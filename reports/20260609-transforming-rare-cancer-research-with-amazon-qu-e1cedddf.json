@@ -1,0 +1,681 @@
+{
+  "id": "20260609-transforming-rare-cancer-research-with-amazon-qu-e1cedddf",
+  "title": "平台规则：AWS 平台规则变化",
+  "original_title": "Transforming rare cancer research with Amazon Quick: Integrating biomedical databases for breakthrough discoveries",
+  "url": "https://aws.amazon.com/blogs/machine-learning/transforming-rare-cancer-research-with-amazon-quick-integrating-biomedical-databases-for-breakthrough-discoveries/",
+  "summary": "In this post, we walk through how to use Amazon Quick Research to integrate biomedical data sources for rare cancer research. The walkthrough uses pediatric sarcoma as the research domain and draws on publicly available datasets from PubMed and other open biomedical repositories. It covers the end-to-end workflow: defining a research objective, configuring data sources, reviewing the AI-generated research plan, running the investigation, and iterating on results using the revision and versioning system.",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "ai-practice",
+  "topic_direction_title": "AI 实操与自动化",
+  "topic_direction_short_title": "AI 实操",
+  "topic_direction_description": "AI 落到具体需求的实操线索，例如个人助手、内容生产、办公自动化、数据分析、健康助手、客服、运营工具和工作流。重点看需求是否真实、能否低成本验证、普通读者能不能照着理解一遍。",
+  "source_name": "AWS Machine Learning Blog",
+  "original_source_name": "Artificial Intelligence",
+  "source_type": "rss",
+  "feed_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+  "published_at": "2026-06-01T21:54:16+00:00",
+  "fetched_at": "2026-06-09T09:23:42.260088+00:00",
+  "decision": "deep_dive",
+  "report_type": "platform-rules",
+  "report_type_title": "平台规则",
+  "score": 60,
+  "reader_hook": "这条线索可能影响平台规则、搜索流量、出海路径或合规边界，适合先看清条件。",
+  "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "命中老花主线关键词，且来源可复查。",
+  "collection_fit": "符合收集原则：来源可复查，且具备进入「平台规则」类报告的分析价值。",
+  "investigation_direction": "优先追官方政策、开发者公告、执行范围、受影响人群和合规边界。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。"
+  ],
+  "facts": [
+    {
+      "claim": "AWS Machine Learning Blog 发布/收录了这条原始线索：Transforming rare cancer research with Amazon Quick: Integrating biomedical databases for breakthrough discoveries",
+      "type": "confirmed_fact",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/transforming-rare-cancer-research-with-amazon-quick-integrating-biomedical-databases-for-breakthrough-discoveries/",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "AWS Machine Learning Blog",
+      "url": "https://aws.amazon.com/blogs/machine-learning/transforming-rare-cancer-research-with-amazon-quick-integrating-biomedical-databases-for-breakthrough-discoveries/",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "ai"
+      ],
+      "dev": [
+        "database"
+      ],
+      "platform": [
+        "search",
+        "amazon"
+      ]
+    },
+    "source_host": "aws.amazon.com",
+    "source_type": "rss",
+    "heuristic": true
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "这条线索可能影响平台规则、搜索流量、出海路径或合规边界，适合先看清条件。",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+    },
+    "core_question": "AWS Quick Research 的发布是否改变了 AWS 平台规则或搜索生态，从而影响技术人的工具链或流量策略？",
+    "why_this_topic_matters": "如果 AWS 确实通过该工具改变了数据访问规则或搜索生态，可能影响技术人的工具链选择和流量策略。但实际证据表明，这只是一个针对特定领域的 AI 工具发布，不涉及规则变更，因此对老花读者群体价值有限。",
+    "fact_summary": [
+      "AWS 发布了一篇博客，介绍如何使用 Amazon Quick Research 集成生物医学数据源进行罕见癌症研究。",
+      "该工具使用公开数据集（如 PubMed），提供端到端工作流：定义目标、配置数据源、生成研究计划、运行调查、迭代结果。",
+      "博客内容为技术教程，未提及任何平台规则、定价、服务条款或 API 限制的变更。",
+      "目前未发现其他独立来源对该工具进行评测或讨论。"
+    ],
+    "timeline": [
+      {
+        "date": "2025-03-31",
+        "event": "AWS 发布博客文章介绍 Amazon Quick Research 用于罕见癌症研究"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "AWS Machine Learning Blog",
+        "url": "https://aws.amazon.com/blogs/machine-learning/transforming-rare-cancer-research-with-amazon-quick-integrating-biomedical-databases-for-breakthrough-discoveries/",
+        "supports": "AWS 发布了新工具 Amazon Quick Research，但未涉及平台规则变化",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "线索标题声称是平台规则变化，但实际内容为 AI 工具发布。核心问题（规则变化）不成立，因为官方博客未提及任何规则、定价或服务条款变更。无其他来源支持规则变化假设。因此，该线索无法形成逻辑闭环。",
+    "writeable_angles": [
+      {
+        "angle": "AWS Quick Research 对生物医学研究者的实操价值",
+        "why": "如果读者中有从事生物信息学或医疗 AI 的技术人，该工具可能简化数据集成流程。",
+        "needs": "需要独立评测、用户反馈、定价信息"
+      },
+      {
+        "angle": "AWS 在垂直领域 AI 工具的策略分析",
+        "why": "可探讨 AWS 如何通过专用工具（如 Quick Research）拓展行业应用，但偏离老花主线。",
+        "needs": "AWS 行业 AI 工具列表、市场分析报告"
+      }
+    ],
+    "missing_basics": [
+      "AWS Quick Research 的定价信息",
+      "AWS Quick Research 的 API 文档或服务条款",
+      "独立用户评测或第三方讨论"
+    ],
+    "missing_materials": [
+      "AWS Quick Research 官方定价页面",
+      "至少一篇独立评测或用户反馈",
+      "AWS 服务条款中关于数据使用的相关段落",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "AWS 平台规则发生了变化",
+      "该工具影响了搜索流量或出海路径",
+      "该工具对技术人现金流或合规有直接影响",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "AWS Quick Research 是否对普通 AWS 用户开放？",
+      "该工具是否改变了 AWS 对第三方数据源的访问政策？",
+      "是否有开发者报告使用该工具后遇到平台限制？"
+    ],
+    "additional_search_queries": [
+      "AWS Quick Research pricing",
+      "AWS Quick Research API documentation",
+      "AWS Quick Research terms of service",
+      "AWS Quick Research review",
+      "AWS Quick Research vs other biomedical search tools",
+      "AWS Quick Research data source restrictions",
+      "AWS Quick Research launch date",
+      "AWS Quick Research rare cancer research"
+    ],
+    "stop_conditions": [
+      "确认 AWS Quick Research 仅为现有服务的包装，无新规则",
+      "无独立来源讨论该工具对平台规则的影响",
+      "定价和条款页面显示无变化"
+    ],
+    "confidence": 20.0,
+    "topic_direction": "ai-practice",
+    "topic_direction_title": "AI 实操与自动化",
+    "report_type": "platform-rules",
+    "research_plan": {
+      "core_question": "AWS Quick Research 的发布是否改变了 AWS 平台规则或搜索生态，从而影响技术人的工具链或流量策略？",
+      "must_verify": [
+        "AWS Quick Research 是否属于新平台功能或 API 更新，而非规则变更",
+        "该工具是否对第三方数据源或搜索行为施加了新的限制或费用",
+        "是否有其他开发者或用户报告了使用该工具后的平台政策变化"
+      ],
+      "search_queries": [
+        "AWS Quick Research pricing",
+        "AWS Quick Research API documentation",
+        "AWS Quick Research terms of service",
+        "AWS Quick Research review",
+        "AWS Quick Research vs other biomedical search tools",
+        "AWS Quick Research data source restrictions",
+        "AWS Quick Research launch date",
+        "AWS Quick Research rare cancer research"
+      ],
+      "best_sources_to_find": [
+        "AWS 官方文档和定价页面",
+        "AWS 服务条款页面",
+        "AWS 开发者论坛或 GitHub 讨论",
+        "第三方技术评测或博客文章",
+        "Hacker News 或 Reddit 上的讨论"
+      ],
+      "expert_challenge_points": [
+        "AWS Quick Research 是否只是现有服务的包装，而非新规则？",
+        "该工具是否对普通技术人的日常工作有实际影响？",
+        "是否有证据表明 AWS 通过该工具改变了数据访问或搜索的规则？"
+      ],
+      "do_not_claim_yet": [
+        "AWS 平台规则发生了变化",
+        "该工具影响了搜索流量或出海路径",
+        "该工具对技术人现金流或合规有直接影响"
+      ],
+      "can_publish_as_radar_if_missing": "否，线索太窄且与平台规则关联弱，不适合作为 Radar 发布",
+      "downstream_materials_needed": [
+        "AWS Quick Research 的官方定价页面截图或链接",
+        "至少一篇独立评测或用户反馈",
+        "AWS 服务条款中关于数据使用的相关段落"
+      ]
+    },
+    "research_evidence": []
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+    },
+    "core_question": "AWS Quick Research 的发布是否改变了 AWS 平台规则或搜索生态，从而影响技术人的工具链或流量策略？",
+    "why_this_topic_matters": "如果 AWS 确实通过该工具改变了数据访问规则或搜索生态，可能影响技术人的工具链选择和流量策略。但实际证据表明，这只是一个针对特定领域的 AI 工具发布，不涉及规则变更，因此对老花读者群体价值有限。",
+    "fact_summary": [
+      "AWS 发布了一篇博客，介绍如何使用 Amazon Quick Research 集成生物医学数据源进行罕见癌症研究。",
+      "该工具使用公开数据集（如 PubMed），提供端到端工作流：定义目标、配置数据源、生成研究计划、运行调查、迭代结果。",
+      "博客内容为技术教程，未提及任何平台规则、定价、服务条款或 API 限制的变更。",
+      "目前未发现其他独立来源对该工具进行评测或讨论。"
+    ],
+    "timeline": [
+      {
+        "date": "2025-03-31",
+        "event": "AWS 发布博客文章介绍 Amazon Quick Research 用于罕见癌症研究"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "AWS Machine Learning Blog",
+        "url": "https://aws.amazon.com/blogs/machine-learning/transforming-rare-cancer-research-with-amazon-quick-integrating-biomedical-databases-for-breakthrough-discoveries/",
+        "supports": "AWS 发布了新工具 Amazon Quick Research，但未涉及平台规则变化",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "线索标题声称是平台规则变化，但实际内容为 AI 工具发布。核心问题（规则变化）不成立，因为官方博客未提及任何规则、定价或服务条款变更。无其他来源支持规则变化假设。因此，该线索无法形成逻辑闭环。",
+    "writeable_angles": [
+      {
+        "angle": "AWS Quick Research 对生物医学研究者的实操价值",
+        "why": "如果读者中有从事生物信息学或医疗 AI 的技术人，该工具可能简化数据集成流程。",
+        "needs": "需要独立评测、用户反馈、定价信息"
+      },
+      {
+        "angle": "AWS 在垂直领域 AI 工具的策略分析",
+        "why": "可探讨 AWS 如何通过专用工具（如 Quick Research）拓展行业应用，但偏离老花主线。",
+        "needs": "AWS 行业 AI 工具列表、市场分析报告"
+      }
+    ],
+    "missing_basics": [
+      "AWS Quick Research 的定价信息",
+      "AWS Quick Research 的 API 文档或服务条款",
+      "独立用户评测或第三方讨论"
+    ],
+    "missing_materials": [
+      "AWS Quick Research 官方定价页面",
+      "至少一篇独立评测或用户反馈",
+      "AWS 服务条款中关于数据使用的相关段落",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "AWS 平台规则发生了变化",
+      "该工具影响了搜索流量或出海路径",
+      "该工具对技术人现金流或合规有直接影响",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "AWS Quick Research 是否对普通 AWS 用户开放？",
+      "该工具是否改变了 AWS 对第三方数据源的访问政策？",
+      "是否有开发者报告使用该工具后遇到平台限制？"
+    ],
+    "additional_search_queries": [
+      "AWS Quick Research pricing",
+      "AWS Quick Research API documentation",
+      "AWS Quick Research terms of service",
+      "AWS Quick Research review",
+      "AWS Quick Research vs other biomedical search tools",
+      "AWS Quick Research data source restrictions",
+      "AWS Quick Research launch date",
+      "AWS Quick Research rare cancer research"
+    ],
+    "stop_conditions": [
+      "确认 AWS Quick Research 仅为现有服务的包装，无新规则",
+      "无独立来源讨论该工具对平台规则的影响",
+      "定价和条款页面显示无变化"
+    ],
+    "confidence": 20.0,
+    "topic_direction": "ai-practice",
+    "topic_direction_title": "AI 实操与自动化",
+    "report_type": "platform-rules",
+    "research_plan": {
+      "core_question": "AWS Quick Research 的发布是否改变了 AWS 平台规则或搜索生态，从而影响技术人的工具链或流量策略？",
+      "must_verify": [
+        "AWS Quick Research 是否属于新平台功能或 API 更新，而非规则变更",
+        "该工具是否对第三方数据源或搜索行为施加了新的限制或费用",
+        "是否有其他开发者或用户报告了使用该工具后的平台政策变化"
+      ],
+      "search_queries": [
+        "AWS Quick Research pricing",
+        "AWS Quick Research API documentation",
+        "AWS Quick Research terms of service",
+        "AWS Quick Research review",
+        "AWS Quick Research vs other biomedical search tools",
+        "AWS Quick Research data source restrictions",
+        "AWS Quick Research launch date",
+        "AWS Quick Research rare cancer research"
+      ],
+      "best_sources_to_find": [
+        "AWS 官方文档和定价页面",
+        "AWS 服务条款页面",
+        "AWS 开发者论坛或 GitHub 讨论",
+        "第三方技术评测或博客文章",
+        "Hacker News 或 Reddit 上的讨论"
+      ],
+      "expert_challenge_points": [
+        "AWS Quick Research 是否只是现有服务的包装，而非新规则？",
+        "该工具是否对普通技术人的日常工作有实际影响？",
+        "是否有证据表明 AWS 通过该工具改变了数据访问或搜索的规则？"
+      ],
+      "do_not_claim_yet": [
+        "AWS 平台规则发生了变化",
+        "该工具影响了搜索流量或出海路径",
+        "该工具对技术人现金流或合规有直接影响"
+      ],
+      "can_publish_as_radar_if_missing": "否，线索太窄且与平台规则关联弱，不适合作为 Radar 发布",
+      "downstream_materials_needed": [
+        "AWS Quick Research 的官方定价页面截图或链接",
+        "至少一篇独立评测或用户反馈",
+        "AWS 服务条款中关于数据使用的相关段落"
+      ]
+    },
+    "research_evidence": []
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260609-transforming-rare-cancer-research-with-amazon-qu-e1cedddf/",
+    "for_gpt_editor": {
+      "brief": "In this post, we walk through how to use Amazon Quick Research to integrate biomedical data sources for rare cancer research. The walkthrough uses pediatric sarcoma as the research domain and draws on publicly available datasets from PubMed and other open biomedical repositories. It covers the end-to-end workflow: defining a research objective, configuring data sources, reviewing the AI-generated research plan, running the investigation, and iterating on results using the revision and versioning system.",
+      "title_seed": "平台规则：AWS 平台规则变化",
+      "original_title": "Transforming rare cancer research with Amazon Quick: Integrating biomedical databases for breakthrough discoveries",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/transforming-rare-cancer-research-with-amazon-quick-integrating-biomedical-databases-for-breakthrough-discoveries/",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+        },
+        "core_question": "AWS Quick Research 的发布是否改变了 AWS 平台规则或搜索生态，从而影响技术人的工具链或流量策略？",
+        "why_this_topic_matters": "如果 AWS 确实通过该工具改变了数据访问规则或搜索生态，可能影响技术人的工具链选择和流量策略。但实际证据表明，这只是一个针对特定领域的 AI 工具发布，不涉及规则变更，因此对老花读者群体价值有限。",
+        "fact_summary": [
+          "AWS 发布了一篇博客，介绍如何使用 Amazon Quick Research 集成生物医学数据源进行罕见癌症研究。",
+          "该工具使用公开数据集（如 PubMed），提供端到端工作流：定义目标、配置数据源、生成研究计划、运行调查、迭代结果。",
+          "博客内容为技术教程，未提及任何平台规则、定价、服务条款或 API 限制的变更。",
+          "目前未发现其他独立来源对该工具进行评测或讨论。"
+        ],
+        "timeline": [
+          {
+            "date": "2025-03-31",
+            "event": "AWS 发布博客文章介绍 Amazon Quick Research 用于罕见癌症研究"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "AWS Machine Learning Blog",
+            "url": "https://aws.amazon.com/blogs/machine-learning/transforming-rare-cancer-research-with-amazon-quick-integrating-biomedical-databases-for-breakthrough-discoveries/",
+            "supports": "AWS 发布了新工具 Amazon Quick Research，但未涉及平台规则变化",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "线索标题声称是平台规则变化，但实际内容为 AI 工具发布。核心问题（规则变化）不成立，因为官方博客未提及任何规则、定价或服务条款变更。无其他来源支持规则变化假设。因此，该线索无法形成逻辑闭环。",
+        "writeable_angles": [
+          {
+            "angle": "AWS Quick Research 对生物医学研究者的实操价值",
+            "why": "如果读者中有从事生物信息学或医疗 AI 的技术人，该工具可能简化数据集成流程。",
+            "needs": "需要独立评测、用户反馈、定价信息"
+          },
+          {
+            "angle": "AWS 在垂直领域 AI 工具的策略分析",
+            "why": "可探讨 AWS 如何通过专用工具（如 Quick Research）拓展行业应用，但偏离老花主线。",
+            "needs": "AWS 行业 AI 工具列表、市场分析报告"
+          }
+        ],
+        "missing_basics": [
+          "AWS Quick Research 的定价信息",
+          "AWS Quick Research 的 API 文档或服务条款",
+          "独立用户评测或第三方讨论"
+        ],
+        "missing_materials": [
+          "AWS Quick Research 官方定价页面",
+          "至少一篇独立评测或用户反馈",
+          "AWS 服务条款中关于数据使用的相关段落",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "AWS 平台规则发生了变化",
+          "该工具影响了搜索流量或出海路径",
+          "该工具对技术人现金流或合规有直接影响",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "AWS Quick Research 是否对普通 AWS 用户开放？",
+          "该工具是否改变了 AWS 对第三方数据源的访问政策？",
+          "是否有开发者报告使用该工具后遇到平台限制？"
+        ],
+        "additional_search_queries": [
+          "AWS Quick Research pricing",
+          "AWS Quick Research API documentation",
+          "AWS Quick Research terms of service",
+          "AWS Quick Research review",
+          "AWS Quick Research vs other biomedical search tools",
+          "AWS Quick Research data source restrictions",
+          "AWS Quick Research launch date",
+          "AWS Quick Research rare cancer research"
+        ],
+        "stop_conditions": [
+          "确认 AWS Quick Research 仅为现有服务的包装，无新规则",
+          "无独立来源讨论该工具对平台规则的影响",
+          "定价和条款页面显示无变化"
+        ],
+        "confidence": 20.0,
+        "topic_direction": "ai-practice",
+        "topic_direction_title": "AI 实操与自动化",
+        "report_type": "platform-rules",
+        "research_plan": {
+          "core_question": "AWS Quick Research 的发布是否改变了 AWS 平台规则或搜索生态，从而影响技术人的工具链或流量策略？",
+          "must_verify": [
+            "AWS Quick Research 是否属于新平台功能或 API 更新，而非规则变更",
+            "该工具是否对第三方数据源或搜索行为施加了新的限制或费用",
+            "是否有其他开发者或用户报告了使用该工具后的平台政策变化"
+          ],
+          "search_queries": [
+            "AWS Quick Research pricing",
+            "AWS Quick Research API documentation",
+            "AWS Quick Research terms of service",
+            "AWS Quick Research review",
+            "AWS Quick Research vs other biomedical search tools",
+            "AWS Quick Research data source restrictions",
+            "AWS Quick Research launch date",
+            "AWS Quick Research rare cancer research"
+          ],
+          "best_sources_to_find": [
+            "AWS 官方文档和定价页面",
+            "AWS 服务条款页面",
+            "AWS 开发者论坛或 GitHub 讨论",
+            "第三方技术评测或博客文章",
+            "Hacker News 或 Reddit 上的讨论"
+          ],
+          "expert_challenge_points": [
+            "AWS Quick Research 是否只是现有服务的包装，而非新规则？",
+            "该工具是否对普通技术人的日常工作有实际影响？",
+            "是否有证据表明 AWS 通过该工具改变了数据访问或搜索的规则？"
+          ],
+          "do_not_claim_yet": [
+            "AWS 平台规则发生了变化",
+            "该工具影响了搜索流量或出海路径",
+            "该工具对技术人现金流或合规有直接影响"
+          ],
+          "can_publish_as_radar_if_missing": "否，线索太窄且与平台规则关联弱，不适合作为 Radar 发布",
+          "downstream_materials_needed": [
+            "AWS Quick Research 的官方定价页面截图或链接",
+            "至少一篇独立评测或用户反馈",
+            "AWS 服务条款中关于数据使用的相关段落"
+          ]
+        },
+        "research_evidence": []
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+        },
+        "core_question": "AWS Quick Research 的发布是否改变了 AWS 平台规则或搜索生态，从而影响技术人的工具链或流量策略？",
+        "why_this_topic_matters": "如果 AWS 确实通过该工具改变了数据访问规则或搜索生态，可能影响技术人的工具链选择和流量策略。但实际证据表明，这只是一个针对特定领域的 AI 工具发布，不涉及规则变更，因此对老花读者群体价值有限。",
+        "fact_summary": [
+          "AWS 发布了一篇博客，介绍如何使用 Amazon Quick Research 集成生物医学数据源进行罕见癌症研究。",
+          "该工具使用公开数据集（如 PubMed），提供端到端工作流：定义目标、配置数据源、生成研究计划、运行调查、迭代结果。",
+          "博客内容为技术教程，未提及任何平台规则、定价、服务条款或 API 限制的变更。",
+          "目前未发现其他独立来源对该工具进行评测或讨论。"
+        ],
+        "timeline": [
+          {
+            "date": "2025-03-31",
+            "event": "AWS 发布博客文章介绍 Amazon Quick Research 用于罕见癌症研究"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "AWS Machine Learning Blog",
+            "url": "https://aws.amazon.com/blogs/machine-learning/transforming-rare-cancer-research-with-amazon-quick-integrating-biomedical-databases-for-breakthrough-discoveries/",
+            "supports": "AWS 发布了新工具 Amazon Quick Research，但未涉及平台规则变化",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "线索标题声称是平台规则变化，但实际内容为 AI 工具发布。核心问题（规则变化）不成立，因为官方博客未提及任何规则、定价或服务条款变更。无其他来源支持规则变化假设。因此，该线索无法形成逻辑闭环。",
+        "writeable_angles": [
+          {
+            "angle": "AWS Quick Research 对生物医学研究者的实操价值",
+            "why": "如果读者中有从事生物信息学或医疗 AI 的技术人，该工具可能简化数据集成流程。",
+            "needs": "需要独立评测、用户反馈、定价信息"
+          },
+          {
+            "angle": "AWS 在垂直领域 AI 工具的策略分析",
+            "why": "可探讨 AWS 如何通过专用工具（如 Quick Research）拓展行业应用，但偏离老花主线。",
+            "needs": "AWS 行业 AI 工具列表、市场分析报告"
+          }
+        ],
+        "missing_basics": [
+          "AWS Quick Research 的定价信息",
+          "AWS Quick Research 的 API 文档或服务条款",
+          "独立用户评测或第三方讨论"
+        ],
+        "missing_materials": [
+          "AWS Quick Research 官方定价页面",
+          "至少一篇独立评测或用户反馈",
+          "AWS 服务条款中关于数据使用的相关段落",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "AWS 平台规则发生了变化",
+          "该工具影响了搜索流量或出海路径",
+          "该工具对技术人现金流或合规有直接影响",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "AWS Quick Research 是否对普通 AWS 用户开放？",
+          "该工具是否改变了 AWS 对第三方数据源的访问政策？",
+          "是否有开发者报告使用该工具后遇到平台限制？"
+        ],
+        "additional_search_queries": [
+          "AWS Quick Research pricing",
+          "AWS Quick Research API documentation",
+          "AWS Quick Research terms of service",
+          "AWS Quick Research review",
+          "AWS Quick Research vs other biomedical search tools",
+          "AWS Quick Research data source restrictions",
+          "AWS Quick Research launch date",
+          "AWS Quick Research rare cancer research"
+        ],
+        "stop_conditions": [
+          "确认 AWS Quick Research 仅为现有服务的包装，无新规则",
+          "无独立来源讨论该工具对平台规则的影响",
+          "定价和条款页面显示无变化"
+        ],
+        "confidence": 20.0,
+        "topic_direction": "ai-practice",
+        "topic_direction_title": "AI 实操与自动化",
+        "report_type": "platform-rules",
+        "research_plan": {
+          "core_question": "AWS Quick Research 的发布是否改变了 AWS 平台规则或搜索生态，从而影响技术人的工具链或流量策略？",
+          "must_verify": [
+            "AWS Quick Research 是否属于新平台功能或 API 更新，而非规则变更",
+            "该工具是否对第三方数据源或搜索行为施加了新的限制或费用",
+            "是否有其他开发者或用户报告了使用该工具后的平台政策变化"
+          ],
+          "search_queries": [
+            "AWS Quick Research pricing",
+            "AWS Quick Research API documentation",
+            "AWS Quick Research terms of service",
+            "AWS Quick Research review",
+            "AWS Quick Research vs other biomedical search tools",
+            "AWS Quick Research data source restrictions",
+            "AWS Quick Research launch date",
+            "AWS Quick Research rare cancer research"
+          ],
+          "best_sources_to_find": [
+            "AWS 官方文档和定价页面",
+            "AWS 服务条款页面",
+            "AWS 开发者论坛或 GitHub 讨论",
+            "第三方技术评测或博客文章",
+            "Hacker News 或 Reddit 上的讨论"
+          ],
+          "expert_challenge_points": [
+            "AWS Quick Research 是否只是现有服务的包装，而非新规则？",
+            "该工具是否对普通技术人的日常工作有实际影响？",
+            "是否有证据表明 AWS 通过该工具改变了数据访问或搜索的规则？"
+          ],
+          "do_not_claim_yet": [
+            "AWS 平台规则发生了变化",
+            "该工具影响了搜索流量或出海路径",
+            "该工具对技术人现金流或合规有直接影响"
+          ],
+          "can_publish_as_radar_if_missing": "否，线索太窄且与平台规则关联弱，不适合作为 Radar 发布",
+          "downstream_materials_needed": [
+            "AWS Quick Research 的官方定价页面截图或链接",
+            "至少一篇独立评测或用户反馈",
+            "AWS 服务条款中关于数据使用的相关段落"
+          ]
+        },
+        "research_evidence": []
+      },
+      "angle_candidates": [
+        "规则变动影响谁",
+        "普通技术人的合规边界",
+        "平台红利和封号风险"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留普通读者入口，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "平台规则：AWS 平台规则变化 官方政策 规则 原文",
+        "平台规则：AWS 平台规则变化 开发者公告 影响范围",
+        "平台规则：AWS 平台规则变化 合规 风险 受影响用户"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
