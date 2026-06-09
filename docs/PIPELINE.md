@@ -4,9 +4,20 @@
 
 输入：`config/sources.seed.json`
 
-抓取类型：RSS/Atom、公开 JSON API、GitHub、HN Algolia API、静态网页正文。
+支持类型：RSS/Atom、公开 JSON API、HN Algolia API 等稳定公开源。
 
-每条原始记录保留：标题、URL、来源名、来源类型、发布时间、抓取时间、摘要、原文片段、标签。
+每条原始记录保留：
+
+- 标题
+- URL
+- 来源名称
+- 数据源分类 `source_category`
+- 来源类型 `source_type`
+- 发布时间
+- 抓取时间
+- 摘要
+
+注意：`source_category` 只用于内部溯源和后续统计，不是网站栏目。
 
 ## Step 2：去重
 
@@ -16,24 +27,67 @@
 
 模型：DeepSeek v4 Flash。
 
-输出相关性、分类、读者入口、证据等级、深挖潜力、跳过理由。
+输出：
 
-## Step 4：补证规划
+- `decision`: `deep_dive` / `brief` / `skip`
+- `report_type`: 报告类型，也是网站栏目归属
+- `score`: 相关性和深挖潜力
+- `reader_hook`: 普通读者入口
+- `why_now`: 为什么现在值得看
+- `evidence_level`: 证据等级
+- `reject_reason`: 跳过理由
 
-只对高潜力线索执行。模型列出需要确认的事实、搜索词、一手来源、懂行人挑刺点和不能提前下的结论。
+`report_type` 可选值：
 
-## Step 5：追加检索
+- `investigation`
+- `opportunity`
+- `tool-ledger`
+- `platform-rules`
+- `case-study`
+- `risk-warning`
 
-只抓稳定公开结果。抓不到就标记证据缺口，不硬编。
+## Step 4：报告生成
 
-## Step 6：调查报告
+当前第一版为轻量调查报告，必须包含：
 
-报告不写成公众号风格，而是写成研究卡片：这是什么、为什么现在看、和读者有什么关系、证据链、概念风险、成本门槛、文章模式建议。
+- 线索是什么
+- 为什么现在值得看
+- 和老花人设的关系
+- 普通读者入口
+- 程序员/IT 视角
+- 已确认事实
+- 证据链
+- 基础概念和边界
+- 风险和缺口
+- 不应夸大的地方
 
-## Step 7：发布
+报告不写成公众号正文，只作为后续 GPT 编辑应用的素材。
 
-生成静态页面和 JSON 数据，GitHub Pages 展示今日简讯、深挖报告、来源和证据等级。
+## Step 5：发布
 
-## Step 8：Telegram 通知
+生成内容：
 
-通知只发摘要和 Radar 链接，不发长文。
+- `data/{batch_id}.json`
+- `data/latest.json`
+- `reports/{report_id}.json`
+- `site/index.html`
+- `site/briefings/index.html`
+- `site/reports/{report_type}/index.html`
+- `site/items/{report_id}/index.html`
+- `site/robots.txt`
+- `site/sitemap.xml`
+- `site/llms.txt`
+- `site/ads.txt`
+
+GitHub Pages 只发布 `site/` 目录。
+
+## Step 6：Telegram 通知
+
+Telegram 只发摘要和 Radar 链接，不发长文。
+
+## 失败处理
+
+- 单个源失败：记录失败，不中断全局流程。
+- GitHub Actions 长期抓不到的源：从配置中移除。
+- DeepSeek 不可用：降级为规则初筛，但保留 `traceability` 标记。
+- 没有高潜力线索：只发简报，不强行生成深度报告。

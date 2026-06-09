@@ -12,7 +12,7 @@
   "must_verify": [],
   "best_sources_to_find": [
     {
-      "source_type": "official_doc|pricing_page|github_repo|case_study|developer_discussion|policy",
+      "source_type": "official_doc|pricing_page|github_repo|case_study|developer_discussion|policy|benchmark",
       "query": "",
       "why_needed": ""
     }
@@ -23,4 +23,11 @@
 }
 ```
 
-重点：先澄清基础概念，检查成本估算是否拍脑袋，检查技术方案是否过度设计，检查商业案例是否只是卖课/营销。
+重点检查：
+
+- 基础概念是否准确。
+- 成本估算是否有公式、单位和边界。
+- 技术方案是否被过度简化。
+- 商业案例是否只是卖课、卖源码、卖工具。
+- 这个主题是否只有小圈子才关心。
+- 是否有普通读者能理解的利益关系、成本关系或风险关系。
