@@ -16,6 +16,7 @@
   "report_type_ok": true,
   "source_closure_ok": true,
   "downstream_handoff_ok": true,
+  "material_pack_ok": true,
   "source_coverage_ok": true,
   "recommendation": "publish|downgrade_to_brief|hold"
 }
@@ -33,4 +34,5 @@
 - 强行把不可行动线索写成试跑项目。
 - 把营销收入、截图、社区传言写成确认事实。
 - 没有给下游 GPT 编辑应用、CMS、研究闭环留下足够结构化资料。
+- 没有按具体类型提供资料包，例如 AI 大更新没有时间线和更新摘要，副业拆解没有需求、流量、变现、成本、合规、停止信号。
 - 当天信息源严重偏科却没有在源覆盖统计中暴露出来。

@@ -9,13 +9,13 @@
   "topic_direction": "ai-frontier",
   "topic_direction_title": "AI 前沿与工具链",
   "topic_direction_short_title": "AI 前沿",
-  "topic_direction_description": "AI 模型、Agent、开发工具、API、云服务和自动化能力变化。重点看它们会不会改变普通技术人的工作方式、成本结构和副业工具链。",
+  "topic_direction_description": "AI 模型、Agent、开发工具、API、云服务和底层能力变化。重点看这次变化到底是什么、时间线如何、会不会改变普通技术人的工作方式、成本结构和工具链。",
   "source_name": "AWS Machine Learning Blog",
   "original_source_name": "Artificial Intelligence",
   "source_type": "rss",
   "feed_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
   "published_at": "2026-06-03T15:56:50+00:00",
-  "fetched_at": "2026-06-09T05:07:09.084271+00:00",
+  "fetched_at": "2026-06-09T05:29:41.993791+00:00",
   "decision": "brief",
   "report_type": "investigation",
   "report_type_title": "深度调查",
@@ -123,6 +123,115 @@
       "涉及价格、收益、比例时必须继续找来源或公式。"
     ]
   },
+  "material_pack": {
+    "template": "general_investigation",
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "investigation",
+    "must_answer": [
+      "核心事实",
+      "证据链",
+      "影响边界",
+      "存疑点",
+      "可写切口"
+    ],
+    "timeline": [
+      {
+        "time": "2026-06-03T15:56:50+00:00",
+        "event": "原始来源发布/收录线索：Improve your agent’s tool-calling accuracy with SFT and DPO on Amazon SageMaker AI",
+        "evidence": "https://aws.amazon.com/blogs/machine-learning/improve-your-agents-tool-calling-accuracy-with-sft-and-dpo-on-amazon-sagemaker-ai/"
+      },
+      {
+        "time": "2026-06-09T05:29:41.993791+00:00",
+        "event": "Easton Radar 抓取并归档该线索。",
+        "evidence": "https://aws.amazon.com/blogs/machine-learning/feed/"
+      },
+      {
+        "time": "待补证",
+        "event": "继续查官方文档、价格页、案例、反方观点或真实使用反馈。",
+        "evidence": "见 followup_queries"
+      }
+    ],
+    "fact_sheet": [
+      "原始标题：Improve your agent’s tool-calling accuracy with SFT and DPO on Amazon SageMaker AI",
+      "来源：AWS Machine Learning Blog",
+      "证据等级：official",
+      "当前判断：部分符合收集原则：可以进入简报观察，但证据链或读者入口还不够完整。"
+    ],
+    "evidence_map": [
+      {
+        "source": "AWS Machine Learning Blog",
+        "url": "https://aws.amazon.com/blogs/machine-learning/improve-your-agents-tool-calling-accuracy-with-sft-and-dpo-on-amazon-sagemaker-ai/",
+        "supports": "原始线索存在、标题、来源和基础事实入口。",
+        "evidence_level": "official",
+        "confidence": 0.8
+      }
+    ],
+    "analysis_dimensions": [
+      {
+        "name": "核心事实",
+        "how_to_use": "这件事目前确认了什么。"
+      },
+      {
+        "name": "证据链",
+        "how_to_use": "证据来自哪里，是否一手，是否可复查。"
+      },
+      {
+        "name": "影响边界",
+        "how_to_use": "影响谁，不影响谁，别扩大。"
+      },
+      {
+        "name": "存疑点",
+        "how_to_use": "哪些地方还不能下结论。"
+      },
+      {
+        "name": "可写切口",
+        "how_to_use": "后续写博客或公众号时，最自然的入口是什么。"
+      }
+    ],
+    "writing_materials": {
+      "title_seeds": [
+        "AWS AI 编程工具变化",
+        "AWS AI 编程工具变化，和普通技术人有什么关系",
+        "AWS AI 编程工具变化：机会、成本和风险先拆清楚"
+      ],
+      "reader_questions": [
+        "这事和我有什么关系？",
+        "它到底改变了什么，还是只是包装换了个名字？",
+        "如果我只是懂一点技术，能不能低成本验证？",
+        "最大的坑是技术，还是流量、合规、成本、回款和交付？"
+      ],
+      "opening_hooks": [
+        "今天这条线索看起来是 深度调查，但我更关心它能不能成为一个真正有用的选题。",
+        "先别急着下结论，咱们还是先看来源、证据和利益关系。"
+      ],
+      "angle_seeds": [
+        "事实时间线",
+        "基础概念澄清",
+        "证据矛盾和影响边界"
+      ]
+    },
+    "evidence_gaps": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "followup_queries": [
+      "深度调查：AWS AI 编程工具变化 官方来源 原始公告",
+      "深度调查：AWS AI 编程工具变化 概念解释 证据",
+      "深度调查：AWS AI 编程工具变化 反方观点 局限"
+    ],
+    "stop_conditions": [
+      "找不到一手来源或近源证据。",
+      "只能证明概念存在，无法证明需求、成本、规则、收入或影响。",
+      "需要用大量想象补齐关键事实，读者看完只会觉得虚。"
+    ]
+  },
   "downstream_handoff": {
     "package_version": "radar-handoff-v1",
     "canonical_url": "https://radar.huadongpeng.com/items/20260609-improve-your-agent-s-tool-calling-accuracy-with-7a40dbc0/",
@@ -131,6 +240,115 @@
       "title_seed": "深度调查：AWS AI 编程工具变化",
       "original_title": "Improve your agent’s tool-calling accuracy with SFT and DPO on Amazon SageMaker AI",
       "source_url": "https://aws.amazon.com/blogs/machine-learning/improve-your-agents-tool-calling-accuracy-with-sft-and-dpo-on-amazon-sagemaker-ai/",
+      "material_pack": {
+        "template": "general_investigation",
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "investigation",
+        "must_answer": [
+          "核心事实",
+          "证据链",
+          "影响边界",
+          "存疑点",
+          "可写切口"
+        ],
+        "timeline": [
+          {
+            "time": "2026-06-03T15:56:50+00:00",
+            "event": "原始来源发布/收录线索：Improve your agent’s tool-calling accuracy with SFT and DPO on Amazon SageMaker AI",
+            "evidence": "https://aws.amazon.com/blogs/machine-learning/improve-your-agents-tool-calling-accuracy-with-sft-and-dpo-on-amazon-sagemaker-ai/"
+          },
+          {
+            "time": "2026-06-09T05:29:41.993791+00:00",
+            "event": "Easton Radar 抓取并归档该线索。",
+            "evidence": "https://aws.amazon.com/blogs/machine-learning/feed/"
+          },
+          {
+            "time": "待补证",
+            "event": "继续查官方文档、价格页、案例、反方观点或真实使用反馈。",
+            "evidence": "见 followup_queries"
+          }
+        ],
+        "fact_sheet": [
+          "原始标题：Improve your agent’s tool-calling accuracy with SFT and DPO on Amazon SageMaker AI",
+          "来源：AWS Machine Learning Blog",
+          "证据等级：official",
+          "当前判断：部分符合收集原则：可以进入简报观察，但证据链或读者入口还不够完整。"
+        ],
+        "evidence_map": [
+          {
+            "source": "AWS Machine Learning Blog",
+            "url": "https://aws.amazon.com/blogs/machine-learning/improve-your-agents-tool-calling-accuracy-with-sft-and-dpo-on-amazon-sagemaker-ai/",
+            "supports": "原始线索存在、标题、来源和基础事实入口。",
+            "evidence_level": "official",
+            "confidence": 0.8
+          }
+        ],
+        "analysis_dimensions": [
+          {
+            "name": "核心事实",
+            "how_to_use": "这件事目前确认了什么。"
+          },
+          {
+            "name": "证据链",
+            "how_to_use": "证据来自哪里，是否一手，是否可复查。"
+          },
+          {
+            "name": "影响边界",
+            "how_to_use": "影响谁，不影响谁，别扩大。"
+          },
+          {
+            "name": "存疑点",
+            "how_to_use": "哪些地方还不能下结论。"
+          },
+          {
+            "name": "可写切口",
+            "how_to_use": "后续写博客或公众号时，最自然的入口是什么。"
+          }
+        ],
+        "writing_materials": {
+          "title_seeds": [
+            "AWS AI 编程工具变化",
+            "AWS AI 编程工具变化，和普通技术人有什么关系",
+            "AWS AI 编程工具变化：机会、成本和风险先拆清楚"
+          ],
+          "reader_questions": [
+            "这事和我有什么关系？",
+            "它到底改变了什么，还是只是包装换了个名字？",
+            "如果我只是懂一点技术，能不能低成本验证？",
+            "最大的坑是技术，还是流量、合规、成本、回款和交付？"
+          ],
+          "opening_hooks": [
+            "今天这条线索看起来是 深度调查，但我更关心它能不能成为一个真正有用的选题。",
+            "先别急着下结论，咱们还是先看来源、证据和利益关系。"
+          ],
+          "angle_seeds": [
+            "事实时间线",
+            "基础概念澄清",
+            "证据矛盾和影响边界"
+          ]
+        },
+        "evidence_gaps": [
+          "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+          "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+          "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+        ],
+        "not_claimable": [
+          "不要声称老花已经实操验证。",
+          "不要声称普通人都能复制。",
+          "不要在证据不足时给完整行动方案。"
+        ],
+        "followup_queries": [
+          "深度调查：AWS AI 编程工具变化 官方来源 原始公告",
+          "深度调查：AWS AI 编程工具变化 概念解释 证据",
+          "深度调查：AWS AI 编程工具变化 反方观点 局限"
+        ],
+        "stop_conditions": [
+          "找不到一手来源或近源证据。",
+          "只能证明概念存在，无法证明需求、成本、规则、收入或影响。",
+          "需要用大量想象补齐关键事实，读者看完只会觉得虚。"
+        ]
+      },
       "angle_candidates": [
         "事实时间线",
         "基础概念澄清",
@@ -169,6 +387,7 @@
       "topic_direction_title": "AI 前沿与工具链",
       "source_category": "ai_tools",
       "evidence_level": "official",
+      "material_template": "general_investigation",
       "publish_status": "radar_published"
     },
     "for_research_loop": {

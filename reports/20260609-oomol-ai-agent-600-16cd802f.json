@@ -6,16 +6,16 @@
   "summary": "最近几个月，我们团队做了一个新的东西，也是目前我们主推的一个产品: OOMOL OOMOL：让你本地的 AI Agent （ Claude Code 、Codex 等）能安全地调用你自己的第三方账号和服务。 你对一个服务授权一次，之后本机的 AI 就能随时用上它，不用每次重新贴 token 、配 MCP 。 目前我们的 connector 支持近 600 个 service （ provider ） ，覆盖 6000 多个 action （动作） 。 它能做到什么 授权完之后，你在 Claude / Codex 里直接说出需求就好，如： /oo 帮我看看 gmail 里最近 3 天的邮件 我们也支持跨服务串联: /oo 将我最近 2 天 github 的 PR 汇总，写入到 notion 中的「 github 总结」下的子页面中 同时，你可以非常方便的在不同电脑中使用，无需重新配置鉴权，只需要在另一台电脑中安装并登录 oo 即可。 而且，我们还内置了 oo skills sync upload 和 oo skills sync download ，以便你可以在不同电脑中同步 SKILL 。 工作流程 在 OOMOL Console 对第三方服务做一次 OAuth 授权（比如授权 Google ），或填入你自己在某个平台的 API Key 。凭证从这一步起就加密托管在云端。 安装 oo-cli oo-cli 首次启动会往本地 AI Agent 的 skills 目录里释放内置的 skills （写到 ~/.claude/skills 、 ~/.agents/skills 这类目录），这一步自动完成。 之后你在 Claude / Codex 里输入自然语言描述需求。 oo skill 调 oo-cli → 连上 connector → 云端用你授权好的凭证发请求 → 返回结果。 provider 和 action 用的时候会反复见到这两个概念，所以这里简单描述下: 每个服务是一个 provider 。比如 gmail 、 googlecalendar 、 googledri",
   "source_category": "developer_business",
   "source_category_title": "开发者副业与独立开发",
-  "topic_direction": "ai-frontier",
-  "topic_direction_title": "AI 前沿与工具链",
-  "topic_direction_short_title": "AI 前沿",
-  "topic_direction_description": "AI 模型、Agent、开发工具、API、云服务和自动化能力变化。重点看它们会不会改变普通技术人的工作方式、成本结构和副业工具链。",
+  "topic_direction": "traffic-rules",
+  "topic_direction_title": "平台规则与流量生态",
+  "topic_direction_short_title": "平台流量",
+  "topic_direction_description": "公众号、小红书、视频号、Google SEO、AI SEO、平台政策、账号限制、推荐机制和内容分发生态变化。重点看哪些规则会影响流量、账号、合规、内容收益和后续变现。",
   "source_name": "V2EX 分享创造",
   "original_source_name": "分享创造",
   "source_type": "rss",
   "feed_url": "https://v2ex.com/feed/create.xml",
   "published_at": "2026-06-09T03:49:32Z",
-  "fetched_at": "2026-06-09T05:07:11.161588+00:00",
+  "fetched_at": "2026-06-09T05:29:52.416658+00:00",
   "decision": "deep_dive",
   "report_type": "tool-ledger",
   "report_type_title": "工具账本",
@@ -127,6 +127,115 @@
       "涉及价格、收益、比例时必须继续找来源或公式。"
     ]
   },
+  "material_pack": {
+    "template": "platform_rule_change",
+    "topic_direction": "traffic-rules",
+    "topic_direction_title": "平台规则与流量生态",
+    "report_type": "tool-ledger",
+    "must_answer": [
+      "规则变化",
+      "影响范围",
+      "证据边界",
+      "应对材料",
+      "风险信号"
+    ],
+    "timeline": [
+      {
+        "time": "2026-06-09T03:49:32Z",
+        "event": "原始来源发布/收录线索：[软件推广 - 抽奖] OOMOL: 一次连接，随处使用 — 本地 AI Agent 安全调用近 600 个第三方服务，凭证不落本地",
+        "evidence": "https://www.v2ex.com/t/1219012"
+      },
+      {
+        "time": "2026-06-09T05:29:52.416658+00:00",
+        "event": "Easton Radar 抓取并归档该线索。",
+        "evidence": "https://v2ex.com/feed/create.xml"
+      },
+      {
+        "time": "待补证",
+        "event": "继续查官方文档、价格页、案例、反方观点或真实使用反馈。",
+        "evidence": "见 followup_queries"
+      }
+    ],
+    "fact_sheet": [
+      "原始标题：[软件推广 - 抽奖] OOMOL: 一次连接，随处使用 — 本地 AI Agent 安全调用近 600 个第三方服务，凭证不落本地",
+      "来源：V2EX 分享创造",
+      "证据等级：near_source",
+      "当前判断：符合收集原则：来源可复查，且具备进入「工具账本」类报告的分析价值。"
+    ],
+    "evidence_map": [
+      {
+        "source": "V2EX 分享创造",
+        "url": "https://www.v2ex.com/t/1219012",
+        "supports": "原始线索存在、标题、来源和基础事实入口。",
+        "evidence_level": "near_source",
+        "confidence": 0.8
+      }
+    ],
+    "analysis_dimensions": [
+      {
+        "name": "规则变化",
+        "how_to_use": "平台改了什么，原规则是什么，新规则影响哪部分人。"
+      },
+      {
+        "name": "影响范围",
+        "how_to_use": "影响流量、账号、支付、分发、SEO、AI 内容还是开发者生态。"
+      },
+      {
+        "name": "证据边界",
+        "how_to_use": "哪些来自官方，哪些只是社区推断或媒体解释。"
+      },
+      {
+        "name": "应对材料",
+        "how_to_use": "后续写文需要准备官方原文、案例、反例、时间点和执行口径。"
+      },
+      {
+        "name": "风险信号",
+        "how_to_use": "哪些行为可能被限流、封号、拒付、降权或触发合规问题。"
+      }
+    ],
+    "writing_materials": {
+      "title_seeds": [
+        "OOMOL AI 编程工具变化",
+        "OOMOL AI 编程工具变化，和普通技术人有什么关系",
+        "OOMOL AI 编程工具变化：机会、成本和风险先拆清楚"
+      ],
+      "reader_questions": [
+        "这事和我有什么关系？",
+        "它到底改变了什么，还是只是包装换了个名字？",
+        "如果我只是懂一点技术，能不能低成本验证？",
+        "最大的坑是技术，还是流量、合规、成本、回款和交付？"
+      ],
+      "opening_hooks": [
+        "今天这条线索看起来是 工具账本，但我更关心它能不能成为一个真正有用的选题。",
+        "先别急着下结论，咱们还是先看来源、证据和利益关系。"
+      ],
+      "angle_seeds": [
+        "成本是否真的下降",
+        "免费额度和爆账单风险",
+        "替代方案值不值得换"
+      ]
+    },
+    "evidence_gaps": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "followup_queries": [
+      "工具账本：OOMOL AI 编程工具变化 官方公告 价格 成本",
+      "工具账本：OOMOL AI 编程工具变化 API 文档 额度 限制",
+      "工具账本：OOMOL AI 编程工具变化 替代方案 真实使用 成本"
+    ],
+    "stop_conditions": [
+      "找不到一手来源或近源证据。",
+      "只能证明概念存在，无法证明需求、成本、规则、收入或影响。",
+      "需要用大量想象补齐关键事实，读者看完只会觉得虚。"
+    ]
+  },
   "downstream_handoff": {
     "package_version": "radar-handoff-v1",
     "canonical_url": "https://radar.huadongpeng.com/items/20260609-oomol-ai-agent-600-16cd802f/",
@@ -135,6 +244,115 @@
       "title_seed": "工具账本：OOMOL AI 编程工具变化",
       "original_title": "[软件推广 - 抽奖] OOMOL: 一次连接，随处使用 — 本地 AI Agent 安全调用近 600 个第三方服务，凭证不落本地",
       "source_url": "https://www.v2ex.com/t/1219012",
+      "material_pack": {
+        "template": "platform_rule_change",
+        "topic_direction": "traffic-rules",
+        "topic_direction_title": "平台规则与流量生态",
+        "report_type": "tool-ledger",
+        "must_answer": [
+          "规则变化",
+          "影响范围",
+          "证据边界",
+          "应对材料",
+          "风险信号"
+        ],
+        "timeline": [
+          {
+            "time": "2026-06-09T03:49:32Z",
+            "event": "原始来源发布/收录线索：[软件推广 - 抽奖] OOMOL: 一次连接，随处使用 — 本地 AI Agent 安全调用近 600 个第三方服务，凭证不落本地",
+            "evidence": "https://www.v2ex.com/t/1219012"
+          },
+          {
+            "time": "2026-06-09T05:29:52.416658+00:00",
+            "event": "Easton Radar 抓取并归档该线索。",
+            "evidence": "https://v2ex.com/feed/create.xml"
+          },
+          {
+            "time": "待补证",
+            "event": "继续查官方文档、价格页、案例、反方观点或真实使用反馈。",
+            "evidence": "见 followup_queries"
+          }
+        ],
+        "fact_sheet": [
+          "原始标题：[软件推广 - 抽奖] OOMOL: 一次连接，随处使用 — 本地 AI Agent 安全调用近 600 个第三方服务，凭证不落本地",
+          "来源：V2EX 分享创造",
+          "证据等级：near_source",
+          "当前判断：符合收集原则：来源可复查，且具备进入「工具账本」类报告的分析价值。"
+        ],
+        "evidence_map": [
+          {
+            "source": "V2EX 分享创造",
+            "url": "https://www.v2ex.com/t/1219012",
+            "supports": "原始线索存在、标题、来源和基础事实入口。",
+            "evidence_level": "near_source",
+            "confidence": 0.8
+          }
+        ],
+        "analysis_dimensions": [
+          {
+            "name": "规则变化",
+            "how_to_use": "平台改了什么，原规则是什么，新规则影响哪部分人。"
+          },
+          {
+            "name": "影响范围",
+            "how_to_use": "影响流量、账号、支付、分发、SEO、AI 内容还是开发者生态。"
+          },
+          {
+            "name": "证据边界",
+            "how_to_use": "哪些来自官方，哪些只是社区推断或媒体解释。"
+          },
+          {
+            "name": "应对材料",
+            "how_to_use": "后续写文需要准备官方原文、案例、反例、时间点和执行口径。"
+          },
+          {
+            "name": "风险信号",
+            "how_to_use": "哪些行为可能被限流、封号、拒付、降权或触发合规问题。"
+          }
+        ],
+        "writing_materials": {
+          "title_seeds": [
+            "OOMOL AI 编程工具变化",
+            "OOMOL AI 编程工具变化，和普通技术人有什么关系",
+            "OOMOL AI 编程工具变化：机会、成本和风险先拆清楚"
+          ],
+          "reader_questions": [
+            "这事和我有什么关系？",
+            "它到底改变了什么，还是只是包装换了个名字？",
+            "如果我只是懂一点技术，能不能低成本验证？",
+            "最大的坑是技术，还是流量、合规、成本、回款和交付？"
+          ],
+          "opening_hooks": [
+            "今天这条线索看起来是 工具账本，但我更关心它能不能成为一个真正有用的选题。",
+            "先别急着下结论，咱们还是先看来源、证据和利益关系。"
+          ],
+          "angle_seeds": [
+            "成本是否真的下降",
+            "免费额度和爆账单风险",
+            "替代方案值不值得换"
+          ]
+        },
+        "evidence_gaps": [
+          "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+          "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+          "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+        ],
+        "not_claimable": [
+          "不要声称老花已经实操验证。",
+          "不要声称普通人都能复制。",
+          "不要在证据不足时给完整行动方案。"
+        ],
+        "followup_queries": [
+          "工具账本：OOMOL AI 编程工具变化 官方公告 价格 成本",
+          "工具账本：OOMOL AI 编程工具变化 API 文档 额度 限制",
+          "工具账本：OOMOL AI 编程工具变化 替代方案 真实使用 成本"
+        ],
+        "stop_conditions": [
+          "找不到一手来源或近源证据。",
+          "只能证明概念存在，无法证明需求、成本、规则、收入或影响。",
+          "需要用大量想象补齐关键事实，读者看完只会觉得虚。"
+        ]
+      },
       "angle_candidates": [
         "成本是否真的下降",
         "免费额度和爆账单风险",
@@ -162,17 +380,18 @@
       "seo_title": "工具账本：OOMOL AI 编程工具变化",
       "seo_description": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。",
       "tags": [
-        "AI 前沿与工具链",
+        "平台规则与流量生态",
         "工具账本",
         "开发者副业与独立开发",
         "near_source",
         "V2EX 分享创造"
       ],
       "report_type": "tool-ledger",
-      "topic_direction": "ai-frontier",
-      "topic_direction_title": "AI 前沿与工具链",
+      "topic_direction": "traffic-rules",
+      "topic_direction_title": "平台规则与流量生态",
       "source_category": "developer_business",
       "evidence_level": "near_source",
+      "material_template": "platform_rule_change",
       "publish_status": "radar_published"
     },
     "for_research_loop": {

@@ -667,6 +667,7 @@ def downstream_handoff(report: dict[str, Any], site: dict[str, Any]) -> dict[str
             "title_seed": report["title"],
             "original_title": report.get("original_title", ""),
             "source_url": report["url"],
+            "material_pack": report.get("material_pack", {}),
             "angle_candidates": angle_candidates(report["report_type"]),
             "must_keep": [
                 "先交代来源和证据等级。",
@@ -687,6 +688,7 @@ def downstream_handoff(report: dict[str, Any], site: dict[str, Any]) -> dict[str
             "topic_direction_title": report.get("topic_direction_title", ""),
             "source_category": report["source_category"],
             "evidence_level": report["evidence_level"],
+            "material_template": report.get("material_pack", {}).get("template", ""),
             "publish_status": "radar_published",
         },
         "for_research_loop": {
@@ -719,10 +721,22 @@ def topic_direction_for_item(item: SourceItem, report_type: str, site: dict[str,
         return item.source_category, {"title": item.source_category, "short_title": item.source_category, "description": ""}
 
     text = f"{item.title} {item.summary} {item.source_name} {item.url}".lower()
+    if any(word in text for word in ["freelance", "contract", "invoice", "chargeback", "debt", "lawsuit", "scam", "arbitrage", "外包", "接项目", "合同", "回款", "发票", "催收", "债务", "起诉", "骗局", "套利", "卖课"]):
+        meta = directions.get("cashflow-risk")
+        if meta:
+            return "cashflow-risk", meta
+    if any(word in text for word in ["google search", "seo", "ai seo", "ranking", "traffic", "recommendation", "policy", "license", "terms", "compliance", "公众号", "小红书", "视频号", "搜索", "流量", "推荐", "规则", "合规", "账号"]):
+        meta = directions.get("traffic-rules")
+        if meta:
+            return "traffic-rules", meta
     if any(word in text for word in ["stripe", "shopify", "payment", "commerce", "cross-border", "global demand", "出海", "跨境", "支付", "收款", "独立站"]):
         meta = directions.get("cross-border")
         if meta:
             return "cross-border", meta
+    if any(word in text for word in ["automation", "workflow", "assistant", "agentic", "template", "no-code", "n8n", "zapier", "个人助手", "自动化", "工作流", "实操", "办公", "内容生产", "健康助手", "客服", "运营工具"]):
+        meta = directions.get("ai-practice")
+        if meta:
+            return "ai-practice", meta
     best_key = ""
     best_score = -1
     for key, meta in directions.items():
@@ -734,16 +748,20 @@ def topic_direction_for_item(item: SourceItem, report_type: str, site: dict[str,
         for keyword in meta.get("keywords", []):
             if keyword.lower() in text:
                 score += 3
-        if key == "platform-rules" and report_type == "platform-rules":
+        if key == "traffic-rules" and report_type == "platform-rules":
             score += 2
         if key == "cross-border" and any(word in text for word in ["stripe", "shopify", "payment", "commerce", "cross-border", "global demand", "出海", "跨境", "支付", "收款", "独立站"]):
             score += 10
         if key == "ai-frontier" and any(word in text for word in ["ai", "llm", "agent", "model", "anthropic", "openai", "claude", "codex", "copilot", "frontier", "模型", "智能体"]):
             score += 6
-        if key == "platform-rules" and any(word in text for word in ["policy", "license", "terms", "compliance", "regulation", "search", "seo", "规则", "合规", "协议", "搜索"]):
+        if key == "ai-practice" and any(word in text for word in ["automation", "workflow", "assistant", "agentic", "template", "no-code", "个人助手", "自动化", "工作流", "实操"]):
+            score += 8
+        if key == "traffic-rules" and any(word in text for word in ["policy", "license", "terms", "compliance", "regulation", "search", "seo", "traffic", "规则", "合规", "协议", "搜索", "流量", "推荐"]):
             score += 6
         if key == "indie-builder" and any(word in text for word in ["show hn", "producthunt", "product hunt", "v2ex", "mrr", "saas", "独立开发", "副业", "工具站", "开源"]):
             score += 5
+        if key == "cashflow-risk" and any(word in text for word in ["freelance", "contract", "invoice", "chargeback", "debt", "lawsuit", "scam", "arbitrage", "外包", "合同", "回款", "催收", "债务", "骗局", "套利"]):
+            score += 8
         if score > best_score:
             best_key = key
             best_score = score
@@ -838,6 +856,148 @@ def deepseek_triage(items: list[SourceItem], site: dict[str, Any], policy: dict[
         return None
 
 
+def report_template_key(report: dict[str, Any]) -> str:
+    topic = report.get("topic_direction", "")
+    report_type = report.get("report_type", "")
+    text = f"{report.get('title', '')} {report.get('original_title', '')} {report.get('summary', '')}".lower()
+    if topic == "ai-frontier" and any(word in text for word in ["release", "launch", "update", "available", "announce", "introduce", "new", "发布", "更新", "上线", "推出"]):
+        return "ai_major_update"
+    if topic == "ai-practice":
+        return "ai_practice"
+    if topic in {"indie-builder", "cross-border"} or report_type in {"opportunity", "case-study"}:
+        return "business_teardown"
+    if topic == "traffic-rules" or report_type == "platform-rules":
+        return "platform_rule_change"
+    if topic == "cashflow-risk" or report_type == "risk-warning":
+        return "risk_case"
+    if report_type == "tool-ledger":
+        return "tool_cost_ledger"
+    return "general_investigation"
+
+
+def material_dimensions(template: str) -> list[dict[str, str]]:
+    templates: dict[str, list[tuple[str, str]]] = {
+        "ai_major_update": [
+            ("时间线", "这次更新最早从哪里出现，发布时间、开放范围、后续可能变化是什么。"),
+            ("本次更新摘要", "新增了什么、改变了什么、没有改变什么，别只写产品名。"),
+            ("影响对象", "普通用户、开发者、独立开发者、企业团队分别会受到什么影响。"),
+            ("成本和门槛", "价格、额度、API、账号、地区、设备、学习成本是否变化。"),
+            ("替代和竞争", "和已有工具或模型相比，替代了什么，没替代什么。"),
+            ("老花切入口", "从程序员、AI 工具重度用户、副业工具链角度能拆出什么。"),
+        ],
+        "ai_practice": [
+            ("具体需求", "这个 AI 场景到底解决谁的什么问题，是真需求还是演示需求。"),
+            ("输入输出", "需要哪些数据、素材、账号、工具，输出物是否可直接使用。"),
+            ("工作流步骤", "从触发、处理、审核到交付，最小流程怎么跑。"),
+            ("工具组合", "可以用哪些现成工具或 API，哪些环节必须人工兜底。"),
+            ("验证成本", "一天内能否做最小验证，时间、API、订阅和维护成本是多少。"),
+            ("失败信号", "什么时候说明这个自动化不值得继续做。"),
+        ],
+        "business_teardown": [
+            ("需求真实性", "谁会用，痛点是否高频，是否愿意付费或持续使用。"),
+            ("用户和场景", "目标用户是谁，使用场景在哪里，国内/海外是否不同。"),
+            ("流量来源", "SEO、社区、平台推荐、付费投放、内容引流哪条可能成立。"),
+            ("变现路径", "广告、订阅、一次性付费、Affiliate、服务费哪条更现实。"),
+            ("技术和运营", "技术实现难不难，真正麻烦的是维护、客服、销售还是合规。"),
+            ("最小 MVP", "如果只验证一件事，应该验证需求、流量、付费还是交付。"),
+            ("停止信号", "什么数据出现就应该停，不要继续堆功能。"),
+        ],
+        "platform_rule_change": [
+            ("规则变化", "平台改了什么，原规则是什么，新规则影响哪部分人。"),
+            ("影响范围", "影响流量、账号、支付、分发、SEO、AI 内容还是开发者生态。"),
+            ("证据边界", "哪些来自官方，哪些只是社区推断或媒体解释。"),
+            ("应对材料", "后续写文需要准备官方原文、案例、反例、时间点和执行口径。"),
+            ("风险信号", "哪些行为可能被限流、封号、拒付、降权或触发合规问题。"),
+        ],
+        "risk_case": [
+            ("诱饵话术", "它是怎么让人上头的，收益、截图、案例、焦虑分别怎么包装。"),
+            ("利益关系", "谁赚钱，谁承担成本，卖铲子、卖课、卖服务还是卖工具。"),
+            ("成本清单", "钱、时间、账号、合规、机会成本分别在哪里。"),
+            ("证据缺口", "哪些关键事实还没证据，哪些说法不能当真。"),
+            ("避坑判断", "普通技术人应该查什么，什么信号出现就别碰。"),
+        ],
+        "tool_cost_ledger": [
+            ("能力变化", "工具/API/云服务新增了什么能力，适合什么任务。"),
+            ("价格和额度", "价格、免费额度、API 限制、地区限制和隐藏成本是什么。"),
+            ("替代方案", "能否用开源、低价模型、传统脚本或手工方案替代。"),
+            ("爆账单风险", "哪类调用、任务规模或配置最容易造成成本失控。"),
+            ("老花用法", "如果只是作为 AI 工具重度用户，应该怎么观察和试用。"),
+        ],
+        "general_investigation": [
+            ("核心事实", "这件事目前确认了什么。"),
+            ("证据链", "证据来自哪里，是否一手，是否可复查。"),
+            ("影响边界", "影响谁，不影响谁，别扩大。"),
+            ("存疑点", "哪些地方还不能下结论。"),
+            ("可写切口", "后续写博客或公众号时，最自然的入口是什么。"),
+        ],
+    }
+    return [{"name": name, "how_to_use": how} for name, how in templates.get(template, templates["general_investigation"])]
+
+
+def material_pack(report: dict[str, Any]) -> dict[str, Any]:
+    template = report_template_key(report)
+    original_title = report.get("original_title", "")
+    published = report.get("published_at") or "原文未提供发布时间"
+    fetched = report.get("fetched_at") or ""
+    timeline = [
+        {"time": published, "event": f"原始来源发布/收录线索：{original_title}", "evidence": report.get("url", "")},
+        {"time": fetched, "event": "Easton Radar 抓取并归档该线索。", "evidence": report.get("feed_url", report.get("url", ""))},
+        {"time": "待补证", "event": "继续查官方文档、价格页、案例、反方观点或真实使用反馈。", "evidence": "见 followup_queries"},
+    ]
+    evidence_map = [
+        {
+            "source": report.get("source_name", ""),
+            "url": report.get("url", ""),
+            "supports": "原始线索存在、标题、来源和基础事实入口。",
+            "evidence_level": report.get("evidence_level", ""),
+            "confidence": 0.8 if report.get("evidence_level") in {"official", "near_source"} else 0.55,
+        }
+    ]
+    title = display_report_title(report)
+    return {
+        "template": template,
+        "topic_direction": report.get("topic_direction", ""),
+        "topic_direction_title": report.get("topic_direction_title", ""),
+        "report_type": report.get("report_type", ""),
+        "must_answer": [d["name"] for d in material_dimensions(template)],
+        "timeline": timeline,
+        "fact_sheet": [
+            f"原始标题：{original_title}",
+            f"来源：{report.get('source_name', '')}",
+            f"证据等级：{report.get('evidence_level', '')}",
+            f"当前判断：{report.get('collection_fit', '')}",
+        ],
+        "evidence_map": evidence_map,
+        "analysis_dimensions": material_dimensions(template),
+        "writing_materials": {
+            "title_seeds": [
+                title,
+                f"{title}，和普通技术人有什么关系",
+                f"{title}：机会、成本和风险先拆清楚",
+            ],
+            "reader_questions": [
+                "这事和我有什么关系？",
+                "它到底改变了什么，还是只是包装换了个名字？",
+                "如果我只是懂一点技术，能不能低成本验证？",
+                "最大的坑是技术，还是流量、合规、成本、回款和交付？",
+            ],
+            "opening_hooks": [
+                f"今天这条线索看起来是 {report.get('report_type_title', '报告')}，但我更关心它能不能成为一个真正有用的选题。",
+                "先别急着下结论，咱们还是先看来源、证据和利益关系。",
+            ],
+            "angle_seeds": angle_candidates(report.get("report_type", "investigation")),
+        },
+        "evidence_gaps": report["verification"]["what_needs_followup"],
+        "not_claimable": report["verification"]["do_not_claim"],
+        "followup_queries": followup_queries_from_report(report),
+        "stop_conditions": [
+            "找不到一手来源或近源证据。",
+            "只能证明概念存在，无法证明需求、成本、规则、收入或影响。",
+            "需要用大量想象补齐关键事实，读者看完只会觉得虚。",
+        ],
+    }
+
+
 def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str, Any]) -> dict[str, Any]:
     item = decision.item
     report_id = f"{now_bj().strftime('%Y%m%d')}-{slugify(item.title)}"
@@ -921,6 +1081,7 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
     }
     report["source_assessment"] = source_access_assessment(item)
     report["evidence_dossier"] = evidence_dossier(report)
+    report["material_pack"] = material_pack(report)
     report["downstream_handoff"] = downstream_handoff(report, site)
     return report
 
@@ -1219,6 +1380,49 @@ def render_report_type(key: str, meta: dict[str, Any], reports: list[dict[str, A
     return f'<section class="hero"><p class="kicker">分析方法</p><h1>{html.escape(meta["title"])}</h1><p>{html.escape(meta["description"])}</p></section><section class="list">{items}</section>'
 
 
+def render_material_pack(pack: dict[str, Any]) -> str:
+    if not pack:
+        return ""
+    timeline = "".join(
+        f'<li><strong>{html.escape(str(item.get("time", "")))}</strong>：{html.escape(item.get("event", ""))} <span class="meta">{html.escape(item.get("evidence", ""))}</span></li>'
+        for item in pack.get("timeline", [])
+    )
+    fact_sheet = list_html(pack.get("fact_sheet", []))
+    dimensions = "".join(
+        f'<li><strong>{html.escape(item.get("name", ""))}</strong>：{html.escape(item.get("how_to_use", ""))}</li>'
+        for item in pack.get("analysis_dimensions", [])
+    )
+    evidence_map = "".join(
+        f'<li><strong>{html.escape(item.get("source", ""))}</strong>：{html.escape(item.get("supports", ""))} <a href="{html.escape(item.get("url", ""))}">证据</a> <span class="meta">{html.escape(item.get("evidence_level", ""))}</span></li>'
+        for item in pack.get("evidence_map", [])
+    )
+    writing = pack.get("writing_materials", {})
+    title_seeds = list_html(writing.get("title_seeds", []))
+    questions = list_html(writing.get("reader_questions", []))
+    hooks = list_html(writing.get("opening_hooks", []))
+    angles = list_html(writing.get("angle_seeds", []))
+    gaps = list_html(pack.get("evidence_gaps", []))
+    stop = list_html(pack.get("stop_conditions", []))
+    return f"""
+<section class="section callout">
+  <h2>完整资料和素材包</h2>
+  <p class="meta">结构模板：{html.escape(pack.get("template", ""))} · 选题方向：{html.escape(pack.get("topic_direction_title", ""))}</p>
+  <div class="evidence-grid">
+    <section><h3>时间线</h3><ul>{timeline}</ul></section>
+    <section><h3>事实速记</h3><ul>{fact_sheet}</ul></section>
+  </div>
+  <h3>本类报告必须拆的维度</h3><ul>{dimensions}</ul>
+  <h3>证据地图</h3><ul>{evidence_map}</ul>
+  <div class="evidence-grid">
+    <section><h3>标题种子</h3><ul>{title_seeds}</ul><h3>读者会问的问题</h3><ul>{questions}</ul></section>
+    <section><h3>开头切入素材</h3><ul>{hooks}</ul><h3>可展开角度</h3><ul>{angles}</ul></section>
+  </div>
+  <h3>证据缺口</h3><ul>{gaps}</ul>
+  <h3>停止信号</h3><ul>{stop}</ul>
+</section>
+"""
+
+
 def render_item(report: dict[str, Any], site: dict[str, Any]) -> str:
     facts = "".join(f'<li><strong>{html.escape(f["type"])}</strong>：{html.escape(f["claim"])} <a href="{html.escape(f["source_url"])}">来源</a></li>' for f in report["facts"])
     sources = "".join(f'<li><a href="{html.escape(s["url"])}">{html.escape(s["title"])}</a> · {html.escape(s["source_type"])} · {html.escape(s["used_for"])}</li>' for s in report["sources"])
@@ -1236,6 +1440,7 @@ def render_item(report: dict[str, Any], site: dict[str, Any]) -> str:
     queries = list_html(research.get("followup_queries", []))
     cms_tags = "、".join(html.escape(x) for x in cms.get("tags", []))
     source_assessment = report.get("source_assessment", {})
+    pack_html = render_material_pack(report.get("material_pack", {}))
     topic_key = report.get("topic_direction", "")
     topic_title = report.get("topic_direction_title") or report.get("source_category_title", "")
     topic_link = topic_href(topic_key) if topic_key else "/briefings/"
@@ -1257,6 +1462,8 @@ def render_item(report: dict[str, Any], site: dict[str, Any]) -> str:
   <p class="meta">原始标题：{html.escape(report.get("original_title", report["title"]))}</p>
 
   <section class="callout"><h2>和老花相关的切入口</h2><p>{html.escape(report["persona_connection"]["why_it_matters"])}</p></section>
+
+  {pack_html}
 
   <h2>事情的来龙去脉</h2>
   {summary}
@@ -1291,8 +1498,6 @@ def render_static(batch: dict[str, Any], reports: list[dict[str, Any]], site: di
     static.write_page("about/index.html", "关于 - Easton Radar", render_about(site, policy))
     for key, meta in site.get("topic_directions", {}).items():
         static.write_page(f"topics/{key}/index.html", f"{meta['title']} - Easton Radar", render_topic_direction(key, meta, reports_for_topic(reports, key)))
-    for key, meta in site["report_types"].items():
-        static.write_page(f"reports/{key}/index.html", f"{meta['title']} - Easton Radar", render_report_type(key, meta, [r for r in reports if r["report_type"] == key]))
     for report in reports:
         static.write_page(f"items/{report['id']}/index.html", f"{display_report_title(report)} - Easton Radar", render_item(report, site))
     static.write_text("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {site['site_url'].rstrip('/')}/sitemap.xml\n")
@@ -1303,7 +1508,7 @@ def render_static(batch: dict[str, Any], reports: list[dict[str, Any]], site: di
 
 def sitemap(site: dict[str, Any], reports: list[dict[str, Any]]) -> str:
     base = site["site_url"].rstrip("/")
-    paths = ["", "briefings/", "about/"] + [f"topics/{k}/" for k in site.get("topic_directions", {})] + [f"reports/{k}/" for k in site["report_types"]] + [f"items/{r['id']}/" for r in reports]
+    paths = ["", "briefings/", "about/"] + [f"topics/{k}/" for k in site.get("topic_directions", {})] + [f"items/{r['id']}/" for r in reports]
     today = now_utc().date().isoformat()
     body = "\n".join(f"<url><loc>{base}/{p}</loc><lastmod>{today}</lastmod></url>" for p in paths)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}\n</urlset>\n'
@@ -1316,7 +1521,7 @@ def llms(site: dict[str, Any], reports: list[dict[str, Any]]) -> str:
         lines.append(f"- {meta['title']}: {base}/topics/{key}/")
     lines.extend(["", "## Analysis methods"])
     for key, meta in site["report_types"].items():
-        lines.append(f"- {meta['title']}: {base}/reports/{key}/")
+        lines.append(f"- {meta['title']}: internal report_type={key}, used only as an analysis method")
     lines.extend(["", "## Latest items"])
     for report in reports[:30]:
         lines.append(f"- {report['title']}: {base}/items/{report['id']}/")

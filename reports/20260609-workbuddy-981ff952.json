@@ -6,16 +6,16 @@
   "summary": "这段时间尝试使用了 workbuddy 的专家团模式，把各种 Agents 串联在了一起，这种方式特别友好。但因为不常用 workbuddy ，就想着把这套专家团模式给提炼出来给 codex 使用。 因此就有了这个开源项目： https://github.com/ReJeCtAll/ExpertTeam-Codex 一套可直接安装到 ~/.codex 的专家团配置，面向 Codex CLI / Codex App 桌面版的 Skill 调用方式 提供 3 个专家团与 1 个总路由入口。 我目前暂时只把自己常用的三大专家团给提炼转化了出来，分别为《软件开发团队》、《设计原型专家团》、《产品战略团队》。 如有什么意见、建议请各位佬怒喷。 核心能力 软件开发团队：PRD 、架构设计、批量编码、QA 验证、BugFix 。 设计原型专家团：需求发现、设计系统选择、高保真原型、质量审查、导出交付。 产品战略团队：PRD 、用户研究、竞品分析、指标分析、路线图、Sprint 、干系人沟通。 专家团总路由器：根据任务自动选择合适团队，或手动指定团队。 适用场景：想把 Codex 从「单个助手」升级为「可路由、可协作、可复用的专家团系统」。 Codex CLI / Codex App 桌面版可用命令 总路由 $expert-team $expert-team software $expert-team design $expert-team product 软件开发团队 $expert-software --fast $expert-software --bugfix $expert-software --standard $expert-software --prd $expert-software --arch $expert-software --code $expert-software --test 设计原型专家团 $expert-design --full $expert-design --style $expert-design --review $expert-desi",
   "source_category": "developer_business",
   "source_category_title": "开发者副业与独立开发",
-  "topic_direction": "indie-builder",
-  "topic_direction_title": "独立开发与副业实验",
-  "topic_direction_short_title": "独立开发",
-  "topic_direction_description": "独立开发、开源项目、工具站、微型 SaaS、副业实验和真实项目复盘。重点看可复制条件、非技术门槛、失败信号和最小验证路径。",
+  "topic_direction": "ai-practice",
+  "topic_direction_title": "AI 实操与自动化",
+  "topic_direction_short_title": "AI 实操",
+  "topic_direction_description": "AI 落到具体需求的实操线索，例如个人助手、内容生产、办公自动化、数据分析、健康助手、客服、运营工具和工作流。重点看需求是否真实、能否低成本验证、普通读者能不能照着理解一遍。",
   "source_name": "V2EX 分享创造",
   "original_source_name": "分享创造",
   "source_type": "rss",
   "feed_url": "https://v2ex.com/feed/create.xml",
   "published_at": "2026-06-08T09:01:54Z",
-  "fetched_at": "2026-06-09T05:07:11.162639+00:00",
+  "fetched_at": "2026-06-09T05:29:52.418777+00:00",
   "decision": "brief",
   "report_type": "case-study",
   "report_type_title": "案例复盘",
@@ -123,6 +123,120 @@
       "涉及价格、收益、比例时必须继续找来源或公式。"
     ]
   },
+  "material_pack": {
+    "template": "ai_practice",
+    "topic_direction": "ai-practice",
+    "topic_direction_title": "AI 实操与自动化",
+    "report_type": "case-study",
+    "must_answer": [
+      "具体需求",
+      "输入输出",
+      "工作流步骤",
+      "工具组合",
+      "验证成本",
+      "失败信号"
+    ],
+    "timeline": [
+      {
+        "time": "2026-06-08T09:01:54Z",
+        "event": "原始来源发布/收录线索：[开源分享] 从 workbuddy 提炼转化的专家团工作流模式。",
+        "evidence": "https://www.v2ex.com/t/1218821"
+      },
+      {
+        "time": "2026-06-09T05:29:52.418777+00:00",
+        "event": "Easton Radar 抓取并归档该线索。",
+        "evidence": "https://v2ex.com/feed/create.xml"
+      },
+      {
+        "time": "待补证",
+        "event": "继续查官方文档、价格页、案例、反方观点或真实使用反馈。",
+        "evidence": "见 followup_queries"
+      }
+    ],
+    "fact_sheet": [
+      "原始标题：[开源分享] 从 workbuddy 提炼转化的专家团工作流模式。",
+      "来源：V2EX 分享创造",
+      "证据等级：near_source",
+      "当前判断：部分符合收集原则：可以进入简报观察，但证据链或读者入口还不够完整。"
+    ],
+    "evidence_map": [
+      {
+        "source": "V2EX 分享创造",
+        "url": "https://www.v2ex.com/t/1218821",
+        "supports": "原始线索存在、标题、来源和基础事实入口。",
+        "evidence_level": "near_source",
+        "confidence": 0.8
+      }
+    ],
+    "analysis_dimensions": [
+      {
+        "name": "具体需求",
+        "how_to_use": "这个 AI 场景到底解决谁的什么问题，是真需求还是演示需求。"
+      },
+      {
+        "name": "输入输出",
+        "how_to_use": "需要哪些数据、素材、账号、工具，输出物是否可直接使用。"
+      },
+      {
+        "name": "工作流步骤",
+        "how_to_use": "从触发、处理、审核到交付，最小流程怎么跑。"
+      },
+      {
+        "name": "工具组合",
+        "how_to_use": "可以用哪些现成工具或 API，哪些环节必须人工兜底。"
+      },
+      {
+        "name": "验证成本",
+        "how_to_use": "一天内能否做最小验证，时间、API、订阅和维护成本是多少。"
+      },
+      {
+        "name": "失败信号",
+        "how_to_use": "什么时候说明这个自动化不值得继续做。"
+      }
+    ],
+    "writing_materials": {
+      "title_seeds": [
+        "从 workbuddy 提炼转化的专家团工作流模",
+        "从 workbuddy 提炼转化的专家团工作流模，和普通技术人有什么关系",
+        "从 workbuddy 提炼转化的专家团工作流模：机会、成本和风险先拆清楚"
+      ],
+      "reader_questions": [
+        "这事和我有什么关系？",
+        "它到底改变了什么，还是只是包装换了个名字？",
+        "如果我只是懂一点技术，能不能低成本验证？",
+        "最大的坑是技术，还是流量、合规、成本、回款和交付？"
+      ],
+      "opening_hooks": [
+        "今天这条线索看起来是 案例复盘，但我更关心它能不能成为一个真正有用的选题。",
+        "先别急着下结论，咱们还是先看来源、证据和利益关系。"
+      ],
+      "angle_seeds": [
+        "可复制条件",
+        "不可复制条件",
+        "失败或成功背后的非技术因素"
+      ]
+    },
+    "evidence_gaps": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "followup_queries": [
+      "案例复盘：从 workbuddy 提炼转化的专家团工作流模 原始项目 GitHub 复盘",
+      "案例复盘：从 workbuddy 提炼转化的专家团工作流模 收入 增长 证据",
+      "案例复盘：从 workbuddy 提炼转化的专家团工作流模 失败 限制 反方证据"
+    ],
+    "stop_conditions": [
+      "找不到一手来源或近源证据。",
+      "只能证明概念存在，无法证明需求、成本、规则、收入或影响。",
+      "需要用大量想象补齐关键事实，读者看完只会觉得虚。"
+    ]
+  },
   "downstream_handoff": {
     "package_version": "radar-handoff-v1",
     "canonical_url": "https://radar.huadongpeng.com/items/20260609-workbuddy-981ff952/",
@@ -131,6 +245,120 @@
       "title_seed": "案例复盘：从 workbuddy 提炼转化的专家团工作流模",
       "original_title": "[开源分享] 从 workbuddy 提炼转化的专家团工作流模式。",
       "source_url": "https://www.v2ex.com/t/1218821",
+      "material_pack": {
+        "template": "ai_practice",
+        "topic_direction": "ai-practice",
+        "topic_direction_title": "AI 实操与自动化",
+        "report_type": "case-study",
+        "must_answer": [
+          "具体需求",
+          "输入输出",
+          "工作流步骤",
+          "工具组合",
+          "验证成本",
+          "失败信号"
+        ],
+        "timeline": [
+          {
+            "time": "2026-06-08T09:01:54Z",
+            "event": "原始来源发布/收录线索：[开源分享] 从 workbuddy 提炼转化的专家团工作流模式。",
+            "evidence": "https://www.v2ex.com/t/1218821"
+          },
+          {
+            "time": "2026-06-09T05:29:52.418777+00:00",
+            "event": "Easton Radar 抓取并归档该线索。",
+            "evidence": "https://v2ex.com/feed/create.xml"
+          },
+          {
+            "time": "待补证",
+            "event": "继续查官方文档、价格页、案例、反方观点或真实使用反馈。",
+            "evidence": "见 followup_queries"
+          }
+        ],
+        "fact_sheet": [
+          "原始标题：[开源分享] 从 workbuddy 提炼转化的专家团工作流模式。",
+          "来源：V2EX 分享创造",
+          "证据等级：near_source",
+          "当前判断：部分符合收集原则：可以进入简报观察，但证据链或读者入口还不够完整。"
+        ],
+        "evidence_map": [
+          {
+            "source": "V2EX 分享创造",
+            "url": "https://www.v2ex.com/t/1218821",
+            "supports": "原始线索存在、标题、来源和基础事实入口。",
+            "evidence_level": "near_source",
+            "confidence": 0.8
+          }
+        ],
+        "analysis_dimensions": [
+          {
+            "name": "具体需求",
+            "how_to_use": "这个 AI 场景到底解决谁的什么问题，是真需求还是演示需求。"
+          },
+          {
+            "name": "输入输出",
+            "how_to_use": "需要哪些数据、素材、账号、工具，输出物是否可直接使用。"
+          },
+          {
+            "name": "工作流步骤",
+            "how_to_use": "从触发、处理、审核到交付，最小流程怎么跑。"
+          },
+          {
+            "name": "工具组合",
+            "how_to_use": "可以用哪些现成工具或 API，哪些环节必须人工兜底。"
+          },
+          {
+            "name": "验证成本",
+            "how_to_use": "一天内能否做最小验证，时间、API、订阅和维护成本是多少。"
+          },
+          {
+            "name": "失败信号",
+            "how_to_use": "什么时候说明这个自动化不值得继续做。"
+          }
+        ],
+        "writing_materials": {
+          "title_seeds": [
+            "从 workbuddy 提炼转化的专家团工作流模",
+            "从 workbuddy 提炼转化的专家团工作流模，和普通技术人有什么关系",
+            "从 workbuddy 提炼转化的专家团工作流模：机会、成本和风险先拆清楚"
+          ],
+          "reader_questions": [
+            "这事和我有什么关系？",
+            "它到底改变了什么，还是只是包装换了个名字？",
+            "如果我只是懂一点技术，能不能低成本验证？",
+            "最大的坑是技术，还是流量、合规、成本、回款和交付？"
+          ],
+          "opening_hooks": [
+            "今天这条线索看起来是 案例复盘，但我更关心它能不能成为一个真正有用的选题。",
+            "先别急着下结论，咱们还是先看来源、证据和利益关系。"
+          ],
+          "angle_seeds": [
+            "可复制条件",
+            "不可复制条件",
+            "失败或成功背后的非技术因素"
+          ]
+        },
+        "evidence_gaps": [
+          "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+          "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+          "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+        ],
+        "not_claimable": [
+          "不要声称老花已经实操验证。",
+          "不要声称普通人都能复制。",
+          "不要在证据不足时给完整行动方案。"
+        ],
+        "followup_queries": [
+          "案例复盘：从 workbuddy 提炼转化的专家团工作流模 原始项目 GitHub 复盘",
+          "案例复盘：从 workbuddy 提炼转化的专家团工作流模 收入 增长 证据",
+          "案例复盘：从 workbuddy 提炼转化的专家团工作流模 失败 限制 反方证据"
+        ],
+        "stop_conditions": [
+          "找不到一手来源或近源证据。",
+          "只能证明概念存在，无法证明需求、成本、规则、收入或影响。",
+          "需要用大量想象补齐关键事实，读者看完只会觉得虚。"
+        ]
+      },
       "angle_candidates": [
         "可复制条件",
         "不可复制条件",
@@ -158,17 +386,18 @@
       "seo_title": "案例复盘：从 workbuddy 提炼转化的专家团工作流模",
       "seo_description": "这条线索有具体项目或案例，可以拆哪些条件可复制，哪些只是别人自己的局。",
       "tags": [
-        "独立开发与副业实验",
+        "AI 实操与自动化",
         "案例复盘",
         "开发者副业与独立开发",
         "near_source",
         "V2EX 分享创造"
       ],
       "report_type": "case-study",
-      "topic_direction": "indie-builder",
-      "topic_direction_title": "独立开发与副业实验",
+      "topic_direction": "ai-practice",
+      "topic_direction_title": "AI 实操与自动化",
       "source_category": "developer_business",
       "evidence_level": "near_source",
+      "material_template": "ai_practice",
       "publish_status": "radar_published"
     },
     "for_research_loop": {

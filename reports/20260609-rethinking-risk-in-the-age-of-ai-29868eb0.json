@@ -15,7 +15,7 @@
   "source_type": "rss",
   "feed_url": "https://stripe.com/blog/feed.rss",
   "published_at": "2026-06-04T00:00:00+00:00",
-  "fetched_at": "2026-06-09T05:07:12.491479+00:00",
+  "fetched_at": "2026-06-09T05:29:56.931159+00:00",
   "decision": "brief",
   "report_type": "risk-warning",
   "report_type_title": "风险避坑",
@@ -124,6 +124,125 @@
       "涉及价格、收益、比例时必须继续找来源或公式。"
     ]
   },
+  "material_pack": {
+    "template": "business_teardown",
+    "topic_direction": "cross-border",
+    "topic_direction_title": "跨境出海与支付",
+    "report_type": "risk-warning",
+    "must_answer": [
+      "需求真实性",
+      "用户和场景",
+      "流量来源",
+      "变现路径",
+      "技术和运营",
+      "最小 MVP",
+      "停止信号"
+    ],
+    "timeline": [
+      {
+        "time": "2026-06-04T00:00:00+00:00",
+        "event": "原始来源发布/收录线索：Rethinking risk in the age of AI",
+        "evidence": "https://stripe.events/stripeforumseattle1"
+      },
+      {
+        "time": "2026-06-09T05:29:56.931159+00:00",
+        "event": "Easton Radar 抓取并归档该线索。",
+        "evidence": "https://stripe.com/blog/feed.rss"
+      },
+      {
+        "time": "待补证",
+        "event": "继续查官方文档、价格页、案例、反方观点或真实使用反馈。",
+        "evidence": "见 followup_queries"
+      }
+    ],
+    "fact_sheet": [
+      "原始标题：Rethinking risk in the age of AI",
+      "来源：Stripe Blog",
+      "证据等级：near_source",
+      "当前判断：部分符合收集原则：可以进入简报观察，但证据链或读者入口还不够完整。"
+    ],
+    "evidence_map": [
+      {
+        "source": "Stripe Blog",
+        "url": "https://stripe.events/stripeforumseattle1",
+        "supports": "原始线索存在、标题、来源和基础事实入口。",
+        "evidence_level": "near_source",
+        "confidence": 0.8
+      }
+    ],
+    "analysis_dimensions": [
+      {
+        "name": "需求真实性",
+        "how_to_use": "谁会用，痛点是否高频，是否愿意付费或持续使用。"
+      },
+      {
+        "name": "用户和场景",
+        "how_to_use": "目标用户是谁，使用场景在哪里，国内/海外是否不同。"
+      },
+      {
+        "name": "流量来源",
+        "how_to_use": "SEO、社区、平台推荐、付费投放、内容引流哪条可能成立。"
+      },
+      {
+        "name": "变现路径",
+        "how_to_use": "广告、订阅、一次性付费、Affiliate、服务费哪条更现实。"
+      },
+      {
+        "name": "技术和运营",
+        "how_to_use": "技术实现难不难，真正麻烦的是维护、客服、销售还是合规。"
+      },
+      {
+        "name": "最小 MVP",
+        "how_to_use": "如果只验证一件事，应该验证需求、流量、付费还是交付。"
+      },
+      {
+        "name": "停止信号",
+        "how_to_use": "什么数据出现就应该停，不要继续堆功能。"
+      }
+    ],
+    "writing_materials": {
+      "title_seeds": [
+        "Stripe 平台规则变化",
+        "Stripe 平台规则变化，和普通技术人有什么关系",
+        "Stripe 平台规则变化：机会、成本和风险先拆清楚"
+      ],
+      "reader_questions": [
+        "这事和我有什么关系？",
+        "它到底改变了什么，还是只是包装换了个名字？",
+        "如果我只是懂一点技术，能不能低成本验证？",
+        "最大的坑是技术，还是流量、合规、成本、回款和交付？"
+      ],
+      "opening_hooks": [
+        "今天这条线索看起来是 风险避坑，但我更关心它能不能成为一个真正有用的选题。",
+        "先别急着下结论，咱们还是先看来源、证据和利益关系。"
+      ],
+      "angle_seeds": [
+        "营销话术拆解",
+        "合规和资金风险",
+        "普通人不该硬冲的原因"
+      ]
+    },
+    "evidence_gaps": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "followup_queries": [
+      "风险避坑：Stripe 平台规则变化 投诉 风险 违规",
+      "风险避坑：Stripe 平台规则变化 骗局 营销话术",
+      "风险避坑：Stripe 平台规则变化 隐藏成本 失败案例"
+    ],
+    "stop_conditions": [
+      "找不到一手来源或近源证据。",
+      "只能证明概念存在，无法证明需求、成本、规则、收入或影响。",
+      "需要用大量想象补齐关键事实，读者看完只会觉得虚。"
+    ]
+  },
   "downstream_handoff": {
     "package_version": "radar-handoff-v1",
     "canonical_url": "https://radar.huadongpeng.com/items/20260609-rethinking-risk-in-the-age-of-ai-29868eb0/",
@@ -132,6 +251,125 @@
       "title_seed": "风险避坑：Stripe 平台规则变化",
       "original_title": "Rethinking risk in the age of AI",
       "source_url": "https://stripe.events/stripeforumseattle1",
+      "material_pack": {
+        "template": "business_teardown",
+        "topic_direction": "cross-border",
+        "topic_direction_title": "跨境出海与支付",
+        "report_type": "risk-warning",
+        "must_answer": [
+          "需求真实性",
+          "用户和场景",
+          "流量来源",
+          "变现路径",
+          "技术和运营",
+          "最小 MVP",
+          "停止信号"
+        ],
+        "timeline": [
+          {
+            "time": "2026-06-04T00:00:00+00:00",
+            "event": "原始来源发布/收录线索：Rethinking risk in the age of AI",
+            "evidence": "https://stripe.events/stripeforumseattle1"
+          },
+          {
+            "time": "2026-06-09T05:29:56.931159+00:00",
+            "event": "Easton Radar 抓取并归档该线索。",
+            "evidence": "https://stripe.com/blog/feed.rss"
+          },
+          {
+            "time": "待补证",
+            "event": "继续查官方文档、价格页、案例、反方观点或真实使用反馈。",
+            "evidence": "见 followup_queries"
+          }
+        ],
+        "fact_sheet": [
+          "原始标题：Rethinking risk in the age of AI",
+          "来源：Stripe Blog",
+          "证据等级：near_source",
+          "当前判断：部分符合收集原则：可以进入简报观察，但证据链或读者入口还不够完整。"
+        ],
+        "evidence_map": [
+          {
+            "source": "Stripe Blog",
+            "url": "https://stripe.events/stripeforumseattle1",
+            "supports": "原始线索存在、标题、来源和基础事实入口。",
+            "evidence_level": "near_source",
+            "confidence": 0.8
+          }
+        ],
+        "analysis_dimensions": [
+          {
+            "name": "需求真实性",
+            "how_to_use": "谁会用，痛点是否高频，是否愿意付费或持续使用。"
+          },
+          {
+            "name": "用户和场景",
+            "how_to_use": "目标用户是谁，使用场景在哪里，国内/海外是否不同。"
+          },
+          {
+            "name": "流量来源",
+            "how_to_use": "SEO、社区、平台推荐、付费投放、内容引流哪条可能成立。"
+          },
+          {
+            "name": "变现路径",
+            "how_to_use": "广告、订阅、一次性付费、Affiliate、服务费哪条更现实。"
+          },
+          {
+            "name": "技术和运营",
+            "how_to_use": "技术实现难不难，真正麻烦的是维护、客服、销售还是合规。"
+          },
+          {
+            "name": "最小 MVP",
+            "how_to_use": "如果只验证一件事，应该验证需求、流量、付费还是交付。"
+          },
+          {
+            "name": "停止信号",
+            "how_to_use": "什么数据出现就应该停，不要继续堆功能。"
+          }
+        ],
+        "writing_materials": {
+          "title_seeds": [
+            "Stripe 平台规则变化",
+            "Stripe 平台规则变化，和普通技术人有什么关系",
+            "Stripe 平台规则变化：机会、成本和风险先拆清楚"
+          ],
+          "reader_questions": [
+            "这事和我有什么关系？",
+            "它到底改变了什么，还是只是包装换了个名字？",
+            "如果我只是懂一点技术，能不能低成本验证？",
+            "最大的坑是技术，还是流量、合规、成本、回款和交付？"
+          ],
+          "opening_hooks": [
+            "今天这条线索看起来是 风险避坑，但我更关心它能不能成为一个真正有用的选题。",
+            "先别急着下结论，咱们还是先看来源、证据和利益关系。"
+          ],
+          "angle_seeds": [
+            "营销话术拆解",
+            "合规和资金风险",
+            "普通人不该硬冲的原因"
+          ]
+        },
+        "evidence_gaps": [
+          "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+          "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+          "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+        ],
+        "not_claimable": [
+          "不要声称老花已经实操验证。",
+          "不要声称普通人都能复制。",
+          "不要在证据不足时给完整行动方案。"
+        ],
+        "followup_queries": [
+          "风险避坑：Stripe 平台规则变化 投诉 风险 违规",
+          "风险避坑：Stripe 平台规则变化 骗局 营销话术",
+          "风险避坑：Stripe 平台规则变化 隐藏成本 失败案例"
+        ],
+        "stop_conditions": [
+          "找不到一手来源或近源证据。",
+          "只能证明概念存在，无法证明需求、成本、规则、收入或影响。",
+          "需要用大量想象补齐关键事实，读者看完只会觉得虚。"
+        ]
+      },
       "angle_candidates": [
         "营销话术拆解",
         "合规和资金风险",
@@ -170,6 +408,7 @@
       "topic_direction_title": "跨境出海与支付",
       "source_category": "overseas_and_platforms",
       "evidence_level": "near_source",
+      "material_template": "business_teardown",
       "publish_status": "radar_published"
     },
     "for_research_loop": {

@@ -46,9 +46,11 @@
 `topic_direction` 当前可选方向：
 
 - `ai-frontier`
+- `ai-practice`
 - `cross-border`
 - `indie-builder`
-- `platform-rules`
+- `traffic-rules`
+- `cashflow-risk`
 
 `report_type` 当前可选分析方法：
 
@@ -73,6 +75,11 @@
 - 程序员/IT 视角
 - 已确认事实
 - 证据链
+- 时间线
+- 事实速记
+- 证据地图
+- 按选题方向/报告类型拆出的分析维度
+- 标题种子、读者问题、开头切入素材
 - 基础概念和边界
 - 风险和缺口
 - 不应夸大的地方
@@ -84,7 +91,7 @@
 每条报告必须生成 `downstream_handoff`：
 
 - `for_gpt_editor`: 标题种子、原始标题、来源 URL、角度候选、必须保留的信息、不能写成结论的点、待解决问题。
-- `for_cms`: slug、canonical URL、SEO 标题、SEO 描述、标签、选题方向、报告类型、来源分类、证据等级、发布状态。
+- `for_cms`: slug、canonical URL、SEO 标题、SEO 描述、标签、选题方向、报告类型、来源分类、证据等级、资料包、发布状态。
 - `for_research_loop`: 继续检索词、证据缺口、停止信号。
 
 ## Step 6：发布
@@ -97,7 +104,6 @@
 - `site/index.html`
 - `site/briefings/index.html`
 - `site/topics/{topic_direction}/index.html`
-- `site/reports/{report_type}/index.html`
 - `site/items/{report_id}/index.html`
 - `site/robots.txt`
 - `site/sitemap.xml`

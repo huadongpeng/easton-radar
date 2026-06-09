@@ -6,16 +6,16 @@
   "summary": "In this post, we walk through how to use Amazon Quick Research to integrate biomedical data sources for rare cancer research. The walkthrough uses pediatric sarcoma as the research domain and draws on publicly available datasets from PubMed and other open biomedical repositories. It covers the end-to-end workflow: defining a research objective, configuring data sources, reviewing the AI-generated research plan, running the investigation, and iterating on results using the revision and versioning system.",
   "source_category": "ai_tools",
   "source_category_title": "AI 工具与开发者平台",
-  "topic_direction": "ai-frontier",
-  "topic_direction_title": "AI 前沿与工具链",
-  "topic_direction_short_title": "AI 前沿",
-  "topic_direction_description": "AI 模型、Agent、开发工具、API、云服务和自动化能力变化。重点看它们会不会改变普通技术人的工作方式、成本结构和副业工具链。",
+  "topic_direction": "ai-practice",
+  "topic_direction_title": "AI 实操与自动化",
+  "topic_direction_short_title": "AI 实操",
+  "topic_direction_description": "AI 落到具体需求的实操线索，例如个人助手、内容生产、办公自动化、数据分析、健康助手、客服、运营工具和工作流。重点看需求是否真实、能否低成本验证、普通读者能不能照着理解一遍。",
   "source_name": "AWS Machine Learning Blog",
   "original_source_name": "Artificial Intelligence",
   "source_type": "rss",
   "feed_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
   "published_at": "2026-06-01T21:54:16+00:00",
-  "fetched_at": "2026-06-09T05:07:09.084513+00:00",
+  "fetched_at": "2026-06-09T05:29:41.994332+00:00",
   "decision": "deep_dive",
   "report_type": "platform-rules",
   "report_type_title": "平台规则",
@@ -123,6 +123,120 @@
       "涉及价格、收益、比例时必须继续找来源或公式。"
     ]
   },
+  "material_pack": {
+    "template": "ai_practice",
+    "topic_direction": "ai-practice",
+    "topic_direction_title": "AI 实操与自动化",
+    "report_type": "platform-rules",
+    "must_answer": [
+      "具体需求",
+      "输入输出",
+      "工作流步骤",
+      "工具组合",
+      "验证成本",
+      "失败信号"
+    ],
+    "timeline": [
+      {
+        "time": "2026-06-01T21:54:16+00:00",
+        "event": "原始来源发布/收录线索：Transforming rare cancer research with Amazon Quick: Integrating biomedical databases for breakthrough discoveries",
+        "evidence": "https://aws.amazon.com/blogs/machine-learning/transforming-rare-cancer-research-with-amazon-quick-integrating-biomedical-databases-for-breakthrough-discoveries/"
+      },
+      {
+        "time": "2026-06-09T05:29:41.994332+00:00",
+        "event": "Easton Radar 抓取并归档该线索。",
+        "evidence": "https://aws.amazon.com/blogs/machine-learning/feed/"
+      },
+      {
+        "time": "待补证",
+        "event": "继续查官方文档、价格页、案例、反方观点或真实使用反馈。",
+        "evidence": "见 followup_queries"
+      }
+    ],
+    "fact_sheet": [
+      "原始标题：Transforming rare cancer research with Amazon Quick: Integrating biomedical databases for breakthrough discoveries",
+      "来源：AWS Machine Learning Blog",
+      "证据等级：official",
+      "当前判断：符合收集原则：来源可复查，且具备进入「平台规则」类报告的分析价值。"
+    ],
+    "evidence_map": [
+      {
+        "source": "AWS Machine Learning Blog",
+        "url": "https://aws.amazon.com/blogs/machine-learning/transforming-rare-cancer-research-with-amazon-quick-integrating-biomedical-databases-for-breakthrough-discoveries/",
+        "supports": "原始线索存在、标题、来源和基础事实入口。",
+        "evidence_level": "official",
+        "confidence": 0.8
+      }
+    ],
+    "analysis_dimensions": [
+      {
+        "name": "具体需求",
+        "how_to_use": "这个 AI 场景到底解决谁的什么问题，是真需求还是演示需求。"
+      },
+      {
+        "name": "输入输出",
+        "how_to_use": "需要哪些数据、素材、账号、工具，输出物是否可直接使用。"
+      },
+      {
+        "name": "工作流步骤",
+        "how_to_use": "从触发、处理、审核到交付，最小流程怎么跑。"
+      },
+      {
+        "name": "工具组合",
+        "how_to_use": "可以用哪些现成工具或 API，哪些环节必须人工兜底。"
+      },
+      {
+        "name": "验证成本",
+        "how_to_use": "一天内能否做最小验证，时间、API、订阅和维护成本是多少。"
+      },
+      {
+        "name": "失败信号",
+        "how_to_use": "什么时候说明这个自动化不值得继续做。"
+      }
+    ],
+    "writing_materials": {
+      "title_seeds": [
+        "AWS 平台规则变化",
+        "AWS 平台规则变化，和普通技术人有什么关系",
+        "AWS 平台规则变化：机会、成本和风险先拆清楚"
+      ],
+      "reader_questions": [
+        "这事和我有什么关系？",
+        "它到底改变了什么，还是只是包装换了个名字？",
+        "如果我只是懂一点技术，能不能低成本验证？",
+        "最大的坑是技术，还是流量、合规、成本、回款和交付？"
+      ],
+      "opening_hooks": [
+        "今天这条线索看起来是 平台规则，但我更关心它能不能成为一个真正有用的选题。",
+        "先别急着下结论，咱们还是先看来源、证据和利益关系。"
+      ],
+      "angle_seeds": [
+        "规则变动影响谁",
+        "普通技术人的合规边界",
+        "平台红利和封号风险"
+      ]
+    },
+    "evidence_gaps": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "followup_queries": [
+      "平台规则：AWS 平台规则变化 官方政策 规则 原文",
+      "平台规则：AWS 平台规则变化 开发者公告 影响范围",
+      "平台规则：AWS 平台规则变化 合规 风险 受影响用户"
+    ],
+    "stop_conditions": [
+      "找不到一手来源或近源证据。",
+      "只能证明概念存在，无法证明需求、成本、规则、收入或影响。",
+      "需要用大量想象补齐关键事实，读者看完只会觉得虚。"
+    ]
+  },
   "downstream_handoff": {
     "package_version": "radar-handoff-v1",
     "canonical_url": "https://radar.huadongpeng.com/items/20260609-transforming-rare-cancer-research-with-amazon-qu-e1cedddf/",
@@ -131,6 +245,120 @@
       "title_seed": "平台规则：AWS 平台规则变化",
       "original_title": "Transforming rare cancer research with Amazon Quick: Integrating biomedical databases for breakthrough discoveries",
       "source_url": "https://aws.amazon.com/blogs/machine-learning/transforming-rare-cancer-research-with-amazon-quick-integrating-biomedical-databases-for-breakthrough-discoveries/",
+      "material_pack": {
+        "template": "ai_practice",
+        "topic_direction": "ai-practice",
+        "topic_direction_title": "AI 实操与自动化",
+        "report_type": "platform-rules",
+        "must_answer": [
+          "具体需求",
+          "输入输出",
+          "工作流步骤",
+          "工具组合",
+          "验证成本",
+          "失败信号"
+        ],
+        "timeline": [
+          {
+            "time": "2026-06-01T21:54:16+00:00",
+            "event": "原始来源发布/收录线索：Transforming rare cancer research with Amazon Quick: Integrating biomedical databases for breakthrough discoveries",
+            "evidence": "https://aws.amazon.com/blogs/machine-learning/transforming-rare-cancer-research-with-amazon-quick-integrating-biomedical-databases-for-breakthrough-discoveries/"
+          },
+          {
+            "time": "2026-06-09T05:29:41.994332+00:00",
+            "event": "Easton Radar 抓取并归档该线索。",
+            "evidence": "https://aws.amazon.com/blogs/machine-learning/feed/"
+          },
+          {
+            "time": "待补证",
+            "event": "继续查官方文档、价格页、案例、反方观点或真实使用反馈。",
+            "evidence": "见 followup_queries"
+          }
+        ],
+        "fact_sheet": [
+          "原始标题：Transforming rare cancer research with Amazon Quick: Integrating biomedical databases for breakthrough discoveries",
+          "来源：AWS Machine Learning Blog",
+          "证据等级：official",
+          "当前判断：符合收集原则：来源可复查，且具备进入「平台规则」类报告的分析价值。"
+        ],
+        "evidence_map": [
+          {
+            "source": "AWS Machine Learning Blog",
+            "url": "https://aws.amazon.com/blogs/machine-learning/transforming-rare-cancer-research-with-amazon-quick-integrating-biomedical-databases-for-breakthrough-discoveries/",
+            "supports": "原始线索存在、标题、来源和基础事实入口。",
+            "evidence_level": "official",
+            "confidence": 0.8
+          }
+        ],
+        "analysis_dimensions": [
+          {
+            "name": "具体需求",
+            "how_to_use": "这个 AI 场景到底解决谁的什么问题，是真需求还是演示需求。"
+          },
+          {
+            "name": "输入输出",
+            "how_to_use": "需要哪些数据、素材、账号、工具，输出物是否可直接使用。"
+          },
+          {
+            "name": "工作流步骤",
+            "how_to_use": "从触发、处理、审核到交付，最小流程怎么跑。"
+          },
+          {
+            "name": "工具组合",
+            "how_to_use": "可以用哪些现成工具或 API，哪些环节必须人工兜底。"
+          },
+          {
+            "name": "验证成本",
+            "how_to_use": "一天内能否做最小验证，时间、API、订阅和维护成本是多少。"
+          },
+          {
+            "name": "失败信号",
+            "how_to_use": "什么时候说明这个自动化不值得继续做。"
+          }
+        ],
+        "writing_materials": {
+          "title_seeds": [
+            "AWS 平台规则变化",
+            "AWS 平台规则变化，和普通技术人有什么关系",
+            "AWS 平台规则变化：机会、成本和风险先拆清楚"
+          ],
+          "reader_questions": [
+            "这事和我有什么关系？",
+            "它到底改变了什么，还是只是包装换了个名字？",
+            "如果我只是懂一点技术，能不能低成本验证？",
+            "最大的坑是技术，还是流量、合规、成本、回款和交付？"
+          ],
+          "opening_hooks": [
+            "今天这条线索看起来是 平台规则，但我更关心它能不能成为一个真正有用的选题。",
+            "先别急着下结论，咱们还是先看来源、证据和利益关系。"
+          ],
+          "angle_seeds": [
+            "规则变动影响谁",
+            "普通技术人的合规边界",
+            "平台红利和封号风险"
+          ]
+        },
+        "evidence_gaps": [
+          "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+          "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+          "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+        ],
+        "not_claimable": [
+          "不要声称老花已经实操验证。",
+          "不要声称普通人都能复制。",
+          "不要在证据不足时给完整行动方案。"
+        ],
+        "followup_queries": [
+          "平台规则：AWS 平台规则变化 官方政策 规则 原文",
+          "平台规则：AWS 平台规则变化 开发者公告 影响范围",
+          "平台规则：AWS 平台规则变化 合规 风险 受影响用户"
+        ],
+        "stop_conditions": [
+          "找不到一手来源或近源证据。",
+          "只能证明概念存在，无法证明需求、成本、规则、收入或影响。",
+          "需要用大量想象补齐关键事实，读者看完只会觉得虚。"
+        ]
+      },
       "angle_candidates": [
         "规则变动影响谁",
         "普通技术人的合规边界",
@@ -158,17 +386,18 @@
       "seo_title": "平台规则：AWS 平台规则变化",
       "seo_description": "这条线索可能影响平台规则、搜索流量、出海路径或合规边界，适合先看清条件。",
       "tags": [
-        "AI 前沿与工具链",
+        "AI 实操与自动化",
         "平台规则",
         "AI 工具与开发者平台",
         "official",
         "AWS Machine Learning Blog"
       ],
       "report_type": "platform-rules",
-      "topic_direction": "ai-frontier",
-      "topic_direction_title": "AI 前沿与工具链",
+      "topic_direction": "ai-practice",
+      "topic_direction_title": "AI 实操与自动化",
       "source_category": "ai_tools",
       "evidence_level": "official",
+      "material_template": "ai_practice",
       "publish_status": "radar_published"
     },
     "for_research_loop": {

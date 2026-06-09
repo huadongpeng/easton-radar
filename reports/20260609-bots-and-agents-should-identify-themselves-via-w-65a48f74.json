@@ -6,16 +6,16 @@
   "summary": "What's changing Shopify now applies stricter rate limits to bots and agents that access the Storefront API and Shopify-hosted online store pages. Bots and agents that don't sign their requests are subject to the strictest limits. To qualify for higher rate limits, operators should sign their requests with Web Bot Auth. For more details, see Storefront rate limits . What you should do If you operate a bot or agent accessing Shopify storefronts, sign your requests using Web Bot Auth . To get started, review the Web Bot Auth architecture and Cloudflare's implementation guide — for context only, you do not need to enroll with Cloudflare. Higher access tiers If you require higher rate limits than those provided to Web Bot Auth traffic, please contact us through this form . Shopify Merchants Shopify merchants who want to crawl their own stores can find ready-to-use Web Bot Auth signatures in t",
   "source_category": "platform_policy",
   "source_category_title": "平台规则与搜索生态",
-  "topic_direction": "cross-border",
-  "topic_direction_title": "跨境出海与支付",
-  "topic_direction_short_title": "跨境出海",
-  "topic_direction_description": "跨境支付、海外平台、独立站、电商、合规、收款和出海基础设施。重点看普通技术人有没有能理解、能验证、能低成本试错的切入口。",
+  "topic_direction": "traffic-rules",
+  "topic_direction_title": "平台规则与流量生态",
+  "topic_direction_short_title": "平台流量",
+  "topic_direction_description": "公众号、小红书、视频号、Google SEO、AI SEO、平台政策、账号限制、推荐机制和内容分发生态变化。重点看哪些规则会影响流量、账号、合规、内容收益和后续变现。",
   "source_name": "Shopify Developer Changelog",
   "original_source_name": "Recent changes to Shopify's platform",
   "source_type": "rss",
   "feed_url": "https://shopify.dev/changelog/feed.xml",
   "published_at": "2026-05-30T16:00:00+00:00",
-  "fetched_at": "2026-06-09T05:07:17.247557+00:00",
+  "fetched_at": "2026-06-09T05:30:02.224687+00:00",
   "decision": "brief",
   "report_type": "platform-rules",
   "report_type_title": "平台规则",
@@ -126,6 +126,115 @@
       "涉及价格、收益、比例时必须继续找来源或公式。"
     ]
   },
+  "material_pack": {
+    "template": "platform_rule_change",
+    "topic_direction": "traffic-rules",
+    "topic_direction_title": "平台规则与流量生态",
+    "report_type": "platform-rules",
+    "must_answer": [
+      "规则变化",
+      "影响范围",
+      "证据边界",
+      "应对材料",
+      "风险信号"
+    ],
+    "timeline": [
+      {
+        "time": "2026-05-30T16:00:00+00:00",
+        "event": "原始来源发布/收录线索：Bots and agents should identify themselves via Web Bot Auth",
+        "evidence": "https://shopify.dev/changelog/bots-and-agents-should-identify-themselves-via-web-bot-auth"
+      },
+      {
+        "time": "2026-06-09T05:30:02.224687+00:00",
+        "event": "Easton Radar 抓取并归档该线索。",
+        "evidence": "https://shopify.dev/changelog/feed.xml"
+      },
+      {
+        "time": "待补证",
+        "event": "继续查官方文档、价格页、案例、反方观点或真实使用反馈。",
+        "evidence": "见 followup_queries"
+      }
+    ],
+    "fact_sheet": [
+      "原始标题：Bots and agents should identify themselves via Web Bot Auth",
+      "来源：Shopify Developer Changelog",
+      "证据等级：near_source",
+      "当前判断：部分符合收集原则：可以进入简报观察，但证据链或读者入口还不够完整。"
+    ],
+    "evidence_map": [
+      {
+        "source": "Shopify Developer Changelog",
+        "url": "https://shopify.dev/changelog/bots-and-agents-should-identify-themselves-via-web-bot-auth",
+        "supports": "原始线索存在、标题、来源和基础事实入口。",
+        "evidence_level": "near_source",
+        "confidence": 0.8
+      }
+    ],
+    "analysis_dimensions": [
+      {
+        "name": "规则变化",
+        "how_to_use": "平台改了什么，原规则是什么，新规则影响哪部分人。"
+      },
+      {
+        "name": "影响范围",
+        "how_to_use": "影响流量、账号、支付、分发、SEO、AI 内容还是开发者生态。"
+      },
+      {
+        "name": "证据边界",
+        "how_to_use": "哪些来自官方，哪些只是社区推断或媒体解释。"
+      },
+      {
+        "name": "应对材料",
+        "how_to_use": "后续写文需要准备官方原文、案例、反例、时间点和执行口径。"
+      },
+      {
+        "name": "风险信号",
+        "how_to_use": "哪些行为可能被限流、封号、拒付、降权或触发合规问题。"
+      }
+    ],
+    "writing_materials": {
+      "title_seeds": [
+        "Shopify AI 编程工具变化",
+        "Shopify AI 编程工具变化，和普通技术人有什么关系",
+        "Shopify AI 编程工具变化：机会、成本和风险先拆清楚"
+      ],
+      "reader_questions": [
+        "这事和我有什么关系？",
+        "它到底改变了什么，还是只是包装换了个名字？",
+        "如果我只是懂一点技术，能不能低成本验证？",
+        "最大的坑是技术，还是流量、合规、成本、回款和交付？"
+      ],
+      "opening_hooks": [
+        "今天这条线索看起来是 平台规则，但我更关心它能不能成为一个真正有用的选题。",
+        "先别急着下结论，咱们还是先看来源、证据和利益关系。"
+      ],
+      "angle_seeds": [
+        "规则变动影响谁",
+        "普通技术人的合规边界",
+        "平台红利和封号风险"
+      ]
+    },
+    "evidence_gaps": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "followup_queries": [
+      "平台规则：Shopify AI 编程工具变化 官方政策 规则 原文",
+      "平台规则：Shopify AI 编程工具变化 开发者公告 影响范围",
+      "平台规则：Shopify AI 编程工具变化 合规 风险 受影响用户"
+    ],
+    "stop_conditions": [
+      "找不到一手来源或近源证据。",
+      "只能证明概念存在，无法证明需求、成本、规则、收入或影响。",
+      "需要用大量想象补齐关键事实，读者看完只会觉得虚。"
+    ]
+  },
   "downstream_handoff": {
     "package_version": "radar-handoff-v1",
     "canonical_url": "https://radar.huadongpeng.com/items/20260609-bots-and-agents-should-identify-themselves-via-w-65a48f74/",
@@ -134,6 +243,115 @@
       "title_seed": "平台规则：Shopify AI 编程工具变化",
       "original_title": "Bots and agents should identify themselves via Web Bot Auth",
       "source_url": "https://shopify.dev/changelog/bots-and-agents-should-identify-themselves-via-web-bot-auth",
+      "material_pack": {
+        "template": "platform_rule_change",
+        "topic_direction": "traffic-rules",
+        "topic_direction_title": "平台规则与流量生态",
+        "report_type": "platform-rules",
+        "must_answer": [
+          "规则变化",
+          "影响范围",
+          "证据边界",
+          "应对材料",
+          "风险信号"
+        ],
+        "timeline": [
+          {
+            "time": "2026-05-30T16:00:00+00:00",
+            "event": "原始来源发布/收录线索：Bots and agents should identify themselves via Web Bot Auth",
+            "evidence": "https://shopify.dev/changelog/bots-and-agents-should-identify-themselves-via-web-bot-auth"
+          },
+          {
+            "time": "2026-06-09T05:30:02.224687+00:00",
+            "event": "Easton Radar 抓取并归档该线索。",
+            "evidence": "https://shopify.dev/changelog/feed.xml"
+          },
+          {
+            "time": "待补证",
+            "event": "继续查官方文档、价格页、案例、反方观点或真实使用反馈。",
+            "evidence": "见 followup_queries"
+          }
+        ],
+        "fact_sheet": [
+          "原始标题：Bots and agents should identify themselves via Web Bot Auth",
+          "来源：Shopify Developer Changelog",
+          "证据等级：near_source",
+          "当前判断：部分符合收集原则：可以进入简报观察，但证据链或读者入口还不够完整。"
+        ],
+        "evidence_map": [
+          {
+            "source": "Shopify Developer Changelog",
+            "url": "https://shopify.dev/changelog/bots-and-agents-should-identify-themselves-via-web-bot-auth",
+            "supports": "原始线索存在、标题、来源和基础事实入口。",
+            "evidence_level": "near_source",
+            "confidence": 0.8
+          }
+        ],
+        "analysis_dimensions": [
+          {
+            "name": "规则变化",
+            "how_to_use": "平台改了什么，原规则是什么，新规则影响哪部分人。"
+          },
+          {
+            "name": "影响范围",
+            "how_to_use": "影响流量、账号、支付、分发、SEO、AI 内容还是开发者生态。"
+          },
+          {
+            "name": "证据边界",
+            "how_to_use": "哪些来自官方，哪些只是社区推断或媒体解释。"
+          },
+          {
+            "name": "应对材料",
+            "how_to_use": "后续写文需要准备官方原文、案例、反例、时间点和执行口径。"
+          },
+          {
+            "name": "风险信号",
+            "how_to_use": "哪些行为可能被限流、封号、拒付、降权或触发合规问题。"
+          }
+        ],
+        "writing_materials": {
+          "title_seeds": [
+            "Shopify AI 编程工具变化",
+            "Shopify AI 编程工具变化，和普通技术人有什么关系",
+            "Shopify AI 编程工具变化：机会、成本和风险先拆清楚"
+          ],
+          "reader_questions": [
+            "这事和我有什么关系？",
+            "它到底改变了什么，还是只是包装换了个名字？",
+            "如果我只是懂一点技术，能不能低成本验证？",
+            "最大的坑是技术，还是流量、合规、成本、回款和交付？"
+          ],
+          "opening_hooks": [
+            "今天这条线索看起来是 平台规则，但我更关心它能不能成为一个真正有用的选题。",
+            "先别急着下结论，咱们还是先看来源、证据和利益关系。"
+          ],
+          "angle_seeds": [
+            "规则变动影响谁",
+            "普通技术人的合规边界",
+            "平台红利和封号风险"
+          ]
+        },
+        "evidence_gaps": [
+          "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+          "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+          "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+        ],
+        "not_claimable": [
+          "不要声称老花已经实操验证。",
+          "不要声称普通人都能复制。",
+          "不要在证据不足时给完整行动方案。"
+        ],
+        "followup_queries": [
+          "平台规则：Shopify AI 编程工具变化 官方政策 规则 原文",
+          "平台规则：Shopify AI 编程工具变化 开发者公告 影响范围",
+          "平台规则：Shopify AI 编程工具变化 合规 风险 受影响用户"
+        ],
+        "stop_conditions": [
+          "找不到一手来源或近源证据。",
+          "只能证明概念存在，无法证明需求、成本、规则、收入或影响。",
+          "需要用大量想象补齐关键事实，读者看完只会觉得虚。"
+        ]
+      },
       "angle_candidates": [
         "规则变动影响谁",
         "普通技术人的合规边界",
@@ -161,17 +379,18 @@
       "seo_title": "平台规则：Shopify AI 编程工具变化",
       "seo_description": "这条线索可能影响平台规则、搜索流量、出海路径或合规边界，适合先看清条件。",
       "tags": [
-        "跨境出海与支付",
+        "平台规则与流量生态",
         "平台规则",
         "平台规则与搜索生态",
         "near_source",
         "Shopify Developer Changelog"
       ],
       "report_type": "platform-rules",
-      "topic_direction": "cross-border",
-      "topic_direction_title": "跨境出海与支付",
+      "topic_direction": "traffic-rules",
+      "topic_direction_title": "平台规则与流量生态",
       "source_category": "platform_policy",
       "evidence_level": "near_source",
+      "material_template": "platform_rule_change",
       "publish_status": "radar_published"
     },
     "for_research_loop": {

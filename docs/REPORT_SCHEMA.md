@@ -34,6 +34,22 @@
     "anti_scrape_required": false,
     "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
   },
+  "material_pack": {
+    "template": "ai_major_update",
+    "timeline": [],
+    "fact_sheet": [],
+    "evidence_map": [],
+    "analysis_dimensions": [],
+    "writing_materials": {
+      "title_seeds": [],
+      "reader_questions": [],
+      "opening_hooks": [],
+      "angle_seeds": []
+    },
+    "evidence_gaps": [],
+    "followup_queries": [],
+    "stop_conditions": []
+  },
   "downstream_handoff": {
     "package_version": "radar-handoff-v1",
     "canonical_url": "https://radar.huadongpeng.com/items/20260609-openai-pricing/",
@@ -92,6 +108,7 @@
 
 - `topic_direction`：网站主栏目，表示这条线索属于哪个实际选题方向。
 - `report_type`：分析方法，表示这篇报告应该用哪种方式拆，不再承担主栏目职责。
+- `material_pack`：完整资料和素材包。后续 GPT 应用优先读取它，而不是只读取页面正文。
 - `title`：中文 Radar 标题，可以保留产品名/公司名，但不能整句照搬英文原题。
 - `original_title`：原始来源标题。
 - `source_category`：内部数据源分类，表示线索来自哪类源。

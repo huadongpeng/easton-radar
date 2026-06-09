@@ -9,13 +9,13 @@
   "topic_direction": "ai-frontier",
   "topic_direction_title": "AI 前沿与工具链",
   "topic_direction_short_title": "AI 前沿",
-  "topic_direction_description": "AI 模型、Agent、开发工具、API、云服务和自动化能力变化。重点看它们会不会改变普通技术人的工作方式、成本结构和副业工具链。",
+  "topic_direction_description": "AI 模型、Agent、开发工具、API、云服务和底层能力变化。重点看这次变化到底是什么、时间线如何、会不会改变普通技术人的工作方式、成本结构和工具链。",
   "source_name": "Cloudflare Developers",
   "original_source_name": "Cloudflare changelogs | Developer platform",
   "source_type": "rss",
   "feed_url": "https://developers.cloudflare.com/changelog/rss/developer-platform.xml",
   "published_at": "2026-06-05T00:00:00+00:00",
-  "fetched_at": "2026-06-09T05:07:08.533426+00:00",
+  "fetched_at": "2026-06-09T05:29:38.433211+00:00",
   "decision": "brief",
   "report_type": "tool-ledger",
   "report_type_title": "工具账本",
@@ -124,6 +124,115 @@
       "涉及价格、收益、比例时必须继续找来源或公式。"
     ]
   },
+  "material_pack": {
+    "template": "tool_cost_ledger",
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "tool-ledger",
+    "must_answer": [
+      "能力变化",
+      "价格和额度",
+      "替代方案",
+      "爆账单风险",
+      "老花用法"
+    ],
+    "timeline": [
+      {
+        "time": "2026-06-05T00:00:00+00:00",
+        "event": "原始来源发布/收录线索：AI Gateway - Control AI costs with spend limits",
+        "evidence": "https://developers.cloudflare.com/changelog/post/2026-06-05-spend-limits/"
+      },
+      {
+        "time": "2026-06-09T05:29:38.433211+00:00",
+        "event": "Easton Radar 抓取并归档该线索。",
+        "evidence": "https://developers.cloudflare.com/changelog/rss/developer-platform.xml"
+      },
+      {
+        "time": "待补证",
+        "event": "继续查官方文档、价格页、案例、反方观点或真实使用反馈。",
+        "evidence": "见 followup_queries"
+      }
+    ],
+    "fact_sheet": [
+      "原始标题：AI Gateway - Control AI costs with spend limits",
+      "来源：Cloudflare Developers",
+      "证据等级：official",
+      "当前判断：部分符合收集原则：可以进入简报观察，但证据链或读者入口还不够完整。"
+    ],
+    "evidence_map": [
+      {
+        "source": "Cloudflare Developers",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-06-05-spend-limits/",
+        "supports": "原始线索存在、标题、来源和基础事实入口。",
+        "evidence_level": "official",
+        "confidence": 0.8
+      }
+    ],
+    "analysis_dimensions": [
+      {
+        "name": "能力变化",
+        "how_to_use": "工具/API/云服务新增了什么能力，适合什么任务。"
+      },
+      {
+        "name": "价格和额度",
+        "how_to_use": "价格、免费额度、API 限制、地区限制和隐藏成本是什么。"
+      },
+      {
+        "name": "替代方案",
+        "how_to_use": "能否用开源、低价模型、传统脚本或手工方案替代。"
+      },
+      {
+        "name": "爆账单风险",
+        "how_to_use": "哪类调用、任务规模或配置最容易造成成本失控。"
+      },
+      {
+        "name": "老花用法",
+        "how_to_use": "如果只是作为 AI 工具重度用户，应该怎么观察和试用。"
+      }
+    ],
+    "writing_materials": {
+      "title_seeds": [
+        "Cloudflare 计费和成本变化",
+        "Cloudflare 计费和成本变化，和普通技术人有什么关系",
+        "Cloudflare 计费和成本变化：机会、成本和风险先拆清楚"
+      ],
+      "reader_questions": [
+        "这事和我有什么关系？",
+        "它到底改变了什么，还是只是包装换了个名字？",
+        "如果我只是懂一点技术，能不能低成本验证？",
+        "最大的坑是技术，还是流量、合规、成本、回款和交付？"
+      ],
+      "opening_hooks": [
+        "今天这条线索看起来是 工具账本，但我更关心它能不能成为一个真正有用的选题。",
+        "先别急着下结论，咱们还是先看来源、证据和利益关系。"
+      ],
+      "angle_seeds": [
+        "成本是否真的下降",
+        "免费额度和爆账单风险",
+        "替代方案值不值得换"
+      ]
+    },
+    "evidence_gaps": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "followup_queries": [
+      "工具账本：Cloudflare 计费和成本变化 官方公告 价格 成本",
+      "工具账本：Cloudflare 计费和成本变化 API 文档 额度 限制",
+      "工具账本：Cloudflare 计费和成本变化 替代方案 真实使用 成本"
+    ],
+    "stop_conditions": [
+      "找不到一手来源或近源证据。",
+      "只能证明概念存在，无法证明需求、成本、规则、收入或影响。",
+      "需要用大量想象补齐关键事实，读者看完只会觉得虚。"
+    ]
+  },
   "downstream_handoff": {
     "package_version": "radar-handoff-v1",
     "canonical_url": "https://radar.huadongpeng.com/items/20260609-ai-gateway-control-ai-costs-with-spend-limits-c6bcd64f/",
@@ -132,6 +241,115 @@
       "title_seed": "工具账本：Cloudflare 计费和成本变化",
       "original_title": "AI Gateway - Control AI costs with spend limits",
       "source_url": "https://developers.cloudflare.com/changelog/post/2026-06-05-spend-limits/",
+      "material_pack": {
+        "template": "tool_cost_ledger",
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "tool-ledger",
+        "must_answer": [
+          "能力变化",
+          "价格和额度",
+          "替代方案",
+          "爆账单风险",
+          "老花用法"
+        ],
+        "timeline": [
+          {
+            "time": "2026-06-05T00:00:00+00:00",
+            "event": "原始来源发布/收录线索：AI Gateway - Control AI costs with spend limits",
+            "evidence": "https://developers.cloudflare.com/changelog/post/2026-06-05-spend-limits/"
+          },
+          {
+            "time": "2026-06-09T05:29:38.433211+00:00",
+            "event": "Easton Radar 抓取并归档该线索。",
+            "evidence": "https://developers.cloudflare.com/changelog/rss/developer-platform.xml"
+          },
+          {
+            "time": "待补证",
+            "event": "继续查官方文档、价格页、案例、反方观点或真实使用反馈。",
+            "evidence": "见 followup_queries"
+          }
+        ],
+        "fact_sheet": [
+          "原始标题：AI Gateway - Control AI costs with spend limits",
+          "来源：Cloudflare Developers",
+          "证据等级：official",
+          "当前判断：部分符合收集原则：可以进入简报观察，但证据链或读者入口还不够完整。"
+        ],
+        "evidence_map": [
+          {
+            "source": "Cloudflare Developers",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-06-05-spend-limits/",
+            "supports": "原始线索存在、标题、来源和基础事实入口。",
+            "evidence_level": "official",
+            "confidence": 0.8
+          }
+        ],
+        "analysis_dimensions": [
+          {
+            "name": "能力变化",
+            "how_to_use": "工具/API/云服务新增了什么能力，适合什么任务。"
+          },
+          {
+            "name": "价格和额度",
+            "how_to_use": "价格、免费额度、API 限制、地区限制和隐藏成本是什么。"
+          },
+          {
+            "name": "替代方案",
+            "how_to_use": "能否用开源、低价模型、传统脚本或手工方案替代。"
+          },
+          {
+            "name": "爆账单风险",
+            "how_to_use": "哪类调用、任务规模或配置最容易造成成本失控。"
+          },
+          {
+            "name": "老花用法",
+            "how_to_use": "如果只是作为 AI 工具重度用户，应该怎么观察和试用。"
+          }
+        ],
+        "writing_materials": {
+          "title_seeds": [
+            "Cloudflare 计费和成本变化",
+            "Cloudflare 计费和成本变化，和普通技术人有什么关系",
+            "Cloudflare 计费和成本变化：机会、成本和风险先拆清楚"
+          ],
+          "reader_questions": [
+            "这事和我有什么关系？",
+            "它到底改变了什么，还是只是包装换了个名字？",
+            "如果我只是懂一点技术，能不能低成本验证？",
+            "最大的坑是技术，还是流量、合规、成本、回款和交付？"
+          ],
+          "opening_hooks": [
+            "今天这条线索看起来是 工具账本，但我更关心它能不能成为一个真正有用的选题。",
+            "先别急着下结论，咱们还是先看来源、证据和利益关系。"
+          ],
+          "angle_seeds": [
+            "成本是否真的下降",
+            "免费额度和爆账单风险",
+            "替代方案值不值得换"
+          ]
+        },
+        "evidence_gaps": [
+          "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+          "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+          "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+        ],
+        "not_claimable": [
+          "不要声称老花已经实操验证。",
+          "不要声称普通人都能复制。",
+          "不要在证据不足时给完整行动方案。"
+        ],
+        "followup_queries": [
+          "工具账本：Cloudflare 计费和成本变化 官方公告 价格 成本",
+          "工具账本：Cloudflare 计费和成本变化 API 文档 额度 限制",
+          "工具账本：Cloudflare 计费和成本变化 替代方案 真实使用 成本"
+        ],
+        "stop_conditions": [
+          "找不到一手来源或近源证据。",
+          "只能证明概念存在，无法证明需求、成本、规则、收入或影响。",
+          "需要用大量想象补齐关键事实，读者看完只会觉得虚。"
+        ]
+      },
       "angle_candidates": [
         "成本是否真的下降",
         "免费额度和爆账单风险",
@@ -170,6 +388,7 @@
       "topic_direction_title": "AI 前沿与工具链",
       "source_category": "ai_tools",
       "evidence_level": "official",
+      "material_template": "tool_cost_ledger",
       "publish_status": "radar_published"
     },
     "for_research_loop": {
