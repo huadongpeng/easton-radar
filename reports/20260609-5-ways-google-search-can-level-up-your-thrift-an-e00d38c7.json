@@ -15,7 +15,7 @@
   "source_type": "rss",
   "feed_url": "https://blog.google/technology/ai/rss/",
   "published_at": "2026-06-03T13:00:00+00:00",
-  "fetched_at": "2026-06-09T06:14:39.241798+00:00",
+  "fetched_at": "2026-06-09T07:04:10.731675+00:00",
   "decision": "deep_dive",
   "report_type": "tool-ledger",
   "report_type_title": "工具账本",
@@ -125,330 +125,232 @@
     ]
   },
   "selection_dossier": {
-    "schema": "topic-selection-dossier-v2",
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
     "verdict": {
-      "status": "可进入选题池",
-      "label": "可选",
-      "reason": "当前线索有明确来源、读者关系和分析空间，可以作为候选选题继续补证。"
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "核心问题不明确：该功能是UI提示还是算法变化？是否影响SEO？目前仅有Google官方博客一篇来源，缺乏第三方验证和SEO影响证据，无法判断对技术人流量获取的实际影响。"
     },
-    "topic_direction": "traffic-rules",
-    "topic_direction_title": "平台规则与流量生态",
-    "report_type": "tool-ledger",
-    "core_question": "这条线索能不能成为一个值得老花继续写的选题：Google 搜索生态变化",
-    "human_judgment_path": [
-      "先确认这件事是不是真的发生，而不是只看标题兴奋。",
-      "再确认它和读者有什么关系：能不能帮读者理解机会、成本、规则、坑或工具变化。",
-      "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
-      "再看逻辑是否闭环：事实、原因、影响、边界、可写角度能不能连起来。",
-      "最后决定：可选、观察、暂缓，而不是把所有线索都写成同一套报告。"
-    ],
-    "selection_questions": [
-      "它是不是平台规则、搜索、推荐、账号、SEO、AI SEO 或内容分发生态变化？",
-      "它会不会影响公众号、小红书、视频号、博客、独立站或后续变现？",
-      "规则来自官方、近源实测还是社区猜测？证据边界能不能标清？",
-      "能不能形成时间线、规则变化、影响范围和应对材料？"
-    ],
-    "value_signals": [
-      "官方规则变化",
-      "影响流量和账号",
-      "影响内容分发",
-      "有实测材料",
-      "有明确应对边界"
-    ],
-    "reject_signals": [
-      "只有玄学猜测",
-      "只有营销号二手解读",
-      "没有平台或账号关系",
-      "不能落到内容生产"
-    ],
-    "topic_value_assessment": [
-      {
-        "question": "这是什么？",
-        "judgment": "5 ways Google Search can level up your thrift and vintage shopping"
-      },
-      {
-        "question": "和读者有什么关系？",
-        "judgment": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
-      },
-      {
-        "question": "为什么现在看？",
-        "judgment": "来自本批次稳定公开源，适合先进入 Radar 观察。"
-      },
-      {
-        "question": "事实清楚吗？",
-        "judgment": "基本清楚"
-      },
-      {
-        "question": "材料可靠吗？",
-        "judgment": "当前证据等级：official"
-      },
-      {
-        "question": "逻辑能闭环吗？",
-        "judgment": "需要补齐材料后才能闭环"
-      }
-    ],
-    "fact_clarity": {
-      "status": "基本清楚",
-      "summary_status": "有摘要",
-      "confirmed": [
-        "标题、来源 URL、来源类型、抓取时间已记录。",
-        "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
-      ],
-      "uncertainty": [
-        "尚未抓取正文外的补充证据。",
-        "尚未形成多源交叉验证。"
-      ]
-    },
-    "evidence_reliability": {
-      "level": "official",
-      "primary_source": "https://blog.google/products-and-platforms/products/search/thrifting-tips/",
-      "source_name": "Google AI Blog",
-      "cross_check_status": "待二次交叉验证",
-      "weak_points": [
-        "尚未抓取正文外的补充证据。",
-        "尚未形成多源交叉验证。"
-      ]
-    },
-    "logic_closure": [
-      {
-        "node": "事件是否存在",
-        "status": "已确认",
-        "note": "来源入口：Google AI Blog"
-      },
-      {
-        "node": "和读者是否有关",
-        "status": "初步成立",
-        "note": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
-      },
-      {
-        "node": "事实是否清楚",
-        "status": "基本清楚",
-        "note": "原始标题：5 ways Google Search can level up your thrift and vintage shopping"
-      },
-      {
-        "node": "材料是否足够写正文",
-        "status": "可以继续扩写",
-        "note": "Radar 只负责给出选题档案，不在证据不足时强行生成公众号正文。"
-      }
-    ],
+    "core_question": "Google搜索的'thrifting tips'功能是否涉及搜索算法或展示规则的变化，从而影响普通技术人的流量获取或SEO策略？",
+    "why_this_topic_matters": "Google搜索的任何展示规则变化都可能影响依赖搜索流量的技术人（如独立开发者、内容创作者、SEO从业者）。但本线索聚焦于二手/复古购物场景，与大多数技术人直接关联度低，需确认是否泛化到其他领域。",
+    "fact_summary": [],
+    "timeline": [],
+    "evidence_table": [],
+    "logic_closure": "目前仅有一篇Google官方博客，宣称搜索新增了thrifting tips功能，但未说明是否涉及算法更新、展示结构变化或AI模型。无第三方验证，无法判断该功能是否影响SEO或流量。逻辑链断裂：从功能上线到影响技术人流量，中间缺少证据证明该功能改变了搜索排名或展示规则。",
     "writeable_angles": [
       {
-        "angle": "平台到底改了什么",
-        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+        "angle": "Google搜索UI提示功能对SEO的潜在影响分析",
+        "why": "如果该功能改变了搜索结果页结构（如新增模块），可能影响点击率，但需确认是否涉及排名变化。",
+        "needs": "第三方SEO分析文章、用户反馈、Google官方说明是否涉及算法更新。"
       },
       {
-        "angle": "对普通创作者和技术人有什么影响",
-        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-        "needs": "补齐事实、概念、证据、成本和边界后再写。"
-      },
-      {
-        "angle": "哪些行为可能失效",
-        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-        "needs": "补齐事实、概念、证据、成本和边界后再写。"
-      },
-      {
-        "angle": "哪些材料还不能当结论",
-        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+        "angle": "垂直领域搜索功能更新对独立开发者的启示",
+        "why": "针对二手/复古购物的功能可能预示Google在特定垂直领域的搜索优化方向，独立开发者可关注类似机会。",
+        "needs": "该功能是否依赖AI、是否可复制到其他垂直领域、Google是否有类似功能规划。"
       }
     ],
     "missing_basics": [
-      "原规则",
-      "新规则",
-      "影响对象",
-      "执行时间",
-      "处罚或收益机制"
+      "该功能是否改变了搜索结果页的展示结构（如新增模块、排序规则）？",
+      "该功能是否依赖AI或机器学习模型？",
+      "该功能是否已正式上线，还是仅限美国/特定地区？",
+      "该功能是否影响所有搜索还是仅限特定商品类别？"
     ],
     "missing_materials": [
-      "官方公告",
-      "帮助中心",
-      "社区实测",
-      "流量数据",
-      "反例和边界案例",
-      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
-      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
-      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      "Google官方博客原文及发布日期",
+      "Google搜索功能更新日志或changelog",
+      "至少一篇第三方SEO分析文章",
+      "用户或开发者对该功能的实际体验反馈",
+      "该功能是否在Google搜索帮助中心有专门说明"
     ],
     "not_claimable": [
-      "不要声称老花已经实操验证。",
-      "不要声称普通人都能复制。",
-      "不要在证据不足时给完整行动方案。"
+      "不要声称这是Google搜索的重大算法更新",
+      "不要声称该功能会影响所有搜索结果的排名",
+      "不要声称该功能与AI或机器学习直接相关",
+      "不要声称该功能已全球上线"
     ],
     "followup_queries": [
-      "工具账本：Google 搜索生态变化 官方公告 价格 成本",
-      "工具账本：Google 搜索生态变化 API 文档 额度 限制",
-      "工具账本：Google 搜索生态变化 替代方案 真实使用 成本"
+      "该功能是否改变了搜索结果页的展示结构？",
+      "该功能是否依赖AI模型？",
+      "该功能是否已正式上线？覆盖哪些地区？",
+      "是否有第三方SEO分析文章讨论该功能？"
+    ],
+    "additional_search_queries": [
+      "Google Search thrifting tips algorithm change 2025",
+      "Google Search thrifting tips SEO impact",
+      "Google Search thrifting tips feature launch date",
+      "Google Search thrifting tips AI model",
+      "Google Search thrifting tips availability countries"
     ],
     "stop_conditions": [
-      "找不到一手来源或近源证据。",
-      "无法说明这件事和读者有什么关系。",
-      "关键概念、成本、合规、收益或影响对象说不清。",
-      "逻辑必须靠想象补齐，写出来只会像假大空。"
-    ]
+      "如果确认该功能仅为UI提示，不涉及算法或排名变化，则放弃。",
+      "如果确认该功能仅限美国且与大多数技术人无关，则降级为观察。"
+    ],
+    "confidence": 0,
+    "topic_direction": "traffic-rules",
+    "topic_direction_title": "平台规则与流量生态",
+    "report_type": "tool-ledger",
+    "research_plan": {
+      "core_question": "Google 搜索的‘thrifting tips’功能是否涉及搜索算法或展示规则的变化，从而影响普通技术人的流量获取或 SEO 策略？",
+      "must_verify": [
+        "该功能是否仅针对特定商品类别（如二手、复古）还是通用搜索变化？",
+        "该功能是否改变了搜索结果页的展示结构（如新增模块、排序规则）？",
+        "该功能是否依赖 AI 或机器学习模型？",
+        "该功能是否已正式上线，还是仅限美国/特定地区？"
+      ],
+      "search_queries": [
+        "Google Search thrifting tips algorithm change 2025",
+        "Google Search update vintage shopping thrift 2025",
+        "Google Search thrifting tips feature launch date",
+        "Google Search thrifting tips AI model",
+        "Google Search thrifting tips SEO impact",
+        "Google Search thrifting tips availability countries",
+        "Google Search thrifting tips vs Google Shopping",
+        "Google Search thrifting tips user experience review"
+      ],
+      "best_sources_to_find": [
+        "Google Search Central Blog (developers.google.com/search)",
+        "Google AI Blog (blog.google/products-and-platforms/products/search)",
+        "Google Search Status Dashboard (status.search.google.com)",
+        "SEO 行业分析网站如 Search Engine Land、Search Engine Journal",
+        "Google 官方帮助文档关于搜索功能更新"
+      ],
+      "expert_challenge_points": [
+        "该功能是否只是 UI 层面的提示，而非算法或排名变化？",
+        "该功能是否仅影响特定垂直领域（如二手商品），对大多数技术人无关？",
+        "该功能是否已经存在多年，只是被重新包装宣传？",
+        "该功能是否依赖用户行为数据，而非 AI 模型？"
+      ],
+      "do_not_claim_yet": [
+        "不要声称这是 Google 搜索的重大算法更新",
+        "不要声称该功能会影响所有搜索结果的排名",
+        "不要声称该功能与 AI 或机器学习直接相关",
+        "不要声称该功能已全球上线"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法确认该功能是否涉及搜索规则变化，且缺乏 SEO 影响证据，则不适合作为 Radar 发布，建议降级为观察项。",
+      "downstream_materials_needed": [
+        "Google 官方博客原文及发布日期",
+        "Google 搜索功能更新日志或 changelog",
+        "至少一篇第三方 SEO 分析文章",
+        "用户或开发者对该功能的实际体验反馈",
+        "该功能是否在 Google 搜索帮助中心有专门说明"
+      ]
+    },
+    "research_evidence": []
   },
   "material_pack": {
-    "schema": "topic-selection-dossier-v2",
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
     "verdict": {
-      "status": "可进入选题池",
-      "label": "可选",
-      "reason": "当前线索有明确来源、读者关系和分析空间，可以作为候选选题继续补证。"
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "核心问题不明确：该功能是UI提示还是算法变化？是否影响SEO？目前仅有Google官方博客一篇来源，缺乏第三方验证和SEO影响证据，无法判断对技术人流量获取的实际影响。"
     },
-    "topic_direction": "traffic-rules",
-    "topic_direction_title": "平台规则与流量生态",
-    "report_type": "tool-ledger",
-    "core_question": "这条线索能不能成为一个值得老花继续写的选题：Google 搜索生态变化",
-    "human_judgment_path": [
-      "先确认这件事是不是真的发生，而不是只看标题兴奋。",
-      "再确认它和读者有什么关系：能不能帮读者理解机会、成本、规则、坑或工具变化。",
-      "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
-      "再看逻辑是否闭环：事实、原因、影响、边界、可写角度能不能连起来。",
-      "最后决定：可选、观察、暂缓，而不是把所有线索都写成同一套报告。"
-    ],
-    "selection_questions": [
-      "它是不是平台规则、搜索、推荐、账号、SEO、AI SEO 或内容分发生态变化？",
-      "它会不会影响公众号、小红书、视频号、博客、独立站或后续变现？",
-      "规则来自官方、近源实测还是社区猜测？证据边界能不能标清？",
-      "能不能形成时间线、规则变化、影响范围和应对材料？"
-    ],
-    "value_signals": [
-      "官方规则变化",
-      "影响流量和账号",
-      "影响内容分发",
-      "有实测材料",
-      "有明确应对边界"
-    ],
-    "reject_signals": [
-      "只有玄学猜测",
-      "只有营销号二手解读",
-      "没有平台或账号关系",
-      "不能落到内容生产"
-    ],
-    "topic_value_assessment": [
-      {
-        "question": "这是什么？",
-        "judgment": "5 ways Google Search can level up your thrift and vintage shopping"
-      },
-      {
-        "question": "和读者有什么关系？",
-        "judgment": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
-      },
-      {
-        "question": "为什么现在看？",
-        "judgment": "来自本批次稳定公开源，适合先进入 Radar 观察。"
-      },
-      {
-        "question": "事实清楚吗？",
-        "judgment": "基本清楚"
-      },
-      {
-        "question": "材料可靠吗？",
-        "judgment": "当前证据等级：official"
-      },
-      {
-        "question": "逻辑能闭环吗？",
-        "judgment": "需要补齐材料后才能闭环"
-      }
-    ],
-    "fact_clarity": {
-      "status": "基本清楚",
-      "summary_status": "有摘要",
-      "confirmed": [
-        "标题、来源 URL、来源类型、抓取时间已记录。",
-        "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
-      ],
-      "uncertainty": [
-        "尚未抓取正文外的补充证据。",
-        "尚未形成多源交叉验证。"
-      ]
-    },
-    "evidence_reliability": {
-      "level": "official",
-      "primary_source": "https://blog.google/products-and-platforms/products/search/thrifting-tips/",
-      "source_name": "Google AI Blog",
-      "cross_check_status": "待二次交叉验证",
-      "weak_points": [
-        "尚未抓取正文外的补充证据。",
-        "尚未形成多源交叉验证。"
-      ]
-    },
-    "logic_closure": [
-      {
-        "node": "事件是否存在",
-        "status": "已确认",
-        "note": "来源入口：Google AI Blog"
-      },
-      {
-        "node": "和读者是否有关",
-        "status": "初步成立",
-        "note": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
-      },
-      {
-        "node": "事实是否清楚",
-        "status": "基本清楚",
-        "note": "原始标题：5 ways Google Search can level up your thrift and vintage shopping"
-      },
-      {
-        "node": "材料是否足够写正文",
-        "status": "可以继续扩写",
-        "note": "Radar 只负责给出选题档案，不在证据不足时强行生成公众号正文。"
-      }
-    ],
+    "core_question": "Google搜索的'thrifting tips'功能是否涉及搜索算法或展示规则的变化，从而影响普通技术人的流量获取或SEO策略？",
+    "why_this_topic_matters": "Google搜索的任何展示规则变化都可能影响依赖搜索流量的技术人（如独立开发者、内容创作者、SEO从业者）。但本线索聚焦于二手/复古购物场景，与大多数技术人直接关联度低，需确认是否泛化到其他领域。",
+    "fact_summary": [],
+    "timeline": [],
+    "evidence_table": [],
+    "logic_closure": "目前仅有一篇Google官方博客，宣称搜索新增了thrifting tips功能，但未说明是否涉及算法更新、展示结构变化或AI模型。无第三方验证，无法判断该功能是否影响SEO或流量。逻辑链断裂：从功能上线到影响技术人流量，中间缺少证据证明该功能改变了搜索排名或展示规则。",
     "writeable_angles": [
       {
-        "angle": "平台到底改了什么",
-        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+        "angle": "Google搜索UI提示功能对SEO的潜在影响分析",
+        "why": "如果该功能改变了搜索结果页结构（如新增模块），可能影响点击率，但需确认是否涉及排名变化。",
+        "needs": "第三方SEO分析文章、用户反馈、Google官方说明是否涉及算法更新。"
       },
       {
-        "angle": "对普通创作者和技术人有什么影响",
-        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-        "needs": "补齐事实、概念、证据、成本和边界后再写。"
-      },
-      {
-        "angle": "哪些行为可能失效",
-        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-        "needs": "补齐事实、概念、证据、成本和边界后再写。"
-      },
-      {
-        "angle": "哪些材料还不能当结论",
-        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+        "angle": "垂直领域搜索功能更新对独立开发者的启示",
+        "why": "针对二手/复古购物的功能可能预示Google在特定垂直领域的搜索优化方向，独立开发者可关注类似机会。",
+        "needs": "该功能是否依赖AI、是否可复制到其他垂直领域、Google是否有类似功能规划。"
       }
     ],
     "missing_basics": [
-      "原规则",
-      "新规则",
-      "影响对象",
-      "执行时间",
-      "处罚或收益机制"
+      "该功能是否改变了搜索结果页的展示结构（如新增模块、排序规则）？",
+      "该功能是否依赖AI或机器学习模型？",
+      "该功能是否已正式上线，还是仅限美国/特定地区？",
+      "该功能是否影响所有搜索还是仅限特定商品类别？"
     ],
     "missing_materials": [
-      "官方公告",
-      "帮助中心",
-      "社区实测",
-      "流量数据",
-      "反例和边界案例",
-      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
-      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
-      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      "Google官方博客原文及发布日期",
+      "Google搜索功能更新日志或changelog",
+      "至少一篇第三方SEO分析文章",
+      "用户或开发者对该功能的实际体验反馈",
+      "该功能是否在Google搜索帮助中心有专门说明"
     ],
     "not_claimable": [
-      "不要声称老花已经实操验证。",
-      "不要声称普通人都能复制。",
-      "不要在证据不足时给完整行动方案。"
+      "不要声称这是Google搜索的重大算法更新",
+      "不要声称该功能会影响所有搜索结果的排名",
+      "不要声称该功能与AI或机器学习直接相关",
+      "不要声称该功能已全球上线"
     ],
     "followup_queries": [
-      "工具账本：Google 搜索生态变化 官方公告 价格 成本",
-      "工具账本：Google 搜索生态变化 API 文档 额度 限制",
-      "工具账本：Google 搜索生态变化 替代方案 真实使用 成本"
+      "该功能是否改变了搜索结果页的展示结构？",
+      "该功能是否依赖AI模型？",
+      "该功能是否已正式上线？覆盖哪些地区？",
+      "是否有第三方SEO分析文章讨论该功能？"
+    ],
+    "additional_search_queries": [
+      "Google Search thrifting tips algorithm change 2025",
+      "Google Search thrifting tips SEO impact",
+      "Google Search thrifting tips feature launch date",
+      "Google Search thrifting tips AI model",
+      "Google Search thrifting tips availability countries"
     ],
     "stop_conditions": [
-      "找不到一手来源或近源证据。",
-      "无法说明这件事和读者有什么关系。",
-      "关键概念、成本、合规、收益或影响对象说不清。",
-      "逻辑必须靠想象补齐，写出来只会像假大空。"
-    ]
+      "如果确认该功能仅为UI提示，不涉及算法或排名变化，则放弃。",
+      "如果确认该功能仅限美国且与大多数技术人无关，则降级为观察。"
+    ],
+    "confidence": 0,
+    "topic_direction": "traffic-rules",
+    "topic_direction_title": "平台规则与流量生态",
+    "report_type": "tool-ledger",
+    "research_plan": {
+      "core_question": "Google 搜索的‘thrifting tips’功能是否涉及搜索算法或展示规则的变化，从而影响普通技术人的流量获取或 SEO 策略？",
+      "must_verify": [
+        "该功能是否仅针对特定商品类别（如二手、复古）还是通用搜索变化？",
+        "该功能是否改变了搜索结果页的展示结构（如新增模块、排序规则）？",
+        "该功能是否依赖 AI 或机器学习模型？",
+        "该功能是否已正式上线，还是仅限美国/特定地区？"
+      ],
+      "search_queries": [
+        "Google Search thrifting tips algorithm change 2025",
+        "Google Search update vintage shopping thrift 2025",
+        "Google Search thrifting tips feature launch date",
+        "Google Search thrifting tips AI model",
+        "Google Search thrifting tips SEO impact",
+        "Google Search thrifting tips availability countries",
+        "Google Search thrifting tips vs Google Shopping",
+        "Google Search thrifting tips user experience review"
+      ],
+      "best_sources_to_find": [
+        "Google Search Central Blog (developers.google.com/search)",
+        "Google AI Blog (blog.google/products-and-platforms/products/search)",
+        "Google Search Status Dashboard (status.search.google.com)",
+        "SEO 行业分析网站如 Search Engine Land、Search Engine Journal",
+        "Google 官方帮助文档关于搜索功能更新"
+      ],
+      "expert_challenge_points": [
+        "该功能是否只是 UI 层面的提示，而非算法或排名变化？",
+        "该功能是否仅影响特定垂直领域（如二手商品），对大多数技术人无关？",
+        "该功能是否已经存在多年，只是被重新包装宣传？",
+        "该功能是否依赖用户行为数据，而非 AI 模型？"
+      ],
+      "do_not_claim_yet": [
+        "不要声称这是 Google 搜索的重大算法更新",
+        "不要声称该功能会影响所有搜索结果的排名",
+        "不要声称该功能与 AI 或机器学习直接相关",
+        "不要声称该功能已全球上线"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法确认该功能是否涉及搜索规则变化，且缺乏 SEO 影响证据，则不适合作为 Radar 发布，建议降级为观察项。",
+      "downstream_materials_needed": [
+        "Google 官方博客原文及发布日期",
+        "Google 搜索功能更新日志或 changelog",
+        "至少一篇第三方 SEO 分析文章",
+        "用户或开发者对该功能的实际体验反馈",
+        "该功能是否在 Google 搜索帮助中心有专门说明"
+      ]
+    },
+    "research_evidence": []
   },
   "downstream_handoff": {
     "package_version": "radar-handoff-v1",
@@ -459,330 +361,232 @@
       "original_title": "5 ways Google Search can level up your thrift and vintage shopping",
       "source_url": "https://blog.google/products-and-platforms/products/search/thrifting-tips/",
       "selection_dossier": {
-        "schema": "topic-selection-dossier-v2",
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
         "verdict": {
-          "status": "可进入选题池",
-          "label": "可选",
-          "reason": "当前线索有明确来源、读者关系和分析空间，可以作为候选选题继续补证。"
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "核心问题不明确：该功能是UI提示还是算法变化？是否影响SEO？目前仅有Google官方博客一篇来源，缺乏第三方验证和SEO影响证据，无法判断对技术人流量获取的实际影响。"
         },
-        "topic_direction": "traffic-rules",
-        "topic_direction_title": "平台规则与流量生态",
-        "report_type": "tool-ledger",
-        "core_question": "这条线索能不能成为一个值得老花继续写的选题：Google 搜索生态变化",
-        "human_judgment_path": [
-          "先确认这件事是不是真的发生，而不是只看标题兴奋。",
-          "再确认它和读者有什么关系：能不能帮读者理解机会、成本、规则、坑或工具变化。",
-          "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
-          "再看逻辑是否闭环：事实、原因、影响、边界、可写角度能不能连起来。",
-          "最后决定：可选、观察、暂缓，而不是把所有线索都写成同一套报告。"
-        ],
-        "selection_questions": [
-          "它是不是平台规则、搜索、推荐、账号、SEO、AI SEO 或内容分发生态变化？",
-          "它会不会影响公众号、小红书、视频号、博客、独立站或后续变现？",
-          "规则来自官方、近源实测还是社区猜测？证据边界能不能标清？",
-          "能不能形成时间线、规则变化、影响范围和应对材料？"
-        ],
-        "value_signals": [
-          "官方规则变化",
-          "影响流量和账号",
-          "影响内容分发",
-          "有实测材料",
-          "有明确应对边界"
-        ],
-        "reject_signals": [
-          "只有玄学猜测",
-          "只有营销号二手解读",
-          "没有平台或账号关系",
-          "不能落到内容生产"
-        ],
-        "topic_value_assessment": [
-          {
-            "question": "这是什么？",
-            "judgment": "5 ways Google Search can level up your thrift and vintage shopping"
-          },
-          {
-            "question": "和读者有什么关系？",
-            "judgment": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
-          },
-          {
-            "question": "为什么现在看？",
-            "judgment": "来自本批次稳定公开源，适合先进入 Radar 观察。"
-          },
-          {
-            "question": "事实清楚吗？",
-            "judgment": "基本清楚"
-          },
-          {
-            "question": "材料可靠吗？",
-            "judgment": "当前证据等级：official"
-          },
-          {
-            "question": "逻辑能闭环吗？",
-            "judgment": "需要补齐材料后才能闭环"
-          }
-        ],
-        "fact_clarity": {
-          "status": "基本清楚",
-          "summary_status": "有摘要",
-          "confirmed": [
-            "标题、来源 URL、来源类型、抓取时间已记录。",
-            "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
-          ],
-          "uncertainty": [
-            "尚未抓取正文外的补充证据。",
-            "尚未形成多源交叉验证。"
-          ]
-        },
-        "evidence_reliability": {
-          "level": "official",
-          "primary_source": "https://blog.google/products-and-platforms/products/search/thrifting-tips/",
-          "source_name": "Google AI Blog",
-          "cross_check_status": "待二次交叉验证",
-          "weak_points": [
-            "尚未抓取正文外的补充证据。",
-            "尚未形成多源交叉验证。"
-          ]
-        },
-        "logic_closure": [
-          {
-            "node": "事件是否存在",
-            "status": "已确认",
-            "note": "来源入口：Google AI Blog"
-          },
-          {
-            "node": "和读者是否有关",
-            "status": "初步成立",
-            "note": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
-          },
-          {
-            "node": "事实是否清楚",
-            "status": "基本清楚",
-            "note": "原始标题：5 ways Google Search can level up your thrift and vintage shopping"
-          },
-          {
-            "node": "材料是否足够写正文",
-            "status": "可以继续扩写",
-            "note": "Radar 只负责给出选题档案，不在证据不足时强行生成公众号正文。"
-          }
-        ],
+        "core_question": "Google搜索的'thrifting tips'功能是否涉及搜索算法或展示规则的变化，从而影响普通技术人的流量获取或SEO策略？",
+        "why_this_topic_matters": "Google搜索的任何展示规则变化都可能影响依赖搜索流量的技术人（如独立开发者、内容创作者、SEO从业者）。但本线索聚焦于二手/复古购物场景，与大多数技术人直接关联度低，需确认是否泛化到其他领域。",
+        "fact_summary": [],
+        "timeline": [],
+        "evidence_table": [],
+        "logic_closure": "目前仅有一篇Google官方博客，宣称搜索新增了thrifting tips功能，但未说明是否涉及算法更新、展示结构变化或AI模型。无第三方验证，无法判断该功能是否影响SEO或流量。逻辑链断裂：从功能上线到影响技术人流量，中间缺少证据证明该功能改变了搜索排名或展示规则。",
         "writeable_angles": [
           {
-            "angle": "平台到底改了什么",
-            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+            "angle": "Google搜索UI提示功能对SEO的潜在影响分析",
+            "why": "如果该功能改变了搜索结果页结构（如新增模块），可能影响点击率，但需确认是否涉及排名变化。",
+            "needs": "第三方SEO分析文章、用户反馈、Google官方说明是否涉及算法更新。"
           },
           {
-            "angle": "对普通创作者和技术人有什么影响",
-            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-            "needs": "补齐事实、概念、证据、成本和边界后再写。"
-          },
-          {
-            "angle": "哪些行为可能失效",
-            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-            "needs": "补齐事实、概念、证据、成本和边界后再写。"
-          },
-          {
-            "angle": "哪些材料还不能当结论",
-            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+            "angle": "垂直领域搜索功能更新对独立开发者的启示",
+            "why": "针对二手/复古购物的功能可能预示Google在特定垂直领域的搜索优化方向，独立开发者可关注类似机会。",
+            "needs": "该功能是否依赖AI、是否可复制到其他垂直领域、Google是否有类似功能规划。"
           }
         ],
         "missing_basics": [
-          "原规则",
-          "新规则",
-          "影响对象",
-          "执行时间",
-          "处罚或收益机制"
+          "该功能是否改变了搜索结果页的展示结构（如新增模块、排序规则）？",
+          "该功能是否依赖AI或机器学习模型？",
+          "该功能是否已正式上线，还是仅限美国/特定地区？",
+          "该功能是否影响所有搜索还是仅限特定商品类别？"
         ],
         "missing_materials": [
-          "官方公告",
-          "帮助中心",
-          "社区实测",
-          "流量数据",
-          "反例和边界案例",
-          "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
-          "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
-          "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+          "Google官方博客原文及发布日期",
+          "Google搜索功能更新日志或changelog",
+          "至少一篇第三方SEO分析文章",
+          "用户或开发者对该功能的实际体验反馈",
+          "该功能是否在Google搜索帮助中心有专门说明"
         ],
         "not_claimable": [
-          "不要声称老花已经实操验证。",
-          "不要声称普通人都能复制。",
-          "不要在证据不足时给完整行动方案。"
+          "不要声称这是Google搜索的重大算法更新",
+          "不要声称该功能会影响所有搜索结果的排名",
+          "不要声称该功能与AI或机器学习直接相关",
+          "不要声称该功能已全球上线"
         ],
         "followup_queries": [
-          "工具账本：Google 搜索生态变化 官方公告 价格 成本",
-          "工具账本：Google 搜索生态变化 API 文档 额度 限制",
-          "工具账本：Google 搜索生态变化 替代方案 真实使用 成本"
+          "该功能是否改变了搜索结果页的展示结构？",
+          "该功能是否依赖AI模型？",
+          "该功能是否已正式上线？覆盖哪些地区？",
+          "是否有第三方SEO分析文章讨论该功能？"
+        ],
+        "additional_search_queries": [
+          "Google Search thrifting tips algorithm change 2025",
+          "Google Search thrifting tips SEO impact",
+          "Google Search thrifting tips feature launch date",
+          "Google Search thrifting tips AI model",
+          "Google Search thrifting tips availability countries"
         ],
         "stop_conditions": [
-          "找不到一手来源或近源证据。",
-          "无法说明这件事和读者有什么关系。",
-          "关键概念、成本、合规、收益或影响对象说不清。",
-          "逻辑必须靠想象补齐，写出来只会像假大空。"
-        ]
+          "如果确认该功能仅为UI提示，不涉及算法或排名变化，则放弃。",
+          "如果确认该功能仅限美国且与大多数技术人无关，则降级为观察。"
+        ],
+        "confidence": 0,
+        "topic_direction": "traffic-rules",
+        "topic_direction_title": "平台规则与流量生态",
+        "report_type": "tool-ledger",
+        "research_plan": {
+          "core_question": "Google 搜索的‘thrifting tips’功能是否涉及搜索算法或展示规则的变化，从而影响普通技术人的流量获取或 SEO 策略？",
+          "must_verify": [
+            "该功能是否仅针对特定商品类别（如二手、复古）还是通用搜索变化？",
+            "该功能是否改变了搜索结果页的展示结构（如新增模块、排序规则）？",
+            "该功能是否依赖 AI 或机器学习模型？",
+            "该功能是否已正式上线，还是仅限美国/特定地区？"
+          ],
+          "search_queries": [
+            "Google Search thrifting tips algorithm change 2025",
+            "Google Search update vintage shopping thrift 2025",
+            "Google Search thrifting tips feature launch date",
+            "Google Search thrifting tips AI model",
+            "Google Search thrifting tips SEO impact",
+            "Google Search thrifting tips availability countries",
+            "Google Search thrifting tips vs Google Shopping",
+            "Google Search thrifting tips user experience review"
+          ],
+          "best_sources_to_find": [
+            "Google Search Central Blog (developers.google.com/search)",
+            "Google AI Blog (blog.google/products-and-platforms/products/search)",
+            "Google Search Status Dashboard (status.search.google.com)",
+            "SEO 行业分析网站如 Search Engine Land、Search Engine Journal",
+            "Google 官方帮助文档关于搜索功能更新"
+          ],
+          "expert_challenge_points": [
+            "该功能是否只是 UI 层面的提示，而非算法或排名变化？",
+            "该功能是否仅影响特定垂直领域（如二手商品），对大多数技术人无关？",
+            "该功能是否已经存在多年，只是被重新包装宣传？",
+            "该功能是否依赖用户行为数据，而非 AI 模型？"
+          ],
+          "do_not_claim_yet": [
+            "不要声称这是 Google 搜索的重大算法更新",
+            "不要声称该功能会影响所有搜索结果的排名",
+            "不要声称该功能与 AI 或机器学习直接相关",
+            "不要声称该功能已全球上线"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法确认该功能是否涉及搜索规则变化，且缺乏 SEO 影响证据，则不适合作为 Radar 发布，建议降级为观察项。",
+          "downstream_materials_needed": [
+            "Google 官方博客原文及发布日期",
+            "Google 搜索功能更新日志或 changelog",
+            "至少一篇第三方 SEO 分析文章",
+            "用户或开发者对该功能的实际体验反馈",
+            "该功能是否在 Google 搜索帮助中心有专门说明"
+          ]
+        },
+        "research_evidence": []
       },
       "material_pack": {
-        "schema": "topic-selection-dossier-v2",
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
         "verdict": {
-          "status": "可进入选题池",
-          "label": "可选",
-          "reason": "当前线索有明确来源、读者关系和分析空间，可以作为候选选题继续补证。"
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "核心问题不明确：该功能是UI提示还是算法变化？是否影响SEO？目前仅有Google官方博客一篇来源，缺乏第三方验证和SEO影响证据，无法判断对技术人流量获取的实际影响。"
         },
-        "topic_direction": "traffic-rules",
-        "topic_direction_title": "平台规则与流量生态",
-        "report_type": "tool-ledger",
-        "core_question": "这条线索能不能成为一个值得老花继续写的选题：Google 搜索生态变化",
-        "human_judgment_path": [
-          "先确认这件事是不是真的发生，而不是只看标题兴奋。",
-          "再确认它和读者有什么关系：能不能帮读者理解机会、成本、规则、坑或工具变化。",
-          "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
-          "再看逻辑是否闭环：事实、原因、影响、边界、可写角度能不能连起来。",
-          "最后决定：可选、观察、暂缓，而不是把所有线索都写成同一套报告。"
-        ],
-        "selection_questions": [
-          "它是不是平台规则、搜索、推荐、账号、SEO、AI SEO 或内容分发生态变化？",
-          "它会不会影响公众号、小红书、视频号、博客、独立站或后续变现？",
-          "规则来自官方、近源实测还是社区猜测？证据边界能不能标清？",
-          "能不能形成时间线、规则变化、影响范围和应对材料？"
-        ],
-        "value_signals": [
-          "官方规则变化",
-          "影响流量和账号",
-          "影响内容分发",
-          "有实测材料",
-          "有明确应对边界"
-        ],
-        "reject_signals": [
-          "只有玄学猜测",
-          "只有营销号二手解读",
-          "没有平台或账号关系",
-          "不能落到内容生产"
-        ],
-        "topic_value_assessment": [
-          {
-            "question": "这是什么？",
-            "judgment": "5 ways Google Search can level up your thrift and vintage shopping"
-          },
-          {
-            "question": "和读者有什么关系？",
-            "judgment": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
-          },
-          {
-            "question": "为什么现在看？",
-            "judgment": "来自本批次稳定公开源，适合先进入 Radar 观察。"
-          },
-          {
-            "question": "事实清楚吗？",
-            "judgment": "基本清楚"
-          },
-          {
-            "question": "材料可靠吗？",
-            "judgment": "当前证据等级：official"
-          },
-          {
-            "question": "逻辑能闭环吗？",
-            "judgment": "需要补齐材料后才能闭环"
-          }
-        ],
-        "fact_clarity": {
-          "status": "基本清楚",
-          "summary_status": "有摘要",
-          "confirmed": [
-            "标题、来源 URL、来源类型、抓取时间已记录。",
-            "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
-          ],
-          "uncertainty": [
-            "尚未抓取正文外的补充证据。",
-            "尚未形成多源交叉验证。"
-          ]
-        },
-        "evidence_reliability": {
-          "level": "official",
-          "primary_source": "https://blog.google/products-and-platforms/products/search/thrifting-tips/",
-          "source_name": "Google AI Blog",
-          "cross_check_status": "待二次交叉验证",
-          "weak_points": [
-            "尚未抓取正文外的补充证据。",
-            "尚未形成多源交叉验证。"
-          ]
-        },
-        "logic_closure": [
-          {
-            "node": "事件是否存在",
-            "status": "已确认",
-            "note": "来源入口：Google AI Blog"
-          },
-          {
-            "node": "和读者是否有关",
-            "status": "初步成立",
-            "note": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
-          },
-          {
-            "node": "事实是否清楚",
-            "status": "基本清楚",
-            "note": "原始标题：5 ways Google Search can level up your thrift and vintage shopping"
-          },
-          {
-            "node": "材料是否足够写正文",
-            "status": "可以继续扩写",
-            "note": "Radar 只负责给出选题档案，不在证据不足时强行生成公众号正文。"
-          }
-        ],
+        "core_question": "Google搜索的'thrifting tips'功能是否涉及搜索算法或展示规则的变化，从而影响普通技术人的流量获取或SEO策略？",
+        "why_this_topic_matters": "Google搜索的任何展示规则变化都可能影响依赖搜索流量的技术人（如独立开发者、内容创作者、SEO从业者）。但本线索聚焦于二手/复古购物场景，与大多数技术人直接关联度低，需确认是否泛化到其他领域。",
+        "fact_summary": [],
+        "timeline": [],
+        "evidence_table": [],
+        "logic_closure": "目前仅有一篇Google官方博客，宣称搜索新增了thrifting tips功能，但未说明是否涉及算法更新、展示结构变化或AI模型。无第三方验证，无法判断该功能是否影响SEO或流量。逻辑链断裂：从功能上线到影响技术人流量，中间缺少证据证明该功能改变了搜索排名或展示规则。",
         "writeable_angles": [
           {
-            "angle": "平台到底改了什么",
-            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+            "angle": "Google搜索UI提示功能对SEO的潜在影响分析",
+            "why": "如果该功能改变了搜索结果页结构（如新增模块），可能影响点击率，但需确认是否涉及排名变化。",
+            "needs": "第三方SEO分析文章、用户反馈、Google官方说明是否涉及算法更新。"
           },
           {
-            "angle": "对普通创作者和技术人有什么影响",
-            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-            "needs": "补齐事实、概念、证据、成本和边界后再写。"
-          },
-          {
-            "angle": "哪些行为可能失效",
-            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-            "needs": "补齐事实、概念、证据、成本和边界后再写。"
-          },
-          {
-            "angle": "哪些材料还不能当结论",
-            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+            "angle": "垂直领域搜索功能更新对独立开发者的启示",
+            "why": "针对二手/复古购物的功能可能预示Google在特定垂直领域的搜索优化方向，独立开发者可关注类似机会。",
+            "needs": "该功能是否依赖AI、是否可复制到其他垂直领域、Google是否有类似功能规划。"
           }
         ],
         "missing_basics": [
-          "原规则",
-          "新规则",
-          "影响对象",
-          "执行时间",
-          "处罚或收益机制"
+          "该功能是否改变了搜索结果页的展示结构（如新增模块、排序规则）？",
+          "该功能是否依赖AI或机器学习模型？",
+          "该功能是否已正式上线，还是仅限美国/特定地区？",
+          "该功能是否影响所有搜索还是仅限特定商品类别？"
         ],
         "missing_materials": [
-          "官方公告",
-          "帮助中心",
-          "社区实测",
-          "流量数据",
-          "反例和边界案例",
-          "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
-          "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
-          "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+          "Google官方博客原文及发布日期",
+          "Google搜索功能更新日志或changelog",
+          "至少一篇第三方SEO分析文章",
+          "用户或开发者对该功能的实际体验反馈",
+          "该功能是否在Google搜索帮助中心有专门说明"
         ],
         "not_claimable": [
-          "不要声称老花已经实操验证。",
-          "不要声称普通人都能复制。",
-          "不要在证据不足时给完整行动方案。"
+          "不要声称这是Google搜索的重大算法更新",
+          "不要声称该功能会影响所有搜索结果的排名",
+          "不要声称该功能与AI或机器学习直接相关",
+          "不要声称该功能已全球上线"
         ],
         "followup_queries": [
-          "工具账本：Google 搜索生态变化 官方公告 价格 成本",
-          "工具账本：Google 搜索生态变化 API 文档 额度 限制",
-          "工具账本：Google 搜索生态变化 替代方案 真实使用 成本"
+          "该功能是否改变了搜索结果页的展示结构？",
+          "该功能是否依赖AI模型？",
+          "该功能是否已正式上线？覆盖哪些地区？",
+          "是否有第三方SEO分析文章讨论该功能？"
+        ],
+        "additional_search_queries": [
+          "Google Search thrifting tips algorithm change 2025",
+          "Google Search thrifting tips SEO impact",
+          "Google Search thrifting tips feature launch date",
+          "Google Search thrifting tips AI model",
+          "Google Search thrifting tips availability countries"
         ],
         "stop_conditions": [
-          "找不到一手来源或近源证据。",
-          "无法说明这件事和读者有什么关系。",
-          "关键概念、成本、合规、收益或影响对象说不清。",
-          "逻辑必须靠想象补齐，写出来只会像假大空。"
-        ]
+          "如果确认该功能仅为UI提示，不涉及算法或排名变化，则放弃。",
+          "如果确认该功能仅限美国且与大多数技术人无关，则降级为观察。"
+        ],
+        "confidence": 0,
+        "topic_direction": "traffic-rules",
+        "topic_direction_title": "平台规则与流量生态",
+        "report_type": "tool-ledger",
+        "research_plan": {
+          "core_question": "Google 搜索的‘thrifting tips’功能是否涉及搜索算法或展示规则的变化，从而影响普通技术人的流量获取或 SEO 策略？",
+          "must_verify": [
+            "该功能是否仅针对特定商品类别（如二手、复古）还是通用搜索变化？",
+            "该功能是否改变了搜索结果页的展示结构（如新增模块、排序规则）？",
+            "该功能是否依赖 AI 或机器学习模型？",
+            "该功能是否已正式上线，还是仅限美国/特定地区？"
+          ],
+          "search_queries": [
+            "Google Search thrifting tips algorithm change 2025",
+            "Google Search update vintage shopping thrift 2025",
+            "Google Search thrifting tips feature launch date",
+            "Google Search thrifting tips AI model",
+            "Google Search thrifting tips SEO impact",
+            "Google Search thrifting tips availability countries",
+            "Google Search thrifting tips vs Google Shopping",
+            "Google Search thrifting tips user experience review"
+          ],
+          "best_sources_to_find": [
+            "Google Search Central Blog (developers.google.com/search)",
+            "Google AI Blog (blog.google/products-and-platforms/products/search)",
+            "Google Search Status Dashboard (status.search.google.com)",
+            "SEO 行业分析网站如 Search Engine Land、Search Engine Journal",
+            "Google 官方帮助文档关于搜索功能更新"
+          ],
+          "expert_challenge_points": [
+            "该功能是否只是 UI 层面的提示，而非算法或排名变化？",
+            "该功能是否仅影响特定垂直领域（如二手商品），对大多数技术人无关？",
+            "该功能是否已经存在多年，只是被重新包装宣传？",
+            "该功能是否依赖用户行为数据，而非 AI 模型？"
+          ],
+          "do_not_claim_yet": [
+            "不要声称这是 Google 搜索的重大算法更新",
+            "不要声称该功能会影响所有搜索结果的排名",
+            "不要声称该功能与 AI 或机器学习直接相关",
+            "不要声称该功能已全球上线"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法确认该功能是否涉及搜索规则变化，且缺乏 SEO 影响证据，则不适合作为 Radar 发布，建议降级为观察项。",
+          "downstream_materials_needed": [
+            "Google 官方博客原文及发布日期",
+            "Google 搜索功能更新日志或 changelog",
+            "至少一篇第三方 SEO 分析文章",
+            "用户或开发者对该功能的实际体验反馈",
+            "该功能是否在 Google 搜索帮助中心有专门说明"
+          ]
+        },
+        "research_evidence": []
       },
       "angle_candidates": [
         "成本是否真的下降",

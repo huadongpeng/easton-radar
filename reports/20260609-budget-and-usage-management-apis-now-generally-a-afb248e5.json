@@ -15,7 +15,7 @@
   "source_type": "rss",
   "feed_url": "https://github.blog/changelog/feed/",
   "published_at": "2026-06-04T19:46:34+00:00",
-  "fetched_at": "2026-06-09T06:14:40.135283+00:00",
+  "fetched_at": "2026-06-09T07:04:11.490698+00:00",
   "decision": "deep_dive",
   "report_type": "tool-ledger",
   "report_type_title": "工具账本",
@@ -124,328 +124,262 @@
     ]
   },
   "selection_dossier": {
-    "schema": "topic-selection-dossier-v2",
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
     "verdict": {
-      "status": "待补证观察",
+      "status": "观察",
       "label": "观察",
-      "reason": "线索有方向价值，但事实、概念、案例或成本材料还不足，暂时不能直接写成正文。"
+      "reason": "核心事实（API 具体功能、定价、适用范围）尚未从官方文档或社区反馈中确认，无法判断对普通技术人的实际影响。当前线索仅来自一篇博客公告，缺乏多源交叉验证和真实案例。"
     },
-    "topic_direction": "ai-frontier",
-    "topic_direction_title": "AI 前沿与工具链",
-    "report_type": "tool-ledger",
-    "core_question": "这条线索能不能成为一个值得老花继续写的选题：GitHub 计费和成本变化",
-    "human_judgment_path": [
-      "先确认这件事是不是真的发生，而不是只看标题兴奋。",
-      "再确认它和读者有什么关系：能不能帮读者理解机会、成本、规则、坑或工具变化。",
-      "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
-      "再看逻辑是否闭环：事实、原因、影响、边界、可写角度能不能连起来。",
-      "最后决定：可选、观察、暂缓，而不是把所有线索都写成同一套报告。"
-    ],
-    "selection_questions": [
-      "这是不是明确发生的 AI 能力、价格、生态或平台规则变化，而不是普通产品小更新？",
-      "普通读者能不能听懂它改变了什么，程序员能不能看出技术和工具链价值？",
-      "有没有官方公告、文档、价格页、发布说明或可信近源材料？",
-      "能不能讲清楚发布时间线、能力变化、影响对象、成本门槛和替代关系？"
-    ],
-    "value_signals": [
-      "官方发布",
-      "影响开发者或高频 AI 用户",
-      "改变成本结构",
-      "改变工作流",
-      "有明确对比对象"
-    ],
-    "reject_signals": [
-      "只有产品名",
-      "只是 SDK 小版本",
-      "没有大众钩子",
-      "只能写成又一个工具更新"
-    ],
-    "topic_value_assessment": [
-      {
-        "question": "这是什么？",
-        "judgment": "Budget and usage management APIs now generally available"
-      },
-      {
-        "question": "和读者有什么关系？",
-        "judgment": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
-      },
-      {
-        "question": "为什么现在看？",
-        "judgment": "来自本批次稳定公开源，适合先进入 Radar 观察。"
-      },
-      {
-        "question": "事实清楚吗？",
-        "judgment": "基本清楚"
-      },
-      {
-        "question": "材料可靠吗？",
-        "judgment": "当前证据等级：official"
-      },
-      {
-        "question": "逻辑能闭环吗？",
-        "judgment": "需要补齐材料后才能闭环"
-      }
-    ],
-    "fact_clarity": {
-      "status": "基本清楚",
-      "summary_status": "有摘要",
-      "confirmed": [
-        "标题、来源 URL、来源类型、抓取时间已记录。",
-        "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
-      ],
-      "uncertainty": [
-        "尚未抓取正文外的补充证据。",
-        "尚未形成多源交叉验证。"
-      ]
-    },
-    "evidence_reliability": {
-      "level": "official",
-      "primary_source": "https://github.blog/changelog/2026-06-04-budget-and-usage-management-apis-now-generally-available",
-      "source_name": "GitHub Blog",
-      "cross_check_status": "待二次交叉验证",
-      "weak_points": [
-        "尚未抓取正文外的补充证据。",
-        "尚未形成多源交叉验证。"
-      ]
-    },
-    "logic_closure": [
-      {
-        "node": "事件是否存在",
-        "status": "已确认",
-        "note": "来源入口：GitHub Blog"
-      },
-      {
-        "node": "和读者是否有关",
-        "status": "初步成立",
-        "note": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
-      },
-      {
-        "node": "事实是否清楚",
-        "status": "基本清楚",
-        "note": "原始标题：Budget and usage management APIs now generally available"
-      },
-      {
-        "node": "材料是否足够写正文",
-        "status": "不足，需要补证",
-        "note": "Radar 只负责给出选题档案，不在证据不足时强行生成公众号正文。"
-      }
-    ],
+    "core_question": "GitHub 新发布的预算与用量管理 API 对普通技术人的实际成本控制、工具链和开发工作流有何具体影响？",
+    "why_this_topic_matters": "GitHub 是开发者核心平台，其计费 API 的开放可能改变团队成本管理方式，尤其对使用 Actions、Codespaces 等按量计费服务的个人开发者和小团队有直接财务影响。",
+    "fact_summary": [],
+    "timeline": [],
+    "evidence_table": [],
+    "logic_closure": "当前仅有一篇博客公告，未获取官方文档、定价信息或社区反馈，无法验证 API 是否支持硬预算上限、覆盖所有计费项、以及是否免费。逻辑链条断裂，无法形成闭环。",
     "writeable_angles": [
       {
-        "angle": "这次更新到底改变了什么",
-        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+        "angle": "GitHub 计费 API 功能详解与集成指南",
+        "why": "开发者最关心 API 能做什么、怎么用、成本如何。",
+        "needs": "官方 API 文档、定价页面、至少一个完整示例。"
       },
       {
-        "angle": "普通技术人该不该关注",
-        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+        "angle": "GitHub 原生 API vs 第三方成本管理工具对比",
+        "why": "帮助读者判断是否值得迁移或集成。",
+        "needs": "第三方工具（如 Vantage、CloudHealth）的功能和定价信息，对比表格。"
       },
       {
-        "angle": "成本和工具链会不会变化",
-        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-        "needs": "补齐事实、概念、证据、成本和边界后再写。"
-      },
-      {
-        "angle": "它替代了谁又替代不了谁",
-        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+        "angle": "真实用户评测：GitHub 计费 API 的实际效果与坑",
+        "why": "社区反馈能揭示文档未提及的限制或问题。",
+        "needs": "至少 2-3 篇真实用户评测或论坛讨论。"
       }
     ],
     "missing_basics": [
-      "产品/模型/Agent 基础概念",
-      "本次更新前后的差异",
-      "开放范围和使用门槛",
-      "价格、额度和地区限制"
+      "API 是否免费使用？",
+      "API 是否支持硬预算上限（阻止超额）还是仅告警？",
+      "API 覆盖哪些计费项（Actions、Packages、Codespaces 等）？",
+      "API 的调用频率限制是多少？",
+      "是否有官方文档页面？"
     ],
     "missing_materials": [
-      "官方公告",
-      "文档或 changelog",
-      "价格页",
-      "真实使用反馈",
-      "竞品对比材料",
-      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
-      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
-      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      "GitHub 官方 API 文档（含参数和示例）",
+      "GitHub 官方定价页面（Actions、Codespaces 等）",
+      "至少一篇真实用户评测或教程",
+      "与第三方工具的对比分析",
+      "常见问题 FAQ"
     ],
     "not_claimable": [
-      "不要声称老花已经实操验证。",
-      "不要声称普通人都能复制。",
-      "不要在证据不足时给完整行动方案。"
+      "API 能显著降低 GitHub 使用成本",
+      "API 是免费且无限制的",
+      "API 覆盖所有 GitHub 计费项",
+      "API 易于集成且文档完善",
+      "API 已获得社区广泛好评"
     ],
     "followup_queries": [
-      "工具账本：GitHub 计费和成本变化 官方公告 价格 成本",
-      "工具账本：GitHub 计费和成本变化 API 文档 额度 限制",
-      "工具账本：GitHub 计费和成本变化 替代方案 真实使用 成本"
+      "GitHub 预算管理 API 是否支持硬预算上限？",
+      "GitHub 用量管理 API 的定价模式是什么？",
+      "GitHub 计费 API 覆盖哪些服务？",
+      "开发者对 GitHub 新计费 API 的反馈如何？"
+    ],
+    "additional_search_queries": [
+      "GitHub budget management API pricing",
+      "GitHub usage management API documentation",
+      "GitHub Actions cost control API",
+      "GitHub Codespaces budget API",
+      "GitHub billing API review developer",
+      "GitHub cost center API example",
+      "GitHub API budget alert",
+      "GitHub billing API vs third-party tools"
     ],
     "stop_conditions": [
-      "找不到一手来源或近源证据。",
-      "无法说明这件事和读者有什么关系。",
-      "关键概念、成本、合规、收益或影响对象说不清。",
-      "逻辑必须靠想象补齐，写出来只会像假大空。"
-    ]
+      "获取到官方 API 文档和定价信息",
+      "找到至少一篇真实用户评测或教程",
+      "确认 API 是否免费及覆盖范围"
+    ],
+    "confidence": 20,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "tool-ledger",
+    "research_plan": {
+      "core_question": "GitHub 新发布的预算与用量管理 API 对普通技术人的实际成本控制、工具链和开发工作流有何具体影响？",
+      "must_verify": [
+        "API 的具体功能：能否设置预算上限、用量告警、成本中心分配？",
+        "API 的定价模式：是免费使用还是按调用量计费？",
+        "API 的适用范围：是否覆盖 Actions、Packages、Codespaces 等所有计费项？",
+        "API 的文档和示例是否完整，普通开发者能否快速集成？",
+        "是否有真实用户案例或社区反馈，证明其实际效果或问题？"
+      ],
+      "search_queries": [
+        "GitHub budget management API pricing",
+        "GitHub usage management API documentation",
+        "GitHub Actions cost control API",
+        "GitHub Codespaces budget API",
+        "GitHub billing API review developer",
+        "GitHub cost center API example",
+        "GitHub API budget alert",
+        "GitHub billing API vs third-party tools"
+      ],
+      "best_sources_to_find": [
+        "GitHub 官方文档（docs.github.com）",
+        "GitHub 官方博客（github.blog）",
+        "GitHub 社区论坛（github.community）",
+        "GitHub 变更日志（github.blog/changelog）",
+        "技术博客（如 dev.to、medium）中的使用教程和评测",
+        "Reddit 的 r/github 和 r/devops 子版块"
+      ],
+      "expert_challenge_points": [
+        "API 是否支持实时预算控制，还是仅事后报告？",
+        "API 的预算上限是硬限制还是软告警？",
+        "API 是否支持跨组织或企业级成本中心？",
+        "API 的调用频率限制是否影响大规模自动化？",
+        "与现有第三方成本管理工具（如 Vantage、CloudHealth）相比，GitHub 原生 API 的优势和不足？"
+      ],
+      "do_not_claim_yet": [
+        "API 能显著降低 GitHub 使用成本",
+        "API 是免费且无限制的",
+        "API 覆盖所有 GitHub 计费项",
+        "API 易于集成且文档完善",
+        "API 已获得社区广泛好评"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取定价、文档细节或真实案例，则仅作为趋势线索发布，提醒读者关注 GitHub 成本管理能力的变化。",
+      "downstream_materials_needed": [
+        "GitHub 官方 API 文档页面（含参数和示例）",
+        "GitHub 官方定价页面（Actions、Codespaces 等）",
+        "至少一篇真实用户评测或教程",
+        "与第三方工具的对比分析（如表格）",
+        "常见问题 FAQ（如预算上限是否硬限制）"
+      ]
+    },
+    "research_evidence": []
   },
   "material_pack": {
-    "schema": "topic-selection-dossier-v2",
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
     "verdict": {
-      "status": "待补证观察",
+      "status": "观察",
       "label": "观察",
-      "reason": "线索有方向价值，但事实、概念、案例或成本材料还不足，暂时不能直接写成正文。"
+      "reason": "核心事实（API 具体功能、定价、适用范围）尚未从官方文档或社区反馈中确认，无法判断对普通技术人的实际影响。当前线索仅来自一篇博客公告，缺乏多源交叉验证和真实案例。"
     },
-    "topic_direction": "ai-frontier",
-    "topic_direction_title": "AI 前沿与工具链",
-    "report_type": "tool-ledger",
-    "core_question": "这条线索能不能成为一个值得老花继续写的选题：GitHub 计费和成本变化",
-    "human_judgment_path": [
-      "先确认这件事是不是真的发生，而不是只看标题兴奋。",
-      "再确认它和读者有什么关系：能不能帮读者理解机会、成本、规则、坑或工具变化。",
-      "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
-      "再看逻辑是否闭环：事实、原因、影响、边界、可写角度能不能连起来。",
-      "最后决定：可选、观察、暂缓，而不是把所有线索都写成同一套报告。"
-    ],
-    "selection_questions": [
-      "这是不是明确发生的 AI 能力、价格、生态或平台规则变化，而不是普通产品小更新？",
-      "普通读者能不能听懂它改变了什么，程序员能不能看出技术和工具链价值？",
-      "有没有官方公告、文档、价格页、发布说明或可信近源材料？",
-      "能不能讲清楚发布时间线、能力变化、影响对象、成本门槛和替代关系？"
-    ],
-    "value_signals": [
-      "官方发布",
-      "影响开发者或高频 AI 用户",
-      "改变成本结构",
-      "改变工作流",
-      "有明确对比对象"
-    ],
-    "reject_signals": [
-      "只有产品名",
-      "只是 SDK 小版本",
-      "没有大众钩子",
-      "只能写成又一个工具更新"
-    ],
-    "topic_value_assessment": [
-      {
-        "question": "这是什么？",
-        "judgment": "Budget and usage management APIs now generally available"
-      },
-      {
-        "question": "和读者有什么关系？",
-        "judgment": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
-      },
-      {
-        "question": "为什么现在看？",
-        "judgment": "来自本批次稳定公开源，适合先进入 Radar 观察。"
-      },
-      {
-        "question": "事实清楚吗？",
-        "judgment": "基本清楚"
-      },
-      {
-        "question": "材料可靠吗？",
-        "judgment": "当前证据等级：official"
-      },
-      {
-        "question": "逻辑能闭环吗？",
-        "judgment": "需要补齐材料后才能闭环"
-      }
-    ],
-    "fact_clarity": {
-      "status": "基本清楚",
-      "summary_status": "有摘要",
-      "confirmed": [
-        "标题、来源 URL、来源类型、抓取时间已记录。",
-        "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
-      ],
-      "uncertainty": [
-        "尚未抓取正文外的补充证据。",
-        "尚未形成多源交叉验证。"
-      ]
-    },
-    "evidence_reliability": {
-      "level": "official",
-      "primary_source": "https://github.blog/changelog/2026-06-04-budget-and-usage-management-apis-now-generally-available",
-      "source_name": "GitHub Blog",
-      "cross_check_status": "待二次交叉验证",
-      "weak_points": [
-        "尚未抓取正文外的补充证据。",
-        "尚未形成多源交叉验证。"
-      ]
-    },
-    "logic_closure": [
-      {
-        "node": "事件是否存在",
-        "status": "已确认",
-        "note": "来源入口：GitHub Blog"
-      },
-      {
-        "node": "和读者是否有关",
-        "status": "初步成立",
-        "note": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
-      },
-      {
-        "node": "事实是否清楚",
-        "status": "基本清楚",
-        "note": "原始标题：Budget and usage management APIs now generally available"
-      },
-      {
-        "node": "材料是否足够写正文",
-        "status": "不足，需要补证",
-        "note": "Radar 只负责给出选题档案，不在证据不足时强行生成公众号正文。"
-      }
-    ],
+    "core_question": "GitHub 新发布的预算与用量管理 API 对普通技术人的实际成本控制、工具链和开发工作流有何具体影响？",
+    "why_this_topic_matters": "GitHub 是开发者核心平台，其计费 API 的开放可能改变团队成本管理方式，尤其对使用 Actions、Codespaces 等按量计费服务的个人开发者和小团队有直接财务影响。",
+    "fact_summary": [],
+    "timeline": [],
+    "evidence_table": [],
+    "logic_closure": "当前仅有一篇博客公告，未获取官方文档、定价信息或社区反馈，无法验证 API 是否支持硬预算上限、覆盖所有计费项、以及是否免费。逻辑链条断裂，无法形成闭环。",
     "writeable_angles": [
       {
-        "angle": "这次更新到底改变了什么",
-        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+        "angle": "GitHub 计费 API 功能详解与集成指南",
+        "why": "开发者最关心 API 能做什么、怎么用、成本如何。",
+        "needs": "官方 API 文档、定价页面、至少一个完整示例。"
       },
       {
-        "angle": "普通技术人该不该关注",
-        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+        "angle": "GitHub 原生 API vs 第三方成本管理工具对比",
+        "why": "帮助读者判断是否值得迁移或集成。",
+        "needs": "第三方工具（如 Vantage、CloudHealth）的功能和定价信息，对比表格。"
       },
       {
-        "angle": "成本和工具链会不会变化",
-        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-        "needs": "补齐事实、概念、证据、成本和边界后再写。"
-      },
-      {
-        "angle": "它替代了谁又替代不了谁",
-        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+        "angle": "真实用户评测：GitHub 计费 API 的实际效果与坑",
+        "why": "社区反馈能揭示文档未提及的限制或问题。",
+        "needs": "至少 2-3 篇真实用户评测或论坛讨论。"
       }
     ],
     "missing_basics": [
-      "产品/模型/Agent 基础概念",
-      "本次更新前后的差异",
-      "开放范围和使用门槛",
-      "价格、额度和地区限制"
+      "API 是否免费使用？",
+      "API 是否支持硬预算上限（阻止超额）还是仅告警？",
+      "API 覆盖哪些计费项（Actions、Packages、Codespaces 等）？",
+      "API 的调用频率限制是多少？",
+      "是否有官方文档页面？"
     ],
     "missing_materials": [
-      "官方公告",
-      "文档或 changelog",
-      "价格页",
-      "真实使用反馈",
-      "竞品对比材料",
-      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
-      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
-      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      "GitHub 官方 API 文档（含参数和示例）",
+      "GitHub 官方定价页面（Actions、Codespaces 等）",
+      "至少一篇真实用户评测或教程",
+      "与第三方工具的对比分析",
+      "常见问题 FAQ"
     ],
     "not_claimable": [
-      "不要声称老花已经实操验证。",
-      "不要声称普通人都能复制。",
-      "不要在证据不足时给完整行动方案。"
+      "API 能显著降低 GitHub 使用成本",
+      "API 是免费且无限制的",
+      "API 覆盖所有 GitHub 计费项",
+      "API 易于集成且文档完善",
+      "API 已获得社区广泛好评"
     ],
     "followup_queries": [
-      "工具账本：GitHub 计费和成本变化 官方公告 价格 成本",
-      "工具账本：GitHub 计费和成本变化 API 文档 额度 限制",
-      "工具账本：GitHub 计费和成本变化 替代方案 真实使用 成本"
+      "GitHub 预算管理 API 是否支持硬预算上限？",
+      "GitHub 用量管理 API 的定价模式是什么？",
+      "GitHub 计费 API 覆盖哪些服务？",
+      "开发者对 GitHub 新计费 API 的反馈如何？"
+    ],
+    "additional_search_queries": [
+      "GitHub budget management API pricing",
+      "GitHub usage management API documentation",
+      "GitHub Actions cost control API",
+      "GitHub Codespaces budget API",
+      "GitHub billing API review developer",
+      "GitHub cost center API example",
+      "GitHub API budget alert",
+      "GitHub billing API vs third-party tools"
     ],
     "stop_conditions": [
-      "找不到一手来源或近源证据。",
-      "无法说明这件事和读者有什么关系。",
-      "关键概念、成本、合规、收益或影响对象说不清。",
-      "逻辑必须靠想象补齐，写出来只会像假大空。"
-    ]
+      "获取到官方 API 文档和定价信息",
+      "找到至少一篇真实用户评测或教程",
+      "确认 API 是否免费及覆盖范围"
+    ],
+    "confidence": 20,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "tool-ledger",
+    "research_plan": {
+      "core_question": "GitHub 新发布的预算与用量管理 API 对普通技术人的实际成本控制、工具链和开发工作流有何具体影响？",
+      "must_verify": [
+        "API 的具体功能：能否设置预算上限、用量告警、成本中心分配？",
+        "API 的定价模式：是免费使用还是按调用量计费？",
+        "API 的适用范围：是否覆盖 Actions、Packages、Codespaces 等所有计费项？",
+        "API 的文档和示例是否完整，普通开发者能否快速集成？",
+        "是否有真实用户案例或社区反馈，证明其实际效果或问题？"
+      ],
+      "search_queries": [
+        "GitHub budget management API pricing",
+        "GitHub usage management API documentation",
+        "GitHub Actions cost control API",
+        "GitHub Codespaces budget API",
+        "GitHub billing API review developer",
+        "GitHub cost center API example",
+        "GitHub API budget alert",
+        "GitHub billing API vs third-party tools"
+      ],
+      "best_sources_to_find": [
+        "GitHub 官方文档（docs.github.com）",
+        "GitHub 官方博客（github.blog）",
+        "GitHub 社区论坛（github.community）",
+        "GitHub 变更日志（github.blog/changelog）",
+        "技术博客（如 dev.to、medium）中的使用教程和评测",
+        "Reddit 的 r/github 和 r/devops 子版块"
+      ],
+      "expert_challenge_points": [
+        "API 是否支持实时预算控制，还是仅事后报告？",
+        "API 的预算上限是硬限制还是软告警？",
+        "API 是否支持跨组织或企业级成本中心？",
+        "API 的调用频率限制是否影响大规模自动化？",
+        "与现有第三方成本管理工具（如 Vantage、CloudHealth）相比，GitHub 原生 API 的优势和不足？"
+      ],
+      "do_not_claim_yet": [
+        "API 能显著降低 GitHub 使用成本",
+        "API 是免费且无限制的",
+        "API 覆盖所有 GitHub 计费项",
+        "API 易于集成且文档完善",
+        "API 已获得社区广泛好评"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取定价、文档细节或真实案例，则仅作为趋势线索发布，提醒读者关注 GitHub 成本管理能力的变化。",
+      "downstream_materials_needed": [
+        "GitHub 官方 API 文档页面（含参数和示例）",
+        "GitHub 官方定价页面（Actions、Codespaces 等）",
+        "至少一篇真实用户评测或教程",
+        "与第三方工具的对比分析（如表格）",
+        "常见问题 FAQ（如预算上限是否硬限制）"
+      ]
+    },
+    "research_evidence": []
   },
   "downstream_handoff": {
     "package_version": "radar-handoff-v1",
@@ -456,328 +390,262 @@
       "original_title": "Budget and usage management APIs now generally available",
       "source_url": "https://github.blog/changelog/2026-06-04-budget-and-usage-management-apis-now-generally-available",
       "selection_dossier": {
-        "schema": "topic-selection-dossier-v2",
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
         "verdict": {
-          "status": "待补证观察",
+          "status": "观察",
           "label": "观察",
-          "reason": "线索有方向价值，但事实、概念、案例或成本材料还不足，暂时不能直接写成正文。"
+          "reason": "核心事实（API 具体功能、定价、适用范围）尚未从官方文档或社区反馈中确认，无法判断对普通技术人的实际影响。当前线索仅来自一篇博客公告，缺乏多源交叉验证和真实案例。"
         },
-        "topic_direction": "ai-frontier",
-        "topic_direction_title": "AI 前沿与工具链",
-        "report_type": "tool-ledger",
-        "core_question": "这条线索能不能成为一个值得老花继续写的选题：GitHub 计费和成本变化",
-        "human_judgment_path": [
-          "先确认这件事是不是真的发生，而不是只看标题兴奋。",
-          "再确认它和读者有什么关系：能不能帮读者理解机会、成本、规则、坑或工具变化。",
-          "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
-          "再看逻辑是否闭环：事实、原因、影响、边界、可写角度能不能连起来。",
-          "最后决定：可选、观察、暂缓，而不是把所有线索都写成同一套报告。"
-        ],
-        "selection_questions": [
-          "这是不是明确发生的 AI 能力、价格、生态或平台规则变化，而不是普通产品小更新？",
-          "普通读者能不能听懂它改变了什么，程序员能不能看出技术和工具链价值？",
-          "有没有官方公告、文档、价格页、发布说明或可信近源材料？",
-          "能不能讲清楚发布时间线、能力变化、影响对象、成本门槛和替代关系？"
-        ],
-        "value_signals": [
-          "官方发布",
-          "影响开发者或高频 AI 用户",
-          "改变成本结构",
-          "改变工作流",
-          "有明确对比对象"
-        ],
-        "reject_signals": [
-          "只有产品名",
-          "只是 SDK 小版本",
-          "没有大众钩子",
-          "只能写成又一个工具更新"
-        ],
-        "topic_value_assessment": [
-          {
-            "question": "这是什么？",
-            "judgment": "Budget and usage management APIs now generally available"
-          },
-          {
-            "question": "和读者有什么关系？",
-            "judgment": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
-          },
-          {
-            "question": "为什么现在看？",
-            "judgment": "来自本批次稳定公开源，适合先进入 Radar 观察。"
-          },
-          {
-            "question": "事实清楚吗？",
-            "judgment": "基本清楚"
-          },
-          {
-            "question": "材料可靠吗？",
-            "judgment": "当前证据等级：official"
-          },
-          {
-            "question": "逻辑能闭环吗？",
-            "judgment": "需要补齐材料后才能闭环"
-          }
-        ],
-        "fact_clarity": {
-          "status": "基本清楚",
-          "summary_status": "有摘要",
-          "confirmed": [
-            "标题、来源 URL、来源类型、抓取时间已记录。",
-            "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
-          ],
-          "uncertainty": [
-            "尚未抓取正文外的补充证据。",
-            "尚未形成多源交叉验证。"
-          ]
-        },
-        "evidence_reliability": {
-          "level": "official",
-          "primary_source": "https://github.blog/changelog/2026-06-04-budget-and-usage-management-apis-now-generally-available",
-          "source_name": "GitHub Blog",
-          "cross_check_status": "待二次交叉验证",
-          "weak_points": [
-            "尚未抓取正文外的补充证据。",
-            "尚未形成多源交叉验证。"
-          ]
-        },
-        "logic_closure": [
-          {
-            "node": "事件是否存在",
-            "status": "已确认",
-            "note": "来源入口：GitHub Blog"
-          },
-          {
-            "node": "和读者是否有关",
-            "status": "初步成立",
-            "note": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
-          },
-          {
-            "node": "事实是否清楚",
-            "status": "基本清楚",
-            "note": "原始标题：Budget and usage management APIs now generally available"
-          },
-          {
-            "node": "材料是否足够写正文",
-            "status": "不足，需要补证",
-            "note": "Radar 只负责给出选题档案，不在证据不足时强行生成公众号正文。"
-          }
-        ],
+        "core_question": "GitHub 新发布的预算与用量管理 API 对普通技术人的实际成本控制、工具链和开发工作流有何具体影响？",
+        "why_this_topic_matters": "GitHub 是开发者核心平台，其计费 API 的开放可能改变团队成本管理方式，尤其对使用 Actions、Codespaces 等按量计费服务的个人开发者和小团队有直接财务影响。",
+        "fact_summary": [],
+        "timeline": [],
+        "evidence_table": [],
+        "logic_closure": "当前仅有一篇博客公告，未获取官方文档、定价信息或社区反馈，无法验证 API 是否支持硬预算上限、覆盖所有计费项、以及是否免费。逻辑链条断裂，无法形成闭环。",
         "writeable_angles": [
           {
-            "angle": "这次更新到底改变了什么",
-            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+            "angle": "GitHub 计费 API 功能详解与集成指南",
+            "why": "开发者最关心 API 能做什么、怎么用、成本如何。",
+            "needs": "官方 API 文档、定价页面、至少一个完整示例。"
           },
           {
-            "angle": "普通技术人该不该关注",
-            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+            "angle": "GitHub 原生 API vs 第三方成本管理工具对比",
+            "why": "帮助读者判断是否值得迁移或集成。",
+            "needs": "第三方工具（如 Vantage、CloudHealth）的功能和定价信息，对比表格。"
           },
           {
-            "angle": "成本和工具链会不会变化",
-            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-            "needs": "补齐事实、概念、证据、成本和边界后再写。"
-          },
-          {
-            "angle": "它替代了谁又替代不了谁",
-            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+            "angle": "真实用户评测：GitHub 计费 API 的实际效果与坑",
+            "why": "社区反馈能揭示文档未提及的限制或问题。",
+            "needs": "至少 2-3 篇真实用户评测或论坛讨论。"
           }
         ],
         "missing_basics": [
-          "产品/模型/Agent 基础概念",
-          "本次更新前后的差异",
-          "开放范围和使用门槛",
-          "价格、额度和地区限制"
+          "API 是否免费使用？",
+          "API 是否支持硬预算上限（阻止超额）还是仅告警？",
+          "API 覆盖哪些计费项（Actions、Packages、Codespaces 等）？",
+          "API 的调用频率限制是多少？",
+          "是否有官方文档页面？"
         ],
         "missing_materials": [
-          "官方公告",
-          "文档或 changelog",
-          "价格页",
-          "真实使用反馈",
-          "竞品对比材料",
-          "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
-          "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
-          "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+          "GitHub 官方 API 文档（含参数和示例）",
+          "GitHub 官方定价页面（Actions、Codespaces 等）",
+          "至少一篇真实用户评测或教程",
+          "与第三方工具的对比分析",
+          "常见问题 FAQ"
         ],
         "not_claimable": [
-          "不要声称老花已经实操验证。",
-          "不要声称普通人都能复制。",
-          "不要在证据不足时给完整行动方案。"
+          "API 能显著降低 GitHub 使用成本",
+          "API 是免费且无限制的",
+          "API 覆盖所有 GitHub 计费项",
+          "API 易于集成且文档完善",
+          "API 已获得社区广泛好评"
         ],
         "followup_queries": [
-          "工具账本：GitHub 计费和成本变化 官方公告 价格 成本",
-          "工具账本：GitHub 计费和成本变化 API 文档 额度 限制",
-          "工具账本：GitHub 计费和成本变化 替代方案 真实使用 成本"
+          "GitHub 预算管理 API 是否支持硬预算上限？",
+          "GitHub 用量管理 API 的定价模式是什么？",
+          "GitHub 计费 API 覆盖哪些服务？",
+          "开发者对 GitHub 新计费 API 的反馈如何？"
+        ],
+        "additional_search_queries": [
+          "GitHub budget management API pricing",
+          "GitHub usage management API documentation",
+          "GitHub Actions cost control API",
+          "GitHub Codespaces budget API",
+          "GitHub billing API review developer",
+          "GitHub cost center API example",
+          "GitHub API budget alert",
+          "GitHub billing API vs third-party tools"
         ],
         "stop_conditions": [
-          "找不到一手来源或近源证据。",
-          "无法说明这件事和读者有什么关系。",
-          "关键概念、成本、合规、收益或影响对象说不清。",
-          "逻辑必须靠想象补齐，写出来只会像假大空。"
-        ]
+          "获取到官方 API 文档和定价信息",
+          "找到至少一篇真实用户评测或教程",
+          "确认 API 是否免费及覆盖范围"
+        ],
+        "confidence": 20,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "tool-ledger",
+        "research_plan": {
+          "core_question": "GitHub 新发布的预算与用量管理 API 对普通技术人的实际成本控制、工具链和开发工作流有何具体影响？",
+          "must_verify": [
+            "API 的具体功能：能否设置预算上限、用量告警、成本中心分配？",
+            "API 的定价模式：是免费使用还是按调用量计费？",
+            "API 的适用范围：是否覆盖 Actions、Packages、Codespaces 等所有计费项？",
+            "API 的文档和示例是否完整，普通开发者能否快速集成？",
+            "是否有真实用户案例或社区反馈，证明其实际效果或问题？"
+          ],
+          "search_queries": [
+            "GitHub budget management API pricing",
+            "GitHub usage management API documentation",
+            "GitHub Actions cost control API",
+            "GitHub Codespaces budget API",
+            "GitHub billing API review developer",
+            "GitHub cost center API example",
+            "GitHub API budget alert",
+            "GitHub billing API vs third-party tools"
+          ],
+          "best_sources_to_find": [
+            "GitHub 官方文档（docs.github.com）",
+            "GitHub 官方博客（github.blog）",
+            "GitHub 社区论坛（github.community）",
+            "GitHub 变更日志（github.blog/changelog）",
+            "技术博客（如 dev.to、medium）中的使用教程和评测",
+            "Reddit 的 r/github 和 r/devops 子版块"
+          ],
+          "expert_challenge_points": [
+            "API 是否支持实时预算控制，还是仅事后报告？",
+            "API 的预算上限是硬限制还是软告警？",
+            "API 是否支持跨组织或企业级成本中心？",
+            "API 的调用频率限制是否影响大规模自动化？",
+            "与现有第三方成本管理工具（如 Vantage、CloudHealth）相比，GitHub 原生 API 的优势和不足？"
+          ],
+          "do_not_claim_yet": [
+            "API 能显著降低 GitHub 使用成本",
+            "API 是免费且无限制的",
+            "API 覆盖所有 GitHub 计费项",
+            "API 易于集成且文档完善",
+            "API 已获得社区广泛好评"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取定价、文档细节或真实案例，则仅作为趋势线索发布，提醒读者关注 GitHub 成本管理能力的变化。",
+          "downstream_materials_needed": [
+            "GitHub 官方 API 文档页面（含参数和示例）",
+            "GitHub 官方定价页面（Actions、Codespaces 等）",
+            "至少一篇真实用户评测或教程",
+            "与第三方工具的对比分析（如表格）",
+            "常见问题 FAQ（如预算上限是否硬限制）"
+          ]
+        },
+        "research_evidence": []
       },
       "material_pack": {
-        "schema": "topic-selection-dossier-v2",
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
         "verdict": {
-          "status": "待补证观察",
+          "status": "观察",
           "label": "观察",
-          "reason": "线索有方向价值，但事实、概念、案例或成本材料还不足，暂时不能直接写成正文。"
+          "reason": "核心事实（API 具体功能、定价、适用范围）尚未从官方文档或社区反馈中确认，无法判断对普通技术人的实际影响。当前线索仅来自一篇博客公告，缺乏多源交叉验证和真实案例。"
         },
-        "topic_direction": "ai-frontier",
-        "topic_direction_title": "AI 前沿与工具链",
-        "report_type": "tool-ledger",
-        "core_question": "这条线索能不能成为一个值得老花继续写的选题：GitHub 计费和成本变化",
-        "human_judgment_path": [
-          "先确认这件事是不是真的发生，而不是只看标题兴奋。",
-          "再确认它和读者有什么关系：能不能帮读者理解机会、成本、规则、坑或工具变化。",
-          "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
-          "再看逻辑是否闭环：事实、原因、影响、边界、可写角度能不能连起来。",
-          "最后决定：可选、观察、暂缓，而不是把所有线索都写成同一套报告。"
-        ],
-        "selection_questions": [
-          "这是不是明确发生的 AI 能力、价格、生态或平台规则变化，而不是普通产品小更新？",
-          "普通读者能不能听懂它改变了什么，程序员能不能看出技术和工具链价值？",
-          "有没有官方公告、文档、价格页、发布说明或可信近源材料？",
-          "能不能讲清楚发布时间线、能力变化、影响对象、成本门槛和替代关系？"
-        ],
-        "value_signals": [
-          "官方发布",
-          "影响开发者或高频 AI 用户",
-          "改变成本结构",
-          "改变工作流",
-          "有明确对比对象"
-        ],
-        "reject_signals": [
-          "只有产品名",
-          "只是 SDK 小版本",
-          "没有大众钩子",
-          "只能写成又一个工具更新"
-        ],
-        "topic_value_assessment": [
-          {
-            "question": "这是什么？",
-            "judgment": "Budget and usage management APIs now generally available"
-          },
-          {
-            "question": "和读者有什么关系？",
-            "judgment": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
-          },
-          {
-            "question": "为什么现在看？",
-            "judgment": "来自本批次稳定公开源，适合先进入 Radar 观察。"
-          },
-          {
-            "question": "事实清楚吗？",
-            "judgment": "基本清楚"
-          },
-          {
-            "question": "材料可靠吗？",
-            "judgment": "当前证据等级：official"
-          },
-          {
-            "question": "逻辑能闭环吗？",
-            "judgment": "需要补齐材料后才能闭环"
-          }
-        ],
-        "fact_clarity": {
-          "status": "基本清楚",
-          "summary_status": "有摘要",
-          "confirmed": [
-            "标题、来源 URL、来源类型、抓取时间已记录。",
-            "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
-          ],
-          "uncertainty": [
-            "尚未抓取正文外的补充证据。",
-            "尚未形成多源交叉验证。"
-          ]
-        },
-        "evidence_reliability": {
-          "level": "official",
-          "primary_source": "https://github.blog/changelog/2026-06-04-budget-and-usage-management-apis-now-generally-available",
-          "source_name": "GitHub Blog",
-          "cross_check_status": "待二次交叉验证",
-          "weak_points": [
-            "尚未抓取正文外的补充证据。",
-            "尚未形成多源交叉验证。"
-          ]
-        },
-        "logic_closure": [
-          {
-            "node": "事件是否存在",
-            "status": "已确认",
-            "note": "来源入口：GitHub Blog"
-          },
-          {
-            "node": "和读者是否有关",
-            "status": "初步成立",
-            "note": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
-          },
-          {
-            "node": "事实是否清楚",
-            "status": "基本清楚",
-            "note": "原始标题：Budget and usage management APIs now generally available"
-          },
-          {
-            "node": "材料是否足够写正文",
-            "status": "不足，需要补证",
-            "note": "Radar 只负责给出选题档案，不在证据不足时强行生成公众号正文。"
-          }
-        ],
+        "core_question": "GitHub 新发布的预算与用量管理 API 对普通技术人的实际成本控制、工具链和开发工作流有何具体影响？",
+        "why_this_topic_matters": "GitHub 是开发者核心平台，其计费 API 的开放可能改变团队成本管理方式，尤其对使用 Actions、Codespaces 等按量计费服务的个人开发者和小团队有直接财务影响。",
+        "fact_summary": [],
+        "timeline": [],
+        "evidence_table": [],
+        "logic_closure": "当前仅有一篇博客公告，未获取官方文档、定价信息或社区反馈，无法验证 API 是否支持硬预算上限、覆盖所有计费项、以及是否免费。逻辑链条断裂，无法形成闭环。",
         "writeable_angles": [
           {
-            "angle": "这次更新到底改变了什么",
-            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+            "angle": "GitHub 计费 API 功能详解与集成指南",
+            "why": "开发者最关心 API 能做什么、怎么用、成本如何。",
+            "needs": "官方 API 文档、定价页面、至少一个完整示例。"
           },
           {
-            "angle": "普通技术人该不该关注",
-            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+            "angle": "GitHub 原生 API vs 第三方成本管理工具对比",
+            "why": "帮助读者判断是否值得迁移或集成。",
+            "needs": "第三方工具（如 Vantage、CloudHealth）的功能和定价信息，对比表格。"
           },
           {
-            "angle": "成本和工具链会不会变化",
-            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-            "needs": "补齐事实、概念、证据、成本和边界后再写。"
-          },
-          {
-            "angle": "它替代了谁又替代不了谁",
-            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
-            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+            "angle": "真实用户评测：GitHub 计费 API 的实际效果与坑",
+            "why": "社区反馈能揭示文档未提及的限制或问题。",
+            "needs": "至少 2-3 篇真实用户评测或论坛讨论。"
           }
         ],
         "missing_basics": [
-          "产品/模型/Agent 基础概念",
-          "本次更新前后的差异",
-          "开放范围和使用门槛",
-          "价格、额度和地区限制"
+          "API 是否免费使用？",
+          "API 是否支持硬预算上限（阻止超额）还是仅告警？",
+          "API 覆盖哪些计费项（Actions、Packages、Codespaces 等）？",
+          "API 的调用频率限制是多少？",
+          "是否有官方文档页面？"
         ],
         "missing_materials": [
-          "官方公告",
-          "文档或 changelog",
-          "价格页",
-          "真实使用反馈",
-          "竞品对比材料",
-          "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
-          "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
-          "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+          "GitHub 官方 API 文档（含参数和示例）",
+          "GitHub 官方定价页面（Actions、Codespaces 等）",
+          "至少一篇真实用户评测或教程",
+          "与第三方工具的对比分析",
+          "常见问题 FAQ"
         ],
         "not_claimable": [
-          "不要声称老花已经实操验证。",
-          "不要声称普通人都能复制。",
-          "不要在证据不足时给完整行动方案。"
+          "API 能显著降低 GitHub 使用成本",
+          "API 是免费且无限制的",
+          "API 覆盖所有 GitHub 计费项",
+          "API 易于集成且文档完善",
+          "API 已获得社区广泛好评"
         ],
         "followup_queries": [
-          "工具账本：GitHub 计费和成本变化 官方公告 价格 成本",
-          "工具账本：GitHub 计费和成本变化 API 文档 额度 限制",
-          "工具账本：GitHub 计费和成本变化 替代方案 真实使用 成本"
+          "GitHub 预算管理 API 是否支持硬预算上限？",
+          "GitHub 用量管理 API 的定价模式是什么？",
+          "GitHub 计费 API 覆盖哪些服务？",
+          "开发者对 GitHub 新计费 API 的反馈如何？"
+        ],
+        "additional_search_queries": [
+          "GitHub budget management API pricing",
+          "GitHub usage management API documentation",
+          "GitHub Actions cost control API",
+          "GitHub Codespaces budget API",
+          "GitHub billing API review developer",
+          "GitHub cost center API example",
+          "GitHub API budget alert",
+          "GitHub billing API vs third-party tools"
         ],
         "stop_conditions": [
-          "找不到一手来源或近源证据。",
-          "无法说明这件事和读者有什么关系。",
-          "关键概念、成本、合规、收益或影响对象说不清。",
-          "逻辑必须靠想象补齐，写出来只会像假大空。"
-        ]
+          "获取到官方 API 文档和定价信息",
+          "找到至少一篇真实用户评测或教程",
+          "确认 API 是否免费及覆盖范围"
+        ],
+        "confidence": 20,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "tool-ledger",
+        "research_plan": {
+          "core_question": "GitHub 新发布的预算与用量管理 API 对普通技术人的实际成本控制、工具链和开发工作流有何具体影响？",
+          "must_verify": [
+            "API 的具体功能：能否设置预算上限、用量告警、成本中心分配？",
+            "API 的定价模式：是免费使用还是按调用量计费？",
+            "API 的适用范围：是否覆盖 Actions、Packages、Codespaces 等所有计费项？",
+            "API 的文档和示例是否完整，普通开发者能否快速集成？",
+            "是否有真实用户案例或社区反馈，证明其实际效果或问题？"
+          ],
+          "search_queries": [
+            "GitHub budget management API pricing",
+            "GitHub usage management API documentation",
+            "GitHub Actions cost control API",
+            "GitHub Codespaces budget API",
+            "GitHub billing API review developer",
+            "GitHub cost center API example",
+            "GitHub API budget alert",
+            "GitHub billing API vs third-party tools"
+          ],
+          "best_sources_to_find": [
+            "GitHub 官方文档（docs.github.com）",
+            "GitHub 官方博客（github.blog）",
+            "GitHub 社区论坛（github.community）",
+            "GitHub 变更日志（github.blog/changelog）",
+            "技术博客（如 dev.to、medium）中的使用教程和评测",
+            "Reddit 的 r/github 和 r/devops 子版块"
+          ],
+          "expert_challenge_points": [
+            "API 是否支持实时预算控制，还是仅事后报告？",
+            "API 的预算上限是硬限制还是软告警？",
+            "API 是否支持跨组织或企业级成本中心？",
+            "API 的调用频率限制是否影响大规模自动化？",
+            "与现有第三方成本管理工具（如 Vantage、CloudHealth）相比，GitHub 原生 API 的优势和不足？"
+          ],
+          "do_not_claim_yet": [
+            "API 能显著降低 GitHub 使用成本",
+            "API 是免费且无限制的",
+            "API 覆盖所有 GitHub 计费项",
+            "API 易于集成且文档完善",
+            "API 已获得社区广泛好评"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取定价、文档细节或真实案例，则仅作为趋势线索发布，提醒读者关注 GitHub 成本管理能力的变化。",
+          "downstream_materials_needed": [
+            "GitHub 官方 API 文档页面（含参数和示例）",
+            "GitHub 官方定价页面（Actions、Codespaces 等）",
+            "至少一篇真实用户评测或教程",
+            "与第三方工具的对比分析（如表格）",
+            "常见问题 FAQ（如预算上限是否硬限制）"
+          ]
+        },
+        "research_evidence": []
       },
       "angle_candidates": [
         "成本是否真的下降",
