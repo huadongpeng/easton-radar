@@ -1,0 +1,659 @@
+{
+  "id": "20260609-oomol-ai-agent-600-16cd802f",
+  "title": "工具账本：OOMOL AI 编程工具变化",
+  "original_title": "[软件推广 - 抽奖] OOMOL: 一次连接，随处使用 — 本地 AI Agent 安全调用近 600 个第三方服务，凭证不落本地",
+  "url": "https://www.v2ex.com/t/1219012",
+  "summary": "最近几个月，我们团队做了一个新的东西，也是目前我们主推的一个产品: OOMOL OOMOL：让你本地的 AI Agent （ Claude Code 、Codex 等）能安全地调用你自己的第三方账号和服务。 你对一个服务授权一次，之后本机的 AI 就能随时用上它，不用每次重新贴 token 、配 MCP 。 目前我们的 connector 支持近 600 个 service （ provider ） ，覆盖 6000 多个 action （动作） 。 它能做到什么 授权完之后，你在 Claude / Codex 里直接说出需求就好，如： /oo 帮我看看 gmail 里最近 3 天的邮件 我们也支持跨服务串联: /oo 将我最近 2 天 github 的 PR 汇总，写入到 notion 中的「 github 总结」下的子页面中 同时，你可以非常方便的在不同电脑中使用，无需重新配置鉴权，只需要在另一台电脑中安装并登录 oo 即可。 而且，我们还内置了 oo skills sync upload 和 oo skills sync download ，以便你可以在不同电脑中同步 SKILL 。 工作流程 在 OOMOL Console 对第三方服务做一次 OAuth 授权（比如授权 Google ），或填入你自己在某个平台的 API Key 。凭证从这一步起就加密托管在云端。 安装 oo-cli oo-cli 首次启动会往本地 AI Agent 的 skills 目录里释放内置的 skills （写到 ~/.claude/skills 、 ~/.agents/skills 这类目录），这一步自动完成。 之后你在 Claude / Codex 里输入自然语言描述需求。 oo skill 调 oo-cli → 连上 connector → 云端用你授权好的凭证发请求 → 返回结果。 provider 和 action 用的时候会反复见到这两个概念，所以这里简单描述下: 每个服务是一个 provider 。比如 gmail 、 googlecalendar 、 googledri",
+  "source_category": "developer_business",
+  "source_category_title": "开发者副业与独立开发",
+  "topic_direction": "traffic-rules",
+  "topic_direction_title": "平台规则与流量生态",
+  "topic_direction_short_title": "平台流量",
+  "topic_direction_description": "公众号、小红书、视频号、Google SEO、AI SEO、平台政策、账号限制、推荐机制和内容分发生态变化。重点看哪些规则会影响流量、账号、合规、内容收益和后续变现。",
+  "source_name": "V2EX 分享创造",
+  "original_source_name": "分享创造",
+  "source_type": "rss",
+  "feed_url": "https://v2ex.com/feed/create.xml",
+  "published_at": "2026-06-09T03:49:32Z",
+  "fetched_at": "2026-06-09T07:56:47.211329+00:00",
+  "decision": "brief",
+  "report_type": "tool-ledger",
+  "report_type_title": "工具账本",
+  "score": 60,
+  "reader_hook": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。",
+  "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "AI Agent安全调用第三方服务",
+  "collection_fit": "符合收集原则：来源可复查，且具备进入「工具账本」类报告的分析价值。",
+  "investigation_direction": "优先追价格页、额度、API 文档、替代方案和实际成本边界。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。"
+  ],
+  "facts": [
+    {
+      "claim": "V2EX 分享创造 发布/收录了这条原始线索：[软件推广 - 抽奖] OOMOL: 一次连接，随处使用 — 本地 AI Agent 安全调用近 600 个第三方服务，凭证不落本地",
+      "type": "confirmed_fact",
+      "source_url": "https://www.v2ex.com/t/1219012",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "V2EX 分享创造",
+      "url": "https://www.v2ex.com/t/1219012",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "ai",
+        "agent",
+        "claude",
+        "token"
+      ],
+      "dev": [
+        "github",
+        "api"
+      ],
+      "platform": [
+        "google",
+        "平台"
+      ]
+    },
+    "source_host": "www.v2ex.com",
+    "source_type": "rss",
+    "heuristic": false,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。",
+    "fit_for_radar": false
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://v2ex.com/feed/create.xml",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "观察",
+      "label": "观察",
+      "reason": "线索有价值但关键信息缺失：定价、安全方案、用户真实反馈均未获取，无法判断是否值得普通技术人尝试。需补充证据后再决定是否可选。"
+    },
+    "core_question": "OOMOL 工具的实际成本、安全风险、用户真实反馈如何？是否值得普通技术人尝试？",
+    "why_this_topic_matters": "AI Agent 调用第三方服务是当前热门需求，OOMOL 声称简化凭证管理和跨服务串联，可能降低普通技术人使用 AI Agent 的门槛。但凭证托管在云端的安全性和定价模式直接影响是否值得采用，需要核实。",
+    "fact_summary": [],
+    "timeline": [],
+    "evidence_table": [],
+    "logic_closure": "目前仅有 V2EX 推广帖，无定价、安全细节、用户评价等关键信息，无法形成逻辑闭环。",
+    "writeable_angles": [
+      {
+        "angle": "成本对比：OOMOL vs 自建 MCP vs Zapier",
+        "why": "普通技术人最关心成本，对比能直观展示是否划算。",
+        "needs": "OOMOL 定价页面、免费额度、自建 MCP 的隐形成本（时间、服务器）"
+      },
+      {
+        "angle": "安全风险分析：凭证托管云端的攻击面",
+        "why": "安全是核心顾虑，分析能帮助读者判断是否可信。",
+        "needs": "OOMOL 安全白皮书、加密方案、是否开源、审计报告"
+      },
+      {
+        "angle": "实际体验评测：从安装到串联服务的完整流程",
+        "why": "实操评测能验证宣传是否属实，发现隐藏问题。",
+        "needs": "实际使用体验、常见问题、与竞品对比"
+      }
+    ],
+    "missing_basics": [
+      "OOMOL 定价页面和免费额度",
+      "凭证加密托管的具体技术方案",
+      "用户真实评价（正面和负面）",
+      "支持的 600 个服务列表及实际可用性"
+    ],
+    "missing_materials": [
+      "定价截图或文字说明",
+      "安全白皮书或技术文档",
+      "至少 3 条真实用户评价",
+      "与竞品（如 MCP、Zapier）的对比表格"
+    ],
+    "not_claimable": [
+      "OOMOL 是安全的最佳实践",
+      "OOMOL 比自建方案更便宜",
+      "OOMOL 获得广泛好评"
+    ],
+    "followup_queries": [
+      "OOMOL 的定价页面是什么？",
+      "OOMOL 是否有 GitHub 仓库或安全文档？",
+      "V2EX 原帖下有哪些用户评论？",
+      "是否有其他社区（如 Hacker News、Reddit）讨论 OOMOL？"
+    ],
+    "additional_search_queries": [
+      "OOMOL pricing",
+      "OOMOL security encryption",
+      "OOMOL review",
+      "OOMOL vs MCP",
+      "OOMOL 价格",
+      "OOMOL 安全 凭证 加密",
+      "OOMOL 用户评价",
+      "OOMOL 替代方案"
+    ],
+    "stop_conditions": [
+      "获取到定价页面且免费额度足够日常使用",
+      "获取到安全白皮书且方案合理",
+      "获取到至少 3 条真实用户评价且无明显负面信号"
+    ],
+    "confidence": 30,
+    "topic_direction": "traffic-rules",
+    "topic_direction_title": "平台规则与流量生态",
+    "report_type": "tool-ledger",
+    "research_plan": {
+      "core_question": "OOMOL 工具的实际成本、安全风险、用户真实反馈如何？是否值得普通技术人尝试？",
+      "must_verify": [
+        "OOMOL 的定价页面和免费额度",
+        "凭证加密托管的具体技术方案（是否开源、审计）",
+        "用户真实评价（V2EX 帖子内回复、其他社区讨论）",
+        "支持的 600 个服务列表及实际可用性",
+        "与直接使用 MCP 或自建方案的成本对比"
+      ],
+      "search_queries": [
+        "OOMOL pricing",
+        "OOMOL security encryption",
+        "OOMOL review",
+        "OOMOL vs MCP",
+        "OOMOL 价格",
+        "OOMOL 安全 凭证 加密",
+        "OOMOL 用户评价",
+        "OOMOL 替代方案"
+      ],
+      "best_sources_to_find": [
+        "OOMOL 官网定价页",
+        "OOMOL GitHub 仓库（如有）",
+        "V2EX 原帖评论",
+        "Hacker News 或 Reddit 讨论",
+        "技术博客评测"
+      ],
+      "expert_challenge_points": [
+        "凭证托管在云端是否增加攻击面？",
+        "免费额度是否足够日常使用？",
+        "与直接使用 MCP 相比，是否真的简化了流程？",
+        "600 个服务中，有多少是常用且稳定的？"
+      ],
+      "do_not_claim_yet": [
+        "OOMOL 是安全的最佳实践",
+        "OOMOL 比自建方案更便宜",
+        "OOMOL 获得广泛好评"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取定价、安全细节和用户反馈，则不适合发布，因为缺乏关键信息。",
+      "downstream_materials_needed": [
+        "定价截图或文字说明",
+        "安全白皮书或技术文档",
+        "至少 3 条真实用户评价（正面和负面）",
+        "与竞品（如 MCP、Zapier）的对比表格"
+      ]
+    },
+    "research_evidence": []
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "观察",
+      "label": "观察",
+      "reason": "线索有价值但关键信息缺失：定价、安全方案、用户真实反馈均未获取，无法判断是否值得普通技术人尝试。需补充证据后再决定是否可选。"
+    },
+    "core_question": "OOMOL 工具的实际成本、安全风险、用户真实反馈如何？是否值得普通技术人尝试？",
+    "why_this_topic_matters": "AI Agent 调用第三方服务是当前热门需求，OOMOL 声称简化凭证管理和跨服务串联，可能降低普通技术人使用 AI Agent 的门槛。但凭证托管在云端的安全性和定价模式直接影响是否值得采用，需要核实。",
+    "fact_summary": [],
+    "timeline": [],
+    "evidence_table": [],
+    "logic_closure": "目前仅有 V2EX 推广帖，无定价、安全细节、用户评价等关键信息，无法形成逻辑闭环。",
+    "writeable_angles": [
+      {
+        "angle": "成本对比：OOMOL vs 自建 MCP vs Zapier",
+        "why": "普通技术人最关心成本，对比能直观展示是否划算。",
+        "needs": "OOMOL 定价页面、免费额度、自建 MCP 的隐形成本（时间、服务器）"
+      },
+      {
+        "angle": "安全风险分析：凭证托管云端的攻击面",
+        "why": "安全是核心顾虑，分析能帮助读者判断是否可信。",
+        "needs": "OOMOL 安全白皮书、加密方案、是否开源、审计报告"
+      },
+      {
+        "angle": "实际体验评测：从安装到串联服务的完整流程",
+        "why": "实操评测能验证宣传是否属实，发现隐藏问题。",
+        "needs": "实际使用体验、常见问题、与竞品对比"
+      }
+    ],
+    "missing_basics": [
+      "OOMOL 定价页面和免费额度",
+      "凭证加密托管的具体技术方案",
+      "用户真实评价（正面和负面）",
+      "支持的 600 个服务列表及实际可用性"
+    ],
+    "missing_materials": [
+      "定价截图或文字说明",
+      "安全白皮书或技术文档",
+      "至少 3 条真实用户评价",
+      "与竞品（如 MCP、Zapier）的对比表格"
+    ],
+    "not_claimable": [
+      "OOMOL 是安全的最佳实践",
+      "OOMOL 比自建方案更便宜",
+      "OOMOL 获得广泛好评"
+    ],
+    "followup_queries": [
+      "OOMOL 的定价页面是什么？",
+      "OOMOL 是否有 GitHub 仓库或安全文档？",
+      "V2EX 原帖下有哪些用户评论？",
+      "是否有其他社区（如 Hacker News、Reddit）讨论 OOMOL？"
+    ],
+    "additional_search_queries": [
+      "OOMOL pricing",
+      "OOMOL security encryption",
+      "OOMOL review",
+      "OOMOL vs MCP",
+      "OOMOL 价格",
+      "OOMOL 安全 凭证 加密",
+      "OOMOL 用户评价",
+      "OOMOL 替代方案"
+    ],
+    "stop_conditions": [
+      "获取到定价页面且免费额度足够日常使用",
+      "获取到安全白皮书且方案合理",
+      "获取到至少 3 条真实用户评价且无明显负面信号"
+    ],
+    "confidence": 30,
+    "topic_direction": "traffic-rules",
+    "topic_direction_title": "平台规则与流量生态",
+    "report_type": "tool-ledger",
+    "research_plan": {
+      "core_question": "OOMOL 工具的实际成本、安全风险、用户真实反馈如何？是否值得普通技术人尝试？",
+      "must_verify": [
+        "OOMOL 的定价页面和免费额度",
+        "凭证加密托管的具体技术方案（是否开源、审计）",
+        "用户真实评价（V2EX 帖子内回复、其他社区讨论）",
+        "支持的 600 个服务列表及实际可用性",
+        "与直接使用 MCP 或自建方案的成本对比"
+      ],
+      "search_queries": [
+        "OOMOL pricing",
+        "OOMOL security encryption",
+        "OOMOL review",
+        "OOMOL vs MCP",
+        "OOMOL 价格",
+        "OOMOL 安全 凭证 加密",
+        "OOMOL 用户评价",
+        "OOMOL 替代方案"
+      ],
+      "best_sources_to_find": [
+        "OOMOL 官网定价页",
+        "OOMOL GitHub 仓库（如有）",
+        "V2EX 原帖评论",
+        "Hacker News 或 Reddit 讨论",
+        "技术博客评测"
+      ],
+      "expert_challenge_points": [
+        "凭证托管在云端是否增加攻击面？",
+        "免费额度是否足够日常使用？",
+        "与直接使用 MCP 相比，是否真的简化了流程？",
+        "600 个服务中，有多少是常用且稳定的？"
+      ],
+      "do_not_claim_yet": [
+        "OOMOL 是安全的最佳实践",
+        "OOMOL 比自建方案更便宜",
+        "OOMOL 获得广泛好评"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取定价、安全细节和用户反馈，则不适合发布，因为缺乏关键信息。",
+      "downstream_materials_needed": [
+        "定价截图或文字说明",
+        "安全白皮书或技术文档",
+        "至少 3 条真实用户评价（正面和负面）",
+        "与竞品（如 MCP、Zapier）的对比表格"
+      ]
+    },
+    "research_evidence": []
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260609-oomol-ai-agent-600-16cd802f/",
+    "for_gpt_editor": {
+      "brief": "最近几个月，我们团队做了一个新的东西，也是目前我们主推的一个产品: OOMOL OOMOL：让你本地的 AI Agent （ Claude Code 、Codex 等）能安全地调用你自己的第三方账号和服务。 你对一个服务授权一次，之后本机的 AI 就能随时用上它，不用每次重新贴 token 、配 MCP 。 目前我们的 connector 支持近 600 个 service （ provider ） ，覆盖 6000 多个 action （动作） 。 它能做到什么 授权完之后，你在 Claude / Codex 里直接说出需求就好，如： /oo 帮我看看 gmail 里最近 3 天的邮件 我们也支持跨服务串联: /oo 将我最近 2 天 github 的 PR 汇总，写入到 notion 中的「 github 总结」下的子页面中 同时，你可以非常方便的在不同电脑中使用，无需重新配置鉴权，只需要在另一台电脑中安装并登录 oo 即可。 而且，我们还内置了 oo skills sync upload 和 oo skills sync download ，以便你可以在不同电脑中同步 SKILL 。 工作流程 在 OOMOL Console 对第三方服务做一次 OAuth 授权（比如授权 Google ），或填入你自己在某个平台的 API Key 。凭证从这一步起就加密托管在云端。 安装 oo-cli oo-cli 首次启动会往本地 AI Agent 的 skills 目录里释放内置的 skills （写到 ~/.claude/skills 、 ~/.agents/skills 这类目录），这一步自动完成。 之后你在 Claude / Codex 里输入自然语言描述需求。 oo skill 调 oo-cli → 连上 connector → 云端用你授权好的凭证发请求 → 返回结果。 provider 和 action 用的时候会反复见到这两个概念，所以这里简单描述下: 每个服务是一个 provider 。比如 gmail 、 googlecalendar 、 googledri",
+      "title_seed": "工具账本：OOMOL AI 编程工具变化",
+      "original_title": "[软件推广 - 抽奖] OOMOL: 一次连接，随处使用 — 本地 AI Agent 安全调用近 600 个第三方服务，凭证不落本地",
+      "source_url": "https://www.v2ex.com/t/1219012",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "观察",
+          "label": "观察",
+          "reason": "线索有价值但关键信息缺失：定价、安全方案、用户真实反馈均未获取，无法判断是否值得普通技术人尝试。需补充证据后再决定是否可选。"
+        },
+        "core_question": "OOMOL 工具的实际成本、安全风险、用户真实反馈如何？是否值得普通技术人尝试？",
+        "why_this_topic_matters": "AI Agent 调用第三方服务是当前热门需求，OOMOL 声称简化凭证管理和跨服务串联，可能降低普通技术人使用 AI Agent 的门槛。但凭证托管在云端的安全性和定价模式直接影响是否值得采用，需要核实。",
+        "fact_summary": [],
+        "timeline": [],
+        "evidence_table": [],
+        "logic_closure": "目前仅有 V2EX 推广帖，无定价、安全细节、用户评价等关键信息，无法形成逻辑闭环。",
+        "writeable_angles": [
+          {
+            "angle": "成本对比：OOMOL vs 自建 MCP vs Zapier",
+            "why": "普通技术人最关心成本，对比能直观展示是否划算。",
+            "needs": "OOMOL 定价页面、免费额度、自建 MCP 的隐形成本（时间、服务器）"
+          },
+          {
+            "angle": "安全风险分析：凭证托管云端的攻击面",
+            "why": "安全是核心顾虑，分析能帮助读者判断是否可信。",
+            "needs": "OOMOL 安全白皮书、加密方案、是否开源、审计报告"
+          },
+          {
+            "angle": "实际体验评测：从安装到串联服务的完整流程",
+            "why": "实操评测能验证宣传是否属实，发现隐藏问题。",
+            "needs": "实际使用体验、常见问题、与竞品对比"
+          }
+        ],
+        "missing_basics": [
+          "OOMOL 定价页面和免费额度",
+          "凭证加密托管的具体技术方案",
+          "用户真实评价（正面和负面）",
+          "支持的 600 个服务列表及实际可用性"
+        ],
+        "missing_materials": [
+          "定价截图或文字说明",
+          "安全白皮书或技术文档",
+          "至少 3 条真实用户评价",
+          "与竞品（如 MCP、Zapier）的对比表格"
+        ],
+        "not_claimable": [
+          "OOMOL 是安全的最佳实践",
+          "OOMOL 比自建方案更便宜",
+          "OOMOL 获得广泛好评"
+        ],
+        "followup_queries": [
+          "OOMOL 的定价页面是什么？",
+          "OOMOL 是否有 GitHub 仓库或安全文档？",
+          "V2EX 原帖下有哪些用户评论？",
+          "是否有其他社区（如 Hacker News、Reddit）讨论 OOMOL？"
+        ],
+        "additional_search_queries": [
+          "OOMOL pricing",
+          "OOMOL security encryption",
+          "OOMOL review",
+          "OOMOL vs MCP",
+          "OOMOL 价格",
+          "OOMOL 安全 凭证 加密",
+          "OOMOL 用户评价",
+          "OOMOL 替代方案"
+        ],
+        "stop_conditions": [
+          "获取到定价页面且免费额度足够日常使用",
+          "获取到安全白皮书且方案合理",
+          "获取到至少 3 条真实用户评价且无明显负面信号"
+        ],
+        "confidence": 30,
+        "topic_direction": "traffic-rules",
+        "topic_direction_title": "平台规则与流量生态",
+        "report_type": "tool-ledger",
+        "research_plan": {
+          "core_question": "OOMOL 工具的实际成本、安全风险、用户真实反馈如何？是否值得普通技术人尝试？",
+          "must_verify": [
+            "OOMOL 的定价页面和免费额度",
+            "凭证加密托管的具体技术方案（是否开源、审计）",
+            "用户真实评价（V2EX 帖子内回复、其他社区讨论）",
+            "支持的 600 个服务列表及实际可用性",
+            "与直接使用 MCP 或自建方案的成本对比"
+          ],
+          "search_queries": [
+            "OOMOL pricing",
+            "OOMOL security encryption",
+            "OOMOL review",
+            "OOMOL vs MCP",
+            "OOMOL 价格",
+            "OOMOL 安全 凭证 加密",
+            "OOMOL 用户评价",
+            "OOMOL 替代方案"
+          ],
+          "best_sources_to_find": [
+            "OOMOL 官网定价页",
+            "OOMOL GitHub 仓库（如有）",
+            "V2EX 原帖评论",
+            "Hacker News 或 Reddit 讨论",
+            "技术博客评测"
+          ],
+          "expert_challenge_points": [
+            "凭证托管在云端是否增加攻击面？",
+            "免费额度是否足够日常使用？",
+            "与直接使用 MCP 相比，是否真的简化了流程？",
+            "600 个服务中，有多少是常用且稳定的？"
+          ],
+          "do_not_claim_yet": [
+            "OOMOL 是安全的最佳实践",
+            "OOMOL 比自建方案更便宜",
+            "OOMOL 获得广泛好评"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取定价、安全细节和用户反馈，则不适合发布，因为缺乏关键信息。",
+          "downstream_materials_needed": [
+            "定价截图或文字说明",
+            "安全白皮书或技术文档",
+            "至少 3 条真实用户评价（正面和负面）",
+            "与竞品（如 MCP、Zapier）的对比表格"
+          ]
+        },
+        "research_evidence": []
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "观察",
+          "label": "观察",
+          "reason": "线索有价值但关键信息缺失：定价、安全方案、用户真实反馈均未获取，无法判断是否值得普通技术人尝试。需补充证据后再决定是否可选。"
+        },
+        "core_question": "OOMOL 工具的实际成本、安全风险、用户真实反馈如何？是否值得普通技术人尝试？",
+        "why_this_topic_matters": "AI Agent 调用第三方服务是当前热门需求，OOMOL 声称简化凭证管理和跨服务串联，可能降低普通技术人使用 AI Agent 的门槛。但凭证托管在云端的安全性和定价模式直接影响是否值得采用，需要核实。",
+        "fact_summary": [],
+        "timeline": [],
+        "evidence_table": [],
+        "logic_closure": "目前仅有 V2EX 推广帖，无定价、安全细节、用户评价等关键信息，无法形成逻辑闭环。",
+        "writeable_angles": [
+          {
+            "angle": "成本对比：OOMOL vs 自建 MCP vs Zapier",
+            "why": "普通技术人最关心成本，对比能直观展示是否划算。",
+            "needs": "OOMOL 定价页面、免费额度、自建 MCP 的隐形成本（时间、服务器）"
+          },
+          {
+            "angle": "安全风险分析：凭证托管云端的攻击面",
+            "why": "安全是核心顾虑，分析能帮助读者判断是否可信。",
+            "needs": "OOMOL 安全白皮书、加密方案、是否开源、审计报告"
+          },
+          {
+            "angle": "实际体验评测：从安装到串联服务的完整流程",
+            "why": "实操评测能验证宣传是否属实，发现隐藏问题。",
+            "needs": "实际使用体验、常见问题、与竞品对比"
+          }
+        ],
+        "missing_basics": [
+          "OOMOL 定价页面和免费额度",
+          "凭证加密托管的具体技术方案",
+          "用户真实评价（正面和负面）",
+          "支持的 600 个服务列表及实际可用性"
+        ],
+        "missing_materials": [
+          "定价截图或文字说明",
+          "安全白皮书或技术文档",
+          "至少 3 条真实用户评价",
+          "与竞品（如 MCP、Zapier）的对比表格"
+        ],
+        "not_claimable": [
+          "OOMOL 是安全的最佳实践",
+          "OOMOL 比自建方案更便宜",
+          "OOMOL 获得广泛好评"
+        ],
+        "followup_queries": [
+          "OOMOL 的定价页面是什么？",
+          "OOMOL 是否有 GitHub 仓库或安全文档？",
+          "V2EX 原帖下有哪些用户评论？",
+          "是否有其他社区（如 Hacker News、Reddit）讨论 OOMOL？"
+        ],
+        "additional_search_queries": [
+          "OOMOL pricing",
+          "OOMOL security encryption",
+          "OOMOL review",
+          "OOMOL vs MCP",
+          "OOMOL 价格",
+          "OOMOL 安全 凭证 加密",
+          "OOMOL 用户评价",
+          "OOMOL 替代方案"
+        ],
+        "stop_conditions": [
+          "获取到定价页面且免费额度足够日常使用",
+          "获取到安全白皮书且方案合理",
+          "获取到至少 3 条真实用户评价且无明显负面信号"
+        ],
+        "confidence": 30,
+        "topic_direction": "traffic-rules",
+        "topic_direction_title": "平台规则与流量生态",
+        "report_type": "tool-ledger",
+        "research_plan": {
+          "core_question": "OOMOL 工具的实际成本、安全风险、用户真实反馈如何？是否值得普通技术人尝试？",
+          "must_verify": [
+            "OOMOL 的定价页面和免费额度",
+            "凭证加密托管的具体技术方案（是否开源、审计）",
+            "用户真实评价（V2EX 帖子内回复、其他社区讨论）",
+            "支持的 600 个服务列表及实际可用性",
+            "与直接使用 MCP 或自建方案的成本对比"
+          ],
+          "search_queries": [
+            "OOMOL pricing",
+            "OOMOL security encryption",
+            "OOMOL review",
+            "OOMOL vs MCP",
+            "OOMOL 价格",
+            "OOMOL 安全 凭证 加密",
+            "OOMOL 用户评价",
+            "OOMOL 替代方案"
+          ],
+          "best_sources_to_find": [
+            "OOMOL 官网定价页",
+            "OOMOL GitHub 仓库（如有）",
+            "V2EX 原帖评论",
+            "Hacker News 或 Reddit 讨论",
+            "技术博客评测"
+          ],
+          "expert_challenge_points": [
+            "凭证托管在云端是否增加攻击面？",
+            "免费额度是否足够日常使用？",
+            "与直接使用 MCP 相比，是否真的简化了流程？",
+            "600 个服务中，有多少是常用且稳定的？"
+          ],
+          "do_not_claim_yet": [
+            "OOMOL 是安全的最佳实践",
+            "OOMOL 比自建方案更便宜",
+            "OOMOL 获得广泛好评"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取定价、安全细节和用户反馈，则不适合发布，因为缺乏关键信息。",
+          "downstream_materials_needed": [
+            "定价截图或文字说明",
+            "安全白皮书或技术文档",
+            "至少 3 条真实用户评价（正面和负面）",
+            "与竞品（如 MCP、Zapier）的对比表格"
+          ]
+        },
+        "research_evidence": []
+      },
+      "angle_candidates": [
+        "成本是否真的下降",
+        "免费额度和爆账单风险",
+        "替代方案值不值得换"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留普通读者入口，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "工具账本：OOMOL AI 编程工具变化 官方公告 价格 成本",
+        "工具账本：OOMOL AI 编程工具变化 API 文档 额度 限制",
+        "工具账本：OOMOL AI 编程工具变化 替代方案 真实使用 成本"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
