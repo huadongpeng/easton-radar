@@ -24,6 +24,7 @@ CONFIG_DIR = ROOT / "config"
 DATA_DIR = ROOT / "data"
 REPORTS_DIR = ROOT / "reports"
 SITE_DIR = ROOT / "site"
+TOPIC_ARCHIVE_PATH = DATA_DIR / "topic_archive.json"
 
 USER_AGENT = "EastonRadar/0.1 (+https://radar.huadongpeng.com)"
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
@@ -105,8 +106,9 @@ def clean_generated_outputs() -> None:
         path.unlink()
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     for path in DATA_DIR.glob("*.json"):
-        path.unlink()
-    for rel in ["items", "reports", "topics", "briefings", "about", "assets"]:
+        if path.name != TOPIC_ARCHIVE_PATH.name:
+            path.unlink()
+    for rel in ["items", "reports", "topics", "briefings", "archive", "about", "assets"]:
         target = SITE_DIR / rel
         if target.exists():
             shutil.rmtree(target)
@@ -137,10 +139,192 @@ def slugify(text: str, fallback: str = "report") -> str:
     return f"{ascii_part or fallback}-{digest}"
 
 
+def topic_fingerprint(text: str) -> str:
+    text = html.unescape(text or "").lower()
+    text = re.sub(r"https?://\S+", " ", text)
+    text = re.sub(r"[^a-z0-9\u4e00-\u9fff]+", " ", text)
+    stop_words = {
+        "the", "and", "for", "with", "from", "now", "new", "update", "updates",
+        "工具账本", "案例复盘", "深度调查", "机会拆解", "平台规则", "风险避坑",
+    }
+    tokens = [token for token in text.split() if token and token not in stop_words]
+    return " ".join(tokens[:14])
+
+
+def load_topic_archive() -> dict[str, Any]:
+    if not TOPIC_ARCHIVE_PATH.exists():
+        return {"version": 1, "items": []}
+    try:
+        data = json.loads(TOPIC_ARCHIVE_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return {"version": 1, "items": []}
+    if not isinstance(data, dict):
+        return {"version": 1, "items": []}
+    data.setdefault("version", 1)
+    data.setdefault("items", [])
+    return data
+
+
+def recent_archive_items(archive: dict[str, Any], days: int = 14) -> list[dict[str, Any]]:
+    cutoff = now_utc() - dt.timedelta(days=days)
+    recent: list[dict[str, Any]] = []
+    for item in archive.get("items", []):
+        value = item.get("first_seen_at") or item.get("last_seen_at") or ""
+        try:
+            seen = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
+        except Exception:
+            seen = now_utc()
+        if seen >= cutoff:
+            recent.append(item)
+    return recent
+
+
+def is_duplicate_topic(decision: "RadarDecision", site: dict[str, Any], archive: dict[str, Any], batch_id: str, days: int = 14) -> tuple[bool, str]:
+    topic_key, _ = topic_direction_for_item(decision.item, decision.report_type, site)
+    url = normalize_url(decision.item.url)
+    fingerprint = topic_fingerprint(decision.report_title or decision.item.title)
+    for item in recent_archive_items(archive, days):
+        if item.get("batch_id") == batch_id:
+            continue
+        if item.get("url") and normalize_url(str(item.get("url"))) == url:
+            return True, f"近 {days} 天已收录同 URL：{item.get('title', '')}"
+        if item.get("topic_direction") == topic_key and item.get("fingerprint") and item.get("fingerprint") == fingerprint:
+            return True, f"近 {days} 天已收录相同选题：{item.get('title', '')}"
+    return False, ""
+
+
+def archive_entry(report: dict[str, Any], batch: dict[str, Any]) -> dict[str, Any]:
+    dossier = report.get("selection_dossier") or report.get("material_pack") or {}
+    verdict = dossier.get("verdict", {})
+    now = batch.get("generated_at") or now_utc().isoformat()
+    return {
+        "id": report["id"],
+        "batch_id": batch["batch_id"],
+        "title": display_report_title(report),
+        "original_title": report.get("original_title", ""),
+        "url": report.get("url", ""),
+        "fingerprint": topic_fingerprint(report.get("title") or report.get("original_title", "")),
+        "topic_direction": report.get("topic_direction", ""),
+        "topic_direction_title": report.get("topic_direction_title", ""),
+        "verdict": verdict.get("label") or verdict.get("status") or "待判断",
+        "evidence_level": report.get("evidence_level", ""),
+        "score": report.get("score", 0),
+        "first_seen_at": now,
+        "last_seen_at": now,
+        "item_url": f"/items/{report['id']}/",
+    }
+
+
+def update_topic_archive(archive: dict[str, Any], reports: list[dict[str, Any]], batch: dict[str, Any]) -> dict[str, Any]:
+    existing = archive.get("items", [])
+    by_key: dict[tuple[str, str], dict[str, Any]] = {}
+    for item in existing:
+        key = (str(item.get("topic_direction", "")), str(item.get("fingerprint", "")))
+        if key[1]:
+            by_key[key] = item
+    for report in reports:
+        entry = archive_entry(report, batch)
+        key = (entry["topic_direction"], entry["fingerprint"])
+        previous = by_key.get(key)
+        if previous:
+            previous.update({k: v for k, v in entry.items() if k not in {"first_seen_at"}})
+            previous["last_seen_at"] = entry["last_seen_at"]
+        else:
+            existing.append(entry)
+            by_key[key] = entry
+    existing.sort(key=lambda x: x.get("last_seen_at", ""), reverse=True)
+    return {"version": 1, "updated_at": batch.get("generated_at", now_utc().isoformat()), "items": existing[:240]}
+
+
 def fetch_url(url: str, timeout: int = 20) -> bytes:
     req = urllib.request.Request(url, headers={"User-Agent": USER_AGENT, "Accept": "*/*"})
     with urllib.request.urlopen(req, timeout=timeout) as resp:
         return resp.read()
+
+
+def deepseek_json(messages: list[dict[str, str]], max_tokens: int = 6000, temperature: float = 0.2, timeout: int = 90) -> Any | None:
+    api_key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
+    if not api_key:
+        return None
+    body = {
+        "model": os.environ.get("DEEPSEEK_MODEL", "deepseek-chat"),
+        "temperature": temperature,
+        "max_tokens": max_tokens,
+        "response_format": {"type": "json_object"},
+        "messages": messages,
+    }
+    try:
+        req = urllib.request.Request(
+            DEEPSEEK_URL,
+            data=json.dumps(body, ensure_ascii=False).encode("utf-8"),
+            headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json", "User-Agent": USER_AGENT},
+            method="POST",
+        )
+        with urllib.request.urlopen(req, timeout=timeout) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        content = data["choices"][0]["message"]["content"].strip()
+        if content.startswith("```"):
+            content = re.sub(r"^```(?:json)?\s*", "", content)
+            content = re.sub(r"\s*```$", "", content)
+        return json.loads(content)
+    except Exception as exc:
+        print(f"DeepSeek JSON call failed: {exc}", file=sys.stderr)
+        return None
+
+
+def ddg_search(query: str, limit: int = 5) -> list[dict[str, str]]:
+    if not query.strip():
+        return []
+    url = "https://duckduckgo.com/html/?" + urllib.parse.urlencode({"q": query})
+    try:
+        raw = fetch_url(url, timeout=18).decode("utf-8", errors="ignore")
+    except Exception as exc:
+        print(f"Search failed for {query}: {exc}", file=sys.stderr)
+        return []
+    results: list[dict[str, str]] = []
+    for match in re.finditer(r'<a[^>]+class="result__a"[^>]+href="([^"]+)"[^>]*>(.*?)</a>', raw, re.S):
+        href = html.unescape(match.group(1))
+        title = clean_text(match.group(2))
+        parsed = urllib.parse.urlparse(href)
+        params = urllib.parse.parse_qs(parsed.query)
+        if "uddg" in params:
+            href = params["uddg"][0]
+        if title and href.startswith(("http://", "https://")):
+            results.append({"title": title, "url": normalize_url(href), "query": query})
+        if len(results) >= limit:
+            break
+    return results
+
+
+def fetch_evidence_pages(search_results: list[dict[str, str]], per_query_limit: int = 3, text_limit: int = 1800) -> list[dict[str, str]]:
+    evidence: list[dict[str, str]] = []
+    seen: set[str] = set()
+    per_query_counts: dict[str, int] = {}
+    for result in search_results:
+        url = result.get("url", "")
+        query = result.get("query", "")
+        if not url or url in seen:
+            continue
+        if per_query_counts.get(query, 0) >= per_query_limit:
+            continue
+        seen.add(url)
+        text = ""
+        error = ""
+        try:
+            text = clean_text(fetch_url(url, timeout=16).decode("utf-8", errors="ignore"))[:text_limit]
+        except Exception as exc:
+            error = str(exc)[:180]
+        evidence.append({
+            "title": result.get("title", ""),
+            "url": url,
+            "query": query,
+            "fetched_text": text,
+            "fetch_error": error,
+        })
+        per_query_counts[query] = per_query_counts.get(query, 0) + 1
+        if len(evidence) >= 18:
+            break
+    return evidence
 
 
 def strip_ns(tag: str) -> str:
@@ -353,7 +537,7 @@ def heuristic_decision(item: SourceItem, site: dict[str, Any]) -> RadarDecision:
     else:
         decision = "skip"
     reader_hook = infer_reader_hook(hits, report_type)
-    reject_reason = "" if decision != "skip" else "读者入口、成本/平台/工具链关联不够明确，先不进入简报。"
+    reject_reason = "" if decision != "skip" else "读者入口、成本/平台/工具链关联不够明确，先不进入候选池。"
     return RadarDecision(
         item=item,
         decision=decision,
@@ -513,7 +697,7 @@ def collection_fit_text(score: int, evidence_level: str, report_type: str, site:
     if score >= 55 and evidence_level in {"official", "near_source"}:
         return f"符合收集原则：来源可复查，且具备进入「{report_name}」类报告的分析价值。"
     if score >= 32:
-        return "部分符合收集原则：可以进入简报观察，但证据链或读者入口还不够完整。"
+        return "部分符合收集原则：可以进入观察池，但证据链或读者入口还不够完整。"
     return "暂不符合深挖原则：相关性、证据质量或普通读者入口不足。"
 
 
@@ -534,7 +718,7 @@ def default_uncertainty_flags(evidence_level: str, decision: str) -> list[str]:
     if evidence_level not in {"official", "near_source"}:
         flags.append("当前来源不是官方或近源，结论必须降级。")
     if decision == "brief":
-        flags.append("当前仅适合简报观察，不宜写成深度结论。")
+        flags.append("当前仅适合观察，不宜写成深度结论。")
     return flags
 
 
@@ -846,6 +1030,173 @@ def deepseek_triage(items: list[SourceItem], site: dict[str, Any], policy: dict[
         return None
 
 
+def compact_report_seed(report: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "title": report.get("title", ""),
+        "original_title": report.get("original_title", ""),
+        "url": report.get("url", ""),
+        "summary": report.get("summary", "")[:900],
+        "source_name": report.get("source_name", ""),
+        "source_category": report.get("source_category", ""),
+        "topic_direction": report.get("topic_direction", ""),
+        "topic_direction_title": report.get("topic_direction_title", ""),
+        "report_type": report.get("report_type", ""),
+        "score": report.get("score", 0),
+        "reader_hook": report.get("reader_hook", ""),
+        "why_now": report.get("why_now", ""),
+        "reason": report.get("reason", ""),
+        "uncertainty_flags": report.get("uncertainty_flags", []),
+        "traceability": report.get("traceability", {}),
+    }
+
+
+def fallback_pending_dossier(report: dict[str, Any], reason: str) -> dict[str, Any]:
+    title = display_report_title(report)
+    return {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "fallback",
+        "verdict": {
+            "status": "待 LLM 判断",
+            "label": "待判断",
+            "reason": reason,
+        },
+        "topic_direction": report.get("topic_direction", ""),
+        "topic_direction_title": report.get("topic_direction_title", ""),
+        "report_type": report.get("report_type", ""),
+        "core_question": f"这条线索是否值得继续做成选题：{title}",
+        "why_this_topic_matters": report.get("reader_hook", ""),
+        "fact_summary": [
+            f"原始来源记录到这条线索：{report.get('original_title', title)}",
+            "本次没有完成 LLM 补证和最终判断，因此不能当作可信选题报告。",
+        ],
+        "evidence_table": [
+            {
+                "source": report.get("source_name", ""),
+                "url": report.get("url", ""),
+                "supports": "只能证明线索入口存在。",
+                "reliability": report.get("evidence_level", "unknown"),
+            }
+        ],
+        "logic_closure": "证据链尚未闭合。需要先让 LLM 明确应查材料，再执行检索和交叉验证。",
+        "writeable_angles": [],
+        "missing_basics": ["核心概念、影响对象、成本边界、事实时间线仍待补齐。"],
+        "missing_materials": ["官方/近源材料、反方材料、案例或数据材料仍待补齐。"],
+        "not_claimable": ["不能写成已验证机会。", "不能写成老花已经实操。", "不能直接给可冲结论。"],
+        "followup_queries": followup_queries_from_report(report),
+        "stop_conditions": ["补证后仍只有单一来源。", "无法说清楚和老花人设或读者需求的关系。"],
+        "confidence": 0,
+    }
+
+
+def plan_topic_research(report: dict[str, Any], site: dict[str, Any], policy: dict[str, Any]) -> dict[str, Any] | None:
+    prompt = (
+        "你是 Easton Radar 的选题调查编辑。先不要写报告，只判断这条线索还需要查什么。\n"
+        "目标：给后续 GPT 写作应用准备可信素材包，而不是把通用规则写进网页。\n"
+        "请只输出 JSON：{\"core_question\":\"\",\"must_verify\":[],\"search_queries\":[],\"best_sources_to_find\":[],"
+        "\"expert_challenge_points\":[],\"do_not_claim_yet\":[],\"can_publish_as_radar_if_missing\":\"\",\"downstream_materials_needed\":[]}。\n"
+        "要求：search_queries 给 4-8 个具体搜索词；优先官方、近源、价格页、文档、GitHub、监管/平台规则、真实案例、反方材料。"
+        "如果这个题太窄、太冷、和读者关系弱，要明确写出来。"
+    )
+    data = deepseek_json(
+        [
+            {"role": "system", "content": prompt},
+            {"role": "user", "content": json.dumps({
+                "site_topic_directions": site.get("topic_directions", {}),
+                "persona_lines": policy.get("persona_lines", []),
+                "fatal_filters": policy.get("fatal_filters", []),
+                "candidate": compact_report_seed(report),
+            }, ensure_ascii=False)},
+        ],
+        max_tokens=2600,
+        timeout=80,
+    )
+    return data if isinstance(data, dict) else None
+
+
+def collect_research_evidence(plan: dict[str, Any], max_queries: int = 6) -> list[dict[str, str]]:
+    queries: list[str] = []
+    for query in plan.get("search_queries", []):
+        if isinstance(query, str):
+            queries.append(query)
+    for item in plan.get("best_sources_to_find", []):
+        if isinstance(item, dict) and item.get("query"):
+            queries.append(str(item["query"]))
+    deduped: list[str] = []
+    seen: set[str] = set()
+    for query in queries:
+        key = query.strip().lower()
+        if key and key not in seen:
+            seen.add(key)
+            deduped.append(query.strip())
+    search_results: list[dict[str, str]] = []
+    for query in deduped[:max_queries]:
+        search_results.extend(ddg_search(query, limit=5))
+    return fetch_evidence_pages(search_results)
+
+
+def compose_topic_dossier(report: dict[str, Any], site: dict[str, Any], policy: dict[str, Any], plan: dict[str, Any], evidence: list[dict[str, str]], previous: dict[str, Any] | None = None) -> dict[str, Any] | None:
+    prompt = (
+        "你是 Easton Radar 的最终选题质检员。你要基于原始线索、补证计划、搜索结果和抓取正文，生成一份自然可读的选题报告。\n"
+        "这不是公众号正文，不要写口水开头，不要强行写“如果是我我会怎么做”。\n"
+        "报告必须回答：这题值不值得选，为什么，事实是否清楚，证据够不够，逻辑能否闭环，和老花/读者有什么关系，后续能写哪些方向，还缺哪些材料。\n"
+        "不要把通用判断规则原样写出来。所有判断都要落到这个具体题上。\n"
+        "请只输出 JSON：{\"schema\":\"topic-selection-dossier-v3\",\"generated_by\":\"deepseek\","
+        "\"verdict\":{\"status\":\"可选|观察|暂缓|放弃\",\"label\":\"可选|观察|暂缓|放弃\",\"reason\":\"\"},"
+        "\"core_question\":\"\",\"why_this_topic_matters\":\"\",\"fact_summary\":[],"
+        "\"timeline\":[],\"evidence_table\":[{\"source\":\"\",\"url\":\"\",\"supports\":\"\",\"reliability\":\"official|near_source|media|weak\"}],"
+        "\"logic_closure\":\"\",\"writeable_angles\":[{\"angle\":\"\",\"why\":\"\",\"needs\":\"\"}],"
+        "\"missing_basics\":[],\"missing_materials\":[],\"not_claimable\":[],\"followup_queries\":[],"
+        "\"additional_search_queries\":[],\"stop_conditions\":[],\"confidence\":0}。\n"
+        "如果证据不足，verdict 不得写可选；如果需要更多证据，把 additional_search_queries 写清楚。"
+    )
+    data = deepseek_json(
+        [
+            {"role": "system", "content": prompt},
+            {"role": "user", "content": json.dumps({
+                "site_topic_directions": site.get("topic_directions", {}),
+                "persona_lines": policy.get("persona_lines", []),
+                "candidate": compact_report_seed(report),
+                "research_plan": plan,
+                "evidence": evidence,
+                "previous_dossier": previous or {},
+            }, ensure_ascii=False)},
+        ],
+        max_tokens=5200,
+        timeout=110,
+    )
+    if not isinstance(data, dict):
+        return None
+    data.setdefault("schema", "topic-selection-dossier-v3")
+    data.setdefault("generated_by", "deepseek")
+    data.setdefault("topic_direction", report.get("topic_direction", ""))
+    data.setdefault("topic_direction_title", report.get("topic_direction_title", ""))
+    data.setdefault("report_type", report.get("report_type", ""))
+    return data
+
+
+def enrich_selection_dossier(report: dict[str, Any], site: dict[str, Any], policy: dict[str, Any]) -> dict[str, Any]:
+    if not os.environ.get("DEEPSEEK_API_KEY", "").strip():
+        return fallback_pending_dossier(report, "本次运行没有 DeepSeek API Key，只能保留线索，不能生成可信选题判断。")
+    plan = plan_topic_research(report, site, policy)
+    if not plan:
+        return fallback_pending_dossier(report, "DeepSeek 没有成功生成补证计划，暂不输出可信选题判断。")
+    evidence = collect_research_evidence(plan)
+    dossier = compose_topic_dossier(report, site, policy, plan, evidence)
+    extra_queries = []
+    if dossier:
+        extra_queries = [q for q in dossier.get("additional_search_queries", []) if isinstance(q, str) and q.strip()]
+    low_confidence = bool(dossier and int(dossier.get("confidence", 0) or 0) < 55)
+    if extra_queries and low_confidence:
+        extra_plan = {"search_queries": extra_queries[:4], "best_sources_to_find": []}
+        evidence.extend(collect_research_evidence(extra_plan, max_queries=4))
+        dossier = compose_topic_dossier(report, site, policy, plan, evidence, previous=dossier)
+    if not dossier:
+        return fallback_pending_dossier(report, "DeepSeek 没有成功生成最终选题报告，暂不输出可信结论。")
+    dossier["research_plan"] = plan
+    dossier["research_evidence"] = evidence
+    return dossier
+
+
 def report_template_key(report: dict[str, Any]) -> str:
     topic = report.get("topic_direction", "")
     report_type = report.get("report_type", "")
@@ -1103,7 +1454,7 @@ def selection_verdict(report: dict[str, Any]) -> dict[str, str]:
     return {
         "status": "不建议写成正文",
         "label": "暂缓",
-        "reason": "当前材料不足以支撑一个有用选题，最多保留为简报或后续检索线索。",
+            "reason": "当前材料不足以支撑一个有用选题，最多保留为观察或后续检索线索。",
     }
 
 
@@ -1289,13 +1640,13 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
     }
     report["source_assessment"] = source_access_assessment(item)
     report["evidence_dossier"] = evidence_dossier(report)
-    report["selection_dossier"] = selection_dossier(report)
+    report["selection_dossier"] = enrich_selection_dossier(report, site, policy)
     report["material_pack"] = report["selection_dossier"]
     report["downstream_handoff"] = downstream_handoff(report, site)
     return report
 
 
-def select_reports(decisions: list[RadarDecision], site: dict[str, Any], limit: int = MAX_REPORTS_PER_BATCH) -> list[RadarDecision]:
+def select_reports(decisions: list[RadarDecision], site: dict[str, Any], archive: dict[str, Any], batch_id: str, limit: int = MAX_REPORTS_PER_BATCH) -> tuple[list[RadarDecision], list[dict[str, str]]]:
     eligible = [d for d in decisions if d.decision == "deep_dive"]
     eligible.extend(d for d in decisions if d.decision == "brief" and d.score >= 62)
     if not eligible:
@@ -1303,10 +1654,15 @@ def select_reports(decisions: list[RadarDecision], site: dict[str, Any], limit: 
     selected: list[RadarDecision] = []
     category_counts: dict[str, int] = {}
     topic_counts: dict[str, int] = {}
+    duplicate_skips: list[dict[str, str]] = []
 
     for decision in eligible:
         category = decision.item.source_category
         topic_key, _ = topic_direction_for_item(decision.item, decision.report_type, site)
+        duplicate, reason = is_duplicate_topic(decision, site, archive, batch_id)
+        if duplicate:
+            duplicate_skips.append({"title": decision.report_title or decision.item.title, "url": decision.item.url, "reason": reason})
+            continue
         cap = SOURCE_CATEGORY_REPORT_CAPS.get(category, limit)
         if category_counts.get(category, 0) >= cap:
             continue
@@ -1316,9 +1672,9 @@ def select_reports(decisions: list[RadarDecision], site: dict[str, Any], limit: 
         category_counts[category] = category_counts.get(category, 0) + 1
         topic_counts[topic_key] = topic_counts.get(topic_key, 0) + 1
         if len(selected) >= limit:
-            return selected
+            return selected, duplicate_skips
 
-    return selected
+    return selected, duplicate_skips
 
 
 class StaticSite:
@@ -1379,11 +1735,11 @@ nav{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;gap:16px;align
 .brand{font-weight:750;color:var(--text);margin-right:auto}nav a{font-size:14px;color:#2c3852}
 main{max-width:1120px;margin:0 auto;padding:28px 20px 56px}.hero{padding:34px 0 18px}.hero h1{font-size:38px;line-height:1.16;margin:0 0 14px}.hero p{max-width:790px;color:var(--muted);font-size:17px;margin:0}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.card,.item,.report,.callout{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px}.section{margin-top:32px}
-.list{display:grid;gap:12px}.item h3{margin:0 0 8px;font-size:18px}.item p{margin:8px 0}.meta{color:var(--muted);font-size:13px}.badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:12px;color:#33415f;background:#fafbff;margin:0 6px 6px 0}.score{font-weight:700;color:#0a7f42}.source{word-break:break-all}
+.list{display:grid;gap:12px}.flow{display:grid;gap:10px}.flow-item{display:grid;grid-template-columns:120px 1fr auto;gap:14px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px}.flow-item h3{margin:0 0 6px;font-size:17px}.flow-item p{margin:5px 0}.topic-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}.topic-chip{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px}.topic-chip strong{display:block;font-size:22px}.archive-day{margin-top:18px}.item h3{margin:0 0 8px;font-size:18px}.item p{margin:8px 0}.meta{color:var(--muted);font-size:13px}.badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:12px;color:#33415f;background:#fafbff;margin:0 6px 6px 0}.score{font-weight:700;color:#0a7f42}.source{word-break:break-all}
 .topic-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.topic-head h2{margin:0}.kicker{font-size:13px;color:#44516b;font-weight:650;margin:0 0 6px}.topic-list{margin-top:14px}.callout{border-color:#bfd1f8;background:#f8fbff}.evidence-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.evidence-grid h3{margin-top:0}
 .report{max-width:920px}.report h1{line-height:1.25}.report h2{margin-top:28px}.ad-slot{border:1px dashed #c8cfdd;border-radius:8px;color:#7b8496;padding:16px;text-align:center;background:#fff;margin:24px 0}
 footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:22px 20px;text-align:center}
-@media(max-width:640px){.hero h1{font-size:30px}.brand{width:100%;margin-right:0}.report{padding:16px}}
+@media(max-width:760px){.flow-item{grid-template-columns:1fr}.hero h1{font-size:30px}.brand{width:100%;margin-right:0}.report{padding:16px}}
 """).strip() + "\n"
 
 
@@ -1440,30 +1796,79 @@ def report_card(report: dict[str, Any]) -> str:
 """
 
 
-def render_home(batch: dict[str, Any], reports: list[dict[str, Any]], site: dict[str, Any], policy: dict[str, Any]) -> str:
-    topic_cards = []
+def topic_summary_chips(reports: list[dict[str, Any]], site: dict[str, Any]) -> str:
+    chips = []
     for key, meta in site.get("topic_directions", {}).items():
-        topic_reports = reports_for_topic(reports, key)
-        preview = "".join(report_card(r) for r in topic_reports[:2]) or '<p class="meta">本批次暂无高价值线索。</p>'
-        topic_cards.append(f"""
-<section class="card">
-  <div class="topic-head"><div><p class="kicker">选题方向</p><h2><a href="{topic_href(key)}">{html.escape(meta['title'])}</a></h2></div><span class="badge">本批次 {len(topic_reports)} 条</span></div>
-  <p>{html.escape(meta.get('description', ''))}</p>
-  <div class="topic-list list">{preview}</div>
-</section>
+        count = len(reports_for_topic(reports, key))
+        chips.append(f"""
+<a class="topic-chip" href="{topic_href(key)}">
+  <span class="meta">{html.escape(meta.get("short_title", meta.get("title", key)))}</span>
+  <strong>{count}</strong>
+  <span class="meta">本批次候选</span>
+</a>
 """)
+    return "".join(chips)
+
+
+def report_flow_item(report: dict[str, Any]) -> str:
+    dossier = report.get("selection_dossier") or report.get("material_pack") or {}
+    verdict = dossier.get("verdict", {})
+    label = verdict.get("label") or verdict.get("status") or "待判断"
+    reason = verdict.get("reason", "")
+    topic = report.get("topic_direction_short_title") or report.get("topic_direction_title") or report.get("source_category_title", "")
+    title = display_report_title(report)
+    return f"""
+<article class="flow-item">
+  <div><span class="badge">{html.escape(label)}</span><p class="meta">{html.escape(topic)}</p></div>
+  <div>
+    <h3><a href="/items/{html.escape(report['id'])}/">{html.escape(title)}</a></h3>
+    <p>{html.escape(reason or report.get("reader_hook", ""))}</p>
+    <p class="meta source">来源：<a href="{html.escape(report['url'])}" rel="nofollow noopener">{html.escape(report['source_name'])}</a> · {html.escape(report.get('original_title', ''))}</p>
+  </div>
+  <div class="meta">Score {report["score"]}<br>{html.escape(report["evidence_level"])}</div>
+</article>
+"""
+
+
+def render_archive_preview(archive: dict[str, Any], limit_days: int = 5) -> str:
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for item in archive.get("items", []):
+        day = str(item.get("last_seen_at") or item.get("first_seen_at") or "")[:10] or "unknown"
+        grouped.setdefault(day, []).append(item)
+    sections = []
+    for day in sorted(grouped.keys(), reverse=True)[:limit_days]:
+        rows = []
+        for item in grouped[day][:8]:
+            rows.append(f'<li><span class="badge">{html.escape(item.get("verdict", "待判断"))}</span><a href="{html.escape(item.get("item_url", ""))}">{html.escape(item.get("title", ""))}</a> <span class="meta">· {html.escape(item.get("topic_direction_title", ""))}</span></li>')
+        sections.append(f'<section class="archive-day"><h3>{html.escape(day)}</h3><ul>{"".join(rows)}</ul></section>')
+    return "".join(sections) or '<p class="meta">暂无历史选题归档。</p>'
+
+
+def render_home(batch: dict[str, Any], reports: list[dict[str, Any]], site: dict[str, Any], policy: dict[str, Any], archive: dict[str, Any]) -> str:
     principles = "".join(f"<li>{html.escape(x)}</li>" for x in policy["source_principles"])
     coverage = "".join(
         f'<span class="badge">{html.escape(v["title"])}：{v["items"]} 条 / 失败 {v["failures"]}</span>'
         for v in batch.get("source_coverage", {}).values()
     )
-    latest = "".join(report_card(r) for r in reports[:8]) or '<p class="meta">本批次暂无可发布报告。</p>'
+    flow = "".join(report_flow_item(r) for r in reports) or '<p class="meta">本批次暂无入池候选选题。</p>'
+    verdict_counts: dict[str, int] = {}
+    for report in reports:
+        dossier = report.get("selection_dossier") or report.get("material_pack") or {}
+        verdict = dossier.get("verdict", {})
+        label = verdict.get("label") or verdict.get("status") or "待判断"
+        verdict_counts[label] = verdict_counts.get(label, 0) + 1
+    verdict_summary = " / ".join(f"{html.escape(k)} {v}" for k, v in verdict_counts.items()) or "暂无候选"
+    duplicate_count = len(batch.get("duplicate_skips", []))
     return f"""
 <section class="hero"><h1>老花的选题雷达站</h1><p>这里不是公众号成稿库，而是上游情报台。每条线索先按选题方向沉淀，再保留来龙去脉、事实、证据、存疑点和与老花人设相关的切入口，给后续博客、公众号、视频和小红书做素材底座。</p></section>
-<section class="grid">{''.join(topic_cards)}</section>
+<section class="section">
+  <h2>大选题方向聚合</h2>
+  <div class="topic-strip">{topic_summary_chips(reports, site)}</div>
+</section>
 <div class="ad-slot">AdSense 预留位：后续填入 publisher client 后启用</div>
-<section class="section card"><h2>本批次数据源覆盖</h2><p>{coverage}</p></section>
-<section class="section"><h2>最新值得扫一眼的线索</h2><p class="meta">批次：{html.escape(batch["batch_id"])} · 抓取 {batch["fetched_count"]} 条 · 深挖 {batch["deep_count"]} 条 · 简报 {batch["brief_count"]} 条</p><div class="list">{latest}</div></section>
+<section class="section card"><h2>本批次概况</h2><p class="meta">批次：{html.escape(batch["batch_id"])} · 抓取 {batch["fetched_count"]} 条 · 入池 {len(reports)} 个候选 · {verdict_summary} · 近期重复跳过 {duplicate_count} 个</p><p>{coverage}</p></section>
+<section class="section"><h2>候选选题信息流</h2><div class="flow">{flow}</div></section>
+<section class="section card"><h2>历史选题库</h2><p class="meta">按日期回看已入池选题，用来判断哪些题已经看过、哪些方向反复出现。<a href="/archive/">查看完整历史</a></p>{render_archive_preview(archive)}</section>
 <section class="section card"><h2>数据源原则</h2><ul>{principles}</ul></section>
 """
 
@@ -1477,8 +1882,8 @@ def render_briefings(batch: dict[str, Any], reports: list[dict[str, Any]], site:
     failures = "".join(f'<li>{html.escape(f["source"])}：{html.escape(f["error"])}</li>' for f in batch.get("failures", [])[:12]) or "<li>本批次无抓取失败。</li>"
     coverage = "".join(f'<li>{html.escape(v["title"])}：{v["items"]} 条，失败 {v["failures"]}</li>' for v in batch.get("source_coverage", {}).values())
     return f"""
-<section class="hero"><h1>本批次简报</h1><p>简报按选题方向归档。先看方向，再看具体话题，最后进入深度报告确认事实、证据和可写切入口。</p></section>
-<section class="card"><p>批次：{html.escape(batch["batch_id"])}</p><p>抓取 {batch["fetched_count"]} 条；深挖 {batch["deep_count"]} 条；简报 {batch["brief_count"]} 条；跳过 {batch["skipped_count"]} 条。</p></section>
+<section class="hero"><h1>本批次候选选题</h1><p>候选选题按方向归档。先看方向，再看具体话题，最后进入报告确认事实、证据和可写切入口。</p></section>
+<section class="card"><p>批次：{html.escape(batch["batch_id"])}</p><p>抓取 {batch["fetched_count"]} 条；入池 {len(reports)} 条；跳过 {batch["skipped_count"]} 条。</p></section>
 <section class="section card"><h2>数据源覆盖</h2><ul>{coverage}</ul></section>
 {''.join(topic_sections)}
 <section class="section card"><h2>抓取失败</h2><ul>{failures}</ul></section>
@@ -1490,6 +1895,34 @@ def render_topic_direction(key: str, meta: dict[str, Any], reports: list[dict[st
     return f"""
 <section class="hero"><p class="kicker">选题方向</p><h1>{html.escape(meta["title"])}</h1><p>{html.escape(meta.get("description", ""))}</p></section>
 <section class="callout"><h2>这个方向怎么读</h2><p>先看线索和原始来源，再进入详情页看事实收集、证据收集、存疑点和与老花相关的切入口。报告类型只是分析方法，不代表主栏目。</p></section>
+<section class="section list">{items}</section>
+"""
+
+
+def render_archive(archive: dict[str, Any], site: dict[str, Any]) -> str:
+    directions = site.get("topic_directions", {})
+    grouped: dict[str, list[dict[str, Any]]] = {}
+    for item in archive.get("items", [])[:180]:
+        day = str(item.get("last_seen_at") or item.get("first_seen_at") or "")[:10] or "unknown"
+        grouped.setdefault(day, []).append(item)
+    sections = []
+    for day in sorted(grouped.keys(), reverse=True):
+        rows = []
+        for item in grouped[day]:
+            topic_key = item.get("topic_direction", "")
+            topic_title = item.get("topic_direction_title") or directions.get(topic_key, {}).get("title", topic_key)
+            rows.append(f"""
+<article class="item">
+  <p class="kicker">{html.escape(topic_title)} · {html.escape(item.get("verdict", "待判断"))}</p>
+  <h3><a href="{html.escape(item.get("item_url", ""))}">{html.escape(item.get("title", ""))}</a></h3>
+  <p class="meta">Score {html.escape(str(item.get("score", "")))} · {html.escape(item.get("evidence_level", ""))} · 首次入池 {html.escape(item.get("first_seen_at", ""))}</p>
+  <p class="meta source"><a href="{html.escape(item.get("url", ""))}">{html.escape(item.get("original_title", "") or item.get("url", ""))}</a></p>
+</article>
+""")
+        sections.append(f'<section class="archive-day"><h2>{html.escape(day)}</h2><div class="list">{"".join(rows)}</div></section>')
+    items = "".join(sections) or '<p class="meta">暂无历史选题归档。</p>'
+    return f"""
+<section class="hero"><h1>历史选题归档</h1><p>这里记录曾经进入候选池的选题，用于回看、去重和判断哪些方向已经反复出现。新的候选选题会和近 14 天归档做重复检查。</p></section>
 <section class="section list">{items}</section>
 """
 
@@ -1534,12 +1967,12 @@ def render_material_pack(pack: dict[str, Any]) -> str:
   <h2>选题判断结论</h2>
   <p><strong>{html.escape(verdict.get("status", "待判断"))}</strong>：{html.escape(verdict.get("reason", ""))}</p>
   <p class="meta">档案版本：{html.escape(pack.get("schema", ""))} · 选题方向：{html.escape(pack.get("topic_direction_title", ""))}</p>
-  <h3>正常人的判断链路</h3><ul>{judgment_path}</ul>
+  <h3>旧版判断链路</h3><ul>{judgment_path}</ul>
 </section>
 <section class="section card">
-  <h2>这个选题方向应该怎么判断</h2>
+  <h2>旧版选题判断字段</h2>
   <div class="evidence-grid">
-    <section><h3>必须先问的问题</h3><ul>{selection_questions}</ul></section>
+    <section><h3>旧版问题清单</h3><ul>{selection_questions}</ul></section>
     <section><h3>有价值的信号</h3><ul>{value_signals}</ul><h3>应该放弃的信号</h3><ul>{reject_signals}</ul></section>
   </div>
 </section>
@@ -1557,6 +1990,73 @@ def render_material_pack(pack: dict[str, Any]) -> str:
 </section>
 <section class="section card">
   <h2>可以写的方向</h2>
+  <ul>{angles}</ul>
+  <h3>还缺哪些基础概念</h3><ul>{missing_basics}</ul>
+  <h3>还缺哪些资料素材</h3><ul>{missing_materials}</ul>
+  <h3>不能写成结论的地方</h3><ul>{not_claimable}</ul>
+  <h3>下一步补证检索词</h3><ul>{followup_queries}</ul>
+  <h3>停止信号</h3><ul>{stop}</ul>
+</section>
+"""
+
+
+def render_material_pack(pack: dict[str, Any]) -> str:
+    if not pack:
+        return ""
+    verdict = pack.get("verdict", {})
+    facts = list_html(pack.get("fact_summary", []))
+    timeline = list_html(pack.get("timeline", []), "暂无明确时间线。")
+    missing_basics = list_html(pack.get("missing_basics", []))
+    missing_materials = list_html(pack.get("missing_materials", []))
+    not_claimable = list_html(pack.get("not_claimable", []))
+    followup_queries = list_html(pack.get("followup_queries", []))
+    stop = list_html(pack.get("stop_conditions", []))
+    logic = html.escape(str(pack.get("logic_closure", "")))
+    angles = "".join(
+        f'<li><strong>{html.escape(item.get("angle", ""))}</strong>：{html.escape(item.get("why", ""))}<br><span class="meta">还需要：{html.escape(item.get("needs", ""))}</span></li>'
+        for item in pack.get("writeable_angles", [])
+        if isinstance(item, dict)
+    )
+    if not angles:
+        angles = "<li>暂无可直接展开的写作方向，优先继续补证。</li>"
+    evidence_rows = "".join(
+        f"""
+<article class="item">
+  <h3>{html.escape(item.get("source", "") or item.get("title", "") or "证据来源")}</h3>
+  <p>{html.escape(item.get("supports", ""))}</p>
+  <p class="meta">{html.escape(item.get("reliability", ""))} · <a href="{html.escape(item.get("url", ""))}">{html.escape(item.get("url", ""))}</a></p>
+</article>
+"""
+        for item in pack.get("evidence_table", [])
+        if isinstance(item, dict)
+    )
+    if not evidence_rows:
+        evidence_rows = '<p class="meta">暂无交叉证据。当前页面只能作为待补证线索。</p>'
+    confidence = pack.get("confidence", "")
+    generated_by = pack.get("generated_by", "")
+    return f"""
+<section class="section callout">
+  <h2>选题判断</h2>
+  <p><strong>{html.escape(verdict.get("status", "待判断"))}</strong>：{html.escape(verdict.get("reason", ""))}</p>
+  <p>{html.escape(pack.get("why_this_topic_matters", ""))}</p>
+  <p class="meta">报告来源：{html.escape(generated_by)} · 可信度 {html.escape(str(confidence))} · {html.escape(pack.get("schema", ""))}</p>
+</section>
+<section class="section card">
+  <h2>这件事目前能确认什么</h2>
+  <p><strong>核心问题：</strong>{html.escape(pack.get("core_question", ""))}</p>
+  <ul>{facts}</ul>
+  <h3>时间线</h3><ul>{timeline}</ul>
+</section>
+<section class="section card">
+  <h2>证据与依据</h2>
+  <div class="list">{evidence_rows}</div>
+</section>
+<section class="section card">
+  <h2>逻辑能不能闭环</h2>
+  <p>{logic}</p>
+</section>
+<section class="section card">
+  <h2>可以继续写的方向</h2>
   <ul>{angles}</ul>
   <h3>还缺哪些基础概念</h3><ul>{missing_basics}</ul>
   <h3>还缺哪些资料素材</h3><ul>{missing_materials}</ul>
@@ -1585,7 +2085,7 @@ def render_item(report: dict[str, Any], site: dict[str, Any]) -> str:
     pack_html = render_material_pack(dossier)
     topic_key = report.get("topic_direction", "")
     topic_title = report.get("topic_direction_title") or report.get("source_category_title", "")
-    topic_link = topic_href(topic_key) if topic_key else "/briefings/"
+    topic_link = topic_href(topic_key) if topic_key else "/"
     visible_title = display_report_title(report)
     schema = {
         "@context": "https://schema.org",
@@ -1644,11 +2144,11 @@ def render_item(report: dict[str, Any], site: dict[str, Any]) -> str:
 """
 
 
-def render_static(batch: dict[str, Any], reports: list[dict[str, Any]], site: dict[str, Any], policy: dict[str, Any]) -> None:
+def render_static(batch: dict[str, Any], reports: list[dict[str, Any]], site: dict[str, Any], policy: dict[str, Any], archive: dict[str, Any]) -> None:
     static = StaticSite(site)
     static.write_assets()
-    static.write_page("index.html", "Easton Radar", render_home(batch, reports, site, policy))
-    static.write_page("briefings/index.html", "简报 - Easton Radar", render_briefings(batch, reports, site))
+    static.write_page("index.html", "Easton Radar", render_home(batch, reports, site, policy, archive))
+    static.write_page("archive/index.html", "历史选题归档 - Easton Radar", render_archive(archive, site))
     static.write_page("about/index.html", "关于 - Easton Radar", render_about(site, policy))
     for key, meta in site.get("topic_directions", {}).items():
         static.write_page(f"topics/{key}/index.html", f"{meta['title']} - Easton Radar", render_topic_direction(key, meta, reports_for_topic(reports, key)))
@@ -1662,7 +2162,7 @@ def render_static(batch: dict[str, Any], reports: list[dict[str, Any]], site: di
 
 def sitemap(site: dict[str, Any], reports: list[dict[str, Any]]) -> str:
     base = site["site_url"].rstrip("/")
-    paths = ["", "briefings/", "about/"] + [f"topics/{k}/" for k in site.get("topic_directions", {})] + [f"items/{r['id']}/" for r in reports]
+    paths = ["", "archive/", "about/"] + [f"topics/{k}/" for k in site.get("topic_directions", {})] + [f"items/{r['id']}/" for r in reports]
     today = now_utc().date().isoformat()
     body = "\n".join(f"<url><loc>{base}/{p}</loc><lastmod>{today}</lastmod></url>" for p in paths)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}\n</urlset>\n'
@@ -1670,7 +2170,7 @@ def sitemap(site: dict[str, Any], reports: list[dict[str, Any]]) -> str:
 
 def llms(site: dict[str, Any], reports: list[dict[str, Any]]) -> str:
     base = site["site_url"].rstrip("/")
-    lines = ["# Easton Radar", "", site["description"], "", "## Topic directions"]
+    lines = ["# Easton Radar", "", site["description"], "", f"Archive: {base}/archive/", "", "## Topic directions"]
     for key, meta in site.get("topic_directions", {}).items():
         lines.append(f"- {meta['title']}: {base}/topics/{key}/")
     lines.extend(["", "## Analysis methods"])
@@ -1689,11 +2189,39 @@ def send_telegram(batch: dict[str, Any], reports: list[dict[str, Any]], site: di
         print("Telegram not configured; skip notification.")
         return
     base = site["site_url"].rstrip("/")
-    lines = [f"Easton Radar {batch['slot_label']}", f"抓取 {batch['fetched_count']} 条，深挖 {batch['deep_count']} 条，简报 {batch['brief_count']} 条。", ""]
+    verdict_counts: dict[str, int] = {}
+    topic_counts: dict[str, int] = {}
+    for report in reports:
+        dossier = report.get("selection_dossier") or report.get("material_pack") or {}
+        verdict = dossier.get("verdict", {})
+        label = verdict.get("label") or verdict.get("status") or "待判断"
+        topic = report.get("topic_direction_short_title") or report.get("topic_direction_title") or report.get("source_category_title", "未分类")
+        verdict_counts[label] = verdict_counts.get(label, 0) + 1
+        topic_counts[topic] = topic_counts.get(topic, 0) + 1
+
+    verdict_summary = " / ".join(f"{key} {value}" for key, value in verdict_counts.items()) or "暂无候选"
+    topic_summary = " / ".join(f"{key} {value}" for key, value in topic_counts.items()) or "暂无方向"
+    lines = [
+        f"Easton Radar {batch['slot_label']}｜候选选题池",
+        f"抓取 {batch['fetched_count']} 条，入池 {len(reports)} 个候选选题（{verdict_summary}）。",
+        f"方向分布：{topic_summary}",
+        "",
+        "本批次候选：",
+    ]
     for report in reports[:8]:
-        lines.append(f"- {report['title']}")
-        lines.append(f"  {report['report_type_title']} | Score {report['score']}")
+        dossier = report.get("selection_dossier") or report.get("material_pack") or {}
+        verdict = dossier.get("verdict", {})
+        label = verdict.get("label") or verdict.get("status") or "待判断"
+        reason = verdict.get("reason", "")
+        topic = report.get("topic_direction_short_title") or report.get("topic_direction_title") or report.get("source_category_title", "")
+        title = display_report_title(report)
+        lines.append(f"- [{label}] {title}")
+        lines.append(f"  {topic} | {report['evidence_level']} | Score {report['score']}")
+        if reason:
+            lines.append(f"  判断：{reason[:80]}")
         lines.append(f"  {base}/items/{report['id']}/")
+    if not reports:
+        lines.append("本批次没有达到入池标准的候选选题，只保留抓取数据和源覆盖统计。")
     payload = urllib.parse.urlencode({"chat_id": chat_id, "text": "\n".join(lines)[:3900], "disable_web_page_preview": "true"}).encode("utf-8")
     try:
         req = urllib.request.Request(f"https://api.telegram.org/bot{token}/sendMessage", data=payload, method="POST")
@@ -1715,13 +2243,14 @@ def main() -> int:
     site = load_json(CONFIG_DIR / "site.json")
     policy = load_json(CONFIG_DIR / "radar_policy.json")
     sources = load_json(CONFIG_DIR / "sources.seed.json")
+    archive = load_topic_archive()
     items, failures = collect_items(sources)
     print(f"Fetched {len(items)} items, failures {len(failures)}")
     decisions = deepseek_triage(items, site, policy) or [heuristic_decision(item, site) for item in items]
     known = {d.item.id for d in decisions}
     decisions.extend(heuristic_decision(item, site) for item in items if item.id not in known)
     decisions.sort(key=lambda x: x.score, reverse=True)
-    selected = select_reports(decisions, site)
+    selected, duplicate_skips = select_reports(decisions, site, archive, batch_id)
     reports = [build_report(d, site, policy) for d in selected]
     selected_deep_count = sum(1 for d in selected if d.decision == "deep_dive")
     selected_brief_count = sum(1 for d in selected if d.decision == "brief")
@@ -1736,15 +2265,19 @@ def main() -> int:
         "skipped_count": sum(1 for d in decisions if d.decision == "skip"),
         "candidate_deep_count": sum(1 for d in decisions if d.decision == "deep_dive"),
         "candidate_brief_count": sum(1 for d in decisions if d.decision == "brief"),
+        "duplicate_skip_count": len(duplicate_skips),
+        "duplicate_skips": duplicate_skips[:30],
         "source_coverage": source_coverage(items, failures, site),
         "failures": failures,
     }
+    archive = update_topic_archive(archive, reports, batch)
     clean_generated_outputs()
     write_json(DATA_DIR / f"{batch_id}.json", {"batch": batch, "items": [item.__dict__ for item in items], "reports": reports})
     write_json(DATA_DIR / "latest.json", {"batch": batch, "reports": reports})
+    write_json(TOPIC_ARCHIVE_PATH, archive)
     for report in reports:
         write_json(REPORTS_DIR / f"{report['id']}.json", report)
-    render_static(batch, reports, site, policy)
+    render_static(batch, reports, site, policy, archive)
     if not args.no_telegram:
         send_telegram(batch, reports, site)
     print("Done.")

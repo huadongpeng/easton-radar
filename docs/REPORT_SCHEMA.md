@@ -35,24 +35,25 @@
     "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
   },
   "selection_dossier": {
-    "schema": "topic-selection-dossier-v2",
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek|fallback",
     "verdict": {
       "status": "可进入选题池",
       "label": "可选",
       "reason": "当前线索有较强来源、读者关系和分析空间。"
     },
     "core_question": "这条线索能不能成为一个值得老花继续写的选题？",
-    "human_judgment_path": [],
-    "selection_questions": [],
-    "topic_value_assessment": [],
-    "fact_clarity": {},
-    "evidence_reliability": {},
-    "logic_closure": [],
+    "why_this_topic_matters": "",
+    "fact_summary": [],
+    "timeline": [],
+    "evidence_table": [],
+    "logic_closure": "",
     "writeable_angles": [],
     "missing_basics": [],
     "missing_materials": [],
     "not_claimable": [],
     "followup_queries": [],
+    "additional_search_queries": [],
     "stop_conditions": []
   },
   "material_pack": "与 selection_dossier 同内容，用于兼容下游旧字段",
