@@ -27,6 +27,7 @@ SITE_DIR = ROOT / "site"
 TOPIC_ARCHIVE_PATH = DATA_DIR / "topic_archive.json"
 
 USER_AGENT = "EastonRadar/0.1 (+https://radar.huadongpeng.com)"
+SEARCH_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36"
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 MAX_ITEMS_PER_SOURCE = 18
 MAX_TOTAL_ITEMS = 220
@@ -242,6 +243,18 @@ def fetch_url(url: str, timeout: int = 20) -> bytes:
         return resp.read()
 
 
+def fetch_search_url(url: str, timeout: int = 18) -> bytes:
+    headers = {
+        "User-Agent": SEARCH_USER_AGENT,
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7",
+        "Referer": "https://www.google.com/",
+    }
+    req = urllib.request.Request(url, headers=headers)
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return resp.read()
+
+
 def deepseek_json(messages: list[dict[str, str]], max_tokens: int = 6000, temperature: float = 0.2, timeout: int = 90) -> Any | None:
     api_key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
     if not api_key:
@@ -277,10 +290,10 @@ def ddg_search(query: str, limit: int = 5) -> list[dict[str, str]]:
         return []
     url = "https://duckduckgo.com/html/?" + urllib.parse.urlencode({"q": query})
     try:
-        raw = fetch_url(url, timeout=18).decode("utf-8", errors="ignore")
+        raw = fetch_search_url(url, timeout=18).decode("utf-8", errors="ignore")
     except Exception as exc:
         print(f"Search failed for {query}: {exc}", file=sys.stderr)
-        return []
+        return bing_search(query, limit=limit)
     results: list[dict[str, str]] = []
     for match in re.finditer(r'<a[^>]+class="result__a"[^>]+href="([^"]+)"[^>]*>(.*?)</a>', raw, re.S):
         href = html.unescape(match.group(1))
@@ -289,6 +302,24 @@ def ddg_search(query: str, limit: int = 5) -> list[dict[str, str]]:
         params = urllib.parse.parse_qs(parsed.query)
         if "uddg" in params:
             href = params["uddg"][0]
+        if title and href.startswith(("http://", "https://")):
+            results.append({"title": title, "url": normalize_url(href), "query": query})
+        if len(results) >= limit:
+            break
+    return results
+
+
+def bing_search(query: str, limit: int = 5) -> list[dict[str, str]]:
+    url = "https://www.bing.com/search?" + urllib.parse.urlencode({"q": query})
+    try:
+        raw = fetch_search_url(url, timeout=18).decode("utf-8", errors="ignore")
+    except Exception as exc:
+        print(f"Bing search failed for {query}: {exc}", file=sys.stderr)
+        return []
+    results: list[dict[str, str]] = []
+    for match in re.finditer(r'<li class="b_algo".*?<h2>.*?<a href="([^"]+)"[^>]*>(.*?)</a>', raw, re.S):
+        href = html.unescape(match.group(1))
+        title = clean_text(match.group(2))
         if title and href.startswith(("http://", "https://")):
             results.append({"title": title, "url": normalize_url(href), "query": query})
         if len(results) >= limit:
@@ -945,10 +976,10 @@ def topic_direction_for_item(item: SourceItem, report_type: str, site: dict[str,
     return best_key, directions[best_key]
 
 
-def deepseek_triage(items: list[SourceItem], site: dict[str, Any], policy: dict[str, Any]) -> list[RadarDecision] | None:
+def deepseek_triage_batch(items: list[SourceItem], site: dict[str, Any], policy: dict[str, Any]) -> list[RadarDecision]:
     api_key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
     if not api_key:
-        return None
+        return []
     sample = [
         {
             "id": item.id,
@@ -956,15 +987,15 @@ def deepseek_triage(items: list[SourceItem], site: dict[str, Any], policy: dict[
             "source_name": item.source_name,
             "title": item.title,
             "url": item.url,
-            "summary": item.summary[:360],
+            "summary": item.summary[:220],
             "published_at": item.published_at,
         }
-        for item in items[:80]
+        for item in items
     ]
     body = {
         "model": os.environ.get("DEEPSEEK_MODEL", "deepseek-chat"),
         "temperature": 0.2,
-        "max_tokens": 6000,
+        "max_tokens": 4200,
         "response_format": {"type": "json_object"},
         "messages": [
             {
@@ -997,7 +1028,11 @@ def deepseek_triage(items: list[SourceItem], site: dict[str, Any], policy: dict[
         )
         with urllib.request.urlopen(req, timeout=90) as resp:
             data = json.loads(resp.read().decode("utf-8"))
-        parsed = json.loads(data["choices"][0]["message"]["content"])
+        content = data["choices"][0]["message"]["content"].strip()
+        if content.startswith("```"):
+            content = re.sub(r"^```(?:json)?\s*", "", content)
+            content = re.sub(r"\s*```$", "", content)
+        parsed = json.loads(content)
         rows = parsed if isinstance(parsed, list) else parsed.get("items", [])
         by_id = {item.id: item for item in items}
         decisions: list[RadarDecision] = []
@@ -1024,10 +1059,21 @@ def deepseek_triage(items: list[SourceItem], site: dict[str, Any], policy: dict[
                     traceability={**fallback.traceability, "heuristic": False, "model": body["model"]},
                 )
             )
-        return decisions or None
+        return decisions
     except Exception as exc:
-        print(f"DeepSeek triage failed, fallback to heuristic: {exc}", file=sys.stderr)
+        print(f"DeepSeek triage batch failed, fallback this batch to heuristic: {exc}", file=sys.stderr)
+        return []
+
+
+def deepseek_triage(items: list[SourceItem], site: dict[str, Any], policy: dict[str, Any]) -> list[RadarDecision] | None:
+    if not os.environ.get("DEEPSEEK_API_KEY", "").strip():
         return None
+    decisions: list[RadarDecision] = []
+    batch_size = 25
+    for offset in range(0, min(len(items), 100), batch_size):
+        batch = items[offset:offset + batch_size]
+        decisions.extend(deepseek_triage_batch(batch, site, policy))
+    return decisions or None
 
 
 def compact_report_seed(report: dict[str, Any]) -> dict[str, Any]:
@@ -1756,6 +1802,38 @@ def render_about(site: dict[str, Any], policy: dict[str, Any]) -> str:
 
 def list_html(items: list[str], empty: str = "暂无") -> str:
     values = [x for x in items if x]
+    if not values:
+        values = [empty]
+    return "".join(f"<li>{html.escape(x)}</li>" for x in values)
+
+
+def display_value(value: Any) -> str:
+    if value is None:
+        return ""
+    if isinstance(value, str):
+        return value
+    if isinstance(value, (int, float, bool)):
+        return str(value)
+    if isinstance(value, dict):
+        preferred = []
+        for key in ["time", "date", "event", "title", "source", "supports", "evidence", "note", "why", "needs", "query"]:
+            if value.get(key):
+                preferred.append(str(value[key]))
+        if preferred:
+            return " - ".join(preferred)
+        return "；".join(f"{k}: {display_value(v)}" for k, v in value.items() if v)
+    if isinstance(value, list):
+        return "；".join(display_value(item) for item in value if item)
+    return str(value)
+
+
+def list_html(items: Any, empty: str = "暂无") -> str:
+    if isinstance(items, list):
+        values = [display_value(x) for x in items if display_value(x)]
+    elif items:
+        values = [display_value(items)]
+    else:
+        values = []
     if not values:
         values = [empty]
     return "".join(f"<li>{html.escape(x)}</li>" for x in values)
