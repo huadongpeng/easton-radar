@@ -72,5 +72,28 @@ GitHub Actions 能稳定抓到，是第一版信息源的硬门槛。
 - `ai_tools`
 - `developer_business`
 - `overseas_and_platforms`
+- `platform_policy`
 
 不要把数据源分类暴露成网站主栏目。
+
+## 当前数据源覆盖
+
+第一版只保留 GitHub Actions 可稳定抓取的公开源。
+
+- `ai_tools`：OpenAI、Google AI、DeepMind、Hugging Face、Microsoft AI、GitHub Blog、Cloudflare Changelog、Vercel Changelog、AWS ML、Simon Willison、Changelog。
+- `developer_business`：Hacker News、HN Show、Product Hunt、YC Blog、The Bootstrapped Founder、Failory、Side Hustle Nation、V2EX、阮一峰。
+- `overseas_and_platforms`：Rest of World、Practical Ecommerce、Stripe Blog、Medianama，以及支付/出海相关 HN 查询。
+- `platform_policy`：Shopify Developer Changelog、Apple Developer News，以及搜索生态、支付合规相关 HN 查询。
+
+如果新增源在本地或 GitHub Actions 返回 403/404/429，先移除，不为抓取炫技牺牲稳定性。
+
+## 批次覆盖策略
+
+每个批次最多保留 48 条报告。为了避免 AI 平台 changelog 把页面刷屏，入选报告按数据源分类设置上限：
+
+- `ai_tools`：最多 20 条。
+- `developer_business`：最多 14 条。
+- `overseas_and_platforms`：最多 8 条。
+- `platform_policy`：最多 8 条。
+
+如果某个分类当批次没有足够高质量线索，宁可低于 48 条，也不让单一分类继续补位刷屏。这样可以保证 Radar 既跟住 AI/开发者平台，又不丢掉副业、出海、支付、搜索生态和平台规则这些后续写作更容易展开的源头。

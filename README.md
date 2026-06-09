@@ -11,6 +11,20 @@ Easton Radar 是老花的信息差侦察站。
 - 频率：每天早、中、晚 3 次定时采集。
 - 输出：静态 Radar 网站、JSON 数据、Telegram 摘要通知。
 
+## 三项目协作使命
+
+Easton Radar 是三项目链路的上游情报层。
+
+- `01-easton-radar`：只做信息采集、证据沉淀、存疑标记和调查方向判断。
+- `02-easton-gpt-editor`：读取 Radar 链接或 JSON 调查包，再结合人设进行多轮创作。
+- `03-easton-cms`：接收标准化内容包，负责发布、推送、归档和复盘。
+
+因此每条 Radar 报告都必须给足后续流程所需资料：
+
+- 给 GPT 编辑应用：来源、事实、存疑点、可展开角度、不可写成结论的点、需要补证的问题。
+- 给 CMS：slug、canonical URL、SEO 标题、摘要、标签、报告类型、来源分类、证据等级、发布状态。
+- 给研究闭环：继续检索词、证据缺口、停止信号。
+
 ## 栏目定义
 
 网站栏目按“报告类型”划分，不按数据源分类划分。
@@ -25,7 +39,7 @@ Easton Radar 是老花的信息差侦察站。
 - 案例复盘：独立开发、产品增长、失败复盘、真实运营案例。
 - 风险避坑：容易误导、夸大、踩坑或割韭菜的线索。
 
-数据源分类只作为内部字段使用，例如 `ai_tools`、`developer_business`、`overseas_and_platforms`，不能直接变成网站主栏目。
+数据源分类只作为内部字段使用，例如 `ai_tools`、`developer_business`、`overseas_and_platforms`、`platform_policy`，不能直接变成网站主栏目。
 
 ## 信息源原则
 
@@ -43,9 +57,10 @@ Radar 宁可少，也不要脏。
 稳定信息源
   -> 拉取 RSS/API/公开 JSON
   -> 去重和基础清洗
+  -> 统计数据源覆盖
   -> DeepSeek v4 Flash 初筛
   -> 判断 report_type
-  -> 生成简报和调查报告 JSON
+  -> 生成简报、调查报告 JSON 和 downstream_handoff
   -> 生成静态网站
   -> GitHub Pages 发布
   -> Telegram 通知

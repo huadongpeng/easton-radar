@@ -8,6 +8,7 @@ import html
 import json
 import os
 import re
+import shutil
 import sys
 import textwrap
 import urllib.parse
@@ -27,7 +28,14 @@ SITE_DIR = ROOT / "site"
 USER_AGENT = "EastonRadar/0.1 (+https://radar.huadongpeng.com)"
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 MAX_ITEMS_PER_SOURCE = 18
-MAX_TOTAL_ITEMS = 120
+MAX_TOTAL_ITEMS = 220
+MAX_REPORTS_PER_BATCH = 48
+SOURCE_CATEGORY_REPORT_CAPS = {
+    "ai_tools": 20,
+    "developer_business": 14,
+    "overseas_and_platforms": 8,
+    "platform_policy": 8,
+}
 
 
 @dataclass
@@ -88,6 +96,20 @@ def load_json(path: Path) -> dict[str, Any]:
 def write_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def clean_generated_outputs() -> None:
+    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+    for path in REPORTS_DIR.glob("*.json"):
+        path.unlink()
+    for rel in ["items", "reports", "briefings", "about", "assets"]:
+        target = SITE_DIR / rel
+        if target.exists():
+            shutil.rmtree(target)
+    for rel in ["index.html", "sitemap.xml", "robots.txt", "llms.txt", "ads.txt"]:
+        target = SITE_DIR / rel
+        if target.exists():
+            target.unlink()
 
 
 def clean_text(value: str) -> str:
@@ -169,6 +191,34 @@ def make_item(source_category: str, source_name: str, source_type: str, title: s
     )
 
 
+def should_drop_item(item: SourceItem) -> bool:
+    text = f"{item.title} {item.summary}".lower()
+    host = urllib.parse.urlparse(item.url).netloc.lower()
+    noisy_phrases = [
+        "氪星晚报",
+        "8点1氪",
+        "早报",
+        "晚报",
+        "午报",
+        "一周融资",
+        "完成融资",
+        "获得融资",
+        "质押",
+        "贷款提供担保",
+    ]
+    if any(phrase.lower() in text for phrase in noisy_phrases):
+        return True
+    if "v2ex.com" in host and "jobs.xml" in item.feed_url:
+        job_fit_keywords = ["remote", "远程", "兼职", "外包", "副业", "出海", "跨境", "海外", "独立开发", "saas", "shopify", "stripe"]
+        if not any(word in text for word in job_fit_keywords):
+            return True
+    if item.source_category == "overseas_and_platforms" and any(word in text for word in ["融资", "ipo", "财报"]) and not any(word in text for word in ["stripe", "shopify", "支付", "跨境", "出海", "开发者", "ai", "api"]):
+        return True
+    if len(item.title) > 90 and any(mark in item.title for mark in ["丨", "；", ";"]):
+        return True
+    return False
+
+
 def parse_feed(source_category: str, feed_url: str, payload: bytes) -> list[SourceItem]:
     root = ET.fromstring(payload)
     items: list[SourceItem] = []
@@ -217,7 +267,7 @@ def collect_items(sources: dict[str, Any]) -> tuple[list[SourceItem], list[dict[
         for url in group.get("feeds", []):
             try:
                 for item in parse_feed(source_category, url, fetch_url(url)):
-                    if item.url not in seen:
+                    if item.url not in seen and not should_drop_item(item):
                         items.append(item)
                         seen.add(item.url)
             except Exception as exc:
@@ -225,16 +275,35 @@ def collect_items(sources: dict[str, Any]) -> tuple[list[SourceItem], list[dict[
         for url in group.get("apis", []):
             try:
                 for item in parse_hn_api(source_category, url, fetch_url(url)):
-                    if item.url not in seen:
+                    if item.url not in seen and not should_drop_item(item):
                         items.append(item)
                         seen.add(item.url)
             except Exception as exc:
                 failures.append({"source_category": source_category, "source": url, "error": str(exc)[:240]})
+    items.sort(key=lambda item: item.published_at or item.fetched_at, reverse=True)
     return items[:MAX_TOTAL_ITEMS], failures
+
+
+def source_coverage(items: list[SourceItem], failures: list[dict[str, str]], site: dict[str, Any]) -> dict[str, Any]:
+    categories = site.get("source_categories", {})
+    result: dict[str, Any] = {}
+    for key, title in categories.items():
+        result[key] = {
+            "title": title,
+            "items": sum(1 for item in items if item.source_category == key),
+            "failures": sum(1 for failure in failures if failure.get("source_category") == key),
+        }
+    for item in items:
+        result.setdefault(item.source_category, {"title": item.source_category, "items": 0, "failures": 0})
+    for failure in failures:
+        result.setdefault(failure.get("source_category", "unknown"), {"title": failure.get("source_category", "unknown"), "items": 0, "failures": 0})
+    return result
 
 
 def infer_report_type(text: str, source_category: str) -> str:
     text = text.lower()
+    if source_category == "platform_policy":
+        return "platform-rules"
     if any(w in text for w in ["pricing", "price", "cost", "token", "bill", "revenue", "mrr", "adsense", "价格", "成本", "收入", "账单"]):
         return "tool-ledger"
     if any(w in text for w in ["policy", "rules", "compliance", "seo", "google", "search", "stripe", "paddle", "规则", "合规", "平台"]):
@@ -315,30 +384,124 @@ def infer_reader_hook(hits: dict[str, list[str]], report_type: str) -> str:
     return "这条线索需要继续确认它和普通技术人的成本、岗位、工具链或机会有什么关系。"
 
 
-def make_report_title(item: SourceItem, report_type: str, site: dict[str, Any]) -> str:
-    report_name = site["report_types"].get(report_type, {}).get("title", "线索")
-    host = urllib.parse.urlparse(item.url).netloc.replace("www.", "")
-    source = item.source_name or host
-    lower = f"{item.title} {source}".lower()
-    known = ["OpenAI", "Claude", "GitHub", "Copilot", "Cloudflare", "Amazon", "AWS", "Google", "Gemini", "DeepSeek", "Hugging Face", "Vercel", "Stripe"]
-    subject = source or host
-    for name in known:
-        if name.lower() in lower:
-            subject = name
-            break
-    if subject == "Amazon":
-        subject = "AWS"
-    if subject.lower() in {"artificial intelligence", "machine learning"} and "amazon" in host:
-        subject = "AWS"
-    actions = {
-        "tool-ledger": "工具成本和能力变化",
+def display_source_name(item: SourceItem) -> str:
+    host = urllib.parse.urlparse(item.url).netloc.lower()
+    if "v2ex.com" in host:
+        if "create.xml" in item.feed_url:
+            return "V2EX 分享创造"
+        if "jobs.xml" in item.feed_url:
+            return "V2EX 酷工作"
+        return "V2EX"
+    if "aws.amazon.com" in host:
+        return "AWS Machine Learning Blog"
+    if "github.blog" in host:
+        return "GitHub Blog"
+    if "developers.cloudflare.com" in host:
+        return "Cloudflare Developers"
+    if "vercel.com" in host:
+        return "Vercel Changelog"
+    if "openai.com" in host:
+        return "OpenAI News"
+    if "blog.google" in host:
+        return "Google AI Blog"
+    if "deepmind.google" in host:
+        return "Google DeepMind Blog"
+    if "huggingface.co" in host:
+        return "Hugging Face Blog"
+    if "stripe.com" in host:
+        return "Stripe Blog"
+    if "producthunt.com" in host:
+        return "Product Hunt"
+    if "news.ycombinator.com" in host:
+        return "Hacker News"
+    if "shopify.dev" in host:
+        return "Shopify Developer Changelog"
+    if "developer.apple.com" in host:
+        return "Apple Developer News"
+    noisy = {"ai", "artificial intelligence", "archive: 2026 - github changelog", "machine learning"}
+    if item.source_name.strip().lower() in noisy:
+        return urllib.parse.urlparse(item.url).netloc.replace("www.", "")
+    return item.source_name
+
+
+def title_subject(title: str, fallback: str) -> str:
+    text = clean_text(title)
+    text = re.sub(r"^\[[^\]]+\]\s*", "", text)
+    text = re.sub(r"^【[^】]+】\s*", "", text)
+    for part in re.split(r"[|｜:：,，;；。!！?？—（(]+", text):
+        candidate = part.strip(" -_")
+        if len(candidate) >= 2:
+            return candidate[:24]
+    return (text or fallback)[:24]
+
+
+def ascii_dominant(text: str) -> bool:
+    letters = sum(1 for ch in text if ch.isascii() and ch.isalpha())
+    cjk = sum(1 for ch in text if "\u4e00" <= ch <= "\u9fff")
+    return letters > 0 and cjk == 0
+
+
+def chinese_topic_hint(title: str, report_type: str) -> str:
+    lower = title.lower()
+    def has_word(*words: str) -> bool:
+        return any(re.search(rf"\b{re.escape(word)}\b", lower) for word in words)
+
+    if any(word in lower for word in ["pricing", "billing", "usage", "cost", "budget", "quota", "api access"]):
+        return "计费和成本变化"
+    if has_word("search", "seo", "ranking", "ai mode") or "google search" in lower:
+        return "搜索生态变化"
+    if any(word in lower for word in ["codex", "copilot", "claude code", "agent", "agents", "tool calling"]):
+        return "AI 编程工具变化"
+    if any(word in lower for word in ["model", "gpt", "gemini", "claude", "nova", "nemotron", "llm", "inference"]):
+        return "模型能力变化"
+    if any(word in lower for word in ["policy", "license", "terms", "safety", "compliance", "privacy", "risk"]):
+        return "平台规则变化"
+    if any(word in lower for word in ["stripe", "payment", "billing", "shopify", "storefront", "commerce"]):
+        return "支付和电商平台变化"
+    if any(word in lower for word in ["cloudflare", "worker", "gateway", "vercel", "aws", "github"]):
+        return "开发者平台变化"
+    fallback = {
+        "tool-ledger": "工具成本变化",
         "platform-rules": "平台规则变化",
         "case-study": "案例线索",
         "opportunity": "机会线索",
         "risk-warning": "风险线索",
         "investigation": "重要线索",
     }
-    return f"{report_name}：{subject} 的{actions.get(report_type, '重要线索')}"
+    return fallback.get(report_type, "重要线索")
+
+
+def make_report_title(item: SourceItem, report_type: str, site: dict[str, Any]) -> str:
+    report_name = site["report_types"].get(report_type, {}).get("title", "线索")
+    host = urllib.parse.urlparse(item.url).netloc.replace("www.", "")
+    source = display_source_name(item) or host
+    lower = f"{item.title} {source}".lower()
+    known = ["OpenAI", "Claude", "GitHub", "Copilot", "Cloudflare", "Amazon", "AWS", "Google", "Gemini", "DeepSeek", "Hugging Face", "Vercel", "Stripe", "Microsoft", "Apple", "Siri", "Shopify"]
+    source_label = source or host
+    brand = ""
+    for name in known:
+        if name.lower() in lower:
+            brand = name
+            break
+    if brand == "Amazon":
+        brand = "AWS"
+    if brand == "Siri":
+        brand = "Apple"
+    if source_label.lower() in {"artificial intelligence", "machine learning"} and "amazon" in host:
+        brand = "AWS"
+
+    topic = title_subject(item.title, source_label)
+    if ascii_dominant(topic):
+        label = brand or source_label
+        if (source.startswith("V2EX") or source in {"Product Hunt", "Hacker News"}) and len(topic) <= 20 and len(topic.split()) <= 4:
+            label = topic
+        subject = f"{label} {chinese_topic_hint(item.title, report_type)}"
+        return f"{report_name}：{subject}"
+    if brand and brand.lower() not in topic.lower():
+        subject = f"{brand}：{topic}"
+    else:
+        subject = topic or brand or source_label
+    return f"{report_name}：{subject}"
 
 
 def collection_fit_text(score: int, evidence_level: str, report_type: str, site: dict[str, Any]) -> str:
@@ -369,6 +532,183 @@ def default_uncertainty_flags(evidence_level: str, decision: str) -> list[str]:
     if decision == "brief":
         flags.append("当前仅适合简报观察，不宜写成深度结论。")
     return flags
+
+
+def source_priority(item: SourceItem, evidence_level: str) -> str:
+    host = urllib.parse.urlparse(item.url).netloc.lower()
+    if evidence_level == "official":
+        return "P0 官方/一手源"
+    if any(key in host for key in ["github.com", "github.blog", "developers.", "docs.", "cloudflare.com", "openai.com", "google", "amazon.com", "stripe.com"]):
+        return "P0 官方/一手源"
+    if item.source_name in {"Hacker News", "Product Hunt"} or any(key in host for key in ["simonwillison.net", "ycombinator.com", "changelog.com"]):
+        return "P1 高质量近源"
+    if item.source_category in {"overseas_and_platforms", "developer_business"}:
+        return "P2 可参考源"
+    return "P2 可参考源"
+
+
+def source_access_assessment(item: SourceItem, failures: list[dict[str, str]] | None = None) -> dict[str, Any]:
+    failed = [f for f in failures or [] if f.get("source") == item.feed_url]
+    return {
+        "access_method": item.source_type,
+        "feed_url": item.feed_url,
+        "stable_in_github_actions": not failed,
+        "failure_reason": failed[0]["error"] if failed else "",
+        "anti_scrape_required": False,
+        "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+    }
+
+
+def evidence_dossier(report: dict[str, Any]) -> dict[str, Any]:
+    return {
+        "confirmed": report["verification"]["what_is_confirmed"],
+        "needs_followup": report["verification"]["what_needs_followup"],
+        "uncertain": report["uncertainty_flags"],
+        "not_claimable": report["verification"]["do_not_claim"],
+        "expert_challenges": report["verification"]["expert_challenge_points"],
+    }
+
+
+def followup_queries(item: SourceItem, report_type: str) -> list[str]:
+    title = item.title.strip()
+    source = item.source_name.strip()
+    base = title or source
+    has_chinese = bool(re.search(r"[\u4e00-\u9fff]", base))
+    if has_chinese:
+        templates = {
+            "tool-ledger": [
+                f"{base} 官方公告 价格 成本",
+                f"{base} API 文档 额度 限制",
+                f"{base} 替代方案 真实使用 成本",
+            ],
+            "platform-rules": [
+                f"{base} 官方政策 规则 原文",
+                f"{base} 开发者公告 影响范围",
+                f"{base} 合规 风险 受影响用户",
+            ],
+            "case-study": [
+                f"{base} 原始项目 GitHub 复盘",
+                f"{base} 收入 增长 证据",
+                f"{base} 失败 限制 反方证据",
+            ],
+            "opportunity": [
+                f"{base} 用户需求 付费意愿",
+                f"{base} 竞品 替代方案",
+                f"{base} 最小验证 案例",
+            ],
+            "risk-warning": [
+                f"{base} 投诉 风险 违规",
+                f"{base} 骗局 营销话术",
+                f"{base} 隐藏成本 失败案例",
+            ],
+            "investigation": [
+                f"{base} 官方来源 原始公告",
+                f"{base} 概念解释 证据",
+                f"{base} 反方观点 局限",
+            ],
+        }
+        return templates.get(report_type, templates["investigation"])
+    templates = {
+        "tool-ledger": [
+            f"{base} official pricing limits changelog",
+            f"{base} API documentation quota cost",
+            f"{base} alternative comparison cost",
+        ],
+        "platform-rules": [
+            f"{base} official policy documentation",
+            f"{base} developer announcement impact",
+            f"{base} compliance risk affected users",
+        ],
+        "case-study": [
+            f"{base} GitHub repository case study",
+            f"{base} founder postmortem revenue evidence",
+            f"{base} criticism limitations real users",
+        ],
+        "opportunity": [
+            f"{base} user demand evidence pricing",
+            f"{base} market alternatives competitors",
+            f"{base} time to first dollar case study",
+        ],
+        "risk-warning": [
+            f"{base} complaints risk policy violation",
+            f"{base} scam warning criticism",
+            f"{base} hidden cost failure case",
+        ],
+        "investigation": [
+            f"{base} official announcement source",
+            f"{base} technical explanation evidence",
+            f"{base} opposing views limitations",
+        ],
+    }
+    return templates.get(report_type, templates["investigation"])
+
+
+def angle_candidates(report_type: str) -> list[str]:
+    mapping = {
+        "tool-ledger": ["成本是否真的下降", "免费额度和爆账单风险", "替代方案值不值得换"],
+        "platform-rules": ["规则变动影响谁", "普通技术人的合规边界", "平台红利和封号风险"],
+        "case-study": ["可复制条件", "不可复制条件", "失败或成功背后的非技术因素"],
+        "opportunity": ["最小验证路径", "真实需求和付费意愿", "停止信号和资金边界"],
+        "risk-warning": ["营销话术拆解", "合规和资金风险", "普通人不该硬冲的原因"],
+        "investigation": ["事实时间线", "基础概念澄清", "证据矛盾和影响边界"],
+    }
+    return mapping.get(report_type, mapping["investigation"])
+
+
+def downstream_handoff(report: dict[str, Any], site: dict[str, Any]) -> dict[str, Any]:
+    base = site["site_url"].rstrip("/")
+    canonical_url = f"{base}/items/{report['id']}/"
+    tags = [report["report_type_title"], report["source_category_title"], report["evidence_level"], report["source_name"]]
+    return {
+        "package_version": "radar-handoff-v1",
+        "canonical_url": canonical_url,
+        "for_gpt_editor": {
+            "brief": report["summary"] or report["reader_hook"],
+            "title_seed": report["title"],
+            "original_title": report.get("original_title", ""),
+            "source_url": report["url"],
+            "angle_candidates": angle_candidates(report["report_type"]),
+            "must_keep": [
+                "先交代来源和证据等级。",
+                "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+                "保留普通读者入口，不把冷门技术写成圈内自嗨。"
+            ],
+            "must_not_claim": report["verification"]["do_not_claim"],
+            "questions_to_resolve": report["verification"]["what_needs_followup"],
+        },
+        "for_cms": {
+            "slug": report["id"],
+            "canonical_url": canonical_url,
+            "seo_title": report["title"],
+            "seo_description": report["reader_hook"],
+            "tags": [tag for tag in tags if tag],
+            "report_type": report["report_type"],
+            "source_category": report["source_category"],
+            "evidence_level": report["evidence_level"],
+            "publish_status": "radar_published",
+        },
+        "for_research_loop": {
+            "followup_queries": followup_queries_from_report(report),
+            "evidence_gaps": report["verification"]["what_needs_followup"],
+            "stop_conditions": [
+                "找不到一手来源或近源证据。",
+                "只能证明技术存在，无法证明需求、成本、规则或影响。",
+                "所有高价值信息都来自营销页或无法复查的截图。"
+            ],
+        },
+    }
+
+
+def followup_queries_from_report(report: dict[str, Any]) -> list[str]:
+    fake_item = SourceItem(
+        id=report["id"],
+        source_category=report["source_category"],
+        source_name=report["source_name"],
+        source_type=report["source_type"],
+        title=report["title"],
+        url=report["url"],
+    )
+    return followup_queries(fake_item, report["report_type"])
 
 
 def deepseek_triage(items: list[SourceItem], site: dict[str, Any], policy: dict[str, Any]) -> list[RadarDecision] | None:
@@ -405,6 +745,8 @@ def deepseek_triage(items: list[SourceItem], site: dict[str, Any], policy: dict[
                     "硬规则：优先官方/一手/近源；反爬论坛抓不到就放弃；冷门技术没有普通读者入口就 skip；"
                     "先判断是否符合信息收集原则；符合才深挖证据；证据不足必须标记存疑，不能写成结论。\n"
                     f"报告类型规则：{json.dumps(policy['report_type_rules'], ensure_ascii=False)}\n"
+                    f"下游交接要求：{json.dumps(policy.get('downstream_requirements', {}), ensure_ascii=False)}\n"
+                    f"数据源分类：{json.dumps(site.get('source_categories', {}), ensure_ascii=False)}\n"
                     f"人设主线：{json.dumps(policy['persona_lines'], ensure_ascii=False)}\n"
                     f"待筛信息：{json.dumps(sample, ensure_ascii=False)}"
                 ),
@@ -458,7 +800,8 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
     report_id = f"{now_bj().strftime('%Y%m%d')}-{slugify(item.title)}"
     report_type_meta = site["report_types"][decision.report_type]
     source_title = site.get("source_categories", {}).get(item.source_category, item.source_category)
-    return {
+    source_name = display_source_name(item)
+    report = {
         "id": report_id,
         "title": decision.report_title,
         "original_title": item.title,
@@ -466,7 +809,8 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
         "summary": item.summary,
         "source_category": item.source_category,
         "source_category_title": source_title,
-        "source_name": item.source_name,
+        "source_name": source_name,
+        "original_source_name": item.source_name,
         "source_type": item.source_type,
         "feed_url": item.feed_url,
         "published_at": item.published_at,
@@ -478,13 +822,14 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
         "reader_hook": decision.reader_hook,
         "why_now": decision.why_now,
         "evidence_level": decision.evidence_level,
+        "source_priority": source_priority(item, decision.evidence_level),
         "reason": decision.reason,
         "collection_fit": decision.collection_fit,
         "investigation_direction": decision.investigation_direction,
         "uncertainty_flags": decision.uncertainty_flags,
         "facts": [
             {
-                "claim": f"{item.source_name} 发布/收录了这条原始线索：{item.title}",
+                "claim": f"{source_name} 发布/收录了这条原始线索：{item.title}",
                 "type": "confirmed_fact",
                 "source_url": item.url,
                 "confidence": 0.8 if decision.evidence_level in {"official", "near_source"} else 0.55
@@ -492,7 +837,7 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
         ],
         "sources": [
             {
-                "title": item.source_name,
+                "title": source_name,
                 "url": item.url,
                 "source_type": decision.evidence_level,
                 "used_for": "原始线索和事实入口"
@@ -526,6 +871,28 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
             "fit_for_radar": decision.decision == "deep_dive"
         }
     }
+    report["source_assessment"] = source_access_assessment(item)
+    report["evidence_dossier"] = evidence_dossier(report)
+    report["downstream_handoff"] = downstream_handoff(report, site)
+    return report
+
+
+def select_reports(decisions: list[RadarDecision], limit: int = MAX_REPORTS_PER_BATCH) -> list[RadarDecision]:
+    eligible = [d for d in decisions if d.decision in {"deep_dive", "brief"}]
+    selected: list[RadarDecision] = []
+    category_counts: dict[str, int] = {}
+
+    for decision in eligible:
+        category = decision.item.source_category
+        cap = SOURCE_CATEGORY_REPORT_CAPS.get(category, limit)
+        if category_counts.get(category, 0) >= cap:
+            continue
+        selected.append(decision)
+        category_counts[category] = category_counts.get(category, 0) + 1
+        if len(selected) >= limit:
+            return selected
+
+    return selected
 
 
 class StaticSite:
@@ -610,11 +977,16 @@ def render_home(batch: dict[str, Any], reports: list[dict[str, Any]], site: dict
         count = sum(1 for r in reports if r["report_type"] == key)
         type_cards.append(f'<article class="card"><h3><a href="/reports/{key}/">{html.escape(meta["title"])}</a></h3><p>{html.escape(meta["description"])}</p><p class="meta">本批次 {count} 条</p></article>')
     principles = "".join(f"<li>{html.escape(x)}</li>" for x in policy["source_principles"])
+    coverage = "".join(
+        f'<span class="badge">{html.escape(v["title"])}：{v["items"]} 条 / 失败 {v["failures"]}</span>'
+        for v in batch.get("source_coverage", {}).values()
+    )
     latest = "".join(report_card(r) for r in reports[:10]) or '<p class="meta">本批次暂无可发布报告。</p>'
     return f"""
 <section class="hero"><h1>老花的信息差侦察站</h1><p>按报告类型整理线索：先判断是否符合收集原则，再持续深挖证据；没有证据或仍存疑的地方，必须单独标记。</p></section>
 <section class="grid">{''.join(type_cards)}</section>
 <div class="ad-slot">AdSense 预留位：后续填入 publisher client 后启用</div>
+<section class="section card"><h2>数据源覆盖</h2><p>{coverage}</p></section>
 <section class="section"><h2>最新简报</h2><p class="meta">批次：{html.escape(batch["batch_id"])} · 抓取 {batch["fetched_count"]} 条 · 深挖 {batch["deep_count"]} 条 · 简报 {batch["brief_count"]} 条</p><div class="list">{latest}</div></section>
 <section class="section card"><h2>数据源原则</h2><ul>{principles}</ul></section>
 """
@@ -623,9 +995,11 @@ def render_home(batch: dict[str, Any], reports: list[dict[str, Any]], site: dict
 def render_briefings(batch: dict[str, Any], reports: list[dict[str, Any]]) -> str:
     items = "".join(report_card(r) for r in reports) or '<p class="meta">本批次暂无条目。</p>'
     failures = "".join(f'<li>{html.escape(f["source"])}：{html.escape(f["error"])}</li>' for f in batch.get("failures", [])[:12]) or "<li>本批次无抓取失败。</li>"
+    coverage = "".join(f'<li>{html.escape(v["title"])}：{v["items"]} 条，失败 {v["failures"]}</li>' for v in batch.get("source_coverage", {}).values())
     return f"""
 <section class="hero"><h1>简报</h1><p>简报是信息线索和证据入口。每条都会保留报告类型、来源分类、收集判断和溯源信息。</p></section>
 <section class="card"><p>批次：{html.escape(batch["batch_id"])}</p><p>抓取 {batch["fetched_count"]} 条；深挖 {batch["deep_count"]} 条；简报 {batch["brief_count"]} 条；跳过 {batch["skipped_count"]} 条。</p></section>
+<section class="section card"><h2>数据源覆盖</h2><ul>{coverage}</ul></section>
 <section class="section list">{items}</section>
 <section class="section card"><h2>抓取失败</h2><ul>{failures}</ul></section>
 """
@@ -643,6 +1017,14 @@ def render_item(report: dict[str, Any], site: dict[str, Any]) -> str:
     challenge = "".join(f"<li>{html.escape(x)}</li>" for x in report["verification"]["expert_challenge_points"])
     dont = "".join(f"<li>{html.escape(x)}</li>" for x in report["verification"]["do_not_claim"])
     uncertainty = "".join(f"<li>{html.escape(x)}</li>" for x in report.get("uncertainty_flags", []))
+    handoff = report.get("downstream_handoff", {})
+    editor = handoff.get("for_gpt_editor", {})
+    cms = handoff.get("for_cms", {})
+    research = handoff.get("for_research_loop", {})
+    angles = "".join(f"<li>{html.escape(x)}</li>" for x in editor.get("angle_candidates", []))
+    queries = "".join(f"<li>{html.escape(x)}</li>" for x in research.get("followup_queries", []))
+    cms_tags = "、".join(html.escape(x) for x in cms.get("tags", []))
+    source_assessment = report.get("source_assessment", {})
     schema = {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -662,12 +1044,17 @@ def render_item(report: dict[str, Any], site: dict[str, Any]) -> str:
   <h2>收集原则判断</h2><p>{html.escape(report.get("collection_fit", ""))}</p>
   <h2>深挖方向</h2><p>{html.escape(report.get("investigation_direction", ""))}</p>
   <h2>存疑标记</h2><ul>{uncertainty}</ul>
+  <h2>来源评估</h2><p>{html.escape(report.get("source_priority", ""))} · GitHub Actions 稳定抓取：{html.escape(str(source_assessment.get("stable_in_github_actions", "")))}</p>
   <h2>普通读者入口</h2><p>{html.escape(report["reader_hook"])}</p>
   <h2>为什么现在看</h2><p>{html.escape(report["why_now"])}</p>
   <h2>和老花人设的关系</h2><p>{html.escape(report["persona_connection"]["why_it_matters"])}</p>
   <h2>证据链</h2><ul>{facts}</ul>
   <h2>来源</h2><ul>{sources}</ul>
   <h2>还要补证</h2><ul>{follow}</ul>
+  <h2>后续流程交接包</h2>
+  <p><strong>GPT 编辑应用角度候选：</strong></p><ul>{angles}</ul>
+  <p><strong>继续检索词：</strong></p><ul>{queries}</ul>
+  <p><strong>CMS 标签：</strong>{cms_tags}</p>
   <h2>懂行人可能挑刺的地方</h2><ul>{challenge}</ul>
   <h2>不能夸大的地方</h2><ul>{dont}</ul>
   <p class="meta source">原始链接：<a href="{html.escape(report["url"])}">{html.escape(report["url"])}</a></p>
@@ -760,7 +1147,7 @@ def main() -> int:
     known = {d.item.id for d in decisions}
     decisions.extend(heuristic_decision(item, site) for item in items if item.id not in known)
     decisions.sort(key=lambda x: x.score, reverse=True)
-    selected = [d for d in decisions if d.decision in {"deep_dive", "brief"}][:48]
+    selected = select_reports(decisions)
     reports = [build_report(d, site, policy) for d in selected]
     selected_deep_count = sum(1 for d in selected if d.decision == "deep_dive")
     selected_brief_count = sum(1 for d in selected if d.decision == "brief")
@@ -775,8 +1162,10 @@ def main() -> int:
         "skipped_count": sum(1 for d in decisions if d.decision == "skip"),
         "candidate_deep_count": sum(1 for d in decisions if d.decision == "deep_dive"),
         "candidate_brief_count": sum(1 for d in decisions if d.decision == "brief"),
+        "source_coverage": source_coverage(items, failures, site),
         "failures": failures,
     }
+    clean_generated_outputs()
     write_json(DATA_DIR / f"{batch_id}.json", {"batch": batch, "items": [item.__dict__ for item in items], "reports": reports})
     write_json(DATA_DIR / "latest.json", {"batch": batch, "reports": reports})
     for report in reports:

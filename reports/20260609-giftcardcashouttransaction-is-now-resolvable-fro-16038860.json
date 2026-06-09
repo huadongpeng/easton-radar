@@ -1,0 +1,186 @@
+{
+  "id": "20260609-giftcardcashouttransaction-is-now-resolvable-fro-16038860",
+  "title": "平台规则：Shopify 平台规则变化",
+  "original_title": "`GiftCardCashOutTransaction` is now resolvable from `GiftCardTransaction`",
+  "url": "https://shopify.dev/changelog/giftcardcashouttransaction-now-resolvable-from-giftcardtransaction",
+  "summary": "Starting with GraphQL Admin API version 2026-07, the [ GiftCardCashOutTransaction ]( https://shopify.dev/docs/api/admin-graphql/2026-07/objects/GiftCardCashOutTransaction type is introduced as a new variant of the GiftCardTransaction interface. This type specifically represents transactions where a gift card balance is paid out through a point of sale (POS) system. In previous API versions, such as 2026-04 and earlier, these transactions were classified as GiftCardDebitTransaction . From version 2026-07 onwards, they are identified as GiftCardCashOutTransaction . To accurately differentiate cash-out transactions from credit and debit transactions, use the __typename field when querying giftCard.transactions . Below is an example query: giftCard(id: \"...\") { transactions(first: 10) { nodes { __typename ... on GiftCardCashOutTransaction { id amount { amount currencyCode } } } } }",
+  "source_category": "platform_policy",
+  "source_category_title": "平台规则与搜索生态",
+  "source_name": "Shopify Developer Changelog",
+  "original_source_name": "Recent changes to Shopify's platform",
+  "source_type": "rss",
+  "feed_url": "https://shopify.dev/changelog/feed.xml",
+  "published_at": "2026-06-02T16:00:00+00:00",
+  "fetched_at": "2026-06-09T04:24:30.633899+00:00",
+  "decision": "brief",
+  "report_type": "platform-rules",
+  "report_type_title": "平台规则",
+  "score": 45,
+  "reader_hook": "这条线索可能影响平台规则、搜索流量、出海路径或合规边界，适合先看清条件。",
+  "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
+  "evidence_level": "near_source",
+  "source_priority": "P2 可参考源",
+  "reason": "命中老花主线关键词，且来源可复查。",
+  "collection_fit": "部分符合收集原则：可以进入简报观察，但证据链或读者入口还不够完整。",
+  "investigation_direction": "优先追官方政策、开发者公告、执行范围、受影响人群和合规边界。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。",
+    "当前仅适合简报观察，不宜写成深度结论。"
+  ],
+  "facts": [
+    {
+      "claim": "Shopify Developer Changelog 发布/收录了这条原始线索：`GiftCardCashOutTransaction` is now resolvable from `GiftCardTransaction`",
+      "type": "confirmed_fact",
+      "source_url": "https://shopify.dev/changelog/giftcardcashouttransaction-now-resolvable-from-giftcardtransaction",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Shopify Developer Changelog",
+      "url": "https://shopify.dev/changelog/giftcardcashouttransaction-now-resolvable-from-giftcardtransaction",
+      "source_type": "near_source",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "ai"
+      ],
+      "dev": [
+        "api"
+      ],
+      "platform": [
+        "shopify"
+      ]
+    },
+    "source_host": "shopify.dev",
+    "source_type": "rss",
+    "heuristic": true
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "这条线索可能影响平台规则、搜索流量、出海路径或合规边界，适合先看清条件。",
+    "fit_for_radar": false
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://shopify.dev/changelog/feed.xml",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。",
+      "当前仅适合简报观察，不宜写成深度结论。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260609-giftcardcashouttransaction-is-now-resolvable-fro-16038860/",
+    "for_gpt_editor": {
+      "brief": "Starting with GraphQL Admin API version 2026-07, the [ GiftCardCashOutTransaction ]( https://shopify.dev/docs/api/admin-graphql/2026-07/objects/GiftCardCashOutTransaction type is introduced as a new variant of the GiftCardTransaction interface. This type specifically represents transactions where a gift card balance is paid out through a point of sale (POS) system. In previous API versions, such as 2026-04 and earlier, these transactions were classified as GiftCardDebitTransaction . From version 2026-07 onwards, they are identified as GiftCardCashOutTransaction . To accurately differentiate cash-out transactions from credit and debit transactions, use the __typename field when querying giftCard.transactions . Below is an example query: giftCard(id: \"...\") { transactions(first: 10) { nodes { __typename ... on GiftCardCashOutTransaction { id amount { amount currencyCode } } } } }",
+      "title_seed": "平台规则：Shopify 平台规则变化",
+      "original_title": "`GiftCardCashOutTransaction` is now resolvable from `GiftCardTransaction`",
+      "source_url": "https://shopify.dev/changelog/giftcardcashouttransaction-now-resolvable-from-giftcardtransaction",
+      "angle_candidates": [
+        "规则变动影响谁",
+        "普通技术人的合规边界",
+        "平台红利和封号风险"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留普通读者入口，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_cms": {
+      "slug": "20260609-giftcardcashouttransaction-is-now-resolvable-fro-16038860",
+      "canonical_url": "https://radar.huadongpeng.com/items/20260609-giftcardcashouttransaction-is-now-resolvable-fro-16038860/",
+      "seo_title": "平台规则：Shopify 平台规则变化",
+      "seo_description": "这条线索可能影响平台规则、搜索流量、出海路径或合规边界，适合先看清条件。",
+      "tags": [
+        "平台规则",
+        "平台规则与搜索生态",
+        "near_source",
+        "Shopify Developer Changelog"
+      ],
+      "report_type": "platform-rules",
+      "source_category": "platform_policy",
+      "evidence_level": "near_source",
+      "publish_status": "radar_published"
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "平台规则：Shopify 平台规则变化 官方政策 规则 原文",
+        "平台规则：Shopify 平台规则变化 开发者公告 影响范围",
+        "平台规则：Shopify 平台规则变化 合规 风险 受影响用户"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}

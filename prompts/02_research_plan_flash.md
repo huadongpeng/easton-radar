@@ -4,6 +4,12 @@
 
 输入是一条已通过初筛的线索。你不要直接写报告，先列出需要补充的证据。
 
+你的目标是让 Radar 报告能服务后续三个流程：
+
+- GPT 编辑应用能拿到事实、角度、限制和待补证问题。
+- CMS 能拿到标签、摘要、来源和证据等级。
+- 研究闭环能拿到继续检索词、证据缺口和停止信号。
+
 输出 JSON：
 
 ```json
@@ -19,7 +25,8 @@
   ],
   "expert_challenge_points": [],
   "do_not_claim_yet": [],
-  "can_write_if_missing": ""
+  "can_publish_as_radar_if_missing": "",
+  "downstream_materials_needed": []
 }
 ```
 

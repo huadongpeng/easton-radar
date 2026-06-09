@@ -4,9 +4,33 @@
     "不把强反爬论坛、登录社区、截图爆料和纯营销软文作为核心源。",
     "GitHub Actions 抓不到的反爬源及时放弃，不为了抓取炫技。",
     "任何深度报告必须保留来源、证据类型、可信度、疑点和不可夸大之处。",
+    "每条报告必须生成可交给 GPT 编辑应用、CMS 和研究闭环的标准交接包。",
     "选题必须能回答：这事和一个懂一点技术、想提升收入但不想被割的人有什么关系。",
     "冷门技术产品只有在影响成本、岗位、平台规则、隐私安全、出海收入或可复制工作流时才进入深挖。"
   ],
+  "downstream_requirements": {
+    "gpt_editor": [
+      "事实和证据链",
+      "存疑点和不可写成结论的地方",
+      "可展开角度",
+      "后续要追问的问题"
+    ],
+    "cms": [
+      "slug",
+      "canonical_url",
+      "seo_title",
+      "seo_description",
+      "tags",
+      "report_type",
+      "source_category",
+      "evidence_level"
+    ],
+    "research_loop": [
+      "followup_queries",
+      "evidence_gaps",
+      "stop_conditions"
+    ]
+  },
   "persona_lines": [
     "AI 工具与开发成本",
     "程序员副业与独立开发",

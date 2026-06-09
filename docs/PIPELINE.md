@@ -40,6 +40,8 @@
 - `uncertainty_flags`: 存疑点
 - `reject_reason`: 跳过理由
 
+初筛不是写稿判断，而是资料价值判断：这条线索是否值得进入 Radar、后续还缺什么证据、能否给下游项目提供足够材料。
+
 `report_type` 可选值：
 
 - `investigation`
@@ -69,7 +71,15 @@
 
 报告不写成内容平台正文，只作为 Radar 的证据沉淀和方向判断。
 
-## Step 5：发布
+## Step 5：后续流程交接包
+
+每条报告必须生成 `downstream_handoff`：
+
+- `for_gpt_editor`: 标题种子、原始标题、来源 URL、角度候选、必须保留的信息、不能写成结论的点、待解决问题。
+- `for_cms`: slug、canonical URL、SEO 标题、SEO 描述、标签、报告类型、来源分类、证据等级、发布状态。
+- `for_research_loop`: 继续检索词、证据缺口、停止信号。
+
+## Step 6：发布
 
 生成内容：
 
@@ -87,7 +97,7 @@
 
 GitHub Pages 只发布 `site/` 目录。
 
-## Step 6：Telegram 通知
+## Step 7：Telegram 通知
 
 Telegram 只发摘要和 Radar 链接，不发长文。
 

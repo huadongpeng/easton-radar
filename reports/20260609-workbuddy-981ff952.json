@@ -1,0 +1,185 @@
+{
+  "id": "20260609-workbuddy-981ff952",
+  "title": "案例复盘：从 workbuddy 提炼转化的专家团工作流模",
+  "original_title": "[开源分享] 从 workbuddy 提炼转化的专家团工作流模式。",
+  "url": "https://www.v2ex.com/t/1218821",
+  "summary": "这段时间尝试使用了 workbuddy 的专家团模式，把各种 Agents 串联在了一起，这种方式特别友好。但因为不常用 workbuddy ，就想着把这套专家团模式给提炼出来给 codex 使用。 因此就有了这个开源项目： https://github.com/ReJeCtAll/ExpertTeam-Codex 一套可直接安装到 ~/.codex 的专家团配置，面向 Codex CLI / Codex App 桌面版的 Skill 调用方式 提供 3 个专家团与 1 个总路由入口。 我目前暂时只把自己常用的三大专家团给提炼转化了出来，分别为《软件开发团队》、《设计原型专家团》、《产品战略团队》。 如有什么意见、建议请各位佬怒喷。 核心能力 软件开发团队：PRD 、架构设计、批量编码、QA 验证、BugFix 。 设计原型专家团：需求发现、设计系统选择、高保真原型、质量审查、导出交付。 产品战略团队：PRD 、用户研究、竞品分析、指标分析、路线图、Sprint 、干系人沟通。 专家团总路由器：根据任务自动选择合适团队，或手动指定团队。 适用场景：想把 Codex 从「单个助手」升级为「可路由、可协作、可复用的专家团系统」。 Codex CLI / Codex App 桌面版可用命令 总路由 $expert-team $expert-team software $expert-team design $expert-team product 软件开发团队 $expert-software --fast $expert-software --bugfix $expert-software --standard $expert-software --prd $expert-software --arch $expert-software --code $expert-software --test 设计原型专家团 $expert-design --full $expert-design --style $expert-design --review $expert-desi",
+  "source_category": "developer_business",
+  "source_category_title": "开发者副业与独立开发",
+  "source_name": "V2EX 分享创造",
+  "original_source_name": "分享创造",
+  "source_type": "rss",
+  "feed_url": "https://v2ex.com/feed/create.xml",
+  "published_at": "2026-06-08T09:01:54Z",
+  "fetched_at": "2026-06-09T04:24:22.008289+00:00",
+  "decision": "brief",
+  "report_type": "case-study",
+  "report_type_title": "案例复盘",
+  "score": 36,
+  "reader_hook": "这条线索有具体项目或案例，可以拆哪些条件可复制，哪些只是别人自己的局。",
+  "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
+  "evidence_level": "near_source",
+  "source_priority": "P2 可参考源",
+  "reason": "命中老花主线关键词，且来源可复查。",
+  "collection_fit": "部分符合收集原则：可以进入简报观察，但证据链或读者入口还不够完整。",
+  "investigation_direction": "优先追项目原始页面、代码仓库、作者复盘、收入/增长证据和不可复制条件。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。",
+    "当前仅适合简报观察，不宜写成深度结论。"
+  ],
+  "facts": [
+    {
+      "claim": "V2EX 分享创造 发布/收录了这条原始线索：[开源分享] 从 workbuddy 提炼转化的专家团工作流模式。",
+      "type": "confirmed_fact",
+      "source_url": "https://www.v2ex.com/t/1218821",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "V2EX 分享创造",
+      "url": "https://www.v2ex.com/t/1218821",
+      "source_type": "near_source",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "agent"
+      ],
+      "dev": [
+        "github",
+        "开源",
+        "开发"
+      ]
+    },
+    "source_host": "www.v2ex.com",
+    "source_type": "rss",
+    "heuristic": true
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "这条线索有具体项目或案例，可以拆哪些条件可复制，哪些只是别人自己的局。",
+    "fit_for_radar": false
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://v2ex.com/feed/create.xml",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。",
+      "当前仅适合简报观察，不宜写成深度结论。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260609-workbuddy-981ff952/",
+    "for_gpt_editor": {
+      "brief": "这段时间尝试使用了 workbuddy 的专家团模式，把各种 Agents 串联在了一起，这种方式特别友好。但因为不常用 workbuddy ，就想着把这套专家团模式给提炼出来给 codex 使用。 因此就有了这个开源项目： https://github.com/ReJeCtAll/ExpertTeam-Codex 一套可直接安装到 ~/.codex 的专家团配置，面向 Codex CLI / Codex App 桌面版的 Skill 调用方式 提供 3 个专家团与 1 个总路由入口。 我目前暂时只把自己常用的三大专家团给提炼转化了出来，分别为《软件开发团队》、《设计原型专家团》、《产品战略团队》。 如有什么意见、建议请各位佬怒喷。 核心能力 软件开发团队：PRD 、架构设计、批量编码、QA 验证、BugFix 。 设计原型专家团：需求发现、设计系统选择、高保真原型、质量审查、导出交付。 产品战略团队：PRD 、用户研究、竞品分析、指标分析、路线图、Sprint 、干系人沟通。 专家团总路由器：根据任务自动选择合适团队，或手动指定团队。 适用场景：想把 Codex 从「单个助手」升级为「可路由、可协作、可复用的专家团系统」。 Codex CLI / Codex App 桌面版可用命令 总路由 $expert-team $expert-team software $expert-team design $expert-team product 软件开发团队 $expert-software --fast $expert-software --bugfix $expert-software --standard $expert-software --prd $expert-software --arch $expert-software --code $expert-software --test 设计原型专家团 $expert-design --full $expert-design --style $expert-design --review $expert-desi",
+      "title_seed": "案例复盘：从 workbuddy 提炼转化的专家团工作流模",
+      "original_title": "[开源分享] 从 workbuddy 提炼转化的专家团工作流模式。",
+      "source_url": "https://www.v2ex.com/t/1218821",
+      "angle_candidates": [
+        "可复制条件",
+        "不可复制条件",
+        "失败或成功背后的非技术因素"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留普通读者入口，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_cms": {
+      "slug": "20260609-workbuddy-981ff952",
+      "canonical_url": "https://radar.huadongpeng.com/items/20260609-workbuddy-981ff952/",
+      "seo_title": "案例复盘：从 workbuddy 提炼转化的专家团工作流模",
+      "seo_description": "这条线索有具体项目或案例，可以拆哪些条件可复制，哪些只是别人自己的局。",
+      "tags": [
+        "案例复盘",
+        "开发者副业与独立开发",
+        "near_source",
+        "V2EX 分享创造"
+      ],
+      "report_type": "case-study",
+      "source_category": "developer_business",
+      "evidence_level": "near_source",
+      "publish_status": "radar_published"
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "案例复盘：从 workbuddy 提炼转化的专家团工作流模 原始项目 GitHub 复盘",
+        "案例复盘：从 workbuddy 提炼转化的专家团工作流模 收入 增长 证据",
+        "案例复盘：从 workbuddy 提炼转化的专家团工作流模 失败 限制 反方证据"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
