@@ -27,12 +27,16 @@
       "id": "",
       "decision": "deep_dive|brief|skip",
       "report_type": "investigation|opportunity|tool-ledger|platform-rules|case-study|risk-warning",
+      "report_title": "",
       "score": 0,
       "reader_hook": "",
       "why_now": "",
       "evidence_level": "official|near_source|media|weak",
       "reason": "",
-      "reject_reason": ""
+      "reject_reason": "",
+      "collection_fit": "",
+      "investigation_direction": "",
+      "uncertainty_flags": []
     }
   ]
 }
@@ -41,7 +45,10 @@
 硬规则：
 
 - `report_type` 是网站栏目，不是数据源分类。
+- `report_title` 必须是中文 Radar 标题，可以保留产品名/公司名，但不能整句英文照搬原题。
 - `reader_hook` 必须回答“这事和我有什么关系”。
+- 先判断是否符合信息收集原则；符合才深挖。
+- 没有证据、证据弱或仍存疑的地方，必须放进 `uncertainty_flags`。
 - 如果只是冷门产品名、冷门技术点，没有大众钩子，降级为 brief 或 skip。
 - 如果需要强行写“我会怎么做”，说明行动性不足，降级为 brief。
 - 如果基础概念、成本、合规、收入数据无法核实，不能给高分。

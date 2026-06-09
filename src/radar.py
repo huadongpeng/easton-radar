@@ -49,12 +49,16 @@ class RadarDecision:
     item: SourceItem
     decision: str
     report_type: str
+    report_title: str
     score: int
     reader_hook: str
     why_now: str
     evidence_level: str
     reason: str
     reject_reason: str = ""
+    collection_fit: str = ""
+    investigation_direction: str = ""
+    uncertainty_flags: list[str] = field(default_factory=list)
     traceability: dict[str, Any] = field(default_factory=dict)
 
 
@@ -268,6 +272,7 @@ def heuristic_decision(item: SourceItem, site: dict[str, Any]) -> RadarDecision:
         score += 5
     score = min(score, 100)
     report_type = infer_report_type(text, item.source_category)
+    report_title = make_report_title(item, report_type, site)
     if score >= 55:
         decision = "deep_dive"
     elif score >= 32:
@@ -280,12 +285,16 @@ def heuristic_decision(item: SourceItem, site: dict[str, Any]) -> RadarDecision:
         item=item,
         decision=decision,
         report_type=report_type,
+        report_title=report_title,
         score=score,
         reader_hook=reader_hook,
         why_now="来自本批次稳定公开源，适合先进入 Radar 观察。",
         evidence_level=evidence_level,
         reason="命中老花主线关键词，且来源可复查。" if decision != "skip" else reject_reason,
         reject_reason=reject_reason,
+        collection_fit=collection_fit_text(score, evidence_level, report_type, site),
+        investigation_direction=infer_investigation_direction(report_type),
+        uncertainty_flags=default_uncertainty_flags(evidence_level, decision),
         traceability={"matched_keywords": hits, "source_host": host, "source_type": item.source_type, "heuristic": True},
     )
 
@@ -304,6 +313,62 @@ def infer_reader_hook(hits: dict[str, list[str]], report_type: str) -> str:
     if "ai" in hits and "dev" in hits:
         return "这条线索可能影响 AI 开发工作流、API 使用成本或程序员工具链，适合判断是否值得跟进。"
     return "这条线索需要继续确认它和普通技术人的成本、岗位、工具链或机会有什么关系。"
+
+
+def make_report_title(item: SourceItem, report_type: str, site: dict[str, Any]) -> str:
+    report_name = site["report_types"].get(report_type, {}).get("title", "线索")
+    host = urllib.parse.urlparse(item.url).netloc.replace("www.", "")
+    source = item.source_name or host
+    lower = f"{item.title} {source}".lower()
+    known = ["OpenAI", "Claude", "GitHub", "Copilot", "Cloudflare", "Amazon", "AWS", "Google", "Gemini", "DeepSeek", "Hugging Face", "Vercel", "Stripe"]
+    subject = source or host
+    for name in known:
+        if name.lower() in lower:
+            subject = name
+            break
+    if subject == "Amazon":
+        subject = "AWS"
+    if subject.lower() in {"artificial intelligence", "machine learning"} and "amazon" in host:
+        subject = "AWS"
+    actions = {
+        "tool-ledger": "工具成本和能力变化",
+        "platform-rules": "平台规则变化",
+        "case-study": "案例线索",
+        "opportunity": "机会线索",
+        "risk-warning": "风险线索",
+        "investigation": "重要线索",
+    }
+    return f"{report_name}：{subject} 的{actions.get(report_type, '重要线索')}"
+
+
+def collection_fit_text(score: int, evidence_level: str, report_type: str, site: dict[str, Any]) -> str:
+    report_name = site["report_types"].get(report_type, {}).get("title", "报告")
+    if score >= 55 and evidence_level in {"official", "near_source"}:
+        return f"符合收集原则：来源可复查，且具备进入「{report_name}」类报告的分析价值。"
+    if score >= 32:
+        return "部分符合收集原则：可以进入简报观察，但证据链或读者入口还不够完整。"
+    return "暂不符合深挖原则：相关性、证据质量或普通读者入口不足。"
+
+
+def infer_investigation_direction(report_type: str) -> str:
+    mapping = {
+        "tool-ledger": "优先追价格页、额度、API 文档、替代方案和实际成本边界。",
+        "platform-rules": "优先追官方政策、开发者公告、执行范围、受影响人群和合规边界。",
+        "case-study": "优先追项目原始页面、代码仓库、作者复盘、收入/增长证据和不可复制条件。",
+        "opportunity": "优先追需求是否真实、用户是谁、付费路径、最小验证成本和停止信号。",
+        "risk-warning": "优先追反方证据、投诉、政策限制、成本陷阱和营销话术来源。",
+        "investigation": "优先追一手来源、概念定义、时间线、证据矛盾和可能影响面。",
+    }
+    return mapping.get(report_type, "继续补齐一手来源、反方证据和影响边界。")
+
+
+def default_uncertainty_flags(evidence_level: str, decision: str) -> list[str]:
+    flags = ["尚未抓取正文外的补充证据。", "尚未形成多源交叉验证。"]
+    if evidence_level not in {"official", "near_source"}:
+        flags.append("当前来源不是官方或近源，结论必须降级。")
+    if decision == "brief":
+        flags.append("当前仅适合简报观察，不宜写成深度结论。")
+    return flags
 
 
 def deepseek_triage(items: list[SourceItem], site: dict[str, Any], policy: dict[str, Any]) -> list[RadarDecision] | None:
@@ -332,11 +397,13 @@ def deepseek_triage(items: list[SourceItem], site: dict[str, Any], policy: dict[
                 "role": "user",
                 "content": (
                     "你是 Easton Radar 的信息初筛员。网站栏目按报告类型分类，不按数据源分类。"
-                    "请只输出 JSON：{\"items\":[...]}。每项包含 id, decision(deep_dive|brief|skip), report_type"
+                    "请只输出 JSON：{\"items\":[...]}。每项包含 id, decision(deep_dive|brief|skip), report_type, report_title"
                     "(investigation|opportunity|tool-ledger|platform-rules|case-study|risk-warning), score(0-100),"
-                    "reader_hook, why_now, evidence_level(official|near_source|media|weak), reason, reject_reason。\n"
+                    "reader_hook, why_now, evidence_level(official|near_source|media|weak), reason, reject_reason,"
+                    "collection_fit, investigation_direction, uncertainty_flags。\n"
+                    "report_title 必须是中文 Radar 标题，可以保留产品名/公司名，但不能整句英文照搬原题。\n"
                     "硬规则：优先官方/一手/近源；反爬论坛抓不到就放弃；冷门技术没有普通读者入口就 skip；"
-                    "深度报告必须和老花人设有关，或者是可能影响老花/普通技术人的大事件。\n"
+                    "先判断是否符合信息收集原则；符合才深挖证据；证据不足必须标记存疑，不能写成结论。\n"
                     f"报告类型规则：{json.dumps(policy['report_type_rules'], ensure_ascii=False)}\n"
                     f"人设主线：{json.dumps(policy['persona_lines'], ensure_ascii=False)}\n"
                     f"待筛信息：{json.dumps(sample, ensure_ascii=False)}"
@@ -367,12 +434,16 @@ def deepseek_triage(items: list[SourceItem], site: dict[str, Any], policy: dict[
                     item=item,
                     decision=row.get("decision", fallback.decision),
                     report_type=row.get("report_type", fallback.report_type),
+                    report_title=row.get("report_title") or fallback.report_title,
                     score=int(row.get("score", fallback.score)),
                     reader_hook=row.get("reader_hook", fallback.reader_hook),
                     why_now=row.get("why_now", fallback.why_now),
                     evidence_level=row.get("evidence_level", fallback.evidence_level),
                     reason=row.get("reason", fallback.reason),
                     reject_reason=row.get("reject_reason", ""),
+                    collection_fit=row.get("collection_fit", fallback.collection_fit),
+                    investigation_direction=row.get("investigation_direction", fallback.investigation_direction),
+                    uncertainty_flags=row.get("uncertainty_flags", fallback.uncertainty_flags) or fallback.uncertainty_flags,
                     traceability={**fallback.traceability, "heuristic": False, "model": body["model"]},
                 )
             )
@@ -389,7 +460,8 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
     source_title = site.get("source_categories", {}).get(item.source_category, item.source_category)
     return {
         "id": report_id,
-        "title": item.title,
+        "title": decision.report_title,
+        "original_title": item.title,
         "url": item.url,
         "summary": item.summary,
         "source_category": item.source_category,
@@ -407,9 +479,12 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
         "why_now": decision.why_now,
         "evidence_level": decision.evidence_level,
         "reason": decision.reason,
+        "collection_fit": decision.collection_fit,
+        "investigation_direction": decision.investigation_direction,
+        "uncertainty_flags": decision.uncertainty_flags,
         "facts": [
             {
-                "claim": f"{item.source_name} 发布/收录了这条线索：{item.title}",
+                "claim": f"{item.source_name} 发布/收录了这条原始线索：{item.title}",
                 "type": "confirmed_fact",
                 "source_url": item.url,
                 "confidence": 0.8 if decision.evidence_level in {"official", "near_source"} else 0.55
@@ -432,7 +507,7 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
             "what_needs_followup": [
                 "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
                 "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
-                "如果进入公众号写作，必须重新核对正文里出现的每个第三方来源。"
+                "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
             ],
             "expert_challenge_points": [
                 "不能把单条线索写成已验证机会。",
@@ -448,7 +523,7 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
         "persona_connection": {
             "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
             "why_it_matters": decision.reader_hook,
-            "fit_for_wechat": decision.decision == "deep_dive"
+            "fit_for_radar": decision.decision == "deep_dive"
         }
     }
 
@@ -496,7 +571,7 @@ class StaticSite:
 <body>
   <header><nav><a class="brand" href="/">Easton Radar</a>{nav}</nav></header>
   <main>{body}</main>
-  <footer>Easton Radar · 老花的信息差侦察站 · 内容用于选题研究和证据沉淀</footer>
+  <footer>Easton Radar · 老花的信息差侦察站 · 内容用于信息收集、证据沉淀和方向判断</footer>
 </body>
 </html>
 """
@@ -537,7 +612,7 @@ def render_home(batch: dict[str, Any], reports: list[dict[str, Any]], site: dict
     principles = "".join(f"<li>{html.escape(x)}</li>" for x in policy["source_principles"])
     latest = "".join(report_card(r) for r in reports[:10]) or '<p class="meta">本批次暂无可发布报告。</p>'
     return f"""
-<section class="hero"><h1>老花的信息差侦察站</h1><p>按报告类型整理线索：先看来源和证据，再判断这事和普通技术人的成本、岗位、副业、出海和工具链有什么关系。</p></section>
+<section class="hero"><h1>老花的信息差侦察站</h1><p>按报告类型整理线索：先判断是否符合收集原则，再持续深挖证据；没有证据或仍存疑的地方，必须单独标记。</p></section>
 <section class="grid">{''.join(type_cards)}</section>
 <div class="ad-slot">AdSense 预留位：后续填入 publisher client 后启用</div>
 <section class="section"><h2>最新简报</h2><p class="meta">批次：{html.escape(batch["batch_id"])} · 抓取 {batch["fetched_count"]} 条 · 深挖 {batch["deep_count"]} 条 · 简报 {batch["brief_count"]} 条</p><div class="list">{latest}</div></section>
@@ -549,7 +624,7 @@ def render_briefings(batch: dict[str, Any], reports: list[dict[str, Any]]) -> st
     items = "".join(report_card(r) for r in reports) or '<p class="meta">本批次暂无条目。</p>'
     failures = "".join(f'<li>{html.escape(f["source"])}：{html.escape(f["error"])}</li>' for f in batch.get("failures", [])[:12]) or "<li>本批次无抓取失败。</li>"
     return f"""
-<section class="hero"><h1>简报</h1><p>简报是信息线索和证据入口，不是公众号成稿。每条都会保留报告类型、来源分类和溯源信息。</p></section>
+<section class="hero"><h1>简报</h1><p>简报是信息线索和证据入口。每条都会保留报告类型、来源分类、收集判断和溯源信息。</p></section>
 <section class="card"><p>批次：{html.escape(batch["batch_id"])}</p><p>抓取 {batch["fetched_count"]} 条；深挖 {batch["deep_count"]} 条；简报 {batch["brief_count"]} 条；跳过 {batch["skipped_count"]} 条。</p></section>
 <section class="section list">{items}</section>
 <section class="section card"><h2>抓取失败</h2><ul>{failures}</ul></section>
@@ -567,6 +642,7 @@ def render_item(report: dict[str, Any], site: dict[str, Any]) -> str:
     follow = "".join(f"<li>{html.escape(x)}</li>" for x in report["verification"]["what_needs_followup"])
     challenge = "".join(f"<li>{html.escape(x)}</li>" for x in report["verification"]["expert_challenge_points"])
     dont = "".join(f"<li>{html.escape(x)}</li>" for x in report["verification"]["do_not_claim"])
+    uncertainty = "".join(f"<li>{html.escape(x)}</li>" for x in report.get("uncertainty_flags", []))
     schema = {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -581,7 +657,11 @@ def render_item(report: dict[str, Any], site: dict[str, Any]) -> str:
   <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>
   <p class="meta"><a href="/reports/{html.escape(report["report_type"])}/">{html.escape(report["report_type_title"])}</a> · {html.escape(report["source_category_title"])} · {html.escape(report["evidence_level"])} · Score {report["score"]}</p>
   <h1>{html.escape(report["title"])}</h1>
+  <p class="meta">原始标题：{html.escape(report.get("original_title", report["title"]))}</p>
   {summary}
+  <h2>收集原则判断</h2><p>{html.escape(report.get("collection_fit", ""))}</p>
+  <h2>深挖方向</h2><p>{html.escape(report.get("investigation_direction", ""))}</p>
+  <h2>存疑标记</h2><ul>{uncertainty}</ul>
   <h2>普通读者入口</h2><p>{html.escape(report["reader_hook"])}</p>
   <h2>为什么现在看</h2><p>{html.escape(report["why_now"])}</p>
   <h2>和老花人设的关系</h2><p>{html.escape(report["persona_connection"]["why_it_matters"])}</p>
@@ -599,7 +679,7 @@ def render_about(site: dict[str, Any], policy: dict[str, Any]) -> str:
     lines = "".join(f"<li>{html.escape(x)}</li>" for x in policy["persona_lines"])
     filters = "".join(f"<li>{html.escape(x)}</li>" for x in policy["fatal_filters"])
     return f"""
-<section class="hero"><h1>关于 Easton Radar</h1><p>这里是公众号前面的情报和证据层，不是自动写稿机。</p></section>
+<section class="hero"><h1>关于 Easton Radar</h1><p>这里是信息雷达和证据层，不是自动写稿机。</p></section>
 <section class="card"><h2>关注主线</h2><ul>{lines}</ul></section>
 <section class="card section"><h2>直接跳过</h2><ul>{filters}</ul></section>
 <section class="card section"><h2>SEO / AI SEO</h2><p>站点输出结构化 HTML、JSON-LD、sitemap.xml、robots.txt、llms.txt，并保留 Google Search Console 和 AdSense 配置位。</p></section>

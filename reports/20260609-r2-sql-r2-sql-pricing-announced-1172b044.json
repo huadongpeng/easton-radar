@@ -1,6 +1,7 @@
 {
   "id": "20260609-r2-sql-r2-sql-pricing-announced-1172b044",
-  "title": "R2 SQL - R2 SQL pricing announced",
+  "title": "工具账本：Cloudflare 的工具成本和能力变化",
+  "original_title": "R2 SQL - R2 SQL pricing announced",
   "url": "https://developers.cloudflare.com/changelog/post/2026-05-11-r2-sql-pricing-announced/",
   "summary": "R2 SQL is a serverless, distributed query engine that runs SQL against Apache Iceberg tables stored in R2 Data Catalog . R2 SQL now has published pricing based on a single dimension: the volume of compressed data scanned to execute your queries. At $2.50 / TB ($0.0025 / GB), R2 SQL is priced at half the cost of AWS Athena and less than half of Google BigQuery on-demand. Billing is not yet enabled. We will provide at least 30 days notice before we start charging for R2 SQL usage. Data scanned is measured on compressed bytes read from R2 object storage. This matches what you see in your R2 bucket — if a Parquet file is 100 MB on disk, scanning that file bills for 100 MB. Each query has a minimum billing increment of 10 MB. Free plans include 1 GB / month and Paid plans include 10 GB / month. Standard R2 storage and operations and R2 Data Catalog charges apply separately. For full pricing d",
   "source_category": "ai_tools",
@@ -9,7 +10,7 @@
   "source_type": "rss",
   "feed_url": "https://developers.cloudflare.com/changelog/rss/developer-platform.xml",
   "published_at": "2026-05-28T00:00:00+00:00",
-  "fetched_at": "2026-06-09T03:17:01.680619+00:00",
+  "fetched_at": "2026-06-09T03:34:29.642253+00:00",
   "decision": "deep_dive",
   "report_type": "tool-ledger",
   "report_type_title": "工具账本",
@@ -18,9 +19,15 @@
   "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
   "evidence_level": "official",
   "reason": "命中老花主线关键词，且来源可复查。",
+  "collection_fit": "符合收集原则：来源可复查，且具备进入「工具账本」类报告的分析价值。",
+  "investigation_direction": "优先追价格页、额度、API 文档、替代方案和实际成本边界。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。"
+  ],
   "facts": [
     {
-      "claim": "Cloudflare changelogs | Developer platform 发布/收录了这条线索：R2 SQL - R2 SQL pricing announced",
+      "claim": "Cloudflare changelogs | Developer platform 发布/收录了这条原始线索：R2 SQL - R2 SQL pricing announced",
       "type": "confirmed_fact",
       "source_url": "https://developers.cloudflare.com/changelog/post/2026-05-11-r2-sql-pricing-announced/",
       "confidence": 0.8
@@ -63,7 +70,7 @@
     "what_needs_followup": [
       "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
       "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
-      "如果进入公众号写作，必须重新核对正文里出现的每个第三方来源。"
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
     ],
     "expert_challenge_points": [
       "不能把单条线索写成已验证机会。",
@@ -79,6 +86,6 @@
   "persona_connection": {
     "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
     "why_it_matters": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。",
-    "fit_for_wechat": true
+    "fit_for_radar": true
   }
 }
