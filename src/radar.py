@@ -31,10 +31,12 @@ SEARCH_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.3
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 MAX_ITEMS_PER_SOURCE = 18
 MAX_TOTAL_ITEMS = 220
-MAX_REPORTS_PER_BATCH = 12
+MAX_REPORTS_PER_BATCH = 6
 MAX_REPORTS_PER_TOPIC = 3
 TRIAGE_BATCH_SIZE = 10
 MAX_REPORTS_PER_SOURCE_HOST = 2
+MIN_DEEP_DIVE_SCORE = 45
+MIN_BRIEF_SCORE = 55
 SOURCE_CATEGORY_REPORT_CAPS = {
     "ai_tools": 6,
     "developer_business": 4,
@@ -131,6 +133,17 @@ def clean_text(value: str) -> str:
     value = re.sub(r"<[^>]+>", " ", value)
     value = re.sub(r"\s+", " ", value)
     return value.strip()
+
+
+def count_configured_sources(sources: dict[str, Any]) -> int:
+    count = 0
+    for group in sources.values():
+        if isinstance(group, dict):
+            count += len(group.get("feeds", []))
+            count += len(group.get("apis", []))
+        elif isinstance(group, list):
+            count += len(group)
+    return count
 
 
 def normalize_url(url: str) -> str:
@@ -293,6 +306,65 @@ def fetch_search_url(url: str, timeout: int = 18) -> bytes:
         return resp.read()
 
 
+def search_block_reason(raw: str, provider: str) -> str:
+    lower = raw.lower()
+    if provider == "ddg":
+        if "anomaly.js" in lower or "cc=botnet" in lower or "/anomaly" in lower:
+            return "duckduckgo anomaly page"
+        if "captcha" in lower or "challenge" in lower:
+            return "duckduckgo challenge page"
+    if provider == "bing":
+        if "captcha" in lower or "id=\"bnp_container\"" in lower or "bnp_btn_accept" in lower:
+            return "bing captcha/consent page"
+        if "unusual traffic" in lower or "verify you are human" in lower:
+            return "bing anti-bot page"
+    return ""
+
+
+def brave_search(query: str, limit: int = 5) -> list[dict[str, str]]:
+    api_key = os.environ.get("BRAVE_SEARCH_API_KEY", "").strip()
+    if not query.strip() or not api_key:
+        return []
+    cache_key = f"brave:{query}:{limit}"
+    if cache_key in SEARCH_CACHE:
+        return SEARCH_CACHE[cache_key]
+    url = "https://api.search.brave.com/res/v1/web/search?" + urllib.parse.urlencode({
+        "q": query,
+        "count": max(1, min(limit, 20)),
+        "text_decorations": "false",
+    })
+    try:
+        req = urllib.request.Request(
+            url,
+            headers={
+                "Accept": "application/json",
+                "Accept-Encoding": "gzip",
+                "User-Agent": USER_AGENT,
+                "X-Subscription-Token": api_key,
+            },
+        )
+        with urllib.request.urlopen(req, timeout=18) as resp:
+            raw = resp.read()
+            if resp.headers.get("Content-Encoding") == "gzip":
+                import gzip
+                raw = gzip.decompress(raw)
+            data = json.loads(raw.decode("utf-8", errors="ignore"))
+    except Exception as exc:
+        print(f"Brave search failed for {query}: {exc}", file=sys.stderr)
+        SEARCH_CACHE[cache_key] = []
+        return []
+    results: list[dict[str, str]] = []
+    for row in data.get("web", {}).get("results", []):
+        title = clean_text(str(row.get("title", "")))
+        url_value = normalize_url(str(row.get("url", "")))
+        if title and url_value.startswith(("http://", "https://")):
+            results.append({"title": title, "url": url_value, "query": query, "provider": "brave"})
+        if len(results) >= limit:
+            break
+    SEARCH_CACHE[cache_key] = results
+    return results
+
+
 def deepseek_json(messages: list[dict[str, str]], max_tokens: int = 6000, temperature: float = 0.2, timeout: int = 90) -> Any | None:
     api_key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
     if not api_key:
@@ -333,9 +405,14 @@ def ddg_search(query: str, limit: int = 5) -> list[dict[str, str]]:
     try:
         raw = fetch_search_url(url, timeout=18).decode("utf-8", errors="ignore")
     except Exception as exc:
-        print(f"DDG search blocked, trying Bing fallback: {query} | {exc}", file=sys.stderr)
-        SEARCH_CACHE[cache_key] = bing_search(query, limit=limit)
-        return SEARCH_CACHE[cache_key]
+        print(f"DDG search failed for {query}: {exc}", file=sys.stderr)
+        SEARCH_CACHE[cache_key] = []
+        return []
+    block_reason = search_block_reason(raw, "ddg")
+    if block_reason:
+        print(f"DDG search blocked for {query}: {block_reason}", file=sys.stderr)
+        SEARCH_CACHE[cache_key] = []
+        return []
     results: list[dict[str, str]] = []
     for match in re.finditer(r'<a[^>]+class="result__a"[^>]+href="([^"]+)"[^>]*>(.*?)</a>', raw, re.S):
         href = html.unescape(match.group(1))
@@ -345,9 +422,11 @@ def ddg_search(query: str, limit: int = 5) -> list[dict[str, str]]:
         if "uddg" in params:
             href = params["uddg"][0]
         if title and href.startswith(("http://", "https://")):
-            results.append({"title": title, "url": normalize_url(href), "query": query})
+            results.append({"title": title, "url": normalize_url(href), "query": query, "provider": "ddg"})
         if len(results) >= limit:
             break
+    if not results:
+        print(f"DDG search returned no parsed results for {query}: html_len={len(raw)}", file=sys.stderr)
     SEARCH_CACHE[cache_key] = results
     return results
 
@@ -363,16 +442,36 @@ def bing_search(query: str, limit: int = 5) -> list[dict[str, str]]:
         print(f"Bing search failed for {query}: {exc}", file=sys.stderr)
         SEARCH_CACHE[cache_key] = []
         return []
+    block_reason = search_block_reason(raw, "bing")
+    if block_reason:
+        print(f"Bing search blocked for {query}: {block_reason}", file=sys.stderr)
+        SEARCH_CACHE[cache_key] = []
+        return []
     results: list[dict[str, str]] = []
     for match in re.finditer(r'<li class="b_algo".*?<h2>.*?<a href="([^"]+)"[^>]*>(.*?)</a>', raw, re.S):
         href = html.unescape(match.group(1))
         title = clean_text(match.group(2))
         if title and href.startswith(("http://", "https://")):
-            results.append({"title": title, "url": normalize_url(href), "query": query})
+            results.append({"title": title, "url": normalize_url(href), "query": query, "provider": "bing"})
         if len(results) >= limit:
             break
+    if not results:
+        print(f"Bing search returned no parsed results for {query}: html_len={len(raw)}", file=sys.stderr)
     SEARCH_CACHE[cache_key] = results
     return results
+
+
+def search_web(query: str, limit: int = 5) -> list[dict[str, str]]:
+    providers: list[tuple[str, Any]] = []
+    if os.environ.get("BRAVE_SEARCH_API_KEY", "").strip():
+        providers.append(("brave", brave_search))
+    providers.extend([("ddg", ddg_search), ("bing", bing_search)])
+    for name, func in providers:
+        results = func(query, limit=limit)
+        if results:
+            return results
+        info(f"Search provider empty: provider={name}, query={query[:80]}")
+    return []
 
 
 def fetch_evidence_pages(search_results: list[dict[str, str]], per_query_limit: int = 3, text_limit: int = 1800) -> list[dict[str, str]]:
@@ -1329,11 +1428,43 @@ def collect_research_evidence(plan: dict[str, Any], max_queries: int = 6) -> lis
             deduped.append(query.strip())
     search_results: list[dict[str, str]] = []
     for query in deduped[:max_queries]:
-        search_results.extend(ddg_search(query, limit=5))
-    info(f"Research search complete: queries={len(deduped[:max_queries])}, results={len(search_results)}")
+        search_results.extend(search_web(query, limit=5))
+    provider_counts: dict[str, int] = {}
+    for result in search_results:
+        provider = result.get("provider", "unknown")
+        provider_counts[provider] = provider_counts.get(provider, 0) + 1
+    provider_text = ", ".join(f"{key}:{value}" for key, value in sorted(provider_counts.items())) or "none"
+    info(f"Research search complete: queries={len(deduped[:max_queries])}, results={len(search_results)}, providers={provider_text}")
     evidence = fetch_evidence_pages(search_results)
     info(f"Evidence fetch complete: pages={len(evidence)}, fetched={sum(1 for item in evidence if item.get('fetched_text'))}")
     return evidence
+
+
+def confidence_score(value: Any) -> float:
+    try:
+        number = float(value)
+    except (TypeError, ValueError):
+        return 0.0
+    if 0 < number <= 1:
+        return number * 100
+    return number
+
+
+def enforce_evidence_gate(dossier: dict[str, Any], evidence: list[dict[str, str]]) -> dict[str, Any]:
+    if evidence:
+        return dossier
+    verdict = dossier.setdefault("verdict", {})
+    verdict["status"] = "暂缓"
+    verdict["label"] = "暂缓"
+    verdict["reason"] = "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+    dossier["confidence"] = min(confidence_score(dossier.get("confidence", 0)), 30)
+    missing = dossier.setdefault("missing_materials", [])
+    if isinstance(missing, list):
+        missing.append("补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。")
+    not_claimable = dossier.setdefault("not_claimable", [])
+    if isinstance(not_claimable, list):
+        not_claimable.append("不能在无补证结果时声称该选题已经具备可写条件。")
+    return dossier
 
 
 def compose_topic_dossier(report: dict[str, Any], site: dict[str, Any], policy: dict[str, Any], plan: dict[str, Any], evidence: list[dict[str, str]], previous: dict[str, Any] | None = None) -> dict[str, Any] | None:
@@ -1391,15 +1522,17 @@ def enrich_selection_dossier(report: dict[str, Any], site: dict[str, Any], polic
     extra_queries = []
     if dossier:
         extra_queries = [q for q in dossier.get("additional_search_queries", []) if isinstance(q, str) and q.strip()]
-    low_confidence = bool(dossier and int(dossier.get("confidence", 0) or 0) < 55)
-    if extra_queries and low_confidence:
-        info(f"Low confidence dossier, running extra search: confidence={dossier.get('confidence', '')}, extra_queries={len(extra_queries[:4])}")
+    low_confidence = bool(dossier and confidence_score(dossier.get("confidence", 0)) < 55)
+    no_search_evidence = bool(dossier and not evidence)
+    if extra_queries and (low_confidence or no_search_evidence):
+        info(f"Evidence/low-confidence dossier, running extra search: confidence={dossier.get('confidence', '')}, evidence={len(evidence)}, extra_queries={len(extra_queries[:4])}")
         extra_plan = {"search_queries": extra_queries[:4], "best_sources_to_find": []}
         evidence.extend(collect_research_evidence(extra_plan, max_queries=4))
         dossier = compose_topic_dossier(report, site, policy, plan, evidence, previous=dossier)
     if not dossier:
         info(f"LLM dossier failed at final composition: {report.get('title', '')}")
         return fallback_pending_dossier(report, "DeepSeek 没有成功生成最终选题报告，暂不输出可信结论。")
+    dossier = enforce_evidence_gate(dossier, evidence)
     dossier["research_plan"] = plan
     dossier["research_evidence"] = evidence
     verdict = dossier.get("verdict", {}) if isinstance(dossier, dict) else {}
@@ -1857,10 +1990,10 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
 
 
 def select_reports(decisions: list[RadarDecision], site: dict[str, Any], archive: dict[str, Any], batch_id: str, limit: int = MAX_REPORTS_PER_BATCH) -> tuple[list[RadarDecision], list[dict[str, str]]]:
-    eligible = [d for d in decisions if d.decision == "deep_dive"]
-    eligible.extend(d for d in decisions if d.decision == "brief" and d.score >= 55)
+    eligible = [d for d in decisions if d.decision == "deep_dive" and d.score >= MIN_DEEP_DIVE_SCORE]
+    eligible.extend(d for d in decisions if d.decision == "brief" and d.score >= MIN_BRIEF_SCORE)
     if not eligible:
-        eligible = [d for d in decisions if d.decision != "skip" and d.score >= 55]
+        eligible = [d for d in decisions if d.decision != "skip" and d.score >= MIN_BRIEF_SCORE]
     selected: list[RadarDecision] = []
     category_counts: dict[str, int] = {}
     topic_counts: dict[str, int] = {}
@@ -2514,7 +2647,8 @@ def main() -> int:
         "Runtime config: "
         f"deepseek={'yes' if os.environ.get('DEEPSEEK_API_KEY') else 'no'}, "
         f"telegram={'yes' if os.environ.get('TELEGRAM_BOT_TOKEN') and os.environ.get('TELEGRAM_CHAT_ID') else 'no'}, "
-        f"sources={sum(len(v) for v in sources.values() if isinstance(v, list))}"
+        f"sources={count_configured_sources(sources)}, "
+        f"brave_search={'yes' if os.environ.get('BRAVE_SEARCH_API_KEY') else 'no'}"
     )
     archive = load_topic_archive()
     info(f"Loaded topic archive entries: {len(archive.get('items', []))}")

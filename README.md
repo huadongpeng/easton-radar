@@ -83,6 +83,7 @@ Radar 宁可少，也不要脏。
 | 名称 | 用途 |
 | --- | --- |
 | `DEEPSEEK_API_KEY` | DeepSeek v4 Flash 调用 |
+| `BRAVE_SEARCH_API_KEY` | 可选，Brave Search API，用于 GitHub Actions 上稳定执行补证搜索 |
 | `TELEGRAM_BOT_TOKEN` | Telegram bot |
 | `TELEGRAM_CHAT_ID` | Telegram 接收频道或用户 |
 

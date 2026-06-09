@@ -21,6 +21,7 @@ git push -u origin main
 ## 配置 Secrets
 
 - `DEEPSEEK_API_KEY`
+- `BRAVE_SEARCH_API_KEY`（可选但推荐，用于稳定补证搜索）
 - `TELEGRAM_BOT_TOKEN`
 - `TELEGRAM_CHAT_ID`
 
