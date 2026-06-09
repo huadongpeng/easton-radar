@@ -36,37 +36,37 @@
 <section class="section callout">
   <h2>选题判断</h2>
   <p><strong>暂缓</strong>：补证搜索没有拿到可用结果，当前不能给可选或高可信判断。</p>
-  <p>GitHub 是开发者核心平台，其计费 API 的开放可能改变团队成本管理方式，尤其对使用 Actions、Codespaces 等按量付费服务的团队有直接财务影响。老花读者中独立开发者、小团队和运维人员占比高，成本控制是刚需。</p>
-  <p class="meta">报告来源：deepseek · 可信度 0.0 · topic-selection-dossier-v3</p>
+  <p>GitHub 是开发者日常工具，计费 API 可能改变团队管理云成本的方式，尤其对使用 GitHub Actions、Copilot 等付费服务的个人和中小企业有直接影响。如果 API 能实现自动化预算控制和用量告警，可能帮助开发者避免意外超支，降低运维成本。</p>
+  <p class="meta">报告来源：deepseek · 可信度 30.0 · topic-selection-dossier-v3</p>
 </section>
 <section class="section card">
   <h2>这件事目前能确认什么</h2>
-  <p><strong>核心问题：</strong>GitHub 新发布的预算与用量管理 API 对普通技术人的实际成本控制、工具链集成和团队协作有何具体影响？</p>
-  <ul><li>GitHub 宣布预算与用量管理 API 正式可用（GA）。</li><li>API 支持编程管理预算、跟踪用量、访问成本中心数据。</li><li>来源为 GitHub 官方博客，信息权威但仅此一源。</li></ul>
-  <h3>时间线</h3><ul><li>2026-06-04 - GitHub 官方博客发布公告，预算与用量管理 API 正式可用。</li></ul>
+  <p><strong>核心问题：</strong>GitHub 新计费 API 对普通技术人的实际成本影响是什么？</p>
+  <ul><li>GitHub 宣布预算和用量管理 API 正式可用（GA），可编程管理预算、跟踪用量、访问成本中心数据。</li><li>API 支持预算全生命周期管理（创建、更新、删除、查询）。</li><li>来源为 GitHub 官方博客 changelog，属于官方公告。</li><li>尚未获取官方 API 文档、定价页面、用户反馈或第三方分析。</li></ul>
+  <h3>时间线</h3><ul><li>2026-06-04 - GitHub 发布博客文章，宣布 Budget and usage management APIs 正式可用。</li></ul>
 </section>
 <section class="section card">
   <h2>证据与依据</h2>
   <div class="list">
 <article class="item">
-  <h3>GitHub Blog</h3>
-  <p>API 功能已 GA，可管理预算、用量和成本中心。</p>
+  <h3>GitHub Blog Changelog</h3>
+  <p>API 已 GA，可管理预算、用量、成本中心</p>
   <p class="meta">official · <a href="https://github.blog/changelog/2026-06-04-budget-and-usage-management-apis-now-generally-available">https://github.blog/changelog/2026-06-04-budget-and-usage-management-apis-now-generally-available</a></p>
 </article>
 </div>
 </section>
 <section class="section card">
   <h2>逻辑能不能闭环</h2>
-  <p>目前仅官方公告，缺乏定价、覆盖范围、用户反馈等关键信息，无法判断 API 的实际价值、采用门槛和与第三方工具的优劣。逻辑链不完整，需更多证据。</p>
+  <p>目前仅有一条官方公告，无法确认 API 是否引入新计费逻辑、是否适用于所有计划、是否支持告警或自动限制。没有用户案例或第三方验证，无法判断实际影响。逻辑上，API 可能只是 UI 功能的程序化封装，未必改变计费模式或价格。因此，在获取更多证据前，不能得出“影响成本”的结论。</p>
 </section>
 <section class="section card">
   <h2>可以继续写的方向</h2>
-  <ul><li><strong>工具账本：GitHub 计费 API 能帮你省多少钱？</strong>：直接回应读者对成本控制的关切，通过定价和案例量化影响。<br><span class="meta">还需要：API 定价细节、免费额度、超额费率；至少一个真实用户案例或社区实践。</span></li><li><strong>GitHub 原生 vs 第三方成本工具：谁更值得用？</strong>：帮助读者在原生 API 和现有工具（如 Vantage）之间做选择。<br><span class="meta">还需要：与第三方工具的对比表格；原生 API 的局限性（如覆盖范围、速率限制）。</span></li><li><strong>小团队如何用 GitHub 新 API 自动化成本管控？</strong>：提供实操指南，降低 API 集成门槛。<br><span class="meta">还需要：官方文档示例代码；集成步骤；潜在坑点。</span></li></ul>
-  <h3>还缺哪些基础概念</h3><ul><li>API 的具体定价模式（免费额度、超额费率）</li><li>API 覆盖哪些 GitHub 产品（Actions、Packages、Codespaces 等）</li><li>API 的可用性限制（速率限制、地域限制）</li></ul>
-  <h3>还缺哪些资料素材</h3><ul><li>官方 API 文档（含请求/响应示例）</li><li>GitHub 定价页面的最新截图或数据</li><li>至少一篇社区实践文章或教程</li><li>一个真实用户的使用案例（正面或负面）</li><li>与第三方工具的对比表格（可选）</li><li>补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。</li></ul>
-  <h3>不能写成结论的地方</h3><ul><li>API 能显著降低所有用户的 GitHub 费用</li><li>API 易于集成且无需额外开发</li><li>API 覆盖所有计费场景（如 Sponsors、Marketplace）</li><li>API 无速率限制或延迟问题</li><li>不能在无补证结果时声称该选题已经具备可写条件。</li></ul>
-  <h3>下一步补证检索词</h3><ul><li>GitHub 预算管理 API 的定价是多少？是否有免费额度？</li><li>该 API 是否支持 Actions、Codespaces、Packages 等所有计费产品？</li><li>社区（Hacker News、Reddit）对该 API 的初步评价如何？</li><li>是否有官方文档或示例代码？</li><li>与 Vantage、CloudHealth 等第三方工具相比，原生 API 有何优劣？</li></ul>
-  <h3>停止信号</h3><ul><li>找到官方定价页面或文档，确认免费额度和超额费率。</li><li>找到至少一篇社区实践文章或用户反馈。</li><li>确认 API 覆盖的产品范围。</li></ul>
+  <ul><li><strong>GitHub 计费 API 对个人开发者和中小团队的成本管理价值</strong>：普通技术人最关心如何避免意外超支，API 能否实现自动化预算告警和用量跟踪是核心。<br><span class="meta">还需要：官方 API 文档中关于预算告警、用量查询的具体能力；至少一个真实用户的使用反馈或案例。</span></li><li><strong>GitHub 计费 API 与第三方成本管理工具的对比</strong>：开发者可能已经在用 Vantage、CloudHealth 等工具，API 是否兼容或替代这些工具影响采用意愿。<br><span class="meta">还需要：API 文档中关于数据导出、集成方式的信息；第三方工具是否已支持该 API。</span></li><li><strong>GitHub 计费 API 对 Enterprise 客户的意义</strong>：大型团队有多成本中心、预算审批流程，API 可能带来显著效率提升。<br><span class="meta">还需要：Enterprise 计划下 API 的可用性、成本中心功能细节；企业用户案例。</span></li></ul>
+  <h3>还缺哪些基础概念</h3><ul><li>API 具体管理哪些计费维度（预算、用量、成本中心）的详细能力</li><li>API 是否影响现有计费模式或价格</li><li>API 的可用性（GA 时间、地区、账户类型限制）</li><li>是否有真实用户反馈或案例</li></ul>
+  <h3>还缺哪些资料素材</h3><ul><li>GitHub 官方 API 文档（预算管理、用量查询、成本中心）</li><li>GitHub 定价页面（各计划包含的用量和超额费用）</li><li>至少一个真实用户或团队的 API 使用案例</li><li>与现有计费方式的对比（手动 vs API）</li><li>补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。</li></ul>
+  <h3>不能写成结论的地方</h3><ul><li>GitHub 计费 API 会改变计费模式</li><li>GitHub 计费 API 会降低成本</li><li>GitHub 计费 API 对所有用户都有用</li><li>不能在无补证结果时声称该选题已经具备可写条件。</li></ul>
+  <h3>下一步补证检索词</h3><ul><li>GitHub 预算管理 API 是否支持设置预算告警阈值？</li><li>GitHub 用量管理 API 能否查询 Actions、Copilot 等具体服务的用量？</li><li>GitHub 成本中心 API 是否仅限 Enterprise 计划？</li><li>是否有开发者已经在生产环境中使用该 API？效果如何？</li></ul>
+  <h3>停止信号</h3><ul><li>如果官方文档显示 API 仅为 UI 功能的程序化封装，不改变计费逻辑或价格，则选题价值降低，可降级为 Radar 线索。</li><li>如果用户反馈显示 API 门槛高、文档不完善、实际帮助有限，则暂缓。</li><li>如果发现 API 仅适用于 Enterprise 计划，对个人开发者无影响，则调整角度。</li></ul>
 </section>
 
 

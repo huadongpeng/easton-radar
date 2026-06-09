@@ -1,0 +1,762 @@
+{
+  "id": "20260609-openai-help-lockdown-mode-8f786904",
+  "title": "深度调查：OpenAI 重要线索",
+  "original_title": "OpenAI Help: Lockdown Mode",
+  "url": "https://simonwillison.net/2026/Jun/5/openai-help-lockdown-mode/",
+  "summary": "OpenAI Help: Lockdown Mode OpenAI first teased this in February , but now it's live and \"rolling out to eligible personal accounts, including Free, Go, Plus, and Pro, and self-serve ChatGPT Business accounts\": Lockdown Mode is designed to help prevent the final stage of data exfiltration from a prompt injection attack by limiting outbound network requests that could transfer sensitive data to an attacker. Lockdown Mode does not prevent prompt injections from appearing in the content ChatGPT processes. For example, a prompt injection could appear in cached web content or in an uploaded file, and could still affect the behavior or accuracy of a response. This looks really good to me. The Lethal Trifecta occurs when an LLM system has access to all three of access to private data, exposure to untrusted content and a way to steal data and transmit it back to the attacker. The only way to solv",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "ai-frontier",
+  "topic_direction_title": "AI 前沿与工具链",
+  "topic_direction_short_title": "AI 前沿",
+  "topic_direction_description": "AI 模型、Agent、开发工具、API、云服务和底层能力变化。重点看这次变化到底是什么、时间线如何、会不会改变普通技术人的工作方式、成本结构和工具链。",
+  "source_name": "Simon Willison's Weblog",
+  "original_source_name": "Simon Willison's Weblog",
+  "source_type": "rss",
+  "feed_url": "https://simonwillison.net/atom/everything/",
+  "published_at": "2026-06-05T23:56:40+00:00",
+  "fetched_at": "2026-06-09T13:17:04.084228+00:00",
+  "decision": "deep_dive",
+  "report_type": "platform-rules",
+  "report_type_title": "平台规则",
+  "score": 85,
+  "reader_hook": "这条线索需要继续确认它和普通技术人的成本、岗位、工具链或机会有什么关系。",
+  "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "OpenAI锁定模式，影响隐私与合规",
+  "collection_fit": "暂不符合深挖原则：相关性、证据质量或普通读者入口不足。",
+  "investigation_direction": "优先追一手来源、概念定义、时间线、证据矛盾和可能影响面。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。"
+  ],
+  "facts": [
+    {
+      "claim": "Simon Willison's Weblog 发布/收录了这条原始线索：OpenAI Help: Lockdown Mode",
+      "type": "confirmed_fact",
+      "source_url": "https://simonwillison.net/2026/Jun/5/openai-help-lockdown-mode/",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Simon Willison's Weblog",
+      "url": "https://simonwillison.net/2026/Jun/5/openai-help-lockdown-mode/",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "ai",
+        "llm",
+        "openai"
+      ]
+    },
+    "source_host": "simonwillison.net",
+    "source_type": "rss",
+    "heuristic": false,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "这条线索需要继续确认它和普通技术人的成本、岗位、工具链或机会有什么关系。",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://simonwillison.net/atom/everything/",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+    },
+    "core_question": "OpenAI Lockdown Mode 的具体技术实现、适用范围、对普通技术人（特别是使用 API 或自建应用的开发者）的实际影响是什么？",
+    "why_this_topic_matters": "Lockdown Mode 是 OpenAI 针对 prompt injection 数据泄露风险推出的安全功能，直接影响使用 ChatGPT 的个人和企业用户的数据安全与功能可用性。对于依赖 ChatGPT 进行自动化、工具链集成的技术人，可能改变其工作流程和成本结构。",
+    "fact_summary": [
+      "OpenAI 在 2026 年 2 月首次预告 Lockdown Mode，2026 年 6 月 5 日宣布向符合条件的个人账户（Free、Go、Plus、Pro）及自助 ChatGPT Business 账户推出。",
+      "Lockdown Mode 旨在通过限制出站网络请求，防止 prompt injection 攻击的最后阶段——数据外泄。",
+      "Lockdown Mode 不阻止 prompt injection 出现在 ChatGPT 处理的内容中（如缓存网页、上传文件），仅阻止数据外传。",
+      "目前信息仅来自 Simon Willison 的博客，未找到 OpenAI 官方文档或第三方验证。"
+    ],
+    "timeline": [
+      {
+        "date": "2026-02",
+        "event": "OpenAI 首次预告 Lockdown Mode"
+      },
+      {
+        "date": "2026-06-05",
+        "event": "Simon Willison 发布博客，称 Lockdown Mode 已向符合条件的账户推出"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "Simon Willison's Weblog",
+        "url": "https://simonwillison.net/2026/Jun/5/openai-help-lockdown-mode/",
+        "supports": "Lockdown Mode 已推出，旨在防止 prompt injection 数据外泄",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "目前证据不足以闭环。核心问题（是否影响 API、是否默认开启、能否关闭、对插件/联网搜索的影响）均无答案。需官方文档和实际测试才能判断对技术人的实际影响。",
+    "writeable_angles": [
+      {
+        "angle": "Lockdown Mode 对 ChatGPT 用户数据安全的影响",
+        "why": "直接关系到用户隐私和合规，读者关注度高",
+        "needs": "官方文档说明 Lockdown Mode 的具体保护范围、是否默认开启、用户控制权"
+      },
+      {
+        "angle": "Lockdown Mode 对开发者工具链的影响",
+        "why": "使用 ChatGPT API 或集成 ChatGPT 的开发者需要评估兼容性",
+        "needs": "官方说明 Lockdown Mode 是否影响 API 调用、第三方客户端、自动化工具"
+      },
+      {
+        "angle": "Lockdown Mode 与 prompt injection 攻防演进",
+        "why": "安全技术爱好者关注其有效性及局限性",
+        "needs": "第三方安全专家分析、实际攻击测试案例"
+      }
+    ],
+    "missing_basics": [
+      "Lockdown Mode 是否仅限 ChatGPT 网页/App 端，还是也影响 API 调用？",
+      "Lockdown Mode 是否默认开启？用户能否关闭？",
+      "Lockdown Mode 是否影响 ChatGPT 的联网搜索、插件、代码解释器等功能的正常使用？",
+      "Lockdown Mode 是否影响通过 API 构建的第三方应用？",
+      "Lockdown Mode 是否影响 ChatGPT 的导出数据功能？"
+    ],
+    "missing_materials": [
+      "OpenAI 官方 Lockdown Mode 文档（含技术细节、适用范围、开关选项）",
+      "至少一个第三方安全专家对 Lockdown Mode 有效性的分析",
+      "至少一个开发者实际测试 Lockdown Mode 的案例或报告",
+      "OpenAI 官方关于 Lockdown Mode 对 API 影响的说明",
+      "Lockdown Mode 与现有安全措施（如内容审核、数据隔离）的关系说明",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "Lockdown Mode 会显著影响普通技术人的工作流程",
+      "Lockdown Mode 是 OpenAI 对 prompt injection 的最终解决方案",
+      "Lockdown Mode 会导致 ChatGPT 功能受限",
+      "Lockdown Mode 对 API 用户有直接影响",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "OpenAI 官方是否发布了 Lockdown Mode 的详细文档？",
+      "是否有开发者报告 Lockdown Mode 的实际使用体验？",
+      "Lockdown Mode 是否在 Hacker News 或 Reddit 上有讨论？"
+    ],
+    "additional_search_queries": [
+      "OpenAI Lockdown Mode official documentation",
+      "OpenAI Lockdown Mode API impact",
+      "OpenAI Lockdown Mode disable",
+      "OpenAI Lockdown Mode plugin compatibility",
+      "OpenAI Lockdown Mode data export",
+      "OpenAI Lockdown Mode vs prompt injection mitigation",
+      "OpenAI Lockdown Mode rollout date",
+      "OpenAI Lockdown mode ChatGPT enterprise"
+    ],
+    "stop_conditions": [
+      "OpenAI 官方发布 Lockdown Mode 的完整技术文档",
+      "至少两个独立来源（如安全博客、开发者论坛）确认 Lockdown Mode 的具体影响",
+      "出现实际用户报告 Lockdown Mode 导致功能异常或数据泄露的案例"
+    ],
+    "confidence": 20.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "platform-rules",
+    "research_plan": {
+      "core_question": "OpenAI Lockdown Mode 的具体技术实现、适用范围、对普通技术人（特别是使用 API 或自建应用的开发者）的实际影响是什么？",
+      "must_verify": [
+        "Lockdown Mode 是否仅限 ChatGPT 网页/App 端，还是也影响 API 调用？",
+        "Lockdown Mode 是否默认开启？用户能否关闭？",
+        "Lockdown Mode 是否影响 ChatGPT 的联网搜索、插件、代码解释器等功能的正常使用？",
+        "Lockdown Mode 是否影响通过 API 构建的第三方应用（如客户端、自动化工具）？",
+        "Lockdown Mode 是否影响 ChatGPT 的导出数据功能（如导出对话）？"
+      ],
+      "search_queries": [
+        "OpenAI Lockdown Mode technical details",
+        "OpenAI Lockdown Mode API impact",
+        "OpenAI Lockdown Mode disable",
+        "OpenAI Lockdown Mode plugin compatibility",
+        "OpenAI Lockdown Mode data export",
+        "OpenAI Lockdown Mode vs prompt injection mitigation",
+        "OpenAI Lockdown Mode rollout date",
+        "OpenAI Lockdown mode ChatGPT enterprise"
+      ],
+      "best_sources_to_find": [
+        "OpenAI 官方帮助文档或博客",
+        "OpenAI 开发者论坛或 GitHub 讨论",
+        "OpenAI 官方 changelog 或 release notes",
+        "Simon Willison 的博客原文及后续更新",
+        "Hacker News 相关讨论帖",
+        "Reddit r/OpenAI 或 r/MachineLearning 讨论"
+      ],
+      "expert_challenge_points": [
+        "Lockdown Mode 是否真的能有效防止 prompt injection 数据泄露？还是只是增加攻击难度？",
+        "Lockdown Mode 是否会影响合法使用场景（如通过 API 调用外部工具）？",
+        "Lockdown Mode 是否会导致开发者需要修改现有应用以兼容？",
+        "Lockdown Mode 是否只针对个人账户，企业账户是否有不同策略？"
+      ],
+      "do_not_claim_yet": [
+        "Lockdown Mode 会显著影响普通技术人的工作流程",
+        "Lockdown Mode 是 OpenAI 对 prompt injection 的最终解决方案",
+        "Lockdown Mode 会导致 ChatGPT 功能受限",
+        "Lockdown Mode 对 API 用户有直接影响"
+      ],
+      "can_publish_as_radar_if_missing": "否，因为目前信息主要来自单一博客，缺乏官方详细说明和实际影响案例，无法形成可靠判断。",
+      "downstream_materials_needed": [
+        "OpenAI 官方 Lockdown Mode 文档（含技术细节、适用范围、开关选项）",
+        "至少一个第三方安全专家对 Lockdown Mode 有效性的分析",
+        "至少一个开发者实际测试 Lockdown Mode 的案例或报告",
+        "OpenAI 官方关于 Lockdown Mode 对 API 影响的说明",
+        "Lockdown Mode 与现有安全措施（如内容审核、数据隔离）的关系说明"
+      ]
+    },
+    "research_evidence": []
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+    },
+    "core_question": "OpenAI Lockdown Mode 的具体技术实现、适用范围、对普通技术人（特别是使用 API 或自建应用的开发者）的实际影响是什么？",
+    "why_this_topic_matters": "Lockdown Mode 是 OpenAI 针对 prompt injection 数据泄露风险推出的安全功能，直接影响使用 ChatGPT 的个人和企业用户的数据安全与功能可用性。对于依赖 ChatGPT 进行自动化、工具链集成的技术人，可能改变其工作流程和成本结构。",
+    "fact_summary": [
+      "OpenAI 在 2026 年 2 月首次预告 Lockdown Mode，2026 年 6 月 5 日宣布向符合条件的个人账户（Free、Go、Plus、Pro）及自助 ChatGPT Business 账户推出。",
+      "Lockdown Mode 旨在通过限制出站网络请求，防止 prompt injection 攻击的最后阶段——数据外泄。",
+      "Lockdown Mode 不阻止 prompt injection 出现在 ChatGPT 处理的内容中（如缓存网页、上传文件），仅阻止数据外传。",
+      "目前信息仅来自 Simon Willison 的博客，未找到 OpenAI 官方文档或第三方验证。"
+    ],
+    "timeline": [
+      {
+        "date": "2026-02",
+        "event": "OpenAI 首次预告 Lockdown Mode"
+      },
+      {
+        "date": "2026-06-05",
+        "event": "Simon Willison 发布博客，称 Lockdown Mode 已向符合条件的账户推出"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "Simon Willison's Weblog",
+        "url": "https://simonwillison.net/2026/Jun/5/openai-help-lockdown-mode/",
+        "supports": "Lockdown Mode 已推出，旨在防止 prompt injection 数据外泄",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "目前证据不足以闭环。核心问题（是否影响 API、是否默认开启、能否关闭、对插件/联网搜索的影响）均无答案。需官方文档和实际测试才能判断对技术人的实际影响。",
+    "writeable_angles": [
+      {
+        "angle": "Lockdown Mode 对 ChatGPT 用户数据安全的影响",
+        "why": "直接关系到用户隐私和合规，读者关注度高",
+        "needs": "官方文档说明 Lockdown Mode 的具体保护范围、是否默认开启、用户控制权"
+      },
+      {
+        "angle": "Lockdown Mode 对开发者工具链的影响",
+        "why": "使用 ChatGPT API 或集成 ChatGPT 的开发者需要评估兼容性",
+        "needs": "官方说明 Lockdown Mode 是否影响 API 调用、第三方客户端、自动化工具"
+      },
+      {
+        "angle": "Lockdown Mode 与 prompt injection 攻防演进",
+        "why": "安全技术爱好者关注其有效性及局限性",
+        "needs": "第三方安全专家分析、实际攻击测试案例"
+      }
+    ],
+    "missing_basics": [
+      "Lockdown Mode 是否仅限 ChatGPT 网页/App 端，还是也影响 API 调用？",
+      "Lockdown Mode 是否默认开启？用户能否关闭？",
+      "Lockdown Mode 是否影响 ChatGPT 的联网搜索、插件、代码解释器等功能的正常使用？",
+      "Lockdown Mode 是否影响通过 API 构建的第三方应用？",
+      "Lockdown Mode 是否影响 ChatGPT 的导出数据功能？"
+    ],
+    "missing_materials": [
+      "OpenAI 官方 Lockdown Mode 文档（含技术细节、适用范围、开关选项）",
+      "至少一个第三方安全专家对 Lockdown Mode 有效性的分析",
+      "至少一个开发者实际测试 Lockdown Mode 的案例或报告",
+      "OpenAI 官方关于 Lockdown Mode 对 API 影响的说明",
+      "Lockdown Mode 与现有安全措施（如内容审核、数据隔离）的关系说明",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "Lockdown Mode 会显著影响普通技术人的工作流程",
+      "Lockdown Mode 是 OpenAI 对 prompt injection 的最终解决方案",
+      "Lockdown Mode 会导致 ChatGPT 功能受限",
+      "Lockdown Mode 对 API 用户有直接影响",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "OpenAI 官方是否发布了 Lockdown Mode 的详细文档？",
+      "是否有开发者报告 Lockdown Mode 的实际使用体验？",
+      "Lockdown Mode 是否在 Hacker News 或 Reddit 上有讨论？"
+    ],
+    "additional_search_queries": [
+      "OpenAI Lockdown Mode official documentation",
+      "OpenAI Lockdown Mode API impact",
+      "OpenAI Lockdown Mode disable",
+      "OpenAI Lockdown Mode plugin compatibility",
+      "OpenAI Lockdown Mode data export",
+      "OpenAI Lockdown Mode vs prompt injection mitigation",
+      "OpenAI Lockdown Mode rollout date",
+      "OpenAI Lockdown mode ChatGPT enterprise"
+    ],
+    "stop_conditions": [
+      "OpenAI 官方发布 Lockdown Mode 的完整技术文档",
+      "至少两个独立来源（如安全博客、开发者论坛）确认 Lockdown Mode 的具体影响",
+      "出现实际用户报告 Lockdown Mode 导致功能异常或数据泄露的案例"
+    ],
+    "confidence": 20.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "platform-rules",
+    "research_plan": {
+      "core_question": "OpenAI Lockdown Mode 的具体技术实现、适用范围、对普通技术人（特别是使用 API 或自建应用的开发者）的实际影响是什么？",
+      "must_verify": [
+        "Lockdown Mode 是否仅限 ChatGPT 网页/App 端，还是也影响 API 调用？",
+        "Lockdown Mode 是否默认开启？用户能否关闭？",
+        "Lockdown Mode 是否影响 ChatGPT 的联网搜索、插件、代码解释器等功能的正常使用？",
+        "Lockdown Mode 是否影响通过 API 构建的第三方应用（如客户端、自动化工具）？",
+        "Lockdown Mode 是否影响 ChatGPT 的导出数据功能（如导出对话）？"
+      ],
+      "search_queries": [
+        "OpenAI Lockdown Mode technical details",
+        "OpenAI Lockdown Mode API impact",
+        "OpenAI Lockdown Mode disable",
+        "OpenAI Lockdown Mode plugin compatibility",
+        "OpenAI Lockdown Mode data export",
+        "OpenAI Lockdown Mode vs prompt injection mitigation",
+        "OpenAI Lockdown Mode rollout date",
+        "OpenAI Lockdown mode ChatGPT enterprise"
+      ],
+      "best_sources_to_find": [
+        "OpenAI 官方帮助文档或博客",
+        "OpenAI 开发者论坛或 GitHub 讨论",
+        "OpenAI 官方 changelog 或 release notes",
+        "Simon Willison 的博客原文及后续更新",
+        "Hacker News 相关讨论帖",
+        "Reddit r/OpenAI 或 r/MachineLearning 讨论"
+      ],
+      "expert_challenge_points": [
+        "Lockdown Mode 是否真的能有效防止 prompt injection 数据泄露？还是只是增加攻击难度？",
+        "Lockdown Mode 是否会影响合法使用场景（如通过 API 调用外部工具）？",
+        "Lockdown Mode 是否会导致开发者需要修改现有应用以兼容？",
+        "Lockdown Mode 是否只针对个人账户，企业账户是否有不同策略？"
+      ],
+      "do_not_claim_yet": [
+        "Lockdown Mode 会显著影响普通技术人的工作流程",
+        "Lockdown Mode 是 OpenAI 对 prompt injection 的最终解决方案",
+        "Lockdown Mode 会导致 ChatGPT 功能受限",
+        "Lockdown Mode 对 API 用户有直接影响"
+      ],
+      "can_publish_as_radar_if_missing": "否，因为目前信息主要来自单一博客，缺乏官方详细说明和实际影响案例，无法形成可靠判断。",
+      "downstream_materials_needed": [
+        "OpenAI 官方 Lockdown Mode 文档（含技术细节、适用范围、开关选项）",
+        "至少一个第三方安全专家对 Lockdown Mode 有效性的分析",
+        "至少一个开发者实际测试 Lockdown Mode 的案例或报告",
+        "OpenAI 官方关于 Lockdown Mode 对 API 影响的说明",
+        "Lockdown Mode 与现有安全措施（如内容审核、数据隔离）的关系说明"
+      ]
+    },
+    "research_evidence": []
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260609-openai-help-lockdown-mode-8f786904/",
+    "for_gpt_editor": {
+      "brief": "OpenAI Help: Lockdown Mode OpenAI first teased this in February , but now it's live and \"rolling out to eligible personal accounts, including Free, Go, Plus, and Pro, and self-serve ChatGPT Business accounts\": Lockdown Mode is designed to help prevent the final stage of data exfiltration from a prompt injection attack by limiting outbound network requests that could transfer sensitive data to an attacker. Lockdown Mode does not prevent prompt injections from appearing in the content ChatGPT processes. For example, a prompt injection could appear in cached web content or in an uploaded file, and could still affect the behavior or accuracy of a response. This looks really good to me. The Lethal Trifecta occurs when an LLM system has access to all three of access to private data, exposure to untrusted content and a way to steal data and transmit it back to the attacker. The only way to solv",
+      "title_seed": "深度调查：OpenAI 重要线索",
+      "original_title": "OpenAI Help: Lockdown Mode",
+      "source_url": "https://simonwillison.net/2026/Jun/5/openai-help-lockdown-mode/",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+        },
+        "core_question": "OpenAI Lockdown Mode 的具体技术实现、适用范围、对普通技术人（特别是使用 API 或自建应用的开发者）的实际影响是什么？",
+        "why_this_topic_matters": "Lockdown Mode 是 OpenAI 针对 prompt injection 数据泄露风险推出的安全功能，直接影响使用 ChatGPT 的个人和企业用户的数据安全与功能可用性。对于依赖 ChatGPT 进行自动化、工具链集成的技术人，可能改变其工作流程和成本结构。",
+        "fact_summary": [
+          "OpenAI 在 2026 年 2 月首次预告 Lockdown Mode，2026 年 6 月 5 日宣布向符合条件的个人账户（Free、Go、Plus、Pro）及自助 ChatGPT Business 账户推出。",
+          "Lockdown Mode 旨在通过限制出站网络请求，防止 prompt injection 攻击的最后阶段——数据外泄。",
+          "Lockdown Mode 不阻止 prompt injection 出现在 ChatGPT 处理的内容中（如缓存网页、上传文件），仅阻止数据外传。",
+          "目前信息仅来自 Simon Willison 的博客，未找到 OpenAI 官方文档或第三方验证。"
+        ],
+        "timeline": [
+          {
+            "date": "2026-02",
+            "event": "OpenAI 首次预告 Lockdown Mode"
+          },
+          {
+            "date": "2026-06-05",
+            "event": "Simon Willison 发布博客，称 Lockdown Mode 已向符合条件的账户推出"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "Simon Willison's Weblog",
+            "url": "https://simonwillison.net/2026/Jun/5/openai-help-lockdown-mode/",
+            "supports": "Lockdown Mode 已推出，旨在防止 prompt injection 数据外泄",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "目前证据不足以闭环。核心问题（是否影响 API、是否默认开启、能否关闭、对插件/联网搜索的影响）均无答案。需官方文档和实际测试才能判断对技术人的实际影响。",
+        "writeable_angles": [
+          {
+            "angle": "Lockdown Mode 对 ChatGPT 用户数据安全的影响",
+            "why": "直接关系到用户隐私和合规，读者关注度高",
+            "needs": "官方文档说明 Lockdown Mode 的具体保护范围、是否默认开启、用户控制权"
+          },
+          {
+            "angle": "Lockdown Mode 对开发者工具链的影响",
+            "why": "使用 ChatGPT API 或集成 ChatGPT 的开发者需要评估兼容性",
+            "needs": "官方说明 Lockdown Mode 是否影响 API 调用、第三方客户端、自动化工具"
+          },
+          {
+            "angle": "Lockdown Mode 与 prompt injection 攻防演进",
+            "why": "安全技术爱好者关注其有效性及局限性",
+            "needs": "第三方安全专家分析、实际攻击测试案例"
+          }
+        ],
+        "missing_basics": [
+          "Lockdown Mode 是否仅限 ChatGPT 网页/App 端，还是也影响 API 调用？",
+          "Lockdown Mode 是否默认开启？用户能否关闭？",
+          "Lockdown Mode 是否影响 ChatGPT 的联网搜索、插件、代码解释器等功能的正常使用？",
+          "Lockdown Mode 是否影响通过 API 构建的第三方应用？",
+          "Lockdown Mode 是否影响 ChatGPT 的导出数据功能？"
+        ],
+        "missing_materials": [
+          "OpenAI 官方 Lockdown Mode 文档（含技术细节、适用范围、开关选项）",
+          "至少一个第三方安全专家对 Lockdown Mode 有效性的分析",
+          "至少一个开发者实际测试 Lockdown Mode 的案例或报告",
+          "OpenAI 官方关于 Lockdown Mode 对 API 影响的说明",
+          "Lockdown Mode 与现有安全措施（如内容审核、数据隔离）的关系说明",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "Lockdown Mode 会显著影响普通技术人的工作流程",
+          "Lockdown Mode 是 OpenAI 对 prompt injection 的最终解决方案",
+          "Lockdown Mode 会导致 ChatGPT 功能受限",
+          "Lockdown Mode 对 API 用户有直接影响",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "OpenAI 官方是否发布了 Lockdown Mode 的详细文档？",
+          "是否有开发者报告 Lockdown Mode 的实际使用体验？",
+          "Lockdown Mode 是否在 Hacker News 或 Reddit 上有讨论？"
+        ],
+        "additional_search_queries": [
+          "OpenAI Lockdown Mode official documentation",
+          "OpenAI Lockdown Mode API impact",
+          "OpenAI Lockdown Mode disable",
+          "OpenAI Lockdown Mode plugin compatibility",
+          "OpenAI Lockdown Mode data export",
+          "OpenAI Lockdown Mode vs prompt injection mitigation",
+          "OpenAI Lockdown Mode rollout date",
+          "OpenAI Lockdown mode ChatGPT enterprise"
+        ],
+        "stop_conditions": [
+          "OpenAI 官方发布 Lockdown Mode 的完整技术文档",
+          "至少两个独立来源（如安全博客、开发者论坛）确认 Lockdown Mode 的具体影响",
+          "出现实际用户报告 Lockdown Mode 导致功能异常或数据泄露的案例"
+        ],
+        "confidence": 20.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "platform-rules",
+        "research_plan": {
+          "core_question": "OpenAI Lockdown Mode 的具体技术实现、适用范围、对普通技术人（特别是使用 API 或自建应用的开发者）的实际影响是什么？",
+          "must_verify": [
+            "Lockdown Mode 是否仅限 ChatGPT 网页/App 端，还是也影响 API 调用？",
+            "Lockdown Mode 是否默认开启？用户能否关闭？",
+            "Lockdown Mode 是否影响 ChatGPT 的联网搜索、插件、代码解释器等功能的正常使用？",
+            "Lockdown Mode 是否影响通过 API 构建的第三方应用（如客户端、自动化工具）？",
+            "Lockdown Mode 是否影响 ChatGPT 的导出数据功能（如导出对话）？"
+          ],
+          "search_queries": [
+            "OpenAI Lockdown Mode technical details",
+            "OpenAI Lockdown Mode API impact",
+            "OpenAI Lockdown Mode disable",
+            "OpenAI Lockdown Mode plugin compatibility",
+            "OpenAI Lockdown Mode data export",
+            "OpenAI Lockdown Mode vs prompt injection mitigation",
+            "OpenAI Lockdown Mode rollout date",
+            "OpenAI Lockdown mode ChatGPT enterprise"
+          ],
+          "best_sources_to_find": [
+            "OpenAI 官方帮助文档或博客",
+            "OpenAI 开发者论坛或 GitHub 讨论",
+            "OpenAI 官方 changelog 或 release notes",
+            "Simon Willison 的博客原文及后续更新",
+            "Hacker News 相关讨论帖",
+            "Reddit r/OpenAI 或 r/MachineLearning 讨论"
+          ],
+          "expert_challenge_points": [
+            "Lockdown Mode 是否真的能有效防止 prompt injection 数据泄露？还是只是增加攻击难度？",
+            "Lockdown Mode 是否会影响合法使用场景（如通过 API 调用外部工具）？",
+            "Lockdown Mode 是否会导致开发者需要修改现有应用以兼容？",
+            "Lockdown Mode 是否只针对个人账户，企业账户是否有不同策略？"
+          ],
+          "do_not_claim_yet": [
+            "Lockdown Mode 会显著影响普通技术人的工作流程",
+            "Lockdown Mode 是 OpenAI 对 prompt injection 的最终解决方案",
+            "Lockdown Mode 会导致 ChatGPT 功能受限",
+            "Lockdown Mode 对 API 用户有直接影响"
+          ],
+          "can_publish_as_radar_if_missing": "否，因为目前信息主要来自单一博客，缺乏官方详细说明和实际影响案例，无法形成可靠判断。",
+          "downstream_materials_needed": [
+            "OpenAI 官方 Lockdown Mode 文档（含技术细节、适用范围、开关选项）",
+            "至少一个第三方安全专家对 Lockdown Mode 有效性的分析",
+            "至少一个开发者实际测试 Lockdown Mode 的案例或报告",
+            "OpenAI 官方关于 Lockdown Mode 对 API 影响的说明",
+            "Lockdown Mode 与现有安全措施（如内容审核、数据隔离）的关系说明"
+          ]
+        },
+        "research_evidence": []
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+        },
+        "core_question": "OpenAI Lockdown Mode 的具体技术实现、适用范围、对普通技术人（特别是使用 API 或自建应用的开发者）的实际影响是什么？",
+        "why_this_topic_matters": "Lockdown Mode 是 OpenAI 针对 prompt injection 数据泄露风险推出的安全功能，直接影响使用 ChatGPT 的个人和企业用户的数据安全与功能可用性。对于依赖 ChatGPT 进行自动化、工具链集成的技术人，可能改变其工作流程和成本结构。",
+        "fact_summary": [
+          "OpenAI 在 2026 年 2 月首次预告 Lockdown Mode，2026 年 6 月 5 日宣布向符合条件的个人账户（Free、Go、Plus、Pro）及自助 ChatGPT Business 账户推出。",
+          "Lockdown Mode 旨在通过限制出站网络请求，防止 prompt injection 攻击的最后阶段——数据外泄。",
+          "Lockdown Mode 不阻止 prompt injection 出现在 ChatGPT 处理的内容中（如缓存网页、上传文件），仅阻止数据外传。",
+          "目前信息仅来自 Simon Willison 的博客，未找到 OpenAI 官方文档或第三方验证。"
+        ],
+        "timeline": [
+          {
+            "date": "2026-02",
+            "event": "OpenAI 首次预告 Lockdown Mode"
+          },
+          {
+            "date": "2026-06-05",
+            "event": "Simon Willison 发布博客，称 Lockdown Mode 已向符合条件的账户推出"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "Simon Willison's Weblog",
+            "url": "https://simonwillison.net/2026/Jun/5/openai-help-lockdown-mode/",
+            "supports": "Lockdown Mode 已推出，旨在防止 prompt injection 数据外泄",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "目前证据不足以闭环。核心问题（是否影响 API、是否默认开启、能否关闭、对插件/联网搜索的影响）均无答案。需官方文档和实际测试才能判断对技术人的实际影响。",
+        "writeable_angles": [
+          {
+            "angle": "Lockdown Mode 对 ChatGPT 用户数据安全的影响",
+            "why": "直接关系到用户隐私和合规，读者关注度高",
+            "needs": "官方文档说明 Lockdown Mode 的具体保护范围、是否默认开启、用户控制权"
+          },
+          {
+            "angle": "Lockdown Mode 对开发者工具链的影响",
+            "why": "使用 ChatGPT API 或集成 ChatGPT 的开发者需要评估兼容性",
+            "needs": "官方说明 Lockdown Mode 是否影响 API 调用、第三方客户端、自动化工具"
+          },
+          {
+            "angle": "Lockdown Mode 与 prompt injection 攻防演进",
+            "why": "安全技术爱好者关注其有效性及局限性",
+            "needs": "第三方安全专家分析、实际攻击测试案例"
+          }
+        ],
+        "missing_basics": [
+          "Lockdown Mode 是否仅限 ChatGPT 网页/App 端，还是也影响 API 调用？",
+          "Lockdown Mode 是否默认开启？用户能否关闭？",
+          "Lockdown Mode 是否影响 ChatGPT 的联网搜索、插件、代码解释器等功能的正常使用？",
+          "Lockdown Mode 是否影响通过 API 构建的第三方应用？",
+          "Lockdown Mode 是否影响 ChatGPT 的导出数据功能？"
+        ],
+        "missing_materials": [
+          "OpenAI 官方 Lockdown Mode 文档（含技术细节、适用范围、开关选项）",
+          "至少一个第三方安全专家对 Lockdown Mode 有效性的分析",
+          "至少一个开发者实际测试 Lockdown Mode 的案例或报告",
+          "OpenAI 官方关于 Lockdown Mode 对 API 影响的说明",
+          "Lockdown Mode 与现有安全措施（如内容审核、数据隔离）的关系说明",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "Lockdown Mode 会显著影响普通技术人的工作流程",
+          "Lockdown Mode 是 OpenAI 对 prompt injection 的最终解决方案",
+          "Lockdown Mode 会导致 ChatGPT 功能受限",
+          "Lockdown Mode 对 API 用户有直接影响",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "OpenAI 官方是否发布了 Lockdown Mode 的详细文档？",
+          "是否有开发者报告 Lockdown Mode 的实际使用体验？",
+          "Lockdown Mode 是否在 Hacker News 或 Reddit 上有讨论？"
+        ],
+        "additional_search_queries": [
+          "OpenAI Lockdown Mode official documentation",
+          "OpenAI Lockdown Mode API impact",
+          "OpenAI Lockdown Mode disable",
+          "OpenAI Lockdown Mode plugin compatibility",
+          "OpenAI Lockdown Mode data export",
+          "OpenAI Lockdown Mode vs prompt injection mitigation",
+          "OpenAI Lockdown Mode rollout date",
+          "OpenAI Lockdown mode ChatGPT enterprise"
+        ],
+        "stop_conditions": [
+          "OpenAI 官方发布 Lockdown Mode 的完整技术文档",
+          "至少两个独立来源（如安全博客、开发者论坛）确认 Lockdown Mode 的具体影响",
+          "出现实际用户报告 Lockdown Mode 导致功能异常或数据泄露的案例"
+        ],
+        "confidence": 20.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "platform-rules",
+        "research_plan": {
+          "core_question": "OpenAI Lockdown Mode 的具体技术实现、适用范围、对普通技术人（特别是使用 API 或自建应用的开发者）的实际影响是什么？",
+          "must_verify": [
+            "Lockdown Mode 是否仅限 ChatGPT 网页/App 端，还是也影响 API 调用？",
+            "Lockdown Mode 是否默认开启？用户能否关闭？",
+            "Lockdown Mode 是否影响 ChatGPT 的联网搜索、插件、代码解释器等功能的正常使用？",
+            "Lockdown Mode 是否影响通过 API 构建的第三方应用（如客户端、自动化工具）？",
+            "Lockdown Mode 是否影响 ChatGPT 的导出数据功能（如导出对话）？"
+          ],
+          "search_queries": [
+            "OpenAI Lockdown Mode technical details",
+            "OpenAI Lockdown Mode API impact",
+            "OpenAI Lockdown Mode disable",
+            "OpenAI Lockdown Mode plugin compatibility",
+            "OpenAI Lockdown Mode data export",
+            "OpenAI Lockdown Mode vs prompt injection mitigation",
+            "OpenAI Lockdown Mode rollout date",
+            "OpenAI Lockdown mode ChatGPT enterprise"
+          ],
+          "best_sources_to_find": [
+            "OpenAI 官方帮助文档或博客",
+            "OpenAI 开发者论坛或 GitHub 讨论",
+            "OpenAI 官方 changelog 或 release notes",
+            "Simon Willison 的博客原文及后续更新",
+            "Hacker News 相关讨论帖",
+            "Reddit r/OpenAI 或 r/MachineLearning 讨论"
+          ],
+          "expert_challenge_points": [
+            "Lockdown Mode 是否真的能有效防止 prompt injection 数据泄露？还是只是增加攻击难度？",
+            "Lockdown Mode 是否会影响合法使用场景（如通过 API 调用外部工具）？",
+            "Lockdown Mode 是否会导致开发者需要修改现有应用以兼容？",
+            "Lockdown Mode 是否只针对个人账户，企业账户是否有不同策略？"
+          ],
+          "do_not_claim_yet": [
+            "Lockdown Mode 会显著影响普通技术人的工作流程",
+            "Lockdown Mode 是 OpenAI 对 prompt injection 的最终解决方案",
+            "Lockdown Mode 会导致 ChatGPT 功能受限",
+            "Lockdown Mode 对 API 用户有直接影响"
+          ],
+          "can_publish_as_radar_if_missing": "否，因为目前信息主要来自单一博客，缺乏官方详细说明和实际影响案例，无法形成可靠判断。",
+          "downstream_materials_needed": [
+            "OpenAI 官方 Lockdown Mode 文档（含技术细节、适用范围、开关选项）",
+            "至少一个第三方安全专家对 Lockdown Mode 有效性的分析",
+            "至少一个开发者实际测试 Lockdown Mode 的案例或报告",
+            "OpenAI 官方关于 Lockdown Mode 对 API 影响的说明",
+            "Lockdown Mode 与现有安全措施（如内容审核、数据隔离）的关系说明"
+          ]
+        },
+        "research_evidence": []
+      },
+      "angle_candidates": [
+        "规则变动影响谁",
+        "普通技术人的合规边界",
+        "平台红利和封号风险"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留普通读者入口，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "深度调查：OpenAI 重要线索 官方政策 规则 原文",
+        "深度调查：OpenAI 重要线索 开发者公告 影响范围",
+        "深度调查：OpenAI 重要线索 合规 风险 受影响用户"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
