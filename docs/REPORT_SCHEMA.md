@@ -34,22 +34,28 @@
     "anti_scrape_required": false,
     "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
   },
-  "material_pack": {
-    "template": "ai_major_update",
-    "timeline": [],
-    "fact_sheet": [],
-    "evidence_map": [],
-    "analysis_dimensions": [],
-    "writing_materials": {
-      "title_seeds": [],
-      "reader_questions": [],
-      "opening_hooks": [],
-      "angle_seeds": []
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v2",
+    "verdict": {
+      "status": "可进入选题池",
+      "label": "可选",
+      "reason": "当前线索有较强来源、读者关系和分析空间。"
     },
-    "evidence_gaps": [],
+    "core_question": "这条线索能不能成为一个值得老花继续写的选题？",
+    "human_judgment_path": [],
+    "selection_questions": [],
+    "topic_value_assessment": [],
+    "fact_clarity": {},
+    "evidence_reliability": {},
+    "logic_closure": [],
+    "writeable_angles": [],
+    "missing_basics": [],
+    "missing_materials": [],
+    "not_claimable": [],
     "followup_queries": [],
     "stop_conditions": []
   },
+  "material_pack": "与 selection_dossier 同内容，用于兼容下游旧字段",
   "downstream_handoff": {
     "package_version": "radar-handoff-v1",
     "canonical_url": "https://radar.huadongpeng.com/items/20260609-openai-pricing/",
@@ -58,15 +64,6 @@
       "angle_candidates": ["成本是否真的下降", "免费额度和爆账单风险"],
       "must_not_claim": ["不要声称老花已经实操验证。"],
       "questions_to_resolve": ["继续追官方文档、价格页、真实用户案例或反方证据。"]
-    },
-    "for_cms": {
-      "slug": "20260609-openai-pricing",
-      "seo_title": "工具账本：OpenAI 的工具成本和能力变化",
-      "seo_description": "用 API 做副业工具或内部自动化的人，需要重新算账。",
-      "tags": ["AI 前沿与工具链", "工具账本", "AI 工具与开发者平台", "official", "OpenAI"],
-      "topic_direction": "ai-frontier",
-      "topic_direction_title": "AI 前沿与工具链",
-      "publish_status": "radar_published"
     },
     "for_research_loop": {
       "followup_queries": ["OpenAI API pricing official changelog"],
@@ -108,7 +105,8 @@
 
 - `topic_direction`：网站主栏目，表示这条线索属于哪个实际选题方向。
 - `report_type`：分析方法，表示这篇报告应该用哪种方式拆，不再承担主栏目职责。
-- `material_pack`：完整资料和素材包。后续 GPT 应用优先读取它，而不是只读取页面正文。
+- `selection_dossier`：选题报告主字段。后续 GPT 应用优先读取它，用它判断这个题值不值得写、怎么写、缺什么、哪些不能写成结论。
+- `material_pack`：兼容字段，内容等同于 `selection_dossier`，避免下游旧流程读不到素材包。
 - `title`：中文 Radar 标题，可以保留产品名/公司名，但不能整句照搬英文原题。
 - `original_title`：原始来源标题。
 - `source_category`：内部数据源分类，表示线索来自哪类源。
@@ -119,7 +117,7 @@
 - `uncertainty_flags`：没有证据、证据弱或仍存疑的地方。
 - `source_priority`：来源优先级，帮助判断是否值得下游继续投入。
 - `source_assessment`：这个源在 GitHub Actions 环境下是否稳定、是否需要反爬。
-- `downstream_handoff`：给 GPT 编辑应用、CMS 和研究闭环的标准交接包。
+- `downstream_handoff`：给 GPT 编辑应用和研究闭环的标准交接包。
 - `boundaries`：必须写明不能夸大的地方。
 
 ## 证据类型

@@ -15,7 +15,7 @@
   "source_type": "rss",
   "feed_url": "https://github.blog/changelog/feed/",
   "published_at": "2026-06-04T19:46:34+00:00",
-  "fetched_at": "2026-06-09T05:36:51.801695+00:00",
+  "fetched_at": "2026-06-09T06:11:39.210017+00:00",
   "decision": "deep_dive",
   "report_type": "tool-ledger",
   "report_type_title": "工具账本",
@@ -123,100 +123,147 @@
       "涉及价格、收益、比例时必须继续找来源或公式。"
     ]
   },
-  "material_pack": {
-    "template": "ai_major_update",
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v2",
+    "verdict": {
+      "status": "待补证观察",
+      "label": "观察",
+      "reason": "线索有方向价值，但事实、概念、案例或成本材料还不足，暂时不能直接写成正文。"
+    },
     "topic_direction": "ai-frontier",
     "topic_direction_title": "AI 前沿与工具链",
     "report_type": "tool-ledger",
-    "must_answer": [
-      "时间线",
-      "本次更新摘要",
-      "影响对象",
-      "成本和门槛",
-      "替代和竞争",
-      "老花切入口"
+    "core_question": "这条线索能不能成为一个值得老花继续写的选题：GitHub 计费和成本变化",
+    "human_judgment_path": [
+      "先确认这件事是不是真的发生，而不是只看标题兴奋。",
+      "再确认它和读者有什么关系：能不能帮读者理解机会、成本、规则、坑或工具变化。",
+      "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
+      "再看逻辑是否闭环：事实、原因、影响、边界、可写角度能不能连起来。",
+      "最后决定：可选、观察、暂缓，而不是把所有线索都写成同一套报告。"
     ],
-    "timeline": [
+    "selection_questions": [
+      "这是不是明确发生的 AI 能力、价格、生态或平台规则变化，而不是普通产品小更新？",
+      "普通读者能不能听懂它改变了什么，程序员能不能看出技术和工具链价值？",
+      "有没有官方公告、文档、价格页、发布说明或可信近源材料？",
+      "能不能讲清楚发布时间线、能力变化、影响对象、成本门槛和替代关系？"
+    ],
+    "value_signals": [
+      "官方发布",
+      "影响开发者或高频 AI 用户",
+      "改变成本结构",
+      "改变工作流",
+      "有明确对比对象"
+    ],
+    "reject_signals": [
+      "只有产品名",
+      "只是 SDK 小版本",
+      "没有大众钩子",
+      "只能写成又一个工具更新"
+    ],
+    "topic_value_assessment": [
       {
-        "time": "2026-06-04T19:46:34+00:00",
-        "event": "原始来源发布/收录线索：Budget and usage management APIs now generally available",
-        "evidence": "https://github.blog/changelog/2026-06-04-budget-and-usage-management-apis-now-generally-available"
+        "question": "这是什么？",
+        "judgment": "Budget and usage management APIs now generally available"
       },
       {
-        "time": "2026-06-09T05:36:51.801695+00:00",
-        "event": "Easton Radar 抓取并归档该线索。",
-        "evidence": "https://github.blog/changelog/feed/"
+        "question": "和读者有什么关系？",
+        "judgment": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
       },
       {
-        "time": "待补证",
-        "event": "继续查官方文档、价格页、案例、反方观点或真实使用反馈。",
-        "evidence": "见 followup_queries"
+        "question": "为什么现在看？",
+        "judgment": "来自本批次稳定公开源，适合先进入 Radar 观察。"
+      },
+      {
+        "question": "事实清楚吗？",
+        "judgment": "基本清楚"
+      },
+      {
+        "question": "材料可靠吗？",
+        "judgment": "当前证据等级：official"
+      },
+      {
+        "question": "逻辑能闭环吗？",
+        "judgment": "需要补齐材料后才能闭环"
       }
     ],
-    "fact_sheet": [
-      "原始标题：Budget and usage management APIs now generally available",
-      "来源：GitHub Blog",
-      "证据等级：official",
-      "当前判断：符合收集原则：来源可复查，且具备进入「工具账本」类报告的分析价值。"
-    ],
-    "evidence_map": [
-      {
-        "source": "GitHub Blog",
-        "url": "https://github.blog/changelog/2026-06-04-budget-and-usage-management-apis-now-generally-available",
-        "supports": "原始线索存在、标题、来源和基础事实入口。",
-        "evidence_level": "official",
-        "confidence": 0.8
-      }
-    ],
-    "analysis_dimensions": [
-      {
-        "name": "时间线",
-        "how_to_use": "这次更新最早从哪里出现，发布时间、开放范围、后续可能变化是什么。"
-      },
-      {
-        "name": "本次更新摘要",
-        "how_to_use": "新增了什么、改变了什么、没有改变什么，别只写产品名。"
-      },
-      {
-        "name": "影响对象",
-        "how_to_use": "普通用户、开发者、独立开发者、企业团队分别会受到什么影响。"
-      },
-      {
-        "name": "成本和门槛",
-        "how_to_use": "价格、额度、API、账号、地区、设备、学习成本是否变化。"
-      },
-      {
-        "name": "替代和竞争",
-        "how_to_use": "和已有工具或模型相比，替代了什么，没替代什么。"
-      },
-      {
-        "name": "老花切入口",
-        "how_to_use": "从程序员、AI 工具重度用户、副业工具链角度能拆出什么。"
-      }
-    ],
-    "writing_materials": {
-      "title_seeds": [
-        "GitHub 计费和成本变化",
-        "GitHub 计费和成本变化，和普通技术人有什么关系",
-        "GitHub 计费和成本变化：机会、成本和风险先拆清楚"
+    "fact_clarity": {
+      "status": "基本清楚",
+      "summary_status": "有摘要",
+      "confirmed": [
+        "标题、来源 URL、来源类型、抓取时间已记录。",
+        "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
       ],
-      "reader_questions": [
-        "这事和我有什么关系？",
-        "它到底改变了什么，还是只是包装换了个名字？",
-        "如果我只是懂一点技术，能不能低成本验证？",
-        "最大的坑是技术，还是流量、合规、成本、回款和交付？"
-      ],
-      "opening_hooks": [
-        "今天这条线索看起来是 工具账本，但我更关心它能不能成为一个真正有用的选题。",
-        "先别急着下结论，咱们还是先看来源、证据和利益关系。"
-      ],
-      "angle_seeds": [
-        "成本是否真的下降",
-        "免费额度和爆账单风险",
-        "替代方案值不值得换"
+      "uncertainty": [
+        "尚未抓取正文外的补充证据。",
+        "尚未形成多源交叉验证。"
       ]
     },
-    "evidence_gaps": [
+    "evidence_reliability": {
+      "level": "official",
+      "primary_source": "https://github.blog/changelog/2026-06-04-budget-and-usage-management-apis-now-generally-available",
+      "source_name": "GitHub Blog",
+      "cross_check_status": "待二次交叉验证",
+      "weak_points": [
+        "尚未抓取正文外的补充证据。",
+        "尚未形成多源交叉验证。"
+      ]
+    },
+    "logic_closure": [
+      {
+        "node": "事件是否存在",
+        "status": "已确认",
+        "note": "来源入口：GitHub Blog"
+      },
+      {
+        "node": "和读者是否有关",
+        "status": "初步成立",
+        "note": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
+      },
+      {
+        "node": "事实是否清楚",
+        "status": "基本清楚",
+        "note": "原始标题：Budget and usage management APIs now generally available"
+      },
+      {
+        "node": "材料是否足够写正文",
+        "status": "不足，需要补证",
+        "note": "Radar 只负责给出选题档案，不在证据不足时强行生成公众号正文。"
+      }
+    ],
+    "writeable_angles": [
+      {
+        "angle": "这次更新到底改变了什么",
+        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+      },
+      {
+        "angle": "普通技术人该不该关注",
+        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+      },
+      {
+        "angle": "成本和工具链会不会变化",
+        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+      },
+      {
+        "angle": "它替代了谁又替代不了谁",
+        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+      }
+    ],
+    "missing_basics": [
+      "产品/模型/Agent 基础概念",
+      "本次更新前后的差异",
+      "开放范围和使用门槛",
+      "价格、额度和地区限制"
+    ],
+    "missing_materials": [
+      "官方公告",
+      "文档或 changelog",
+      "价格页",
+      "真实使用反馈",
+      "竞品对比材料",
       "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
       "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
       "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
@@ -233,8 +280,171 @@
     ],
     "stop_conditions": [
       "找不到一手来源或近源证据。",
-      "只能证明概念存在，无法证明需求、成本、规则、收入或影响。",
-      "需要用大量想象补齐关键事实，读者看完只会觉得虚。"
+      "无法说明这件事和读者有什么关系。",
+      "关键概念、成本、合规、收益或影响对象说不清。",
+      "逻辑必须靠想象补齐，写出来只会像假大空。"
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v2",
+    "verdict": {
+      "status": "待补证观察",
+      "label": "观察",
+      "reason": "线索有方向价值，但事实、概念、案例或成本材料还不足，暂时不能直接写成正文。"
+    },
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "tool-ledger",
+    "core_question": "这条线索能不能成为一个值得老花继续写的选题：GitHub 计费和成本变化",
+    "human_judgment_path": [
+      "先确认这件事是不是真的发生，而不是只看标题兴奋。",
+      "再确认它和读者有什么关系：能不能帮读者理解机会、成本、规则、坑或工具变化。",
+      "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
+      "再看逻辑是否闭环：事实、原因、影响、边界、可写角度能不能连起来。",
+      "最后决定：可选、观察、暂缓，而不是把所有线索都写成同一套报告。"
+    ],
+    "selection_questions": [
+      "这是不是明确发生的 AI 能力、价格、生态或平台规则变化，而不是普通产品小更新？",
+      "普通读者能不能听懂它改变了什么，程序员能不能看出技术和工具链价值？",
+      "有没有官方公告、文档、价格页、发布说明或可信近源材料？",
+      "能不能讲清楚发布时间线、能力变化、影响对象、成本门槛和替代关系？"
+    ],
+    "value_signals": [
+      "官方发布",
+      "影响开发者或高频 AI 用户",
+      "改变成本结构",
+      "改变工作流",
+      "有明确对比对象"
+    ],
+    "reject_signals": [
+      "只有产品名",
+      "只是 SDK 小版本",
+      "没有大众钩子",
+      "只能写成又一个工具更新"
+    ],
+    "topic_value_assessment": [
+      {
+        "question": "这是什么？",
+        "judgment": "Budget and usage management APIs now generally available"
+      },
+      {
+        "question": "和读者有什么关系？",
+        "judgment": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
+      },
+      {
+        "question": "为什么现在看？",
+        "judgment": "来自本批次稳定公开源，适合先进入 Radar 观察。"
+      },
+      {
+        "question": "事实清楚吗？",
+        "judgment": "基本清楚"
+      },
+      {
+        "question": "材料可靠吗？",
+        "judgment": "当前证据等级：official"
+      },
+      {
+        "question": "逻辑能闭环吗？",
+        "judgment": "需要补齐材料后才能闭环"
+      }
+    ],
+    "fact_clarity": {
+      "status": "基本清楚",
+      "summary_status": "有摘要",
+      "confirmed": [
+        "标题、来源 URL、来源类型、抓取时间已记录。",
+        "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+      ],
+      "uncertainty": [
+        "尚未抓取正文外的补充证据。",
+        "尚未形成多源交叉验证。"
+      ]
+    },
+    "evidence_reliability": {
+      "level": "official",
+      "primary_source": "https://github.blog/changelog/2026-06-04-budget-and-usage-management-apis-now-generally-available",
+      "source_name": "GitHub Blog",
+      "cross_check_status": "待二次交叉验证",
+      "weak_points": [
+        "尚未抓取正文外的补充证据。",
+        "尚未形成多源交叉验证。"
+      ]
+    },
+    "logic_closure": [
+      {
+        "node": "事件是否存在",
+        "status": "已确认",
+        "note": "来源入口：GitHub Blog"
+      },
+      {
+        "node": "和读者是否有关",
+        "status": "初步成立",
+        "note": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
+      },
+      {
+        "node": "事实是否清楚",
+        "status": "基本清楚",
+        "note": "原始标题：Budget and usage management APIs now generally available"
+      },
+      {
+        "node": "材料是否足够写正文",
+        "status": "不足，需要补证",
+        "note": "Radar 只负责给出选题档案，不在证据不足时强行生成公众号正文。"
+      }
+    ],
+    "writeable_angles": [
+      {
+        "angle": "这次更新到底改变了什么",
+        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+      },
+      {
+        "angle": "普通技术人该不该关注",
+        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+      },
+      {
+        "angle": "成本和工具链会不会变化",
+        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+      },
+      {
+        "angle": "它替代了谁又替代不了谁",
+        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+      }
+    ],
+    "missing_basics": [
+      "产品/模型/Agent 基础概念",
+      "本次更新前后的差异",
+      "开放范围和使用门槛",
+      "价格、额度和地区限制"
+    ],
+    "missing_materials": [
+      "官方公告",
+      "文档或 changelog",
+      "价格页",
+      "真实使用反馈",
+      "竞品对比材料",
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "followup_queries": [
+      "工具账本：GitHub 计费和成本变化 官方公告 价格 成本",
+      "工具账本：GitHub 计费和成本变化 API 文档 额度 限制",
+      "工具账本：GitHub 计费和成本变化 替代方案 真实使用 成本"
+    ],
+    "stop_conditions": [
+      "找不到一手来源或近源证据。",
+      "无法说明这件事和读者有什么关系。",
+      "关键概念、成本、合规、收益或影响对象说不清。",
+      "逻辑必须靠想象补齐，写出来只会像假大空。"
     ]
   },
   "downstream_handoff": {
@@ -245,100 +455,147 @@
       "title_seed": "工具账本：GitHub 计费和成本变化",
       "original_title": "Budget and usage management APIs now generally available",
       "source_url": "https://github.blog/changelog/2026-06-04-budget-and-usage-management-apis-now-generally-available",
-      "material_pack": {
-        "template": "ai_major_update",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v2",
+        "verdict": {
+          "status": "待补证观察",
+          "label": "观察",
+          "reason": "线索有方向价值，但事实、概念、案例或成本材料还不足，暂时不能直接写成正文。"
+        },
         "topic_direction": "ai-frontier",
         "topic_direction_title": "AI 前沿与工具链",
         "report_type": "tool-ledger",
-        "must_answer": [
-          "时间线",
-          "本次更新摘要",
-          "影响对象",
-          "成本和门槛",
-          "替代和竞争",
-          "老花切入口"
+        "core_question": "这条线索能不能成为一个值得老花继续写的选题：GitHub 计费和成本变化",
+        "human_judgment_path": [
+          "先确认这件事是不是真的发生，而不是只看标题兴奋。",
+          "再确认它和读者有什么关系：能不能帮读者理解机会、成本、规则、坑或工具变化。",
+          "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
+          "再看逻辑是否闭环：事实、原因、影响、边界、可写角度能不能连起来。",
+          "最后决定：可选、观察、暂缓，而不是把所有线索都写成同一套报告。"
         ],
-        "timeline": [
+        "selection_questions": [
+          "这是不是明确发生的 AI 能力、价格、生态或平台规则变化，而不是普通产品小更新？",
+          "普通读者能不能听懂它改变了什么，程序员能不能看出技术和工具链价值？",
+          "有没有官方公告、文档、价格页、发布说明或可信近源材料？",
+          "能不能讲清楚发布时间线、能力变化、影响对象、成本门槛和替代关系？"
+        ],
+        "value_signals": [
+          "官方发布",
+          "影响开发者或高频 AI 用户",
+          "改变成本结构",
+          "改变工作流",
+          "有明确对比对象"
+        ],
+        "reject_signals": [
+          "只有产品名",
+          "只是 SDK 小版本",
+          "没有大众钩子",
+          "只能写成又一个工具更新"
+        ],
+        "topic_value_assessment": [
           {
-            "time": "2026-06-04T19:46:34+00:00",
-            "event": "原始来源发布/收录线索：Budget and usage management APIs now generally available",
-            "evidence": "https://github.blog/changelog/2026-06-04-budget-and-usage-management-apis-now-generally-available"
+            "question": "这是什么？",
+            "judgment": "Budget and usage management APIs now generally available"
           },
           {
-            "time": "2026-06-09T05:36:51.801695+00:00",
-            "event": "Easton Radar 抓取并归档该线索。",
-            "evidence": "https://github.blog/changelog/feed/"
+            "question": "和读者有什么关系？",
+            "judgment": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
           },
           {
-            "time": "待补证",
-            "event": "继续查官方文档、价格页、案例、反方观点或真实使用反馈。",
-            "evidence": "见 followup_queries"
+            "question": "为什么现在看？",
+            "judgment": "来自本批次稳定公开源，适合先进入 Radar 观察。"
+          },
+          {
+            "question": "事实清楚吗？",
+            "judgment": "基本清楚"
+          },
+          {
+            "question": "材料可靠吗？",
+            "judgment": "当前证据等级：official"
+          },
+          {
+            "question": "逻辑能闭环吗？",
+            "judgment": "需要补齐材料后才能闭环"
           }
         ],
-        "fact_sheet": [
-          "原始标题：Budget and usage management APIs now generally available",
-          "来源：GitHub Blog",
-          "证据等级：official",
-          "当前判断：符合收集原则：来源可复查，且具备进入「工具账本」类报告的分析价值。"
-        ],
-        "evidence_map": [
-          {
-            "source": "GitHub Blog",
-            "url": "https://github.blog/changelog/2026-06-04-budget-and-usage-management-apis-now-generally-available",
-            "supports": "原始线索存在、标题、来源和基础事实入口。",
-            "evidence_level": "official",
-            "confidence": 0.8
-          }
-        ],
-        "analysis_dimensions": [
-          {
-            "name": "时间线",
-            "how_to_use": "这次更新最早从哪里出现，发布时间、开放范围、后续可能变化是什么。"
-          },
-          {
-            "name": "本次更新摘要",
-            "how_to_use": "新增了什么、改变了什么、没有改变什么，别只写产品名。"
-          },
-          {
-            "name": "影响对象",
-            "how_to_use": "普通用户、开发者、独立开发者、企业团队分别会受到什么影响。"
-          },
-          {
-            "name": "成本和门槛",
-            "how_to_use": "价格、额度、API、账号、地区、设备、学习成本是否变化。"
-          },
-          {
-            "name": "替代和竞争",
-            "how_to_use": "和已有工具或模型相比，替代了什么，没替代什么。"
-          },
-          {
-            "name": "老花切入口",
-            "how_to_use": "从程序员、AI 工具重度用户、副业工具链角度能拆出什么。"
-          }
-        ],
-        "writing_materials": {
-          "title_seeds": [
-            "GitHub 计费和成本变化",
-            "GitHub 计费和成本变化，和普通技术人有什么关系",
-            "GitHub 计费和成本变化：机会、成本和风险先拆清楚"
+        "fact_clarity": {
+          "status": "基本清楚",
+          "summary_status": "有摘要",
+          "confirmed": [
+            "标题、来源 URL、来源类型、抓取时间已记录。",
+            "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
           ],
-          "reader_questions": [
-            "这事和我有什么关系？",
-            "它到底改变了什么，还是只是包装换了个名字？",
-            "如果我只是懂一点技术，能不能低成本验证？",
-            "最大的坑是技术，还是流量、合规、成本、回款和交付？"
-          ],
-          "opening_hooks": [
-            "今天这条线索看起来是 工具账本，但我更关心它能不能成为一个真正有用的选题。",
-            "先别急着下结论，咱们还是先看来源、证据和利益关系。"
-          ],
-          "angle_seeds": [
-            "成本是否真的下降",
-            "免费额度和爆账单风险",
-            "替代方案值不值得换"
+          "uncertainty": [
+            "尚未抓取正文外的补充证据。",
+            "尚未形成多源交叉验证。"
           ]
         },
-        "evidence_gaps": [
+        "evidence_reliability": {
+          "level": "official",
+          "primary_source": "https://github.blog/changelog/2026-06-04-budget-and-usage-management-apis-now-generally-available",
+          "source_name": "GitHub Blog",
+          "cross_check_status": "待二次交叉验证",
+          "weak_points": [
+            "尚未抓取正文外的补充证据。",
+            "尚未形成多源交叉验证。"
+          ]
+        },
+        "logic_closure": [
+          {
+            "node": "事件是否存在",
+            "status": "已确认",
+            "note": "来源入口：GitHub Blog"
+          },
+          {
+            "node": "和读者是否有关",
+            "status": "初步成立",
+            "note": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
+          },
+          {
+            "node": "事实是否清楚",
+            "status": "基本清楚",
+            "note": "原始标题：Budget and usage management APIs now generally available"
+          },
+          {
+            "node": "材料是否足够写正文",
+            "status": "不足，需要补证",
+            "note": "Radar 只负责给出选题档案，不在证据不足时强行生成公众号正文。"
+          }
+        ],
+        "writeable_angles": [
+          {
+            "angle": "这次更新到底改变了什么",
+            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+          },
+          {
+            "angle": "普通技术人该不该关注",
+            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+          },
+          {
+            "angle": "成本和工具链会不会变化",
+            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+          },
+          {
+            "angle": "它替代了谁又替代不了谁",
+            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+          }
+        ],
+        "missing_basics": [
+          "产品/模型/Agent 基础概念",
+          "本次更新前后的差异",
+          "开放范围和使用门槛",
+          "价格、额度和地区限制"
+        ],
+        "missing_materials": [
+          "官方公告",
+          "文档或 changelog",
+          "价格页",
+          "真实使用反馈",
+          "竞品对比材料",
           "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
           "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
           "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
@@ -355,8 +612,171 @@
         ],
         "stop_conditions": [
           "找不到一手来源或近源证据。",
-          "只能证明概念存在，无法证明需求、成本、规则、收入或影响。",
-          "需要用大量想象补齐关键事实，读者看完只会觉得虚。"
+          "无法说明这件事和读者有什么关系。",
+          "关键概念、成本、合规、收益或影响对象说不清。",
+          "逻辑必须靠想象补齐，写出来只会像假大空。"
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v2",
+        "verdict": {
+          "status": "待补证观察",
+          "label": "观察",
+          "reason": "线索有方向价值，但事实、概念、案例或成本材料还不足，暂时不能直接写成正文。"
+        },
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "tool-ledger",
+        "core_question": "这条线索能不能成为一个值得老花继续写的选题：GitHub 计费和成本变化",
+        "human_judgment_path": [
+          "先确认这件事是不是真的发生，而不是只看标题兴奋。",
+          "再确认它和读者有什么关系：能不能帮读者理解机会、成本、规则、坑或工具变化。",
+          "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
+          "再看逻辑是否闭环：事实、原因、影响、边界、可写角度能不能连起来。",
+          "最后决定：可选、观察、暂缓，而不是把所有线索都写成同一套报告。"
+        ],
+        "selection_questions": [
+          "这是不是明确发生的 AI 能力、价格、生态或平台规则变化，而不是普通产品小更新？",
+          "普通读者能不能听懂它改变了什么，程序员能不能看出技术和工具链价值？",
+          "有没有官方公告、文档、价格页、发布说明或可信近源材料？",
+          "能不能讲清楚发布时间线、能力变化、影响对象、成本门槛和替代关系？"
+        ],
+        "value_signals": [
+          "官方发布",
+          "影响开发者或高频 AI 用户",
+          "改变成本结构",
+          "改变工作流",
+          "有明确对比对象"
+        ],
+        "reject_signals": [
+          "只有产品名",
+          "只是 SDK 小版本",
+          "没有大众钩子",
+          "只能写成又一个工具更新"
+        ],
+        "topic_value_assessment": [
+          {
+            "question": "这是什么？",
+            "judgment": "Budget and usage management APIs now generally available"
+          },
+          {
+            "question": "和读者有什么关系？",
+            "judgment": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
+          },
+          {
+            "question": "为什么现在看？",
+            "judgment": "来自本批次稳定公开源，适合先进入 Radar 观察。"
+          },
+          {
+            "question": "事实清楚吗？",
+            "judgment": "基本清楚"
+          },
+          {
+            "question": "材料可靠吗？",
+            "judgment": "当前证据等级：official"
+          },
+          {
+            "question": "逻辑能闭环吗？",
+            "judgment": "需要补齐材料后才能闭环"
+          }
+        ],
+        "fact_clarity": {
+          "status": "基本清楚",
+          "summary_status": "有摘要",
+          "confirmed": [
+            "标题、来源 URL、来源类型、抓取时间已记录。",
+            "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+          ],
+          "uncertainty": [
+            "尚未抓取正文外的补充证据。",
+            "尚未形成多源交叉验证。"
+          ]
+        },
+        "evidence_reliability": {
+          "level": "official",
+          "primary_source": "https://github.blog/changelog/2026-06-04-budget-and-usage-management-apis-now-generally-available",
+          "source_name": "GitHub Blog",
+          "cross_check_status": "待二次交叉验证",
+          "weak_points": [
+            "尚未抓取正文外的补充证据。",
+            "尚未形成多源交叉验证。"
+          ]
+        },
+        "logic_closure": [
+          {
+            "node": "事件是否存在",
+            "status": "已确认",
+            "note": "来源入口：GitHub Blog"
+          },
+          {
+            "node": "和读者是否有关",
+            "status": "初步成立",
+            "note": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
+          },
+          {
+            "node": "事实是否清楚",
+            "status": "基本清楚",
+            "note": "原始标题：Budget and usage management APIs now generally available"
+          },
+          {
+            "node": "材料是否足够写正文",
+            "status": "不足，需要补证",
+            "note": "Radar 只负责给出选题档案，不在证据不足时强行生成公众号正文。"
+          }
+        ],
+        "writeable_angles": [
+          {
+            "angle": "这次更新到底改变了什么",
+            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+          },
+          {
+            "angle": "普通技术人该不该关注",
+            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+          },
+          {
+            "angle": "成本和工具链会不会变化",
+            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+          },
+          {
+            "angle": "它替代了谁又替代不了谁",
+            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+          }
+        ],
+        "missing_basics": [
+          "产品/模型/Agent 基础概念",
+          "本次更新前后的差异",
+          "开放范围和使用门槛",
+          "价格、额度和地区限制"
+        ],
+        "missing_materials": [
+          "官方公告",
+          "文档或 changelog",
+          "价格页",
+          "真实使用反馈",
+          "竞品对比材料",
+          "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+          "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+          "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+        ],
+        "not_claimable": [
+          "不要声称老花已经实操验证。",
+          "不要声称普通人都能复制。",
+          "不要在证据不足时给完整行动方案。"
+        ],
+        "followup_queries": [
+          "工具账本：GitHub 计费和成本变化 官方公告 价格 成本",
+          "工具账本：GitHub 计费和成本变化 API 文档 额度 限制",
+          "工具账本：GitHub 计费和成本变化 替代方案 真实使用 成本"
+        ],
+        "stop_conditions": [
+          "找不到一手来源或近源证据。",
+          "无法说明这件事和读者有什么关系。",
+          "关键概念、成本、合规、收益或影响对象说不清。",
+          "逻辑必须靠想象补齐，写出来只会像假大空。"
         ]
       },
       "angle_candidates": [
@@ -379,26 +799,6 @@
         "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
         "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
       ]
-    },
-    "for_cms": {
-      "slug": "20260609-budget-and-usage-management-apis-now-generally-a-afb248e5",
-      "canonical_url": "https://radar.huadongpeng.com/items/20260609-budget-and-usage-management-apis-now-generally-a-afb248e5/",
-      "seo_title": "工具账本：GitHub 计费和成本变化",
-      "seo_description": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。",
-      "tags": [
-        "AI 前沿与工具链",
-        "工具账本",
-        "AI 工具与开发者平台",
-        "official",
-        "GitHub Blog"
-      ],
-      "report_type": "tool-ledger",
-      "topic_direction": "ai-frontier",
-      "topic_direction_title": "AI 前沿与工具链",
-      "source_category": "ai_tools",
-      "evidence_level": "official",
-      "material_template": "ai_major_update",
-      "publish_status": "radar_published"
     },
     "for_research_loop": {
       "followup_queries": [

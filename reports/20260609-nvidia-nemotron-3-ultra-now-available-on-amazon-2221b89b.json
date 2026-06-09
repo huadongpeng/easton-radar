@@ -15,7 +15,7 @@
   "source_type": "rss",
   "feed_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
   "published_at": "2026-06-04T16:59:08+00:00",
-  "fetched_at": "2026-06-09T05:36:52.392249+00:00",
+  "fetched_at": "2026-06-09T06:11:43.765303+00:00",
   "decision": "deep_dive",
   "report_type": "tool-ledger",
   "report_type_title": "工具账本",
@@ -124,100 +124,147 @@
       "涉及价格、收益、比例时必须继续找来源或公式。"
     ]
   },
-  "material_pack": {
-    "template": "ai_practice",
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v2",
+    "verdict": {
+      "status": "可进入选题池",
+      "label": "可选",
+      "reason": "当前线索有明确来源、读者关系和分析空间，可以作为候选选题继续补证。"
+    },
     "topic_direction": "ai-practice",
     "topic_direction_title": "AI 实操与自动化",
     "report_type": "tool-ledger",
-    "must_answer": [
-      "具体需求",
-      "输入输出",
-      "工作流步骤",
-      "工具组合",
-      "验证成本",
-      "失败信号"
+    "core_question": "这条线索能不能成为一个值得老花继续写的选题：AWS 模型能力变化",
+    "human_judgment_path": [
+      "先确认这件事是不是真的发生，而不是只看标题兴奋。",
+      "再确认它和读者有什么关系：能不能帮读者理解机会、成本、规则、坑或工具变化。",
+      "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
+      "再看逻辑是否闭环：事实、原因、影响、边界、可写角度能不能连起来。",
+      "最后决定：可选、观察、暂缓，而不是把所有线索都写成同一套报告。"
     ],
-    "timeline": [
+    "selection_questions": [
+      "它是不是一个具体需求场景，而不是空泛地说 AI 很强？",
+      "读者能不能想象自己也有类似需求，比如个人助手、办公、健康、内容、客服或运营？",
+      "能不能拆出输入、处理流程、输出、人工兜底和失败信号？",
+      "能不能低成本验证，而不是必须完整开发一个大系统？"
+    ],
+    "value_signals": [
+      "需求具体",
+      "输入输出清楚",
+      "能一两天做 MVP",
+      "有人工兜底",
+      "非技术读者也能理解"
+    ],
+    "reject_signals": [
+      "只有工具名",
+      "只有炫技",
+      "需求不真实",
+      "必须编一堆操作细节"
+    ],
+    "topic_value_assessment": [
       {
-        "time": "2026-06-04T16:59:08+00:00",
-        "event": "原始来源发布/收录线索：NVIDIA Nemotron 3 Ultra now available on Amazon SageMaker JumpStart",
-        "evidence": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-ultra-now-available-on-amazon-sagemaker-jumpstart/"
+        "question": "这是什么？",
+        "judgment": "NVIDIA Nemotron 3 Ultra now available on Amazon SageMaker JumpStart"
       },
       {
-        "time": "2026-06-09T05:36:52.392249+00:00",
-        "event": "Easton Radar 抓取并归档该线索。",
-        "evidence": "https://aws.amazon.com/blogs/machine-learning/feed/"
+        "question": "和读者有什么关系？",
+        "judgment": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
       },
       {
-        "time": "待补证",
-        "event": "继续查官方文档、价格页、案例、反方观点或真实使用反馈。",
-        "evidence": "见 followup_queries"
+        "question": "为什么现在看？",
+        "judgment": "来自本批次稳定公开源，适合先进入 Radar 观察。"
+      },
+      {
+        "question": "事实清楚吗？",
+        "judgment": "基本清楚"
+      },
+      {
+        "question": "材料可靠吗？",
+        "judgment": "当前证据等级：official"
+      },
+      {
+        "question": "逻辑能闭环吗？",
+        "judgment": "需要补齐材料后才能闭环"
       }
     ],
-    "fact_sheet": [
-      "原始标题：NVIDIA Nemotron 3 Ultra now available on Amazon SageMaker JumpStart",
-      "来源：AWS Machine Learning Blog",
-      "证据等级：official",
-      "当前判断：符合收集原则：来源可复查，且具备进入「工具账本」类报告的分析价值。"
-    ],
-    "evidence_map": [
-      {
-        "source": "AWS Machine Learning Blog",
-        "url": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-ultra-now-available-on-amazon-sagemaker-jumpstart/",
-        "supports": "原始线索存在、标题、来源和基础事实入口。",
-        "evidence_level": "official",
-        "confidence": 0.8
-      }
-    ],
-    "analysis_dimensions": [
-      {
-        "name": "具体需求",
-        "how_to_use": "这个 AI 场景到底解决谁的什么问题，是真需求还是演示需求。"
-      },
-      {
-        "name": "输入输出",
-        "how_to_use": "需要哪些数据、素材、账号、工具，输出物是否可直接使用。"
-      },
-      {
-        "name": "工作流步骤",
-        "how_to_use": "从触发、处理、审核到交付，最小流程怎么跑。"
-      },
-      {
-        "name": "工具组合",
-        "how_to_use": "可以用哪些现成工具或 API，哪些环节必须人工兜底。"
-      },
-      {
-        "name": "验证成本",
-        "how_to_use": "一天内能否做最小验证，时间、API、订阅和维护成本是多少。"
-      },
-      {
-        "name": "失败信号",
-        "how_to_use": "什么时候说明这个自动化不值得继续做。"
-      }
-    ],
-    "writing_materials": {
-      "title_seeds": [
-        "AWS 模型能力变化",
-        "AWS 模型能力变化，和普通技术人有什么关系",
-        "AWS 模型能力变化：机会、成本和风险先拆清楚"
+    "fact_clarity": {
+      "status": "基本清楚",
+      "summary_status": "有摘要",
+      "confirmed": [
+        "标题、来源 URL、来源类型、抓取时间已记录。",
+        "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
       ],
-      "reader_questions": [
-        "这事和我有什么关系？",
-        "它到底改变了什么，还是只是包装换了个名字？",
-        "如果我只是懂一点技术，能不能低成本验证？",
-        "最大的坑是技术，还是流量、合规、成本、回款和交付？"
-      ],
-      "opening_hooks": [
-        "今天这条线索看起来是 工具账本，但我更关心它能不能成为一个真正有用的选题。",
-        "先别急着下结论，咱们还是先看来源、证据和利益关系。"
-      ],
-      "angle_seeds": [
-        "成本是否真的下降",
-        "免费额度和爆账单风险",
-        "替代方案值不值得换"
+      "uncertainty": [
+        "尚未抓取正文外的补充证据。",
+        "尚未形成多源交叉验证。"
       ]
     },
-    "evidence_gaps": [
+    "evidence_reliability": {
+      "level": "official",
+      "primary_source": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-ultra-now-available-on-amazon-sagemaker-jumpstart/",
+      "source_name": "AWS Machine Learning Blog",
+      "cross_check_status": "待二次交叉验证",
+      "weak_points": [
+        "尚未抓取正文外的补充证据。",
+        "尚未形成多源交叉验证。"
+      ]
+    },
+    "logic_closure": [
+      {
+        "node": "事件是否存在",
+        "status": "已确认",
+        "note": "来源入口：AWS Machine Learning Blog"
+      },
+      {
+        "node": "和读者是否有关",
+        "status": "初步成立",
+        "note": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
+      },
+      {
+        "node": "事实是否清楚",
+        "status": "基本清楚",
+        "note": "原始标题：NVIDIA Nemotron 3 Ultra now available on Amazon SageMaker JumpStart"
+      },
+      {
+        "node": "材料是否足够写正文",
+        "status": "可以继续扩写",
+        "note": "Radar 只负责给出选题档案，不在证据不足时强行生成公众号正文。"
+      }
+    ],
+    "writeable_angles": [
+      {
+        "angle": "如果是我会怎么把需求说清楚",
+        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+      },
+      {
+        "angle": "AI 能放大的到底是哪一段",
+        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+      },
+      {
+        "angle": "最低成本验证流程",
+        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+      },
+      {
+        "angle": "哪些环节必须人工兜底",
+        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+      }
+    ],
+    "missing_basics": [
+      "具体使用者是谁",
+      "输入数据从哪里来",
+      "输出物怎么验收",
+      "失败后怎么回滚"
+    ],
+    "missing_materials": [
+      "工具文档",
+      "示例工作流",
+      "输入输出样例",
+      "成本估算",
+      "失败案例",
       "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
       "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
       "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
@@ -234,8 +281,171 @@
     ],
     "stop_conditions": [
       "找不到一手来源或近源证据。",
-      "只能证明概念存在，无法证明需求、成本、规则、收入或影响。",
-      "需要用大量想象补齐关键事实，读者看完只会觉得虚。"
+      "无法说明这件事和读者有什么关系。",
+      "关键概念、成本、合规、收益或影响对象说不清。",
+      "逻辑必须靠想象补齐，写出来只会像假大空。"
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v2",
+    "verdict": {
+      "status": "可进入选题池",
+      "label": "可选",
+      "reason": "当前线索有明确来源、读者关系和分析空间，可以作为候选选题继续补证。"
+    },
+    "topic_direction": "ai-practice",
+    "topic_direction_title": "AI 实操与自动化",
+    "report_type": "tool-ledger",
+    "core_question": "这条线索能不能成为一个值得老花继续写的选题：AWS 模型能力变化",
+    "human_judgment_path": [
+      "先确认这件事是不是真的发生，而不是只看标题兴奋。",
+      "再确认它和读者有什么关系：能不能帮读者理解机会、成本、规则、坑或工具变化。",
+      "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
+      "再看逻辑是否闭环：事实、原因、影响、边界、可写角度能不能连起来。",
+      "最后决定：可选、观察、暂缓，而不是把所有线索都写成同一套报告。"
+    ],
+    "selection_questions": [
+      "它是不是一个具体需求场景，而不是空泛地说 AI 很强？",
+      "读者能不能想象自己也有类似需求，比如个人助手、办公、健康、内容、客服或运营？",
+      "能不能拆出输入、处理流程、输出、人工兜底和失败信号？",
+      "能不能低成本验证，而不是必须完整开发一个大系统？"
+    ],
+    "value_signals": [
+      "需求具体",
+      "输入输出清楚",
+      "能一两天做 MVP",
+      "有人工兜底",
+      "非技术读者也能理解"
+    ],
+    "reject_signals": [
+      "只有工具名",
+      "只有炫技",
+      "需求不真实",
+      "必须编一堆操作细节"
+    ],
+    "topic_value_assessment": [
+      {
+        "question": "这是什么？",
+        "judgment": "NVIDIA Nemotron 3 Ultra now available on Amazon SageMaker JumpStart"
+      },
+      {
+        "question": "和读者有什么关系？",
+        "judgment": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
+      },
+      {
+        "question": "为什么现在看？",
+        "judgment": "来自本批次稳定公开源，适合先进入 Radar 观察。"
+      },
+      {
+        "question": "事实清楚吗？",
+        "judgment": "基本清楚"
+      },
+      {
+        "question": "材料可靠吗？",
+        "judgment": "当前证据等级：official"
+      },
+      {
+        "question": "逻辑能闭环吗？",
+        "judgment": "需要补齐材料后才能闭环"
+      }
+    ],
+    "fact_clarity": {
+      "status": "基本清楚",
+      "summary_status": "有摘要",
+      "confirmed": [
+        "标题、来源 URL、来源类型、抓取时间已记录。",
+        "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+      ],
+      "uncertainty": [
+        "尚未抓取正文外的补充证据。",
+        "尚未形成多源交叉验证。"
+      ]
+    },
+    "evidence_reliability": {
+      "level": "official",
+      "primary_source": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-ultra-now-available-on-amazon-sagemaker-jumpstart/",
+      "source_name": "AWS Machine Learning Blog",
+      "cross_check_status": "待二次交叉验证",
+      "weak_points": [
+        "尚未抓取正文外的补充证据。",
+        "尚未形成多源交叉验证。"
+      ]
+    },
+    "logic_closure": [
+      {
+        "node": "事件是否存在",
+        "status": "已确认",
+        "note": "来源入口：AWS Machine Learning Blog"
+      },
+      {
+        "node": "和读者是否有关",
+        "status": "初步成立",
+        "note": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
+      },
+      {
+        "node": "事实是否清楚",
+        "status": "基本清楚",
+        "note": "原始标题：NVIDIA Nemotron 3 Ultra now available on Amazon SageMaker JumpStart"
+      },
+      {
+        "node": "材料是否足够写正文",
+        "status": "可以继续扩写",
+        "note": "Radar 只负责给出选题档案，不在证据不足时强行生成公众号正文。"
+      }
+    ],
+    "writeable_angles": [
+      {
+        "angle": "如果是我会怎么把需求说清楚",
+        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+      },
+      {
+        "angle": "AI 能放大的到底是哪一段",
+        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+      },
+      {
+        "angle": "最低成本验证流程",
+        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+      },
+      {
+        "angle": "哪些环节必须人工兜底",
+        "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+        "needs": "补齐事实、概念、证据、成本和边界后再写。"
+      }
+    ],
+    "missing_basics": [
+      "具体使用者是谁",
+      "输入数据从哪里来",
+      "输出物怎么验收",
+      "失败后怎么回滚"
+    ],
+    "missing_materials": [
+      "工具文档",
+      "示例工作流",
+      "输入输出样例",
+      "成本估算",
+      "失败案例",
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "followup_queries": [
+      "工具账本：AWS 模型能力变化 官方公告 价格 成本",
+      "工具账本：AWS 模型能力变化 API 文档 额度 限制",
+      "工具账本：AWS 模型能力变化 替代方案 真实使用 成本"
+    ],
+    "stop_conditions": [
+      "找不到一手来源或近源证据。",
+      "无法说明这件事和读者有什么关系。",
+      "关键概念、成本、合规、收益或影响对象说不清。",
+      "逻辑必须靠想象补齐，写出来只会像假大空。"
     ]
   },
   "downstream_handoff": {
@@ -246,100 +456,147 @@
       "title_seed": "工具账本：AWS 模型能力变化",
       "original_title": "NVIDIA Nemotron 3 Ultra now available on Amazon SageMaker JumpStart",
       "source_url": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-ultra-now-available-on-amazon-sagemaker-jumpstart/",
-      "material_pack": {
-        "template": "ai_practice",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v2",
+        "verdict": {
+          "status": "可进入选题池",
+          "label": "可选",
+          "reason": "当前线索有明确来源、读者关系和分析空间，可以作为候选选题继续补证。"
+        },
         "topic_direction": "ai-practice",
         "topic_direction_title": "AI 实操与自动化",
         "report_type": "tool-ledger",
-        "must_answer": [
-          "具体需求",
-          "输入输出",
-          "工作流步骤",
-          "工具组合",
-          "验证成本",
-          "失败信号"
+        "core_question": "这条线索能不能成为一个值得老花继续写的选题：AWS 模型能力变化",
+        "human_judgment_path": [
+          "先确认这件事是不是真的发生，而不是只看标题兴奋。",
+          "再确认它和读者有什么关系：能不能帮读者理解机会、成本、规则、坑或工具变化。",
+          "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
+          "再看逻辑是否闭环：事实、原因、影响、边界、可写角度能不能连起来。",
+          "最后决定：可选、观察、暂缓，而不是把所有线索都写成同一套报告。"
         ],
-        "timeline": [
+        "selection_questions": [
+          "它是不是一个具体需求场景，而不是空泛地说 AI 很强？",
+          "读者能不能想象自己也有类似需求，比如个人助手、办公、健康、内容、客服或运营？",
+          "能不能拆出输入、处理流程、输出、人工兜底和失败信号？",
+          "能不能低成本验证，而不是必须完整开发一个大系统？"
+        ],
+        "value_signals": [
+          "需求具体",
+          "输入输出清楚",
+          "能一两天做 MVP",
+          "有人工兜底",
+          "非技术读者也能理解"
+        ],
+        "reject_signals": [
+          "只有工具名",
+          "只有炫技",
+          "需求不真实",
+          "必须编一堆操作细节"
+        ],
+        "topic_value_assessment": [
           {
-            "time": "2026-06-04T16:59:08+00:00",
-            "event": "原始来源发布/收录线索：NVIDIA Nemotron 3 Ultra now available on Amazon SageMaker JumpStart",
-            "evidence": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-ultra-now-available-on-amazon-sagemaker-jumpstart/"
+            "question": "这是什么？",
+            "judgment": "NVIDIA Nemotron 3 Ultra now available on Amazon SageMaker JumpStart"
           },
           {
-            "time": "2026-06-09T05:36:52.392249+00:00",
-            "event": "Easton Radar 抓取并归档该线索。",
-            "evidence": "https://aws.amazon.com/blogs/machine-learning/feed/"
+            "question": "和读者有什么关系？",
+            "judgment": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
           },
           {
-            "time": "待补证",
-            "event": "继续查官方文档、价格页、案例、反方观点或真实使用反馈。",
-            "evidence": "见 followup_queries"
+            "question": "为什么现在看？",
+            "judgment": "来自本批次稳定公开源，适合先进入 Radar 观察。"
+          },
+          {
+            "question": "事实清楚吗？",
+            "judgment": "基本清楚"
+          },
+          {
+            "question": "材料可靠吗？",
+            "judgment": "当前证据等级：official"
+          },
+          {
+            "question": "逻辑能闭环吗？",
+            "judgment": "需要补齐材料后才能闭环"
           }
         ],
-        "fact_sheet": [
-          "原始标题：NVIDIA Nemotron 3 Ultra now available on Amazon SageMaker JumpStart",
-          "来源：AWS Machine Learning Blog",
-          "证据等级：official",
-          "当前判断：符合收集原则：来源可复查，且具备进入「工具账本」类报告的分析价值。"
-        ],
-        "evidence_map": [
-          {
-            "source": "AWS Machine Learning Blog",
-            "url": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-ultra-now-available-on-amazon-sagemaker-jumpstart/",
-            "supports": "原始线索存在、标题、来源和基础事实入口。",
-            "evidence_level": "official",
-            "confidence": 0.8
-          }
-        ],
-        "analysis_dimensions": [
-          {
-            "name": "具体需求",
-            "how_to_use": "这个 AI 场景到底解决谁的什么问题，是真需求还是演示需求。"
-          },
-          {
-            "name": "输入输出",
-            "how_to_use": "需要哪些数据、素材、账号、工具，输出物是否可直接使用。"
-          },
-          {
-            "name": "工作流步骤",
-            "how_to_use": "从触发、处理、审核到交付，最小流程怎么跑。"
-          },
-          {
-            "name": "工具组合",
-            "how_to_use": "可以用哪些现成工具或 API，哪些环节必须人工兜底。"
-          },
-          {
-            "name": "验证成本",
-            "how_to_use": "一天内能否做最小验证，时间、API、订阅和维护成本是多少。"
-          },
-          {
-            "name": "失败信号",
-            "how_to_use": "什么时候说明这个自动化不值得继续做。"
-          }
-        ],
-        "writing_materials": {
-          "title_seeds": [
-            "AWS 模型能力变化",
-            "AWS 模型能力变化，和普通技术人有什么关系",
-            "AWS 模型能力变化：机会、成本和风险先拆清楚"
+        "fact_clarity": {
+          "status": "基本清楚",
+          "summary_status": "有摘要",
+          "confirmed": [
+            "标题、来源 URL、来源类型、抓取时间已记录。",
+            "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
           ],
-          "reader_questions": [
-            "这事和我有什么关系？",
-            "它到底改变了什么，还是只是包装换了个名字？",
-            "如果我只是懂一点技术，能不能低成本验证？",
-            "最大的坑是技术，还是流量、合规、成本、回款和交付？"
-          ],
-          "opening_hooks": [
-            "今天这条线索看起来是 工具账本，但我更关心它能不能成为一个真正有用的选题。",
-            "先别急着下结论，咱们还是先看来源、证据和利益关系。"
-          ],
-          "angle_seeds": [
-            "成本是否真的下降",
-            "免费额度和爆账单风险",
-            "替代方案值不值得换"
+          "uncertainty": [
+            "尚未抓取正文外的补充证据。",
+            "尚未形成多源交叉验证。"
           ]
         },
-        "evidence_gaps": [
+        "evidence_reliability": {
+          "level": "official",
+          "primary_source": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-ultra-now-available-on-amazon-sagemaker-jumpstart/",
+          "source_name": "AWS Machine Learning Blog",
+          "cross_check_status": "待二次交叉验证",
+          "weak_points": [
+            "尚未抓取正文外的补充证据。",
+            "尚未形成多源交叉验证。"
+          ]
+        },
+        "logic_closure": [
+          {
+            "node": "事件是否存在",
+            "status": "已确认",
+            "note": "来源入口：AWS Machine Learning Blog"
+          },
+          {
+            "node": "和读者是否有关",
+            "status": "初步成立",
+            "note": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
+          },
+          {
+            "node": "事实是否清楚",
+            "status": "基本清楚",
+            "note": "原始标题：NVIDIA Nemotron 3 Ultra now available on Amazon SageMaker JumpStart"
+          },
+          {
+            "node": "材料是否足够写正文",
+            "status": "可以继续扩写",
+            "note": "Radar 只负责给出选题档案，不在证据不足时强行生成公众号正文。"
+          }
+        ],
+        "writeable_angles": [
+          {
+            "angle": "如果是我会怎么把需求说清楚",
+            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+          },
+          {
+            "angle": "AI 能放大的到底是哪一段",
+            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+          },
+          {
+            "angle": "最低成本验证流程",
+            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+          },
+          {
+            "angle": "哪些环节必须人工兜底",
+            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+          }
+        ],
+        "missing_basics": [
+          "具体使用者是谁",
+          "输入数据从哪里来",
+          "输出物怎么验收",
+          "失败后怎么回滚"
+        ],
+        "missing_materials": [
+          "工具文档",
+          "示例工作流",
+          "输入输出样例",
+          "成本估算",
+          "失败案例",
           "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
           "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
           "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
@@ -356,8 +613,171 @@
         ],
         "stop_conditions": [
           "找不到一手来源或近源证据。",
-          "只能证明概念存在，无法证明需求、成本、规则、收入或影响。",
-          "需要用大量想象补齐关键事实，读者看完只会觉得虚。"
+          "无法说明这件事和读者有什么关系。",
+          "关键概念、成本、合规、收益或影响对象说不清。",
+          "逻辑必须靠想象补齐，写出来只会像假大空。"
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v2",
+        "verdict": {
+          "status": "可进入选题池",
+          "label": "可选",
+          "reason": "当前线索有明确来源、读者关系和分析空间，可以作为候选选题继续补证。"
+        },
+        "topic_direction": "ai-practice",
+        "topic_direction_title": "AI 实操与自动化",
+        "report_type": "tool-ledger",
+        "core_question": "这条线索能不能成为一个值得老花继续写的选题：AWS 模型能力变化",
+        "human_judgment_path": [
+          "先确认这件事是不是真的发生，而不是只看标题兴奋。",
+          "再确认它和读者有什么关系：能不能帮读者理解机会、成本、规则、坑或工具变化。",
+          "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
+          "再看逻辑是否闭环：事实、原因、影响、边界、可写角度能不能连起来。",
+          "最后决定：可选、观察、暂缓，而不是把所有线索都写成同一套报告。"
+        ],
+        "selection_questions": [
+          "它是不是一个具体需求场景，而不是空泛地说 AI 很强？",
+          "读者能不能想象自己也有类似需求，比如个人助手、办公、健康、内容、客服或运营？",
+          "能不能拆出输入、处理流程、输出、人工兜底和失败信号？",
+          "能不能低成本验证，而不是必须完整开发一个大系统？"
+        ],
+        "value_signals": [
+          "需求具体",
+          "输入输出清楚",
+          "能一两天做 MVP",
+          "有人工兜底",
+          "非技术读者也能理解"
+        ],
+        "reject_signals": [
+          "只有工具名",
+          "只有炫技",
+          "需求不真实",
+          "必须编一堆操作细节"
+        ],
+        "topic_value_assessment": [
+          {
+            "question": "这是什么？",
+            "judgment": "NVIDIA Nemotron 3 Ultra now available on Amazon SageMaker JumpStart"
+          },
+          {
+            "question": "和读者有什么关系？",
+            "judgment": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
+          },
+          {
+            "question": "为什么现在看？",
+            "judgment": "来自本批次稳定公开源，适合先进入 Radar 观察。"
+          },
+          {
+            "question": "事实清楚吗？",
+            "judgment": "基本清楚"
+          },
+          {
+            "question": "材料可靠吗？",
+            "judgment": "当前证据等级：official"
+          },
+          {
+            "question": "逻辑能闭环吗？",
+            "judgment": "需要补齐材料后才能闭环"
+          }
+        ],
+        "fact_clarity": {
+          "status": "基本清楚",
+          "summary_status": "有摘要",
+          "confirmed": [
+            "标题、来源 URL、来源类型、抓取时间已记录。",
+            "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+          ],
+          "uncertainty": [
+            "尚未抓取正文外的补充证据。",
+            "尚未形成多源交叉验证。"
+          ]
+        },
+        "evidence_reliability": {
+          "level": "official",
+          "primary_source": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-ultra-now-available-on-amazon-sagemaker-jumpstart/",
+          "source_name": "AWS Machine Learning Blog",
+          "cross_check_status": "待二次交叉验证",
+          "weak_points": [
+            "尚未抓取正文外的补充证据。",
+            "尚未形成多源交叉验证。"
+          ]
+        },
+        "logic_closure": [
+          {
+            "node": "事件是否存在",
+            "status": "已确认",
+            "note": "来源入口：AWS Machine Learning Blog"
+          },
+          {
+            "node": "和读者是否有关",
+            "status": "初步成立",
+            "note": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
+          },
+          {
+            "node": "事实是否清楚",
+            "status": "基本清楚",
+            "note": "原始标题：NVIDIA Nemotron 3 Ultra now available on Amazon SageMaker JumpStart"
+          },
+          {
+            "node": "材料是否足够写正文",
+            "status": "可以继续扩写",
+            "note": "Radar 只负责给出选题档案，不在证据不足时强行生成公众号正文。"
+          }
+        ],
+        "writeable_angles": [
+          {
+            "angle": "如果是我会怎么把需求说清楚",
+            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+          },
+          {
+            "angle": "AI 能放大的到底是哪一段",
+            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+          },
+          {
+            "angle": "最低成本验证流程",
+            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+          },
+          {
+            "angle": "哪些环节必须人工兜底",
+            "why": "这个角度能服务读者判断，而不是单纯复述新闻。",
+            "needs": "补齐事实、概念、证据、成本和边界后再写。"
+          }
+        ],
+        "missing_basics": [
+          "具体使用者是谁",
+          "输入数据从哪里来",
+          "输出物怎么验收",
+          "失败后怎么回滚"
+        ],
+        "missing_materials": [
+          "工具文档",
+          "示例工作流",
+          "输入输出样例",
+          "成本估算",
+          "失败案例",
+          "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+          "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+          "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+        ],
+        "not_claimable": [
+          "不要声称老花已经实操验证。",
+          "不要声称普通人都能复制。",
+          "不要在证据不足时给完整行动方案。"
+        ],
+        "followup_queries": [
+          "工具账本：AWS 模型能力变化 官方公告 价格 成本",
+          "工具账本：AWS 模型能力变化 API 文档 额度 限制",
+          "工具账本：AWS 模型能力变化 替代方案 真实使用 成本"
+        ],
+        "stop_conditions": [
+          "找不到一手来源或近源证据。",
+          "无法说明这件事和读者有什么关系。",
+          "关键概念、成本、合规、收益或影响对象说不清。",
+          "逻辑必须靠想象补齐，写出来只会像假大空。"
         ]
       },
       "angle_candidates": [
@@ -380,26 +800,6 @@
         "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
         "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
       ]
-    },
-    "for_cms": {
-      "slug": "20260609-nvidia-nemotron-3-ultra-now-available-on-amazon-2221b89b",
-      "canonical_url": "https://radar.huadongpeng.com/items/20260609-nvidia-nemotron-3-ultra-now-available-on-amazon-2221b89b/",
-      "seo_title": "工具账本：AWS 模型能力变化",
-      "seo_description": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。",
-      "tags": [
-        "AI 实操与自动化",
-        "工具账本",
-        "AI 工具与开发者平台",
-        "official",
-        "AWS Machine Learning Blog"
-      ],
-      "report_type": "tool-ledger",
-      "topic_direction": "ai-practice",
-      "topic_direction_title": "AI 实操与自动化",
-      "source_category": "ai_tools",
-      "evidence_level": "official",
-      "material_template": "ai_practice",
-      "publish_status": "radar_published"
     },
     "for_research_loop": {
       "followup_queries": [
