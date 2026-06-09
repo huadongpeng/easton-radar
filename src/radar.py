@@ -33,12 +33,19 @@ MAX_ITEMS_PER_SOURCE = 18
 MAX_TOTAL_ITEMS = 220
 MAX_REPORTS_PER_BATCH = 12
 MAX_REPORTS_PER_TOPIC = 3
+TRIAGE_BATCH_SIZE = 10
+MAX_REPORTS_PER_SOURCE_HOST = 2
 SOURCE_CATEGORY_REPORT_CAPS = {
     "ai_tools": 6,
     "developer_business": 4,
     "overseas_and_platforms": 4,
     "platform_policy": 4,
 }
+SEARCH_CACHE: dict[str, list[dict[str, str]]] = {}
+
+
+def info(message: str) -> None:
+    print(f"[info] {message}", flush=True)
 
 
 @dataclass
@@ -154,7 +161,7 @@ def topic_fingerprint(text: str) -> str:
 
 def load_topic_archive() -> dict[str, Any]:
     if not TOPIC_ARCHIVE_PATH.exists():
-        return {"version": 1, "items": []}
+        return rebuild_topic_archive_from_reports()
     try:
         data = json.loads(TOPIC_ARCHIVE_PATH.read_text(encoding="utf-8"))
     except Exception:
@@ -164,6 +171,37 @@ def load_topic_archive() -> dict[str, Any]:
     data.setdefault("version", 1)
     data.setdefault("items", [])
     return data
+
+
+def rebuild_topic_archive_from_reports() -> dict[str, Any]:
+    items: list[dict[str, Any]] = []
+    if not REPORTS_DIR.exists():
+        return {"version": 1, "items": []}
+    for path in sorted(REPORTS_DIR.glob("*.json"), key=lambda p: p.stat().st_mtime, reverse=True)[:240]:
+        try:
+            report = json.loads(path.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        seen_at = report.get("fetched_at") or report.get("published_at") or now_utc().isoformat()
+        dossier = report.get("selection_dossier") or report.get("material_pack") or {}
+        verdict = dossier.get("verdict", {}) if isinstance(dossier, dict) else {}
+        items.append({
+            "id": report.get("id") or path.stem,
+            "batch_id": "rebuilt-from-reports",
+            "title": report.get("title") or report.get("original_title") or path.stem,
+            "original_title": report.get("original_title", ""),
+            "url": report.get("url", ""),
+            "fingerprint": topic_fingerprint(report.get("title") or report.get("original_title", "")),
+            "topic_direction": report.get("topic_direction", ""),
+            "topic_direction_title": report.get("topic_direction_title", ""),
+            "verdict": verdict.get("label") or verdict.get("status") or "历史",
+            "evidence_level": report.get("evidence_level", ""),
+            "score": report.get("score", 0),
+            "first_seen_at": seen_at,
+            "last_seen_at": seen_at,
+            "item_url": f"/items/{report.get('id') or path.stem}/",
+        })
+    return {"version": 1, "updated_at": now_utc().isoformat(), "items": items}
 
 
 def recent_archive_items(archive: dict[str, Any], days: int = 14) -> list[dict[str, Any]]:
@@ -189,8 +227,8 @@ def is_duplicate_topic(decision: "RadarDecision", site: dict[str, Any], archive:
             continue
         if item.get("url") and normalize_url(str(item.get("url"))) == url:
             return True, f"近 {days} 天已收录同 URL：{item.get('title', '')}"
-        if item.get("topic_direction") == topic_key and item.get("fingerprint") and item.get("fingerprint") == fingerprint:
-            return True, f"近 {days} 天已收录相同选题：{item.get('title', '')}"
+        if item.get("fingerprint") and item.get("fingerprint") == fingerprint:
+            return True, f"近 {days} 天已收录相似选题：{item.get('title', '')}"
     return False, ""
 
 
@@ -288,12 +326,16 @@ def deepseek_json(messages: list[dict[str, str]], max_tokens: int = 6000, temper
 def ddg_search(query: str, limit: int = 5) -> list[dict[str, str]]:
     if not query.strip():
         return []
+    cache_key = f"ddg:{query}:{limit}"
+    if cache_key in SEARCH_CACHE:
+        return SEARCH_CACHE[cache_key]
     url = "https://duckduckgo.com/html/?" + urllib.parse.urlencode({"q": query})
     try:
         raw = fetch_search_url(url, timeout=18).decode("utf-8", errors="ignore")
     except Exception as exc:
-        print(f"Search failed for {query}: {exc}", file=sys.stderr)
-        return bing_search(query, limit=limit)
+        print(f"DDG search blocked, trying Bing fallback: {query} | {exc}", file=sys.stderr)
+        SEARCH_CACHE[cache_key] = bing_search(query, limit=limit)
+        return SEARCH_CACHE[cache_key]
     results: list[dict[str, str]] = []
     for match in re.finditer(r'<a[^>]+class="result__a"[^>]+href="([^"]+)"[^>]*>(.*?)</a>', raw, re.S):
         href = html.unescape(match.group(1))
@@ -306,15 +348,20 @@ def ddg_search(query: str, limit: int = 5) -> list[dict[str, str]]:
             results.append({"title": title, "url": normalize_url(href), "query": query})
         if len(results) >= limit:
             break
+    SEARCH_CACHE[cache_key] = results
     return results
 
 
 def bing_search(query: str, limit: int = 5) -> list[dict[str, str]]:
+    cache_key = f"bing:{query}:{limit}"
+    if cache_key in SEARCH_CACHE:
+        return SEARCH_CACHE[cache_key]
     url = "https://www.bing.com/search?" + urllib.parse.urlencode({"q": query})
     try:
         raw = fetch_search_url(url, timeout=18).decode("utf-8", errors="ignore")
     except Exception as exc:
         print(f"Bing search failed for {query}: {exc}", file=sys.stderr)
+        SEARCH_CACHE[cache_key] = []
         return []
     results: list[dict[str, str]] = []
     for match in re.finditer(r'<li class="b_algo".*?<h2>.*?<a href="([^"]+)"[^>]*>(.*?)</a>', raw, re.S):
@@ -324,6 +371,7 @@ def bing_search(query: str, limit: int = 5) -> list[dict[str, str]]:
             results.append({"title": title, "url": normalize_url(href), "query": query})
         if len(results) >= limit:
             break
+    SEARCH_CACHE[cache_key] = results
     return results
 
 
@@ -1076,6 +1124,111 @@ def deepseek_triage(items: list[SourceItem], site: dict[str, Any], policy: dict[
     return decisions or None
 
 
+def deepseek_triage_batch(items: list[SourceItem], site: dict[str, Any], policy: dict[str, Any]) -> list[RadarDecision]:
+    api_key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
+    if not api_key:
+        return []
+    sample = [
+        {
+            "id": item.id,
+            "source_category": item.source_category,
+            "source_name": item.source_name,
+            "title": item.title,
+            "url": item.url,
+            "summary": item.summary[:160],
+            "published_at": item.published_at,
+        }
+        for item in items
+    ]
+    body = {
+        "model": os.environ.get("DEEPSEEK_MODEL", "deepseek-chat"),
+        "temperature": 0.1,
+        "max_tokens": 1800,
+        "response_format": {"type": "json_object"},
+        "messages": [
+            {
+                "role": "user",
+                "content": (
+                    "You are Easton Radar triage. Return compact JSON only.\n"
+                    "Schema: {\"items\":[{\"id\":\"\",\"decision\":\"deep_dive|brief|skip\",\"report_type\":\"investigation|opportunity|tool-ledger|platform-rules|case-study|risk-warning\",\"score\":0,\"evidence_level\":\"official|near_source|media|weak\",\"reason\":\"\"}]}.\n"
+                    "Keep reason under 24 Chinese chars. Do not output title, hook, why_now, collection_fit, investigation_direction, uncertainty_flags, markdown, or commentary.\n"
+                    "Skip cold niche technical updates unless they affect cost, workflow, platform rules, income, risk, or ordinary tech-adjacent readers.\n"
+                    f"Report type rules: {json.dumps(policy.get('report_type_rules', {}), ensure_ascii=False)}\n"
+                    f"Topic directions: {json.dumps(site.get('topic_directions', {}), ensure_ascii=False)}\n"
+                    f"Persona lines: {json.dumps(policy.get('persona_lines', []), ensure_ascii=False)}\n"
+                    f"Items: {json.dumps(sample, ensure_ascii=False)}"
+                ),
+            }
+        ],
+    }
+    try:
+        req = urllib.request.Request(
+            DEEPSEEK_URL,
+            data=json.dumps(body, ensure_ascii=False).encode("utf-8"),
+            headers={"Authorization": f"Bearer {api_key}", "Content-Type": "application/json", "User-Agent": USER_AGENT},
+            method="POST",
+        )
+        with urllib.request.urlopen(req, timeout=90) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+        choice = data["choices"][0]
+        finish_reason = choice.get("finish_reason", "")
+        content = choice["message"]["content"].strip()
+        if content.startswith("```"):
+            content = re.sub(r"^```(?:json)?\s*", "", content)
+            content = re.sub(r"\s*```$", "", content)
+        if finish_reason == "length":
+            raise json.JSONDecodeError("DeepSeek triage response truncated by max_tokens", content, max(0, len(content) - 1))
+        parsed = json.loads(content)
+        rows = parsed if isinstance(parsed, list) else parsed.get("items", [])
+        by_id = {item.id: item for item in items}
+        decisions: list[RadarDecision] = []
+        for row in rows:
+            if not isinstance(row, dict):
+                continue
+            item = by_id.get(str(row.get("id", "")))
+            if not item:
+                continue
+            fallback = heuristic_decision(item, site)
+            decisions.append(
+                RadarDecision(
+                    item=item,
+                    decision=str(row.get("decision") or fallback.decision),
+                    report_type=str(row.get("report_type") or fallback.report_type),
+                    report_title=fallback.report_title,
+                    score=int(row.get("score", fallback.score) or fallback.score),
+                    reader_hook=fallback.reader_hook,
+                    why_now=fallback.why_now,
+                    evidence_level=str(row.get("evidence_level") or fallback.evidence_level),
+                    reason=str(row.get("reason") or fallback.reason)[:80],
+                    reject_reason=fallback.reject_reason,
+                    collection_fit=fallback.collection_fit,
+                    investigation_direction=fallback.investigation_direction,
+                    uncertainty_flags=fallback.uncertainty_flags,
+                    traceability={**fallback.traceability, "heuristic": False, "model": body["model"], "triage_batch_size": len(items)},
+                )
+            )
+        return decisions
+    except json.JSONDecodeError as exc:
+        if len(items) > 1:
+            mid = len(items) // 2
+            print(f"DeepSeek triage JSON failed; retry split batch size={len(items)}: {exc}", file=sys.stderr)
+            return deepseek_triage_batch(items[:mid], site, policy) + deepseek_triage_batch(items[mid:], site, policy)
+        print(f"DeepSeek triage single item failed, fallback to heuristic: {items[0].title[:80]} | {exc}", file=sys.stderr)
+        return []
+    except Exception as exc:
+        print(f"DeepSeek triage unavailable, fallback batch size={len(items)}: {exc}", file=sys.stderr)
+        return []
+
+
+def deepseek_triage(items: list[SourceItem], site: dict[str, Any], policy: dict[str, Any]) -> list[RadarDecision] | None:
+    if not os.environ.get("DEEPSEEK_API_KEY", "").strip():
+        return None
+    decisions: list[RadarDecision] = []
+    for offset in range(0, min(len(items), 100), TRIAGE_BATCH_SIZE):
+        decisions.extend(deepseek_triage_batch(items[offset:offset + TRIAGE_BATCH_SIZE], site, policy))
+    return decisions or None
+
+
 def compact_report_seed(report: dict[str, Any]) -> dict[str, Any]:
     return {
         "title": report.get("title", ""),
@@ -1177,7 +1330,10 @@ def collect_research_evidence(plan: dict[str, Any], max_queries: int = 6) -> lis
     search_results: list[dict[str, str]] = []
     for query in deduped[:max_queries]:
         search_results.extend(ddg_search(query, limit=5))
-    return fetch_evidence_pages(search_results)
+    info(f"Research search complete: queries={len(deduped[:max_queries])}, results={len(search_results)}")
+    evidence = fetch_evidence_pages(search_results)
+    info(f"Evidence fetch complete: pages={len(evidence)}, fetched={sum(1 for item in evidence if item.get('fetched_text'))}")
+    return evidence
 
 
 def compose_topic_dossier(report: dict[str, Any], site: dict[str, Any], policy: dict[str, Any], plan: dict[str, Any], evidence: list[dict[str, str]], previous: dict[str, Any] | None = None) -> dict[str, Any] | None:
@@ -1222,10 +1378,14 @@ def compose_topic_dossier(report: dict[str, Any], site: dict[str, Any], policy: 
 
 def enrich_selection_dossier(report: dict[str, Any], site: dict[str, Any], policy: dict[str, Any]) -> dict[str, Any]:
     if not os.environ.get("DEEPSEEK_API_KEY", "").strip():
+        info(f"Skip LLM dossier: missing DeepSeek key | {report.get('title', '')}")
         return fallback_pending_dossier(report, "本次运行没有 DeepSeek API Key，只能保留线索，不能生成可信选题判断。")
+    info(f"LLM dossier start: {report.get('title', '')}")
     plan = plan_topic_research(report, site, policy)
     if not plan:
+        info(f"LLM dossier failed at research plan: {report.get('title', '')}")
         return fallback_pending_dossier(report, "DeepSeek 没有成功生成补证计划，暂不输出可信选题判断。")
+    info(f"Research plan ready: queries={len(plan.get('search_queries', []))}, source_targets={len(plan.get('best_sources_to_find', []))}")
     evidence = collect_research_evidence(plan)
     dossier = compose_topic_dossier(report, site, policy, plan, evidence)
     extra_queries = []
@@ -1233,13 +1393,17 @@ def enrich_selection_dossier(report: dict[str, Any], site: dict[str, Any], polic
         extra_queries = [q for q in dossier.get("additional_search_queries", []) if isinstance(q, str) and q.strip()]
     low_confidence = bool(dossier and int(dossier.get("confidence", 0) or 0) < 55)
     if extra_queries and low_confidence:
+        info(f"Low confidence dossier, running extra search: confidence={dossier.get('confidence', '')}, extra_queries={len(extra_queries[:4])}")
         extra_plan = {"search_queries": extra_queries[:4], "best_sources_to_find": []}
         evidence.extend(collect_research_evidence(extra_plan, max_queries=4))
         dossier = compose_topic_dossier(report, site, policy, plan, evidence, previous=dossier)
     if not dossier:
+        info(f"LLM dossier failed at final composition: {report.get('title', '')}")
         return fallback_pending_dossier(report, "DeepSeek 没有成功生成最终选题报告，暂不输出可信结论。")
     dossier["research_plan"] = plan
     dossier["research_evidence"] = evidence
+    verdict = dossier.get("verdict", {}) if isinstance(dossier, dict) else {}
+    info(f"LLM dossier done: verdict={verdict.get('status', '')}, confidence={dossier.get('confidence', '')}, evidence={len(evidence)}")
     return dossier
 
 
@@ -1694,17 +1858,24 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
 
 def select_reports(decisions: list[RadarDecision], site: dict[str, Any], archive: dict[str, Any], batch_id: str, limit: int = MAX_REPORTS_PER_BATCH) -> tuple[list[RadarDecision], list[dict[str, str]]]:
     eligible = [d for d in decisions if d.decision == "deep_dive"]
-    eligible.extend(d for d in decisions if d.decision == "brief" and d.score >= 62)
+    eligible.extend(d for d in decisions if d.decision == "brief" and d.score >= 55)
     if not eligible:
         eligible = [d for d in decisions if d.decision != "skip" and d.score >= 55]
     selected: list[RadarDecision] = []
     category_counts: dict[str, int] = {}
     topic_counts: dict[str, int] = {}
+    source_host_counts: dict[str, int] = {}
+    seen_fingerprints: set[str] = set()
     duplicate_skips: list[dict[str, str]] = []
 
     for decision in eligible:
         category = decision.item.source_category
         topic_key, _ = topic_direction_for_item(decision.item, decision.report_type, site)
+        source_host = urllib.parse.urlparse(decision.item.url).netloc.lower()
+        fingerprint = topic_fingerprint(decision.report_title or decision.item.title)
+        if fingerprint in seen_fingerprints:
+            duplicate_skips.append({"title": decision.report_title or decision.item.title, "url": decision.item.url, "reason": "本批次相似选题已入池"})
+            continue
         duplicate, reason = is_duplicate_topic(decision, site, archive, batch_id)
         if duplicate:
             duplicate_skips.append({"title": decision.report_title or decision.item.title, "url": decision.item.url, "reason": reason})
@@ -1714,9 +1885,13 @@ def select_reports(decisions: list[RadarDecision], site: dict[str, Any], archive
             continue
         if topic_counts.get(topic_key, 0) >= MAX_REPORTS_PER_TOPIC:
             continue
+        if source_host_counts.get(source_host, 0) >= MAX_REPORTS_PER_SOURCE_HOST:
+            continue
         selected.append(decision)
         category_counts[category] = category_counts.get(category, 0) + 1
         topic_counts[topic_key] = topic_counts.get(topic_key, 0) + 1
+        source_host_counts[source_host] = source_host_counts.get(source_host, 0) + 1
+        seen_fingerprints.add(fingerprint)
         if len(selected) >= limit:
             return selected, duplicate_skips
 
@@ -1738,6 +1913,7 @@ class StaticSite:
 
     def write_assets(self) -> None:
         self.write_text("assets/style.css", STYLE)
+        self.write_text("favicon.svg", FAVICON_SVG)
 
     def layout(self, title: str, body: str, description: str) -> str:
         nav = "".join(f'<a href="{item["href"]}">{html.escape(item["label"])}</a>' for item in self.site["nav"])
@@ -1760,7 +1936,8 @@ class StaticSite:
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{html.escape(title)}</title>
   <meta name="description" content="{html.escape(description)}">
-  {verify_meta}  <link rel="stylesheet" href="/assets/style.css">
+  {verify_meta}  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/assets/style.css">
   {adsense_script}  <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>
 </head>
 <body>
@@ -1769,6 +1946,17 @@ class StaticSite:
   <footer>Easton Radar · 老花的信息差侦察站 · 内容用于信息收集、证据沉淀和方向判断</footer>
 </body>
 </html>
+"""
+
+
+FAVICON_SVG = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<rect width="64" height="64" rx="12" fill="#101828"/>
+<circle cx="32" cy="32" r="22" fill="none" stroke="#57d6a3" stroke-width="3"/>
+<circle cx="32" cy="32" r="12" fill="none" stroke="#9ee7c7" stroke-width="2" opacity=".75"/>
+<path d="M32 32 50 18" stroke="#ffd166" stroke-width="4" stroke-linecap="round"/>
+<circle cx="32" cy="32" r="4" fill="#fff"/>
+<path d="M10 46c8 9 23 12 36 3" fill="none" stroke="#57d6a3" stroke-width="3" stroke-linecap="round" opacity=".65"/>
+</svg>
 """
 
 
@@ -2318,18 +2506,46 @@ def main() -> int:
     slot = current_slot(args.slot)
     bj = now_bj()
     batch_id = f"{bj.strftime('%Y-%m-%d')}-{slot}"
+    info(f"Easton Radar pipeline start: batch={batch_id}, slot={slot}")
     site = load_json(CONFIG_DIR / "site.json")
     policy = load_json(CONFIG_DIR / "radar_policy.json")
     sources = load_json(CONFIG_DIR / "sources.seed.json")
+    info(
+        "Runtime config: "
+        f"deepseek={'yes' if os.environ.get('DEEPSEEK_API_KEY') else 'no'}, "
+        f"telegram={'yes' if os.environ.get('TELEGRAM_BOT_TOKEN') and os.environ.get('TELEGRAM_CHAT_ID') else 'no'}, "
+        f"sources={sum(len(v) for v in sources.values() if isinstance(v, list))}"
+    )
     archive = load_topic_archive()
+    info(f"Loaded topic archive entries: {len(archive.get('items', []))}")
     items, failures = collect_items(sources)
-    print(f"Fetched {len(items)} items, failures {len(failures)}")
+    info(f"Fetched source items: items={len(items)}, failures={len(failures)}")
+    if failures:
+        for failure in failures[:10]:
+            info(f"Source failure: {failure.get('source', '')} | {failure.get('error', '')}")
     decisions = deepseek_triage(items, site, policy) or [heuristic_decision(item, site) for item in items]
     known = {d.item.id for d in decisions}
     decisions.extend(heuristic_decision(item, site) for item in items if item.id not in known)
     decisions.sort(key=lambda x: x.score, reverse=True)
+    llm_count = sum(1 for d in decisions if not d.traceability.get("heuristic"))
+    heuristic_count = sum(1 for d in decisions if d.traceability.get("heuristic"))
+    info(
+        "Triage complete: "
+        f"decisions={len(decisions)}, llm={llm_count}, heuristic={heuristic_count}, "
+        f"deep={sum(1 for d in decisions if d.decision == 'deep_dive')}, "
+        f"brief={sum(1 for d in decisions if d.decision == 'brief')}, "
+        f"skip={sum(1 for d in decisions if d.decision == 'skip')}"
+    )
     selected, duplicate_skips = select_reports(decisions, site, archive, batch_id)
+    info(f"Selection complete: selected={len(selected)}, duplicate_skips={len(duplicate_skips)}")
+    for index, decision in enumerate(selected, 1):
+        topic_key, _ = topic_direction_for_item(decision.item, decision.report_type, site)
+        info(f"Selected #{index}: score={decision.score}, decision={decision.decision}, topic={topic_key}, title={decision.report_title}")
+    for skipped in duplicate_skips[:10]:
+        info(f"Duplicate skip: {skipped.get('title', '')} | {skipped.get('reason', '')}")
+    info("Building enriched topic reports...")
     reports = [build_report(d, site, policy) for d in selected]
+    info(f"Report build complete: reports={len(reports)}")
     selected_deep_count = sum(1 for d in selected if d.decision == "deep_dive")
     selected_brief_count = sum(1 for d in selected if d.decision == "brief")
     batch = {
@@ -2349,16 +2565,20 @@ def main() -> int:
         "failures": failures,
     }
     archive = update_topic_archive(archive, reports, batch)
+    info(f"Updated topic archive entries: {len(archive.get('items', []))}")
     clean_generated_outputs()
+    info("Cleaned generated output directories.")
     write_json(DATA_DIR / f"{batch_id}.json", {"batch": batch, "items": [item.__dict__ for item in items], "reports": reports})
     write_json(DATA_DIR / "latest.json", {"batch": batch, "reports": reports})
     write_json(TOPIC_ARCHIVE_PATH, archive)
     for report in reports:
         write_json(REPORTS_DIR / f"{report['id']}.json", report)
+    info("Wrote JSON outputs.")
     render_static(batch, reports, site, policy, archive)
+    info("Rendered static site.")
     if not args.no_telegram:
         send_telegram(batch, reports, site)
-    print("Done.")
+    info("Pipeline done.")
     return 0
 
 
