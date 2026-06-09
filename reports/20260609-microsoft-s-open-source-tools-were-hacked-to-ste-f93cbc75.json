@@ -1,0 +1,687 @@
+{
+  "id": "20260609-microsoft-s-open-source-tools-were-hacked-to-ste-f93cbc75",
+  "title": "案例复盘：Microsoft 案例线索",
+  "original_title": "Microsoft's open source tools were hacked to steal passwords of AI developers",
+  "url": "https://techcrunch.com/2026/06/08/microsofts-open-source-tools-were-hacked-to-steal-passwords-of-ai-developers/",
+  "summary": "Comments",
+  "source_category": "developer_business",
+  "source_category_title": "开发者副业与独立开发",
+  "topic_direction": "ai-frontier",
+  "topic_direction_title": "AI 前沿与工具链",
+  "topic_direction_short_title": "AI 前沿",
+  "topic_direction_description": "AI 模型、Agent、开发工具、API、云服务和底层能力变化。重点看这次变化到底是什么、时间线如何、会不会改变普通技术人的工作方式、成本结构和工具链。",
+  "source_name": "Hacker News",
+  "original_source_name": "Hacker News",
+  "source_type": "rss",
+  "feed_url": "https://news.ycombinator.com/rss",
+  "published_at": "2026-06-09T07:33:16+00:00",
+  "fetched_at": "2026-06-09T08:22:44.619158+00:00",
+  "decision": "deep_dive",
+  "report_type": "risk-warning",
+  "report_type_title": "风险避坑",
+  "score": 85,
+  "reader_hook": "这条线索有具体项目或案例，可以拆哪些条件可复制，哪些只是别人自己的局。",
+  "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "微软工具被黑窃密，影响AI开发者安全",
+  "collection_fit": "暂不符合深挖原则：相关性、证据质量或普通读者入口不足。",
+  "investigation_direction": "优先追项目原始页面、代码仓库、作者复盘、收入/增长证据和不可复制条件。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。"
+  ],
+  "facts": [
+    {
+      "claim": "Hacker News 发布/收录了这条原始线索：Microsoft's open source tools were hacked to steal passwords of AI developers",
+      "type": "confirmed_fact",
+      "source_url": "https://techcrunch.com/2026/06/08/microsofts-open-source-tools-were-hacked-to-steal-passwords-of-ai-developers/",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Hacker News",
+      "url": "https://techcrunch.com/2026/06/08/microsofts-open-source-tools-were-hacked-to-steal-passwords-of-ai-developers/",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "ai"
+      ],
+      "dev": [
+        "developer"
+      ]
+    },
+    "source_host": "techcrunch.com",
+    "source_type": "rss",
+    "heuristic": false,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "这条线索有具体项目或案例，可以拆哪些条件可复制，哪些只是别人自己的局。",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://news.ycombinator.com/rss",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+    },
+    "core_question": "微软开源工具被黑窃取AI开发者密码的具体攻击方式、受影响工具列表、影响范围及微软官方回应是什么？",
+    "why_this_topic_matters": "微软开源工具被黑直接威胁AI开发者的密码安全，可能影响大量使用微软开源工具（如VS Code扩展、Azure SDK等）的开发者。若属实，将引发对开源供应链安全的广泛关注，与AI工具链安全、开发者工作流安全高度相关，符合读者对AI前沿风险预警的需求。",
+    "fact_summary": [],
+    "timeline": [],
+    "evidence_table": [],
+    "logic_closure": "目前仅有TechCrunch一篇报道，且未提供具体攻击细节、受影响工具名称、微软官方回应等关键信息。无法判断攻击是否真实、影响范围多大、是否已修复。逻辑上无法闭环，不能得出可靠结论。",
+    "writeable_angles": [
+      {
+        "angle": "事件还原与风险预警",
+        "why": "若证据充分，可详细还原攻击方式、受影响工具、微软应对措施，为AI开发者提供安全建议。",
+        "needs": "微软官方公告、安全机构分析、受影响工具列表、攻击样本或IoC。"
+      },
+      {
+        "angle": "开源供应链安全讨论",
+        "why": "此类事件可引申至开源依赖安全、代码签名、发布流程等更广泛议题，适合深度分析。",
+        "needs": "攻击技术细节、行业对比案例、专家评论。"
+      },
+      {
+        "angle": "开发者自我保护指南",
+        "why": "提供实用安全建议，如验证签名、使用沙箱、监控异常等，直接服务读者。",
+        "needs": "攻击手法总结、通用防护措施、工具推荐。"
+      }
+    ],
+    "missing_basics": [
+      "TechCrunch报道全文",
+      "微软官方安全公告或回应",
+      "受影响工具名称及版本",
+      "攻击方式（如供应链攻击、恶意代码注入等）",
+      "受影响用户数量或下载量数据",
+      "攻击者身份或组织信息"
+    ],
+    "missing_materials": [
+      "微软官方安全公告原文",
+      "受影响工具的GitHub仓库安全公告或Issue",
+      "安全研究机构的分析报告（如Unit 42、Mandiant）",
+      "攻击样本或IoC（如有公开）",
+      "Hacker News讨论帖中的关键评论或补充信息",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "攻击的具体技术细节",
+      "受影响用户数量",
+      "微软是否已完全修复",
+      "攻击是否与特定国家背景有关",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "TechCrunch报道中是否提及具体攻击方式？",
+      "微软官方是否有任何公开声明？",
+      "Hacker News讨论中是否有知情人士或微软员工回应？",
+      "是否有其他安全媒体（如BleepingComputer、The Register）跟进报道？"
+    ],
+    "additional_search_queries": [
+      "Microsoft open source tools hacked steal passwords AI developers 2026",
+      "Microsoft security advisory open source tools compromised 2026",
+      "Microsoft GitHub repository compromised password theft 2026",
+      "AI developer tools supply chain attack 2026",
+      "Microsoft open source malware password stealer 2026",
+      "TechCrunch Microsoft tools hacked AI developers 2026",
+      "Microsoft official response open source hack 2026",
+      "CVE Microsoft open source tools 2026"
+    ],
+    "stop_conditions": [
+      "微软官方发布安全公告或回应",
+      "至少两家独立安全媒体（如BleepingComputer、The Register）报道并交叉验证",
+      "安全研究机构发布分析报告",
+      "获得受影响工具的具体名称和版本"
+    ],
+    "confidence": 20.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "risk-warning",
+    "research_plan": {
+      "core_question": "微软开源工具被黑窃取AI开发者密码的具体攻击方式、受影响工具列表、影响范围及微软官方回应是什么？",
+      "must_verify": [
+        "TechCrunch报道中提到的具体攻击方式（如供应链攻击、恶意代码注入等）",
+        "受影响的开源工具名称及版本",
+        "微软官方是否已发布安全公告或补丁",
+        "攻击者身份或组织（如有披露）",
+        "受影响用户数量或下载量数据"
+      ],
+      "search_queries": [
+        "Microsoft open source tools hacked steal passwords AI developers 2026",
+        "Microsoft security advisory open source tools compromised 2026",
+        "Microsoft GitHub repository compromised password theft 2026",
+        "AI developer tools supply chain attack 2026",
+        "Microsoft open source malware password stealer 2026",
+        "TechCrunch Microsoft tools hacked AI developers 2026",
+        "Microsoft official response open source hack 2026",
+        "CVE Microsoft open source tools 2026"
+      ],
+      "best_sources_to_find": [
+        "Microsoft Security Response Center (MSRC) blog",
+        "Microsoft GitHub organization security advisories",
+        "TechCrunch original article (full text)",
+        "Hacker News discussion thread",
+        "BleepingComputer or The Register coverage",
+        "CVE database (if assigned)"
+      ],
+      "expert_challenge_points": [
+        "攻击是否利用了开源依赖的漏洞（如依赖混淆、恶意包）？",
+        "微软的发布流程是否被绕过？",
+        "攻击者是否获得了代码签名证书？",
+        "受影响工具是否包含AI开发常用库（如PyTorch、TensorFlow扩展）？"
+      ],
+      "do_not_claim_yet": [
+        "攻击的具体技术细节",
+        "受影响用户数量",
+        "微软是否已完全修复",
+        "攻击是否与特定国家背景有关"
+      ],
+      "can_publish_as_radar_if_missing": "否，缺乏多源验证和官方确认，无法作为可靠风险预警发布。",
+      "downstream_materials_needed": [
+        "微软官方安全公告原文",
+        "受影响工具的GitHub仓库安全公告或Issue",
+        "安全研究机构的分析报告（如Unit 42、Mandiant）",
+        "攻击样本或IoC（如有公开）"
+      ]
+    },
+    "research_evidence": []
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+    },
+    "core_question": "微软开源工具被黑窃取AI开发者密码的具体攻击方式、受影响工具列表、影响范围及微软官方回应是什么？",
+    "why_this_topic_matters": "微软开源工具被黑直接威胁AI开发者的密码安全，可能影响大量使用微软开源工具（如VS Code扩展、Azure SDK等）的开发者。若属实，将引发对开源供应链安全的广泛关注，与AI工具链安全、开发者工作流安全高度相关，符合读者对AI前沿风险预警的需求。",
+    "fact_summary": [],
+    "timeline": [],
+    "evidence_table": [],
+    "logic_closure": "目前仅有TechCrunch一篇报道，且未提供具体攻击细节、受影响工具名称、微软官方回应等关键信息。无法判断攻击是否真实、影响范围多大、是否已修复。逻辑上无法闭环，不能得出可靠结论。",
+    "writeable_angles": [
+      {
+        "angle": "事件还原与风险预警",
+        "why": "若证据充分，可详细还原攻击方式、受影响工具、微软应对措施，为AI开发者提供安全建议。",
+        "needs": "微软官方公告、安全机构分析、受影响工具列表、攻击样本或IoC。"
+      },
+      {
+        "angle": "开源供应链安全讨论",
+        "why": "此类事件可引申至开源依赖安全、代码签名、发布流程等更广泛议题，适合深度分析。",
+        "needs": "攻击技术细节、行业对比案例、专家评论。"
+      },
+      {
+        "angle": "开发者自我保护指南",
+        "why": "提供实用安全建议，如验证签名、使用沙箱、监控异常等，直接服务读者。",
+        "needs": "攻击手法总结、通用防护措施、工具推荐。"
+      }
+    ],
+    "missing_basics": [
+      "TechCrunch报道全文",
+      "微软官方安全公告或回应",
+      "受影响工具名称及版本",
+      "攻击方式（如供应链攻击、恶意代码注入等）",
+      "受影响用户数量或下载量数据",
+      "攻击者身份或组织信息"
+    ],
+    "missing_materials": [
+      "微软官方安全公告原文",
+      "受影响工具的GitHub仓库安全公告或Issue",
+      "安全研究机构的分析报告（如Unit 42、Mandiant）",
+      "攻击样本或IoC（如有公开）",
+      "Hacker News讨论帖中的关键评论或补充信息",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "攻击的具体技术细节",
+      "受影响用户数量",
+      "微软是否已完全修复",
+      "攻击是否与特定国家背景有关",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "TechCrunch报道中是否提及具体攻击方式？",
+      "微软官方是否有任何公开声明？",
+      "Hacker News讨论中是否有知情人士或微软员工回应？",
+      "是否有其他安全媒体（如BleepingComputer、The Register）跟进报道？"
+    ],
+    "additional_search_queries": [
+      "Microsoft open source tools hacked steal passwords AI developers 2026",
+      "Microsoft security advisory open source tools compromised 2026",
+      "Microsoft GitHub repository compromised password theft 2026",
+      "AI developer tools supply chain attack 2026",
+      "Microsoft open source malware password stealer 2026",
+      "TechCrunch Microsoft tools hacked AI developers 2026",
+      "Microsoft official response open source hack 2026",
+      "CVE Microsoft open source tools 2026"
+    ],
+    "stop_conditions": [
+      "微软官方发布安全公告或回应",
+      "至少两家独立安全媒体（如BleepingComputer、The Register）报道并交叉验证",
+      "安全研究机构发布分析报告",
+      "获得受影响工具的具体名称和版本"
+    ],
+    "confidence": 20.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "risk-warning",
+    "research_plan": {
+      "core_question": "微软开源工具被黑窃取AI开发者密码的具体攻击方式、受影响工具列表、影响范围及微软官方回应是什么？",
+      "must_verify": [
+        "TechCrunch报道中提到的具体攻击方式（如供应链攻击、恶意代码注入等）",
+        "受影响的开源工具名称及版本",
+        "微软官方是否已发布安全公告或补丁",
+        "攻击者身份或组织（如有披露）",
+        "受影响用户数量或下载量数据"
+      ],
+      "search_queries": [
+        "Microsoft open source tools hacked steal passwords AI developers 2026",
+        "Microsoft security advisory open source tools compromised 2026",
+        "Microsoft GitHub repository compromised password theft 2026",
+        "AI developer tools supply chain attack 2026",
+        "Microsoft open source malware password stealer 2026",
+        "TechCrunch Microsoft tools hacked AI developers 2026",
+        "Microsoft official response open source hack 2026",
+        "CVE Microsoft open source tools 2026"
+      ],
+      "best_sources_to_find": [
+        "Microsoft Security Response Center (MSRC) blog",
+        "Microsoft GitHub organization security advisories",
+        "TechCrunch original article (full text)",
+        "Hacker News discussion thread",
+        "BleepingComputer or The Register coverage",
+        "CVE database (if assigned)"
+      ],
+      "expert_challenge_points": [
+        "攻击是否利用了开源依赖的漏洞（如依赖混淆、恶意包）？",
+        "微软的发布流程是否被绕过？",
+        "攻击者是否获得了代码签名证书？",
+        "受影响工具是否包含AI开发常用库（如PyTorch、TensorFlow扩展）？"
+      ],
+      "do_not_claim_yet": [
+        "攻击的具体技术细节",
+        "受影响用户数量",
+        "微软是否已完全修复",
+        "攻击是否与特定国家背景有关"
+      ],
+      "can_publish_as_radar_if_missing": "否，缺乏多源验证和官方确认，无法作为可靠风险预警发布。",
+      "downstream_materials_needed": [
+        "微软官方安全公告原文",
+        "受影响工具的GitHub仓库安全公告或Issue",
+        "安全研究机构的分析报告（如Unit 42、Mandiant）",
+        "攻击样本或IoC（如有公开）"
+      ]
+    },
+    "research_evidence": []
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260609-microsoft-s-open-source-tools-were-hacked-to-ste-f93cbc75/",
+    "for_gpt_editor": {
+      "brief": "Comments",
+      "title_seed": "案例复盘：Microsoft 案例线索",
+      "original_title": "Microsoft's open source tools were hacked to steal passwords of AI developers",
+      "source_url": "https://techcrunch.com/2026/06/08/microsofts-open-source-tools-were-hacked-to-steal-passwords-of-ai-developers/",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+        },
+        "core_question": "微软开源工具被黑窃取AI开发者密码的具体攻击方式、受影响工具列表、影响范围及微软官方回应是什么？",
+        "why_this_topic_matters": "微软开源工具被黑直接威胁AI开发者的密码安全，可能影响大量使用微软开源工具（如VS Code扩展、Azure SDK等）的开发者。若属实，将引发对开源供应链安全的广泛关注，与AI工具链安全、开发者工作流安全高度相关，符合读者对AI前沿风险预警的需求。",
+        "fact_summary": [],
+        "timeline": [],
+        "evidence_table": [],
+        "logic_closure": "目前仅有TechCrunch一篇报道，且未提供具体攻击细节、受影响工具名称、微软官方回应等关键信息。无法判断攻击是否真实、影响范围多大、是否已修复。逻辑上无法闭环，不能得出可靠结论。",
+        "writeable_angles": [
+          {
+            "angle": "事件还原与风险预警",
+            "why": "若证据充分，可详细还原攻击方式、受影响工具、微软应对措施，为AI开发者提供安全建议。",
+            "needs": "微软官方公告、安全机构分析、受影响工具列表、攻击样本或IoC。"
+          },
+          {
+            "angle": "开源供应链安全讨论",
+            "why": "此类事件可引申至开源依赖安全、代码签名、发布流程等更广泛议题，适合深度分析。",
+            "needs": "攻击技术细节、行业对比案例、专家评论。"
+          },
+          {
+            "angle": "开发者自我保护指南",
+            "why": "提供实用安全建议，如验证签名、使用沙箱、监控异常等，直接服务读者。",
+            "needs": "攻击手法总结、通用防护措施、工具推荐。"
+          }
+        ],
+        "missing_basics": [
+          "TechCrunch报道全文",
+          "微软官方安全公告或回应",
+          "受影响工具名称及版本",
+          "攻击方式（如供应链攻击、恶意代码注入等）",
+          "受影响用户数量或下载量数据",
+          "攻击者身份或组织信息"
+        ],
+        "missing_materials": [
+          "微软官方安全公告原文",
+          "受影响工具的GitHub仓库安全公告或Issue",
+          "安全研究机构的分析报告（如Unit 42、Mandiant）",
+          "攻击样本或IoC（如有公开）",
+          "Hacker News讨论帖中的关键评论或补充信息",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "攻击的具体技术细节",
+          "受影响用户数量",
+          "微软是否已完全修复",
+          "攻击是否与特定国家背景有关",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "TechCrunch报道中是否提及具体攻击方式？",
+          "微软官方是否有任何公开声明？",
+          "Hacker News讨论中是否有知情人士或微软员工回应？",
+          "是否有其他安全媒体（如BleepingComputer、The Register）跟进报道？"
+        ],
+        "additional_search_queries": [
+          "Microsoft open source tools hacked steal passwords AI developers 2026",
+          "Microsoft security advisory open source tools compromised 2026",
+          "Microsoft GitHub repository compromised password theft 2026",
+          "AI developer tools supply chain attack 2026",
+          "Microsoft open source malware password stealer 2026",
+          "TechCrunch Microsoft tools hacked AI developers 2026",
+          "Microsoft official response open source hack 2026",
+          "CVE Microsoft open source tools 2026"
+        ],
+        "stop_conditions": [
+          "微软官方发布安全公告或回应",
+          "至少两家独立安全媒体（如BleepingComputer、The Register）报道并交叉验证",
+          "安全研究机构发布分析报告",
+          "获得受影响工具的具体名称和版本"
+        ],
+        "confidence": 20.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "risk-warning",
+        "research_plan": {
+          "core_question": "微软开源工具被黑窃取AI开发者密码的具体攻击方式、受影响工具列表、影响范围及微软官方回应是什么？",
+          "must_verify": [
+            "TechCrunch报道中提到的具体攻击方式（如供应链攻击、恶意代码注入等）",
+            "受影响的开源工具名称及版本",
+            "微软官方是否已发布安全公告或补丁",
+            "攻击者身份或组织（如有披露）",
+            "受影响用户数量或下载量数据"
+          ],
+          "search_queries": [
+            "Microsoft open source tools hacked steal passwords AI developers 2026",
+            "Microsoft security advisory open source tools compromised 2026",
+            "Microsoft GitHub repository compromised password theft 2026",
+            "AI developer tools supply chain attack 2026",
+            "Microsoft open source malware password stealer 2026",
+            "TechCrunch Microsoft tools hacked AI developers 2026",
+            "Microsoft official response open source hack 2026",
+            "CVE Microsoft open source tools 2026"
+          ],
+          "best_sources_to_find": [
+            "Microsoft Security Response Center (MSRC) blog",
+            "Microsoft GitHub organization security advisories",
+            "TechCrunch original article (full text)",
+            "Hacker News discussion thread",
+            "BleepingComputer or The Register coverage",
+            "CVE database (if assigned)"
+          ],
+          "expert_challenge_points": [
+            "攻击是否利用了开源依赖的漏洞（如依赖混淆、恶意包）？",
+            "微软的发布流程是否被绕过？",
+            "攻击者是否获得了代码签名证书？",
+            "受影响工具是否包含AI开发常用库（如PyTorch、TensorFlow扩展）？"
+          ],
+          "do_not_claim_yet": [
+            "攻击的具体技术细节",
+            "受影响用户数量",
+            "微软是否已完全修复",
+            "攻击是否与特定国家背景有关"
+          ],
+          "can_publish_as_radar_if_missing": "否，缺乏多源验证和官方确认，无法作为可靠风险预警发布。",
+          "downstream_materials_needed": [
+            "微软官方安全公告原文",
+            "受影响工具的GitHub仓库安全公告或Issue",
+            "安全研究机构的分析报告（如Unit 42、Mandiant）",
+            "攻击样本或IoC（如有公开）"
+          ]
+        },
+        "research_evidence": []
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+        },
+        "core_question": "微软开源工具被黑窃取AI开发者密码的具体攻击方式、受影响工具列表、影响范围及微软官方回应是什么？",
+        "why_this_topic_matters": "微软开源工具被黑直接威胁AI开发者的密码安全，可能影响大量使用微软开源工具（如VS Code扩展、Azure SDK等）的开发者。若属实，将引发对开源供应链安全的广泛关注，与AI工具链安全、开发者工作流安全高度相关，符合读者对AI前沿风险预警的需求。",
+        "fact_summary": [],
+        "timeline": [],
+        "evidence_table": [],
+        "logic_closure": "目前仅有TechCrunch一篇报道，且未提供具体攻击细节、受影响工具名称、微软官方回应等关键信息。无法判断攻击是否真实、影响范围多大、是否已修复。逻辑上无法闭环，不能得出可靠结论。",
+        "writeable_angles": [
+          {
+            "angle": "事件还原与风险预警",
+            "why": "若证据充分，可详细还原攻击方式、受影响工具、微软应对措施，为AI开发者提供安全建议。",
+            "needs": "微软官方公告、安全机构分析、受影响工具列表、攻击样本或IoC。"
+          },
+          {
+            "angle": "开源供应链安全讨论",
+            "why": "此类事件可引申至开源依赖安全、代码签名、发布流程等更广泛议题，适合深度分析。",
+            "needs": "攻击技术细节、行业对比案例、专家评论。"
+          },
+          {
+            "angle": "开发者自我保护指南",
+            "why": "提供实用安全建议，如验证签名、使用沙箱、监控异常等，直接服务读者。",
+            "needs": "攻击手法总结、通用防护措施、工具推荐。"
+          }
+        ],
+        "missing_basics": [
+          "TechCrunch报道全文",
+          "微软官方安全公告或回应",
+          "受影响工具名称及版本",
+          "攻击方式（如供应链攻击、恶意代码注入等）",
+          "受影响用户数量或下载量数据",
+          "攻击者身份或组织信息"
+        ],
+        "missing_materials": [
+          "微软官方安全公告原文",
+          "受影响工具的GitHub仓库安全公告或Issue",
+          "安全研究机构的分析报告（如Unit 42、Mandiant）",
+          "攻击样本或IoC（如有公开）",
+          "Hacker News讨论帖中的关键评论或补充信息",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "攻击的具体技术细节",
+          "受影响用户数量",
+          "微软是否已完全修复",
+          "攻击是否与特定国家背景有关",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "TechCrunch报道中是否提及具体攻击方式？",
+          "微软官方是否有任何公开声明？",
+          "Hacker News讨论中是否有知情人士或微软员工回应？",
+          "是否有其他安全媒体（如BleepingComputer、The Register）跟进报道？"
+        ],
+        "additional_search_queries": [
+          "Microsoft open source tools hacked steal passwords AI developers 2026",
+          "Microsoft security advisory open source tools compromised 2026",
+          "Microsoft GitHub repository compromised password theft 2026",
+          "AI developer tools supply chain attack 2026",
+          "Microsoft open source malware password stealer 2026",
+          "TechCrunch Microsoft tools hacked AI developers 2026",
+          "Microsoft official response open source hack 2026",
+          "CVE Microsoft open source tools 2026"
+        ],
+        "stop_conditions": [
+          "微软官方发布安全公告或回应",
+          "至少两家独立安全媒体（如BleepingComputer、The Register）报道并交叉验证",
+          "安全研究机构发布分析报告",
+          "获得受影响工具的具体名称和版本"
+        ],
+        "confidence": 20.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "risk-warning",
+        "research_plan": {
+          "core_question": "微软开源工具被黑窃取AI开发者密码的具体攻击方式、受影响工具列表、影响范围及微软官方回应是什么？",
+          "must_verify": [
+            "TechCrunch报道中提到的具体攻击方式（如供应链攻击、恶意代码注入等）",
+            "受影响的开源工具名称及版本",
+            "微软官方是否已发布安全公告或补丁",
+            "攻击者身份或组织（如有披露）",
+            "受影响用户数量或下载量数据"
+          ],
+          "search_queries": [
+            "Microsoft open source tools hacked steal passwords AI developers 2026",
+            "Microsoft security advisory open source tools compromised 2026",
+            "Microsoft GitHub repository compromised password theft 2026",
+            "AI developer tools supply chain attack 2026",
+            "Microsoft open source malware password stealer 2026",
+            "TechCrunch Microsoft tools hacked AI developers 2026",
+            "Microsoft official response open source hack 2026",
+            "CVE Microsoft open source tools 2026"
+          ],
+          "best_sources_to_find": [
+            "Microsoft Security Response Center (MSRC) blog",
+            "Microsoft GitHub organization security advisories",
+            "TechCrunch original article (full text)",
+            "Hacker News discussion thread",
+            "BleepingComputer or The Register coverage",
+            "CVE database (if assigned)"
+          ],
+          "expert_challenge_points": [
+            "攻击是否利用了开源依赖的漏洞（如依赖混淆、恶意包）？",
+            "微软的发布流程是否被绕过？",
+            "攻击者是否获得了代码签名证书？",
+            "受影响工具是否包含AI开发常用库（如PyTorch、TensorFlow扩展）？"
+          ],
+          "do_not_claim_yet": [
+            "攻击的具体技术细节",
+            "受影响用户数量",
+            "微软是否已完全修复",
+            "攻击是否与特定国家背景有关"
+          ],
+          "can_publish_as_radar_if_missing": "否，缺乏多源验证和官方确认，无法作为可靠风险预警发布。",
+          "downstream_materials_needed": [
+            "微软官方安全公告原文",
+            "受影响工具的GitHub仓库安全公告或Issue",
+            "安全研究机构的分析报告（如Unit 42、Mandiant）",
+            "攻击样本或IoC（如有公开）"
+          ]
+        },
+        "research_evidence": []
+      },
+      "angle_candidates": [
+        "营销话术拆解",
+        "合规和资金风险",
+        "普通人不该硬冲的原因"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留普通读者入口，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "案例复盘：Microsoft 案例线索 投诉 风险 违规",
+        "案例复盘：Microsoft 案例线索 骗局 营销话术",
+        "案例复盘：Microsoft 案例线索 隐藏成本 失败案例"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
