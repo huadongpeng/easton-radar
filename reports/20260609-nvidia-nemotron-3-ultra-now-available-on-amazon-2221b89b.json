@@ -15,7 +15,7 @@
   "source_type": "rss",
   "feed_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
   "published_at": "2026-06-04T16:59:08+00:00",
-  "fetched_at": "2026-06-09T08:22:43.979259+00:00",
+  "fetched_at": "2026-06-09T08:39:53.151881+00:00",
   "decision": "deep_dive",
   "report_type": "tool-ledger",
   "report_type_title": "工具账本",
@@ -132,126 +132,111 @@
       "label": "暂缓",
       "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
     },
-    "core_question": "NVIDIA Nemotron 3 Ultra 在 SageMaker JumpStart 上的实际成本、性能提升和部署门槛是否对普通技术人有可操作的账本价值？",
-    "why_this_topic_matters": "AI模型推理成本直接影响技术人构建Agent和自动化工具的经济可行性。如果Nemotron 3 Ultra确实能大幅降低成本并提升速度，可能改变中小团队和独立开发者的模型选型策略。但当前信息来自AWS官方博客，缺乏独立验证和定价细节，需谨慎评估。",
-    "fact_summary": [
-      "NVIDIA Nemotron 3 Ultra 现已可通过 Amazon SageMaker JumpStart 部署。",
-      "官方宣称推理速度提升5倍，成本降低30%，适用于agentic AI工作负载。",
-      "来源为AWS官方博客，属于一手官方渠道，但缺乏具体测试条件和定价数据。"
-    ],
-    "timeline": [
-      {
-        "date": "2025-04-10",
-        "event": "AWS博客发布文章，宣布Nemotron 3 Ultra上线SageMaker JumpStart"
-      }
-    ],
-    "evidence_table": [
-      {
-        "source": "AWS Machine Learning Blog",
-        "url": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-ultra-now-available-on-amazon-sagemaker-jumpstart/",
-        "supports": "Nemotron 3 Ultra 已上线 SageMaker JumpStart，宣称5x推理速度和30%成本降低",
-        "reliability": "official"
-      }
-    ],
-    "logic_closure": "目前仅有一方官方来源，缺乏独立验证和定价细节。无法确认5x和30%的测试条件（硬件、批次大小、任务类型），也无法判断是否包含SageMaker托管费用。模型许可证和部署门槛未知。因此逻辑无法闭环，不能得出“值得采用”的结论。",
+    "core_question": "NVIDIA Nemotron 3 Ultra 在 SageMaker JumpStart 上的实际成本节省（30% lower cost）和性能提升（5x faster inference）是否真实可验证，以及它对普通技术人的 Agent 工作流成本结构有何具体影响？",
+    "why_this_topic_matters": "如果数字属实，该模型可能显著降低 Agent 类 AI 应用的推理成本，直接影响技术人选择模型时的成本账。但若数字夸大或仅针对特定场景，则可能误导决策。",
+    "fact_summary": [],
+    "timeline": [],
+    "evidence_table": [],
+    "logic_closure": "目前仅有 AWS 博客的单一来源声明，缺乏独立验证和定价细节。无法确认 5x 和 30% 的对比基准、适用硬件、是否包含托管费用等关键信息。逻辑上无法闭环。",
     "writeable_angles": [
       {
-        "angle": "成本对比：Nemotron 3 Ultra vs Llama 3 在Agent任务上的推理成本估算",
-        "why": "直接回应读者最关心的成本问题，提供可操作的账本。",
-        "needs": "Nemotron 3 Ultra的SageMaker定价、Llama 3在类似实例上的成本、独立基准测试数据。"
+        "angle": "成本对比：Nemotron 3 Ultra vs Llama 3 vs GPT-4o-mini 在 Agent 场景下的每 token 成本",
+        "why": "直接回应读者最关心的成本问题，提供可操作的选型参考。",
+        "needs": "AWS 定价页、独立基准测试、社区实际使用成本报告"
       },
       {
-        "angle": "部署实操：在SageMaker JumpStart上部署Nemotron 3 Ultra的步骤与门槛",
-        "why": "帮助读者快速上手，验证部署难度。",
-        "needs": "AWS文档中的部署教程、实际部署截图、最低实例配置要求。"
+        "angle": "性能验证：5x faster 是否真实？——从基准测试到实际 Agent 工作流",
+        "why": "帮助读者理解性能提升的实际意义，避免被营销数字误导。",
+        "needs": "NVIDIA 技术报告、第三方基准测试（如 Artificial Analysis）、社区实测"
       },
       {
-        "angle": "模型选型：Nemotron 3 Ultra在Agentic AI场景下的实际表现评测",
-        "why": "评估模型是否适合Agent任务，提供独立视角。",
-        "needs": "第三方评测（如LMSYS、Artificial Analysis）、与GPT-4o-mini等模型的对比。"
+        "angle": "迁移成本：从现有模型切换到 Nemotron 3 Ultra 的工程代价",
+        "why": "普通技术人不仅关心推理成本，还关心迁移的学习成本和工程改动。",
+        "needs": "模型兼容性文档、API 差异、社区迁移经验"
       }
     ],
     "missing_basics": [
-      "Nemotron 3 Ultra 的定价页（SageMaker或NVIDIA）",
-      "模型许可证类型（是否开源、商用限制）",
-      "SageMaker JumpStart 部署的最低实例配置和区域可用性"
+      "Nemotron 3 Ultra 的模型大小、架构、开源许可证",
+      "AWS SageMaker JumpStart 上该模型的定价（每 token 或每小时）",
+      "对比基准模型（如 Llama 3 70B）的具体版本和配置"
     ],
     "missing_materials": [
-      "官方宣称的5x推理速度和30%成本降低的具体测试条件（硬件、批次、任务）",
-      "与主流模型（Llama 3、GPT-4o-mini）的独立对比数据",
-      "一个简单的agentic任务示例（如函数调用）的成本估算",
+      "AWS SageMaker 定价页截图或价格表",
+      "NVIDIA 官方技术报告或模型卡",
+      "至少一个独立第三方评测或社区讨论链接",
+      "与主流模型（如 Llama 3 70B、GPT-4o-mini）的成本对比表",
       "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
     ],
     "not_claimable": [
-      "Nemotron 3 Ultra 比 Llama 3 更便宜或更快",
-      "普通开发者可以轻松部署并降低成本",
-      "该模型是当前agentic AI的最佳选择",
+      "5x faster inference 和 30% lower cost 的数字",
+      "该模型对普通技术人是否真正有成本优势",
+      "该模型是否已广泛可用或仅限特定区域",
       "不能在无补证结果时声称该选题已经具备可写条件。"
     ],
     "followup_queries": [
-      "Nemotron 3 Ultra 在 SageMaker 上的每小时定价是多少？",
-      "Nemotron 3 Ultra 的许可证是否允许商用？",
-      "SageMaker JumpStart 部署 Nemotron 3 Ultra 需要什么实例类型？"
+      "AWS SageMaker JumpStart 上 Nemotron 3 Ultra 的定价页 URL 是什么？",
+      "NVIDIA 官方是否发布了 Nemotron 3 Ultra 的技术报告或基准测试？",
+      "Hugging Face 上是否有 Nemotron 3 Ultra 的模型页面？",
+      "Reddit 或 Hacker News 上是否有社区讨论验证性能声明？"
     ],
     "additional_search_queries": [
-      "NVIDIA Nemotron 3 Ultra pricing SageMaker JumpStart",
-      "Nemotron 3 Ultra open source license",
-      "Amazon SageMaker JumpStart Nemotron 3 Ultra deployment guide",
-      "Nemotron 3 Ultra vs Llama 3 benchmark inference cost",
-      "Nemotron 3 Ultra agentic AI performance comparison"
+      "Nemotron 3 Ultra pricing AWS SageMaker per token",
+      "Nemotron 3 Ultra benchmark vs Llama 3 70B inference speed",
+      "Nemotron 3 Ultra Hugging Face model card",
+      "Nemotron 3 Ultra reddit review",
+      "SageMaker JumpStart model pricing list 2025"
     ],
     "stop_conditions": [
-      "找到官方定价页，确认每小时成本高于Llama 3类似实例",
-      "独立评测显示5x速度或30%成本降低无法在常见实例上复现",
-      "模型许可证限制商用或仅限特定区域"
+      "AWS 定价页显示该模型价格与声明不符",
+      "独立评测显示性能提升远低于 5x 或成本节省低于 30%",
+      "模型许可证限制商业使用或仅限特定区域"
     ],
-    "confidence": 0.0,
+    "confidence": 30.0,
     "topic_direction": "ai-practice",
     "topic_direction_title": "AI 实操与自动化",
     "report_type": "tool-ledger",
     "research_plan": {
-      "core_question": "NVIDIA Nemotron 3 Ultra 在 SageMaker JumpStart 上的实际成本、性能提升和部署门槛是否对普通技术人有可操作的账本价值？",
+      "core_question": "NVIDIA Nemotron 3 Ultra 在 SageMaker JumpStart 上的实际成本节省（30% lower cost）和性能提升（5x faster inference）是否真实可验证，以及它对普通技术人的 Agent 工作流成本结构有何具体影响？",
       "must_verify": [
-        "Nemotron 3 Ultra 的定价页（SageMaker 或 NVIDIA）",
-        "官方宣称的 5x 推理速度、30% 成本降低的具体测试条件",
-        "模型是否开源、许可证类型",
-        "与主流模型（如 Llama 3、GPT-4o-mini）的对比数据",
-        "SageMaker JumpStart 部署的步骤和最低配置要求"
+        "AWS 官方定价页上 Nemotron 3 Ultra 的实例价格和推理成本",
+        "NVIDIA 官方 Nemotron 3 Ultra 的技术规格和基准测试结果",
+        "是否有独立第三方（如社区、评测）验证了 5x 和 30% 的声明",
+        "该模型与主流替代方案（如 Llama 3、GPT-4o-mini）的成本对比"
       ],
       "search_queries": [
-        "NVIDIA Nemotron 3 Ultra pricing SageMaker JumpStart",
-        "Nemotron 3 Ultra vs Llama 3 benchmark inference cost",
-        "NVIDIA Nemotron 3 Ultra open source license",
-        "Amazon SageMaker JumpStart Nemotron 3 Ultra deployment guide",
-        "Nemotron 3 Ultra agentic AI performance comparison",
-        "NVIDIA Nemotron 3 Ultra 5x inference speed test",
-        "SageMaker JumpStart model pricing per hour",
-        "Nemotron 3 Ultra 30% cost reduction claim evidence"
+        "NVIDIA Nemotron 3 Ultra pricing AWS SageMaker",
+        "Nemotron 3 Ultra benchmark inference speed vs Llama 3",
+        "Amazon SageMaker JumpStart Nemotron 3 Ultra cost per token",
+        "NVIDIA Nemotron 3 Ultra technical report",
+        "Nemotron 3 Ultra vs GPT-4o-mini cost comparison",
+        "Nemotron 3 Ultra agentic AI use case example",
+        "SageMaker JumpStart model pricing list 2025",
+        "Nemotron 3 Ultra community review reddit"
       ],
       "best_sources_to_find": [
-        "AWS SageMaker 定价页",
-        "NVIDIA 官方博客或技术报告",
-        "Hugging Face 模型卡",
-        "GitHub 仓库（如果开源）",
-        "第三方基准测试（如 Artificial Analysis、LMSYS）",
-        "AWS 文档中的 JumpStart 部署教程"
+        "AWS SageMaker 定价页（https://aws.amazon.com/sagemaker/pricing/）",
+        "NVIDIA 官方模型卡或技术博客",
+        "Hugging Face 模型页面（若已发布）",
+        "独立 AI 基准测试网站（如 Artificial Analysis、LMSYS Chatbot Arena）",
+        "AWS 官方文档中关于 JumpStart 模型的定价说明"
       ],
       "expert_challenge_points": [
-        "5x 推理速度提升是否在特定硬件（如 H100）上测得？普通实例能否复现？",
-        "30% 成本降低是否包含 SageMaker 托管费用？",
-        "Nemotron 3 Ultra 在 agentic 任务上的实际表现是否有独立评测？",
-        "模型是否真正可用，还是仅限特定区域或账户？"
+        "5x faster inference 是否针对特定硬件（如 H100）或特定批次大小？",
+        "30% lower cost 是与哪个基准模型对比？是否包含 SageMaker 托管费用？",
+        "该模型是否真正开源？许可证是否限制商业使用？",
+        "对于普通开发者，迁移到该模型的学习成本和工程成本是否被低估？"
       ],
       "do_not_claim_yet": [
-        "Nemotron 3 Ultra 比 Llama 3 更便宜或更快",
-        "普通开发者可以轻松部署并降低成本",
-        "该模型是当前 agentic AI 的最佳选择"
+        "5x 和 30% 的数字未经独立验证",
+        "该模型对普通技术人是否真正有成本优势",
+        "该模型是否已广泛可用或仅限特定区域"
       ],
-      "can_publish_as_radar_if_missing": "如果无法获取定价页或独立基准，可发布为“待验证线索”，提示读者关注成本数据缺失。",
+      "can_publish_as_radar_if_missing": "如果无法获取定价页或独立评测，可发布为“待验证”状态，但需明确标注数字来源仅为 AWS 博客声明，并提示读者自行验证。",
       "downstream_materials_needed": [
-        "SageMaker JumpStart 部署截图或步骤",
-        "Nemotron 3 Ultra 与 Llama 3 的推理成本对比表",
-        "一个简单的 agentic 任务示例（如函数调用）的成本估算"
+        "AWS SageMaker 定价页截图或价格表",
+        "NVIDIA 官方技术报告或模型卡",
+        "至少一个独立第三方评测或社区讨论链接",
+        "与主流模型（如 Llama 3 70B、GPT-4o-mini）的成本对比表"
       ]
     },
     "research_evidence": []
@@ -264,126 +249,111 @@
       "label": "暂缓",
       "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
     },
-    "core_question": "NVIDIA Nemotron 3 Ultra 在 SageMaker JumpStart 上的实际成本、性能提升和部署门槛是否对普通技术人有可操作的账本价值？",
-    "why_this_topic_matters": "AI模型推理成本直接影响技术人构建Agent和自动化工具的经济可行性。如果Nemotron 3 Ultra确实能大幅降低成本并提升速度，可能改变中小团队和独立开发者的模型选型策略。但当前信息来自AWS官方博客，缺乏独立验证和定价细节，需谨慎评估。",
-    "fact_summary": [
-      "NVIDIA Nemotron 3 Ultra 现已可通过 Amazon SageMaker JumpStart 部署。",
-      "官方宣称推理速度提升5倍，成本降低30%，适用于agentic AI工作负载。",
-      "来源为AWS官方博客，属于一手官方渠道，但缺乏具体测试条件和定价数据。"
-    ],
-    "timeline": [
-      {
-        "date": "2025-04-10",
-        "event": "AWS博客发布文章，宣布Nemotron 3 Ultra上线SageMaker JumpStart"
-      }
-    ],
-    "evidence_table": [
-      {
-        "source": "AWS Machine Learning Blog",
-        "url": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-ultra-now-available-on-amazon-sagemaker-jumpstart/",
-        "supports": "Nemotron 3 Ultra 已上线 SageMaker JumpStart，宣称5x推理速度和30%成本降低",
-        "reliability": "official"
-      }
-    ],
-    "logic_closure": "目前仅有一方官方来源，缺乏独立验证和定价细节。无法确认5x和30%的测试条件（硬件、批次大小、任务类型），也无法判断是否包含SageMaker托管费用。模型许可证和部署门槛未知。因此逻辑无法闭环，不能得出“值得采用”的结论。",
+    "core_question": "NVIDIA Nemotron 3 Ultra 在 SageMaker JumpStart 上的实际成本节省（30% lower cost）和性能提升（5x faster inference）是否真实可验证，以及它对普通技术人的 Agent 工作流成本结构有何具体影响？",
+    "why_this_topic_matters": "如果数字属实，该模型可能显著降低 Agent 类 AI 应用的推理成本，直接影响技术人选择模型时的成本账。但若数字夸大或仅针对特定场景，则可能误导决策。",
+    "fact_summary": [],
+    "timeline": [],
+    "evidence_table": [],
+    "logic_closure": "目前仅有 AWS 博客的单一来源声明，缺乏独立验证和定价细节。无法确认 5x 和 30% 的对比基准、适用硬件、是否包含托管费用等关键信息。逻辑上无法闭环。",
     "writeable_angles": [
       {
-        "angle": "成本对比：Nemotron 3 Ultra vs Llama 3 在Agent任务上的推理成本估算",
-        "why": "直接回应读者最关心的成本问题，提供可操作的账本。",
-        "needs": "Nemotron 3 Ultra的SageMaker定价、Llama 3在类似实例上的成本、独立基准测试数据。"
+        "angle": "成本对比：Nemotron 3 Ultra vs Llama 3 vs GPT-4o-mini 在 Agent 场景下的每 token 成本",
+        "why": "直接回应读者最关心的成本问题，提供可操作的选型参考。",
+        "needs": "AWS 定价页、独立基准测试、社区实际使用成本报告"
       },
       {
-        "angle": "部署实操：在SageMaker JumpStart上部署Nemotron 3 Ultra的步骤与门槛",
-        "why": "帮助读者快速上手，验证部署难度。",
-        "needs": "AWS文档中的部署教程、实际部署截图、最低实例配置要求。"
+        "angle": "性能验证：5x faster 是否真实？——从基准测试到实际 Agent 工作流",
+        "why": "帮助读者理解性能提升的实际意义，避免被营销数字误导。",
+        "needs": "NVIDIA 技术报告、第三方基准测试（如 Artificial Analysis）、社区实测"
       },
       {
-        "angle": "模型选型：Nemotron 3 Ultra在Agentic AI场景下的实际表现评测",
-        "why": "评估模型是否适合Agent任务，提供独立视角。",
-        "needs": "第三方评测（如LMSYS、Artificial Analysis）、与GPT-4o-mini等模型的对比。"
+        "angle": "迁移成本：从现有模型切换到 Nemotron 3 Ultra 的工程代价",
+        "why": "普通技术人不仅关心推理成本，还关心迁移的学习成本和工程改动。",
+        "needs": "模型兼容性文档、API 差异、社区迁移经验"
       }
     ],
     "missing_basics": [
-      "Nemotron 3 Ultra 的定价页（SageMaker或NVIDIA）",
-      "模型许可证类型（是否开源、商用限制）",
-      "SageMaker JumpStart 部署的最低实例配置和区域可用性"
+      "Nemotron 3 Ultra 的模型大小、架构、开源许可证",
+      "AWS SageMaker JumpStart 上该模型的定价（每 token 或每小时）",
+      "对比基准模型（如 Llama 3 70B）的具体版本和配置"
     ],
     "missing_materials": [
-      "官方宣称的5x推理速度和30%成本降低的具体测试条件（硬件、批次、任务）",
-      "与主流模型（Llama 3、GPT-4o-mini）的独立对比数据",
-      "一个简单的agentic任务示例（如函数调用）的成本估算",
+      "AWS SageMaker 定价页截图或价格表",
+      "NVIDIA 官方技术报告或模型卡",
+      "至少一个独立第三方评测或社区讨论链接",
+      "与主流模型（如 Llama 3 70B、GPT-4o-mini）的成本对比表",
       "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
     ],
     "not_claimable": [
-      "Nemotron 3 Ultra 比 Llama 3 更便宜或更快",
-      "普通开发者可以轻松部署并降低成本",
-      "该模型是当前agentic AI的最佳选择",
+      "5x faster inference 和 30% lower cost 的数字",
+      "该模型对普通技术人是否真正有成本优势",
+      "该模型是否已广泛可用或仅限特定区域",
       "不能在无补证结果时声称该选题已经具备可写条件。"
     ],
     "followup_queries": [
-      "Nemotron 3 Ultra 在 SageMaker 上的每小时定价是多少？",
-      "Nemotron 3 Ultra 的许可证是否允许商用？",
-      "SageMaker JumpStart 部署 Nemotron 3 Ultra 需要什么实例类型？"
+      "AWS SageMaker JumpStart 上 Nemotron 3 Ultra 的定价页 URL 是什么？",
+      "NVIDIA 官方是否发布了 Nemotron 3 Ultra 的技术报告或基准测试？",
+      "Hugging Face 上是否有 Nemotron 3 Ultra 的模型页面？",
+      "Reddit 或 Hacker News 上是否有社区讨论验证性能声明？"
     ],
     "additional_search_queries": [
-      "NVIDIA Nemotron 3 Ultra pricing SageMaker JumpStart",
-      "Nemotron 3 Ultra open source license",
-      "Amazon SageMaker JumpStart Nemotron 3 Ultra deployment guide",
-      "Nemotron 3 Ultra vs Llama 3 benchmark inference cost",
-      "Nemotron 3 Ultra agentic AI performance comparison"
+      "Nemotron 3 Ultra pricing AWS SageMaker per token",
+      "Nemotron 3 Ultra benchmark vs Llama 3 70B inference speed",
+      "Nemotron 3 Ultra Hugging Face model card",
+      "Nemotron 3 Ultra reddit review",
+      "SageMaker JumpStart model pricing list 2025"
     ],
     "stop_conditions": [
-      "找到官方定价页，确认每小时成本高于Llama 3类似实例",
-      "独立评测显示5x速度或30%成本降低无法在常见实例上复现",
-      "模型许可证限制商用或仅限特定区域"
+      "AWS 定价页显示该模型价格与声明不符",
+      "独立评测显示性能提升远低于 5x 或成本节省低于 30%",
+      "模型许可证限制商业使用或仅限特定区域"
     ],
-    "confidence": 0.0,
+    "confidence": 30.0,
     "topic_direction": "ai-practice",
     "topic_direction_title": "AI 实操与自动化",
     "report_type": "tool-ledger",
     "research_plan": {
-      "core_question": "NVIDIA Nemotron 3 Ultra 在 SageMaker JumpStart 上的实际成本、性能提升和部署门槛是否对普通技术人有可操作的账本价值？",
+      "core_question": "NVIDIA Nemotron 3 Ultra 在 SageMaker JumpStart 上的实际成本节省（30% lower cost）和性能提升（5x faster inference）是否真实可验证，以及它对普通技术人的 Agent 工作流成本结构有何具体影响？",
       "must_verify": [
-        "Nemotron 3 Ultra 的定价页（SageMaker 或 NVIDIA）",
-        "官方宣称的 5x 推理速度、30% 成本降低的具体测试条件",
-        "模型是否开源、许可证类型",
-        "与主流模型（如 Llama 3、GPT-4o-mini）的对比数据",
-        "SageMaker JumpStart 部署的步骤和最低配置要求"
+        "AWS 官方定价页上 Nemotron 3 Ultra 的实例价格和推理成本",
+        "NVIDIA 官方 Nemotron 3 Ultra 的技术规格和基准测试结果",
+        "是否有独立第三方（如社区、评测）验证了 5x 和 30% 的声明",
+        "该模型与主流替代方案（如 Llama 3、GPT-4o-mini）的成本对比"
       ],
       "search_queries": [
-        "NVIDIA Nemotron 3 Ultra pricing SageMaker JumpStart",
-        "Nemotron 3 Ultra vs Llama 3 benchmark inference cost",
-        "NVIDIA Nemotron 3 Ultra open source license",
-        "Amazon SageMaker JumpStart Nemotron 3 Ultra deployment guide",
-        "Nemotron 3 Ultra agentic AI performance comparison",
-        "NVIDIA Nemotron 3 Ultra 5x inference speed test",
-        "SageMaker JumpStart model pricing per hour",
-        "Nemotron 3 Ultra 30% cost reduction claim evidence"
+        "NVIDIA Nemotron 3 Ultra pricing AWS SageMaker",
+        "Nemotron 3 Ultra benchmark inference speed vs Llama 3",
+        "Amazon SageMaker JumpStart Nemotron 3 Ultra cost per token",
+        "NVIDIA Nemotron 3 Ultra technical report",
+        "Nemotron 3 Ultra vs GPT-4o-mini cost comparison",
+        "Nemotron 3 Ultra agentic AI use case example",
+        "SageMaker JumpStart model pricing list 2025",
+        "Nemotron 3 Ultra community review reddit"
       ],
       "best_sources_to_find": [
-        "AWS SageMaker 定价页",
-        "NVIDIA 官方博客或技术报告",
-        "Hugging Face 模型卡",
-        "GitHub 仓库（如果开源）",
-        "第三方基准测试（如 Artificial Analysis、LMSYS）",
-        "AWS 文档中的 JumpStart 部署教程"
+        "AWS SageMaker 定价页（https://aws.amazon.com/sagemaker/pricing/）",
+        "NVIDIA 官方模型卡或技术博客",
+        "Hugging Face 模型页面（若已发布）",
+        "独立 AI 基准测试网站（如 Artificial Analysis、LMSYS Chatbot Arena）",
+        "AWS 官方文档中关于 JumpStart 模型的定价说明"
       ],
       "expert_challenge_points": [
-        "5x 推理速度提升是否在特定硬件（如 H100）上测得？普通实例能否复现？",
-        "30% 成本降低是否包含 SageMaker 托管费用？",
-        "Nemotron 3 Ultra 在 agentic 任务上的实际表现是否有独立评测？",
-        "模型是否真正可用，还是仅限特定区域或账户？"
+        "5x faster inference 是否针对特定硬件（如 H100）或特定批次大小？",
+        "30% lower cost 是与哪个基准模型对比？是否包含 SageMaker 托管费用？",
+        "该模型是否真正开源？许可证是否限制商业使用？",
+        "对于普通开发者，迁移到该模型的学习成本和工程成本是否被低估？"
       ],
       "do_not_claim_yet": [
-        "Nemotron 3 Ultra 比 Llama 3 更便宜或更快",
-        "普通开发者可以轻松部署并降低成本",
-        "该模型是当前 agentic AI 的最佳选择"
+        "5x 和 30% 的数字未经独立验证",
+        "该模型对普通技术人是否真正有成本优势",
+        "该模型是否已广泛可用或仅限特定区域"
       ],
-      "can_publish_as_radar_if_missing": "如果无法获取定价页或独立基准，可发布为“待验证线索”，提示读者关注成本数据缺失。",
+      "can_publish_as_radar_if_missing": "如果无法获取定价页或独立评测，可发布为“待验证”状态，但需明确标注数字来源仅为 AWS 博客声明，并提示读者自行验证。",
       "downstream_materials_needed": [
-        "SageMaker JumpStart 部署截图或步骤",
-        "Nemotron 3 Ultra 与 Llama 3 的推理成本对比表",
-        "一个简单的 agentic 任务示例（如函数调用）的成本估算"
+        "AWS SageMaker 定价页截图或价格表",
+        "NVIDIA 官方技术报告或模型卡",
+        "至少一个独立第三方评测或社区讨论链接",
+        "与主流模型（如 Llama 3 70B、GPT-4o-mini）的成本对比表"
       ]
     },
     "research_evidence": []
@@ -404,126 +374,111 @@
           "label": "暂缓",
           "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
         },
-        "core_question": "NVIDIA Nemotron 3 Ultra 在 SageMaker JumpStart 上的实际成本、性能提升和部署门槛是否对普通技术人有可操作的账本价值？",
-        "why_this_topic_matters": "AI模型推理成本直接影响技术人构建Agent和自动化工具的经济可行性。如果Nemotron 3 Ultra确实能大幅降低成本并提升速度，可能改变中小团队和独立开发者的模型选型策略。但当前信息来自AWS官方博客，缺乏独立验证和定价细节，需谨慎评估。",
-        "fact_summary": [
-          "NVIDIA Nemotron 3 Ultra 现已可通过 Amazon SageMaker JumpStart 部署。",
-          "官方宣称推理速度提升5倍，成本降低30%，适用于agentic AI工作负载。",
-          "来源为AWS官方博客，属于一手官方渠道，但缺乏具体测试条件和定价数据。"
-        ],
-        "timeline": [
-          {
-            "date": "2025-04-10",
-            "event": "AWS博客发布文章，宣布Nemotron 3 Ultra上线SageMaker JumpStart"
-          }
-        ],
-        "evidence_table": [
-          {
-            "source": "AWS Machine Learning Blog",
-            "url": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-ultra-now-available-on-amazon-sagemaker-jumpstart/",
-            "supports": "Nemotron 3 Ultra 已上线 SageMaker JumpStart，宣称5x推理速度和30%成本降低",
-            "reliability": "official"
-          }
-        ],
-        "logic_closure": "目前仅有一方官方来源，缺乏独立验证和定价细节。无法确认5x和30%的测试条件（硬件、批次大小、任务类型），也无法判断是否包含SageMaker托管费用。模型许可证和部署门槛未知。因此逻辑无法闭环，不能得出“值得采用”的结论。",
+        "core_question": "NVIDIA Nemotron 3 Ultra 在 SageMaker JumpStart 上的实际成本节省（30% lower cost）和性能提升（5x faster inference）是否真实可验证，以及它对普通技术人的 Agent 工作流成本结构有何具体影响？",
+        "why_this_topic_matters": "如果数字属实，该模型可能显著降低 Agent 类 AI 应用的推理成本，直接影响技术人选择模型时的成本账。但若数字夸大或仅针对特定场景，则可能误导决策。",
+        "fact_summary": [],
+        "timeline": [],
+        "evidence_table": [],
+        "logic_closure": "目前仅有 AWS 博客的单一来源声明，缺乏独立验证和定价细节。无法确认 5x 和 30% 的对比基准、适用硬件、是否包含托管费用等关键信息。逻辑上无法闭环。",
         "writeable_angles": [
           {
-            "angle": "成本对比：Nemotron 3 Ultra vs Llama 3 在Agent任务上的推理成本估算",
-            "why": "直接回应读者最关心的成本问题，提供可操作的账本。",
-            "needs": "Nemotron 3 Ultra的SageMaker定价、Llama 3在类似实例上的成本、独立基准测试数据。"
+            "angle": "成本对比：Nemotron 3 Ultra vs Llama 3 vs GPT-4o-mini 在 Agent 场景下的每 token 成本",
+            "why": "直接回应读者最关心的成本问题，提供可操作的选型参考。",
+            "needs": "AWS 定价页、独立基准测试、社区实际使用成本报告"
           },
           {
-            "angle": "部署实操：在SageMaker JumpStart上部署Nemotron 3 Ultra的步骤与门槛",
-            "why": "帮助读者快速上手，验证部署难度。",
-            "needs": "AWS文档中的部署教程、实际部署截图、最低实例配置要求。"
+            "angle": "性能验证：5x faster 是否真实？——从基准测试到实际 Agent 工作流",
+            "why": "帮助读者理解性能提升的实际意义，避免被营销数字误导。",
+            "needs": "NVIDIA 技术报告、第三方基准测试（如 Artificial Analysis）、社区实测"
           },
           {
-            "angle": "模型选型：Nemotron 3 Ultra在Agentic AI场景下的实际表现评测",
-            "why": "评估模型是否适合Agent任务，提供独立视角。",
-            "needs": "第三方评测（如LMSYS、Artificial Analysis）、与GPT-4o-mini等模型的对比。"
+            "angle": "迁移成本：从现有模型切换到 Nemotron 3 Ultra 的工程代价",
+            "why": "普通技术人不仅关心推理成本，还关心迁移的学习成本和工程改动。",
+            "needs": "模型兼容性文档、API 差异、社区迁移经验"
           }
         ],
         "missing_basics": [
-          "Nemotron 3 Ultra 的定价页（SageMaker或NVIDIA）",
-          "模型许可证类型（是否开源、商用限制）",
-          "SageMaker JumpStart 部署的最低实例配置和区域可用性"
+          "Nemotron 3 Ultra 的模型大小、架构、开源许可证",
+          "AWS SageMaker JumpStart 上该模型的定价（每 token 或每小时）",
+          "对比基准模型（如 Llama 3 70B）的具体版本和配置"
         ],
         "missing_materials": [
-          "官方宣称的5x推理速度和30%成本降低的具体测试条件（硬件、批次、任务）",
-          "与主流模型（Llama 3、GPT-4o-mini）的独立对比数据",
-          "一个简单的agentic任务示例（如函数调用）的成本估算",
+          "AWS SageMaker 定价页截图或价格表",
+          "NVIDIA 官方技术报告或模型卡",
+          "至少一个独立第三方评测或社区讨论链接",
+          "与主流模型（如 Llama 3 70B、GPT-4o-mini）的成本对比表",
           "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
         ],
         "not_claimable": [
-          "Nemotron 3 Ultra 比 Llama 3 更便宜或更快",
-          "普通开发者可以轻松部署并降低成本",
-          "该模型是当前agentic AI的最佳选择",
+          "5x faster inference 和 30% lower cost 的数字",
+          "该模型对普通技术人是否真正有成本优势",
+          "该模型是否已广泛可用或仅限特定区域",
           "不能在无补证结果时声称该选题已经具备可写条件。"
         ],
         "followup_queries": [
-          "Nemotron 3 Ultra 在 SageMaker 上的每小时定价是多少？",
-          "Nemotron 3 Ultra 的许可证是否允许商用？",
-          "SageMaker JumpStart 部署 Nemotron 3 Ultra 需要什么实例类型？"
+          "AWS SageMaker JumpStart 上 Nemotron 3 Ultra 的定价页 URL 是什么？",
+          "NVIDIA 官方是否发布了 Nemotron 3 Ultra 的技术报告或基准测试？",
+          "Hugging Face 上是否有 Nemotron 3 Ultra 的模型页面？",
+          "Reddit 或 Hacker News 上是否有社区讨论验证性能声明？"
         ],
         "additional_search_queries": [
-          "NVIDIA Nemotron 3 Ultra pricing SageMaker JumpStart",
-          "Nemotron 3 Ultra open source license",
-          "Amazon SageMaker JumpStart Nemotron 3 Ultra deployment guide",
-          "Nemotron 3 Ultra vs Llama 3 benchmark inference cost",
-          "Nemotron 3 Ultra agentic AI performance comparison"
+          "Nemotron 3 Ultra pricing AWS SageMaker per token",
+          "Nemotron 3 Ultra benchmark vs Llama 3 70B inference speed",
+          "Nemotron 3 Ultra Hugging Face model card",
+          "Nemotron 3 Ultra reddit review",
+          "SageMaker JumpStart model pricing list 2025"
         ],
         "stop_conditions": [
-          "找到官方定价页，确认每小时成本高于Llama 3类似实例",
-          "独立评测显示5x速度或30%成本降低无法在常见实例上复现",
-          "模型许可证限制商用或仅限特定区域"
+          "AWS 定价页显示该模型价格与声明不符",
+          "独立评测显示性能提升远低于 5x 或成本节省低于 30%",
+          "模型许可证限制商业使用或仅限特定区域"
         ],
-        "confidence": 0.0,
+        "confidence": 30.0,
         "topic_direction": "ai-practice",
         "topic_direction_title": "AI 实操与自动化",
         "report_type": "tool-ledger",
         "research_plan": {
-          "core_question": "NVIDIA Nemotron 3 Ultra 在 SageMaker JumpStart 上的实际成本、性能提升和部署门槛是否对普通技术人有可操作的账本价值？",
+          "core_question": "NVIDIA Nemotron 3 Ultra 在 SageMaker JumpStart 上的实际成本节省（30% lower cost）和性能提升（5x faster inference）是否真实可验证，以及它对普通技术人的 Agent 工作流成本结构有何具体影响？",
           "must_verify": [
-            "Nemotron 3 Ultra 的定价页（SageMaker 或 NVIDIA）",
-            "官方宣称的 5x 推理速度、30% 成本降低的具体测试条件",
-            "模型是否开源、许可证类型",
-            "与主流模型（如 Llama 3、GPT-4o-mini）的对比数据",
-            "SageMaker JumpStart 部署的步骤和最低配置要求"
+            "AWS 官方定价页上 Nemotron 3 Ultra 的实例价格和推理成本",
+            "NVIDIA 官方 Nemotron 3 Ultra 的技术规格和基准测试结果",
+            "是否有独立第三方（如社区、评测）验证了 5x 和 30% 的声明",
+            "该模型与主流替代方案（如 Llama 3、GPT-4o-mini）的成本对比"
           ],
           "search_queries": [
-            "NVIDIA Nemotron 3 Ultra pricing SageMaker JumpStart",
-            "Nemotron 3 Ultra vs Llama 3 benchmark inference cost",
-            "NVIDIA Nemotron 3 Ultra open source license",
-            "Amazon SageMaker JumpStart Nemotron 3 Ultra deployment guide",
-            "Nemotron 3 Ultra agentic AI performance comparison",
-            "NVIDIA Nemotron 3 Ultra 5x inference speed test",
-            "SageMaker JumpStart model pricing per hour",
-            "Nemotron 3 Ultra 30% cost reduction claim evidence"
+            "NVIDIA Nemotron 3 Ultra pricing AWS SageMaker",
+            "Nemotron 3 Ultra benchmark inference speed vs Llama 3",
+            "Amazon SageMaker JumpStart Nemotron 3 Ultra cost per token",
+            "NVIDIA Nemotron 3 Ultra technical report",
+            "Nemotron 3 Ultra vs GPT-4o-mini cost comparison",
+            "Nemotron 3 Ultra agentic AI use case example",
+            "SageMaker JumpStart model pricing list 2025",
+            "Nemotron 3 Ultra community review reddit"
           ],
           "best_sources_to_find": [
-            "AWS SageMaker 定价页",
-            "NVIDIA 官方博客或技术报告",
-            "Hugging Face 模型卡",
-            "GitHub 仓库（如果开源）",
-            "第三方基准测试（如 Artificial Analysis、LMSYS）",
-            "AWS 文档中的 JumpStart 部署教程"
+            "AWS SageMaker 定价页（https://aws.amazon.com/sagemaker/pricing/）",
+            "NVIDIA 官方模型卡或技术博客",
+            "Hugging Face 模型页面（若已发布）",
+            "独立 AI 基准测试网站（如 Artificial Analysis、LMSYS Chatbot Arena）",
+            "AWS 官方文档中关于 JumpStart 模型的定价说明"
           ],
           "expert_challenge_points": [
-            "5x 推理速度提升是否在特定硬件（如 H100）上测得？普通实例能否复现？",
-            "30% 成本降低是否包含 SageMaker 托管费用？",
-            "Nemotron 3 Ultra 在 agentic 任务上的实际表现是否有独立评测？",
-            "模型是否真正可用，还是仅限特定区域或账户？"
+            "5x faster inference 是否针对特定硬件（如 H100）或特定批次大小？",
+            "30% lower cost 是与哪个基准模型对比？是否包含 SageMaker 托管费用？",
+            "该模型是否真正开源？许可证是否限制商业使用？",
+            "对于普通开发者，迁移到该模型的学习成本和工程成本是否被低估？"
           ],
           "do_not_claim_yet": [
-            "Nemotron 3 Ultra 比 Llama 3 更便宜或更快",
-            "普通开发者可以轻松部署并降低成本",
-            "该模型是当前 agentic AI 的最佳选择"
+            "5x 和 30% 的数字未经独立验证",
+            "该模型对普通技术人是否真正有成本优势",
+            "该模型是否已广泛可用或仅限特定区域"
           ],
-          "can_publish_as_radar_if_missing": "如果无法获取定价页或独立基准，可发布为“待验证线索”，提示读者关注成本数据缺失。",
+          "can_publish_as_radar_if_missing": "如果无法获取定价页或独立评测，可发布为“待验证”状态，但需明确标注数字来源仅为 AWS 博客声明，并提示读者自行验证。",
           "downstream_materials_needed": [
-            "SageMaker JumpStart 部署截图或步骤",
-            "Nemotron 3 Ultra 与 Llama 3 的推理成本对比表",
-            "一个简单的 agentic 任务示例（如函数调用）的成本估算"
+            "AWS SageMaker 定价页截图或价格表",
+            "NVIDIA 官方技术报告或模型卡",
+            "至少一个独立第三方评测或社区讨论链接",
+            "与主流模型（如 Llama 3 70B、GPT-4o-mini）的成本对比表"
           ]
         },
         "research_evidence": []
@@ -536,126 +491,111 @@
           "label": "暂缓",
           "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
         },
-        "core_question": "NVIDIA Nemotron 3 Ultra 在 SageMaker JumpStart 上的实际成本、性能提升和部署门槛是否对普通技术人有可操作的账本价值？",
-        "why_this_topic_matters": "AI模型推理成本直接影响技术人构建Agent和自动化工具的经济可行性。如果Nemotron 3 Ultra确实能大幅降低成本并提升速度，可能改变中小团队和独立开发者的模型选型策略。但当前信息来自AWS官方博客，缺乏独立验证和定价细节，需谨慎评估。",
-        "fact_summary": [
-          "NVIDIA Nemotron 3 Ultra 现已可通过 Amazon SageMaker JumpStart 部署。",
-          "官方宣称推理速度提升5倍，成本降低30%，适用于agentic AI工作负载。",
-          "来源为AWS官方博客，属于一手官方渠道，但缺乏具体测试条件和定价数据。"
-        ],
-        "timeline": [
-          {
-            "date": "2025-04-10",
-            "event": "AWS博客发布文章，宣布Nemotron 3 Ultra上线SageMaker JumpStart"
-          }
-        ],
-        "evidence_table": [
-          {
-            "source": "AWS Machine Learning Blog",
-            "url": "https://aws.amazon.com/blogs/machine-learning/nvidia-nemotron-3-ultra-now-available-on-amazon-sagemaker-jumpstart/",
-            "supports": "Nemotron 3 Ultra 已上线 SageMaker JumpStart，宣称5x推理速度和30%成本降低",
-            "reliability": "official"
-          }
-        ],
-        "logic_closure": "目前仅有一方官方来源，缺乏独立验证和定价细节。无法确认5x和30%的测试条件（硬件、批次大小、任务类型），也无法判断是否包含SageMaker托管费用。模型许可证和部署门槛未知。因此逻辑无法闭环，不能得出“值得采用”的结论。",
+        "core_question": "NVIDIA Nemotron 3 Ultra 在 SageMaker JumpStart 上的实际成本节省（30% lower cost）和性能提升（5x faster inference）是否真实可验证，以及它对普通技术人的 Agent 工作流成本结构有何具体影响？",
+        "why_this_topic_matters": "如果数字属实，该模型可能显著降低 Agent 类 AI 应用的推理成本，直接影响技术人选择模型时的成本账。但若数字夸大或仅针对特定场景，则可能误导决策。",
+        "fact_summary": [],
+        "timeline": [],
+        "evidence_table": [],
+        "logic_closure": "目前仅有 AWS 博客的单一来源声明，缺乏独立验证和定价细节。无法确认 5x 和 30% 的对比基准、适用硬件、是否包含托管费用等关键信息。逻辑上无法闭环。",
         "writeable_angles": [
           {
-            "angle": "成本对比：Nemotron 3 Ultra vs Llama 3 在Agent任务上的推理成本估算",
-            "why": "直接回应读者最关心的成本问题，提供可操作的账本。",
-            "needs": "Nemotron 3 Ultra的SageMaker定价、Llama 3在类似实例上的成本、独立基准测试数据。"
+            "angle": "成本对比：Nemotron 3 Ultra vs Llama 3 vs GPT-4o-mini 在 Agent 场景下的每 token 成本",
+            "why": "直接回应读者最关心的成本问题，提供可操作的选型参考。",
+            "needs": "AWS 定价页、独立基准测试、社区实际使用成本报告"
           },
           {
-            "angle": "部署实操：在SageMaker JumpStart上部署Nemotron 3 Ultra的步骤与门槛",
-            "why": "帮助读者快速上手，验证部署难度。",
-            "needs": "AWS文档中的部署教程、实际部署截图、最低实例配置要求。"
+            "angle": "性能验证：5x faster 是否真实？——从基准测试到实际 Agent 工作流",
+            "why": "帮助读者理解性能提升的实际意义，避免被营销数字误导。",
+            "needs": "NVIDIA 技术报告、第三方基准测试（如 Artificial Analysis）、社区实测"
           },
           {
-            "angle": "模型选型：Nemotron 3 Ultra在Agentic AI场景下的实际表现评测",
-            "why": "评估模型是否适合Agent任务，提供独立视角。",
-            "needs": "第三方评测（如LMSYS、Artificial Analysis）、与GPT-4o-mini等模型的对比。"
+            "angle": "迁移成本：从现有模型切换到 Nemotron 3 Ultra 的工程代价",
+            "why": "普通技术人不仅关心推理成本，还关心迁移的学习成本和工程改动。",
+            "needs": "模型兼容性文档、API 差异、社区迁移经验"
           }
         ],
         "missing_basics": [
-          "Nemotron 3 Ultra 的定价页（SageMaker或NVIDIA）",
-          "模型许可证类型（是否开源、商用限制）",
-          "SageMaker JumpStart 部署的最低实例配置和区域可用性"
+          "Nemotron 3 Ultra 的模型大小、架构、开源许可证",
+          "AWS SageMaker JumpStart 上该模型的定价（每 token 或每小时）",
+          "对比基准模型（如 Llama 3 70B）的具体版本和配置"
         ],
         "missing_materials": [
-          "官方宣称的5x推理速度和30%成本降低的具体测试条件（硬件、批次、任务）",
-          "与主流模型（Llama 3、GPT-4o-mini）的独立对比数据",
-          "一个简单的agentic任务示例（如函数调用）的成本估算",
+          "AWS SageMaker 定价页截图或价格表",
+          "NVIDIA 官方技术报告或模型卡",
+          "至少一个独立第三方评测或社区讨论链接",
+          "与主流模型（如 Llama 3 70B、GPT-4o-mini）的成本对比表",
           "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
         ],
         "not_claimable": [
-          "Nemotron 3 Ultra 比 Llama 3 更便宜或更快",
-          "普通开发者可以轻松部署并降低成本",
-          "该模型是当前agentic AI的最佳选择",
+          "5x faster inference 和 30% lower cost 的数字",
+          "该模型对普通技术人是否真正有成本优势",
+          "该模型是否已广泛可用或仅限特定区域",
           "不能在无补证结果时声称该选题已经具备可写条件。"
         ],
         "followup_queries": [
-          "Nemotron 3 Ultra 在 SageMaker 上的每小时定价是多少？",
-          "Nemotron 3 Ultra 的许可证是否允许商用？",
-          "SageMaker JumpStart 部署 Nemotron 3 Ultra 需要什么实例类型？"
+          "AWS SageMaker JumpStart 上 Nemotron 3 Ultra 的定价页 URL 是什么？",
+          "NVIDIA 官方是否发布了 Nemotron 3 Ultra 的技术报告或基准测试？",
+          "Hugging Face 上是否有 Nemotron 3 Ultra 的模型页面？",
+          "Reddit 或 Hacker News 上是否有社区讨论验证性能声明？"
         ],
         "additional_search_queries": [
-          "NVIDIA Nemotron 3 Ultra pricing SageMaker JumpStart",
-          "Nemotron 3 Ultra open source license",
-          "Amazon SageMaker JumpStart Nemotron 3 Ultra deployment guide",
-          "Nemotron 3 Ultra vs Llama 3 benchmark inference cost",
-          "Nemotron 3 Ultra agentic AI performance comparison"
+          "Nemotron 3 Ultra pricing AWS SageMaker per token",
+          "Nemotron 3 Ultra benchmark vs Llama 3 70B inference speed",
+          "Nemotron 3 Ultra Hugging Face model card",
+          "Nemotron 3 Ultra reddit review",
+          "SageMaker JumpStart model pricing list 2025"
         ],
         "stop_conditions": [
-          "找到官方定价页，确认每小时成本高于Llama 3类似实例",
-          "独立评测显示5x速度或30%成本降低无法在常见实例上复现",
-          "模型许可证限制商用或仅限特定区域"
+          "AWS 定价页显示该模型价格与声明不符",
+          "独立评测显示性能提升远低于 5x 或成本节省低于 30%",
+          "模型许可证限制商业使用或仅限特定区域"
         ],
-        "confidence": 0.0,
+        "confidence": 30.0,
         "topic_direction": "ai-practice",
         "topic_direction_title": "AI 实操与自动化",
         "report_type": "tool-ledger",
         "research_plan": {
-          "core_question": "NVIDIA Nemotron 3 Ultra 在 SageMaker JumpStart 上的实际成本、性能提升和部署门槛是否对普通技术人有可操作的账本价值？",
+          "core_question": "NVIDIA Nemotron 3 Ultra 在 SageMaker JumpStart 上的实际成本节省（30% lower cost）和性能提升（5x faster inference）是否真实可验证，以及它对普通技术人的 Agent 工作流成本结构有何具体影响？",
           "must_verify": [
-            "Nemotron 3 Ultra 的定价页（SageMaker 或 NVIDIA）",
-            "官方宣称的 5x 推理速度、30% 成本降低的具体测试条件",
-            "模型是否开源、许可证类型",
-            "与主流模型（如 Llama 3、GPT-4o-mini）的对比数据",
-            "SageMaker JumpStart 部署的步骤和最低配置要求"
+            "AWS 官方定价页上 Nemotron 3 Ultra 的实例价格和推理成本",
+            "NVIDIA 官方 Nemotron 3 Ultra 的技术规格和基准测试结果",
+            "是否有独立第三方（如社区、评测）验证了 5x 和 30% 的声明",
+            "该模型与主流替代方案（如 Llama 3、GPT-4o-mini）的成本对比"
           ],
           "search_queries": [
-            "NVIDIA Nemotron 3 Ultra pricing SageMaker JumpStart",
-            "Nemotron 3 Ultra vs Llama 3 benchmark inference cost",
-            "NVIDIA Nemotron 3 Ultra open source license",
-            "Amazon SageMaker JumpStart Nemotron 3 Ultra deployment guide",
-            "Nemotron 3 Ultra agentic AI performance comparison",
-            "NVIDIA Nemotron 3 Ultra 5x inference speed test",
-            "SageMaker JumpStart model pricing per hour",
-            "Nemotron 3 Ultra 30% cost reduction claim evidence"
+            "NVIDIA Nemotron 3 Ultra pricing AWS SageMaker",
+            "Nemotron 3 Ultra benchmark inference speed vs Llama 3",
+            "Amazon SageMaker JumpStart Nemotron 3 Ultra cost per token",
+            "NVIDIA Nemotron 3 Ultra technical report",
+            "Nemotron 3 Ultra vs GPT-4o-mini cost comparison",
+            "Nemotron 3 Ultra agentic AI use case example",
+            "SageMaker JumpStart model pricing list 2025",
+            "Nemotron 3 Ultra community review reddit"
           ],
           "best_sources_to_find": [
-            "AWS SageMaker 定价页",
-            "NVIDIA 官方博客或技术报告",
-            "Hugging Face 模型卡",
-            "GitHub 仓库（如果开源）",
-            "第三方基准测试（如 Artificial Analysis、LMSYS）",
-            "AWS 文档中的 JumpStart 部署教程"
+            "AWS SageMaker 定价页（https://aws.amazon.com/sagemaker/pricing/）",
+            "NVIDIA 官方模型卡或技术博客",
+            "Hugging Face 模型页面（若已发布）",
+            "独立 AI 基准测试网站（如 Artificial Analysis、LMSYS Chatbot Arena）",
+            "AWS 官方文档中关于 JumpStart 模型的定价说明"
           ],
           "expert_challenge_points": [
-            "5x 推理速度提升是否在特定硬件（如 H100）上测得？普通实例能否复现？",
-            "30% 成本降低是否包含 SageMaker 托管费用？",
-            "Nemotron 3 Ultra 在 agentic 任务上的实际表现是否有独立评测？",
-            "模型是否真正可用，还是仅限特定区域或账户？"
+            "5x faster inference 是否针对特定硬件（如 H100）或特定批次大小？",
+            "30% lower cost 是与哪个基准模型对比？是否包含 SageMaker 托管费用？",
+            "该模型是否真正开源？许可证是否限制商业使用？",
+            "对于普通开发者，迁移到该模型的学习成本和工程成本是否被低估？"
           ],
           "do_not_claim_yet": [
-            "Nemotron 3 Ultra 比 Llama 3 更便宜或更快",
-            "普通开发者可以轻松部署并降低成本",
-            "该模型是当前 agentic AI 的最佳选择"
+            "5x 和 30% 的数字未经独立验证",
+            "该模型对普通技术人是否真正有成本优势",
+            "该模型是否已广泛可用或仅限特定区域"
           ],
-          "can_publish_as_radar_if_missing": "如果无法获取定价页或独立基准，可发布为“待验证线索”，提示读者关注成本数据缺失。",
+          "can_publish_as_radar_if_missing": "如果无法获取定价页或独立评测，可发布为“待验证”状态，但需明确标注数字来源仅为 AWS 博客声明，并提示读者自行验证。",
           "downstream_materials_needed": [
-            "SageMaker JumpStart 部署截图或步骤",
-            "Nemotron 3 Ultra 与 Llama 3 的推理成本对比表",
-            "一个简单的 agentic 任务示例（如函数调用）的成本估算"
+            "AWS SageMaker 定价页截图或价格表",
+            "NVIDIA 官方技术报告或模型卡",
+            "至少一个独立第三方评测或社区讨论链接",
+            "与主流模型（如 Llama 3 70B、GPT-4o-mini）的成本对比表"
           ]
         },
         "research_evidence": []

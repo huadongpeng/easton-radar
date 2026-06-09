@@ -14,13 +14,13 @@
   <main>
 <article class="report">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "你在 ping0 查代理 IP 时", "author": {"@type": "Person", "name": "老花 / Easton Hua"}, "datePublished": "2026-06-09T06:16:39Z", "mainEntityOfPage": "https://radar.huadongpeng.com/items/20260609-ping0-ip-ip-c8f0042c/"}</script>
-  <p class="meta"><a href="/topics/indie-builder/">独立开发与副业实验</a> · 风险避坑 · near_source · Score 90</p>
+  <p class="meta"><a href="/topics/indie-builder/">独立开发与副业实验</a> · 风险避坑 · official · Score 85</p>
   <h1>你在 ping0 查代理 IP 时</h1>
   <p class="meta">原始标题：你在 ping0 查代理 IP 时，它把你的真实 IP 也一起记走了——抓包实锤</p>
 
   <section class="callout">
     <h2>这是不是一个值得进入写作池的选题</h2>
-    <p><strong>可选</strong>：原帖提供了可复现的抓包证据，且第三方安全网站（Gridinsoft）给出低信任评分（59/100），交叉验证了风险。核心事实（WebRTC 泄露、双栈请求、配对存储）有技术细节支撑，逻辑闭环。虽然未获取 ping0 官方隐私政策，但抓包证据足以构成风险预警。该话题与读者隐私安全强相关，且能延伸出防护指南和工具对比，具备可写性和传播价值。</p>
+    <p><strong>暂缓</strong>：补证搜索没有拿到可用结果，当前不能给可选或高可信判断。</p>
     <p>这条线索可能关联副业、独立开发或出海机会，需要继续拆门槛、用户和现金流。</p>
   </section>
 
@@ -35,56 +35,38 @@
   
 <section class="section callout">
   <h2>选题判断</h2>
-  <p><strong>可选</strong>：原帖提供了可复现的抓包证据，且第三方安全网站（Gridinsoft）给出低信任评分（59/100），交叉验证了风险。核心事实（WebRTC 泄露、双栈请求、配对存储）有技术细节支撑，逻辑闭环。虽然未获取 ping0 官方隐私政策，但抓包证据足以构成风险预警。该话题与读者隐私安全强相关，且能延伸出防护指南和工具对比，具备可写性和传播价值。</p>
-  <p>ping0.cc 是技术社区常用的 IP 纯净度/风控值查询工具，用户通常在使用代理/VPN 时访问，期望隐藏真实 IP。如果该工具确实利用 WebRTC 绕过代理获取真实 IP 并配对存储，则构成严重的隐私风险，直接影响大量技术用户的匿名性和安全。该话题涉及 WebRTC 泄露这一经典但常被忽视的漏洞，能引发广泛讨论和防护行动。</p>
-  <p class="meta">报告来源：deepseek · 可信度 80 · topic-selection-dossier-v3</p>
+  <p><strong>暂缓</strong>：补证搜索没有拿到可用结果，当前不能给可选或高可信判断。</p>
+  <p>ping0.cc 是广泛使用的 IP 纯净度查询工具，用户常在使用代理/VPN 时访问，期望隐藏真实 IP。该工具利用 WebRTC 绕过代理获取真实 IP 并记录，直接威胁用户隐私安全。此行为若属实，属于典型的隐私陷阱，对技术人、跨境工作者、独立开发者等群体具有普遍警示意义。</p>
+  <p class="meta">报告来源：deepseek · 可信度 30 · topic-selection-dossier-v3</p>
 </section>
 <section class="section card">
   <h2>这件事目前能确认什么</h2>
-  <p><strong>核心问题：</strong>ping0.cc 是否通过 WebRTC 和双栈请求收集用户真实 IP 并配对存储？</p>
-  <ul><li>原帖作者通过浏览器 F12 抓包发现 ping0.cc 的 check.js 中存在 peer() 函数，利用 RTCPeerConnection 和 STUN 服务器获取用户真实 IP，并通过 POST /ip/peer 发回服务器。</li><li>原帖作者发现 ping0.cc 从 ipv4.ping0.cc 和 ipv6.ping0.cc 两个子域名加载脚本，强制浏览器分别走 IPv4 和 IPv6 连接，从而获取双栈用户的两种地址。</li><li>原帖作者发现 ping0.cc 通过 GET /logv6/{ipv6}/{ip} 将 IPv4 和 IPv6 地址配对发送到服务器。</li><li>Gridinsoft 对 ping0.cc 的信任评分为 59/100，提示存在安全风险。</li><li>WebRTC 泄露是已知的浏览器漏洞，多个网站（如 BrowserLeaks）提供检测和防护指南。</li></ul>
-  <h3>时间线</h3><ul><li>2026-04-21 - Gridinsoft 更新 ping0.cc 信任评分页面，显示 59/100 低信任度。</li><li>2025-06-22 - Gridinsoft 首次发布 ping0.cc 信任评分页面。</li><li>未知（近期） - V2EX 用户发布抓包实锤帖子，揭露 ping0.cc 收集真实 IP 的行为。</li></ul>
+  <p><strong>核心问题：</strong>ping0.cc 是否通过 WebRTC 和双栈请求在用户不知情的情况下收集真实 IP，且该行为是否违反其隐私政策或相关法规？</p>
+  <ul><li>V2EX 用户通过抓包发现 ping0.cc 的 check.js 中 peer() 函数利用 WebRTC 获取用户真实 IP，并通过 POST /ip/peer 发送至服务器。</li><li>页面同时从 ipv4.ping0.cc 和 ipv6.ping0.cc 加载脚本，强制浏览器分别走 IPv4 和 IPv6，收集双栈用户的两个地址。</li><li>JS 代码中存在 GET /logv6/{ipv6}/{ip} 请求，将 IPv4 和 IPv6 配对记录到服务器。</li><li>该行为在用户使用代理/VPN 时仍能获取真实 IP，且用户未被告知或同意。</li></ul>
+  <h3>时间线</h3><ul><li>2025-04-09 - V2EX 用户发布抓包分析，揭露 ping0.cc 收集真实 IP 的行为</li></ul>
 </section>
 <section class="section card">
   <h2>证据与依据</h2>
   <div class="list">
 <article class="item">
-  <h3>V2EX 原帖</h3>
-  <p>ping0.cc 通过 WebRTC 和双栈请求收集用户真实 IP 并配对存储</p>
+  <h3>V2EX 帖子</h3>
+  <p>用户抓包发现 WebRTC 和双栈收集真实 IP 的具体手法</p>
   <p class="meta">media · <a href="https://www.v2ex.com/t/1219057">https://www.v2ex.com/t/1219057</a></p>
-</article>
-
-<article class="item">
-  <h3>Gridinsoft 安全扫描</h3>
-  <p>ping0.cc 信任评分低（59/100），存在安全风险</p>
-  <p class="meta">media · <a href="https://gridinsoft.com/online-virus-scanner/url/ping0-cc">https://gridinsoft.com/online-virus-scanner/url/ping0-cc</a></p>
-</article>
-
-<article class="item">
-  <h3>BrowserLeaks WebRTC 测试</h3>
-  <p>WebRTC 可泄露真实 IP，且提供防护方法</p>
-  <p class="meta">official · <a href="https://browserleaks.com/webrtc">https://browserleaks.com/webrtc</a></p>
-</article>
-
-<article class="item">
-  <h3>ping0.cc 网站自身</h3>
-  <p>未在页面中找到隐私政策或用户协议</p>
-  <p class="meta">official · <a href="https://www.ping0.cc/">https://www.ping0.cc/</a></p>
 </article>
 </div>
 </section>
 <section class="section card">
   <h2>逻辑能不能闭环</h2>
-  <p>原帖通过抓包确认了 POST /ip/peer 和 GET /logv6/ 请求的存在，结合 WebRTC 泄露原理和双栈请求的强制获取，可以合理推断 ping0.cc 确实收集了用户的真实 IP 并进行了配对存储。Gridinsoft 的低信任评分从侧面佐证了风险。虽然未获取官方隐私政策，但抓包证据本身足以构成风险预警。逻辑上，该行为对用户隐私构成威胁，且用户难以察觉。</p>
+  <p>线索提供了明确的技术细节和可复现步骤，逻辑自洽：用户使用代理访问 ping0.cc → 页面加载 JS → JS 通过 WebRTC 获取真实 IP → 通过 POST/GET 请求发送至服务器。双栈强制抓取进一步扩大了收集范围。该行为与用户期望（隐藏真实 IP）相悖，且未在用户界面或隐私政策中明确告知，构成隐私风险。</p>
 </section>
 <section class="section card">
   <h2>可以继续写的方向</h2>
-  <ul><li><strong>风险预警：ping0.cc 收集真实 IP 的技术细节与影响</strong>：直接揭露工具的安全问题，满足用户对隐私保护的关注，传播性强。<br><span class="meta">还需要：抓包截图、WebRTC 原理简释、用户影响说明</span></li><li><strong>防护指南：如何检测和防止 WebRTC 泄露</strong>：提供实用价值，帮助读者保护隐私，可结合工具对比。<br><span class="meta">还需要：浏览器设置方法、扩展推荐（如 WebRTC Network Limiter）、测试网站链接</span></li><li><strong>工具对比：IP 查询工具的隐私安全性评估</strong>：横向对比同类工具（如 ipinfo.io、whatismyip.com），帮助读者选择更安全的替代品。<br><span class="meta">还需要：各工具的隐私政策、数据收集行为、用户评价</span></li></ul>
-  <h3>还缺哪些基础概念</h3><ul><li>ping0.cc 的隐私政策或用户协议（未在网站找到）</li><li>ping0.cc 运营方信息（公司、联系方式）</li></ul>
-  <h3>还缺哪些资料素材</h3><ul><li>抓包截图或 HAR 文件（需自行复现或从原帖获取）</li><li>WebRTC 泄露原理的通俗解释（面向普通读者）</li><li>用户如何禁用 WebRTC 或使用防护工具的详细指南</li><li>类似工具（如 ipinfo.io、whatismyip.com）的隐私对比数据</li></ul>
-  <h3>不能写成结论的地方</h3><ul><li>ping0.cc 故意窃取用户隐私（动机未知）</li><li>ping0.cc 将 IP 数据出售或用于恶意目的（无证据）</li><li>所有用户都受到影响（取决于浏览器和网络配置）</li><li>该行为违反任何具体法律（需法律评估）</li></ul>
-  <h3>下一步补证检索词</h3><ul><li>ping0.cc 是否有隐私政策页面？URL 是什么？</li><li>原帖作者是否提供了抓包截图或 HAR 文件？</li><li>是否有其他用户复现了该行为？</li><li>ping0.cc 的运营方是谁？是否有公开联系信息？</li></ul>
-  <h3>停止信号</h3><ul><li>ping0.cc 官方发布隐私政策并明确说明数据收集用途</li><li>原帖被证实为虚假或夸大</li><li>主流安全机构发布报告澄清 ping0.cc 无风险</li></ul>
+  <ul><li><strong>风险预警：揭露 ping0.cc 的隐私收集行为，提醒用户注意</strong>：直接面向大量使用 ping0.cc 的技术用户，具有即时警示价值，且手法可复现，可信度高。<br><span class="meta">还需要：需要补充 ping0.cc 隐私政策原文、其他用户复现验证、类似工具对比。</span></li><li><strong>技术科普：WebRTC 隐私泄露原理及防范方法</strong>：WebRTC 泄露真实 IP 是已知风险，但普通用户未必了解。结合此案例可做科普，提升读者安全意识。<br><span class="meta">还需要：需要 WebRTC 工作原理的通俗解释、浏览器禁用 WebRTC 的方法、相关工具推荐。</span></li><li><strong>行业观察：IP 查询工具的商业模式与隐私边界</strong>：探讨此类工具如何平衡功能与隐私，以及用户应如何选择可信工具。<br><span class="meta">还需要：需要收集多个 IP 查询工具的隐私政策、商业模式信息、用户评价。</span></li></ul>
+  <h3>还缺哪些基础概念</h3><ul><li>ping0.cc 的隐私政策或服务条款原文</li><li>ping0.cc 的运营主体及所在地</li><li>其他用户独立复现的验证报告</li></ul>
+  <h3>还缺哪些资料素材</h3><ul><li>抓包过程的详细截图或视频（原帖可能已有，需确认）</li><li>类似工具（如 ipinfo.io、whatismyip.com）的隐私政策对比</li><li>WebRTC 隐私泄露的通用科普文章或案例</li><li>补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。</li></ul>
+  <h3>不能写成结论的地方</h3><ul><li>ping0.cc 的行为违法（需法律判断）</li><li>ping0.cc 将 IP 数据出售给第三方（无证据）</li><li>ping0.cc 是恶意网站（需更多证据）</li><li>所有类似 IP 查询工具都存在同样问题</li><li>不能在无补证结果时声称该选题已经具备可写条件。</li></ul>
+  <h3>下一步补证检索词</h3><ul><li>ping0.cc 的隐私政策页面 URL 是什么？内容是否提及 IP 收集？</li><li>是否有其他用户在 V2EX、Hacker News 等平台复现了该行为？</li><li>ping0.cc 的运营公司信息（Whois、备案号等）？</li><li>WebRTC 泄露真实 IP 是否违反 GDPR 或中国《个人信息保护法》？</li></ul>
+  <h3>停止信号</h3><ul><li>ping0.cc 官方发布声明否认收集行为，并提供可信证据</li><li>ping0.cc 更新隐私政策明确告知并获取用户同意</li><li>多个独立来源证实该行为是误判或正常功能</li></ul>
 </section>
 
 
@@ -92,7 +74,7 @@
     <h2>原始事实和证据入口</h2>
     <div class="evidence-grid">
       <section><h3>事实入口</h3><ul><li><strong>confirmed_fact</strong>：V2EX 分享创造 发布/收录了这条原始线索：你在 ping0 查代理 IP 时，它把你的真实 IP 也一起记走了——抓包实锤 <a href="https://www.v2ex.com/t/1219057">来源</a></li></ul><h3>已确认部分</h3><ul><li>标题、来源 URL、来源类型、抓取时间已记录。</li><li>该条线索来自稳定公开源，而不是强反爬论坛或截图转述。</li></ul></section>
-      <section><h3>证据入口</h3><ul><li><a href="https://www.v2ex.com/t/1219057">V2EX 分享创造</a> · near_source · 原始线索和事实入口</li></ul><p class="meta">来源优先级：P2 可参考源</p><p class="meta">GitHub Actions 稳定抓取：True</p></section>
+      <section><h3>证据入口</h3><ul><li><a href="https://www.v2ex.com/t/1219057">V2EX 分享创造</a> · official · 原始线索和事实入口</li></ul><p class="meta">来源优先级：P0 官方/一手源</p><p class="meta">GitHub Actions 稳定抓取：True</p></section>
     </div>
   </section>
 
