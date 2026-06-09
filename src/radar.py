@@ -11,6 +11,7 @@ import re
 import shutil
 import sys
 import textwrap
+import urllib.error
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -25,11 +26,12 @@ DATA_DIR = ROOT / "data"
 REPORTS_DIR = ROOT / "reports"
 SITE_DIR = ROOT / "site"
 TOPIC_ARCHIVE_PATH = DATA_DIR / "topic_archive.json"
+SEARCH_USAGE_PATH = DATA_DIR / "search_usage.json"
 
 USER_AGENT = "EastonRadar/0.1 (+https://radar.huadongpeng.com)"
-SEARCH_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36"
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 TAVILY_URL = "https://api.tavily.com/search"
+TAVILY_USAGE_URL = "https://api.tavily.com/usage"
 MAX_ITEMS_PER_SOURCE = 18
 MAX_TOTAL_ITEMS = 220
 MAX_REPORTS_PER_BATCH = 6
@@ -45,6 +47,10 @@ SOURCE_CATEGORY_REPORT_CAPS = {
     "platform_policy": 4,
 }
 SEARCH_CACHE: dict[str, list[dict[str, str]]] = {}
+SEARCH_USAGE_STATE: dict[str, Any] = {}
+SEARCH_NOTICE_KEYS: set[str] = set()
+TAVILY_USAGE_FETCHED = False
+SEARCH_API_CALLS_USED = 0
 
 
 def info(message: str) -> None:
@@ -109,6 +115,246 @@ def load_json(path: Path) -> dict[str, Any]:
 def write_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+
+def info_once(key: str, message: str) -> None:
+    if key in SEARCH_NOTICE_KEYS:
+        return
+    SEARCH_NOTICE_KEYS.add(key)
+    info(message)
+
+
+def env_int(name: str, default: int) -> int:
+    value = os.environ.get(name, "").strip()
+    if not value:
+        return default
+    try:
+        return int(value)
+    except ValueError:
+        return default
+
+
+def search_api_call_limit_per_run() -> int:
+    return env_int("SEARCH_API_CALL_LIMIT_PER_RUN", 18)
+
+
+def search_run_has_budget(provider: str, cost: int = 1) -> bool:
+    limit = search_api_call_limit_per_run()
+    if limit <= 0:
+        info_once("search-run-disabled", "Search budget: SEARCH_API_CALL_LIMIT_PER_RUN<=0, skip all web search calls.")
+        return False
+    if SEARCH_API_CALLS_USED + cost > limit:
+        info_once(
+            "search-run-exhausted",
+            f"Search budget: per-run API call limit reached, used={SEARCH_API_CALLS_USED}, limit={limit}.",
+        )
+        return False
+    return True
+
+
+def record_search_api_call(provider: str, cost: int = 1) -> None:
+    global SEARCH_API_CALLS_USED
+    SEARCH_API_CALLS_USED += cost
+    state = load_search_usage_state()
+    state["current_run"] = {
+        "api_calls_used": SEARCH_API_CALLS_USED,
+        "api_call_limit": search_api_call_limit_per_run(),
+        "last_provider": provider,
+        "updated_at": now_utc().isoformat(),
+    }
+    save_search_usage_state()
+    info(f"Search budget: provider={provider}, run_calls_used={SEARCH_API_CALLS_USED}/{search_api_call_limit_per_run()}.")
+
+
+def numeric_value(value: Any, default: float = 0.0) -> float:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return default
+
+
+def load_search_usage_state() -> dict[str, Any]:
+    global SEARCH_USAGE_STATE
+    if SEARCH_USAGE_STATE:
+        return SEARCH_USAGE_STATE
+    try:
+        state = json.loads(SEARCH_USAGE_PATH.read_text(encoding="utf-8")) if SEARCH_USAGE_PATH.exists() else {}
+    except Exception as exc:
+        print(f"Search usage state load failed: {exc}", file=sys.stderr)
+        state = {}
+    state.setdefault("version", 1)
+    state.setdefault("updated_at", now_utc().isoformat())
+    state.setdefault("providers", {})
+    SEARCH_USAGE_STATE = state
+    return SEARCH_USAGE_STATE
+
+
+def save_search_usage_state() -> None:
+    if not SEARCH_USAGE_STATE:
+        return
+    SEARCH_USAGE_STATE["updated_at"] = now_utc().isoformat()
+    write_json(SEARCH_USAGE_PATH, SEARCH_USAGE_STATE)
+
+
+def update_search_provider_state(provider: str, values: dict[str, Any]) -> None:
+    state = load_search_usage_state()
+    providers = state.setdefault("providers", {})
+    record = providers.setdefault(provider, {})
+    record.update(values)
+    record["checked_at"] = now_utc().isoformat()
+
+
+def tavily_search_cost() -> int:
+    depth = os.environ.get("TAVILY_SEARCH_DEPTH", "basic").strip().lower() or "basic"
+    return 2 if depth == "advanced" else 1
+
+
+def tavily_usage() -> dict[str, Any] | None:
+    global TAVILY_USAGE_FETCHED
+    cached = load_search_usage_state().get("providers", {}).get("tavily", {})
+    if TAVILY_USAGE_FETCHED and cached.get("source") == "usage_api" and cached.get("checked_at"):
+        return cached
+    api_key = os.environ.get("TAVILY_API_KEY", "").strip()
+    if not api_key:
+        return None
+    try:
+        req = urllib.request.Request(
+            TAVILY_USAGE_URL,
+            headers={"Authorization": f"Bearer {api_key}", "User-Agent": USER_AGENT},
+        )
+        with urllib.request.urlopen(req, timeout=18) as resp:
+            data = json.loads(resp.read().decode("utf-8", errors="ignore"))
+    except Exception as exc:
+        print(f"Tavily usage check failed: {exc}", file=sys.stderr)
+        update_search_provider_state("tavily", {"enabled": False, "source": "usage_api", "error": str(exc)[:180]})
+        TAVILY_USAGE_FETCHED = True
+        return None
+    key_usage = data.get("key", {}) if isinstance(data, dict) else {}
+    account_usage = data.get("account", {}) if isinstance(data, dict) else {}
+    used = numeric_value(key_usage.get("usage"))
+    limit = numeric_value(key_usage.get("limit"))
+    remaining = max(0.0, limit - used) if limit else 0.0
+    record = {
+        "enabled": True,
+        "source": "usage_api",
+        "used": used,
+        "limit": limit,
+        "remaining": remaining,
+        "search_usage": numeric_value(key_usage.get("search_usage")),
+        "account_plan": account_usage.get("current_plan", ""),
+        "account_paygo_usage": numeric_value(account_usage.get("paygo_usage")),
+        "raw": data,
+    }
+    update_search_provider_state("tavily", record)
+    TAVILY_USAGE_FETCHED = True
+    return load_search_usage_state().get("providers", {}).get("tavily", {})
+
+
+def tavily_has_budget() -> bool:
+    usage = tavily_usage()
+    if not usage:
+        info_once("tavily-no-usage", "Search budget: Tavily usage check unavailable, skip Tavily to avoid paid usage.")
+        return False
+    if usage.get("enabled") is False:
+        info_once("tavily-disabled", f"Search budget: Tavily disabled for this run, error={usage.get('error', '')}.")
+        return False
+    cost = tavily_search_cost()
+    if not search_run_has_budget("tavily", cost):
+        return False
+    remaining = numeric_value(usage.get("remaining"))
+    if numeric_value(usage.get("limit")) <= 0:
+        info_once("tavily-no-limit", "Search budget: Tavily limit is unavailable or zero, skip Tavily.")
+        return False
+    if numeric_value(usage.get("account_paygo_usage")) > 0:
+        info_once("tavily-paygo", "Search budget: Tavily pay-as-you-go usage detected, skip Tavily.")
+        return False
+    if remaining < cost:
+        info_once("tavily-exhausted", f"Search budget: Tavily free credits exhausted or too low, remaining={remaining}, cost={cost}.")
+        return False
+    return True
+
+
+def record_tavily_success() -> None:
+    usage = tavily_usage()
+    if not usage:
+        return
+    cost = tavily_search_cost()
+    usage["used"] = numeric_value(usage.get("used")) + cost
+    usage["remaining"] = max(0.0, numeric_value(usage.get("remaining")) - cost)
+    usage["search_usage"] = numeric_value(usage.get("search_usage")) + cost
+
+
+def parse_rate_header_numbers(value: str) -> list[float]:
+    numbers: list[float] = []
+    for part in value.split(","):
+        part = part.strip()
+        if not part:
+            continue
+        try:
+            numbers.append(float(part))
+        except ValueError:
+            continue
+    return numbers
+
+
+def update_brave_rate_state(headers: Any) -> None:
+    remaining_values = parse_rate_header_numbers(headers.get("X-RateLimit-Remaining", "") if headers else "")
+    limit_values = parse_rate_header_numbers(headers.get("X-RateLimit-Limit", "") if headers else "")
+    reset_values = parse_rate_header_numbers(headers.get("X-RateLimit-Reset", "") if headers else "")
+    monthly_remaining = remaining_values[-1] if remaining_values else None
+    monthly_limit = limit_values[-1] if limit_values else None
+    reset_seconds = reset_values[-1] if reset_values else None
+    update_search_provider_state("brave", {
+        "enabled": True,
+        "source": "rate_limit_headers",
+        "monthly_remaining": monthly_remaining,
+        "monthly_limit": monthly_limit,
+        "reset_seconds": reset_seconds,
+        "raw_headers": {
+            "X-RateLimit-Remaining": headers.get("X-RateLimit-Remaining", "") if headers else "",
+            "X-RateLimit-Limit": headers.get("X-RateLimit-Limit", "") if headers else "",
+            "X-RateLimit-Reset": headers.get("X-RateLimit-Reset", "") if headers else "",
+        },
+    })
+    if monthly_remaining is not None:
+        info(f"Search budget: Brave monthly_remaining={monthly_remaining}, monthly_limit={monthly_limit}.")
+
+
+def brave_has_budget() -> bool:
+    record = load_search_usage_state().get("providers", {}).get("brave", {})
+    if record.get("enabled") is False:
+        info_once("brave-disabled", f"Search budget: Brave disabled for this run, error={record.get('error', '')}.")
+        return False
+    if not search_run_has_budget("brave", 1):
+        return False
+    remaining = record.get("monthly_remaining")
+    if remaining is None:
+        return True
+    if numeric_value(remaining) < 1:
+        info_once("brave-exhausted", f"Search budget: Brave free quota exhausted or too low, monthly_remaining={remaining}.")
+        return False
+    return True
+
+
+def log_search_budget_preflight() -> None:
+    parts: list[str] = [f"run_call_limit={search_api_call_limit_per_run()}"]
+    if os.environ.get("TAVILY_API_KEY", "").strip():
+        usage = tavily_usage()
+        if usage:
+            parts.append(f"tavily={usage.get('used', 0)}/{usage.get('limit', 0)} remaining={usage.get('remaining', 0)} source=usage_api")
+        else:
+            parts.append("tavily=unavailable")
+    else:
+        parts.append("tavily=missing-key")
+    if os.environ.get("BRAVE_SEARCH_API_KEY", "").strip():
+        brave = load_search_usage_state().get("providers", {}).get("brave", {})
+        if brave.get("monthly_remaining") is not None:
+            parts.append(f"brave_remaining={brave.get('monthly_remaining')} source=rate_limit_headers")
+        else:
+            parts.append("brave=enabled remaining=unknown-until-first-response")
+    else:
+        parts.append("brave=missing-key")
+    info("Search budget preflight: " + "; ".join(parts))
 
 
 def clean_generated_outputs() -> None:
@@ -295,33 +541,6 @@ def fetch_url(url: str, timeout: int = 20) -> bytes:
         return resp.read()
 
 
-def fetch_search_url(url: str, timeout: int = 18) -> bytes:
-    headers = {
-        "User-Agent": SEARCH_USER_AGENT,
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7",
-        "Referer": "https://www.google.com/",
-    }
-    req = urllib.request.Request(url, headers=headers)
-    with urllib.request.urlopen(req, timeout=timeout) as resp:
-        return resp.read()
-
-
-def search_block_reason(raw: str, provider: str) -> str:
-    lower = raw.lower()
-    if provider == "ddg":
-        if "anomaly.js" in lower or "cc=botnet" in lower or "/anomaly" in lower:
-            return "duckduckgo anomaly page"
-        if "captcha" in lower or "challenge" in lower:
-            return "duckduckgo challenge page"
-    if provider == "bing":
-        if "captcha" in lower or "id=\"bnp_container\"" in lower or "bnp_btn_accept" in lower:
-            return "bing captcha/consent page"
-        if "unusual traffic" in lower or "verify you are human" in lower:
-            return "bing anti-bot page"
-    return ""
-
-
 def tavily_search(query: str, limit: int = 5) -> list[dict[str, str]]:
     api_key = os.environ.get("TAVILY_API_KEY", "").strip()
     if not query.strip() or not api_key:
@@ -331,6 +550,8 @@ def tavily_search(query: str, limit: int = 5) -> list[dict[str, str]]:
     cache_key = f"tavily:{query}:{limit}:{depth}:{raw_content}"
     if cache_key in SEARCH_CACHE:
         return SEARCH_CACHE[cache_key]
+    if not tavily_has_budget():
+        return []
     body: dict[str, Any] = {
         "query": query,
         "topic": "general",
@@ -356,6 +577,18 @@ def tavily_search(query: str, limit: int = 5) -> list[dict[str, str]]:
         )
         with urllib.request.urlopen(req, timeout=25) as resp:
             data = json.loads(resp.read().decode("utf-8", errors="ignore"))
+        record_search_api_call("tavily", tavily_search_cost())
+        record_tavily_success()
+    except urllib.error.HTTPError as exc:
+        print(f"Tavily search failed for {query}: HTTP {exc.code} {exc.reason}", file=sys.stderr)
+        if exc.code in {401, 403, 429}:
+            update_search_provider_state("tavily", {
+                "enabled": False,
+                "source": "usage_api",
+                "error": f"HTTP {exc.code} {exc.reason}",
+            })
+        SEARCH_CACHE[cache_key] = []
+        return []
     except Exception as exc:
         print(f"Tavily search failed for {query}: {exc}", file=sys.stderr)
         SEARCH_CACHE[cache_key] = []
@@ -378,6 +611,8 @@ def tavily_search(query: str, limit: int = 5) -> list[dict[str, str]]:
             })
         if len(results) >= limit:
             break
+    usage = tavily_usage() or {}
+    info(f"Search provider result: provider=tavily, results={len(results)}, remaining={usage.get('remaining', '')}, query={query[:80]}")
     SEARCH_CACHE[cache_key] = results
     return results
 
@@ -389,6 +624,8 @@ def brave_search(query: str, limit: int = 5) -> list[dict[str, str]]:
     cache_key = f"brave:{query}:{limit}"
     if cache_key in SEARCH_CACHE:
         return SEARCH_CACHE[cache_key]
+    if not brave_has_budget():
+        return []
     url = "https://api.search.brave.com/res/v1/web/search?" + urllib.parse.urlencode({
         "q": query,
         "count": max(1, min(limit, 20)),
@@ -405,11 +642,24 @@ def brave_search(query: str, limit: int = 5) -> list[dict[str, str]]:
             },
         )
         with urllib.request.urlopen(req, timeout=18) as resp:
+            update_brave_rate_state(resp.headers)
             raw = resp.read()
             if resp.headers.get("Content-Encoding") == "gzip":
                 import gzip
                 raw = gzip.decompress(raw)
             data = json.loads(raw.decode("utf-8", errors="ignore"))
+        record_search_api_call("brave", 1)
+    except urllib.error.HTTPError as exc:
+        update_brave_rate_state(exc.headers)
+        print(f"Brave search failed for {query}: HTTP {exc.code} {exc.reason}", file=sys.stderr)
+        if exc.code in {401, 403, 429}:
+            update_search_provider_state("brave", {
+                "enabled": False,
+                "source": "rate_limit_headers",
+                "error": f"HTTP {exc.code} {exc.reason}",
+            })
+        SEARCH_CACHE[cache_key] = []
+        return []
     except Exception as exc:
         print(f"Brave search failed for {query}: {exc}", file=sys.stderr)
         SEARCH_CACHE[cache_key] = []
@@ -422,6 +672,8 @@ def brave_search(query: str, limit: int = 5) -> list[dict[str, str]]:
             results.append({"title": title, "url": url_value, "query": query, "provider": "brave"})
         if len(results) >= limit:
             break
+    brave = load_search_usage_state().get("providers", {}).get("brave", {})
+    info(f"Search provider result: provider=brave, results={len(results)}, monthly_remaining={brave.get('monthly_remaining', '')}, query={query[:80]}")
     SEARCH_CACHE[cache_key] = results
     return results
 
@@ -456,84 +708,21 @@ def deepseek_json(messages: list[dict[str, str]], max_tokens: int = 6000, temper
         return None
 
 
-def ddg_search(query: str, limit: int = 5) -> list[dict[str, str]]:
-    if not query.strip():
-        return []
-    cache_key = f"ddg:{query}:{limit}"
-    if cache_key in SEARCH_CACHE:
-        return SEARCH_CACHE[cache_key]
-    url = "https://duckduckgo.com/html/?" + urllib.parse.urlencode({"q": query})
-    try:
-        raw = fetch_search_url(url, timeout=18).decode("utf-8", errors="ignore")
-    except Exception as exc:
-        print(f"DDG search failed for {query}: {exc}", file=sys.stderr)
-        SEARCH_CACHE[cache_key] = []
-        return []
-    block_reason = search_block_reason(raw, "ddg")
-    if block_reason:
-        print(f"DDG search blocked for {query}: {block_reason}", file=sys.stderr)
-        SEARCH_CACHE[cache_key] = []
-        return []
-    results: list[dict[str, str]] = []
-    for match in re.finditer(r'<a[^>]+class="result__a"[^>]+href="([^"]+)"[^>]*>(.*?)</a>', raw, re.S):
-        href = html.unescape(match.group(1))
-        title = clean_text(match.group(2))
-        parsed = urllib.parse.urlparse(href)
-        params = urllib.parse.parse_qs(parsed.query)
-        if "uddg" in params:
-            href = params["uddg"][0]
-        if title and href.startswith(("http://", "https://")):
-            results.append({"title": title, "url": normalize_url(href), "query": query, "provider": "ddg"})
-        if len(results) >= limit:
-            break
-    if not results:
-        print(f"DDG search returned no parsed results for {query}: html_len={len(raw)}", file=sys.stderr)
-    SEARCH_CACHE[cache_key] = results
-    return results
-
-
-def bing_search(query: str, limit: int = 5) -> list[dict[str, str]]:
-    cache_key = f"bing:{query}:{limit}"
-    if cache_key in SEARCH_CACHE:
-        return SEARCH_CACHE[cache_key]
-    url = "https://www.bing.com/search?" + urllib.parse.urlencode({"q": query})
-    try:
-        raw = fetch_search_url(url, timeout=18).decode("utf-8", errors="ignore")
-    except Exception as exc:
-        print(f"Bing search failed for {query}: {exc}", file=sys.stderr)
-        SEARCH_CACHE[cache_key] = []
-        return []
-    block_reason = search_block_reason(raw, "bing")
-    if block_reason:
-        print(f"Bing search blocked for {query}: {block_reason}", file=sys.stderr)
-        SEARCH_CACHE[cache_key] = []
-        return []
-    results: list[dict[str, str]] = []
-    for match in re.finditer(r'<li class="b_algo".*?<h2>.*?<a href="([^"]+)"[^>]*>(.*?)</a>', raw, re.S):
-        href = html.unescape(match.group(1))
-        title = clean_text(match.group(2))
-        if title and href.startswith(("http://", "https://")):
-            results.append({"title": title, "url": normalize_url(href), "query": query, "provider": "bing"})
-        if len(results) >= limit:
-            break
-    if not results:
-        print(f"Bing search returned no parsed results for {query}: html_len={len(raw)}", file=sys.stderr)
-    SEARCH_CACHE[cache_key] = results
-    return results
-
-
 def search_web(query: str, limit: int = 5) -> list[dict[str, str]]:
     providers: list[tuple[str, Any]] = []
     if os.environ.get("TAVILY_API_KEY", "").strip():
         providers.append(("tavily", tavily_search))
     if os.environ.get("BRAVE_SEARCH_API_KEY", "").strip():
         providers.append(("brave", brave_search))
-    providers.extend([("ddg", ddg_search), ("bing", bing_search)])
+    if not providers:
+        info_once("search-no-provider", "Search provider unavailable: missing both TAVILY_API_KEY and BRAVE_SEARCH_API_KEY.")
+        return []
     for name, func in providers:
         results = func(query, limit=limit)
         if results:
             return results
         info(f"Search provider empty: provider={name}, query={query[:80]}")
+    info(f"Search skipped: Tavily/Brave unavailable, exhausted, or returned no result for query={query[:80]}")
     return []
 
 
@@ -2720,8 +2909,10 @@ def main() -> int:
         f"sources={count_configured_sources(sources)}, "
         f"tavily_search={'yes' if os.environ.get('TAVILY_API_KEY') else 'no'}, "
         f"tavily_depth={os.environ.get('TAVILY_SEARCH_DEPTH', 'basic') or 'basic'}, "
-        f"brave_search={'yes' if os.environ.get('BRAVE_SEARCH_API_KEY') else 'no'}"
+        f"brave_search={'yes' if os.environ.get('BRAVE_SEARCH_API_KEY') else 'no'}, "
+        f"search_call_limit={search_api_call_limit_per_run()}"
     )
+    log_search_budget_preflight()
     archive = load_topic_archive()
     info(f"Loaded topic archive entries: {len(archive.get('items', []))}")
     items, failures = collect_items(sources)
@@ -2777,9 +2968,10 @@ def main() -> int:
     write_json(DATA_DIR / f"{batch_id}.json", {"batch": batch, "items": [item.__dict__ for item in items], "reports": reports})
     write_json(DATA_DIR / "latest.json", {"batch": batch, "reports": reports})
     write_json(TOPIC_ARCHIVE_PATH, archive)
+    save_search_usage_state()
     for report in reports:
         write_json(REPORTS_DIR / f"{report['id']}.json", report)
-    info("Wrote JSON outputs.")
+    info("Wrote JSON outputs and search usage state.")
     render_static(batch, reports, site, policy, archive)
     info("Rendered static site.")
     if not args.no_telegram:
