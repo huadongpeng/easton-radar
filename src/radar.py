@@ -29,6 +29,7 @@ TOPIC_ARCHIVE_PATH = DATA_DIR / "topic_archive.json"
 USER_AGENT = "EastonRadar/0.1 (+https://radar.huadongpeng.com)"
 SEARCH_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0 Safari/537.36"
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
+TAVILY_URL = "https://api.tavily.com/search"
 MAX_ITEMS_PER_SOURCE = 18
 MAX_TOTAL_ITEMS = 220
 MAX_REPORTS_PER_BATCH = 6
@@ -321,6 +322,66 @@ def search_block_reason(raw: str, provider: str) -> str:
     return ""
 
 
+def tavily_search(query: str, limit: int = 5) -> list[dict[str, str]]:
+    api_key = os.environ.get("TAVILY_API_KEY", "").strip()
+    if not query.strip() or not api_key:
+        return []
+    depth = os.environ.get("TAVILY_SEARCH_DEPTH", "basic").strip() or "basic"
+    raw_content = os.environ.get("TAVILY_INCLUDE_RAW_CONTENT", "").strip().lower()
+    cache_key = f"tavily:{query}:{limit}:{depth}:{raw_content}"
+    if cache_key in SEARCH_CACHE:
+        return SEARCH_CACHE[cache_key]
+    body: dict[str, Any] = {
+        "query": query,
+        "topic": "general",
+        "search_depth": depth,
+        "max_results": max(1, min(limit, 20)),
+        "include_answer": False,
+        "include_images": False,
+    }
+    if raw_content in {"true", "markdown", "text"}:
+        body["include_raw_content"] = raw_content
+    else:
+        body["include_raw_content"] = False
+    try:
+        req = urllib.request.Request(
+            TAVILY_URL,
+            data=json.dumps(body, ensure_ascii=False).encode("utf-8"),
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+                "User-Agent": USER_AGENT,
+            },
+            method="POST",
+        )
+        with urllib.request.urlopen(req, timeout=25) as resp:
+            data = json.loads(resp.read().decode("utf-8", errors="ignore"))
+    except Exception as exc:
+        print(f"Tavily search failed for {query}: {exc}", file=sys.stderr)
+        SEARCH_CACHE[cache_key] = []
+        return []
+    results: list[dict[str, str]] = []
+    for row in data.get("results", []):
+        if not isinstance(row, dict):
+            continue
+        title = clean_text(str(row.get("title", "")))
+        url_value = normalize_url(str(row.get("url", "")))
+        content = clean_text(str(row.get("raw_content") or row.get("content") or ""))
+        if title and url_value.startswith(("http://", "https://")):
+            results.append({
+                "title": title,
+                "url": url_value,
+                "query": query,
+                "provider": "tavily",
+                "content": content[:2400],
+                "score": str(row.get("score", "")),
+            })
+        if len(results) >= limit:
+            break
+    SEARCH_CACHE[cache_key] = results
+    return results
+
+
 def brave_search(query: str, limit: int = 5) -> list[dict[str, str]]:
     api_key = os.environ.get("BRAVE_SEARCH_API_KEY", "").strip()
     if not query.strip() or not api_key:
@@ -463,6 +524,8 @@ def bing_search(query: str, limit: int = 5) -> list[dict[str, str]]:
 
 def search_web(query: str, limit: int = 5) -> list[dict[str, str]]:
     providers: list[tuple[str, Any]] = []
+    if os.environ.get("TAVILY_API_KEY", "").strip():
+        providers.append(("tavily", tavily_search))
     if os.environ.get("BRAVE_SEARCH_API_KEY", "").strip():
         providers.append(("brave", brave_search))
     providers.extend([("ddg", ddg_search), ("bing", bing_search)])
@@ -488,14 +551,21 @@ def fetch_evidence_pages(search_results: list[dict[str, str]], per_query_limit: 
         seen.add(url)
         text = ""
         error = ""
+        provider_content = clean_text(result.get("content", ""))[:text_limit]
         try:
             text = clean_text(fetch_url(url, timeout=16).decode("utf-8", errors="ignore"))[:text_limit]
         except Exception as exc:
             error = str(exc)[:180]
+        if not text and provider_content:
+            text = provider_content
+            if error:
+                error = f"{error}; used {result.get('provider', 'provider')} content fallback"[:180]
         evidence.append({
             "title": result.get("title", ""),
             "url": url,
             "query": query,
+            "provider": result.get("provider", ""),
+            "score": result.get("score", ""),
             "fetched_text": text,
             "fetch_error": error,
         })
@@ -2648,6 +2718,8 @@ def main() -> int:
         f"deepseek={'yes' if os.environ.get('DEEPSEEK_API_KEY') else 'no'}, "
         f"telegram={'yes' if os.environ.get('TELEGRAM_BOT_TOKEN') and os.environ.get('TELEGRAM_CHAT_ID') else 'no'}, "
         f"sources={count_configured_sources(sources)}, "
+        f"tavily_search={'yes' if os.environ.get('TAVILY_API_KEY') else 'no'}, "
+        f"tavily_depth={os.environ.get('TAVILY_SEARCH_DEPTH', 'basic') or 'basic'}, "
         f"brave_search={'yes' if os.environ.get('BRAVE_SEARCH_API_KEY') else 'no'}"
     )
     archive = load_topic_archive()

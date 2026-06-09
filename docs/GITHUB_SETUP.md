@@ -21,9 +21,15 @@ git push -u origin main
 ## 配置 Secrets
 
 - `DEEPSEEK_API_KEY`
-- `BRAVE_SEARCH_API_KEY`（可选但推荐，用于稳定补证搜索）
+- `TAVILY_API_KEY`（推荐，用于稳定补证搜索）
+- `BRAVE_SEARCH_API_KEY`（可选，备用搜索后端）
 - `TELEGRAM_BOT_TOKEN`
 - `TELEGRAM_CHAT_ID`
+
+可选 Variables：
+
+- `TAVILY_SEARCH_DEPTH`：默认 `basic`，可设 `advanced`。
+- `TAVILY_INCLUDE_RAW_CONTENT`：默认 `false`，可设 `markdown` 或 `text`。
 
 ## 启用 Pages
 

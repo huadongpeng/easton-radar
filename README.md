@@ -83,7 +83,10 @@ Radar 宁可少，也不要脏。
 | 名称 | 用途 |
 | --- | --- |
 | `DEEPSEEK_API_KEY` | DeepSeek v4 Flash 调用 |
-| `BRAVE_SEARCH_API_KEY` | 可选，Brave Search API，用于 GitHub Actions 上稳定执行补证搜索 |
+| `TAVILY_API_KEY` | 推荐，Tavily Search API，用于 GitHub Actions 上稳定执行补证搜索 |
+| `TAVILY_SEARCH_DEPTH` | 可选，默认 `basic`；可设 `advanced` 提高相关性但消耗更多额度 |
+| `TAVILY_INCLUDE_RAW_CONTENT` | 可选，默认 `false`；可设 `markdown` 或 `text` 让 Tavily 返回正文内容兜底 |
+| `BRAVE_SEARCH_API_KEY` | 可选，Brave Search API，作为 Tavily 之外的备用搜索后端 |
 | `TELEGRAM_BOT_TOKEN` | Telegram bot |
 | `TELEGRAM_CHAT_ID` | Telegram 接收频道或用户 |
 
