@@ -102,7 +102,7 @@ def clean_generated_outputs() -> None:
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
     for path in REPORTS_DIR.glob("*.json"):
         path.unlink()
-    for rel in ["items", "reports", "briefings", "about", "assets"]:
+    for rel in ["items", "reports", "topics", "briefings", "about", "assets"]:
         target = SITE_DIR / rel
         if target.exists():
             shutil.rmtree(target)
@@ -658,7 +658,7 @@ def angle_candidates(report_type: str) -> list[str]:
 def downstream_handoff(report: dict[str, Any], site: dict[str, Any]) -> dict[str, Any]:
     base = site["site_url"].rstrip("/")
     canonical_url = f"{base}/items/{report['id']}/"
-    tags = [report["report_type_title"], report["source_category_title"], report["evidence_level"], report["source_name"]]
+    tags = [report.get("topic_direction_title", ""), report["report_type_title"], report["source_category_title"], report["evidence_level"], report["source_name"]]
     return {
         "package_version": "radar-handoff-v1",
         "canonical_url": canonical_url,
@@ -683,6 +683,8 @@ def downstream_handoff(report: dict[str, Any], site: dict[str, Any]) -> dict[str
             "seo_description": report["reader_hook"],
             "tags": [tag for tag in tags if tag],
             "report_type": report["report_type"],
+            "topic_direction": report.get("topic_direction", ""),
+            "topic_direction_title": report.get("topic_direction_title", ""),
             "source_category": report["source_category"],
             "evidence_level": report["evidence_level"],
             "publish_status": "radar_published",
@@ -711,6 +713,46 @@ def followup_queries_from_report(report: dict[str, Any]) -> list[str]:
     return followup_queries(fake_item, report["report_type"])
 
 
+def topic_direction_for_item(item: SourceItem, report_type: str, site: dict[str, Any]) -> tuple[str, dict[str, Any]]:
+    directions = site.get("topic_directions", {})
+    if not directions:
+        return item.source_category, {"title": item.source_category, "short_title": item.source_category, "description": ""}
+
+    text = f"{item.title} {item.summary} {item.source_name} {item.url}".lower()
+    if any(word in text for word in ["stripe", "shopify", "payment", "commerce", "cross-border", "global demand", "出海", "跨境", "支付", "收款", "独立站"]):
+        meta = directions.get("cross-border")
+        if meta:
+            return "cross-border", meta
+    best_key = ""
+    best_score = -1
+    for key, meta in directions.items():
+        score = 0
+        if item.source_category in meta.get("source_categories", []):
+            score += 4
+            if item.source_category == "overseas_and_platforms" and key == "cross-border":
+                score -= 2
+        for keyword in meta.get("keywords", []):
+            if keyword.lower() in text:
+                score += 3
+        if key == "platform-rules" and report_type == "platform-rules":
+            score += 2
+        if key == "cross-border" and any(word in text for word in ["stripe", "shopify", "payment", "commerce", "cross-border", "global demand", "出海", "跨境", "支付", "收款", "独立站"]):
+            score += 10
+        if key == "ai-frontier" and any(word in text for word in ["ai", "llm", "agent", "model", "anthropic", "openai", "claude", "codex", "copilot", "frontier", "模型", "智能体"]):
+            score += 6
+        if key == "platform-rules" and any(word in text for word in ["policy", "license", "terms", "compliance", "regulation", "search", "seo", "规则", "合规", "协议", "搜索"]):
+            score += 6
+        if key == "indie-builder" and any(word in text for word in ["show hn", "producthunt", "product hunt", "v2ex", "mrr", "saas", "独立开发", "副业", "工具站", "开源"]):
+            score += 5
+        if score > best_score:
+            best_key = key
+            best_score = score
+
+    if not best_key:
+        best_key = next(iter(directions))
+    return best_key, directions[best_key]
+
+
 def deepseek_triage(items: list[SourceItem], site: dict[str, Any], policy: dict[str, Any]) -> list[RadarDecision] | None:
     api_key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
     if not api_key:
@@ -736,7 +778,7 @@ def deepseek_triage(items: list[SourceItem], site: dict[str, Any], policy: dict[
             {
                 "role": "user",
                 "content": (
-                    "你是 Easton Radar 的信息初筛员。网站栏目按报告类型分类，不按数据源分类。"
+                    "你是 Easton Radar 的信息初筛员。网站栏目按选题方向分类，报告类型只表示分析方法，不作为主栏目。"
                     "请只输出 JSON：{\"items\":[...]}。每项包含 id, decision(deep_dive|brief|skip), report_type, report_title"
                     "(investigation|opportunity|tool-ledger|platform-rules|case-study|risk-warning), score(0-100),"
                     "reader_hook, why_now, evidence_level(official|near_source|media|weak), reason, reject_reason,"
@@ -747,6 +789,7 @@ def deepseek_triage(items: list[SourceItem], site: dict[str, Any], policy: dict[
                     f"报告类型规则：{json.dumps(policy['report_type_rules'], ensure_ascii=False)}\n"
                     f"下游交接要求：{json.dumps(policy.get('downstream_requirements', {}), ensure_ascii=False)}\n"
                     f"数据源分类：{json.dumps(site.get('source_categories', {}), ensure_ascii=False)}\n"
+                    f"选题方向：{json.dumps(site.get('topic_directions', {}), ensure_ascii=False)}\n"
                     f"人设主线：{json.dumps(policy['persona_lines'], ensure_ascii=False)}\n"
                     f"待筛信息：{json.dumps(sample, ensure_ascii=False)}"
                 ),
@@ -801,6 +844,7 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
     report_type_meta = site["report_types"][decision.report_type]
     source_title = site.get("source_categories", {}).get(item.source_category, item.source_category)
     source_name = display_source_name(item)
+    topic_key, topic_meta = topic_direction_for_item(item, decision.report_type, site)
     report = {
         "id": report_id,
         "title": decision.report_title,
@@ -809,6 +853,10 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
         "summary": item.summary,
         "source_category": item.source_category,
         "source_category_title": source_title,
+        "topic_direction": topic_key,
+        "topic_direction_title": topic_meta.get("title", topic_key),
+        "topic_direction_short_title": topic_meta.get("short_title", topic_meta.get("title", topic_key)),
+        "topic_direction_description": topic_meta.get("description", ""),
         "source_name": source_name,
         "original_source_name": item.source_name,
         "source_type": item.source_type,
@@ -952,9 +1000,10 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 nav{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
 .brand{font-weight:750;color:var(--text);margin-right:auto}nav a{font-size:14px;color:#2c3852}
 main{max-width:1120px;margin:0 auto;padding:28px 20px 56px}.hero{padding:34px 0 18px}.hero h1{font-size:38px;line-height:1.16;margin:0 0 14px}.hero p{max-width:790px;color:var(--muted);font-size:17px;margin:0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.card,.item,.report{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px}.section{margin-top:32px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.card,.item,.report,.callout{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px}.section{margin-top:32px}
 .list{display:grid;gap:12px}.item h3{margin:0 0 8px;font-size:18px}.item p{margin:8px 0}.meta{color:var(--muted);font-size:13px}.badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:12px;color:#33415f;background:#fafbff;margin:0 6px 6px 0}.score{font-weight:700;color:#0a7f42}.source{word-break:break-all}
-.report{max-width:880px}.report h1{line-height:1.25}.report h2{margin-top:28px}.ad-slot{border:1px dashed #c8cfdd;border-radius:8px;color:#7b8496;padding:16px;text-align:center;background:#fff;margin:24px 0}
+.topic-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.topic-head h2{margin:0}.kicker{font-size:13px;color:#44516b;font-weight:650;margin:0 0 6px}.topic-list{margin-top:14px}.callout{border-color:#bfd1f8;background:#f8fbff}.evidence-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.evidence-grid h3{margin-top:0}
+.report{max-width:920px}.report h1{line-height:1.25}.report h2{margin-top:28px}.ad-slot{border:1px dashed #c8cfdd;border-radius:8px;color:#7b8496;padding:16px;text-align:center;background:#fff;margin:24px 0}
 footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:22px 20px;text-align:center}
 @media(max-width:640px){.hero h1{font-size:30px}.brand{width:100%;margin-right:0}.report{padding:16px}}
 """).strip() + "\n"
@@ -1073,16 +1122,179 @@ def render_about(site: dict[str, Any], policy: dict[str, Any]) -> str:
 """
 
 
+def list_html(items: list[str], empty: str = "暂无") -> str:
+    values = [x for x in items if x]
+    if not values:
+        values = [empty]
+    return "".join(f"<li>{html.escape(x)}</li>" for x in values)
+
+
+def topic_href(key: str) -> str:
+    return f"/topics/{html.escape(key)}/"
+
+
+def reports_for_topic(reports: list[dict[str, Any]], topic_key: str) -> list[dict[str, Any]]:
+    return [report for report in reports if report.get("topic_direction") == topic_key]
+
+
+def display_report_title(report: dict[str, Any]) -> str:
+    title = report.get("title", "")
+    prefixes = [report.get("report_type_title", ""), "深度调查", "机会拆解", "工具账本", "平台规则", "案例复盘", "风险避坑"]
+    for prefix in prefixes:
+        if prefix and title.startswith(prefix + "："):
+            return title[len(prefix) + 1:].strip()
+    return title
+
+
+def report_card(report: dict[str, Any]) -> str:
+    topic_title = report.get("topic_direction_short_title") or report.get("topic_direction_title") or report.get("source_category_title", "")
+    title = display_report_title(report)
+    return f"""
+<article class="item">
+  <p class="kicker">{html.escape(topic_title)}</p>
+  <h3><a href="/items/{html.escape(report['id'])}/">{html.escape(title)}</a></h3>
+  <p>{html.escape(report['reader_hook'])}</p>
+  <p><span class="badge">{html.escape(report['report_type_title'])}</span><span class="badge">{html.escape(report['evidence_level'])}</span><span class="score">Score {report['score']}</span></p>
+  <p class="meta source">来源：<a href="{html.escape(report['url'])}" rel="nofollow noopener">{html.escape(report['source_name'])}</a> · {html.escape(report.get('original_title', ''))}</p>
+</article>
+"""
+
+
+def render_home(batch: dict[str, Any], reports: list[dict[str, Any]], site: dict[str, Any], policy: dict[str, Any]) -> str:
+    topic_cards = []
+    for key, meta in site.get("topic_directions", {}).items():
+        topic_reports = reports_for_topic(reports, key)
+        preview = "".join(report_card(r) for r in topic_reports[:2]) or '<p class="meta">本批次暂无高价值线索。</p>'
+        topic_cards.append(f"""
+<section class="card">
+  <div class="topic-head"><div><p class="kicker">选题方向</p><h2><a href="{topic_href(key)}">{html.escape(meta['title'])}</a></h2></div><span class="badge">本批次 {len(topic_reports)} 条</span></div>
+  <p>{html.escape(meta.get('description', ''))}</p>
+  <div class="topic-list list">{preview}</div>
+</section>
+""")
+    principles = "".join(f"<li>{html.escape(x)}</li>" for x in policy["source_principles"])
+    coverage = "".join(
+        f'<span class="badge">{html.escape(v["title"])}：{v["items"]} 条 / 失败 {v["failures"]}</span>'
+        for v in batch.get("source_coverage", {}).values()
+    )
+    latest = "".join(report_card(r) for r in reports[:8]) or '<p class="meta">本批次暂无可发布报告。</p>'
+    return f"""
+<section class="hero"><h1>老花的选题雷达站</h1><p>这里不是公众号成稿库，而是上游情报台。每条线索先按选题方向沉淀，再保留来龙去脉、事实、证据、存疑点和与老花人设相关的切入口，给后续博客、公众号、视频和小红书做素材底座。</p></section>
+<section class="grid">{''.join(topic_cards)}</section>
+<div class="ad-slot">AdSense 预留位：后续填入 publisher client 后启用</div>
+<section class="section card"><h2>本批次数据源覆盖</h2><p>{coverage}</p></section>
+<section class="section"><h2>最新值得扫一眼的线索</h2><p class="meta">批次：{html.escape(batch["batch_id"])} · 抓取 {batch["fetched_count"]} 条 · 深挖 {batch["deep_count"]} 条 · 简报 {batch["brief_count"]} 条</p><div class="list">{latest}</div></section>
+<section class="section card"><h2>数据源原则</h2><ul>{principles}</ul></section>
+"""
+
+
+def render_briefings(batch: dict[str, Any], reports: list[dict[str, Any]], site: dict[str, Any]) -> str:
+    topic_sections = []
+    for key, meta in site.get("topic_directions", {}).items():
+        topic_reports = reports_for_topic(reports, key)
+        items = "".join(report_card(r) for r in topic_reports) or '<p class="meta">本方向暂无高价值线索。</p>'
+        topic_sections.append(f'<section class="section"><h2>{html.escape(meta["title"])}</h2><p>{html.escape(meta.get("description", ""))}</p><div class="list">{items}</div></section>')
+    failures = "".join(f'<li>{html.escape(f["source"])}：{html.escape(f["error"])}</li>' for f in batch.get("failures", [])[:12]) or "<li>本批次无抓取失败。</li>"
+    coverage = "".join(f'<li>{html.escape(v["title"])}：{v["items"]} 条，失败 {v["failures"]}</li>' for v in batch.get("source_coverage", {}).values())
+    return f"""
+<section class="hero"><h1>本批次简报</h1><p>简报按选题方向归档。先看方向，再看具体话题，最后进入深度报告确认事实、证据和可写切入口。</p></section>
+<section class="card"><p>批次：{html.escape(batch["batch_id"])}</p><p>抓取 {batch["fetched_count"]} 条；深挖 {batch["deep_count"]} 条；简报 {batch["brief_count"]} 条；跳过 {batch["skipped_count"]} 条。</p></section>
+<section class="section card"><h2>数据源覆盖</h2><ul>{coverage}</ul></section>
+{''.join(topic_sections)}
+<section class="section card"><h2>抓取失败</h2><ul>{failures}</ul></section>
+"""
+
+
+def render_topic_direction(key: str, meta: dict[str, Any], reports: list[dict[str, Any]]) -> str:
+    items = "".join(report_card(r) for r in reports) or '<p class="meta">本方向暂无报告。</p>'
+    return f"""
+<section class="hero"><p class="kicker">选题方向</p><h1>{html.escape(meta["title"])}</h1><p>{html.escape(meta.get("description", ""))}</p></section>
+<section class="callout"><h2>这个方向怎么读</h2><p>先看线索和原始来源，再进入详情页看事实收集、证据收集、存疑点和与老花相关的切入口。报告类型只是分析方法，不代表主栏目。</p></section>
+<section class="section list">{items}</section>
+"""
+
+
+def render_report_type(key: str, meta: dict[str, Any], reports: list[dict[str, Any]]) -> str:
+    items = "".join(report_card(r) for r in reports) or '<p class="meta">本类型暂无报告。</p>'
+    return f'<section class="hero"><p class="kicker">分析方法</p><h1>{html.escape(meta["title"])}</h1><p>{html.escape(meta["description"])}</p></section><section class="list">{items}</section>'
+
+
+def render_item(report: dict[str, Any], site: dict[str, Any]) -> str:
+    facts = "".join(f'<li><strong>{html.escape(f["type"])}</strong>：{html.escape(f["claim"])} <a href="{html.escape(f["source_url"])}">来源</a></li>' for f in report["facts"])
+    sources = "".join(f'<li><a href="{html.escape(s["url"])}">{html.escape(s["title"])}</a> · {html.escape(s["source_type"])} · {html.escape(s["used_for"])}</li>' for s in report["sources"])
+    verification = report.get("verification", {})
+    follow = list_html(verification.get("what_needs_followup", []))
+    challenge = list_html(verification.get("expert_challenge_points", []))
+    dont = list_html(verification.get("do_not_claim", []))
+    confirmed = list_html(verification.get("what_is_confirmed", []))
+    uncertainty = list_html(report.get("uncertainty_flags", []), "当前暂无额外存疑标记，但仍要以原始证据为准。")
+    handoff = report.get("downstream_handoff", {})
+    editor = handoff.get("for_gpt_editor", {})
+    cms = handoff.get("for_cms", {})
+    research = handoff.get("for_research_loop", {})
+    angles = list_html(editor.get("angle_candidates", []))
+    queries = list_html(research.get("followup_queries", []))
+    cms_tags = "、".join(html.escape(x) for x in cms.get("tags", []))
+    source_assessment = report.get("source_assessment", {})
+    topic_key = report.get("topic_direction", "")
+    topic_title = report.get("topic_direction_title") or report.get("source_category_title", "")
+    topic_link = topic_href(topic_key) if topic_key else "/briefings/"
+    visible_title = display_report_title(report)
+    schema = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": visible_title,
+        "author": {"@type": "Person", "name": site["author"]},
+        "datePublished": report.get("published_at") or report.get("fetched_at"),
+        "mainEntityOfPage": f"{site['site_url'].rstrip('/')}/items/{report['id']}/"
+    }
+    summary = f"<p>{html.escape(report['summary'])}</p>" if report.get("summary") else '<p class="meta">原始来源未提供摘要，优先查看证据链和原文。</p>'
+    return f"""
+<article class="report">
+  <script type="application/ld+json">{json.dumps(schema, ensure_ascii=False)}</script>
+  <p class="meta"><a href="{topic_link}">{html.escape(topic_title)}</a> · {html.escape(report["report_type_title"])} · {html.escape(report["evidence_level"])} · Score {report["score"]}</p>
+  <h1>{html.escape(visible_title)}</h1>
+  <p class="meta">原始标题：{html.escape(report.get("original_title", report["title"]))}</p>
+
+  <section class="callout"><h2>和老花相关的切入口</h2><p>{html.escape(report["persona_connection"]["why_it_matters"])}</p></section>
+
+  <h2>事情的来龙去脉</h2>
+  {summary}
+  <p>{html.escape(report["why_now"])}</p>
+  <p>{html.escape(report.get("collection_fit", ""))}</p>
+
+  <div class="evidence-grid">
+    <section><h3>事实收集</h3><ul>{facts}</ul><h3>已确认部分</h3><ul>{confirmed}</ul></section>
+    <section><h3>证据收集</h3><ul>{sources}</ul><p class="meta">来源优先级：{html.escape(report.get("source_priority", ""))}</p><p class="meta">GitHub Actions 稳定抓取：{html.escape(str(source_assessment.get("stable_in_github_actions", "")))}</p></section>
+  </div>
+
+  <h2>存疑点和证据缺口</h2><ul>{uncertainty}</ul>
+  <h2>下一步应该怎么深挖</h2><p>{html.escape(report.get("investigation_direction", ""))}</p><ul>{follow}</ul>
+
+  <h2>后续写作可用材料</h2>
+  <p><strong>可展开角度：</strong></p><ul>{angles}</ul>
+  <p><strong>继续检索词：</strong></p><ul>{queries}</ul>
+  <p><strong>CMS 标签：</strong>{cms_tags}</p>
+
+  <h2>懂行人可能会挑刺的地方</h2><ul>{challenge}</ul>
+  <h2>不能写成结论的地方</h2><ul>{dont}</ul>
+  <p class="meta source">原始链接：<a href="{html.escape(report["url"])}">{html.escape(report["url"])}</a></p>
+</article>
+"""
+
+
 def render_static(batch: dict[str, Any], reports: list[dict[str, Any]], site: dict[str, Any], policy: dict[str, Any]) -> None:
     static = StaticSite(site)
     static.write_assets()
     static.write_page("index.html", "Easton Radar", render_home(batch, reports, site, policy))
-    static.write_page("briefings/index.html", "简报 - Easton Radar", render_briefings(batch, reports))
+    static.write_page("briefings/index.html", "简报 - Easton Radar", render_briefings(batch, reports, site))
     static.write_page("about/index.html", "关于 - Easton Radar", render_about(site, policy))
+    for key, meta in site.get("topic_directions", {}).items():
+        static.write_page(f"topics/{key}/index.html", f"{meta['title']} - Easton Radar", render_topic_direction(key, meta, reports_for_topic(reports, key)))
     for key, meta in site["report_types"].items():
         static.write_page(f"reports/{key}/index.html", f"{meta['title']} - Easton Radar", render_report_type(key, meta, [r for r in reports if r["report_type"] == key]))
     for report in reports:
-        static.write_page(f"items/{report['id']}/index.html", f"{report['title']} - Easton Radar", render_item(report, site))
+        static.write_page(f"items/{report['id']}/index.html", f"{display_report_title(report)} - Easton Radar", render_item(report, site))
     static.write_text("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {site['site_url'].rstrip('/')}/sitemap.xml\n")
     static.write_text("sitemap.xml", sitemap(site, reports))
     static.write_text("llms.txt", llms(site, reports))
@@ -1091,7 +1303,7 @@ def render_static(batch: dict[str, Any], reports: list[dict[str, Any]], site: di
 
 def sitemap(site: dict[str, Any], reports: list[dict[str, Any]]) -> str:
     base = site["site_url"].rstrip("/")
-    paths = ["", "briefings/", "about/"] + [f"reports/{k}/" for k in site["report_types"]] + [f"items/{r['id']}/" for r in reports]
+    paths = ["", "briefings/", "about/"] + [f"topics/{k}/" for k in site.get("topic_directions", {})] + [f"reports/{k}/" for k in site["report_types"]] + [f"items/{r['id']}/" for r in reports]
     today = now_utc().date().isoformat()
     body = "\n".join(f"<url><loc>{base}/{p}</loc><lastmod>{today}</lastmod></url>" for p in paths)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}\n</urlset>\n'
@@ -1099,7 +1311,10 @@ def sitemap(site: dict[str, Any], reports: list[dict[str, Any]]) -> str:
 
 def llms(site: dict[str, Any], reports: list[dict[str, Any]]) -> str:
     base = site["site_url"].rstrip("/")
-    lines = ["# Easton Radar", "", site["description"], "", "## Report types"]
+    lines = ["# Easton Radar", "", site["description"], "", "## Topic directions"]
+    for key, meta in site.get("topic_directions", {}).items():
+        lines.append(f"- {meta['title']}: {base}/topics/{key}/")
+    lines.extend(["", "## Analysis methods"])
     for key, meta in site["report_types"].items():
         lines.append(f"- {meta['title']}: {base}/reports/{key}/")
     lines.extend(["", "## Latest items"])

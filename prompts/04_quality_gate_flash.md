@@ -12,6 +12,7 @@
   "warnings": [],
   "missing_evidence": [],
   "reader_hook_ok": true,
+  "topic_direction_ok": true,
   "report_type_ok": true,
   "source_closure_ok": true,
   "downstream_handoff_ok": true,
@@ -27,6 +28,7 @@
 - 成本估算没有公式、单位或边界。
 - 普通读者入口说不清。
 - 冷门技术产品没有大众钩子。
+- 没有明确归入实际选题方向，或者选题方向和内容不匹配。
 - 把数据源分类误当成网站栏目。
 - 强行把不可行动线索写成试跑项目。
 - 把营销收入、截图、社区传言写成确认事实。

@@ -10,6 +10,8 @@
   "original_title": "OpenAI updates API pricing",
   "report_type": "tool-ledger",
   "report_type_title": "工具账本",
+  "topic_direction": "ai-frontier",
+  "topic_direction_title": "AI 前沿与工具链",
   "source_category": "ai_tools",
   "source_name": "OpenAI",
   "source_url": "https://example.com/original",
@@ -45,7 +47,9 @@
       "slug": "20260609-openai-pricing",
       "seo_title": "工具账本：OpenAI 的工具成本和能力变化",
       "seo_description": "用 API 做副业工具或内部自动化的人，需要重新算账。",
-      "tags": ["工具账本", "AI 工具与开发者平台", "official", "OpenAI"],
+      "tags": ["AI 前沿与工具链", "工具账本", "AI 工具与开发者平台", "official", "OpenAI"],
+      "topic_direction": "ai-frontier",
+      "topic_direction_title": "AI 前沿与工具链",
       "publish_status": "radar_published"
     },
     "for_research_loop": {
@@ -86,7 +90,8 @@
 
 ## 字段边界
 
-- `report_type`：网站栏目，表示这篇报告的类型。
+- `topic_direction`：网站主栏目，表示这条线索属于哪个实际选题方向。
+- `report_type`：分析方法，表示这篇报告应该用哪种方式拆，不再承担主栏目职责。
 - `title`：中文 Radar 标题，可以保留产品名/公司名，但不能整句照搬英文原题。
 - `original_title`：原始来源标题。
 - `source_category`：内部数据源分类，表示线索来自哪类源。

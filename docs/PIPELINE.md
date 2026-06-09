@@ -30,7 +30,8 @@
 输出：
 
 - `decision`: `deep_dive` / `brief` / `skip`
-- `report_type`: 报告类型，也是网站栏目归属
+- `topic_direction`: 选题方向，也是网站主栏目归属
+- `report_type`: 报告类型，只表示分析方法
 - `score`: 相关性和深挖潜力
 - `reader_hook`: 普通读者入口
 - `why_now`: 为什么现在值得看
@@ -42,7 +43,14 @@
 
 初筛不是写稿判断，而是资料价值判断：这条线索是否值得进入 Radar、后续还缺什么证据、能否给下游项目提供足够材料。
 
-`report_type` 可选值：
+`topic_direction` 当前可选方向：
+
+- `ai-frontier`
+- `cross-border`
+- `indie-builder`
+- `platform-rules`
+
+`report_type` 当前可选分析方法：
 
 - `investigation`
 - `opportunity`
@@ -76,7 +84,7 @@
 每条报告必须生成 `downstream_handoff`：
 
 - `for_gpt_editor`: 标题种子、原始标题、来源 URL、角度候选、必须保留的信息、不能写成结论的点、待解决问题。
-- `for_cms`: slug、canonical URL、SEO 标题、SEO 描述、标签、报告类型、来源分类、证据等级、发布状态。
+- `for_cms`: slug、canonical URL、SEO 标题、SEO 描述、标签、选题方向、报告类型、来源分类、证据等级、发布状态。
 - `for_research_loop`: 继续检索词、证据缺口、停止信号。
 
 ## Step 6：发布
@@ -88,6 +96,7 @@
 - `reports/{report_id}.json`
 - `site/index.html`
 - `site/briefings/index.html`
+- `site/topics/{topic_direction}/index.html`
 - `site/reports/{report_type}/index.html`
 - `site/items/{report_id}/index.html`
 - `site/robots.txt`
