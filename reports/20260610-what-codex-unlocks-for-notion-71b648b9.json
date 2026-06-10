@@ -1,0 +1,1773 @@
+{
+  "id": "20260610-what-codex-unlocks-for-notion-71b648b9",
+  "batch_id": "2026-06-10-noon",
+  "title": "Notion 用 Codex 做了什么：AI 语音输入与工程效率翻倍",
+  "original_title": "What Codex unlocks for Notion",
+  "url": "https://openai.com/index/notion",
+  "summary": "How Notion uses Codex to one-shot specs, build AI Voice Input for the web, and multiply engineering power across small teams.",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "ai-frontier",
+  "topic_direction_title": "AI 前沿与工具链",
+  "topic_direction_short_title": "AI 前沿",
+  "topic_direction_description": "AI 模型、Agent、开发工具、API、云服务和底层能力变化。重点看这次变化到底是什么、时间线如何、会不会改变普通技术人的工作方式、成本结构和工具链。",
+  "source_name": "OpenAI News",
+  "original_source_name": "OpenAI News",
+  "source_type": "rss",
+  "feed_url": "https://openai.com/news/rss.xml",
+  "published_at": "2026-06-09T10:00:00+00:00",
+  "fetched_at": "2026-06-10T07:56:15.375524+00:00",
+  "decision": "deep_dive",
+  "report_type": "case-study",
+  "report_type_title": "案例复盘",
+  "score": 85,
+  "reader_hook": "Notion 用 Codex 实现 AI 语音输入和自动化，小团队也能借鉴。",
+  "why_now": "OpenAI 官方案例，展示 Codex 实际应用。",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "官方案例，有具体应用场景（语音输入、自动化），可拆解技术实现、成本、效果，适合 deep_dive。",
+  "collection_fit": "ai-frontier",
+  "investigation_direction": "Codex 能力边界、Notion 实现细节、成本、对独立开发者的启示。",
+  "uncertainty_flags": [
+    "成本数据未公开",
+    "技术细节可能不完整"
+  ],
+  "facts": [
+    {
+      "claim": "OpenAI News 发布/收录了这条原始线索：What Codex unlocks for Notion",
+      "type": "confirmed_fact",
+      "source_url": "https://openai.com/index/notion",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "OpenAI News",
+      "url": "https://openai.com/index/notion",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "ai"
+      ]
+    },
+    "source_host": "openai.com",
+    "source_type": "rss",
+    "heuristic": false,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "Notion 用 Codex 实现 AI 语音输入和自动化，小团队也能借鉴。",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://openai.com/news/rss.xml",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "成本数据未公开",
+      "技术细节可能不完整"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选",
+      "label": "可选",
+      "reason": "OpenAI 官方发布 Notion 使用 Codex 的案例，有具体应用场景（AI 语音输入、spec-driven 开发），证据链较完整，但成本数据缺失，适合作为趋势雷达或案例拆解，不宜过度承诺可复制性。"
+    },
+    "core_question": "Notion 使用 OpenAI Codex 实现 AI 语音输入和 spec-driven 开发的具体技术方案、实际效果、成本结构如何，其他小团队能否复制？",
+    "why_this_topic_matters": "OpenAI 官方案例展示 Codex 在真实产品中的落地，涉及语音输入、自动化开发流程，对技术团队有参考价值，且案例来自知名产品 Notion，读者关注度高。",
+    "fact_summary": [
+      "Notion 工程师 Ryan Nystrom 使用 Codex 独立构建了 AI Voice Input 功能（从移动端移植到 Web）。",
+      "Notion 采用 spec-driven 开发流程：工程师用自然语言写 spec，Codex 生成代码，人工审查后合并。",
+      "OpenAI 官方发布了案例文章和视频。",
+      "Notion 团队约 1000 人，但工程团队规模未公开。",
+      "Codex 定价：API 按 token 计费，Plus 订阅 $20/月，Pro $200/月。",
+      "Notion AI 附加功能定价 $10/月/用户。"
+    ],
+    "timeline": [
+      {
+        "date": "2026-03-24",
+        "event": "OpenAI 发布 Notion 案例文章和 LinkedIn 视频"
+      },
+      {
+        "date": "2026-06-06",
+        "event": "YouTube 视频 'the AI engineering workflow at Notion' 发布"
+      },
+      {
+        "date": "2026-06-06",
+        "event": "Lenny's Newsletter 文章 'Spec-driven development' 发布"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "OpenAI 官方文章",
+        "url": "https://openai.com/index/notion",
+        "supports": "Notion 使用 Codex 构建 AI Voice Input 和 spec-driven 开发",
+        "reliability": "official"
+      },
+      {
+        "source": "LinkedIn 帖子",
+        "url": "https://www.linkedin.com/posts/openai-devs_with-codex-ryan-built-notions-ai-voice-activity-7442287799996874753-oa4Y",
+        "supports": "Ryan Nystrom 用 Codex 独立构建 AI Voice Input",
+        "reliability": "official"
+      },
+      {
+        "source": "YouTube 视频",
+        "url": "https://www.youtube.com/watch?v=pUHA_jNwuYE",
+        "supports": "Notion AI 工程工作流详情",
+        "reliability": "official"
+      },
+      {
+        "source": "Lenny's Newsletter",
+        "url": "https://www.lennysnewsletter.com/p/spec-driven-development-the-ai-engineering",
+        "supports": "Spec-driven 开发流程细节",
+        "reliability": "media"
+      },
+      {
+        "source": "PricePerToken",
+        "url": "https://pricepertoken.com/pricing-page/model/openai-gpt-5-codex",
+        "supports": "Codex API 定价",
+        "reliability": "media"
+      },
+      {
+        "source": "UserJot",
+        "url": "https://userjot.com/blog/openai-codex-pricing",
+        "supports": "Codex 定价和计划",
+        "reliability": "media"
+      },
+      {
+        "source": "GetLatka",
+        "url": "https://getlatka.com/companies/notion",
+        "supports": "Notion 团队规模约 1000 人",
+        "reliability": "media"
+      },
+      {
+        "source": "Reddit",
+        "url": "https://www.reddit.com/r/SaaS/comments/1rzgfiw/notion_reportedly_has_1000_employees_can_someone",
+        "supports": "Notion 团队规模讨论",
+        "reliability": "weak"
+      }
+    ],
+    "logic_closure": "事实链基本完整：官方确认使用 Codex，有具体功能（语音输入、spec-driven），有工程师个人案例。但成本数据、实际效果（如节省工时、用户满意度）缺失，无法完全闭环。",
+    "writeable_angles": [
+      {
+        "angle": "技术拆解：Notion 如何用 Codex 实现 AI 语音输入",
+        "why": "读者对具体实现感兴趣，可分析浏览器 API、模型调用、延迟优化",
+        "needs": "需要更多技术细节（如使用的模型版本、延迟数据）"
+      },
+      {
+        "angle": "工作流变革：Spec-driven 开发是否适合小团队",
+        "why": "小团队关注效率提升，可讨论自然语言写 spec 的可行性和人工审查成本",
+        "needs": "需要 Notion 内部效率数据（如 spec 到代码的转化率）"
+      },
+      {
+        "angle": "成本分析：Codex API 费用 vs 人工成本",
+        "why": "读者关心投入产出比，可估算 API 调用成本并与工程师薪资对比",
+        "needs": "需要 Notion 的 API 调用量和费用数据"
+      },
+      {
+        "angle": "可复制性：其他团队能否复制 Notion 的做法",
+        "why": "读者希望知道自己的团队是否适用",
+        "needs": "需要 Notion 团队规模、技术栈、Codex 使用深度等信息"
+      }
+    ],
+    "missing_basics": [
+      "Codex 与 GPT-4 在代码生成上的具体差异（当前证据仅来自社区讨论，非官方）",
+      "Notion 工程团队具体人数（仅知总员工约 1000 人）",
+      "AI Voice Input 的技术实现细节（如使用的模型、延迟、准确率）"
+    ],
+    "missing_materials": [
+      "Notion AI Voice Input 的产品页面或技术文档",
+      "Notion 内部使用 Codex 的成本数据（API 调用量、费用）",
+      "Spec-driven 开发的实际效果数据（如节省工时、代码质量）",
+      "Notion 工程团队规模和技术栈的官方信息"
+    ],
+    "not_claimable": [
+      "Notion 使用 Codex 的具体成本",
+      "AI 语音输入的实际用户满意度",
+      "Spec-driven 开发节省的具体工时",
+      "其他团队能直接复制的条件"
+    ],
+    "followup_queries": [
+      "Notion AI Voice Input 的技术实现细节（模型、延迟、准确率）",
+      "Notion 使用 Codex 的 API 调用量和费用",
+      "Notion 工程团队规模和分工",
+      "Spec-driven 开发在 Notion 内部的效果数据"
+    ],
+    "additional_search_queries": [
+      "Notion AI voice input technical implementation",
+      "Notion Codex API cost estimate",
+      "Notion engineering team size 2025",
+      "Spec-driven development Notion results",
+      "OpenAI Codex vs GPT-4 code generation benchmark"
+    ],
+    "stop_conditions": [
+      "如果无法获取任何成本或效果数据，则放弃深入分析，仅做趋势报道",
+      "如果官方案例被撤回或证实为营销内容，则放弃",
+      "如果社区反馈显示 Codex 实际效果远低于宣传，则转为风险避坑角度"
+    ],
+    "confidence": 70,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "case-study",
+    "quality_gate": {
+      "pass": true,
+      "score": 82,
+      "fatal_issues": [],
+      "warnings": [
+        "成本数据缺失，无法进行完整的成本效益分析",
+        "技术细节（模型版本、延迟、准确率）未公开",
+        "团队规模信息仅来自第三方，非官方确认"
+      ],
+      "missing_evidence": [
+        "Notion 使用 Codex 的 API 调用量和费用",
+        "AI Voice Input 的技术实现细节（模型、延迟、准确率）",
+        "Spec-driven 开发的实际效果数据（节省工时、代码质量）",
+        "Notion 工程团队规模和技术栈的官方信息"
+      ],
+      "reader_hook_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": true,
+      "downstream_handoff_ok": true,
+      "material_pack_ok": true,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": true,
+      "source_coverage_ok": true,
+      "recommendation": "publish"
+    },
+    "research_plan": {
+      "core_question": "Notion 使用 OpenAI Codex 实现 AI 语音输入和工程自动化的具体技术方案、实际效果、成本结构如何，其他小团队能否复制？",
+      "must_verify": [
+        "Notion 是否确实使用了 Codex（而非其他模型）？",
+        "AI 语音输入功能的具体实现方式（模型、延迟、准确率）？",
+        "工程自动化（one-shot specs）的具体案例和效果数据？",
+        "成本数据：API 调用量、费用、与人工对比？",
+        "Notion 团队规模和技术栈？"
+      ],
+      "search_queries": [
+        "Notion AI voice input Codex implementation",
+        "Notion Codex one-shot specs engineering automation",
+        "OpenAI Codex pricing per token 2025",
+        "Notion AI feature cost analysis",
+        "Notion engineering team size 2025",
+        "Codex vs GPT-4 for code generation comparison",
+        "Notion AI voice input latency accuracy",
+        "small team AI automation case study Notion"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Notion AI voice input Codex implementation",
+          "why_needed": "确认技术方案细节和实际效果"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "OpenAI Codex pricing per token 2025",
+          "why_needed": "获取成本估算基础"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Notion AI feature cost analysis",
+          "why_needed": "了解实际投入产出比"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Notion engineering team size 2025",
+          "why_needed": "评估可复制性门槛"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "Codex vs GPT-4 for code generation comparison",
+          "why_needed": "验证模型选择合理性"
+        }
+      ],
+      "expert_challenge_points": [
+        "语音输入在 web 端的技术挑战（浏览器 API、实时性）",
+        "Codex 生成代码的准确率和人工审查成本",
+        "小团队是否真的能负担 Codex API 费用？",
+        "Notion 案例是否具有普遍性？"
+      ],
+      "do_not_claim_yet": [
+        "Notion 使用 Codex 的具体成本",
+        "AI 语音输入的实际用户满意度",
+        "工程自动化节省的具体工时",
+        "其他团队能直接复制的条件"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取成本数据，可发布为趋势雷达，聚焦技术方案和可复制性讨论，但需明确标注成本未知。",
+      "downstream_materials_needed": [
+        "Notion AI 语音输入的产品页面或文档",
+        "OpenAI Codex 定价页面",
+        "Notion 工程博客或技术演讲",
+        "开发者社区关于 Codex 实际使用的讨论"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Instagram",
+        "url": "https://www.instagram.com/reel/DWbw7LCjD8r",
+        "query": "Notion AI voice input Codex implementation",
+        "provider": "tavily",
+        "score": "0.7734393",
+        "fetched_text": ":root, .__ig-light-mode:root, .__ig-light-mode {--fds-black:#000000;--fds-black-alpha-05:rgba(0, 0, 0, 0.05);--fds-black-alpha-10:rgba(0, 0, 0, 0.1);--fds-black-alpha-15:rgba(0, 0, 0, 0.15);--fds-black-alpha-20:rgba(0, 0, 0, 0.2);--fds-black-alpha-30:rgba(0, 0, 0, 0.3);--fds-black-alpha-40:rgba(0, 0, 0, 0.4);--fds-black-alpha-50:rgba(0, 0, 0, 0.5);--fds-black-alpha-60:rgba(0, 0, 0, 0.6);--fds-black-alpha-80:rgba(0, 0, 0, 0.8);--fds-blue-05:#ECF3FF;--fds-blue-30:#AAC9FF;--fds-blue-40:#77A7FF;--fds-blue-60:#1877F2;--fds-blue-70:#2851A3;--fds-blue-80:#1D3C78;--fds-button-text:#444950;--fds-comment-background:#F2F3F5;--fds-dark-mode-gray-35:#CCCCCC;--fds-dark-mode-gray-50:#828282;--fds-dark-mode-gray-70:#4A4A4A;--fds-dark-mode-gray-80:#373737;--fds-dark-mode-gray-90:#282828;--fds-dark-mode-gray-100:#1C1C1C;--fds-gray-00:#F5F6F7;--fds-gray-05:#F2F3F5;--fds-gray-10:#EBEDF0;--fds-gray-20:#DADDE1;--fds-gray-25:#CCD0D5;--fds-gray-30:#BEC3C9;--fds-gray-45:#8D949E;--fds-gray-70:#606770;--fds-gray-80:#444950;--fds-gray-90:#303338;--fds-gray-100:#1C1E21;--fds-green-55:#00A400;--fds-green-60:#31A73B;--fds-green-65:#51CE70;--fds-highlight:#3578E5;--fds-highlight-cell-background:#ECF3FF;--fds-primary-icon:#1C1E21;--fds-primary-text:#1C1E21;--fds-red-55:#FA383E;--fds-soft:cubic-bezier(.08,.52,.52,1);--fds-spectrum-aluminum-tint-70:#E4F0F6;--fds-spectrum-blue-gray-tint-70:#CFD1D5;--fds-spectrum-cherry:#F35369;--fds-spectrum-cherry-tint-70:#FBCCD2;--fds-spectrum-grape-tint-70:#DDD5F0;--fds-spectrum-grape-tint-90:#F4F1FA;--fds-spectrum-lemon-dark-1:#F5C33B;--fds-spectrum-lemon-tint-70:#FEF2D1;--fds-spectrum-lime:#A3CE71;--fds-spectrum-lime-tint-70:#E4F0D5;--fds-spectrum-orange-tint-70:#FCDEC5;--fds-spectrum-orange-tint-90:#FEF4EC;--fds-spectrum-seafoam-tint-70:#CAEEF9;--fds-spectrum-slate-",
+        "fetch_error": ""
+      },
+      {
+        "title": "With Codex, Ryan built Notion's AI Voice Input feature ... - LinkedIn",
+        "url": "https://www.linkedin.com/posts/openai-devs_with-codex-ryan-built-notions-ai-voice-activity-7442287799996874753-oa4Y",
+        "query": "Notion AI voice input Codex implementation",
+        "provider": "tavily",
+        "score": "0.75027883",
+        "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); With Codex, Ryan built Notion’s AI Voice Input feature entirely by himself. Ryan Nystrom used Codex to understand the context, point Codex to an existing mobile feature, and ship it to web and… | OpenAI Developers {\"@context\":\"http://schema.org\",\"@type\":\"VideoObject\",\"@id\":\"https://www.linkedin.com/posts/openai-devs_with-codex-ryan-built-notions-ai-voice-activity-7442287799996874753-oa4Y\",\"datePublished\":\"2026-03-24T19:14:42.510Z\",\"headline\":\"With Codex, Ryan built Notion’s AI Voice Input feature entirely by himself.\",\"comment\":[{\"@type\":\"Comment\",\"datePublished\":\"2026-03-25T00:11:26.365Z\",\"text\":\"https://github.com/Jhosman9090\",\"creator\":{\"@type\":\"Person\",\"name\":\"jhosman carlos martinez morales\"},\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/LikeAction\",\"userInteractionCount\":0}},{\"@type\":\"Comment\",\"datePublished\":\"2026-03-24T23:44:03.555Z\",\"text\":\"This is very inspiring!\",\"creator\":{\"@type\":\"Person\",\"name\":\"Luis Gonzalez\"},\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/LikeAction\",\"userInteractionCount\":1}},{\"@type\":\"Comment\",\"datePublished\":\"2026-03-25T00:11:45.688Z\",\"text\":\"Instituto Mexicano de la Propiedad Industrial (IMPI)\",\"creator\":{\"@type\":\"Person\",\"name\":\"jhosman carlos martinez morales\"},\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/LikeAction\",\"userInteractionCount\":0}}],\"commentCou",
+        "fetch_error": ""
+      },
+      {
+        "title": "feat: Add a voice input mode · Issue #418 · openai/codex · GitHub",
+        "url": "https://github.com/openai/codex/issues/418",
+        "query": "Notion AI voice input Codex implementation",
+        "provider": "tavily",
+        "score": "0.68191797",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"arianotify_comprehensive_migration\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_diff_explain_conversation_intent\",\"copilot_diff_reference_context\",\"co",
+        "fetch_error": ""
+      },
+      {
+        "title": "the AI engineering workflow at Notion | Ryan Nystrom - YouTube",
+        "url": "https://www.youtube.com/watch?v=pUHA_jNwuYE",
+        "query": "Notion Codex one-shot specs engineering automation",
+        "provider": "tavily",
+        "score": "0.518815",
+        "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260606.02.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+        "fetch_error": ""
+      },
+      {
+        "title": "Spec-driven development: The AI engineering workflow at Notion | Ryan Nystrom",
+        "url": "https://www.lennysnewsletter.com/p/spec-driven-development-the-ai-engineering",
+        "query": "Notion Codex one-shot specs engineering automation",
+        "provider": "tavily",
+        "score": "0.49450764",
+        "fetched_text": "Spec-driven development: The AI engineering workflow at Notion | Ryan Nystrom @layer legacy, tailwind, pencraftReset, pencraft; @font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCt-xNNww_2s0amA9M8on7mTNmnUHowCw.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCt-xNNww_2s0amA9M8onXmTNmnUHowCw.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCt-xNNww_2s0amA9M8onTmTNmnUHowCw.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCt-xNNww_2s0amA9M8onrmTNmnUHo.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Spectral';font-style:normal;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCr-xNNww_2s0amA9M9knjsS_ulYHs.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Spectral';font-style:normal;font-weight:400;font-display:fallback;src:url(https",
+        "fetch_error": ""
+      },
+      {
+        "title": "What Codex Unlocks for Notion - YouTube",
+        "url": "https://www.youtube.com/shorts/qHEUIXGSxxg",
+        "query": "Notion Codex one-shot specs engineering automation",
+        "provider": "tavily",
+        "score": "0.40302688",
+        "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260606.02.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+        "fetch_error": ""
+      },
+      {
+        "title": "GPT 5 Codex API Pricing 2026 - Costs, Performance & Providers",
+        "url": "https://pricepertoken.com/pricing-page/model/openai-gpt-5-codex",
+        "query": "OpenAI Codex pricing per token 2025",
+        "provider": "tavily",
+        "score": "0.92074",
+        "fetched_text": ":root { --color-primary-50: 240 253 244; --color-primary-100: 220 252 231; --color-primary-200: 187 247 208; --color-primary-300: 134 239 172; --color-primary-400: 74 222 128; --color-primary-500: 34 197 94; --color-primary-600: 22 163 74; --color-primary-700: 21 128 61; --color-primary-800: 22 101 52; --color-primary-900: 20 83 45; --color-primary-950: 5 46 22; --color-primary-DEFAULT: var(--color-primary-500); --color-gray-50: 249 250 251; --color-gray-100: 243 244 246; --color-gray-200: 229 231 235; --color-gray-300: 209 213 219; --color-gray-400: 156 163 175; --color-gray-500: 107 114 128; --color-gray-600: 75 85 99; --color-gray-700: 55 65 81; --color-gray-800: 31 41 55; --color-gray-900: 17 24 39; --color-gray-950: 3 7 18; } .dark { --color-primary-DEFAULT: var(--color-primary-400); } GPT 5 Codex API Pricing 2026 - Costs, Performance & Providers header[data-v-8b7adbe1]{font-family:Inter,sans-serif} .fade-enter-active[data-v-02bc130b],.fade-leave-active[data-v-02bc130b]{transition:opacity .3s ease}.fade-enter-from[data-v-02bc130b],.fade-leave-to[data-v-02bc130b]{opacity:0} .sticky-nav-container[data-v-726096fe]{position:sticky;top:56px;z-index:40}.sticky-nav[data-v-726096fe]{transition:box-shadow .2s ease}.is-sticky .sticky-nav[data-v-726096fe]{box-shadow:0 2px 4px #0000001a}.nav-item[data-v-726096fe]{position:relative}.nav-item[data-v-726096fe]:focus{outline:none}.nav-item[data-v-726096fe]:focus-visible{outline:2px solid #3b82f6;outline-offset:2px} :where(.i-heroicons\\:arrow-right){display:inline-block;width:1em;height:1em;background-color:currentColor;-webkit-mask-image:var(--svg);mask-image:var(--svg);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;--svg:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2",
+        "fetch_error": ""
+      },
+      {
+        "title": "OpenAI Codex Pricing in 2026: What I Found After Ditching Claude ...",
+        "url": "https://userjot.com/blog/openai-codex-pricing",
+        "query": "OpenAI Codex pricing per token 2025",
+        "provider": "tavily",
+        "score": "0.81630427",
+        "fetched_text": "OpenAI Codex Pricing in 2026: What I Found After Ditching Claude Code — UserJot {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"OpenAI Codex Pricing in 2026: What I Found After Ditching Claude Code\",\"description\":\"OpenAI Codex pricing breakdown: $20 ChatGPT Plus vs $200 Pro. What happened to the API and how the new Codex Web and CLI compare to Claude Code.\",\"datePublished\":\"2025-09-06T00:00:00.000Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Shayan Taslim\",\"url\":\"https://userjot.com\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"UserJot\",\"url\":\"https://userjot.com\"},\"image\":\"https://userjot.com/assets/blog/covers/openai-codex-pricing/glass-blower-1.webp\",\"mainEntityOfPage\":\"https://userjot.com/blog/openai-codex-pricing\",\"articleSection\":\"Engineering\",\"keywords\":\"ai, coding, openai, codex, claude-code\"} {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://userjot.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"https://userjot.com/blog\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Engineering\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"OpenAI Codex Pricing in 2026: What I Found After Ditching Claude Code\"}]} UserJot Product Resources Pricing Blog Log in Get started UserJot Feedback, roadmap, and changelog, designed as one loop for product-led teams. Features Customer Feedback Feature Requests Feature Voting Product Roadmap Product Changelog Feedback Widget AI Agents Slack Resources Help Center Documentation API Reference Glossary Tools Product Get Started Pricing Feedback Roadmap Updates Blog Get Help Contact Status Privacy Terms Compare Canny Alternative UserVoice Alternative Nolt Alternative Aha! Alternative Beamer Alternative BugHerd Alternative Productboard Alter",
+        "fetch_error": ""
+      },
+      {
+        "title": "OpenAI Codex pricing in 2026: every plan, cost, and gotcha explained",
+        "url": "https://www.eesel.ai/blog/openai-codex-pricing",
+        "query": "OpenAI Codex pricing per token 2025",
+        "provider": "tavily",
+        "score": "0.79522943",
+        "fetched_text": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-scroll-snap-strictness:proximity;--tw-space-y-reverse:0;--tw-space-x-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-ordinal:initial;--tw-slashed-zero:initial;--tw-numeric-figure:initial;--tw-numeric-spacing:initial;--tw-numeric-fraction:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw-backdrop-contrast:initial;--tw-backdrop-grayscale:i",
+        "fetch_error": ""
+      },
+      {
+        "title": "Notion AI Pricing: Is the $10/Month Add-on Really Worth It?",
+        "url": "https://flowith.io/blog/notion-ai-pricing-10-month-addon-worth-it",
+        "query": "Notion AI feature cost analysis",
+        "provider": "tavily",
+        "score": "0.81347597",
+        "fetched_text": "Notion AI Pricing: Is the $10/Month Add-on Really Worth It? - Flowith Blog (function(){const adjustLoadDelayMs = 2000; const adjustSdkUrl = \"https://cdn.adjust.com/adjust-latest.min.js\"; window.addEventListener('load', function() { setTimeout(function() { // Adjust SDK loader (getWebUUID enables S2S beacon fallback for payment_show) !function(t,e,a,o,n,s,r,d){t.Adjust=t.Adjust||{},t.Adjust_q=t.Adjust_q||[];for(var i=0;i if (history.scrollRestoration) { history.scrollRestoration = 'manual'; } // Restore scroll position immediately (function() { var scrollPos = sessionStorage.getItem('scrollPos_' + location.pathname); if (scrollPos && performance.navigation && performance.navigation.type === 2) { // Back/forward navigation document.documentElement.style.opacity = '0'; } })(); (() => { const root = document.documentElement; const updateScrollEdge = () => { const scroller = document.scrollingElement || root; const maxScroll = Math.max(0, scroller.scrollHeight - window.innerHeight); const scrollTop = scroller.scrollTop || window.scrollY || 0; root.dataset.scrollEdge = maxScroll > 2 && scrollTop >= maxScroll - 2 ? \"bottom\" : \"top\"; }; updateScrollEdge(); window.addEventListener(\"scroll\", updateScrollEdge, { passive: true }); window.addEventListener(\"resize\", updateScrollEdge); window.addEventListener(\"pageshow\", updateScrollEdge); document.addEventListener(\"DOMContentLoaded\", updateScrollEdge); })(); .blog-content{font-family:ABC Oracle,sans-serif;font-weight:350;font-size:16px;line-height:24px;letter-spacing:-.32px;color:#2d3139}.blog-content h2{font-size:20px;line-height:28px;letter-spacing:-.4px;color:#2d3139;font-weight:500;margin-top:2.5rem;margin-bottom:.875rem}.blog-content h3{font-size:18px;line-height:26px;letter-spacing:-.36px;color:#2d3139;font-weight:500;margin-to",
+        "fetch_error": ""
+      },
+      {
+        "title": "How Much Does Notion AI Cost? Complete 2024 Pricing ...",
+        "url": "https://www.getmonetizely.com/articles/how-much-does-notion-ai-cost-complete-2024-pricing-guide-amp-plan-comparison",
+        "query": "Notion AI feature cost analysis",
+        "provider": "tavily",
+        "score": "0.78650844",
+        "fetched_text": "How Much Does Notion AI Cost? Complete 2024 Pricing Guide &amp; Plan Comparison WebFont.load({ google: { families: [\"Rethink Sans:300,400,500,600,700\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-EG2J7NZ80W'); !function(e,r){try{if(e.vector)return void console.log(\"Vector snippet included more than once.\");var t={};t.q=t.q||[];for(var o=[\"load\",\"identify\",\"on\"],n=function(e){return function(){var r=Array.prototype.slice.call(arguments);t.q.push([e,r])}},c=0;c !function () {var reb2b = window.reb2b = window.reb2b || [];if (reb2b.invoked) return;reb2b.invoked = true;reb2b.methods = [\"identify\", \"collect\"];reb2b.factory = function (method) {return function () {var args = Array.prototype.slice.call(arguments);args.unshift(method);reb2b.push(args);return reb2b;};};for (var i = 0; i function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement(\"script\"); o.src=\"https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=\"+n,o.async=!0,o.defer=!0, o.onload=function(){window.trackingFunctions.onLoad({appId:\"6632e13eae7f050300f062c0\"})}, document.head.appendChild(o)}initApollo(); .blog-content p { font-size: 18px; line-height: 1.7; color: #333333; /* max-width: 700px; */ margin: 0 auto 1.5em auto; } .blog-content h2 { font-size: 28px; font-weight: 700; color: #222222; margin-top: 2em; margin-bottom: 1em; border-left: 4px solid #0055FF; padding-left: 12px; } .blog-content h3 { font-size: 22px; font-weight: 600; color: #333333; margin-top: 1.5em; } .blog-content blockquote",
+        "fetch_error": ""
+      },
+      {
+        "title": "Notion AI Guide: Features, Pricing, Real Use Cases 2026",
+        "url": "https://dancumberlandlabs.com/blog/notion-ai-guide",
+        "query": "Notion AI feature cost analysis",
+        "provider": "tavily",
+        "score": "0.7734393",
+        "fetched_text": "Notion AI Guide: Features, Pricing, Real Use Cases 2026 | Dan Cumberland Labs {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"headline\":\"Notion AI Guide\",\"description\":\"Notion AI operates as a team of specialized agents embedded in your workspace. It can draft documents, build databases, search across connected tools like...\",\"image\":\"https://cms.dancumberlandlabs.com\\n/uploads/blog_notion_ai_guide_223895de79.webp\",\"datePublished\":\"2026-05-08T14:27:18.255Z\",\"dateModified\":\"2026-05-08T14:27:18.223Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Dan Cumberland\",\"url\":\"https://dancumberlandlabs.com/about/\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Dan Cumberland Labs\",\"url\":\"https://dancumberlandlabs.com\"}}]} (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-KKLSF5KN'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-JH4K4FM7DX'); // GA4 custom event tracking via event delegation document.addEventListener('click', function(e) { var link = e.target.closest('a[href]'); if (!link) return; var href = link.href; // Booking clicks if (href.indexOf('book.dancumberland.com') !== -1) { gtag('event', 'book_call_click', { link_url: href, cta_text: link.textContent.trim(), page_path: window.location.pathname }); } // Resource downloads if (href.indexOf('go.dancumberlandlabs.com') !== -1 || href.indexOf('aitrainingguide.com') !== -1 || href.indexOf('aiflowaudit.com') !== -1) { gtag('event', 'resource_download', { resour",
+        "fetch_error": ""
+      },
+      {
+        "title": "Notion Revenue 2025: $600M ARR, $10B Valuation - GetLatka",
+        "url": "https://getlatka.com/companies/notion",
+        "query": "Notion engineering team size 2025",
+        "provider": "tavily",
+        "score": "0.7304634",
+        "fetched_text": "Notion Revenue 2025: $600M ARR, $10B Valuation (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"\\n try {\\n if (window.location.href.includes('.local.')) {\\n localStorage.setItem('newsletter_modal_closed', Date.now().toString());\\n }\\n } catch {}\\n \",\"id\":\"disable-newsletter-popup-on-local\"}]) Home SaaS Database Add Your Company Podcast Pricing Sections Company Revenue Valuation and Funding Founder and CEO Customers and Pricing Employees and Team Size FAQ Industries Contacts Competitors {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"@id\":\"https://getlatka.com/companies/notion#organization\",\"name\":\"Notion\",\"description\":\"Notion Labs, Inc. is the company that owns notion.so. It is a privately-held software company based in San Francisco, California, that provides a productivity and collaboration platform that allows users to create, organize, and share notes, tasks, wikis, and databases. The company was founded in 2013 by Ivan Zhao, and has since raised over $300 million in funding from investors including Index Ventures, Sequoia Capital, and Greylock Partners. Notion is used by individuals, teams, and organizations of all sizes across various industries to streamline their workflow, increase productivity, and improve collaboration.\",\"url\":\"https://notion.com\",\"logo\":\"https://storage.getlatka.com/images/notion.com.png\",\"sameAs\":[\"https://twitter.com/NotionHQ\",\"https://www.youtube.com/channel/UCoSvlWS5XcwaSzIcbuJ-Ysg\",\"https://www.facebook.com/NotionHQ/\",\"https://www.linkedin.com/company/notionhq/\",\"https://www.crunchbase.com/organization/notion-so\"],\"foundingDate\":\"2013-01-01\",\"founder\":{\"@type\":\"Person\",\"name\":\"Ivan Zhao\",\"sameAs\":\"https://www.linkedin.com/in/ivanhzhao/\"},\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"San Francisco\",\"addressRegion\":",
+        "fetch_error": ""
+      },
+      {
+        "title": "1000 employees. Can someone explain what all of them actually do?",
+        "url": "https://www.reddit.com/r/SaaS/comments/1rzgfiw/notion_reportedly_has_1000_employees_can_someone",
+        "query": "Notion engineering team size 2025",
+        "provider": "tavily",
+        "score": "0.5775198",
+        "fetched_text": "Notion handles millions of users, real-time collaboration, search indexing, file storage, version control. That's not a small team problem.",
+        "fetch_error": "HTTP Error 403: Blocked; used tavily content fallback"
+      },
+      {
+        "title": "Make with Notion 2025: How Notion AI Changed Work at Notion",
+        "url": "https://www.youtube.com/watch?v=swd5BZBUZlY",
+        "query": "Notion engineering team size 2025",
+        "provider": "tavily",
+        "score": "0.356492",
+        "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260606.02.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+        "fetch_error": ""
+      },
+      {
+        "title": "GPT-4 vs Codex for Coding...general discussion - API - OpenAI Developer Community",
+        "url": "https://community.openai.com/t/gpt-4-vs-codex-for-coding-general-discussion/109973",
+        "query": "Codex vs GPT-4 for code generation comparison",
+        "provider": "tavily",
+        "score": "0.7646988",
+        "fetched_text": "# GPT-4 vs Codex for Coding...general discussion. What I’ve found using GPT-4 for help coding is that you really need to know a little bit about programming to know what to ask and how to ask. I haven’t played much with the most recent Codex, but I need to investigate again. GPT-4, though, is almost like a “Coder Buddy” that can help you get where you want to go if you know where you want to go… and can ask the right, specific questions. Anyone else using GPT-4 for coding help? Do you like it better than Codex? Another trick I’ve noticed is that if it gives you something you don’t want (bad solution), you can copy and paste that and put it in the USER prompt as “I tried X Y Z” and it wasn’t what I really wanted. | Getting ChatGPT-4 to help with coding current GPT APIs Community api | 1 | 1158 | November 5, 2023 |.",
+        "fetch_error": "HTTP Error 429: Too Many Requests; used tavily content fallback"
+      },
+      {
+        "title": "The Tale of 2 Models: Opus 4.6 vs GPT 5.3 Codex | by Cordero Core",
+        "url": "https://medium.com/@cdcore/the-tale-of-2-models-opus-4-6-vs-gpt-5-3-codex-129fcb35630f",
+        "query": "Codex vs GPT-4 for code generation comparison",
+        "provider": "tavily",
+        "score": "0.48557588",
+        "fetched_text": "On the LFG benchmark, four escalating tasks from simple to complex, Opus scored 9.25/10 compared to Codex's 7.5/10. The gap widened on the",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      },
+      {
+        "title": "GPT-5.4 Review: Is It Worth Leaving GPT-5.3 Codex Behind?",
+        "url": "https://www.turingcollege.com/blog/gpt-5-4-review-vs-gpt-5-3-codex",
+        "query": "Codex vs GPT-4 for code generation comparison",
+        "provider": "tavily",
+        "score": "0.45289946",
+        "fetched_text": "GPT-5.4 Review: Is It Worth Leaving GPT-5.3 Codex Behind? html.w-mod-js:not(.w-mod-ix3) :is(.heading-83, [data-el=\"modal-lead-ae\"], [data-el=\"modal-lead-sae\"], [data-el=\"modal-lead-aiba\"], [data-el=\"modal-lead-ds\"], [data-el=\"modal-lead-da\"], [data-el=\"modal-lead-aiet\"], [data-el=\"modal-syllabus-ae\"], [data-el=\"modal-syllabus-sae\"], [data-el=\"modal-syllabus-aili\"], [data-el=\"modal-syllabus-dm\"], [data-el=\"modal-syllabus-da\"], [data-el=\"modal-syllabus-aiet\"], [data-el=\"modal-lead-geo\"], [data-el=\"modal-syllabus-aiba\"]) {visibility: hidden !important;} !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); function getCookie(name) { const value = '; ' + document.cookie; const parts = value.split('; ' + name + '='); if (parts.length == 2) return parts.pop().split(';').shift(); } (function() { const isStaging = window.location.origin.includes('webflow.io'); const script = document.createElement('script'); script.src = isStaging // ? 'http://localhost:3000/navigation.js' ? 'https://cdn.jsdelivr.net/npm/@tc-turing/webflow@1.0.70/dist/navigation.js' : 'https://cdn.jsdelivr.net/npm/@tc-turing/webflow@1.0.70/dist/navigation.js'; script.defer = true; document.currentScript.insertAdjacentElement('afterend', script); })(); (function() { const isStaging = window.location.origin.includes('webflow.io'); const script = document.createElement('script'); script.src = isStaging // ? 'http://localhost:3000/utils/geolocation.js' ? 'https://cdn.jsdelivr.net/npm/@tc-turing/webflow@1.0.58/dist/utils/geolocation.js' : 'https://cdn.jsdelivr.net/npm/@tc-turing/webflow@1.0.58/dist/utils/geolocation.js'; script.defer = true; document.currentScript.insertAdjacentElement('aft",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选",
+      "label": "可选",
+      "reason": "OpenAI 官方发布 Notion 使用 Codex 的案例，有具体应用场景（AI 语音输入、spec-driven 开发），证据链较完整，但成本数据缺失，适合作为趋势雷达或案例拆解，不宜过度承诺可复制性。"
+    },
+    "core_question": "Notion 使用 OpenAI Codex 实现 AI 语音输入和 spec-driven 开发的具体技术方案、实际效果、成本结构如何，其他小团队能否复制？",
+    "why_this_topic_matters": "OpenAI 官方案例展示 Codex 在真实产品中的落地，涉及语音输入、自动化开发流程，对技术团队有参考价值，且案例来自知名产品 Notion，读者关注度高。",
+    "fact_summary": [
+      "Notion 工程师 Ryan Nystrom 使用 Codex 独立构建了 AI Voice Input 功能（从移动端移植到 Web）。",
+      "Notion 采用 spec-driven 开发流程：工程师用自然语言写 spec，Codex 生成代码，人工审查后合并。",
+      "OpenAI 官方发布了案例文章和视频。",
+      "Notion 团队约 1000 人，但工程团队规模未公开。",
+      "Codex 定价：API 按 token 计费，Plus 订阅 $20/月，Pro $200/月。",
+      "Notion AI 附加功能定价 $10/月/用户。"
+    ],
+    "timeline": [
+      {
+        "date": "2026-03-24",
+        "event": "OpenAI 发布 Notion 案例文章和 LinkedIn 视频"
+      },
+      {
+        "date": "2026-06-06",
+        "event": "YouTube 视频 'the AI engineering workflow at Notion' 发布"
+      },
+      {
+        "date": "2026-06-06",
+        "event": "Lenny's Newsletter 文章 'Spec-driven development' 发布"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "OpenAI 官方文章",
+        "url": "https://openai.com/index/notion",
+        "supports": "Notion 使用 Codex 构建 AI Voice Input 和 spec-driven 开发",
+        "reliability": "official"
+      },
+      {
+        "source": "LinkedIn 帖子",
+        "url": "https://www.linkedin.com/posts/openai-devs_with-codex-ryan-built-notions-ai-voice-activity-7442287799996874753-oa4Y",
+        "supports": "Ryan Nystrom 用 Codex 独立构建 AI Voice Input",
+        "reliability": "official"
+      },
+      {
+        "source": "YouTube 视频",
+        "url": "https://www.youtube.com/watch?v=pUHA_jNwuYE",
+        "supports": "Notion AI 工程工作流详情",
+        "reliability": "official"
+      },
+      {
+        "source": "Lenny's Newsletter",
+        "url": "https://www.lennysnewsletter.com/p/spec-driven-development-the-ai-engineering",
+        "supports": "Spec-driven 开发流程细节",
+        "reliability": "media"
+      },
+      {
+        "source": "PricePerToken",
+        "url": "https://pricepertoken.com/pricing-page/model/openai-gpt-5-codex",
+        "supports": "Codex API 定价",
+        "reliability": "media"
+      },
+      {
+        "source": "UserJot",
+        "url": "https://userjot.com/blog/openai-codex-pricing",
+        "supports": "Codex 定价和计划",
+        "reliability": "media"
+      },
+      {
+        "source": "GetLatka",
+        "url": "https://getlatka.com/companies/notion",
+        "supports": "Notion 团队规模约 1000 人",
+        "reliability": "media"
+      },
+      {
+        "source": "Reddit",
+        "url": "https://www.reddit.com/r/SaaS/comments/1rzgfiw/notion_reportedly_has_1000_employees_can_someone",
+        "supports": "Notion 团队规模讨论",
+        "reliability": "weak"
+      }
+    ],
+    "logic_closure": "事实链基本完整：官方确认使用 Codex，有具体功能（语音输入、spec-driven），有工程师个人案例。但成本数据、实际效果（如节省工时、用户满意度）缺失，无法完全闭环。",
+    "writeable_angles": [
+      {
+        "angle": "技术拆解：Notion 如何用 Codex 实现 AI 语音输入",
+        "why": "读者对具体实现感兴趣，可分析浏览器 API、模型调用、延迟优化",
+        "needs": "需要更多技术细节（如使用的模型版本、延迟数据）"
+      },
+      {
+        "angle": "工作流变革：Spec-driven 开发是否适合小团队",
+        "why": "小团队关注效率提升，可讨论自然语言写 spec 的可行性和人工审查成本",
+        "needs": "需要 Notion 内部效率数据（如 spec 到代码的转化率）"
+      },
+      {
+        "angle": "成本分析：Codex API 费用 vs 人工成本",
+        "why": "读者关心投入产出比，可估算 API 调用成本并与工程师薪资对比",
+        "needs": "需要 Notion 的 API 调用量和费用数据"
+      },
+      {
+        "angle": "可复制性：其他团队能否复制 Notion 的做法",
+        "why": "读者希望知道自己的团队是否适用",
+        "needs": "需要 Notion 团队规模、技术栈、Codex 使用深度等信息"
+      }
+    ],
+    "missing_basics": [
+      "Codex 与 GPT-4 在代码生成上的具体差异（当前证据仅来自社区讨论，非官方）",
+      "Notion 工程团队具体人数（仅知总员工约 1000 人）",
+      "AI Voice Input 的技术实现细节（如使用的模型、延迟、准确率）"
+    ],
+    "missing_materials": [
+      "Notion AI Voice Input 的产品页面或技术文档",
+      "Notion 内部使用 Codex 的成本数据（API 调用量、费用）",
+      "Spec-driven 开发的实际效果数据（如节省工时、代码质量）",
+      "Notion 工程团队规模和技术栈的官方信息"
+    ],
+    "not_claimable": [
+      "Notion 使用 Codex 的具体成本",
+      "AI 语音输入的实际用户满意度",
+      "Spec-driven 开发节省的具体工时",
+      "其他团队能直接复制的条件"
+    ],
+    "followup_queries": [
+      "Notion AI Voice Input 的技术实现细节（模型、延迟、准确率）",
+      "Notion 使用 Codex 的 API 调用量和费用",
+      "Notion 工程团队规模和分工",
+      "Spec-driven 开发在 Notion 内部的效果数据"
+    ],
+    "additional_search_queries": [
+      "Notion AI voice input technical implementation",
+      "Notion Codex API cost estimate",
+      "Notion engineering team size 2025",
+      "Spec-driven development Notion results",
+      "OpenAI Codex vs GPT-4 code generation benchmark"
+    ],
+    "stop_conditions": [
+      "如果无法获取任何成本或效果数据，则放弃深入分析，仅做趋势报道",
+      "如果官方案例被撤回或证实为营销内容，则放弃",
+      "如果社区反馈显示 Codex 实际效果远低于宣传，则转为风险避坑角度"
+    ],
+    "confidence": 70,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "case-study",
+    "quality_gate": {
+      "pass": true,
+      "score": 82,
+      "fatal_issues": [],
+      "warnings": [
+        "成本数据缺失，无法进行完整的成本效益分析",
+        "技术细节（模型版本、延迟、准确率）未公开",
+        "团队规模信息仅来自第三方，非官方确认"
+      ],
+      "missing_evidence": [
+        "Notion 使用 Codex 的 API 调用量和费用",
+        "AI Voice Input 的技术实现细节（模型、延迟、准确率）",
+        "Spec-driven 开发的实际效果数据（节省工时、代码质量）",
+        "Notion 工程团队规模和技术栈的官方信息"
+      ],
+      "reader_hook_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": true,
+      "downstream_handoff_ok": true,
+      "material_pack_ok": true,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": true,
+      "source_coverage_ok": true,
+      "recommendation": "publish"
+    },
+    "research_plan": {
+      "core_question": "Notion 使用 OpenAI Codex 实现 AI 语音输入和工程自动化的具体技术方案、实际效果、成本结构如何，其他小团队能否复制？",
+      "must_verify": [
+        "Notion 是否确实使用了 Codex（而非其他模型）？",
+        "AI 语音输入功能的具体实现方式（模型、延迟、准确率）？",
+        "工程自动化（one-shot specs）的具体案例和效果数据？",
+        "成本数据：API 调用量、费用、与人工对比？",
+        "Notion 团队规模和技术栈？"
+      ],
+      "search_queries": [
+        "Notion AI voice input Codex implementation",
+        "Notion Codex one-shot specs engineering automation",
+        "OpenAI Codex pricing per token 2025",
+        "Notion AI feature cost analysis",
+        "Notion engineering team size 2025",
+        "Codex vs GPT-4 for code generation comparison",
+        "Notion AI voice input latency accuracy",
+        "small team AI automation case study Notion"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Notion AI voice input Codex implementation",
+          "why_needed": "确认技术方案细节和实际效果"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "OpenAI Codex pricing per token 2025",
+          "why_needed": "获取成本估算基础"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Notion AI feature cost analysis",
+          "why_needed": "了解实际投入产出比"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Notion engineering team size 2025",
+          "why_needed": "评估可复制性门槛"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "Codex vs GPT-4 for code generation comparison",
+          "why_needed": "验证模型选择合理性"
+        }
+      ],
+      "expert_challenge_points": [
+        "语音输入在 web 端的技术挑战（浏览器 API、实时性）",
+        "Codex 生成代码的准确率和人工审查成本",
+        "小团队是否真的能负担 Codex API 费用？",
+        "Notion 案例是否具有普遍性？"
+      ],
+      "do_not_claim_yet": [
+        "Notion 使用 Codex 的具体成本",
+        "AI 语音输入的实际用户满意度",
+        "工程自动化节省的具体工时",
+        "其他团队能直接复制的条件"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取成本数据，可发布为趋势雷达，聚焦技术方案和可复制性讨论，但需明确标注成本未知。",
+      "downstream_materials_needed": [
+        "Notion AI 语音输入的产品页面或文档",
+        "OpenAI Codex 定价页面",
+        "Notion 工程博客或技术演讲",
+        "开发者社区关于 Codex 实际使用的讨论"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Instagram",
+        "url": "https://www.instagram.com/reel/DWbw7LCjD8r",
+        "query": "Notion AI voice input Codex implementation",
+        "provider": "tavily",
+        "score": "0.7734393",
+        "fetched_text": ":root, .__ig-light-mode:root, .__ig-light-mode {--fds-black:#000000;--fds-black-alpha-05:rgba(0, 0, 0, 0.05);--fds-black-alpha-10:rgba(0, 0, 0, 0.1);--fds-black-alpha-15:rgba(0, 0, 0, 0.15);--fds-black-alpha-20:rgba(0, 0, 0, 0.2);--fds-black-alpha-30:rgba(0, 0, 0, 0.3);--fds-black-alpha-40:rgba(0, 0, 0, 0.4);--fds-black-alpha-50:rgba(0, 0, 0, 0.5);--fds-black-alpha-60:rgba(0, 0, 0, 0.6);--fds-black-alpha-80:rgba(0, 0, 0, 0.8);--fds-blue-05:#ECF3FF;--fds-blue-30:#AAC9FF;--fds-blue-40:#77A7FF;--fds-blue-60:#1877F2;--fds-blue-70:#2851A3;--fds-blue-80:#1D3C78;--fds-button-text:#444950;--fds-comment-background:#F2F3F5;--fds-dark-mode-gray-35:#CCCCCC;--fds-dark-mode-gray-50:#828282;--fds-dark-mode-gray-70:#4A4A4A;--fds-dark-mode-gray-80:#373737;--fds-dark-mode-gray-90:#282828;--fds-dark-mode-gray-100:#1C1C1C;--fds-gray-00:#F5F6F7;--fds-gray-05:#F2F3F5;--fds-gray-10:#EBEDF0;--fds-gray-20:#DADDE1;--fds-gray-25:#CCD0D5;--fds-gray-30:#BEC3C9;--fds-gray-45:#8D949E;--fds-gray-70:#606770;--fds-gray-80:#444950;--fds-gray-90:#303338;--fds-gray-100:#1C1E21;--fds-green-55:#00A400;--fds-green-60:#31A73B;--fds-green-65:#51CE70;--fds-highlight:#3578E5;--fds-highlight-cell-background:#ECF3FF;--fds-primary-icon:#1C1E21;--fds-primary-text:#1C1E21;--fds-red-55:#FA383E;--fds-soft:cubic-bezier(.08,.52,.52,1);--fds-spectrum-aluminum-tint-70:#E4F0F6;--fds-spectrum-blue-gray-tint-70:#CFD1D5;--fds-spectrum-cherry:#F35369;--fds-spectrum-cherry-tint-70:#FBCCD2;--fds-spectrum-grape-tint-70:#DDD5F0;--fds-spectrum-grape-tint-90:#F4F1FA;--fds-spectrum-lemon-dark-1:#F5C33B;--fds-spectrum-lemon-tint-70:#FEF2D1;--fds-spectrum-lime:#A3CE71;--fds-spectrum-lime-tint-70:#E4F0D5;--fds-spectrum-orange-tint-70:#FCDEC5;--fds-spectrum-orange-tint-90:#FEF4EC;--fds-spectrum-seafoam-tint-70:#CAEEF9;--fds-spectrum-slate-",
+        "fetch_error": ""
+      },
+      {
+        "title": "With Codex, Ryan built Notion's AI Voice Input feature ... - LinkedIn",
+        "url": "https://www.linkedin.com/posts/openai-devs_with-codex-ryan-built-notions-ai-voice-activity-7442287799996874753-oa4Y",
+        "query": "Notion AI voice input Codex implementation",
+        "provider": "tavily",
+        "score": "0.75027883",
+        "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); With Codex, Ryan built Notion’s AI Voice Input feature entirely by himself. Ryan Nystrom used Codex to understand the context, point Codex to an existing mobile feature, and ship it to web and… | OpenAI Developers {\"@context\":\"http://schema.org\",\"@type\":\"VideoObject\",\"@id\":\"https://www.linkedin.com/posts/openai-devs_with-codex-ryan-built-notions-ai-voice-activity-7442287799996874753-oa4Y\",\"datePublished\":\"2026-03-24T19:14:42.510Z\",\"headline\":\"With Codex, Ryan built Notion’s AI Voice Input feature entirely by himself.\",\"comment\":[{\"@type\":\"Comment\",\"datePublished\":\"2026-03-25T00:11:26.365Z\",\"text\":\"https://github.com/Jhosman9090\",\"creator\":{\"@type\":\"Person\",\"name\":\"jhosman carlos martinez morales\"},\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/LikeAction\",\"userInteractionCount\":0}},{\"@type\":\"Comment\",\"datePublished\":\"2026-03-24T23:44:03.555Z\",\"text\":\"This is very inspiring!\",\"creator\":{\"@type\":\"Person\",\"name\":\"Luis Gonzalez\"},\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/LikeAction\",\"userInteractionCount\":1}},{\"@type\":\"Comment\",\"datePublished\":\"2026-03-25T00:11:45.688Z\",\"text\":\"Instituto Mexicano de la Propiedad Industrial (IMPI)\",\"creator\":{\"@type\":\"Person\",\"name\":\"jhosman carlos martinez morales\"},\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/LikeAction\",\"userInteractionCount\":0}}],\"commentCou",
+        "fetch_error": ""
+      },
+      {
+        "title": "feat: Add a voice input mode · Issue #418 · openai/codex · GitHub",
+        "url": "https://github.com/openai/codex/issues/418",
+        "query": "Notion AI voice input Codex implementation",
+        "provider": "tavily",
+        "score": "0.68191797",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"arianotify_comprehensive_migration\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_diff_explain_conversation_intent\",\"copilot_diff_reference_context\",\"co",
+        "fetch_error": ""
+      },
+      {
+        "title": "the AI engineering workflow at Notion | Ryan Nystrom - YouTube",
+        "url": "https://www.youtube.com/watch?v=pUHA_jNwuYE",
+        "query": "Notion Codex one-shot specs engineering automation",
+        "provider": "tavily",
+        "score": "0.518815",
+        "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260606.02.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+        "fetch_error": ""
+      },
+      {
+        "title": "Spec-driven development: The AI engineering workflow at Notion | Ryan Nystrom",
+        "url": "https://www.lennysnewsletter.com/p/spec-driven-development-the-ai-engineering",
+        "query": "Notion Codex one-shot specs engineering automation",
+        "provider": "tavily",
+        "score": "0.49450764",
+        "fetched_text": "Spec-driven development: The AI engineering workflow at Notion | Ryan Nystrom @layer legacy, tailwind, pencraftReset, pencraft; @font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCt-xNNww_2s0amA9M8on7mTNmnUHowCw.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCt-xNNww_2s0amA9M8onXmTNmnUHowCw.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCt-xNNww_2s0amA9M8onTmTNmnUHowCw.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCt-xNNww_2s0amA9M8onrmTNmnUHo.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Spectral';font-style:normal;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCr-xNNww_2s0amA9M9knjsS_ulYHs.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Spectral';font-style:normal;font-weight:400;font-display:fallback;src:url(https",
+        "fetch_error": ""
+      },
+      {
+        "title": "What Codex Unlocks for Notion - YouTube",
+        "url": "https://www.youtube.com/shorts/qHEUIXGSxxg",
+        "query": "Notion Codex one-shot specs engineering automation",
+        "provider": "tavily",
+        "score": "0.40302688",
+        "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260606.02.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+        "fetch_error": ""
+      },
+      {
+        "title": "GPT 5 Codex API Pricing 2026 - Costs, Performance & Providers",
+        "url": "https://pricepertoken.com/pricing-page/model/openai-gpt-5-codex",
+        "query": "OpenAI Codex pricing per token 2025",
+        "provider": "tavily",
+        "score": "0.92074",
+        "fetched_text": ":root { --color-primary-50: 240 253 244; --color-primary-100: 220 252 231; --color-primary-200: 187 247 208; --color-primary-300: 134 239 172; --color-primary-400: 74 222 128; --color-primary-500: 34 197 94; --color-primary-600: 22 163 74; --color-primary-700: 21 128 61; --color-primary-800: 22 101 52; --color-primary-900: 20 83 45; --color-primary-950: 5 46 22; --color-primary-DEFAULT: var(--color-primary-500); --color-gray-50: 249 250 251; --color-gray-100: 243 244 246; --color-gray-200: 229 231 235; --color-gray-300: 209 213 219; --color-gray-400: 156 163 175; --color-gray-500: 107 114 128; --color-gray-600: 75 85 99; --color-gray-700: 55 65 81; --color-gray-800: 31 41 55; --color-gray-900: 17 24 39; --color-gray-950: 3 7 18; } .dark { --color-primary-DEFAULT: var(--color-primary-400); } GPT 5 Codex API Pricing 2026 - Costs, Performance & Providers header[data-v-8b7adbe1]{font-family:Inter,sans-serif} .fade-enter-active[data-v-02bc130b],.fade-leave-active[data-v-02bc130b]{transition:opacity .3s ease}.fade-enter-from[data-v-02bc130b],.fade-leave-to[data-v-02bc130b]{opacity:0} .sticky-nav-container[data-v-726096fe]{position:sticky;top:56px;z-index:40}.sticky-nav[data-v-726096fe]{transition:box-shadow .2s ease}.is-sticky .sticky-nav[data-v-726096fe]{box-shadow:0 2px 4px #0000001a}.nav-item[data-v-726096fe]{position:relative}.nav-item[data-v-726096fe]:focus{outline:none}.nav-item[data-v-726096fe]:focus-visible{outline:2px solid #3b82f6;outline-offset:2px} :where(.i-heroicons\\:arrow-right){display:inline-block;width:1em;height:1em;background-color:currentColor;-webkit-mask-image:var(--svg);mask-image:var(--svg);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;--svg:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2",
+        "fetch_error": ""
+      },
+      {
+        "title": "OpenAI Codex Pricing in 2026: What I Found After Ditching Claude ...",
+        "url": "https://userjot.com/blog/openai-codex-pricing",
+        "query": "OpenAI Codex pricing per token 2025",
+        "provider": "tavily",
+        "score": "0.81630427",
+        "fetched_text": "OpenAI Codex Pricing in 2026: What I Found After Ditching Claude Code — UserJot {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"OpenAI Codex Pricing in 2026: What I Found After Ditching Claude Code\",\"description\":\"OpenAI Codex pricing breakdown: $20 ChatGPT Plus vs $200 Pro. What happened to the API and how the new Codex Web and CLI compare to Claude Code.\",\"datePublished\":\"2025-09-06T00:00:00.000Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Shayan Taslim\",\"url\":\"https://userjot.com\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"UserJot\",\"url\":\"https://userjot.com\"},\"image\":\"https://userjot.com/assets/blog/covers/openai-codex-pricing/glass-blower-1.webp\",\"mainEntityOfPage\":\"https://userjot.com/blog/openai-codex-pricing\",\"articleSection\":\"Engineering\",\"keywords\":\"ai, coding, openai, codex, claude-code\"} {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://userjot.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"https://userjot.com/blog\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Engineering\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"OpenAI Codex Pricing in 2026: What I Found After Ditching Claude Code\"}]} UserJot Product Resources Pricing Blog Log in Get started UserJot Feedback, roadmap, and changelog, designed as one loop for product-led teams. Features Customer Feedback Feature Requests Feature Voting Product Roadmap Product Changelog Feedback Widget AI Agents Slack Resources Help Center Documentation API Reference Glossary Tools Product Get Started Pricing Feedback Roadmap Updates Blog Get Help Contact Status Privacy Terms Compare Canny Alternative UserVoice Alternative Nolt Alternative Aha! Alternative Beamer Alternative BugHerd Alternative Productboard Alter",
+        "fetch_error": ""
+      },
+      {
+        "title": "OpenAI Codex pricing in 2026: every plan, cost, and gotcha explained",
+        "url": "https://www.eesel.ai/blog/openai-codex-pricing",
+        "query": "OpenAI Codex pricing per token 2025",
+        "provider": "tavily",
+        "score": "0.79522943",
+        "fetched_text": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-scroll-snap-strictness:proximity;--tw-space-y-reverse:0;--tw-space-x-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-ordinal:initial;--tw-slashed-zero:initial;--tw-numeric-figure:initial;--tw-numeric-spacing:initial;--tw-numeric-fraction:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw-backdrop-contrast:initial;--tw-backdrop-grayscale:i",
+        "fetch_error": ""
+      },
+      {
+        "title": "Notion AI Pricing: Is the $10/Month Add-on Really Worth It?",
+        "url": "https://flowith.io/blog/notion-ai-pricing-10-month-addon-worth-it",
+        "query": "Notion AI feature cost analysis",
+        "provider": "tavily",
+        "score": "0.81347597",
+        "fetched_text": "Notion AI Pricing: Is the $10/Month Add-on Really Worth It? - Flowith Blog (function(){const adjustLoadDelayMs = 2000; const adjustSdkUrl = \"https://cdn.adjust.com/adjust-latest.min.js\"; window.addEventListener('load', function() { setTimeout(function() { // Adjust SDK loader (getWebUUID enables S2S beacon fallback for payment_show) !function(t,e,a,o,n,s,r,d){t.Adjust=t.Adjust||{},t.Adjust_q=t.Adjust_q||[];for(var i=0;i if (history.scrollRestoration) { history.scrollRestoration = 'manual'; } // Restore scroll position immediately (function() { var scrollPos = sessionStorage.getItem('scrollPos_' + location.pathname); if (scrollPos && performance.navigation && performance.navigation.type === 2) { // Back/forward navigation document.documentElement.style.opacity = '0'; } })(); (() => { const root = document.documentElement; const updateScrollEdge = () => { const scroller = document.scrollingElement || root; const maxScroll = Math.max(0, scroller.scrollHeight - window.innerHeight); const scrollTop = scroller.scrollTop || window.scrollY || 0; root.dataset.scrollEdge = maxScroll > 2 && scrollTop >= maxScroll - 2 ? \"bottom\" : \"top\"; }; updateScrollEdge(); window.addEventListener(\"scroll\", updateScrollEdge, { passive: true }); window.addEventListener(\"resize\", updateScrollEdge); window.addEventListener(\"pageshow\", updateScrollEdge); document.addEventListener(\"DOMContentLoaded\", updateScrollEdge); })(); .blog-content{font-family:ABC Oracle,sans-serif;font-weight:350;font-size:16px;line-height:24px;letter-spacing:-.32px;color:#2d3139}.blog-content h2{font-size:20px;line-height:28px;letter-spacing:-.4px;color:#2d3139;font-weight:500;margin-top:2.5rem;margin-bottom:.875rem}.blog-content h3{font-size:18px;line-height:26px;letter-spacing:-.36px;color:#2d3139;font-weight:500;margin-to",
+        "fetch_error": ""
+      },
+      {
+        "title": "How Much Does Notion AI Cost? Complete 2024 Pricing ...",
+        "url": "https://www.getmonetizely.com/articles/how-much-does-notion-ai-cost-complete-2024-pricing-guide-amp-plan-comparison",
+        "query": "Notion AI feature cost analysis",
+        "provider": "tavily",
+        "score": "0.78650844",
+        "fetched_text": "How Much Does Notion AI Cost? Complete 2024 Pricing Guide &amp; Plan Comparison WebFont.load({ google: { families: [\"Rethink Sans:300,400,500,600,700\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-EG2J7NZ80W'); !function(e,r){try{if(e.vector)return void console.log(\"Vector snippet included more than once.\");var t={};t.q=t.q||[];for(var o=[\"load\",\"identify\",\"on\"],n=function(e){return function(){var r=Array.prototype.slice.call(arguments);t.q.push([e,r])}},c=0;c !function () {var reb2b = window.reb2b = window.reb2b || [];if (reb2b.invoked) return;reb2b.invoked = true;reb2b.methods = [\"identify\", \"collect\"];reb2b.factory = function (method) {return function () {var args = Array.prototype.slice.call(arguments);args.unshift(method);reb2b.push(args);return reb2b;};};for (var i = 0; i function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement(\"script\"); o.src=\"https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=\"+n,o.async=!0,o.defer=!0, o.onload=function(){window.trackingFunctions.onLoad({appId:\"6632e13eae7f050300f062c0\"})}, document.head.appendChild(o)}initApollo(); .blog-content p { font-size: 18px; line-height: 1.7; color: #333333; /* max-width: 700px; */ margin: 0 auto 1.5em auto; } .blog-content h2 { font-size: 28px; font-weight: 700; color: #222222; margin-top: 2em; margin-bottom: 1em; border-left: 4px solid #0055FF; padding-left: 12px; } .blog-content h3 { font-size: 22px; font-weight: 600; color: #333333; margin-top: 1.5em; } .blog-content blockquote",
+        "fetch_error": ""
+      },
+      {
+        "title": "Notion AI Guide: Features, Pricing, Real Use Cases 2026",
+        "url": "https://dancumberlandlabs.com/blog/notion-ai-guide",
+        "query": "Notion AI feature cost analysis",
+        "provider": "tavily",
+        "score": "0.7734393",
+        "fetched_text": "Notion AI Guide: Features, Pricing, Real Use Cases 2026 | Dan Cumberland Labs {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"headline\":\"Notion AI Guide\",\"description\":\"Notion AI operates as a team of specialized agents embedded in your workspace. It can draft documents, build databases, search across connected tools like...\",\"image\":\"https://cms.dancumberlandlabs.com\\n/uploads/blog_notion_ai_guide_223895de79.webp\",\"datePublished\":\"2026-05-08T14:27:18.255Z\",\"dateModified\":\"2026-05-08T14:27:18.223Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Dan Cumberland\",\"url\":\"https://dancumberlandlabs.com/about/\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Dan Cumberland Labs\",\"url\":\"https://dancumberlandlabs.com\"}}]} (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-KKLSF5KN'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-JH4K4FM7DX'); // GA4 custom event tracking via event delegation document.addEventListener('click', function(e) { var link = e.target.closest('a[href]'); if (!link) return; var href = link.href; // Booking clicks if (href.indexOf('book.dancumberland.com') !== -1) { gtag('event', 'book_call_click', { link_url: href, cta_text: link.textContent.trim(), page_path: window.location.pathname }); } // Resource downloads if (href.indexOf('go.dancumberlandlabs.com') !== -1 || href.indexOf('aitrainingguide.com') !== -1 || href.indexOf('aiflowaudit.com') !== -1) { gtag('event', 'resource_download', { resour",
+        "fetch_error": ""
+      },
+      {
+        "title": "Notion Revenue 2025: $600M ARR, $10B Valuation - GetLatka",
+        "url": "https://getlatka.com/companies/notion",
+        "query": "Notion engineering team size 2025",
+        "provider": "tavily",
+        "score": "0.7304634",
+        "fetched_text": "Notion Revenue 2025: $600M ARR, $10B Valuation (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"\\n try {\\n if (window.location.href.includes('.local.')) {\\n localStorage.setItem('newsletter_modal_closed', Date.now().toString());\\n }\\n } catch {}\\n \",\"id\":\"disable-newsletter-popup-on-local\"}]) Home SaaS Database Add Your Company Podcast Pricing Sections Company Revenue Valuation and Funding Founder and CEO Customers and Pricing Employees and Team Size FAQ Industries Contacts Competitors {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"@id\":\"https://getlatka.com/companies/notion#organization\",\"name\":\"Notion\",\"description\":\"Notion Labs, Inc. is the company that owns notion.so. It is a privately-held software company based in San Francisco, California, that provides a productivity and collaboration platform that allows users to create, organize, and share notes, tasks, wikis, and databases. The company was founded in 2013 by Ivan Zhao, and has since raised over $300 million in funding from investors including Index Ventures, Sequoia Capital, and Greylock Partners. Notion is used by individuals, teams, and organizations of all sizes across various industries to streamline their workflow, increase productivity, and improve collaboration.\",\"url\":\"https://notion.com\",\"logo\":\"https://storage.getlatka.com/images/notion.com.png\",\"sameAs\":[\"https://twitter.com/NotionHQ\",\"https://www.youtube.com/channel/UCoSvlWS5XcwaSzIcbuJ-Ysg\",\"https://www.facebook.com/NotionHQ/\",\"https://www.linkedin.com/company/notionhq/\",\"https://www.crunchbase.com/organization/notion-so\"],\"foundingDate\":\"2013-01-01\",\"founder\":{\"@type\":\"Person\",\"name\":\"Ivan Zhao\",\"sameAs\":\"https://www.linkedin.com/in/ivanhzhao/\"},\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"San Francisco\",\"addressRegion\":",
+        "fetch_error": ""
+      },
+      {
+        "title": "1000 employees. Can someone explain what all of them actually do?",
+        "url": "https://www.reddit.com/r/SaaS/comments/1rzgfiw/notion_reportedly_has_1000_employees_can_someone",
+        "query": "Notion engineering team size 2025",
+        "provider": "tavily",
+        "score": "0.5775198",
+        "fetched_text": "Notion handles millions of users, real-time collaboration, search indexing, file storage, version control. That's not a small team problem.",
+        "fetch_error": "HTTP Error 403: Blocked; used tavily content fallback"
+      },
+      {
+        "title": "Make with Notion 2025: How Notion AI Changed Work at Notion",
+        "url": "https://www.youtube.com/watch?v=swd5BZBUZlY",
+        "query": "Notion engineering team size 2025",
+        "provider": "tavily",
+        "score": "0.356492",
+        "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260606.02.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+        "fetch_error": ""
+      },
+      {
+        "title": "GPT-4 vs Codex for Coding...general discussion - API - OpenAI Developer Community",
+        "url": "https://community.openai.com/t/gpt-4-vs-codex-for-coding-general-discussion/109973",
+        "query": "Codex vs GPT-4 for code generation comparison",
+        "provider": "tavily",
+        "score": "0.7646988",
+        "fetched_text": "# GPT-4 vs Codex for Coding...general discussion. What I’ve found using GPT-4 for help coding is that you really need to know a little bit about programming to know what to ask and how to ask. I haven’t played much with the most recent Codex, but I need to investigate again. GPT-4, though, is almost like a “Coder Buddy” that can help you get where you want to go if you know where you want to go… and can ask the right, specific questions. Anyone else using GPT-4 for coding help? Do you like it better than Codex? Another trick I’ve noticed is that if it gives you something you don’t want (bad solution), you can copy and paste that and put it in the USER prompt as “I tried X Y Z” and it wasn’t what I really wanted. | Getting ChatGPT-4 to help with coding current GPT APIs Community api | 1 | 1158 | November 5, 2023 |.",
+        "fetch_error": "HTTP Error 429: Too Many Requests; used tavily content fallback"
+      },
+      {
+        "title": "The Tale of 2 Models: Opus 4.6 vs GPT 5.3 Codex | by Cordero Core",
+        "url": "https://medium.com/@cdcore/the-tale-of-2-models-opus-4-6-vs-gpt-5-3-codex-129fcb35630f",
+        "query": "Codex vs GPT-4 for code generation comparison",
+        "provider": "tavily",
+        "score": "0.48557588",
+        "fetched_text": "On the LFG benchmark, four escalating tasks from simple to complex, Opus scored 9.25/10 compared to Codex's 7.5/10. The gap widened on the",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      },
+      {
+        "title": "GPT-5.4 Review: Is It Worth Leaving GPT-5.3 Codex Behind?",
+        "url": "https://www.turingcollege.com/blog/gpt-5-4-review-vs-gpt-5-3-codex",
+        "query": "Codex vs GPT-4 for code generation comparison",
+        "provider": "tavily",
+        "score": "0.45289946",
+        "fetched_text": "GPT-5.4 Review: Is It Worth Leaving GPT-5.3 Codex Behind? html.w-mod-js:not(.w-mod-ix3) :is(.heading-83, [data-el=\"modal-lead-ae\"], [data-el=\"modal-lead-sae\"], [data-el=\"modal-lead-aiba\"], [data-el=\"modal-lead-ds\"], [data-el=\"modal-lead-da\"], [data-el=\"modal-lead-aiet\"], [data-el=\"modal-syllabus-ae\"], [data-el=\"modal-syllabus-sae\"], [data-el=\"modal-syllabus-aili\"], [data-el=\"modal-syllabus-dm\"], [data-el=\"modal-syllabus-da\"], [data-el=\"modal-syllabus-aiet\"], [data-el=\"modal-lead-geo\"], [data-el=\"modal-syllabus-aiba\"]) {visibility: hidden !important;} !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); function getCookie(name) { const value = '; ' + document.cookie; const parts = value.split('; ' + name + '='); if (parts.length == 2) return parts.pop().split(';').shift(); } (function() { const isStaging = window.location.origin.includes('webflow.io'); const script = document.createElement('script'); script.src = isStaging // ? 'http://localhost:3000/navigation.js' ? 'https://cdn.jsdelivr.net/npm/@tc-turing/webflow@1.0.70/dist/navigation.js' : 'https://cdn.jsdelivr.net/npm/@tc-turing/webflow@1.0.70/dist/navigation.js'; script.defer = true; document.currentScript.insertAdjacentElement('afterend', script); })(); (function() { const isStaging = window.location.origin.includes('webflow.io'); const script = document.createElement('script'); script.src = isStaging // ? 'http://localhost:3000/utils/geolocation.js' ? 'https://cdn.jsdelivr.net/npm/@tc-turing/webflow@1.0.58/dist/utils/geolocation.js' : 'https://cdn.jsdelivr.net/npm/@tc-turing/webflow@1.0.58/dist/utils/geolocation.js'; script.defer = true; document.currentScript.insertAdjacentElement('aft",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260610-what-codex-unlocks-for-notion-71b648b9/",
+    "for_gpt_editor": {
+      "brief": "How Notion uses Codex to one-shot specs, build AI Voice Input for the web, and multiply engineering power across small teams.",
+      "title_seed": "Notion 用 Codex 做了什么：AI 语音输入与工程效率翻倍",
+      "original_title": "What Codex unlocks for Notion",
+      "source_url": "https://openai.com/index/notion",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选",
+          "label": "可选",
+          "reason": "OpenAI 官方发布 Notion 使用 Codex 的案例，有具体应用场景（AI 语音输入、spec-driven 开发），证据链较完整，但成本数据缺失，适合作为趋势雷达或案例拆解，不宜过度承诺可复制性。"
+        },
+        "core_question": "Notion 使用 OpenAI Codex 实现 AI 语音输入和 spec-driven 开发的具体技术方案、实际效果、成本结构如何，其他小团队能否复制？",
+        "why_this_topic_matters": "OpenAI 官方案例展示 Codex 在真实产品中的落地，涉及语音输入、自动化开发流程，对技术团队有参考价值，且案例来自知名产品 Notion，读者关注度高。",
+        "fact_summary": [
+          "Notion 工程师 Ryan Nystrom 使用 Codex 独立构建了 AI Voice Input 功能（从移动端移植到 Web）。",
+          "Notion 采用 spec-driven 开发流程：工程师用自然语言写 spec，Codex 生成代码，人工审查后合并。",
+          "OpenAI 官方发布了案例文章和视频。",
+          "Notion 团队约 1000 人，但工程团队规模未公开。",
+          "Codex 定价：API 按 token 计费，Plus 订阅 $20/月，Pro $200/月。",
+          "Notion AI 附加功能定价 $10/月/用户。"
+        ],
+        "timeline": [
+          {
+            "date": "2026-03-24",
+            "event": "OpenAI 发布 Notion 案例文章和 LinkedIn 视频"
+          },
+          {
+            "date": "2026-06-06",
+            "event": "YouTube 视频 'the AI engineering workflow at Notion' 发布"
+          },
+          {
+            "date": "2026-06-06",
+            "event": "Lenny's Newsletter 文章 'Spec-driven development' 发布"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "OpenAI 官方文章",
+            "url": "https://openai.com/index/notion",
+            "supports": "Notion 使用 Codex 构建 AI Voice Input 和 spec-driven 开发",
+            "reliability": "official"
+          },
+          {
+            "source": "LinkedIn 帖子",
+            "url": "https://www.linkedin.com/posts/openai-devs_with-codex-ryan-built-notions-ai-voice-activity-7442287799996874753-oa4Y",
+            "supports": "Ryan Nystrom 用 Codex 独立构建 AI Voice Input",
+            "reliability": "official"
+          },
+          {
+            "source": "YouTube 视频",
+            "url": "https://www.youtube.com/watch?v=pUHA_jNwuYE",
+            "supports": "Notion AI 工程工作流详情",
+            "reliability": "official"
+          },
+          {
+            "source": "Lenny's Newsletter",
+            "url": "https://www.lennysnewsletter.com/p/spec-driven-development-the-ai-engineering",
+            "supports": "Spec-driven 开发流程细节",
+            "reliability": "media"
+          },
+          {
+            "source": "PricePerToken",
+            "url": "https://pricepertoken.com/pricing-page/model/openai-gpt-5-codex",
+            "supports": "Codex API 定价",
+            "reliability": "media"
+          },
+          {
+            "source": "UserJot",
+            "url": "https://userjot.com/blog/openai-codex-pricing",
+            "supports": "Codex 定价和计划",
+            "reliability": "media"
+          },
+          {
+            "source": "GetLatka",
+            "url": "https://getlatka.com/companies/notion",
+            "supports": "Notion 团队规模约 1000 人",
+            "reliability": "media"
+          },
+          {
+            "source": "Reddit",
+            "url": "https://www.reddit.com/r/SaaS/comments/1rzgfiw/notion_reportedly_has_1000_employees_can_someone",
+            "supports": "Notion 团队规模讨论",
+            "reliability": "weak"
+          }
+        ],
+        "logic_closure": "事实链基本完整：官方确认使用 Codex，有具体功能（语音输入、spec-driven），有工程师个人案例。但成本数据、实际效果（如节省工时、用户满意度）缺失，无法完全闭环。",
+        "writeable_angles": [
+          {
+            "angle": "技术拆解：Notion 如何用 Codex 实现 AI 语音输入",
+            "why": "读者对具体实现感兴趣，可分析浏览器 API、模型调用、延迟优化",
+            "needs": "需要更多技术细节（如使用的模型版本、延迟数据）"
+          },
+          {
+            "angle": "工作流变革：Spec-driven 开发是否适合小团队",
+            "why": "小团队关注效率提升，可讨论自然语言写 spec 的可行性和人工审查成本",
+            "needs": "需要 Notion 内部效率数据（如 spec 到代码的转化率）"
+          },
+          {
+            "angle": "成本分析：Codex API 费用 vs 人工成本",
+            "why": "读者关心投入产出比，可估算 API 调用成本并与工程师薪资对比",
+            "needs": "需要 Notion 的 API 调用量和费用数据"
+          },
+          {
+            "angle": "可复制性：其他团队能否复制 Notion 的做法",
+            "why": "读者希望知道自己的团队是否适用",
+            "needs": "需要 Notion 团队规模、技术栈、Codex 使用深度等信息"
+          }
+        ],
+        "missing_basics": [
+          "Codex 与 GPT-4 在代码生成上的具体差异（当前证据仅来自社区讨论，非官方）",
+          "Notion 工程团队具体人数（仅知总员工约 1000 人）",
+          "AI Voice Input 的技术实现细节（如使用的模型、延迟、准确率）"
+        ],
+        "missing_materials": [
+          "Notion AI Voice Input 的产品页面或技术文档",
+          "Notion 内部使用 Codex 的成本数据（API 调用量、费用）",
+          "Spec-driven 开发的实际效果数据（如节省工时、代码质量）",
+          "Notion 工程团队规模和技术栈的官方信息"
+        ],
+        "not_claimable": [
+          "Notion 使用 Codex 的具体成本",
+          "AI 语音输入的实际用户满意度",
+          "Spec-driven 开发节省的具体工时",
+          "其他团队能直接复制的条件"
+        ],
+        "followup_queries": [
+          "Notion AI Voice Input 的技术实现细节（模型、延迟、准确率）",
+          "Notion 使用 Codex 的 API 调用量和费用",
+          "Notion 工程团队规模和分工",
+          "Spec-driven 开发在 Notion 内部的效果数据"
+        ],
+        "additional_search_queries": [
+          "Notion AI voice input technical implementation",
+          "Notion Codex API cost estimate",
+          "Notion engineering team size 2025",
+          "Spec-driven development Notion results",
+          "OpenAI Codex vs GPT-4 code generation benchmark"
+        ],
+        "stop_conditions": [
+          "如果无法获取任何成本或效果数据，则放弃深入分析，仅做趋势报道",
+          "如果官方案例被撤回或证实为营销内容，则放弃",
+          "如果社区反馈显示 Codex 实际效果远低于宣传，则转为风险避坑角度"
+        ],
+        "confidence": 70,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "case-study",
+        "quality_gate": {
+          "pass": true,
+          "score": 82,
+          "fatal_issues": [],
+          "warnings": [
+            "成本数据缺失，无法进行完整的成本效益分析",
+            "技术细节（模型版本、延迟、准确率）未公开",
+            "团队规模信息仅来自第三方，非官方确认"
+          ],
+          "missing_evidence": [
+            "Notion 使用 Codex 的 API 调用量和费用",
+            "AI Voice Input 的技术实现细节（模型、延迟、准确率）",
+            "Spec-driven 开发的实际效果数据（节省工时、代码质量）",
+            "Notion 工程团队规模和技术栈的官方信息"
+          ],
+          "reader_hook_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": true,
+          "downstream_handoff_ok": true,
+          "material_pack_ok": true,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": true,
+          "source_coverage_ok": true,
+          "recommendation": "publish"
+        },
+        "research_plan": {
+          "core_question": "Notion 使用 OpenAI Codex 实现 AI 语音输入和工程自动化的具体技术方案、实际效果、成本结构如何，其他小团队能否复制？",
+          "must_verify": [
+            "Notion 是否确实使用了 Codex（而非其他模型）？",
+            "AI 语音输入功能的具体实现方式（模型、延迟、准确率）？",
+            "工程自动化（one-shot specs）的具体案例和效果数据？",
+            "成本数据：API 调用量、费用、与人工对比？",
+            "Notion 团队规模和技术栈？"
+          ],
+          "search_queries": [
+            "Notion AI voice input Codex implementation",
+            "Notion Codex one-shot specs engineering automation",
+            "OpenAI Codex pricing per token 2025",
+            "Notion AI feature cost analysis",
+            "Notion engineering team size 2025",
+            "Codex vs GPT-4 for code generation comparison",
+            "Notion AI voice input latency accuracy",
+            "small team AI automation case study Notion"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Notion AI voice input Codex implementation",
+              "why_needed": "确认技术方案细节和实际效果"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "OpenAI Codex pricing per token 2025",
+              "why_needed": "获取成本估算基础"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Notion AI feature cost analysis",
+              "why_needed": "了解实际投入产出比"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Notion engineering team size 2025",
+              "why_needed": "评估可复制性门槛"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "Codex vs GPT-4 for code generation comparison",
+              "why_needed": "验证模型选择合理性"
+            }
+          ],
+          "expert_challenge_points": [
+            "语音输入在 web 端的技术挑战（浏览器 API、实时性）",
+            "Codex 生成代码的准确率和人工审查成本",
+            "小团队是否真的能负担 Codex API 费用？",
+            "Notion 案例是否具有普遍性？"
+          ],
+          "do_not_claim_yet": [
+            "Notion 使用 Codex 的具体成本",
+            "AI 语音输入的实际用户满意度",
+            "工程自动化节省的具体工时",
+            "其他团队能直接复制的条件"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取成本数据，可发布为趋势雷达，聚焦技术方案和可复制性讨论，但需明确标注成本未知。",
+          "downstream_materials_needed": [
+            "Notion AI 语音输入的产品页面或文档",
+            "OpenAI Codex 定价页面",
+            "Notion 工程博客或技术演讲",
+            "开发者社区关于 Codex 实际使用的讨论"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Instagram",
+            "url": "https://www.instagram.com/reel/DWbw7LCjD8r",
+            "query": "Notion AI voice input Codex implementation",
+            "provider": "tavily",
+            "score": "0.7734393",
+            "fetched_text": ":root, .__ig-light-mode:root, .__ig-light-mode {--fds-black:#000000;--fds-black-alpha-05:rgba(0, 0, 0, 0.05);--fds-black-alpha-10:rgba(0, 0, 0, 0.1);--fds-black-alpha-15:rgba(0, 0, 0, 0.15);--fds-black-alpha-20:rgba(0, 0, 0, 0.2);--fds-black-alpha-30:rgba(0, 0, 0, 0.3);--fds-black-alpha-40:rgba(0, 0, 0, 0.4);--fds-black-alpha-50:rgba(0, 0, 0, 0.5);--fds-black-alpha-60:rgba(0, 0, 0, 0.6);--fds-black-alpha-80:rgba(0, 0, 0, 0.8);--fds-blue-05:#ECF3FF;--fds-blue-30:#AAC9FF;--fds-blue-40:#77A7FF;--fds-blue-60:#1877F2;--fds-blue-70:#2851A3;--fds-blue-80:#1D3C78;--fds-button-text:#444950;--fds-comment-background:#F2F3F5;--fds-dark-mode-gray-35:#CCCCCC;--fds-dark-mode-gray-50:#828282;--fds-dark-mode-gray-70:#4A4A4A;--fds-dark-mode-gray-80:#373737;--fds-dark-mode-gray-90:#282828;--fds-dark-mode-gray-100:#1C1C1C;--fds-gray-00:#F5F6F7;--fds-gray-05:#F2F3F5;--fds-gray-10:#EBEDF0;--fds-gray-20:#DADDE1;--fds-gray-25:#CCD0D5;--fds-gray-30:#BEC3C9;--fds-gray-45:#8D949E;--fds-gray-70:#606770;--fds-gray-80:#444950;--fds-gray-90:#303338;--fds-gray-100:#1C1E21;--fds-green-55:#00A400;--fds-green-60:#31A73B;--fds-green-65:#51CE70;--fds-highlight:#3578E5;--fds-highlight-cell-background:#ECF3FF;--fds-primary-icon:#1C1E21;--fds-primary-text:#1C1E21;--fds-red-55:#FA383E;--fds-soft:cubic-bezier(.08,.52,.52,1);--fds-spectrum-aluminum-tint-70:#E4F0F6;--fds-spectrum-blue-gray-tint-70:#CFD1D5;--fds-spectrum-cherry:#F35369;--fds-spectrum-cherry-tint-70:#FBCCD2;--fds-spectrum-grape-tint-70:#DDD5F0;--fds-spectrum-grape-tint-90:#F4F1FA;--fds-spectrum-lemon-dark-1:#F5C33B;--fds-spectrum-lemon-tint-70:#FEF2D1;--fds-spectrum-lime:#A3CE71;--fds-spectrum-lime-tint-70:#E4F0D5;--fds-spectrum-orange-tint-70:#FCDEC5;--fds-spectrum-orange-tint-90:#FEF4EC;--fds-spectrum-seafoam-tint-70:#CAEEF9;--fds-spectrum-slate-",
+            "fetch_error": ""
+          },
+          {
+            "title": "With Codex, Ryan built Notion's AI Voice Input feature ... - LinkedIn",
+            "url": "https://www.linkedin.com/posts/openai-devs_with-codex-ryan-built-notions-ai-voice-activity-7442287799996874753-oa4Y",
+            "query": "Notion AI voice input Codex implementation",
+            "provider": "tavily",
+            "score": "0.75027883",
+            "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); With Codex, Ryan built Notion’s AI Voice Input feature entirely by himself. Ryan Nystrom used Codex to understand the context, point Codex to an existing mobile feature, and ship it to web and… | OpenAI Developers {\"@context\":\"http://schema.org\",\"@type\":\"VideoObject\",\"@id\":\"https://www.linkedin.com/posts/openai-devs_with-codex-ryan-built-notions-ai-voice-activity-7442287799996874753-oa4Y\",\"datePublished\":\"2026-03-24T19:14:42.510Z\",\"headline\":\"With Codex, Ryan built Notion’s AI Voice Input feature entirely by himself.\",\"comment\":[{\"@type\":\"Comment\",\"datePublished\":\"2026-03-25T00:11:26.365Z\",\"text\":\"https://github.com/Jhosman9090\",\"creator\":{\"@type\":\"Person\",\"name\":\"jhosman carlos martinez morales\"},\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/LikeAction\",\"userInteractionCount\":0}},{\"@type\":\"Comment\",\"datePublished\":\"2026-03-24T23:44:03.555Z\",\"text\":\"This is very inspiring!\",\"creator\":{\"@type\":\"Person\",\"name\":\"Luis Gonzalez\"},\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/LikeAction\",\"userInteractionCount\":1}},{\"@type\":\"Comment\",\"datePublished\":\"2026-03-25T00:11:45.688Z\",\"text\":\"Instituto Mexicano de la Propiedad Industrial (IMPI)\",\"creator\":{\"@type\":\"Person\",\"name\":\"jhosman carlos martinez morales\"},\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/LikeAction\",\"userInteractionCount\":0}}],\"commentCou",
+            "fetch_error": ""
+          },
+          {
+            "title": "feat: Add a voice input mode · Issue #418 · openai/codex · GitHub",
+            "url": "https://github.com/openai/codex/issues/418",
+            "query": "Notion AI voice input Codex implementation",
+            "provider": "tavily",
+            "score": "0.68191797",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"arianotify_comprehensive_migration\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_diff_explain_conversation_intent\",\"copilot_diff_reference_context\",\"co",
+            "fetch_error": ""
+          },
+          {
+            "title": "the AI engineering workflow at Notion | Ryan Nystrom - YouTube",
+            "url": "https://www.youtube.com/watch?v=pUHA_jNwuYE",
+            "query": "Notion Codex one-shot specs engineering automation",
+            "provider": "tavily",
+            "score": "0.518815",
+            "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260606.02.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+            "fetch_error": ""
+          },
+          {
+            "title": "Spec-driven development: The AI engineering workflow at Notion | Ryan Nystrom",
+            "url": "https://www.lennysnewsletter.com/p/spec-driven-development-the-ai-engineering",
+            "query": "Notion Codex one-shot specs engineering automation",
+            "provider": "tavily",
+            "score": "0.49450764",
+            "fetched_text": "Spec-driven development: The AI engineering workflow at Notion | Ryan Nystrom @layer legacy, tailwind, pencraftReset, pencraft; @font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCt-xNNww_2s0amA9M8on7mTNmnUHowCw.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCt-xNNww_2s0amA9M8onXmTNmnUHowCw.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCt-xNNww_2s0amA9M8onTmTNmnUHowCw.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCt-xNNww_2s0amA9M8onrmTNmnUHo.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Spectral';font-style:normal;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCr-xNNww_2s0amA9M9knjsS_ulYHs.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Spectral';font-style:normal;font-weight:400;font-display:fallback;src:url(https",
+            "fetch_error": ""
+          },
+          {
+            "title": "What Codex Unlocks for Notion - YouTube",
+            "url": "https://www.youtube.com/shorts/qHEUIXGSxxg",
+            "query": "Notion Codex one-shot specs engineering automation",
+            "provider": "tavily",
+            "score": "0.40302688",
+            "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260606.02.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+            "fetch_error": ""
+          },
+          {
+            "title": "GPT 5 Codex API Pricing 2026 - Costs, Performance & Providers",
+            "url": "https://pricepertoken.com/pricing-page/model/openai-gpt-5-codex",
+            "query": "OpenAI Codex pricing per token 2025",
+            "provider": "tavily",
+            "score": "0.92074",
+            "fetched_text": ":root { --color-primary-50: 240 253 244; --color-primary-100: 220 252 231; --color-primary-200: 187 247 208; --color-primary-300: 134 239 172; --color-primary-400: 74 222 128; --color-primary-500: 34 197 94; --color-primary-600: 22 163 74; --color-primary-700: 21 128 61; --color-primary-800: 22 101 52; --color-primary-900: 20 83 45; --color-primary-950: 5 46 22; --color-primary-DEFAULT: var(--color-primary-500); --color-gray-50: 249 250 251; --color-gray-100: 243 244 246; --color-gray-200: 229 231 235; --color-gray-300: 209 213 219; --color-gray-400: 156 163 175; --color-gray-500: 107 114 128; --color-gray-600: 75 85 99; --color-gray-700: 55 65 81; --color-gray-800: 31 41 55; --color-gray-900: 17 24 39; --color-gray-950: 3 7 18; } .dark { --color-primary-DEFAULT: var(--color-primary-400); } GPT 5 Codex API Pricing 2026 - Costs, Performance & Providers header[data-v-8b7adbe1]{font-family:Inter,sans-serif} .fade-enter-active[data-v-02bc130b],.fade-leave-active[data-v-02bc130b]{transition:opacity .3s ease}.fade-enter-from[data-v-02bc130b],.fade-leave-to[data-v-02bc130b]{opacity:0} .sticky-nav-container[data-v-726096fe]{position:sticky;top:56px;z-index:40}.sticky-nav[data-v-726096fe]{transition:box-shadow .2s ease}.is-sticky .sticky-nav[data-v-726096fe]{box-shadow:0 2px 4px #0000001a}.nav-item[data-v-726096fe]{position:relative}.nav-item[data-v-726096fe]:focus{outline:none}.nav-item[data-v-726096fe]:focus-visible{outline:2px solid #3b82f6;outline-offset:2px} :where(.i-heroicons\\:arrow-right){display:inline-block;width:1em;height:1em;background-color:currentColor;-webkit-mask-image:var(--svg);mask-image:var(--svg);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;--svg:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2",
+            "fetch_error": ""
+          },
+          {
+            "title": "OpenAI Codex Pricing in 2026: What I Found After Ditching Claude ...",
+            "url": "https://userjot.com/blog/openai-codex-pricing",
+            "query": "OpenAI Codex pricing per token 2025",
+            "provider": "tavily",
+            "score": "0.81630427",
+            "fetched_text": "OpenAI Codex Pricing in 2026: What I Found After Ditching Claude Code — UserJot {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"OpenAI Codex Pricing in 2026: What I Found After Ditching Claude Code\",\"description\":\"OpenAI Codex pricing breakdown: $20 ChatGPT Plus vs $200 Pro. What happened to the API and how the new Codex Web and CLI compare to Claude Code.\",\"datePublished\":\"2025-09-06T00:00:00.000Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Shayan Taslim\",\"url\":\"https://userjot.com\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"UserJot\",\"url\":\"https://userjot.com\"},\"image\":\"https://userjot.com/assets/blog/covers/openai-codex-pricing/glass-blower-1.webp\",\"mainEntityOfPage\":\"https://userjot.com/blog/openai-codex-pricing\",\"articleSection\":\"Engineering\",\"keywords\":\"ai, coding, openai, codex, claude-code\"} {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://userjot.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"https://userjot.com/blog\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Engineering\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"OpenAI Codex Pricing in 2026: What I Found After Ditching Claude Code\"}]} UserJot Product Resources Pricing Blog Log in Get started UserJot Feedback, roadmap, and changelog, designed as one loop for product-led teams. Features Customer Feedback Feature Requests Feature Voting Product Roadmap Product Changelog Feedback Widget AI Agents Slack Resources Help Center Documentation API Reference Glossary Tools Product Get Started Pricing Feedback Roadmap Updates Blog Get Help Contact Status Privacy Terms Compare Canny Alternative UserVoice Alternative Nolt Alternative Aha! Alternative Beamer Alternative BugHerd Alternative Productboard Alter",
+            "fetch_error": ""
+          },
+          {
+            "title": "OpenAI Codex pricing in 2026: every plan, cost, and gotcha explained",
+            "url": "https://www.eesel.ai/blog/openai-codex-pricing",
+            "query": "OpenAI Codex pricing per token 2025",
+            "provider": "tavily",
+            "score": "0.79522943",
+            "fetched_text": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-scroll-snap-strictness:proximity;--tw-space-y-reverse:0;--tw-space-x-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-ordinal:initial;--tw-slashed-zero:initial;--tw-numeric-figure:initial;--tw-numeric-spacing:initial;--tw-numeric-fraction:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw-backdrop-contrast:initial;--tw-backdrop-grayscale:i",
+            "fetch_error": ""
+          },
+          {
+            "title": "Notion AI Pricing: Is the $10/Month Add-on Really Worth It?",
+            "url": "https://flowith.io/blog/notion-ai-pricing-10-month-addon-worth-it",
+            "query": "Notion AI feature cost analysis",
+            "provider": "tavily",
+            "score": "0.81347597",
+            "fetched_text": "Notion AI Pricing: Is the $10/Month Add-on Really Worth It? - Flowith Blog (function(){const adjustLoadDelayMs = 2000; const adjustSdkUrl = \"https://cdn.adjust.com/adjust-latest.min.js\"; window.addEventListener('load', function() { setTimeout(function() { // Adjust SDK loader (getWebUUID enables S2S beacon fallback for payment_show) !function(t,e,a,o,n,s,r,d){t.Adjust=t.Adjust||{},t.Adjust_q=t.Adjust_q||[];for(var i=0;i if (history.scrollRestoration) { history.scrollRestoration = 'manual'; } // Restore scroll position immediately (function() { var scrollPos = sessionStorage.getItem('scrollPos_' + location.pathname); if (scrollPos && performance.navigation && performance.navigation.type === 2) { // Back/forward navigation document.documentElement.style.opacity = '0'; } })(); (() => { const root = document.documentElement; const updateScrollEdge = () => { const scroller = document.scrollingElement || root; const maxScroll = Math.max(0, scroller.scrollHeight - window.innerHeight); const scrollTop = scroller.scrollTop || window.scrollY || 0; root.dataset.scrollEdge = maxScroll > 2 && scrollTop >= maxScroll - 2 ? \"bottom\" : \"top\"; }; updateScrollEdge(); window.addEventListener(\"scroll\", updateScrollEdge, { passive: true }); window.addEventListener(\"resize\", updateScrollEdge); window.addEventListener(\"pageshow\", updateScrollEdge); document.addEventListener(\"DOMContentLoaded\", updateScrollEdge); })(); .blog-content{font-family:ABC Oracle,sans-serif;font-weight:350;font-size:16px;line-height:24px;letter-spacing:-.32px;color:#2d3139}.blog-content h2{font-size:20px;line-height:28px;letter-spacing:-.4px;color:#2d3139;font-weight:500;margin-top:2.5rem;margin-bottom:.875rem}.blog-content h3{font-size:18px;line-height:26px;letter-spacing:-.36px;color:#2d3139;font-weight:500;margin-to",
+            "fetch_error": ""
+          },
+          {
+            "title": "How Much Does Notion AI Cost? Complete 2024 Pricing ...",
+            "url": "https://www.getmonetizely.com/articles/how-much-does-notion-ai-cost-complete-2024-pricing-guide-amp-plan-comparison",
+            "query": "Notion AI feature cost analysis",
+            "provider": "tavily",
+            "score": "0.78650844",
+            "fetched_text": "How Much Does Notion AI Cost? Complete 2024 Pricing Guide &amp; Plan Comparison WebFont.load({ google: { families: [\"Rethink Sans:300,400,500,600,700\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-EG2J7NZ80W'); !function(e,r){try{if(e.vector)return void console.log(\"Vector snippet included more than once.\");var t={};t.q=t.q||[];for(var o=[\"load\",\"identify\",\"on\"],n=function(e){return function(){var r=Array.prototype.slice.call(arguments);t.q.push([e,r])}},c=0;c !function () {var reb2b = window.reb2b = window.reb2b || [];if (reb2b.invoked) return;reb2b.invoked = true;reb2b.methods = [\"identify\", \"collect\"];reb2b.factory = function (method) {return function () {var args = Array.prototype.slice.call(arguments);args.unshift(method);reb2b.push(args);return reb2b;};};for (var i = 0; i function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement(\"script\"); o.src=\"https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=\"+n,o.async=!0,o.defer=!0, o.onload=function(){window.trackingFunctions.onLoad({appId:\"6632e13eae7f050300f062c0\"})}, document.head.appendChild(o)}initApollo(); .blog-content p { font-size: 18px; line-height: 1.7; color: #333333; /* max-width: 700px; */ margin: 0 auto 1.5em auto; } .blog-content h2 { font-size: 28px; font-weight: 700; color: #222222; margin-top: 2em; margin-bottom: 1em; border-left: 4px solid #0055FF; padding-left: 12px; } .blog-content h3 { font-size: 22px; font-weight: 600; color: #333333; margin-top: 1.5em; } .blog-content blockquote",
+            "fetch_error": ""
+          },
+          {
+            "title": "Notion AI Guide: Features, Pricing, Real Use Cases 2026",
+            "url": "https://dancumberlandlabs.com/blog/notion-ai-guide",
+            "query": "Notion AI feature cost analysis",
+            "provider": "tavily",
+            "score": "0.7734393",
+            "fetched_text": "Notion AI Guide: Features, Pricing, Real Use Cases 2026 | Dan Cumberland Labs {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"headline\":\"Notion AI Guide\",\"description\":\"Notion AI operates as a team of specialized agents embedded in your workspace. It can draft documents, build databases, search across connected tools like...\",\"image\":\"https://cms.dancumberlandlabs.com\\n/uploads/blog_notion_ai_guide_223895de79.webp\",\"datePublished\":\"2026-05-08T14:27:18.255Z\",\"dateModified\":\"2026-05-08T14:27:18.223Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Dan Cumberland\",\"url\":\"https://dancumberlandlabs.com/about/\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Dan Cumberland Labs\",\"url\":\"https://dancumberlandlabs.com\"}}]} (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-KKLSF5KN'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-JH4K4FM7DX'); // GA4 custom event tracking via event delegation document.addEventListener('click', function(e) { var link = e.target.closest('a[href]'); if (!link) return; var href = link.href; // Booking clicks if (href.indexOf('book.dancumberland.com') !== -1) { gtag('event', 'book_call_click', { link_url: href, cta_text: link.textContent.trim(), page_path: window.location.pathname }); } // Resource downloads if (href.indexOf('go.dancumberlandlabs.com') !== -1 || href.indexOf('aitrainingguide.com') !== -1 || href.indexOf('aiflowaudit.com') !== -1) { gtag('event', 'resource_download', { resour",
+            "fetch_error": ""
+          },
+          {
+            "title": "Notion Revenue 2025: $600M ARR, $10B Valuation - GetLatka",
+            "url": "https://getlatka.com/companies/notion",
+            "query": "Notion engineering team size 2025",
+            "provider": "tavily",
+            "score": "0.7304634",
+            "fetched_text": "Notion Revenue 2025: $600M ARR, $10B Valuation (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"\\n try {\\n if (window.location.href.includes('.local.')) {\\n localStorage.setItem('newsletter_modal_closed', Date.now().toString());\\n }\\n } catch {}\\n \",\"id\":\"disable-newsletter-popup-on-local\"}]) Home SaaS Database Add Your Company Podcast Pricing Sections Company Revenue Valuation and Funding Founder and CEO Customers and Pricing Employees and Team Size FAQ Industries Contacts Competitors {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"@id\":\"https://getlatka.com/companies/notion#organization\",\"name\":\"Notion\",\"description\":\"Notion Labs, Inc. is the company that owns notion.so. It is a privately-held software company based in San Francisco, California, that provides a productivity and collaboration platform that allows users to create, organize, and share notes, tasks, wikis, and databases. The company was founded in 2013 by Ivan Zhao, and has since raised over $300 million in funding from investors including Index Ventures, Sequoia Capital, and Greylock Partners. Notion is used by individuals, teams, and organizations of all sizes across various industries to streamline their workflow, increase productivity, and improve collaboration.\",\"url\":\"https://notion.com\",\"logo\":\"https://storage.getlatka.com/images/notion.com.png\",\"sameAs\":[\"https://twitter.com/NotionHQ\",\"https://www.youtube.com/channel/UCoSvlWS5XcwaSzIcbuJ-Ysg\",\"https://www.facebook.com/NotionHQ/\",\"https://www.linkedin.com/company/notionhq/\",\"https://www.crunchbase.com/organization/notion-so\"],\"foundingDate\":\"2013-01-01\",\"founder\":{\"@type\":\"Person\",\"name\":\"Ivan Zhao\",\"sameAs\":\"https://www.linkedin.com/in/ivanhzhao/\"},\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"San Francisco\",\"addressRegion\":",
+            "fetch_error": ""
+          },
+          {
+            "title": "1000 employees. Can someone explain what all of them actually do?",
+            "url": "https://www.reddit.com/r/SaaS/comments/1rzgfiw/notion_reportedly_has_1000_employees_can_someone",
+            "query": "Notion engineering team size 2025",
+            "provider": "tavily",
+            "score": "0.5775198",
+            "fetched_text": "Notion handles millions of users, real-time collaboration, search indexing, file storage, version control. That's not a small team problem.",
+            "fetch_error": "HTTP Error 403: Blocked; used tavily content fallback"
+          },
+          {
+            "title": "Make with Notion 2025: How Notion AI Changed Work at Notion",
+            "url": "https://www.youtube.com/watch?v=swd5BZBUZlY",
+            "query": "Notion engineering team size 2025",
+            "provider": "tavily",
+            "score": "0.356492",
+            "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260606.02.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+            "fetch_error": ""
+          },
+          {
+            "title": "GPT-4 vs Codex for Coding...general discussion - API - OpenAI Developer Community",
+            "url": "https://community.openai.com/t/gpt-4-vs-codex-for-coding-general-discussion/109973",
+            "query": "Codex vs GPT-4 for code generation comparison",
+            "provider": "tavily",
+            "score": "0.7646988",
+            "fetched_text": "# GPT-4 vs Codex for Coding...general discussion. What I’ve found using GPT-4 for help coding is that you really need to know a little bit about programming to know what to ask and how to ask. I haven’t played much with the most recent Codex, but I need to investigate again. GPT-4, though, is almost like a “Coder Buddy” that can help you get where you want to go if you know where you want to go… and can ask the right, specific questions. Anyone else using GPT-4 for coding help? Do you like it better than Codex? Another trick I’ve noticed is that if it gives you something you don’t want (bad solution), you can copy and paste that and put it in the USER prompt as “I tried X Y Z” and it wasn’t what I really wanted. | Getting ChatGPT-4 to help with coding current GPT APIs Community api | 1 | 1158 | November 5, 2023 |.",
+            "fetch_error": "HTTP Error 429: Too Many Requests; used tavily content fallback"
+          },
+          {
+            "title": "The Tale of 2 Models: Opus 4.6 vs GPT 5.3 Codex | by Cordero Core",
+            "url": "https://medium.com/@cdcore/the-tale-of-2-models-opus-4-6-vs-gpt-5-3-codex-129fcb35630f",
+            "query": "Codex vs GPT-4 for code generation comparison",
+            "provider": "tavily",
+            "score": "0.48557588",
+            "fetched_text": "On the LFG benchmark, four escalating tasks from simple to complex, Opus scored 9.25/10 compared to Codex's 7.5/10. The gap widened on the",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          },
+          {
+            "title": "GPT-5.4 Review: Is It Worth Leaving GPT-5.3 Codex Behind?",
+            "url": "https://www.turingcollege.com/blog/gpt-5-4-review-vs-gpt-5-3-codex",
+            "query": "Codex vs GPT-4 for code generation comparison",
+            "provider": "tavily",
+            "score": "0.45289946",
+            "fetched_text": "GPT-5.4 Review: Is It Worth Leaving GPT-5.3 Codex Behind? html.w-mod-js:not(.w-mod-ix3) :is(.heading-83, [data-el=\"modal-lead-ae\"], [data-el=\"modal-lead-sae\"], [data-el=\"modal-lead-aiba\"], [data-el=\"modal-lead-ds\"], [data-el=\"modal-lead-da\"], [data-el=\"modal-lead-aiet\"], [data-el=\"modal-syllabus-ae\"], [data-el=\"modal-syllabus-sae\"], [data-el=\"modal-syllabus-aili\"], [data-el=\"modal-syllabus-dm\"], [data-el=\"modal-syllabus-da\"], [data-el=\"modal-syllabus-aiet\"], [data-el=\"modal-lead-geo\"], [data-el=\"modal-syllabus-aiba\"]) {visibility: hidden !important;} !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); function getCookie(name) { const value = '; ' + document.cookie; const parts = value.split('; ' + name + '='); if (parts.length == 2) return parts.pop().split(';').shift(); } (function() { const isStaging = window.location.origin.includes('webflow.io'); const script = document.createElement('script'); script.src = isStaging // ? 'http://localhost:3000/navigation.js' ? 'https://cdn.jsdelivr.net/npm/@tc-turing/webflow@1.0.70/dist/navigation.js' : 'https://cdn.jsdelivr.net/npm/@tc-turing/webflow@1.0.70/dist/navigation.js'; script.defer = true; document.currentScript.insertAdjacentElement('afterend', script); })(); (function() { const isStaging = window.location.origin.includes('webflow.io'); const script = document.createElement('script'); script.src = isStaging // ? 'http://localhost:3000/utils/geolocation.js' ? 'https://cdn.jsdelivr.net/npm/@tc-turing/webflow@1.0.58/dist/utils/geolocation.js' : 'https://cdn.jsdelivr.net/npm/@tc-turing/webflow@1.0.58/dist/utils/geolocation.js'; script.defer = true; document.currentScript.insertAdjacentElement('aft",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选",
+          "label": "可选",
+          "reason": "OpenAI 官方发布 Notion 使用 Codex 的案例，有具体应用场景（AI 语音输入、spec-driven 开发），证据链较完整，但成本数据缺失，适合作为趋势雷达或案例拆解，不宜过度承诺可复制性。"
+        },
+        "core_question": "Notion 使用 OpenAI Codex 实现 AI 语音输入和 spec-driven 开发的具体技术方案、实际效果、成本结构如何，其他小团队能否复制？",
+        "why_this_topic_matters": "OpenAI 官方案例展示 Codex 在真实产品中的落地，涉及语音输入、自动化开发流程，对技术团队有参考价值，且案例来自知名产品 Notion，读者关注度高。",
+        "fact_summary": [
+          "Notion 工程师 Ryan Nystrom 使用 Codex 独立构建了 AI Voice Input 功能（从移动端移植到 Web）。",
+          "Notion 采用 spec-driven 开发流程：工程师用自然语言写 spec，Codex 生成代码，人工审查后合并。",
+          "OpenAI 官方发布了案例文章和视频。",
+          "Notion 团队约 1000 人，但工程团队规模未公开。",
+          "Codex 定价：API 按 token 计费，Plus 订阅 $20/月，Pro $200/月。",
+          "Notion AI 附加功能定价 $10/月/用户。"
+        ],
+        "timeline": [
+          {
+            "date": "2026-03-24",
+            "event": "OpenAI 发布 Notion 案例文章和 LinkedIn 视频"
+          },
+          {
+            "date": "2026-06-06",
+            "event": "YouTube 视频 'the AI engineering workflow at Notion' 发布"
+          },
+          {
+            "date": "2026-06-06",
+            "event": "Lenny's Newsletter 文章 'Spec-driven development' 发布"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "OpenAI 官方文章",
+            "url": "https://openai.com/index/notion",
+            "supports": "Notion 使用 Codex 构建 AI Voice Input 和 spec-driven 开发",
+            "reliability": "official"
+          },
+          {
+            "source": "LinkedIn 帖子",
+            "url": "https://www.linkedin.com/posts/openai-devs_with-codex-ryan-built-notions-ai-voice-activity-7442287799996874753-oa4Y",
+            "supports": "Ryan Nystrom 用 Codex 独立构建 AI Voice Input",
+            "reliability": "official"
+          },
+          {
+            "source": "YouTube 视频",
+            "url": "https://www.youtube.com/watch?v=pUHA_jNwuYE",
+            "supports": "Notion AI 工程工作流详情",
+            "reliability": "official"
+          },
+          {
+            "source": "Lenny's Newsletter",
+            "url": "https://www.lennysnewsletter.com/p/spec-driven-development-the-ai-engineering",
+            "supports": "Spec-driven 开发流程细节",
+            "reliability": "media"
+          },
+          {
+            "source": "PricePerToken",
+            "url": "https://pricepertoken.com/pricing-page/model/openai-gpt-5-codex",
+            "supports": "Codex API 定价",
+            "reliability": "media"
+          },
+          {
+            "source": "UserJot",
+            "url": "https://userjot.com/blog/openai-codex-pricing",
+            "supports": "Codex 定价和计划",
+            "reliability": "media"
+          },
+          {
+            "source": "GetLatka",
+            "url": "https://getlatka.com/companies/notion",
+            "supports": "Notion 团队规模约 1000 人",
+            "reliability": "media"
+          },
+          {
+            "source": "Reddit",
+            "url": "https://www.reddit.com/r/SaaS/comments/1rzgfiw/notion_reportedly_has_1000_employees_can_someone",
+            "supports": "Notion 团队规模讨论",
+            "reliability": "weak"
+          }
+        ],
+        "logic_closure": "事实链基本完整：官方确认使用 Codex，有具体功能（语音输入、spec-driven），有工程师个人案例。但成本数据、实际效果（如节省工时、用户满意度）缺失，无法完全闭环。",
+        "writeable_angles": [
+          {
+            "angle": "技术拆解：Notion 如何用 Codex 实现 AI 语音输入",
+            "why": "读者对具体实现感兴趣，可分析浏览器 API、模型调用、延迟优化",
+            "needs": "需要更多技术细节（如使用的模型版本、延迟数据）"
+          },
+          {
+            "angle": "工作流变革：Spec-driven 开发是否适合小团队",
+            "why": "小团队关注效率提升，可讨论自然语言写 spec 的可行性和人工审查成本",
+            "needs": "需要 Notion 内部效率数据（如 spec 到代码的转化率）"
+          },
+          {
+            "angle": "成本分析：Codex API 费用 vs 人工成本",
+            "why": "读者关心投入产出比，可估算 API 调用成本并与工程师薪资对比",
+            "needs": "需要 Notion 的 API 调用量和费用数据"
+          },
+          {
+            "angle": "可复制性：其他团队能否复制 Notion 的做法",
+            "why": "读者希望知道自己的团队是否适用",
+            "needs": "需要 Notion 团队规模、技术栈、Codex 使用深度等信息"
+          }
+        ],
+        "missing_basics": [
+          "Codex 与 GPT-4 在代码生成上的具体差异（当前证据仅来自社区讨论，非官方）",
+          "Notion 工程团队具体人数（仅知总员工约 1000 人）",
+          "AI Voice Input 的技术实现细节（如使用的模型、延迟、准确率）"
+        ],
+        "missing_materials": [
+          "Notion AI Voice Input 的产品页面或技术文档",
+          "Notion 内部使用 Codex 的成本数据（API 调用量、费用）",
+          "Spec-driven 开发的实际效果数据（如节省工时、代码质量）",
+          "Notion 工程团队规模和技术栈的官方信息"
+        ],
+        "not_claimable": [
+          "Notion 使用 Codex 的具体成本",
+          "AI 语音输入的实际用户满意度",
+          "Spec-driven 开发节省的具体工时",
+          "其他团队能直接复制的条件"
+        ],
+        "followup_queries": [
+          "Notion AI Voice Input 的技术实现细节（模型、延迟、准确率）",
+          "Notion 使用 Codex 的 API 调用量和费用",
+          "Notion 工程团队规模和分工",
+          "Spec-driven 开发在 Notion 内部的效果数据"
+        ],
+        "additional_search_queries": [
+          "Notion AI voice input technical implementation",
+          "Notion Codex API cost estimate",
+          "Notion engineering team size 2025",
+          "Spec-driven development Notion results",
+          "OpenAI Codex vs GPT-4 code generation benchmark"
+        ],
+        "stop_conditions": [
+          "如果无法获取任何成本或效果数据，则放弃深入分析，仅做趋势报道",
+          "如果官方案例被撤回或证实为营销内容，则放弃",
+          "如果社区反馈显示 Codex 实际效果远低于宣传，则转为风险避坑角度"
+        ],
+        "confidence": 70,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "case-study",
+        "quality_gate": {
+          "pass": true,
+          "score": 82,
+          "fatal_issues": [],
+          "warnings": [
+            "成本数据缺失，无法进行完整的成本效益分析",
+            "技术细节（模型版本、延迟、准确率）未公开",
+            "团队规模信息仅来自第三方，非官方确认"
+          ],
+          "missing_evidence": [
+            "Notion 使用 Codex 的 API 调用量和费用",
+            "AI Voice Input 的技术实现细节（模型、延迟、准确率）",
+            "Spec-driven 开发的实际效果数据（节省工时、代码质量）",
+            "Notion 工程团队规模和技术栈的官方信息"
+          ],
+          "reader_hook_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": true,
+          "downstream_handoff_ok": true,
+          "material_pack_ok": true,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": true,
+          "source_coverage_ok": true,
+          "recommendation": "publish"
+        },
+        "research_plan": {
+          "core_question": "Notion 使用 OpenAI Codex 实现 AI 语音输入和工程自动化的具体技术方案、实际效果、成本结构如何，其他小团队能否复制？",
+          "must_verify": [
+            "Notion 是否确实使用了 Codex（而非其他模型）？",
+            "AI 语音输入功能的具体实现方式（模型、延迟、准确率）？",
+            "工程自动化（one-shot specs）的具体案例和效果数据？",
+            "成本数据：API 调用量、费用、与人工对比？",
+            "Notion 团队规模和技术栈？"
+          ],
+          "search_queries": [
+            "Notion AI voice input Codex implementation",
+            "Notion Codex one-shot specs engineering automation",
+            "OpenAI Codex pricing per token 2025",
+            "Notion AI feature cost analysis",
+            "Notion engineering team size 2025",
+            "Codex vs GPT-4 for code generation comparison",
+            "Notion AI voice input latency accuracy",
+            "small team AI automation case study Notion"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Notion AI voice input Codex implementation",
+              "why_needed": "确认技术方案细节和实际效果"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "OpenAI Codex pricing per token 2025",
+              "why_needed": "获取成本估算基础"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Notion AI feature cost analysis",
+              "why_needed": "了解实际投入产出比"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Notion engineering team size 2025",
+              "why_needed": "评估可复制性门槛"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "Codex vs GPT-4 for code generation comparison",
+              "why_needed": "验证模型选择合理性"
+            }
+          ],
+          "expert_challenge_points": [
+            "语音输入在 web 端的技术挑战（浏览器 API、实时性）",
+            "Codex 生成代码的准确率和人工审查成本",
+            "小团队是否真的能负担 Codex API 费用？",
+            "Notion 案例是否具有普遍性？"
+          ],
+          "do_not_claim_yet": [
+            "Notion 使用 Codex 的具体成本",
+            "AI 语音输入的实际用户满意度",
+            "工程自动化节省的具体工时",
+            "其他团队能直接复制的条件"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取成本数据，可发布为趋势雷达，聚焦技术方案和可复制性讨论，但需明确标注成本未知。",
+          "downstream_materials_needed": [
+            "Notion AI 语音输入的产品页面或文档",
+            "OpenAI Codex 定价页面",
+            "Notion 工程博客或技术演讲",
+            "开发者社区关于 Codex 实际使用的讨论"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Instagram",
+            "url": "https://www.instagram.com/reel/DWbw7LCjD8r",
+            "query": "Notion AI voice input Codex implementation",
+            "provider": "tavily",
+            "score": "0.7734393",
+            "fetched_text": ":root, .__ig-light-mode:root, .__ig-light-mode {--fds-black:#000000;--fds-black-alpha-05:rgba(0, 0, 0, 0.05);--fds-black-alpha-10:rgba(0, 0, 0, 0.1);--fds-black-alpha-15:rgba(0, 0, 0, 0.15);--fds-black-alpha-20:rgba(0, 0, 0, 0.2);--fds-black-alpha-30:rgba(0, 0, 0, 0.3);--fds-black-alpha-40:rgba(0, 0, 0, 0.4);--fds-black-alpha-50:rgba(0, 0, 0, 0.5);--fds-black-alpha-60:rgba(0, 0, 0, 0.6);--fds-black-alpha-80:rgba(0, 0, 0, 0.8);--fds-blue-05:#ECF3FF;--fds-blue-30:#AAC9FF;--fds-blue-40:#77A7FF;--fds-blue-60:#1877F2;--fds-blue-70:#2851A3;--fds-blue-80:#1D3C78;--fds-button-text:#444950;--fds-comment-background:#F2F3F5;--fds-dark-mode-gray-35:#CCCCCC;--fds-dark-mode-gray-50:#828282;--fds-dark-mode-gray-70:#4A4A4A;--fds-dark-mode-gray-80:#373737;--fds-dark-mode-gray-90:#282828;--fds-dark-mode-gray-100:#1C1C1C;--fds-gray-00:#F5F6F7;--fds-gray-05:#F2F3F5;--fds-gray-10:#EBEDF0;--fds-gray-20:#DADDE1;--fds-gray-25:#CCD0D5;--fds-gray-30:#BEC3C9;--fds-gray-45:#8D949E;--fds-gray-70:#606770;--fds-gray-80:#444950;--fds-gray-90:#303338;--fds-gray-100:#1C1E21;--fds-green-55:#00A400;--fds-green-60:#31A73B;--fds-green-65:#51CE70;--fds-highlight:#3578E5;--fds-highlight-cell-background:#ECF3FF;--fds-primary-icon:#1C1E21;--fds-primary-text:#1C1E21;--fds-red-55:#FA383E;--fds-soft:cubic-bezier(.08,.52,.52,1);--fds-spectrum-aluminum-tint-70:#E4F0F6;--fds-spectrum-blue-gray-tint-70:#CFD1D5;--fds-spectrum-cherry:#F35369;--fds-spectrum-cherry-tint-70:#FBCCD2;--fds-spectrum-grape-tint-70:#DDD5F0;--fds-spectrum-grape-tint-90:#F4F1FA;--fds-spectrum-lemon-dark-1:#F5C33B;--fds-spectrum-lemon-tint-70:#FEF2D1;--fds-spectrum-lime:#A3CE71;--fds-spectrum-lime-tint-70:#E4F0D5;--fds-spectrum-orange-tint-70:#FCDEC5;--fds-spectrum-orange-tint-90:#FEF4EC;--fds-spectrum-seafoam-tint-70:#CAEEF9;--fds-spectrum-slate-",
+            "fetch_error": ""
+          },
+          {
+            "title": "With Codex, Ryan built Notion's AI Voice Input feature ... - LinkedIn",
+            "url": "https://www.linkedin.com/posts/openai-devs_with-codex-ryan-built-notions-ai-voice-activity-7442287799996874753-oa4Y",
+            "query": "Notion AI voice input Codex implementation",
+            "provider": "tavily",
+            "score": "0.75027883",
+            "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); With Codex, Ryan built Notion’s AI Voice Input feature entirely by himself. Ryan Nystrom used Codex to understand the context, point Codex to an existing mobile feature, and ship it to web and… | OpenAI Developers {\"@context\":\"http://schema.org\",\"@type\":\"VideoObject\",\"@id\":\"https://www.linkedin.com/posts/openai-devs_with-codex-ryan-built-notions-ai-voice-activity-7442287799996874753-oa4Y\",\"datePublished\":\"2026-03-24T19:14:42.510Z\",\"headline\":\"With Codex, Ryan built Notion’s AI Voice Input feature entirely by himself.\",\"comment\":[{\"@type\":\"Comment\",\"datePublished\":\"2026-03-25T00:11:26.365Z\",\"text\":\"https://github.com/Jhosman9090\",\"creator\":{\"@type\":\"Person\",\"name\":\"jhosman carlos martinez morales\"},\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/LikeAction\",\"userInteractionCount\":0}},{\"@type\":\"Comment\",\"datePublished\":\"2026-03-24T23:44:03.555Z\",\"text\":\"This is very inspiring!\",\"creator\":{\"@type\":\"Person\",\"name\":\"Luis Gonzalez\"},\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/LikeAction\",\"userInteractionCount\":1}},{\"@type\":\"Comment\",\"datePublished\":\"2026-03-25T00:11:45.688Z\",\"text\":\"Instituto Mexicano de la Propiedad Industrial (IMPI)\",\"creator\":{\"@type\":\"Person\",\"name\":\"jhosman carlos martinez morales\"},\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/LikeAction\",\"userInteractionCount\":0}}],\"commentCou",
+            "fetch_error": ""
+          },
+          {
+            "title": "feat: Add a voice input mode · Issue #418 · openai/codex · GitHub",
+            "url": "https://github.com/openai/codex/issues/418",
+            "query": "Notion AI voice input Codex implementation",
+            "provider": "tavily",
+            "score": "0.68191797",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"arianotify_comprehensive_migration\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_diff_explain_conversation_intent\",\"copilot_diff_reference_context\",\"co",
+            "fetch_error": ""
+          },
+          {
+            "title": "the AI engineering workflow at Notion | Ryan Nystrom - YouTube",
+            "url": "https://www.youtube.com/watch?v=pUHA_jNwuYE",
+            "query": "Notion Codex one-shot specs engineering automation",
+            "provider": "tavily",
+            "score": "0.518815",
+            "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260606.02.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+            "fetch_error": ""
+          },
+          {
+            "title": "Spec-driven development: The AI engineering workflow at Notion | Ryan Nystrom",
+            "url": "https://www.lennysnewsletter.com/p/spec-driven-development-the-ai-engineering",
+            "query": "Notion Codex one-shot specs engineering automation",
+            "provider": "tavily",
+            "score": "0.49450764",
+            "fetched_text": "Spec-driven development: The AI engineering workflow at Notion | Ryan Nystrom @layer legacy, tailwind, pencraftReset, pencraft; @font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCt-xNNww_2s0amA9M8on7mTNmnUHowCw.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCt-xNNww_2s0amA9M8onXmTNmnUHowCw.woff2) format('woff2');unicode-range:U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+0300-0301,U+0303-0304,U+0308-0309,U+0323,U+0329,U+1EA0-1EF9,U+20AB}@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCt-xNNww_2s0amA9M8onTmTNmnUHowCw.woff2) format('woff2');unicode-range:U+0100-02AF,U+0304,U+0308,U+0329,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF}@font-face{font-family:'Spectral';font-style:italic;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCt-xNNww_2s0amA9M8onrmTNmnUHo.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}@font-face{font-family:'Spectral';font-style:normal;font-weight:400;font-display:fallback;src:url(https://fonts.gstatic.com/s/spectral/v13/rnCr-xNNww_2s0amA9M9knjsS_ulYHs.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}@font-face{font-family:'Spectral';font-style:normal;font-weight:400;font-display:fallback;src:url(https",
+            "fetch_error": ""
+          },
+          {
+            "title": "What Codex Unlocks for Notion - YouTube",
+            "url": "https://www.youtube.com/shorts/qHEUIXGSxxg",
+            "query": "Notion Codex one-shot specs engineering automation",
+            "provider": "tavily",
+            "score": "0.40302688",
+            "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260606.02.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+            "fetch_error": ""
+          },
+          {
+            "title": "GPT 5 Codex API Pricing 2026 - Costs, Performance & Providers",
+            "url": "https://pricepertoken.com/pricing-page/model/openai-gpt-5-codex",
+            "query": "OpenAI Codex pricing per token 2025",
+            "provider": "tavily",
+            "score": "0.92074",
+            "fetched_text": ":root { --color-primary-50: 240 253 244; --color-primary-100: 220 252 231; --color-primary-200: 187 247 208; --color-primary-300: 134 239 172; --color-primary-400: 74 222 128; --color-primary-500: 34 197 94; --color-primary-600: 22 163 74; --color-primary-700: 21 128 61; --color-primary-800: 22 101 52; --color-primary-900: 20 83 45; --color-primary-950: 5 46 22; --color-primary-DEFAULT: var(--color-primary-500); --color-gray-50: 249 250 251; --color-gray-100: 243 244 246; --color-gray-200: 229 231 235; --color-gray-300: 209 213 219; --color-gray-400: 156 163 175; --color-gray-500: 107 114 128; --color-gray-600: 75 85 99; --color-gray-700: 55 65 81; --color-gray-800: 31 41 55; --color-gray-900: 17 24 39; --color-gray-950: 3 7 18; } .dark { --color-primary-DEFAULT: var(--color-primary-400); } GPT 5 Codex API Pricing 2026 - Costs, Performance & Providers header[data-v-8b7adbe1]{font-family:Inter,sans-serif} .fade-enter-active[data-v-02bc130b],.fade-leave-active[data-v-02bc130b]{transition:opacity .3s ease}.fade-enter-from[data-v-02bc130b],.fade-leave-to[data-v-02bc130b]{opacity:0} .sticky-nav-container[data-v-726096fe]{position:sticky;top:56px;z-index:40}.sticky-nav[data-v-726096fe]{transition:box-shadow .2s ease}.is-sticky .sticky-nav[data-v-726096fe]{box-shadow:0 2px 4px #0000001a}.nav-item[data-v-726096fe]{position:relative}.nav-item[data-v-726096fe]:focus{outline:none}.nav-item[data-v-726096fe]:focus-visible{outline:2px solid #3b82f6;outline-offset:2px} :where(.i-heroicons\\:arrow-right){display:inline-block;width:1em;height:1em;background-color:currentColor;-webkit-mask-image:var(--svg);mask-image:var(--svg);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-size:100% 100%;mask-size:100% 100%;--svg:url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2",
+            "fetch_error": ""
+          },
+          {
+            "title": "OpenAI Codex Pricing in 2026: What I Found After Ditching Claude ...",
+            "url": "https://userjot.com/blog/openai-codex-pricing",
+            "query": "OpenAI Codex pricing per token 2025",
+            "provider": "tavily",
+            "score": "0.81630427",
+            "fetched_text": "OpenAI Codex Pricing in 2026: What I Found After Ditching Claude Code — UserJot {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"OpenAI Codex Pricing in 2026: What I Found After Ditching Claude Code\",\"description\":\"OpenAI Codex pricing breakdown: $20 ChatGPT Plus vs $200 Pro. What happened to the API and how the new Codex Web and CLI compare to Claude Code.\",\"datePublished\":\"2025-09-06T00:00:00.000Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Shayan Taslim\",\"url\":\"https://userjot.com\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"UserJot\",\"url\":\"https://userjot.com\"},\"image\":\"https://userjot.com/assets/blog/covers/openai-codex-pricing/glass-blower-1.webp\",\"mainEntityOfPage\":\"https://userjot.com/blog/openai-codex-pricing\",\"articleSection\":\"Engineering\",\"keywords\":\"ai, coding, openai, codex, claude-code\"} {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://userjot.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"https://userjot.com/blog\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Engineering\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"OpenAI Codex Pricing in 2026: What I Found After Ditching Claude Code\"}]} UserJot Product Resources Pricing Blog Log in Get started UserJot Feedback, roadmap, and changelog, designed as one loop for product-led teams. Features Customer Feedback Feature Requests Feature Voting Product Roadmap Product Changelog Feedback Widget AI Agents Slack Resources Help Center Documentation API Reference Glossary Tools Product Get Started Pricing Feedback Roadmap Updates Blog Get Help Contact Status Privacy Terms Compare Canny Alternative UserVoice Alternative Nolt Alternative Aha! Alternative Beamer Alternative BugHerd Alternative Productboard Alter",
+            "fetch_error": ""
+          },
+          {
+            "title": "OpenAI Codex pricing in 2026: every plan, cost, and gotcha explained",
+            "url": "https://www.eesel.ai/blog/openai-codex-pricing",
+            "query": "OpenAI Codex pricing per token 2025",
+            "provider": "tavily",
+            "score": "0.79522943",
+            "fetched_text": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after{--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-scroll-snap-strictness:proximity;--tw-space-y-reverse:0;--tw-space-x-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-ordinal:initial;--tw-slashed-zero:initial;--tw-numeric-figure:initial;--tw-numeric-spacing:initial;--tw-numeric-fraction:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw-backdrop-contrast:initial;--tw-backdrop-grayscale:i",
+            "fetch_error": ""
+          },
+          {
+            "title": "Notion AI Pricing: Is the $10/Month Add-on Really Worth It?",
+            "url": "https://flowith.io/blog/notion-ai-pricing-10-month-addon-worth-it",
+            "query": "Notion AI feature cost analysis",
+            "provider": "tavily",
+            "score": "0.81347597",
+            "fetched_text": "Notion AI Pricing: Is the $10/Month Add-on Really Worth It? - Flowith Blog (function(){const adjustLoadDelayMs = 2000; const adjustSdkUrl = \"https://cdn.adjust.com/adjust-latest.min.js\"; window.addEventListener('load', function() { setTimeout(function() { // Adjust SDK loader (getWebUUID enables S2S beacon fallback for payment_show) !function(t,e,a,o,n,s,r,d){t.Adjust=t.Adjust||{},t.Adjust_q=t.Adjust_q||[];for(var i=0;i if (history.scrollRestoration) { history.scrollRestoration = 'manual'; } // Restore scroll position immediately (function() { var scrollPos = sessionStorage.getItem('scrollPos_' + location.pathname); if (scrollPos && performance.navigation && performance.navigation.type === 2) { // Back/forward navigation document.documentElement.style.opacity = '0'; } })(); (() => { const root = document.documentElement; const updateScrollEdge = () => { const scroller = document.scrollingElement || root; const maxScroll = Math.max(0, scroller.scrollHeight - window.innerHeight); const scrollTop = scroller.scrollTop || window.scrollY || 0; root.dataset.scrollEdge = maxScroll > 2 && scrollTop >= maxScroll - 2 ? \"bottom\" : \"top\"; }; updateScrollEdge(); window.addEventListener(\"scroll\", updateScrollEdge, { passive: true }); window.addEventListener(\"resize\", updateScrollEdge); window.addEventListener(\"pageshow\", updateScrollEdge); document.addEventListener(\"DOMContentLoaded\", updateScrollEdge); })(); .blog-content{font-family:ABC Oracle,sans-serif;font-weight:350;font-size:16px;line-height:24px;letter-spacing:-.32px;color:#2d3139}.blog-content h2{font-size:20px;line-height:28px;letter-spacing:-.4px;color:#2d3139;font-weight:500;margin-top:2.5rem;margin-bottom:.875rem}.blog-content h3{font-size:18px;line-height:26px;letter-spacing:-.36px;color:#2d3139;font-weight:500;margin-to",
+            "fetch_error": ""
+          },
+          {
+            "title": "How Much Does Notion AI Cost? Complete 2024 Pricing ...",
+            "url": "https://www.getmonetizely.com/articles/how-much-does-notion-ai-cost-complete-2024-pricing-guide-amp-plan-comparison",
+            "query": "Notion AI feature cost analysis",
+            "provider": "tavily",
+            "score": "0.78650844",
+            "fetched_text": "How Much Does Notion AI Cost? Complete 2024 Pricing Guide &amp; Plan Comparison WebFont.load({ google: { families: [\"Rethink Sans:300,400,500,600,700\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-EG2J7NZ80W'); !function(e,r){try{if(e.vector)return void console.log(\"Vector snippet included more than once.\");var t={};t.q=t.q||[];for(var o=[\"load\",\"identify\",\"on\"],n=function(e){return function(){var r=Array.prototype.slice.call(arguments);t.q.push([e,r])}},c=0;c !function () {var reb2b = window.reb2b = window.reb2b || [];if (reb2b.invoked) return;reb2b.invoked = true;reb2b.methods = [\"identify\", \"collect\"];reb2b.factory = function (method) {return function () {var args = Array.prototype.slice.call(arguments);args.unshift(method);reb2b.push(args);return reb2b;};};for (var i = 0; i function initApollo(){var n=Math.random().toString(36).substring(7),o=document.createElement(\"script\"); o.src=\"https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache=\"+n,o.async=!0,o.defer=!0, o.onload=function(){window.trackingFunctions.onLoad({appId:\"6632e13eae7f050300f062c0\"})}, document.head.appendChild(o)}initApollo(); .blog-content p { font-size: 18px; line-height: 1.7; color: #333333; /* max-width: 700px; */ margin: 0 auto 1.5em auto; } .blog-content h2 { font-size: 28px; font-weight: 700; color: #222222; margin-top: 2em; margin-bottom: 1em; border-left: 4px solid #0055FF; padding-left: 12px; } .blog-content h3 { font-size: 22px; font-weight: 600; color: #333333; margin-top: 1.5em; } .blog-content blockquote",
+            "fetch_error": ""
+          },
+          {
+            "title": "Notion AI Guide: Features, Pricing, Real Use Cases 2026",
+            "url": "https://dancumberlandlabs.com/blog/notion-ai-guide",
+            "query": "Notion AI feature cost analysis",
+            "provider": "tavily",
+            "score": "0.7734393",
+            "fetched_text": "Notion AI Guide: Features, Pricing, Real Use Cases 2026 | Dan Cumberland Labs {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"headline\":\"Notion AI Guide\",\"description\":\"Notion AI operates as a team of specialized agents embedded in your workspace. It can draft documents, build databases, search across connected tools like...\",\"image\":\"https://cms.dancumberlandlabs.com\\n/uploads/blog_notion_ai_guide_223895de79.webp\",\"datePublished\":\"2026-05-08T14:27:18.255Z\",\"dateModified\":\"2026-05-08T14:27:18.223Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Dan Cumberland\",\"url\":\"https://dancumberlandlabs.com/about/\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"Dan Cumberland Labs\",\"url\":\"https://dancumberlandlabs.com\"}}]} (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-KKLSF5KN'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-JH4K4FM7DX'); // GA4 custom event tracking via event delegation document.addEventListener('click', function(e) { var link = e.target.closest('a[href]'); if (!link) return; var href = link.href; // Booking clicks if (href.indexOf('book.dancumberland.com') !== -1) { gtag('event', 'book_call_click', { link_url: href, cta_text: link.textContent.trim(), page_path: window.location.pathname }); } // Resource downloads if (href.indexOf('go.dancumberlandlabs.com') !== -1 || href.indexOf('aitrainingguide.com') !== -1 || href.indexOf('aiflowaudit.com') !== -1) { gtag('event', 'resource_download', { resour",
+            "fetch_error": ""
+          },
+          {
+            "title": "Notion Revenue 2025: $600M ARR, $10B Valuation - GetLatka",
+            "url": "https://getlatka.com/companies/notion",
+            "query": "Notion engineering team size 2025",
+            "provider": "tavily",
+            "score": "0.7304634",
+            "fetched_text": "Notion Revenue 2025: $600M ARR, $10B Valuation (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"\\n try {\\n if (window.location.href.includes('.local.')) {\\n localStorage.setItem('newsletter_modal_closed', Date.now().toString());\\n }\\n } catch {}\\n \",\"id\":\"disable-newsletter-popup-on-local\"}]) Home SaaS Database Add Your Company Podcast Pricing Sections Company Revenue Valuation and Funding Founder and CEO Customers and Pricing Employees and Team Size FAQ Industries Contacts Competitors {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"@id\":\"https://getlatka.com/companies/notion#organization\",\"name\":\"Notion\",\"description\":\"Notion Labs, Inc. is the company that owns notion.so. It is a privately-held software company based in San Francisco, California, that provides a productivity and collaboration platform that allows users to create, organize, and share notes, tasks, wikis, and databases. The company was founded in 2013 by Ivan Zhao, and has since raised over $300 million in funding from investors including Index Ventures, Sequoia Capital, and Greylock Partners. Notion is used by individuals, teams, and organizations of all sizes across various industries to streamline their workflow, increase productivity, and improve collaboration.\",\"url\":\"https://notion.com\",\"logo\":\"https://storage.getlatka.com/images/notion.com.png\",\"sameAs\":[\"https://twitter.com/NotionHQ\",\"https://www.youtube.com/channel/UCoSvlWS5XcwaSzIcbuJ-Ysg\",\"https://www.facebook.com/NotionHQ/\",\"https://www.linkedin.com/company/notionhq/\",\"https://www.crunchbase.com/organization/notion-so\"],\"foundingDate\":\"2013-01-01\",\"founder\":{\"@type\":\"Person\",\"name\":\"Ivan Zhao\",\"sameAs\":\"https://www.linkedin.com/in/ivanhzhao/\"},\"address\":{\"@type\":\"PostalAddress\",\"addressLocality\":\"San Francisco\",\"addressRegion\":",
+            "fetch_error": ""
+          },
+          {
+            "title": "1000 employees. Can someone explain what all of them actually do?",
+            "url": "https://www.reddit.com/r/SaaS/comments/1rzgfiw/notion_reportedly_has_1000_employees_can_someone",
+            "query": "Notion engineering team size 2025",
+            "provider": "tavily",
+            "score": "0.5775198",
+            "fetched_text": "Notion handles millions of users, real-time collaboration, search indexing, file storage, version control. That's not a small team problem.",
+            "fetch_error": "HTTP Error 403: Blocked; used tavily content fallback"
+          },
+          {
+            "title": "Make with Notion 2025: How Notion AI Changed Work at Notion",
+            "url": "https://www.youtube.com/watch?v=swd5BZBUZlY",
+            "query": "Notion engineering team size 2025",
+            "provider": "tavily",
+            "score": "0.356492",
+            "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260606.02.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+            "fetch_error": ""
+          },
+          {
+            "title": "GPT-4 vs Codex for Coding...general discussion - API - OpenAI Developer Community",
+            "url": "https://community.openai.com/t/gpt-4-vs-codex-for-coding-general-discussion/109973",
+            "query": "Codex vs GPT-4 for code generation comparison",
+            "provider": "tavily",
+            "score": "0.7646988",
+            "fetched_text": "# GPT-4 vs Codex for Coding...general discussion. What I’ve found using GPT-4 for help coding is that you really need to know a little bit about programming to know what to ask and how to ask. I haven’t played much with the most recent Codex, but I need to investigate again. GPT-4, though, is almost like a “Coder Buddy” that can help you get where you want to go if you know where you want to go… and can ask the right, specific questions. Anyone else using GPT-4 for coding help? Do you like it better than Codex? Another trick I’ve noticed is that if it gives you something you don’t want (bad solution), you can copy and paste that and put it in the USER prompt as “I tried X Y Z” and it wasn’t what I really wanted. | Getting ChatGPT-4 to help with coding current GPT APIs Community api | 1 | 1158 | November 5, 2023 |.",
+            "fetch_error": "HTTP Error 429: Too Many Requests; used tavily content fallback"
+          },
+          {
+            "title": "The Tale of 2 Models: Opus 4.6 vs GPT 5.3 Codex | by Cordero Core",
+            "url": "https://medium.com/@cdcore/the-tale-of-2-models-opus-4-6-vs-gpt-5-3-codex-129fcb35630f",
+            "query": "Codex vs GPT-4 for code generation comparison",
+            "provider": "tavily",
+            "score": "0.48557588",
+            "fetched_text": "On the LFG benchmark, four escalating tasks from simple to complex, Opus scored 9.25/10 compared to Codex's 7.5/10. The gap widened on the",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          },
+          {
+            "title": "GPT-5.4 Review: Is It Worth Leaving GPT-5.3 Codex Behind?",
+            "url": "https://www.turingcollege.com/blog/gpt-5-4-review-vs-gpt-5-3-codex",
+            "query": "Codex vs GPT-4 for code generation comparison",
+            "provider": "tavily",
+            "score": "0.45289946",
+            "fetched_text": "GPT-5.4 Review: Is It Worth Leaving GPT-5.3 Codex Behind? html.w-mod-js:not(.w-mod-ix3) :is(.heading-83, [data-el=\"modal-lead-ae\"], [data-el=\"modal-lead-sae\"], [data-el=\"modal-lead-aiba\"], [data-el=\"modal-lead-ds\"], [data-el=\"modal-lead-da\"], [data-el=\"modal-lead-aiet\"], [data-el=\"modal-syllabus-ae\"], [data-el=\"modal-syllabus-sae\"], [data-el=\"modal-syllabus-aili\"], [data-el=\"modal-syllabus-dm\"], [data-el=\"modal-syllabus-da\"], [data-el=\"modal-syllabus-aiet\"], [data-el=\"modal-lead-geo\"], [data-el=\"modal-syllabus-aiba\"]) {visibility: hidden !important;} !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); function getCookie(name) { const value = '; ' + document.cookie; const parts = value.split('; ' + name + '='); if (parts.length == 2) return parts.pop().split(';').shift(); } (function() { const isStaging = window.location.origin.includes('webflow.io'); const script = document.createElement('script'); script.src = isStaging // ? 'http://localhost:3000/navigation.js' ? 'https://cdn.jsdelivr.net/npm/@tc-turing/webflow@1.0.70/dist/navigation.js' : 'https://cdn.jsdelivr.net/npm/@tc-turing/webflow@1.0.70/dist/navigation.js'; script.defer = true; document.currentScript.insertAdjacentElement('afterend', script); })(); (function() { const isStaging = window.location.origin.includes('webflow.io'); const script = document.createElement('script'); script.src = isStaging // ? 'http://localhost:3000/utils/geolocation.js' ? 'https://cdn.jsdelivr.net/npm/@tc-turing/webflow@1.0.58/dist/utils/geolocation.js' : 'https://cdn.jsdelivr.net/npm/@tc-turing/webflow@1.0.58/dist/utils/geolocation.js'; script.defer = true; document.currentScript.insertAdjacentElement('aft",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "可复制条件",
+        "不可复制条件",
+        "失败或成功背后的非技术因素"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留普通读者入口，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "Notion 用 Codex 做了什么：AI 语音输入与工程效率翻倍 原始项目 GitHub 复盘",
+        "Notion 用 Codex 做了什么：AI 语音输入与工程效率翻倍 收入 增长 证据",
+        "Notion 用 Codex 做了什么：AI 语音输入与工程效率翻倍 失败 限制 反方证据"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
