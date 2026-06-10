@@ -1,0 +1,654 @@
+{
+  "id": "20260610-building-a-secure-auth-code-flow-setup-using-age-ffdace06",
+  "title": "工具账本：AWS AI 编程工具变化",
+  "original_title": "Building a secure auth code flow setup using AgentCore Gateway with MCP clients",
+  "url": "https://aws.amazon.com/blogs/machine-learning/building-a-secure-auth-code-flow-setup-using-agentcore-gateway-with-mcp-clients/",
+  "summary": "This post demonstrates how to implement Open Authorization (OAuth) Code flow as an inbound authorization mechanism for MCP servers hosted on Amazon Bedrock AgentCore Gateway. By the end of this guide, you will have a production-ready setup where each AI assistant request is authenticated with a valid user identity token issued from your organization’s identity provider.",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "ai-practice",
+  "topic_direction_title": "AI 实操与自动化",
+  "topic_direction_short_title": "AI 实操",
+  "topic_direction_description": "AI 落到具体需求的实操线索，例如个人助手、内容生产、办公自动化、数据分析、健康助手、客服、运营工具和工作流。重点看需求是否真实、能否低成本验证、普通读者能不能照着理解一遍。",
+  "source_name": "AWS Machine Learning Blog",
+  "original_source_name": "Artificial Intelligence",
+  "source_type": "rss",
+  "feed_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+  "published_at": "2026-06-02T03:23:35+00:00",
+  "fetched_at": "2026-06-10T01:24:41.666456+00:00",
+  "decision": "deep_dive",
+  "report_type": "tool-ledger",
+  "report_type_title": "工具账本",
+  "score": 63,
+  "reader_hook": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。",
+  "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "命中老花主线关键词，且来源可复查。",
+  "collection_fit": "符合收集原则：来源可复查，且具备进入「工具账本」类报告的分析价值。",
+  "investigation_direction": "优先追价格页、额度、API 文档、替代方案和实际成本边界。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。"
+  ],
+  "facts": [
+    {
+      "claim": "AWS Machine Learning Blog 发布/收录了这条原始线索：Building a secure auth code flow setup using AgentCore Gateway with MCP clients",
+      "type": "confirmed_fact",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/building-a-secure-auth-code-flow-setup-using-agentcore-gateway-with-mcp-clients/",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "AWS Machine Learning Blog",
+      "url": "https://aws.amazon.com/blogs/machine-learning/building-a-secure-auth-code-flow-setup-using-agentcore-gateway-with-mcp-clients/",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "ai",
+        "agent",
+        "token"
+      ],
+      "dev": [
+        "server"
+      ],
+      "platform": [
+        "amazon"
+      ]
+    },
+    "source_host": "aws.amazon.com",
+    "source_type": "rss",
+    "heuristic": true
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+    },
+    "core_question": "AWS AgentCore Gateway 的 MCP OAuth 方案对普通技术人的开发成本、工具链选择和工作流程有何实际影响？",
+    "why_this_topic_matters": "MCP 协议正在成为 AI 工具链的标准接口，而认证是生产环境落地的关键环节。AWS 推出官方 OAuth 方案可能降低企业级部署门槛，但也可能引入额外成本和复杂度。对于独立开发者和小团队，需要明确是否值得采用。",
+    "fact_summary": [],
+    "timeline": [],
+    "evidence_table": [],
+    "logic_closure": "目前仅有 AWS 官方博客一篇来源，描述了技术实现步骤，但未涉及定价、性能、社区反馈等关键信息。无法判断该方案是否比现有方案更优或更贵，也无法评估对普通技术人的实际影响。逻辑上存在多个未闭合的环节：成本未知、适用范围未知、集成难度未知。",
+    "writeable_angles": [
+      {
+        "angle": "技术动态速览：AWS 推出 MCP OAuth 方案，但成本未知",
+        "why": "如果无法获取定价和用户反馈，可先作为纯技术动态发布，提醒读者关注后续发展。",
+        "needs": "无需额外证据，仅基于现有博客内容即可。"
+      },
+      {
+        "angle": "成本对比：AgentCore Gateway OAuth vs 自建认证",
+        "why": "如果获取到定价信息，可以对比两种方案的成本和复杂度，帮助读者决策。",
+        "needs": "AgentCore Gateway 定价、自建认证的典型成本（如 Auth0 价格）、社区对两种方案的反馈。"
+      },
+      {
+        "angle": "实操指南：用 AgentCore Gateway 为 MCP 服务器添加 OAuth",
+        "why": "如果方案成熟且易用，可以写一篇面向普通开发者的教程。",
+        "needs": "完整的端到端示例代码、至少一个第三方 IdP 的集成案例、性能测试数据。"
+      }
+    ],
+    "missing_basics": [
+      "AgentCore Gateway 的定价模式（免费、按量、包月？）",
+      "该方案是否仅适用于 Bedrock 托管 MCP 服务器，还是也支持自托管",
+      "是否有现成的 SDK 或 CLI 工具简化集成",
+      "是否支持常见 IdP（Auth0、Okta、Azure AD）",
+      "性能瓶颈或限制（并发、令牌刷新频率等）",
+      "社区或用户反馈（正面/负面）"
+    ],
+    "missing_materials": [
+      "AWS Bedrock AgentCore Gateway 定价页面截图或文字说明",
+      "一个完整的端到端示例代码（如 GitHub 仓库）",
+      "至少一个第三方身份提供商的集成案例",
+      "社区讨论中关于性能或易用性的具体评论",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "该方案会显著降低开发成本",
+      "该方案是 MCP 认证的最佳实践",
+      "该方案适用于所有类型的 AI 助手应用",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [],
+    "additional_search_queries": [
+      "AWS AgentCore Gateway pricing",
+      "Amazon Bedrock AgentCore Gateway MCP OAuth tutorial",
+      "AgentCore Gateway MCP server authentication example",
+      "AWS Bedrock AgentCore Gateway limitations",
+      "AgentCore Gateway vs custom MCP auth comparison",
+      "MCP OAuth flow AWS Bedrock review",
+      "AgentCore Gateway supported identity providers",
+      "AWS AgentCore Gateway SDK"
+    ],
+    "stop_conditions": [
+      "获取到 AgentCore Gateway 的定价信息",
+      "至少找到一篇社区用户的实际使用反馈（正面或负面）",
+      "确认该方案是否支持自托管 MCP 服务器"
+    ],
+    "confidence": 0.0,
+    "topic_direction": "ai-practice",
+    "topic_direction_title": "AI 实操与自动化",
+    "report_type": "tool-ledger",
+    "research_plan": {
+      "core_question": "AWS AgentCore Gateway 的 MCP OAuth 方案对普通技术人的开发成本、工具链选择和工作流程有何实际影响？",
+      "must_verify": [
+        "AgentCore Gateway 的定价模式（是否免费、按量计费、或包含在 Bedrock 费用中）",
+        "该方案是否仅适用于 Bedrock 托管 MCP 服务器，还是也支持自托管 MCP 服务器",
+        "是否有现成的 SDK 或 CLI 工具简化集成，还是需要手动编写大量代码",
+        "该方案是否支持常见的身份提供商（如 Auth0、Okta、Azure AD）",
+        "是否有已知的性能瓶颈或限制（如并发连接数、令牌刷新频率）",
+        "是否有社区或用户反馈（正面/负面）"
+      ],
+      "search_queries": [
+        "AWS AgentCore Gateway pricing",
+        "Amazon Bedrock AgentCore Gateway MCP OAuth tutorial",
+        "AgentCore Gateway MCP server authentication example",
+        "AWS Bedrock AgentCore Gateway limitations",
+        "AgentCore Gateway vs custom MCP auth comparison",
+        "MCP OAuth flow AWS Bedrock review",
+        "AgentCore Gateway supported identity providers",
+        "AWS AgentCore Gateway SDK"
+      ],
+      "best_sources_to_find": [
+        "AWS 官方文档（AgentCore Gateway 页面、Bedrock 定价页）",
+        "AWS 官方博客（Machine Learning Blog）",
+        "GitHub 上的示例代码仓库（aws-samples）",
+        "AWS re:Post 或 Stack Overflow 上的问答",
+        "技术社区（如 Hacker News、Reddit r/aws）的讨论帖"
+      ],
+      "expert_challenge_points": [
+        "该方案是否增加了额外的网络延迟或复杂性，相比直接使用 API 密钥",
+        "对于小型项目或原型开发，OAuth 流程是否过度设计",
+        "AgentCore Gateway 是否支持自定义令牌验证逻辑（如 JWT 自定义声明）",
+        "该方案是否与现有的 AWS IAM 角色和策略无缝集成"
+      ],
+      "do_not_claim_yet": [
+        "该方案会显著降低开发成本",
+        "该方案是 MCP 认证的最佳实践",
+        "该方案适用于所有类型的 AI 助手应用"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取定价信息和实际用户反馈，则仅作为技术动态发布，不涉及成本影响分析。",
+      "downstream_materials_needed": [
+        "AWS Bedrock AgentCore Gateway 定价页面截图或文字说明",
+        "一个完整的端到端示例代码（如 GitHub 仓库）",
+        "至少一个第三方身份提供商的集成案例",
+        "社区讨论中关于性能或易用性的具体评论"
+      ]
+    },
+    "research_evidence": []
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+    },
+    "core_question": "AWS AgentCore Gateway 的 MCP OAuth 方案对普通技术人的开发成本、工具链选择和工作流程有何实际影响？",
+    "why_this_topic_matters": "MCP 协议正在成为 AI 工具链的标准接口，而认证是生产环境落地的关键环节。AWS 推出官方 OAuth 方案可能降低企业级部署门槛，但也可能引入额外成本和复杂度。对于独立开发者和小团队，需要明确是否值得采用。",
+    "fact_summary": [],
+    "timeline": [],
+    "evidence_table": [],
+    "logic_closure": "目前仅有 AWS 官方博客一篇来源，描述了技术实现步骤，但未涉及定价、性能、社区反馈等关键信息。无法判断该方案是否比现有方案更优或更贵，也无法评估对普通技术人的实际影响。逻辑上存在多个未闭合的环节：成本未知、适用范围未知、集成难度未知。",
+    "writeable_angles": [
+      {
+        "angle": "技术动态速览：AWS 推出 MCP OAuth 方案，但成本未知",
+        "why": "如果无法获取定价和用户反馈，可先作为纯技术动态发布，提醒读者关注后续发展。",
+        "needs": "无需额外证据，仅基于现有博客内容即可。"
+      },
+      {
+        "angle": "成本对比：AgentCore Gateway OAuth vs 自建认证",
+        "why": "如果获取到定价信息，可以对比两种方案的成本和复杂度，帮助读者决策。",
+        "needs": "AgentCore Gateway 定价、自建认证的典型成本（如 Auth0 价格）、社区对两种方案的反馈。"
+      },
+      {
+        "angle": "实操指南：用 AgentCore Gateway 为 MCP 服务器添加 OAuth",
+        "why": "如果方案成熟且易用，可以写一篇面向普通开发者的教程。",
+        "needs": "完整的端到端示例代码、至少一个第三方 IdP 的集成案例、性能测试数据。"
+      }
+    ],
+    "missing_basics": [
+      "AgentCore Gateway 的定价模式（免费、按量、包月？）",
+      "该方案是否仅适用于 Bedrock 托管 MCP 服务器，还是也支持自托管",
+      "是否有现成的 SDK 或 CLI 工具简化集成",
+      "是否支持常见 IdP（Auth0、Okta、Azure AD）",
+      "性能瓶颈或限制（并发、令牌刷新频率等）",
+      "社区或用户反馈（正面/负面）"
+    ],
+    "missing_materials": [
+      "AWS Bedrock AgentCore Gateway 定价页面截图或文字说明",
+      "一个完整的端到端示例代码（如 GitHub 仓库）",
+      "至少一个第三方身份提供商的集成案例",
+      "社区讨论中关于性能或易用性的具体评论",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "该方案会显著降低开发成本",
+      "该方案是 MCP 认证的最佳实践",
+      "该方案适用于所有类型的 AI 助手应用",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [],
+    "additional_search_queries": [
+      "AWS AgentCore Gateway pricing",
+      "Amazon Bedrock AgentCore Gateway MCP OAuth tutorial",
+      "AgentCore Gateway MCP server authentication example",
+      "AWS Bedrock AgentCore Gateway limitations",
+      "AgentCore Gateway vs custom MCP auth comparison",
+      "MCP OAuth flow AWS Bedrock review",
+      "AgentCore Gateway supported identity providers",
+      "AWS AgentCore Gateway SDK"
+    ],
+    "stop_conditions": [
+      "获取到 AgentCore Gateway 的定价信息",
+      "至少找到一篇社区用户的实际使用反馈（正面或负面）",
+      "确认该方案是否支持自托管 MCP 服务器"
+    ],
+    "confidence": 0.0,
+    "topic_direction": "ai-practice",
+    "topic_direction_title": "AI 实操与自动化",
+    "report_type": "tool-ledger",
+    "research_plan": {
+      "core_question": "AWS AgentCore Gateway 的 MCP OAuth 方案对普通技术人的开发成本、工具链选择和工作流程有何实际影响？",
+      "must_verify": [
+        "AgentCore Gateway 的定价模式（是否免费、按量计费、或包含在 Bedrock 费用中）",
+        "该方案是否仅适用于 Bedrock 托管 MCP 服务器，还是也支持自托管 MCP 服务器",
+        "是否有现成的 SDK 或 CLI 工具简化集成，还是需要手动编写大量代码",
+        "该方案是否支持常见的身份提供商（如 Auth0、Okta、Azure AD）",
+        "是否有已知的性能瓶颈或限制（如并发连接数、令牌刷新频率）",
+        "是否有社区或用户反馈（正面/负面）"
+      ],
+      "search_queries": [
+        "AWS AgentCore Gateway pricing",
+        "Amazon Bedrock AgentCore Gateway MCP OAuth tutorial",
+        "AgentCore Gateway MCP server authentication example",
+        "AWS Bedrock AgentCore Gateway limitations",
+        "AgentCore Gateway vs custom MCP auth comparison",
+        "MCP OAuth flow AWS Bedrock review",
+        "AgentCore Gateway supported identity providers",
+        "AWS AgentCore Gateway SDK"
+      ],
+      "best_sources_to_find": [
+        "AWS 官方文档（AgentCore Gateway 页面、Bedrock 定价页）",
+        "AWS 官方博客（Machine Learning Blog）",
+        "GitHub 上的示例代码仓库（aws-samples）",
+        "AWS re:Post 或 Stack Overflow 上的问答",
+        "技术社区（如 Hacker News、Reddit r/aws）的讨论帖"
+      ],
+      "expert_challenge_points": [
+        "该方案是否增加了额外的网络延迟或复杂性，相比直接使用 API 密钥",
+        "对于小型项目或原型开发，OAuth 流程是否过度设计",
+        "AgentCore Gateway 是否支持自定义令牌验证逻辑（如 JWT 自定义声明）",
+        "该方案是否与现有的 AWS IAM 角色和策略无缝集成"
+      ],
+      "do_not_claim_yet": [
+        "该方案会显著降低开发成本",
+        "该方案是 MCP 认证的最佳实践",
+        "该方案适用于所有类型的 AI 助手应用"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取定价信息和实际用户反馈，则仅作为技术动态发布，不涉及成本影响分析。",
+      "downstream_materials_needed": [
+        "AWS Bedrock AgentCore Gateway 定价页面截图或文字说明",
+        "一个完整的端到端示例代码（如 GitHub 仓库）",
+        "至少一个第三方身份提供商的集成案例",
+        "社区讨论中关于性能或易用性的具体评论"
+      ]
+    },
+    "research_evidence": []
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260610-building-a-secure-auth-code-flow-setup-using-age-ffdace06/",
+    "for_gpt_editor": {
+      "brief": "This post demonstrates how to implement Open Authorization (OAuth) Code flow as an inbound authorization mechanism for MCP servers hosted on Amazon Bedrock AgentCore Gateway. By the end of this guide, you will have a production-ready setup where each AI assistant request is authenticated with a valid user identity token issued from your organization’s identity provider.",
+      "title_seed": "工具账本：AWS AI 编程工具变化",
+      "original_title": "Building a secure auth code flow setup using AgentCore Gateway with MCP clients",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/building-a-secure-auth-code-flow-setup-using-agentcore-gateway-with-mcp-clients/",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+        },
+        "core_question": "AWS AgentCore Gateway 的 MCP OAuth 方案对普通技术人的开发成本、工具链选择和工作流程有何实际影响？",
+        "why_this_topic_matters": "MCP 协议正在成为 AI 工具链的标准接口，而认证是生产环境落地的关键环节。AWS 推出官方 OAuth 方案可能降低企业级部署门槛，但也可能引入额外成本和复杂度。对于独立开发者和小团队，需要明确是否值得采用。",
+        "fact_summary": [],
+        "timeline": [],
+        "evidence_table": [],
+        "logic_closure": "目前仅有 AWS 官方博客一篇来源，描述了技术实现步骤，但未涉及定价、性能、社区反馈等关键信息。无法判断该方案是否比现有方案更优或更贵，也无法评估对普通技术人的实际影响。逻辑上存在多个未闭合的环节：成本未知、适用范围未知、集成难度未知。",
+        "writeable_angles": [
+          {
+            "angle": "技术动态速览：AWS 推出 MCP OAuth 方案，但成本未知",
+            "why": "如果无法获取定价和用户反馈，可先作为纯技术动态发布，提醒读者关注后续发展。",
+            "needs": "无需额外证据，仅基于现有博客内容即可。"
+          },
+          {
+            "angle": "成本对比：AgentCore Gateway OAuth vs 自建认证",
+            "why": "如果获取到定价信息，可以对比两种方案的成本和复杂度，帮助读者决策。",
+            "needs": "AgentCore Gateway 定价、自建认证的典型成本（如 Auth0 价格）、社区对两种方案的反馈。"
+          },
+          {
+            "angle": "实操指南：用 AgentCore Gateway 为 MCP 服务器添加 OAuth",
+            "why": "如果方案成熟且易用，可以写一篇面向普通开发者的教程。",
+            "needs": "完整的端到端示例代码、至少一个第三方 IdP 的集成案例、性能测试数据。"
+          }
+        ],
+        "missing_basics": [
+          "AgentCore Gateway 的定价模式（免费、按量、包月？）",
+          "该方案是否仅适用于 Bedrock 托管 MCP 服务器，还是也支持自托管",
+          "是否有现成的 SDK 或 CLI 工具简化集成",
+          "是否支持常见 IdP（Auth0、Okta、Azure AD）",
+          "性能瓶颈或限制（并发、令牌刷新频率等）",
+          "社区或用户反馈（正面/负面）"
+        ],
+        "missing_materials": [
+          "AWS Bedrock AgentCore Gateway 定价页面截图或文字说明",
+          "一个完整的端到端示例代码（如 GitHub 仓库）",
+          "至少一个第三方身份提供商的集成案例",
+          "社区讨论中关于性能或易用性的具体评论",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "该方案会显著降低开发成本",
+          "该方案是 MCP 认证的最佳实践",
+          "该方案适用于所有类型的 AI 助手应用",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [],
+        "additional_search_queries": [
+          "AWS AgentCore Gateway pricing",
+          "Amazon Bedrock AgentCore Gateway MCP OAuth tutorial",
+          "AgentCore Gateway MCP server authentication example",
+          "AWS Bedrock AgentCore Gateway limitations",
+          "AgentCore Gateway vs custom MCP auth comparison",
+          "MCP OAuth flow AWS Bedrock review",
+          "AgentCore Gateway supported identity providers",
+          "AWS AgentCore Gateway SDK"
+        ],
+        "stop_conditions": [
+          "获取到 AgentCore Gateway 的定价信息",
+          "至少找到一篇社区用户的实际使用反馈（正面或负面）",
+          "确认该方案是否支持自托管 MCP 服务器"
+        ],
+        "confidence": 0.0,
+        "topic_direction": "ai-practice",
+        "topic_direction_title": "AI 实操与自动化",
+        "report_type": "tool-ledger",
+        "research_plan": {
+          "core_question": "AWS AgentCore Gateway 的 MCP OAuth 方案对普通技术人的开发成本、工具链选择和工作流程有何实际影响？",
+          "must_verify": [
+            "AgentCore Gateway 的定价模式（是否免费、按量计费、或包含在 Bedrock 费用中）",
+            "该方案是否仅适用于 Bedrock 托管 MCP 服务器，还是也支持自托管 MCP 服务器",
+            "是否有现成的 SDK 或 CLI 工具简化集成，还是需要手动编写大量代码",
+            "该方案是否支持常见的身份提供商（如 Auth0、Okta、Azure AD）",
+            "是否有已知的性能瓶颈或限制（如并发连接数、令牌刷新频率）",
+            "是否有社区或用户反馈（正面/负面）"
+          ],
+          "search_queries": [
+            "AWS AgentCore Gateway pricing",
+            "Amazon Bedrock AgentCore Gateway MCP OAuth tutorial",
+            "AgentCore Gateway MCP server authentication example",
+            "AWS Bedrock AgentCore Gateway limitations",
+            "AgentCore Gateway vs custom MCP auth comparison",
+            "MCP OAuth flow AWS Bedrock review",
+            "AgentCore Gateway supported identity providers",
+            "AWS AgentCore Gateway SDK"
+          ],
+          "best_sources_to_find": [
+            "AWS 官方文档（AgentCore Gateway 页面、Bedrock 定价页）",
+            "AWS 官方博客（Machine Learning Blog）",
+            "GitHub 上的示例代码仓库（aws-samples）",
+            "AWS re:Post 或 Stack Overflow 上的问答",
+            "技术社区（如 Hacker News、Reddit r/aws）的讨论帖"
+          ],
+          "expert_challenge_points": [
+            "该方案是否增加了额外的网络延迟或复杂性，相比直接使用 API 密钥",
+            "对于小型项目或原型开发，OAuth 流程是否过度设计",
+            "AgentCore Gateway 是否支持自定义令牌验证逻辑（如 JWT 自定义声明）",
+            "该方案是否与现有的 AWS IAM 角色和策略无缝集成"
+          ],
+          "do_not_claim_yet": [
+            "该方案会显著降低开发成本",
+            "该方案是 MCP 认证的最佳实践",
+            "该方案适用于所有类型的 AI 助手应用"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取定价信息和实际用户反馈，则仅作为技术动态发布，不涉及成本影响分析。",
+          "downstream_materials_needed": [
+            "AWS Bedrock AgentCore Gateway 定价页面截图或文字说明",
+            "一个完整的端到端示例代码（如 GitHub 仓库）",
+            "至少一个第三方身份提供商的集成案例",
+            "社区讨论中关于性能或易用性的具体评论"
+          ]
+        },
+        "research_evidence": []
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+        },
+        "core_question": "AWS AgentCore Gateway 的 MCP OAuth 方案对普通技术人的开发成本、工具链选择和工作流程有何实际影响？",
+        "why_this_topic_matters": "MCP 协议正在成为 AI 工具链的标准接口，而认证是生产环境落地的关键环节。AWS 推出官方 OAuth 方案可能降低企业级部署门槛，但也可能引入额外成本和复杂度。对于独立开发者和小团队，需要明确是否值得采用。",
+        "fact_summary": [],
+        "timeline": [],
+        "evidence_table": [],
+        "logic_closure": "目前仅有 AWS 官方博客一篇来源，描述了技术实现步骤，但未涉及定价、性能、社区反馈等关键信息。无法判断该方案是否比现有方案更优或更贵，也无法评估对普通技术人的实际影响。逻辑上存在多个未闭合的环节：成本未知、适用范围未知、集成难度未知。",
+        "writeable_angles": [
+          {
+            "angle": "技术动态速览：AWS 推出 MCP OAuth 方案，但成本未知",
+            "why": "如果无法获取定价和用户反馈，可先作为纯技术动态发布，提醒读者关注后续发展。",
+            "needs": "无需额外证据，仅基于现有博客内容即可。"
+          },
+          {
+            "angle": "成本对比：AgentCore Gateway OAuth vs 自建认证",
+            "why": "如果获取到定价信息，可以对比两种方案的成本和复杂度，帮助读者决策。",
+            "needs": "AgentCore Gateway 定价、自建认证的典型成本（如 Auth0 价格）、社区对两种方案的反馈。"
+          },
+          {
+            "angle": "实操指南：用 AgentCore Gateway 为 MCP 服务器添加 OAuth",
+            "why": "如果方案成熟且易用，可以写一篇面向普通开发者的教程。",
+            "needs": "完整的端到端示例代码、至少一个第三方 IdP 的集成案例、性能测试数据。"
+          }
+        ],
+        "missing_basics": [
+          "AgentCore Gateway 的定价模式（免费、按量、包月？）",
+          "该方案是否仅适用于 Bedrock 托管 MCP 服务器，还是也支持自托管",
+          "是否有现成的 SDK 或 CLI 工具简化集成",
+          "是否支持常见 IdP（Auth0、Okta、Azure AD）",
+          "性能瓶颈或限制（并发、令牌刷新频率等）",
+          "社区或用户反馈（正面/负面）"
+        ],
+        "missing_materials": [
+          "AWS Bedrock AgentCore Gateway 定价页面截图或文字说明",
+          "一个完整的端到端示例代码（如 GitHub 仓库）",
+          "至少一个第三方身份提供商的集成案例",
+          "社区讨论中关于性能或易用性的具体评论",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "该方案会显著降低开发成本",
+          "该方案是 MCP 认证的最佳实践",
+          "该方案适用于所有类型的 AI 助手应用",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [],
+        "additional_search_queries": [
+          "AWS AgentCore Gateway pricing",
+          "Amazon Bedrock AgentCore Gateway MCP OAuth tutorial",
+          "AgentCore Gateway MCP server authentication example",
+          "AWS Bedrock AgentCore Gateway limitations",
+          "AgentCore Gateway vs custom MCP auth comparison",
+          "MCP OAuth flow AWS Bedrock review",
+          "AgentCore Gateway supported identity providers",
+          "AWS AgentCore Gateway SDK"
+        ],
+        "stop_conditions": [
+          "获取到 AgentCore Gateway 的定价信息",
+          "至少找到一篇社区用户的实际使用反馈（正面或负面）",
+          "确认该方案是否支持自托管 MCP 服务器"
+        ],
+        "confidence": 0.0,
+        "topic_direction": "ai-practice",
+        "topic_direction_title": "AI 实操与自动化",
+        "report_type": "tool-ledger",
+        "research_plan": {
+          "core_question": "AWS AgentCore Gateway 的 MCP OAuth 方案对普通技术人的开发成本、工具链选择和工作流程有何实际影响？",
+          "must_verify": [
+            "AgentCore Gateway 的定价模式（是否免费、按量计费、或包含在 Bedrock 费用中）",
+            "该方案是否仅适用于 Bedrock 托管 MCP 服务器，还是也支持自托管 MCP 服务器",
+            "是否有现成的 SDK 或 CLI 工具简化集成，还是需要手动编写大量代码",
+            "该方案是否支持常见的身份提供商（如 Auth0、Okta、Azure AD）",
+            "是否有已知的性能瓶颈或限制（如并发连接数、令牌刷新频率）",
+            "是否有社区或用户反馈（正面/负面）"
+          ],
+          "search_queries": [
+            "AWS AgentCore Gateway pricing",
+            "Amazon Bedrock AgentCore Gateway MCP OAuth tutorial",
+            "AgentCore Gateway MCP server authentication example",
+            "AWS Bedrock AgentCore Gateway limitations",
+            "AgentCore Gateway vs custom MCP auth comparison",
+            "MCP OAuth flow AWS Bedrock review",
+            "AgentCore Gateway supported identity providers",
+            "AWS AgentCore Gateway SDK"
+          ],
+          "best_sources_to_find": [
+            "AWS 官方文档（AgentCore Gateway 页面、Bedrock 定价页）",
+            "AWS 官方博客（Machine Learning Blog）",
+            "GitHub 上的示例代码仓库（aws-samples）",
+            "AWS re:Post 或 Stack Overflow 上的问答",
+            "技术社区（如 Hacker News、Reddit r/aws）的讨论帖"
+          ],
+          "expert_challenge_points": [
+            "该方案是否增加了额外的网络延迟或复杂性，相比直接使用 API 密钥",
+            "对于小型项目或原型开发，OAuth 流程是否过度设计",
+            "AgentCore Gateway 是否支持自定义令牌验证逻辑（如 JWT 自定义声明）",
+            "该方案是否与现有的 AWS IAM 角色和策略无缝集成"
+          ],
+          "do_not_claim_yet": [
+            "该方案会显著降低开发成本",
+            "该方案是 MCP 认证的最佳实践",
+            "该方案适用于所有类型的 AI 助手应用"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取定价信息和实际用户反馈，则仅作为技术动态发布，不涉及成本影响分析。",
+          "downstream_materials_needed": [
+            "AWS Bedrock AgentCore Gateway 定价页面截图或文字说明",
+            "一个完整的端到端示例代码（如 GitHub 仓库）",
+            "至少一个第三方身份提供商的集成案例",
+            "社区讨论中关于性能或易用性的具体评论"
+          ]
+        },
+        "research_evidence": []
+      },
+      "angle_candidates": [
+        "成本是否真的下降",
+        "免费额度和爆账单风险",
+        "替代方案值不值得换"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留普通读者入口，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "工具账本：AWS AI 编程工具变化 官方公告 价格 成本",
+        "工具账本：AWS AI 编程工具变化 API 文档 额度 限制",
+        "工具账本：AWS AI 编程工具变化 替代方案 真实使用 成本"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}

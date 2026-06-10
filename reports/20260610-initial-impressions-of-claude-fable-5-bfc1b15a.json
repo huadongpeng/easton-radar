@@ -1,0 +1,875 @@
+{
+  "id": "20260610-initial-impressions-of-claude-fable-5-bfc1b15a",
+  "title": "深度调查：Claude 模型能力变化",
+  "original_title": "Initial impressions of Claude Fable 5",
+  "url": "https://simonwillison.net/2026/Jun/9/claude-fable-5/",
+  "summary": "I didn't have early access to today's Claude Fable 5 release, but I've spent the past ~5.5 hours putting it through its paces. My initial impressions are that this is something of a beast . It's slow, expensive and has been quite happily churning through everything I've thrown at it so far. As is frequently the case with current frontier models the challenge is finding tasks that it can't do. First, let's review the key characteristics. Anthropic claim that Claude Fable 5 offers the same performance as Claude Mythos 5, except with much more strict guardrails in place to prevent it being used for harmful things. Those guardrails trigger often enough that the Claude API has new mechanisms for letting you know when you hit them, and even has a new option to request it falls back to another model automatically if something gets rejected. Claude Mythos 5 is out today as well, Anthropic say it",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "ai-frontier",
+  "topic_direction_title": "AI 前沿与工具链",
+  "topic_direction_short_title": "AI 前沿",
+  "topic_direction_description": "AI 模型、Agent、开发工具、API、云服务和底层能力变化。重点看这次变化到底是什么、时间线如何、会不会改变普通技术人的工作方式、成本结构和工具链。",
+  "source_name": "Simon Willison's Weblog",
+  "original_source_name": "Simon Willison's Weblog",
+  "source_type": "rss",
+  "feed_url": "https://simonwillison.net/atom/everything/",
+  "published_at": "2026-06-09T23:59:54+00:00",
+  "fetched_at": "2026-06-10T01:24:41.743642+00:00",
+  "decision": "deep_dive",
+  "report_type": "investigation",
+  "report_type_title": "深度调查",
+  "score": 90,
+  "reader_hook": "这条线索可能影响 AI 开发工作流、API 使用成本或程序员工具链，适合判断是否值得跟进。",
+  "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
+  "evidence_level": "near_source",
+  "source_priority": "P1 高质量近源",
+  "reason": "Claude Fable 5 初评，影响AI工具链",
+  "collection_fit": "部分符合收集原则：可以进入观察池，但证据链或读者入口还不够完整。",
+  "investigation_direction": "优先追一手来源、概念定义、时间线、证据矛盾和可能影响面。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。",
+    "当前仅适合观察，不宜写成深度结论。"
+  ],
+  "facts": [
+    {
+      "claim": "Simon Willison's Weblog 发布/收录了这条原始线索：Initial impressions of Claude Fable 5",
+      "type": "confirmed_fact",
+      "source_url": "https://simonwillison.net/2026/Jun/9/claude-fable-5/",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Simon Willison's Weblog",
+      "url": "https://simonwillison.net/2026/Jun/9/claude-fable-5/",
+      "source_type": "near_source",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "ai",
+        "claude",
+        "model"
+      ],
+      "dev": [
+        "api"
+      ]
+    },
+    "source_host": "simonwillison.net",
+    "source_type": "rss",
+    "heuristic": false,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "这条线索可能影响 AI 开发工作流、API 使用成本或程序员工具链，适合判断是否值得跟进。",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://simonwillison.net/atom/everything/",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。",
+      "当前仅适合观察，不宜写成深度结论。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "观察",
+      "label": "观察",
+      "reason": "核心事实（定价、性能对比、安全限制细节）尚未从官方或独立评测中充分验证，现有证据主要来自 Simon Willison 的初步印象和第三方聚合站，缺乏官方定价页面和独立基准测试。"
+    },
+    "core_question": "Claude Fable 5 相比 Claude Mythos 5 在性能、成本、安全限制上的具体差异是什么，对开发者实际使用有何影响？",
+    "why_this_topic_matters": "Claude 是当前主流 AI 模型之一，Fable 5 作为新版本可能改变开发者的模型选择、API 成本和工具链适配。如果安全限制过严或 fallback 机制不透明，可能影响实际工作流。",
+    "fact_summary": [
+      "Anthropic 声称 Claude Fable 5 与 Mythos 5 性能相同，但安全限制更严格。",
+      "Claude Fable 5 的 API 新增了 guardrails 触发通知和 fallback 到其他模型的选项。",
+      "Simon Willison 初步评测认为 Fable 5 速度慢、成本高，但能处理大部分任务。",
+      "OpenRouter 和 Coursiv 等第三方站点列出了 Fable 5 的定价，但官方定价页面未直接显示具体数字。"
+    ],
+    "timeline": [
+      "2026-06-09: Simon Willison 发布 Claude Fable 5 初步评测。",
+      "2026-06-09: Anthropic 发布 Claude Fable 5 和 Claude Mythos 5。"
+    ],
+    "evidence_table": [
+      {
+        "source": "Simon Willison's Weblog",
+        "url": "https://simonwillison.net/2026/Jun/9/claude-fable-5/",
+        "supports": "Claude Fable 5 性能强大但慢、贵，安全限制严格，有 fallback 机制。",
+        "reliability": "near_source"
+      },
+      {
+        "source": "Anthropic 官方定价页面",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "supports": "官方定价页面存在，但抓取内容未显示具体数字，可能需登录或动态加载。",
+        "reliability": "official"
+      },
+      {
+        "source": "OpenRouter",
+        "url": "https://openrouter.ai/anthropic/claude-fable-5",
+        "supports": "列出了 Claude Fable 5 的 API 定价（具体数字未抓取到）。",
+        "reliability": "media"
+      },
+      {
+        "source": "Coursiv Blog",
+        "url": "https://coursiv.io/blog/claude-fable-5",
+        "supports": "介绍了 Fable 5 的定价、API 访问和安全措施，但为第三方总结。",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "目前逻辑链条不完整：性能对比缺乏官方基准和独立评测，定价细节未从官方页面确认，安全限制的具体触发条件未知。无法判断 Fable 5 是否值得开发者迁移。",
+    "writeable_angles": [
+      {
+        "angle": "Claude Fable 5 的 guardrails 对开发者工作流的影响",
+        "why": "安全限制是 Fable 5 的核心差异点，可能影响合法用例，开发者关心误拦率和 fallback 可靠性。",
+        "needs": "官方文档中 guardrails 触发条件、误报率数据、开发者社区反馈。"
+      },
+      {
+        "angle": "Claude Fable 5 的性价比分析",
+        "why": "定价和性能直接决定开发者是否采用，需对比 Mythos 5 和竞品。",
+        "needs": "官方定价、独立基准测试（如延迟、吞吐量）、实际使用成本案例。"
+      },
+      {
+        "angle": "Claude Fable 5 的 fallback 机制是否足够透明",
+        "why": "fallback 到其他模型可能影响结果一致性和成本，开发者需要控制权。",
+        "needs": "API 文档中 fallback 的详细行为、开发者体验报告。"
+      }
+    ],
+    "missing_basics": [
+      "Claude Fable 5 的官方定价（每 token 费用）",
+      "Claude Fable 5 与 Mythos 5 的官方性能对比数据",
+      "Claude Fable 5 的 guardrails 具体触发条件文档"
+    ],
+    "missing_materials": [
+      "Anthropic 官方博客关于 Fable 5 的发布说明",
+      "至少一篇独立评测（如 LMSYS Chatbot Arena 或 Artificial Analysis）",
+      "Hacker News 或 Reddit 上开发者的实际使用讨论"
+    ],
+    "not_claimable": [
+      "Claude Fable 5 比 Mythos 5 更好或更差",
+      "Claude Fable 5 的 guardrails 过于严格",
+      "Claude Fable 5 的定价细节",
+      "Claude Fable 5 的开发者接受度"
+    ],
+    "followup_queries": [
+      "Anthropic 官方博客中关于 Claude Fable 5 的发布文章",
+      "Claude Fable 5 在 LMSYS Chatbot Arena 上的评测结果",
+      "Reddit r/ClaudeAI 上关于 Fable 5 的讨论"
+    ],
+    "additional_search_queries": [
+      "Claude Fable 5 official pricing per token",
+      "Claude Mythos 5 vs Fable 5 benchmark latency throughput",
+      "Anthropic Claude Fable 5 guardrails documentation trigger conditions",
+      "Claude Fable 5 fallback model API documentation",
+      "Claude Fable 5 review developer experience reddit"
+    ],
+    "stop_conditions": [
+      "Anthropic 官方发布 Fable 5 的定价和性能对比",
+      "至少两篇独立评测确认性能差异",
+      "开发者社区出现大量关于 guardrails 误拦的反馈"
+    ],
+    "confidence": 0.3,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "investigation",
+    "research_plan": {
+      "core_question": "Claude Fable 5 相比 Claude Mythos 5 在性能、成本、安全限制上的具体差异是什么，对开发者实际使用有何影响？",
+      "must_verify": [
+        "Anthropic 官方对 Claude Fable 5 和 Mythos 5 的定价、性能对比、安全限制说明",
+        "Claude Fable 5 的 API 文档中关于 guardrails 和 fallback 机制的详细描述",
+        "其他开发者或评测者对 Claude Fable 5 的独立评测，特别是与 Mythos 5 的对比"
+      ],
+      "search_queries": [
+        "Claude Fable 5 pricing API",
+        "Claude Mythos 5 vs Fable 5 benchmark",
+        "Anthropic Claude Fable 5 guardrails documentation",
+        "Claude Fable 5 fallback model API",
+        "Claude Fable 5 review developer experience",
+        "Anthropic Claude model comparison 2026",
+        "Claude Fable 5 rate limits latency",
+        "Claude Fable 5 safety restrictions examples"
+      ],
+      "best_sources_to_find": [
+        "Anthropic 官方博客和文档站",
+        "Anthropic 的 API 参考文档（特别是错误码和 fallback 部分）",
+        "Simon Willison 的完整博文（已有关联）",
+        "Hacker News 或 Reddit 上开发者对 Claude Fable 5 的讨论",
+        "独立 AI 评测网站如 Artificial Analysis、LMSYS Chatbot Arena"
+      ],
+      "expert_challenge_points": [
+        "Claude Fable 5 的 guardrails 是否过于严格，导致合法用例被误拦？",
+        "Claude Fable 5 的 fallback 机制是否透明，开发者能否控制？",
+        "Claude Fable 5 的定价是否合理，相比 Mythos 5 性价比如何？",
+        "Claude Fable 5 的延迟是否影响实时应用？"
+      ],
+      "do_not_claim_yet": [
+        "Claude Fable 5 比 Mythos 5 更好或更差",
+        "Claude Fable 5 的 guardrails 具体触发条件",
+        "Claude Fable 5 的定价细节",
+        "Claude Fable 5 的开发者接受度"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取官方定价和性能对比，可以基于现有评测发布雷达，但需注明信息有限，建议读者关注官方更新。",
+      "downstream_materials_needed": [
+        "Anthropic 官方定价页面截图或链接",
+        "Claude Fable 5 API 文档中关于 guardrails 和 fallback 的章节",
+        "至少一篇独立评测的原文链接",
+        "开发者社区讨论的汇总（如 HN 或 Reddit 帖子）"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Pricing - Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "query": "Claude Fable 5 pricing API",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Pricing - Claude API Docs window.__GATED_CHUNK_MAP__={};window.__GATED_GATES__={}; requestAnimationFrame(function(){$RT=performance.now()}); Messages Managed Agents Admin Resources API reference English Console Log in Search... ⌘K Models Models overview Model IDs and versioning Choosing a model Introducing Claude Fable 5 and Claude Mythos 5 What's new in Claude Opus 4.8 Upgrade between model versions Model deprecations Model cards System prompts Pricing Log in Models & pricing Pricing Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Solutions AI agents Code modernization Coding Customer support Education Financial services Government Life sciences Partners Amazon Bedrock Google Cloud's Vertex AI Learn Blog Courses Use cases Connectors Customer stories Engineering at Anthropic Events Powered by Claude Service partners Startups program Company Anthropic Careers Economic Futures Research News Responsible Scaling Policy Security and compliance Transparency Learn Blog Courses Use cases Connectors Customer stories Engineering at Anthropic Events Powered by Claude Service partners Startups program Help and security Availability Status Support Discord Terms and policies Privacy policy Responsible disclosure policy Terms of service: Commercial Terms of service: Consumer Usage policy $RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b a&&2E3 *]:max-w-full [&>*]:box-border prose-a:inline-flex prose-a:items-center prose-a:min-h-[44px] prose-a:py-0.5 prose-p:leading-[1.6] prose-li:leading-[1.6] prose-blockquote:leading-[1.6]\"> Models & pricing / Models Pricing Copy page Learn about Anthropic's pricing structure for models and features Copy page This p",
+        "fetch_error": ""
+      },
+      {
+        "title": "Claude Fable 5 - API Pricing & Providers | OpenRouter",
+        "url": "https://openrouter.ai/anthropic/claude-fable-5",
+        "query": "Claude Fable 5 pricing API",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Claude Fable 5 - API Pricing & Providers | OpenRouter window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-R8YZRJS2XN'); :root { --bprogress-color: hsl(var(--primary)); --bprogress-height: 2px; --bprogress-spinner-size: 18px; --bprogress-spinner-animation-duration: 400ms; --bprogress-spinner-border-size: 2px; --bprogress-box-shadow: 0 0 10px hsl(var(--primary)), 0 0 5px hsl(var(--primary)); --bprogress-z-index: 99999; --bprogress-spinner-top: 15px; --bprogress-spinner-bottom: auto; --bprogress-spinner-right: 15px; --bprogress-spinner-left: auto; } .bprogress { width: 0; height: 0; pointer-events: none; z-index: var(--bprogress-z-index); } .bprogress .bar { background: var(--bprogress-color); position: fixed; z-index: var(--bprogress-z-index); top: 0; left: 0; width: 100%; height: var(--bprogress-height); } /* Fancy blur effect */ .bprogress .peg { display: block; position: absolute; right: 0; width: 100px; height: 100%; box-shadow: var(--bprogress-box-shadow); opacity: 1.0; transform: rotate(3deg) translate(0px, -4px); } /* Remove these to get rid of the spinner */ .bprogress .spinner { display: block; position: fixed; z-index: var(--bprogress-z-index); top: var(--bprogress-spinner-top); bottom: var(--bprogress-spinner-bottom); right: var(--bprogress-spinner-right); left: var(--bprogress-spinner-left); } .bprogress .spinner-icon { width: var(--bprogress-spinner-size); height: var(--bprogress-spinner-size); box-sizing: border-box; border: solid var(--bprogress-spinner-border-size) transparent; border-top-color: var(--bprogress-color); border-left-color: var(--bprogress-color); border-radius: 50%; -webkit-animation: bprogress-spinner var(--bprogress-spinner-animation-duration) linear infinite; ani",
+        "fetch_error": ""
+      },
+      {
+        "title": "Claude Fable 5: Price, API, Access & Safeguards | Coursiv Blog",
+        "url": "https://coursiv.io/blog/claude-fable-5",
+        "query": "Claude Fable 5 pricing API",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Claude Fable 5: Price, API, Access & Safeguards | Coursiv Blog #theme-toggle, .top-link { display: none; } @media (prefers-color-scheme: dark) { :root { --theme: rgb(29, 30, 32); --entry: rgb(46, 46, 51); --primary: rgb(218, 218, 219); --secondary: rgb(155, 156, 157); --tertiary: rgb(65, 66, 68); --content: rgb(196, 196, 197); --code-block-bg: rgb(46, 46, 51); --code-bg: rgb(55, 56, 62); --border: rgb(51, 51, 51); color-scheme: dark; } .list { background: var(--theme); } .toc { background: var(--entry); } } @media (prefers-color-scheme: light) { .list::-webkit-scrollbar-thumb { border-color: var(--code-bg); } } if (localStorage.getItem(\"pref-theme\") === \"dark\") { document.querySelector(\"html\").dataset.theme = 'dark'; } else if (localStorage.getItem(\"pref-theme\") === \"light\") { document.querySelector(\"html\").dataset.theme = 'light'; } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) { document.querySelector(\"html\").dataset.theme = 'dark'; } else { document.querySelector(\"html\").dataset.theme = 'light'; } window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-SBE8SXNKF6'); { \"@context\": \"https://schema.org\", \"@id\": \"https://coursiv.io/blog/claude-fable-5#breadcrumb\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [ { \"@type\": \"ListItem\", \"item\": \"https://coursiv.io/\", \"name\": \"Home\", \"position\": 1 }, { \"@type\": \"ListItem\", \"item\": \"https://coursiv.io/blog\", \"name\": \"Blog\", \"position\": 2 }, { \"@type\": \"ListItem\", \"item\": \"https://coursiv.io/blog/claude-fable-5\", \"name\": \"Claude Fable 5: Price, API, Access, Safeguards \\u0026 Use Cases\", \"position\": 3 } ] } { \"@context\": \"https://schema.org\", \"@id\": \"https://coursiv.io/blog/claude-fable-5#article\", \"@type\": \"NewsArticle\", \"author\": { ",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "观察",
+      "label": "观察",
+      "reason": "核心事实（定价、性能对比、安全限制细节）尚未从官方或独立评测中充分验证，现有证据主要来自 Simon Willison 的初步印象和第三方聚合站，缺乏官方定价页面和独立基准测试。"
+    },
+    "core_question": "Claude Fable 5 相比 Claude Mythos 5 在性能、成本、安全限制上的具体差异是什么，对开发者实际使用有何影响？",
+    "why_this_topic_matters": "Claude 是当前主流 AI 模型之一，Fable 5 作为新版本可能改变开发者的模型选择、API 成本和工具链适配。如果安全限制过严或 fallback 机制不透明，可能影响实际工作流。",
+    "fact_summary": [
+      "Anthropic 声称 Claude Fable 5 与 Mythos 5 性能相同，但安全限制更严格。",
+      "Claude Fable 5 的 API 新增了 guardrails 触发通知和 fallback 到其他模型的选项。",
+      "Simon Willison 初步评测认为 Fable 5 速度慢、成本高，但能处理大部分任务。",
+      "OpenRouter 和 Coursiv 等第三方站点列出了 Fable 5 的定价，但官方定价页面未直接显示具体数字。"
+    ],
+    "timeline": [
+      "2026-06-09: Simon Willison 发布 Claude Fable 5 初步评测。",
+      "2026-06-09: Anthropic 发布 Claude Fable 5 和 Claude Mythos 5。"
+    ],
+    "evidence_table": [
+      {
+        "source": "Simon Willison's Weblog",
+        "url": "https://simonwillison.net/2026/Jun/9/claude-fable-5/",
+        "supports": "Claude Fable 5 性能强大但慢、贵，安全限制严格，有 fallback 机制。",
+        "reliability": "near_source"
+      },
+      {
+        "source": "Anthropic 官方定价页面",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "supports": "官方定价页面存在，但抓取内容未显示具体数字，可能需登录或动态加载。",
+        "reliability": "official"
+      },
+      {
+        "source": "OpenRouter",
+        "url": "https://openrouter.ai/anthropic/claude-fable-5",
+        "supports": "列出了 Claude Fable 5 的 API 定价（具体数字未抓取到）。",
+        "reliability": "media"
+      },
+      {
+        "source": "Coursiv Blog",
+        "url": "https://coursiv.io/blog/claude-fable-5",
+        "supports": "介绍了 Fable 5 的定价、API 访问和安全措施，但为第三方总结。",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "目前逻辑链条不完整：性能对比缺乏官方基准和独立评测，定价细节未从官方页面确认，安全限制的具体触发条件未知。无法判断 Fable 5 是否值得开发者迁移。",
+    "writeable_angles": [
+      {
+        "angle": "Claude Fable 5 的 guardrails 对开发者工作流的影响",
+        "why": "安全限制是 Fable 5 的核心差异点，可能影响合法用例，开发者关心误拦率和 fallback 可靠性。",
+        "needs": "官方文档中 guardrails 触发条件、误报率数据、开发者社区反馈。"
+      },
+      {
+        "angle": "Claude Fable 5 的性价比分析",
+        "why": "定价和性能直接决定开发者是否采用，需对比 Mythos 5 和竞品。",
+        "needs": "官方定价、独立基准测试（如延迟、吞吐量）、实际使用成本案例。"
+      },
+      {
+        "angle": "Claude Fable 5 的 fallback 机制是否足够透明",
+        "why": "fallback 到其他模型可能影响结果一致性和成本，开发者需要控制权。",
+        "needs": "API 文档中 fallback 的详细行为、开发者体验报告。"
+      }
+    ],
+    "missing_basics": [
+      "Claude Fable 5 的官方定价（每 token 费用）",
+      "Claude Fable 5 与 Mythos 5 的官方性能对比数据",
+      "Claude Fable 5 的 guardrails 具体触发条件文档"
+    ],
+    "missing_materials": [
+      "Anthropic 官方博客关于 Fable 5 的发布说明",
+      "至少一篇独立评测（如 LMSYS Chatbot Arena 或 Artificial Analysis）",
+      "Hacker News 或 Reddit 上开发者的实际使用讨论"
+    ],
+    "not_claimable": [
+      "Claude Fable 5 比 Mythos 5 更好或更差",
+      "Claude Fable 5 的 guardrails 过于严格",
+      "Claude Fable 5 的定价细节",
+      "Claude Fable 5 的开发者接受度"
+    ],
+    "followup_queries": [
+      "Anthropic 官方博客中关于 Claude Fable 5 的发布文章",
+      "Claude Fable 5 在 LMSYS Chatbot Arena 上的评测结果",
+      "Reddit r/ClaudeAI 上关于 Fable 5 的讨论"
+    ],
+    "additional_search_queries": [
+      "Claude Fable 5 official pricing per token",
+      "Claude Mythos 5 vs Fable 5 benchmark latency throughput",
+      "Anthropic Claude Fable 5 guardrails documentation trigger conditions",
+      "Claude Fable 5 fallback model API documentation",
+      "Claude Fable 5 review developer experience reddit"
+    ],
+    "stop_conditions": [
+      "Anthropic 官方发布 Fable 5 的定价和性能对比",
+      "至少两篇独立评测确认性能差异",
+      "开发者社区出现大量关于 guardrails 误拦的反馈"
+    ],
+    "confidence": 0.3,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "investigation",
+    "research_plan": {
+      "core_question": "Claude Fable 5 相比 Claude Mythos 5 在性能、成本、安全限制上的具体差异是什么，对开发者实际使用有何影响？",
+      "must_verify": [
+        "Anthropic 官方对 Claude Fable 5 和 Mythos 5 的定价、性能对比、安全限制说明",
+        "Claude Fable 5 的 API 文档中关于 guardrails 和 fallback 机制的详细描述",
+        "其他开发者或评测者对 Claude Fable 5 的独立评测，特别是与 Mythos 5 的对比"
+      ],
+      "search_queries": [
+        "Claude Fable 5 pricing API",
+        "Claude Mythos 5 vs Fable 5 benchmark",
+        "Anthropic Claude Fable 5 guardrails documentation",
+        "Claude Fable 5 fallback model API",
+        "Claude Fable 5 review developer experience",
+        "Anthropic Claude model comparison 2026",
+        "Claude Fable 5 rate limits latency",
+        "Claude Fable 5 safety restrictions examples"
+      ],
+      "best_sources_to_find": [
+        "Anthropic 官方博客和文档站",
+        "Anthropic 的 API 参考文档（特别是错误码和 fallback 部分）",
+        "Simon Willison 的完整博文（已有关联）",
+        "Hacker News 或 Reddit 上开发者对 Claude Fable 5 的讨论",
+        "独立 AI 评测网站如 Artificial Analysis、LMSYS Chatbot Arena"
+      ],
+      "expert_challenge_points": [
+        "Claude Fable 5 的 guardrails 是否过于严格，导致合法用例被误拦？",
+        "Claude Fable 5 的 fallback 机制是否透明，开发者能否控制？",
+        "Claude Fable 5 的定价是否合理，相比 Mythos 5 性价比如何？",
+        "Claude Fable 5 的延迟是否影响实时应用？"
+      ],
+      "do_not_claim_yet": [
+        "Claude Fable 5 比 Mythos 5 更好或更差",
+        "Claude Fable 5 的 guardrails 具体触发条件",
+        "Claude Fable 5 的定价细节",
+        "Claude Fable 5 的开发者接受度"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取官方定价和性能对比，可以基于现有评测发布雷达，但需注明信息有限，建议读者关注官方更新。",
+      "downstream_materials_needed": [
+        "Anthropic 官方定价页面截图或链接",
+        "Claude Fable 5 API 文档中关于 guardrails 和 fallback 的章节",
+        "至少一篇独立评测的原文链接",
+        "开发者社区讨论的汇总（如 HN 或 Reddit 帖子）"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Pricing - Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "query": "Claude Fable 5 pricing API",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Pricing - Claude API Docs window.__GATED_CHUNK_MAP__={};window.__GATED_GATES__={}; requestAnimationFrame(function(){$RT=performance.now()}); Messages Managed Agents Admin Resources API reference English Console Log in Search... ⌘K Models Models overview Model IDs and versioning Choosing a model Introducing Claude Fable 5 and Claude Mythos 5 What's new in Claude Opus 4.8 Upgrade between model versions Model deprecations Model cards System prompts Pricing Log in Models & pricing Pricing Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Solutions AI agents Code modernization Coding Customer support Education Financial services Government Life sciences Partners Amazon Bedrock Google Cloud's Vertex AI Learn Blog Courses Use cases Connectors Customer stories Engineering at Anthropic Events Powered by Claude Service partners Startups program Company Anthropic Careers Economic Futures Research News Responsible Scaling Policy Security and compliance Transparency Learn Blog Courses Use cases Connectors Customer stories Engineering at Anthropic Events Powered by Claude Service partners Startups program Help and security Availability Status Support Discord Terms and policies Privacy policy Responsible disclosure policy Terms of service: Commercial Terms of service: Consumer Usage policy $RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b a&&2E3 *]:max-w-full [&>*]:box-border prose-a:inline-flex prose-a:items-center prose-a:min-h-[44px] prose-a:py-0.5 prose-p:leading-[1.6] prose-li:leading-[1.6] prose-blockquote:leading-[1.6]\"> Models & pricing / Models Pricing Copy page Learn about Anthropic's pricing structure for models and features Copy page This p",
+        "fetch_error": ""
+      },
+      {
+        "title": "Claude Fable 5 - API Pricing & Providers | OpenRouter",
+        "url": "https://openrouter.ai/anthropic/claude-fable-5",
+        "query": "Claude Fable 5 pricing API",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Claude Fable 5 - API Pricing & Providers | OpenRouter window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-R8YZRJS2XN'); :root { --bprogress-color: hsl(var(--primary)); --bprogress-height: 2px; --bprogress-spinner-size: 18px; --bprogress-spinner-animation-duration: 400ms; --bprogress-spinner-border-size: 2px; --bprogress-box-shadow: 0 0 10px hsl(var(--primary)), 0 0 5px hsl(var(--primary)); --bprogress-z-index: 99999; --bprogress-spinner-top: 15px; --bprogress-spinner-bottom: auto; --bprogress-spinner-right: 15px; --bprogress-spinner-left: auto; } .bprogress { width: 0; height: 0; pointer-events: none; z-index: var(--bprogress-z-index); } .bprogress .bar { background: var(--bprogress-color); position: fixed; z-index: var(--bprogress-z-index); top: 0; left: 0; width: 100%; height: var(--bprogress-height); } /* Fancy blur effect */ .bprogress .peg { display: block; position: absolute; right: 0; width: 100px; height: 100%; box-shadow: var(--bprogress-box-shadow); opacity: 1.0; transform: rotate(3deg) translate(0px, -4px); } /* Remove these to get rid of the spinner */ .bprogress .spinner { display: block; position: fixed; z-index: var(--bprogress-z-index); top: var(--bprogress-spinner-top); bottom: var(--bprogress-spinner-bottom); right: var(--bprogress-spinner-right); left: var(--bprogress-spinner-left); } .bprogress .spinner-icon { width: var(--bprogress-spinner-size); height: var(--bprogress-spinner-size); box-sizing: border-box; border: solid var(--bprogress-spinner-border-size) transparent; border-top-color: var(--bprogress-color); border-left-color: var(--bprogress-color); border-radius: 50%; -webkit-animation: bprogress-spinner var(--bprogress-spinner-animation-duration) linear infinite; ani",
+        "fetch_error": ""
+      },
+      {
+        "title": "Claude Fable 5: Price, API, Access & Safeguards | Coursiv Blog",
+        "url": "https://coursiv.io/blog/claude-fable-5",
+        "query": "Claude Fable 5 pricing API",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Claude Fable 5: Price, API, Access & Safeguards | Coursiv Blog #theme-toggle, .top-link { display: none; } @media (prefers-color-scheme: dark) { :root { --theme: rgb(29, 30, 32); --entry: rgb(46, 46, 51); --primary: rgb(218, 218, 219); --secondary: rgb(155, 156, 157); --tertiary: rgb(65, 66, 68); --content: rgb(196, 196, 197); --code-block-bg: rgb(46, 46, 51); --code-bg: rgb(55, 56, 62); --border: rgb(51, 51, 51); color-scheme: dark; } .list { background: var(--theme); } .toc { background: var(--entry); } } @media (prefers-color-scheme: light) { .list::-webkit-scrollbar-thumb { border-color: var(--code-bg); } } if (localStorage.getItem(\"pref-theme\") === \"dark\") { document.querySelector(\"html\").dataset.theme = 'dark'; } else if (localStorage.getItem(\"pref-theme\") === \"light\") { document.querySelector(\"html\").dataset.theme = 'light'; } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) { document.querySelector(\"html\").dataset.theme = 'dark'; } else { document.querySelector(\"html\").dataset.theme = 'light'; } window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-SBE8SXNKF6'); { \"@context\": \"https://schema.org\", \"@id\": \"https://coursiv.io/blog/claude-fable-5#breadcrumb\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [ { \"@type\": \"ListItem\", \"item\": \"https://coursiv.io/\", \"name\": \"Home\", \"position\": 1 }, { \"@type\": \"ListItem\", \"item\": \"https://coursiv.io/blog\", \"name\": \"Blog\", \"position\": 2 }, { \"@type\": \"ListItem\", \"item\": \"https://coursiv.io/blog/claude-fable-5\", \"name\": \"Claude Fable 5: Price, API, Access, Safeguards \\u0026 Use Cases\", \"position\": 3 } ] } { \"@context\": \"https://schema.org\", \"@id\": \"https://coursiv.io/blog/claude-fable-5#article\", \"@type\": \"NewsArticle\", \"author\": { ",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260610-initial-impressions-of-claude-fable-5-bfc1b15a/",
+    "for_gpt_editor": {
+      "brief": "I didn't have early access to today's Claude Fable 5 release, but I've spent the past ~5.5 hours putting it through its paces. My initial impressions are that this is something of a beast . It's slow, expensive and has been quite happily churning through everything I've thrown at it so far. As is frequently the case with current frontier models the challenge is finding tasks that it can't do. First, let's review the key characteristics. Anthropic claim that Claude Fable 5 offers the same performance as Claude Mythos 5, except with much more strict guardrails in place to prevent it being used for harmful things. Those guardrails trigger often enough that the Claude API has new mechanisms for letting you know when you hit them, and even has a new option to request it falls back to another model automatically if something gets rejected. Claude Mythos 5 is out today as well, Anthropic say it",
+      "title_seed": "深度调查：Claude 模型能力变化",
+      "original_title": "Initial impressions of Claude Fable 5",
+      "source_url": "https://simonwillison.net/2026/Jun/9/claude-fable-5/",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "观察",
+          "label": "观察",
+          "reason": "核心事实（定价、性能对比、安全限制细节）尚未从官方或独立评测中充分验证，现有证据主要来自 Simon Willison 的初步印象和第三方聚合站，缺乏官方定价页面和独立基准测试。"
+        },
+        "core_question": "Claude Fable 5 相比 Claude Mythos 5 在性能、成本、安全限制上的具体差异是什么，对开发者实际使用有何影响？",
+        "why_this_topic_matters": "Claude 是当前主流 AI 模型之一，Fable 5 作为新版本可能改变开发者的模型选择、API 成本和工具链适配。如果安全限制过严或 fallback 机制不透明，可能影响实际工作流。",
+        "fact_summary": [
+          "Anthropic 声称 Claude Fable 5 与 Mythos 5 性能相同，但安全限制更严格。",
+          "Claude Fable 5 的 API 新增了 guardrails 触发通知和 fallback 到其他模型的选项。",
+          "Simon Willison 初步评测认为 Fable 5 速度慢、成本高，但能处理大部分任务。",
+          "OpenRouter 和 Coursiv 等第三方站点列出了 Fable 5 的定价，但官方定价页面未直接显示具体数字。"
+        ],
+        "timeline": [
+          "2026-06-09: Simon Willison 发布 Claude Fable 5 初步评测。",
+          "2026-06-09: Anthropic 发布 Claude Fable 5 和 Claude Mythos 5。"
+        ],
+        "evidence_table": [
+          {
+            "source": "Simon Willison's Weblog",
+            "url": "https://simonwillison.net/2026/Jun/9/claude-fable-5/",
+            "supports": "Claude Fable 5 性能强大但慢、贵，安全限制严格，有 fallback 机制。",
+            "reliability": "near_source"
+          },
+          {
+            "source": "Anthropic 官方定价页面",
+            "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+            "supports": "官方定价页面存在，但抓取内容未显示具体数字，可能需登录或动态加载。",
+            "reliability": "official"
+          },
+          {
+            "source": "OpenRouter",
+            "url": "https://openrouter.ai/anthropic/claude-fable-5",
+            "supports": "列出了 Claude Fable 5 的 API 定价（具体数字未抓取到）。",
+            "reliability": "media"
+          },
+          {
+            "source": "Coursiv Blog",
+            "url": "https://coursiv.io/blog/claude-fable-5",
+            "supports": "介绍了 Fable 5 的定价、API 访问和安全措施，但为第三方总结。",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "目前逻辑链条不完整：性能对比缺乏官方基准和独立评测，定价细节未从官方页面确认，安全限制的具体触发条件未知。无法判断 Fable 5 是否值得开发者迁移。",
+        "writeable_angles": [
+          {
+            "angle": "Claude Fable 5 的 guardrails 对开发者工作流的影响",
+            "why": "安全限制是 Fable 5 的核心差异点，可能影响合法用例，开发者关心误拦率和 fallback 可靠性。",
+            "needs": "官方文档中 guardrails 触发条件、误报率数据、开发者社区反馈。"
+          },
+          {
+            "angle": "Claude Fable 5 的性价比分析",
+            "why": "定价和性能直接决定开发者是否采用，需对比 Mythos 5 和竞品。",
+            "needs": "官方定价、独立基准测试（如延迟、吞吐量）、实际使用成本案例。"
+          },
+          {
+            "angle": "Claude Fable 5 的 fallback 机制是否足够透明",
+            "why": "fallback 到其他模型可能影响结果一致性和成本，开发者需要控制权。",
+            "needs": "API 文档中 fallback 的详细行为、开发者体验报告。"
+          }
+        ],
+        "missing_basics": [
+          "Claude Fable 5 的官方定价（每 token 费用）",
+          "Claude Fable 5 与 Mythos 5 的官方性能对比数据",
+          "Claude Fable 5 的 guardrails 具体触发条件文档"
+        ],
+        "missing_materials": [
+          "Anthropic 官方博客关于 Fable 5 的发布说明",
+          "至少一篇独立评测（如 LMSYS Chatbot Arena 或 Artificial Analysis）",
+          "Hacker News 或 Reddit 上开发者的实际使用讨论"
+        ],
+        "not_claimable": [
+          "Claude Fable 5 比 Mythos 5 更好或更差",
+          "Claude Fable 5 的 guardrails 过于严格",
+          "Claude Fable 5 的定价细节",
+          "Claude Fable 5 的开发者接受度"
+        ],
+        "followup_queries": [
+          "Anthropic 官方博客中关于 Claude Fable 5 的发布文章",
+          "Claude Fable 5 在 LMSYS Chatbot Arena 上的评测结果",
+          "Reddit r/ClaudeAI 上关于 Fable 5 的讨论"
+        ],
+        "additional_search_queries": [
+          "Claude Fable 5 official pricing per token",
+          "Claude Mythos 5 vs Fable 5 benchmark latency throughput",
+          "Anthropic Claude Fable 5 guardrails documentation trigger conditions",
+          "Claude Fable 5 fallback model API documentation",
+          "Claude Fable 5 review developer experience reddit"
+        ],
+        "stop_conditions": [
+          "Anthropic 官方发布 Fable 5 的定价和性能对比",
+          "至少两篇独立评测确认性能差异",
+          "开发者社区出现大量关于 guardrails 误拦的反馈"
+        ],
+        "confidence": 0.3,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "investigation",
+        "research_plan": {
+          "core_question": "Claude Fable 5 相比 Claude Mythos 5 在性能、成本、安全限制上的具体差异是什么，对开发者实际使用有何影响？",
+          "must_verify": [
+            "Anthropic 官方对 Claude Fable 5 和 Mythos 5 的定价、性能对比、安全限制说明",
+            "Claude Fable 5 的 API 文档中关于 guardrails 和 fallback 机制的详细描述",
+            "其他开发者或评测者对 Claude Fable 5 的独立评测，特别是与 Mythos 5 的对比"
+          ],
+          "search_queries": [
+            "Claude Fable 5 pricing API",
+            "Claude Mythos 5 vs Fable 5 benchmark",
+            "Anthropic Claude Fable 5 guardrails documentation",
+            "Claude Fable 5 fallback model API",
+            "Claude Fable 5 review developer experience",
+            "Anthropic Claude model comparison 2026",
+            "Claude Fable 5 rate limits latency",
+            "Claude Fable 5 safety restrictions examples"
+          ],
+          "best_sources_to_find": [
+            "Anthropic 官方博客和文档站",
+            "Anthropic 的 API 参考文档（特别是错误码和 fallback 部分）",
+            "Simon Willison 的完整博文（已有关联）",
+            "Hacker News 或 Reddit 上开发者对 Claude Fable 5 的讨论",
+            "独立 AI 评测网站如 Artificial Analysis、LMSYS Chatbot Arena"
+          ],
+          "expert_challenge_points": [
+            "Claude Fable 5 的 guardrails 是否过于严格，导致合法用例被误拦？",
+            "Claude Fable 5 的 fallback 机制是否透明，开发者能否控制？",
+            "Claude Fable 5 的定价是否合理，相比 Mythos 5 性价比如何？",
+            "Claude Fable 5 的延迟是否影响实时应用？"
+          ],
+          "do_not_claim_yet": [
+            "Claude Fable 5 比 Mythos 5 更好或更差",
+            "Claude Fable 5 的 guardrails 具体触发条件",
+            "Claude Fable 5 的定价细节",
+            "Claude Fable 5 的开发者接受度"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取官方定价和性能对比，可以基于现有评测发布雷达，但需注明信息有限，建议读者关注官方更新。",
+          "downstream_materials_needed": [
+            "Anthropic 官方定价页面截图或链接",
+            "Claude Fable 5 API 文档中关于 guardrails 和 fallback 的章节",
+            "至少一篇独立评测的原文链接",
+            "开发者社区讨论的汇总（如 HN 或 Reddit 帖子）"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Pricing - Claude API Docs",
+            "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+            "query": "Claude Fable 5 pricing API",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Pricing - Claude API Docs window.__GATED_CHUNK_MAP__={};window.__GATED_GATES__={}; requestAnimationFrame(function(){$RT=performance.now()}); Messages Managed Agents Admin Resources API reference English Console Log in Search... ⌘K Models Models overview Model IDs and versioning Choosing a model Introducing Claude Fable 5 and Claude Mythos 5 What's new in Claude Opus 4.8 Upgrade between model versions Model deprecations Model cards System prompts Pricing Log in Models & pricing Pricing Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Solutions AI agents Code modernization Coding Customer support Education Financial services Government Life sciences Partners Amazon Bedrock Google Cloud's Vertex AI Learn Blog Courses Use cases Connectors Customer stories Engineering at Anthropic Events Powered by Claude Service partners Startups program Company Anthropic Careers Economic Futures Research News Responsible Scaling Policy Security and compliance Transparency Learn Blog Courses Use cases Connectors Customer stories Engineering at Anthropic Events Powered by Claude Service partners Startups program Help and security Availability Status Support Discord Terms and policies Privacy policy Responsible disclosure policy Terms of service: Commercial Terms of service: Consumer Usage policy $RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b a&&2E3 *]:max-w-full [&>*]:box-border prose-a:inline-flex prose-a:items-center prose-a:min-h-[44px] prose-a:py-0.5 prose-p:leading-[1.6] prose-li:leading-[1.6] prose-blockquote:leading-[1.6]\"> Models & pricing / Models Pricing Copy page Learn about Anthropic's pricing structure for models and features Copy page This p",
+            "fetch_error": ""
+          },
+          {
+            "title": "Claude Fable 5 - API Pricing & Providers | OpenRouter",
+            "url": "https://openrouter.ai/anthropic/claude-fable-5",
+            "query": "Claude Fable 5 pricing API",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Claude Fable 5 - API Pricing & Providers | OpenRouter window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-R8YZRJS2XN'); :root { --bprogress-color: hsl(var(--primary)); --bprogress-height: 2px; --bprogress-spinner-size: 18px; --bprogress-spinner-animation-duration: 400ms; --bprogress-spinner-border-size: 2px; --bprogress-box-shadow: 0 0 10px hsl(var(--primary)), 0 0 5px hsl(var(--primary)); --bprogress-z-index: 99999; --bprogress-spinner-top: 15px; --bprogress-spinner-bottom: auto; --bprogress-spinner-right: 15px; --bprogress-spinner-left: auto; } .bprogress { width: 0; height: 0; pointer-events: none; z-index: var(--bprogress-z-index); } .bprogress .bar { background: var(--bprogress-color); position: fixed; z-index: var(--bprogress-z-index); top: 0; left: 0; width: 100%; height: var(--bprogress-height); } /* Fancy blur effect */ .bprogress .peg { display: block; position: absolute; right: 0; width: 100px; height: 100%; box-shadow: var(--bprogress-box-shadow); opacity: 1.0; transform: rotate(3deg) translate(0px, -4px); } /* Remove these to get rid of the spinner */ .bprogress .spinner { display: block; position: fixed; z-index: var(--bprogress-z-index); top: var(--bprogress-spinner-top); bottom: var(--bprogress-spinner-bottom); right: var(--bprogress-spinner-right); left: var(--bprogress-spinner-left); } .bprogress .spinner-icon { width: var(--bprogress-spinner-size); height: var(--bprogress-spinner-size); box-sizing: border-box; border: solid var(--bprogress-spinner-border-size) transparent; border-top-color: var(--bprogress-color); border-left-color: var(--bprogress-color); border-radius: 50%; -webkit-animation: bprogress-spinner var(--bprogress-spinner-animation-duration) linear infinite; ani",
+            "fetch_error": ""
+          },
+          {
+            "title": "Claude Fable 5: Price, API, Access & Safeguards | Coursiv Blog",
+            "url": "https://coursiv.io/blog/claude-fable-5",
+            "query": "Claude Fable 5 pricing API",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Claude Fable 5: Price, API, Access & Safeguards | Coursiv Blog #theme-toggle, .top-link { display: none; } @media (prefers-color-scheme: dark) { :root { --theme: rgb(29, 30, 32); --entry: rgb(46, 46, 51); --primary: rgb(218, 218, 219); --secondary: rgb(155, 156, 157); --tertiary: rgb(65, 66, 68); --content: rgb(196, 196, 197); --code-block-bg: rgb(46, 46, 51); --code-bg: rgb(55, 56, 62); --border: rgb(51, 51, 51); color-scheme: dark; } .list { background: var(--theme); } .toc { background: var(--entry); } } @media (prefers-color-scheme: light) { .list::-webkit-scrollbar-thumb { border-color: var(--code-bg); } } if (localStorage.getItem(\"pref-theme\") === \"dark\") { document.querySelector(\"html\").dataset.theme = 'dark'; } else if (localStorage.getItem(\"pref-theme\") === \"light\") { document.querySelector(\"html\").dataset.theme = 'light'; } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) { document.querySelector(\"html\").dataset.theme = 'dark'; } else { document.querySelector(\"html\").dataset.theme = 'light'; } window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-SBE8SXNKF6'); { \"@context\": \"https://schema.org\", \"@id\": \"https://coursiv.io/blog/claude-fable-5#breadcrumb\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [ { \"@type\": \"ListItem\", \"item\": \"https://coursiv.io/\", \"name\": \"Home\", \"position\": 1 }, { \"@type\": \"ListItem\", \"item\": \"https://coursiv.io/blog\", \"name\": \"Blog\", \"position\": 2 }, { \"@type\": \"ListItem\", \"item\": \"https://coursiv.io/blog/claude-fable-5\", \"name\": \"Claude Fable 5: Price, API, Access, Safeguards \\u0026 Use Cases\", \"position\": 3 } ] } { \"@context\": \"https://schema.org\", \"@id\": \"https://coursiv.io/blog/claude-fable-5#article\", \"@type\": \"NewsArticle\", \"author\": { ",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "观察",
+          "label": "观察",
+          "reason": "核心事实（定价、性能对比、安全限制细节）尚未从官方或独立评测中充分验证，现有证据主要来自 Simon Willison 的初步印象和第三方聚合站，缺乏官方定价页面和独立基准测试。"
+        },
+        "core_question": "Claude Fable 5 相比 Claude Mythos 5 在性能、成本、安全限制上的具体差异是什么，对开发者实际使用有何影响？",
+        "why_this_topic_matters": "Claude 是当前主流 AI 模型之一，Fable 5 作为新版本可能改变开发者的模型选择、API 成本和工具链适配。如果安全限制过严或 fallback 机制不透明，可能影响实际工作流。",
+        "fact_summary": [
+          "Anthropic 声称 Claude Fable 5 与 Mythos 5 性能相同，但安全限制更严格。",
+          "Claude Fable 5 的 API 新增了 guardrails 触发通知和 fallback 到其他模型的选项。",
+          "Simon Willison 初步评测认为 Fable 5 速度慢、成本高，但能处理大部分任务。",
+          "OpenRouter 和 Coursiv 等第三方站点列出了 Fable 5 的定价，但官方定价页面未直接显示具体数字。"
+        ],
+        "timeline": [
+          "2026-06-09: Simon Willison 发布 Claude Fable 5 初步评测。",
+          "2026-06-09: Anthropic 发布 Claude Fable 5 和 Claude Mythos 5。"
+        ],
+        "evidence_table": [
+          {
+            "source": "Simon Willison's Weblog",
+            "url": "https://simonwillison.net/2026/Jun/9/claude-fable-5/",
+            "supports": "Claude Fable 5 性能强大但慢、贵，安全限制严格，有 fallback 机制。",
+            "reliability": "near_source"
+          },
+          {
+            "source": "Anthropic 官方定价页面",
+            "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+            "supports": "官方定价页面存在，但抓取内容未显示具体数字，可能需登录或动态加载。",
+            "reliability": "official"
+          },
+          {
+            "source": "OpenRouter",
+            "url": "https://openrouter.ai/anthropic/claude-fable-5",
+            "supports": "列出了 Claude Fable 5 的 API 定价（具体数字未抓取到）。",
+            "reliability": "media"
+          },
+          {
+            "source": "Coursiv Blog",
+            "url": "https://coursiv.io/blog/claude-fable-5",
+            "supports": "介绍了 Fable 5 的定价、API 访问和安全措施，但为第三方总结。",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "目前逻辑链条不完整：性能对比缺乏官方基准和独立评测，定价细节未从官方页面确认，安全限制的具体触发条件未知。无法判断 Fable 5 是否值得开发者迁移。",
+        "writeable_angles": [
+          {
+            "angle": "Claude Fable 5 的 guardrails 对开发者工作流的影响",
+            "why": "安全限制是 Fable 5 的核心差异点，可能影响合法用例，开发者关心误拦率和 fallback 可靠性。",
+            "needs": "官方文档中 guardrails 触发条件、误报率数据、开发者社区反馈。"
+          },
+          {
+            "angle": "Claude Fable 5 的性价比分析",
+            "why": "定价和性能直接决定开发者是否采用，需对比 Mythos 5 和竞品。",
+            "needs": "官方定价、独立基准测试（如延迟、吞吐量）、实际使用成本案例。"
+          },
+          {
+            "angle": "Claude Fable 5 的 fallback 机制是否足够透明",
+            "why": "fallback 到其他模型可能影响结果一致性和成本，开发者需要控制权。",
+            "needs": "API 文档中 fallback 的详细行为、开发者体验报告。"
+          }
+        ],
+        "missing_basics": [
+          "Claude Fable 5 的官方定价（每 token 费用）",
+          "Claude Fable 5 与 Mythos 5 的官方性能对比数据",
+          "Claude Fable 5 的 guardrails 具体触发条件文档"
+        ],
+        "missing_materials": [
+          "Anthropic 官方博客关于 Fable 5 的发布说明",
+          "至少一篇独立评测（如 LMSYS Chatbot Arena 或 Artificial Analysis）",
+          "Hacker News 或 Reddit 上开发者的实际使用讨论"
+        ],
+        "not_claimable": [
+          "Claude Fable 5 比 Mythos 5 更好或更差",
+          "Claude Fable 5 的 guardrails 过于严格",
+          "Claude Fable 5 的定价细节",
+          "Claude Fable 5 的开发者接受度"
+        ],
+        "followup_queries": [
+          "Anthropic 官方博客中关于 Claude Fable 5 的发布文章",
+          "Claude Fable 5 在 LMSYS Chatbot Arena 上的评测结果",
+          "Reddit r/ClaudeAI 上关于 Fable 5 的讨论"
+        ],
+        "additional_search_queries": [
+          "Claude Fable 5 official pricing per token",
+          "Claude Mythos 5 vs Fable 5 benchmark latency throughput",
+          "Anthropic Claude Fable 5 guardrails documentation trigger conditions",
+          "Claude Fable 5 fallback model API documentation",
+          "Claude Fable 5 review developer experience reddit"
+        ],
+        "stop_conditions": [
+          "Anthropic 官方发布 Fable 5 的定价和性能对比",
+          "至少两篇独立评测确认性能差异",
+          "开发者社区出现大量关于 guardrails 误拦的反馈"
+        ],
+        "confidence": 0.3,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "investigation",
+        "research_plan": {
+          "core_question": "Claude Fable 5 相比 Claude Mythos 5 在性能、成本、安全限制上的具体差异是什么，对开发者实际使用有何影响？",
+          "must_verify": [
+            "Anthropic 官方对 Claude Fable 5 和 Mythos 5 的定价、性能对比、安全限制说明",
+            "Claude Fable 5 的 API 文档中关于 guardrails 和 fallback 机制的详细描述",
+            "其他开发者或评测者对 Claude Fable 5 的独立评测，特别是与 Mythos 5 的对比"
+          ],
+          "search_queries": [
+            "Claude Fable 5 pricing API",
+            "Claude Mythos 5 vs Fable 5 benchmark",
+            "Anthropic Claude Fable 5 guardrails documentation",
+            "Claude Fable 5 fallback model API",
+            "Claude Fable 5 review developer experience",
+            "Anthropic Claude model comparison 2026",
+            "Claude Fable 5 rate limits latency",
+            "Claude Fable 5 safety restrictions examples"
+          ],
+          "best_sources_to_find": [
+            "Anthropic 官方博客和文档站",
+            "Anthropic 的 API 参考文档（特别是错误码和 fallback 部分）",
+            "Simon Willison 的完整博文（已有关联）",
+            "Hacker News 或 Reddit 上开发者对 Claude Fable 5 的讨论",
+            "独立 AI 评测网站如 Artificial Analysis、LMSYS Chatbot Arena"
+          ],
+          "expert_challenge_points": [
+            "Claude Fable 5 的 guardrails 是否过于严格，导致合法用例被误拦？",
+            "Claude Fable 5 的 fallback 机制是否透明，开发者能否控制？",
+            "Claude Fable 5 的定价是否合理，相比 Mythos 5 性价比如何？",
+            "Claude Fable 5 的延迟是否影响实时应用？"
+          ],
+          "do_not_claim_yet": [
+            "Claude Fable 5 比 Mythos 5 更好或更差",
+            "Claude Fable 5 的 guardrails 具体触发条件",
+            "Claude Fable 5 的定价细节",
+            "Claude Fable 5 的开发者接受度"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取官方定价和性能对比，可以基于现有评测发布雷达，但需注明信息有限，建议读者关注官方更新。",
+          "downstream_materials_needed": [
+            "Anthropic 官方定价页面截图或链接",
+            "Claude Fable 5 API 文档中关于 guardrails 和 fallback 的章节",
+            "至少一篇独立评测的原文链接",
+            "开发者社区讨论的汇总（如 HN 或 Reddit 帖子）"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Pricing - Claude API Docs",
+            "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+            "query": "Claude Fable 5 pricing API",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Pricing - Claude API Docs window.__GATED_CHUNK_MAP__={};window.__GATED_GATES__={}; requestAnimationFrame(function(){$RT=performance.now()}); Messages Managed Agents Admin Resources API reference English Console Log in Search... ⌘K Models Models overview Model IDs and versioning Choosing a model Introducing Claude Fable 5 and Claude Mythos 5 What's new in Claude Opus 4.8 Upgrade between model versions Model deprecations Model cards System prompts Pricing Log in Models & pricing Pricing Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Solutions AI agents Code modernization Coding Customer support Education Financial services Government Life sciences Partners Amazon Bedrock Google Cloud's Vertex AI Learn Blog Courses Use cases Connectors Customer stories Engineering at Anthropic Events Powered by Claude Service partners Startups program Company Anthropic Careers Economic Futures Research News Responsible Scaling Policy Security and compliance Transparency Learn Blog Courses Use cases Connectors Customer stories Engineering at Anthropic Events Powered by Claude Service partners Startups program Help and security Availability Status Support Discord Terms and policies Privacy policy Responsible disclosure policy Terms of service: Commercial Terms of service: Consumer Usage policy $RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b a&&2E3 *]:max-w-full [&>*]:box-border prose-a:inline-flex prose-a:items-center prose-a:min-h-[44px] prose-a:py-0.5 prose-p:leading-[1.6] prose-li:leading-[1.6] prose-blockquote:leading-[1.6]\"> Models & pricing / Models Pricing Copy page Learn about Anthropic's pricing structure for models and features Copy page This p",
+            "fetch_error": ""
+          },
+          {
+            "title": "Claude Fable 5 - API Pricing & Providers | OpenRouter",
+            "url": "https://openrouter.ai/anthropic/claude-fable-5",
+            "query": "Claude Fable 5 pricing API",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Claude Fable 5 - API Pricing & Providers | OpenRouter window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-R8YZRJS2XN'); :root { --bprogress-color: hsl(var(--primary)); --bprogress-height: 2px; --bprogress-spinner-size: 18px; --bprogress-spinner-animation-duration: 400ms; --bprogress-spinner-border-size: 2px; --bprogress-box-shadow: 0 0 10px hsl(var(--primary)), 0 0 5px hsl(var(--primary)); --bprogress-z-index: 99999; --bprogress-spinner-top: 15px; --bprogress-spinner-bottom: auto; --bprogress-spinner-right: 15px; --bprogress-spinner-left: auto; } .bprogress { width: 0; height: 0; pointer-events: none; z-index: var(--bprogress-z-index); } .bprogress .bar { background: var(--bprogress-color); position: fixed; z-index: var(--bprogress-z-index); top: 0; left: 0; width: 100%; height: var(--bprogress-height); } /* Fancy blur effect */ .bprogress .peg { display: block; position: absolute; right: 0; width: 100px; height: 100%; box-shadow: var(--bprogress-box-shadow); opacity: 1.0; transform: rotate(3deg) translate(0px, -4px); } /* Remove these to get rid of the spinner */ .bprogress .spinner { display: block; position: fixed; z-index: var(--bprogress-z-index); top: var(--bprogress-spinner-top); bottom: var(--bprogress-spinner-bottom); right: var(--bprogress-spinner-right); left: var(--bprogress-spinner-left); } .bprogress .spinner-icon { width: var(--bprogress-spinner-size); height: var(--bprogress-spinner-size); box-sizing: border-box; border: solid var(--bprogress-spinner-border-size) transparent; border-top-color: var(--bprogress-color); border-left-color: var(--bprogress-color); border-radius: 50%; -webkit-animation: bprogress-spinner var(--bprogress-spinner-animation-duration) linear infinite; ani",
+            "fetch_error": ""
+          },
+          {
+            "title": "Claude Fable 5: Price, API, Access & Safeguards | Coursiv Blog",
+            "url": "https://coursiv.io/blog/claude-fable-5",
+            "query": "Claude Fable 5 pricing API",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Claude Fable 5: Price, API, Access & Safeguards | Coursiv Blog #theme-toggle, .top-link { display: none; } @media (prefers-color-scheme: dark) { :root { --theme: rgb(29, 30, 32); --entry: rgb(46, 46, 51); --primary: rgb(218, 218, 219); --secondary: rgb(155, 156, 157); --tertiary: rgb(65, 66, 68); --content: rgb(196, 196, 197); --code-block-bg: rgb(46, 46, 51); --code-bg: rgb(55, 56, 62); --border: rgb(51, 51, 51); color-scheme: dark; } .list { background: var(--theme); } .toc { background: var(--entry); } } @media (prefers-color-scheme: light) { .list::-webkit-scrollbar-thumb { border-color: var(--code-bg); } } if (localStorage.getItem(\"pref-theme\") === \"dark\") { document.querySelector(\"html\").dataset.theme = 'dark'; } else if (localStorage.getItem(\"pref-theme\") === \"light\") { document.querySelector(\"html\").dataset.theme = 'light'; } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) { document.querySelector(\"html\").dataset.theme = 'dark'; } else { document.querySelector(\"html\").dataset.theme = 'light'; } window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-SBE8SXNKF6'); { \"@context\": \"https://schema.org\", \"@id\": \"https://coursiv.io/blog/claude-fable-5#breadcrumb\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [ { \"@type\": \"ListItem\", \"item\": \"https://coursiv.io/\", \"name\": \"Home\", \"position\": 1 }, { \"@type\": \"ListItem\", \"item\": \"https://coursiv.io/blog\", \"name\": \"Blog\", \"position\": 2 }, { \"@type\": \"ListItem\", \"item\": \"https://coursiv.io/blog/claude-fable-5\", \"name\": \"Claude Fable 5: Price, API, Access, Safeguards \\u0026 Use Cases\", \"position\": 3 } ] } { \"@context\": \"https://schema.org\", \"@id\": \"https://coursiv.io/blog/claude-fable-5#article\", \"@type\": \"NewsArticle\", \"author\": { ",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "事实时间线",
+        "基础概念澄清",
+        "证据矛盾和影响边界"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留普通读者入口，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "深度调查：Claude 模型能力变化 官方来源 原始公告",
+        "深度调查：Claude 模型能力变化 概念解释 证据",
+        "深度调查：Claude 模型能力变化 反方观点 局限"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
