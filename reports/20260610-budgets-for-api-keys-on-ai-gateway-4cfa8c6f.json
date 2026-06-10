@@ -1,0 +1,699 @@
+{
+  "id": "20260610-budgets-for-api-keys-on-ai-gateway-4cfa8c6f",
+  "title": "深度调查：Vercel 计费和成本变化",
+  "original_title": "Budgets for API keys on AI Gateway",
+  "url": "https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway",
+  "summary": "",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "ai-frontier",
+  "topic_direction_title": "AI 前沿与工具链",
+  "topic_direction_short_title": "AI 前沿",
+  "topic_direction_description": "AI 模型、Agent、开发工具、API、云服务和底层能力变化。重点看这次变化到底是什么、时间线如何、会不会改变普通技术人的工作方式、成本结构和工具链。",
+  "source_name": "Vercel Changelog",
+  "original_source_name": "Vercel News",
+  "source_type": "rss",
+  "feed_url": "https://vercel.com/changelog/rss",
+  "published_at": "2026-06-09T00:00:00.000Z",
+  "fetched_at": "2026-06-10T05:45:59.130270+00:00",
+  "decision": "deep_dive",
+  "report_type": "tool-ledger",
+  "report_type_title": "工具账本",
+  "score": 90,
+  "reader_hook": "这条线索可能影响 AI 开发工作流、API 使用成本或程序员工具链，适合判断是否值得跟进。",
+  "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "AI Gateway API密钥预算功能，直接影响成本控制",
+  "collection_fit": "暂不符合深挖原则：相关性、证据质量或普通读者入口不足。",
+  "investigation_direction": "优先追一手来源、概念定义、时间线、证据矛盾和可能影响面。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。"
+  ],
+  "facts": [
+    {
+      "claim": "Vercel Changelog 发布/收录了这条原始线索：Budgets for API keys on AI Gateway",
+      "type": "confirmed_fact",
+      "source_url": "https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Vercel Changelog",
+      "url": "https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "ai"
+      ],
+      "dev": [
+        "api"
+      ]
+    },
+    "source_host": "vercel.com",
+    "source_type": "rss",
+    "heuristic": false,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "这条线索可能影响 AI 开发工作流、API 使用成本或程序员工具链，适合判断是否值得跟进。",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://vercel.com/changelog/rss",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+    },
+    "core_question": "Vercel AI Gateway 的 API 密钥预算功能具体如何工作？对开发者使用 AI API 的成本控制有何实际影响？",
+    "why_this_topic_matters": "AI API 成本是开发者实际痛点，Vercel 作为主流平台推出预算功能可能影响工具链选择。但需验证功能是否真正有效、有无隐藏成本。",
+    "fact_summary": [
+      "Vercel 发布了 AI Gateway 的 API 密钥预算功能，允许为每个 API 密钥设置预算上限。",
+      "功能包括阈值设置、通知和自动停止（需确认）。",
+      "支持 OpenAI、Anthropic 等主流 AI 提供商（需确认完整列表）。",
+      "定价信息未明确，需查官方定价页面。"
+    ],
+    "timeline": [
+      "2025-04-XX: Vercel Changelog 发布预算功能公告"
+    ],
+    "evidence_table": [
+      {
+        "source": "Vercel Changelog",
+        "url": "https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway",
+        "supports": "功能存在，基本机制描述",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "目前仅官方公告，缺乏用户反馈和成本对比，无法判断实际效果。逻辑上预算功能有助于成本控制，但需确认是否强制停止、是否额外收费。",
+    "writeable_angles": [
+      {
+        "angle": "功能解读：Vercel AI Gateway 预算功能怎么用？",
+        "why": "开发者需要快速了解新功能操作和适用场景。",
+        "needs": "官方文档详细步骤、支持提供商列表、定价信息。"
+      },
+      {
+        "angle": "成本对比：Vercel AI Gateway vs 直接调用 API，哪个更省钱？",
+        "why": "读者最关心实际成本影响，对比能提供决策依据。",
+        "needs": "至少 2-3 个用户反馈案例、成本计算示例、定价页面截图。"
+      },
+      {
+        "angle": "避坑指南：Vercel AI Gateway 预算功能的隐藏限制",
+        "why": "开发者可能忽略软限制、额外费用等陷阱。",
+        "needs": "用户负面反馈、官方文档限制说明、与竞品对比。"
+      }
+    ],
+    "missing_basics": [
+      "预算功能是否强制停止 API 调用还是仅通知？",
+      "支持哪些 AI 提供商？",
+      "功能是否免费？需要什么计划？"
+    ],
+    "missing_materials": [
+      "Vercel AI Gateway 官方定价页面",
+      "用户反馈（至少 2-3 个，来自 Hacker News、Reddit、GitHub）",
+      "与直接 API 调用的成本对比数据",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "该功能能显著降低 AI 使用成本",
+      "该功能是 Vercel 独有的创新",
+      "所有开发者都应迁移到 Vercel AI Gateway",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "Vercel AI Gateway 预算功能是否支持所有 API 密钥类型？",
+      "是否有开发者报告预算功能导致意外停止？",
+      "Vercel AI Gateway 相比 Cloudflare AI Gateway 有何优劣？"
+    ],
+    "additional_search_queries": [
+      "Vercel AI Gateway pricing 2025",
+      "Vercel AI Gateway budget review",
+      "Vercel AI Gateway vs direct API cost",
+      "Vercel AI Gateway budget notification stop",
+      "Vercel AI Gateway supported providers list",
+      "Vercel AI Gateway budget feedback developer"
+    ],
+    "stop_conditions": [
+      "官方文档明确预算功能为软限制且无额外费用",
+      "用户反馈普遍正面且成本节省明显",
+      "定价页面显示功能免费且无隐藏成本"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "tool-ledger",
+    "research_plan": {
+      "core_question": "Vercel AI Gateway 的 API 密钥预算功能具体如何工作？对开发者使用 AI API 的成本控制有何实际影响？",
+      "must_verify": [
+        "预算功能的具体机制（如阈值设置、通知、自动停止）",
+        "是否支持所有 AI 提供商（OpenAI、Anthropic 等）",
+        "定价：该功能是否免费，或需要付费计划",
+        "用户反馈：是否有开发者报告成本节省或问题",
+        "与直接使用 AI API 的成本对比"
+      ],
+      "search_queries": [
+        "Vercel AI Gateway budgets API keys how it works",
+        "Vercel AI Gateway pricing 2025",
+        "Vercel AI Gateway budget limit review",
+        "Vercel AI Gateway vs direct API cost comparison",
+        "Vercel AI Gateway budget notification stop",
+        "Vercel AI Gateway supported providers list",
+        "Vercel AI Gateway budget feature feedback developer",
+        "Vercel AI Gateway changelog budgets"
+      ],
+      "best_sources_to_find": [
+        "Vercel 官方文档（AI Gateway 部分）",
+        "Vercel 官方定价页面",
+        "Vercel Changelog 原文",
+        "GitHub 讨论或 Issues",
+        "开发者博客或论坛（如 Hacker News、Reddit）",
+        "YouTube 教程或评测"
+      ],
+      "expert_challenge_points": [
+        "预算功能是否只是软限制（不强制停止）？",
+        "是否有隐藏成本（如额外请求费）？",
+        "与直接使用 AI API 相比，Vercel 是否加价？",
+        "预算功能是否适用于所有 API 密钥或仅限特定计划？"
+      ],
+      "do_not_claim_yet": [
+        "该功能能显著降低 AI 使用成本",
+        "该功能是 Vercel 独有的创新",
+        "所有开发者都应迁移到 Vercel AI Gateway"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取用户反馈或成本对比数据，仍可基于官方文档发布，但需注明信息有限。",
+      "downstream_materials_needed": [
+        "Vercel AI Gateway 官方文档截图或链接",
+        "定价页面截图",
+        "用户反馈案例（至少 2-3 个）",
+        "与直接 API 调用的成本对比表格"
+      ]
+    },
+    "research_evidence": []
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+    },
+    "core_question": "Vercel AI Gateway 的 API 密钥预算功能具体如何工作？对开发者使用 AI API 的成本控制有何实际影响？",
+    "why_this_topic_matters": "AI API 成本是开发者实际痛点，Vercel 作为主流平台推出预算功能可能影响工具链选择。但需验证功能是否真正有效、有无隐藏成本。",
+    "fact_summary": [
+      "Vercel 发布了 AI Gateway 的 API 密钥预算功能，允许为每个 API 密钥设置预算上限。",
+      "功能包括阈值设置、通知和自动停止（需确认）。",
+      "支持 OpenAI、Anthropic 等主流 AI 提供商（需确认完整列表）。",
+      "定价信息未明确，需查官方定价页面。"
+    ],
+    "timeline": [
+      "2025-04-XX: Vercel Changelog 发布预算功能公告"
+    ],
+    "evidence_table": [
+      {
+        "source": "Vercel Changelog",
+        "url": "https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway",
+        "supports": "功能存在，基本机制描述",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "目前仅官方公告，缺乏用户反馈和成本对比，无法判断实际效果。逻辑上预算功能有助于成本控制，但需确认是否强制停止、是否额外收费。",
+    "writeable_angles": [
+      {
+        "angle": "功能解读：Vercel AI Gateway 预算功能怎么用？",
+        "why": "开发者需要快速了解新功能操作和适用场景。",
+        "needs": "官方文档详细步骤、支持提供商列表、定价信息。"
+      },
+      {
+        "angle": "成本对比：Vercel AI Gateway vs 直接调用 API，哪个更省钱？",
+        "why": "读者最关心实际成本影响，对比能提供决策依据。",
+        "needs": "至少 2-3 个用户反馈案例、成本计算示例、定价页面截图。"
+      },
+      {
+        "angle": "避坑指南：Vercel AI Gateway 预算功能的隐藏限制",
+        "why": "开发者可能忽略软限制、额外费用等陷阱。",
+        "needs": "用户负面反馈、官方文档限制说明、与竞品对比。"
+      }
+    ],
+    "missing_basics": [
+      "预算功能是否强制停止 API 调用还是仅通知？",
+      "支持哪些 AI 提供商？",
+      "功能是否免费？需要什么计划？"
+    ],
+    "missing_materials": [
+      "Vercel AI Gateway 官方定价页面",
+      "用户反馈（至少 2-3 个，来自 Hacker News、Reddit、GitHub）",
+      "与直接 API 调用的成本对比数据",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "该功能能显著降低 AI 使用成本",
+      "该功能是 Vercel 独有的创新",
+      "所有开发者都应迁移到 Vercel AI Gateway",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "Vercel AI Gateway 预算功能是否支持所有 API 密钥类型？",
+      "是否有开发者报告预算功能导致意外停止？",
+      "Vercel AI Gateway 相比 Cloudflare AI Gateway 有何优劣？"
+    ],
+    "additional_search_queries": [
+      "Vercel AI Gateway pricing 2025",
+      "Vercel AI Gateway budget review",
+      "Vercel AI Gateway vs direct API cost",
+      "Vercel AI Gateway budget notification stop",
+      "Vercel AI Gateway supported providers list",
+      "Vercel AI Gateway budget feedback developer"
+    ],
+    "stop_conditions": [
+      "官方文档明确预算功能为软限制且无额外费用",
+      "用户反馈普遍正面且成本节省明显",
+      "定价页面显示功能免费且无隐藏成本"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "tool-ledger",
+    "research_plan": {
+      "core_question": "Vercel AI Gateway 的 API 密钥预算功能具体如何工作？对开发者使用 AI API 的成本控制有何实际影响？",
+      "must_verify": [
+        "预算功能的具体机制（如阈值设置、通知、自动停止）",
+        "是否支持所有 AI 提供商（OpenAI、Anthropic 等）",
+        "定价：该功能是否免费，或需要付费计划",
+        "用户反馈：是否有开发者报告成本节省或问题",
+        "与直接使用 AI API 的成本对比"
+      ],
+      "search_queries": [
+        "Vercel AI Gateway budgets API keys how it works",
+        "Vercel AI Gateway pricing 2025",
+        "Vercel AI Gateway budget limit review",
+        "Vercel AI Gateway vs direct API cost comparison",
+        "Vercel AI Gateway budget notification stop",
+        "Vercel AI Gateway supported providers list",
+        "Vercel AI Gateway budget feature feedback developer",
+        "Vercel AI Gateway changelog budgets"
+      ],
+      "best_sources_to_find": [
+        "Vercel 官方文档（AI Gateway 部分）",
+        "Vercel 官方定价页面",
+        "Vercel Changelog 原文",
+        "GitHub 讨论或 Issues",
+        "开发者博客或论坛（如 Hacker News、Reddit）",
+        "YouTube 教程或评测"
+      ],
+      "expert_challenge_points": [
+        "预算功能是否只是软限制（不强制停止）？",
+        "是否有隐藏成本（如额外请求费）？",
+        "与直接使用 AI API 相比，Vercel 是否加价？",
+        "预算功能是否适用于所有 API 密钥或仅限特定计划？"
+      ],
+      "do_not_claim_yet": [
+        "该功能能显著降低 AI 使用成本",
+        "该功能是 Vercel 独有的创新",
+        "所有开发者都应迁移到 Vercel AI Gateway"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取用户反馈或成本对比数据，仍可基于官方文档发布，但需注明信息有限。",
+      "downstream_materials_needed": [
+        "Vercel AI Gateway 官方文档截图或链接",
+        "定价页面截图",
+        "用户反馈案例（至少 2-3 个）",
+        "与直接 API 调用的成本对比表格"
+      ]
+    },
+    "research_evidence": []
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260610-budgets-for-api-keys-on-ai-gateway-4cfa8c6f/",
+    "for_gpt_editor": {
+      "brief": "这条线索可能影响 AI 开发工作流、API 使用成本或程序员工具链，适合判断是否值得跟进。",
+      "title_seed": "深度调查：Vercel 计费和成本变化",
+      "original_title": "Budgets for API keys on AI Gateway",
+      "source_url": "https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+        },
+        "core_question": "Vercel AI Gateway 的 API 密钥预算功能具体如何工作？对开发者使用 AI API 的成本控制有何实际影响？",
+        "why_this_topic_matters": "AI API 成本是开发者实际痛点，Vercel 作为主流平台推出预算功能可能影响工具链选择。但需验证功能是否真正有效、有无隐藏成本。",
+        "fact_summary": [
+          "Vercel 发布了 AI Gateway 的 API 密钥预算功能，允许为每个 API 密钥设置预算上限。",
+          "功能包括阈值设置、通知和自动停止（需确认）。",
+          "支持 OpenAI、Anthropic 等主流 AI 提供商（需确认完整列表）。",
+          "定价信息未明确，需查官方定价页面。"
+        ],
+        "timeline": [
+          "2025-04-XX: Vercel Changelog 发布预算功能公告"
+        ],
+        "evidence_table": [
+          {
+            "source": "Vercel Changelog",
+            "url": "https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway",
+            "supports": "功能存在，基本机制描述",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "目前仅官方公告，缺乏用户反馈和成本对比，无法判断实际效果。逻辑上预算功能有助于成本控制，但需确认是否强制停止、是否额外收费。",
+        "writeable_angles": [
+          {
+            "angle": "功能解读：Vercel AI Gateway 预算功能怎么用？",
+            "why": "开发者需要快速了解新功能操作和适用场景。",
+            "needs": "官方文档详细步骤、支持提供商列表、定价信息。"
+          },
+          {
+            "angle": "成本对比：Vercel AI Gateway vs 直接调用 API，哪个更省钱？",
+            "why": "读者最关心实际成本影响，对比能提供决策依据。",
+            "needs": "至少 2-3 个用户反馈案例、成本计算示例、定价页面截图。"
+          },
+          {
+            "angle": "避坑指南：Vercel AI Gateway 预算功能的隐藏限制",
+            "why": "开发者可能忽略软限制、额外费用等陷阱。",
+            "needs": "用户负面反馈、官方文档限制说明、与竞品对比。"
+          }
+        ],
+        "missing_basics": [
+          "预算功能是否强制停止 API 调用还是仅通知？",
+          "支持哪些 AI 提供商？",
+          "功能是否免费？需要什么计划？"
+        ],
+        "missing_materials": [
+          "Vercel AI Gateway 官方定价页面",
+          "用户反馈（至少 2-3 个，来自 Hacker News、Reddit、GitHub）",
+          "与直接 API 调用的成本对比数据",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "该功能能显著降低 AI 使用成本",
+          "该功能是 Vercel 独有的创新",
+          "所有开发者都应迁移到 Vercel AI Gateway",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "Vercel AI Gateway 预算功能是否支持所有 API 密钥类型？",
+          "是否有开发者报告预算功能导致意外停止？",
+          "Vercel AI Gateway 相比 Cloudflare AI Gateway 有何优劣？"
+        ],
+        "additional_search_queries": [
+          "Vercel AI Gateway pricing 2025",
+          "Vercel AI Gateway budget review",
+          "Vercel AI Gateway vs direct API cost",
+          "Vercel AI Gateway budget notification stop",
+          "Vercel AI Gateway supported providers list",
+          "Vercel AI Gateway budget feedback developer"
+        ],
+        "stop_conditions": [
+          "官方文档明确预算功能为软限制且无额外费用",
+          "用户反馈普遍正面且成本节省明显",
+          "定价页面显示功能免费且无隐藏成本"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "tool-ledger",
+        "research_plan": {
+          "core_question": "Vercel AI Gateway 的 API 密钥预算功能具体如何工作？对开发者使用 AI API 的成本控制有何实际影响？",
+          "must_verify": [
+            "预算功能的具体机制（如阈值设置、通知、自动停止）",
+            "是否支持所有 AI 提供商（OpenAI、Anthropic 等）",
+            "定价：该功能是否免费，或需要付费计划",
+            "用户反馈：是否有开发者报告成本节省或问题",
+            "与直接使用 AI API 的成本对比"
+          ],
+          "search_queries": [
+            "Vercel AI Gateway budgets API keys how it works",
+            "Vercel AI Gateway pricing 2025",
+            "Vercel AI Gateway budget limit review",
+            "Vercel AI Gateway vs direct API cost comparison",
+            "Vercel AI Gateway budget notification stop",
+            "Vercel AI Gateway supported providers list",
+            "Vercel AI Gateway budget feature feedback developer",
+            "Vercel AI Gateway changelog budgets"
+          ],
+          "best_sources_to_find": [
+            "Vercel 官方文档（AI Gateway 部分）",
+            "Vercel 官方定价页面",
+            "Vercel Changelog 原文",
+            "GitHub 讨论或 Issues",
+            "开发者博客或论坛（如 Hacker News、Reddit）",
+            "YouTube 教程或评测"
+          ],
+          "expert_challenge_points": [
+            "预算功能是否只是软限制（不强制停止）？",
+            "是否有隐藏成本（如额外请求费）？",
+            "与直接使用 AI API 相比，Vercel 是否加价？",
+            "预算功能是否适用于所有 API 密钥或仅限特定计划？"
+          ],
+          "do_not_claim_yet": [
+            "该功能能显著降低 AI 使用成本",
+            "该功能是 Vercel 独有的创新",
+            "所有开发者都应迁移到 Vercel AI Gateway"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取用户反馈或成本对比数据，仍可基于官方文档发布，但需注明信息有限。",
+          "downstream_materials_needed": [
+            "Vercel AI Gateway 官方文档截图或链接",
+            "定价页面截图",
+            "用户反馈案例（至少 2-3 个）",
+            "与直接 API 调用的成本对比表格"
+          ]
+        },
+        "research_evidence": []
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+        },
+        "core_question": "Vercel AI Gateway 的 API 密钥预算功能具体如何工作？对开发者使用 AI API 的成本控制有何实际影响？",
+        "why_this_topic_matters": "AI API 成本是开发者实际痛点，Vercel 作为主流平台推出预算功能可能影响工具链选择。但需验证功能是否真正有效、有无隐藏成本。",
+        "fact_summary": [
+          "Vercel 发布了 AI Gateway 的 API 密钥预算功能，允许为每个 API 密钥设置预算上限。",
+          "功能包括阈值设置、通知和自动停止（需确认）。",
+          "支持 OpenAI、Anthropic 等主流 AI 提供商（需确认完整列表）。",
+          "定价信息未明确，需查官方定价页面。"
+        ],
+        "timeline": [
+          "2025-04-XX: Vercel Changelog 发布预算功能公告"
+        ],
+        "evidence_table": [
+          {
+            "source": "Vercel Changelog",
+            "url": "https://vercel.com/changelog/budgets-for-api-keys-on-ai-gateway",
+            "supports": "功能存在，基本机制描述",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "目前仅官方公告，缺乏用户反馈和成本对比，无法判断实际效果。逻辑上预算功能有助于成本控制，但需确认是否强制停止、是否额外收费。",
+        "writeable_angles": [
+          {
+            "angle": "功能解读：Vercel AI Gateway 预算功能怎么用？",
+            "why": "开发者需要快速了解新功能操作和适用场景。",
+            "needs": "官方文档详细步骤、支持提供商列表、定价信息。"
+          },
+          {
+            "angle": "成本对比：Vercel AI Gateway vs 直接调用 API，哪个更省钱？",
+            "why": "读者最关心实际成本影响，对比能提供决策依据。",
+            "needs": "至少 2-3 个用户反馈案例、成本计算示例、定价页面截图。"
+          },
+          {
+            "angle": "避坑指南：Vercel AI Gateway 预算功能的隐藏限制",
+            "why": "开发者可能忽略软限制、额外费用等陷阱。",
+            "needs": "用户负面反馈、官方文档限制说明、与竞品对比。"
+          }
+        ],
+        "missing_basics": [
+          "预算功能是否强制停止 API 调用还是仅通知？",
+          "支持哪些 AI 提供商？",
+          "功能是否免费？需要什么计划？"
+        ],
+        "missing_materials": [
+          "Vercel AI Gateway 官方定价页面",
+          "用户反馈（至少 2-3 个，来自 Hacker News、Reddit、GitHub）",
+          "与直接 API 调用的成本对比数据",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "该功能能显著降低 AI 使用成本",
+          "该功能是 Vercel 独有的创新",
+          "所有开发者都应迁移到 Vercel AI Gateway",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "Vercel AI Gateway 预算功能是否支持所有 API 密钥类型？",
+          "是否有开发者报告预算功能导致意外停止？",
+          "Vercel AI Gateway 相比 Cloudflare AI Gateway 有何优劣？"
+        ],
+        "additional_search_queries": [
+          "Vercel AI Gateway pricing 2025",
+          "Vercel AI Gateway budget review",
+          "Vercel AI Gateway vs direct API cost",
+          "Vercel AI Gateway budget notification stop",
+          "Vercel AI Gateway supported providers list",
+          "Vercel AI Gateway budget feedback developer"
+        ],
+        "stop_conditions": [
+          "官方文档明确预算功能为软限制且无额外费用",
+          "用户反馈普遍正面且成本节省明显",
+          "定价页面显示功能免费且无隐藏成本"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "tool-ledger",
+        "research_plan": {
+          "core_question": "Vercel AI Gateway 的 API 密钥预算功能具体如何工作？对开发者使用 AI API 的成本控制有何实际影响？",
+          "must_verify": [
+            "预算功能的具体机制（如阈值设置、通知、自动停止）",
+            "是否支持所有 AI 提供商（OpenAI、Anthropic 等）",
+            "定价：该功能是否免费，或需要付费计划",
+            "用户反馈：是否有开发者报告成本节省或问题",
+            "与直接使用 AI API 的成本对比"
+          ],
+          "search_queries": [
+            "Vercel AI Gateway budgets API keys how it works",
+            "Vercel AI Gateway pricing 2025",
+            "Vercel AI Gateway budget limit review",
+            "Vercel AI Gateway vs direct API cost comparison",
+            "Vercel AI Gateway budget notification stop",
+            "Vercel AI Gateway supported providers list",
+            "Vercel AI Gateway budget feature feedback developer",
+            "Vercel AI Gateway changelog budgets"
+          ],
+          "best_sources_to_find": [
+            "Vercel 官方文档（AI Gateway 部分）",
+            "Vercel 官方定价页面",
+            "Vercel Changelog 原文",
+            "GitHub 讨论或 Issues",
+            "开发者博客或论坛（如 Hacker News、Reddit）",
+            "YouTube 教程或评测"
+          ],
+          "expert_challenge_points": [
+            "预算功能是否只是软限制（不强制停止）？",
+            "是否有隐藏成本（如额外请求费）？",
+            "与直接使用 AI API 相比，Vercel 是否加价？",
+            "预算功能是否适用于所有 API 密钥或仅限特定计划？"
+          ],
+          "do_not_claim_yet": [
+            "该功能能显著降低 AI 使用成本",
+            "该功能是 Vercel 独有的创新",
+            "所有开发者都应迁移到 Vercel AI Gateway"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取用户反馈或成本对比数据，仍可基于官方文档发布，但需注明信息有限。",
+          "downstream_materials_needed": [
+            "Vercel AI Gateway 官方文档截图或链接",
+            "定价页面截图",
+            "用户反馈案例（至少 2-3 个）",
+            "与直接 API 调用的成本对比表格"
+          ]
+        },
+        "research_evidence": []
+      },
+      "angle_candidates": [
+        "成本是否真的下降",
+        "免费额度和爆账单风险",
+        "替代方案值不值得换"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留普通读者入口，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "深度调查：Vercel 计费和成本变化 官方公告 价格 成本",
+        "深度调查：Vercel 计费和成本变化 API 文档 额度 限制",
+        "深度调查：Vercel 计费和成本变化 替代方案 真实使用 成本"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
