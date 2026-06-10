@@ -35,8 +35,8 @@ TAVILY_URL = "https://api.tavily.com/search"
 TAVILY_USAGE_URL = "https://api.tavily.com/usage"
 MAX_ITEMS_PER_SOURCE = 18
 MAX_TOTAL_ITEMS = 220
-MAX_REPORTS_PER_BATCH = 6
-MAX_REPORTS_PER_TOPIC = 3
+MAX_REPORTS_PER_BATCH = 3
+MAX_REPORTS_PER_TOPIC = 2
 TRIAGE_BATCH_SIZE = 10
 MAX_REPORTS_PER_SOURCE_HOST = 2
 MIN_DEEP_DIVE_SCORE = 45
@@ -52,7 +52,6 @@ SEARCH_USAGE_STATE: dict[str, Any] = {}
 SEARCH_NOTICE_KEYS: set[str] = set()
 TAVILY_USAGE_FETCHED = False
 SEARCH_API_CALLS_USED = 0
-SEARCH_API_CALLS_BY_PROVIDER: dict[str, int] = {}
 BJ_TZ = dt.timezone(dt.timedelta(hours=8))
 
 
@@ -190,11 +189,10 @@ def search_run_has_budget(provider: str, cost: int = 1) -> bool:
     if limit <= 0:
         info_once("search-run-disabled", "Search budget: SEARCH_API_CALL_LIMIT_PER_RUN<=0, skip all web search calls.")
         return False
-    provider_used = SEARCH_API_CALLS_BY_PROVIDER.get(provider, 0)
-    if provider_used + cost > limit:
+    if SEARCH_API_CALLS_USED + cost > limit:
         info_once(
-            f"search-run-exhausted-{provider}",
-            f"Search budget: per-provider API call limit reached, provider={provider}, used={provider_used}, limit={limit}.",
+            "search-run-exhausted",
+            f"Search budget: per-run API call limit reached, used={SEARCH_API_CALLS_USED}, limit={limit}.",
         )
         return False
     return True
@@ -203,18 +201,15 @@ def search_run_has_budget(provider: str, cost: int = 1) -> bool:
 def record_search_api_call(provider: str, cost: int = 1) -> None:
     global SEARCH_API_CALLS_USED
     SEARCH_API_CALLS_USED += cost
-    SEARCH_API_CALLS_BY_PROVIDER[provider] = SEARCH_API_CALLS_BY_PROVIDER.get(provider, 0) + cost
     state = load_search_usage_state()
     state["current_run"] = {
-        "api_calls_used_total": SEARCH_API_CALLS_USED,
-        "api_calls_by_provider": SEARCH_API_CALLS_BY_PROVIDER,
-        "api_call_limit_per_provider": search_api_call_limit_per_run(),
+        "api_calls_used": SEARCH_API_CALLS_USED,
+        "api_call_limit": search_api_call_limit_per_run(),
         "last_provider": provider,
         "updated_at": now_utc().isoformat(),
     }
     save_search_usage_state()
-    provider_used = SEARCH_API_CALLS_BY_PROVIDER.get(provider, 0)
-    info(f"Search budget: provider={provider}, provider_run_calls_used={provider_used}/{search_api_call_limit_per_run()}, total_run_calls_used={SEARCH_API_CALLS_USED}.")
+    info(f"Search budget: provider={provider}, run_calls_used={SEARCH_API_CALLS_USED}/{search_api_call_limit_per_run()}.")
 
 
 def numeric_value(value: Any, default: float = 0.0) -> float:

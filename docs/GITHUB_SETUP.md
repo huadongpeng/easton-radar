@@ -30,7 +30,7 @@ git push -u origin main
 
 - `TAVILY_SEARCH_DEPTH`：默认 `basic`，可设 `advanced`。
 - `TAVILY_INCLUDE_RAW_CONTENT`：默认 `false`，可设 `markdown` 或 `text`。
-- `SEARCH_API_CALL_LIMIT_PER_RUN`：默认 `18`，限制每次 Action 中每个搜索后端的 API 调用数；Tavily 达到本轮上限后，Brave 仍可作为备用搜索后端。
+- `SEARCH_API_CALL_LIMIT_PER_RUN`：默认 `18`，限制每次 Action 的 Tavily/Brave 搜索 API 调用总数；核心控量优先通过减少每批入池选题实现。
 
 ## 启用 Pages
 
