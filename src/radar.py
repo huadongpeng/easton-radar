@@ -51,6 +51,7 @@ SEARCH_USAGE_STATE: dict[str, Any] = {}
 SEARCH_NOTICE_KEYS: set[str] = set()
 TAVILY_USAGE_FETCHED = False
 SEARCH_API_CALLS_USED = 0
+BJ_TZ = dt.timezone(dt.timedelta(hours=8))
 
 
 def info(message: str) -> None:
@@ -94,7 +95,47 @@ def now_utc() -> dt.datetime:
 
 
 def now_bj() -> dt.datetime:
-    return now_utc().astimezone(dt.timezone(dt.timedelta(hours=8)))
+    return now_utc().astimezone(BJ_TZ)
+
+
+def parse_timestamp(value: Any) -> dt.datetime | None:
+    if not value:
+        return None
+    text = str(value).strip()
+    if not text:
+        return None
+    try:
+        parsed = dt.datetime.fromisoformat(text.replace("Z", "+00:00"))
+    except Exception:
+        try:
+            parsed = email.utils.parsedate_to_datetime(text)
+        except Exception:
+            return None
+    if parsed.tzinfo is None:
+        parsed = parsed.replace(tzinfo=dt.timezone.utc)
+    return parsed
+
+
+def bj_iso(value: Any) -> str:
+    parsed = parse_timestamp(value)
+    if not parsed:
+        return str(value or "")
+    return parsed.astimezone(BJ_TZ).isoformat()
+
+
+def bj_day(value: Any) -> str:
+    parsed = parse_timestamp(value)
+    if parsed:
+        return parsed.astimezone(BJ_TZ).date().isoformat()
+    text = str(value or "").strip()
+    return text[:10] if text else "unknown"
+
+
+def bj_time(value: Any, fallback: str = "") -> str:
+    parsed = parse_timestamp(value)
+    if not parsed:
+        return str(value or fallback)
+    return parsed.astimezone(BJ_TZ).strftime("%Y-%m-%d %H:%M")
 
 
 def current_slot(value: str) -> str:
@@ -440,7 +481,7 @@ def rebuild_topic_archive_from_reports() -> dict[str, Any]:
             report = json.loads(path.read_text(encoding="utf-8"))
         except Exception:
             continue
-        seen_at = report.get("fetched_at") or report.get("published_at") or now_utc().isoformat()
+        seen_at = bj_iso(report.get("fetched_at") or report.get("published_at") or now_utc().isoformat())
         dossier = report.get("selection_dossier") or report.get("material_pack") or {}
         verdict = dossier.get("verdict", {}) if isinstance(dossier, dict) else {}
         items.append({
@@ -459,7 +500,7 @@ def rebuild_topic_archive_from_reports() -> dict[str, Any]:
             "last_seen_at": seen_at,
             "item_url": f"/items/{report.get('id') or path.stem}/",
         })
-    return {"version": 1, "updated_at": now_utc().isoformat(), "items": items}
+    return {"version": 1, "updated_at": now_bj().isoformat(), "items": items}
 
 
 def recent_archive_items(archive: dict[str, Any], days: int = 14) -> list[dict[str, Any]]:
@@ -467,9 +508,8 @@ def recent_archive_items(archive: dict[str, Any], days: int = 14) -> list[dict[s
     recent: list[dict[str, Any]] = []
     for item in archive.get("items", []):
         value = item.get("first_seen_at") or item.get("last_seen_at") or ""
-        try:
-            seen = dt.datetime.fromisoformat(value.replace("Z", "+00:00"))
-        except Exception:
+        seen = parse_timestamp(value)
+        if seen is None:
             seen = now_utc()
         if seen >= cutoff:
             recent.append(item)
@@ -493,7 +533,7 @@ def is_duplicate_topic(decision: "RadarDecision", site: dict[str, Any], archive:
 def archive_entry(report: dict[str, Any], batch: dict[str, Any]) -> dict[str, Any]:
     dossier = report.get("selection_dossier") or report.get("material_pack") or {}
     verdict = dossier.get("verdict", {})
-    now = batch.get("generated_at") or now_utc().isoformat()
+    now = bj_iso(batch.get("generated_at") or now_utc().isoformat())
     return {
         "id": report["id"],
         "batch_id": batch["batch_id"],
@@ -530,11 +570,12 @@ def update_topic_archive(archive: dict[str, Any], reports: list[dict[str, Any]],
             existing.append(entry)
             by_key[key] = entry
     existing.sort(key=lambda x: x.get("last_seen_at", ""), reverse=True)
-    return {"version": 1, "updated_at": batch.get("generated_at", now_utc().isoformat()), "items": existing[:240]}
+    return {"version": 1, "updated_at": bj_iso(batch.get("generated_at", now_utc().isoformat())), "items": existing[:240]}
 
 
-def report_time_key(report: dict[str, Any]) -> str:
-    return str(report.get("fetched_at") or report.get("published_at") or report.get("generated_at") or "")
+def report_time_key(report: dict[str, Any]) -> float:
+    parsed = parse_timestamp(report.get("fetched_at") or report.get("published_at") or report.get("generated_at"))
+    return parsed.timestamp() if parsed else 0.0
 
 
 def load_report_archive() -> list[dict[str, Any]]:
@@ -1909,8 +1950,8 @@ def material_dimensions(template: str) -> list[dict[str, str]]:
 def material_pack(report: dict[str, Any]) -> dict[str, Any]:
     template = report_template_key(report)
     original_title = report.get("original_title", "")
-    published = report.get("published_at") or "原文未提供发布时间"
-    fetched = report.get("fetched_at") or ""
+    published = bj_time(report.get("published_at"), "原文未提供发布时间")
+    fetched = bj_time(report.get("fetched_at"), "")
     timeline = [
         {"time": published, "event": f"原始来源发布/收录线索：{original_title}", "evidence": report.get("url", "")},
         {"time": fetched, "event": "Easton Radar 抓取并归档该线索。", "evidence": report.get("feed_url", report.get("url", ""))},
@@ -2520,7 +2561,7 @@ def report_flow_item(report: dict[str, Any]) -> str:
 def render_archive_preview(archive: dict[str, Any], limit_days: int = 5) -> str:
     grouped: dict[str, list[dict[str, Any]]] = {}
     for item in archive.get("items", []):
-        day = str(item.get("last_seen_at") or item.get("first_seen_at") or "")[:10] or "unknown"
+        day = bj_day(item.get("last_seen_at") or item.get("first_seen_at"))
         grouped.setdefault(day, []).append(item)
     sections = []
     for day in sorted(grouped.keys(), reverse=True)[:limit_days]:
@@ -2590,7 +2631,7 @@ def render_archive(archive: dict[str, Any], site: dict[str, Any]) -> str:
     directions = site.get("topic_directions", {})
     grouped: dict[str, list[dict[str, Any]]] = {}
     for item in archive.get("items", [])[:180]:
-        day = str(item.get("last_seen_at") or item.get("first_seen_at") or "")[:10] or "unknown"
+        day = bj_day(item.get("last_seen_at") or item.get("first_seen_at"))
         grouped.setdefault(day, []).append(item)
     sections = []
     for day in sorted(grouped.keys(), reverse=True):
@@ -2602,7 +2643,7 @@ def render_archive(archive: dict[str, Any], site: dict[str, Any]) -> str:
 <article class="item">
   <p class="kicker">{html.escape(topic_title)} · {html.escape(item.get("verdict", "待判断"))}</p>
   <h3><a href="{html.escape(item.get("item_url", ""))}">{html.escape(item.get("title", ""))}</a></h3>
-  <p class="meta">Score {html.escape(str(item.get("score", "")))} · {html.escape(item.get("evidence_level", ""))} · 首次入池 {html.escape(item.get("first_seen_at", ""))}</p>
+  <p class="meta">Score {html.escape(str(item.get("score", "")))} · {html.escape(item.get("evidence_level", ""))} · 首次入池 {html.escape(bj_time(item.get("first_seen_at")))}</p>
   <p class="meta source"><a href="{html.escape(item.get("url", ""))}">{html.escape(item.get("original_title", "") or item.get("url", ""))}</a></p>
 </article>
 """)
@@ -2779,7 +2820,7 @@ def render_item(report: dict[str, Any], site: dict[str, Any]) -> str:
         "@type": "Article",
         "headline": visible_title,
         "author": {"@type": "Person", "name": site["author"]},
-        "datePublished": report.get("published_at") or report.get("fetched_at"),
+        "datePublished": report.get("published_at") or bj_iso(report.get("fetched_at")),
         "mainEntityOfPage": f"{site['site_url'].rstrip('/')}/items/{report['id']}/"
     }
     summary = f"<p>{html.escape(report['summary'])}</p>" if report.get("summary") else '<p class="meta">原始来源未提供摘要，优先查看证据链和原文。</p>'
@@ -2850,7 +2891,7 @@ def render_static(batch: dict[str, Any], reports: list[dict[str, Any]], all_repo
 def sitemap(site: dict[str, Any], reports: list[dict[str, Any]]) -> str:
     base = site["site_url"].rstrip("/")
     paths = ["", "archive/", "about/"] + [f"topics/{k}/" for k in site.get("topic_directions", {})] + [f"items/{r['id']}/" for r in reports]
-    today = now_utc().date().isoformat()
+    today = now_bj().date().isoformat()
     body = "\n".join(f"<url><loc>{base}/{p}</loc><lastmod>{today}</lastmod></url>" for p in paths)
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{body}\n</urlset>\n'
 
