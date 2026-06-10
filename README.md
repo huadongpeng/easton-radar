@@ -87,7 +87,7 @@ Radar 宁可少，也不要脏。
 | `TAVILY_SEARCH_DEPTH` | 可选，默认 `basic`；可设 `advanced` 提高相关性但消耗更多额度 |
 | `TAVILY_INCLUDE_RAW_CONTENT` | 可选，默认 `false`；可设 `markdown` 或 `text` 让 Tavily 返回正文内容兜底 |
 | `BRAVE_SEARCH_API_KEY` | 可选，Brave Search API，作为 Tavily 之外的备用搜索后端 |
-| `SEARCH_API_CALL_LIMIT_PER_RUN` | 可选，默认 `18`；限制每次 Action 的 Tavily/Brave 搜索 API 调用数，保护每月免费额度 |
+| `SEARCH_API_CALL_LIMIT_PER_RUN` | 可选，默认 `18`；限制每次 Action 中每个搜索后端的 API 调用数，Tavily 达到本轮上限后 Brave 仍可作为备用搜索后端 |
 | `TELEGRAM_BOT_TOKEN` | Telegram bot |
 | `TELEGRAM_CHAT_ID` | Telegram 接收频道或用户 |
 

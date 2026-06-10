@@ -52,6 +52,7 @@ SEARCH_USAGE_STATE: dict[str, Any] = {}
 SEARCH_NOTICE_KEYS: set[str] = set()
 TAVILY_USAGE_FETCHED = False
 SEARCH_API_CALLS_USED = 0
+SEARCH_API_CALLS_BY_PROVIDER: dict[str, int] = {}
 BJ_TZ = dt.timezone(dt.timedelta(hours=8))
 
 
@@ -189,10 +190,11 @@ def search_run_has_budget(provider: str, cost: int = 1) -> bool:
     if limit <= 0:
         info_once("search-run-disabled", "Search budget: SEARCH_API_CALL_LIMIT_PER_RUN<=0, skip all web search calls.")
         return False
-    if SEARCH_API_CALLS_USED + cost > limit:
+    provider_used = SEARCH_API_CALLS_BY_PROVIDER.get(provider, 0)
+    if provider_used + cost > limit:
         info_once(
-            "search-run-exhausted",
-            f"Search budget: per-run API call limit reached, used={SEARCH_API_CALLS_USED}, limit={limit}.",
+            f"search-run-exhausted-{provider}",
+            f"Search budget: per-provider API call limit reached, provider={provider}, used={provider_used}, limit={limit}.",
         )
         return False
     return True
@@ -201,15 +203,18 @@ def search_run_has_budget(provider: str, cost: int = 1) -> bool:
 def record_search_api_call(provider: str, cost: int = 1) -> None:
     global SEARCH_API_CALLS_USED
     SEARCH_API_CALLS_USED += cost
+    SEARCH_API_CALLS_BY_PROVIDER[provider] = SEARCH_API_CALLS_BY_PROVIDER.get(provider, 0) + cost
     state = load_search_usage_state()
     state["current_run"] = {
-        "api_calls_used": SEARCH_API_CALLS_USED,
-        "api_call_limit": search_api_call_limit_per_run(),
+        "api_calls_used_total": SEARCH_API_CALLS_USED,
+        "api_calls_by_provider": SEARCH_API_CALLS_BY_PROVIDER,
+        "api_call_limit_per_provider": search_api_call_limit_per_run(),
         "last_provider": provider,
         "updated_at": now_utc().isoformat(),
     }
     save_search_usage_state()
-    info(f"Search budget: provider={provider}, run_calls_used={SEARCH_API_CALLS_USED}/{search_api_call_limit_per_run()}.")
+    provider_used = SEARCH_API_CALLS_BY_PROVIDER.get(provider, 0)
+    info(f"Search budget: provider={provider}, provider_run_calls_used={provider_used}/{search_api_call_limit_per_run()}, total_run_calls_used={SEARCH_API_CALLS_USED}.")
 
 
 def numeric_value(value: Any, default: float = 0.0) -> float:
@@ -357,6 +362,9 @@ def update_brave_rate_state(headers: Any) -> None:
     monthly_limit = limit_values[-1] if limit_values else None
     reset_seconds = reset_values[-1] if reset_values else None
     monthly_unlimited = monthly_limit == 0
+    monthly_used = None
+    if monthly_limit is not None and monthly_remaining is not None and monthly_limit > 0:
+        monthly_used = max(0.0, monthly_limit - monthly_remaining)
     update_search_provider_state("brave", {
         "enabled": True,
         "source": "rate_limit_headers",
@@ -364,6 +372,7 @@ def update_brave_rate_state(headers: Any) -> None:
         "second_limit": second_limit,
         "monthly_remaining": monthly_remaining,
         "monthly_limit": monthly_limit,
+        "monthly_used": monthly_used,
         "monthly_unlimited": monthly_unlimited,
         "reset_seconds": reset_seconds,
         "raw_headers": {
@@ -374,7 +383,8 @@ def update_brave_rate_state(headers: Any) -> None:
     })
     if monthly_remaining is not None:
         monthly_text = "unlimited" if monthly_unlimited else str(monthly_remaining)
-        info(f"Search budget: Brave second_remaining={second_remaining}, monthly_remaining={monthly_text}, monthly_limit={monthly_limit}.")
+        used_text = "unknown" if monthly_used is None else str(monthly_used)
+        info(f"Search budget: Brave second_remaining={second_remaining}, monthly_used={used_text}, monthly_remaining={monthly_text}, monthly_limit={monthly_limit}.")
 
 
 def brave_has_budget() -> bool:
@@ -415,7 +425,7 @@ def log_search_budget_preflight() -> None:
         if brave.get("monthly_unlimited"):
             parts.append("brave_monthly=unlimited source=rate_limit_headers")
         elif brave.get("monthly_remaining") is not None:
-            parts.append(f"brave_remaining={brave.get('monthly_remaining')} source=rate_limit_headers")
+            parts.append(f"brave={brave.get('monthly_used', 'unknown')}/{brave.get('monthly_limit')} remaining={brave.get('monthly_remaining')} source=rate_limit_headers")
         else:
             parts.append("brave=enabled remaining=unknown-until-first-response")
     else:

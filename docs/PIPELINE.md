@@ -130,6 +130,6 @@ Telegram 只发摘要和 Radar 链接，不发长文。
 
 - 单个源失败：记录失败，不中断全局流程。
 - GitHub Actions 长期抓不到的源：从配置中移除。
-- 补证搜索只使用 Tavily 和 Brave，不再使用 DDG/Bing 这类易被 GitHub Actions 机房 IP 拦截的页面搜索。Tavily 通过官方 `/usage` 接口预检额度；Brave 通过官方 `X-RateLimit-*` 响应头记录月度剩余额度。两者都不可用、额度不足或本轮 `SEARCH_API_CALL_LIMIT_PER_RUN` 用尽时，必须降级为证据不足，不能输出高可信选题判断。
+- 补证搜索只使用 Tavily 和 Brave，不再使用 DDG/Bing 这类易被 GitHub Actions 机房 IP 拦截的页面搜索。Tavily 通过官方 `/usage` 接口预检额度；Brave 通过官方 `X-RateLimit-*` 响应头记录秒级窗口和月度剩余额度。`SEARCH_API_CALL_LIMIT_PER_RUN` 按搜索后端分别限制，Tavily 达到本轮上限后仍允许 Brave 作为备用后端继续补证。两者都不可用、额度不足或各自本轮调用上限都用尽时，必须降级为证据不足，不能输出高可信选题判断。
 - DeepSeek 不可用：只保留本地启发式线索池，并在 `selection_dossier.generated_by=fallback` 中标记为“待 LLM 判断”，不能伪装成可信选题报告。
 - 没有高潜力线索：只发布空候选池和数据源覆盖情况，不强行生成选题报告。
