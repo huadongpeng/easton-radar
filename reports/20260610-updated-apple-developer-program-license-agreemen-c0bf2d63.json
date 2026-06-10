@@ -15,7 +15,7 @@
   "source_type": "rss",
   "feed_url": "https://developer.apple.com/news/rss/news.rss",
   "published_at": "2026-06-08T18:18:33+00:00",
-  "fetched_at": "2026-06-10T01:12:32.927931+00:00",
+  "fetched_at": "2026-06-10T01:21:00.173667+00:00",
   "decision": "deep_dive",
   "report_type": "platform-rules",
   "report_type_title": "平台规则",
@@ -24,7 +24,7 @@
   "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
   "evidence_level": "official",
   "source_priority": "P0 官方/一手源",
-  "reason": "许可协议和审核指南更新，必读",
+  "reason": "Apple协议和审核指南更新，必读",
   "collection_fit": "部分符合收集原则：可以进入观察池，但证据链或读者入口还不够完整。",
   "investigation_direction": "优先追官方政策、开发者公告、执行范围、受影响人群和合规边界。",
   "uncertainty_flags": [
@@ -135,141 +135,123 @@
       "label": "暂缓",
       "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
     },
-    "core_question": "Apple 开发者许可协议和审核指南的具体变更内容是什么？这些变更对开发者的实际影响（如合规成本、审核通过率、功能限制）如何？",
-    "why_this_topic_matters": "Apple 平台规则直接影响 iOS/macOS 开发者的应用上架、功能实现和合规成本，尤其涉及敏感内容分析、建议动作 API、信任洞察框架等新条款，可能改变开发者的技术选型和审核策略。对于关注平台规则、出海合规的技术人，这是必须跟踪的信号。",
-    "fact_summary": [
-      "Apple 于 2025 年 4 月 2 日更新了开发者许可协议和 App Review 指南。",
-      "变更涉及开发者身份信息要求（3.1, 14.8）、敏感内容分析框架（3.3.3(N)）、建议动作 API（3.3.3(Q)）、信任洞察框架（3.3.3(R)）以及用户个人可访问性修改（3.3.4(A)）。",
-      "官方摘要未提供条款原文、生效时间、过渡期或详细解读。"
-    ],
-    "timeline": [
-      {
-        "date": "2025-04-02",
-        "event": "Apple 发布更新公告，摘要列出变更条款范围。"
-      }
-    ],
-    "evidence_table": [
-      {
-        "source": "Apple Developer News",
-        "url": "https://developer.apple.com/news/?id=a233fmpw",
-        "supports": "官方公告，确认协议和指南已更新，列出变更条款编号和简要说明。",
-        "reliability": "official"
-      }
-    ],
-    "logic_closure": "目前仅有一个官方来源，且内容为摘要，无法验证变更的具体措辞、生效时间、过渡期、开发者反馈和实际影响。逻辑上无法闭环，不能得出任何关于影响程度的结论。",
+    "core_question": "Apple 开发者协议和审核指南的具体变更内容是什么？对开发者（尤其是中国出海开发者）的实际影响有哪些？",
+    "why_this_topic_matters": "Apple 平台规则变化直接影响所有 iOS/macOS 开发者的合规成本、功能实现和上架流程。对于中国出海开发者，涉及出口合规、内容分析框架限制等敏感点，可能影响 App 功能设计和审核通过率。",
+    "fact_summary": [],
+    "timeline": [],
+    "evidence_table": [],
+    "logic_closure": "当前仅有官方新闻摘要，未获取完整变更条款和第三方分析，无法形成逻辑闭环。需补充证据后才能判断影响。",
     "writeable_angles": [
       {
-        "angle": "条款逐条解读：新规对开发者意味着什么？",
-        "why": "开发者最关心具体条款的改动和合规要求，逐条解读能提供直接价值。",
-        "needs": "条款原文（diff）、Apple 官方 FAQ、开发者社区讨论。"
+        "angle": "Apple 新规对 AI 相关 App 的限制",
+        "why": "Sensitive Content Analysis framework、Suggested Actions API、Trust Insights framework 可能涉及 AI 功能合规，影响开发者使用 AI 能力。",
+        "needs": "官方框架文档、第三方解读、开发者案例"
       },
       {
-        "angle": "开发者合规成本与审核风险变化",
-        "why": "身份信息要求、敏感内容分析框架等可能增加中小开发者的合规负担和审核不确定性。",
-        "needs": "真实案例（被拒或下架）、开发者反馈、法律/合规分析。"
+        "angle": "中国出海开发者的合规风险",
+        "why": "Section 3.1 和 14.8 的出口合规要求可能增加中国开发者的身份验证和合规成本。",
+        "needs": "官方条款原文、中国开发者反馈、法律分析"
       },
       {
-        "angle": "新 API 限制对功能开发的影响",
-        "why": "建议动作 API、信任洞察框架等限制可能影响 Siri 集成、快捷指令、用户数据收集等功能。",
-        "needs": "API 文档、开发者实测报告、与旧版对比。"
-      },
-      {
-        "angle": "与监管（如 DMA）的潜在冲突",
-        "why": "Apple 在欧盟 DMA 压力下调整政策，新规是否合规或引发新一轮争议。",
-        "needs": "监管文本、法律专家分析、Apple 官方声明。"
+        "angle": "无障碍条款对 App 功能的影响",
+        "why": "Section 3.3.4(A) 允许用户修改内容用于个人无障碍，可能影响 App 内容保护策略。",
+        "needs": "官方条款、开发者讨论、实际案例"
       }
     ],
     "missing_basics": [
-      "变更条款的完整原文（PDF 或网页）",
-      "变更生效时间及过渡期安排",
-      "Apple 官方 FAQ 或解读文档"
+      "Apple Developer Program License Agreement 最新版全文",
+      "App Store Review Guidelines 最新版全文",
+      "官方变更说明（diff 或摘要）"
     ],
     "missing_materials": [
-      "至少 2-3 个开发者社区的真实讨论帖（如 Hacker News、Reddit）",
-      "至少 1 个开发者因新规受影响的具体案例（如有）",
-      "与上一版本协议的对比分析（diff）",
-      "法律/合规分析网站（如 TechCrunch、The Verge）的报道",
+      "至少 2-3 篇第三方分析文章（如 MacRumors、9to5Mac、TechCrunch）",
+      "开发者反馈（论坛或社交媒体）",
+      "中国开发者社区讨论（掘金、V2EX、知乎）",
       "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
     ],
     "not_claimable": [
-      "变更对开发者有重大负面影响",
-      "变更导致审核通过率下降",
-      "变更影响特定类型应用（如 AI、健康、儿童类）",
-      "变更与欧盟 DMA 或其他监管要求冲突",
+      "具体变更内容",
+      "对开发者的实际影响程度",
+      "是否涉及 AI 相关限制",
+      "中国开发者是否面临额外合规风险",
       "不能在无补证结果时声称该选题已经具备可写条件。"
     ],
     "followup_queries": [
-      "Apple 是否已发布条款原文？请提供链接。",
-      "开发者社区（Hacker News、Reddit）是否有关于此次更新的讨论？",
-      "是否有开发者报告因新规被拒或下架？",
-      "Apple 是否提供 FAQ 或解读？"
+      "Apple Developer Program License Agreement 2025 changes",
+      "Apple App Review Guidelines 2025 update",
+      "Sensitive Content Analysis framework Apple requirements",
+      "Suggested Actions API Apple developer restrictions",
+      "Trust Insights framework Apple privacy",
+      "Apple 开发者协议 2025 变更 中国开发者",
+      "Apple 审核指南 2025 更新 影响",
+      "Apple developer identity export compliance requirements"
     ],
     "additional_search_queries": [
-      "Apple Developer Program License Agreement 2025 full text",
-      "App Review Guidelines 2025 update developer impact",
-      "Apple Sensitive Content Analysis framework requirements",
-      "Apple Suggested Actions API developer restrictions",
-      "Apple Trust Insights framework privacy compliance",
-      "Apple developer identity verification export compliance",
-      "Apple 3.3.4(A) personal accessibility modification terms",
-      "Apple developer agreement changes developer complaints"
+      "Apple Developer Program License Agreement 2025 changes",
+      "Apple App Review Guidelines 2025 update",
+      "Sensitive Content Analysis framework Apple requirements",
+      "Suggested Actions API Apple developer restrictions",
+      "Trust Insights framework Apple privacy",
+      "Apple 开发者协议 2025 变更 中国开发者",
+      "Apple 审核指南 2025 更新 影响",
+      "Apple developer identity export compliance requirements"
     ],
     "stop_conditions": [
-      "获取条款原文后，确认变更内容与摘要一致且无重大遗漏。",
-      "收集到至少 2 个开发者社区讨论帖，且无大规模负面反馈。",
-      "Apple 发布 FAQ 或解读，明确过渡期和合规要求。"
+      "获取官方完整变更条款",
+      "获取至少 2 篇第三方分析文章",
+      "获取开发者社区讨论（至少 5 条有实质内容的反馈）"
     ],
-    "confidence": 20.0,
+    "confidence": 0.0,
     "topic_direction": "traffic-rules",
     "topic_direction_title": "平台规则与流量生态",
     "report_type": "platform-rules",
     "research_plan": {
-      "core_question": "Apple 开发者许可协议和审核指南的具体变更内容是什么？这些变更对开发者的实际影响（如合规成本、审核通过率、功能限制）如何？",
+      "core_question": "Apple 开发者协议和审核指南的具体变更内容是什么？对开发者（尤其是中国出海开发者）的实际影响有哪些？",
       "must_verify": [
-        "变更的具体条款原文（尤其是 3.1, 14.8, 3.3.3(N)(Q)(R), 3.3.4(A)）",
-        "变更生效时间及过渡期安排",
-        "开发者社区（如 Hacker News、Reddit）的讨论和反馈",
-        "是否有开发者因新规被拒或下架的真实案例",
-        "Apple 官方是否提供解读或 FAQ"
+        "Apple 官方发布的完整变更日志（diff 或摘要）",
+        "变更生效日期和过渡期安排",
+        "Sensitive Content Analysis framework、Suggested Actions API、Trust Insights framework 的具体限制和合规要求",
+        "Section 3.1 和 14.8 关于开发者身份信息及出口合规的新要求",
+        "Section 3.3.4(A) 关于用户修改内容用于个人无障碍的条款"
       ],
       "search_queries": [
         "Apple Developer Program License Agreement 2025 changes",
-        "App Review Guidelines 2025 update developer impact",
-        "Apple Sensitive Content Analysis framework requirements",
-        "Apple Suggested Actions API developer restrictions",
-        "Apple Trust Insights framework privacy compliance",
-        "Apple developer identity verification export compliance",
-        "Apple 3.3.4(A) personal accessibility modification terms",
-        "Apple developer agreement changes developer complaints"
+        "Apple App Review Guidelines 2025 update",
+        "Sensitive Content Analysis framework Apple requirements",
+        "Suggested Actions API Apple developer restrictions",
+        "Trust Insights framework Apple privacy",
+        "Apple 开发者协议 2025 变更 中国开发者",
+        "Apple 审核指南 2025 更新 影响",
+        "Apple developer identity export compliance requirements"
       ],
       "best_sources_to_find": [
-        "Apple Developer 官方新闻页（developer.apple.com/news）",
-        "Apple Developer 论坛（developer.apple.com/forums）",
-        "Hacker News 讨论（news.ycombinator.com）",
-        "Reddit r/iOSProgramming 和 r/apple",
-        "知名开发者博客（如 Michael Tsai、Daring Fireball）",
-        "法律/合规分析网站（如 TechCrunch、The Verge 的开发者政策报道）"
+        "Apple Developer 官网新闻页（developer.apple.com/news）",
+        "Apple Developer Program License Agreement 全文（PDF）",
+        "App Store Review Guidelines 全文",
+        "Apple 开发者论坛（developer.apple.com/forums）",
+        "第三方开发者博客（如 MacRumors、9to5Mac、TechCrunch）",
+        "中国开发者社区（如掘金、V2EX、知乎）"
       ],
       "expert_challenge_points": [
-        "Sensitive Content Analysis 框架是否强制使用？对隐私和性能有何影响？",
-        "Suggested Actions API 的限制是否影响 Siri 集成或快捷指令功能？",
-        "Trust Insights 框架是否涉及用户数据收集？合规要求是否模糊？",
-        "开发者身份信息要求是否增加中小开发者的合规负担？",
-        "个人可访问性修改条款是否允许开发者绕过某些审核限制？"
+        "Sensitive Content Analysis framework 是否要求开发者披露或限制用户内容分析？",
+        "Suggested Actions API 是否限制了第三方推荐功能？",
+        "Trust Insights framework 是否涉及用户隐私数据收集？",
+        "Section 3.1 和 14.8 的出口合规要求是否影响中国开发者提交应用？",
+        "这些变更是否与欧盟 DMA 或其他监管压力有关？"
       ],
       "do_not_claim_yet": [
-        "变更对开发者有重大负面影响",
-        "变更导致审核通过率下降",
-        "变更影响特定类型应用（如 AI、健康、儿童类）",
-        "变更与欧盟 DMA 或其他监管要求冲突"
+        "具体变更内容（需阅读官方文档确认）",
+        "对开发者的实际影响程度（需分析条款）",
+        "是否涉及 AI 相关限制（需确认框架用途）",
+        "中国开发者是否面临额外合规风险（需结合中国法律）"
       ],
-      "can_publish_as_radar_if_missing": "可以，但需明确标注当前信息仅来自 Apple 官方摘要，具体条款和影响待验证。",
+      "can_publish_as_radar_if_missing": "否，因为缺乏具体变更内容和影响分析，无法形成有价值的 Radar 报告。",
       "downstream_materials_needed": [
-        "变更条款的完整原文（PDF 或网页）",
-        "Apple 官方 FAQ 或解读文档",
-        "至少 2-3 个开发者社区的真实讨论帖",
-        "至少 1 个开发者因新规受影响的具体案例（如有）",
-        "与上一版本协议的对比分析（diff）"
+        "Apple Developer Program License Agreement 最新版 PDF",
+        "App Store Review Guidelines 最新版",
+        "Apple 官方变更说明（如有）",
+        "至少 2-3 篇第三方分析文章",
+        "开发者反馈（论坛或社交媒体）"
       ]
     },
     "research_evidence": []
@@ -282,141 +264,123 @@
       "label": "暂缓",
       "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
     },
-    "core_question": "Apple 开发者许可协议和审核指南的具体变更内容是什么？这些变更对开发者的实际影响（如合规成本、审核通过率、功能限制）如何？",
-    "why_this_topic_matters": "Apple 平台规则直接影响 iOS/macOS 开发者的应用上架、功能实现和合规成本，尤其涉及敏感内容分析、建议动作 API、信任洞察框架等新条款，可能改变开发者的技术选型和审核策略。对于关注平台规则、出海合规的技术人，这是必须跟踪的信号。",
-    "fact_summary": [
-      "Apple 于 2025 年 4 月 2 日更新了开发者许可协议和 App Review 指南。",
-      "变更涉及开发者身份信息要求（3.1, 14.8）、敏感内容分析框架（3.3.3(N)）、建议动作 API（3.3.3(Q)）、信任洞察框架（3.3.3(R)）以及用户个人可访问性修改（3.3.4(A)）。",
-      "官方摘要未提供条款原文、生效时间、过渡期或详细解读。"
-    ],
-    "timeline": [
-      {
-        "date": "2025-04-02",
-        "event": "Apple 发布更新公告，摘要列出变更条款范围。"
-      }
-    ],
-    "evidence_table": [
-      {
-        "source": "Apple Developer News",
-        "url": "https://developer.apple.com/news/?id=a233fmpw",
-        "supports": "官方公告，确认协议和指南已更新，列出变更条款编号和简要说明。",
-        "reliability": "official"
-      }
-    ],
-    "logic_closure": "目前仅有一个官方来源，且内容为摘要，无法验证变更的具体措辞、生效时间、过渡期、开发者反馈和实际影响。逻辑上无法闭环，不能得出任何关于影响程度的结论。",
+    "core_question": "Apple 开发者协议和审核指南的具体变更内容是什么？对开发者（尤其是中国出海开发者）的实际影响有哪些？",
+    "why_this_topic_matters": "Apple 平台规则变化直接影响所有 iOS/macOS 开发者的合规成本、功能实现和上架流程。对于中国出海开发者，涉及出口合规、内容分析框架限制等敏感点，可能影响 App 功能设计和审核通过率。",
+    "fact_summary": [],
+    "timeline": [],
+    "evidence_table": [],
+    "logic_closure": "当前仅有官方新闻摘要，未获取完整变更条款和第三方分析，无法形成逻辑闭环。需补充证据后才能判断影响。",
     "writeable_angles": [
       {
-        "angle": "条款逐条解读：新规对开发者意味着什么？",
-        "why": "开发者最关心具体条款的改动和合规要求，逐条解读能提供直接价值。",
-        "needs": "条款原文（diff）、Apple 官方 FAQ、开发者社区讨论。"
+        "angle": "Apple 新规对 AI 相关 App 的限制",
+        "why": "Sensitive Content Analysis framework、Suggested Actions API、Trust Insights framework 可能涉及 AI 功能合规，影响开发者使用 AI 能力。",
+        "needs": "官方框架文档、第三方解读、开发者案例"
       },
       {
-        "angle": "开发者合规成本与审核风险变化",
-        "why": "身份信息要求、敏感内容分析框架等可能增加中小开发者的合规负担和审核不确定性。",
-        "needs": "真实案例（被拒或下架）、开发者反馈、法律/合规分析。"
+        "angle": "中国出海开发者的合规风险",
+        "why": "Section 3.1 和 14.8 的出口合规要求可能增加中国开发者的身份验证和合规成本。",
+        "needs": "官方条款原文、中国开发者反馈、法律分析"
       },
       {
-        "angle": "新 API 限制对功能开发的影响",
-        "why": "建议动作 API、信任洞察框架等限制可能影响 Siri 集成、快捷指令、用户数据收集等功能。",
-        "needs": "API 文档、开发者实测报告、与旧版对比。"
-      },
-      {
-        "angle": "与监管（如 DMA）的潜在冲突",
-        "why": "Apple 在欧盟 DMA 压力下调整政策，新规是否合规或引发新一轮争议。",
-        "needs": "监管文本、法律专家分析、Apple 官方声明。"
+        "angle": "无障碍条款对 App 功能的影响",
+        "why": "Section 3.3.4(A) 允许用户修改内容用于个人无障碍，可能影响 App 内容保护策略。",
+        "needs": "官方条款、开发者讨论、实际案例"
       }
     ],
     "missing_basics": [
-      "变更条款的完整原文（PDF 或网页）",
-      "变更生效时间及过渡期安排",
-      "Apple 官方 FAQ 或解读文档"
+      "Apple Developer Program License Agreement 最新版全文",
+      "App Store Review Guidelines 最新版全文",
+      "官方变更说明（diff 或摘要）"
     ],
     "missing_materials": [
-      "至少 2-3 个开发者社区的真实讨论帖（如 Hacker News、Reddit）",
-      "至少 1 个开发者因新规受影响的具体案例（如有）",
-      "与上一版本协议的对比分析（diff）",
-      "法律/合规分析网站（如 TechCrunch、The Verge）的报道",
+      "至少 2-3 篇第三方分析文章（如 MacRumors、9to5Mac、TechCrunch）",
+      "开发者反馈（论坛或社交媒体）",
+      "中国开发者社区讨论（掘金、V2EX、知乎）",
       "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
     ],
     "not_claimable": [
-      "变更对开发者有重大负面影响",
-      "变更导致审核通过率下降",
-      "变更影响特定类型应用（如 AI、健康、儿童类）",
-      "变更与欧盟 DMA 或其他监管要求冲突",
+      "具体变更内容",
+      "对开发者的实际影响程度",
+      "是否涉及 AI 相关限制",
+      "中国开发者是否面临额外合规风险",
       "不能在无补证结果时声称该选题已经具备可写条件。"
     ],
     "followup_queries": [
-      "Apple 是否已发布条款原文？请提供链接。",
-      "开发者社区（Hacker News、Reddit）是否有关于此次更新的讨论？",
-      "是否有开发者报告因新规被拒或下架？",
-      "Apple 是否提供 FAQ 或解读？"
+      "Apple Developer Program License Agreement 2025 changes",
+      "Apple App Review Guidelines 2025 update",
+      "Sensitive Content Analysis framework Apple requirements",
+      "Suggested Actions API Apple developer restrictions",
+      "Trust Insights framework Apple privacy",
+      "Apple 开发者协议 2025 变更 中国开发者",
+      "Apple 审核指南 2025 更新 影响",
+      "Apple developer identity export compliance requirements"
     ],
     "additional_search_queries": [
-      "Apple Developer Program License Agreement 2025 full text",
-      "App Review Guidelines 2025 update developer impact",
-      "Apple Sensitive Content Analysis framework requirements",
-      "Apple Suggested Actions API developer restrictions",
-      "Apple Trust Insights framework privacy compliance",
-      "Apple developer identity verification export compliance",
-      "Apple 3.3.4(A) personal accessibility modification terms",
-      "Apple developer agreement changes developer complaints"
+      "Apple Developer Program License Agreement 2025 changes",
+      "Apple App Review Guidelines 2025 update",
+      "Sensitive Content Analysis framework Apple requirements",
+      "Suggested Actions API Apple developer restrictions",
+      "Trust Insights framework Apple privacy",
+      "Apple 开发者协议 2025 变更 中国开发者",
+      "Apple 审核指南 2025 更新 影响",
+      "Apple developer identity export compliance requirements"
     ],
     "stop_conditions": [
-      "获取条款原文后，确认变更内容与摘要一致且无重大遗漏。",
-      "收集到至少 2 个开发者社区讨论帖，且无大规模负面反馈。",
-      "Apple 发布 FAQ 或解读，明确过渡期和合规要求。"
+      "获取官方完整变更条款",
+      "获取至少 2 篇第三方分析文章",
+      "获取开发者社区讨论（至少 5 条有实质内容的反馈）"
     ],
-    "confidence": 20.0,
+    "confidence": 0.0,
     "topic_direction": "traffic-rules",
     "topic_direction_title": "平台规则与流量生态",
     "report_type": "platform-rules",
     "research_plan": {
-      "core_question": "Apple 开发者许可协议和审核指南的具体变更内容是什么？这些变更对开发者的实际影响（如合规成本、审核通过率、功能限制）如何？",
+      "core_question": "Apple 开发者协议和审核指南的具体变更内容是什么？对开发者（尤其是中国出海开发者）的实际影响有哪些？",
       "must_verify": [
-        "变更的具体条款原文（尤其是 3.1, 14.8, 3.3.3(N)(Q)(R), 3.3.4(A)）",
-        "变更生效时间及过渡期安排",
-        "开发者社区（如 Hacker News、Reddit）的讨论和反馈",
-        "是否有开发者因新规被拒或下架的真实案例",
-        "Apple 官方是否提供解读或 FAQ"
+        "Apple 官方发布的完整变更日志（diff 或摘要）",
+        "变更生效日期和过渡期安排",
+        "Sensitive Content Analysis framework、Suggested Actions API、Trust Insights framework 的具体限制和合规要求",
+        "Section 3.1 和 14.8 关于开发者身份信息及出口合规的新要求",
+        "Section 3.3.4(A) 关于用户修改内容用于个人无障碍的条款"
       ],
       "search_queries": [
         "Apple Developer Program License Agreement 2025 changes",
-        "App Review Guidelines 2025 update developer impact",
-        "Apple Sensitive Content Analysis framework requirements",
-        "Apple Suggested Actions API developer restrictions",
-        "Apple Trust Insights framework privacy compliance",
-        "Apple developer identity verification export compliance",
-        "Apple 3.3.4(A) personal accessibility modification terms",
-        "Apple developer agreement changes developer complaints"
+        "Apple App Review Guidelines 2025 update",
+        "Sensitive Content Analysis framework Apple requirements",
+        "Suggested Actions API Apple developer restrictions",
+        "Trust Insights framework Apple privacy",
+        "Apple 开发者协议 2025 变更 中国开发者",
+        "Apple 审核指南 2025 更新 影响",
+        "Apple developer identity export compliance requirements"
       ],
       "best_sources_to_find": [
-        "Apple Developer 官方新闻页（developer.apple.com/news）",
-        "Apple Developer 论坛（developer.apple.com/forums）",
-        "Hacker News 讨论（news.ycombinator.com）",
-        "Reddit r/iOSProgramming 和 r/apple",
-        "知名开发者博客（如 Michael Tsai、Daring Fireball）",
-        "法律/合规分析网站（如 TechCrunch、The Verge 的开发者政策报道）"
+        "Apple Developer 官网新闻页（developer.apple.com/news）",
+        "Apple Developer Program License Agreement 全文（PDF）",
+        "App Store Review Guidelines 全文",
+        "Apple 开发者论坛（developer.apple.com/forums）",
+        "第三方开发者博客（如 MacRumors、9to5Mac、TechCrunch）",
+        "中国开发者社区（如掘金、V2EX、知乎）"
       ],
       "expert_challenge_points": [
-        "Sensitive Content Analysis 框架是否强制使用？对隐私和性能有何影响？",
-        "Suggested Actions API 的限制是否影响 Siri 集成或快捷指令功能？",
-        "Trust Insights 框架是否涉及用户数据收集？合规要求是否模糊？",
-        "开发者身份信息要求是否增加中小开发者的合规负担？",
-        "个人可访问性修改条款是否允许开发者绕过某些审核限制？"
+        "Sensitive Content Analysis framework 是否要求开发者披露或限制用户内容分析？",
+        "Suggested Actions API 是否限制了第三方推荐功能？",
+        "Trust Insights framework 是否涉及用户隐私数据收集？",
+        "Section 3.1 和 14.8 的出口合规要求是否影响中国开发者提交应用？",
+        "这些变更是否与欧盟 DMA 或其他监管压力有关？"
       ],
       "do_not_claim_yet": [
-        "变更对开发者有重大负面影响",
-        "变更导致审核通过率下降",
-        "变更影响特定类型应用（如 AI、健康、儿童类）",
-        "变更与欧盟 DMA 或其他监管要求冲突"
+        "具体变更内容（需阅读官方文档确认）",
+        "对开发者的实际影响程度（需分析条款）",
+        "是否涉及 AI 相关限制（需确认框架用途）",
+        "中国开发者是否面临额外合规风险（需结合中国法律）"
       ],
-      "can_publish_as_radar_if_missing": "可以，但需明确标注当前信息仅来自 Apple 官方摘要，具体条款和影响待验证。",
+      "can_publish_as_radar_if_missing": "否，因为缺乏具体变更内容和影响分析，无法形成有价值的 Radar 报告。",
       "downstream_materials_needed": [
-        "变更条款的完整原文（PDF 或网页）",
-        "Apple 官方 FAQ 或解读文档",
-        "至少 2-3 个开发者社区的真实讨论帖",
-        "至少 1 个开发者因新规受影响的具体案例（如有）",
-        "与上一版本协议的对比分析（diff）"
+        "Apple Developer Program License Agreement 最新版 PDF",
+        "App Store Review Guidelines 最新版",
+        "Apple 官方变更说明（如有）",
+        "至少 2-3 篇第三方分析文章",
+        "开发者反馈（论坛或社交媒体）"
       ]
     },
     "research_evidence": []
@@ -437,141 +401,123 @@
           "label": "暂缓",
           "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
         },
-        "core_question": "Apple 开发者许可协议和审核指南的具体变更内容是什么？这些变更对开发者的实际影响（如合规成本、审核通过率、功能限制）如何？",
-        "why_this_topic_matters": "Apple 平台规则直接影响 iOS/macOS 开发者的应用上架、功能实现和合规成本，尤其涉及敏感内容分析、建议动作 API、信任洞察框架等新条款，可能改变开发者的技术选型和审核策略。对于关注平台规则、出海合规的技术人，这是必须跟踪的信号。",
-        "fact_summary": [
-          "Apple 于 2025 年 4 月 2 日更新了开发者许可协议和 App Review 指南。",
-          "变更涉及开发者身份信息要求（3.1, 14.8）、敏感内容分析框架（3.3.3(N)）、建议动作 API（3.3.3(Q)）、信任洞察框架（3.3.3(R)）以及用户个人可访问性修改（3.3.4(A)）。",
-          "官方摘要未提供条款原文、生效时间、过渡期或详细解读。"
-        ],
-        "timeline": [
-          {
-            "date": "2025-04-02",
-            "event": "Apple 发布更新公告，摘要列出变更条款范围。"
-          }
-        ],
-        "evidence_table": [
-          {
-            "source": "Apple Developer News",
-            "url": "https://developer.apple.com/news/?id=a233fmpw",
-            "supports": "官方公告，确认协议和指南已更新，列出变更条款编号和简要说明。",
-            "reliability": "official"
-          }
-        ],
-        "logic_closure": "目前仅有一个官方来源，且内容为摘要，无法验证变更的具体措辞、生效时间、过渡期、开发者反馈和实际影响。逻辑上无法闭环，不能得出任何关于影响程度的结论。",
+        "core_question": "Apple 开发者协议和审核指南的具体变更内容是什么？对开发者（尤其是中国出海开发者）的实际影响有哪些？",
+        "why_this_topic_matters": "Apple 平台规则变化直接影响所有 iOS/macOS 开发者的合规成本、功能实现和上架流程。对于中国出海开发者，涉及出口合规、内容分析框架限制等敏感点，可能影响 App 功能设计和审核通过率。",
+        "fact_summary": [],
+        "timeline": [],
+        "evidence_table": [],
+        "logic_closure": "当前仅有官方新闻摘要，未获取完整变更条款和第三方分析，无法形成逻辑闭环。需补充证据后才能判断影响。",
         "writeable_angles": [
           {
-            "angle": "条款逐条解读：新规对开发者意味着什么？",
-            "why": "开发者最关心具体条款的改动和合规要求，逐条解读能提供直接价值。",
-            "needs": "条款原文（diff）、Apple 官方 FAQ、开发者社区讨论。"
+            "angle": "Apple 新规对 AI 相关 App 的限制",
+            "why": "Sensitive Content Analysis framework、Suggested Actions API、Trust Insights framework 可能涉及 AI 功能合规，影响开发者使用 AI 能力。",
+            "needs": "官方框架文档、第三方解读、开发者案例"
           },
           {
-            "angle": "开发者合规成本与审核风险变化",
-            "why": "身份信息要求、敏感内容分析框架等可能增加中小开发者的合规负担和审核不确定性。",
-            "needs": "真实案例（被拒或下架）、开发者反馈、法律/合规分析。"
+            "angle": "中国出海开发者的合规风险",
+            "why": "Section 3.1 和 14.8 的出口合规要求可能增加中国开发者的身份验证和合规成本。",
+            "needs": "官方条款原文、中国开发者反馈、法律分析"
           },
           {
-            "angle": "新 API 限制对功能开发的影响",
-            "why": "建议动作 API、信任洞察框架等限制可能影响 Siri 集成、快捷指令、用户数据收集等功能。",
-            "needs": "API 文档、开发者实测报告、与旧版对比。"
-          },
-          {
-            "angle": "与监管（如 DMA）的潜在冲突",
-            "why": "Apple 在欧盟 DMA 压力下调整政策，新规是否合规或引发新一轮争议。",
-            "needs": "监管文本、法律专家分析、Apple 官方声明。"
+            "angle": "无障碍条款对 App 功能的影响",
+            "why": "Section 3.3.4(A) 允许用户修改内容用于个人无障碍，可能影响 App 内容保护策略。",
+            "needs": "官方条款、开发者讨论、实际案例"
           }
         ],
         "missing_basics": [
-          "变更条款的完整原文（PDF 或网页）",
-          "变更生效时间及过渡期安排",
-          "Apple 官方 FAQ 或解读文档"
+          "Apple Developer Program License Agreement 最新版全文",
+          "App Store Review Guidelines 最新版全文",
+          "官方变更说明（diff 或摘要）"
         ],
         "missing_materials": [
-          "至少 2-3 个开发者社区的真实讨论帖（如 Hacker News、Reddit）",
-          "至少 1 个开发者因新规受影响的具体案例（如有）",
-          "与上一版本协议的对比分析（diff）",
-          "法律/合规分析网站（如 TechCrunch、The Verge）的报道",
+          "至少 2-3 篇第三方分析文章（如 MacRumors、9to5Mac、TechCrunch）",
+          "开发者反馈（论坛或社交媒体）",
+          "中国开发者社区讨论（掘金、V2EX、知乎）",
           "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
         ],
         "not_claimable": [
-          "变更对开发者有重大负面影响",
-          "变更导致审核通过率下降",
-          "变更影响特定类型应用（如 AI、健康、儿童类）",
-          "变更与欧盟 DMA 或其他监管要求冲突",
+          "具体变更内容",
+          "对开发者的实际影响程度",
+          "是否涉及 AI 相关限制",
+          "中国开发者是否面临额外合规风险",
           "不能在无补证结果时声称该选题已经具备可写条件。"
         ],
         "followup_queries": [
-          "Apple 是否已发布条款原文？请提供链接。",
-          "开发者社区（Hacker News、Reddit）是否有关于此次更新的讨论？",
-          "是否有开发者报告因新规被拒或下架？",
-          "Apple 是否提供 FAQ 或解读？"
+          "Apple Developer Program License Agreement 2025 changes",
+          "Apple App Review Guidelines 2025 update",
+          "Sensitive Content Analysis framework Apple requirements",
+          "Suggested Actions API Apple developer restrictions",
+          "Trust Insights framework Apple privacy",
+          "Apple 开发者协议 2025 变更 中国开发者",
+          "Apple 审核指南 2025 更新 影响",
+          "Apple developer identity export compliance requirements"
         ],
         "additional_search_queries": [
-          "Apple Developer Program License Agreement 2025 full text",
-          "App Review Guidelines 2025 update developer impact",
-          "Apple Sensitive Content Analysis framework requirements",
-          "Apple Suggested Actions API developer restrictions",
-          "Apple Trust Insights framework privacy compliance",
-          "Apple developer identity verification export compliance",
-          "Apple 3.3.4(A) personal accessibility modification terms",
-          "Apple developer agreement changes developer complaints"
+          "Apple Developer Program License Agreement 2025 changes",
+          "Apple App Review Guidelines 2025 update",
+          "Sensitive Content Analysis framework Apple requirements",
+          "Suggested Actions API Apple developer restrictions",
+          "Trust Insights framework Apple privacy",
+          "Apple 开发者协议 2025 变更 中国开发者",
+          "Apple 审核指南 2025 更新 影响",
+          "Apple developer identity export compliance requirements"
         ],
         "stop_conditions": [
-          "获取条款原文后，确认变更内容与摘要一致且无重大遗漏。",
-          "收集到至少 2 个开发者社区讨论帖，且无大规模负面反馈。",
-          "Apple 发布 FAQ 或解读，明确过渡期和合规要求。"
+          "获取官方完整变更条款",
+          "获取至少 2 篇第三方分析文章",
+          "获取开发者社区讨论（至少 5 条有实质内容的反馈）"
         ],
-        "confidence": 20.0,
+        "confidence": 0.0,
         "topic_direction": "traffic-rules",
         "topic_direction_title": "平台规则与流量生态",
         "report_type": "platform-rules",
         "research_plan": {
-          "core_question": "Apple 开发者许可协议和审核指南的具体变更内容是什么？这些变更对开发者的实际影响（如合规成本、审核通过率、功能限制）如何？",
+          "core_question": "Apple 开发者协议和审核指南的具体变更内容是什么？对开发者（尤其是中国出海开发者）的实际影响有哪些？",
           "must_verify": [
-            "变更的具体条款原文（尤其是 3.1, 14.8, 3.3.3(N)(Q)(R), 3.3.4(A)）",
-            "变更生效时间及过渡期安排",
-            "开发者社区（如 Hacker News、Reddit）的讨论和反馈",
-            "是否有开发者因新规被拒或下架的真实案例",
-            "Apple 官方是否提供解读或 FAQ"
+            "Apple 官方发布的完整变更日志（diff 或摘要）",
+            "变更生效日期和过渡期安排",
+            "Sensitive Content Analysis framework、Suggested Actions API、Trust Insights framework 的具体限制和合规要求",
+            "Section 3.1 和 14.8 关于开发者身份信息及出口合规的新要求",
+            "Section 3.3.4(A) 关于用户修改内容用于个人无障碍的条款"
           ],
           "search_queries": [
             "Apple Developer Program License Agreement 2025 changes",
-            "App Review Guidelines 2025 update developer impact",
-            "Apple Sensitive Content Analysis framework requirements",
-            "Apple Suggested Actions API developer restrictions",
-            "Apple Trust Insights framework privacy compliance",
-            "Apple developer identity verification export compliance",
-            "Apple 3.3.4(A) personal accessibility modification terms",
-            "Apple developer agreement changes developer complaints"
+            "Apple App Review Guidelines 2025 update",
+            "Sensitive Content Analysis framework Apple requirements",
+            "Suggested Actions API Apple developer restrictions",
+            "Trust Insights framework Apple privacy",
+            "Apple 开发者协议 2025 变更 中国开发者",
+            "Apple 审核指南 2025 更新 影响",
+            "Apple developer identity export compliance requirements"
           ],
           "best_sources_to_find": [
-            "Apple Developer 官方新闻页（developer.apple.com/news）",
-            "Apple Developer 论坛（developer.apple.com/forums）",
-            "Hacker News 讨论（news.ycombinator.com）",
-            "Reddit r/iOSProgramming 和 r/apple",
-            "知名开发者博客（如 Michael Tsai、Daring Fireball）",
-            "法律/合规分析网站（如 TechCrunch、The Verge 的开发者政策报道）"
+            "Apple Developer 官网新闻页（developer.apple.com/news）",
+            "Apple Developer Program License Agreement 全文（PDF）",
+            "App Store Review Guidelines 全文",
+            "Apple 开发者论坛（developer.apple.com/forums）",
+            "第三方开发者博客（如 MacRumors、9to5Mac、TechCrunch）",
+            "中国开发者社区（如掘金、V2EX、知乎）"
           ],
           "expert_challenge_points": [
-            "Sensitive Content Analysis 框架是否强制使用？对隐私和性能有何影响？",
-            "Suggested Actions API 的限制是否影响 Siri 集成或快捷指令功能？",
-            "Trust Insights 框架是否涉及用户数据收集？合规要求是否模糊？",
-            "开发者身份信息要求是否增加中小开发者的合规负担？",
-            "个人可访问性修改条款是否允许开发者绕过某些审核限制？"
+            "Sensitive Content Analysis framework 是否要求开发者披露或限制用户内容分析？",
+            "Suggested Actions API 是否限制了第三方推荐功能？",
+            "Trust Insights framework 是否涉及用户隐私数据收集？",
+            "Section 3.1 和 14.8 的出口合规要求是否影响中国开发者提交应用？",
+            "这些变更是否与欧盟 DMA 或其他监管压力有关？"
           ],
           "do_not_claim_yet": [
-            "变更对开发者有重大负面影响",
-            "变更导致审核通过率下降",
-            "变更影响特定类型应用（如 AI、健康、儿童类）",
-            "变更与欧盟 DMA 或其他监管要求冲突"
+            "具体变更内容（需阅读官方文档确认）",
+            "对开发者的实际影响程度（需分析条款）",
+            "是否涉及 AI 相关限制（需确认框架用途）",
+            "中国开发者是否面临额外合规风险（需结合中国法律）"
           ],
-          "can_publish_as_radar_if_missing": "可以，但需明确标注当前信息仅来自 Apple 官方摘要，具体条款和影响待验证。",
+          "can_publish_as_radar_if_missing": "否，因为缺乏具体变更内容和影响分析，无法形成有价值的 Radar 报告。",
           "downstream_materials_needed": [
-            "变更条款的完整原文（PDF 或网页）",
-            "Apple 官方 FAQ 或解读文档",
-            "至少 2-3 个开发者社区的真实讨论帖",
-            "至少 1 个开发者因新规受影响的具体案例（如有）",
-            "与上一版本协议的对比分析（diff）"
+            "Apple Developer Program License Agreement 最新版 PDF",
+            "App Store Review Guidelines 最新版",
+            "Apple 官方变更说明（如有）",
+            "至少 2-3 篇第三方分析文章",
+            "开发者反馈（论坛或社交媒体）"
           ]
         },
         "research_evidence": []
@@ -584,141 +530,123 @@
           "label": "暂缓",
           "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
         },
-        "core_question": "Apple 开发者许可协议和审核指南的具体变更内容是什么？这些变更对开发者的实际影响（如合规成本、审核通过率、功能限制）如何？",
-        "why_this_topic_matters": "Apple 平台规则直接影响 iOS/macOS 开发者的应用上架、功能实现和合规成本，尤其涉及敏感内容分析、建议动作 API、信任洞察框架等新条款，可能改变开发者的技术选型和审核策略。对于关注平台规则、出海合规的技术人，这是必须跟踪的信号。",
-        "fact_summary": [
-          "Apple 于 2025 年 4 月 2 日更新了开发者许可协议和 App Review 指南。",
-          "变更涉及开发者身份信息要求（3.1, 14.8）、敏感内容分析框架（3.3.3(N)）、建议动作 API（3.3.3(Q)）、信任洞察框架（3.3.3(R)）以及用户个人可访问性修改（3.3.4(A)）。",
-          "官方摘要未提供条款原文、生效时间、过渡期或详细解读。"
-        ],
-        "timeline": [
-          {
-            "date": "2025-04-02",
-            "event": "Apple 发布更新公告，摘要列出变更条款范围。"
-          }
-        ],
-        "evidence_table": [
-          {
-            "source": "Apple Developer News",
-            "url": "https://developer.apple.com/news/?id=a233fmpw",
-            "supports": "官方公告，确认协议和指南已更新，列出变更条款编号和简要说明。",
-            "reliability": "official"
-          }
-        ],
-        "logic_closure": "目前仅有一个官方来源，且内容为摘要，无法验证变更的具体措辞、生效时间、过渡期、开发者反馈和实际影响。逻辑上无法闭环，不能得出任何关于影响程度的结论。",
+        "core_question": "Apple 开发者协议和审核指南的具体变更内容是什么？对开发者（尤其是中国出海开发者）的实际影响有哪些？",
+        "why_this_topic_matters": "Apple 平台规则变化直接影响所有 iOS/macOS 开发者的合规成本、功能实现和上架流程。对于中国出海开发者，涉及出口合规、内容分析框架限制等敏感点，可能影响 App 功能设计和审核通过率。",
+        "fact_summary": [],
+        "timeline": [],
+        "evidence_table": [],
+        "logic_closure": "当前仅有官方新闻摘要，未获取完整变更条款和第三方分析，无法形成逻辑闭环。需补充证据后才能判断影响。",
         "writeable_angles": [
           {
-            "angle": "条款逐条解读：新规对开发者意味着什么？",
-            "why": "开发者最关心具体条款的改动和合规要求，逐条解读能提供直接价值。",
-            "needs": "条款原文（diff）、Apple 官方 FAQ、开发者社区讨论。"
+            "angle": "Apple 新规对 AI 相关 App 的限制",
+            "why": "Sensitive Content Analysis framework、Suggested Actions API、Trust Insights framework 可能涉及 AI 功能合规，影响开发者使用 AI 能力。",
+            "needs": "官方框架文档、第三方解读、开发者案例"
           },
           {
-            "angle": "开发者合规成本与审核风险变化",
-            "why": "身份信息要求、敏感内容分析框架等可能增加中小开发者的合规负担和审核不确定性。",
-            "needs": "真实案例（被拒或下架）、开发者反馈、法律/合规分析。"
+            "angle": "中国出海开发者的合规风险",
+            "why": "Section 3.1 和 14.8 的出口合规要求可能增加中国开发者的身份验证和合规成本。",
+            "needs": "官方条款原文、中国开发者反馈、法律分析"
           },
           {
-            "angle": "新 API 限制对功能开发的影响",
-            "why": "建议动作 API、信任洞察框架等限制可能影响 Siri 集成、快捷指令、用户数据收集等功能。",
-            "needs": "API 文档、开发者实测报告、与旧版对比。"
-          },
-          {
-            "angle": "与监管（如 DMA）的潜在冲突",
-            "why": "Apple 在欧盟 DMA 压力下调整政策，新规是否合规或引发新一轮争议。",
-            "needs": "监管文本、法律专家分析、Apple 官方声明。"
+            "angle": "无障碍条款对 App 功能的影响",
+            "why": "Section 3.3.4(A) 允许用户修改内容用于个人无障碍，可能影响 App 内容保护策略。",
+            "needs": "官方条款、开发者讨论、实际案例"
           }
         ],
         "missing_basics": [
-          "变更条款的完整原文（PDF 或网页）",
-          "变更生效时间及过渡期安排",
-          "Apple 官方 FAQ 或解读文档"
+          "Apple Developer Program License Agreement 最新版全文",
+          "App Store Review Guidelines 最新版全文",
+          "官方变更说明（diff 或摘要）"
         ],
         "missing_materials": [
-          "至少 2-3 个开发者社区的真实讨论帖（如 Hacker News、Reddit）",
-          "至少 1 个开发者因新规受影响的具体案例（如有）",
-          "与上一版本协议的对比分析（diff）",
-          "法律/合规分析网站（如 TechCrunch、The Verge）的报道",
+          "至少 2-3 篇第三方分析文章（如 MacRumors、9to5Mac、TechCrunch）",
+          "开发者反馈（论坛或社交媒体）",
+          "中国开发者社区讨论（掘金、V2EX、知乎）",
           "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
         ],
         "not_claimable": [
-          "变更对开发者有重大负面影响",
-          "变更导致审核通过率下降",
-          "变更影响特定类型应用（如 AI、健康、儿童类）",
-          "变更与欧盟 DMA 或其他监管要求冲突",
+          "具体变更内容",
+          "对开发者的实际影响程度",
+          "是否涉及 AI 相关限制",
+          "中国开发者是否面临额外合规风险",
           "不能在无补证结果时声称该选题已经具备可写条件。"
         ],
         "followup_queries": [
-          "Apple 是否已发布条款原文？请提供链接。",
-          "开发者社区（Hacker News、Reddit）是否有关于此次更新的讨论？",
-          "是否有开发者报告因新规被拒或下架？",
-          "Apple 是否提供 FAQ 或解读？"
+          "Apple Developer Program License Agreement 2025 changes",
+          "Apple App Review Guidelines 2025 update",
+          "Sensitive Content Analysis framework Apple requirements",
+          "Suggested Actions API Apple developer restrictions",
+          "Trust Insights framework Apple privacy",
+          "Apple 开发者协议 2025 变更 中国开发者",
+          "Apple 审核指南 2025 更新 影响",
+          "Apple developer identity export compliance requirements"
         ],
         "additional_search_queries": [
-          "Apple Developer Program License Agreement 2025 full text",
-          "App Review Guidelines 2025 update developer impact",
-          "Apple Sensitive Content Analysis framework requirements",
-          "Apple Suggested Actions API developer restrictions",
-          "Apple Trust Insights framework privacy compliance",
-          "Apple developer identity verification export compliance",
-          "Apple 3.3.4(A) personal accessibility modification terms",
-          "Apple developer agreement changes developer complaints"
+          "Apple Developer Program License Agreement 2025 changes",
+          "Apple App Review Guidelines 2025 update",
+          "Sensitive Content Analysis framework Apple requirements",
+          "Suggested Actions API Apple developer restrictions",
+          "Trust Insights framework Apple privacy",
+          "Apple 开发者协议 2025 变更 中国开发者",
+          "Apple 审核指南 2025 更新 影响",
+          "Apple developer identity export compliance requirements"
         ],
         "stop_conditions": [
-          "获取条款原文后，确认变更内容与摘要一致且无重大遗漏。",
-          "收集到至少 2 个开发者社区讨论帖，且无大规模负面反馈。",
-          "Apple 发布 FAQ 或解读，明确过渡期和合规要求。"
+          "获取官方完整变更条款",
+          "获取至少 2 篇第三方分析文章",
+          "获取开发者社区讨论（至少 5 条有实质内容的反馈）"
         ],
-        "confidence": 20.0,
+        "confidence": 0.0,
         "topic_direction": "traffic-rules",
         "topic_direction_title": "平台规则与流量生态",
         "report_type": "platform-rules",
         "research_plan": {
-          "core_question": "Apple 开发者许可协议和审核指南的具体变更内容是什么？这些变更对开发者的实际影响（如合规成本、审核通过率、功能限制）如何？",
+          "core_question": "Apple 开发者协议和审核指南的具体变更内容是什么？对开发者（尤其是中国出海开发者）的实际影响有哪些？",
           "must_verify": [
-            "变更的具体条款原文（尤其是 3.1, 14.8, 3.3.3(N)(Q)(R), 3.3.4(A)）",
-            "变更生效时间及过渡期安排",
-            "开发者社区（如 Hacker News、Reddit）的讨论和反馈",
-            "是否有开发者因新规被拒或下架的真实案例",
-            "Apple 官方是否提供解读或 FAQ"
+            "Apple 官方发布的完整变更日志（diff 或摘要）",
+            "变更生效日期和过渡期安排",
+            "Sensitive Content Analysis framework、Suggested Actions API、Trust Insights framework 的具体限制和合规要求",
+            "Section 3.1 和 14.8 关于开发者身份信息及出口合规的新要求",
+            "Section 3.3.4(A) 关于用户修改内容用于个人无障碍的条款"
           ],
           "search_queries": [
             "Apple Developer Program License Agreement 2025 changes",
-            "App Review Guidelines 2025 update developer impact",
-            "Apple Sensitive Content Analysis framework requirements",
-            "Apple Suggested Actions API developer restrictions",
-            "Apple Trust Insights framework privacy compliance",
-            "Apple developer identity verification export compliance",
-            "Apple 3.3.4(A) personal accessibility modification terms",
-            "Apple developer agreement changes developer complaints"
+            "Apple App Review Guidelines 2025 update",
+            "Sensitive Content Analysis framework Apple requirements",
+            "Suggested Actions API Apple developer restrictions",
+            "Trust Insights framework Apple privacy",
+            "Apple 开发者协议 2025 变更 中国开发者",
+            "Apple 审核指南 2025 更新 影响",
+            "Apple developer identity export compliance requirements"
           ],
           "best_sources_to_find": [
-            "Apple Developer 官方新闻页（developer.apple.com/news）",
-            "Apple Developer 论坛（developer.apple.com/forums）",
-            "Hacker News 讨论（news.ycombinator.com）",
-            "Reddit r/iOSProgramming 和 r/apple",
-            "知名开发者博客（如 Michael Tsai、Daring Fireball）",
-            "法律/合规分析网站（如 TechCrunch、The Verge 的开发者政策报道）"
+            "Apple Developer 官网新闻页（developer.apple.com/news）",
+            "Apple Developer Program License Agreement 全文（PDF）",
+            "App Store Review Guidelines 全文",
+            "Apple 开发者论坛（developer.apple.com/forums）",
+            "第三方开发者博客（如 MacRumors、9to5Mac、TechCrunch）",
+            "中国开发者社区（如掘金、V2EX、知乎）"
           ],
           "expert_challenge_points": [
-            "Sensitive Content Analysis 框架是否强制使用？对隐私和性能有何影响？",
-            "Suggested Actions API 的限制是否影响 Siri 集成或快捷指令功能？",
-            "Trust Insights 框架是否涉及用户数据收集？合规要求是否模糊？",
-            "开发者身份信息要求是否增加中小开发者的合规负担？",
-            "个人可访问性修改条款是否允许开发者绕过某些审核限制？"
+            "Sensitive Content Analysis framework 是否要求开发者披露或限制用户内容分析？",
+            "Suggested Actions API 是否限制了第三方推荐功能？",
+            "Trust Insights framework 是否涉及用户隐私数据收集？",
+            "Section 3.1 和 14.8 的出口合规要求是否影响中国开发者提交应用？",
+            "这些变更是否与欧盟 DMA 或其他监管压力有关？"
           ],
           "do_not_claim_yet": [
-            "变更对开发者有重大负面影响",
-            "变更导致审核通过率下降",
-            "变更影响特定类型应用（如 AI、健康、儿童类）",
-            "变更与欧盟 DMA 或其他监管要求冲突"
+            "具体变更内容（需阅读官方文档确认）",
+            "对开发者的实际影响程度（需分析条款）",
+            "是否涉及 AI 相关限制（需确认框架用途）",
+            "中国开发者是否面临额外合规风险（需结合中国法律）"
           ],
-          "can_publish_as_radar_if_missing": "可以，但需明确标注当前信息仅来自 Apple 官方摘要，具体条款和影响待验证。",
+          "can_publish_as_radar_if_missing": "否，因为缺乏具体变更内容和影响分析，无法形成有价值的 Radar 报告。",
           "downstream_materials_needed": [
-            "变更条款的完整原文（PDF 或网页）",
-            "Apple 官方 FAQ 或解读文档",
-            "至少 2-3 个开发者社区的真实讨论帖",
-            "至少 1 个开发者因新规受影响的具体案例（如有）",
-            "与上一版本协议的对比分析（diff）"
+            "Apple Developer Program License Agreement 最新版 PDF",
+            "App Store Review Guidelines 最新版",
+            "Apple 官方变更说明（如有）",
+            "至少 2-3 篇第三方分析文章",
+            "开发者反馈（论坛或社交媒体）"
           ]
         },
         "research_evidence": []

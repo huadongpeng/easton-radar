@@ -1,0 +1,723 @@
+{
+  "id": "20260610-ai-c77aa3ba",
+  "title": "机会拆解：分享团队提升 ai 开发效率的经验",
+  "original_title": "分享团队提升 ai 开发效率的经验，如何达到人均每天数十次的代码提交",
+  "url": "https://www.v2ex.com/t/1219122",
+  "summary": "年初的时候 openclaw 刚火起来，我们惊讶于 Peter Steinberger 每天的开发效率，OpenClaw 峰值有 1 天 merge 600 commits 。我们便开始重新回顾和研究，开始一步步的向更高效率靠拢。 这小半年来我们从每天个位数的提交提升到数十次，巅峰期某天达到上百次，效率明显提升，所以我们把一点点的经验和使用的工具 Agentflow 和 it-runner 分享给大家。 （如下是 Agentflow 项目的最近提交截图） 先聊开发过程中的几个问题： 1 、手动操作和记忆消耗 AI 写代码的能力越来越强，但真正落到具体业务开发时，很多事情还是停留在“人肉调度”的阶段。 某个硬件或服务端项目，需要记住端口、环境变量、部署路径、上传方式、重启命令； 调试业务问题时，不只是跑单元测试，还要看日志、清缓存、重启服务、反复验证； 很多任务需要长期或重复运行，比如构建、部署、联调； AI 改完代码后，最好能自动执行固定流程，失败后继续让 AI 分析、修复、再验证， 避免开发者手动收集信息再转交。 这些事情单独看都不复杂，但每天重复很多次，就会非常消耗精力和考验记忆力 2 、并行开发和团队协作 我们经常同时跑多个项目、多个任务、多个 Agent 。以前用 tmux 、Cursor 、VSCode 也能跑，但时间一长会遇到几个问题： 不方便管理多个项目和多个任务； 不方便回看每个任务的历史记录； 不方便在手机或远程环境里查看进度、接手操作； 多个 Agent 同时改代码时，分支、目录、上下文容易混乱。 团队成员共同开发一个任务时，不方便共享上下文，也不容易看到其他人是怎么思考和推进任务的。 这一点在多人协作时尤其明显。 以前一个任务如果是多个人一起参与，很多上下文其实散落在微信群、飞书、终端记录、Git commit 、PR 描述里。别人要接手时，往往只能看到最终代码，很难知道前面是怎么思考的、试过哪些方案、为什么这么改。 在 AgentFlow 里，同一个任务可以由团队成员共享同一个面板。大家可以直接看到任务进度、Agent 的执行过程、其他成员写过的",
+  "source_category": "developer_business",
+  "source_category_title": "开发者副业与独立开发",
+  "topic_direction": "ai-frontier",
+  "topic_direction_title": "AI 前沿与工具链",
+  "topic_direction_short_title": "AI 前沿",
+  "topic_direction_description": "AI 模型、Agent、开发工具、API、云服务和底层能力变化。重点看这次变化到底是什么、时间线如何、会不会改变普通技术人的工作方式、成本结构和工具链。",
+  "source_name": "V2EX 分享创造",
+  "original_source_name": "分享创造",
+  "source_type": "rss",
+  "feed_url": "https://v2ex.com/feed/create.xml",
+  "published_at": "2026-06-09T08:47:12Z",
+  "fetched_at": "2026-06-10T01:20:47.163967+00:00",
+  "decision": "deep_dive",
+  "report_type": "case-study",
+  "report_type_title": "案例复盘",
+  "score": 85,
+  "reader_hook": "这条线索可能关联副业、独立开发或出海机会，需要继续拆门槛、用户和现金流。",
+  "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
+  "evidence_level": "near_source",
+  "source_priority": "P2 可参考源",
+  "reason": "AI开发效率提升经验，可复制性强",
+  "collection_fit": "部分符合收集原则：可以进入观察池，但证据链或读者入口还不够完整。",
+  "investigation_direction": "优先追需求是否真实、用户是谁、付费路径、最小验证成本和停止信号。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。",
+    "当前仅适合观察，不宜写成深度结论。"
+  ],
+  "facts": [
+    {
+      "claim": "V2EX 分享创造 发布/收录了这条原始线索：分享团队提升 ai 开发效率的经验，如何达到人均每天数十次的代码提交",
+      "type": "confirmed_fact",
+      "source_url": "https://www.v2ex.com/t/1219122",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "V2EX 分享创造",
+      "url": "https://www.v2ex.com/t/1219122",
+      "source_type": "near_source",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "ai",
+        "agent",
+        "cursor"
+      ],
+      "dev": [
+        "开发"
+      ]
+    },
+    "source_host": "www.v2ex.com",
+    "source_type": "rss",
+    "heuristic": false,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "这条线索可能关联副业、独立开发或出海机会，需要继续拆门槛、用户和现金流。",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://v2ex.com/feed/create.xml",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。",
+      "当前仅适合观察，不宜写成深度结论。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+    },
+    "core_question": "Agentflow 和 it-runner 这两个工具的具体功能、定价、用户规模、与现有竞品（如 Cursor、Copilot）的差异是什么？团队的真实效率提升数据是否可验证？",
+    "why_this_topic_matters": "AI 开发效率提升是当前技术人普遍关注的话题，原帖中提到的“人均每天数十次提交”和“团队协作上下文共享”直击痛点，若经验可复制，对独立开发者和小团队有实际参考价值。",
+    "fact_summary": [
+      "原帖作者团队通过使用 Agentflow 和 it-runner 工具，将人均每天代码提交次数从个位数提升到数十次，巅峰期达到上百次。",
+      "原帖列举了开发过程中的三个痛点：手动操作和记忆消耗、并行开发和团队协作、上下文共享困难。",
+      "Agentflow 支持团队成员共享任务面板，可查看任务进度、Agent 执行过程和其他成员的思考记录。",
+      "原帖提到受 Peter Steinberger 的 OpenClaw 项目（峰值 1 天 merge 600 commits）启发。"
+    ],
+    "timeline": [
+      {
+        "date": "2025-04-10",
+        "event": "V2EX 用户发布帖子《分享团队提升 ai 开发效率的经验，如何达到人均每天数十次的代码提交》"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "V2EX 原帖",
+        "url": "https://www.v2ex.com/t/1219122",
+        "supports": "团队使用 Agentflow 和 it-runner 提升开发效率，人均提交次数从个位数提升到数十次",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "逻辑链条基本完整：团队识别痛点 → 引入工具 → 效率提升。但关键环节“工具如何具体解决痛点”缺乏细节，且效率提升数据仅来自作者自述，无第三方验证。",
+    "writeable_angles": [
+      {
+        "angle": "工具评测：Agentflow 和 it-runner 的功能、定价、与 Cursor/Copilot 的对比",
+        "why": "读者需要知道这些工具是否值得尝试，以及它们与现有工具的差异。",
+        "needs": "Agentflow 和 it-runner 的官方文档、定价页面、GitHub 仓库、用户评测"
+      },
+      {
+        "angle": "效率提升方法论：从原帖经验提炼可复用的开发流程改进策略",
+        "why": "即使工具不通用，方法论（如自动化固定流程、共享上下文）对团队有参考价值。",
+        "needs": "原帖作者进一步解释具体流程、工具配置细节、团队规模等"
+      },
+      {
+        "angle": "案例验证：寻找其他使用 Agentflow 或类似工具的团队，验证效率提升效果",
+        "why": "通过第三方案例增强可信度，避免单一来源偏差。",
+        "needs": "至少一个第三方用户或团队的评测、数据或访谈"
+      }
+    ],
+    "missing_basics": [
+      "Agentflow 和 it-runner 的官方文档或 README",
+      "Agentflow 和 it-runner 的定价信息",
+      "Agentflow 的 GitHub 仓库（stars、issues、活跃度）",
+      "原帖作者团队背景（公司名、成员、项目类型）"
+    ],
+    "missing_materials": [
+      "原帖中提到的“巅峰期某天达到上百次”的截图或日志",
+      "与 Cursor、Copilot 的功能对比表",
+      "至少一个第三方用户或团队的评测",
+      "Peter Steinberger 关于 OpenClaw 效率的原始讨论",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "Agentflow 是唯一能提升开发效率的工具",
+      "该团队的经验适用于所有技术团队",
+      "人均每天数十次提交是普遍可达到的指标",
+      "Agentflow 比 Cursor 或 Copilot 更优",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "Agentflow 和 it-runner 的官方网站和定价页面是什么？",
+      "Agentflow 在 GitHub 上的仓库地址和 star 数？",
+      "原帖作者是否在其他平台（如 Twitter、博客）分享过更多细节？",
+      "是否有第三方用户或团队公开评测过 Agentflow？"
+    ],
+    "additional_search_queries": [
+      "Agentflow AI development tool pricing",
+      "Agentflow GitHub",
+      "it-runner AI tool",
+      "Agentflow vs Cursor vs Copilot",
+      "Peter Steinberger OpenClaw 600 commits",
+      "V2EX 1219122 Agentflow"
+    ],
+    "stop_conditions": [
+      "Agentflow 和 it-runner 无公开官方信息或定价",
+      "原帖作者无法提供更多验证材料",
+      "无第三方用户或团队评测"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "case-study",
+    "research_plan": {
+      "core_question": "Agentflow 和 it-runner 这两个工具的具体功能、定价、用户规模、与现有竞品（如 Cursor、Copilot）的差异是什么？团队的真实效率提升数据是否可验证？",
+      "must_verify": [
+        "Agentflow 和 it-runner 的官方文档、GitHub 仓库、定价页面",
+        "团队背景（公司名、成员、过往项目）",
+        "人均每天数十次提交的原始数据来源（截图、公开日志）",
+        "与 Cursor、Copilot、tmux 等工具的对比数据"
+      ],
+      "search_queries": [
+        "Agentflow AI development tool",
+        "it-runner AI tool",
+        "Agentflow pricing",
+        "Agentflow GitHub",
+        "Peter Steinberger OpenClaw 600 commits",
+        "AI code review efficiency improvement case study",
+        "Cursor vs Agentflow comparison",
+        "V2EX 1219122 Agentflow"
+      ],
+      "best_sources_to_find": [
+        "Agentflow 官方网站和定价页",
+        "Agentflow GitHub 仓库（stars、issues、README）",
+        "it-runner 官方文档或 GitHub",
+        "V2EX 原帖作者的个人主页或历史发帖",
+        "Peter Steinberger 的 Twitter 或博客关于 OpenClaw 的讨论"
+      ],
+      "expert_challenge_points": [
+        "人均每天数十次提交是否包含自动化脚本或小修改？",
+        "效率提升是否可归因于工具而非团队规模或项目类型？",
+        "Agentflow 是否只是 tmux 或 Cursor 的封装？",
+        "团队协作中的上下文共享是否真的解决了根本问题？"
+      ],
+      "do_not_claim_yet": [
+        "Agentflow 是唯一能提升开发效率的工具",
+        "该团队的经验适用于所有技术团队",
+        "人均每天数十次提交是普遍可达到的指标"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取 Agentflow 和 it-runner 的官方信息或定价，且无第三方验证，则不宜发布；但若原帖提供了足够详细的截图和流程，可作为案例观察，但需标注“未独立验证”。",
+      "downstream_materials_needed": [
+        "Agentflow 和 it-runner 的官方文档或 README",
+        "至少一个第三方用户或团队的评测",
+        "与 Cursor、Copilot 的功能对比表",
+        "原帖中提到的“巅峰期某天达到上百次”的截图或日志"
+      ]
+    },
+    "research_evidence": []
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+    },
+    "core_question": "Agentflow 和 it-runner 这两个工具的具体功能、定价、用户规模、与现有竞品（如 Cursor、Copilot）的差异是什么？团队的真实效率提升数据是否可验证？",
+    "why_this_topic_matters": "AI 开发效率提升是当前技术人普遍关注的话题，原帖中提到的“人均每天数十次提交”和“团队协作上下文共享”直击痛点，若经验可复制，对独立开发者和小团队有实际参考价值。",
+    "fact_summary": [
+      "原帖作者团队通过使用 Agentflow 和 it-runner 工具，将人均每天代码提交次数从个位数提升到数十次，巅峰期达到上百次。",
+      "原帖列举了开发过程中的三个痛点：手动操作和记忆消耗、并行开发和团队协作、上下文共享困难。",
+      "Agentflow 支持团队成员共享任务面板，可查看任务进度、Agent 执行过程和其他成员的思考记录。",
+      "原帖提到受 Peter Steinberger 的 OpenClaw 项目（峰值 1 天 merge 600 commits）启发。"
+    ],
+    "timeline": [
+      {
+        "date": "2025-04-10",
+        "event": "V2EX 用户发布帖子《分享团队提升 ai 开发效率的经验，如何达到人均每天数十次的代码提交》"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "V2EX 原帖",
+        "url": "https://www.v2ex.com/t/1219122",
+        "supports": "团队使用 Agentflow 和 it-runner 提升开发效率，人均提交次数从个位数提升到数十次",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "逻辑链条基本完整：团队识别痛点 → 引入工具 → 效率提升。但关键环节“工具如何具体解决痛点”缺乏细节，且效率提升数据仅来自作者自述，无第三方验证。",
+    "writeable_angles": [
+      {
+        "angle": "工具评测：Agentflow 和 it-runner 的功能、定价、与 Cursor/Copilot 的对比",
+        "why": "读者需要知道这些工具是否值得尝试，以及它们与现有工具的差异。",
+        "needs": "Agentflow 和 it-runner 的官方文档、定价页面、GitHub 仓库、用户评测"
+      },
+      {
+        "angle": "效率提升方法论：从原帖经验提炼可复用的开发流程改进策略",
+        "why": "即使工具不通用，方法论（如自动化固定流程、共享上下文）对团队有参考价值。",
+        "needs": "原帖作者进一步解释具体流程、工具配置细节、团队规模等"
+      },
+      {
+        "angle": "案例验证：寻找其他使用 Agentflow 或类似工具的团队，验证效率提升效果",
+        "why": "通过第三方案例增强可信度，避免单一来源偏差。",
+        "needs": "至少一个第三方用户或团队的评测、数据或访谈"
+      }
+    ],
+    "missing_basics": [
+      "Agentflow 和 it-runner 的官方文档或 README",
+      "Agentflow 和 it-runner 的定价信息",
+      "Agentflow 的 GitHub 仓库（stars、issues、活跃度）",
+      "原帖作者团队背景（公司名、成员、项目类型）"
+    ],
+    "missing_materials": [
+      "原帖中提到的“巅峰期某天达到上百次”的截图或日志",
+      "与 Cursor、Copilot 的功能对比表",
+      "至少一个第三方用户或团队的评测",
+      "Peter Steinberger 关于 OpenClaw 效率的原始讨论",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "Agentflow 是唯一能提升开发效率的工具",
+      "该团队的经验适用于所有技术团队",
+      "人均每天数十次提交是普遍可达到的指标",
+      "Agentflow 比 Cursor 或 Copilot 更优",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "Agentflow 和 it-runner 的官方网站和定价页面是什么？",
+      "Agentflow 在 GitHub 上的仓库地址和 star 数？",
+      "原帖作者是否在其他平台（如 Twitter、博客）分享过更多细节？",
+      "是否有第三方用户或团队公开评测过 Agentflow？"
+    ],
+    "additional_search_queries": [
+      "Agentflow AI development tool pricing",
+      "Agentflow GitHub",
+      "it-runner AI tool",
+      "Agentflow vs Cursor vs Copilot",
+      "Peter Steinberger OpenClaw 600 commits",
+      "V2EX 1219122 Agentflow"
+    ],
+    "stop_conditions": [
+      "Agentflow 和 it-runner 无公开官方信息或定价",
+      "原帖作者无法提供更多验证材料",
+      "无第三方用户或团队评测"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "case-study",
+    "research_plan": {
+      "core_question": "Agentflow 和 it-runner 这两个工具的具体功能、定价、用户规模、与现有竞品（如 Cursor、Copilot）的差异是什么？团队的真实效率提升数据是否可验证？",
+      "must_verify": [
+        "Agentflow 和 it-runner 的官方文档、GitHub 仓库、定价页面",
+        "团队背景（公司名、成员、过往项目）",
+        "人均每天数十次提交的原始数据来源（截图、公开日志）",
+        "与 Cursor、Copilot、tmux 等工具的对比数据"
+      ],
+      "search_queries": [
+        "Agentflow AI development tool",
+        "it-runner AI tool",
+        "Agentflow pricing",
+        "Agentflow GitHub",
+        "Peter Steinberger OpenClaw 600 commits",
+        "AI code review efficiency improvement case study",
+        "Cursor vs Agentflow comparison",
+        "V2EX 1219122 Agentflow"
+      ],
+      "best_sources_to_find": [
+        "Agentflow 官方网站和定价页",
+        "Agentflow GitHub 仓库（stars、issues、README）",
+        "it-runner 官方文档或 GitHub",
+        "V2EX 原帖作者的个人主页或历史发帖",
+        "Peter Steinberger 的 Twitter 或博客关于 OpenClaw 的讨论"
+      ],
+      "expert_challenge_points": [
+        "人均每天数十次提交是否包含自动化脚本或小修改？",
+        "效率提升是否可归因于工具而非团队规模或项目类型？",
+        "Agentflow 是否只是 tmux 或 Cursor 的封装？",
+        "团队协作中的上下文共享是否真的解决了根本问题？"
+      ],
+      "do_not_claim_yet": [
+        "Agentflow 是唯一能提升开发效率的工具",
+        "该团队的经验适用于所有技术团队",
+        "人均每天数十次提交是普遍可达到的指标"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取 Agentflow 和 it-runner 的官方信息或定价，且无第三方验证，则不宜发布；但若原帖提供了足够详细的截图和流程，可作为案例观察，但需标注“未独立验证”。",
+      "downstream_materials_needed": [
+        "Agentflow 和 it-runner 的官方文档或 README",
+        "至少一个第三方用户或团队的评测",
+        "与 Cursor、Copilot 的功能对比表",
+        "原帖中提到的“巅峰期某天达到上百次”的截图或日志"
+      ]
+    },
+    "research_evidence": []
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260610-ai-c77aa3ba/",
+    "for_gpt_editor": {
+      "brief": "年初的时候 openclaw 刚火起来，我们惊讶于 Peter Steinberger 每天的开发效率，OpenClaw 峰值有 1 天 merge 600 commits 。我们便开始重新回顾和研究，开始一步步的向更高效率靠拢。 这小半年来我们从每天个位数的提交提升到数十次，巅峰期某天达到上百次，效率明显提升，所以我们把一点点的经验和使用的工具 Agentflow 和 it-runner 分享给大家。 （如下是 Agentflow 项目的最近提交截图） 先聊开发过程中的几个问题： 1 、手动操作和记忆消耗 AI 写代码的能力越来越强，但真正落到具体业务开发时，很多事情还是停留在“人肉调度”的阶段。 某个硬件或服务端项目，需要记住端口、环境变量、部署路径、上传方式、重启命令； 调试业务问题时，不只是跑单元测试，还要看日志、清缓存、重启服务、反复验证； 很多任务需要长期或重复运行，比如构建、部署、联调； AI 改完代码后，最好能自动执行固定流程，失败后继续让 AI 分析、修复、再验证， 避免开发者手动收集信息再转交。 这些事情单独看都不复杂，但每天重复很多次，就会非常消耗精力和考验记忆力 2 、并行开发和团队协作 我们经常同时跑多个项目、多个任务、多个 Agent 。以前用 tmux 、Cursor 、VSCode 也能跑，但时间一长会遇到几个问题： 不方便管理多个项目和多个任务； 不方便回看每个任务的历史记录； 不方便在手机或远程环境里查看进度、接手操作； 多个 Agent 同时改代码时，分支、目录、上下文容易混乱。 团队成员共同开发一个任务时，不方便共享上下文，也不容易看到其他人是怎么思考和推进任务的。 这一点在多人协作时尤其明显。 以前一个任务如果是多个人一起参与，很多上下文其实散落在微信群、飞书、终端记录、Git commit 、PR 描述里。别人要接手时，往往只能看到最终代码，很难知道前面是怎么思考的、试过哪些方案、为什么这么改。 在 AgentFlow 里，同一个任务可以由团队成员共享同一个面板。大家可以直接看到任务进度、Agent 的执行过程、其他成员写过的",
+      "title_seed": "机会拆解：分享团队提升 ai 开发效率的经验",
+      "original_title": "分享团队提升 ai 开发效率的经验，如何达到人均每天数十次的代码提交",
+      "source_url": "https://www.v2ex.com/t/1219122",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+        },
+        "core_question": "Agentflow 和 it-runner 这两个工具的具体功能、定价、用户规模、与现有竞品（如 Cursor、Copilot）的差异是什么？团队的真实效率提升数据是否可验证？",
+        "why_this_topic_matters": "AI 开发效率提升是当前技术人普遍关注的话题，原帖中提到的“人均每天数十次提交”和“团队协作上下文共享”直击痛点，若经验可复制，对独立开发者和小团队有实际参考价值。",
+        "fact_summary": [
+          "原帖作者团队通过使用 Agentflow 和 it-runner 工具，将人均每天代码提交次数从个位数提升到数十次，巅峰期达到上百次。",
+          "原帖列举了开发过程中的三个痛点：手动操作和记忆消耗、并行开发和团队协作、上下文共享困难。",
+          "Agentflow 支持团队成员共享任务面板，可查看任务进度、Agent 执行过程和其他成员的思考记录。",
+          "原帖提到受 Peter Steinberger 的 OpenClaw 项目（峰值 1 天 merge 600 commits）启发。"
+        ],
+        "timeline": [
+          {
+            "date": "2025-04-10",
+            "event": "V2EX 用户发布帖子《分享团队提升 ai 开发效率的经验，如何达到人均每天数十次的代码提交》"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "V2EX 原帖",
+            "url": "https://www.v2ex.com/t/1219122",
+            "supports": "团队使用 Agentflow 和 it-runner 提升开发效率，人均提交次数从个位数提升到数十次",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "逻辑链条基本完整：团队识别痛点 → 引入工具 → 效率提升。但关键环节“工具如何具体解决痛点”缺乏细节，且效率提升数据仅来自作者自述，无第三方验证。",
+        "writeable_angles": [
+          {
+            "angle": "工具评测：Agentflow 和 it-runner 的功能、定价、与 Cursor/Copilot 的对比",
+            "why": "读者需要知道这些工具是否值得尝试，以及它们与现有工具的差异。",
+            "needs": "Agentflow 和 it-runner 的官方文档、定价页面、GitHub 仓库、用户评测"
+          },
+          {
+            "angle": "效率提升方法论：从原帖经验提炼可复用的开发流程改进策略",
+            "why": "即使工具不通用，方法论（如自动化固定流程、共享上下文）对团队有参考价值。",
+            "needs": "原帖作者进一步解释具体流程、工具配置细节、团队规模等"
+          },
+          {
+            "angle": "案例验证：寻找其他使用 Agentflow 或类似工具的团队，验证效率提升效果",
+            "why": "通过第三方案例增强可信度，避免单一来源偏差。",
+            "needs": "至少一个第三方用户或团队的评测、数据或访谈"
+          }
+        ],
+        "missing_basics": [
+          "Agentflow 和 it-runner 的官方文档或 README",
+          "Agentflow 和 it-runner 的定价信息",
+          "Agentflow 的 GitHub 仓库（stars、issues、活跃度）",
+          "原帖作者团队背景（公司名、成员、项目类型）"
+        ],
+        "missing_materials": [
+          "原帖中提到的“巅峰期某天达到上百次”的截图或日志",
+          "与 Cursor、Copilot 的功能对比表",
+          "至少一个第三方用户或团队的评测",
+          "Peter Steinberger 关于 OpenClaw 效率的原始讨论",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "Agentflow 是唯一能提升开发效率的工具",
+          "该团队的经验适用于所有技术团队",
+          "人均每天数十次提交是普遍可达到的指标",
+          "Agentflow 比 Cursor 或 Copilot 更优",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "Agentflow 和 it-runner 的官方网站和定价页面是什么？",
+          "Agentflow 在 GitHub 上的仓库地址和 star 数？",
+          "原帖作者是否在其他平台（如 Twitter、博客）分享过更多细节？",
+          "是否有第三方用户或团队公开评测过 Agentflow？"
+        ],
+        "additional_search_queries": [
+          "Agentflow AI development tool pricing",
+          "Agentflow GitHub",
+          "it-runner AI tool",
+          "Agentflow vs Cursor vs Copilot",
+          "Peter Steinberger OpenClaw 600 commits",
+          "V2EX 1219122 Agentflow"
+        ],
+        "stop_conditions": [
+          "Agentflow 和 it-runner 无公开官方信息或定价",
+          "原帖作者无法提供更多验证材料",
+          "无第三方用户或团队评测"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "case-study",
+        "research_plan": {
+          "core_question": "Agentflow 和 it-runner 这两个工具的具体功能、定价、用户规模、与现有竞品（如 Cursor、Copilot）的差异是什么？团队的真实效率提升数据是否可验证？",
+          "must_verify": [
+            "Agentflow 和 it-runner 的官方文档、GitHub 仓库、定价页面",
+            "团队背景（公司名、成员、过往项目）",
+            "人均每天数十次提交的原始数据来源（截图、公开日志）",
+            "与 Cursor、Copilot、tmux 等工具的对比数据"
+          ],
+          "search_queries": [
+            "Agentflow AI development tool",
+            "it-runner AI tool",
+            "Agentflow pricing",
+            "Agentflow GitHub",
+            "Peter Steinberger OpenClaw 600 commits",
+            "AI code review efficiency improvement case study",
+            "Cursor vs Agentflow comparison",
+            "V2EX 1219122 Agentflow"
+          ],
+          "best_sources_to_find": [
+            "Agentflow 官方网站和定价页",
+            "Agentflow GitHub 仓库（stars、issues、README）",
+            "it-runner 官方文档或 GitHub",
+            "V2EX 原帖作者的个人主页或历史发帖",
+            "Peter Steinberger 的 Twitter 或博客关于 OpenClaw 的讨论"
+          ],
+          "expert_challenge_points": [
+            "人均每天数十次提交是否包含自动化脚本或小修改？",
+            "效率提升是否可归因于工具而非团队规模或项目类型？",
+            "Agentflow 是否只是 tmux 或 Cursor 的封装？",
+            "团队协作中的上下文共享是否真的解决了根本问题？"
+          ],
+          "do_not_claim_yet": [
+            "Agentflow 是唯一能提升开发效率的工具",
+            "该团队的经验适用于所有技术团队",
+            "人均每天数十次提交是普遍可达到的指标"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取 Agentflow 和 it-runner 的官方信息或定价，且无第三方验证，则不宜发布；但若原帖提供了足够详细的截图和流程，可作为案例观察，但需标注“未独立验证”。",
+          "downstream_materials_needed": [
+            "Agentflow 和 it-runner 的官方文档或 README",
+            "至少一个第三方用户或团队的评测",
+            "与 Cursor、Copilot 的功能对比表",
+            "原帖中提到的“巅峰期某天达到上百次”的截图或日志"
+          ]
+        },
+        "research_evidence": []
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+        },
+        "core_question": "Agentflow 和 it-runner 这两个工具的具体功能、定价、用户规模、与现有竞品（如 Cursor、Copilot）的差异是什么？团队的真实效率提升数据是否可验证？",
+        "why_this_topic_matters": "AI 开发效率提升是当前技术人普遍关注的话题，原帖中提到的“人均每天数十次提交”和“团队协作上下文共享”直击痛点，若经验可复制，对独立开发者和小团队有实际参考价值。",
+        "fact_summary": [
+          "原帖作者团队通过使用 Agentflow 和 it-runner 工具，将人均每天代码提交次数从个位数提升到数十次，巅峰期达到上百次。",
+          "原帖列举了开发过程中的三个痛点：手动操作和记忆消耗、并行开发和团队协作、上下文共享困难。",
+          "Agentflow 支持团队成员共享任务面板，可查看任务进度、Agent 执行过程和其他成员的思考记录。",
+          "原帖提到受 Peter Steinberger 的 OpenClaw 项目（峰值 1 天 merge 600 commits）启发。"
+        ],
+        "timeline": [
+          {
+            "date": "2025-04-10",
+            "event": "V2EX 用户发布帖子《分享团队提升 ai 开发效率的经验，如何达到人均每天数十次的代码提交》"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "V2EX 原帖",
+            "url": "https://www.v2ex.com/t/1219122",
+            "supports": "团队使用 Agentflow 和 it-runner 提升开发效率，人均提交次数从个位数提升到数十次",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "逻辑链条基本完整：团队识别痛点 → 引入工具 → 效率提升。但关键环节“工具如何具体解决痛点”缺乏细节，且效率提升数据仅来自作者自述，无第三方验证。",
+        "writeable_angles": [
+          {
+            "angle": "工具评测：Agentflow 和 it-runner 的功能、定价、与 Cursor/Copilot 的对比",
+            "why": "读者需要知道这些工具是否值得尝试，以及它们与现有工具的差异。",
+            "needs": "Agentflow 和 it-runner 的官方文档、定价页面、GitHub 仓库、用户评测"
+          },
+          {
+            "angle": "效率提升方法论：从原帖经验提炼可复用的开发流程改进策略",
+            "why": "即使工具不通用，方法论（如自动化固定流程、共享上下文）对团队有参考价值。",
+            "needs": "原帖作者进一步解释具体流程、工具配置细节、团队规模等"
+          },
+          {
+            "angle": "案例验证：寻找其他使用 Agentflow 或类似工具的团队，验证效率提升效果",
+            "why": "通过第三方案例增强可信度，避免单一来源偏差。",
+            "needs": "至少一个第三方用户或团队的评测、数据或访谈"
+          }
+        ],
+        "missing_basics": [
+          "Agentflow 和 it-runner 的官方文档或 README",
+          "Agentflow 和 it-runner 的定价信息",
+          "Agentflow 的 GitHub 仓库（stars、issues、活跃度）",
+          "原帖作者团队背景（公司名、成员、项目类型）"
+        ],
+        "missing_materials": [
+          "原帖中提到的“巅峰期某天达到上百次”的截图或日志",
+          "与 Cursor、Copilot 的功能对比表",
+          "至少一个第三方用户或团队的评测",
+          "Peter Steinberger 关于 OpenClaw 效率的原始讨论",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "Agentflow 是唯一能提升开发效率的工具",
+          "该团队的经验适用于所有技术团队",
+          "人均每天数十次提交是普遍可达到的指标",
+          "Agentflow 比 Cursor 或 Copilot 更优",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "Agentflow 和 it-runner 的官方网站和定价页面是什么？",
+          "Agentflow 在 GitHub 上的仓库地址和 star 数？",
+          "原帖作者是否在其他平台（如 Twitter、博客）分享过更多细节？",
+          "是否有第三方用户或团队公开评测过 Agentflow？"
+        ],
+        "additional_search_queries": [
+          "Agentflow AI development tool pricing",
+          "Agentflow GitHub",
+          "it-runner AI tool",
+          "Agentflow vs Cursor vs Copilot",
+          "Peter Steinberger OpenClaw 600 commits",
+          "V2EX 1219122 Agentflow"
+        ],
+        "stop_conditions": [
+          "Agentflow 和 it-runner 无公开官方信息或定价",
+          "原帖作者无法提供更多验证材料",
+          "无第三方用户或团队评测"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "case-study",
+        "research_plan": {
+          "core_question": "Agentflow 和 it-runner 这两个工具的具体功能、定价、用户规模、与现有竞品（如 Cursor、Copilot）的差异是什么？团队的真实效率提升数据是否可验证？",
+          "must_verify": [
+            "Agentflow 和 it-runner 的官方文档、GitHub 仓库、定价页面",
+            "团队背景（公司名、成员、过往项目）",
+            "人均每天数十次提交的原始数据来源（截图、公开日志）",
+            "与 Cursor、Copilot、tmux 等工具的对比数据"
+          ],
+          "search_queries": [
+            "Agentflow AI development tool",
+            "it-runner AI tool",
+            "Agentflow pricing",
+            "Agentflow GitHub",
+            "Peter Steinberger OpenClaw 600 commits",
+            "AI code review efficiency improvement case study",
+            "Cursor vs Agentflow comparison",
+            "V2EX 1219122 Agentflow"
+          ],
+          "best_sources_to_find": [
+            "Agentflow 官方网站和定价页",
+            "Agentflow GitHub 仓库（stars、issues、README）",
+            "it-runner 官方文档或 GitHub",
+            "V2EX 原帖作者的个人主页或历史发帖",
+            "Peter Steinberger 的 Twitter 或博客关于 OpenClaw 的讨论"
+          ],
+          "expert_challenge_points": [
+            "人均每天数十次提交是否包含自动化脚本或小修改？",
+            "效率提升是否可归因于工具而非团队规模或项目类型？",
+            "Agentflow 是否只是 tmux 或 Cursor 的封装？",
+            "团队协作中的上下文共享是否真的解决了根本问题？"
+          ],
+          "do_not_claim_yet": [
+            "Agentflow 是唯一能提升开发效率的工具",
+            "该团队的经验适用于所有技术团队",
+            "人均每天数十次提交是普遍可达到的指标"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取 Agentflow 和 it-runner 的官方信息或定价，且无第三方验证，则不宜发布；但若原帖提供了足够详细的截图和流程，可作为案例观察，但需标注“未独立验证”。",
+          "downstream_materials_needed": [
+            "Agentflow 和 it-runner 的官方文档或 README",
+            "至少一个第三方用户或团队的评测",
+            "与 Cursor、Copilot 的功能对比表",
+            "原帖中提到的“巅峰期某天达到上百次”的截图或日志"
+          ]
+        },
+        "research_evidence": []
+      },
+      "angle_candidates": [
+        "可复制条件",
+        "不可复制条件",
+        "失败或成功背后的非技术因素"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留普通读者入口，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "机会拆解：分享团队提升 ai 开发效率的经验 原始项目 GitHub 复盘",
+        "机会拆解：分享团队提升 ai 开发效率的经验 收入 增长 证据",
+        "机会拆解：分享团队提升 ai 开发效率的经验 失败 限制 反方证据"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
