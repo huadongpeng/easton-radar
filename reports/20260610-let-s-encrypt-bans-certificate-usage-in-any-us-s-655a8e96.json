@@ -1,0 +1,668 @@
+{
+  "id": "20260610-let-s-encrypt-bans-certificate-usage-in-any-us-s-655a8e96",
+  "title": "风险避坑：Hacker News 计费和成本变化",
+  "original_title": "Let's Encrypt bans certificate usage in any US sanctioned territory [pdf]",
+  "url": "https://letsencrypt.org/documents/LE-SA-v1.7-June-04-2026-diff.pdf",
+  "summary": "Comments",
+  "source_category": "developer_business",
+  "source_category_title": "开发者副业与独立开发",
+  "topic_direction": "ai-practice",
+  "topic_direction_title": "AI 实操与自动化",
+  "topic_direction_short_title": "AI 实操",
+  "topic_direction_description": "AI 落到具体需求的实操线索，例如个人助手、内容生产、办公自动化、数据分析、健康助手、客服、运营工具和工作流。重点看需求是否真实、能否低成本验证、普通读者能不能照着理解一遍。",
+  "source_name": "Hacker News",
+  "original_source_name": "Hacker News",
+  "source_type": "rss",
+  "feed_url": "https://news.ycombinator.com/rss",
+  "published_at": "2026-06-08T22:32:36+00:00",
+  "fetched_at": "2026-06-10T01:12:15.151044+00:00",
+  "decision": "deep_dive",
+  "report_type": "platform-rules",
+  "report_type_title": "平台规则",
+  "score": 85,
+  "reader_hook": "这条线索可能藏着成本、合规、封号或营销话术风险，适合先避坑。",
+  "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "影响开发者证书使用，合规风险高",
+  "collection_fit": "暂不符合深挖原则：相关性、证据质量或普通读者入口不足。",
+  "investigation_direction": "优先追反方证据、投诉、政策限制、成本陷阱和营销话术来源。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。"
+  ],
+  "facts": [
+    {
+      "claim": "Hacker News 发布/收录了这条原始线索：Let's Encrypt bans certificate usage in any US sanctioned territory [pdf]",
+      "type": "confirmed_fact",
+      "source_url": "https://letsencrypt.org/documents/LE-SA-v1.7-June-04-2026-diff.pdf",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Hacker News",
+      "url": "https://letsencrypt.org/documents/LE-SA-v1.7-June-04-2026-diff.pdf",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {},
+    "source_host": "letsencrypt.org",
+    "source_type": "rss",
+    "heuristic": false,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "这条线索可能藏着成本、合规、封号或营销话术风险，适合先避坑。",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://news.ycombinator.com/rss",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+    },
+    "core_question": "Let's Encrypt 新条款对开发者证书使用和合规的具体影响是什么？",
+    "why_this_topic_matters": "Let's Encrypt 是全球使用最广泛的免费证书颁发机构，其条款变更可能影响大量开发者的HTTPS证书获取和使用，尤其是涉及美国制裁地区的开发者。如果执行严格，可能导致部分用户无法续期或新申请证书，进而影响网站安全性和可访问性。这与技术人的现金流、合规风险直接相关。",
+    "fact_summary": [],
+    "timeline": [],
+    "evidence_table": [],
+    "logic_closure": "目前仅有标题和摘要，无法形成逻辑闭环。关键缺口：条款是否明确禁止制裁地区用户申请或使用证书？制裁名单具体包含哪些地区？已有证书如何处理？Let's Encrypt 如何执行地域限制？替代方案是否可行？",
+    "writeable_angles": [
+      {
+        "angle": "风险提示：Let's Encrypt 新条款对制裁地区开发者的潜在影响",
+        "why": "直接面向可能受影响的开发者，提供预警和应对思路。",
+        "needs": "确认制裁名单、条款原文、执行方式、替代方案成本。"
+      },
+      {
+        "angle": "合规避坑：美国制裁对开源基础设施的连锁反应",
+        "why": "从合规角度分析，帮助读者理解制裁如何影响技术工具链。",
+        "needs": "官方条款、制裁法律背景、社区反馈。"
+      },
+      {
+        "angle": "替代方案对比：自签证书、商业CA vs Let's Encrypt",
+        "why": "为受影响的开发者提供实用指南。",
+        "needs": "替代方案的成本、可用性、安全性对比数据。"
+      }
+    ],
+    "missing_basics": [
+      "Let's Encrypt SA v1.7 全文（PDF）",
+      "美国制裁国家/地区列表（OFAC）",
+      "Let's Encrypt 官方关于此条款的说明或 FAQ",
+      "社区讨论中开发者的实际反馈"
+    ],
+    "missing_materials": [
+      "条款原文中关于制裁地区的具体表述",
+      "制裁名单与 Let's Encrypt 服务地区的交集",
+      "Let's Encrypt 执行地域限制的技术手段（IP/地理位置/用户声明）",
+      "已有证书在制裁地区的处理方式（撤销/到期不续）",
+      "商业CA（如ZeroSSL、SSL.com）在制裁地区的可用性和价格",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "所有制裁地区用户证书立即失效",
+      "Let's Encrypt 主动检测并撤销证书",
+      "替代方案成本高昂或不可用",
+      "此条款对普通开发者有重大影响",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "Let's Encrypt SA v1.7 全文内容是什么？",
+      "美国制裁国家/地区列表（OFAC）具体包含哪些？",
+      "Let's Encrypt 社区论坛是否有关于此条款的讨论？",
+      "ZeroSSL、SSL.com 等商业CA是否在制裁地区提供服务？价格如何？"
+    ],
+    "additional_search_queries": [
+      "Let's Encrypt SA v1.7 sanctioned territories list",
+      "Let's Encrypt certificate revocation sanctioned countries",
+      "Let's Encrypt alternative for sanctioned regions",
+      "US sanctions impact on HTTPS certificates developers",
+      "Let's Encrypt community forum ban sanctioned territory",
+      "Let's Encrypt SA v1.7 June 2026 diff changes",
+      "自签证书 替代 Let's Encrypt 制裁地区",
+      "商业SSL证书 成本 制裁国家"
+    ],
+    "stop_conditions": [
+      "获取到 Let's Encrypt SA v1.7 全文，确认条款具体内容",
+      "确认制裁名单与 Let's Encrypt 服务地区的交集",
+      "获取到 Let's Encrypt 官方关于执行方式的说明",
+      "获取到至少一个可靠来源（官方或知名技术媒体）的报道"
+    ],
+    "confidence": 0.0,
+    "topic_direction": "ai-practice",
+    "topic_direction_title": "AI 实操与自动化",
+    "report_type": "platform-rules",
+    "research_plan": {
+      "core_question": "Let's Encrypt 新条款对开发者证书使用和合规的具体影响是什么？",
+      "must_verify": [
+        "Let's Encrypt 新条款的具体生效日期和适用范围",
+        "被制裁地区列表及对开发者证书使用的影响",
+        "已有证书在制裁地区的处理方式（撤销/到期不续）",
+        "替代方案（如自签证书、商业CA）的成本和可行性"
+      ],
+      "search_queries": [
+        "Let's Encrypt SA v1.7 sanctioned territories list",
+        "Let's Encrypt certificate revocation sanctioned countries",
+        "Let's Encrypt alternative for sanctioned regions",
+        "US sanctions impact on HTTPS certificates developers",
+        "Let's Encrypt community forum ban sanctioned territory",
+        "Let's Encrypt SA v1.7 June 2026 diff changes",
+        "自签证书 替代 Let's Encrypt 制裁地区",
+        "商业SSL证书 成本 制裁国家"
+      ],
+      "best_sources_to_find": [
+        "Let's Encrypt 官方文档和社区论坛",
+        "Let's Encrypt 证书政策页面",
+        "美国财政部制裁名单（OFAC）",
+        "开发者博客或技术媒体关于此事的报道",
+        "GitHub 相关讨论或 issue"
+      ],
+      "expert_challenge_points": [
+        "条款是否明确禁止制裁地区用户申请新证书，还是仅禁止使用？",
+        "Let's Encrypt 如何执行地域限制（IP/地理位置/用户声明）？",
+        "制裁地区开发者是否有合法替代方案（如商业CA）？",
+        "此条款是否影响全球开发者对 Let's Encrypt 的信任？"
+      ],
+      "do_not_claim_yet": [
+        "所有制裁地区用户证书立即失效",
+        "Let's Encrypt 主动检测并撤销证书",
+        "替代方案成本高昂或不可用",
+        "此条款对普通开发者有重大影响"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法确认具体影响范围和执行方式，建议仅作为风险提示发布，不深入分析。",
+      "downstream_materials_needed": [
+        "Let's Encrypt SA v1.7 全文（PDF）",
+        "美国制裁国家/地区列表",
+        "Let's Encrypt 官方关于此条款的说明或 FAQ",
+        "社区讨论中开发者的实际反馈",
+        "商业CA（如ZeroSSL、SSL.com）在制裁地区的可用性"
+      ]
+    },
+    "research_evidence": []
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+    },
+    "core_question": "Let's Encrypt 新条款对开发者证书使用和合规的具体影响是什么？",
+    "why_this_topic_matters": "Let's Encrypt 是全球使用最广泛的免费证书颁发机构，其条款变更可能影响大量开发者的HTTPS证书获取和使用，尤其是涉及美国制裁地区的开发者。如果执行严格，可能导致部分用户无法续期或新申请证书，进而影响网站安全性和可访问性。这与技术人的现金流、合规风险直接相关。",
+    "fact_summary": [],
+    "timeline": [],
+    "evidence_table": [],
+    "logic_closure": "目前仅有标题和摘要，无法形成逻辑闭环。关键缺口：条款是否明确禁止制裁地区用户申请或使用证书？制裁名单具体包含哪些地区？已有证书如何处理？Let's Encrypt 如何执行地域限制？替代方案是否可行？",
+    "writeable_angles": [
+      {
+        "angle": "风险提示：Let's Encrypt 新条款对制裁地区开发者的潜在影响",
+        "why": "直接面向可能受影响的开发者，提供预警和应对思路。",
+        "needs": "确认制裁名单、条款原文、执行方式、替代方案成本。"
+      },
+      {
+        "angle": "合规避坑：美国制裁对开源基础设施的连锁反应",
+        "why": "从合规角度分析，帮助读者理解制裁如何影响技术工具链。",
+        "needs": "官方条款、制裁法律背景、社区反馈。"
+      },
+      {
+        "angle": "替代方案对比：自签证书、商业CA vs Let's Encrypt",
+        "why": "为受影响的开发者提供实用指南。",
+        "needs": "替代方案的成本、可用性、安全性对比数据。"
+      }
+    ],
+    "missing_basics": [
+      "Let's Encrypt SA v1.7 全文（PDF）",
+      "美国制裁国家/地区列表（OFAC）",
+      "Let's Encrypt 官方关于此条款的说明或 FAQ",
+      "社区讨论中开发者的实际反馈"
+    ],
+    "missing_materials": [
+      "条款原文中关于制裁地区的具体表述",
+      "制裁名单与 Let's Encrypt 服务地区的交集",
+      "Let's Encrypt 执行地域限制的技术手段（IP/地理位置/用户声明）",
+      "已有证书在制裁地区的处理方式（撤销/到期不续）",
+      "商业CA（如ZeroSSL、SSL.com）在制裁地区的可用性和价格",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "所有制裁地区用户证书立即失效",
+      "Let's Encrypt 主动检测并撤销证书",
+      "替代方案成本高昂或不可用",
+      "此条款对普通开发者有重大影响",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "Let's Encrypt SA v1.7 全文内容是什么？",
+      "美国制裁国家/地区列表（OFAC）具体包含哪些？",
+      "Let's Encrypt 社区论坛是否有关于此条款的讨论？",
+      "ZeroSSL、SSL.com 等商业CA是否在制裁地区提供服务？价格如何？"
+    ],
+    "additional_search_queries": [
+      "Let's Encrypt SA v1.7 sanctioned territories list",
+      "Let's Encrypt certificate revocation sanctioned countries",
+      "Let's Encrypt alternative for sanctioned regions",
+      "US sanctions impact on HTTPS certificates developers",
+      "Let's Encrypt community forum ban sanctioned territory",
+      "Let's Encrypt SA v1.7 June 2026 diff changes",
+      "自签证书 替代 Let's Encrypt 制裁地区",
+      "商业SSL证书 成本 制裁国家"
+    ],
+    "stop_conditions": [
+      "获取到 Let's Encrypt SA v1.7 全文，确认条款具体内容",
+      "确认制裁名单与 Let's Encrypt 服务地区的交集",
+      "获取到 Let's Encrypt 官方关于执行方式的说明",
+      "获取到至少一个可靠来源（官方或知名技术媒体）的报道"
+    ],
+    "confidence": 0.0,
+    "topic_direction": "ai-practice",
+    "topic_direction_title": "AI 实操与自动化",
+    "report_type": "platform-rules",
+    "research_plan": {
+      "core_question": "Let's Encrypt 新条款对开发者证书使用和合规的具体影响是什么？",
+      "must_verify": [
+        "Let's Encrypt 新条款的具体生效日期和适用范围",
+        "被制裁地区列表及对开发者证书使用的影响",
+        "已有证书在制裁地区的处理方式（撤销/到期不续）",
+        "替代方案（如自签证书、商业CA）的成本和可行性"
+      ],
+      "search_queries": [
+        "Let's Encrypt SA v1.7 sanctioned territories list",
+        "Let's Encrypt certificate revocation sanctioned countries",
+        "Let's Encrypt alternative for sanctioned regions",
+        "US sanctions impact on HTTPS certificates developers",
+        "Let's Encrypt community forum ban sanctioned territory",
+        "Let's Encrypt SA v1.7 June 2026 diff changes",
+        "自签证书 替代 Let's Encrypt 制裁地区",
+        "商业SSL证书 成本 制裁国家"
+      ],
+      "best_sources_to_find": [
+        "Let's Encrypt 官方文档和社区论坛",
+        "Let's Encrypt 证书政策页面",
+        "美国财政部制裁名单（OFAC）",
+        "开发者博客或技术媒体关于此事的报道",
+        "GitHub 相关讨论或 issue"
+      ],
+      "expert_challenge_points": [
+        "条款是否明确禁止制裁地区用户申请新证书，还是仅禁止使用？",
+        "Let's Encrypt 如何执行地域限制（IP/地理位置/用户声明）？",
+        "制裁地区开发者是否有合法替代方案（如商业CA）？",
+        "此条款是否影响全球开发者对 Let's Encrypt 的信任？"
+      ],
+      "do_not_claim_yet": [
+        "所有制裁地区用户证书立即失效",
+        "Let's Encrypt 主动检测并撤销证书",
+        "替代方案成本高昂或不可用",
+        "此条款对普通开发者有重大影响"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法确认具体影响范围和执行方式，建议仅作为风险提示发布，不深入分析。",
+      "downstream_materials_needed": [
+        "Let's Encrypt SA v1.7 全文（PDF）",
+        "美国制裁国家/地区列表",
+        "Let's Encrypt 官方关于此条款的说明或 FAQ",
+        "社区讨论中开发者的实际反馈",
+        "商业CA（如ZeroSSL、SSL.com）在制裁地区的可用性"
+      ]
+    },
+    "research_evidence": []
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260610-let-s-encrypt-bans-certificate-usage-in-any-us-s-655a8e96/",
+    "for_gpt_editor": {
+      "brief": "Comments",
+      "title_seed": "风险避坑：Hacker News 计费和成本变化",
+      "original_title": "Let's Encrypt bans certificate usage in any US sanctioned territory [pdf]",
+      "source_url": "https://letsencrypt.org/documents/LE-SA-v1.7-June-04-2026-diff.pdf",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+        },
+        "core_question": "Let's Encrypt 新条款对开发者证书使用和合规的具体影响是什么？",
+        "why_this_topic_matters": "Let's Encrypt 是全球使用最广泛的免费证书颁发机构，其条款变更可能影响大量开发者的HTTPS证书获取和使用，尤其是涉及美国制裁地区的开发者。如果执行严格，可能导致部分用户无法续期或新申请证书，进而影响网站安全性和可访问性。这与技术人的现金流、合规风险直接相关。",
+        "fact_summary": [],
+        "timeline": [],
+        "evidence_table": [],
+        "logic_closure": "目前仅有标题和摘要，无法形成逻辑闭环。关键缺口：条款是否明确禁止制裁地区用户申请或使用证书？制裁名单具体包含哪些地区？已有证书如何处理？Let's Encrypt 如何执行地域限制？替代方案是否可行？",
+        "writeable_angles": [
+          {
+            "angle": "风险提示：Let's Encrypt 新条款对制裁地区开发者的潜在影响",
+            "why": "直接面向可能受影响的开发者，提供预警和应对思路。",
+            "needs": "确认制裁名单、条款原文、执行方式、替代方案成本。"
+          },
+          {
+            "angle": "合规避坑：美国制裁对开源基础设施的连锁反应",
+            "why": "从合规角度分析，帮助读者理解制裁如何影响技术工具链。",
+            "needs": "官方条款、制裁法律背景、社区反馈。"
+          },
+          {
+            "angle": "替代方案对比：自签证书、商业CA vs Let's Encrypt",
+            "why": "为受影响的开发者提供实用指南。",
+            "needs": "替代方案的成本、可用性、安全性对比数据。"
+          }
+        ],
+        "missing_basics": [
+          "Let's Encrypt SA v1.7 全文（PDF）",
+          "美国制裁国家/地区列表（OFAC）",
+          "Let's Encrypt 官方关于此条款的说明或 FAQ",
+          "社区讨论中开发者的实际反馈"
+        ],
+        "missing_materials": [
+          "条款原文中关于制裁地区的具体表述",
+          "制裁名单与 Let's Encrypt 服务地区的交集",
+          "Let's Encrypt 执行地域限制的技术手段（IP/地理位置/用户声明）",
+          "已有证书在制裁地区的处理方式（撤销/到期不续）",
+          "商业CA（如ZeroSSL、SSL.com）在制裁地区的可用性和价格",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "所有制裁地区用户证书立即失效",
+          "Let's Encrypt 主动检测并撤销证书",
+          "替代方案成本高昂或不可用",
+          "此条款对普通开发者有重大影响",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "Let's Encrypt SA v1.7 全文内容是什么？",
+          "美国制裁国家/地区列表（OFAC）具体包含哪些？",
+          "Let's Encrypt 社区论坛是否有关于此条款的讨论？",
+          "ZeroSSL、SSL.com 等商业CA是否在制裁地区提供服务？价格如何？"
+        ],
+        "additional_search_queries": [
+          "Let's Encrypt SA v1.7 sanctioned territories list",
+          "Let's Encrypt certificate revocation sanctioned countries",
+          "Let's Encrypt alternative for sanctioned regions",
+          "US sanctions impact on HTTPS certificates developers",
+          "Let's Encrypt community forum ban sanctioned territory",
+          "Let's Encrypt SA v1.7 June 2026 diff changes",
+          "自签证书 替代 Let's Encrypt 制裁地区",
+          "商业SSL证书 成本 制裁国家"
+        ],
+        "stop_conditions": [
+          "获取到 Let's Encrypt SA v1.7 全文，确认条款具体内容",
+          "确认制裁名单与 Let's Encrypt 服务地区的交集",
+          "获取到 Let's Encrypt 官方关于执行方式的说明",
+          "获取到至少一个可靠来源（官方或知名技术媒体）的报道"
+        ],
+        "confidence": 0.0,
+        "topic_direction": "ai-practice",
+        "topic_direction_title": "AI 实操与自动化",
+        "report_type": "platform-rules",
+        "research_plan": {
+          "core_question": "Let's Encrypt 新条款对开发者证书使用和合规的具体影响是什么？",
+          "must_verify": [
+            "Let's Encrypt 新条款的具体生效日期和适用范围",
+            "被制裁地区列表及对开发者证书使用的影响",
+            "已有证书在制裁地区的处理方式（撤销/到期不续）",
+            "替代方案（如自签证书、商业CA）的成本和可行性"
+          ],
+          "search_queries": [
+            "Let's Encrypt SA v1.7 sanctioned territories list",
+            "Let's Encrypt certificate revocation sanctioned countries",
+            "Let's Encrypt alternative for sanctioned regions",
+            "US sanctions impact on HTTPS certificates developers",
+            "Let's Encrypt community forum ban sanctioned territory",
+            "Let's Encrypt SA v1.7 June 2026 diff changes",
+            "自签证书 替代 Let's Encrypt 制裁地区",
+            "商业SSL证书 成本 制裁国家"
+          ],
+          "best_sources_to_find": [
+            "Let's Encrypt 官方文档和社区论坛",
+            "Let's Encrypt 证书政策页面",
+            "美国财政部制裁名单（OFAC）",
+            "开发者博客或技术媒体关于此事的报道",
+            "GitHub 相关讨论或 issue"
+          ],
+          "expert_challenge_points": [
+            "条款是否明确禁止制裁地区用户申请新证书，还是仅禁止使用？",
+            "Let's Encrypt 如何执行地域限制（IP/地理位置/用户声明）？",
+            "制裁地区开发者是否有合法替代方案（如商业CA）？",
+            "此条款是否影响全球开发者对 Let's Encrypt 的信任？"
+          ],
+          "do_not_claim_yet": [
+            "所有制裁地区用户证书立即失效",
+            "Let's Encrypt 主动检测并撤销证书",
+            "替代方案成本高昂或不可用",
+            "此条款对普通开发者有重大影响"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法确认具体影响范围和执行方式，建议仅作为风险提示发布，不深入分析。",
+          "downstream_materials_needed": [
+            "Let's Encrypt SA v1.7 全文（PDF）",
+            "美国制裁国家/地区列表",
+            "Let's Encrypt 官方关于此条款的说明或 FAQ",
+            "社区讨论中开发者的实际反馈",
+            "商业CA（如ZeroSSL、SSL.com）在制裁地区的可用性"
+          ]
+        },
+        "research_evidence": []
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+        },
+        "core_question": "Let's Encrypt 新条款对开发者证书使用和合规的具体影响是什么？",
+        "why_this_topic_matters": "Let's Encrypt 是全球使用最广泛的免费证书颁发机构，其条款变更可能影响大量开发者的HTTPS证书获取和使用，尤其是涉及美国制裁地区的开发者。如果执行严格，可能导致部分用户无法续期或新申请证书，进而影响网站安全性和可访问性。这与技术人的现金流、合规风险直接相关。",
+        "fact_summary": [],
+        "timeline": [],
+        "evidence_table": [],
+        "logic_closure": "目前仅有标题和摘要，无法形成逻辑闭环。关键缺口：条款是否明确禁止制裁地区用户申请或使用证书？制裁名单具体包含哪些地区？已有证书如何处理？Let's Encrypt 如何执行地域限制？替代方案是否可行？",
+        "writeable_angles": [
+          {
+            "angle": "风险提示：Let's Encrypt 新条款对制裁地区开发者的潜在影响",
+            "why": "直接面向可能受影响的开发者，提供预警和应对思路。",
+            "needs": "确认制裁名单、条款原文、执行方式、替代方案成本。"
+          },
+          {
+            "angle": "合规避坑：美国制裁对开源基础设施的连锁反应",
+            "why": "从合规角度分析，帮助读者理解制裁如何影响技术工具链。",
+            "needs": "官方条款、制裁法律背景、社区反馈。"
+          },
+          {
+            "angle": "替代方案对比：自签证书、商业CA vs Let's Encrypt",
+            "why": "为受影响的开发者提供实用指南。",
+            "needs": "替代方案的成本、可用性、安全性对比数据。"
+          }
+        ],
+        "missing_basics": [
+          "Let's Encrypt SA v1.7 全文（PDF）",
+          "美国制裁国家/地区列表（OFAC）",
+          "Let's Encrypt 官方关于此条款的说明或 FAQ",
+          "社区讨论中开发者的实际反馈"
+        ],
+        "missing_materials": [
+          "条款原文中关于制裁地区的具体表述",
+          "制裁名单与 Let's Encrypt 服务地区的交集",
+          "Let's Encrypt 执行地域限制的技术手段（IP/地理位置/用户声明）",
+          "已有证书在制裁地区的处理方式（撤销/到期不续）",
+          "商业CA（如ZeroSSL、SSL.com）在制裁地区的可用性和价格",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "所有制裁地区用户证书立即失效",
+          "Let's Encrypt 主动检测并撤销证书",
+          "替代方案成本高昂或不可用",
+          "此条款对普通开发者有重大影响",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "Let's Encrypt SA v1.7 全文内容是什么？",
+          "美国制裁国家/地区列表（OFAC）具体包含哪些？",
+          "Let's Encrypt 社区论坛是否有关于此条款的讨论？",
+          "ZeroSSL、SSL.com 等商业CA是否在制裁地区提供服务？价格如何？"
+        ],
+        "additional_search_queries": [
+          "Let's Encrypt SA v1.7 sanctioned territories list",
+          "Let's Encrypt certificate revocation sanctioned countries",
+          "Let's Encrypt alternative for sanctioned regions",
+          "US sanctions impact on HTTPS certificates developers",
+          "Let's Encrypt community forum ban sanctioned territory",
+          "Let's Encrypt SA v1.7 June 2026 diff changes",
+          "自签证书 替代 Let's Encrypt 制裁地区",
+          "商业SSL证书 成本 制裁国家"
+        ],
+        "stop_conditions": [
+          "获取到 Let's Encrypt SA v1.7 全文，确认条款具体内容",
+          "确认制裁名单与 Let's Encrypt 服务地区的交集",
+          "获取到 Let's Encrypt 官方关于执行方式的说明",
+          "获取到至少一个可靠来源（官方或知名技术媒体）的报道"
+        ],
+        "confidence": 0.0,
+        "topic_direction": "ai-practice",
+        "topic_direction_title": "AI 实操与自动化",
+        "report_type": "platform-rules",
+        "research_plan": {
+          "core_question": "Let's Encrypt 新条款对开发者证书使用和合规的具体影响是什么？",
+          "must_verify": [
+            "Let's Encrypt 新条款的具体生效日期和适用范围",
+            "被制裁地区列表及对开发者证书使用的影响",
+            "已有证书在制裁地区的处理方式（撤销/到期不续）",
+            "替代方案（如自签证书、商业CA）的成本和可行性"
+          ],
+          "search_queries": [
+            "Let's Encrypt SA v1.7 sanctioned territories list",
+            "Let's Encrypt certificate revocation sanctioned countries",
+            "Let's Encrypt alternative for sanctioned regions",
+            "US sanctions impact on HTTPS certificates developers",
+            "Let's Encrypt community forum ban sanctioned territory",
+            "Let's Encrypt SA v1.7 June 2026 diff changes",
+            "自签证书 替代 Let's Encrypt 制裁地区",
+            "商业SSL证书 成本 制裁国家"
+          ],
+          "best_sources_to_find": [
+            "Let's Encrypt 官方文档和社区论坛",
+            "Let's Encrypt 证书政策页面",
+            "美国财政部制裁名单（OFAC）",
+            "开发者博客或技术媒体关于此事的报道",
+            "GitHub 相关讨论或 issue"
+          ],
+          "expert_challenge_points": [
+            "条款是否明确禁止制裁地区用户申请新证书，还是仅禁止使用？",
+            "Let's Encrypt 如何执行地域限制（IP/地理位置/用户声明）？",
+            "制裁地区开发者是否有合法替代方案（如商业CA）？",
+            "此条款是否影响全球开发者对 Let's Encrypt 的信任？"
+          ],
+          "do_not_claim_yet": [
+            "所有制裁地区用户证书立即失效",
+            "Let's Encrypt 主动检测并撤销证书",
+            "替代方案成本高昂或不可用",
+            "此条款对普通开发者有重大影响"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法确认具体影响范围和执行方式，建议仅作为风险提示发布，不深入分析。",
+          "downstream_materials_needed": [
+            "Let's Encrypt SA v1.7 全文（PDF）",
+            "美国制裁国家/地区列表",
+            "Let's Encrypt 官方关于此条款的说明或 FAQ",
+            "社区讨论中开发者的实际反馈",
+            "商业CA（如ZeroSSL、SSL.com）在制裁地区的可用性"
+          ]
+        },
+        "research_evidence": []
+      },
+      "angle_candidates": [
+        "规则变动影响谁",
+        "普通技术人的合规边界",
+        "平台红利和封号风险"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留普通读者入口，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "风险避坑：Hacker News 计费和成本变化 官方政策 规则 原文",
+        "风险避坑：Hacker News 计费和成本变化 开发者公告 影响范围",
+        "风险避坑：Hacker News 计费和成本变化 合规 风险 受影响用户"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}

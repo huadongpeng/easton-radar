@@ -1,0 +1,712 @@
+{
+  "id": "20260610-security-validation-for-third-party-coding-agent-5709ec61",
+  "title": "案例复盘：GitHub AI 编程工具变化",
+  "original_title": "Security validation for third-party coding agents",
+  "url": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+  "summary": "Security validation for third-party coding agents is now generally available. GitHub supports third-party coding agents (including Claude and OpenAI Codex) that work directly within your repositories to implement features, fix… The post Security validation for third-party coding agents appeared first on The GitHub Blog .",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "ai-frontier",
+  "topic_direction_title": "AI 前沿与工具链",
+  "topic_direction_short_title": "AI 前沿",
+  "topic_direction_description": "AI 模型、Agent、开发工具、API、云服务和底层能力变化。重点看这次变化到底是什么、时间线如何、会不会改变普通技术人的工作方式、成本结构和工具链。",
+  "source_name": "GitHub Blog",
+  "original_source_name": "Archive: 2026 - GitHub Changelog",
+  "source_type": "rss",
+  "feed_url": "https://github.blog/changelog/feed/",
+  "published_at": "2026-06-09T07:12:54+00:00",
+  "fetched_at": "2026-06-10T01:12:13.902627+00:00",
+  "decision": "deep_dive",
+  "report_type": "platform-rules",
+  "report_type_title": "平台规则",
+  "score": 90,
+  "reader_hook": "这条线索有具体项目或案例，可以拆哪些条件可复制，哪些只是别人自己的局。",
+  "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "GitHub支持第三方编码代理安全验证",
+  "collection_fit": "部分符合收集原则：可以进入观察池，但证据链或读者入口还不够完整。",
+  "investigation_direction": "优先追项目原始页面、代码仓库、作者复盘、收入/增长证据和不可复制条件。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。",
+    "当前仅适合观察，不宜写成深度结论。"
+  ],
+  "facts": [
+    {
+      "claim": "GitHub Blog 发布/收录了这条原始线索：Security validation for third-party coding agents",
+      "type": "confirmed_fact",
+      "source_url": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "GitHub Blog",
+      "url": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "ai",
+        "agent",
+        "openai",
+        "claude"
+      ],
+      "dev": [
+        "github"
+      ]
+    },
+    "source_host": "github.blog",
+    "source_type": "rss",
+    "heuristic": false,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "这条线索有具体项目或案例，可以拆哪些条件可复制，哪些只是别人自己的局。",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://github.blog/changelog/feed/",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。",
+      "当前仅适合观察，不宜写成深度结论。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+    },
+    "core_question": "GitHub 第三方编码代理安全验证功能的具体机制是什么？它如何影响使用 Claude、OpenAI Codex 等 AI 编程工具的开发者？",
+    "why_this_topic_matters": "GitHub 是开发者使用 AI 编程工具的核心平台，其安全策略变化直接影响 Claude、Codex 等第三方代理的可用性和工作流。如果验证机制严格或强制，可能改变 AI 辅助编程的成本结构和开发体验，与 AI 前沿和工具链方向高度相关。",
+    "fact_summary": [
+      "GitHub 宣布第三方编码代理（包括 Claude 和 OpenAI Codex）的安全验证功能正式可用。",
+      "该功能允许第三方代理直接在仓库内工作，实现功能、修复等操作。",
+      "公告来自 GitHub Blog，发布时间为 2026-06-09。",
+      "目前仅有一篇官方公告，无其他来源或用户反馈。"
+    ],
+    "timeline": [
+      {
+        "date": "2026-06-09",
+        "event": "GitHub 发布博客，宣布第三方编码代理安全验证功能正式可用。"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "GitHub Blog",
+        "url": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+        "supports": "功能已发布，支持 Claude 和 OpenAI Codex 等第三方代理。",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "目前仅有一个官方来源，缺乏技术细节、用户反馈和对比分析。无法判断该功能是否强制、如何验证、对开发者体验的影响。逻辑上，安全验证可能增加代理使用的门槛或延迟，但无证据支持。因此无法形成闭环。",
+    "writeable_angles": [
+      {
+        "angle": "功能解读：GitHub 第三方编码代理安全验证机制详解",
+        "why": "开发者需要了解具体如何验证、是否影响现有工作流。",
+        "needs": "GitHub 官方文档、技术实现细节、与 Copilot 安全策略的对比。"
+      },
+      {
+        "angle": "开发者体验：第三方 AI 编码代理在 GitHub 上的安全验证实测",
+        "why": "实际使用反馈能揭示功能是否好用、是否增加负担。",
+        "needs": "至少一位使用 Claude 或 Codex 的开发者实测体验。"
+      },
+      {
+        "angle": "行业影响：GitHub 安全验证对 AI 编码代理生态的潜在影响",
+        "why": "可能改变第三方代理的竞争格局，影响开发者选择。",
+        "needs": "多平台对比（如 GitLab、自托管方案）、市场反应。"
+      }
+    ],
+    "missing_basics": [
+      "安全验证的具体技术实现（权限控制、代码审查、沙箱隔离等）",
+      "该功能是否强制启用，还是可选？",
+      "对免费用户和付费用户（如 GitHub Copilot 用户）的影响差异",
+      "与现有 GitHub Copilot 安全策略的关系"
+    ],
+    "missing_materials": [
+      "GitHub 官方文档中关于安全验证的详细说明",
+      "至少一个使用 Claude 或 Codex 的开发者实际体验反馈",
+      "与 GitHub Copilot 安全策略的对比分析",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "该功能会显著改变开发者工作流程",
+      "该功能是 GitHub 对 AI 编码代理的全面安全升级",
+      "该功能会影响所有使用第三方编码代理的用户",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "GitHub 第三方编码代理安全验证是否强制？",
+      "安全验证的具体流程是什么？",
+      "开发者如何配置或绕过验证？",
+      "该功能是否影响代理的自主性和响应速度？"
+    ],
+    "additional_search_queries": [
+      "GitHub security validation third-party coding agents documentation",
+      "GitHub third-party coding agents security verification how it works",
+      "GitHub Copilot third-party agent security policy 2026",
+      "Claude Codex GitHub security validation impact",
+      "OpenAI Codex GitHub security validation",
+      "GitHub third-party coding agent security changelog 2026",
+      "GitHub security validation for coding agents developer experience",
+      "GitHub third-party agent security review process"
+    ],
+    "stop_conditions": [
+      "如果官方文档明确说明该功能为可选且不影响现有工作流，则影响有限，可降级为短讯。",
+      "如果用户反馈显示验证流程繁琐或导致代理不可用，则值得深入。"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "platform-rules",
+    "research_plan": {
+      "core_question": "GitHub 第三方编码代理安全验证功能的具体机制是什么？它如何影响使用 Claude、OpenAI Codex 等 AI 编程工具的开发者？",
+      "must_verify": [
+        "安全验证的具体技术实现（如权限控制、代码审查、沙箱隔离等）",
+        "该功能是否强制启用，还是可选？",
+        "对免费用户和付费用户（如 GitHub Copilot 用户）的影响差异",
+        "与现有 GitHub Copilot 安全策略的关系"
+      ],
+      "search_queries": [
+        "GitHub security validation third-party coding agents documentation",
+        "GitHub third-party coding agents security verification how it works",
+        "GitHub Copilot third-party agent security policy 2026",
+        "Claude Codex GitHub security validation impact",
+        "OpenAI Codex GitHub security validation",
+        "GitHub third-party coding agent security changelog 2026",
+        "GitHub security validation for coding agents developer experience",
+        "GitHub third-party agent security review process"
+      ],
+      "best_sources_to_find": [
+        "GitHub 官方文档（docs.github.com）",
+        "GitHub Blog 原文及评论区",
+        "GitHub 社区论坛（github.com/community）",
+        "相关技术博客（如 The New Stack, InfoQ）",
+        "Reddit r/github 或 r/programming 讨论帖"
+      ],
+      "expert_challenge_points": [
+        "安全验证是否会增加延迟或限制 AI 代理的自主性？",
+        "该功能是否真正解决了代码安全风险，还是仅增加合规负担？",
+        "与自托管 AI 编码代理相比，GitHub 的验证是否更安全？"
+      ],
+      "do_not_claim_yet": [
+        "该功能会显著改变开发者工作流程",
+        "该功能是 GitHub 对 AI 编码代理的全面安全升级",
+        "该功能会影响所有使用第三方编码代理的用户"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取具体技术细节或用户反馈，可发布为“GitHub 推出第三方编码代理安全验证功能，但具体影响待观察”的短讯。",
+      "downstream_materials_needed": [
+        "GitHub 官方文档中关于安全验证的详细说明",
+        "至少一个使用 Claude 或 Codex 的开发者实际体验反馈",
+        "与 GitHub Copilot 安全策略的对比分析"
+      ]
+    },
+    "research_evidence": []
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+    },
+    "core_question": "GitHub 第三方编码代理安全验证功能的具体机制是什么？它如何影响使用 Claude、OpenAI Codex 等 AI 编程工具的开发者？",
+    "why_this_topic_matters": "GitHub 是开发者使用 AI 编程工具的核心平台，其安全策略变化直接影响 Claude、Codex 等第三方代理的可用性和工作流。如果验证机制严格或强制，可能改变 AI 辅助编程的成本结构和开发体验，与 AI 前沿和工具链方向高度相关。",
+    "fact_summary": [
+      "GitHub 宣布第三方编码代理（包括 Claude 和 OpenAI Codex）的安全验证功能正式可用。",
+      "该功能允许第三方代理直接在仓库内工作，实现功能、修复等操作。",
+      "公告来自 GitHub Blog，发布时间为 2026-06-09。",
+      "目前仅有一篇官方公告，无其他来源或用户反馈。"
+    ],
+    "timeline": [
+      {
+        "date": "2026-06-09",
+        "event": "GitHub 发布博客，宣布第三方编码代理安全验证功能正式可用。"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "GitHub Blog",
+        "url": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+        "supports": "功能已发布，支持 Claude 和 OpenAI Codex 等第三方代理。",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "目前仅有一个官方来源，缺乏技术细节、用户反馈和对比分析。无法判断该功能是否强制、如何验证、对开发者体验的影响。逻辑上，安全验证可能增加代理使用的门槛或延迟，但无证据支持。因此无法形成闭环。",
+    "writeable_angles": [
+      {
+        "angle": "功能解读：GitHub 第三方编码代理安全验证机制详解",
+        "why": "开发者需要了解具体如何验证、是否影响现有工作流。",
+        "needs": "GitHub 官方文档、技术实现细节、与 Copilot 安全策略的对比。"
+      },
+      {
+        "angle": "开发者体验：第三方 AI 编码代理在 GitHub 上的安全验证实测",
+        "why": "实际使用反馈能揭示功能是否好用、是否增加负担。",
+        "needs": "至少一位使用 Claude 或 Codex 的开发者实测体验。"
+      },
+      {
+        "angle": "行业影响：GitHub 安全验证对 AI 编码代理生态的潜在影响",
+        "why": "可能改变第三方代理的竞争格局，影响开发者选择。",
+        "needs": "多平台对比（如 GitLab、自托管方案）、市场反应。"
+      }
+    ],
+    "missing_basics": [
+      "安全验证的具体技术实现（权限控制、代码审查、沙箱隔离等）",
+      "该功能是否强制启用，还是可选？",
+      "对免费用户和付费用户（如 GitHub Copilot 用户）的影响差异",
+      "与现有 GitHub Copilot 安全策略的关系"
+    ],
+    "missing_materials": [
+      "GitHub 官方文档中关于安全验证的详细说明",
+      "至少一个使用 Claude 或 Codex 的开发者实际体验反馈",
+      "与 GitHub Copilot 安全策略的对比分析",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "该功能会显著改变开发者工作流程",
+      "该功能是 GitHub 对 AI 编码代理的全面安全升级",
+      "该功能会影响所有使用第三方编码代理的用户",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "GitHub 第三方编码代理安全验证是否强制？",
+      "安全验证的具体流程是什么？",
+      "开发者如何配置或绕过验证？",
+      "该功能是否影响代理的自主性和响应速度？"
+    ],
+    "additional_search_queries": [
+      "GitHub security validation third-party coding agents documentation",
+      "GitHub third-party coding agents security verification how it works",
+      "GitHub Copilot third-party agent security policy 2026",
+      "Claude Codex GitHub security validation impact",
+      "OpenAI Codex GitHub security validation",
+      "GitHub third-party coding agent security changelog 2026",
+      "GitHub security validation for coding agents developer experience",
+      "GitHub third-party agent security review process"
+    ],
+    "stop_conditions": [
+      "如果官方文档明确说明该功能为可选且不影响现有工作流，则影响有限，可降级为短讯。",
+      "如果用户反馈显示验证流程繁琐或导致代理不可用，则值得深入。"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "platform-rules",
+    "research_plan": {
+      "core_question": "GitHub 第三方编码代理安全验证功能的具体机制是什么？它如何影响使用 Claude、OpenAI Codex 等 AI 编程工具的开发者？",
+      "must_verify": [
+        "安全验证的具体技术实现（如权限控制、代码审查、沙箱隔离等）",
+        "该功能是否强制启用，还是可选？",
+        "对免费用户和付费用户（如 GitHub Copilot 用户）的影响差异",
+        "与现有 GitHub Copilot 安全策略的关系"
+      ],
+      "search_queries": [
+        "GitHub security validation third-party coding agents documentation",
+        "GitHub third-party coding agents security verification how it works",
+        "GitHub Copilot third-party agent security policy 2026",
+        "Claude Codex GitHub security validation impact",
+        "OpenAI Codex GitHub security validation",
+        "GitHub third-party coding agent security changelog 2026",
+        "GitHub security validation for coding agents developer experience",
+        "GitHub third-party agent security review process"
+      ],
+      "best_sources_to_find": [
+        "GitHub 官方文档（docs.github.com）",
+        "GitHub Blog 原文及评论区",
+        "GitHub 社区论坛（github.com/community）",
+        "相关技术博客（如 The New Stack, InfoQ）",
+        "Reddit r/github 或 r/programming 讨论帖"
+      ],
+      "expert_challenge_points": [
+        "安全验证是否会增加延迟或限制 AI 代理的自主性？",
+        "该功能是否真正解决了代码安全风险，还是仅增加合规负担？",
+        "与自托管 AI 编码代理相比，GitHub 的验证是否更安全？"
+      ],
+      "do_not_claim_yet": [
+        "该功能会显著改变开发者工作流程",
+        "该功能是 GitHub 对 AI 编码代理的全面安全升级",
+        "该功能会影响所有使用第三方编码代理的用户"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取具体技术细节或用户反馈，可发布为“GitHub 推出第三方编码代理安全验证功能，但具体影响待观察”的短讯。",
+      "downstream_materials_needed": [
+        "GitHub 官方文档中关于安全验证的详细说明",
+        "至少一个使用 Claude 或 Codex 的开发者实际体验反馈",
+        "与 GitHub Copilot 安全策略的对比分析"
+      ]
+    },
+    "research_evidence": []
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260610-security-validation-for-third-party-coding-agent-5709ec61/",
+    "for_gpt_editor": {
+      "brief": "Security validation for third-party coding agents is now generally available. GitHub supports third-party coding agents (including Claude and OpenAI Codex) that work directly within your repositories to implement features, fix… The post Security validation for third-party coding agents appeared first on The GitHub Blog .",
+      "title_seed": "案例复盘：GitHub AI 编程工具变化",
+      "original_title": "Security validation for third-party coding agents",
+      "source_url": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+        },
+        "core_question": "GitHub 第三方编码代理安全验证功能的具体机制是什么？它如何影响使用 Claude、OpenAI Codex 等 AI 编程工具的开发者？",
+        "why_this_topic_matters": "GitHub 是开发者使用 AI 编程工具的核心平台，其安全策略变化直接影响 Claude、Codex 等第三方代理的可用性和工作流。如果验证机制严格或强制，可能改变 AI 辅助编程的成本结构和开发体验，与 AI 前沿和工具链方向高度相关。",
+        "fact_summary": [
+          "GitHub 宣布第三方编码代理（包括 Claude 和 OpenAI Codex）的安全验证功能正式可用。",
+          "该功能允许第三方代理直接在仓库内工作，实现功能、修复等操作。",
+          "公告来自 GitHub Blog，发布时间为 2026-06-09。",
+          "目前仅有一篇官方公告，无其他来源或用户反馈。"
+        ],
+        "timeline": [
+          {
+            "date": "2026-06-09",
+            "event": "GitHub 发布博客，宣布第三方编码代理安全验证功能正式可用。"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "GitHub Blog",
+            "url": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+            "supports": "功能已发布，支持 Claude 和 OpenAI Codex 等第三方代理。",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "目前仅有一个官方来源，缺乏技术细节、用户反馈和对比分析。无法判断该功能是否强制、如何验证、对开发者体验的影响。逻辑上，安全验证可能增加代理使用的门槛或延迟，但无证据支持。因此无法形成闭环。",
+        "writeable_angles": [
+          {
+            "angle": "功能解读：GitHub 第三方编码代理安全验证机制详解",
+            "why": "开发者需要了解具体如何验证、是否影响现有工作流。",
+            "needs": "GitHub 官方文档、技术实现细节、与 Copilot 安全策略的对比。"
+          },
+          {
+            "angle": "开发者体验：第三方 AI 编码代理在 GitHub 上的安全验证实测",
+            "why": "实际使用反馈能揭示功能是否好用、是否增加负担。",
+            "needs": "至少一位使用 Claude 或 Codex 的开发者实测体验。"
+          },
+          {
+            "angle": "行业影响：GitHub 安全验证对 AI 编码代理生态的潜在影响",
+            "why": "可能改变第三方代理的竞争格局，影响开发者选择。",
+            "needs": "多平台对比（如 GitLab、自托管方案）、市场反应。"
+          }
+        ],
+        "missing_basics": [
+          "安全验证的具体技术实现（权限控制、代码审查、沙箱隔离等）",
+          "该功能是否强制启用，还是可选？",
+          "对免费用户和付费用户（如 GitHub Copilot 用户）的影响差异",
+          "与现有 GitHub Copilot 安全策略的关系"
+        ],
+        "missing_materials": [
+          "GitHub 官方文档中关于安全验证的详细说明",
+          "至少一个使用 Claude 或 Codex 的开发者实际体验反馈",
+          "与 GitHub Copilot 安全策略的对比分析",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "该功能会显著改变开发者工作流程",
+          "该功能是 GitHub 对 AI 编码代理的全面安全升级",
+          "该功能会影响所有使用第三方编码代理的用户",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "GitHub 第三方编码代理安全验证是否强制？",
+          "安全验证的具体流程是什么？",
+          "开发者如何配置或绕过验证？",
+          "该功能是否影响代理的自主性和响应速度？"
+        ],
+        "additional_search_queries": [
+          "GitHub security validation third-party coding agents documentation",
+          "GitHub third-party coding agents security verification how it works",
+          "GitHub Copilot third-party agent security policy 2026",
+          "Claude Codex GitHub security validation impact",
+          "OpenAI Codex GitHub security validation",
+          "GitHub third-party coding agent security changelog 2026",
+          "GitHub security validation for coding agents developer experience",
+          "GitHub third-party agent security review process"
+        ],
+        "stop_conditions": [
+          "如果官方文档明确说明该功能为可选且不影响现有工作流，则影响有限，可降级为短讯。",
+          "如果用户反馈显示验证流程繁琐或导致代理不可用，则值得深入。"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "platform-rules",
+        "research_plan": {
+          "core_question": "GitHub 第三方编码代理安全验证功能的具体机制是什么？它如何影响使用 Claude、OpenAI Codex 等 AI 编程工具的开发者？",
+          "must_verify": [
+            "安全验证的具体技术实现（如权限控制、代码审查、沙箱隔离等）",
+            "该功能是否强制启用，还是可选？",
+            "对免费用户和付费用户（如 GitHub Copilot 用户）的影响差异",
+            "与现有 GitHub Copilot 安全策略的关系"
+          ],
+          "search_queries": [
+            "GitHub security validation third-party coding agents documentation",
+            "GitHub third-party coding agents security verification how it works",
+            "GitHub Copilot third-party agent security policy 2026",
+            "Claude Codex GitHub security validation impact",
+            "OpenAI Codex GitHub security validation",
+            "GitHub third-party coding agent security changelog 2026",
+            "GitHub security validation for coding agents developer experience",
+            "GitHub third-party agent security review process"
+          ],
+          "best_sources_to_find": [
+            "GitHub 官方文档（docs.github.com）",
+            "GitHub Blog 原文及评论区",
+            "GitHub 社区论坛（github.com/community）",
+            "相关技术博客（如 The New Stack, InfoQ）",
+            "Reddit r/github 或 r/programming 讨论帖"
+          ],
+          "expert_challenge_points": [
+            "安全验证是否会增加延迟或限制 AI 代理的自主性？",
+            "该功能是否真正解决了代码安全风险，还是仅增加合规负担？",
+            "与自托管 AI 编码代理相比，GitHub 的验证是否更安全？"
+          ],
+          "do_not_claim_yet": [
+            "该功能会显著改变开发者工作流程",
+            "该功能是 GitHub 对 AI 编码代理的全面安全升级",
+            "该功能会影响所有使用第三方编码代理的用户"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取具体技术细节或用户反馈，可发布为“GitHub 推出第三方编码代理安全验证功能，但具体影响待观察”的短讯。",
+          "downstream_materials_needed": [
+            "GitHub 官方文档中关于安全验证的详细说明",
+            "至少一个使用 Claude 或 Codex 的开发者实际体验反馈",
+            "与 GitHub Copilot 安全策略的对比分析"
+          ]
+        },
+        "research_evidence": []
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+        },
+        "core_question": "GitHub 第三方编码代理安全验证功能的具体机制是什么？它如何影响使用 Claude、OpenAI Codex 等 AI 编程工具的开发者？",
+        "why_this_topic_matters": "GitHub 是开发者使用 AI 编程工具的核心平台，其安全策略变化直接影响 Claude、Codex 等第三方代理的可用性和工作流。如果验证机制严格或强制，可能改变 AI 辅助编程的成本结构和开发体验，与 AI 前沿和工具链方向高度相关。",
+        "fact_summary": [
+          "GitHub 宣布第三方编码代理（包括 Claude 和 OpenAI Codex）的安全验证功能正式可用。",
+          "该功能允许第三方代理直接在仓库内工作，实现功能、修复等操作。",
+          "公告来自 GitHub Blog，发布时间为 2026-06-09。",
+          "目前仅有一篇官方公告，无其他来源或用户反馈。"
+        ],
+        "timeline": [
+          {
+            "date": "2026-06-09",
+            "event": "GitHub 发布博客，宣布第三方编码代理安全验证功能正式可用。"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "GitHub Blog",
+            "url": "https://github.blog/changelog/2026-06-09-security-validation-for-third-party-coding-agents",
+            "supports": "功能已发布，支持 Claude 和 OpenAI Codex 等第三方代理。",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "目前仅有一个官方来源，缺乏技术细节、用户反馈和对比分析。无法判断该功能是否强制、如何验证、对开发者体验的影响。逻辑上，安全验证可能增加代理使用的门槛或延迟，但无证据支持。因此无法形成闭环。",
+        "writeable_angles": [
+          {
+            "angle": "功能解读：GitHub 第三方编码代理安全验证机制详解",
+            "why": "开发者需要了解具体如何验证、是否影响现有工作流。",
+            "needs": "GitHub 官方文档、技术实现细节、与 Copilot 安全策略的对比。"
+          },
+          {
+            "angle": "开发者体验：第三方 AI 编码代理在 GitHub 上的安全验证实测",
+            "why": "实际使用反馈能揭示功能是否好用、是否增加负担。",
+            "needs": "至少一位使用 Claude 或 Codex 的开发者实测体验。"
+          },
+          {
+            "angle": "行业影响：GitHub 安全验证对 AI 编码代理生态的潜在影响",
+            "why": "可能改变第三方代理的竞争格局，影响开发者选择。",
+            "needs": "多平台对比（如 GitLab、自托管方案）、市场反应。"
+          }
+        ],
+        "missing_basics": [
+          "安全验证的具体技术实现（权限控制、代码审查、沙箱隔离等）",
+          "该功能是否强制启用，还是可选？",
+          "对免费用户和付费用户（如 GitHub Copilot 用户）的影响差异",
+          "与现有 GitHub Copilot 安全策略的关系"
+        ],
+        "missing_materials": [
+          "GitHub 官方文档中关于安全验证的详细说明",
+          "至少一个使用 Claude 或 Codex 的开发者实际体验反馈",
+          "与 GitHub Copilot 安全策略的对比分析",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "该功能会显著改变开发者工作流程",
+          "该功能是 GitHub 对 AI 编码代理的全面安全升级",
+          "该功能会影响所有使用第三方编码代理的用户",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "GitHub 第三方编码代理安全验证是否强制？",
+          "安全验证的具体流程是什么？",
+          "开发者如何配置或绕过验证？",
+          "该功能是否影响代理的自主性和响应速度？"
+        ],
+        "additional_search_queries": [
+          "GitHub security validation third-party coding agents documentation",
+          "GitHub third-party coding agents security verification how it works",
+          "GitHub Copilot third-party agent security policy 2026",
+          "Claude Codex GitHub security validation impact",
+          "OpenAI Codex GitHub security validation",
+          "GitHub third-party coding agent security changelog 2026",
+          "GitHub security validation for coding agents developer experience",
+          "GitHub third-party agent security review process"
+        ],
+        "stop_conditions": [
+          "如果官方文档明确说明该功能为可选且不影响现有工作流，则影响有限，可降级为短讯。",
+          "如果用户反馈显示验证流程繁琐或导致代理不可用，则值得深入。"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "platform-rules",
+        "research_plan": {
+          "core_question": "GitHub 第三方编码代理安全验证功能的具体机制是什么？它如何影响使用 Claude、OpenAI Codex 等 AI 编程工具的开发者？",
+          "must_verify": [
+            "安全验证的具体技术实现（如权限控制、代码审查、沙箱隔离等）",
+            "该功能是否强制启用，还是可选？",
+            "对免费用户和付费用户（如 GitHub Copilot 用户）的影响差异",
+            "与现有 GitHub Copilot 安全策略的关系"
+          ],
+          "search_queries": [
+            "GitHub security validation third-party coding agents documentation",
+            "GitHub third-party coding agents security verification how it works",
+            "GitHub Copilot third-party agent security policy 2026",
+            "Claude Codex GitHub security validation impact",
+            "OpenAI Codex GitHub security validation",
+            "GitHub third-party coding agent security changelog 2026",
+            "GitHub security validation for coding agents developer experience",
+            "GitHub third-party agent security review process"
+          ],
+          "best_sources_to_find": [
+            "GitHub 官方文档（docs.github.com）",
+            "GitHub Blog 原文及评论区",
+            "GitHub 社区论坛（github.com/community）",
+            "相关技术博客（如 The New Stack, InfoQ）",
+            "Reddit r/github 或 r/programming 讨论帖"
+          ],
+          "expert_challenge_points": [
+            "安全验证是否会增加延迟或限制 AI 代理的自主性？",
+            "该功能是否真正解决了代码安全风险，还是仅增加合规负担？",
+            "与自托管 AI 编码代理相比，GitHub 的验证是否更安全？"
+          ],
+          "do_not_claim_yet": [
+            "该功能会显著改变开发者工作流程",
+            "该功能是 GitHub 对 AI 编码代理的全面安全升级",
+            "该功能会影响所有使用第三方编码代理的用户"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取具体技术细节或用户反馈，可发布为“GitHub 推出第三方编码代理安全验证功能，但具体影响待观察”的短讯。",
+          "downstream_materials_needed": [
+            "GitHub 官方文档中关于安全验证的详细说明",
+            "至少一个使用 Claude 或 Codex 的开发者实际体验反馈",
+            "与 GitHub Copilot 安全策略的对比分析"
+          ]
+        },
+        "research_evidence": []
+      },
+      "angle_candidates": [
+        "规则变动影响谁",
+        "普通技术人的合规边界",
+        "平台红利和封号风险"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留普通读者入口，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "案例复盘：GitHub AI 编程工具变化 官方政策 规则 原文",
+        "案例复盘：GitHub AI 编程工具变化 开发者公告 影响范围",
+        "案例复盘：GitHub AI 编程工具变化 合规 风险 受影响用户"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
