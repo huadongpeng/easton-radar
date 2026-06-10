@@ -113,7 +113,14 @@
 - `site/llms.txt`
 - `site/ads.txt`
 
-GitHub Pages 只发布 `site/` 目录。
+GitHub Pages 只发布本次 Action 工作区里的 `site/` 目录。`site/*`、`data/latest.json`、`data/search_usage.json` 和批次 JSON 都是运行时产物，不提交回 `main`。
+
+历史报告和跨批次去重状态保存到 `radar-archive` 分支：
+
+- `reports/*.json`：历史选题报告 JSON，用来重新渲染历史详情页。
+- `data/topic_archive.json`：轻量去重状态，只保存 URL/标题指纹/方向/时间等元数据。
+
+Action 每次先从 `radar-archive` 恢复历史报告和指纹库，再生成本次选题，最后把新的报告 JSON 和指纹库推回 `radar-archive`。这样 `main` 保持代码仓库干净，Radar 网站仍能回看历史报告。
 
 ## Step 7：Telegram 通知
 

@@ -359,8 +359,6 @@ def log_search_budget_preflight() -> None:
 
 def clean_generated_outputs() -> None:
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
-    for path in REPORTS_DIR.glob("*.json"):
-        path.unlink()
     DATA_DIR.mkdir(parents=True, exist_ok=True)
     for path in DATA_DIR.glob("*.json"):
         if path.name != TOPIC_ARCHIVE_PATH.name:
@@ -533,6 +531,37 @@ def update_topic_archive(archive: dict[str, Any], reports: list[dict[str, Any]],
             by_key[key] = entry
     existing.sort(key=lambda x: x.get("last_seen_at", ""), reverse=True)
     return {"version": 1, "updated_at": batch.get("generated_at", now_utc().isoformat()), "items": existing[:240]}
+
+
+def report_time_key(report: dict[str, Any]) -> str:
+    return str(report.get("fetched_at") or report.get("published_at") or report.get("generated_at") or "")
+
+
+def load_report_archive() -> list[dict[str, Any]]:
+    reports: list[dict[str, Any]] = []
+    if not REPORTS_DIR.exists():
+        return reports
+    for path in sorted(REPORTS_DIR.glob("*.json")):
+        try:
+            report = json.loads(path.read_text(encoding="utf-8"))
+        except Exception as exc:
+            print(f"Archived report load failed: {path.name} | {exc}", file=sys.stderr)
+            continue
+        if isinstance(report, dict) and report.get("id"):
+            reports.append(report)
+    reports.sort(key=report_time_key, reverse=True)
+    return reports
+
+
+def merge_report_archive(current_reports: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    by_id: dict[str, dict[str, Any]] = {}
+    for report in load_report_archive():
+        by_id[str(report.get("id"))] = report
+    for report in current_reports:
+        by_id[str(report.get("id"))] = report
+    merged = list(by_id.values())
+    merged.sort(key=report_time_key, reverse=True)
+    return merged[:240]
 
 
 def fetch_url(url: str, timeout: int = 20) -> bytes:
@@ -2802,19 +2831,19 @@ def render_item(report: dict[str, Any], site: dict[str, Any]) -> str:
 """
 
 
-def render_static(batch: dict[str, Any], reports: list[dict[str, Any]], site: dict[str, Any], policy: dict[str, Any], archive: dict[str, Any]) -> None:
+def render_static(batch: dict[str, Any], reports: list[dict[str, Any]], all_reports: list[dict[str, Any]], site: dict[str, Any], policy: dict[str, Any], archive: dict[str, Any]) -> None:
     static = StaticSite(site)
     static.write_assets()
     static.write_page("index.html", "Easton Radar", render_home(batch, reports, site, policy, archive))
     static.write_page("archive/index.html", "历史选题归档 - Easton Radar", render_archive(archive, site))
     static.write_page("about/index.html", "关于 - Easton Radar", render_about(site, policy))
     for key, meta in site.get("topic_directions", {}).items():
-        static.write_page(f"topics/{key}/index.html", f"{meta['title']} - Easton Radar", render_topic_direction(key, meta, reports_for_topic(reports, key)))
-    for report in reports:
+        static.write_page(f"topics/{key}/index.html", f"{meta['title']} - Easton Radar", render_topic_direction(key, meta, reports_for_topic(all_reports, key)))
+    for report in all_reports:
         static.write_page(f"items/{report['id']}/index.html", f"{display_report_title(report)} - Easton Radar", render_item(report, site))
     static.write_text("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {site['site_url'].rstrip('/')}/sitemap.xml\n")
-    static.write_text("sitemap.xml", sitemap(site, reports))
-    static.write_text("llms.txt", llms(site, reports))
+    static.write_text("sitemap.xml", sitemap(site, all_reports))
+    static.write_text("llms.txt", llms(site, all_reports))
     static.write_text("ads.txt", "google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0\n")
 
 
@@ -2971,8 +3000,9 @@ def main() -> int:
     save_search_usage_state()
     for report in reports:
         write_json(REPORTS_DIR / f"{report['id']}.json", report)
-    info("Wrote JSON outputs and search usage state.")
-    render_static(batch, reports, site, policy, archive)
+    all_reports = merge_report_archive(reports)
+    info(f"Wrote JSON outputs and search usage state. current_reports={len(reports)}, archive_reports={len(all_reports)}")
+    render_static(batch, reports, all_reports, site, policy, archive)
     info("Rendered static site.")
     if not args.no_telegram:
         send_telegram(batch, reports, site)
