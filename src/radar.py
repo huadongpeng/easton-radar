@@ -22,6 +22,7 @@ from typing import Any
 
 ROOT = Path(__file__).resolve().parents[1]
 CONFIG_DIR = ROOT / "config"
+PROMPTS_DIR = ROOT / "prompts"
 DATA_DIR = ROOT / "data"
 REPORTS_DIR = ROOT / "reports"
 SITE_DIR = ROOT / "site"
@@ -153,6 +154,10 @@ def load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
+def load_prompt(name: str) -> str:
+    return (PROMPTS_DIR / name).read_text(encoding="utf-8").strip()
+
+
 def write_json(path: Path, data: Any) -> None:
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -272,8 +277,10 @@ def tavily_usage() -> dict[str, Any] | None:
         return None
     key_usage = data.get("key", {}) if isinstance(data, dict) else {}
     account_usage = data.get("account", {}) if isinstance(data, dict) else {}
-    used = numeric_value(key_usage.get("usage"))
-    limit = numeric_value(key_usage.get("limit"))
+    key_limit = key_usage.get("limit")
+    account_plan_limit = account_usage.get("plan_limit")
+    used = numeric_value(key_usage.get("usage") if key_usage.get("usage") is not None else account_usage.get("plan_usage"))
+    limit = numeric_value(key_limit if key_limit is not None else account_plan_limit)
     remaining = max(0.0, limit - used) if limit else 0.0
     record = {
         "enabled": True,
@@ -283,6 +290,8 @@ def tavily_usage() -> dict[str, Any] | None:
         "remaining": remaining,
         "search_usage": numeric_value(key_usage.get("search_usage")),
         "account_plan": account_usage.get("current_plan", ""),
+        "account_plan_usage": numeric_value(account_usage.get("plan_usage")),
+        "account_plan_limit": numeric_value(account_plan_limit),
         "account_paygo_usage": numeric_value(account_usage.get("paygo_usage")),
         "raw": data,
     }
@@ -342,14 +351,20 @@ def update_brave_rate_state(headers: Any) -> None:
     remaining_values = parse_rate_header_numbers(headers.get("X-RateLimit-Remaining", "") if headers else "")
     limit_values = parse_rate_header_numbers(headers.get("X-RateLimit-Limit", "") if headers else "")
     reset_values = parse_rate_header_numbers(headers.get("X-RateLimit-Reset", "") if headers else "")
+    second_remaining = remaining_values[0] if remaining_values else None
+    second_limit = limit_values[0] if limit_values else None
     monthly_remaining = remaining_values[-1] if remaining_values else None
     monthly_limit = limit_values[-1] if limit_values else None
     reset_seconds = reset_values[-1] if reset_values else None
+    monthly_unlimited = monthly_limit == 0
     update_search_provider_state("brave", {
         "enabled": True,
         "source": "rate_limit_headers",
+        "second_remaining": second_remaining,
+        "second_limit": second_limit,
         "monthly_remaining": monthly_remaining,
         "monthly_limit": monthly_limit,
+        "monthly_unlimited": monthly_unlimited,
         "reset_seconds": reset_seconds,
         "raw_headers": {
             "X-RateLimit-Remaining": headers.get("X-RateLimit-Remaining", "") if headers else "",
@@ -358,17 +373,25 @@ def update_brave_rate_state(headers: Any) -> None:
         },
     })
     if monthly_remaining is not None:
-        info(f"Search budget: Brave monthly_remaining={monthly_remaining}, monthly_limit={monthly_limit}.")
+        monthly_text = "unlimited" if monthly_unlimited else str(monthly_remaining)
+        info(f"Search budget: Brave second_remaining={second_remaining}, monthly_remaining={monthly_text}, monthly_limit={monthly_limit}.")
 
 
 def brave_has_budget() -> bool:
     record = load_search_usage_state().get("providers", {}).get("brave", {})
-    if record.get("enabled") is False:
+    if record.get("enabled") is False and str(record.get("error", "")).startswith(("HTTP 401", "HTTP 403")):
         info_once("brave-disabled", f"Search budget: Brave disabled for this run, error={record.get('error', '')}.")
         return False
     if not search_run_has_budget("brave", 1):
         return False
+    second_remaining = record.get("second_remaining")
+    if second_remaining is not None and numeric_value(second_remaining) < 1:
+        info_once("brave-second-window", f"Search budget: Brave one-second window exhausted, second_remaining={second_remaining}; try next query later.")
+        return False
+    monthly_limit = record.get("monthly_limit")
     remaining = record.get("monthly_remaining")
+    if monthly_limit is not None and numeric_value(monthly_limit) == 0:
+        return True
     if remaining is None:
         return True
     if numeric_value(remaining) < 1:
@@ -389,7 +412,9 @@ def log_search_budget_preflight() -> None:
         parts.append("tavily=missing-key")
     if os.environ.get("BRAVE_SEARCH_API_KEY", "").strip():
         brave = load_search_usage_state().get("providers", {}).get("brave", {})
-        if brave.get("monthly_remaining") is not None:
+        if brave.get("monthly_unlimited"):
+            parts.append("brave_monthly=unlimited source=rate_limit_headers")
+        elif brave.get("monthly_remaining") is not None:
             parts.append(f"brave_remaining={brave.get('monthly_remaining')} source=rate_limit_headers")
         else:
             parts.append("brave=enabled remaining=unknown-until-first-response")
@@ -722,10 +747,17 @@ def brave_search(query: str, limit: int = 5) -> list[dict[str, str]]:
     except urllib.error.HTTPError as exc:
         update_brave_rate_state(exc.headers)
         print(f"Brave search failed for {query}: HTTP {exc.code} {exc.reason}", file=sys.stderr)
-        if exc.code in {401, 403, 429}:
+        if exc.code in {401, 403}:
             update_search_provider_state("brave", {
                 "enabled": False,
                 "source": "rate_limit_headers",
+                "error": f"HTTP {exc.code} {exc.reason}",
+            })
+        elif exc.code == 429:
+            update_search_provider_state("brave", {
+                "enabled": True,
+                "source": "rate_limit_headers",
+                "rate_limited": True,
                 "error": f"HTTP {exc.code} {exc.reason}",
             })
         SEARCH_CACHE[cache_key] = []
@@ -743,7 +775,8 @@ def brave_search(query: str, limit: int = 5) -> list[dict[str, str]]:
         if len(results) >= limit:
             break
     brave = load_search_usage_state().get("providers", {}).get("brave", {})
-    info(f"Search provider result: provider=brave, results={len(results)}, monthly_remaining={brave.get('monthly_remaining', '')}, query={query[:80]}")
+    remaining = "unlimited" if brave.get("monthly_unlimited") else brave.get("monthly_remaining", "")
+    info(f"Search provider result: provider=brave, results={len(results)}, monthly_remaining={remaining}, query={query[:80]}")
     SEARCH_CACHE[cache_key] = results
     return results
 
@@ -1452,7 +1485,7 @@ def topic_direction_for_item(item: SourceItem, report_type: str, site: dict[str,
     return best_key, directions[best_key]
 
 
-def deepseek_triage_batch(items: list[SourceItem], site: dict[str, Any], policy: dict[str, Any]) -> list[RadarDecision]:
+def legacy_deepseek_triage_batch(items: list[SourceItem], site: dict[str, Any], policy: dict[str, Any]) -> list[RadarDecision]:
     api_key = os.environ.get("DEEPSEEK_API_KEY", "").strip()
     if not api_key:
         return []
@@ -1541,14 +1574,14 @@ def deepseek_triage_batch(items: list[SourceItem], site: dict[str, Any], policy:
         return []
 
 
-def deepseek_triage(items: list[SourceItem], site: dict[str, Any], policy: dict[str, Any]) -> list[RadarDecision] | None:
+def legacy_deepseek_triage(items: list[SourceItem], site: dict[str, Any], policy: dict[str, Any]) -> list[RadarDecision] | None:
     if not os.environ.get("DEEPSEEK_API_KEY", "").strip():
         return None
     decisions: list[RadarDecision] = []
     batch_size = 25
     for offset in range(0, min(len(items), 100), batch_size):
         batch = items[offset:offset + batch_size]
-        decisions.extend(deepseek_triage_batch(batch, site, policy))
+        decisions.extend(legacy_deepseek_triage_batch(batch, site, policy))
     return decisions or None
 
 
@@ -1571,16 +1604,13 @@ def deepseek_triage_batch(items: list[SourceItem], site: dict[str, Any], policy:
     body = {
         "model": os.environ.get("DEEPSEEK_MODEL", "deepseek-chat"),
         "temperature": 0.1,
-        "max_tokens": 1800,
+        "max_tokens": 4200,
         "response_format": {"type": "json_object"},
         "messages": [
             {
                 "role": "user",
                 "content": (
-                    "You are Easton Radar triage. Return compact JSON only.\n"
-                    "Schema: {\"items\":[{\"id\":\"\",\"decision\":\"deep_dive|brief|skip\",\"report_type\":\"investigation|opportunity|tool-ledger|platform-rules|case-study|risk-warning\",\"score\":0,\"evidence_level\":\"official|near_source|media|weak\",\"reason\":\"\"}]}.\n"
-                    "Keep reason under 24 Chinese chars. Do not output title, hook, why_now, collection_fit, investigation_direction, uncertainty_flags, markdown, or commentary.\n"
-                    "Skip cold niche technical updates unless they affect cost, workflow, platform rules, income, risk, or ordinary tech-adjacent readers.\n"
+                    f"{load_prompt('01_triage_flash.md')}\n\n"
                     f"Report type rules: {json.dumps(policy.get('report_type_rules', {}), ensure_ascii=False)}\n"
                     f"Topic directions: {json.dumps(site.get('topic_directions', {}), ensure_ascii=False)}\n"
                     f"Persona lines: {json.dumps(policy.get('persona_lines', []), ensure_ascii=False)}\n"
@@ -1622,16 +1652,16 @@ def deepseek_triage_batch(items: list[SourceItem], site: dict[str, Any], policy:
                     item=item,
                     decision=str(row.get("decision") or fallback.decision),
                     report_type=str(row.get("report_type") or fallback.report_type),
-                    report_title=fallback.report_title,
+                    report_title=str(row.get("report_title") or fallback.report_title),
                     score=int(row.get("score", fallback.score) or fallback.score),
-                    reader_hook=fallback.reader_hook,
-                    why_now=fallback.why_now,
+                    reader_hook=str(row.get("reader_hook") or fallback.reader_hook),
+                    why_now=str(row.get("why_now") or fallback.why_now),
                     evidence_level=str(row.get("evidence_level") or fallback.evidence_level),
                     reason=str(row.get("reason") or fallback.reason)[:80],
-                    reject_reason=fallback.reject_reason,
-                    collection_fit=fallback.collection_fit,
-                    investigation_direction=fallback.investigation_direction,
-                    uncertainty_flags=fallback.uncertainty_flags,
+                    reject_reason=str(row.get("reject_reason") or fallback.reject_reason),
+                    collection_fit=str(row.get("collection_fit") or fallback.collection_fit),
+                    investigation_direction=str(row.get("investigation_direction") or fallback.investigation_direction),
+                    uncertainty_flags=row.get("uncertainty_flags", fallback.uncertainty_flags) or fallback.uncertainty_flags,
                     traceability={**fallback.traceability, "heuristic": False, "model": body["model"], "triage_batch_size": len(items)},
                 )
             )
@@ -1717,8 +1747,7 @@ def fallback_pending_dossier(report: dict[str, Any], reason: str) -> dict[str, A
 
 def plan_topic_research(report: dict[str, Any], site: dict[str, Any], policy: dict[str, Any]) -> dict[str, Any] | None:
     prompt = (
-        "你是 Easton Radar 的选题调查编辑。先不要写报告，只判断这条线索还需要查什么。\n"
-        "目标：给后续 GPT 写作应用准备可信素材包，而不是把通用规则写进网页。\n"
+        f"{load_prompt('02_research_plan_flash.md')}\n\n"
         "请只输出 JSON：{\"core_question\":\"\",\"must_verify\":[],\"search_queries\":[],\"best_sources_to_find\":[],"
         "\"expert_challenge_points\":[],\"do_not_claim_yet\":[],\"can_publish_as_radar_if_missing\":\"\",\"downstream_materials_needed\":[]}。\n"
         "要求：search_queries 给 4-8 个具体搜索词；优先官方、近源、价格页、文档、GitHub、监管/平台规则、真实案例、反方材料。"
@@ -1796,12 +1825,52 @@ def enforce_evidence_gate(dossier: dict[str, Any], evidence: list[dict[str, str]
     return dossier
 
 
+def apply_quality_gate(report: dict[str, Any], dossier: dict[str, Any], evidence: list[dict[str, str]]) -> dict[str, Any]:
+    data = deepseek_json(
+        [
+            {"role": "system", "content": load_prompt("04_quality_gate_flash.md")},
+            {"role": "user", "content": json.dumps({
+                "candidate": compact_report_seed(report),
+                "selection_dossier": dossier,
+                "evidence_count": len(evidence),
+                "evidence": evidence,
+            }, ensure_ascii=False)},
+        ],
+        max_tokens=2200,
+        temperature=0.1,
+        timeout=70,
+    )
+    if not isinstance(data, dict):
+        dossier["quality_gate"] = {"pass": False, "recommendation": "hold", "error": "quality gate LLM call failed"}
+        verdict = dossier.setdefault("verdict", {})
+        if verdict.get("status") == "可选":
+            verdict["status"] = "观察"
+            verdict["label"] = "观察"
+            verdict["reason"] = "质量闸调用失败，不能保持可选结论。"
+        return dossier
+    dossier["quality_gate"] = data
+    if data.get("pass") is True and data.get("recommendation") == "publish":
+        return dossier
+    recommendation = data.get("recommendation", "hold")
+    verdict = dossier.setdefault("verdict", {})
+    if recommendation == "downgrade_to_brief":
+        verdict["status"] = "观察"
+        verdict["label"] = "观察"
+    else:
+        verdict["status"] = "暂缓"
+        verdict["label"] = "暂缓"
+    issues = data.get("fatal_issues") or data.get("missing_evidence") or data.get("warnings") or []
+    if isinstance(issues, list) and issues:
+        verdict["reason"] = f"质量闸未通过：{str(issues[0])[:120]}"
+    else:
+        verdict["reason"] = "质量闸未通过，暂不作为可直接写作选题。"
+    dossier["confidence"] = min(confidence_score(dossier.get("confidence", 0)), numeric_value(data.get("score"), 50))
+    return dossier
+
+
 def compose_topic_dossier(report: dict[str, Any], site: dict[str, Any], policy: dict[str, Any], plan: dict[str, Any], evidence: list[dict[str, str]], previous: dict[str, Any] | None = None) -> dict[str, Any] | None:
     prompt = (
-        "你是 Easton Radar 的最终选题质检员。你要基于原始线索、补证计划、搜索结果和抓取正文，生成一份自然可读的选题报告。\n"
-        "这不是公众号正文，不要写口水开头，不要强行写“如果是我我会怎么做”。\n"
-        "报告必须回答：这题值不值得选，为什么，事实是否清楚，证据够不够，逻辑能否闭环，和老花/读者有什么关系，后续能写哪些方向，还缺哪些材料。\n"
-        "不要把通用判断规则原样写出来。所有判断都要落到这个具体题上。\n"
+        f"{load_prompt('03_investigation_report_flash.md')}\n\n"
         "请只输出 JSON：{\"schema\":\"topic-selection-dossier-v3\",\"generated_by\":\"deepseek\","
         "\"verdict\":{\"status\":\"可选|观察|暂缓|放弃\",\"label\":\"可选|观察|暂缓|放弃\",\"reason\":\"\"},"
         "\"core_question\":\"\",\"why_this_topic_matters\":\"\",\"fact_summary\":[],"
@@ -1862,6 +1931,7 @@ def enrich_selection_dossier(report: dict[str, Any], site: dict[str, Any], polic
         info(f"LLM dossier failed at final composition: {report.get('title', '')}")
         return fallback_pending_dossier(report, "DeepSeek 没有成功生成最终选题报告，暂不输出可信结论。")
     dossier = enforce_evidence_gate(dossier, evidence)
+    dossier = apply_quality_gate(report, dossier, evidence)
     dossier["research_plan"] = plan
     dossier["research_evidence"] = evidence
     verdict = dossier.get("verdict", {}) if isinstance(dossier, dict) else {}
@@ -2229,7 +2299,7 @@ def material_pack(report: dict[str, Any]) -> dict[str, Any]:
     return selection_dossier(report)
 
 
-def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str, Any]) -> dict[str, Any]:
+def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str, Any], batch_id: str) -> dict[str, Any]:
     item = decision.item
     report_id = f"{now_bj().strftime('%Y%m%d')}-{slugify(item.title)}"
     report_type_meta = site["report_types"][decision.report_type]
@@ -2238,6 +2308,7 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
     topic_key, topic_meta = topic_direction_for_item(item, decision.report_type, site)
     report = {
         "id": report_id,
+        "batch_id": batch_id,
         "title": decision.report_title,
         "original_title": item.title,
         "url": item.url,
@@ -2558,6 +2629,12 @@ def report_flow_item(report: dict[str, Any]) -> str:
 """
 
 
+def report_verdict_label(report: dict[str, Any]) -> str:
+    dossier = report.get("selection_dossier") or report.get("material_pack") or {}
+    verdict = dossier.get("verdict", {}) if isinstance(dossier, dict) else {}
+    return verdict.get("label") or verdict.get("status") or "待判断"
+
+
 def render_archive_preview(archive: dict[str, Any], limit_days: int = 5) -> str:
     grouped: dict[str, list[dict[str, Any]]] = {}
     for item in archive.get("items", []):
@@ -2578,7 +2655,10 @@ def render_home(batch: dict[str, Any], reports: list[dict[str, Any]], site: dict
         f'<span class="badge">{html.escape(v["title"])}：{v["items"]} 条 / 失败 {v["failures"]}</span>'
         for v in batch.get("source_coverage", {}).values()
     )
-    flow = "".join(report_flow_item(r) for r in reports) or '<p class="meta">本批次暂无入池候选选题。</p>'
+    ready_reports = [r for r in reports if report_verdict_label(r) in {"可选", "观察"}]
+    pending_reports = [r for r in reports if report_verdict_label(r) not in {"可选", "观察"}]
+    flow = "".join(report_flow_item(r) for r in ready_reports) or '<p class="meta">本批次暂无可选或观察选题。</p>'
+    pending_flow = "".join(report_flow_item(r) for r in pending_reports) or '<p class="meta">本批次暂无待补证线索。</p>'
     verdict_counts: dict[str, int] = {}
     for report in reports:
         dossier = report.get("selection_dossier") or report.get("material_pack") or {}
@@ -2595,7 +2675,8 @@ def render_home(batch: dict[str, Any], reports: list[dict[str, Any]], site: dict
 </section>
 <div class="ad-slot">AdSense 预留位：后续填入 publisher client 后启用</div>
 <section class="section card"><h2>本批次概况</h2><p class="meta">批次：{html.escape(batch["batch_id"])} · 抓取 {batch["fetched_count"]} 条 · 入池 {len(reports)} 个候选 · {verdict_summary} · 近期重复跳过 {duplicate_count} 个</p><p>{coverage}</p></section>
-<section class="section"><h2>候选选题信息流</h2><div class="flow">{flow}</div></section>
+<section class="section"><h2>可写候选与观察选题</h2><div class="flow">{flow}</div></section>
+<section class="section"><h2>待补证线索</h2><p class="meta">这些线索已经入池，但质量闸或补证搜索尚未支持直接写作。</p><div class="flow">{pending_flow}</div></section>
 <section class="section card"><h2>历史选题库</h2><p class="meta">按日期回看已入池选题，用来判断哪些题已经看过、哪些方向反复出现。<a href="/archive/">查看完整历史</a></p>{render_archive_preview(archive)}</section>
 <section class="section card"><h2>数据源原则</h2><ul>{principles}</ul></section>
 """
@@ -3010,9 +3091,6 @@ def main() -> int:
         info(f"Selected #{index}: score={decision.score}, decision={decision.decision}, topic={topic_key}, title={decision.report_title}")
     for skipped in duplicate_skips[:10]:
         info(f"Duplicate skip: {skipped.get('title', '')} | {skipped.get('reason', '')}")
-    info("Building enriched topic reports...")
-    reports = [build_report(d, site, policy) for d in selected]
-    info(f"Report build complete: reports={len(reports)}")
     selected_deep_count = sum(1 for d in selected if d.decision == "deep_dive")
     selected_brief_count = sum(1 for d in selected if d.decision == "brief")
     batch = {
@@ -3031,6 +3109,9 @@ def main() -> int:
         "source_coverage": source_coverage(items, failures, site),
         "failures": failures,
     }
+    info("Building enriched topic reports...")
+    reports = [build_report(d, site, policy, batch_id) for d in selected]
+    info(f"Report build complete: reports={len(reports)}")
     archive = update_topic_archive(archive, reports, batch)
     info(f"Updated topic archive entries: {len(archive.get('items', []))}")
     clean_generated_outputs()

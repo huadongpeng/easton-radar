@@ -98,6 +98,16 @@ py -3.13 -m py_compile src\radar.py
 py -3.13 src\radar.py --slot auto --no-telegram
 ```
 
+如果要在本地跑完整 LLM 和搜索补证链路：
+
+```powershell
+Copy-Item .env.local.example .env.local
+# 编辑 .env.local，填入 DeepSeek、Tavily/Brave 等 key
+powershell -ExecutionPolicy Bypass -File tools\run-radar-local.ps1 -Slot auto
+```
+
+默认本地脚本会加 `--no-telegram`，避免测试时发通知；需要测试 Telegram 时加 `-Telegram`。脚本会把输出同步写入 `logs/radar-local-*.log`，便于排查 LLM 和搜索补证耗时。
+
 ## 非目标
 
 - 不做反爬绕过。
