@@ -18,7 +18,7 @@
   "published_at": "2026-06-09T08:00:00Z",
   "score": 86,
   "evidence_level": "official",
-  "reader_hook": "用 API 做副业工具或内部自动化的人，需要重新算账。",
+  "reader_hook": "老花可以从技术人账本角度拆：用 API 做副业工具或内部自动化的人，需要重新算账。目标读者兴趣：高。",
   "why_now": "官方价格页刚更新，可能影响模型选型和成本结构。",
   "collection_fit": "符合收集原则：来源可复查，且具备进入「工具账本」类报告的分析价值。",
   "investigation_direction": "优先追价格页、额度、API 文档、替代方案和实际成本边界。",
@@ -38,9 +38,9 @@
     "schema": "topic-selection-dossier-v3",
     "generated_by": "deepseek|fallback",
     "verdict": {
-      "status": "可进入选题池",
-      "label": "可选",
-      "reason": "当前线索有较强来源、读者关系和分析空间。"
+      "status": "推荐选题",
+      "label": "推荐",
+      "reason": "当前线索有较强来源、人设解读角度、目标读者兴趣和分析空间。"
     },
     "core_question": "这条线索能不能成为一个值得老花继续写的选题？",
     "why_this_topic_matters": "",
@@ -107,12 +107,13 @@
 - `topic_direction`：网站主栏目，表示这条线索属于哪个实际选题方向。
 - `report_type`：分析方法，表示这篇报告应该用哪种方式拆，不再承担主栏目职责。
 - `selection_dossier`：选题报告主字段。后续 GPT 应用优先读取它，用它判断这个题值不值得写、怎么写、缺什么、哪些不能写成结论。
+- `selection_dossier.verdict.label`：公开选题级别，只允许 `推荐` 或 `可选`。推荐表示优先进入写作框架；可选表示方向有价值但写作前仍需补证。
 - `material_pack`：兼容字段，内容等同于 `selection_dossier`，避免下游旧流程读不到素材包。
 - `title`：中文 Radar 标题，可以保留产品名/公司名，但不能整句照搬英文原题。
 - `original_title`：原始来源标题。
 - `source_category`：内部数据源分类，表示线索来自哪类源。
 - `evidence_level`：证据等级，不等于可信结论。
-- `reader_hook`：必须回答“这事和普通读者有什么关系”。
+- `reader_hook`：兼容旧字段名，实际语义是“符合老花人设的解读角度 + 目标读者兴趣理由”，不能写成泛泛的大众化钩子。
 - `collection_fit`：先判断它是否符合信息收集原则。
 - `investigation_direction`：粗略说明后续应该沿什么方向深挖。
 - `uncertainty_flags`：没有证据、证据弱或仍存疑的地方。

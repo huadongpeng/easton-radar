@@ -35,12 +35,12 @@ TAVILY_URL = "https://api.tavily.com/search"
 TAVILY_USAGE_URL = "https://api.tavily.com/usage"
 MAX_ITEMS_PER_SOURCE = 18
 MAX_TOTAL_ITEMS = 220
-MAX_REPORTS_PER_BATCH = 3
-MAX_REPORTS_PER_TOPIC = 2
+MAX_REPORTS_PER_BATCH = 5
+MAX_REPORTS_PER_TOPIC = 3
 TRIAGE_BATCH_SIZE = 10
 MAX_REPORTS_PER_SOURCE_HOST = 2
 MIN_DEEP_DIVE_SCORE = 45
-MIN_BRIEF_SCORE = 55
+MIN_BRIEF_SCORE = 38
 SOURCE_CATEGORY_REPORT_CAPS = {
     "ai_tools": 6,
     "developer_business": 4,
@@ -1082,7 +1082,7 @@ def heuristic_decision(item: SourceItem, site: dict[str, Any]) -> RadarDecision:
     else:
         decision = "skip"
     reader_hook = infer_reader_hook(hits, report_type)
-    reject_reason = "" if decision != "skip" else "读者入口、成本/平台/工具链关联不够明确，先不进入候选池。"
+    reject_reason = "" if decision != "skip" else "老花人设解读角度、成本/平台/工具链关联不够明确，先不进入候选池。"
     return RadarDecision(
         item=item,
         decision=decision,
@@ -1103,18 +1103,18 @@ def heuristic_decision(item: SourceItem, site: dict[str, Any]) -> RadarDecision:
 
 def infer_reader_hook(hits: dict[str, list[str]], report_type: str) -> str:
     if report_type == "tool-ledger":
-        return "这条线索可能影响 AI/API/云服务/开发工具成本，适合按普通技术人的账本拆。"
+        return "适合按老花的技术人账本视角拆：AI/API/云服务/开发工具成本到底怎么变。"
     if report_type == "platform-rules":
-        return "这条线索可能影响平台规则、搜索流量、出海路径或合规边界，适合先看清条件。"
+        return "适合按老花的规则避坑视角拆：平台规则、搜索流量、出海路径或合规边界怎么影响小团队。"
     if report_type == "risk-warning":
-        return "这条线索可能藏着成本、合规、封号或营销话术风险，适合先避坑。"
+        return "适合按老花的避坑视角拆：成本、合规、封号或营销话术里有哪些坑。"
     if report_type == "case-study":
-        return "这条线索有具体项目或案例，可以拆哪些条件可复制，哪些只是别人自己的局。"
+        return "适合按老花的案例复盘视角拆：哪些条件可复制，哪些只是别人自己的局。"
     if report_type == "opportunity":
-        return "这条线索可能关联副业、独立开发或出海机会，需要继续拆门槛、用户和现金流。"
+        return "适合按老花的副业和信息差视角拆：门槛、用户、流量和现金流是否真实。"
     if "ai" in hits and "dev" in hits:
-        return "这条线索可能影响 AI 开发工作流、API 使用成本或程序员工具链，适合判断是否值得跟进。"
-    return "这条线索需要继续确认它和普通技术人的成本、岗位、工具链或机会有什么关系。"
+        return "适合按老花的 AI 开发视角拆：它会不会改变工作流、API 成本或程序员工具链。"
+    return "需要继续确认它是否符合老花的人设主线，以及目标读者会不会关心其中的成本、岗位、工具链或机会变化。"
 
 
 def display_source_name(item: SourceItem) -> str:
@@ -1242,8 +1242,8 @@ def collection_fit_text(score: int, evidence_level: str, report_type: str, site:
     if score >= 55 and evidence_level in {"official", "near_source"}:
         return f"符合收集原则：来源可复查，且具备进入「{report_name}」类报告的分析价值。"
     if score >= 32:
-        return "部分符合收集原则：可以进入观察池，但证据链或读者入口还不够完整。"
-    return "暂不符合深挖原则：相关性、证据质量或普通读者入口不足。"
+        return "部分符合收集原则：可以进入可选池，但证据链、人设解读角度或目标读者兴趣还不够完整。"
+    return "暂不符合深挖原则：相关性、证据质量、人设解读角度或目标读者兴趣不足。"
 
 
 def infer_investigation_direction(report_type: str) -> str:
@@ -1405,7 +1405,7 @@ def downstream_handoff(report: dict[str, Any], site: dict[str, Any]) -> dict[str
             "must_keep": [
                 "先交代来源和证据等级。",
                 "明确哪些是已确认事实，哪些只是推断或待验证线索。",
-                "保留普通读者入口，不把冷门技术写成圈内自嗨。"
+                "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
             ],
             "must_not_claim": report["verification"]["do_not_claim"],
             "questions_to_resolve": report["verification"]["what_needs_followup"],
@@ -1521,7 +1521,7 @@ def legacy_deepseek_triage_batch(items: list[SourceItem], site: dict[str, Any], 
                     "reader_hook, why_now, evidence_level(official|near_source|media|weak), reason, reject_reason,"
                     "collection_fit, investigation_direction, uncertainty_flags。\n"
                     "report_title 必须是中文 Radar 标题，可以保留产品名/公司名，但不能整句英文照搬原题。\n"
-                    "硬规则：优先官方/一手/近源；反爬论坛抓不到就放弃；冷门技术没有普通读者入口就 skip；"
+                    "硬规则：优先官方/一手/近源；反爬论坛抓不到就放弃；冷门技术没有老花人设解读角度就 skip；"
                     "先判断是否符合信息收集原则；符合才深挖证据；证据不足必须标记存疑，不能写成结论。\n"
                     f"报告类型规则：{json.dumps(policy['report_type_rules'], ensure_ascii=False)}\n"
                     f"下游交接要求：{json.dumps(policy.get('downstream_requirements', {}), ensure_ascii=False)}\n"
@@ -1756,7 +1756,7 @@ def plan_topic_research(report: dict[str, Any], site: dict[str, Any], policy: di
         "请只输出 JSON：{\"core_question\":\"\",\"must_verify\":[],\"search_queries\":[],\"best_sources_to_find\":[],"
         "\"expert_challenge_points\":[],\"do_not_claim_yet\":[],\"can_publish_as_radar_if_missing\":\"\",\"downstream_materials_needed\":[]}。\n"
         "要求：search_queries 给 4-8 个具体搜索词；优先官方、近源、价格页、文档、GitHub、监管/平台规则、真实案例、反方材料。"
-        "如果这个题太窄、太冷、和读者关系弱，要明确写出来。"
+        "如果这个题太窄、太冷、人设解读角度弱或目标读者兴趣低，要明确写出来。"
     )
     data = deepseek_json(
         [
@@ -1813,13 +1813,49 @@ def confidence_score(value: Any) -> float:
     return number
 
 
+def topic_level(report: dict[str, Any], dossier: dict[str, Any] | None = None) -> str:
+    dossier = dossier or report.get("selection_dossier") or report.get("material_pack") or {}
+    verdict = dossier.get("verdict", {}) if isinstance(dossier, dict) else {}
+    label = str(verdict.get("label") or verdict.get("status") or "").strip()
+    if label in {"推荐", "可选"}:
+        return label
+    score = int(report.get("score", 0) or 0)
+    confidence = confidence_score(dossier.get("confidence", 0)) if isinstance(dossier, dict) else 0
+    evidence = report.get("evidence_level", "")
+    decision = report.get("decision", "")
+    quality_gate = dossier.get("quality_gate", {}) if isinstance(dossier, dict) else {}
+    gaps = len(report.get("uncertainty_flags", []))
+    if (
+        decision == "deep_dive"
+        and evidence in {"official", "near_source"}
+        and score >= 68
+        and (confidence >= 62 or quality_gate.get("pass") is True)
+        and gaps <= 3
+    ):
+        return "推荐"
+    return "可选"
+
+
+def normalize_selection_dossier(report: dict[str, Any], dossier: dict[str, Any]) -> dict[str, Any]:
+    verdict = dossier.setdefault("verdict", {})
+    previous = str(verdict.get("label") or verdict.get("status") or "").strip()
+    level = topic_level(report, dossier)
+    verdict["status"] = "推荐选题" if level == "推荐" else "可选选题"
+    verdict["label"] = level
+    if previous and previous not in {"推荐", "可选"}:
+        verdict["previous_label"] = previous
+    if not verdict.get("reason"):
+        verdict["reason"] = "证据、人设解读角度和目标读者兴趣较完整，建议优先进入写作框架。" if level == "推荐" else "可以保留为候选选题，写作前需要按缺口继续补证。"
+    return dossier
+
+
 def enforce_evidence_gate(dossier: dict[str, Any], evidence: list[dict[str, str]]) -> dict[str, Any]:
     if evidence:
         return dossier
     verdict = dossier.setdefault("verdict", {})
-    verdict["status"] = "暂缓"
-    verdict["label"] = "暂缓"
-    verdict["reason"] = "补证搜索没有拿到可用结果，当前不能给可选或高可信判断。"
+    verdict["status"] = "可选选题"
+    verdict["label"] = "可选"
+    verdict["reason"] = "补证搜索没有拿到可用结果，只能保留为可选线索；写作前必须补官方或近源材料。"
     dossier["confidence"] = min(confidence_score(dossier.get("confidence", 0)), 30)
     missing = dossier.setdefault("missing_materials", [])
     if isinstance(missing, list):
@@ -1848,27 +1884,29 @@ def apply_quality_gate(report: dict[str, Any], dossier: dict[str, Any], evidence
     if not isinstance(data, dict):
         dossier["quality_gate"] = {"pass": False, "recommendation": "hold", "error": "quality gate LLM call failed"}
         verdict = dossier.setdefault("verdict", {})
-        if verdict.get("status") == "可选":
-            verdict["status"] = "观察"
-            verdict["label"] = "观察"
-            verdict["reason"] = "质量闸调用失败，不能保持可选结论。"
+        verdict["status"] = "可选选题"
+        verdict["label"] = "可选"
+        verdict["reason"] = "质量闸调用失败，只保留为可选线索；写作前需要人工复核证据和缺口。"
         return dossier
     dossier["quality_gate"] = data
     if data.get("pass") is True and data.get("recommendation") == "publish":
+        verdict = dossier.setdefault("verdict", {})
+        verdict["status"] = "推荐选题"
+        verdict["label"] = "推荐"
         return dossier
     recommendation = data.get("recommendation", "hold")
     verdict = dossier.setdefault("verdict", {})
     if recommendation == "downgrade_to_brief":
-        verdict["status"] = "观察"
-        verdict["label"] = "观察"
+        verdict["status"] = "可选选题"
+        verdict["label"] = "可选"
     else:
-        verdict["status"] = "暂缓"
-        verdict["label"] = "暂缓"
+        verdict["status"] = "可选选题"
+        verdict["label"] = "可选"
     issues = data.get("fatal_issues") or data.get("missing_evidence") or data.get("warnings") or []
     if isinstance(issues, list) and issues:
-        verdict["reason"] = f"质量闸未通过：{str(issues[0])[:120]}"
+        verdict["reason"] = f"质量闸提示缺口：{str(issues[0])[:120]}"
     else:
-        verdict["reason"] = "质量闸未通过，暂不作为可直接写作选题。"
+        verdict["reason"] = "质量闸没有给出推荐结论，保留为可选线索，写作前继续补证。"
     dossier["confidence"] = min(confidence_score(dossier.get("confidence", 0)), numeric_value(data.get("score"), 50))
     return dossier
 
@@ -1877,13 +1915,13 @@ def compose_topic_dossier(report: dict[str, Any], site: dict[str, Any], policy: 
     prompt = (
         f"{load_prompt('03_investigation_report_flash.md')}\n\n"
         "请只输出 JSON：{\"schema\":\"topic-selection-dossier-v3\",\"generated_by\":\"deepseek\","
-        "\"verdict\":{\"status\":\"可选|观察|暂缓|放弃\",\"label\":\"可选|观察|暂缓|放弃\",\"reason\":\"\"},"
+        "\"verdict\":{\"status\":\"推荐选题|可选选题\",\"label\":\"推荐|可选\",\"reason\":\"\"},"
         "\"core_question\":\"\",\"why_this_topic_matters\":\"\",\"fact_summary\":[],"
         "\"timeline\":[],\"evidence_table\":[{\"source\":\"\",\"url\":\"\",\"supports\":\"\",\"reliability\":\"official|near_source|media|weak\"}],"
         "\"logic_closure\":\"\",\"writeable_angles\":[{\"angle\":\"\",\"why\":\"\",\"needs\":\"\"}],"
         "\"missing_basics\":[],\"missing_materials\":[],\"not_claimable\":[],\"followup_queries\":[],"
         "\"additional_search_queries\":[],\"stop_conditions\":[],\"confidence\":0}。\n"
-        "如果证据不足，verdict 不得写可选；如果需要更多证据，把 additional_search_queries 写清楚。"
+        "只有证据较完整、老花人设解读角度清楚、目标读者兴趣明确、逻辑可闭环时才写推荐；证据不足但有方向价值时写可选，并把 additional_search_queries 和缺口写清楚。"
     )
     data = deepseek_json(
         [
@@ -1907,7 +1945,7 @@ def compose_topic_dossier(report: dict[str, Any], site: dict[str, Any], policy: 
     data.setdefault("topic_direction", report.get("topic_direction", ""))
     data.setdefault("topic_direction_title", report.get("topic_direction_title", ""))
     data.setdefault("report_type", report.get("report_type", ""))
-    return data
+    return normalize_selection_dossier(report, data)
 
 
 def enrich_selection_dossier(report: dict[str, Any], site: dict[str, Any], policy: dict[str, Any]) -> dict[str, Any]:
@@ -1937,6 +1975,7 @@ def enrich_selection_dossier(report: dict[str, Any], site: dict[str, Any], polic
         return fallback_pending_dossier(report, "DeepSeek 没有成功生成最终选题报告，暂不输出可信结论。")
     dossier = enforce_evidence_gate(dossier, evidence)
     dossier = apply_quality_gate(report, dossier, evidence)
+    dossier = normalize_selection_dossier(report, dossier)
     dossier["research_plan"] = plan
     dossier["research_evidence"] = evidence
     verdict = dossier.get("verdict", {}) if isinstance(dossier, dict) else {}
@@ -2089,12 +2128,12 @@ def topic_selection_rules(topic_key: str) -> dict[str, list[str]]:
         "ai-frontier": {
             "selection_questions": [
                 "这是不是明确发生的 AI 能力、价格、生态或平台规则变化，而不是普通产品小更新？",
-                "普通读者能不能听懂它改变了什么，程序员能不能看出技术和工具链价值？",
+                "能不能形成老花的人设解读角度，目标读者会不会关心其中的工具链、成本或能力变化？",
                 "有没有官方公告、文档、价格页、发布说明或可信近源材料？",
                 "能不能讲清楚发布时间线、能力变化、影响对象、成本门槛和替代关系？",
             ],
             "valuable_signals": ["官方发布", "影响开发者或高频 AI 用户", "改变成本结构", "改变工作流", "有明确对比对象"],
-            "reject_signals": ["只有产品名", "只是 SDK 小版本", "没有大众钩子", "只能写成又一个工具更新"],
+            "reject_signals": ["只有产品名", "只是 SDK 小版本", "没有人设解读角度", "只能写成又一个工具更新"],
             "writeable_angles": ["这次更新到底改变了什么", "普通技术人该不该关注", "成本和工具链会不会变化", "它替代了谁又替代不了谁"],
             "missing_basics": ["产品/模型/Agent 基础概念", "本次更新前后的差异", "开放范围和使用门槛", "价格、额度和地区限制"],
             "missing_materials": ["官方公告", "文档或 changelog", "价格页", "真实使用反馈", "竞品对比材料"],
@@ -2102,11 +2141,11 @@ def topic_selection_rules(topic_key: str) -> dict[str, list[str]]:
         "tools-rules": {
             "selection_questions": [
                 "它是不是一个具体工具、工作流、平台规则或搜索流量变化，而不是空泛地说 AI 很强？",
-                "普通读者能不能理解它怎么用、怎么变、会影响什么成本或边界？",
+                "能不能从老花的人设视角说清它怎么用、怎么变、会影响什么成本或边界？",
                 "能不能拆出输入输出、执行规则、人工兜底、失败信号或账号/合规风险？",
                 "有没有官方文档、帮助中心、价格页、规则原文、实测材料或反例？",
             ],
-            "valuable_signals": ["工具或规则明确", "输入输出清楚", "影响成本/效率/流量/账号", "有官方或近源材料", "普通读者能理解"],
+            "valuable_signals": ["工具或规则明确", "输入输出清楚", "影响成本/效率/流量/账号", "有官方或近源材料", "目标读者会关心"],
             "reject_signals": ["只有工具名", "只有炫技", "只有玄学猜测", "没有规则原文", "必须编一堆操作细节"],
             "writeable_angles": ["这个工具或规则到底改变了什么", "最低成本怎么验证", "哪些环节必须人工兜底", "哪些行为可能失效或踩坑"],
             "missing_basics": ["具体使用者是谁", "输入输出或规则原文", "影响对象", "执行时间", "失败后怎么回滚"],
@@ -2146,7 +2185,7 @@ def topic_selection_rules(topic_key: str) -> dict[str, list[str]]:
             "事实是否清楚，证据是否可靠，逻辑能不能闭环？",
         ],
         "valuable_signals": ["事实清楚", "读者能理解", "有证据", "能形成判断"],
-        "reject_signals": ["只能泛泛而谈", "没有证据", "没有读者关系"],
+        "reject_signals": ["只能泛泛而谈", "没有证据", "没有人设解读角度"],
         "writeable_angles": ["事实拆解", "价值判断", "风险边界"],
         "missing_basics": ["核心概念", "影响对象", "证据边界"],
         "missing_materials": ["一手来源", "近源证据", "反方材料"],
@@ -2158,22 +2197,22 @@ def selection_verdict(report: dict[str, Any]) -> dict[str, str]:
     evidence = report.get("evidence_level", "")
     decision = report.get("decision", "")
     gaps = len(report.get("uncertainty_flags", []))
-    if decision == "deep_dive" and evidence in {"official", "near_source"} and score >= 63 and gaps <= 3:
+    if decision == "deep_dive" and evidence in {"official", "near_source"} and score >= 68 and gaps <= 3:
         return {
-            "status": "可进入选题池",
-            "label": "可选",
-            "reason": "当前线索有明确来源、读者关系和分析空间，可以作为候选选题继续补证。",
+            "status": "推荐选题",
+            "label": "推荐",
+            "reason": "当前线索有明确来源、人设解读角度、目标读者兴趣和分析空间，建议优先进入写作框架。",
         }
-    if decision == "deep_dive" or score >= 58:
+    if decision != "skip" and score >= MIN_BRIEF_SCORE:
         return {
-            "status": "待补证观察",
-            "label": "观察",
-            "reason": "线索有方向价值，但事实、概念、案例或成本材料还不足，暂时不能直接写成正文。",
+            "status": "可选选题",
+            "label": "可选",
+            "reason": "线索有方向价值，但事实、概念、案例或成本材料还需要继续补证。",
         }
     return {
-        "status": "不建议写成正文",
-        "label": "暂缓",
-            "reason": "当前材料不足以支撑一个有用选题，最多保留为观察或后续检索线索。",
+        "status": "可选选题",
+        "label": "可选",
+        "reason": "当前材料偏弱，只作为候选线索保留；写作前必须补足来源、人设解读角度和目标读者兴趣理由。",
     }
 
 
@@ -2197,7 +2236,7 @@ def selection_dossier(report: dict[str, Any]) -> dict[str, Any]:
             "note": f"来源入口：{report.get('source_name', '')}",
         },
         {
-            "node": "和读者是否有关",
+            "node": "人设解读角度是否成立",
             "status": "初步成立" if report.get("reader_hook") else "缺判断",
             "note": report.get("reader_hook", ""),
         },
@@ -2221,17 +2260,17 @@ def selection_dossier(report: dict[str, Any]) -> dict[str, Any]:
         "core_question": f"这条线索能不能成为一个值得老花继续写的选题：{title}",
         "human_judgment_path": [
             "先确认这件事是不是真的发生，而不是只看标题兴奋。",
-            "再确认它和读者有什么关系：能不能帮读者理解机会、成本、规则、坑或工具变化。",
+            "再确认它是否符合老花人设：能不能用技术人视角解释机会、成本、规则、坑或工具变化。",
             "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
             "再看逻辑是否闭环：事实、原因、影响、边界、可写角度能不能连起来。",
-            "最后决定：可选、观察、暂缓，而不是把所有线索都写成同一套报告。",
+            "最后决定：推荐或可选，而不是把所有线索都写成同一套报告。",
         ],
         "selection_questions": rules["selection_questions"],
         "value_signals": rules["valuable_signals"],
         "reject_signals": rules["reject_signals"],
         "topic_value_assessment": [
             {"question": "这是什么？", "judgment": original_title or title},
-            {"question": "和读者有什么关系？", "judgment": report.get("reader_hook", "暂无明确读者关系")},
+            {"question": "老花可以从什么角度解读？", "judgment": report.get("reader_hook", "暂无明确人设解读角度")},
             {"question": "为什么现在看？", "judgment": report.get("why_now", "暂无明确时间价值")},
             {"question": "事实清楚吗？", "judgment": fact_status},
             {"question": "材料可靠吗？", "judgment": f"当前证据等级：{evidence}"},
@@ -2265,7 +2304,7 @@ def selection_dossier(report: dict[str, Any]) -> dict[str, Any]:
         "followup_queries": followup_queries_from_report(report),
         "stop_conditions": [
             "找不到一手来源或近源证据。",
-            "无法说明这件事和读者有什么关系。",
+            "无法说明老花能从什么角度解读，以及目标读者为什么会关心。",
             "关键概念、成本、合规、收益或影响对象说不清。",
             "逻辑必须靠想象补齐，写出来只会像假大空。",
         ],
@@ -2360,7 +2399,7 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
     }
     report["source_assessment"] = source_access_assessment(item)
     report["evidence_dossier"] = evidence_dossier(report)
-    report["selection_dossier"] = enrich_selection_dossier(report, site, policy)
+    report["selection_dossier"] = normalize_selection_dossier(report, enrich_selection_dossier(report, site, policy))
     report["material_pack"] = report["selection_dossier"]
     report["downstream_handoff"] = downstream_handoff(report, site)
     return report
@@ -2480,7 +2519,7 @@ nav{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;gap:16px;align
 main{max-width:1120px;margin:0 auto;padding:28px 20px 56px}.hero{padding:34px 0 18px}.hero h1{font-size:38px;line-height:1.16;margin:0 0 14px}.hero p{max-width:790px;color:var(--muted);font-size:17px;margin:0}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.card,.item,.report,.callout{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px}.section{margin-top:32px}
 .list{display:grid;gap:12px}.flow{display:grid;gap:10px}.flow-item{display:grid;grid-template-columns:120px 1fr auto;gap:14px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px}.flow-item h3{margin:0 0 6px;font-size:17px}.flow-item p{margin:5px 0}.topic-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}.topic-chip{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px}.topic-chip strong{display:block;font-size:22px}.archive-day{margin-top:18px}.item h3{margin:0 0 8px;font-size:18px}.item p{margin:8px 0}.meta{color:var(--muted);font-size:13px}.badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:12px;color:#33415f;background:#fafbff;margin:0 6px 6px 0}.score{font-weight:700;color:#0a7f42}.source{word-break:break-all}
-.topic-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.topic-head h2{margin:0}.kicker{font-size:13px;color:#44516b;font-weight:650;margin:0 0 6px}.topic-list{margin-top:14px}.callout{border-color:#bfd1f8;background:#f8fbff}.evidence-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.evidence-grid h3{margin-top:0}
+.topic-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.topic-head h2{margin:0}.kicker{font-size:13px;color:#44516b;font-weight:650;margin:0 0 6px}.topic-list{margin-top:14px}.filter-tabs{position:sticky;top:54px;z-index:4;display:flex;gap:8px;flex-wrap:wrap;background:rgba(246,247,251,.94);padding:10px 0;border-bottom:1px solid var(--line)}.filter-tabs a{border:1px solid var(--line);border-radius:999px;background:#fff;color:#2c3852;padding:6px 12px;font-size:14px}.callout{border-color:#bfd1f8;background:#f8fbff}.evidence-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.evidence-grid h3{margin-top:0}
 .report{max-width:920px}.report h1{line-height:1.25}.report h2{margin-top:28px}.ad-slot{border:1px dashed #c8cfdd;border-radius:8px;color:#7b8496;padding:16px;text-align:center;background:#fff;margin:24px 0}
 footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:22px 20px;text-align:center}
 @media(max-width:760px){.flow-item{grid-template-columns:1fr}.hero h1{font-size:30px}.brand{width:100%;margin-right:0}.report{padding:16px}}
@@ -2559,7 +2598,7 @@ def report_card(report: dict[str, Any]) -> str:
     title = display_report_title(report)
     dossier = report.get("selection_dossier") or report.get("material_pack") or {}
     verdict = dossier.get("verdict", {})
-    verdict_label = verdict.get("label") or verdict.get("status") or "待判断"
+    verdict_label = report_verdict_label(report)
     core_question = dossier.get("core_question") or report.get("reader_hook", "")
     return f"""
 <article class="item">
@@ -2589,7 +2628,7 @@ def topic_summary_chips(reports: list[dict[str, Any]], site: dict[str, Any]) -> 
 def report_flow_item(report: dict[str, Any]) -> str:
     dossier = report.get("selection_dossier") or report.get("material_pack") or {}
     verdict = dossier.get("verdict", {})
-    label = verdict.get("label") or verdict.get("status") or "待判断"
+    label = report_verdict_label(report)
     reason = verdict.get("reason", "")
     topic = report.get("topic_direction_short_title") or report.get("topic_direction_title") or report.get("source_category_title", "")
     title = display_report_title(report)
@@ -2608,8 +2647,28 @@ def report_flow_item(report: dict[str, Any]) -> str:
 
 def report_verdict_label(report: dict[str, Any]) -> str:
     dossier = report.get("selection_dossier") or report.get("material_pack") or {}
-    verdict = dossier.get("verdict", {}) if isinstance(dossier, dict) else {}
-    return verdict.get("label") or verdict.get("status") or "待判断"
+    return topic_level(report, dossier if isinstance(dossier, dict) else {})
+
+
+def archive_item_level(item: dict[str, Any]) -> str:
+    verdict = str(item.get("verdict", "")).strip()
+    if verdict in {"推荐", "可选"}:
+        return verdict
+    score = int(item.get("score", 0) or 0)
+    evidence = item.get("evidence_level", "")
+    if evidence in {"official", "near_source"} and score >= 68:
+        return "推荐"
+    return "可选"
+
+
+def pack_verdict_display(pack: dict[str, Any]) -> tuple[str, str]:
+    verdict = pack.get("verdict", {}) if isinstance(pack, dict) else {}
+    label = str(verdict.get("label") or verdict.get("status") or "").strip()
+    if label == "推荐":
+        status = "推荐选题"
+    else:
+        status = "可选选题"
+    return status, str(verdict.get("reason", ""))
 
 
 def render_archive_preview(archive: dict[str, Any], limit_days: int = 5) -> str:
@@ -2621,7 +2680,7 @@ def render_archive_preview(archive: dict[str, Any], limit_days: int = 5) -> str:
     for day in sorted(grouped.keys(), reverse=True)[:limit_days]:
         rows = []
         for item in grouped[day][:8]:
-            rows.append(f'<li><span class="badge">{html.escape(item.get("verdict", "待判断"))}</span><a href="{html.escape(item.get("item_url", ""))}">{html.escape(item.get("title", ""))}</a> <span class="meta">· {html.escape(item.get("topic_direction_title", ""))}</span></li>')
+            rows.append(f'<li><span class="badge">{html.escape(archive_item_level(item))}</span><a href="{html.escape(item.get("item_url", ""))}">{html.escape(item.get("title", ""))}</a> <span class="meta">· {html.escape(item.get("topic_direction_title", ""))}</span></li>')
         sections.append(f'<section class="archive-day"><h3>{html.escape(day)}</h3><ul>{"".join(rows)}</ul></section>')
     return "".join(sections) or '<p class="meta">暂无历史选题归档。</p>'
 
@@ -2632,28 +2691,26 @@ def render_home(batch: dict[str, Any], reports: list[dict[str, Any]], site: dict
         f'<span class="badge">{html.escape(v["title"])}：{v["items"]} 条 / 失败 {v["failures"]}</span>'
         for v in batch.get("source_coverage", {}).values()
     )
-    ready_reports = [r for r in reports if report_verdict_label(r) in {"可选", "观察"}]
-    pending_reports = [r for r in reports if report_verdict_label(r) not in {"可选", "观察"}]
-    flow = "".join(report_flow_item(r) for r in ready_reports) or '<p class="meta">本批次暂无可选或观察选题。</p>'
-    pending_flow = "".join(report_flow_item(r) for r in pending_reports) or '<p class="meta">本批次暂无待补证线索。</p>'
+    recommended_reports = [r for r in reports if report_verdict_label(r) == "推荐"]
+    optional_reports = [r for r in reports if report_verdict_label(r) == "可选"]
+    recommended_flow = "".join(report_flow_item(r) for r in recommended_reports) or '<p class="meta">本批次暂无推荐选题。</p>'
+    optional_flow = "".join(report_flow_item(r) for r in optional_reports) or '<p class="meta">本批次暂无可选选题。</p>'
     verdict_counts: dict[str, int] = {}
     for report in reports:
-        dossier = report.get("selection_dossier") or report.get("material_pack") or {}
-        verdict = dossier.get("verdict", {})
-        label = verdict.get("label") or verdict.get("status") or "待判断"
+        label = report_verdict_label(report)
         verdict_counts[label] = verdict_counts.get(label, 0) + 1
     verdict_summary = " / ".join(f"{html.escape(k)} {v}" for k, v in verdict_counts.items()) or "暂无候选"
     duplicate_count = len(batch.get("duplicate_skips", []))
     return f"""
 <section class="hero"><h1>老花的选题雷达站</h1><p>这里不是公众号成稿库，而是上游情报台。每条线索先按选题方向沉淀，再保留来龙去脉、事实、证据、存疑点和与老花人设相关的切入口，给后续博客、公众号、视频和小红书做素材底座。</p></section>
+<section class="section"><h2>推荐选题</h2><div class="flow">{recommended_flow}</div></section>
+<section class="section"><h2>可选选题</h2><p class="meta">可选不等于可直接成稿，进入写作前仍要按详情页里的缺口继续补证。</p><div class="flow">{optional_flow}</div></section>
 <section class="section">
   <h2>大选题方向聚合</h2>
   <div class="topic-strip">{topic_summary_chips(reports, site)}</div>
 </section>
 <div class="ad-slot">AdSense 预留位：后续填入 publisher client 后启用</div>
 <section class="section card"><h2>本批次概况</h2><p class="meta">批次：{html.escape(batch["batch_id"])} · 抓取 {batch["fetched_count"]} 条 · 入池 {len(reports)} 个候选 · {verdict_summary} · 近期重复跳过 {duplicate_count} 个</p><p>{coverage}</p></section>
-<section class="section"><h2>可写候选与观察选题</h2><div class="flow">{flow}</div></section>
-<section class="section"><h2>待补证线索</h2><p class="meta">这些线索已经入池，但质量闸或补证搜索尚未支持直接写作。</p><div class="flow">{pending_flow}</div></section>
 <section class="section card"><h2>历史选题库</h2><p class="meta">按日期回看已入池选题，用来判断哪些题已经看过、哪些方向反复出现。<a href="/archive/">查看完整历史</a></p>{render_archive_preview(archive)}</section>
 <section class="section card"><h2>数据源原则</h2><ul>{principles}</ul></section>
 """
@@ -2677,11 +2734,19 @@ def render_briefings(batch: dict[str, Any], reports: list[dict[str, Any]], site:
 
 
 def render_topic_direction(key: str, meta: dict[str, Any], reports: list[dict[str, Any]]) -> str:
-    items = "".join(report_card(r) for r in reports) or '<p class="meta">本方向暂无报告。</p>'
+    sorted_reports = sorted(reports, key=report_time_key, reverse=True)
+    recommended = [report for report in sorted_reports if report_verdict_label(report) == "推荐"]
+    optional = [report for report in sorted_reports if report_verdict_label(report) == "可选"]
+    optional_items = "".join(report_card(r) for r in optional) or '<p class="meta">本方向暂无可选选题。</p>'
+    recommended_items = "".join(report_card(r) for r in recommended) or '<p class="meta">本方向暂无推荐选题。</p>'
+    all_items = "".join(report_card(r) for r in sorted_reports) or '<p class="meta">本方向暂无历史选题。</p>'
     return f"""
 <section class="hero"><p class="kicker">选题方向</p><h1>{html.escape(meta["title"])}</h1><p>{html.escape(meta.get("description", ""))}</p></section>
 <section class="callout"><h2>这个方向怎么读</h2><p>先看线索和原始来源，再进入详情页看事实收集、证据收集、存疑点和与老花相关的切入口。报告类型只是分析方法，不代表主栏目。</p></section>
-<section class="section list">{items}</section>
+<nav class="filter-tabs" aria-label="选题筛选"><a href="#optional">可选</a><a href="#recommended">推荐</a><a href="#all">全部</a></nav>
+<section id="optional" class="section"><h2>可选</h2><div class="list">{optional_items}</div></section>
+<section id="recommended" class="section"><h2>推荐</h2><div class="list">{recommended_items}</div></section>
+<section id="all" class="section"><h2>全部历史</h2><p class="meta">按时间由近及远排序。</p><div class="list">{all_items}</div></section>
 """
 
 
@@ -2699,7 +2764,7 @@ def render_archive(archive: dict[str, Any], site: dict[str, Any]) -> str:
             topic_title = item.get("topic_direction_title") or directions.get(topic_key, {}).get("title", topic_key)
             rows.append(f"""
 <article class="item">
-  <p class="kicker">{html.escape(topic_title)} · {html.escape(item.get("verdict", "待判断"))}</p>
+  <p class="kicker">{html.escape(topic_title)} · {html.escape(archive_item_level(item))}</p>
   <h3><a href="{html.escape(item.get("item_url", ""))}">{html.escape(item.get("title", ""))}</a></h3>
   <p class="meta">Score {html.escape(str(item.get("score", "")))} · {html.escape(item.get("evidence_level", ""))} · 首次入池 {html.escape(bj_time(item.get("first_seen_at")))}</p>
   <p class="meta source"><a href="{html.escape(item.get("url", ""))}">{html.escape(item.get("original_title", "") or item.get("url", ""))}</a></p>
@@ -2722,6 +2787,7 @@ def render_material_pack(pack: dict[str, Any]) -> str:
     if not pack:
         return ""
     verdict = pack.get("verdict", {})
+    verdict_status, verdict_reason = pack_verdict_display(pack)
     judgment_path = list_html(pack.get("human_judgment_path", []))
     selection_questions = list_html(pack.get("selection_questions", []))
     value_signals = list_html(pack.get("value_signals", []))
@@ -2751,7 +2817,7 @@ def render_material_pack(pack: dict[str, Any]) -> str:
     return f"""
 <section class="section callout">
   <h2>选题判断结论</h2>
-  <p><strong>{html.escape(verdict.get("status", "待判断"))}</strong>：{html.escape(verdict.get("reason", ""))}</p>
+  <p><strong>{html.escape(verdict_status)}</strong>：{html.escape(verdict_reason)}</p>
   <p class="meta">档案版本：{html.escape(pack.get("schema", ""))} · 选题方向：{html.escape(pack.get("topic_direction_title", ""))}</p>
   <h3>旧版判断链路</h3><ul>{judgment_path}</ul>
 </section>
@@ -2790,6 +2856,7 @@ def render_material_pack(pack: dict[str, Any]) -> str:
     if not pack:
         return ""
     verdict = pack.get("verdict", {})
+    verdict_status, verdict_reason = pack_verdict_display(pack)
     facts = list_html(pack.get("fact_summary", []))
     timeline = list_html(pack.get("timeline", []), "暂无明确时间线。")
     missing_basics = list_html(pack.get("missing_basics", []))
@@ -2823,7 +2890,7 @@ def render_material_pack(pack: dict[str, Any]) -> str:
     return f"""
 <section class="section callout">
   <h2>选题判断</h2>
-  <p><strong>{html.escape(verdict.get("status", "待判断"))}</strong>：{html.escape(verdict.get("reason", ""))}</p>
+  <p><strong>{html.escape(verdict_status)}</strong>：{html.escape(verdict_reason)}</p>
   <p>{html.escape(pack.get("why_this_topic_matters", ""))}</p>
   <p class="meta">报告来源：{html.escape(generated_by)} · 可信度 {html.escape(str(confidence))} · {html.escape(pack.get("schema", ""))}</p>
 </section>
@@ -2868,6 +2935,7 @@ def render_item(report: dict[str, Any], site: dict[str, Any]) -> str:
     source_assessment = report.get("source_assessment", {})
     dossier = report.get("selection_dossier") or report.get("material_pack", {})
     verdict = dossier.get("verdict", {})
+    verdict_status = "推荐选题" if report_verdict_label(report) == "推荐" else "可选选题"
     pack_html = render_material_pack(dossier)
     topic_key = report.get("topic_direction", "")
     topic_title = report.get("topic_direction_title") or report.get("source_category_title", "")
@@ -2891,7 +2959,7 @@ def render_item(report: dict[str, Any], site: dict[str, Any]) -> str:
 
   <section class="callout">
     <h2>这是不是一个值得进入写作池的选题</h2>
-    <p><strong>{html.escape(verdict.get("status", "待判断"))}</strong>：{html.escape(verdict.get("reason", ""))}</p>
+    <p><strong>{html.escape(verdict_status)}</strong>：{html.escape(verdict.get("reason", ""))}</p>
     <p>{html.escape(report["persona_connection"]["why_it_matters"])}</p>
   </section>
 
@@ -2978,9 +3046,7 @@ def send_telegram(batch: dict[str, Any], reports: list[dict[str, Any]], site: di
     verdict_counts: dict[str, int] = {}
     topic_counts: dict[str, int] = {}
     for report in reports:
-        dossier = report.get("selection_dossier") or report.get("material_pack") or {}
-        verdict = dossier.get("verdict", {})
-        label = verdict.get("label") or verdict.get("status") or "待判断"
+        label = report_verdict_label(report)
         topic = report.get("topic_direction_short_title") or report.get("topic_direction_title") or report.get("source_category_title", "未分类")
         verdict_counts[label] = verdict_counts.get(label, 0) + 1
         topic_counts[topic] = topic_counts.get(topic, 0) + 1
@@ -2997,7 +3063,7 @@ def send_telegram(batch: dict[str, Any], reports: list[dict[str, Any]], site: di
     for report in reports[:8]:
         dossier = report.get("selection_dossier") or report.get("material_pack") or {}
         verdict = dossier.get("verdict", {})
-        label = verdict.get("label") or verdict.get("status") or "待判断"
+        label = report_verdict_label(report)
         reason = verdict.get("reason", "")
         topic = report.get("topic_direction_short_title") or report.get("topic_direction_title") or report.get("source_category_title", "")
         title = display_report_title(report)
