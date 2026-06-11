@@ -1,0 +1,946 @@
+{
+  "id": "20260611-upcoming-breaking-changes-for-npm-v12-3ff21d4c",
+  "batch_id": "2026-06-11-noon",
+  "title": "npm v12 即将到来：安全默认变更，你的项目准备好了吗？",
+  "original_title": "Upcoming breaking changes for npm v12",
+  "url": "https://github.blog/changelog/2026-06-09-upcoming-breaking-changes-for-npm-v12",
+  "summary": "Our next npm major version, v12, introduces security-related default changes to npm install. All these changes are available behind warnings in npm today on 11.16.0 or newer, so you can… The post Upcoming breaking changes for npm v12 appeared first on The GitHub Blog .",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "ai-frontier",
+  "topic_direction_title": "AI前沿",
+  "topic_direction_short_title": "AI前沿",
+  "topic_direction_description": "AI 模型、Agent、OpenAI、Claude、Gemini、底层能力和关键产品变化。重点看这次变化到底是什么、时间线如何、会不会改变普通技术人的工作方式和判断框架。",
+  "source_name": "GitHub Blog",
+  "original_source_name": "Archive: 2026 - GitHub Changelog",
+  "source_type": "rss",
+  "feed_url": "https://github.blog/changelog/feed/",
+  "published_at": "2026-06-09T20:04:10+00:00",
+  "fetched_at": "2026-06-11T04:00:57.149777+00:00",
+  "decision": "deep_dive",
+  "report_type": "risk-warning",
+  "report_type_title": "风险避坑",
+  "score": 75,
+  "reader_hook": "从平台规则和风险角度，分析npm v12的breaking changes对开发者的影响，适合核心技术人和入门读者。",
+  "why_now": "npm v12即将发布，安全变更可能影响大量项目，开发者需要提前了解。",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "GitHub官方公告，证据可靠。主要服务核心技术人（兴趣高），入门读者（兴趣中）可了解避坑，泛兴趣普通人（兴趣低）可通过“你的项目可能出问题”吸引。",
+  "collection_fit": "tools-rules",
+  "investigation_direction": "详细列出npm v12的breaking changes，分析对常见项目的影响，提供迁移指南。",
+  "uncertainty_flags": [
+    "具体变更细节尚未完全公布"
+  ],
+  "facts": [
+    {
+      "claim": "GitHub Blog 发布/收录了这条原始线索：Upcoming breaking changes for npm v12",
+      "type": "confirmed_fact",
+      "source_url": "https://github.blog/changelog/2026-06-09-upcoming-breaking-changes-for-npm-v12",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "GitHub Blog",
+      "url": "https://github.blog/changelog/2026-06-09-upcoming-breaking-changes-for-npm-v12",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "ai"
+      ],
+      "dev": [
+        "github"
+      ]
+    },
+    "source_host": "github.blog",
+    "source_type": "rss",
+    "heuristic": false,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "从平台规则和风险角度，分析npm v12的breaking changes对开发者的影响，适合核心技术人和入门读者。",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://github.blog/changelog/feed/",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "具体变更细节尚未完全公布"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：补证搜索没有拿到可用结果，却仍保留为可选选题，未明确要求补证后再写"
+    },
+    "core_question": "npm v12 的 breaking changes 具体是什么？对普通开发者的项目有何实际影响？如何提前适配？",
+    "why_this_topic_matters": "npm 是 JavaScript 生态的核心工具，v12 的安全默认变更可能影响大量项目的安装行为、CI/CD 流程和依赖管理，开发者需要提前了解并适配。",
+    "fact_summary": [
+      "GitHub 官方博客宣布 npm v12 即将发布，引入安全相关的默认变更。",
+      "所有变更在 npm 11.16.0 及以上版本中已可通过警告预览。",
+      "具体变更细节尚未完全公布。"
+    ],
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者"
+      ],
+      "interest_score": 75,
+      "why_interested": "核心技术人需要提前了解变更以维护项目兼容性；入门读者可借此学习 npm 安全最佳实践。",
+      "reader_risk": "信息不全可能导致过度恐慌或忽视。"
+    },
+    "mass_interest_hook": {
+      "score": 40,
+      "hook_type": "踩坑",
+      "why_non_technical_people_may_click": "标题暗示项目可能出问题，吸引非技术读者关注自身依赖风险。",
+      "story_seed": "一个开发者因未注意 npm 更新导致 CI 构建失败，项目延期。",
+      "do_not_overhype": "不要夸大影响范围，实际影响取决于项目配置。"
+    },
+    "timeline": [
+      "2026-06-09: GitHub 博客发布预告",
+      "npm 11.16.0 及以上: 警告已可用",
+      "未来: npm v12 正式发布"
+    ],
+    "evidence_table": [
+      {
+        "source": "GitHub Blog",
+        "url": "https://github.blog/changelog/2026-06-09-upcoming-breaking-changes-for-npm-v12",
+        "supports": "npm v12 将引入安全默认变更，当前版本已有警告",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "部分闭环：官方预告确认变更存在，但具体细节缺失，无法评估实际影响。",
+    "writeable_angles": [
+      {
+        "angle": "风险预警：npm v12 安全变更可能破坏现有项目",
+        "why": "直接服务核心技术人，提供迁移指南和常见问题",
+        "needs": "官方完整变更列表、社区反馈、典型项目兼容性测试"
+      },
+      {
+        "angle": "最佳实践：如何利用 npm 11 的警告提前适配",
+        "why": "提供可操作步骤，降低迁移风险",
+        "needs": "警告信息示例、配置修改方法"
+      }
+    ],
+    "missing_basics": [
+      "npm v12 具体变更列表",
+      "每个变更的默认行为说明",
+      "迁移指南"
+    ],
+    "missing_materials": [
+      "官方完整 changelog",
+      "npm 11.16.0 警告信息示例",
+      "社区讨论和已知问题",
+      "典型项目兼容性测试结果",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "具体变更细节",
+      "影响范围",
+      "迁移难度",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "npm v12 breaking changes list",
+      "npm v12 migration guide",
+      "npm v12 security defaults",
+      "npm v12 compatibility issues"
+    ],
+    "additional_search_queries": [
+      "npm v12 changelog",
+      "npm v12 install behavior change",
+      "npm v12 audit changes",
+      "npm v12 lockfile changes",
+      "npm v12 breaking changes issues"
+    ],
+    "stop_conditions": [
+      "官方发布完整 changelog 和迁移指南",
+      "社区出现大量兼容性报告",
+      "npm v12 正式发布"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI前沿",
+    "report_type": "risk-warning",
+    "quality_gate": {
+      "pass": false,
+      "score": 30,
+      "fatal_issues": [
+        "补证搜索没有拿到可用结果，却仍保留为可选选题，未明确要求补证后再写",
+        "核心事实（具体变更细节）没有来源，且未说明如何获取",
+        "逻辑未闭环：缺少具体变更细节，无法评估实际影响"
+      ],
+      "warnings": [
+        "泛兴趣钩子得分仅40，且标题可能过度暗示风险，正文证据接不住",
+        "未列出基础概念缺口和资料素材缺口中的具体缺失项",
+        "未明确选题结论为推荐或可选，且未解释为什么值得选"
+      ],
+      "missing_evidence": [
+        "npm v12 具体变更列表",
+        "每个变更的默认行为说明",
+        "迁移指南",
+        "官方完整 changelog",
+        "npm 11.16.0 警告信息示例",
+        "社区讨论和已知问题",
+        "典型项目兼容性测试结果"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": false,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "npm v12 的 breaking changes 具体是什么？对普通开发者的项目有何实际影响？如何提前适配？",
+      "must_verify": [
+        "npm v12 的具体 breaking changes 列表（官方文档或 changelog）",
+        "每个变更的默认行为、迁移指南和警告提示",
+        "npm 11.16.0 及以上版本中已提供的警告信息",
+        "社区（如 GitHub Issues、Stack Overflow）对变更的讨论和反馈",
+        "是否有已知的兼容性问题或常见错误"
+      ],
+      "search_queries": [
+        "npm v12 breaking changes",
+        "npm v12 security defaults",
+        "npm v12 migration guide",
+        "npm v12 changelog",
+        "npm v12 install behavior change",
+        "npm v12 audit changes",
+        "npm v12 lockfile changes",
+        "npm v12 compatibility issues"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "npm v12 breaking changes",
+          "why_needed": "获取官方发布的完整变更列表和迁移指南"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "npm v12 changelog",
+          "why_needed": "查看每个变更的详细说明和引入版本"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "npm v12 breaking changes issues",
+          "why_needed": "了解社区反馈、已知问题和解决方案"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "npm v12 migration problems",
+          "why_needed": "收集实际迁移中遇到的坑和应对策略"
+        }
+      ],
+      "expert_challenge_points": [
+        "变更是否真的影响大多数项目？还是仅影响特定配置？",
+        "安全默认值是否会导致功能破坏？例如自动修复漏洞可能改变依赖行为。",
+        "是否有足够的迁移窗口？npm 11 中的警告是否足够清晰？",
+        "对于 CI/CD 流程，是否需要额外配置来避免构建失败？"
+      ],
+      "do_not_claim_yet": [
+        "具体变更细节（需等待官方完整文档）",
+        "影响范围（需验证实际项目兼容性）",
+        "迁移难度（需参考社区反馈）"
+      ],
+      "can_publish_as_radar_if_missing": "可以，但需明确标注信息来自官方预告，具体细节待补充。",
+      "downstream_materials_needed": [
+        "官方迁移指南文档",
+        "npm 11.16.0 警告信息示例",
+        "社区常见问题汇总",
+        "典型项目（如 React、Vue 脚手架）的兼容性测试结果"
+      ]
+    },
+    "research_evidence": []
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：补证搜索没有拿到可用结果，却仍保留为可选选题，未明确要求补证后再写"
+    },
+    "core_question": "npm v12 的 breaking changes 具体是什么？对普通开发者的项目有何实际影响？如何提前适配？",
+    "why_this_topic_matters": "npm 是 JavaScript 生态的核心工具，v12 的安全默认变更可能影响大量项目的安装行为、CI/CD 流程和依赖管理，开发者需要提前了解并适配。",
+    "fact_summary": [
+      "GitHub 官方博客宣布 npm v12 即将发布，引入安全相关的默认变更。",
+      "所有变更在 npm 11.16.0 及以上版本中已可通过警告预览。",
+      "具体变更细节尚未完全公布。"
+    ],
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者"
+      ],
+      "interest_score": 75,
+      "why_interested": "核心技术人需要提前了解变更以维护项目兼容性；入门读者可借此学习 npm 安全最佳实践。",
+      "reader_risk": "信息不全可能导致过度恐慌或忽视。"
+    },
+    "mass_interest_hook": {
+      "score": 40,
+      "hook_type": "踩坑",
+      "why_non_technical_people_may_click": "标题暗示项目可能出问题，吸引非技术读者关注自身依赖风险。",
+      "story_seed": "一个开发者因未注意 npm 更新导致 CI 构建失败，项目延期。",
+      "do_not_overhype": "不要夸大影响范围，实际影响取决于项目配置。"
+    },
+    "timeline": [
+      "2026-06-09: GitHub 博客发布预告",
+      "npm 11.16.0 及以上: 警告已可用",
+      "未来: npm v12 正式发布"
+    ],
+    "evidence_table": [
+      {
+        "source": "GitHub Blog",
+        "url": "https://github.blog/changelog/2026-06-09-upcoming-breaking-changes-for-npm-v12",
+        "supports": "npm v12 将引入安全默认变更，当前版本已有警告",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "部分闭环：官方预告确认变更存在，但具体细节缺失，无法评估实际影响。",
+    "writeable_angles": [
+      {
+        "angle": "风险预警：npm v12 安全变更可能破坏现有项目",
+        "why": "直接服务核心技术人，提供迁移指南和常见问题",
+        "needs": "官方完整变更列表、社区反馈、典型项目兼容性测试"
+      },
+      {
+        "angle": "最佳实践：如何利用 npm 11 的警告提前适配",
+        "why": "提供可操作步骤，降低迁移风险",
+        "needs": "警告信息示例、配置修改方法"
+      }
+    ],
+    "missing_basics": [
+      "npm v12 具体变更列表",
+      "每个变更的默认行为说明",
+      "迁移指南"
+    ],
+    "missing_materials": [
+      "官方完整 changelog",
+      "npm 11.16.0 警告信息示例",
+      "社区讨论和已知问题",
+      "典型项目兼容性测试结果",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "具体变更细节",
+      "影响范围",
+      "迁移难度",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "npm v12 breaking changes list",
+      "npm v12 migration guide",
+      "npm v12 security defaults",
+      "npm v12 compatibility issues"
+    ],
+    "additional_search_queries": [
+      "npm v12 changelog",
+      "npm v12 install behavior change",
+      "npm v12 audit changes",
+      "npm v12 lockfile changes",
+      "npm v12 breaking changes issues"
+    ],
+    "stop_conditions": [
+      "官方发布完整 changelog 和迁移指南",
+      "社区出现大量兼容性报告",
+      "npm v12 正式发布"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI前沿",
+    "report_type": "risk-warning",
+    "quality_gate": {
+      "pass": false,
+      "score": 30,
+      "fatal_issues": [
+        "补证搜索没有拿到可用结果，却仍保留为可选选题，未明确要求补证后再写",
+        "核心事实（具体变更细节）没有来源，且未说明如何获取",
+        "逻辑未闭环：缺少具体变更细节，无法评估实际影响"
+      ],
+      "warnings": [
+        "泛兴趣钩子得分仅40，且标题可能过度暗示风险，正文证据接不住",
+        "未列出基础概念缺口和资料素材缺口中的具体缺失项",
+        "未明确选题结论为推荐或可选，且未解释为什么值得选"
+      ],
+      "missing_evidence": [
+        "npm v12 具体变更列表",
+        "每个变更的默认行为说明",
+        "迁移指南",
+        "官方完整 changelog",
+        "npm 11.16.0 警告信息示例",
+        "社区讨论和已知问题",
+        "典型项目兼容性测试结果"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": false,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "npm v12 的 breaking changes 具体是什么？对普通开发者的项目有何实际影响？如何提前适配？",
+      "must_verify": [
+        "npm v12 的具体 breaking changes 列表（官方文档或 changelog）",
+        "每个变更的默认行为、迁移指南和警告提示",
+        "npm 11.16.0 及以上版本中已提供的警告信息",
+        "社区（如 GitHub Issues、Stack Overflow）对变更的讨论和反馈",
+        "是否有已知的兼容性问题或常见错误"
+      ],
+      "search_queries": [
+        "npm v12 breaking changes",
+        "npm v12 security defaults",
+        "npm v12 migration guide",
+        "npm v12 changelog",
+        "npm v12 install behavior change",
+        "npm v12 audit changes",
+        "npm v12 lockfile changes",
+        "npm v12 compatibility issues"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "npm v12 breaking changes",
+          "why_needed": "获取官方发布的完整变更列表和迁移指南"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "npm v12 changelog",
+          "why_needed": "查看每个变更的详细说明和引入版本"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "npm v12 breaking changes issues",
+          "why_needed": "了解社区反馈、已知问题和解决方案"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "npm v12 migration problems",
+          "why_needed": "收集实际迁移中遇到的坑和应对策略"
+        }
+      ],
+      "expert_challenge_points": [
+        "变更是否真的影响大多数项目？还是仅影响特定配置？",
+        "安全默认值是否会导致功能破坏？例如自动修复漏洞可能改变依赖行为。",
+        "是否有足够的迁移窗口？npm 11 中的警告是否足够清晰？",
+        "对于 CI/CD 流程，是否需要额外配置来避免构建失败？"
+      ],
+      "do_not_claim_yet": [
+        "具体变更细节（需等待官方完整文档）",
+        "影响范围（需验证实际项目兼容性）",
+        "迁移难度（需参考社区反馈）"
+      ],
+      "can_publish_as_radar_if_missing": "可以，但需明确标注信息来自官方预告，具体细节待补充。",
+      "downstream_materials_needed": [
+        "官方迁移指南文档",
+        "npm 11.16.0 警告信息示例",
+        "社区常见问题汇总",
+        "典型项目（如 React、Vue 脚手架）的兼容性测试结果"
+      ]
+    },
+    "research_evidence": []
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260611-upcoming-breaking-changes-for-npm-v12-3ff21d4c/",
+    "for_gpt_editor": {
+      "brief": "Our next npm major version, v12, introduces security-related default changes to npm install. All these changes are available behind warnings in npm today on 11.16.0 or newer, so you can… The post Upcoming breaking changes for npm v12 appeared first on The GitHub Blog .",
+      "title_seed": "npm v12 即将到来：安全默认变更，你的项目准备好了吗？",
+      "original_title": "Upcoming breaking changes for npm v12",
+      "source_url": "https://github.blog/changelog/2026-06-09-upcoming-breaking-changes-for-npm-v12",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：补证搜索没有拿到可用结果，却仍保留为可选选题，未明确要求补证后再写"
+        },
+        "core_question": "npm v12 的 breaking changes 具体是什么？对普通开发者的项目有何实际影响？如何提前适配？",
+        "why_this_topic_matters": "npm 是 JavaScript 生态的核心工具，v12 的安全默认变更可能影响大量项目的安装行为、CI/CD 流程和依赖管理，开发者需要提前了解并适配。",
+        "fact_summary": [
+          "GitHub 官方博客宣布 npm v12 即将发布，引入安全相关的默认变更。",
+          "所有变更在 npm 11.16.0 及以上版本中已可通过警告预览。",
+          "具体变更细节尚未完全公布。"
+        ],
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者"
+          ],
+          "interest_score": 75,
+          "why_interested": "核心技术人需要提前了解变更以维护项目兼容性；入门读者可借此学习 npm 安全最佳实践。",
+          "reader_risk": "信息不全可能导致过度恐慌或忽视。"
+        },
+        "mass_interest_hook": {
+          "score": 40,
+          "hook_type": "踩坑",
+          "why_non_technical_people_may_click": "标题暗示项目可能出问题，吸引非技术读者关注自身依赖风险。",
+          "story_seed": "一个开发者因未注意 npm 更新导致 CI 构建失败，项目延期。",
+          "do_not_overhype": "不要夸大影响范围，实际影响取决于项目配置。"
+        },
+        "timeline": [
+          "2026-06-09: GitHub 博客发布预告",
+          "npm 11.16.0 及以上: 警告已可用",
+          "未来: npm v12 正式发布"
+        ],
+        "evidence_table": [
+          {
+            "source": "GitHub Blog",
+            "url": "https://github.blog/changelog/2026-06-09-upcoming-breaking-changes-for-npm-v12",
+            "supports": "npm v12 将引入安全默认变更，当前版本已有警告",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "部分闭环：官方预告确认变更存在，但具体细节缺失，无法评估实际影响。",
+        "writeable_angles": [
+          {
+            "angle": "风险预警：npm v12 安全变更可能破坏现有项目",
+            "why": "直接服务核心技术人，提供迁移指南和常见问题",
+            "needs": "官方完整变更列表、社区反馈、典型项目兼容性测试"
+          },
+          {
+            "angle": "最佳实践：如何利用 npm 11 的警告提前适配",
+            "why": "提供可操作步骤，降低迁移风险",
+            "needs": "警告信息示例、配置修改方法"
+          }
+        ],
+        "missing_basics": [
+          "npm v12 具体变更列表",
+          "每个变更的默认行为说明",
+          "迁移指南"
+        ],
+        "missing_materials": [
+          "官方完整 changelog",
+          "npm 11.16.0 警告信息示例",
+          "社区讨论和已知问题",
+          "典型项目兼容性测试结果",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "具体变更细节",
+          "影响范围",
+          "迁移难度",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "npm v12 breaking changes list",
+          "npm v12 migration guide",
+          "npm v12 security defaults",
+          "npm v12 compatibility issues"
+        ],
+        "additional_search_queries": [
+          "npm v12 changelog",
+          "npm v12 install behavior change",
+          "npm v12 audit changes",
+          "npm v12 lockfile changes",
+          "npm v12 breaking changes issues"
+        ],
+        "stop_conditions": [
+          "官方发布完整 changelog 和迁移指南",
+          "社区出现大量兼容性报告",
+          "npm v12 正式发布"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI前沿",
+        "report_type": "risk-warning",
+        "quality_gate": {
+          "pass": false,
+          "score": 30,
+          "fatal_issues": [
+            "补证搜索没有拿到可用结果，却仍保留为可选选题，未明确要求补证后再写",
+            "核心事实（具体变更细节）没有来源，且未说明如何获取",
+            "逻辑未闭环：缺少具体变更细节，无法评估实际影响"
+          ],
+          "warnings": [
+            "泛兴趣钩子得分仅40，且标题可能过度暗示风险，正文证据接不住",
+            "未列出基础概念缺口和资料素材缺口中的具体缺失项",
+            "未明确选题结论为推荐或可选，且未解释为什么值得选"
+          ],
+          "missing_evidence": [
+            "npm v12 具体变更列表",
+            "每个变更的默认行为说明",
+            "迁移指南",
+            "官方完整 changelog",
+            "npm 11.16.0 警告信息示例",
+            "社区讨论和已知问题",
+            "典型项目兼容性测试结果"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": false,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "npm v12 的 breaking changes 具体是什么？对普通开发者的项目有何实际影响？如何提前适配？",
+          "must_verify": [
+            "npm v12 的具体 breaking changes 列表（官方文档或 changelog）",
+            "每个变更的默认行为、迁移指南和警告提示",
+            "npm 11.16.0 及以上版本中已提供的警告信息",
+            "社区（如 GitHub Issues、Stack Overflow）对变更的讨论和反馈",
+            "是否有已知的兼容性问题或常见错误"
+          ],
+          "search_queries": [
+            "npm v12 breaking changes",
+            "npm v12 security defaults",
+            "npm v12 migration guide",
+            "npm v12 changelog",
+            "npm v12 install behavior change",
+            "npm v12 audit changes",
+            "npm v12 lockfile changes",
+            "npm v12 compatibility issues"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "npm v12 breaking changes",
+              "why_needed": "获取官方发布的完整变更列表和迁移指南"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "npm v12 changelog",
+              "why_needed": "查看每个变更的详细说明和引入版本"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "npm v12 breaking changes issues",
+              "why_needed": "了解社区反馈、已知问题和解决方案"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "npm v12 migration problems",
+              "why_needed": "收集实际迁移中遇到的坑和应对策略"
+            }
+          ],
+          "expert_challenge_points": [
+            "变更是否真的影响大多数项目？还是仅影响特定配置？",
+            "安全默认值是否会导致功能破坏？例如自动修复漏洞可能改变依赖行为。",
+            "是否有足够的迁移窗口？npm 11 中的警告是否足够清晰？",
+            "对于 CI/CD 流程，是否需要额外配置来避免构建失败？"
+          ],
+          "do_not_claim_yet": [
+            "具体变更细节（需等待官方完整文档）",
+            "影响范围（需验证实际项目兼容性）",
+            "迁移难度（需参考社区反馈）"
+          ],
+          "can_publish_as_radar_if_missing": "可以，但需明确标注信息来自官方预告，具体细节待补充。",
+          "downstream_materials_needed": [
+            "官方迁移指南文档",
+            "npm 11.16.0 警告信息示例",
+            "社区常见问题汇总",
+            "典型项目（如 React、Vue 脚手架）的兼容性测试结果"
+          ]
+        },
+        "research_evidence": []
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：补证搜索没有拿到可用结果，却仍保留为可选选题，未明确要求补证后再写"
+        },
+        "core_question": "npm v12 的 breaking changes 具体是什么？对普通开发者的项目有何实际影响？如何提前适配？",
+        "why_this_topic_matters": "npm 是 JavaScript 生态的核心工具，v12 的安全默认变更可能影响大量项目的安装行为、CI/CD 流程和依赖管理，开发者需要提前了解并适配。",
+        "fact_summary": [
+          "GitHub 官方博客宣布 npm v12 即将发布，引入安全相关的默认变更。",
+          "所有变更在 npm 11.16.0 及以上版本中已可通过警告预览。",
+          "具体变更细节尚未完全公布。"
+        ],
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者"
+          ],
+          "interest_score": 75,
+          "why_interested": "核心技术人需要提前了解变更以维护项目兼容性；入门读者可借此学习 npm 安全最佳实践。",
+          "reader_risk": "信息不全可能导致过度恐慌或忽视。"
+        },
+        "mass_interest_hook": {
+          "score": 40,
+          "hook_type": "踩坑",
+          "why_non_technical_people_may_click": "标题暗示项目可能出问题，吸引非技术读者关注自身依赖风险。",
+          "story_seed": "一个开发者因未注意 npm 更新导致 CI 构建失败，项目延期。",
+          "do_not_overhype": "不要夸大影响范围，实际影响取决于项目配置。"
+        },
+        "timeline": [
+          "2026-06-09: GitHub 博客发布预告",
+          "npm 11.16.0 及以上: 警告已可用",
+          "未来: npm v12 正式发布"
+        ],
+        "evidence_table": [
+          {
+            "source": "GitHub Blog",
+            "url": "https://github.blog/changelog/2026-06-09-upcoming-breaking-changes-for-npm-v12",
+            "supports": "npm v12 将引入安全默认变更，当前版本已有警告",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "部分闭环：官方预告确认变更存在，但具体细节缺失，无法评估实际影响。",
+        "writeable_angles": [
+          {
+            "angle": "风险预警：npm v12 安全变更可能破坏现有项目",
+            "why": "直接服务核心技术人，提供迁移指南和常见问题",
+            "needs": "官方完整变更列表、社区反馈、典型项目兼容性测试"
+          },
+          {
+            "angle": "最佳实践：如何利用 npm 11 的警告提前适配",
+            "why": "提供可操作步骤，降低迁移风险",
+            "needs": "警告信息示例、配置修改方法"
+          }
+        ],
+        "missing_basics": [
+          "npm v12 具体变更列表",
+          "每个变更的默认行为说明",
+          "迁移指南"
+        ],
+        "missing_materials": [
+          "官方完整 changelog",
+          "npm 11.16.0 警告信息示例",
+          "社区讨论和已知问题",
+          "典型项目兼容性测试结果",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "具体变更细节",
+          "影响范围",
+          "迁移难度",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "npm v12 breaking changes list",
+          "npm v12 migration guide",
+          "npm v12 security defaults",
+          "npm v12 compatibility issues"
+        ],
+        "additional_search_queries": [
+          "npm v12 changelog",
+          "npm v12 install behavior change",
+          "npm v12 audit changes",
+          "npm v12 lockfile changes",
+          "npm v12 breaking changes issues"
+        ],
+        "stop_conditions": [
+          "官方发布完整 changelog 和迁移指南",
+          "社区出现大量兼容性报告",
+          "npm v12 正式发布"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI前沿",
+        "report_type": "risk-warning",
+        "quality_gate": {
+          "pass": false,
+          "score": 30,
+          "fatal_issues": [
+            "补证搜索没有拿到可用结果，却仍保留为可选选题，未明确要求补证后再写",
+            "核心事实（具体变更细节）没有来源，且未说明如何获取",
+            "逻辑未闭环：缺少具体变更细节，无法评估实际影响"
+          ],
+          "warnings": [
+            "泛兴趣钩子得分仅40，且标题可能过度暗示风险，正文证据接不住",
+            "未列出基础概念缺口和资料素材缺口中的具体缺失项",
+            "未明确选题结论为推荐或可选，且未解释为什么值得选"
+          ],
+          "missing_evidence": [
+            "npm v12 具体变更列表",
+            "每个变更的默认行为说明",
+            "迁移指南",
+            "官方完整 changelog",
+            "npm 11.16.0 警告信息示例",
+            "社区讨论和已知问题",
+            "典型项目兼容性测试结果"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": false,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "npm v12 的 breaking changes 具体是什么？对普通开发者的项目有何实际影响？如何提前适配？",
+          "must_verify": [
+            "npm v12 的具体 breaking changes 列表（官方文档或 changelog）",
+            "每个变更的默认行为、迁移指南和警告提示",
+            "npm 11.16.0 及以上版本中已提供的警告信息",
+            "社区（如 GitHub Issues、Stack Overflow）对变更的讨论和反馈",
+            "是否有已知的兼容性问题或常见错误"
+          ],
+          "search_queries": [
+            "npm v12 breaking changes",
+            "npm v12 security defaults",
+            "npm v12 migration guide",
+            "npm v12 changelog",
+            "npm v12 install behavior change",
+            "npm v12 audit changes",
+            "npm v12 lockfile changes",
+            "npm v12 compatibility issues"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "npm v12 breaking changes",
+              "why_needed": "获取官方发布的完整变更列表和迁移指南"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "npm v12 changelog",
+              "why_needed": "查看每个变更的详细说明和引入版本"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "npm v12 breaking changes issues",
+              "why_needed": "了解社区反馈、已知问题和解决方案"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "npm v12 migration problems",
+              "why_needed": "收集实际迁移中遇到的坑和应对策略"
+            }
+          ],
+          "expert_challenge_points": [
+            "变更是否真的影响大多数项目？还是仅影响特定配置？",
+            "安全默认值是否会导致功能破坏？例如自动修复漏洞可能改变依赖行为。",
+            "是否有足够的迁移窗口？npm 11 中的警告是否足够清晰？",
+            "对于 CI/CD 流程，是否需要额外配置来避免构建失败？"
+          ],
+          "do_not_claim_yet": [
+            "具体变更细节（需等待官方完整文档）",
+            "影响范围（需验证实际项目兼容性）",
+            "迁移难度（需参考社区反馈）"
+          ],
+          "can_publish_as_radar_if_missing": "可以，但需明确标注信息来自官方预告，具体细节待补充。",
+          "downstream_materials_needed": [
+            "官方迁移指南文档",
+            "npm 11.16.0 警告信息示例",
+            "社区常见问题汇总",
+            "典型项目（如 React、Vue 脚手架）的兼容性测试结果"
+          ]
+        },
+        "research_evidence": []
+      },
+      "angle_candidates": [
+        "营销话术拆解",
+        "合规和资金风险",
+        "普通人不该硬冲的原因"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "npm v12 即将到来：安全默认变更，你的项目准备好了吗？ 投诉 风险 违规",
+        "npm v12 即将到来：安全默认变更，你的项目准备好了吗？ 骗局 营销话术",
+        "npm v12 即将到来：安全默认变更，你的项目准备好了吗？ 隐藏成本 失败案例"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}

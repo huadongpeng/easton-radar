@@ -1,0 +1,1587 @@
+{
+  "id": "20260611-giftcardcashouttransaction-is-now-resolvable-fro-16038860",
+  "batch_id": "2026-06-11-noon",
+  "title": "平台规则：Shopify 平台规则变化",
+  "original_title": "`GiftCardCashOutTransaction` is now resolvable from `GiftCardTransaction`",
+  "url": "https://shopify.dev/changelog/giftcardcashouttransaction-now-resolvable-from-giftcardtransaction",
+  "summary": "Starting with GraphQL Admin API version 2026-07, the [ GiftCardCashOutTransaction ]( https://shopify.dev/docs/api/admin-graphql/2026-07/objects/GiftCardCashOutTransaction type is introduced as a new variant of the GiftCardTransaction interface. This type specifically represents transactions where a gift card balance is paid out through a point of sale (POS) system. In previous API versions, such as 2026-04 and earlier, these transactions were classified as GiftCardDebitTransaction . From version 2026-07 onwards, they are identified as GiftCardCashOutTransaction . To accurately differentiate cash-out transactions from credit and debit transactions, use the __typename field when querying giftCard.transactions . Below is an example query: giftCard(id: \"...\") { transactions(first: 10) { nodes { __typename ... on GiftCardCashOutTransaction { id amount { amount currencyCode } } } } }",
+  "source_category": "platform_policy",
+  "source_category_title": "平台规则与搜索生态",
+  "topic_direction": "cross-border",
+  "topic_direction_title": "跨境&出海",
+  "topic_direction_short_title": "跨境&出海",
+  "topic_direction_description": "跨境支付、海外平台、独立站、电商、合规、收款和出海基础设施。重点看普通技术人有没有能理解、能验证、能低成本试错的切入口。",
+  "source_name": "Shopify Developer Changelog",
+  "original_source_name": "Recent changes to Shopify's platform",
+  "source_type": "rss",
+  "feed_url": "https://shopify.dev/changelog/feed.xml",
+  "published_at": "2026-06-05T16:00:00+00:00",
+  "fetched_at": "2026-06-11T04:01:14.134611+00:00",
+  "decision": "brief",
+  "report_type": "platform-rules",
+  "report_type_title": "平台规则",
+  "score": 45,
+  "reader_hook": "适合按老花的规则避坑视角拆：平台规则、搜索流量、出海路径或合规边界怎么影响小团队。",
+  "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
+  "evidence_level": "near_source",
+  "source_priority": "P2 可参考源",
+  "reason": "命中老花主线关键词，且来源可复查。",
+  "collection_fit": "部分符合收集原则：可以进入可选池，但证据链、人设解读角度或目标读者兴趣还不够完整。",
+  "investigation_direction": "优先追官方政策、开发者公告、执行范围、受影响人群和合规边界。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。",
+    "当前仅适合观察，不宜写成深度结论。"
+  ],
+  "facts": [
+    {
+      "claim": "Shopify Developer Changelog 发布/收录了这条原始线索：`GiftCardCashOutTransaction` is now resolvable from `GiftCardTransaction`",
+      "type": "confirmed_fact",
+      "source_url": "https://shopify.dev/changelog/giftcardcashouttransaction-now-resolvable-from-giftcardtransaction",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Shopify Developer Changelog",
+      "url": "https://shopify.dev/changelog/giftcardcashouttransaction-now-resolvable-from-giftcardtransaction",
+      "source_type": "near_source",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "ai"
+      ],
+      "dev": [
+        "api"
+      ],
+      "platform": [
+        "shopify"
+      ]
+    },
+    "source_host": "shopify.dev",
+    "source_type": "rss",
+    "heuristic": true
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "适合按老花的规则避坑视角拆：平台规则、搜索流量、出海路径或合规边界怎么影响小团队。",
+    "fit_for_radar": false
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://shopify.dev/changelog/feed.xml",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。",
+      "当前仅适合观察，不宜写成深度结论。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：核心事实没有来源：GiftCardCashOutTransaction 新类型仅依赖官方 changelog，缺乏开发者社区反馈和实际案例。"
+    },
+    "core_question": "Shopify GiftCardCashOutTransaction 新类型对跨境卖家和独立开发者有何实际影响？",
+    "why_this_topic_matters": "Shopify 平台规则变更直接影响跨境卖家的支付流程和开发者的 API 维护工作，提前了解可避免版本升级后的兼容性问题。",
+    "fact_summary": [
+      "Shopify 在 GraphQL Admin API 2026-07 版本中引入 GiftCardCashOutTransaction 类型，专门表示通过 POS 系统提取礼品卡余额的交易。",
+      "在 2026-04 及更早版本中，此类交易被归类为 GiftCardDebitTransaction。",
+      "开发者需使用 __typename 字段区分现金支出交易与借记交易。",
+      "该变更仅影响使用 POS 系统的商家，纯在线商家可能无需关注。"
+    ],
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "高价值商业读者",
+        "入门读者"
+      ],
+      "interest_score": 65,
+      "why_interested": "API 类型变更直接影响代码维护和版本升级计划，开发者需要评估迁移成本；商业读者关注 POS 场景下的礼品卡现金支出合规性。",
+      "reader_risk": "可能过度解读为重大破坏性变更，实际影响范围有限。"
+    },
+    "mass_interest_hook": {
+      "score": 40,
+      "hook_type": "踩坑",
+      "why_non_technical_people_may_click": "标题暗示平台规则变化可能导致商家或开发者踩坑，普通人担心自己使用的系统出问题。",
+      "story_seed": "一个 Shopify 商家因未及时更新 API 版本，导致 POS 礼品卡现金支出交易数据丢失，引发财务对账问题。",
+      "do_not_overhype": "该变更并非破坏性，仅影响特定场景，且 Shopify 提供了迁移路径。"
+    },
+    "timeline": [
+      "2026-06-05: Shopify 发布 changelog 宣布 GiftCardCashOutTransaction 新类型。",
+      "2026-07: GraphQL Admin API 2026-07 版本正式生效，新类型可用。",
+      "2026-04 及之前: 现金支出交易被归类为 GiftCardDebitTransaction。"
+    ],
+    "evidence_table": [
+      {
+        "source": "Shopify Developer Changelog",
+        "url": "https://shopify.dev/changelog/giftcardcashouttransaction-now-resolvable-from-giftcardtransaction",
+        "supports": "官方宣布新类型及变更细节",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify GraphQL Admin API 文档 (2026-07)",
+        "url": "https://shopify.dev/docs/api/admin-graphql/2026-07/objects/GiftCardCashOutTransaction",
+        "supports": "新类型的定义和字段",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify GraphQL Admin API 文档 (2026-04)",
+        "url": "https://shopify.dev/docs/api/admin-graphql/latest/objects/GiftCardDebitTransaction",
+        "supports": "旧类型定义，用于对比",
+        "reliability": "official"
+      },
+      {
+        "source": "Releasebot.io",
+        "url": "https://releasebot.io/updates/shopify",
+        "supports": "汇总 Shopify 发布说明，但未提及此变更",
+        "reliability": "weak"
+      },
+      {
+        "source": "Shopify Developer Community Forums",
+        "url": "https://community.shopify.dev",
+        "supports": "未找到相关讨论，说明开发者关注度低",
+        "reliability": "weak"
+      },
+      {
+        "source": "Badger Blue 博客",
+        "url": "https://badger.blue/blogs/ecommerce-unpacked/shopify-pos-crm-clienteling-gift-cards-in-store-experience-breakdown",
+        "supports": "POS 礼品卡实现背景，但未涉及新类型",
+        "reliability": "weak"
+      }
+    ],
+    "logic_closure": "部分闭环。已知变更内容和影响范围，但缺乏开发者实际迁移案例和社区反馈，无法判断实际影响程度。",
+    "writeable_angles": [
+      {
+        "angle": "平台规则变更预警：GiftCardCashOutTransaction 对 POS 商家的影响",
+        "why": "直接服务使用 POS 的跨境卖家，提醒 API 版本升级注意事项。",
+        "needs": "需要补充 POS 商家案例和迁移指南。"
+      },
+      {
+        "angle": "API 类型变更的技术解读：如何安全迁移",
+        "why": "面向开发者，提供代码示例和最佳实践。",
+        "needs": "需要官方迁移文档和社区反馈。"
+      },
+      {
+        "angle": "礼品卡现金支出合规性：POS 场景下的财务对账",
+        "why": "面向财务或运营人员，解释新类型对数据一致性的影响。",
+        "needs": "需要财务对账案例和合规要求。"
+      }
+    ],
+    "missing_basics": [
+      "GiftCardCashOutTransaction 与 GiftCardDebitTransaction 的具体字段差异",
+      "Shopify POS 系统中礼品卡现金支出的常见场景",
+      "API 版本升级的默认行为（是否自动迁移）"
+    ],
+    "missing_materials": [
+      "开发者社区关于此变更的讨论或问题反馈",
+      "官方迁移指南或最佳实践文档",
+      "实际 POS 商家使用案例",
+      "与旧版本的兼容性说明"
+    ],
+    "not_claimable": [
+      "该变更会破坏现有 API 调用",
+      "所有商家都需要立即修改代码",
+      "该变更影响礼品卡的所有交易类型"
+    ],
+    "followup_queries": [
+      "GiftCardCashOutTransaction 是否仅限 POS 场景？",
+      "2026-07 版本之前，GiftCardDebitTransaction 是否已覆盖现金支出？",
+      "该变更是否影响现有 API 调用或需要代码修改？",
+      "是否有开发者社区讨论或官方文档说明迁移注意事项？"
+    ],
+    "additional_search_queries": [
+      "GiftCardCashOutTransaction Shopify community forum",
+      "GiftCardDebitTransaction Shopify API 2026-04",
+      "Shopify GraphQL Admin API changelog 2026-07",
+      "Shopify gift card cash out POS implementation"
+    ],
+    "stop_conditions": [
+      "官方发布迁移指南或最佳实践",
+      "开发者社区出现大量相关讨论或问题",
+      "发现实际商家因该变更遇到问题"
+    ],
+    "confidence": 45.0,
+    "topic_direction": "cross-border",
+    "topic_direction_title": "跨境&出海",
+    "report_type": "platform-rules",
+    "quality_gate": {
+      "pass": false,
+      "score": 45,
+      "fatal_issues": [
+        "核心事实没有来源：GiftCardCashOutTransaction 新类型仅依赖官方 changelog，缺乏开发者社区反馈和实际案例。",
+        "逻辑未闭环：缺乏开发者实际迁移案例和社区反馈，无法判断实际影响程度。",
+        "泛兴趣钩子过度标题党：标题暗示平台规则变化可能导致踩坑，但正文证据接不住，实际影响范围有限。"
+      ],
+      "warnings": [
+        "读者分层不明确：主要服务核心技术人，但高价值商业读者和入门读者的兴趣度较低。",
+        "信息源严重偏科：所有证据均来自 Shopify 官方文档，缺乏第三方验证。",
+        "未提供具体资料包：缺少时间线、更新摘要、迁移指南等结构化资料。"
+      ],
+      "missing_evidence": [
+        "开发者社区关于此变更的讨论或问题反馈",
+        "官方迁移指南或最佳实践文档",
+        "实际 POS 商家使用案例",
+        "与旧版本的兼容性说明"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "Shopify GiftCardCashOutTransaction 新类型对跨境卖家和独立开发者有何实际影响？",
+      "must_verify": [
+        "GiftCardCashOutTransaction 是否仅限 POS 场景？",
+        "2026-07 版本之前，GiftCardDebitTransaction 是否已覆盖现金支出？",
+        "该变更是否影响现有 API 调用或需要代码修改？",
+        "是否有开发者社区讨论或官方文档说明迁移注意事项？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "GiftCardCashOutTransaction Shopify API documentation",
+          "why_needed": "确认新类型的定义、字段和限制条件"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "GiftCardDebitTransaction Shopify API 2026-04",
+          "why_needed": "对比旧类型，确认变更范围和影响"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "GiftCardCashOutTransaction Shopify community forum",
+          "why_needed": "了解开发者实际遇到的问题和迁移经验"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Shopify GraphQL Admin API changelog 2026-07",
+          "why_needed": "确认版本发布时间和完整变更列表"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Shopify gift card cash out POS implementation",
+          "why_needed": "寻找实际使用案例，验证影响范围"
+        }
+      ],
+      "expert_challenge_points": [
+        "该变更是否仅影响使用 POS 系统的商家？",
+        "对于仅在线销售的商家，是否需要关注此变更？",
+        "变更是否会导致现有查询返回错误或数据不一致？"
+      ],
+      "do_not_claim_yet": [
+        "该变更会破坏现有 API 调用",
+        "所有商家都需要立即修改代码",
+        "该变更影响礼品卡的所有交易类型"
+      ],
+      "can_publish_as_radar_if_missing": "可以，作为平台规则变更的早期预警，提醒开发者关注 API 版本升级",
+      "downstream_materials_needed": [
+        "官方迁移指南或最佳实践",
+        "开发者社区反馈汇总",
+        "与旧版本的兼容性说明"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "GiftCardCashOutTransaction - GraphQL Admin",
+        "url": "https://shopify.dev/docs/api/admin-graphql/2026-07/objects/GiftCardCashOutTransaction",
+        "query": "GiftCardCashOutTransaction Shopify API documentation",
+        "provider": "tavily",
+        "score": "0.90018827",
+        "fetched_text": "GiftCardCashOutTransaction - GraphQL Admin self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar GraphQL Admin API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-07 release candidate Overview Client libraries Authentication Endpoints and queries Rate limits Status and error codes Access Analytics Apps B2B Billing Bulk operations Cart Checkout and accounts configurations Checkout branding Common objects Customers Discounts and marketing Inventory Localizations Metafields Metaobjects Online store Orders Privacy Products and collections Retail Shipping and fulfillment Shopify Markets Shopify Payments Store properties Timeline events Webhooks Graph QL Types Full index Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-07 release candidate Anchor to GiftCardCashOutTransaction Gift Card Cash Out Transaction object Ask Copy MD Requires read _gift _card _transactions access scope. A cash out transaction where the gift card b",
+        "fetch_error": ""
+      },
+      {
+        "title": "GiftCardCashOutTransaction - GraphQL Admin - Shopify Dev Docs",
+        "url": "https://shopify.dev/docs/api/admin-graphql/latest/objects/GiftCardCashOutTransaction",
+        "query": "GiftCardCashOutTransaction Shopify API documentation",
+        "provider": "tavily",
+        "score": "0.87605256",
+        "fetched_text": "GiftCardCashOutTransaction - GraphQL Admin self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar GraphQL Admin API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Overview Client libraries Authentication Endpoints and queries Rate limits Status and error codes Access Analytics Apps B2B Billing Bulk operations Cart Checkout and accounts configurations Checkout branding Common objects Customers Discounts and marketing Inventory Localizations Metafields Metaobjects Online store Orders Privacy Products and collections Retail Shipping and fulfillment Shopify Markets Shopify Payments Store properties Timeline events Webhooks Graph QL Types Full index Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Anchor to GiftCardCashOutTransaction Gift Card Cash Out Transaction object Ask Copy MD This API version is not supported. Updates Developer changelog Shopify Editions Business growth Shopify Partners Program",
+        "fetch_error": ""
+      },
+      {
+        "title": "GiftCardCashOutTransaction is now resolvable from GiftCardTransaction - Shopify developer changelog",
+        "url": "https://shopify.dev/changelog/giftcardcashouttransaction-now-resolvable-from-giftcardtransaction",
+        "query": "GiftCardCashOutTransaction Shopify API documentation",
+        "provider": "tavily",
+        "score": "0.8690161",
+        "fetched_text": "GiftCardCashOutTransaction is now resolvable from GiftCardTransaction - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } June 5, 2026 Tags: Admin GraphQL API 2026-07 GiftCardCashOutTransaction is now resolvable from GiftCardTransaction Ask Copy MD Starting with GraphQL Admin API version 2026-07, the [ Gift Card Cash Out Transaction ]( https://shopify.dev/docs/api/admin-graphql/2026-07/object",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Release Notes - June 2026 Latest Updates - Releasebot",
+        "url": "https://releasebot.io/updates/shopify",
+        "query": "GiftCardDebitTransaction Shopify API 2026-04",
+        "provider": "tavily",
+        "score": "0.7982658",
+        "fetched_text": "Shopify Release Notes - June 2026 Latest Updates - Releasebot {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://releasebot.io/updates/shopify#page\",\"url\":\"https://releasebot.io/updates/shopify\",\"name\":\"Shopify Release Notes\",\"description\":\"Browse the Shopify changelog on Releasebot: your one-stop shop for a perfect feed of Shopify release notes.\",\"mainEntity\":{\"@id\":\"https://releasebot.io/updates/shopify#releases\"},\"author\":{\"@id\":\"https://releasebot.io/#org\"},\"publisher\":{\"@id\":\"https://releasebot.io/#org\"},\"dateModified\":\"2026-06-10\"},{\"@type\":\"Organization\",\"@id\":\"https://releasebot.io/#org\",\"name\":\"Releasebot\",\"url\":\"https://releasebot.io\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://releasebot.io/Square.png\"}},{\"@type\":\"SoftwareApplication\",\"@id\":\"https://releasebot.io/updates/shopify#app\",\"name\":\"Shopify\",\"applicationCategory\":\"BusinessApplication\",\"operatingSystem\":\"Web\",\"brand\":{\"@type\":\"Brand\",\"name\":\"Shopify\"}},{\"@type\":\"ItemList\",\"@id\":\"https://releasebot.io/updates/shopify#releases\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@type\":\"SoftwareRelease\",\"name\":\"shopify-collective-is-now-available-in-australia-77877\",\"datePublished\":\"2026-06-10\",\"inLanguage\":\"en\",\"isPartOf\":{\"@id\":\"https://releasebot.io/updates/shopify#app\"}}},{\"@type\":\"ListItem\",\"position\":2,\"item\":{\"@type\":\"SoftwareRelease\",\"name\":\"shipping-performance-metrics-and-verified-tracking-badge-in-shopify-collective-90184\",\"datePublished\":\"2026-06-10\",\"inLanguage\":\"en\",\"isPartOf\":{\"@id\":\"https://releasebot.io/updates/shopify#app\"}}},{\"@type\":\"ListItem\",\"position\":3,\"item\":{\"@type\":\"SoftwareRelease\",\"name\":\"multi-location-pickup-is-now-available-in-pos-14257\",\"datePublished\":\"2026-06-10\",\"inLanguage\":\"en\",\"isPartOf\":{\"@id\":\"https://releasebot.io/updat",
+        "fetch_error": ""
+      },
+      {
+        "title": "GiftCardDebitTransaction - GraphQL Admin",
+        "url": "https://shopify.dev/docs/api/admin-graphql/latest/objects/GiftCardDebitTransaction",
+        "query": "GiftCardDebitTransaction Shopify API 2026-04",
+        "provider": "tavily",
+        "score": "0.69795954",
+        "fetched_text": "GiftCardDebitTransaction - GraphQL Admin self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar GraphQL Admin API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Overview Client libraries Authentication Endpoints and queries Rate limits Status and error codes Access Analytics Apps B2B Billing Bulk operations Cart Checkout and accounts configurations Checkout branding Common objects Customers Discounts and marketing Inventory Localizations Metafields Metaobjects Online store Orders Privacy Products and collections Retail Shipping and fulfillment Shopify Markets Shopify Payments Store properties Timeline events Webhooks Graph QL Types Full index Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Anchor to GiftCardDebitTransaction Gift Card Debit Transaction object Ask Copy MD Requires read _gift _card _transactions access scope. A debit transaction which decreases the gift card balance. Anchor to Fiel",
+        "fetch_error": ""
+      },
+      {
+        "title": "Developer changelog - Shopify Dev Docs",
+        "url": "https://shopify.dev/changelog",
+        "query": "GiftCardDebitTransaction Shopify API 2026-04",
+        "provider": "tavily",
+        "score": "0.6625569",
+        "fetched_text": "Recent changes to Shopify’s platform self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Developer changelog Subscribe to the changelog to stay up to date on recent changes to Shopify’s APIs and other developer products, as well as preview upcoming features and beta releases. Ask Copy MD RSS Updates .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } Search changelog Filter by tag API Tools Shopify App Store Themes Platform Shopify Theme Store Built For Shopify Polaris POS Extensions Action Required ",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Developer Community Forums",
+        "url": "https://community.shopify.dev",
+        "query": "GiftCardCashOutTransaction Shopify community forum",
+        "provider": "tavily",
+        "score": "0.40021065",
+        "fetched_text": "Shopify Developer Community Forums {\"@context\":\"http://schema.org\",\"@type\":\"WebSite\",\"url\":\"https://community.shopify.dev\",\"name\":\"Shopify Developer Community Forums\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":\"https://community.shopify.dev/search?q={search_term_string}\",\"query-input\":\"required name=search_term_string\"}} Shopify Developer Community Forums The Shopify Developer Community forums is a space for developers building on Shopify to find help and discuss working with Shopify's APIs. Topic Replies Views Activity draftOrderCreate rejects one valid Japanese mobile number with “Phone number in shipping address is invalid” GraphQL Admin API Troubleshooting general-gql-troubles 0 2 June 11, 2026 Cart Transform - Instruction Count Limit Exceeded Error Functions cart-transform 5 13 June 11, 2026 Unrealistic 250-Item Carts Causing Function Failures Functions discount-functions 6 367 June 11, 2026 POS Requests Missing Shopify ID Token Extensions pos-extensions 17 135 June 11, 2026 Selected Product Variant not displayed in Cart Extensions pos-extensions 17 178 June 10, 2026 [Admin UI / i18n] Japanese mistranslation: card \"Reorder\" action shows as \"再注文\" (re-order a purchase) Extensions admin-ui-extensions 1 20 June 10, 2026 Shopify Mobile App: Save button becomes unresponsive after selecting a collection until Contextual Save Bar is re-triggered App Bridge app-bridge 1 16 June 10, 2026 Missing app access permissions Dev Platform dev-dashboard 5 60 June 10, 2026 Dev changelog RSS feed issue(s) Changelog 2 68 June 10, 2026 Auto-focus for input elements Polaris 1 29 June 10, 2026 S-modal not working properly in RTL (Hebrew/Arabic) layouts Polaris 18 215 June 10, 2026 shopifyqlQuery API returns “Metafield Column Not Found” for product metafield that works in Admin Anal",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Discussion Forum",
+        "url": "https://community.shopify.com/c/shopify-discussion/95",
+        "query": "GiftCardCashOutTransaction Shopify community forum",
+        "provider": "tavily",
+        "score": "0.33300465",
+        "fetched_text": "Share wins, solve challenges, and connect with fellow merchants.",
+        "fetch_error": "HTTP Error 429: Too Many Requests; used tavily content fallback"
+      },
+      {
+        "title": "Shopify Community",
+        "url": "https://community.shopify.com",
+        "query": "GiftCardCashOutTransaction Shopify community forum",
+        "provider": "tavily",
+        "score": "0.25124836",
+        "fetched_text": "| Start a Business Turn your entrepreneurial dreams into profitable reality. Get guidance on launching your first store, from concept to first sale. | AI Build Your Business Explore how artificial intelligence can help you build your business and empower your entrepreneurial journey! | Motivation Fuel your entrepreneurial fire with success stories, mindset shifts, and the encouragement you need to push through challenges. | Shopify Discussion Share wins, solve challenges, and connect with fellow merchants. | Store Feedback Share your store for feedback or offer your insights to others! The Store Feedback board is the place to request constructive reviews or help fellow members improve their Shopify stores. | Shopify Apps Supercharge your store with the right apps. | Shopify Flow The Shopify Flow board is a dedicated space for users to discuss automation workflows, share best practices, and get support for the Shopify Flow app. Connect with fellow merchants and experts to streamline your business processes using Shopify Flow’s powerful automation tools.",
+        "fetch_error": "HTTP Error 429: Too Many Requests; used tavily content fallback"
+      },
+      {
+        "title": "Shopify Changelog",
+        "url": "https://changelog.shopify.com",
+        "query": "Shopify GraphQL Admin API changelog 2026-07",
+        "provider": "tavily",
+        "score": "0.67140645",
+        "fetched_text": "Shopify Changelog document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js') 0,'js-has-hint': !state.error && state.hint}\" class=\"marketing-input-wrapper\"> Email address Create your store Skip to Content Shopify Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started Open Main Navigation Home Close Main Navigation Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started About Careers Press and Media Enterprise Sitemap Opens in a new window Opens an external site Opens an external site in a new window Changelog What’s new in Shopify No posts found June 10 Shopify Collective is now available in Australia Australian retailers and suppliers can now connect on Shopify Collective to expand their catalogs without inventory risk and increase sales. New Collective June 10 Shipping performance metrics and Verified Tracking badge in Shopify Collective Suppliers who maintain consistent carrier tracking coverage across all of their orders now earn a Verified Tracking badge that increases their discoverability to retailers. New Collective June 8 Multi-location pickup i",
+        "fetch_error": ""
+      },
+      {
+        "title": "GraphQL Admin API reference",
+        "url": "https://shopify.dev/docs/api/admin-graphql/latest",
+        "query": "Shopify GraphQL Admin API changelog 2026-07",
+        "provider": "tavily",
+        "score": "0.6549173",
+        "fetched_text": "GraphQL Admin API reference self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar GraphQL Admin API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Overview Client libraries Authentication Endpoints and queries Rate limits Status and error codes Access Analytics Apps B2B Billing Bulk operations Cart Checkout and accounts configurations Checkout branding Common objects Customers Discounts and marketing Inventory Localizations Metafields Metaobjects Online store Orders Privacy Products and collections Retail Shipping and fulfillment Shopify Markets Shopify Payments Store properties Timeline events Webhooks Graph QL Types Full index .Mode-Dark { ._HeroImage_14vd5_9-httpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagesadmin-graphql-hero-light-C8uaroa5pnghttpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagesadmin-graphql-hero-dark-DTUNbKoEpng { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/as",
+        "fetch_error": ""
+      },
+      {
+        "title": "Flow adopts version 2026-01 of the GraphQL Admin API - Shopify Changelog",
+        "url": "https://changelog.shopify.com/posts/flow-adopts-version-2026-01-of-the-graphql-admin-api",
+        "query": "Shopify GraphQL Admin API changelog 2026-07",
+        "provider": "tavily",
+        "score": "0.6102915",
+        "fetched_text": "Flow adopts version 2026-01 of the GraphQL Admin API - Shopify Changelog document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js') 0,'js-has-hint': !state.error && state.hint}\" class=\"marketing-input-wrapper\"> Email address Create your store Skip to Content Shopify Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started Open Main Navigation Home Close Main Navigation Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started About Careers Press and Media Enterprise Sitemap Opens in a new window Opens an external site Opens an external site in a new window Changelog What’s new in Shopify Back to Changelog January 15, 2026 Flow adopts version 2026-01 of the GraphQL Admin API Flow now uses version 2026-01 of the GraphQL Admin API, which includes new options for building automations. Some of the changes in version 2026-01 of the GraphQL Admin API include: Advanced querying of metafields and metaobjects : We've expanded the resources that you can query by metafield value to include Companies and Company Locations. We've also expanded how you can query metafield",
+        "fetch_error": ""
+      },
+      {
+        "title": "The Anatomy of a Shopify POS Implementation: CRM, Clienteling ...",
+        "url": "https://badger.blue/blogs/ecommerce-unpacked/shopify-pos-crm-clienteling-gift-cards-in-store-experience-breakdown",
+        "query": "Shopify gift card cash out POS implementation",
+        "provider": "tavily",
+        "score": "0.82728493",
+        "fetched_text": "window.isense_gdpr_privacy_policy_text = \"Contact Us\"; window.isense_gdpr_accept_button_text = \"Accept\"; window.isense_gdpr_close_button_text = \"Close\"; window.isense_gdpr_reject_button_text = \"Reject\"; window.isense_gdpr_change_cookies_text = \"Preferences\"; window.isense_gdpr_text = \"This website uses cookies to ensure you get the best experience on our website.\"; window.isense_widget_content = \"Cookie Preferences\"; window.isense_gdpr_strict_cookies_checkbox = \"Strictly Required Cookies\"; window.isense_gdpr_strict_cookies_text = \"These cookies are required for the website to run and cannot be switched off. Such cookies are only set in response to actions made by you such as language, currency, login session, privacy preferences. You can set your browser to block these cookies but this might affect the way our site is working.\"; window.isense_gdpr_analytics_cookies_checkbox = \"Analytics and Statistics\"; window.isense_gdpr_analytics_cookies_text = \"These cookies allow us to measure visitors traffic and see traffic sources by collecting information in data sets. They also help us understand which products and actions are more popular than others.\"; window.isense_gdpr_marketing_cookies_checkbox = \"Marketing and Retargeting\"; window.isense_gdpr_marketing_cookies_text = \"These cookies are usually set by our marketing and advertising partners. They may be used by them to build a profile of your interest and later show you relevant ads. If you do not allow these cookies you will not experience targeted ads for your interests.\"; window.isense_gdpr_functionality_cookies_checkbox = \"Functional Cookies\"; window.isense_gdpr_functionality_cookies_text = \"These cookies enable our website to offer additional functions and personal settings. They can be set by us or by third-party serv",
+        "fetch_error": ""
+      },
+      {
+        "title": "Using gift cards with Shopify POS",
+        "url": "https://help.shopify.com/en/manual/sell-in-person/shopify-pos/payment-management/gift-cards",
+        "query": "Shopify gift card cash out POS implementation",
+        "provider": "tavily",
+        "score": "0.7604555",
+        "fetched_text": "Use Shopify POS to redeem gift cards as payment by scanning the card's barcode or entering the code manually. You can also process refunds back to gift cards",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      },
+      {
+        "title": "Selling gift cards on Shopify POS",
+        "url": "https://help.shopify.com/en/manual/sell-in-person/shopify-pos/payment-management/gift-cards/sell-gift-cards-pos",
+        "query": "Shopify gift card cash out POS implementation",
+        "provider": "tavily",
+        "score": "0.72768575",
+        "fetched_text": "To sell gift cards from Shopify POS, you can add the Add gift card tile to your smart grid. You can sell digital or physical gift cards using Shopify POS. To",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：核心事实没有来源：GiftCardCashOutTransaction 新类型仅依赖官方 changelog，缺乏开发者社区反馈和实际案例。"
+    },
+    "core_question": "Shopify GiftCardCashOutTransaction 新类型对跨境卖家和独立开发者有何实际影响？",
+    "why_this_topic_matters": "Shopify 平台规则变更直接影响跨境卖家的支付流程和开发者的 API 维护工作，提前了解可避免版本升级后的兼容性问题。",
+    "fact_summary": [
+      "Shopify 在 GraphQL Admin API 2026-07 版本中引入 GiftCardCashOutTransaction 类型，专门表示通过 POS 系统提取礼品卡余额的交易。",
+      "在 2026-04 及更早版本中，此类交易被归类为 GiftCardDebitTransaction。",
+      "开发者需使用 __typename 字段区分现金支出交易与借记交易。",
+      "该变更仅影响使用 POS 系统的商家，纯在线商家可能无需关注。"
+    ],
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "高价值商业读者",
+        "入门读者"
+      ],
+      "interest_score": 65,
+      "why_interested": "API 类型变更直接影响代码维护和版本升级计划，开发者需要评估迁移成本；商业读者关注 POS 场景下的礼品卡现金支出合规性。",
+      "reader_risk": "可能过度解读为重大破坏性变更，实际影响范围有限。"
+    },
+    "mass_interest_hook": {
+      "score": 40,
+      "hook_type": "踩坑",
+      "why_non_technical_people_may_click": "标题暗示平台规则变化可能导致商家或开发者踩坑，普通人担心自己使用的系统出问题。",
+      "story_seed": "一个 Shopify 商家因未及时更新 API 版本，导致 POS 礼品卡现金支出交易数据丢失，引发财务对账问题。",
+      "do_not_overhype": "该变更并非破坏性，仅影响特定场景，且 Shopify 提供了迁移路径。"
+    },
+    "timeline": [
+      "2026-06-05: Shopify 发布 changelog 宣布 GiftCardCashOutTransaction 新类型。",
+      "2026-07: GraphQL Admin API 2026-07 版本正式生效，新类型可用。",
+      "2026-04 及之前: 现金支出交易被归类为 GiftCardDebitTransaction。"
+    ],
+    "evidence_table": [
+      {
+        "source": "Shopify Developer Changelog",
+        "url": "https://shopify.dev/changelog/giftcardcashouttransaction-now-resolvable-from-giftcardtransaction",
+        "supports": "官方宣布新类型及变更细节",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify GraphQL Admin API 文档 (2026-07)",
+        "url": "https://shopify.dev/docs/api/admin-graphql/2026-07/objects/GiftCardCashOutTransaction",
+        "supports": "新类型的定义和字段",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify GraphQL Admin API 文档 (2026-04)",
+        "url": "https://shopify.dev/docs/api/admin-graphql/latest/objects/GiftCardDebitTransaction",
+        "supports": "旧类型定义，用于对比",
+        "reliability": "official"
+      },
+      {
+        "source": "Releasebot.io",
+        "url": "https://releasebot.io/updates/shopify",
+        "supports": "汇总 Shopify 发布说明，但未提及此变更",
+        "reliability": "weak"
+      },
+      {
+        "source": "Shopify Developer Community Forums",
+        "url": "https://community.shopify.dev",
+        "supports": "未找到相关讨论，说明开发者关注度低",
+        "reliability": "weak"
+      },
+      {
+        "source": "Badger Blue 博客",
+        "url": "https://badger.blue/blogs/ecommerce-unpacked/shopify-pos-crm-clienteling-gift-cards-in-store-experience-breakdown",
+        "supports": "POS 礼品卡实现背景，但未涉及新类型",
+        "reliability": "weak"
+      }
+    ],
+    "logic_closure": "部分闭环。已知变更内容和影响范围，但缺乏开发者实际迁移案例和社区反馈，无法判断实际影响程度。",
+    "writeable_angles": [
+      {
+        "angle": "平台规则变更预警：GiftCardCashOutTransaction 对 POS 商家的影响",
+        "why": "直接服务使用 POS 的跨境卖家，提醒 API 版本升级注意事项。",
+        "needs": "需要补充 POS 商家案例和迁移指南。"
+      },
+      {
+        "angle": "API 类型变更的技术解读：如何安全迁移",
+        "why": "面向开发者，提供代码示例和最佳实践。",
+        "needs": "需要官方迁移文档和社区反馈。"
+      },
+      {
+        "angle": "礼品卡现金支出合规性：POS 场景下的财务对账",
+        "why": "面向财务或运营人员，解释新类型对数据一致性的影响。",
+        "needs": "需要财务对账案例和合规要求。"
+      }
+    ],
+    "missing_basics": [
+      "GiftCardCashOutTransaction 与 GiftCardDebitTransaction 的具体字段差异",
+      "Shopify POS 系统中礼品卡现金支出的常见场景",
+      "API 版本升级的默认行为（是否自动迁移）"
+    ],
+    "missing_materials": [
+      "开发者社区关于此变更的讨论或问题反馈",
+      "官方迁移指南或最佳实践文档",
+      "实际 POS 商家使用案例",
+      "与旧版本的兼容性说明"
+    ],
+    "not_claimable": [
+      "该变更会破坏现有 API 调用",
+      "所有商家都需要立即修改代码",
+      "该变更影响礼品卡的所有交易类型"
+    ],
+    "followup_queries": [
+      "GiftCardCashOutTransaction 是否仅限 POS 场景？",
+      "2026-07 版本之前，GiftCardDebitTransaction 是否已覆盖现金支出？",
+      "该变更是否影响现有 API 调用或需要代码修改？",
+      "是否有开发者社区讨论或官方文档说明迁移注意事项？"
+    ],
+    "additional_search_queries": [
+      "GiftCardCashOutTransaction Shopify community forum",
+      "GiftCardDebitTransaction Shopify API 2026-04",
+      "Shopify GraphQL Admin API changelog 2026-07",
+      "Shopify gift card cash out POS implementation"
+    ],
+    "stop_conditions": [
+      "官方发布迁移指南或最佳实践",
+      "开发者社区出现大量相关讨论或问题",
+      "发现实际商家因该变更遇到问题"
+    ],
+    "confidence": 45.0,
+    "topic_direction": "cross-border",
+    "topic_direction_title": "跨境&出海",
+    "report_type": "platform-rules",
+    "quality_gate": {
+      "pass": false,
+      "score": 45,
+      "fatal_issues": [
+        "核心事实没有来源：GiftCardCashOutTransaction 新类型仅依赖官方 changelog，缺乏开发者社区反馈和实际案例。",
+        "逻辑未闭环：缺乏开发者实际迁移案例和社区反馈，无法判断实际影响程度。",
+        "泛兴趣钩子过度标题党：标题暗示平台规则变化可能导致踩坑，但正文证据接不住，实际影响范围有限。"
+      ],
+      "warnings": [
+        "读者分层不明确：主要服务核心技术人，但高价值商业读者和入门读者的兴趣度较低。",
+        "信息源严重偏科：所有证据均来自 Shopify 官方文档，缺乏第三方验证。",
+        "未提供具体资料包：缺少时间线、更新摘要、迁移指南等结构化资料。"
+      ],
+      "missing_evidence": [
+        "开发者社区关于此变更的讨论或问题反馈",
+        "官方迁移指南或最佳实践文档",
+        "实际 POS 商家使用案例",
+        "与旧版本的兼容性说明"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "Shopify GiftCardCashOutTransaction 新类型对跨境卖家和独立开发者有何实际影响？",
+      "must_verify": [
+        "GiftCardCashOutTransaction 是否仅限 POS 场景？",
+        "2026-07 版本之前，GiftCardDebitTransaction 是否已覆盖现金支出？",
+        "该变更是否影响现有 API 调用或需要代码修改？",
+        "是否有开发者社区讨论或官方文档说明迁移注意事项？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "GiftCardCashOutTransaction Shopify API documentation",
+          "why_needed": "确认新类型的定义、字段和限制条件"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "GiftCardDebitTransaction Shopify API 2026-04",
+          "why_needed": "对比旧类型，确认变更范围和影响"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "GiftCardCashOutTransaction Shopify community forum",
+          "why_needed": "了解开发者实际遇到的问题和迁移经验"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Shopify GraphQL Admin API changelog 2026-07",
+          "why_needed": "确认版本发布时间和完整变更列表"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Shopify gift card cash out POS implementation",
+          "why_needed": "寻找实际使用案例，验证影响范围"
+        }
+      ],
+      "expert_challenge_points": [
+        "该变更是否仅影响使用 POS 系统的商家？",
+        "对于仅在线销售的商家，是否需要关注此变更？",
+        "变更是否会导致现有查询返回错误或数据不一致？"
+      ],
+      "do_not_claim_yet": [
+        "该变更会破坏现有 API 调用",
+        "所有商家都需要立即修改代码",
+        "该变更影响礼品卡的所有交易类型"
+      ],
+      "can_publish_as_radar_if_missing": "可以，作为平台规则变更的早期预警，提醒开发者关注 API 版本升级",
+      "downstream_materials_needed": [
+        "官方迁移指南或最佳实践",
+        "开发者社区反馈汇总",
+        "与旧版本的兼容性说明"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "GiftCardCashOutTransaction - GraphQL Admin",
+        "url": "https://shopify.dev/docs/api/admin-graphql/2026-07/objects/GiftCardCashOutTransaction",
+        "query": "GiftCardCashOutTransaction Shopify API documentation",
+        "provider": "tavily",
+        "score": "0.90018827",
+        "fetched_text": "GiftCardCashOutTransaction - GraphQL Admin self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar GraphQL Admin API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-07 release candidate Overview Client libraries Authentication Endpoints and queries Rate limits Status and error codes Access Analytics Apps B2B Billing Bulk operations Cart Checkout and accounts configurations Checkout branding Common objects Customers Discounts and marketing Inventory Localizations Metafields Metaobjects Online store Orders Privacy Products and collections Retail Shipping and fulfillment Shopify Markets Shopify Payments Store properties Timeline events Webhooks Graph QL Types Full index Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-07 release candidate Anchor to GiftCardCashOutTransaction Gift Card Cash Out Transaction object Ask Copy MD Requires read _gift _card _transactions access scope. A cash out transaction where the gift card b",
+        "fetch_error": ""
+      },
+      {
+        "title": "GiftCardCashOutTransaction - GraphQL Admin - Shopify Dev Docs",
+        "url": "https://shopify.dev/docs/api/admin-graphql/latest/objects/GiftCardCashOutTransaction",
+        "query": "GiftCardCashOutTransaction Shopify API documentation",
+        "provider": "tavily",
+        "score": "0.87605256",
+        "fetched_text": "GiftCardCashOutTransaction - GraphQL Admin self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar GraphQL Admin API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Overview Client libraries Authentication Endpoints and queries Rate limits Status and error codes Access Analytics Apps B2B Billing Bulk operations Cart Checkout and accounts configurations Checkout branding Common objects Customers Discounts and marketing Inventory Localizations Metafields Metaobjects Online store Orders Privacy Products and collections Retail Shipping and fulfillment Shopify Markets Shopify Payments Store properties Timeline events Webhooks Graph QL Types Full index Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Anchor to GiftCardCashOutTransaction Gift Card Cash Out Transaction object Ask Copy MD This API version is not supported. Updates Developer changelog Shopify Editions Business growth Shopify Partners Program",
+        "fetch_error": ""
+      },
+      {
+        "title": "GiftCardCashOutTransaction is now resolvable from GiftCardTransaction - Shopify developer changelog",
+        "url": "https://shopify.dev/changelog/giftcardcashouttransaction-now-resolvable-from-giftcardtransaction",
+        "query": "GiftCardCashOutTransaction Shopify API documentation",
+        "provider": "tavily",
+        "score": "0.8690161",
+        "fetched_text": "GiftCardCashOutTransaction is now resolvable from GiftCardTransaction - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } June 5, 2026 Tags: Admin GraphQL API 2026-07 GiftCardCashOutTransaction is now resolvable from GiftCardTransaction Ask Copy MD Starting with GraphQL Admin API version 2026-07, the [ Gift Card Cash Out Transaction ]( https://shopify.dev/docs/api/admin-graphql/2026-07/object",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Release Notes - June 2026 Latest Updates - Releasebot",
+        "url": "https://releasebot.io/updates/shopify",
+        "query": "GiftCardDebitTransaction Shopify API 2026-04",
+        "provider": "tavily",
+        "score": "0.7982658",
+        "fetched_text": "Shopify Release Notes - June 2026 Latest Updates - Releasebot {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://releasebot.io/updates/shopify#page\",\"url\":\"https://releasebot.io/updates/shopify\",\"name\":\"Shopify Release Notes\",\"description\":\"Browse the Shopify changelog on Releasebot: your one-stop shop for a perfect feed of Shopify release notes.\",\"mainEntity\":{\"@id\":\"https://releasebot.io/updates/shopify#releases\"},\"author\":{\"@id\":\"https://releasebot.io/#org\"},\"publisher\":{\"@id\":\"https://releasebot.io/#org\"},\"dateModified\":\"2026-06-10\"},{\"@type\":\"Organization\",\"@id\":\"https://releasebot.io/#org\",\"name\":\"Releasebot\",\"url\":\"https://releasebot.io\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://releasebot.io/Square.png\"}},{\"@type\":\"SoftwareApplication\",\"@id\":\"https://releasebot.io/updates/shopify#app\",\"name\":\"Shopify\",\"applicationCategory\":\"BusinessApplication\",\"operatingSystem\":\"Web\",\"brand\":{\"@type\":\"Brand\",\"name\":\"Shopify\"}},{\"@type\":\"ItemList\",\"@id\":\"https://releasebot.io/updates/shopify#releases\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@type\":\"SoftwareRelease\",\"name\":\"shopify-collective-is-now-available-in-australia-77877\",\"datePublished\":\"2026-06-10\",\"inLanguage\":\"en\",\"isPartOf\":{\"@id\":\"https://releasebot.io/updates/shopify#app\"}}},{\"@type\":\"ListItem\",\"position\":2,\"item\":{\"@type\":\"SoftwareRelease\",\"name\":\"shipping-performance-metrics-and-verified-tracking-badge-in-shopify-collective-90184\",\"datePublished\":\"2026-06-10\",\"inLanguage\":\"en\",\"isPartOf\":{\"@id\":\"https://releasebot.io/updates/shopify#app\"}}},{\"@type\":\"ListItem\",\"position\":3,\"item\":{\"@type\":\"SoftwareRelease\",\"name\":\"multi-location-pickup-is-now-available-in-pos-14257\",\"datePublished\":\"2026-06-10\",\"inLanguage\":\"en\",\"isPartOf\":{\"@id\":\"https://releasebot.io/updat",
+        "fetch_error": ""
+      },
+      {
+        "title": "GiftCardDebitTransaction - GraphQL Admin",
+        "url": "https://shopify.dev/docs/api/admin-graphql/latest/objects/GiftCardDebitTransaction",
+        "query": "GiftCardDebitTransaction Shopify API 2026-04",
+        "provider": "tavily",
+        "score": "0.69795954",
+        "fetched_text": "GiftCardDebitTransaction - GraphQL Admin self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar GraphQL Admin API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Overview Client libraries Authentication Endpoints and queries Rate limits Status and error codes Access Analytics Apps B2B Billing Bulk operations Cart Checkout and accounts configurations Checkout branding Common objects Customers Discounts and marketing Inventory Localizations Metafields Metaobjects Online store Orders Privacy Products and collections Retail Shipping and fulfillment Shopify Markets Shopify Payments Store properties Timeline events Webhooks Graph QL Types Full index Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Anchor to GiftCardDebitTransaction Gift Card Debit Transaction object Ask Copy MD Requires read _gift _card _transactions access scope. A debit transaction which decreases the gift card balance. Anchor to Fiel",
+        "fetch_error": ""
+      },
+      {
+        "title": "Developer changelog - Shopify Dev Docs",
+        "url": "https://shopify.dev/changelog",
+        "query": "GiftCardDebitTransaction Shopify API 2026-04",
+        "provider": "tavily",
+        "score": "0.6625569",
+        "fetched_text": "Recent changes to Shopify’s platform self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Developer changelog Subscribe to the changelog to stay up to date on recent changes to Shopify’s APIs and other developer products, as well as preview upcoming features and beta releases. Ask Copy MD RSS Updates .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } Search changelog Filter by tag API Tools Shopify App Store Themes Platform Shopify Theme Store Built For Shopify Polaris POS Extensions Action Required ",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Developer Community Forums",
+        "url": "https://community.shopify.dev",
+        "query": "GiftCardCashOutTransaction Shopify community forum",
+        "provider": "tavily",
+        "score": "0.40021065",
+        "fetched_text": "Shopify Developer Community Forums {\"@context\":\"http://schema.org\",\"@type\":\"WebSite\",\"url\":\"https://community.shopify.dev\",\"name\":\"Shopify Developer Community Forums\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":\"https://community.shopify.dev/search?q={search_term_string}\",\"query-input\":\"required name=search_term_string\"}} Shopify Developer Community Forums The Shopify Developer Community forums is a space for developers building on Shopify to find help and discuss working with Shopify's APIs. Topic Replies Views Activity draftOrderCreate rejects one valid Japanese mobile number with “Phone number in shipping address is invalid” GraphQL Admin API Troubleshooting general-gql-troubles 0 2 June 11, 2026 Cart Transform - Instruction Count Limit Exceeded Error Functions cart-transform 5 13 June 11, 2026 Unrealistic 250-Item Carts Causing Function Failures Functions discount-functions 6 367 June 11, 2026 POS Requests Missing Shopify ID Token Extensions pos-extensions 17 135 June 11, 2026 Selected Product Variant not displayed in Cart Extensions pos-extensions 17 178 June 10, 2026 [Admin UI / i18n] Japanese mistranslation: card \"Reorder\" action shows as \"再注文\" (re-order a purchase) Extensions admin-ui-extensions 1 20 June 10, 2026 Shopify Mobile App: Save button becomes unresponsive after selecting a collection until Contextual Save Bar is re-triggered App Bridge app-bridge 1 16 June 10, 2026 Missing app access permissions Dev Platform dev-dashboard 5 60 June 10, 2026 Dev changelog RSS feed issue(s) Changelog 2 68 June 10, 2026 Auto-focus for input elements Polaris 1 29 June 10, 2026 S-modal not working properly in RTL (Hebrew/Arabic) layouts Polaris 18 215 June 10, 2026 shopifyqlQuery API returns “Metafield Column Not Found” for product metafield that works in Admin Anal",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Discussion Forum",
+        "url": "https://community.shopify.com/c/shopify-discussion/95",
+        "query": "GiftCardCashOutTransaction Shopify community forum",
+        "provider": "tavily",
+        "score": "0.33300465",
+        "fetched_text": "Share wins, solve challenges, and connect with fellow merchants.",
+        "fetch_error": "HTTP Error 429: Too Many Requests; used tavily content fallback"
+      },
+      {
+        "title": "Shopify Community",
+        "url": "https://community.shopify.com",
+        "query": "GiftCardCashOutTransaction Shopify community forum",
+        "provider": "tavily",
+        "score": "0.25124836",
+        "fetched_text": "| Start a Business Turn your entrepreneurial dreams into profitable reality. Get guidance on launching your first store, from concept to first sale. | AI Build Your Business Explore how artificial intelligence can help you build your business and empower your entrepreneurial journey! | Motivation Fuel your entrepreneurial fire with success stories, mindset shifts, and the encouragement you need to push through challenges. | Shopify Discussion Share wins, solve challenges, and connect with fellow merchants. | Store Feedback Share your store for feedback or offer your insights to others! The Store Feedback board is the place to request constructive reviews or help fellow members improve their Shopify stores. | Shopify Apps Supercharge your store with the right apps. | Shopify Flow The Shopify Flow board is a dedicated space for users to discuss automation workflows, share best practices, and get support for the Shopify Flow app. Connect with fellow merchants and experts to streamline your business processes using Shopify Flow’s powerful automation tools.",
+        "fetch_error": "HTTP Error 429: Too Many Requests; used tavily content fallback"
+      },
+      {
+        "title": "Shopify Changelog",
+        "url": "https://changelog.shopify.com",
+        "query": "Shopify GraphQL Admin API changelog 2026-07",
+        "provider": "tavily",
+        "score": "0.67140645",
+        "fetched_text": "Shopify Changelog document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js') 0,'js-has-hint': !state.error && state.hint}\" class=\"marketing-input-wrapper\"> Email address Create your store Skip to Content Shopify Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started Open Main Navigation Home Close Main Navigation Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started About Careers Press and Media Enterprise Sitemap Opens in a new window Opens an external site Opens an external site in a new window Changelog What’s new in Shopify No posts found June 10 Shopify Collective is now available in Australia Australian retailers and suppliers can now connect on Shopify Collective to expand their catalogs without inventory risk and increase sales. New Collective June 10 Shipping performance metrics and Verified Tracking badge in Shopify Collective Suppliers who maintain consistent carrier tracking coverage across all of their orders now earn a Verified Tracking badge that increases their discoverability to retailers. New Collective June 8 Multi-location pickup i",
+        "fetch_error": ""
+      },
+      {
+        "title": "GraphQL Admin API reference",
+        "url": "https://shopify.dev/docs/api/admin-graphql/latest",
+        "query": "Shopify GraphQL Admin API changelog 2026-07",
+        "provider": "tavily",
+        "score": "0.6549173",
+        "fetched_text": "GraphQL Admin API reference self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar GraphQL Admin API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Overview Client libraries Authentication Endpoints and queries Rate limits Status and error codes Access Analytics Apps B2B Billing Bulk operations Cart Checkout and accounts configurations Checkout branding Common objects Customers Discounts and marketing Inventory Localizations Metafields Metaobjects Online store Orders Privacy Products and collections Retail Shipping and fulfillment Shopify Markets Shopify Payments Store properties Timeline events Webhooks Graph QL Types Full index .Mode-Dark { ._HeroImage_14vd5_9-httpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagesadmin-graphql-hero-light-C8uaroa5pnghttpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagesadmin-graphql-hero-dark-DTUNbKoEpng { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/as",
+        "fetch_error": ""
+      },
+      {
+        "title": "Flow adopts version 2026-01 of the GraphQL Admin API - Shopify Changelog",
+        "url": "https://changelog.shopify.com/posts/flow-adopts-version-2026-01-of-the-graphql-admin-api",
+        "query": "Shopify GraphQL Admin API changelog 2026-07",
+        "provider": "tavily",
+        "score": "0.6102915",
+        "fetched_text": "Flow adopts version 2026-01 of the GraphQL Admin API - Shopify Changelog document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js') 0,'js-has-hint': !state.error && state.hint}\" class=\"marketing-input-wrapper\"> Email address Create your store Skip to Content Shopify Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started Open Main Navigation Home Close Main Navigation Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started About Careers Press and Media Enterprise Sitemap Opens in a new window Opens an external site Opens an external site in a new window Changelog What’s new in Shopify Back to Changelog January 15, 2026 Flow adopts version 2026-01 of the GraphQL Admin API Flow now uses version 2026-01 of the GraphQL Admin API, which includes new options for building automations. Some of the changes in version 2026-01 of the GraphQL Admin API include: Advanced querying of metafields and metaobjects : We've expanded the resources that you can query by metafield value to include Companies and Company Locations. We've also expanded how you can query metafield",
+        "fetch_error": ""
+      },
+      {
+        "title": "The Anatomy of a Shopify POS Implementation: CRM, Clienteling ...",
+        "url": "https://badger.blue/blogs/ecommerce-unpacked/shopify-pos-crm-clienteling-gift-cards-in-store-experience-breakdown",
+        "query": "Shopify gift card cash out POS implementation",
+        "provider": "tavily",
+        "score": "0.82728493",
+        "fetched_text": "window.isense_gdpr_privacy_policy_text = \"Contact Us\"; window.isense_gdpr_accept_button_text = \"Accept\"; window.isense_gdpr_close_button_text = \"Close\"; window.isense_gdpr_reject_button_text = \"Reject\"; window.isense_gdpr_change_cookies_text = \"Preferences\"; window.isense_gdpr_text = \"This website uses cookies to ensure you get the best experience on our website.\"; window.isense_widget_content = \"Cookie Preferences\"; window.isense_gdpr_strict_cookies_checkbox = \"Strictly Required Cookies\"; window.isense_gdpr_strict_cookies_text = \"These cookies are required for the website to run and cannot be switched off. Such cookies are only set in response to actions made by you such as language, currency, login session, privacy preferences. You can set your browser to block these cookies but this might affect the way our site is working.\"; window.isense_gdpr_analytics_cookies_checkbox = \"Analytics and Statistics\"; window.isense_gdpr_analytics_cookies_text = \"These cookies allow us to measure visitors traffic and see traffic sources by collecting information in data sets. They also help us understand which products and actions are more popular than others.\"; window.isense_gdpr_marketing_cookies_checkbox = \"Marketing and Retargeting\"; window.isense_gdpr_marketing_cookies_text = \"These cookies are usually set by our marketing and advertising partners. They may be used by them to build a profile of your interest and later show you relevant ads. If you do not allow these cookies you will not experience targeted ads for your interests.\"; window.isense_gdpr_functionality_cookies_checkbox = \"Functional Cookies\"; window.isense_gdpr_functionality_cookies_text = \"These cookies enable our website to offer additional functions and personal settings. They can be set by us or by third-party serv",
+        "fetch_error": ""
+      },
+      {
+        "title": "Using gift cards with Shopify POS",
+        "url": "https://help.shopify.com/en/manual/sell-in-person/shopify-pos/payment-management/gift-cards",
+        "query": "Shopify gift card cash out POS implementation",
+        "provider": "tavily",
+        "score": "0.7604555",
+        "fetched_text": "Use Shopify POS to redeem gift cards as payment by scanning the card's barcode or entering the code manually. You can also process refunds back to gift cards",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      },
+      {
+        "title": "Selling gift cards on Shopify POS",
+        "url": "https://help.shopify.com/en/manual/sell-in-person/shopify-pos/payment-management/gift-cards/sell-gift-cards-pos",
+        "query": "Shopify gift card cash out POS implementation",
+        "provider": "tavily",
+        "score": "0.72768575",
+        "fetched_text": "To sell gift cards from Shopify POS, you can add the Add gift card tile to your smart grid. You can sell digital or physical gift cards using Shopify POS. To",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260611-giftcardcashouttransaction-is-now-resolvable-fro-16038860/",
+    "for_gpt_editor": {
+      "brief": "Starting with GraphQL Admin API version 2026-07, the [ GiftCardCashOutTransaction ]( https://shopify.dev/docs/api/admin-graphql/2026-07/objects/GiftCardCashOutTransaction type is introduced as a new variant of the GiftCardTransaction interface. This type specifically represents transactions where a gift card balance is paid out through a point of sale (POS) system. In previous API versions, such as 2026-04 and earlier, these transactions were classified as GiftCardDebitTransaction . From version 2026-07 onwards, they are identified as GiftCardCashOutTransaction . To accurately differentiate cash-out transactions from credit and debit transactions, use the __typename field when querying giftCard.transactions . Below is an example query: giftCard(id: \"...\") { transactions(first: 10) { nodes { __typename ... on GiftCardCashOutTransaction { id amount { amount currencyCode } } } } }",
+      "title_seed": "平台规则：Shopify 平台规则变化",
+      "original_title": "`GiftCardCashOutTransaction` is now resolvable from `GiftCardTransaction`",
+      "source_url": "https://shopify.dev/changelog/giftcardcashouttransaction-now-resolvable-from-giftcardtransaction",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：核心事实没有来源：GiftCardCashOutTransaction 新类型仅依赖官方 changelog，缺乏开发者社区反馈和实际案例。"
+        },
+        "core_question": "Shopify GiftCardCashOutTransaction 新类型对跨境卖家和独立开发者有何实际影响？",
+        "why_this_topic_matters": "Shopify 平台规则变更直接影响跨境卖家的支付流程和开发者的 API 维护工作，提前了解可避免版本升级后的兼容性问题。",
+        "fact_summary": [
+          "Shopify 在 GraphQL Admin API 2026-07 版本中引入 GiftCardCashOutTransaction 类型，专门表示通过 POS 系统提取礼品卡余额的交易。",
+          "在 2026-04 及更早版本中，此类交易被归类为 GiftCardDebitTransaction。",
+          "开发者需使用 __typename 字段区分现金支出交易与借记交易。",
+          "该变更仅影响使用 POS 系统的商家，纯在线商家可能无需关注。"
+        ],
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "高价值商业读者",
+            "入门读者"
+          ],
+          "interest_score": 65,
+          "why_interested": "API 类型变更直接影响代码维护和版本升级计划，开发者需要评估迁移成本；商业读者关注 POS 场景下的礼品卡现金支出合规性。",
+          "reader_risk": "可能过度解读为重大破坏性变更，实际影响范围有限。"
+        },
+        "mass_interest_hook": {
+          "score": 40,
+          "hook_type": "踩坑",
+          "why_non_technical_people_may_click": "标题暗示平台规则变化可能导致商家或开发者踩坑，普通人担心自己使用的系统出问题。",
+          "story_seed": "一个 Shopify 商家因未及时更新 API 版本，导致 POS 礼品卡现金支出交易数据丢失，引发财务对账问题。",
+          "do_not_overhype": "该变更并非破坏性，仅影响特定场景，且 Shopify 提供了迁移路径。"
+        },
+        "timeline": [
+          "2026-06-05: Shopify 发布 changelog 宣布 GiftCardCashOutTransaction 新类型。",
+          "2026-07: GraphQL Admin API 2026-07 版本正式生效，新类型可用。",
+          "2026-04 及之前: 现金支出交易被归类为 GiftCardDebitTransaction。"
+        ],
+        "evidence_table": [
+          {
+            "source": "Shopify Developer Changelog",
+            "url": "https://shopify.dev/changelog/giftcardcashouttransaction-now-resolvable-from-giftcardtransaction",
+            "supports": "官方宣布新类型及变更细节",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify GraphQL Admin API 文档 (2026-07)",
+            "url": "https://shopify.dev/docs/api/admin-graphql/2026-07/objects/GiftCardCashOutTransaction",
+            "supports": "新类型的定义和字段",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify GraphQL Admin API 文档 (2026-04)",
+            "url": "https://shopify.dev/docs/api/admin-graphql/latest/objects/GiftCardDebitTransaction",
+            "supports": "旧类型定义，用于对比",
+            "reliability": "official"
+          },
+          {
+            "source": "Releasebot.io",
+            "url": "https://releasebot.io/updates/shopify",
+            "supports": "汇总 Shopify 发布说明，但未提及此变更",
+            "reliability": "weak"
+          },
+          {
+            "source": "Shopify Developer Community Forums",
+            "url": "https://community.shopify.dev",
+            "supports": "未找到相关讨论，说明开发者关注度低",
+            "reliability": "weak"
+          },
+          {
+            "source": "Badger Blue 博客",
+            "url": "https://badger.blue/blogs/ecommerce-unpacked/shopify-pos-crm-clienteling-gift-cards-in-store-experience-breakdown",
+            "supports": "POS 礼品卡实现背景，但未涉及新类型",
+            "reliability": "weak"
+          }
+        ],
+        "logic_closure": "部分闭环。已知变更内容和影响范围，但缺乏开发者实际迁移案例和社区反馈，无法判断实际影响程度。",
+        "writeable_angles": [
+          {
+            "angle": "平台规则变更预警：GiftCardCashOutTransaction 对 POS 商家的影响",
+            "why": "直接服务使用 POS 的跨境卖家，提醒 API 版本升级注意事项。",
+            "needs": "需要补充 POS 商家案例和迁移指南。"
+          },
+          {
+            "angle": "API 类型变更的技术解读：如何安全迁移",
+            "why": "面向开发者，提供代码示例和最佳实践。",
+            "needs": "需要官方迁移文档和社区反馈。"
+          },
+          {
+            "angle": "礼品卡现金支出合规性：POS 场景下的财务对账",
+            "why": "面向财务或运营人员，解释新类型对数据一致性的影响。",
+            "needs": "需要财务对账案例和合规要求。"
+          }
+        ],
+        "missing_basics": [
+          "GiftCardCashOutTransaction 与 GiftCardDebitTransaction 的具体字段差异",
+          "Shopify POS 系统中礼品卡现金支出的常见场景",
+          "API 版本升级的默认行为（是否自动迁移）"
+        ],
+        "missing_materials": [
+          "开发者社区关于此变更的讨论或问题反馈",
+          "官方迁移指南或最佳实践文档",
+          "实际 POS 商家使用案例",
+          "与旧版本的兼容性说明"
+        ],
+        "not_claimable": [
+          "该变更会破坏现有 API 调用",
+          "所有商家都需要立即修改代码",
+          "该变更影响礼品卡的所有交易类型"
+        ],
+        "followup_queries": [
+          "GiftCardCashOutTransaction 是否仅限 POS 场景？",
+          "2026-07 版本之前，GiftCardDebitTransaction 是否已覆盖现金支出？",
+          "该变更是否影响现有 API 调用或需要代码修改？",
+          "是否有开发者社区讨论或官方文档说明迁移注意事项？"
+        ],
+        "additional_search_queries": [
+          "GiftCardCashOutTransaction Shopify community forum",
+          "GiftCardDebitTransaction Shopify API 2026-04",
+          "Shopify GraphQL Admin API changelog 2026-07",
+          "Shopify gift card cash out POS implementation"
+        ],
+        "stop_conditions": [
+          "官方发布迁移指南或最佳实践",
+          "开发者社区出现大量相关讨论或问题",
+          "发现实际商家因该变更遇到问题"
+        ],
+        "confidence": 45.0,
+        "topic_direction": "cross-border",
+        "topic_direction_title": "跨境&出海",
+        "report_type": "platform-rules",
+        "quality_gate": {
+          "pass": false,
+          "score": 45,
+          "fatal_issues": [
+            "核心事实没有来源：GiftCardCashOutTransaction 新类型仅依赖官方 changelog，缺乏开发者社区反馈和实际案例。",
+            "逻辑未闭环：缺乏开发者实际迁移案例和社区反馈，无法判断实际影响程度。",
+            "泛兴趣钩子过度标题党：标题暗示平台规则变化可能导致踩坑，但正文证据接不住，实际影响范围有限。"
+          ],
+          "warnings": [
+            "读者分层不明确：主要服务核心技术人，但高价值商业读者和入门读者的兴趣度较低。",
+            "信息源严重偏科：所有证据均来自 Shopify 官方文档，缺乏第三方验证。",
+            "未提供具体资料包：缺少时间线、更新摘要、迁移指南等结构化资料。"
+          ],
+          "missing_evidence": [
+            "开发者社区关于此变更的讨论或问题反馈",
+            "官方迁移指南或最佳实践文档",
+            "实际 POS 商家使用案例",
+            "与旧版本的兼容性说明"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "Shopify GiftCardCashOutTransaction 新类型对跨境卖家和独立开发者有何实际影响？",
+          "must_verify": [
+            "GiftCardCashOutTransaction 是否仅限 POS 场景？",
+            "2026-07 版本之前，GiftCardDebitTransaction 是否已覆盖现金支出？",
+            "该变更是否影响现有 API 调用或需要代码修改？",
+            "是否有开发者社区讨论或官方文档说明迁移注意事项？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "GiftCardCashOutTransaction Shopify API documentation",
+              "why_needed": "确认新类型的定义、字段和限制条件"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "GiftCardDebitTransaction Shopify API 2026-04",
+              "why_needed": "对比旧类型，确认变更范围和影响"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "GiftCardCashOutTransaction Shopify community forum",
+              "why_needed": "了解开发者实际遇到的问题和迁移经验"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Shopify GraphQL Admin API changelog 2026-07",
+              "why_needed": "确认版本发布时间和完整变更列表"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Shopify gift card cash out POS implementation",
+              "why_needed": "寻找实际使用案例，验证影响范围"
+            }
+          ],
+          "expert_challenge_points": [
+            "该变更是否仅影响使用 POS 系统的商家？",
+            "对于仅在线销售的商家，是否需要关注此变更？",
+            "变更是否会导致现有查询返回错误或数据不一致？"
+          ],
+          "do_not_claim_yet": [
+            "该变更会破坏现有 API 调用",
+            "所有商家都需要立即修改代码",
+            "该变更影响礼品卡的所有交易类型"
+          ],
+          "can_publish_as_radar_if_missing": "可以，作为平台规则变更的早期预警，提醒开发者关注 API 版本升级",
+          "downstream_materials_needed": [
+            "官方迁移指南或最佳实践",
+            "开发者社区反馈汇总",
+            "与旧版本的兼容性说明"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "GiftCardCashOutTransaction - GraphQL Admin",
+            "url": "https://shopify.dev/docs/api/admin-graphql/2026-07/objects/GiftCardCashOutTransaction",
+            "query": "GiftCardCashOutTransaction Shopify API documentation",
+            "provider": "tavily",
+            "score": "0.90018827",
+            "fetched_text": "GiftCardCashOutTransaction - GraphQL Admin self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar GraphQL Admin API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-07 release candidate Overview Client libraries Authentication Endpoints and queries Rate limits Status and error codes Access Analytics Apps B2B Billing Bulk operations Cart Checkout and accounts configurations Checkout branding Common objects Customers Discounts and marketing Inventory Localizations Metafields Metaobjects Online store Orders Privacy Products and collections Retail Shipping and fulfillment Shopify Markets Shopify Payments Store properties Timeline events Webhooks Graph QL Types Full index Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-07 release candidate Anchor to GiftCardCashOutTransaction Gift Card Cash Out Transaction object Ask Copy MD Requires read _gift _card _transactions access scope. A cash out transaction where the gift card b",
+            "fetch_error": ""
+          },
+          {
+            "title": "GiftCardCashOutTransaction - GraphQL Admin - Shopify Dev Docs",
+            "url": "https://shopify.dev/docs/api/admin-graphql/latest/objects/GiftCardCashOutTransaction",
+            "query": "GiftCardCashOutTransaction Shopify API documentation",
+            "provider": "tavily",
+            "score": "0.87605256",
+            "fetched_text": "GiftCardCashOutTransaction - GraphQL Admin self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar GraphQL Admin API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Overview Client libraries Authentication Endpoints and queries Rate limits Status and error codes Access Analytics Apps B2B Billing Bulk operations Cart Checkout and accounts configurations Checkout branding Common objects Customers Discounts and marketing Inventory Localizations Metafields Metaobjects Online store Orders Privacy Products and collections Retail Shipping and fulfillment Shopify Markets Shopify Payments Store properties Timeline events Webhooks Graph QL Types Full index Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Anchor to GiftCardCashOutTransaction Gift Card Cash Out Transaction object Ask Copy MD This API version is not supported. Updates Developer changelog Shopify Editions Business growth Shopify Partners Program",
+            "fetch_error": ""
+          },
+          {
+            "title": "GiftCardCashOutTransaction is now resolvable from GiftCardTransaction - Shopify developer changelog",
+            "url": "https://shopify.dev/changelog/giftcardcashouttransaction-now-resolvable-from-giftcardtransaction",
+            "query": "GiftCardCashOutTransaction Shopify API documentation",
+            "provider": "tavily",
+            "score": "0.8690161",
+            "fetched_text": "GiftCardCashOutTransaction is now resolvable from GiftCardTransaction - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } June 5, 2026 Tags: Admin GraphQL API 2026-07 GiftCardCashOutTransaction is now resolvable from GiftCardTransaction Ask Copy MD Starting with GraphQL Admin API version 2026-07, the [ Gift Card Cash Out Transaction ]( https://shopify.dev/docs/api/admin-graphql/2026-07/object",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Release Notes - June 2026 Latest Updates - Releasebot",
+            "url": "https://releasebot.io/updates/shopify",
+            "query": "GiftCardDebitTransaction Shopify API 2026-04",
+            "provider": "tavily",
+            "score": "0.7982658",
+            "fetched_text": "Shopify Release Notes - June 2026 Latest Updates - Releasebot {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://releasebot.io/updates/shopify#page\",\"url\":\"https://releasebot.io/updates/shopify\",\"name\":\"Shopify Release Notes\",\"description\":\"Browse the Shopify changelog on Releasebot: your one-stop shop for a perfect feed of Shopify release notes.\",\"mainEntity\":{\"@id\":\"https://releasebot.io/updates/shopify#releases\"},\"author\":{\"@id\":\"https://releasebot.io/#org\"},\"publisher\":{\"@id\":\"https://releasebot.io/#org\"},\"dateModified\":\"2026-06-10\"},{\"@type\":\"Organization\",\"@id\":\"https://releasebot.io/#org\",\"name\":\"Releasebot\",\"url\":\"https://releasebot.io\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://releasebot.io/Square.png\"}},{\"@type\":\"SoftwareApplication\",\"@id\":\"https://releasebot.io/updates/shopify#app\",\"name\":\"Shopify\",\"applicationCategory\":\"BusinessApplication\",\"operatingSystem\":\"Web\",\"brand\":{\"@type\":\"Brand\",\"name\":\"Shopify\"}},{\"@type\":\"ItemList\",\"@id\":\"https://releasebot.io/updates/shopify#releases\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@type\":\"SoftwareRelease\",\"name\":\"shopify-collective-is-now-available-in-australia-77877\",\"datePublished\":\"2026-06-10\",\"inLanguage\":\"en\",\"isPartOf\":{\"@id\":\"https://releasebot.io/updates/shopify#app\"}}},{\"@type\":\"ListItem\",\"position\":2,\"item\":{\"@type\":\"SoftwareRelease\",\"name\":\"shipping-performance-metrics-and-verified-tracking-badge-in-shopify-collective-90184\",\"datePublished\":\"2026-06-10\",\"inLanguage\":\"en\",\"isPartOf\":{\"@id\":\"https://releasebot.io/updates/shopify#app\"}}},{\"@type\":\"ListItem\",\"position\":3,\"item\":{\"@type\":\"SoftwareRelease\",\"name\":\"multi-location-pickup-is-now-available-in-pos-14257\",\"datePublished\":\"2026-06-10\",\"inLanguage\":\"en\",\"isPartOf\":{\"@id\":\"https://releasebot.io/updat",
+            "fetch_error": ""
+          },
+          {
+            "title": "GiftCardDebitTransaction - GraphQL Admin",
+            "url": "https://shopify.dev/docs/api/admin-graphql/latest/objects/GiftCardDebitTransaction",
+            "query": "GiftCardDebitTransaction Shopify API 2026-04",
+            "provider": "tavily",
+            "score": "0.69795954",
+            "fetched_text": "GiftCardDebitTransaction - GraphQL Admin self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar GraphQL Admin API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Overview Client libraries Authentication Endpoints and queries Rate limits Status and error codes Access Analytics Apps B2B Billing Bulk operations Cart Checkout and accounts configurations Checkout branding Common objects Customers Discounts and marketing Inventory Localizations Metafields Metaobjects Online store Orders Privacy Products and collections Retail Shipping and fulfillment Shopify Markets Shopify Payments Store properties Timeline events Webhooks Graph QL Types Full index Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Anchor to GiftCardDebitTransaction Gift Card Debit Transaction object Ask Copy MD Requires read _gift _card _transactions access scope. A debit transaction which decreases the gift card balance. Anchor to Fiel",
+            "fetch_error": ""
+          },
+          {
+            "title": "Developer changelog - Shopify Dev Docs",
+            "url": "https://shopify.dev/changelog",
+            "query": "GiftCardDebitTransaction Shopify API 2026-04",
+            "provider": "tavily",
+            "score": "0.6625569",
+            "fetched_text": "Recent changes to Shopify’s platform self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Developer changelog Subscribe to the changelog to stay up to date on recent changes to Shopify’s APIs and other developer products, as well as preview upcoming features and beta releases. Ask Copy MD RSS Updates .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } Search changelog Filter by tag API Tools Shopify App Store Themes Platform Shopify Theme Store Built For Shopify Polaris POS Extensions Action Required ",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Developer Community Forums",
+            "url": "https://community.shopify.dev",
+            "query": "GiftCardCashOutTransaction Shopify community forum",
+            "provider": "tavily",
+            "score": "0.40021065",
+            "fetched_text": "Shopify Developer Community Forums {\"@context\":\"http://schema.org\",\"@type\":\"WebSite\",\"url\":\"https://community.shopify.dev\",\"name\":\"Shopify Developer Community Forums\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":\"https://community.shopify.dev/search?q={search_term_string}\",\"query-input\":\"required name=search_term_string\"}} Shopify Developer Community Forums The Shopify Developer Community forums is a space for developers building on Shopify to find help and discuss working with Shopify's APIs. Topic Replies Views Activity draftOrderCreate rejects one valid Japanese mobile number with “Phone number in shipping address is invalid” GraphQL Admin API Troubleshooting general-gql-troubles 0 2 June 11, 2026 Cart Transform - Instruction Count Limit Exceeded Error Functions cart-transform 5 13 June 11, 2026 Unrealistic 250-Item Carts Causing Function Failures Functions discount-functions 6 367 June 11, 2026 POS Requests Missing Shopify ID Token Extensions pos-extensions 17 135 June 11, 2026 Selected Product Variant not displayed in Cart Extensions pos-extensions 17 178 June 10, 2026 [Admin UI / i18n] Japanese mistranslation: card \"Reorder\" action shows as \"再注文\" (re-order a purchase) Extensions admin-ui-extensions 1 20 June 10, 2026 Shopify Mobile App: Save button becomes unresponsive after selecting a collection until Contextual Save Bar is re-triggered App Bridge app-bridge 1 16 June 10, 2026 Missing app access permissions Dev Platform dev-dashboard 5 60 June 10, 2026 Dev changelog RSS feed issue(s) Changelog 2 68 June 10, 2026 Auto-focus for input elements Polaris 1 29 June 10, 2026 S-modal not working properly in RTL (Hebrew/Arabic) layouts Polaris 18 215 June 10, 2026 shopifyqlQuery API returns “Metafield Column Not Found” for product metafield that works in Admin Anal",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Discussion Forum",
+            "url": "https://community.shopify.com/c/shopify-discussion/95",
+            "query": "GiftCardCashOutTransaction Shopify community forum",
+            "provider": "tavily",
+            "score": "0.33300465",
+            "fetched_text": "Share wins, solve challenges, and connect with fellow merchants.",
+            "fetch_error": "HTTP Error 429: Too Many Requests; used tavily content fallback"
+          },
+          {
+            "title": "Shopify Community",
+            "url": "https://community.shopify.com",
+            "query": "GiftCardCashOutTransaction Shopify community forum",
+            "provider": "tavily",
+            "score": "0.25124836",
+            "fetched_text": "| Start a Business Turn your entrepreneurial dreams into profitable reality. Get guidance on launching your first store, from concept to first sale. | AI Build Your Business Explore how artificial intelligence can help you build your business and empower your entrepreneurial journey! | Motivation Fuel your entrepreneurial fire with success stories, mindset shifts, and the encouragement you need to push through challenges. | Shopify Discussion Share wins, solve challenges, and connect with fellow merchants. | Store Feedback Share your store for feedback or offer your insights to others! The Store Feedback board is the place to request constructive reviews or help fellow members improve their Shopify stores. | Shopify Apps Supercharge your store with the right apps. | Shopify Flow The Shopify Flow board is a dedicated space for users to discuss automation workflows, share best practices, and get support for the Shopify Flow app. Connect with fellow merchants and experts to streamline your business processes using Shopify Flow’s powerful automation tools.",
+            "fetch_error": "HTTP Error 429: Too Many Requests; used tavily content fallback"
+          },
+          {
+            "title": "Shopify Changelog",
+            "url": "https://changelog.shopify.com",
+            "query": "Shopify GraphQL Admin API changelog 2026-07",
+            "provider": "tavily",
+            "score": "0.67140645",
+            "fetched_text": "Shopify Changelog document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js') 0,'js-has-hint': !state.error && state.hint}\" class=\"marketing-input-wrapper\"> Email address Create your store Skip to Content Shopify Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started Open Main Navigation Home Close Main Navigation Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started About Careers Press and Media Enterprise Sitemap Opens in a new window Opens an external site Opens an external site in a new window Changelog What’s new in Shopify No posts found June 10 Shopify Collective is now available in Australia Australian retailers and suppliers can now connect on Shopify Collective to expand their catalogs without inventory risk and increase sales. New Collective June 10 Shipping performance metrics and Verified Tracking badge in Shopify Collective Suppliers who maintain consistent carrier tracking coverage across all of their orders now earn a Verified Tracking badge that increases their discoverability to retailers. New Collective June 8 Multi-location pickup i",
+            "fetch_error": ""
+          },
+          {
+            "title": "GraphQL Admin API reference",
+            "url": "https://shopify.dev/docs/api/admin-graphql/latest",
+            "query": "Shopify GraphQL Admin API changelog 2026-07",
+            "provider": "tavily",
+            "score": "0.6549173",
+            "fetched_text": "GraphQL Admin API reference self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar GraphQL Admin API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Overview Client libraries Authentication Endpoints and queries Rate limits Status and error codes Access Analytics Apps B2B Billing Bulk operations Cart Checkout and accounts configurations Checkout branding Common objects Customers Discounts and marketing Inventory Localizations Metafields Metaobjects Online store Orders Privacy Products and collections Retail Shipping and fulfillment Shopify Markets Shopify Payments Store properties Timeline events Webhooks Graph QL Types Full index .Mode-Dark { ._HeroImage_14vd5_9-httpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagesadmin-graphql-hero-light-C8uaroa5pnghttpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagesadmin-graphql-hero-dark-DTUNbKoEpng { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/as",
+            "fetch_error": ""
+          },
+          {
+            "title": "Flow adopts version 2026-01 of the GraphQL Admin API - Shopify Changelog",
+            "url": "https://changelog.shopify.com/posts/flow-adopts-version-2026-01-of-the-graphql-admin-api",
+            "query": "Shopify GraphQL Admin API changelog 2026-07",
+            "provider": "tavily",
+            "score": "0.6102915",
+            "fetched_text": "Flow adopts version 2026-01 of the GraphQL Admin API - Shopify Changelog document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js') 0,'js-has-hint': !state.error && state.hint}\" class=\"marketing-input-wrapper\"> Email address Create your store Skip to Content Shopify Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started Open Main Navigation Home Close Main Navigation Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started About Careers Press and Media Enterprise Sitemap Opens in a new window Opens an external site Opens an external site in a new window Changelog What’s new in Shopify Back to Changelog January 15, 2026 Flow adopts version 2026-01 of the GraphQL Admin API Flow now uses version 2026-01 of the GraphQL Admin API, which includes new options for building automations. Some of the changes in version 2026-01 of the GraphQL Admin API include: Advanced querying of metafields and metaobjects : We've expanded the resources that you can query by metafield value to include Companies and Company Locations. We've also expanded how you can query metafield",
+            "fetch_error": ""
+          },
+          {
+            "title": "The Anatomy of a Shopify POS Implementation: CRM, Clienteling ...",
+            "url": "https://badger.blue/blogs/ecommerce-unpacked/shopify-pos-crm-clienteling-gift-cards-in-store-experience-breakdown",
+            "query": "Shopify gift card cash out POS implementation",
+            "provider": "tavily",
+            "score": "0.82728493",
+            "fetched_text": "window.isense_gdpr_privacy_policy_text = \"Contact Us\"; window.isense_gdpr_accept_button_text = \"Accept\"; window.isense_gdpr_close_button_text = \"Close\"; window.isense_gdpr_reject_button_text = \"Reject\"; window.isense_gdpr_change_cookies_text = \"Preferences\"; window.isense_gdpr_text = \"This website uses cookies to ensure you get the best experience on our website.\"; window.isense_widget_content = \"Cookie Preferences\"; window.isense_gdpr_strict_cookies_checkbox = \"Strictly Required Cookies\"; window.isense_gdpr_strict_cookies_text = \"These cookies are required for the website to run and cannot be switched off. Such cookies are only set in response to actions made by you such as language, currency, login session, privacy preferences. You can set your browser to block these cookies but this might affect the way our site is working.\"; window.isense_gdpr_analytics_cookies_checkbox = \"Analytics and Statistics\"; window.isense_gdpr_analytics_cookies_text = \"These cookies allow us to measure visitors traffic and see traffic sources by collecting information in data sets. They also help us understand which products and actions are more popular than others.\"; window.isense_gdpr_marketing_cookies_checkbox = \"Marketing and Retargeting\"; window.isense_gdpr_marketing_cookies_text = \"These cookies are usually set by our marketing and advertising partners. They may be used by them to build a profile of your interest and later show you relevant ads. If you do not allow these cookies you will not experience targeted ads for your interests.\"; window.isense_gdpr_functionality_cookies_checkbox = \"Functional Cookies\"; window.isense_gdpr_functionality_cookies_text = \"These cookies enable our website to offer additional functions and personal settings. They can be set by us or by third-party serv",
+            "fetch_error": ""
+          },
+          {
+            "title": "Using gift cards with Shopify POS",
+            "url": "https://help.shopify.com/en/manual/sell-in-person/shopify-pos/payment-management/gift-cards",
+            "query": "Shopify gift card cash out POS implementation",
+            "provider": "tavily",
+            "score": "0.7604555",
+            "fetched_text": "Use Shopify POS to redeem gift cards as payment by scanning the card's barcode or entering the code manually. You can also process refunds back to gift cards",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          },
+          {
+            "title": "Selling gift cards on Shopify POS",
+            "url": "https://help.shopify.com/en/manual/sell-in-person/shopify-pos/payment-management/gift-cards/sell-gift-cards-pos",
+            "query": "Shopify gift card cash out POS implementation",
+            "provider": "tavily",
+            "score": "0.72768575",
+            "fetched_text": "To sell gift cards from Shopify POS, you can add the Add gift card tile to your smart grid. You can sell digital or physical gift cards using Shopify POS. To",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：核心事实没有来源：GiftCardCashOutTransaction 新类型仅依赖官方 changelog，缺乏开发者社区反馈和实际案例。"
+        },
+        "core_question": "Shopify GiftCardCashOutTransaction 新类型对跨境卖家和独立开发者有何实际影响？",
+        "why_this_topic_matters": "Shopify 平台规则变更直接影响跨境卖家的支付流程和开发者的 API 维护工作，提前了解可避免版本升级后的兼容性问题。",
+        "fact_summary": [
+          "Shopify 在 GraphQL Admin API 2026-07 版本中引入 GiftCardCashOutTransaction 类型，专门表示通过 POS 系统提取礼品卡余额的交易。",
+          "在 2026-04 及更早版本中，此类交易被归类为 GiftCardDebitTransaction。",
+          "开发者需使用 __typename 字段区分现金支出交易与借记交易。",
+          "该变更仅影响使用 POS 系统的商家，纯在线商家可能无需关注。"
+        ],
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "高价值商业读者",
+            "入门读者"
+          ],
+          "interest_score": 65,
+          "why_interested": "API 类型变更直接影响代码维护和版本升级计划，开发者需要评估迁移成本；商业读者关注 POS 场景下的礼品卡现金支出合规性。",
+          "reader_risk": "可能过度解读为重大破坏性变更，实际影响范围有限。"
+        },
+        "mass_interest_hook": {
+          "score": 40,
+          "hook_type": "踩坑",
+          "why_non_technical_people_may_click": "标题暗示平台规则变化可能导致商家或开发者踩坑，普通人担心自己使用的系统出问题。",
+          "story_seed": "一个 Shopify 商家因未及时更新 API 版本，导致 POS 礼品卡现金支出交易数据丢失，引发财务对账问题。",
+          "do_not_overhype": "该变更并非破坏性，仅影响特定场景，且 Shopify 提供了迁移路径。"
+        },
+        "timeline": [
+          "2026-06-05: Shopify 发布 changelog 宣布 GiftCardCashOutTransaction 新类型。",
+          "2026-07: GraphQL Admin API 2026-07 版本正式生效，新类型可用。",
+          "2026-04 及之前: 现金支出交易被归类为 GiftCardDebitTransaction。"
+        ],
+        "evidence_table": [
+          {
+            "source": "Shopify Developer Changelog",
+            "url": "https://shopify.dev/changelog/giftcardcashouttransaction-now-resolvable-from-giftcardtransaction",
+            "supports": "官方宣布新类型及变更细节",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify GraphQL Admin API 文档 (2026-07)",
+            "url": "https://shopify.dev/docs/api/admin-graphql/2026-07/objects/GiftCardCashOutTransaction",
+            "supports": "新类型的定义和字段",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify GraphQL Admin API 文档 (2026-04)",
+            "url": "https://shopify.dev/docs/api/admin-graphql/latest/objects/GiftCardDebitTransaction",
+            "supports": "旧类型定义，用于对比",
+            "reliability": "official"
+          },
+          {
+            "source": "Releasebot.io",
+            "url": "https://releasebot.io/updates/shopify",
+            "supports": "汇总 Shopify 发布说明，但未提及此变更",
+            "reliability": "weak"
+          },
+          {
+            "source": "Shopify Developer Community Forums",
+            "url": "https://community.shopify.dev",
+            "supports": "未找到相关讨论，说明开发者关注度低",
+            "reliability": "weak"
+          },
+          {
+            "source": "Badger Blue 博客",
+            "url": "https://badger.blue/blogs/ecommerce-unpacked/shopify-pos-crm-clienteling-gift-cards-in-store-experience-breakdown",
+            "supports": "POS 礼品卡实现背景，但未涉及新类型",
+            "reliability": "weak"
+          }
+        ],
+        "logic_closure": "部分闭环。已知变更内容和影响范围，但缺乏开发者实际迁移案例和社区反馈，无法判断实际影响程度。",
+        "writeable_angles": [
+          {
+            "angle": "平台规则变更预警：GiftCardCashOutTransaction 对 POS 商家的影响",
+            "why": "直接服务使用 POS 的跨境卖家，提醒 API 版本升级注意事项。",
+            "needs": "需要补充 POS 商家案例和迁移指南。"
+          },
+          {
+            "angle": "API 类型变更的技术解读：如何安全迁移",
+            "why": "面向开发者，提供代码示例和最佳实践。",
+            "needs": "需要官方迁移文档和社区反馈。"
+          },
+          {
+            "angle": "礼品卡现金支出合规性：POS 场景下的财务对账",
+            "why": "面向财务或运营人员，解释新类型对数据一致性的影响。",
+            "needs": "需要财务对账案例和合规要求。"
+          }
+        ],
+        "missing_basics": [
+          "GiftCardCashOutTransaction 与 GiftCardDebitTransaction 的具体字段差异",
+          "Shopify POS 系统中礼品卡现金支出的常见场景",
+          "API 版本升级的默认行为（是否自动迁移）"
+        ],
+        "missing_materials": [
+          "开发者社区关于此变更的讨论或问题反馈",
+          "官方迁移指南或最佳实践文档",
+          "实际 POS 商家使用案例",
+          "与旧版本的兼容性说明"
+        ],
+        "not_claimable": [
+          "该变更会破坏现有 API 调用",
+          "所有商家都需要立即修改代码",
+          "该变更影响礼品卡的所有交易类型"
+        ],
+        "followup_queries": [
+          "GiftCardCashOutTransaction 是否仅限 POS 场景？",
+          "2026-07 版本之前，GiftCardDebitTransaction 是否已覆盖现金支出？",
+          "该变更是否影响现有 API 调用或需要代码修改？",
+          "是否有开发者社区讨论或官方文档说明迁移注意事项？"
+        ],
+        "additional_search_queries": [
+          "GiftCardCashOutTransaction Shopify community forum",
+          "GiftCardDebitTransaction Shopify API 2026-04",
+          "Shopify GraphQL Admin API changelog 2026-07",
+          "Shopify gift card cash out POS implementation"
+        ],
+        "stop_conditions": [
+          "官方发布迁移指南或最佳实践",
+          "开发者社区出现大量相关讨论或问题",
+          "发现实际商家因该变更遇到问题"
+        ],
+        "confidence": 45.0,
+        "topic_direction": "cross-border",
+        "topic_direction_title": "跨境&出海",
+        "report_type": "platform-rules",
+        "quality_gate": {
+          "pass": false,
+          "score": 45,
+          "fatal_issues": [
+            "核心事实没有来源：GiftCardCashOutTransaction 新类型仅依赖官方 changelog，缺乏开发者社区反馈和实际案例。",
+            "逻辑未闭环：缺乏开发者实际迁移案例和社区反馈，无法判断实际影响程度。",
+            "泛兴趣钩子过度标题党：标题暗示平台规则变化可能导致踩坑，但正文证据接不住，实际影响范围有限。"
+          ],
+          "warnings": [
+            "读者分层不明确：主要服务核心技术人，但高价值商业读者和入门读者的兴趣度较低。",
+            "信息源严重偏科：所有证据均来自 Shopify 官方文档，缺乏第三方验证。",
+            "未提供具体资料包：缺少时间线、更新摘要、迁移指南等结构化资料。"
+          ],
+          "missing_evidence": [
+            "开发者社区关于此变更的讨论或问题反馈",
+            "官方迁移指南或最佳实践文档",
+            "实际 POS 商家使用案例",
+            "与旧版本的兼容性说明"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "Shopify GiftCardCashOutTransaction 新类型对跨境卖家和独立开发者有何实际影响？",
+          "must_verify": [
+            "GiftCardCashOutTransaction 是否仅限 POS 场景？",
+            "2026-07 版本之前，GiftCardDebitTransaction 是否已覆盖现金支出？",
+            "该变更是否影响现有 API 调用或需要代码修改？",
+            "是否有开发者社区讨论或官方文档说明迁移注意事项？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "GiftCardCashOutTransaction Shopify API documentation",
+              "why_needed": "确认新类型的定义、字段和限制条件"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "GiftCardDebitTransaction Shopify API 2026-04",
+              "why_needed": "对比旧类型，确认变更范围和影响"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "GiftCardCashOutTransaction Shopify community forum",
+              "why_needed": "了解开发者实际遇到的问题和迁移经验"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Shopify GraphQL Admin API changelog 2026-07",
+              "why_needed": "确认版本发布时间和完整变更列表"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Shopify gift card cash out POS implementation",
+              "why_needed": "寻找实际使用案例，验证影响范围"
+            }
+          ],
+          "expert_challenge_points": [
+            "该变更是否仅影响使用 POS 系统的商家？",
+            "对于仅在线销售的商家，是否需要关注此变更？",
+            "变更是否会导致现有查询返回错误或数据不一致？"
+          ],
+          "do_not_claim_yet": [
+            "该变更会破坏现有 API 调用",
+            "所有商家都需要立即修改代码",
+            "该变更影响礼品卡的所有交易类型"
+          ],
+          "can_publish_as_radar_if_missing": "可以，作为平台规则变更的早期预警，提醒开发者关注 API 版本升级",
+          "downstream_materials_needed": [
+            "官方迁移指南或最佳实践",
+            "开发者社区反馈汇总",
+            "与旧版本的兼容性说明"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "GiftCardCashOutTransaction - GraphQL Admin",
+            "url": "https://shopify.dev/docs/api/admin-graphql/2026-07/objects/GiftCardCashOutTransaction",
+            "query": "GiftCardCashOutTransaction Shopify API documentation",
+            "provider": "tavily",
+            "score": "0.90018827",
+            "fetched_text": "GiftCardCashOutTransaction - GraphQL Admin self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar GraphQL Admin API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-07 release candidate Overview Client libraries Authentication Endpoints and queries Rate limits Status and error codes Access Analytics Apps B2B Billing Bulk operations Cart Checkout and accounts configurations Checkout branding Common objects Customers Discounts and marketing Inventory Localizations Metafields Metaobjects Online store Orders Privacy Products and collections Retail Shipping and fulfillment Shopify Markets Shopify Payments Store properties Timeline events Webhooks Graph QL Types Full index Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-07 release candidate Anchor to GiftCardCashOutTransaction Gift Card Cash Out Transaction object Ask Copy MD Requires read _gift _card _transactions access scope. A cash out transaction where the gift card b",
+            "fetch_error": ""
+          },
+          {
+            "title": "GiftCardCashOutTransaction - GraphQL Admin - Shopify Dev Docs",
+            "url": "https://shopify.dev/docs/api/admin-graphql/latest/objects/GiftCardCashOutTransaction",
+            "query": "GiftCardCashOutTransaction Shopify API documentation",
+            "provider": "tavily",
+            "score": "0.87605256",
+            "fetched_text": "GiftCardCashOutTransaction - GraphQL Admin self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar GraphQL Admin API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Overview Client libraries Authentication Endpoints and queries Rate limits Status and error codes Access Analytics Apps B2B Billing Bulk operations Cart Checkout and accounts configurations Checkout branding Common objects Customers Discounts and marketing Inventory Localizations Metafields Metaobjects Online store Orders Privacy Products and collections Retail Shipping and fulfillment Shopify Markets Shopify Payments Store properties Timeline events Webhooks Graph QL Types Full index Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Anchor to GiftCardCashOutTransaction Gift Card Cash Out Transaction object Ask Copy MD This API version is not supported. Updates Developer changelog Shopify Editions Business growth Shopify Partners Program",
+            "fetch_error": ""
+          },
+          {
+            "title": "GiftCardCashOutTransaction is now resolvable from GiftCardTransaction - Shopify developer changelog",
+            "url": "https://shopify.dev/changelog/giftcardcashouttransaction-now-resolvable-from-giftcardtransaction",
+            "query": "GiftCardCashOutTransaction Shopify API documentation",
+            "provider": "tavily",
+            "score": "0.8690161",
+            "fetched_text": "GiftCardCashOutTransaction is now resolvable from GiftCardTransaction - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } June 5, 2026 Tags: Admin GraphQL API 2026-07 GiftCardCashOutTransaction is now resolvable from GiftCardTransaction Ask Copy MD Starting with GraphQL Admin API version 2026-07, the [ Gift Card Cash Out Transaction ]( https://shopify.dev/docs/api/admin-graphql/2026-07/object",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Release Notes - June 2026 Latest Updates - Releasebot",
+            "url": "https://releasebot.io/updates/shopify",
+            "query": "GiftCardDebitTransaction Shopify API 2026-04",
+            "provider": "tavily",
+            "score": "0.7982658",
+            "fetched_text": "Shopify Release Notes - June 2026 Latest Updates - Releasebot {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"CollectionPage\",\"@id\":\"https://releasebot.io/updates/shopify#page\",\"url\":\"https://releasebot.io/updates/shopify\",\"name\":\"Shopify Release Notes\",\"description\":\"Browse the Shopify changelog on Releasebot: your one-stop shop for a perfect feed of Shopify release notes.\",\"mainEntity\":{\"@id\":\"https://releasebot.io/updates/shopify#releases\"},\"author\":{\"@id\":\"https://releasebot.io/#org\"},\"publisher\":{\"@id\":\"https://releasebot.io/#org\"},\"dateModified\":\"2026-06-10\"},{\"@type\":\"Organization\",\"@id\":\"https://releasebot.io/#org\",\"name\":\"Releasebot\",\"url\":\"https://releasebot.io\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://releasebot.io/Square.png\"}},{\"@type\":\"SoftwareApplication\",\"@id\":\"https://releasebot.io/updates/shopify#app\",\"name\":\"Shopify\",\"applicationCategory\":\"BusinessApplication\",\"operatingSystem\":\"Web\",\"brand\":{\"@type\":\"Brand\",\"name\":\"Shopify\"}},{\"@type\":\"ItemList\",\"@id\":\"https://releasebot.io/updates/shopify#releases\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"item\":{\"@type\":\"SoftwareRelease\",\"name\":\"shopify-collective-is-now-available-in-australia-77877\",\"datePublished\":\"2026-06-10\",\"inLanguage\":\"en\",\"isPartOf\":{\"@id\":\"https://releasebot.io/updates/shopify#app\"}}},{\"@type\":\"ListItem\",\"position\":2,\"item\":{\"@type\":\"SoftwareRelease\",\"name\":\"shipping-performance-metrics-and-verified-tracking-badge-in-shopify-collective-90184\",\"datePublished\":\"2026-06-10\",\"inLanguage\":\"en\",\"isPartOf\":{\"@id\":\"https://releasebot.io/updates/shopify#app\"}}},{\"@type\":\"ListItem\",\"position\":3,\"item\":{\"@type\":\"SoftwareRelease\",\"name\":\"multi-location-pickup-is-now-available-in-pos-14257\",\"datePublished\":\"2026-06-10\",\"inLanguage\":\"en\",\"isPartOf\":{\"@id\":\"https://releasebot.io/updat",
+            "fetch_error": ""
+          },
+          {
+            "title": "GiftCardDebitTransaction - GraphQL Admin",
+            "url": "https://shopify.dev/docs/api/admin-graphql/latest/objects/GiftCardDebitTransaction",
+            "query": "GiftCardDebitTransaction Shopify API 2026-04",
+            "provider": "tavily",
+            "score": "0.69795954",
+            "fetched_text": "GiftCardDebitTransaction - GraphQL Admin self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar GraphQL Admin API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Overview Client libraries Authentication Endpoints and queries Rate limits Status and error codes Access Analytics Apps B2B Billing Bulk operations Cart Checkout and accounts configurations Checkout branding Common objects Customers Discounts and marketing Inventory Localizations Metafields Metaobjects Online store Orders Privacy Products and collections Retail Shipping and fulfillment Shopify Markets Shopify Payments Store properties Timeline events Webhooks Graph QL Types Full index Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Anchor to GiftCardDebitTransaction Gift Card Debit Transaction object Ask Copy MD Requires read _gift _card _transactions access scope. A debit transaction which decreases the gift card balance. Anchor to Fiel",
+            "fetch_error": ""
+          },
+          {
+            "title": "Developer changelog - Shopify Dev Docs",
+            "url": "https://shopify.dev/changelog",
+            "query": "GiftCardDebitTransaction Shopify API 2026-04",
+            "provider": "tavily",
+            "score": "0.6625569",
+            "fetched_text": "Recent changes to Shopify’s platform self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Developer changelog Subscribe to the changelog to stay up to date on recent changes to Shopify’s APIs and other developer products, as well as preview upcoming features and beta releases. Ask Copy MD RSS Updates .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } Search changelog Filter by tag API Tools Shopify App Store Themes Platform Shopify Theme Store Built For Shopify Polaris POS Extensions Action Required ",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Developer Community Forums",
+            "url": "https://community.shopify.dev",
+            "query": "GiftCardCashOutTransaction Shopify community forum",
+            "provider": "tavily",
+            "score": "0.40021065",
+            "fetched_text": "Shopify Developer Community Forums {\"@context\":\"http://schema.org\",\"@type\":\"WebSite\",\"url\":\"https://community.shopify.dev\",\"name\":\"Shopify Developer Community Forums\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":\"https://community.shopify.dev/search?q={search_term_string}\",\"query-input\":\"required name=search_term_string\"}} Shopify Developer Community Forums The Shopify Developer Community forums is a space for developers building on Shopify to find help and discuss working with Shopify's APIs. Topic Replies Views Activity draftOrderCreate rejects one valid Japanese mobile number with “Phone number in shipping address is invalid” GraphQL Admin API Troubleshooting general-gql-troubles 0 2 June 11, 2026 Cart Transform - Instruction Count Limit Exceeded Error Functions cart-transform 5 13 June 11, 2026 Unrealistic 250-Item Carts Causing Function Failures Functions discount-functions 6 367 June 11, 2026 POS Requests Missing Shopify ID Token Extensions pos-extensions 17 135 June 11, 2026 Selected Product Variant not displayed in Cart Extensions pos-extensions 17 178 June 10, 2026 [Admin UI / i18n] Japanese mistranslation: card \"Reorder\" action shows as \"再注文\" (re-order a purchase) Extensions admin-ui-extensions 1 20 June 10, 2026 Shopify Mobile App: Save button becomes unresponsive after selecting a collection until Contextual Save Bar is re-triggered App Bridge app-bridge 1 16 June 10, 2026 Missing app access permissions Dev Platform dev-dashboard 5 60 June 10, 2026 Dev changelog RSS feed issue(s) Changelog 2 68 June 10, 2026 Auto-focus for input elements Polaris 1 29 June 10, 2026 S-modal not working properly in RTL (Hebrew/Arabic) layouts Polaris 18 215 June 10, 2026 shopifyqlQuery API returns “Metafield Column Not Found” for product metafield that works in Admin Anal",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Discussion Forum",
+            "url": "https://community.shopify.com/c/shopify-discussion/95",
+            "query": "GiftCardCashOutTransaction Shopify community forum",
+            "provider": "tavily",
+            "score": "0.33300465",
+            "fetched_text": "Share wins, solve challenges, and connect with fellow merchants.",
+            "fetch_error": "HTTP Error 429: Too Many Requests; used tavily content fallback"
+          },
+          {
+            "title": "Shopify Community",
+            "url": "https://community.shopify.com",
+            "query": "GiftCardCashOutTransaction Shopify community forum",
+            "provider": "tavily",
+            "score": "0.25124836",
+            "fetched_text": "| Start a Business Turn your entrepreneurial dreams into profitable reality. Get guidance on launching your first store, from concept to first sale. | AI Build Your Business Explore how artificial intelligence can help you build your business and empower your entrepreneurial journey! | Motivation Fuel your entrepreneurial fire with success stories, mindset shifts, and the encouragement you need to push through challenges. | Shopify Discussion Share wins, solve challenges, and connect with fellow merchants. | Store Feedback Share your store for feedback or offer your insights to others! The Store Feedback board is the place to request constructive reviews or help fellow members improve their Shopify stores. | Shopify Apps Supercharge your store with the right apps. | Shopify Flow The Shopify Flow board is a dedicated space for users to discuss automation workflows, share best practices, and get support for the Shopify Flow app. Connect with fellow merchants and experts to streamline your business processes using Shopify Flow’s powerful automation tools.",
+            "fetch_error": "HTTP Error 429: Too Many Requests; used tavily content fallback"
+          },
+          {
+            "title": "Shopify Changelog",
+            "url": "https://changelog.shopify.com",
+            "query": "Shopify GraphQL Admin API changelog 2026-07",
+            "provider": "tavily",
+            "score": "0.67140645",
+            "fetched_text": "Shopify Changelog document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js') 0,'js-has-hint': !state.error && state.hint}\" class=\"marketing-input-wrapper\"> Email address Create your store Skip to Content Shopify Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started Open Main Navigation Home Close Main Navigation Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started About Careers Press and Media Enterprise Sitemap Opens in a new window Opens an external site Opens an external site in a new window Changelog What’s new in Shopify No posts found June 10 Shopify Collective is now available in Australia Australian retailers and suppliers can now connect on Shopify Collective to expand their catalogs without inventory risk and increase sales. New Collective June 10 Shipping performance metrics and Verified Tracking badge in Shopify Collective Suppliers who maintain consistent carrier tracking coverage across all of their orders now earn a Verified Tracking badge that increases their discoverability to retailers. New Collective June 8 Multi-location pickup i",
+            "fetch_error": ""
+          },
+          {
+            "title": "GraphQL Admin API reference",
+            "url": "https://shopify.dev/docs/api/admin-graphql/latest",
+            "query": "Shopify GraphQL Admin API changelog 2026-07",
+            "provider": "tavily",
+            "score": "0.6549173",
+            "fetched_text": "GraphQL Admin API reference self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar GraphQL Admin API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Overview Client libraries Authentication Endpoints and queries Rate limits Status and error codes Access Analytics Apps B2B Billing Bulk operations Cart Checkout and accounts configurations Checkout branding Common objects Customers Discounts and marketing Inventory Localizations Metafields Metaobjects Online store Orders Privacy Products and collections Retail Shipping and fulfillment Shopify Markets Shopify Payments Store properties Timeline events Webhooks Graph QL Types Full index .Mode-Dark { ._HeroImage_14vd5_9-httpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagesadmin-graphql-hero-light-C8uaroa5pnghttpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagesadmin-graphql-hero-dark-DTUNbKoEpng { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/as",
+            "fetch_error": ""
+          },
+          {
+            "title": "Flow adopts version 2026-01 of the GraphQL Admin API - Shopify Changelog",
+            "url": "https://changelog.shopify.com/posts/flow-adopts-version-2026-01-of-the-graphql-admin-api",
+            "query": "Shopify GraphQL Admin API changelog 2026-07",
+            "provider": "tavily",
+            "score": "0.6102915",
+            "fetched_text": "Flow adopts version 2026-01 of the GraphQL Admin API - Shopify Changelog document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js') 0,'js-has-hint': !state.error && state.hint}\" class=\"marketing-input-wrapper\"> Email address Create your store Skip to Content Shopify Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started Open Main Navigation Home Close Main Navigation Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started About Careers Press and Media Enterprise Sitemap Opens in a new window Opens an external site Opens an external site in a new window Changelog What’s new in Shopify Back to Changelog January 15, 2026 Flow adopts version 2026-01 of the GraphQL Admin API Flow now uses version 2026-01 of the GraphQL Admin API, which includes new options for building automations. Some of the changes in version 2026-01 of the GraphQL Admin API include: Advanced querying of metafields and metaobjects : We've expanded the resources that you can query by metafield value to include Companies and Company Locations. We've also expanded how you can query metafield",
+            "fetch_error": ""
+          },
+          {
+            "title": "The Anatomy of a Shopify POS Implementation: CRM, Clienteling ...",
+            "url": "https://badger.blue/blogs/ecommerce-unpacked/shopify-pos-crm-clienteling-gift-cards-in-store-experience-breakdown",
+            "query": "Shopify gift card cash out POS implementation",
+            "provider": "tavily",
+            "score": "0.82728493",
+            "fetched_text": "window.isense_gdpr_privacy_policy_text = \"Contact Us\"; window.isense_gdpr_accept_button_text = \"Accept\"; window.isense_gdpr_close_button_text = \"Close\"; window.isense_gdpr_reject_button_text = \"Reject\"; window.isense_gdpr_change_cookies_text = \"Preferences\"; window.isense_gdpr_text = \"This website uses cookies to ensure you get the best experience on our website.\"; window.isense_widget_content = \"Cookie Preferences\"; window.isense_gdpr_strict_cookies_checkbox = \"Strictly Required Cookies\"; window.isense_gdpr_strict_cookies_text = \"These cookies are required for the website to run and cannot be switched off. Such cookies are only set in response to actions made by you such as language, currency, login session, privacy preferences. You can set your browser to block these cookies but this might affect the way our site is working.\"; window.isense_gdpr_analytics_cookies_checkbox = \"Analytics and Statistics\"; window.isense_gdpr_analytics_cookies_text = \"These cookies allow us to measure visitors traffic and see traffic sources by collecting information in data sets. They also help us understand which products and actions are more popular than others.\"; window.isense_gdpr_marketing_cookies_checkbox = \"Marketing and Retargeting\"; window.isense_gdpr_marketing_cookies_text = \"These cookies are usually set by our marketing and advertising partners. They may be used by them to build a profile of your interest and later show you relevant ads. If you do not allow these cookies you will not experience targeted ads for your interests.\"; window.isense_gdpr_functionality_cookies_checkbox = \"Functional Cookies\"; window.isense_gdpr_functionality_cookies_text = \"These cookies enable our website to offer additional functions and personal settings. They can be set by us or by third-party serv",
+            "fetch_error": ""
+          },
+          {
+            "title": "Using gift cards with Shopify POS",
+            "url": "https://help.shopify.com/en/manual/sell-in-person/shopify-pos/payment-management/gift-cards",
+            "query": "Shopify gift card cash out POS implementation",
+            "provider": "tavily",
+            "score": "0.7604555",
+            "fetched_text": "Use Shopify POS to redeem gift cards as payment by scanning the card's barcode or entering the code manually. You can also process refunds back to gift cards",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          },
+          {
+            "title": "Selling gift cards on Shopify POS",
+            "url": "https://help.shopify.com/en/manual/sell-in-person/shopify-pos/payment-management/gift-cards/sell-gift-cards-pos",
+            "query": "Shopify gift card cash out POS implementation",
+            "provider": "tavily",
+            "score": "0.72768575",
+            "fetched_text": "To sell gift cards from Shopify POS, you can add the Add gift card tile to your smart grid. You can sell digital or physical gift cards using Shopify POS. To",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          }
+        ]
+      },
+      "angle_candidates": [
+        "规则变动影响谁",
+        "普通技术人的合规边界",
+        "平台红利和封号风险"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "平台规则：Shopify 平台规则变化 官方政策 规则 原文",
+        "平台规则：Shopify 平台规则变化 开发者公告 影响范围",
+        "平台规则：Shopify 平台规则变化 合规 风险 受影响用户"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}

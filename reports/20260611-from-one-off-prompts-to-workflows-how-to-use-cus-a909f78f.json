@@ -1,0 +1,1787 @@
+{
+  "id": "20260611-from-one-off-prompts-to-workflows-how-to-use-cus-a909f78f",
+  "batch_id": "2026-06-11-noon",
+  "title": "GitHub Copilot CLI 自定义 Agent：从单次提示到可复用工作流",
+  "original_title": "From one-off prompts to workflows: How to use custom agents in GitHub Copilot CLI",
+  "url": "https://github.blog/ai-and-ml/github-copilot/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli/",
+  "summary": "Custom agents let GitHub Copilot CLI understand your stack and team workflows, turning one-off terminal prompts into repeatable, reviewable processes. The post From one-off prompts to workflows: How to use custom agents in GitHub Copilot CLI appeared first on The GitHub Blog .",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "tools-rules",
+  "topic_direction_title": "工具&规则",
+  "topic_direction_short_title": "工具&规则",
+  "topic_direction_description": "开发工具、AI 实操、API、云服务、自动化工作流、平台政策、账号规则、搜索流量和内容分发生态变化。重点看工具怎么用、规则怎么变、成本和边界在哪里。",
+  "source_name": "GitHub Blog",
+  "original_source_name": "The latest on AI & ML - The GitHub Blog",
+  "source_type": "rss",
+  "feed_url": "https://github.blog/ai-and-ml/feed/",
+  "published_at": "2026-06-09T16:00:00+00:00",
+  "fetched_at": "2026-06-11T04:00:57.171446+00:00",
+  "decision": "deep_dive",
+  "report_type": "tool-ledger",
+  "report_type_title": "工具账本",
+  "score": 75,
+  "reader_hook": "从AI工具实操角度，展示如何用自定义Agent提升开发效率",
+  "why_now": "Copilot CLI新功能，让AI从单次提示升级为团队工作流，可能改变开发习惯",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "主要服务核心技术人，次要触导入门读者。官方博客，证据可靠。可拆解功能、配置方法、适用场景、与现有工具对比。",
+  "collection_fit": "tools-rules",
+  "investigation_direction": "收集用户案例、配置教程、与Cursor等工具对比",
+  "uncertainty_flags": [
+    "实际效果待验证"
+  ],
+  "facts": [
+    {
+      "claim": "GitHub Blog 发布/收录了这条原始线索：From one-off prompts to workflows: How to use custom agents in GitHub Copilot CLI",
+      "type": "confirmed_fact",
+      "source_url": "https://github.blog/ai-and-ml/github-copilot/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli/",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "GitHub Blog",
+      "url": "https://github.blog/ai-and-ml/github-copilot/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli/",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "agent",
+        "copilot"
+      ],
+      "dev": [
+        "github"
+      ]
+    },
+    "source_host": "github.blog",
+    "source_type": "rss",
+    "heuristic": false,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "从AI工具实操角度，展示如何用自定义Agent提升开发效率",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://github.blog/ai-and-ml/feed/",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "实际效果待验证"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：核心事实没有来源：自定义Agent的实际效率提升数据、配置时间成本等关键事实缺乏来源。"
+    },
+    "core_question": "GitHub Copilot CLI 自定义 Agent 是否真的能提升团队开发效率，其成本、配置复杂度和实际效果如何？",
+    "why_this_topic_matters": "Copilot CLI 自定义 Agent 将 AI 从单次提示升级为可复用工作流，可能改变开发习惯，但实际效果和成本尚不明确。",
+    "fact_summary": [
+      "GitHub 于 2026-06-09 发布博客介绍 Copilot CLI 自定义 Agent 功能。",
+      "自定义 Agent 本质是预设的系统提示，可让 CLI 理解技术栈和团队工作流。",
+      "官方文档提供了创建和使用自定义 Agent 的步骤。",
+      "Copilot CLI 支持自定义 Agent、技能、指令等多种配置。",
+      "定价方面：Pro $10/月，Pro+ $39/月，Business $19/用户/月，Enterprise $39/用户/月，额外高级请求 $0.04/次。"
+    ],
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 75,
+      "why_interested": "核心技术人关注效率提升和工具链集成；入门读者可了解新功能；商业读者关注成本和团队生产力。",
+      "reader_risk": "可能高估自定义 Agent 的实际效果，忽略配置复杂度和额外成本。"
+    },
+    "mass_interest_hook": {
+      "score": 60,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "标题暗示 AI 从单次提示升级为工作流，普通人可能好奇 AI 如何自动化重复性任务。",
+      "story_seed": "一个开发者用自定义 Agent 将 10 步部署流程简化为 1 条命令，但配置过程花了 3 天。",
+      "do_not_overhype": "不要声称自定义 Agent 能解决所有问题，实际效果因团队和技术栈而异。"
+    },
+    "timeline": [
+      "2024年底：GitHub 推出 Copilot Chat、CLI 和 Workspace。",
+      "2025年10月：GitHub 宣布 Copilot CLI 支持自定义 Agent 和任务委托。",
+      "2026-01-26：GitHub 博客介绍 Copilot CLI 的 agentic 工作流。",
+      "2026-06-09：GitHub 博客详细说明如何将单次提示转化为工作流。"
+    ],
+    "evidence_table": [
+      {
+        "source": "GitHub Blog - From one-off prompts to workflows",
+        "url": "https://github.blog/ai-and-ml/github-copilot/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli",
+        "supports": "功能发布和基本概念",
+        "reliability": "official"
+      },
+      {
+        "source": "GitHub Docs - About custom agents",
+        "url": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-custom-agents",
+        "supports": "自定义 Agent 的官方定义和概述",
+        "reliability": "official"
+      },
+      {
+        "source": "GitHub Docs - Creating and using custom agents for CLI",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/create-custom-agents-for-cli",
+        "supports": "配置步骤和权限要求",
+        "reliability": "official"
+      },
+      {
+        "source": "GitHub Docs - Plans for GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/get-started/plans",
+        "supports": "定价信息",
+        "reliability": "official"
+      },
+      {
+        "source": "Reddit - Difference between skills, instructions, prompts, and custom agents?",
+        "url": "https://www.reddit.com/r/GithubCopilot/comments/1r8pwqx/difference_between_skills_instructions_prompts",
+        "supports": "社区对自定义 Agent 的理解：本质是预设系统提示",
+        "reliability": "weak"
+      },
+      {
+        "source": "GitHub Community Discussion - What differentiates on Custom Agents, Agent Skills and ...",
+        "url": "https://github.com/orgs/community/discussions/183962",
+        "supports": "功能区别讨论",
+        "reliability": "weak"
+      },
+      {
+        "source": "DEV Community - GitHub Copilot Instructions vs Prompts vs Custom Agents vs Skills vs ...",
+        "url": "https://dev.to/pwd9000/github-copilot-instructions-vs-prompts-vs-custom-agents-vs-skills-vs-x-vs-why-339l",
+        "supports": "功能对比分析",
+        "reliability": "media"
+      },
+      {
+        "source": "Jimmy Song Blog - GitHub Copilot CLI Custom Agents",
+        "url": "https://jimmysong.io/blog/github-copilot-cli-custom-agents",
+        "supports": "技术教程和背景介绍",
+        "reliability": "media"
+      },
+      {
+        "source": "UserJot - GitHub Copilot Pricing 2026",
+        "url": "https://userjot.com/blog/github-copilot-pricing-guide-2025",
+        "supports": "定价详情",
+        "reliability": "media"
+      },
+      {
+        "source": "CheckThat.ai - Is GitHub Copilot's Pricing Worth It?",
+        "url": "https://checkthat.ai/brands/github-copilot/pricing",
+        "supports": "定价和竞品对比",
+        "reliability": "media"
+      },
+      {
+        "source": "GitHub Blog - Power agentic workflows in your terminal with GitHub Copilot CLI",
+        "url": "https://github.blog/ai-and-ml/github-copilot/power-agentic-workflows-in-your-terminal-with-github-copilot-cli",
+        "supports": "agentic 工作流介绍",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "部分闭环：功能存在、配置步骤明确、定价清晰，但缺乏实际效率提升数据和团队案例，无法判断是否值得投入。",
+    "writeable_angles": [
+      {
+        "angle": "工具账本：自定义 Agent 的配置成本与收益分析",
+        "why": "帮助读者判断是否值得投入时间配置",
+        "needs": "实际用户反馈、配置时间数据、效率提升案例"
+      },
+      {
+        "angle": "功能对比：自定义 Agent vs 普通提示 vs 竞品 Agent",
+        "why": "帮助读者在多个工具中做选择",
+        "needs": "与 Cursor、Codeium 等竞品的详细对比"
+      },
+      {
+        "angle": "风险避坑：自定义 Agent 的局限性和常见问题",
+        "why": "避免读者过度期待",
+        "needs": "社区反馈中的问题列表、官方限制说明"
+      }
+    ],
+    "missing_basics": [
+      "自定义 Agent 与普通提示的具体效率差异数据",
+      "配置自定义 Agent 的平均时间成本",
+      "是否支持所有主流语言和框架",
+      "团队工作流集成的实际案例"
+    ],
+    "missing_materials": [
+      "至少一个真实团队的使用案例和反馈",
+      "与 Cursor、Codeium 等竞品的功能对比表",
+      "用户社区（Reddit、Hacker News）的讨论和评价"
+    ],
+    "not_claimable": [
+      "自定义 Agent 能显著提升所有团队效率",
+      "配置过程简单无门槛",
+      "无需额外成本"
+    ],
+    "followup_queries": [
+      "GitHub Copilot CLI custom agent review reddit",
+      "GitHub Copilot CLI custom agent vs Cursor agent",
+      "GitHub Copilot CLI custom agent team productivity case study",
+      "GitHub Copilot CLI custom agent limitations",
+      "GitHub Copilot CLI custom agent setup time"
+    ],
+    "additional_search_queries": [
+      "site:reddit.com GitHub Copilot CLI custom agent",
+      "site:news.ycombinator.com GitHub Copilot CLI",
+      "GitHub Copilot CLI custom agent vs regular prompts benchmark",
+      "GitHub Copilot CLI custom agent example workflow"
+    ],
+    "stop_conditions": [
+      "发现自定义 Agent 仅限特定计划（如 Business/Enterprise）",
+      "发现配置复杂度远高于收益的普遍反馈",
+      "发现竞品已提供类似但更易用的功能"
+    ],
+    "confidence": 60.0,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "tool-ledger",
+    "quality_gate": {
+      "pass": false,
+      "score": 60,
+      "fatal_issues": [
+        "核心事实没有来源：自定义Agent的实际效率提升数据、配置时间成本等关键事实缺乏来源。",
+        "成本估算没有公式、单位或边界：定价信息虽列出，但未说明自定义Agent功能是否额外收费或受计划限制。",
+        "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象：虽然列出了primary和secondary layers，但interest_score和why_interested描述笼统，未区分不同读者层的具体需求。",
+        "没有泛兴趣故事钩子，标题和开头只适合技术小圈子：reader_hook和mass_interest_hook的hook_type为“反差”，但story_seed“配置花了3天”可能劝退非技术读者，且整体钩子偏向技术圈。",
+        "没有明确选题结论：推荐或可选：verdict为“可选选题”，但未明确是downgrade_to_brief还是hold。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写：reason和why_this_topic_matters较笼统，未深入分析选题价值与风险。",
+        "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断：selection_dossier虽详细，但部分内容（如timeline、evidence_table）未紧密围绕自定义Agent的具体价值判断。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：logic_closure指出“部分闭环”，但未系统检查所有事实的可靠性和逻辑一致性。",
+        "没有列出基础概念缺口和资料素材缺口：missing_basics和missing_materials已列出，但未评估这些缺口对选题的致命程度。",
+        "没有按具体类型提供资料包：report_type为tool-ledger，但资料包未按工具账本类型组织（如成本、配置、效率对比等）。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来：evidence_count为14，但主要来自GitHub官方和少数社区，缺乏竞品对比和独立评测，源覆盖统计未体现偏科。"
+      ],
+      "warnings": [
+        "reader_hook_ok: false - 钩子偏向技术圈，泛兴趣不足。",
+        "mass_interest_hook_ok: false - 故事种子可能劝退非技术读者。",
+        "topic_direction_ok: true - 方向匹配。",
+        "report_type_ok: true - 类型匹配。",
+        "source_closure_ok: false - 缺乏独立评测和竞品对比。",
+        "downstream_handoff_ok: false - 未提供足够结构化资料供下游使用。",
+        "material_pack_ok: false - 未按工具账本类型组织资料。",
+        "selection_dossier_ok: false - 结论不明确，逻辑未闭环。",
+        "logic_closure_ok: false - 部分闭环，关键事实缺失。",
+        "source_coverage_ok: false - 信息源偏科。"
+      ],
+      "missing_evidence": [
+        "自定义Agent与普通提示的效率对比数据（如时间节省百分比）。",
+        "配置自定义Agent的平均时间成本（小时/天）。",
+        "真实团队使用案例和反馈（非官方博客）。",
+        "与Cursor、Codeium等竞品的详细功能对比。",
+        "用户社区（Reddit、Hacker News）的讨论和评价。",
+        "自定义Agent的局限性（如语言/框架支持、计划限制）。"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "GitHub Copilot CLI 自定义 Agent 是否真的能提升团队开发效率，其成本、配置复杂度和实际效果如何？",
+      "must_verify": [
+        "自定义 Agent 的具体配置步骤和所需权限",
+        "与普通 Copilot CLI 提示相比的实际效率提升数据",
+        "是否支持所有主流编程语言和框架",
+        "团队工作流集成的实际案例和反馈"
+      ],
+      "search_queries": [
+        "GitHub Copilot CLI custom agent setup guide",
+        "GitHub Copilot CLI custom agent vs regular prompts performance",
+        "GitHub Copilot CLI custom agent review",
+        "GitHub Copilot CLI pricing 2025",
+        "GitHub Copilot CLI custom agent limitations",
+        "GitHub Copilot CLI custom agent team workflow example",
+        "GitHub Copilot CLI vs Cursor AI agent comparison",
+        "GitHub Copilot CLI custom agent security concerns"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "GitHub Copilot CLI custom agent documentation",
+          "why_needed": "获取官方配置步骤、权限要求和功能边界"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "GitHub Copilot pricing plans 2025",
+          "why_needed": "确认自定义 Agent 是否包含在现有订阅中，或需要额外付费"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "GitHub Copilot CLI custom agent reddit",
+          "why_needed": "收集真实用户反馈、常见问题和实际效果评价"
+        },
+        {
+          "source_type": "case_study",
+          "query": "GitHub Copilot CLI custom agent team productivity",
+          "why_needed": "寻找团队使用案例和效率提升数据"
+        },
+        {
+          "source_type": "github_repo",
+          "query": "GitHub Copilot CLI custom agent examples",
+          "why_needed": "查看开源示例和社区贡献的配置模板"
+        }
+      ],
+      "expert_challenge_points": [
+        "自定义 Agent 的配置复杂度是否高于其带来的效率提升？",
+        "对于非标准技术栈的团队，自定义 Agent 的适配成本如何？",
+        "与 Cursor、Codeium 等竞品的 Agent 功能相比，Copilot CLI 的优劣势？"
+      ],
+      "do_not_claim_yet": [
+        "自定义 Agent 能显著提升所有团队效率",
+        "配置过程简单无门槛",
+        "无需额外成本"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取实际用户反馈和效率数据，可基于官方文档和社区讨论发布，但需明确标注信息缺口",
+      "downstream_materials_needed": [
+        "官方配置文档截图或步骤",
+        "至少一个真实团队的使用案例",
+        "与竞品的功能对比表"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "About custom agents - GitHub Docs",
+        "url": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-custom-agents",
+        "query": "GitHub Copilot CLI custom agent setup guide",
+        "provider": "tavily",
+        "score": "0.86981434",
+        "fetched_text": "About custom agents - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / Concepts / Agents / Cloud agent / Custom agents Home GitHub Copilot Get started Quickstart What is GitHub Copilot? Plans Features Best practices Enterprise AI governance Concepts Completions Code suggestions Code referencing Chat Agents Cloud agent About cloud agent Agent management Custom agents About automations Access management MCP and cloud agent Risks and mitigations Copilot CLI About Copilot CLI Comparing CLI features Cancel and roll back About remote control Custom agents About CLI plugins Autonomous task completion Parallel task execution Researching with Copilot Session data About rubber duck LSP servers Context management GitHub Copilot app Code review Copilot Memory Hooks Enterprise plugin standards Third-party coding agents Agent apps OpenAI Codex Anthropic Claude Agent skills Enterprise management Cloud and local sandboxes Spark Copilot usage metrics All articles Copilot usage metrics Prompting Prompt engineering Response customization Context MCP Spaces Repository indexing Content exclusion Tools AI tools About Copilot integrations Models Utility models Auto model selection FedRAMP models Base and LTS models Usage limits Billing Billing for individuals Billing for organizations and enterprises Budgets Individual plans Organizations and enterprises Copilot-only enterprises Policies MCP management Network settings New features and models How-tos Copilot on GitHub Set up Copilot Enable Copilot Set up for self Set up for organization Set up for enterprise Set up a dedicated enterprise Set up for s",
+        "fetch_error": ""
+      },
+      {
+        "title": "From one-off prompts to workflows: How to use custom agents in ...",
+        "url": "https://github.blog/ai-and-ml/github-copilot/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli",
+        "query": "GitHub Copilot CLI custom agent setup guide",
+        "provider": "tavily",
+        "score": "0.85216236",
+        "fetched_text": "From one-off prompts to workflows: How to use custom agents in GitHub Copilot CLI - The GitHub Blog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"From one-off prompts to workflows: How to use custom agents in GitHub Copilot CLI\",\"author\":{\"@type\":\"Person\",\"name\":\"Natalie Guevara\"},\"datePublished\":\"2026-06-09T09:00:00-07:00\",\"abstract\":\"Custom agents let GitHub Copilot CLI understand your stack and team workflows, turning one-off terminal prompts into repeatable, reviewable processes.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/01\\/CLIBanner_BlogHeader_01.jpg?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"From one-off prompts to workflows: How to use custom agents in GitHub Copilot CLI\",\"author\":{\"@type\":\"Person\",\"name\":\"Natalie Guevara\"},\"datePublished\":\"2026-06-09T09:00:00-07:00\",\"abstract\":\"Custom agents let GitHub Copilot CLI understand your stack and team workflows, turning one-off terminal prompts into repeatable, reviewable processes.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/01\\/CLIBanner_BlogHeader_01.jpg?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/from-one-off",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub Copilot CLI Custom Agents: Building Your Command-Line …",
+        "url": "https://jimmysong.io/blog/github-copilot-cli-custom-agents",
+        "query": "GitHub Copilot CLI custom agent setup guide",
+        "provider": "tavily",
+        "score": "0.8506799",
+        "fetched_text": "(function(){const e=localStorage.getItem(\"sidebarCollapsed\")===\"true\";e&&document.documentElement.classList.add(\"sidebar-collapsed-init\")})() GitHub Copilot CLI Custom Agents: Building Your Command-Line … (function(){try{var t=localStorage.getItem(\"theme\"),n=window.matchMedia(\"(prefers-color-scheme: dark)\").matches,e=t?t===\"dark\":n;document.documentElement.classList.toggle(\"dark-mode\",e),document.documentElement.style.colorScheme=e?\"dark\":\"light\",window.__isDark=e}catch{}})() (function(){try{var n=sessionStorage.getItem(\"topHeaderDismissed\")===\"true\",e=sessionStorage.getItem(\"topHeaderContentHash\"),t=\"cf7f6cad30f4b0c598985b7e799f505f59821e45\";n&&e&&e===t&&document.documentElement.classList.add(\"top-header-dismissed\")}catch{}})() {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/jimmysong.io\\/blog\\/github-copilot-cli-custom-agents\\/\",\"name\":\"GitHub Copilot CLI Custom Agents: Building Your Command-Line AI Assistant\"},\"headline\":\"GitHub Copilot CLI Custom Agents: Building Your Command-Line AI Assistant\",\"description\":\"Learn how to build custom AI assistants with GitHub Copilot CLI Agents to automate tasks, optimize workflows, and boost productivity in your command-line …\",\"articleBody\":\" Make your command line an AI ally, not just a toolbox.\\nBackground: From AI Completion to AI Assistant Since GitHub launched Copilot Chat, CLI, and Workspace at the end of 2024, Copilot has evolved from \\u0026ldquo;intelligent completion\\u0026rdquo; to an \\u0026ldquo;AI Pair Programmer.\\u0026rdquo; In October 2025, GitHub officially announced that Copilot CLI now supports custom Agents and task delegation. This update enables developers to build their own AI assistants in the terminal, allowing Copilot not only to …\",\"identifier\":",
+        "fetch_error": ""
+      },
+      {
+        "title": "Difference between skills, instructions, prompts, and custom agents?",
+        "url": "https://www.reddit.com/r/GithubCopilot/comments/1r8pwqx/difference_between_skills_instructions_prompts",
+        "query": "GitHub Copilot CLI custom agent vs regular prompts performance",
+        "provider": "tavily",
+        "score": "0.7732339",
+        "fetched_text": "Custom agent = Preset of system prompts. It's the same as system prompt, just make it easy for you to choose one.",
+        "fetch_error": "HTTP Error 403: Blocked; used tavily content fallback"
+      },
+      {
+        "title": "What differentiates on Custom Agents, Agent Skills and ... - GitHub",
+        "url": "https://github.com/orgs/community/discussions/183962",
+        "query": "GitHub Copilot CLI custom agent vs regular prompts performance",
+        "provider": "tavily",
+        "score": "0.76554126",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_collapse_cssom_rules\",\"code_view_shared_line_height\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_di",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub Copilot Instructions vs Prompts vs Custom Agents vs Skills vs ...",
+        "url": "https://dev.to/pwd9000/github-copilot-instructions-vs-prompts-vs-custom-agents-vs-skills-vs-x-vs-why-339l",
+        "query": "GitHub Copilot CLI custom agent vs regular prompts performance",
+        "provider": "tavily",
+        "score": "0.7065353",
+        "fetched_text": "GitHub Copilot Instructions vs Prompts vs Custom Agents vs Skills vs X vs WHY? - DEV Community /* ========================================================================== THE 418 CHALLENGE: THEME-AWARE RETRO EDITION ========================================================================== */ .articletag-418challenge { font-family: \"Comic Sans MS\", \"Chalkboard SE\", \"Marker Felt\", sans-serif !important; cursor: crosshair !important; } /* Destroy modern rounded corners and add brutal borders */ .articletag-418challenge .crayons-card, .articletag-418challenge .crayons-article__main, .articletag-418challenge .crayons-article__header { border-radius: 0 !important; margin-bottom: 2rem !important; } /* Typography specifics */ .articletag-418challenge h1, .articletag-418challenge h2, .articletag-418challenge h3 { text-transform: uppercase !important; } /* Fake effect for the main article title */ .articletag-418challenge h1.fs-3xl { animation: retro-slide 5s linear infinite alternate; overflow: visible; } /* Spin those avatars */ .articletag-418challenge .crayons-article__header__meta img { border-radius: 0 !important; animation: retro-spin 5s linear infinite; } /* Obnoxious tags */ .articletag-418challenge .crayons-tag { border-radius: 0 !important; font-weight: 900 !important; transform: rotate(-3deg); display: inline-block; } .articletag-418challenge .crayons-tag:nth-child(even) { transform: rotate(3deg); } /* -------------------------------------------------------------------------- 2. LIGHT THEME (Windows 95 / Office 97 Vibes) -------------------------------------------------------------------------- */ body:not(.dark-theme) .articletag-418challenge { background-color: #008080 !important; /* Win95 Teal Desktop */ } body:not(.dark-theme) .articletag-418challenge .crayons-",
+        "fetch_error": ""
+      },
+      {
+        "title": "Creating and using custom agents for GitHub Copilot CLI",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/create-custom-agents-for-cli",
+        "query": "GitHub Copilot CLI custom agent review",
+        "provider": "tavily",
+        "score": "0.85421735",
+        "fetched_text": "Creating and using custom agents for GitHub Copilot CLI - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / How-tos / Copilot CLI / Customize Copilot CLI / Create custom agents Home GitHub Copilot Get started Quickstart What is GitHub Copilot? Plans Features Best practices Enterprise AI governance Concepts Completions Code suggestions Code referencing Chat Agents Cloud agent About cloud agent Agent management Custom agents About automations Access management MCP and cloud agent Risks and mitigations Copilot CLI About Copilot CLI Comparing CLI features Cancel and roll back About remote control Custom agents About CLI plugins Autonomous task completion Parallel task execution Researching with Copilot Session data About rubber duck LSP servers Context management GitHub Copilot app Code review Copilot Memory Hooks Enterprise plugin standards Third-party coding agents Agent apps OpenAI Codex Anthropic Claude Agent skills Enterprise management Cloud and local sandboxes Spark Copilot usage metrics All articles Copilot usage metrics Prompting Prompt engineering Response customization Context MCP Spaces Repository indexing Content exclusion Tools AI tools About Copilot integrations Models Utility models Auto model selection FedRAMP models Base and LTS models Usage limits Billing Billing for individuals Billing for organizations and enterprises Budgets Individual plans Organizations and enterprises Copilot-only enterprises Policies MCP management Network settings New features and models How-tos Copilot on GitHub Set up Copilot Enable Copilot Set up for self Set up for organization Set up ",
+        "fetch_error": ""
+      },
+      {
+        "title": "How to get a multi-agent code review in Copilot CLI - YouTube",
+        "url": "https://www.youtube.com/watch?v=qRXztN1hi1M&vl=en",
+        "query": "GitHub Copilot CLI custom agent review",
+        "provider": "tavily",
+        "score": "0.6977124",
+        "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260606.02.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub Copilot Pricing 2026: Complete Guide to All 5 Tiers",
+        "url": "https://userjot.com/blog/github-copilot-pricing-guide-2025",
+        "query": "GitHub Copilot CLI pricing 2025",
+        "provider": "tavily",
+        "score": "0.8893851",
+        "fetched_text": "GitHub Copilot Pricing 2026: Complete Guide to All 5 Tiers — UserJot {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"GitHub Copilot Pricing 2026: Complete Guide to All 5 Tiers\",\"description\":\"GitHub Copilot pricing explained: Free vs Pro ($10) vs Pro+ ($39) vs Business vs Enterprise. What each tier includes and why Copilot costs extra.\",\"datePublished\":\"2025-09-07T00:00:00.000Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Shayan Taslim\",\"url\":\"https://userjot.com\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"UserJot\",\"url\":\"https://userjot.com\"},\"image\":\"https://userjot.com/assets/blog/covers/github-copilot-pricing-guide-2025/hidden-underground-1.webp\",\"mainEntityOfPage\":\"https://userjot.com/blog/github-copilot-pricing-guide-2025\",\"articleSection\":\"Engineering\",\"keywords\":\"ai, coding, github, copilot, pricing\"} {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://userjot.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"https://userjot.com/blog\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Engineering\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"GitHub Copilot Pricing 2026: Complete Guide to All 5 Tiers\"}]} UserJot Product Resources Pricing Blog Log in Get started UserJot Feedback, roadmap, and changelog, designed as one loop for product-led teams. Features Customer Feedback Feature Requests Feature Voting Product Roadmap Product Changelog Feedback Widget AI Agents Slack Resources Help Center Documentation API Reference Glossary Tools Product Get Started Pricing Feedback Roadmap Updates Blog Get Help Contact Status Privacy Terms Compare Canny Alternative UserVoice Alternative Nolt Alternative Aha! Alternative Beamer Alternative BugHerd Alternative Productboard Alterna",
+        "fetch_error": ""
+      },
+      {
+        "title": "Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026",
+        "url": "https://checkthat.ai/brands/github-copilot/pricing",
+        "query": "GitHub Copilot CLI pricing 2025",
+        "provider": "tavily",
+        "score": "0.7608822",
+        "fetched_text": "Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026 - GitHub Copilot | CheckThat.ai window.__clerk_publishable_key = \"pk_live_Y2xlcmsuY2hlY2t0aGF0LmFpJA\"; {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Brands\",\"item\":\"https://checkthat.ai/brands\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"GitHub Copilot\",\"item\":\"https://checkthat.ai/brands/github-copilot\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026\",\"item\":\"https://checkthat.ai/brands/github-copilot/pricing\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026\",\"description\":\"GitHub Copilot Pro looks cheap until premium requests, model multipliers, and team seats add up. Plans, $0.04 overages, Business versus Enterprise, versus Cursor, Amazon Q, and Tabnine.\",\"image\":\"https://checkthat-media-files.s3.us-west-1.amazonaws.com/cover-images/cover-image-1768324698075/1768324700911-cover.png\",\"dateModified\":\"2026-04-08T18:39:23Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Kavishka Karunanayake\",\"image\":\"https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvdXBsb2FkZWQvaW1nXzNBbzI1bmxTN2pmaUdIQWdzWGlMdUxiRDRVWSJ9\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"CheckThat.ai\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://checkthat.ai/logo.png\"}},\"url\":\"https://checkthat.ai/brands/github-copilot/pricing\"} Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026 - GitHub Copilot | CheckThat.ai \\n Cost of Plans $0 Free, $10/mo Pro ($100/yr annual), $39/mo Pro+, $19/user/mo Business, $39/user/mo Enterprise (Copilot seat) Cost of Add-Ons Extra premium requests at $0.04 each",
+        "fetch_error": ""
+      },
+      {
+        "title": "Plans for GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/get-started/plans",
+        "query": "GitHub Copilot CLI pricing 2025",
+        "provider": "tavily",
+        "score": "0.6100127",
+        "fetched_text": "Plans for GitHub Copilot - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / Get started / Plans Home GitHub Copilot Get started Quickstart What is GitHub Copilot? Plans Features Best practices Enterprise AI governance Concepts Completions Code suggestions Code referencing Chat Agents Cloud agent About cloud agent Agent management Custom agents About automations Access management MCP and cloud agent Risks and mitigations Copilot CLI About Copilot CLI Comparing CLI features Cancel and roll back About remote control Custom agents About CLI plugins Autonomous task completion Parallel task execution Researching with Copilot Session data About rubber duck LSP servers Context management GitHub Copilot app Code review Copilot Memory Hooks Enterprise plugin standards Third-party coding agents Agent apps OpenAI Codex Anthropic Claude Agent skills Enterprise management Cloud and local sandboxes Spark Copilot usage metrics All articles Copilot usage metrics Prompting Prompt engineering Response customization Context MCP Spaces Repository indexing Content exclusion Tools AI tools About Copilot integrations Models Utility models Auto model selection FedRAMP models Base and LTS models Usage limits Billing Billing for individuals Billing for organizations and enterprises Budgets Individual plans Organizations and enterprises Copilot-only enterprises Policies MCP management Network settings New features and models How-tos Copilot on GitHub Set up Copilot Enable Copilot Set up for self Set up for organization Set up for enterprise Set up a dedicated enterprise Set up for students Set up for teac",
+        "fetch_error": ""
+      },
+      {
+        "title": "About GitHub Copilot CLI",
+        "url": "https://docs.github.com/copilot/concepts/agents/about-copilot-cli",
+        "query": "GitHub Copilot CLI custom agent limitations",
+        "provider": "tavily",
+        "score": "0.8194462",
+        "fetched_text": "About GitHub Copilot CLI - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / Concepts / Agents / Copilot CLI / About Copilot CLI Home GitHub Copilot Get started Quickstart What is GitHub Copilot? Plans Features Best practices Enterprise AI governance Concepts Completions Code suggestions Code referencing Chat Agents Cloud agent About cloud agent Agent management Custom agents About automations Access management MCP and cloud agent Risks and mitigations Copilot CLI About Copilot CLI Comparing CLI features Cancel and roll back About remote control Custom agents About CLI plugins Autonomous task completion Parallel task execution Researching with Copilot Session data About rubber duck LSP servers Context management GitHub Copilot app Code review Copilot Memory Hooks Enterprise plugin standards Third-party coding agents Agent apps OpenAI Codex Anthropic Claude Agent skills Enterprise management Cloud and local sandboxes Spark Copilot usage metrics All articles Copilot usage metrics Prompting Prompt engineering Response customization Context MCP Spaces Repository indexing Content exclusion Tools AI tools About Copilot integrations Models Utility models Auto model selection FedRAMP models Base and LTS models Usage limits Billing Billing for individuals Billing for organizations and enterprises Budgets Individual plans Organizations and enterprises Copilot-only enterprises Policies MCP management Network settings New features and models How-tos Copilot on GitHub Set up Copilot Enable Copilot Set up for self Set up for organization Set up for enterprise Set up a dedicated enterprise Set",
+        "fetch_error": ""
+      },
+      {
+        "title": "Multi-Agent Workflow System with Collaborative AI Team for End-to ...",
+        "url": "https://github.com/github/copilot-cli/issues/1389",
+        "query": "GitHub Copilot CLI custom agent team workflow example",
+        "provider": "tavily",
+        "score": "0.8467682",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_collapse_cssom_rules\",\"code_view_shared_line_height\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_di",
+        "fetch_error": ""
+      },
+      {
+        "title": "Power agentic workflows in your terminal with GitHub Copilot CLI - The GitHub Blog",
+        "url": "https://github.blog/ai-and-ml/github-copilot/power-agentic-workflows-in-your-terminal-with-github-copilot-cli",
+        "query": "GitHub Copilot CLI custom agent team workflow example",
+        "provider": "tavily",
+        "score": "0.7348247",
+        "fetched_text": "Power agentic workflows in your terminal with GitHub Copilot CLI - The GitHub Blog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Power agentic workflows in your terminal with GitHub Copilot CLI\",\"author\":{\"@type\":\"Person\",\"name\":\"Dylan Birtolo\"},\"datePublished\":\"2026-01-26T10:54:49-08:00\",\"abstract\":\"Explore the GitHub Copilot CLI and try interacting with Copilot directly from your terminal.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/power-agentic-workflows-in-your-terminal-with-github-copilot-cli\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2025\\/09\\/cli.jpg?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Power agentic workflows in your terminal with GitHub Copilot CLI\",\"author\":{\"@type\":\"Person\",\"name\":\"Dylan Birtolo\"},\"datePublished\":\"2026-01-26T10:54:49-08:00\",\"abstract\":\"Explore the GitHub Copilot CLI and try interacting with Copilot directly from your terminal.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/power-agentic-workflows-in-your-terminal-with-github-copilot-cli\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2025\\/09\\/cli.jpg?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/power-agentic-workflows-in-your-terminal-with-github-copilot-cli\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/power-agentic-workflows-in-your-terminal-with-github-copilot-cli\\/\"},\"author\":[{\"@id\":\"https:\\/\\/github.blog\\/#\\/schema\\/person\\/ee0de3d321b5a1da4182c16f71b3a6a7\"}],\"headline\":\"Power agentic workflows in your terminal with GitHub Copilot CLI\",\"datePublished\":\"2026-01-26T",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：核心事实没有来源：自定义Agent的实际效率提升数据、配置时间成本等关键事实缺乏来源。"
+    },
+    "core_question": "GitHub Copilot CLI 自定义 Agent 是否真的能提升团队开发效率，其成本、配置复杂度和实际效果如何？",
+    "why_this_topic_matters": "Copilot CLI 自定义 Agent 将 AI 从单次提示升级为可复用工作流，可能改变开发习惯，但实际效果和成本尚不明确。",
+    "fact_summary": [
+      "GitHub 于 2026-06-09 发布博客介绍 Copilot CLI 自定义 Agent 功能。",
+      "自定义 Agent 本质是预设的系统提示，可让 CLI 理解技术栈和团队工作流。",
+      "官方文档提供了创建和使用自定义 Agent 的步骤。",
+      "Copilot CLI 支持自定义 Agent、技能、指令等多种配置。",
+      "定价方面：Pro $10/月，Pro+ $39/月，Business $19/用户/月，Enterprise $39/用户/月，额外高级请求 $0.04/次。"
+    ],
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 75,
+      "why_interested": "核心技术人关注效率提升和工具链集成；入门读者可了解新功能；商业读者关注成本和团队生产力。",
+      "reader_risk": "可能高估自定义 Agent 的实际效果，忽略配置复杂度和额外成本。"
+    },
+    "mass_interest_hook": {
+      "score": 60,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "标题暗示 AI 从单次提示升级为工作流，普通人可能好奇 AI 如何自动化重复性任务。",
+      "story_seed": "一个开发者用自定义 Agent 将 10 步部署流程简化为 1 条命令，但配置过程花了 3 天。",
+      "do_not_overhype": "不要声称自定义 Agent 能解决所有问题，实际效果因团队和技术栈而异。"
+    },
+    "timeline": [
+      "2024年底：GitHub 推出 Copilot Chat、CLI 和 Workspace。",
+      "2025年10月：GitHub 宣布 Copilot CLI 支持自定义 Agent 和任务委托。",
+      "2026-01-26：GitHub 博客介绍 Copilot CLI 的 agentic 工作流。",
+      "2026-06-09：GitHub 博客详细说明如何将单次提示转化为工作流。"
+    ],
+    "evidence_table": [
+      {
+        "source": "GitHub Blog - From one-off prompts to workflows",
+        "url": "https://github.blog/ai-and-ml/github-copilot/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli",
+        "supports": "功能发布和基本概念",
+        "reliability": "official"
+      },
+      {
+        "source": "GitHub Docs - About custom agents",
+        "url": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-custom-agents",
+        "supports": "自定义 Agent 的官方定义和概述",
+        "reliability": "official"
+      },
+      {
+        "source": "GitHub Docs - Creating and using custom agents for CLI",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/create-custom-agents-for-cli",
+        "supports": "配置步骤和权限要求",
+        "reliability": "official"
+      },
+      {
+        "source": "GitHub Docs - Plans for GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/get-started/plans",
+        "supports": "定价信息",
+        "reliability": "official"
+      },
+      {
+        "source": "Reddit - Difference between skills, instructions, prompts, and custom agents?",
+        "url": "https://www.reddit.com/r/GithubCopilot/comments/1r8pwqx/difference_between_skills_instructions_prompts",
+        "supports": "社区对自定义 Agent 的理解：本质是预设系统提示",
+        "reliability": "weak"
+      },
+      {
+        "source": "GitHub Community Discussion - What differentiates on Custom Agents, Agent Skills and ...",
+        "url": "https://github.com/orgs/community/discussions/183962",
+        "supports": "功能区别讨论",
+        "reliability": "weak"
+      },
+      {
+        "source": "DEV Community - GitHub Copilot Instructions vs Prompts vs Custom Agents vs Skills vs ...",
+        "url": "https://dev.to/pwd9000/github-copilot-instructions-vs-prompts-vs-custom-agents-vs-skills-vs-x-vs-why-339l",
+        "supports": "功能对比分析",
+        "reliability": "media"
+      },
+      {
+        "source": "Jimmy Song Blog - GitHub Copilot CLI Custom Agents",
+        "url": "https://jimmysong.io/blog/github-copilot-cli-custom-agents",
+        "supports": "技术教程和背景介绍",
+        "reliability": "media"
+      },
+      {
+        "source": "UserJot - GitHub Copilot Pricing 2026",
+        "url": "https://userjot.com/blog/github-copilot-pricing-guide-2025",
+        "supports": "定价详情",
+        "reliability": "media"
+      },
+      {
+        "source": "CheckThat.ai - Is GitHub Copilot's Pricing Worth It?",
+        "url": "https://checkthat.ai/brands/github-copilot/pricing",
+        "supports": "定价和竞品对比",
+        "reliability": "media"
+      },
+      {
+        "source": "GitHub Blog - Power agentic workflows in your terminal with GitHub Copilot CLI",
+        "url": "https://github.blog/ai-and-ml/github-copilot/power-agentic-workflows-in-your-terminal-with-github-copilot-cli",
+        "supports": "agentic 工作流介绍",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "部分闭环：功能存在、配置步骤明确、定价清晰，但缺乏实际效率提升数据和团队案例，无法判断是否值得投入。",
+    "writeable_angles": [
+      {
+        "angle": "工具账本：自定义 Agent 的配置成本与收益分析",
+        "why": "帮助读者判断是否值得投入时间配置",
+        "needs": "实际用户反馈、配置时间数据、效率提升案例"
+      },
+      {
+        "angle": "功能对比：自定义 Agent vs 普通提示 vs 竞品 Agent",
+        "why": "帮助读者在多个工具中做选择",
+        "needs": "与 Cursor、Codeium 等竞品的详细对比"
+      },
+      {
+        "angle": "风险避坑：自定义 Agent 的局限性和常见问题",
+        "why": "避免读者过度期待",
+        "needs": "社区反馈中的问题列表、官方限制说明"
+      }
+    ],
+    "missing_basics": [
+      "自定义 Agent 与普通提示的具体效率差异数据",
+      "配置自定义 Agent 的平均时间成本",
+      "是否支持所有主流语言和框架",
+      "团队工作流集成的实际案例"
+    ],
+    "missing_materials": [
+      "至少一个真实团队的使用案例和反馈",
+      "与 Cursor、Codeium 等竞品的功能对比表",
+      "用户社区（Reddit、Hacker News）的讨论和评价"
+    ],
+    "not_claimable": [
+      "自定义 Agent 能显著提升所有团队效率",
+      "配置过程简单无门槛",
+      "无需额外成本"
+    ],
+    "followup_queries": [
+      "GitHub Copilot CLI custom agent review reddit",
+      "GitHub Copilot CLI custom agent vs Cursor agent",
+      "GitHub Copilot CLI custom agent team productivity case study",
+      "GitHub Copilot CLI custom agent limitations",
+      "GitHub Copilot CLI custom agent setup time"
+    ],
+    "additional_search_queries": [
+      "site:reddit.com GitHub Copilot CLI custom agent",
+      "site:news.ycombinator.com GitHub Copilot CLI",
+      "GitHub Copilot CLI custom agent vs regular prompts benchmark",
+      "GitHub Copilot CLI custom agent example workflow"
+    ],
+    "stop_conditions": [
+      "发现自定义 Agent 仅限特定计划（如 Business/Enterprise）",
+      "发现配置复杂度远高于收益的普遍反馈",
+      "发现竞品已提供类似但更易用的功能"
+    ],
+    "confidence": 60.0,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "tool-ledger",
+    "quality_gate": {
+      "pass": false,
+      "score": 60,
+      "fatal_issues": [
+        "核心事实没有来源：自定义Agent的实际效率提升数据、配置时间成本等关键事实缺乏来源。",
+        "成本估算没有公式、单位或边界：定价信息虽列出，但未说明自定义Agent功能是否额外收费或受计划限制。",
+        "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象：虽然列出了primary和secondary layers，但interest_score和why_interested描述笼统，未区分不同读者层的具体需求。",
+        "没有泛兴趣故事钩子，标题和开头只适合技术小圈子：reader_hook和mass_interest_hook的hook_type为“反差”，但story_seed“配置花了3天”可能劝退非技术读者，且整体钩子偏向技术圈。",
+        "没有明确选题结论：推荐或可选：verdict为“可选选题”，但未明确是downgrade_to_brief还是hold。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写：reason和why_this_topic_matters较笼统，未深入分析选题价值与风险。",
+        "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断：selection_dossier虽详细，但部分内容（如timeline、evidence_table）未紧密围绕自定义Agent的具体价值判断。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：logic_closure指出“部分闭环”，但未系统检查所有事实的可靠性和逻辑一致性。",
+        "没有列出基础概念缺口和资料素材缺口：missing_basics和missing_materials已列出，但未评估这些缺口对选题的致命程度。",
+        "没有按具体类型提供资料包：report_type为tool-ledger，但资料包未按工具账本类型组织（如成本、配置、效率对比等）。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来：evidence_count为14，但主要来自GitHub官方和少数社区，缺乏竞品对比和独立评测，源覆盖统计未体现偏科。"
+      ],
+      "warnings": [
+        "reader_hook_ok: false - 钩子偏向技术圈，泛兴趣不足。",
+        "mass_interest_hook_ok: false - 故事种子可能劝退非技术读者。",
+        "topic_direction_ok: true - 方向匹配。",
+        "report_type_ok: true - 类型匹配。",
+        "source_closure_ok: false - 缺乏独立评测和竞品对比。",
+        "downstream_handoff_ok: false - 未提供足够结构化资料供下游使用。",
+        "material_pack_ok: false - 未按工具账本类型组织资料。",
+        "selection_dossier_ok: false - 结论不明确，逻辑未闭环。",
+        "logic_closure_ok: false - 部分闭环，关键事实缺失。",
+        "source_coverage_ok: false - 信息源偏科。"
+      ],
+      "missing_evidence": [
+        "自定义Agent与普通提示的效率对比数据（如时间节省百分比）。",
+        "配置自定义Agent的平均时间成本（小时/天）。",
+        "真实团队使用案例和反馈（非官方博客）。",
+        "与Cursor、Codeium等竞品的详细功能对比。",
+        "用户社区（Reddit、Hacker News）的讨论和评价。",
+        "自定义Agent的局限性（如语言/框架支持、计划限制）。"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "GitHub Copilot CLI 自定义 Agent 是否真的能提升团队开发效率，其成本、配置复杂度和实际效果如何？",
+      "must_verify": [
+        "自定义 Agent 的具体配置步骤和所需权限",
+        "与普通 Copilot CLI 提示相比的实际效率提升数据",
+        "是否支持所有主流编程语言和框架",
+        "团队工作流集成的实际案例和反馈"
+      ],
+      "search_queries": [
+        "GitHub Copilot CLI custom agent setup guide",
+        "GitHub Copilot CLI custom agent vs regular prompts performance",
+        "GitHub Copilot CLI custom agent review",
+        "GitHub Copilot CLI pricing 2025",
+        "GitHub Copilot CLI custom agent limitations",
+        "GitHub Copilot CLI custom agent team workflow example",
+        "GitHub Copilot CLI vs Cursor AI agent comparison",
+        "GitHub Copilot CLI custom agent security concerns"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "GitHub Copilot CLI custom agent documentation",
+          "why_needed": "获取官方配置步骤、权限要求和功能边界"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "GitHub Copilot pricing plans 2025",
+          "why_needed": "确认自定义 Agent 是否包含在现有订阅中，或需要额外付费"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "GitHub Copilot CLI custom agent reddit",
+          "why_needed": "收集真实用户反馈、常见问题和实际效果评价"
+        },
+        {
+          "source_type": "case_study",
+          "query": "GitHub Copilot CLI custom agent team productivity",
+          "why_needed": "寻找团队使用案例和效率提升数据"
+        },
+        {
+          "source_type": "github_repo",
+          "query": "GitHub Copilot CLI custom agent examples",
+          "why_needed": "查看开源示例和社区贡献的配置模板"
+        }
+      ],
+      "expert_challenge_points": [
+        "自定义 Agent 的配置复杂度是否高于其带来的效率提升？",
+        "对于非标准技术栈的团队，自定义 Agent 的适配成本如何？",
+        "与 Cursor、Codeium 等竞品的 Agent 功能相比，Copilot CLI 的优劣势？"
+      ],
+      "do_not_claim_yet": [
+        "自定义 Agent 能显著提升所有团队效率",
+        "配置过程简单无门槛",
+        "无需额外成本"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取实际用户反馈和效率数据，可基于官方文档和社区讨论发布，但需明确标注信息缺口",
+      "downstream_materials_needed": [
+        "官方配置文档截图或步骤",
+        "至少一个真实团队的使用案例",
+        "与竞品的功能对比表"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "About custom agents - GitHub Docs",
+        "url": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-custom-agents",
+        "query": "GitHub Copilot CLI custom agent setup guide",
+        "provider": "tavily",
+        "score": "0.86981434",
+        "fetched_text": "About custom agents - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / Concepts / Agents / Cloud agent / Custom agents Home GitHub Copilot Get started Quickstart What is GitHub Copilot? Plans Features Best practices Enterprise AI governance Concepts Completions Code suggestions Code referencing Chat Agents Cloud agent About cloud agent Agent management Custom agents About automations Access management MCP and cloud agent Risks and mitigations Copilot CLI About Copilot CLI Comparing CLI features Cancel and roll back About remote control Custom agents About CLI plugins Autonomous task completion Parallel task execution Researching with Copilot Session data About rubber duck LSP servers Context management GitHub Copilot app Code review Copilot Memory Hooks Enterprise plugin standards Third-party coding agents Agent apps OpenAI Codex Anthropic Claude Agent skills Enterprise management Cloud and local sandboxes Spark Copilot usage metrics All articles Copilot usage metrics Prompting Prompt engineering Response customization Context MCP Spaces Repository indexing Content exclusion Tools AI tools About Copilot integrations Models Utility models Auto model selection FedRAMP models Base and LTS models Usage limits Billing Billing for individuals Billing for organizations and enterprises Budgets Individual plans Organizations and enterprises Copilot-only enterprises Policies MCP management Network settings New features and models How-tos Copilot on GitHub Set up Copilot Enable Copilot Set up for self Set up for organization Set up for enterprise Set up a dedicated enterprise Set up for s",
+        "fetch_error": ""
+      },
+      {
+        "title": "From one-off prompts to workflows: How to use custom agents in ...",
+        "url": "https://github.blog/ai-and-ml/github-copilot/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli",
+        "query": "GitHub Copilot CLI custom agent setup guide",
+        "provider": "tavily",
+        "score": "0.85216236",
+        "fetched_text": "From one-off prompts to workflows: How to use custom agents in GitHub Copilot CLI - The GitHub Blog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"From one-off prompts to workflows: How to use custom agents in GitHub Copilot CLI\",\"author\":{\"@type\":\"Person\",\"name\":\"Natalie Guevara\"},\"datePublished\":\"2026-06-09T09:00:00-07:00\",\"abstract\":\"Custom agents let GitHub Copilot CLI understand your stack and team workflows, turning one-off terminal prompts into repeatable, reviewable processes.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/01\\/CLIBanner_BlogHeader_01.jpg?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"From one-off prompts to workflows: How to use custom agents in GitHub Copilot CLI\",\"author\":{\"@type\":\"Person\",\"name\":\"Natalie Guevara\"},\"datePublished\":\"2026-06-09T09:00:00-07:00\",\"abstract\":\"Custom agents let GitHub Copilot CLI understand your stack and team workflows, turning one-off terminal prompts into repeatable, reviewable processes.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/01\\/CLIBanner_BlogHeader_01.jpg?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/from-one-off",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub Copilot CLI Custom Agents: Building Your Command-Line …",
+        "url": "https://jimmysong.io/blog/github-copilot-cli-custom-agents",
+        "query": "GitHub Copilot CLI custom agent setup guide",
+        "provider": "tavily",
+        "score": "0.8506799",
+        "fetched_text": "(function(){const e=localStorage.getItem(\"sidebarCollapsed\")===\"true\";e&&document.documentElement.classList.add(\"sidebar-collapsed-init\")})() GitHub Copilot CLI Custom Agents: Building Your Command-Line … (function(){try{var t=localStorage.getItem(\"theme\"),n=window.matchMedia(\"(prefers-color-scheme: dark)\").matches,e=t?t===\"dark\":n;document.documentElement.classList.toggle(\"dark-mode\",e),document.documentElement.style.colorScheme=e?\"dark\":\"light\",window.__isDark=e}catch{}})() (function(){try{var n=sessionStorage.getItem(\"topHeaderDismissed\")===\"true\",e=sessionStorage.getItem(\"topHeaderContentHash\"),t=\"cf7f6cad30f4b0c598985b7e799f505f59821e45\";n&&e&&e===t&&document.documentElement.classList.add(\"top-header-dismissed\")}catch{}})() {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/jimmysong.io\\/blog\\/github-copilot-cli-custom-agents\\/\",\"name\":\"GitHub Copilot CLI Custom Agents: Building Your Command-Line AI Assistant\"},\"headline\":\"GitHub Copilot CLI Custom Agents: Building Your Command-Line AI Assistant\",\"description\":\"Learn how to build custom AI assistants with GitHub Copilot CLI Agents to automate tasks, optimize workflows, and boost productivity in your command-line …\",\"articleBody\":\" Make your command line an AI ally, not just a toolbox.\\nBackground: From AI Completion to AI Assistant Since GitHub launched Copilot Chat, CLI, and Workspace at the end of 2024, Copilot has evolved from \\u0026ldquo;intelligent completion\\u0026rdquo; to an \\u0026ldquo;AI Pair Programmer.\\u0026rdquo; In October 2025, GitHub officially announced that Copilot CLI now supports custom Agents and task delegation. This update enables developers to build their own AI assistants in the terminal, allowing Copilot not only to …\",\"identifier\":",
+        "fetch_error": ""
+      },
+      {
+        "title": "Difference between skills, instructions, prompts, and custom agents?",
+        "url": "https://www.reddit.com/r/GithubCopilot/comments/1r8pwqx/difference_between_skills_instructions_prompts",
+        "query": "GitHub Copilot CLI custom agent vs regular prompts performance",
+        "provider": "tavily",
+        "score": "0.7732339",
+        "fetched_text": "Custom agent = Preset of system prompts. It's the same as system prompt, just make it easy for you to choose one.",
+        "fetch_error": "HTTP Error 403: Blocked; used tavily content fallback"
+      },
+      {
+        "title": "What differentiates on Custom Agents, Agent Skills and ... - GitHub",
+        "url": "https://github.com/orgs/community/discussions/183962",
+        "query": "GitHub Copilot CLI custom agent vs regular prompts performance",
+        "provider": "tavily",
+        "score": "0.76554126",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_collapse_cssom_rules\",\"code_view_shared_line_height\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_di",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub Copilot Instructions vs Prompts vs Custom Agents vs Skills vs ...",
+        "url": "https://dev.to/pwd9000/github-copilot-instructions-vs-prompts-vs-custom-agents-vs-skills-vs-x-vs-why-339l",
+        "query": "GitHub Copilot CLI custom agent vs regular prompts performance",
+        "provider": "tavily",
+        "score": "0.7065353",
+        "fetched_text": "GitHub Copilot Instructions vs Prompts vs Custom Agents vs Skills vs X vs WHY? - DEV Community /* ========================================================================== THE 418 CHALLENGE: THEME-AWARE RETRO EDITION ========================================================================== */ .articletag-418challenge { font-family: \"Comic Sans MS\", \"Chalkboard SE\", \"Marker Felt\", sans-serif !important; cursor: crosshair !important; } /* Destroy modern rounded corners and add brutal borders */ .articletag-418challenge .crayons-card, .articletag-418challenge .crayons-article__main, .articletag-418challenge .crayons-article__header { border-radius: 0 !important; margin-bottom: 2rem !important; } /* Typography specifics */ .articletag-418challenge h1, .articletag-418challenge h2, .articletag-418challenge h3 { text-transform: uppercase !important; } /* Fake effect for the main article title */ .articletag-418challenge h1.fs-3xl { animation: retro-slide 5s linear infinite alternate; overflow: visible; } /* Spin those avatars */ .articletag-418challenge .crayons-article__header__meta img { border-radius: 0 !important; animation: retro-spin 5s linear infinite; } /* Obnoxious tags */ .articletag-418challenge .crayons-tag { border-radius: 0 !important; font-weight: 900 !important; transform: rotate(-3deg); display: inline-block; } .articletag-418challenge .crayons-tag:nth-child(even) { transform: rotate(3deg); } /* -------------------------------------------------------------------------- 2. LIGHT THEME (Windows 95 / Office 97 Vibes) -------------------------------------------------------------------------- */ body:not(.dark-theme) .articletag-418challenge { background-color: #008080 !important; /* Win95 Teal Desktop */ } body:not(.dark-theme) .articletag-418challenge .crayons-",
+        "fetch_error": ""
+      },
+      {
+        "title": "Creating and using custom agents for GitHub Copilot CLI",
+        "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/create-custom-agents-for-cli",
+        "query": "GitHub Copilot CLI custom agent review",
+        "provider": "tavily",
+        "score": "0.85421735",
+        "fetched_text": "Creating and using custom agents for GitHub Copilot CLI - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / How-tos / Copilot CLI / Customize Copilot CLI / Create custom agents Home GitHub Copilot Get started Quickstart What is GitHub Copilot? Plans Features Best practices Enterprise AI governance Concepts Completions Code suggestions Code referencing Chat Agents Cloud agent About cloud agent Agent management Custom agents About automations Access management MCP and cloud agent Risks and mitigations Copilot CLI About Copilot CLI Comparing CLI features Cancel and roll back About remote control Custom agents About CLI plugins Autonomous task completion Parallel task execution Researching with Copilot Session data About rubber duck LSP servers Context management GitHub Copilot app Code review Copilot Memory Hooks Enterprise plugin standards Third-party coding agents Agent apps OpenAI Codex Anthropic Claude Agent skills Enterprise management Cloud and local sandboxes Spark Copilot usage metrics All articles Copilot usage metrics Prompting Prompt engineering Response customization Context MCP Spaces Repository indexing Content exclusion Tools AI tools About Copilot integrations Models Utility models Auto model selection FedRAMP models Base and LTS models Usage limits Billing Billing for individuals Billing for organizations and enterprises Budgets Individual plans Organizations and enterprises Copilot-only enterprises Policies MCP management Network settings New features and models How-tos Copilot on GitHub Set up Copilot Enable Copilot Set up for self Set up for organization Set up ",
+        "fetch_error": ""
+      },
+      {
+        "title": "How to get a multi-agent code review in Copilot CLI - YouTube",
+        "url": "https://www.youtube.com/watch?v=qRXztN1hi1M&vl=en",
+        "query": "GitHub Copilot CLI custom agent review",
+        "provider": "tavily",
+        "score": "0.6977124",
+        "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260606.02.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub Copilot Pricing 2026: Complete Guide to All 5 Tiers",
+        "url": "https://userjot.com/blog/github-copilot-pricing-guide-2025",
+        "query": "GitHub Copilot CLI pricing 2025",
+        "provider": "tavily",
+        "score": "0.8893851",
+        "fetched_text": "GitHub Copilot Pricing 2026: Complete Guide to All 5 Tiers — UserJot {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"GitHub Copilot Pricing 2026: Complete Guide to All 5 Tiers\",\"description\":\"GitHub Copilot pricing explained: Free vs Pro ($10) vs Pro+ ($39) vs Business vs Enterprise. What each tier includes and why Copilot costs extra.\",\"datePublished\":\"2025-09-07T00:00:00.000Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Shayan Taslim\",\"url\":\"https://userjot.com\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"UserJot\",\"url\":\"https://userjot.com\"},\"image\":\"https://userjot.com/assets/blog/covers/github-copilot-pricing-guide-2025/hidden-underground-1.webp\",\"mainEntityOfPage\":\"https://userjot.com/blog/github-copilot-pricing-guide-2025\",\"articleSection\":\"Engineering\",\"keywords\":\"ai, coding, github, copilot, pricing\"} {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://userjot.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"https://userjot.com/blog\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Engineering\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"GitHub Copilot Pricing 2026: Complete Guide to All 5 Tiers\"}]} UserJot Product Resources Pricing Blog Log in Get started UserJot Feedback, roadmap, and changelog, designed as one loop for product-led teams. Features Customer Feedback Feature Requests Feature Voting Product Roadmap Product Changelog Feedback Widget AI Agents Slack Resources Help Center Documentation API Reference Glossary Tools Product Get Started Pricing Feedback Roadmap Updates Blog Get Help Contact Status Privacy Terms Compare Canny Alternative UserVoice Alternative Nolt Alternative Aha! Alternative Beamer Alternative BugHerd Alternative Productboard Alterna",
+        "fetch_error": ""
+      },
+      {
+        "title": "Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026",
+        "url": "https://checkthat.ai/brands/github-copilot/pricing",
+        "query": "GitHub Copilot CLI pricing 2025",
+        "provider": "tavily",
+        "score": "0.7608822",
+        "fetched_text": "Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026 - GitHub Copilot | CheckThat.ai window.__clerk_publishable_key = \"pk_live_Y2xlcmsuY2hlY2t0aGF0LmFpJA\"; {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Brands\",\"item\":\"https://checkthat.ai/brands\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"GitHub Copilot\",\"item\":\"https://checkthat.ai/brands/github-copilot\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026\",\"item\":\"https://checkthat.ai/brands/github-copilot/pricing\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026\",\"description\":\"GitHub Copilot Pro looks cheap until premium requests, model multipliers, and team seats add up. Plans, $0.04 overages, Business versus Enterprise, versus Cursor, Amazon Q, and Tabnine.\",\"image\":\"https://checkthat-media-files.s3.us-west-1.amazonaws.com/cover-images/cover-image-1768324698075/1768324700911-cover.png\",\"dateModified\":\"2026-04-08T18:39:23Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Kavishka Karunanayake\",\"image\":\"https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvdXBsb2FkZWQvaW1nXzNBbzI1bmxTN2pmaUdIQWdzWGlMdUxiRDRVWSJ9\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"CheckThat.ai\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://checkthat.ai/logo.png\"}},\"url\":\"https://checkthat.ai/brands/github-copilot/pricing\"} Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026 - GitHub Copilot | CheckThat.ai \\n Cost of Plans $0 Free, $10/mo Pro ($100/yr annual), $39/mo Pro+, $19/user/mo Business, $39/user/mo Enterprise (Copilot seat) Cost of Add-Ons Extra premium requests at $0.04 each",
+        "fetch_error": ""
+      },
+      {
+        "title": "Plans for GitHub Copilot",
+        "url": "https://docs.github.com/en/copilot/get-started/plans",
+        "query": "GitHub Copilot CLI pricing 2025",
+        "provider": "tavily",
+        "score": "0.6100127",
+        "fetched_text": "Plans for GitHub Copilot - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / Get started / Plans Home GitHub Copilot Get started Quickstart What is GitHub Copilot? Plans Features Best practices Enterprise AI governance Concepts Completions Code suggestions Code referencing Chat Agents Cloud agent About cloud agent Agent management Custom agents About automations Access management MCP and cloud agent Risks and mitigations Copilot CLI About Copilot CLI Comparing CLI features Cancel and roll back About remote control Custom agents About CLI plugins Autonomous task completion Parallel task execution Researching with Copilot Session data About rubber duck LSP servers Context management GitHub Copilot app Code review Copilot Memory Hooks Enterprise plugin standards Third-party coding agents Agent apps OpenAI Codex Anthropic Claude Agent skills Enterprise management Cloud and local sandboxes Spark Copilot usage metrics All articles Copilot usage metrics Prompting Prompt engineering Response customization Context MCP Spaces Repository indexing Content exclusion Tools AI tools About Copilot integrations Models Utility models Auto model selection FedRAMP models Base and LTS models Usage limits Billing Billing for individuals Billing for organizations and enterprises Budgets Individual plans Organizations and enterprises Copilot-only enterprises Policies MCP management Network settings New features and models How-tos Copilot on GitHub Set up Copilot Enable Copilot Set up for self Set up for organization Set up for enterprise Set up a dedicated enterprise Set up for students Set up for teac",
+        "fetch_error": ""
+      },
+      {
+        "title": "About GitHub Copilot CLI",
+        "url": "https://docs.github.com/copilot/concepts/agents/about-copilot-cli",
+        "query": "GitHub Copilot CLI custom agent limitations",
+        "provider": "tavily",
+        "score": "0.8194462",
+        "fetched_text": "About GitHub Copilot CLI - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / Concepts / Agents / Copilot CLI / About Copilot CLI Home GitHub Copilot Get started Quickstart What is GitHub Copilot? Plans Features Best practices Enterprise AI governance Concepts Completions Code suggestions Code referencing Chat Agents Cloud agent About cloud agent Agent management Custom agents About automations Access management MCP and cloud agent Risks and mitigations Copilot CLI About Copilot CLI Comparing CLI features Cancel and roll back About remote control Custom agents About CLI plugins Autonomous task completion Parallel task execution Researching with Copilot Session data About rubber duck LSP servers Context management GitHub Copilot app Code review Copilot Memory Hooks Enterprise plugin standards Third-party coding agents Agent apps OpenAI Codex Anthropic Claude Agent skills Enterprise management Cloud and local sandboxes Spark Copilot usage metrics All articles Copilot usage metrics Prompting Prompt engineering Response customization Context MCP Spaces Repository indexing Content exclusion Tools AI tools About Copilot integrations Models Utility models Auto model selection FedRAMP models Base and LTS models Usage limits Billing Billing for individuals Billing for organizations and enterprises Budgets Individual plans Organizations and enterprises Copilot-only enterprises Policies MCP management Network settings New features and models How-tos Copilot on GitHub Set up Copilot Enable Copilot Set up for self Set up for organization Set up for enterprise Set up a dedicated enterprise Set",
+        "fetch_error": ""
+      },
+      {
+        "title": "Multi-Agent Workflow System with Collaborative AI Team for End-to ...",
+        "url": "https://github.com/github/copilot-cli/issues/1389",
+        "query": "GitHub Copilot CLI custom agent team workflow example",
+        "provider": "tavily",
+        "score": "0.8467682",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_collapse_cssom_rules\",\"code_view_shared_line_height\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_di",
+        "fetch_error": ""
+      },
+      {
+        "title": "Power agentic workflows in your terminal with GitHub Copilot CLI - The GitHub Blog",
+        "url": "https://github.blog/ai-and-ml/github-copilot/power-agentic-workflows-in-your-terminal-with-github-copilot-cli",
+        "query": "GitHub Copilot CLI custom agent team workflow example",
+        "provider": "tavily",
+        "score": "0.7348247",
+        "fetched_text": "Power agentic workflows in your terminal with GitHub Copilot CLI - The GitHub Blog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Power agentic workflows in your terminal with GitHub Copilot CLI\",\"author\":{\"@type\":\"Person\",\"name\":\"Dylan Birtolo\"},\"datePublished\":\"2026-01-26T10:54:49-08:00\",\"abstract\":\"Explore the GitHub Copilot CLI and try interacting with Copilot directly from your terminal.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/power-agentic-workflows-in-your-terminal-with-github-copilot-cli\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2025\\/09\\/cli.jpg?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Power agentic workflows in your terminal with GitHub Copilot CLI\",\"author\":{\"@type\":\"Person\",\"name\":\"Dylan Birtolo\"},\"datePublished\":\"2026-01-26T10:54:49-08:00\",\"abstract\":\"Explore the GitHub Copilot CLI and try interacting with Copilot directly from your terminal.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/power-agentic-workflows-in-your-terminal-with-github-copilot-cli\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2025\\/09\\/cli.jpg?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/power-agentic-workflows-in-your-terminal-with-github-copilot-cli\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/power-agentic-workflows-in-your-terminal-with-github-copilot-cli\\/\"},\"author\":[{\"@id\":\"https:\\/\\/github.blog\\/#\\/schema\\/person\\/ee0de3d321b5a1da4182c16f71b3a6a7\"}],\"headline\":\"Power agentic workflows in your terminal with GitHub Copilot CLI\",\"datePublished\":\"2026-01-26T",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260611-from-one-off-prompts-to-workflows-how-to-use-cus-a909f78f/",
+    "for_gpt_editor": {
+      "brief": "Custom agents let GitHub Copilot CLI understand your stack and team workflows, turning one-off terminal prompts into repeatable, reviewable processes. The post From one-off prompts to workflows: How to use custom agents in GitHub Copilot CLI appeared first on The GitHub Blog .",
+      "title_seed": "GitHub Copilot CLI 自定义 Agent：从单次提示到可复用工作流",
+      "original_title": "From one-off prompts to workflows: How to use custom agents in GitHub Copilot CLI",
+      "source_url": "https://github.blog/ai-and-ml/github-copilot/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli/",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：核心事实没有来源：自定义Agent的实际效率提升数据、配置时间成本等关键事实缺乏来源。"
+        },
+        "core_question": "GitHub Copilot CLI 自定义 Agent 是否真的能提升团队开发效率，其成本、配置复杂度和实际效果如何？",
+        "why_this_topic_matters": "Copilot CLI 自定义 Agent 将 AI 从单次提示升级为可复用工作流，可能改变开发习惯，但实际效果和成本尚不明确。",
+        "fact_summary": [
+          "GitHub 于 2026-06-09 发布博客介绍 Copilot CLI 自定义 Agent 功能。",
+          "自定义 Agent 本质是预设的系统提示，可让 CLI 理解技术栈和团队工作流。",
+          "官方文档提供了创建和使用自定义 Agent 的步骤。",
+          "Copilot CLI 支持自定义 Agent、技能、指令等多种配置。",
+          "定价方面：Pro $10/月，Pro+ $39/月，Business $19/用户/月，Enterprise $39/用户/月，额外高级请求 $0.04/次。"
+        ],
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 75,
+          "why_interested": "核心技术人关注效率提升和工具链集成；入门读者可了解新功能；商业读者关注成本和团队生产力。",
+          "reader_risk": "可能高估自定义 Agent 的实际效果，忽略配置复杂度和额外成本。"
+        },
+        "mass_interest_hook": {
+          "score": 60,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "标题暗示 AI 从单次提示升级为工作流，普通人可能好奇 AI 如何自动化重复性任务。",
+          "story_seed": "一个开发者用自定义 Agent 将 10 步部署流程简化为 1 条命令，但配置过程花了 3 天。",
+          "do_not_overhype": "不要声称自定义 Agent 能解决所有问题，实际效果因团队和技术栈而异。"
+        },
+        "timeline": [
+          "2024年底：GitHub 推出 Copilot Chat、CLI 和 Workspace。",
+          "2025年10月：GitHub 宣布 Copilot CLI 支持自定义 Agent 和任务委托。",
+          "2026-01-26：GitHub 博客介绍 Copilot CLI 的 agentic 工作流。",
+          "2026-06-09：GitHub 博客详细说明如何将单次提示转化为工作流。"
+        ],
+        "evidence_table": [
+          {
+            "source": "GitHub Blog - From one-off prompts to workflows",
+            "url": "https://github.blog/ai-and-ml/github-copilot/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli",
+            "supports": "功能发布和基本概念",
+            "reliability": "official"
+          },
+          {
+            "source": "GitHub Docs - About custom agents",
+            "url": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-custom-agents",
+            "supports": "自定义 Agent 的官方定义和概述",
+            "reliability": "official"
+          },
+          {
+            "source": "GitHub Docs - Creating and using custom agents for CLI",
+            "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/create-custom-agents-for-cli",
+            "supports": "配置步骤和权限要求",
+            "reliability": "official"
+          },
+          {
+            "source": "GitHub Docs - Plans for GitHub Copilot",
+            "url": "https://docs.github.com/en/copilot/get-started/plans",
+            "supports": "定价信息",
+            "reliability": "official"
+          },
+          {
+            "source": "Reddit - Difference between skills, instructions, prompts, and custom agents?",
+            "url": "https://www.reddit.com/r/GithubCopilot/comments/1r8pwqx/difference_between_skills_instructions_prompts",
+            "supports": "社区对自定义 Agent 的理解：本质是预设系统提示",
+            "reliability": "weak"
+          },
+          {
+            "source": "GitHub Community Discussion - What differentiates on Custom Agents, Agent Skills and ...",
+            "url": "https://github.com/orgs/community/discussions/183962",
+            "supports": "功能区别讨论",
+            "reliability": "weak"
+          },
+          {
+            "source": "DEV Community - GitHub Copilot Instructions vs Prompts vs Custom Agents vs Skills vs ...",
+            "url": "https://dev.to/pwd9000/github-copilot-instructions-vs-prompts-vs-custom-agents-vs-skills-vs-x-vs-why-339l",
+            "supports": "功能对比分析",
+            "reliability": "media"
+          },
+          {
+            "source": "Jimmy Song Blog - GitHub Copilot CLI Custom Agents",
+            "url": "https://jimmysong.io/blog/github-copilot-cli-custom-agents",
+            "supports": "技术教程和背景介绍",
+            "reliability": "media"
+          },
+          {
+            "source": "UserJot - GitHub Copilot Pricing 2026",
+            "url": "https://userjot.com/blog/github-copilot-pricing-guide-2025",
+            "supports": "定价详情",
+            "reliability": "media"
+          },
+          {
+            "source": "CheckThat.ai - Is GitHub Copilot's Pricing Worth It?",
+            "url": "https://checkthat.ai/brands/github-copilot/pricing",
+            "supports": "定价和竞品对比",
+            "reliability": "media"
+          },
+          {
+            "source": "GitHub Blog - Power agentic workflows in your terminal with GitHub Copilot CLI",
+            "url": "https://github.blog/ai-and-ml/github-copilot/power-agentic-workflows-in-your-terminal-with-github-copilot-cli",
+            "supports": "agentic 工作流介绍",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "部分闭环：功能存在、配置步骤明确、定价清晰，但缺乏实际效率提升数据和团队案例，无法判断是否值得投入。",
+        "writeable_angles": [
+          {
+            "angle": "工具账本：自定义 Agent 的配置成本与收益分析",
+            "why": "帮助读者判断是否值得投入时间配置",
+            "needs": "实际用户反馈、配置时间数据、效率提升案例"
+          },
+          {
+            "angle": "功能对比：自定义 Agent vs 普通提示 vs 竞品 Agent",
+            "why": "帮助读者在多个工具中做选择",
+            "needs": "与 Cursor、Codeium 等竞品的详细对比"
+          },
+          {
+            "angle": "风险避坑：自定义 Agent 的局限性和常见问题",
+            "why": "避免读者过度期待",
+            "needs": "社区反馈中的问题列表、官方限制说明"
+          }
+        ],
+        "missing_basics": [
+          "自定义 Agent 与普通提示的具体效率差异数据",
+          "配置自定义 Agent 的平均时间成本",
+          "是否支持所有主流语言和框架",
+          "团队工作流集成的实际案例"
+        ],
+        "missing_materials": [
+          "至少一个真实团队的使用案例和反馈",
+          "与 Cursor、Codeium 等竞品的功能对比表",
+          "用户社区（Reddit、Hacker News）的讨论和评价"
+        ],
+        "not_claimable": [
+          "自定义 Agent 能显著提升所有团队效率",
+          "配置过程简单无门槛",
+          "无需额外成本"
+        ],
+        "followup_queries": [
+          "GitHub Copilot CLI custom agent review reddit",
+          "GitHub Copilot CLI custom agent vs Cursor agent",
+          "GitHub Copilot CLI custom agent team productivity case study",
+          "GitHub Copilot CLI custom agent limitations",
+          "GitHub Copilot CLI custom agent setup time"
+        ],
+        "additional_search_queries": [
+          "site:reddit.com GitHub Copilot CLI custom agent",
+          "site:news.ycombinator.com GitHub Copilot CLI",
+          "GitHub Copilot CLI custom agent vs regular prompts benchmark",
+          "GitHub Copilot CLI custom agent example workflow"
+        ],
+        "stop_conditions": [
+          "发现自定义 Agent 仅限特定计划（如 Business/Enterprise）",
+          "发现配置复杂度远高于收益的普遍反馈",
+          "发现竞品已提供类似但更易用的功能"
+        ],
+        "confidence": 60.0,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "tool-ledger",
+        "quality_gate": {
+          "pass": false,
+          "score": 60,
+          "fatal_issues": [
+            "核心事实没有来源：自定义Agent的实际效率提升数据、配置时间成本等关键事实缺乏来源。",
+            "成本估算没有公式、单位或边界：定价信息虽列出，但未说明自定义Agent功能是否额外收费或受计划限制。",
+            "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象：虽然列出了primary和secondary layers，但interest_score和why_interested描述笼统，未区分不同读者层的具体需求。",
+            "没有泛兴趣故事钩子，标题和开头只适合技术小圈子：reader_hook和mass_interest_hook的hook_type为“反差”，但story_seed“配置花了3天”可能劝退非技术读者，且整体钩子偏向技术圈。",
+            "没有明确选题结论：推荐或可选：verdict为“可选选题”，但未明确是downgrade_to_brief还是hold。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写：reason和why_this_topic_matters较笼统，未深入分析选题价值与风险。",
+            "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断：selection_dossier虽详细，但部分内容（如timeline、evidence_table）未紧密围绕自定义Agent的具体价值判断。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：logic_closure指出“部分闭环”，但未系统检查所有事实的可靠性和逻辑一致性。",
+            "没有列出基础概念缺口和资料素材缺口：missing_basics和missing_materials已列出，但未评估这些缺口对选题的致命程度。",
+            "没有按具体类型提供资料包：report_type为tool-ledger，但资料包未按工具账本类型组织（如成本、配置、效率对比等）。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来：evidence_count为14，但主要来自GitHub官方和少数社区，缺乏竞品对比和独立评测，源覆盖统计未体现偏科。"
+          ],
+          "warnings": [
+            "reader_hook_ok: false - 钩子偏向技术圈，泛兴趣不足。",
+            "mass_interest_hook_ok: false - 故事种子可能劝退非技术读者。",
+            "topic_direction_ok: true - 方向匹配。",
+            "report_type_ok: true - 类型匹配。",
+            "source_closure_ok: false - 缺乏独立评测和竞品对比。",
+            "downstream_handoff_ok: false - 未提供足够结构化资料供下游使用。",
+            "material_pack_ok: false - 未按工具账本类型组织资料。",
+            "selection_dossier_ok: false - 结论不明确，逻辑未闭环。",
+            "logic_closure_ok: false - 部分闭环，关键事实缺失。",
+            "source_coverage_ok: false - 信息源偏科。"
+          ],
+          "missing_evidence": [
+            "自定义Agent与普通提示的效率对比数据（如时间节省百分比）。",
+            "配置自定义Agent的平均时间成本（小时/天）。",
+            "真实团队使用案例和反馈（非官方博客）。",
+            "与Cursor、Codeium等竞品的详细功能对比。",
+            "用户社区（Reddit、Hacker News）的讨论和评价。",
+            "自定义Agent的局限性（如语言/框架支持、计划限制）。"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "GitHub Copilot CLI 自定义 Agent 是否真的能提升团队开发效率，其成本、配置复杂度和实际效果如何？",
+          "must_verify": [
+            "自定义 Agent 的具体配置步骤和所需权限",
+            "与普通 Copilot CLI 提示相比的实际效率提升数据",
+            "是否支持所有主流编程语言和框架",
+            "团队工作流集成的实际案例和反馈"
+          ],
+          "search_queries": [
+            "GitHub Copilot CLI custom agent setup guide",
+            "GitHub Copilot CLI custom agent vs regular prompts performance",
+            "GitHub Copilot CLI custom agent review",
+            "GitHub Copilot CLI pricing 2025",
+            "GitHub Copilot CLI custom agent limitations",
+            "GitHub Copilot CLI custom agent team workflow example",
+            "GitHub Copilot CLI vs Cursor AI agent comparison",
+            "GitHub Copilot CLI custom agent security concerns"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "GitHub Copilot CLI custom agent documentation",
+              "why_needed": "获取官方配置步骤、权限要求和功能边界"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "GitHub Copilot pricing plans 2025",
+              "why_needed": "确认自定义 Agent 是否包含在现有订阅中，或需要额外付费"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "GitHub Copilot CLI custom agent reddit",
+              "why_needed": "收集真实用户反馈、常见问题和实际效果评价"
+            },
+            {
+              "source_type": "case_study",
+              "query": "GitHub Copilot CLI custom agent team productivity",
+              "why_needed": "寻找团队使用案例和效率提升数据"
+            },
+            {
+              "source_type": "github_repo",
+              "query": "GitHub Copilot CLI custom agent examples",
+              "why_needed": "查看开源示例和社区贡献的配置模板"
+            }
+          ],
+          "expert_challenge_points": [
+            "自定义 Agent 的配置复杂度是否高于其带来的效率提升？",
+            "对于非标准技术栈的团队，自定义 Agent 的适配成本如何？",
+            "与 Cursor、Codeium 等竞品的 Agent 功能相比，Copilot CLI 的优劣势？"
+          ],
+          "do_not_claim_yet": [
+            "自定义 Agent 能显著提升所有团队效率",
+            "配置过程简单无门槛",
+            "无需额外成本"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取实际用户反馈和效率数据，可基于官方文档和社区讨论发布，但需明确标注信息缺口",
+          "downstream_materials_needed": [
+            "官方配置文档截图或步骤",
+            "至少一个真实团队的使用案例",
+            "与竞品的功能对比表"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "About custom agents - GitHub Docs",
+            "url": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-custom-agents",
+            "query": "GitHub Copilot CLI custom agent setup guide",
+            "provider": "tavily",
+            "score": "0.86981434",
+            "fetched_text": "About custom agents - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / Concepts / Agents / Cloud agent / Custom agents Home GitHub Copilot Get started Quickstart What is GitHub Copilot? Plans Features Best practices Enterprise AI governance Concepts Completions Code suggestions Code referencing Chat Agents Cloud agent About cloud agent Agent management Custom agents About automations Access management MCP and cloud agent Risks and mitigations Copilot CLI About Copilot CLI Comparing CLI features Cancel and roll back About remote control Custom agents About CLI plugins Autonomous task completion Parallel task execution Researching with Copilot Session data About rubber duck LSP servers Context management GitHub Copilot app Code review Copilot Memory Hooks Enterprise plugin standards Third-party coding agents Agent apps OpenAI Codex Anthropic Claude Agent skills Enterprise management Cloud and local sandboxes Spark Copilot usage metrics All articles Copilot usage metrics Prompting Prompt engineering Response customization Context MCP Spaces Repository indexing Content exclusion Tools AI tools About Copilot integrations Models Utility models Auto model selection FedRAMP models Base and LTS models Usage limits Billing Billing for individuals Billing for organizations and enterprises Budgets Individual plans Organizations and enterprises Copilot-only enterprises Policies MCP management Network settings New features and models How-tos Copilot on GitHub Set up Copilot Enable Copilot Set up for self Set up for organization Set up for enterprise Set up a dedicated enterprise Set up for s",
+            "fetch_error": ""
+          },
+          {
+            "title": "From one-off prompts to workflows: How to use custom agents in ...",
+            "url": "https://github.blog/ai-and-ml/github-copilot/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli",
+            "query": "GitHub Copilot CLI custom agent setup guide",
+            "provider": "tavily",
+            "score": "0.85216236",
+            "fetched_text": "From one-off prompts to workflows: How to use custom agents in GitHub Copilot CLI - The GitHub Blog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"From one-off prompts to workflows: How to use custom agents in GitHub Copilot CLI\",\"author\":{\"@type\":\"Person\",\"name\":\"Natalie Guevara\"},\"datePublished\":\"2026-06-09T09:00:00-07:00\",\"abstract\":\"Custom agents let GitHub Copilot CLI understand your stack and team workflows, turning one-off terminal prompts into repeatable, reviewable processes.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/01\\/CLIBanner_BlogHeader_01.jpg?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"From one-off prompts to workflows: How to use custom agents in GitHub Copilot CLI\",\"author\":{\"@type\":\"Person\",\"name\":\"Natalie Guevara\"},\"datePublished\":\"2026-06-09T09:00:00-07:00\",\"abstract\":\"Custom agents let GitHub Copilot CLI understand your stack and team workflows, turning one-off terminal prompts into repeatable, reviewable processes.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/01\\/CLIBanner_BlogHeader_01.jpg?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/from-one-off",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub Copilot CLI Custom Agents: Building Your Command-Line …",
+            "url": "https://jimmysong.io/blog/github-copilot-cli-custom-agents",
+            "query": "GitHub Copilot CLI custom agent setup guide",
+            "provider": "tavily",
+            "score": "0.8506799",
+            "fetched_text": "(function(){const e=localStorage.getItem(\"sidebarCollapsed\")===\"true\";e&&document.documentElement.classList.add(\"sidebar-collapsed-init\")})() GitHub Copilot CLI Custom Agents: Building Your Command-Line … (function(){try{var t=localStorage.getItem(\"theme\"),n=window.matchMedia(\"(prefers-color-scheme: dark)\").matches,e=t?t===\"dark\":n;document.documentElement.classList.toggle(\"dark-mode\",e),document.documentElement.style.colorScheme=e?\"dark\":\"light\",window.__isDark=e}catch{}})() (function(){try{var n=sessionStorage.getItem(\"topHeaderDismissed\")===\"true\",e=sessionStorage.getItem(\"topHeaderContentHash\"),t=\"cf7f6cad30f4b0c598985b7e799f505f59821e45\";n&&e&&e===t&&document.documentElement.classList.add(\"top-header-dismissed\")}catch{}})() {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/jimmysong.io\\/blog\\/github-copilot-cli-custom-agents\\/\",\"name\":\"GitHub Copilot CLI Custom Agents: Building Your Command-Line AI Assistant\"},\"headline\":\"GitHub Copilot CLI Custom Agents: Building Your Command-Line AI Assistant\",\"description\":\"Learn how to build custom AI assistants with GitHub Copilot CLI Agents to automate tasks, optimize workflows, and boost productivity in your command-line …\",\"articleBody\":\" Make your command line an AI ally, not just a toolbox.\\nBackground: From AI Completion to AI Assistant Since GitHub launched Copilot Chat, CLI, and Workspace at the end of 2024, Copilot has evolved from \\u0026ldquo;intelligent completion\\u0026rdquo; to an \\u0026ldquo;AI Pair Programmer.\\u0026rdquo; In October 2025, GitHub officially announced that Copilot CLI now supports custom Agents and task delegation. This update enables developers to build their own AI assistants in the terminal, allowing Copilot not only to …\",\"identifier\":",
+            "fetch_error": ""
+          },
+          {
+            "title": "Difference between skills, instructions, prompts, and custom agents?",
+            "url": "https://www.reddit.com/r/GithubCopilot/comments/1r8pwqx/difference_between_skills_instructions_prompts",
+            "query": "GitHub Copilot CLI custom agent vs regular prompts performance",
+            "provider": "tavily",
+            "score": "0.7732339",
+            "fetched_text": "Custom agent = Preset of system prompts. It's the same as system prompt, just make it easy for you to choose one.",
+            "fetch_error": "HTTP Error 403: Blocked; used tavily content fallback"
+          },
+          {
+            "title": "What differentiates on Custom Agents, Agent Skills and ... - GitHub",
+            "url": "https://github.com/orgs/community/discussions/183962",
+            "query": "GitHub Copilot CLI custom agent vs regular prompts performance",
+            "provider": "tavily",
+            "score": "0.76554126",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_collapse_cssom_rules\",\"code_view_shared_line_height\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_di",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub Copilot Instructions vs Prompts vs Custom Agents vs Skills vs ...",
+            "url": "https://dev.to/pwd9000/github-copilot-instructions-vs-prompts-vs-custom-agents-vs-skills-vs-x-vs-why-339l",
+            "query": "GitHub Copilot CLI custom agent vs regular prompts performance",
+            "provider": "tavily",
+            "score": "0.7065353",
+            "fetched_text": "GitHub Copilot Instructions vs Prompts vs Custom Agents vs Skills vs X vs WHY? - DEV Community /* ========================================================================== THE 418 CHALLENGE: THEME-AWARE RETRO EDITION ========================================================================== */ .articletag-418challenge { font-family: \"Comic Sans MS\", \"Chalkboard SE\", \"Marker Felt\", sans-serif !important; cursor: crosshair !important; } /* Destroy modern rounded corners and add brutal borders */ .articletag-418challenge .crayons-card, .articletag-418challenge .crayons-article__main, .articletag-418challenge .crayons-article__header { border-radius: 0 !important; margin-bottom: 2rem !important; } /* Typography specifics */ .articletag-418challenge h1, .articletag-418challenge h2, .articletag-418challenge h3 { text-transform: uppercase !important; } /* Fake effect for the main article title */ .articletag-418challenge h1.fs-3xl { animation: retro-slide 5s linear infinite alternate; overflow: visible; } /* Spin those avatars */ .articletag-418challenge .crayons-article__header__meta img { border-radius: 0 !important; animation: retro-spin 5s linear infinite; } /* Obnoxious tags */ .articletag-418challenge .crayons-tag { border-radius: 0 !important; font-weight: 900 !important; transform: rotate(-3deg); display: inline-block; } .articletag-418challenge .crayons-tag:nth-child(even) { transform: rotate(3deg); } /* -------------------------------------------------------------------------- 2. LIGHT THEME (Windows 95 / Office 97 Vibes) -------------------------------------------------------------------------- */ body:not(.dark-theme) .articletag-418challenge { background-color: #008080 !important; /* Win95 Teal Desktop */ } body:not(.dark-theme) .articletag-418challenge .crayons-",
+            "fetch_error": ""
+          },
+          {
+            "title": "Creating and using custom agents for GitHub Copilot CLI",
+            "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/create-custom-agents-for-cli",
+            "query": "GitHub Copilot CLI custom agent review",
+            "provider": "tavily",
+            "score": "0.85421735",
+            "fetched_text": "Creating and using custom agents for GitHub Copilot CLI - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / How-tos / Copilot CLI / Customize Copilot CLI / Create custom agents Home GitHub Copilot Get started Quickstart What is GitHub Copilot? Plans Features Best practices Enterprise AI governance Concepts Completions Code suggestions Code referencing Chat Agents Cloud agent About cloud agent Agent management Custom agents About automations Access management MCP and cloud agent Risks and mitigations Copilot CLI About Copilot CLI Comparing CLI features Cancel and roll back About remote control Custom agents About CLI plugins Autonomous task completion Parallel task execution Researching with Copilot Session data About rubber duck LSP servers Context management GitHub Copilot app Code review Copilot Memory Hooks Enterprise plugin standards Third-party coding agents Agent apps OpenAI Codex Anthropic Claude Agent skills Enterprise management Cloud and local sandboxes Spark Copilot usage metrics All articles Copilot usage metrics Prompting Prompt engineering Response customization Context MCP Spaces Repository indexing Content exclusion Tools AI tools About Copilot integrations Models Utility models Auto model selection FedRAMP models Base and LTS models Usage limits Billing Billing for individuals Billing for organizations and enterprises Budgets Individual plans Organizations and enterprises Copilot-only enterprises Policies MCP management Network settings New features and models How-tos Copilot on GitHub Set up Copilot Enable Copilot Set up for self Set up for organization Set up ",
+            "fetch_error": ""
+          },
+          {
+            "title": "How to get a multi-agent code review in Copilot CLI - YouTube",
+            "url": "https://www.youtube.com/watch?v=qRXztN1hi1M&vl=en",
+            "query": "GitHub Copilot CLI custom agent review",
+            "provider": "tavily",
+            "score": "0.6977124",
+            "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260606.02.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub Copilot Pricing 2026: Complete Guide to All 5 Tiers",
+            "url": "https://userjot.com/blog/github-copilot-pricing-guide-2025",
+            "query": "GitHub Copilot CLI pricing 2025",
+            "provider": "tavily",
+            "score": "0.8893851",
+            "fetched_text": "GitHub Copilot Pricing 2026: Complete Guide to All 5 Tiers — UserJot {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"GitHub Copilot Pricing 2026: Complete Guide to All 5 Tiers\",\"description\":\"GitHub Copilot pricing explained: Free vs Pro ($10) vs Pro+ ($39) vs Business vs Enterprise. What each tier includes and why Copilot costs extra.\",\"datePublished\":\"2025-09-07T00:00:00.000Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Shayan Taslim\",\"url\":\"https://userjot.com\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"UserJot\",\"url\":\"https://userjot.com\"},\"image\":\"https://userjot.com/assets/blog/covers/github-copilot-pricing-guide-2025/hidden-underground-1.webp\",\"mainEntityOfPage\":\"https://userjot.com/blog/github-copilot-pricing-guide-2025\",\"articleSection\":\"Engineering\",\"keywords\":\"ai, coding, github, copilot, pricing\"} {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://userjot.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"https://userjot.com/blog\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Engineering\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"GitHub Copilot Pricing 2026: Complete Guide to All 5 Tiers\"}]} UserJot Product Resources Pricing Blog Log in Get started UserJot Feedback, roadmap, and changelog, designed as one loop for product-led teams. Features Customer Feedback Feature Requests Feature Voting Product Roadmap Product Changelog Feedback Widget AI Agents Slack Resources Help Center Documentation API Reference Glossary Tools Product Get Started Pricing Feedback Roadmap Updates Blog Get Help Contact Status Privacy Terms Compare Canny Alternative UserVoice Alternative Nolt Alternative Aha! Alternative Beamer Alternative BugHerd Alternative Productboard Alterna",
+            "fetch_error": ""
+          },
+          {
+            "title": "Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026",
+            "url": "https://checkthat.ai/brands/github-copilot/pricing",
+            "query": "GitHub Copilot CLI pricing 2025",
+            "provider": "tavily",
+            "score": "0.7608822",
+            "fetched_text": "Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026 - GitHub Copilot | CheckThat.ai window.__clerk_publishable_key = \"pk_live_Y2xlcmsuY2hlY2t0aGF0LmFpJA\"; {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Brands\",\"item\":\"https://checkthat.ai/brands\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"GitHub Copilot\",\"item\":\"https://checkthat.ai/brands/github-copilot\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026\",\"item\":\"https://checkthat.ai/brands/github-copilot/pricing\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026\",\"description\":\"GitHub Copilot Pro looks cheap until premium requests, model multipliers, and team seats add up. Plans, $0.04 overages, Business versus Enterprise, versus Cursor, Amazon Q, and Tabnine.\",\"image\":\"https://checkthat-media-files.s3.us-west-1.amazonaws.com/cover-images/cover-image-1768324698075/1768324700911-cover.png\",\"dateModified\":\"2026-04-08T18:39:23Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Kavishka Karunanayake\",\"image\":\"https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvdXBsb2FkZWQvaW1nXzNBbzI1bmxTN2pmaUdIQWdzWGlMdUxiRDRVWSJ9\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"CheckThat.ai\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://checkthat.ai/logo.png\"}},\"url\":\"https://checkthat.ai/brands/github-copilot/pricing\"} Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026 - GitHub Copilot | CheckThat.ai \\n Cost of Plans $0 Free, $10/mo Pro ($100/yr annual), $39/mo Pro+, $19/user/mo Business, $39/user/mo Enterprise (Copilot seat) Cost of Add-Ons Extra premium requests at $0.04 each",
+            "fetch_error": ""
+          },
+          {
+            "title": "Plans for GitHub Copilot",
+            "url": "https://docs.github.com/en/copilot/get-started/plans",
+            "query": "GitHub Copilot CLI pricing 2025",
+            "provider": "tavily",
+            "score": "0.6100127",
+            "fetched_text": "Plans for GitHub Copilot - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / Get started / Plans Home GitHub Copilot Get started Quickstart What is GitHub Copilot? Plans Features Best practices Enterprise AI governance Concepts Completions Code suggestions Code referencing Chat Agents Cloud agent About cloud agent Agent management Custom agents About automations Access management MCP and cloud agent Risks and mitigations Copilot CLI About Copilot CLI Comparing CLI features Cancel and roll back About remote control Custom agents About CLI plugins Autonomous task completion Parallel task execution Researching with Copilot Session data About rubber duck LSP servers Context management GitHub Copilot app Code review Copilot Memory Hooks Enterprise plugin standards Third-party coding agents Agent apps OpenAI Codex Anthropic Claude Agent skills Enterprise management Cloud and local sandboxes Spark Copilot usage metrics All articles Copilot usage metrics Prompting Prompt engineering Response customization Context MCP Spaces Repository indexing Content exclusion Tools AI tools About Copilot integrations Models Utility models Auto model selection FedRAMP models Base and LTS models Usage limits Billing Billing for individuals Billing for organizations and enterprises Budgets Individual plans Organizations and enterprises Copilot-only enterprises Policies MCP management Network settings New features and models How-tos Copilot on GitHub Set up Copilot Enable Copilot Set up for self Set up for organization Set up for enterprise Set up a dedicated enterprise Set up for students Set up for teac",
+            "fetch_error": ""
+          },
+          {
+            "title": "About GitHub Copilot CLI",
+            "url": "https://docs.github.com/copilot/concepts/agents/about-copilot-cli",
+            "query": "GitHub Copilot CLI custom agent limitations",
+            "provider": "tavily",
+            "score": "0.8194462",
+            "fetched_text": "About GitHub Copilot CLI - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / Concepts / Agents / Copilot CLI / About Copilot CLI Home GitHub Copilot Get started Quickstart What is GitHub Copilot? Plans Features Best practices Enterprise AI governance Concepts Completions Code suggestions Code referencing Chat Agents Cloud agent About cloud agent Agent management Custom agents About automations Access management MCP and cloud agent Risks and mitigations Copilot CLI About Copilot CLI Comparing CLI features Cancel and roll back About remote control Custom agents About CLI plugins Autonomous task completion Parallel task execution Researching with Copilot Session data About rubber duck LSP servers Context management GitHub Copilot app Code review Copilot Memory Hooks Enterprise plugin standards Third-party coding agents Agent apps OpenAI Codex Anthropic Claude Agent skills Enterprise management Cloud and local sandboxes Spark Copilot usage metrics All articles Copilot usage metrics Prompting Prompt engineering Response customization Context MCP Spaces Repository indexing Content exclusion Tools AI tools About Copilot integrations Models Utility models Auto model selection FedRAMP models Base and LTS models Usage limits Billing Billing for individuals Billing for organizations and enterprises Budgets Individual plans Organizations and enterprises Copilot-only enterprises Policies MCP management Network settings New features and models How-tos Copilot on GitHub Set up Copilot Enable Copilot Set up for self Set up for organization Set up for enterprise Set up a dedicated enterprise Set",
+            "fetch_error": ""
+          },
+          {
+            "title": "Multi-Agent Workflow System with Collaborative AI Team for End-to ...",
+            "url": "https://github.com/github/copilot-cli/issues/1389",
+            "query": "GitHub Copilot CLI custom agent team workflow example",
+            "provider": "tavily",
+            "score": "0.8467682",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_collapse_cssom_rules\",\"code_view_shared_line_height\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_di",
+            "fetch_error": ""
+          },
+          {
+            "title": "Power agentic workflows in your terminal with GitHub Copilot CLI - The GitHub Blog",
+            "url": "https://github.blog/ai-and-ml/github-copilot/power-agentic-workflows-in-your-terminal-with-github-copilot-cli",
+            "query": "GitHub Copilot CLI custom agent team workflow example",
+            "provider": "tavily",
+            "score": "0.7348247",
+            "fetched_text": "Power agentic workflows in your terminal with GitHub Copilot CLI - The GitHub Blog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Power agentic workflows in your terminal with GitHub Copilot CLI\",\"author\":{\"@type\":\"Person\",\"name\":\"Dylan Birtolo\"},\"datePublished\":\"2026-01-26T10:54:49-08:00\",\"abstract\":\"Explore the GitHub Copilot CLI and try interacting with Copilot directly from your terminal.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/power-agentic-workflows-in-your-terminal-with-github-copilot-cli\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2025\\/09\\/cli.jpg?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Power agentic workflows in your terminal with GitHub Copilot CLI\",\"author\":{\"@type\":\"Person\",\"name\":\"Dylan Birtolo\"},\"datePublished\":\"2026-01-26T10:54:49-08:00\",\"abstract\":\"Explore the GitHub Copilot CLI and try interacting with Copilot directly from your terminal.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/power-agentic-workflows-in-your-terminal-with-github-copilot-cli\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2025\\/09\\/cli.jpg?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/power-agentic-workflows-in-your-terminal-with-github-copilot-cli\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/power-agentic-workflows-in-your-terminal-with-github-copilot-cli\\/\"},\"author\":[{\"@id\":\"https:\\/\\/github.blog\\/#\\/schema\\/person\\/ee0de3d321b5a1da4182c16f71b3a6a7\"}],\"headline\":\"Power agentic workflows in your terminal with GitHub Copilot CLI\",\"datePublished\":\"2026-01-26T",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：核心事实没有来源：自定义Agent的实际效率提升数据、配置时间成本等关键事实缺乏来源。"
+        },
+        "core_question": "GitHub Copilot CLI 自定义 Agent 是否真的能提升团队开发效率，其成本、配置复杂度和实际效果如何？",
+        "why_this_topic_matters": "Copilot CLI 自定义 Agent 将 AI 从单次提示升级为可复用工作流，可能改变开发习惯，但实际效果和成本尚不明确。",
+        "fact_summary": [
+          "GitHub 于 2026-06-09 发布博客介绍 Copilot CLI 自定义 Agent 功能。",
+          "自定义 Agent 本质是预设的系统提示，可让 CLI 理解技术栈和团队工作流。",
+          "官方文档提供了创建和使用自定义 Agent 的步骤。",
+          "Copilot CLI 支持自定义 Agent、技能、指令等多种配置。",
+          "定价方面：Pro $10/月，Pro+ $39/月，Business $19/用户/月，Enterprise $39/用户/月，额外高级请求 $0.04/次。"
+        ],
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 75,
+          "why_interested": "核心技术人关注效率提升和工具链集成；入门读者可了解新功能；商业读者关注成本和团队生产力。",
+          "reader_risk": "可能高估自定义 Agent 的实际效果，忽略配置复杂度和额外成本。"
+        },
+        "mass_interest_hook": {
+          "score": 60,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "标题暗示 AI 从单次提示升级为工作流，普通人可能好奇 AI 如何自动化重复性任务。",
+          "story_seed": "一个开发者用自定义 Agent 将 10 步部署流程简化为 1 条命令，但配置过程花了 3 天。",
+          "do_not_overhype": "不要声称自定义 Agent 能解决所有问题，实际效果因团队和技术栈而异。"
+        },
+        "timeline": [
+          "2024年底：GitHub 推出 Copilot Chat、CLI 和 Workspace。",
+          "2025年10月：GitHub 宣布 Copilot CLI 支持自定义 Agent 和任务委托。",
+          "2026-01-26：GitHub 博客介绍 Copilot CLI 的 agentic 工作流。",
+          "2026-06-09：GitHub 博客详细说明如何将单次提示转化为工作流。"
+        ],
+        "evidence_table": [
+          {
+            "source": "GitHub Blog - From one-off prompts to workflows",
+            "url": "https://github.blog/ai-and-ml/github-copilot/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli",
+            "supports": "功能发布和基本概念",
+            "reliability": "official"
+          },
+          {
+            "source": "GitHub Docs - About custom agents",
+            "url": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-custom-agents",
+            "supports": "自定义 Agent 的官方定义和概述",
+            "reliability": "official"
+          },
+          {
+            "source": "GitHub Docs - Creating and using custom agents for CLI",
+            "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/create-custom-agents-for-cli",
+            "supports": "配置步骤和权限要求",
+            "reliability": "official"
+          },
+          {
+            "source": "GitHub Docs - Plans for GitHub Copilot",
+            "url": "https://docs.github.com/en/copilot/get-started/plans",
+            "supports": "定价信息",
+            "reliability": "official"
+          },
+          {
+            "source": "Reddit - Difference between skills, instructions, prompts, and custom agents?",
+            "url": "https://www.reddit.com/r/GithubCopilot/comments/1r8pwqx/difference_between_skills_instructions_prompts",
+            "supports": "社区对自定义 Agent 的理解：本质是预设系统提示",
+            "reliability": "weak"
+          },
+          {
+            "source": "GitHub Community Discussion - What differentiates on Custom Agents, Agent Skills and ...",
+            "url": "https://github.com/orgs/community/discussions/183962",
+            "supports": "功能区别讨论",
+            "reliability": "weak"
+          },
+          {
+            "source": "DEV Community - GitHub Copilot Instructions vs Prompts vs Custom Agents vs Skills vs ...",
+            "url": "https://dev.to/pwd9000/github-copilot-instructions-vs-prompts-vs-custom-agents-vs-skills-vs-x-vs-why-339l",
+            "supports": "功能对比分析",
+            "reliability": "media"
+          },
+          {
+            "source": "Jimmy Song Blog - GitHub Copilot CLI Custom Agents",
+            "url": "https://jimmysong.io/blog/github-copilot-cli-custom-agents",
+            "supports": "技术教程和背景介绍",
+            "reliability": "media"
+          },
+          {
+            "source": "UserJot - GitHub Copilot Pricing 2026",
+            "url": "https://userjot.com/blog/github-copilot-pricing-guide-2025",
+            "supports": "定价详情",
+            "reliability": "media"
+          },
+          {
+            "source": "CheckThat.ai - Is GitHub Copilot's Pricing Worth It?",
+            "url": "https://checkthat.ai/brands/github-copilot/pricing",
+            "supports": "定价和竞品对比",
+            "reliability": "media"
+          },
+          {
+            "source": "GitHub Blog - Power agentic workflows in your terminal with GitHub Copilot CLI",
+            "url": "https://github.blog/ai-and-ml/github-copilot/power-agentic-workflows-in-your-terminal-with-github-copilot-cli",
+            "supports": "agentic 工作流介绍",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "部分闭环：功能存在、配置步骤明确、定价清晰，但缺乏实际效率提升数据和团队案例，无法判断是否值得投入。",
+        "writeable_angles": [
+          {
+            "angle": "工具账本：自定义 Agent 的配置成本与收益分析",
+            "why": "帮助读者判断是否值得投入时间配置",
+            "needs": "实际用户反馈、配置时间数据、效率提升案例"
+          },
+          {
+            "angle": "功能对比：自定义 Agent vs 普通提示 vs 竞品 Agent",
+            "why": "帮助读者在多个工具中做选择",
+            "needs": "与 Cursor、Codeium 等竞品的详细对比"
+          },
+          {
+            "angle": "风险避坑：自定义 Agent 的局限性和常见问题",
+            "why": "避免读者过度期待",
+            "needs": "社区反馈中的问题列表、官方限制说明"
+          }
+        ],
+        "missing_basics": [
+          "自定义 Agent 与普通提示的具体效率差异数据",
+          "配置自定义 Agent 的平均时间成本",
+          "是否支持所有主流语言和框架",
+          "团队工作流集成的实际案例"
+        ],
+        "missing_materials": [
+          "至少一个真实团队的使用案例和反馈",
+          "与 Cursor、Codeium 等竞品的功能对比表",
+          "用户社区（Reddit、Hacker News）的讨论和评价"
+        ],
+        "not_claimable": [
+          "自定义 Agent 能显著提升所有团队效率",
+          "配置过程简单无门槛",
+          "无需额外成本"
+        ],
+        "followup_queries": [
+          "GitHub Copilot CLI custom agent review reddit",
+          "GitHub Copilot CLI custom agent vs Cursor agent",
+          "GitHub Copilot CLI custom agent team productivity case study",
+          "GitHub Copilot CLI custom agent limitations",
+          "GitHub Copilot CLI custom agent setup time"
+        ],
+        "additional_search_queries": [
+          "site:reddit.com GitHub Copilot CLI custom agent",
+          "site:news.ycombinator.com GitHub Copilot CLI",
+          "GitHub Copilot CLI custom agent vs regular prompts benchmark",
+          "GitHub Copilot CLI custom agent example workflow"
+        ],
+        "stop_conditions": [
+          "发现自定义 Agent 仅限特定计划（如 Business/Enterprise）",
+          "发现配置复杂度远高于收益的普遍反馈",
+          "发现竞品已提供类似但更易用的功能"
+        ],
+        "confidence": 60.0,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "tool-ledger",
+        "quality_gate": {
+          "pass": false,
+          "score": 60,
+          "fatal_issues": [
+            "核心事实没有来源：自定义Agent的实际效率提升数据、配置时间成本等关键事实缺乏来源。",
+            "成本估算没有公式、单位或边界：定价信息虽列出，但未说明自定义Agent功能是否额外收费或受计划限制。",
+            "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象：虽然列出了primary和secondary layers，但interest_score和why_interested描述笼统，未区分不同读者层的具体需求。",
+            "没有泛兴趣故事钩子，标题和开头只适合技术小圈子：reader_hook和mass_interest_hook的hook_type为“反差”，但story_seed“配置花了3天”可能劝退非技术读者，且整体钩子偏向技术圈。",
+            "没有明确选题结论：推荐或可选：verdict为“可选选题”，但未明确是downgrade_to_brief还是hold。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写：reason和why_this_topic_matters较笼统，未深入分析选题价值与风险。",
+            "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断：selection_dossier虽详细，但部分内容（如timeline、evidence_table）未紧密围绕自定义Agent的具体价值判断。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：logic_closure指出“部分闭环”，但未系统检查所有事实的可靠性和逻辑一致性。",
+            "没有列出基础概念缺口和资料素材缺口：missing_basics和missing_materials已列出，但未评估这些缺口对选题的致命程度。",
+            "没有按具体类型提供资料包：report_type为tool-ledger，但资料包未按工具账本类型组织（如成本、配置、效率对比等）。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来：evidence_count为14，但主要来自GitHub官方和少数社区，缺乏竞品对比和独立评测，源覆盖统计未体现偏科。"
+          ],
+          "warnings": [
+            "reader_hook_ok: false - 钩子偏向技术圈，泛兴趣不足。",
+            "mass_interest_hook_ok: false - 故事种子可能劝退非技术读者。",
+            "topic_direction_ok: true - 方向匹配。",
+            "report_type_ok: true - 类型匹配。",
+            "source_closure_ok: false - 缺乏独立评测和竞品对比。",
+            "downstream_handoff_ok: false - 未提供足够结构化资料供下游使用。",
+            "material_pack_ok: false - 未按工具账本类型组织资料。",
+            "selection_dossier_ok: false - 结论不明确，逻辑未闭环。",
+            "logic_closure_ok: false - 部分闭环，关键事实缺失。",
+            "source_coverage_ok: false - 信息源偏科。"
+          ],
+          "missing_evidence": [
+            "自定义Agent与普通提示的效率对比数据（如时间节省百分比）。",
+            "配置自定义Agent的平均时间成本（小时/天）。",
+            "真实团队使用案例和反馈（非官方博客）。",
+            "与Cursor、Codeium等竞品的详细功能对比。",
+            "用户社区（Reddit、Hacker News）的讨论和评价。",
+            "自定义Agent的局限性（如语言/框架支持、计划限制）。"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "GitHub Copilot CLI 自定义 Agent 是否真的能提升团队开发效率，其成本、配置复杂度和实际效果如何？",
+          "must_verify": [
+            "自定义 Agent 的具体配置步骤和所需权限",
+            "与普通 Copilot CLI 提示相比的实际效率提升数据",
+            "是否支持所有主流编程语言和框架",
+            "团队工作流集成的实际案例和反馈"
+          ],
+          "search_queries": [
+            "GitHub Copilot CLI custom agent setup guide",
+            "GitHub Copilot CLI custom agent vs regular prompts performance",
+            "GitHub Copilot CLI custom agent review",
+            "GitHub Copilot CLI pricing 2025",
+            "GitHub Copilot CLI custom agent limitations",
+            "GitHub Copilot CLI custom agent team workflow example",
+            "GitHub Copilot CLI vs Cursor AI agent comparison",
+            "GitHub Copilot CLI custom agent security concerns"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "GitHub Copilot CLI custom agent documentation",
+              "why_needed": "获取官方配置步骤、权限要求和功能边界"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "GitHub Copilot pricing plans 2025",
+              "why_needed": "确认自定义 Agent 是否包含在现有订阅中，或需要额外付费"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "GitHub Copilot CLI custom agent reddit",
+              "why_needed": "收集真实用户反馈、常见问题和实际效果评价"
+            },
+            {
+              "source_type": "case_study",
+              "query": "GitHub Copilot CLI custom agent team productivity",
+              "why_needed": "寻找团队使用案例和效率提升数据"
+            },
+            {
+              "source_type": "github_repo",
+              "query": "GitHub Copilot CLI custom agent examples",
+              "why_needed": "查看开源示例和社区贡献的配置模板"
+            }
+          ],
+          "expert_challenge_points": [
+            "自定义 Agent 的配置复杂度是否高于其带来的效率提升？",
+            "对于非标准技术栈的团队，自定义 Agent 的适配成本如何？",
+            "与 Cursor、Codeium 等竞品的 Agent 功能相比，Copilot CLI 的优劣势？"
+          ],
+          "do_not_claim_yet": [
+            "自定义 Agent 能显著提升所有团队效率",
+            "配置过程简单无门槛",
+            "无需额外成本"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取实际用户反馈和效率数据，可基于官方文档和社区讨论发布，但需明确标注信息缺口",
+          "downstream_materials_needed": [
+            "官方配置文档截图或步骤",
+            "至少一个真实团队的使用案例",
+            "与竞品的功能对比表"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "About custom agents - GitHub Docs",
+            "url": "https://docs.github.com/en/copilot/concepts/agents/cloud-agent/about-custom-agents",
+            "query": "GitHub Copilot CLI custom agent setup guide",
+            "provider": "tavily",
+            "score": "0.86981434",
+            "fetched_text": "About custom agents - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / Concepts / Agents / Cloud agent / Custom agents Home GitHub Copilot Get started Quickstart What is GitHub Copilot? Plans Features Best practices Enterprise AI governance Concepts Completions Code suggestions Code referencing Chat Agents Cloud agent About cloud agent Agent management Custom agents About automations Access management MCP and cloud agent Risks and mitigations Copilot CLI About Copilot CLI Comparing CLI features Cancel and roll back About remote control Custom agents About CLI plugins Autonomous task completion Parallel task execution Researching with Copilot Session data About rubber duck LSP servers Context management GitHub Copilot app Code review Copilot Memory Hooks Enterprise plugin standards Third-party coding agents Agent apps OpenAI Codex Anthropic Claude Agent skills Enterprise management Cloud and local sandboxes Spark Copilot usage metrics All articles Copilot usage metrics Prompting Prompt engineering Response customization Context MCP Spaces Repository indexing Content exclusion Tools AI tools About Copilot integrations Models Utility models Auto model selection FedRAMP models Base and LTS models Usage limits Billing Billing for individuals Billing for organizations and enterprises Budgets Individual plans Organizations and enterprises Copilot-only enterprises Policies MCP management Network settings New features and models How-tos Copilot on GitHub Set up Copilot Enable Copilot Set up for self Set up for organization Set up for enterprise Set up a dedicated enterprise Set up for s",
+            "fetch_error": ""
+          },
+          {
+            "title": "From one-off prompts to workflows: How to use custom agents in ...",
+            "url": "https://github.blog/ai-and-ml/github-copilot/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli",
+            "query": "GitHub Copilot CLI custom agent setup guide",
+            "provider": "tavily",
+            "score": "0.85216236",
+            "fetched_text": "From one-off prompts to workflows: How to use custom agents in GitHub Copilot CLI - The GitHub Blog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"From one-off prompts to workflows: How to use custom agents in GitHub Copilot CLI\",\"author\":{\"@type\":\"Person\",\"name\":\"Natalie Guevara\"},\"datePublished\":\"2026-06-09T09:00:00-07:00\",\"abstract\":\"Custom agents let GitHub Copilot CLI understand your stack and team workflows, turning one-off terminal prompts into repeatable, reviewable processes.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/01\\/CLIBanner_BlogHeader_01.jpg?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"From one-off prompts to workflows: How to use custom agents in GitHub Copilot CLI\",\"author\":{\"@type\":\"Person\",\"name\":\"Natalie Guevara\"},\"datePublished\":\"2026-06-09T09:00:00-07:00\",\"abstract\":\"Custom agents let GitHub Copilot CLI understand your stack and team workflows, turning one-off terminal prompts into repeatable, reviewable processes.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/01\\/CLIBanner_BlogHeader_01.jpg?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/from-one-off-prompts-to-workflows-how-to-use-custom-agents-in-github-copilot-cli\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/from-one-off",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub Copilot CLI Custom Agents: Building Your Command-Line …",
+            "url": "https://jimmysong.io/blog/github-copilot-cli-custom-agents",
+            "query": "GitHub Copilot CLI custom agent setup guide",
+            "provider": "tavily",
+            "score": "0.8506799",
+            "fetched_text": "(function(){const e=localStorage.getItem(\"sidebarCollapsed\")===\"true\";e&&document.documentElement.classList.add(\"sidebar-collapsed-init\")})() GitHub Copilot CLI Custom Agents: Building Your Command-Line … (function(){try{var t=localStorage.getItem(\"theme\"),n=window.matchMedia(\"(prefers-color-scheme: dark)\").matches,e=t?t===\"dark\":n;document.documentElement.classList.toggle(\"dark-mode\",e),document.documentElement.style.colorScheme=e?\"dark\":\"light\",window.__isDark=e}catch{}})() (function(){try{var n=sessionStorage.getItem(\"topHeaderDismissed\")===\"true\",e=sessionStorage.getItem(\"topHeaderContentHash\"),t=\"cf7f6cad30f4b0c598985b7e799f505f59821e45\";n&&e&&e===t&&document.documentElement.classList.add(\"top-header-dismissed\")}catch{}})() {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/jimmysong.io\\/blog\\/github-copilot-cli-custom-agents\\/\",\"name\":\"GitHub Copilot CLI Custom Agents: Building Your Command-Line AI Assistant\"},\"headline\":\"GitHub Copilot CLI Custom Agents: Building Your Command-Line AI Assistant\",\"description\":\"Learn how to build custom AI assistants with GitHub Copilot CLI Agents to automate tasks, optimize workflows, and boost productivity in your command-line …\",\"articleBody\":\" Make your command line an AI ally, not just a toolbox.\\nBackground: From AI Completion to AI Assistant Since GitHub launched Copilot Chat, CLI, and Workspace at the end of 2024, Copilot has evolved from \\u0026ldquo;intelligent completion\\u0026rdquo; to an \\u0026ldquo;AI Pair Programmer.\\u0026rdquo; In October 2025, GitHub officially announced that Copilot CLI now supports custom Agents and task delegation. This update enables developers to build their own AI assistants in the terminal, allowing Copilot not only to …\",\"identifier\":",
+            "fetch_error": ""
+          },
+          {
+            "title": "Difference between skills, instructions, prompts, and custom agents?",
+            "url": "https://www.reddit.com/r/GithubCopilot/comments/1r8pwqx/difference_between_skills_instructions_prompts",
+            "query": "GitHub Copilot CLI custom agent vs regular prompts performance",
+            "provider": "tavily",
+            "score": "0.7732339",
+            "fetched_text": "Custom agent = Preset of system prompts. It's the same as system prompt, just make it easy for you to choose one.",
+            "fetch_error": "HTTP Error 403: Blocked; used tavily content fallback"
+          },
+          {
+            "title": "What differentiates on Custom Agents, Agent Skills and ... - GitHub",
+            "url": "https://github.com/orgs/community/discussions/183962",
+            "query": "GitHub Copilot CLI custom agent vs regular prompts performance",
+            "provider": "tavily",
+            "score": "0.76554126",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_collapse_cssom_rules\",\"code_view_shared_line_height\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_di",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub Copilot Instructions vs Prompts vs Custom Agents vs Skills vs ...",
+            "url": "https://dev.to/pwd9000/github-copilot-instructions-vs-prompts-vs-custom-agents-vs-skills-vs-x-vs-why-339l",
+            "query": "GitHub Copilot CLI custom agent vs regular prompts performance",
+            "provider": "tavily",
+            "score": "0.7065353",
+            "fetched_text": "GitHub Copilot Instructions vs Prompts vs Custom Agents vs Skills vs X vs WHY? - DEV Community /* ========================================================================== THE 418 CHALLENGE: THEME-AWARE RETRO EDITION ========================================================================== */ .articletag-418challenge { font-family: \"Comic Sans MS\", \"Chalkboard SE\", \"Marker Felt\", sans-serif !important; cursor: crosshair !important; } /* Destroy modern rounded corners and add brutal borders */ .articletag-418challenge .crayons-card, .articletag-418challenge .crayons-article__main, .articletag-418challenge .crayons-article__header { border-radius: 0 !important; margin-bottom: 2rem !important; } /* Typography specifics */ .articletag-418challenge h1, .articletag-418challenge h2, .articletag-418challenge h3 { text-transform: uppercase !important; } /* Fake effect for the main article title */ .articletag-418challenge h1.fs-3xl { animation: retro-slide 5s linear infinite alternate; overflow: visible; } /* Spin those avatars */ .articletag-418challenge .crayons-article__header__meta img { border-radius: 0 !important; animation: retro-spin 5s linear infinite; } /* Obnoxious tags */ .articletag-418challenge .crayons-tag { border-radius: 0 !important; font-weight: 900 !important; transform: rotate(-3deg); display: inline-block; } .articletag-418challenge .crayons-tag:nth-child(even) { transform: rotate(3deg); } /* -------------------------------------------------------------------------- 2. LIGHT THEME (Windows 95 / Office 97 Vibes) -------------------------------------------------------------------------- */ body:not(.dark-theme) .articletag-418challenge { background-color: #008080 !important; /* Win95 Teal Desktop */ } body:not(.dark-theme) .articletag-418challenge .crayons-",
+            "fetch_error": ""
+          },
+          {
+            "title": "Creating and using custom agents for GitHub Copilot CLI",
+            "url": "https://docs.github.com/en/copilot/how-tos/copilot-cli/customize-copilot/create-custom-agents-for-cli",
+            "query": "GitHub Copilot CLI custom agent review",
+            "provider": "tavily",
+            "score": "0.85421735",
+            "fetched_text": "Creating and using custom agents for GitHub Copilot CLI - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / How-tos / Copilot CLI / Customize Copilot CLI / Create custom agents Home GitHub Copilot Get started Quickstart What is GitHub Copilot? Plans Features Best practices Enterprise AI governance Concepts Completions Code suggestions Code referencing Chat Agents Cloud agent About cloud agent Agent management Custom agents About automations Access management MCP and cloud agent Risks and mitigations Copilot CLI About Copilot CLI Comparing CLI features Cancel and roll back About remote control Custom agents About CLI plugins Autonomous task completion Parallel task execution Researching with Copilot Session data About rubber duck LSP servers Context management GitHub Copilot app Code review Copilot Memory Hooks Enterprise plugin standards Third-party coding agents Agent apps OpenAI Codex Anthropic Claude Agent skills Enterprise management Cloud and local sandboxes Spark Copilot usage metrics All articles Copilot usage metrics Prompting Prompt engineering Response customization Context MCP Spaces Repository indexing Content exclusion Tools AI tools About Copilot integrations Models Utility models Auto model selection FedRAMP models Base and LTS models Usage limits Billing Billing for individuals Billing for organizations and enterprises Budgets Individual plans Organizations and enterprises Copilot-only enterprises Policies MCP management Network settings New features and models How-tos Copilot on GitHub Set up Copilot Enable Copilot Set up for self Set up for organization Set up ",
+            "fetch_error": ""
+          },
+          {
+            "title": "How to get a multi-agent code review in Copilot CLI - YouTube",
+            "url": "https://www.youtube.com/watch?v=qRXztN1hi1M&vl=en",
+            "query": "GitHub Copilot CLI custom agent review",
+            "provider": "tavily",
+            "score": "0.6977124",
+            "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260606.02.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub Copilot Pricing 2026: Complete Guide to All 5 Tiers",
+            "url": "https://userjot.com/blog/github-copilot-pricing-guide-2025",
+            "query": "GitHub Copilot CLI pricing 2025",
+            "provider": "tavily",
+            "score": "0.8893851",
+            "fetched_text": "GitHub Copilot Pricing 2026: Complete Guide to All 5 Tiers — UserJot {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"GitHub Copilot Pricing 2026: Complete Guide to All 5 Tiers\",\"description\":\"GitHub Copilot pricing explained: Free vs Pro ($10) vs Pro+ ($39) vs Business vs Enterprise. What each tier includes and why Copilot costs extra.\",\"datePublished\":\"2025-09-07T00:00:00.000Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Shayan Taslim\",\"url\":\"https://userjot.com\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"UserJot\",\"url\":\"https://userjot.com\"},\"image\":\"https://userjot.com/assets/blog/covers/github-copilot-pricing-guide-2025/hidden-underground-1.webp\",\"mainEntityOfPage\":\"https://userjot.com/blog/github-copilot-pricing-guide-2025\",\"articleSection\":\"Engineering\",\"keywords\":\"ai, coding, github, copilot, pricing\"} {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://userjot.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"https://userjot.com/blog\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Engineering\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"GitHub Copilot Pricing 2026: Complete Guide to All 5 Tiers\"}]} UserJot Product Resources Pricing Blog Log in Get started UserJot Feedback, roadmap, and changelog, designed as one loop for product-led teams. Features Customer Feedback Feature Requests Feature Voting Product Roadmap Product Changelog Feedback Widget AI Agents Slack Resources Help Center Documentation API Reference Glossary Tools Product Get Started Pricing Feedback Roadmap Updates Blog Get Help Contact Status Privacy Terms Compare Canny Alternative UserVoice Alternative Nolt Alternative Aha! Alternative Beamer Alternative BugHerd Alternative Productboard Alterna",
+            "fetch_error": ""
+          },
+          {
+            "title": "Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026",
+            "url": "https://checkthat.ai/brands/github-copilot/pricing",
+            "query": "GitHub Copilot CLI pricing 2025",
+            "provider": "tavily",
+            "score": "0.7608822",
+            "fetched_text": "Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026 - GitHub Copilot | CheckThat.ai window.__clerk_publishable_key = \"pk_live_Y2xlcmsuY2hlY2t0aGF0LmFpJA\"; {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Brands\",\"item\":\"https://checkthat.ai/brands\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"GitHub Copilot\",\"item\":\"https://checkthat.ai/brands/github-copilot\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026\",\"item\":\"https://checkthat.ai/brands/github-copilot/pricing\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026\",\"description\":\"GitHub Copilot Pro looks cheap until premium requests, model multipliers, and team seats add up. Plans, $0.04 overages, Business versus Enterprise, versus Cursor, Amazon Q, and Tabnine.\",\"image\":\"https://checkthat-media-files.s3.us-west-1.amazonaws.com/cover-images/cover-image-1768324698075/1768324700911-cover.png\",\"dateModified\":\"2026-04-08T18:39:23Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Kavishka Karunanayake\",\"image\":\"https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvdXBsb2FkZWQvaW1nXzNBbzI1bmxTN2pmaUdIQWdzWGlMdUxiRDRVWSJ9\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"CheckThat.ai\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://checkthat.ai/logo.png\"}},\"url\":\"https://checkthat.ai/brands/github-copilot/pricing\"} Is GitHub Copilot's Pricing Worth It? Total Cost & Competitors 2026 - GitHub Copilot | CheckThat.ai \\n Cost of Plans $0 Free, $10/mo Pro ($100/yr annual), $39/mo Pro+, $19/user/mo Business, $39/user/mo Enterprise (Copilot seat) Cost of Add-Ons Extra premium requests at $0.04 each",
+            "fetch_error": ""
+          },
+          {
+            "title": "Plans for GitHub Copilot",
+            "url": "https://docs.github.com/en/copilot/get-started/plans",
+            "query": "GitHub Copilot CLI pricing 2025",
+            "provider": "tavily",
+            "score": "0.6100127",
+            "fetched_text": "Plans for GitHub Copilot - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / Get started / Plans Home GitHub Copilot Get started Quickstart What is GitHub Copilot? Plans Features Best practices Enterprise AI governance Concepts Completions Code suggestions Code referencing Chat Agents Cloud agent About cloud agent Agent management Custom agents About automations Access management MCP and cloud agent Risks and mitigations Copilot CLI About Copilot CLI Comparing CLI features Cancel and roll back About remote control Custom agents About CLI plugins Autonomous task completion Parallel task execution Researching with Copilot Session data About rubber duck LSP servers Context management GitHub Copilot app Code review Copilot Memory Hooks Enterprise plugin standards Third-party coding agents Agent apps OpenAI Codex Anthropic Claude Agent skills Enterprise management Cloud and local sandboxes Spark Copilot usage metrics All articles Copilot usage metrics Prompting Prompt engineering Response customization Context MCP Spaces Repository indexing Content exclusion Tools AI tools About Copilot integrations Models Utility models Auto model selection FedRAMP models Base and LTS models Usage limits Billing Billing for individuals Billing for organizations and enterprises Budgets Individual plans Organizations and enterprises Copilot-only enterprises Policies MCP management Network settings New features and models How-tos Copilot on GitHub Set up Copilot Enable Copilot Set up for self Set up for organization Set up for enterprise Set up a dedicated enterprise Set up for students Set up for teac",
+            "fetch_error": ""
+          },
+          {
+            "title": "About GitHub Copilot CLI",
+            "url": "https://docs.github.com/copilot/concepts/agents/about-copilot-cli",
+            "query": "GitHub Copilot CLI custom agent limitations",
+            "provider": "tavily",
+            "score": "0.8194462",
+            "fetched_text": "About GitHub Copilot CLI - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Copilot / Concepts / Agents / Copilot CLI / About Copilot CLI Home GitHub Copilot Get started Quickstart What is GitHub Copilot? Plans Features Best practices Enterprise AI governance Concepts Completions Code suggestions Code referencing Chat Agents Cloud agent About cloud agent Agent management Custom agents About automations Access management MCP and cloud agent Risks and mitigations Copilot CLI About Copilot CLI Comparing CLI features Cancel and roll back About remote control Custom agents About CLI plugins Autonomous task completion Parallel task execution Researching with Copilot Session data About rubber duck LSP servers Context management GitHub Copilot app Code review Copilot Memory Hooks Enterprise plugin standards Third-party coding agents Agent apps OpenAI Codex Anthropic Claude Agent skills Enterprise management Cloud and local sandboxes Spark Copilot usage metrics All articles Copilot usage metrics Prompting Prompt engineering Response customization Context MCP Spaces Repository indexing Content exclusion Tools AI tools About Copilot integrations Models Utility models Auto model selection FedRAMP models Base and LTS models Usage limits Billing Billing for individuals Billing for organizations and enterprises Budgets Individual plans Organizations and enterprises Copilot-only enterprises Policies MCP management Network settings New features and models How-tos Copilot on GitHub Set up Copilot Enable Copilot Set up for self Set up for organization Set up for enterprise Set up a dedicated enterprise Set",
+            "fetch_error": ""
+          },
+          {
+            "title": "Multi-Agent Workflow System with Collaborative AI Team for End-to ...",
+            "url": "https://github.com/github/copilot-cli/issues/1389",
+            "query": "GitHub Copilot CLI custom agent team workflow example",
+            "provider": "tavily",
+            "score": "0.8467682",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_collapse_cssom_rules\",\"code_view_shared_line_height\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_di",
+            "fetch_error": ""
+          },
+          {
+            "title": "Power agentic workflows in your terminal with GitHub Copilot CLI - The GitHub Blog",
+            "url": "https://github.blog/ai-and-ml/github-copilot/power-agentic-workflows-in-your-terminal-with-github-copilot-cli",
+            "query": "GitHub Copilot CLI custom agent team workflow example",
+            "provider": "tavily",
+            "score": "0.7348247",
+            "fetched_text": "Power agentic workflows in your terminal with GitHub Copilot CLI - The GitHub Blog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Power agentic workflows in your terminal with GitHub Copilot CLI\",\"author\":{\"@type\":\"Person\",\"name\":\"Dylan Birtolo\"},\"datePublished\":\"2026-01-26T10:54:49-08:00\",\"abstract\":\"Explore the GitHub Copilot CLI and try interacting with Copilot directly from your terminal.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/power-agentic-workflows-in-your-terminal-with-github-copilot-cli\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2025\\/09\\/cli.jpg?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Power agentic workflows in your terminal with GitHub Copilot CLI\",\"author\":{\"@type\":\"Person\",\"name\":\"Dylan Birtolo\"},\"datePublished\":\"2026-01-26T10:54:49-08:00\",\"abstract\":\"Explore the GitHub Copilot CLI and try interacting with Copilot directly from your terminal.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/power-agentic-workflows-in-your-terminal-with-github-copilot-cli\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2025\\/09\\/cli.jpg?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/power-agentic-workflows-in-your-terminal-with-github-copilot-cli\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/github.blog\\/ai-and-ml\\/github-copilot\\/power-agentic-workflows-in-your-terminal-with-github-copilot-cli\\/\"},\"author\":[{\"@id\":\"https:\\/\\/github.blog\\/#\\/schema\\/person\\/ee0de3d321b5a1da4182c16f71b3a6a7\"}],\"headline\":\"Power agentic workflows in your terminal with GitHub Copilot CLI\",\"datePublished\":\"2026-01-26T",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "成本是否真的下降",
+        "免费额度和爆账单风险",
+        "替代方案值不值得换"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "GitHub Copilot CLI 自定义 Agent：从单次提示到可复用工作流 官方公告 价格 成本",
+        "GitHub Copilot CLI 自定义 Agent：从单次提示到可复用工作流 API 文档 额度 限制",
+        "GitHub Copilot CLI 自定义 Agent：从单次提示到可复用工作流 替代方案 真实使用 成本"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
