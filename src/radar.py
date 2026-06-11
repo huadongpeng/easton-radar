@@ -1733,6 +1733,7 @@ def compact_report_seed(report: dict[str, Any]) -> dict[str, Any]:
         "report_type": report.get("report_type", ""),
         "score": report.get("score", 0),
         "reader_hook": report.get("reader_hook", ""),
+        "topic_tension": report.get("topic_tension") or topic_tension(report),
         "why_now": report.get("why_now", ""),
         "reason": report.get("reason", ""),
         "uncertainty_flags": report.get("uncertainty_flags", []),
@@ -1755,6 +1756,7 @@ def fallback_pending_dossier(report: dict[str, Any], reason: str) -> dict[str, A
         "report_type": report.get("report_type", ""),
         "audience_fit": audience_fit(report),
         "mass_interest_hook": mass_interest_hook(report),
+        "topic_tension": topic_tension(report),
         "core_question": f"这条线索是否值得继续做成选题：{title}",
         "why_this_topic_matters": report.get("reader_hook", ""),
         "fact_summary": [
@@ -1843,23 +1845,45 @@ def confidence_score(value: Any) -> float:
     return number
 
 
+def topic_tension_score(value: Any) -> int:
+    try:
+        number = int(float(value))
+    except (TypeError, ValueError):
+        return 0
+    return max(0, min(10, number))
+
+
+def topic_tension_from(dossier: dict[str, Any], report: dict[str, Any]) -> dict[str, Any]:
+    tension = dossier.get("topic_tension", {}) if isinstance(dossier, dict) else {}
+    if not isinstance(tension, dict):
+        tension = {}
+    fallback = topic_tension(report)
+    merged = {**fallback, **{key: value for key, value in tension.items() if value not in (None, "", [])}}
+    merged["score"] = topic_tension_score(merged.get("score", fallback.get("score", 0)))
+    return merged
+
+
 def topic_level(report: dict[str, Any], dossier: dict[str, Any] | None = None) -> str:
     dossier = dossier or report.get("selection_dossier") or report.get("material_pack") or {}
     verdict = dossier.get("verdict", {}) if isinstance(dossier, dict) else {}
     label = str(verdict.get("label") or verdict.get("status") or "").strip()
     if label in {"推荐", "可选"}:
+        if label == "推荐" and topic_tension_from(dossier, report).get("score", 0) < 7:
+            return "可选"
         return label
     score = int(report.get("score", 0) or 0)
     confidence = confidence_score(dossier.get("confidence", 0)) if isinstance(dossier, dict) else 0
     evidence = report.get("evidence_level", "")
     decision = report.get("decision", "")
     quality_gate = dossier.get("quality_gate", {}) if isinstance(dossier, dict) else {}
+    tension = topic_tension_from(dossier, report) if isinstance(dossier, dict) else topic_tension(report)
     gaps = len(report.get("uncertainty_flags", []))
     if (
         decision == "deep_dive"
         and evidence in {"official", "near_source"}
         and score >= 68
         and (confidence >= 62 or quality_gate.get("pass") is True)
+        and tension.get("score", 0) >= 7
         and gaps <= 3
     ):
         return "推荐"
@@ -1875,9 +1899,10 @@ def normalize_selection_dossier(report: dict[str, Any], dossier: dict[str, Any])
     if previous and previous not in {"推荐", "可选"}:
         verdict["previous_label"] = previous
     if not verdict.get("reason"):
-        verdict["reason"] = "证据、人设解读角度和目标读者兴趣较完整，建议优先进入写作框架。" if level == "推荐" else "可以保留为候选选题，写作前需要按缺口继续补证。"
+        verdict["reason"] = "证据、人设解读角度、目标读者兴趣和传播张力较完整，建议优先进入写作框架。" if level == "推荐" else "可以保留为候选选题，写作前需要按缺口继续补证，尤其确认是否有真实冲突点和讨论空间。"
     dossier.setdefault("audience_fit", audience_fit(report))
     dossier.setdefault("mass_interest_hook", mass_interest_hook(report))
+    dossier.setdefault("topic_tension", topic_tension(report))
     return dossier
 
 
@@ -1921,7 +1946,9 @@ def apply_quality_gate(report: dict[str, Any], dossier: dict[str, Any], evidence
         verdict["reason"] = "质量闸调用失败，只保留为可选线索；写作前需要人工复核证据和缺口。"
         return dossier
     dossier["quality_gate"] = data
-    if data.get("pass") is True and data.get("recommendation") == "publish":
+    quality_tension_ok = data.get("topic_tension_ok", True) is not False
+    dossier_tension = topic_tension_from(dossier, report)
+    if data.get("pass") is True and data.get("recommendation") == "publish" and quality_tension_ok and dossier_tension.get("score", 0) >= 7:
         verdict = dossier.setdefault("verdict", {})
         verdict["status"] = "推荐选题"
         verdict["label"] = "推荐"
@@ -1951,11 +1978,12 @@ def compose_topic_dossier(report: dict[str, Any], site: dict[str, Any], policy: 
         "\"core_question\":\"\",\"why_this_topic_matters\":\"\",\"fact_summary\":[],"
         "\"audience_fit\":{\"primary_layer\":\"\",\"secondary_layers\":[],\"interest_score\":0,\"why_interested\":\"\",\"reader_risk\":\"\"},"
         "\"mass_interest_hook\":{\"score\":0,\"hook_type\":\"故事|反差|争议|数字|踩坑|普通人关系\",\"why_non_technical_people_may_click\":\"\",\"story_seed\":\"\",\"do_not_overhype\":\"\"},"
+        "\"topic_tension\":{\"score\":0,\"conflict_point\":\"\",\"debate_question\":\"\",\"stakeholders\":[],\"why_people_would_comment\":\"\",\"traffic_risk\":\"\"},"
         "\"timeline\":[],\"evidence_table\":[{\"source\":\"\",\"url\":\"\",\"supports\":\"\",\"reliability\":\"official|near_source|media|weak\"}],"
         "\"logic_closure\":\"\",\"writeable_angles\":[{\"angle\":\"\",\"why\":\"\",\"needs\":\"\"}],"
         "\"missing_basics\":[],\"missing_materials\":[],\"not_claimable\":[],\"followup_queries\":[],"
         "\"additional_search_queries\":[],\"stop_conditions\":[],\"confidence\":0}。\n"
-        "只有证据较完整、老花人设解读角度清楚、目标读者分层明确、泛兴趣故事钩子不夸张且逻辑可闭环时才写推荐；证据不足但有方向价值时写可选，并把 additional_search_queries 和缺口写清楚。"
+        "只有证据较完整、老花人设解读角度清楚、目标读者分层明确、泛兴趣故事钩子不夸张、传播张力成立且逻辑可闭环时才写推荐；证据不足、缺少真实冲突点或缺少讨论空间时写可选，并把 additional_search_queries 和缺口写清楚。"
     )
     data = deepseek_json(
         [
@@ -2132,6 +2160,7 @@ def audience_fit(report: dict[str, Any]) -> dict[str, Any]:
 def mass_interest_hook(report: dict[str, Any]) -> dict[str, Any]:
     title = display_report_title(report)
     report_type = report.get("report_type", "")
+    tension = topic_tension(report)
     hook_type = "故事"
     if report_type == "risk-warning":
         hook_type = "踩坑"
@@ -2139,14 +2168,61 @@ def mass_interest_hook(report: dict[str, Any]) -> dict[str, Any]:
         hook_type = "数字/规则反差"
     elif report_type in {"opportunity", "case-study"}:
         hook_type = "机会反差"
-    elif report.get("score", 0) >= 70:
+    elif tension.get("score", 0) >= 7:
         hook_type = "争议/反差"
     return {
-        "score": 7 if report.get("evidence_level") in {"official", "near_source"} else 5,
+        "score": max(4, min(10, tension.get("score", 0))),
         "hook_type": hook_type,
-        "why_non_technical_people_may_click": "它能被讲成一个普通人也看得懂的冲突：看起来是技术新闻，背后其实是钱、规则、门槛、风险或机会变化。",
+        "why_non_technical_people_may_click": tension.get("why_people_would_comment") or "它需要先找到普通人也看得懂的冲突：钱、规则、门槛、风险或机会变化，否则只适合作为专业沉淀。",
         "story_seed": f"{title} 背后真正值得看的，不只是技术本身，而是谁会受影响、谁可能踩坑、谁又可能误判。",
         "do_not_overhype": "标题和开头可以有故事感，但不能把线索写成确定机会、不能制造恐慌，必须用来源和证据接住。",
+    }
+
+
+def topic_tension(report: dict[str, Any]) -> dict[str, Any]:
+    title = display_report_title(report)
+    text = f"{title} {report.get('summary', '')} {report.get('reader_hook', '')}".lower()
+    report_type = report.get("report_type", "")
+    signal_groups = {
+        "money": ["price", "pricing", "cost", "bill", "revenue", "mrr", "token", "adsense", "价格", "成本", "账单", "收入", "涨价", "免费", "付费", "流量主"],
+        "rules": ["policy", "rule", "compliance", "ban", "search", "seo", "license", "terms", "规则", "合规", "封号", "搜索", "流量", "协议"],
+        "risk": ["risk", "scam", "lawsuit", "warning", "failed", "风险", "骗局", "踩坑", "翻车", "失败", "避坑"],
+        "people": ["developer", "founder", "user", "creator", "程序员", "开发者", "小团队", "独立开发", "普通人", "新人"],
+        "contrast": ["but", "however", "vs", "against", "反而", "但是", "争议", "反差", "冲突", "没想到", "看起来"],
+    }
+    matched = {name: [word for word in words if word in text] for name, words in signal_groups.items()}
+    matched = {name: words[:4] for name, words in matched.items() if words}
+    base = 3 + min(len(matched), 4)
+    if report_type in {"tool-ledger", "platform-rules", "risk-warning", "opportunity", "case-study"}:
+        base += 1
+    if report.get("evidence_level") in {"official", "near_source"}:
+        base += 1
+    if {"money", "rules"} & set(matched) and {"risk", "people", "contrast"} & set(matched):
+        base += 1
+    score = max(3, min(10, base))
+    if "rules" in matched:
+        conflict = "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。"
+        debate = "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？"
+    elif "money" in matched:
+        conflict = "表面价格、额度或收益预期和真实成本之间的冲突。"
+        debate = "这笔账普通技术人还能不能算得过来，还是只适合少数人？"
+    elif "risk" in matched:
+        conflict = "看起来有机会的路径和实际风险、合规边界之间的冲突。"
+        debate = "这是值得试的小机会，还是又一个容易被包装的话术？"
+    elif "people" in matched and "contrast" in matched:
+        conflict = "不同人群对同一件事的预期和实际结果之间有反差。"
+        debate = "这类变化到底利好谁，又会让谁误判？"
+    else:
+        conflict = ""
+        debate = ""
+        score = min(score, 5)
+    return {
+        "score": score,
+        "conflict_point": conflict,
+        "debate_question": debate,
+        "stakeholders": ["普通技术人", "小团队/独立开发者", "平台/工具厂商"],
+        "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。" if score >= 7 else "",
+        "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。" if score < 7 else "有讨论空间，但标题不能夸大，必须用证据接住冲突。",
     }
 
 
@@ -2296,17 +2372,18 @@ def selection_verdict(report: dict[str, Any]) -> dict[str, str]:
     evidence = report.get("evidence_level", "")
     decision = report.get("decision", "")
     gaps = len(report.get("uncertainty_flags", []))
-    if decision == "deep_dive" and evidence in {"official", "near_source"} and score >= 68 and gaps <= 3:
+    tension = topic_tension(report)
+    if decision == "deep_dive" and evidence in {"official", "near_source"} and score >= 68 and gaps <= 3 and tension["score"] >= 7:
         return {
             "status": "推荐选题",
             "label": "推荐",
-            "reason": "当前线索有明确来源、人设解读角度、目标读者兴趣和分析空间，建议优先进入写作框架。",
+            "reason": "当前线索有明确来源、人设解读角度、目标读者兴趣、传播张力和分析空间，建议优先进入写作框架。",
         }
     if decision != "skip" and score >= MIN_BRIEF_SCORE:
         return {
             "status": "可选选题",
             "label": "可选",
-            "reason": "线索有方向价值，但事实、概念、案例或成本材料还需要继续补证。",
+            "reason": "线索有方向价值，但事实、概念、案例、成本材料或传播张力还需要继续补证。",
         }
     return {
         "status": "可选选题",
@@ -2328,6 +2405,7 @@ def selection_dossier(report: dict[str, Any]) -> dict[str, Any]:
     title = display_report_title(report)
     audience = audience_fit(report)
     mass_hook = mass_interest_hook(report)
+    tension = topic_tension(report)
     fact_status = "基本清楚" if original_title and report.get("url") else "事实入口不足"
     summary_status = "有摘要" if summary else "缺少原文摘要"
     closure = [
@@ -2340,6 +2418,11 @@ def selection_dossier(report: dict[str, Any]) -> dict[str, Any]:
             "node": "人设解读角度是否成立",
             "status": "初步成立" if report.get("reader_hook") else "缺判断",
             "note": report.get("reader_hook", ""),
+        },
+        {
+            "node": "传播张力是否成立",
+            "status": "初步成立" if tension["score"] >= 7 else "不足，需要补冲突点",
+            "note": tension["conflict_point"] or tension["traffic_risk"],
         },
         {
             "node": "事实是否清楚",
@@ -2360,10 +2443,12 @@ def selection_dossier(report: dict[str, Any]) -> dict[str, Any]:
         "report_type": report.get("report_type", ""),
         "audience_fit": audience,
         "mass_interest_hook": mass_hook,
+        "topic_tension": tension,
         "core_question": f"这条线索能不能成为一个值得老花继续写的选题：{title}",
         "human_judgment_path": [
             "先确认这件事是不是真的发生，而不是只看标题兴奋。",
             "再确认泛兴趣普通人能不能从故事、反差、数字、踩坑或普通人关系进入。",
+            "再确认是否有真实传播张力：冲突点、讨论点、利益拉扯、身份代入或读者愿意评论的问题。",
             "再确认它是否符合老花人设：能不能用技术人视角解释机会、成本、规则、坑或工具变化。",
             "然后确认主要服务哪层读者，不能把所有人都当成同一个读者。",
             "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
@@ -2376,6 +2461,8 @@ def selection_dossier(report: dict[str, Any]) -> dict[str, Any]:
         "topic_value_assessment": [
             {"question": "这是什么？", "judgment": original_title or title},
             {"question": "普通人为什么可能点进来？", "judgment": mass_hook["why_non_technical_people_may_click"]},
+            {"question": "这篇有什么冲突点或讨论点？", "judgment": tension["conflict_point"] or tension["traffic_risk"]},
+            {"question": "读者为什么愿意评论？", "judgment": tension["why_people_would_comment"] or "当前还缺少可评论的公共问题。"},
             {"question": "老花可以从什么角度解读？", "judgment": report.get("reader_hook", "暂无明确人设解读角度")},
             {"question": "主要服务哪层读者？", "judgment": f"{audience['primary_layer']}；兴趣 {audience['interest_score']}/10"},
             {"question": "为什么现在看？", "judgment": report.get("why_now", "暂无明确时间价值")},
@@ -2412,6 +2499,7 @@ def selection_dossier(report: dict[str, Any]) -> dict[str, Any]:
         "stop_conditions": [
             "找不到一手来源或近源证据。",
             "无法说明老花能从什么角度解读，以及目标读者为什么会关心。",
+            "找不到真实冲突点、讨论点或利益拉扯，只能写成专业介绍。",
             "关键概念、成本、合规、收益或影响对象说不清。",
             "逻辑必须靠想象补齐，写出来只会像假大空。",
         ],
@@ -2453,6 +2541,13 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
         "report_type_title": report_type_meta["title"],
         "score": decision.score,
         "reader_hook": decision.reader_hook,
+        "topic_tension": topic_tension({
+            "title": decision.report_title,
+            "summary": item.summary,
+            "reader_hook": decision.reader_hook,
+            "report_type": decision.report_type,
+            "evidence_level": decision.evidence_level,
+        }),
         "why_now": decision.why_now,
         "evidence_level": decision.evidence_level,
         "source_priority": source_priority(item, decision.evidence_level),
