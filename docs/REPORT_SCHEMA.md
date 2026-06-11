@@ -19,6 +19,20 @@
   "score": 86,
   "evidence_level": "official",
   "reader_hook": "老花可以从技术人账本角度拆：用 API 做副业工具或内部自动化的人，需要重新算账。目标读者兴趣：高。",
+  "audience_fit": {
+    "primary_layer": "核心技术人",
+    "secondary_layers": ["高价值商业读者", "泛兴趣普通人"],
+    "interest_score": 8,
+    "why_interested": "影响 API 成本、工具链选择和小团队验证成本。",
+    "reader_risk": "如果只复述模型能力，会变成泛 AI 新闻；必须落到账本和工作流。"
+  },
+  "mass_interest_hook": {
+    "score": 7,
+    "hook_type": "数字/规则反差",
+    "why_non_technical_people_may_click": "普通人不懂 API，也能理解账单、规则和隐藏成本。",
+    "story_seed": "看起来是一次价格更新，真正值得看的是小团队会不会被另一笔账卡住。",
+    "do_not_overhype": "不能写成所有团队都会省钱或赚钱。"
+  },
   "why_now": "官方价格页刚更新，可能影响模型选型和成本结构。",
   "collection_fit": "符合收集原则：来源可复查，且具备进入「工具账本」类报告的分析价值。",
   "investigation_direction": "优先追价格页、额度、API 文档、替代方案和实际成本边界。",
@@ -113,7 +127,9 @@
 - `original_title`：原始来源标题。
 - `source_category`：内部数据源分类，表示线索来自哪类源。
 - `evidence_level`：证据等级，不等于可信结论。
-- `reader_hook`：兼容旧字段名，实际语义是“符合老花人设的解读角度 + 目标读者兴趣理由”，不能写成泛泛的大众化钩子。
+- `reader_hook`：兼容旧字段名，实际语义是“符合老花人设的解读角度 + 目标读者兴趣理由”，不能写成空泛标题钩子。
+- `audience_fit`：读者分层匹配，说明主要服务哪层读者、次要触达哪层读者、兴趣分和风险。
+- `mass_interest_hook`：泛兴趣故事钩子，说明不懂技术的普通人为什么可能被标题吸引，以及不能夸大的边界。
 - `collection_fit`：先判断它是否符合信息收集原则。
 - `investigation_direction`：粗略说明后续应该沿什么方向深挖。
 - `uncertainty_flags`：没有证据、证据弱或仍存疑的地方。

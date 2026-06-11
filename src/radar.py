@@ -1725,6 +1725,8 @@ def fallback_pending_dossier(report: dict[str, Any], reason: str) -> dict[str, A
         "topic_direction": report.get("topic_direction", ""),
         "topic_direction_title": report.get("topic_direction_title", ""),
         "report_type": report.get("report_type", ""),
+        "audience_fit": audience_fit(report),
+        "mass_interest_hook": mass_interest_hook(report),
         "core_question": f"这条线索是否值得继续做成选题：{title}",
         "why_this_topic_matters": report.get("reader_hook", ""),
         "fact_summary": [
@@ -1846,6 +1848,8 @@ def normalize_selection_dossier(report: dict[str, Any], dossier: dict[str, Any])
         verdict["previous_label"] = previous
     if not verdict.get("reason"):
         verdict["reason"] = "证据、人设解读角度和目标读者兴趣较完整，建议优先进入写作框架。" if level == "推荐" else "可以保留为候选选题，写作前需要按缺口继续补证。"
+    dossier.setdefault("audience_fit", audience_fit(report))
+    dossier.setdefault("mass_interest_hook", mass_interest_hook(report))
     return dossier
 
 
@@ -1917,11 +1921,13 @@ def compose_topic_dossier(report: dict[str, Any], site: dict[str, Any], policy: 
         "请只输出 JSON：{\"schema\":\"topic-selection-dossier-v3\",\"generated_by\":\"deepseek\","
         "\"verdict\":{\"status\":\"推荐选题|可选选题\",\"label\":\"推荐|可选\",\"reason\":\"\"},"
         "\"core_question\":\"\",\"why_this_topic_matters\":\"\",\"fact_summary\":[],"
+        "\"audience_fit\":{\"primary_layer\":\"\",\"secondary_layers\":[],\"interest_score\":0,\"why_interested\":\"\",\"reader_risk\":\"\"},"
+        "\"mass_interest_hook\":{\"score\":0,\"hook_type\":\"故事|反差|争议|数字|踩坑|普通人关系\",\"why_non_technical_people_may_click\":\"\",\"story_seed\":\"\",\"do_not_overhype\":\"\"},"
         "\"timeline\":[],\"evidence_table\":[{\"source\":\"\",\"url\":\"\",\"supports\":\"\",\"reliability\":\"official|near_source|media|weak\"}],"
         "\"logic_closure\":\"\",\"writeable_angles\":[{\"angle\":\"\",\"why\":\"\",\"needs\":\"\"}],"
         "\"missing_basics\":[],\"missing_materials\":[],\"not_claimable\":[],\"followup_queries\":[],"
         "\"additional_search_queries\":[],\"stop_conditions\":[],\"confidence\":0}。\n"
-        "只有证据较完整、老花人设解读角度清楚、目标读者兴趣明确、逻辑可闭环时才写推荐；证据不足但有方向价值时写可选，并把 additional_search_queries 和缺口写清楚。"
+        "只有证据较完整、老花人设解读角度清楚、目标读者分层明确、泛兴趣故事钩子不夸张且逻辑可闭环时才写推荐；证据不足但有方向价值时写可选，并把 additional_search_queries 和缺口写清楚。"
     )
     data = deepseek_json(
         [
@@ -2059,6 +2065,63 @@ def material_dimensions(template: str) -> list[dict[str, str]]:
     return [{"name": name, "how_to_use": how} for name, how in templates.get(template, templates["general_investigation"])]
 
 
+def audience_fit(report: dict[str, Any]) -> dict[str, Any]:
+    topic = report.get("topic_direction", "")
+    report_type = report.get("report_type", "")
+    score = int(report.get("score", 0) or 0)
+    layers = {
+        "mass-interest": "泛兴趣普通人",
+        "starter": "学生/新人/1-5年入门读者",
+        "core-tech": "核心技术人",
+        "commercial": "独立开发/出海/SEO/SaaS 高价值读者",
+        "side-hustle": "想副业但技术能力有限的人",
+        "mid-career": "30+/35岁焦虑的 IT 打工人",
+    }
+    primary = "core-tech"
+    secondary = ["mass-interest"]
+    if topic == "cross-border":
+        primary = "commercial"
+        secondary = ["core-tech", "side-hustle", "mass-interest"]
+    elif topic == "side-info":
+        primary = "side-hustle" if report_type in {"opportunity", "risk-warning"} else "commercial"
+        secondary = ["core-tech", "mid-career", "mass-interest"]
+    elif topic == "tools-rules":
+        primary = "core-tech"
+        secondary = ["commercial", "side-hustle", "mass-interest"]
+    elif topic == "ai-frontier":
+        primary = "core-tech"
+        secondary = ["starter", "mid-career", "mass-interest"]
+    interest_score = max(4, min(10, round(score / 12) + (2 if report.get("evidence_level") in {"official", "near_source"} else 0)))
+    return {
+        "primary_layer": layers[primary],
+        "secondary_layers": [layers[key] for key in secondary],
+        "interest_score": interest_score,
+        "why_interested": report.get("reader_hook", ""),
+        "reader_risk": "如果只复述新闻或产品功能，会失去普通读者；必须落到故事冲突、成本、门槛、规则、坑或机会。",
+    }
+
+
+def mass_interest_hook(report: dict[str, Any]) -> dict[str, Any]:
+    title = display_report_title(report)
+    report_type = report.get("report_type", "")
+    hook_type = "故事"
+    if report_type == "risk-warning":
+        hook_type = "踩坑"
+    elif report_type in {"tool-ledger", "platform-rules"}:
+        hook_type = "数字/规则反差"
+    elif report_type in {"opportunity", "case-study"}:
+        hook_type = "机会反差"
+    elif report.get("score", 0) >= 70:
+        hook_type = "争议/反差"
+    return {
+        "score": 7 if report.get("evidence_level") in {"official", "near_source"} else 5,
+        "hook_type": hook_type,
+        "why_non_technical_people_may_click": "它能被讲成一个普通人也看得懂的冲突：看起来是技术新闻，背后其实是钱、规则、门槛、风险或机会变化。",
+        "story_seed": f"{title} 背后真正值得看的，不只是技术本身，而是谁会受影响、谁可能踩坑、谁又可能误判。",
+        "do_not_overhype": "标题和开头可以有故事感，但不能把线索写成确定机会、不能制造恐慌，必须用来源和证据接住。",
+    }
+
+
 def material_pack(report: dict[str, Any]) -> dict[str, Any]:
     template = report_template_key(report)
     original_title = report.get("original_title", "")
@@ -2079,11 +2142,15 @@ def material_pack(report: dict[str, Any]) -> dict[str, Any]:
         }
     ]
     title = display_report_title(report)
+    audience = audience_fit(report)
+    mass_hook = mass_interest_hook(report)
     return {
         "template": template,
         "topic_direction": report.get("topic_direction", ""),
         "topic_direction_title": report.get("topic_direction_title", ""),
         "report_type": report.get("report_type", ""),
+        "audience_fit": audience,
+        "mass_interest_hook": mass_hook,
         "must_answer": [d["name"] for d in material_dimensions(template)],
         "timeline": timeline,
         "fact_sheet": [
@@ -2097,16 +2164,20 @@ def material_pack(report: dict[str, Any]) -> dict[str, Any]:
         "writing_materials": {
             "title_seeds": [
                 title,
+                mass_hook["story_seed"],
                 f"{title}，和普通技术人有什么关系",
                 f"{title}：机会、成本和风险先拆清楚",
             ],
             "reader_questions": [
+                f"泛兴趣读者为什么会点：{mass_hook['why_non_technical_people_may_click']}",
+                f"主要服务哪层读者：{audience['primary_layer']}，兴趣 {audience['interest_score']}/10",
                 "这事和我有什么关系？",
                 "它到底改变了什么，还是只是包装换了个名字？",
                 "如果我只是懂一点技术，能不能低成本验证？",
                 "最大的坑是技术，还是流量、合规、成本、回款和交付？",
             ],
             "opening_hooks": [
+                mass_hook["story_seed"],
                 f"今天这条线索看起来是 {report.get('report_type_title', '报告')}，但我更关心它能不能成为一个真正有用的选题。",
                 "先别急着下结论，咱们还是先看来源、证据和利益关系。",
             ],
@@ -2227,6 +2298,8 @@ def selection_dossier(report: dict[str, Any]) -> dict[str, Any]:
     do_not_claim = (report.get("verification", {}) or {}).get("do_not_claim", [])
     original_title = report.get("original_title", "")
     title = display_report_title(report)
+    audience = audience_fit(report)
+    mass_hook = mass_interest_hook(report)
     fact_status = "基本清楚" if original_title and report.get("url") else "事实入口不足"
     summary_status = "有摘要" if summary else "缺少原文摘要"
     closure = [
@@ -2247,7 +2320,7 @@ def selection_dossier(report: dict[str, Any]) -> dict[str, Any]:
         },
         {
             "node": "材料是否足够写正文",
-            "status": "不足，需要补证" if verdict["label"] != "可选" else "可以继续扩写",
+            "status": "建议优先扩写" if verdict["label"] == "推荐" else "可选，需要补证",
             "note": "Radar 只负责给出选题档案，不在证据不足时强行生成公众号正文。",
         },
     ]
@@ -2257,10 +2330,14 @@ def selection_dossier(report: dict[str, Any]) -> dict[str, Any]:
         "topic_direction": topic_key,
         "topic_direction_title": report.get("topic_direction_title", ""),
         "report_type": report.get("report_type", ""),
+        "audience_fit": audience,
+        "mass_interest_hook": mass_hook,
         "core_question": f"这条线索能不能成为一个值得老花继续写的选题：{title}",
         "human_judgment_path": [
             "先确认这件事是不是真的发生，而不是只看标题兴奋。",
+            "再确认泛兴趣普通人能不能从故事、反差、数字、踩坑或普通人关系进入。",
             "再确认它是否符合老花人设：能不能用技术人视角解释机会、成本、规则、坑或工具变化。",
+            "然后确认主要服务哪层读者，不能把所有人都当成同一个读者。",
             "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
             "再看逻辑是否闭环：事实、原因、影响、边界、可写角度能不能连起来。",
             "最后决定：推荐或可选，而不是把所有线索都写成同一套报告。",
@@ -2270,7 +2347,9 @@ def selection_dossier(report: dict[str, Any]) -> dict[str, Any]:
         "reject_signals": rules["reject_signals"],
         "topic_value_assessment": [
             {"question": "这是什么？", "judgment": original_title or title},
+            {"question": "普通人为什么可能点进来？", "judgment": mass_hook["why_non_technical_people_may_click"]},
             {"question": "老花可以从什么角度解读？", "judgment": report.get("reader_hook", "暂无明确人设解读角度")},
+            {"question": "主要服务哪层读者？", "judgment": f"{audience['primary_layer']}；兴趣 {audience['interest_score']}/10"},
             {"question": "为什么现在看？", "judgment": report.get("why_now", "暂无明确时间价值")},
             {"question": "事实清楚吗？", "judgment": fact_status},
             {"question": "材料可靠吗？", "judgment": f"当前证据等级：{evidence}"},
