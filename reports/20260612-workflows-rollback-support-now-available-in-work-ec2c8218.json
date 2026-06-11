@@ -1,0 +1,1108 @@
+{
+  "id": "20260612-workflows-rollback-support-now-available-in-work-ec2c8218",
+  "batch_id": "2026-06-12-morning",
+  "title": "深度调查：Cloudflare 重要线索",
+  "original_title": "Workflows - Rollback support now available in Workflows",
+  "url": "https://developers.cloudflare.com/changelog/post/2026-06-05-saga-rollbacks/",
+  "summary": "Workflows now supports saga-style rollbacks, allowing you to add compensating logic to each step.do() in case of downstream failures. If the instance fails, the rollback handlers will execute in reverse step-start order. This is useful for multi-step operations that touch external systems, such as inventory reservations, payment authorization, ticket creation, or infrastructure provisioning. Instead of writing all cleanup logic in a top-level catch , you can keep each compensating action next to the step it undoes. Rollback handlers support their own retry and timeout configuration, and Workflows now exposes rollback outcomes in instance status responses. Workflows analytics also emits rollback lifecycle events, making it easier to distinguish a forward execution failure from a rollback failure when debugging production workflows. JavaScript await step . do ( \"provision resource\" , async",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "cross-border",
+  "topic_direction_title": "跨境&出海",
+  "topic_direction_short_title": "跨境&出海",
+  "topic_direction_description": "跨境支付、海外平台、独立站、电商、合规、收款和出海基础设施。重点看普通技术人有没有能理解、能验证、能低成本试错的切入口。",
+  "source_name": "Cloudflare Developers",
+  "original_source_name": "Cloudflare changelogs | Developer platform",
+  "source_type": "rss",
+  "feed_url": "https://developers.cloudflare.com/changelog/rss/developer-platform.xml",
+  "published_at": "2026-06-05T15:00:00+00:00",
+  "fetched_at": "2026-06-11T22:19:55.682081+00:00",
+  "decision": "brief",
+  "report_type": "investigation",
+  "report_type_title": "深度调查",
+  "score": 42,
+  "reader_hook": "需要继续确认它是否符合老花的人设主线，以及目标读者会不会关心其中的成本、岗位、工具链或机会变化。",
+  "topic_tension": {
+    "score": 5,
+    "conflict_point": "表面价格、额度或收益预期和真实成本之间的冲突。",
+    "debate_question": "这笔账普通技术人还能不能算得过来，还是只适合少数人？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "",
+    "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+  },
+  "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "命中老花主线关键词，且来源可复查。",
+  "collection_fit": "部分符合收集原则：可以进入可选池，但证据链、人设解读角度或目标读者兴趣还不够完整。",
+  "investigation_direction": "优先追一手来源、概念定义、时间线、证据矛盾和可能影响面。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。",
+    "当前仅适合观察，不宜写成深度结论。"
+  ],
+  "facts": [
+    {
+      "claim": "Cloudflare Developers 发布/收录了这条原始线索：Workflows - Rollback support now available in Workflows",
+      "type": "confirmed_fact",
+      "source_url": "https://developers.cloudflare.com/changelog/post/2026-06-05-saga-rollbacks/",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Cloudflare Developers",
+      "url": "https://developers.cloudflare.com/changelog/post/2026-06-05-saga-rollbacks/",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "money": [
+        "payment"
+      ],
+      "ai": [
+        "ai"
+      ]
+    },
+    "source_host": "developers.cloudflare.com",
+    "source_type": "rss",
+    "heuristic": true
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "需要继续确认它是否符合老花的人设主线，以及目标读者会不会关心其中的成本、岗位、工具链或机会变化。",
+    "fit_for_radar": false
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://developers.cloudflare.com/changelog/rss/developer-platform.xml",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。",
+      "当前仅适合观察，不宜写成深度结论。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：核心事实没有来源：定价、免费额度、用户反馈等关键信息缺失，且补证搜索结果为0。"
+    },
+    "core_question": "Cloudflare Workflows 的回滚支持对普通技术人/小团队的开发成本、运维复杂度、工具链选择有何实际影响？",
+    "why_this_topic_matters": "Cloudflare 在边缘计算和工作流领域持续加码，回滚功能是生产级工作流的关键特性。如果定价合理，可能成为 AWS Step Functions 的轻量替代，影响小团队的技术选型。",
+    "fact_summary": [
+      "Cloudflare Workflows 新增 saga 风格回滚支持，允许为每个 step.do() 添加补偿逻辑。",
+      "回滚按反向顺序执行，支持独立的重试和超时配置。",
+      "Workflows 分析仪表板会发出回滚生命周期事件。",
+      "官方文档已更新，但定价、免费额度、执行时长限制等关键信息未在 changelog 中提及。"
+    ],
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 65,
+      "why_interested": "核心技术人关注工作流引擎的演进和成本；入门读者可了解边缘工作流概念；商业读者评估技术选型风险。",
+      "reader_risk": "缺乏定价和用户反馈，容易导致过早下结论或误导选型。"
+    },
+    "mass_interest_hook": {
+      "score": 30,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "标题如“Cloudflare 悄悄上线了一个让 AWS 紧张的功能”可能吸引泛兴趣读者，但内容偏技术，点击率可能不高。",
+      "story_seed": "一个小团队用 Workflows 替代了昂贵的 AWS Step Functions，成本降低 80%？但需要验证。",
+      "do_not_overhype": "不能声称“更便宜”或“杀手级”，除非有定价和用户数据支撑。"
+    },
+    "topic_tension": {
+      "score": 40,
+      "conflict_point": "Cloudflare Workflows 的易用性和成本 vs AWS Step Functions 的成熟度和生态。",
+      "debate_question": "边缘工作流是否真的适合生产级多步骤操作？回滚功能是否足够可靠？",
+      "stakeholders": [
+        "Cloudflare",
+        "AWS",
+        "Temporal",
+        "Inngest",
+        "小团队/独立开发者"
+      ],
+      "why_people_would_comment": "开发者会争论 Workflows 是否真的能替代 Step Functions，以及回滚实现是否优雅。",
+      "traffic_risk": "话题偏技术，传播范围有限；需要真实冲突或数据对比才能引发讨论。"
+    },
+    "timeline": [
+      "2026-06-05: Cloudflare 发布 Workflows 回滚支持 changelog"
+    ],
+    "evidence_table": [
+      {
+        "source": "Cloudflare Developers Changelog",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-06-05-saga-rollbacks/",
+        "supports": "回滚功能已发布，支持 saga 模式、独立重试和超时、分析事件。",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "不完整。缺少定价、用户反馈、竞品对比，无法判断实际价值。",
+    "writeable_angles": [
+      {
+        "angle": "功能解读：Cloudflare Workflows 回滚是什么、怎么用、适合什么场景",
+        "why": "满足技术读者了解新功能的需求，门槛低。",
+        "needs": "官方文档、示例代码、定价信息。"
+      },
+      {
+        "angle": "成本对比：Cloudflare Workflows vs AWS Step Functions vs Temporal",
+        "why": "高价值商业读者和核心技术人最关心成本。",
+        "needs": "各平台定价页、免费额度、执行时长限制。"
+      },
+      {
+        "angle": "真实用户反馈：Workflows 在生产环境中的表现",
+        "why": "验证功能是否实用，避免纸上谈兵。",
+        "needs": "Reddit、HN、Twitter 上的用户评价。"
+      }
+    ],
+    "missing_basics": [
+      "Cloudflare Workflows 的定价模型（按执行次数、时长、存储？）",
+      "免费额度是多少？",
+      "回滚功能是否额外收费？",
+      "Workflows 的执行时长限制和重试策略",
+      "与 Durable Objects、Queues、R2 的集成成本"
+    ],
+    "missing_materials": [
+      "至少一个真实用户的使用评价（正面或负面）",
+      "与 AWS Step Functions 的简单成本对比表",
+      "一个简单的回滚示例代码（用于说明复杂度）",
+      "Cloudflare Workflows 定价页截图或文字版",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "Workflows 是更便宜的选择",
+      "回滚功能是杀手级特性",
+      "适合所有多步骤操作",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "Cloudflare Workflows 定价页在哪里？",
+      "是否有开发者社区讨论 Workflows 回滚？",
+      "AWS Step Functions 的定价如何？",
+      "Temporal 的定价和易用性如何？"
+    ],
+    "additional_search_queries": [
+      "Cloudflare Workflows pricing per execution",
+      "Cloudflare Workflows rollback cost",
+      "Cloudflare Workflows vs AWS Step Functions pricing",
+      "Cloudflare Workflows review developer experience",
+      "Cloudflare Workflows rollback example",
+      "Cloudflare Workflows limitations",
+      "Cloudflare Workers pricing 2025",
+      "Cloudflare Workflows community feedback"
+    ],
+    "stop_conditions": [
+      "如果 Cloudflare 未公开定价或免费额度，则无法进行成本分析。",
+      "如果社区反馈极少或负面，则不宜推荐。",
+      "如果竞品对比显示 Workflows 无明显优势，则选题价值降低。"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "cross-border",
+    "topic_direction_title": "跨境&出海",
+    "report_type": "investigation",
+    "quality_gate": {
+      "pass": false,
+      "score": 30,
+      "fatal_issues": [
+        "核心事实没有来源：定价、免费额度、用户反馈等关键信息缺失，且补证搜索结果为0。",
+        "没有明确归入实际选题方向：虽然标注为跨境&出海，但内容与跨境出海无直接关联。",
+        "没有明确选题结论：dossier中verdict为可选，但未给出publish/downgrade_to_brief/hold的明确结论。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：逻辑不完整，缺少定价、用户反馈、竞品对比。",
+        "没有列出基础概念缺口和资料素材缺口：已列出但未解决。",
+        "没有按具体类型提供资料包：缺少定价页、用户评价、成本对比表等。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来：仅有一个官方源，无其他来源。"
+      ],
+      "warnings": [
+        "泛兴趣钩子过度标题党风险：标题可能夸大，但正文证据接不住。",
+        "没有真实传播张力：冲突点和讨论点不够明确，traffic_risk指出传播张力不足。",
+        "只有专业价值，没有话题性和公共讨论空间，却仍然标成推荐选题：dossier中verdict为可选，但未明确降级。"
+      ],
+      "missing_evidence": [
+        "Cloudflare Workflows定价模型",
+        "免费额度",
+        "回滚功能是否额外收费",
+        "执行时长限制和重试策略",
+        "与Durable Objects、Queues、R2的集成成本",
+        "至少一个真实用户评价",
+        "与AWS Step Functions的成本对比表",
+        "回滚示例代码",
+        "定价页截图或文字版"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "topic_direction_ok": false,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "Cloudflare Workflows 的回滚支持对普通技术人/小团队的开发成本、运维复杂度、工具链选择有何实际影响？",
+      "must_verify": [
+        "Workflows 的定价模式（按执行次数、时长、存储？有无免费额度？）",
+        "回滚功能是否额外收费？",
+        "Workflows 与 Cloudflare 其他产品（Durable Objects, Queues, R2）的集成成本",
+        "是否有真实用户案例或社区讨论（正面/负面）？",
+        "与 AWS Step Functions、Temporal、Inngest 等竞品的成本/易用性对比"
+      ],
+      "search_queries": [
+        "Cloudflare Workflows pricing per execution",
+        "Cloudflare Workflows rollback cost",
+        "Cloudflare Workflows vs AWS Step Functions pricing",
+        "Cloudflare Workflows review developer experience",
+        "Cloudflare Workflows rollback example",
+        "Cloudflare Workflows limitations",
+        "Cloudflare Workers pricing 2025",
+        "Cloudflare Workflows community feedback"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "pricing_page",
+          "query": "Cloudflare Workflows pricing",
+          "why_needed": "确认成本模型，判断是否对普通开发者友好"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Cloudflare Workflows rollback documentation",
+          "why_needed": "确认回滚功能的具体实现、限制和配置方式"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Cloudflare Workflows rollback reddit hacker news",
+          "why_needed": "获取真实用户反馈，了解实际使用中的痛点和价值"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Cloudflare Workflows use case production",
+          "why_needed": "验证功能是否被实际用于生产环境，避免纸上谈兵"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "Cloudflare Workflows vs Temporal vs AWS Step Functions",
+          "why_needed": "对比竞品，判断 Workflows 的差异化优势和劣势"
+        }
+      ],
+      "expert_challenge_points": [
+        "回滚逻辑是否真的能简化代码？还是引入了新的复杂性（如状态管理、幂等性）？",
+        "Workflows 的执行时长限制和重试策略是否适合长时间运行的工作流？",
+        "Cloudflare 的生态锁定风险：一旦使用 Workflows，迁移到其他平台的成本有多高？",
+        "免费额度是否足够小团队试用？超出后的成本是否可控？"
+      ],
+      "do_not_claim_yet": [
+        "Workflows 是更便宜的选择（需定价对比）",
+        "回滚功能是杀手级特性（需用户验证）",
+        "适合所有多步骤操作（需明确限制）"
+      ],
+      "can_publish_as_radar_if_missing": "可以，但需明确标注为“功能观察”，不给出结论，仅列出待验证点。",
+      "downstream_materials_needed": [
+        "Cloudflare Workflows 定价页截图或文字版",
+        "至少一个真实用户的使用评价（正面或负面）",
+        "与 AWS Step Functions 的简单成本对比表",
+        "一个简单的回滚示例代码（用于说明复杂度）"
+      ]
+    },
+    "research_evidence": []
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：核心事实没有来源：定价、免费额度、用户反馈等关键信息缺失，且补证搜索结果为0。"
+    },
+    "core_question": "Cloudflare Workflows 的回滚支持对普通技术人/小团队的开发成本、运维复杂度、工具链选择有何实际影响？",
+    "why_this_topic_matters": "Cloudflare 在边缘计算和工作流领域持续加码，回滚功能是生产级工作流的关键特性。如果定价合理，可能成为 AWS Step Functions 的轻量替代，影响小团队的技术选型。",
+    "fact_summary": [
+      "Cloudflare Workflows 新增 saga 风格回滚支持，允许为每个 step.do() 添加补偿逻辑。",
+      "回滚按反向顺序执行，支持独立的重试和超时配置。",
+      "Workflows 分析仪表板会发出回滚生命周期事件。",
+      "官方文档已更新，但定价、免费额度、执行时长限制等关键信息未在 changelog 中提及。"
+    ],
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 65,
+      "why_interested": "核心技术人关注工作流引擎的演进和成本；入门读者可了解边缘工作流概念；商业读者评估技术选型风险。",
+      "reader_risk": "缺乏定价和用户反馈，容易导致过早下结论或误导选型。"
+    },
+    "mass_interest_hook": {
+      "score": 30,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "标题如“Cloudflare 悄悄上线了一个让 AWS 紧张的功能”可能吸引泛兴趣读者，但内容偏技术，点击率可能不高。",
+      "story_seed": "一个小团队用 Workflows 替代了昂贵的 AWS Step Functions，成本降低 80%？但需要验证。",
+      "do_not_overhype": "不能声称“更便宜”或“杀手级”，除非有定价和用户数据支撑。"
+    },
+    "topic_tension": {
+      "score": 40,
+      "conflict_point": "Cloudflare Workflows 的易用性和成本 vs AWS Step Functions 的成熟度和生态。",
+      "debate_question": "边缘工作流是否真的适合生产级多步骤操作？回滚功能是否足够可靠？",
+      "stakeholders": [
+        "Cloudflare",
+        "AWS",
+        "Temporal",
+        "Inngest",
+        "小团队/独立开发者"
+      ],
+      "why_people_would_comment": "开发者会争论 Workflows 是否真的能替代 Step Functions，以及回滚实现是否优雅。",
+      "traffic_risk": "话题偏技术，传播范围有限；需要真实冲突或数据对比才能引发讨论。"
+    },
+    "timeline": [
+      "2026-06-05: Cloudflare 发布 Workflows 回滚支持 changelog"
+    ],
+    "evidence_table": [
+      {
+        "source": "Cloudflare Developers Changelog",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-06-05-saga-rollbacks/",
+        "supports": "回滚功能已发布，支持 saga 模式、独立重试和超时、分析事件。",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "不完整。缺少定价、用户反馈、竞品对比，无法判断实际价值。",
+    "writeable_angles": [
+      {
+        "angle": "功能解读：Cloudflare Workflows 回滚是什么、怎么用、适合什么场景",
+        "why": "满足技术读者了解新功能的需求，门槛低。",
+        "needs": "官方文档、示例代码、定价信息。"
+      },
+      {
+        "angle": "成本对比：Cloudflare Workflows vs AWS Step Functions vs Temporal",
+        "why": "高价值商业读者和核心技术人最关心成本。",
+        "needs": "各平台定价页、免费额度、执行时长限制。"
+      },
+      {
+        "angle": "真实用户反馈：Workflows 在生产环境中的表现",
+        "why": "验证功能是否实用，避免纸上谈兵。",
+        "needs": "Reddit、HN、Twitter 上的用户评价。"
+      }
+    ],
+    "missing_basics": [
+      "Cloudflare Workflows 的定价模型（按执行次数、时长、存储？）",
+      "免费额度是多少？",
+      "回滚功能是否额外收费？",
+      "Workflows 的执行时长限制和重试策略",
+      "与 Durable Objects、Queues、R2 的集成成本"
+    ],
+    "missing_materials": [
+      "至少一个真实用户的使用评价（正面或负面）",
+      "与 AWS Step Functions 的简单成本对比表",
+      "一个简单的回滚示例代码（用于说明复杂度）",
+      "Cloudflare Workflows 定价页截图或文字版",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "Workflows 是更便宜的选择",
+      "回滚功能是杀手级特性",
+      "适合所有多步骤操作",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "Cloudflare Workflows 定价页在哪里？",
+      "是否有开发者社区讨论 Workflows 回滚？",
+      "AWS Step Functions 的定价如何？",
+      "Temporal 的定价和易用性如何？"
+    ],
+    "additional_search_queries": [
+      "Cloudflare Workflows pricing per execution",
+      "Cloudflare Workflows rollback cost",
+      "Cloudflare Workflows vs AWS Step Functions pricing",
+      "Cloudflare Workflows review developer experience",
+      "Cloudflare Workflows rollback example",
+      "Cloudflare Workflows limitations",
+      "Cloudflare Workers pricing 2025",
+      "Cloudflare Workflows community feedback"
+    ],
+    "stop_conditions": [
+      "如果 Cloudflare 未公开定价或免费额度，则无法进行成本分析。",
+      "如果社区反馈极少或负面，则不宜推荐。",
+      "如果竞品对比显示 Workflows 无明显优势，则选题价值降低。"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "cross-border",
+    "topic_direction_title": "跨境&出海",
+    "report_type": "investigation",
+    "quality_gate": {
+      "pass": false,
+      "score": 30,
+      "fatal_issues": [
+        "核心事实没有来源：定价、免费额度、用户反馈等关键信息缺失，且补证搜索结果为0。",
+        "没有明确归入实际选题方向：虽然标注为跨境&出海，但内容与跨境出海无直接关联。",
+        "没有明确选题结论：dossier中verdict为可选，但未给出publish/downgrade_to_brief/hold的明确结论。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：逻辑不完整，缺少定价、用户反馈、竞品对比。",
+        "没有列出基础概念缺口和资料素材缺口：已列出但未解决。",
+        "没有按具体类型提供资料包：缺少定价页、用户评价、成本对比表等。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来：仅有一个官方源，无其他来源。"
+      ],
+      "warnings": [
+        "泛兴趣钩子过度标题党风险：标题可能夸大，但正文证据接不住。",
+        "没有真实传播张力：冲突点和讨论点不够明确，traffic_risk指出传播张力不足。",
+        "只有专业价值，没有话题性和公共讨论空间，却仍然标成推荐选题：dossier中verdict为可选，但未明确降级。"
+      ],
+      "missing_evidence": [
+        "Cloudflare Workflows定价模型",
+        "免费额度",
+        "回滚功能是否额外收费",
+        "执行时长限制和重试策略",
+        "与Durable Objects、Queues、R2的集成成本",
+        "至少一个真实用户评价",
+        "与AWS Step Functions的成本对比表",
+        "回滚示例代码",
+        "定价页截图或文字版"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "topic_direction_ok": false,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "Cloudflare Workflows 的回滚支持对普通技术人/小团队的开发成本、运维复杂度、工具链选择有何实际影响？",
+      "must_verify": [
+        "Workflows 的定价模式（按执行次数、时长、存储？有无免费额度？）",
+        "回滚功能是否额外收费？",
+        "Workflows 与 Cloudflare 其他产品（Durable Objects, Queues, R2）的集成成本",
+        "是否有真实用户案例或社区讨论（正面/负面）？",
+        "与 AWS Step Functions、Temporal、Inngest 等竞品的成本/易用性对比"
+      ],
+      "search_queries": [
+        "Cloudflare Workflows pricing per execution",
+        "Cloudflare Workflows rollback cost",
+        "Cloudflare Workflows vs AWS Step Functions pricing",
+        "Cloudflare Workflows review developer experience",
+        "Cloudflare Workflows rollback example",
+        "Cloudflare Workflows limitations",
+        "Cloudflare Workers pricing 2025",
+        "Cloudflare Workflows community feedback"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "pricing_page",
+          "query": "Cloudflare Workflows pricing",
+          "why_needed": "确认成本模型，判断是否对普通开发者友好"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Cloudflare Workflows rollback documentation",
+          "why_needed": "确认回滚功能的具体实现、限制和配置方式"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Cloudflare Workflows rollback reddit hacker news",
+          "why_needed": "获取真实用户反馈，了解实际使用中的痛点和价值"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Cloudflare Workflows use case production",
+          "why_needed": "验证功能是否被实际用于生产环境，避免纸上谈兵"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "Cloudflare Workflows vs Temporal vs AWS Step Functions",
+          "why_needed": "对比竞品，判断 Workflows 的差异化优势和劣势"
+        }
+      ],
+      "expert_challenge_points": [
+        "回滚逻辑是否真的能简化代码？还是引入了新的复杂性（如状态管理、幂等性）？",
+        "Workflows 的执行时长限制和重试策略是否适合长时间运行的工作流？",
+        "Cloudflare 的生态锁定风险：一旦使用 Workflows，迁移到其他平台的成本有多高？",
+        "免费额度是否足够小团队试用？超出后的成本是否可控？"
+      ],
+      "do_not_claim_yet": [
+        "Workflows 是更便宜的选择（需定价对比）",
+        "回滚功能是杀手级特性（需用户验证）",
+        "适合所有多步骤操作（需明确限制）"
+      ],
+      "can_publish_as_radar_if_missing": "可以，但需明确标注为“功能观察”，不给出结论，仅列出待验证点。",
+      "downstream_materials_needed": [
+        "Cloudflare Workflows 定价页截图或文字版",
+        "至少一个真实用户的使用评价（正面或负面）",
+        "与 AWS Step Functions 的简单成本对比表",
+        "一个简单的回滚示例代码（用于说明复杂度）"
+      ]
+    },
+    "research_evidence": []
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260612-workflows-rollback-support-now-available-in-work-ec2c8218/",
+    "for_gpt_editor": {
+      "brief": "Workflows now supports saga-style rollbacks, allowing you to add compensating logic to each step.do() in case of downstream failures. If the instance fails, the rollback handlers will execute in reverse step-start order. This is useful for multi-step operations that touch external systems, such as inventory reservations, payment authorization, ticket creation, or infrastructure provisioning. Instead of writing all cleanup logic in a top-level catch , you can keep each compensating action next to the step it undoes. Rollback handlers support their own retry and timeout configuration, and Workflows now exposes rollback outcomes in instance status responses. Workflows analytics also emits rollback lifecycle events, making it easier to distinguish a forward execution failure from a rollback failure when debugging production workflows. JavaScript await step . do ( \"provision resource\" , async",
+      "title_seed": "深度调查：Cloudflare 重要线索",
+      "original_title": "Workflows - Rollback support now available in Workflows",
+      "source_url": "https://developers.cloudflare.com/changelog/post/2026-06-05-saga-rollbacks/",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：核心事实没有来源：定价、免费额度、用户反馈等关键信息缺失，且补证搜索结果为0。"
+        },
+        "core_question": "Cloudflare Workflows 的回滚支持对普通技术人/小团队的开发成本、运维复杂度、工具链选择有何实际影响？",
+        "why_this_topic_matters": "Cloudflare 在边缘计算和工作流领域持续加码，回滚功能是生产级工作流的关键特性。如果定价合理，可能成为 AWS Step Functions 的轻量替代，影响小团队的技术选型。",
+        "fact_summary": [
+          "Cloudflare Workflows 新增 saga 风格回滚支持，允许为每个 step.do() 添加补偿逻辑。",
+          "回滚按反向顺序执行，支持独立的重试和超时配置。",
+          "Workflows 分析仪表板会发出回滚生命周期事件。",
+          "官方文档已更新，但定价、免费额度、执行时长限制等关键信息未在 changelog 中提及。"
+        ],
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 65,
+          "why_interested": "核心技术人关注工作流引擎的演进和成本；入门读者可了解边缘工作流概念；商业读者评估技术选型风险。",
+          "reader_risk": "缺乏定价和用户反馈，容易导致过早下结论或误导选型。"
+        },
+        "mass_interest_hook": {
+          "score": 30,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "标题如“Cloudflare 悄悄上线了一个让 AWS 紧张的功能”可能吸引泛兴趣读者，但内容偏技术，点击率可能不高。",
+          "story_seed": "一个小团队用 Workflows 替代了昂贵的 AWS Step Functions，成本降低 80%？但需要验证。",
+          "do_not_overhype": "不能声称“更便宜”或“杀手级”，除非有定价和用户数据支撑。"
+        },
+        "topic_tension": {
+          "score": 40,
+          "conflict_point": "Cloudflare Workflows 的易用性和成本 vs AWS Step Functions 的成熟度和生态。",
+          "debate_question": "边缘工作流是否真的适合生产级多步骤操作？回滚功能是否足够可靠？",
+          "stakeholders": [
+            "Cloudflare",
+            "AWS",
+            "Temporal",
+            "Inngest",
+            "小团队/独立开发者"
+          ],
+          "why_people_would_comment": "开发者会争论 Workflows 是否真的能替代 Step Functions，以及回滚实现是否优雅。",
+          "traffic_risk": "话题偏技术，传播范围有限；需要真实冲突或数据对比才能引发讨论。"
+        },
+        "timeline": [
+          "2026-06-05: Cloudflare 发布 Workflows 回滚支持 changelog"
+        ],
+        "evidence_table": [
+          {
+            "source": "Cloudflare Developers Changelog",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-06-05-saga-rollbacks/",
+            "supports": "回滚功能已发布，支持 saga 模式、独立重试和超时、分析事件。",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "不完整。缺少定价、用户反馈、竞品对比，无法判断实际价值。",
+        "writeable_angles": [
+          {
+            "angle": "功能解读：Cloudflare Workflows 回滚是什么、怎么用、适合什么场景",
+            "why": "满足技术读者了解新功能的需求，门槛低。",
+            "needs": "官方文档、示例代码、定价信息。"
+          },
+          {
+            "angle": "成本对比：Cloudflare Workflows vs AWS Step Functions vs Temporal",
+            "why": "高价值商业读者和核心技术人最关心成本。",
+            "needs": "各平台定价页、免费额度、执行时长限制。"
+          },
+          {
+            "angle": "真实用户反馈：Workflows 在生产环境中的表现",
+            "why": "验证功能是否实用，避免纸上谈兵。",
+            "needs": "Reddit、HN、Twitter 上的用户评价。"
+          }
+        ],
+        "missing_basics": [
+          "Cloudflare Workflows 的定价模型（按执行次数、时长、存储？）",
+          "免费额度是多少？",
+          "回滚功能是否额外收费？",
+          "Workflows 的执行时长限制和重试策略",
+          "与 Durable Objects、Queues、R2 的集成成本"
+        ],
+        "missing_materials": [
+          "至少一个真实用户的使用评价（正面或负面）",
+          "与 AWS Step Functions 的简单成本对比表",
+          "一个简单的回滚示例代码（用于说明复杂度）",
+          "Cloudflare Workflows 定价页截图或文字版",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "Workflows 是更便宜的选择",
+          "回滚功能是杀手级特性",
+          "适合所有多步骤操作",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "Cloudflare Workflows 定价页在哪里？",
+          "是否有开发者社区讨论 Workflows 回滚？",
+          "AWS Step Functions 的定价如何？",
+          "Temporal 的定价和易用性如何？"
+        ],
+        "additional_search_queries": [
+          "Cloudflare Workflows pricing per execution",
+          "Cloudflare Workflows rollback cost",
+          "Cloudflare Workflows vs AWS Step Functions pricing",
+          "Cloudflare Workflows review developer experience",
+          "Cloudflare Workflows rollback example",
+          "Cloudflare Workflows limitations",
+          "Cloudflare Workers pricing 2025",
+          "Cloudflare Workflows community feedback"
+        ],
+        "stop_conditions": [
+          "如果 Cloudflare 未公开定价或免费额度，则无法进行成本分析。",
+          "如果社区反馈极少或负面，则不宜推荐。",
+          "如果竞品对比显示 Workflows 无明显优势，则选题价值降低。"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "cross-border",
+        "topic_direction_title": "跨境&出海",
+        "report_type": "investigation",
+        "quality_gate": {
+          "pass": false,
+          "score": 30,
+          "fatal_issues": [
+            "核心事实没有来源：定价、免费额度、用户反馈等关键信息缺失，且补证搜索结果为0。",
+            "没有明确归入实际选题方向：虽然标注为跨境&出海，但内容与跨境出海无直接关联。",
+            "没有明确选题结论：dossier中verdict为可选，但未给出publish/downgrade_to_brief/hold的明确结论。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：逻辑不完整，缺少定价、用户反馈、竞品对比。",
+            "没有列出基础概念缺口和资料素材缺口：已列出但未解决。",
+            "没有按具体类型提供资料包：缺少定价页、用户评价、成本对比表等。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来：仅有一个官方源，无其他来源。"
+          ],
+          "warnings": [
+            "泛兴趣钩子过度标题党风险：标题可能夸大，但正文证据接不住。",
+            "没有真实传播张力：冲突点和讨论点不够明确，traffic_risk指出传播张力不足。",
+            "只有专业价值，没有话题性和公共讨论空间，却仍然标成推荐选题：dossier中verdict为可选，但未明确降级。"
+          ],
+          "missing_evidence": [
+            "Cloudflare Workflows定价模型",
+            "免费额度",
+            "回滚功能是否额外收费",
+            "执行时长限制和重试策略",
+            "与Durable Objects、Queues、R2的集成成本",
+            "至少一个真实用户评价",
+            "与AWS Step Functions的成本对比表",
+            "回滚示例代码",
+            "定价页截图或文字版"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "topic_direction_ok": false,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "Cloudflare Workflows 的回滚支持对普通技术人/小团队的开发成本、运维复杂度、工具链选择有何实际影响？",
+          "must_verify": [
+            "Workflows 的定价模式（按执行次数、时长、存储？有无免费额度？）",
+            "回滚功能是否额外收费？",
+            "Workflows 与 Cloudflare 其他产品（Durable Objects, Queues, R2）的集成成本",
+            "是否有真实用户案例或社区讨论（正面/负面）？",
+            "与 AWS Step Functions、Temporal、Inngest 等竞品的成本/易用性对比"
+          ],
+          "search_queries": [
+            "Cloudflare Workflows pricing per execution",
+            "Cloudflare Workflows rollback cost",
+            "Cloudflare Workflows vs AWS Step Functions pricing",
+            "Cloudflare Workflows review developer experience",
+            "Cloudflare Workflows rollback example",
+            "Cloudflare Workflows limitations",
+            "Cloudflare Workers pricing 2025",
+            "Cloudflare Workflows community feedback"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "pricing_page",
+              "query": "Cloudflare Workflows pricing",
+              "why_needed": "确认成本模型，判断是否对普通开发者友好"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Cloudflare Workflows rollback documentation",
+              "why_needed": "确认回滚功能的具体实现、限制和配置方式"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Cloudflare Workflows rollback reddit hacker news",
+              "why_needed": "获取真实用户反馈，了解实际使用中的痛点和价值"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Cloudflare Workflows use case production",
+              "why_needed": "验证功能是否被实际用于生产环境，避免纸上谈兵"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "Cloudflare Workflows vs Temporal vs AWS Step Functions",
+              "why_needed": "对比竞品，判断 Workflows 的差异化优势和劣势"
+            }
+          ],
+          "expert_challenge_points": [
+            "回滚逻辑是否真的能简化代码？还是引入了新的复杂性（如状态管理、幂等性）？",
+            "Workflows 的执行时长限制和重试策略是否适合长时间运行的工作流？",
+            "Cloudflare 的生态锁定风险：一旦使用 Workflows，迁移到其他平台的成本有多高？",
+            "免费额度是否足够小团队试用？超出后的成本是否可控？"
+          ],
+          "do_not_claim_yet": [
+            "Workflows 是更便宜的选择（需定价对比）",
+            "回滚功能是杀手级特性（需用户验证）",
+            "适合所有多步骤操作（需明确限制）"
+          ],
+          "can_publish_as_radar_if_missing": "可以，但需明确标注为“功能观察”，不给出结论，仅列出待验证点。",
+          "downstream_materials_needed": [
+            "Cloudflare Workflows 定价页截图或文字版",
+            "至少一个真实用户的使用评价（正面或负面）",
+            "与 AWS Step Functions 的简单成本对比表",
+            "一个简单的回滚示例代码（用于说明复杂度）"
+          ]
+        },
+        "research_evidence": []
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：核心事实没有来源：定价、免费额度、用户反馈等关键信息缺失，且补证搜索结果为0。"
+        },
+        "core_question": "Cloudflare Workflows 的回滚支持对普通技术人/小团队的开发成本、运维复杂度、工具链选择有何实际影响？",
+        "why_this_topic_matters": "Cloudflare 在边缘计算和工作流领域持续加码，回滚功能是生产级工作流的关键特性。如果定价合理，可能成为 AWS Step Functions 的轻量替代，影响小团队的技术选型。",
+        "fact_summary": [
+          "Cloudflare Workflows 新增 saga 风格回滚支持，允许为每个 step.do() 添加补偿逻辑。",
+          "回滚按反向顺序执行，支持独立的重试和超时配置。",
+          "Workflows 分析仪表板会发出回滚生命周期事件。",
+          "官方文档已更新，但定价、免费额度、执行时长限制等关键信息未在 changelog 中提及。"
+        ],
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 65,
+          "why_interested": "核心技术人关注工作流引擎的演进和成本；入门读者可了解边缘工作流概念；商业读者评估技术选型风险。",
+          "reader_risk": "缺乏定价和用户反馈，容易导致过早下结论或误导选型。"
+        },
+        "mass_interest_hook": {
+          "score": 30,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "标题如“Cloudflare 悄悄上线了一个让 AWS 紧张的功能”可能吸引泛兴趣读者，但内容偏技术，点击率可能不高。",
+          "story_seed": "一个小团队用 Workflows 替代了昂贵的 AWS Step Functions，成本降低 80%？但需要验证。",
+          "do_not_overhype": "不能声称“更便宜”或“杀手级”，除非有定价和用户数据支撑。"
+        },
+        "topic_tension": {
+          "score": 40,
+          "conflict_point": "Cloudflare Workflows 的易用性和成本 vs AWS Step Functions 的成熟度和生态。",
+          "debate_question": "边缘工作流是否真的适合生产级多步骤操作？回滚功能是否足够可靠？",
+          "stakeholders": [
+            "Cloudflare",
+            "AWS",
+            "Temporal",
+            "Inngest",
+            "小团队/独立开发者"
+          ],
+          "why_people_would_comment": "开发者会争论 Workflows 是否真的能替代 Step Functions，以及回滚实现是否优雅。",
+          "traffic_risk": "话题偏技术，传播范围有限；需要真实冲突或数据对比才能引发讨论。"
+        },
+        "timeline": [
+          "2026-06-05: Cloudflare 发布 Workflows 回滚支持 changelog"
+        ],
+        "evidence_table": [
+          {
+            "source": "Cloudflare Developers Changelog",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-06-05-saga-rollbacks/",
+            "supports": "回滚功能已发布，支持 saga 模式、独立重试和超时、分析事件。",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "不完整。缺少定价、用户反馈、竞品对比，无法判断实际价值。",
+        "writeable_angles": [
+          {
+            "angle": "功能解读：Cloudflare Workflows 回滚是什么、怎么用、适合什么场景",
+            "why": "满足技术读者了解新功能的需求，门槛低。",
+            "needs": "官方文档、示例代码、定价信息。"
+          },
+          {
+            "angle": "成本对比：Cloudflare Workflows vs AWS Step Functions vs Temporal",
+            "why": "高价值商业读者和核心技术人最关心成本。",
+            "needs": "各平台定价页、免费额度、执行时长限制。"
+          },
+          {
+            "angle": "真实用户反馈：Workflows 在生产环境中的表现",
+            "why": "验证功能是否实用，避免纸上谈兵。",
+            "needs": "Reddit、HN、Twitter 上的用户评价。"
+          }
+        ],
+        "missing_basics": [
+          "Cloudflare Workflows 的定价模型（按执行次数、时长、存储？）",
+          "免费额度是多少？",
+          "回滚功能是否额外收费？",
+          "Workflows 的执行时长限制和重试策略",
+          "与 Durable Objects、Queues、R2 的集成成本"
+        ],
+        "missing_materials": [
+          "至少一个真实用户的使用评价（正面或负面）",
+          "与 AWS Step Functions 的简单成本对比表",
+          "一个简单的回滚示例代码（用于说明复杂度）",
+          "Cloudflare Workflows 定价页截图或文字版",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "Workflows 是更便宜的选择",
+          "回滚功能是杀手级特性",
+          "适合所有多步骤操作",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "Cloudflare Workflows 定价页在哪里？",
+          "是否有开发者社区讨论 Workflows 回滚？",
+          "AWS Step Functions 的定价如何？",
+          "Temporal 的定价和易用性如何？"
+        ],
+        "additional_search_queries": [
+          "Cloudflare Workflows pricing per execution",
+          "Cloudflare Workflows rollback cost",
+          "Cloudflare Workflows vs AWS Step Functions pricing",
+          "Cloudflare Workflows review developer experience",
+          "Cloudflare Workflows rollback example",
+          "Cloudflare Workflows limitations",
+          "Cloudflare Workers pricing 2025",
+          "Cloudflare Workflows community feedback"
+        ],
+        "stop_conditions": [
+          "如果 Cloudflare 未公开定价或免费额度，则无法进行成本分析。",
+          "如果社区反馈极少或负面，则不宜推荐。",
+          "如果竞品对比显示 Workflows 无明显优势，则选题价值降低。"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "cross-border",
+        "topic_direction_title": "跨境&出海",
+        "report_type": "investigation",
+        "quality_gate": {
+          "pass": false,
+          "score": 30,
+          "fatal_issues": [
+            "核心事实没有来源：定价、免费额度、用户反馈等关键信息缺失，且补证搜索结果为0。",
+            "没有明确归入实际选题方向：虽然标注为跨境&出海，但内容与跨境出海无直接关联。",
+            "没有明确选题结论：dossier中verdict为可选，但未给出publish/downgrade_to_brief/hold的明确结论。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：逻辑不完整，缺少定价、用户反馈、竞品对比。",
+            "没有列出基础概念缺口和资料素材缺口：已列出但未解决。",
+            "没有按具体类型提供资料包：缺少定价页、用户评价、成本对比表等。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来：仅有一个官方源，无其他来源。"
+          ],
+          "warnings": [
+            "泛兴趣钩子过度标题党风险：标题可能夸大，但正文证据接不住。",
+            "没有真实传播张力：冲突点和讨论点不够明确，traffic_risk指出传播张力不足。",
+            "只有专业价值，没有话题性和公共讨论空间，却仍然标成推荐选题：dossier中verdict为可选，但未明确降级。"
+          ],
+          "missing_evidence": [
+            "Cloudflare Workflows定价模型",
+            "免费额度",
+            "回滚功能是否额外收费",
+            "执行时长限制和重试策略",
+            "与Durable Objects、Queues、R2的集成成本",
+            "至少一个真实用户评价",
+            "与AWS Step Functions的成本对比表",
+            "回滚示例代码",
+            "定价页截图或文字版"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "topic_direction_ok": false,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "Cloudflare Workflows 的回滚支持对普通技术人/小团队的开发成本、运维复杂度、工具链选择有何实际影响？",
+          "must_verify": [
+            "Workflows 的定价模式（按执行次数、时长、存储？有无免费额度？）",
+            "回滚功能是否额外收费？",
+            "Workflows 与 Cloudflare 其他产品（Durable Objects, Queues, R2）的集成成本",
+            "是否有真实用户案例或社区讨论（正面/负面）？",
+            "与 AWS Step Functions、Temporal、Inngest 等竞品的成本/易用性对比"
+          ],
+          "search_queries": [
+            "Cloudflare Workflows pricing per execution",
+            "Cloudflare Workflows rollback cost",
+            "Cloudflare Workflows vs AWS Step Functions pricing",
+            "Cloudflare Workflows review developer experience",
+            "Cloudflare Workflows rollback example",
+            "Cloudflare Workflows limitations",
+            "Cloudflare Workers pricing 2025",
+            "Cloudflare Workflows community feedback"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "pricing_page",
+              "query": "Cloudflare Workflows pricing",
+              "why_needed": "确认成本模型，判断是否对普通开发者友好"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Cloudflare Workflows rollback documentation",
+              "why_needed": "确认回滚功能的具体实现、限制和配置方式"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Cloudflare Workflows rollback reddit hacker news",
+              "why_needed": "获取真实用户反馈，了解实际使用中的痛点和价值"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Cloudflare Workflows use case production",
+              "why_needed": "验证功能是否被实际用于生产环境，避免纸上谈兵"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "Cloudflare Workflows vs Temporal vs AWS Step Functions",
+              "why_needed": "对比竞品，判断 Workflows 的差异化优势和劣势"
+            }
+          ],
+          "expert_challenge_points": [
+            "回滚逻辑是否真的能简化代码？还是引入了新的复杂性（如状态管理、幂等性）？",
+            "Workflows 的执行时长限制和重试策略是否适合长时间运行的工作流？",
+            "Cloudflare 的生态锁定风险：一旦使用 Workflows，迁移到其他平台的成本有多高？",
+            "免费额度是否足够小团队试用？超出后的成本是否可控？"
+          ],
+          "do_not_claim_yet": [
+            "Workflows 是更便宜的选择（需定价对比）",
+            "回滚功能是杀手级特性（需用户验证）",
+            "适合所有多步骤操作（需明确限制）"
+          ],
+          "can_publish_as_radar_if_missing": "可以，但需明确标注为“功能观察”，不给出结论，仅列出待验证点。",
+          "downstream_materials_needed": [
+            "Cloudflare Workflows 定价页截图或文字版",
+            "至少一个真实用户的使用评价（正面或负面）",
+            "与 AWS Step Functions 的简单成本对比表",
+            "一个简单的回滚示例代码（用于说明复杂度）"
+          ]
+        },
+        "research_evidence": []
+      },
+      "angle_candidates": [
+        "事实时间线",
+        "基础概念澄清",
+        "证据矛盾和影响边界"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "深度调查：Cloudflare 重要线索 官方来源 原始公告",
+        "深度调查：Cloudflare 重要线索 概念解释 证据",
+        "深度调查：Cloudflare 重要线索 反方观点 局限"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}

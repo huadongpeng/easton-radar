@@ -1,0 +1,1878 @@
+{
+  "id": "20260612-sandbox-sdk-deprecating-sandbox-sdk-features-664ea054",
+  "batch_id": "2026-06-12-morning",
+  "title": "案例复盘：Cloudflare 案例线索",
+  "original_title": "Sandbox SDK - Deprecating Sandbox SDK features",
+  "url": "https://developers.cloudflare.com/changelog/post/2026-06-09-deprecating-sandbox-sdk-features/",
+  "summary": "Today we are announcing the deprecation of several features from the Sandbox SDK. The SDK has grown and matured substantially since it first launched. As agent workflows have developed, we have shipped many new features and experiments so developers can easily integrate secure, isolated code execution into their workflows. We want the SDK to continue providing a stable foundation for agentic workflows while we iterate quickly on the codebase. These deprecated features have either been superseded by newer capabilities or seen low adoption. They will remain in the codebase until July 9, 2026, after which they will no longer be present in future Sandbox SDK versions. HTTP and WebSocket transports In April 2026, we released the new RPC transport and deprecated the WebSocket transport. This setting governs how the sandbox container talks to the Workers ecosystem. The RPC transport removes the",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "tools-rules",
+  "topic_direction_title": "工具&规则",
+  "topic_direction_short_title": "工具&规则",
+  "topic_direction_description": "开发工具、AI 实操、API、云服务、自动化工作流、平台政策、账号规则、搜索流量和内容分发生态变化。重点看工具怎么用、规则怎么变、成本和边界在哪里。",
+  "source_name": "Cloudflare Developers",
+  "original_source_name": "Cloudflare changelogs | Developer platform",
+  "source_type": "rss",
+  "feed_url": "https://developers.cloudflare.com/changelog/rss/developer-platform.xml",
+  "published_at": "2026-06-09T00:00:00+00:00",
+  "fetched_at": "2026-06-11T22:19:55.681290+00:00",
+  "decision": "brief",
+  "report_type": "case-study",
+  "report_type_title": "案例复盘",
+  "score": 48,
+  "reader_hook": "适合按老花的案例复盘视角拆：哪些条件可复制，哪些只是别人自己的局。",
+  "topic_tension": {
+    "score": 5,
+    "conflict_point": "",
+    "debate_question": "",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "",
+    "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+  },
+  "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "命中老花主线关键词，且来源可复查。",
+  "collection_fit": "部分符合收集原则：可以进入可选池，但证据链、人设解读角度或目标读者兴趣还不够完整。",
+  "investigation_direction": "优先追项目原始页面、代码仓库、作者复盘、收入/增长证据和不可复制条件。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。",
+    "当前仅适合观察，不宜写成深度结论。"
+  ],
+  "facts": [
+    {
+      "claim": "Cloudflare Developers 发布/收录了这条原始线索：Sandbox SDK - Deprecating Sandbox SDK features",
+      "type": "confirmed_fact",
+      "source_url": "https://developers.cloudflare.com/changelog/post/2026-06-09-deprecating-sandbox-sdk-features/",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Cloudflare Developers",
+      "url": "https://developers.cloudflare.com/changelog/post/2026-06-09-deprecating-sandbox-sdk-features/",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "ai",
+        "agent"
+      ],
+      "dev": [
+        "developer",
+        "sdk"
+      ]
+    },
+    "source_host": "developers.cloudflare.com",
+    "source_type": "rss",
+    "heuristic": true
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "适合按老花的案例复盘视角拆：哪些条件可复制，哪些只是别人自己的局。",
+    "fit_for_radar": false
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://developers.cloudflare.com/changelog/rss/developer-platform.xml",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。",
+      "当前仅适合观察，不宜写成深度结论。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：核心事实没有来源：缺乏社区反馈、实际迁移案例和用户视角验证。"
+    },
+    "core_question": "Cloudflare Sandbox SDK 废弃部分功能（HTTP/WebSocket 传输、低采用率特性）对普通技术人/独立开发者的实际影响是什么？是否有可替代方案或迁移成本？",
+    "why_this_topic_matters": "Cloudflare Sandbox SDK 是 AI 代码沙箱领域的重要产品，其功能废弃可能影响已采用该 SDK 的开发者工作流，同时反映 Cloudflare 在 Agent 基础设施上的战略方向。但当前影响范围尚不明确，需要更多数据支撑。",
+    "fact_summary": [
+      "Cloudflare 宣布废弃 Sandbox SDK 中的 HTTP 和 WebSocket 传输模式，以及一些低采用率特性。",
+      "废弃功能将在 2026 年 7 月 9 日之后从未来版本中移除。",
+      "官方推荐迁移至新的 RPC 传输模式。",
+      "废弃原因：已被新能力取代或采用率低。",
+      "Sandbox SDK 用于在 Workers 生态中安全执行隔离代码，支持 Agent 工作流。"
+    ],
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 40,
+      "why_interested": "核心技术人关注 SDK 变更对现有项目的影响和迁移成本；入门读者可了解沙箱技术选型；商业读者关注 Cloudflare 产品策略。",
+      "reader_risk": "缺乏实际案例和社区反馈，容易写成纯官方公告解读，读者参与度低。"
+    },
+    "mass_interest_hook": {
+      "score": 20,
+      "hook_type": "踩坑",
+      "why_non_technical_people_may_click": "标题可突出“你的代码可能突然不能用了”的危机感，但实际影响面窄，难以吸引泛兴趣读者。",
+      "story_seed": "一个独立开发者依赖 Sandbox SDK 构建的 AI 工具，突然收到废弃通知，不得不紧急迁移。",
+      "do_not_overhype": "不要夸大影响范围，目前缺乏证据表明大量用户受影响。"
+    },
+    "topic_tension": {
+      "score": 3,
+      "conflict_point": "Cloudflare 推动 RPC 替代 HTTP/WebSocket，但开发者可能面临迁移成本和兼容性问题。",
+      "debate_question": "RPC 传输是否真的优于 HTTP/WebSocket？迁移是否值得？",
+      "stakeholders": [
+        "Cloudflare",
+        "Sandbox SDK 用户",
+        "替代方案提供商（如 Northflank）"
+      ],
+      "why_people_would_comment": "讨论迁移经验、吐槽官方决策、对比替代方案。",
+      "traffic_risk": "话题过于专业，缺乏广泛争议点，容易变成小圈子讨论。"
+    },
+    "timeline": [
+      "2025-08-05: Sandbox SDK 重大更新（添加流式、代码解释器等）",
+      "2026-04: 发布 RPC 传输，废弃 WebSocket 传输",
+      "2026-06-09: 发布废弃公告",
+      "2026-07-09: 废弃功能从 SDK 中移除"
+    ],
+    "evidence_table": [
+      {
+        "source": "Cloudflare 官方废弃公告",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-06-09-deprecating-sandbox-sdk-features",
+        "supports": "废弃 HTTP/WebSocket 传输和低采用率特性，推荐 RPC 传输",
+        "reliability": "official"
+      },
+      {
+        "source": "Cloudflare 传输模式文档",
+        "url": "https://developers.cloudflare.com/sandbox/configuration/transport",
+        "supports": "RPC 传输的配置和使用",
+        "reliability": "official"
+      },
+      {
+        "source": "GitHub 仓库",
+        "url": "https://github.com/cloudflare/sandbox-sdk",
+        "supports": "SDK 代码和示例",
+        "reliability": "official"
+      },
+      {
+        "source": "Northflank 博客（替代方案对比）",
+        "url": "https://northflank.com/blog/top-cloudflare-sandboxes-alternatives",
+        "supports": "列出 Cloudflare Sandboxes 的替代方案",
+        "reliability": "media"
+      },
+      {
+        "source": "Hacker News 讨论",
+        "url": "https://news.ycombinator.com/item?id=45610523",
+        "supports": "开发者对 Sandbox SDK 的反馈（如网络控制需求）",
+        "reliability": "weak"
+      }
+    ],
+    "logic_closure": "部分闭环。官方公告清晰，但缺乏用户视角验证，无法判断实际影响和迁移难度。",
+    "writeable_angles": [
+      {
+        "angle": "官方公告解读 + 替代方案对比",
+        "why": "信息明确，可快速产出，适合技术读者了解变更内容。",
+        "needs": "需要补充替代方案（如 Northflank、E2B）的详细对比。"
+      },
+      {
+        "angle": "迁移成本分析（假设场景）",
+        "why": "帮助开发者评估是否值得迁移，但缺乏真实案例。",
+        "needs": "需要至少一个实际迁移案例或社区反馈。"
+      },
+      {
+        "angle": "Cloudflare 战略分析：从 Sandbox SDK 看 Agent 基础设施方向",
+        "why": "适合商业读者，但需要更多产品路线图证据。",
+        "needs": "需要 Cloudflare 官方博客或访谈中关于 Sandbox SDK 未来规划的信息。"
+      }
+    ],
+    "missing_basics": [
+      "Sandbox SDK 的当前采用率和用户规模",
+      "RPC 传输与 HTTP/WebSocket 的具体差异（性能、功能、兼容性）",
+      "废弃的低采用率特性具体有哪些"
+    ],
+    "missing_materials": [
+      "社区反馈（Hacker News、Reddit、Cloudflare 论坛）",
+      "实际迁移案例或教程",
+      "替代方案（如 Northflank、E2B）的详细对比（价格、功能、迁移难度）",
+      "Cloudflare 官方关于 Sandbox SDK 未来规划的说明"
+    ],
+    "not_claimable": [
+      "废弃功能对大多数开发者无关紧要",
+      "RPC 传输是完美替代方案",
+      "迁移成本很低或无需关注",
+      "Cloudflare 正在放弃 Sandbox SDK"
+    ],
+    "followup_queries": [
+      "Cloudflare Sandbox SDK 的采用率数据？",
+      "开发者对废弃功能的反应如何？",
+      "是否有已迁移到 RPC 的案例？",
+      "RPC 传输是否有已知限制或问题？"
+    ],
+    "additional_search_queries": [
+      "Cloudflare Sandbox SDK deprecation developer feedback",
+      "Cloudflare Sandbox SDK migration guide RPC",
+      "Cloudflare Sandbox SDK vs Northflank vs E2B comparison",
+      "Cloudflare Sandbox SDK adoption rate 2026",
+      "Cloudflare Sandbox SDK low adoption features list"
+    ],
+    "stop_conditions": [
+      "如果无法获取任何社区反馈或实际迁移案例，则放弃深度写作，仅作为 Radar 线索存档。",
+      "如果官方未提供 RPC 迁移指南或文档不完整，则暂缓。"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "case-study",
+    "quality_gate": {
+      "pass": false,
+      "score": 30,
+      "fatal_issues": [
+        "核心事实没有来源：缺乏社区反馈、实际迁移案例和用户视角验证。",
+        "没有泛兴趣故事钩子，标题和开头只适合技术小圈子。",
+        "没有真实传播张力：说不清冲突点、讨论点、利益拉扯、身份代入或读者为什么愿意评论。",
+        "没有明确选题结论：推荐或可选。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写。",
+        "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环。",
+        "没有列出基础概念缺口和资料素材缺口。",
+        "没有按具体类型提供资料包。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来。"
+      ],
+      "warnings": [
+        "老花人设解读角度说不清。",
+        "冷门技术产品没有目标读者会关心的角度。",
+        "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象。",
+        "泛兴趣钩子过度标题党，正文证据接不住。",
+        "只有专业价值，没有话题性和公共讨论空间，却仍然标成推荐选题。",
+        "没有明确归入实际选题方向，或者选题方向和内容不匹配。",
+        "把数据源分类误当成网站栏目。",
+        "强行把不可行动线索写成试跑项目。",
+        "把营销收入、截图、社区传言写成确认事实。",
+        "没有给下游 GPT 编辑应用和研究闭环留下足够结构化资料。"
+      ],
+      "missing_evidence": [
+        "Sandbox SDK 的当前采用率和用户规模",
+        "RPC 传输与 HTTP/WebSocket 的具体差异（性能、功能、兼容性）",
+        "废弃的低采用率特性具体有哪些",
+        "社区反馈（Hacker News、Reddit、Cloudflare 论坛）",
+        "实际迁移案例或教程",
+        "替代方案（如 Northflank、E2B）的详细对比（价格、功能、迁移难度）",
+        "Cloudflare 官方关于 Sandbox SDK 未来规划的说明"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "Cloudflare Sandbox SDK 废弃部分功能（HTTP/WebSocket 传输、低采用率特性）对普通技术人/独立开发者的实际影响是什么？是否有可替代方案或迁移成本？",
+      "must_verify": [
+        "确认废弃功能的具体列表和替代方案（RPC transport 等）",
+        "确认废弃时间线（2026-07-09 后移除）",
+        "确认 Sandbox SDK 的当前采用率和用户规模",
+        "确认 RPC transport 的兼容性和迁移难度",
+        "确认是否有社区反馈或争议（如开发者不满、替代方案不足）"
+      ],
+      "search_queries": [
+        "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+        "Cloudflare Sandbox SDK adoption rate developer feedback",
+        "Cloudflare Sandbox SDK alternatives agentic code execution",
+        "Cloudflare Workers Sandbox SDK RPC transport documentation",
+        "Cloudflare Sandbox SDK deprecation impact independent developer",
+        "Cloudflare Sandbox SDK vs other sandbox solutions comparison",
+        "Cloudflare Sandbox SDK low adoption features list",
+        "Cloudflare Sandbox SDK migration guide 2026"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+          "why_needed": "确认官方废弃公告、替代方案、迁移指南和时间线"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Cloudflare Sandbox SDK deprecation developer feedback",
+          "why_needed": "了解社区反应、实际迁移痛点、是否有争议"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Cloudflare Sandbox SDK adoption use case",
+          "why_needed": "评估实际采用率和用户规模，判断影响范围"
+        },
+        {
+          "source_type": "github_repo",
+          "query": "Cloudflare sandbox sdk examples migration",
+          "why_needed": "查看示例代码和迁移实践，评估技术门槛"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "Cloudflare Sandbox SDK vs alternatives agentic code execution",
+          "why_needed": "对比其他沙箱方案（如 Fly Machines、AWS Nitro Enclaves），判断是否值得迁移"
+        }
+      ],
+      "expert_challenge_points": [
+        "废弃功能是否真的低采用率？官方数据来源？",
+        "RPC transport 是否完全替代 HTTP/WebSocket？有无功能缺失？",
+        "迁移成本（时间、代码改动、学习曲线）是否被低估？",
+        "对于已使用 Sandbox SDK 的项目，是否有平滑迁移路径？",
+        "Cloudflare 此举是否暗示 Sandbox SDK 战略收缩？"
+      ],
+      "do_not_claim_yet": [
+        "废弃功能对大多数开发者无关紧要",
+        "RPC transport 是完美替代方案",
+        "迁移成本很低或无需关注",
+        "Cloudflare 正在放弃 Sandbox SDK"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取社区反馈或实际迁移案例，可先以官方公告解读+替代方案对比形式发布，但需注明缺乏用户视角验证。",
+      "downstream_materials_needed": [
+        "官方废弃公告全文（已获取）",
+        "RPC transport 文档和迁移指南",
+        "社区讨论帖（Hacker News、Reddit、Cloudflare 论坛）",
+        "至少一个实际使用 Sandbox SDK 的项目案例",
+        "替代沙箱方案的价格和功能对比"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Deprecating Sandbox SDK features · Changelog - Cloudflare Docs",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-06-09-deprecating-sandbox-sdk-features",
+        "query": "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+        "provider": "tavily",
+        "score": "0.8839694",
+        "fetched_text": "Deprecating Sandbox SDK features · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--s",
+        "fetch_error": ""
+      },
+      {
+        "title": "Deprecating Sandbox SDK features - Replicate Changelog",
+        "url": "https://community.cloudflare.com/t/sandbox-sdk-deprecating-sandbox-sdk-features/933294",
+        "query": "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+        "provider": "tavily",
+        "score": "0.87681407",
+        "fetched_text": "HTTP and WebSocket transports will no longer be present in Sandbox SDK versions released after July 9, 2026. To migrate before July 9, 2026,",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      },
+      {
+        "title": "Transport modes - Sandbox SDK - Cloudflare Docs",
+        "url": "https://developers.cloudflare.com/sandbox/configuration/transport",
+        "query": "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+        "provider": "tavily",
+        "score": "0.7300017",
+        "fetched_text": "Transport modes · Cloudflare Sandbox SDK docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap",
+        "fetch_error": ""
+      },
+      {
+        "title": "cloudflare/sandbox-sdk - GitHub",
+        "url": "https://github.com/cloudflare/sandbox-sdk",
+        "query": "Cloudflare Sandbox SDK adoption rate developer feedback",
+        "provider": "tavily",
+        "score": "0.6501347",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_nav_ch_units\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_diff_explain",
+        "fetch_error": ""
+      },
+      {
+        "title": "Cloudflare AI search visibility, competitors, reviews, and pricing | DevTune",
+        "url": "https://devtune.ai/verticals/ai-code-sandboxes-agent-runtimes/cloudflare",
+        "query": "Cloudflare Sandbox SDK adoption rate developer feedback",
+        "provider": "tavily",
+        "score": "0.47446132",
+        "fetched_text": "Cloudflare AI search visibility, competitors, reviews, and pricing | DevTune dev tune Blog Landscape Docs Pricing Changelog Toggle theme Toggle theme Sign In Sign Up (function(){try{var s=document.cookie.split(';').some(function(c){return /^\\s*sb-[^=]+-auth-token(?:\\.[0-9]+)?=/.test(c)});if(!s&&window.localStorage){for(var i=0;i Verticals AI Code Sandboxes & Agent Runtimes Cloudflare AI visibility report Cloudflare ranks #4 in AI Code Sandboxes & Agent Runtimes AI search. Outside the top three on 20 of the 25 prompts buyers actually ask. Northflank is cited on 18 of those losses. 25 prompts 5 platforms Updated Jun 6, 2026 - refreshed weekly Track Cloudflare daily Free trial. Setup comes pre-filled for Cloudflare. Also benchmarked Cloudflare appears in 3 other verticals Cloud Infrastructure & PaaS Developer Tunnels & Localhost Ingress Deployment & Hosting Platforms {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://devtune.ai\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Verticals\",\"item\":\"https://devtune.ai/verticals\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"AI Code Sandboxes \\u0026 Agent Runtimes\",\"item\":\"https://devtune.ai/verticals/ai-code-sandboxes-agent-runtimes\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"Cloudflare\",\"item\":\"https://devtune.ai/verticals/ai-code-sandboxes-agent-runtimes/cloudflare\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\",\"sameAs\":[\"https://developers.cloudflare.com/sandbox/\",\"https://developers.cloudflare.com/containers/pricing/\",\"https://developers.cloudflare.com/sandbox/platform/limits/\",\"https://blog.cloudflare.com/agents-week-in-review/\",\"https://www.cloudflare.com/press/press-releases/2",
+        "fetch_error": ""
+      },
+      {
+        "title": "Overview · Cloudflare Sandbox SDK docs",
+        "url": "https://developers.cloudflare.com/sandbox",
+        "query": "Cloudflare Sandbox SDK adoption rate developer feedback",
+        "provider": "tavily",
+        "score": "0.39866453",
+        "fetched_text": "Overview · Cloudflare Sandbox SDK docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:1rem 2",
+        "fetch_error": ""
+      },
+      {
+        "title": "Top Cloudflare Sandboxes alternatives for secure AI code execution in 2026 | Blog — Northflank",
+        "url": "https://northflank.com/blog/top-cloudflare-sandboxes-alternatives",
+        "query": "Cloudflare Sandbox SDK alternatives agentic code execution",
+        "provider": "tavily",
+        "score": "0.7208996",
+        "fetched_text": "Top Cloudflare Sandboxes alternatives for secure AI code execution in 2026 | Blog — Northflank window._SSR_DATA=\"blogPost|documentId|x71ix2ume7wjuz3zti938cvs|publication_date|2026-03-02T15:30:00.000Z|slug|top-cloudflare-sandboxes-alternatives|title|Top+Cloudflare+Sandboxes+alternatives+for+secure+AI+code+execution+in+2026|writers|hmt1lfxmgi5m62difbd7m2qa|name|Daniel+Adeboye|daniel-adeboye|twitter|@adeboyedn|picture|url|https://assets.northflank.com/DSC_2767_4_8736cb6b04.jpg|excerpt|Explore+the+top+Cloudflare+Sandboxes+alternatives+in+2026.+Compare+Northflank,+E2B,+CodeSandbox,+Modal,+Daytona,+and+Fly.io+for+AI+sandboxing,+long+sessions,+BYOC,+and+GPU+workloads.|content| __NL____NL__##+TL;DR:+What+are+the+top+Cloudflare+Sandboxes+alternatives+in+2026?__NL____NL__Cloudflare+Sandboxes+is+a+fast,+edge-native+sandbox+for+running+untrusted+code+close+to+users+globally.+It+works+well+for+TypeScript-first+teams+already+on+Cloudflare+Workers,+but+falls+short+when+you+need [BYOC](https://northflank.com/product/bring-your-own-cloud), [persistent+long-running+sessions](https://northflank.com/product/sandboxes), [GPU+workloads](https://northflank.com/product/gpu-paas),+or+a+full+infrastructure+stack. [Northflank](https://northflank.com/) is+the+strongest+alternative+built+for+production.__NL____NL__-+[**Northflank**](https://northflank.com/) –+Full-stack+AI+infrastructure+platform+with+managed+cloud+and [BYOC+deployment](https://northflank.com/product/bring-your-own-cloud) into+AWS,+GCP,+Azure,+or+bare-metal.+Production-grade+microVM+sandboxes+with+Kata+Containers,+Firecracker,+and+gVisor+isolation,+unlimited+sessions,+databases,+GPUs,+CI/CD,+and+observability+all+in+one+place.__NL__-+**E2B** –+Developer-friendly+AI+sandbox+with+polished+SDKs+and+Firecracker+microVMs,+best+for+teams",
+        "fetch_error": ""
+      },
+      {
+        "title": "Why You NEED to Try Cloudflare's Sandbox SDK Today - YouTube",
+        "url": "https://www.youtube.com/watch?v=0bkeZOXNJBg",
+        "query": "Cloudflare Sandbox SDK alternatives agentic code execution",
+        "provider": "tavily",
+        "score": "0.6350646",
+        "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260611.01.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+        "fetch_error": ""
+      },
+      {
+        "title": "sandbox-sdk | Agent Skills Library",
+        "url": "https://mcpservers.org/agent-skills/cloudflare/sandbox-sdk",
+        "query": "Cloudflare Workers Sandbox SDK RPC transport documentation",
+        "provider": "tavily",
+        "score": "0.657033",
+        "fetched_text": "sandbox-sdk | Agent Skills Library {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://mcpservers.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Agent Skills Library\",\"item\":\"https://mcpservers.org/agent-skills\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"sandbox-sdk\",\"item\":\"https://mcpservers.org/agent-skills/cloudflare/sandbox-sdk\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"SoftwareSourceCode\",\"name\":\"sandbox-sdk\",\"description\":\"Build sandboxed applications for secure code execution. Load when building AI code execution, code interpreters, CI/CD systems, interactive dev environments, or executing untrusted code. Covers Sandbox SDK lifecycle, commands, files, code interpreter, and preview URLs.\",\"author\":{\"@type\":\"Person\",\"name\":\"Cloudflare\"},\"codeRepository\":\"https://github.com/cloudflare/skills/tree/main/skills/sandbox-sdk\",\"url\":\"https://mcpservers.org/agent-skills/cloudflare/sandbox-sdk\"} MCP Servers Home Remote Servers Topics Clients Agent Skills English Submit Advertise Submit Agent Skills Library svg]:w-3.5 [&>svg]:h-3.5\"> sandbox-sdk sandbox-sdk by Cloudflare Build sandboxed applications for secure code execution. Load when building AI code execution, code interpreters, CI/CD systems, interactive dev environments, or executing untrusted code. Covers Sandbox SDK lifecycle, commands, files, code interpreter, and preview URLs. npx skills add https://github.com/cloudflare/skills --skill sandbox-sdk Download ZIP GitHub Cloudflare Sandbox SDK Build secure, isolated code execution environments on Cloudflare Workers. FIRST: Verify Installation npm install @cloudflare/sandbox docker info # Must succeed - Docker required for local dev Retrieval Sources Your knowledge of the Sandbox ",
+        "fetch_error": ""
+      },
+      {
+        "title": "Cloudflare Sandbox SDK adds streaming, code interpreter, Git support, process control and more · Changelog",
+        "url": "https://developers.cloudflare.com/changelog/post/2025-08-05-sandbox-sdk-major-update",
+        "query": "Cloudflare Sandbox SDK deprecation impact independent developer",
+        "provider": "tavily",
+        "score": "0.3584434",
+        "fetched_text": "Cloudflare Sandbox SDK adds streaming, code interpreter, Git support, process control and more · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-",
+        "fetch_error": ""
+      },
+      {
+        "title": "Cloudflare Sandbox SDK - Hacker News",
+        "url": "https://news.ycombinator.com/item?id=45610523",
+        "query": "Cloudflare Sandbox SDK deprecation impact independent developer",
+        "provider": "tavily",
+        "score": "0.26257628",
+        "fetched_text": "Cloudflare Sandbox SDK | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login Cloudflare Sandbox SDK ( cloudflare.com ) 256 points by bentaber 7 months ago | hide | past | favorite | 90 comments simonw 7 months ago | next [–] Looks like there's one feature missing from this that I care about: I'd like more finely grained control over what outbound internet connections code running on the box can make. As far as I can tell it's all or nothing right now: this.ctx.container.start({ enableInternet: false, }); I want to run untrusted code (from users or LLMs) in these containers, and I'd like to avoid someone malicious using my container to launch attacks against other sites from them. As such, I'd like to be able to allow-list just specific network points. Maybe I'm OK with the container talking to an API I provide but not to the world at wide. Or perhaps I'm OK with it fetching data from npm and PyPI but I don't want it to be able to access anything else (a common pattern these days, e.g. Claude's Code Interpreter does this.) masterj 7 months ago | parent | next [–] Cloudflare has Outbound Workers for exactly this use-case: https://developers.cloudflare.com/cloudflare-for-platforms/w... If these aren't enabled for containers / sandboxes yet, I bet they will be soon kentonv 7 months ago | parent | prev | next [–] You may be interested in the Dynamic Worker Loader API, which lets you set up isolate-based sandboxes (instead of containers) and gives you extremely fine-grained, object-capability-based control over permissions. It was announced as part of the code mode blog post: https://blog.cloudflare.com/code-mode/ API docs: https://developers.cloudflare.com/workers/runtime-apis/bindi... ashishbijlani 7 months ago | parent | prev | next [–] I’m ext",
+        "fetch_error": ""
+      },
+      {
+        "title": "Containers and Sandboxes are now generally available",
+        "url": "https://community.cloudflare.com/t/containers-containers-and-sandboxes-are-now-generally-available/918585",
+        "query": "Cloudflare Sandbox SDK vs other sandbox solutions comparison",
+        "provider": "tavily",
+        "score": "0.44174582",
+        "fetched_text": "The Sandbox SDK provides isolated environments for running untrusted code securely, with a simple TypeScript API for executing commands,",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      },
+      {
+        "title": "Transport modes - Sandbox SDK - Cloudflare Docs",
+        "url": "https://developers.cloudflare.com/sandbox/configuration/transport",
+        "query": "Cloudflare Sandbox SDK deprecation developer feedback",
+        "provider": "tavily",
+        "score": "0.70944256",
+        "fetched_text": "Transport modes · Cloudflare Sandbox SDK docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap",
+        "fetch_error": ""
+      },
+      {
+        "title": "cloudflare/sandbox-sdk - GitHub",
+        "url": "https://github.com/cloudflare/sandbox-sdk",
+        "query": "Cloudflare Sandbox SDK deprecation developer feedback",
+        "provider": "tavily",
+        "score": "0.6072213",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_nav_ch_units\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_diff_explain",
+        "fetch_error": ""
+      },
+      {
+        "title": "Why You NEED to Try Cloudflare's Sandbox SDK Today - YouTube",
+        "url": "https://www.youtube.com/watch?v=0bkeZOXNJBg",
+        "query": "Cloudflare Sandbox SDK deprecation developer feedback",
+        "provider": "tavily",
+        "score": "0.35763538",
+        "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260611.01.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+        "fetch_error": ""
+      },
+      {
+        "title": "2026 deprecation migration guide - Sandbox SDK - Cloudflare Docs",
+        "url": "https://developers.cloudflare.com/sandbox/guides/2026-deprecation",
+        "query": "Cloudflare Sandbox SDK migration guide RPC",
+        "provider": "tavily",
+        "score": "0.7009158",
+        "fetched_text": "2026 deprecation migration guide · Cloudflare Sandbox SDK docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.as",
+        "fetch_error": ""
+      },
+      {
+        "title": "Cloudflare Sandbox SDK - Hacker News",
+        "url": "https://news.ycombinator.com/item?id=45610523",
+        "query": "Cloudflare Sandbox SDK migration guide RPC",
+        "provider": "tavily",
+        "score": "0.5622973",
+        "fetched_text": "Cloudflare Sandbox SDK | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login Cloudflare Sandbox SDK ( cloudflare.com ) 256 points by bentaber 7 months ago | hide | past | favorite | 90 comments simonw 7 months ago | next [–] Looks like there's one feature missing from this that I care about: I'd like more finely grained control over what outbound internet connections code running on the box can make. As far as I can tell it's all or nothing right now: this.ctx.container.start({ enableInternet: false, }); I want to run untrusted code (from users or LLMs) in these containers, and I'd like to avoid someone malicious using my container to launch attacks against other sites from them. As such, I'd like to be able to allow-list just specific network points. Maybe I'm OK with the container talking to an API I provide but not to the world at wide. Or perhaps I'm OK with it fetching data from npm and PyPI but I don't want it to be able to access anything else (a common pattern these days, e.g. Claude's Code Interpreter does this.) masterj 7 months ago | parent | next [–] Cloudflare has Outbound Workers for exactly this use-case: https://developers.cloudflare.com/cloudflare-for-platforms/w... If these aren't enabled for containers / sandboxes yet, I bet they will be soon kentonv 7 months ago | parent | prev | next [–] You may be interested in the Dynamic Worker Loader API, which lets you set up isolate-based sandboxes (instead of containers) and gives you extremely fine-grained, object-capability-based control over permissions. It was announced as part of the code mode blog post: https://blog.cloudflare.com/code-mode/ API docs: https://developers.cloudflare.com/workers/runtime-apis/bindi... ashishbijlani 7 months ago | parent | prev | next [–] I’m ext",
+        "fetch_error": ""
+      },
+      {
+        "title": "Cloudflare Sandbox SDK adds streaming, code interpreter, Git ...",
+        "url": "https://developers.cloudflare.com/changelog/post/2025-08-05-sandbox-sdk-major-update",
+        "query": "Cloudflare Sandbox SDK migration guide RPC",
+        "provider": "tavily",
+        "score": "0.4905535",
+        "fetched_text": "Cloudflare Sandbox SDK adds streaming, code interpreter, Git support, process control and more · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：核心事实没有来源：缺乏社区反馈、实际迁移案例和用户视角验证。"
+    },
+    "core_question": "Cloudflare Sandbox SDK 废弃部分功能（HTTP/WebSocket 传输、低采用率特性）对普通技术人/独立开发者的实际影响是什么？是否有可替代方案或迁移成本？",
+    "why_this_topic_matters": "Cloudflare Sandbox SDK 是 AI 代码沙箱领域的重要产品，其功能废弃可能影响已采用该 SDK 的开发者工作流，同时反映 Cloudflare 在 Agent 基础设施上的战略方向。但当前影响范围尚不明确，需要更多数据支撑。",
+    "fact_summary": [
+      "Cloudflare 宣布废弃 Sandbox SDK 中的 HTTP 和 WebSocket 传输模式，以及一些低采用率特性。",
+      "废弃功能将在 2026 年 7 月 9 日之后从未来版本中移除。",
+      "官方推荐迁移至新的 RPC 传输模式。",
+      "废弃原因：已被新能力取代或采用率低。",
+      "Sandbox SDK 用于在 Workers 生态中安全执行隔离代码，支持 Agent 工作流。"
+    ],
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 40,
+      "why_interested": "核心技术人关注 SDK 变更对现有项目的影响和迁移成本；入门读者可了解沙箱技术选型；商业读者关注 Cloudflare 产品策略。",
+      "reader_risk": "缺乏实际案例和社区反馈，容易写成纯官方公告解读，读者参与度低。"
+    },
+    "mass_interest_hook": {
+      "score": 20,
+      "hook_type": "踩坑",
+      "why_non_technical_people_may_click": "标题可突出“你的代码可能突然不能用了”的危机感，但实际影响面窄，难以吸引泛兴趣读者。",
+      "story_seed": "一个独立开发者依赖 Sandbox SDK 构建的 AI 工具，突然收到废弃通知，不得不紧急迁移。",
+      "do_not_overhype": "不要夸大影响范围，目前缺乏证据表明大量用户受影响。"
+    },
+    "topic_tension": {
+      "score": 3,
+      "conflict_point": "Cloudflare 推动 RPC 替代 HTTP/WebSocket，但开发者可能面临迁移成本和兼容性问题。",
+      "debate_question": "RPC 传输是否真的优于 HTTP/WebSocket？迁移是否值得？",
+      "stakeholders": [
+        "Cloudflare",
+        "Sandbox SDK 用户",
+        "替代方案提供商（如 Northflank）"
+      ],
+      "why_people_would_comment": "讨论迁移经验、吐槽官方决策、对比替代方案。",
+      "traffic_risk": "话题过于专业，缺乏广泛争议点，容易变成小圈子讨论。"
+    },
+    "timeline": [
+      "2025-08-05: Sandbox SDK 重大更新（添加流式、代码解释器等）",
+      "2026-04: 发布 RPC 传输，废弃 WebSocket 传输",
+      "2026-06-09: 发布废弃公告",
+      "2026-07-09: 废弃功能从 SDK 中移除"
+    ],
+    "evidence_table": [
+      {
+        "source": "Cloudflare 官方废弃公告",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-06-09-deprecating-sandbox-sdk-features",
+        "supports": "废弃 HTTP/WebSocket 传输和低采用率特性，推荐 RPC 传输",
+        "reliability": "official"
+      },
+      {
+        "source": "Cloudflare 传输模式文档",
+        "url": "https://developers.cloudflare.com/sandbox/configuration/transport",
+        "supports": "RPC 传输的配置和使用",
+        "reliability": "official"
+      },
+      {
+        "source": "GitHub 仓库",
+        "url": "https://github.com/cloudflare/sandbox-sdk",
+        "supports": "SDK 代码和示例",
+        "reliability": "official"
+      },
+      {
+        "source": "Northflank 博客（替代方案对比）",
+        "url": "https://northflank.com/blog/top-cloudflare-sandboxes-alternatives",
+        "supports": "列出 Cloudflare Sandboxes 的替代方案",
+        "reliability": "media"
+      },
+      {
+        "source": "Hacker News 讨论",
+        "url": "https://news.ycombinator.com/item?id=45610523",
+        "supports": "开发者对 Sandbox SDK 的反馈（如网络控制需求）",
+        "reliability": "weak"
+      }
+    ],
+    "logic_closure": "部分闭环。官方公告清晰，但缺乏用户视角验证，无法判断实际影响和迁移难度。",
+    "writeable_angles": [
+      {
+        "angle": "官方公告解读 + 替代方案对比",
+        "why": "信息明确，可快速产出，适合技术读者了解变更内容。",
+        "needs": "需要补充替代方案（如 Northflank、E2B）的详细对比。"
+      },
+      {
+        "angle": "迁移成本分析（假设场景）",
+        "why": "帮助开发者评估是否值得迁移，但缺乏真实案例。",
+        "needs": "需要至少一个实际迁移案例或社区反馈。"
+      },
+      {
+        "angle": "Cloudflare 战略分析：从 Sandbox SDK 看 Agent 基础设施方向",
+        "why": "适合商业读者，但需要更多产品路线图证据。",
+        "needs": "需要 Cloudflare 官方博客或访谈中关于 Sandbox SDK 未来规划的信息。"
+      }
+    ],
+    "missing_basics": [
+      "Sandbox SDK 的当前采用率和用户规模",
+      "RPC 传输与 HTTP/WebSocket 的具体差异（性能、功能、兼容性）",
+      "废弃的低采用率特性具体有哪些"
+    ],
+    "missing_materials": [
+      "社区反馈（Hacker News、Reddit、Cloudflare 论坛）",
+      "实际迁移案例或教程",
+      "替代方案（如 Northflank、E2B）的详细对比（价格、功能、迁移难度）",
+      "Cloudflare 官方关于 Sandbox SDK 未来规划的说明"
+    ],
+    "not_claimable": [
+      "废弃功能对大多数开发者无关紧要",
+      "RPC 传输是完美替代方案",
+      "迁移成本很低或无需关注",
+      "Cloudflare 正在放弃 Sandbox SDK"
+    ],
+    "followup_queries": [
+      "Cloudflare Sandbox SDK 的采用率数据？",
+      "开发者对废弃功能的反应如何？",
+      "是否有已迁移到 RPC 的案例？",
+      "RPC 传输是否有已知限制或问题？"
+    ],
+    "additional_search_queries": [
+      "Cloudflare Sandbox SDK deprecation developer feedback",
+      "Cloudflare Sandbox SDK migration guide RPC",
+      "Cloudflare Sandbox SDK vs Northflank vs E2B comparison",
+      "Cloudflare Sandbox SDK adoption rate 2026",
+      "Cloudflare Sandbox SDK low adoption features list"
+    ],
+    "stop_conditions": [
+      "如果无法获取任何社区反馈或实际迁移案例，则放弃深度写作，仅作为 Radar 线索存档。",
+      "如果官方未提供 RPC 迁移指南或文档不完整，则暂缓。"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "case-study",
+    "quality_gate": {
+      "pass": false,
+      "score": 30,
+      "fatal_issues": [
+        "核心事实没有来源：缺乏社区反馈、实际迁移案例和用户视角验证。",
+        "没有泛兴趣故事钩子，标题和开头只适合技术小圈子。",
+        "没有真实传播张力：说不清冲突点、讨论点、利益拉扯、身份代入或读者为什么愿意评论。",
+        "没有明确选题结论：推荐或可选。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写。",
+        "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环。",
+        "没有列出基础概念缺口和资料素材缺口。",
+        "没有按具体类型提供资料包。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来。"
+      ],
+      "warnings": [
+        "老花人设解读角度说不清。",
+        "冷门技术产品没有目标读者会关心的角度。",
+        "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象。",
+        "泛兴趣钩子过度标题党，正文证据接不住。",
+        "只有专业价值，没有话题性和公共讨论空间，却仍然标成推荐选题。",
+        "没有明确归入实际选题方向，或者选题方向和内容不匹配。",
+        "把数据源分类误当成网站栏目。",
+        "强行把不可行动线索写成试跑项目。",
+        "把营销收入、截图、社区传言写成确认事实。",
+        "没有给下游 GPT 编辑应用和研究闭环留下足够结构化资料。"
+      ],
+      "missing_evidence": [
+        "Sandbox SDK 的当前采用率和用户规模",
+        "RPC 传输与 HTTP/WebSocket 的具体差异（性能、功能、兼容性）",
+        "废弃的低采用率特性具体有哪些",
+        "社区反馈（Hacker News、Reddit、Cloudflare 论坛）",
+        "实际迁移案例或教程",
+        "替代方案（如 Northflank、E2B）的详细对比（价格、功能、迁移难度）",
+        "Cloudflare 官方关于 Sandbox SDK 未来规划的说明"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "Cloudflare Sandbox SDK 废弃部分功能（HTTP/WebSocket 传输、低采用率特性）对普通技术人/独立开发者的实际影响是什么？是否有可替代方案或迁移成本？",
+      "must_verify": [
+        "确认废弃功能的具体列表和替代方案（RPC transport 等）",
+        "确认废弃时间线（2026-07-09 后移除）",
+        "确认 Sandbox SDK 的当前采用率和用户规模",
+        "确认 RPC transport 的兼容性和迁移难度",
+        "确认是否有社区反馈或争议（如开发者不满、替代方案不足）"
+      ],
+      "search_queries": [
+        "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+        "Cloudflare Sandbox SDK adoption rate developer feedback",
+        "Cloudflare Sandbox SDK alternatives agentic code execution",
+        "Cloudflare Workers Sandbox SDK RPC transport documentation",
+        "Cloudflare Sandbox SDK deprecation impact independent developer",
+        "Cloudflare Sandbox SDK vs other sandbox solutions comparison",
+        "Cloudflare Sandbox SDK low adoption features list",
+        "Cloudflare Sandbox SDK migration guide 2026"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+          "why_needed": "确认官方废弃公告、替代方案、迁移指南和时间线"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Cloudflare Sandbox SDK deprecation developer feedback",
+          "why_needed": "了解社区反应、实际迁移痛点、是否有争议"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Cloudflare Sandbox SDK adoption use case",
+          "why_needed": "评估实际采用率和用户规模，判断影响范围"
+        },
+        {
+          "source_type": "github_repo",
+          "query": "Cloudflare sandbox sdk examples migration",
+          "why_needed": "查看示例代码和迁移实践，评估技术门槛"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "Cloudflare Sandbox SDK vs alternatives agentic code execution",
+          "why_needed": "对比其他沙箱方案（如 Fly Machines、AWS Nitro Enclaves），判断是否值得迁移"
+        }
+      ],
+      "expert_challenge_points": [
+        "废弃功能是否真的低采用率？官方数据来源？",
+        "RPC transport 是否完全替代 HTTP/WebSocket？有无功能缺失？",
+        "迁移成本（时间、代码改动、学习曲线）是否被低估？",
+        "对于已使用 Sandbox SDK 的项目，是否有平滑迁移路径？",
+        "Cloudflare 此举是否暗示 Sandbox SDK 战略收缩？"
+      ],
+      "do_not_claim_yet": [
+        "废弃功能对大多数开发者无关紧要",
+        "RPC transport 是完美替代方案",
+        "迁移成本很低或无需关注",
+        "Cloudflare 正在放弃 Sandbox SDK"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取社区反馈或实际迁移案例，可先以官方公告解读+替代方案对比形式发布，但需注明缺乏用户视角验证。",
+      "downstream_materials_needed": [
+        "官方废弃公告全文（已获取）",
+        "RPC transport 文档和迁移指南",
+        "社区讨论帖（Hacker News、Reddit、Cloudflare 论坛）",
+        "至少一个实际使用 Sandbox SDK 的项目案例",
+        "替代沙箱方案的价格和功能对比"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Deprecating Sandbox SDK features · Changelog - Cloudflare Docs",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-06-09-deprecating-sandbox-sdk-features",
+        "query": "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+        "provider": "tavily",
+        "score": "0.8839694",
+        "fetched_text": "Deprecating Sandbox SDK features · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--s",
+        "fetch_error": ""
+      },
+      {
+        "title": "Deprecating Sandbox SDK features - Replicate Changelog",
+        "url": "https://community.cloudflare.com/t/sandbox-sdk-deprecating-sandbox-sdk-features/933294",
+        "query": "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+        "provider": "tavily",
+        "score": "0.87681407",
+        "fetched_text": "HTTP and WebSocket transports will no longer be present in Sandbox SDK versions released after July 9, 2026. To migrate before July 9, 2026,",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      },
+      {
+        "title": "Transport modes - Sandbox SDK - Cloudflare Docs",
+        "url": "https://developers.cloudflare.com/sandbox/configuration/transport",
+        "query": "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+        "provider": "tavily",
+        "score": "0.7300017",
+        "fetched_text": "Transport modes · Cloudflare Sandbox SDK docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap",
+        "fetch_error": ""
+      },
+      {
+        "title": "cloudflare/sandbox-sdk - GitHub",
+        "url": "https://github.com/cloudflare/sandbox-sdk",
+        "query": "Cloudflare Sandbox SDK adoption rate developer feedback",
+        "provider": "tavily",
+        "score": "0.6501347",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_nav_ch_units\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_diff_explain",
+        "fetch_error": ""
+      },
+      {
+        "title": "Cloudflare AI search visibility, competitors, reviews, and pricing | DevTune",
+        "url": "https://devtune.ai/verticals/ai-code-sandboxes-agent-runtimes/cloudflare",
+        "query": "Cloudflare Sandbox SDK adoption rate developer feedback",
+        "provider": "tavily",
+        "score": "0.47446132",
+        "fetched_text": "Cloudflare AI search visibility, competitors, reviews, and pricing | DevTune dev tune Blog Landscape Docs Pricing Changelog Toggle theme Toggle theme Sign In Sign Up (function(){try{var s=document.cookie.split(';').some(function(c){return /^\\s*sb-[^=]+-auth-token(?:\\.[0-9]+)?=/.test(c)});if(!s&&window.localStorage){for(var i=0;i Verticals AI Code Sandboxes & Agent Runtimes Cloudflare AI visibility report Cloudflare ranks #4 in AI Code Sandboxes & Agent Runtimes AI search. Outside the top three on 20 of the 25 prompts buyers actually ask. Northflank is cited on 18 of those losses. 25 prompts 5 platforms Updated Jun 6, 2026 - refreshed weekly Track Cloudflare daily Free trial. Setup comes pre-filled for Cloudflare. Also benchmarked Cloudflare appears in 3 other verticals Cloud Infrastructure & PaaS Developer Tunnels & Localhost Ingress Deployment & Hosting Platforms {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://devtune.ai\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Verticals\",\"item\":\"https://devtune.ai/verticals\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"AI Code Sandboxes \\u0026 Agent Runtimes\",\"item\":\"https://devtune.ai/verticals/ai-code-sandboxes-agent-runtimes\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"Cloudflare\",\"item\":\"https://devtune.ai/verticals/ai-code-sandboxes-agent-runtimes/cloudflare\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\",\"sameAs\":[\"https://developers.cloudflare.com/sandbox/\",\"https://developers.cloudflare.com/containers/pricing/\",\"https://developers.cloudflare.com/sandbox/platform/limits/\",\"https://blog.cloudflare.com/agents-week-in-review/\",\"https://www.cloudflare.com/press/press-releases/2",
+        "fetch_error": ""
+      },
+      {
+        "title": "Overview · Cloudflare Sandbox SDK docs",
+        "url": "https://developers.cloudflare.com/sandbox",
+        "query": "Cloudflare Sandbox SDK adoption rate developer feedback",
+        "provider": "tavily",
+        "score": "0.39866453",
+        "fetched_text": "Overview · Cloudflare Sandbox SDK docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:1rem 2",
+        "fetch_error": ""
+      },
+      {
+        "title": "Top Cloudflare Sandboxes alternatives for secure AI code execution in 2026 | Blog — Northflank",
+        "url": "https://northflank.com/blog/top-cloudflare-sandboxes-alternatives",
+        "query": "Cloudflare Sandbox SDK alternatives agentic code execution",
+        "provider": "tavily",
+        "score": "0.7208996",
+        "fetched_text": "Top Cloudflare Sandboxes alternatives for secure AI code execution in 2026 | Blog — Northflank window._SSR_DATA=\"blogPost|documentId|x71ix2ume7wjuz3zti938cvs|publication_date|2026-03-02T15:30:00.000Z|slug|top-cloudflare-sandboxes-alternatives|title|Top+Cloudflare+Sandboxes+alternatives+for+secure+AI+code+execution+in+2026|writers|hmt1lfxmgi5m62difbd7m2qa|name|Daniel+Adeboye|daniel-adeboye|twitter|@adeboyedn|picture|url|https://assets.northflank.com/DSC_2767_4_8736cb6b04.jpg|excerpt|Explore+the+top+Cloudflare+Sandboxes+alternatives+in+2026.+Compare+Northflank,+E2B,+CodeSandbox,+Modal,+Daytona,+and+Fly.io+for+AI+sandboxing,+long+sessions,+BYOC,+and+GPU+workloads.|content| __NL____NL__##+TL;DR:+What+are+the+top+Cloudflare+Sandboxes+alternatives+in+2026?__NL____NL__Cloudflare+Sandboxes+is+a+fast,+edge-native+sandbox+for+running+untrusted+code+close+to+users+globally.+It+works+well+for+TypeScript-first+teams+already+on+Cloudflare+Workers,+but+falls+short+when+you+need [BYOC](https://northflank.com/product/bring-your-own-cloud), [persistent+long-running+sessions](https://northflank.com/product/sandboxes), [GPU+workloads](https://northflank.com/product/gpu-paas),+or+a+full+infrastructure+stack. [Northflank](https://northflank.com/) is+the+strongest+alternative+built+for+production.__NL____NL__-+[**Northflank**](https://northflank.com/) –+Full-stack+AI+infrastructure+platform+with+managed+cloud+and [BYOC+deployment](https://northflank.com/product/bring-your-own-cloud) into+AWS,+GCP,+Azure,+or+bare-metal.+Production-grade+microVM+sandboxes+with+Kata+Containers,+Firecracker,+and+gVisor+isolation,+unlimited+sessions,+databases,+GPUs,+CI/CD,+and+observability+all+in+one+place.__NL__-+**E2B** –+Developer-friendly+AI+sandbox+with+polished+SDKs+and+Firecracker+microVMs,+best+for+teams",
+        "fetch_error": ""
+      },
+      {
+        "title": "Why You NEED to Try Cloudflare's Sandbox SDK Today - YouTube",
+        "url": "https://www.youtube.com/watch?v=0bkeZOXNJBg",
+        "query": "Cloudflare Sandbox SDK alternatives agentic code execution",
+        "provider": "tavily",
+        "score": "0.6350646",
+        "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260611.01.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+        "fetch_error": ""
+      },
+      {
+        "title": "sandbox-sdk | Agent Skills Library",
+        "url": "https://mcpservers.org/agent-skills/cloudflare/sandbox-sdk",
+        "query": "Cloudflare Workers Sandbox SDK RPC transport documentation",
+        "provider": "tavily",
+        "score": "0.657033",
+        "fetched_text": "sandbox-sdk | Agent Skills Library {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://mcpservers.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Agent Skills Library\",\"item\":\"https://mcpservers.org/agent-skills\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"sandbox-sdk\",\"item\":\"https://mcpservers.org/agent-skills/cloudflare/sandbox-sdk\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"SoftwareSourceCode\",\"name\":\"sandbox-sdk\",\"description\":\"Build sandboxed applications for secure code execution. Load when building AI code execution, code interpreters, CI/CD systems, interactive dev environments, or executing untrusted code. Covers Sandbox SDK lifecycle, commands, files, code interpreter, and preview URLs.\",\"author\":{\"@type\":\"Person\",\"name\":\"Cloudflare\"},\"codeRepository\":\"https://github.com/cloudflare/skills/tree/main/skills/sandbox-sdk\",\"url\":\"https://mcpservers.org/agent-skills/cloudflare/sandbox-sdk\"} MCP Servers Home Remote Servers Topics Clients Agent Skills English Submit Advertise Submit Agent Skills Library svg]:w-3.5 [&>svg]:h-3.5\"> sandbox-sdk sandbox-sdk by Cloudflare Build sandboxed applications for secure code execution. Load when building AI code execution, code interpreters, CI/CD systems, interactive dev environments, or executing untrusted code. Covers Sandbox SDK lifecycle, commands, files, code interpreter, and preview URLs. npx skills add https://github.com/cloudflare/skills --skill sandbox-sdk Download ZIP GitHub Cloudflare Sandbox SDK Build secure, isolated code execution environments on Cloudflare Workers. FIRST: Verify Installation npm install @cloudflare/sandbox docker info # Must succeed - Docker required for local dev Retrieval Sources Your knowledge of the Sandbox ",
+        "fetch_error": ""
+      },
+      {
+        "title": "Cloudflare Sandbox SDK adds streaming, code interpreter, Git support, process control and more · Changelog",
+        "url": "https://developers.cloudflare.com/changelog/post/2025-08-05-sandbox-sdk-major-update",
+        "query": "Cloudflare Sandbox SDK deprecation impact independent developer",
+        "provider": "tavily",
+        "score": "0.3584434",
+        "fetched_text": "Cloudflare Sandbox SDK adds streaming, code interpreter, Git support, process control and more · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-",
+        "fetch_error": ""
+      },
+      {
+        "title": "Cloudflare Sandbox SDK - Hacker News",
+        "url": "https://news.ycombinator.com/item?id=45610523",
+        "query": "Cloudflare Sandbox SDK deprecation impact independent developer",
+        "provider": "tavily",
+        "score": "0.26257628",
+        "fetched_text": "Cloudflare Sandbox SDK | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login Cloudflare Sandbox SDK ( cloudflare.com ) 256 points by bentaber 7 months ago | hide | past | favorite | 90 comments simonw 7 months ago | next [–] Looks like there's one feature missing from this that I care about: I'd like more finely grained control over what outbound internet connections code running on the box can make. As far as I can tell it's all or nothing right now: this.ctx.container.start({ enableInternet: false, }); I want to run untrusted code (from users or LLMs) in these containers, and I'd like to avoid someone malicious using my container to launch attacks against other sites from them. As such, I'd like to be able to allow-list just specific network points. Maybe I'm OK with the container talking to an API I provide but not to the world at wide. Or perhaps I'm OK with it fetching data from npm and PyPI but I don't want it to be able to access anything else (a common pattern these days, e.g. Claude's Code Interpreter does this.) masterj 7 months ago | parent | next [–] Cloudflare has Outbound Workers for exactly this use-case: https://developers.cloudflare.com/cloudflare-for-platforms/w... If these aren't enabled for containers / sandboxes yet, I bet they will be soon kentonv 7 months ago | parent | prev | next [–] You may be interested in the Dynamic Worker Loader API, which lets you set up isolate-based sandboxes (instead of containers) and gives you extremely fine-grained, object-capability-based control over permissions. It was announced as part of the code mode blog post: https://blog.cloudflare.com/code-mode/ API docs: https://developers.cloudflare.com/workers/runtime-apis/bindi... ashishbijlani 7 months ago | parent | prev | next [–] I’m ext",
+        "fetch_error": ""
+      },
+      {
+        "title": "Containers and Sandboxes are now generally available",
+        "url": "https://community.cloudflare.com/t/containers-containers-and-sandboxes-are-now-generally-available/918585",
+        "query": "Cloudflare Sandbox SDK vs other sandbox solutions comparison",
+        "provider": "tavily",
+        "score": "0.44174582",
+        "fetched_text": "The Sandbox SDK provides isolated environments for running untrusted code securely, with a simple TypeScript API for executing commands,",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      },
+      {
+        "title": "Transport modes - Sandbox SDK - Cloudflare Docs",
+        "url": "https://developers.cloudflare.com/sandbox/configuration/transport",
+        "query": "Cloudflare Sandbox SDK deprecation developer feedback",
+        "provider": "tavily",
+        "score": "0.70944256",
+        "fetched_text": "Transport modes · Cloudflare Sandbox SDK docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap",
+        "fetch_error": ""
+      },
+      {
+        "title": "cloudflare/sandbox-sdk - GitHub",
+        "url": "https://github.com/cloudflare/sandbox-sdk",
+        "query": "Cloudflare Sandbox SDK deprecation developer feedback",
+        "provider": "tavily",
+        "score": "0.6072213",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_nav_ch_units\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_diff_explain",
+        "fetch_error": ""
+      },
+      {
+        "title": "Why You NEED to Try Cloudflare's Sandbox SDK Today - YouTube",
+        "url": "https://www.youtube.com/watch?v=0bkeZOXNJBg",
+        "query": "Cloudflare Sandbox SDK deprecation developer feedback",
+        "provider": "tavily",
+        "score": "0.35763538",
+        "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260611.01.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+        "fetch_error": ""
+      },
+      {
+        "title": "2026 deprecation migration guide - Sandbox SDK - Cloudflare Docs",
+        "url": "https://developers.cloudflare.com/sandbox/guides/2026-deprecation",
+        "query": "Cloudflare Sandbox SDK migration guide RPC",
+        "provider": "tavily",
+        "score": "0.7009158",
+        "fetched_text": "2026 deprecation migration guide · Cloudflare Sandbox SDK docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.as",
+        "fetch_error": ""
+      },
+      {
+        "title": "Cloudflare Sandbox SDK - Hacker News",
+        "url": "https://news.ycombinator.com/item?id=45610523",
+        "query": "Cloudflare Sandbox SDK migration guide RPC",
+        "provider": "tavily",
+        "score": "0.5622973",
+        "fetched_text": "Cloudflare Sandbox SDK | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login Cloudflare Sandbox SDK ( cloudflare.com ) 256 points by bentaber 7 months ago | hide | past | favorite | 90 comments simonw 7 months ago | next [–] Looks like there's one feature missing from this that I care about: I'd like more finely grained control over what outbound internet connections code running on the box can make. As far as I can tell it's all or nothing right now: this.ctx.container.start({ enableInternet: false, }); I want to run untrusted code (from users or LLMs) in these containers, and I'd like to avoid someone malicious using my container to launch attacks against other sites from them. As such, I'd like to be able to allow-list just specific network points. Maybe I'm OK with the container talking to an API I provide but not to the world at wide. Or perhaps I'm OK with it fetching data from npm and PyPI but I don't want it to be able to access anything else (a common pattern these days, e.g. Claude's Code Interpreter does this.) masterj 7 months ago | parent | next [–] Cloudflare has Outbound Workers for exactly this use-case: https://developers.cloudflare.com/cloudflare-for-platforms/w... If these aren't enabled for containers / sandboxes yet, I bet they will be soon kentonv 7 months ago | parent | prev | next [–] You may be interested in the Dynamic Worker Loader API, which lets you set up isolate-based sandboxes (instead of containers) and gives you extremely fine-grained, object-capability-based control over permissions. It was announced as part of the code mode blog post: https://blog.cloudflare.com/code-mode/ API docs: https://developers.cloudflare.com/workers/runtime-apis/bindi... ashishbijlani 7 months ago | parent | prev | next [–] I’m ext",
+        "fetch_error": ""
+      },
+      {
+        "title": "Cloudflare Sandbox SDK adds streaming, code interpreter, Git ...",
+        "url": "https://developers.cloudflare.com/changelog/post/2025-08-05-sandbox-sdk-major-update",
+        "query": "Cloudflare Sandbox SDK migration guide RPC",
+        "provider": "tavily",
+        "score": "0.4905535",
+        "fetched_text": "Cloudflare Sandbox SDK adds streaming, code interpreter, Git support, process control and more · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260612-sandbox-sdk-deprecating-sandbox-sdk-features-664ea054/",
+    "for_gpt_editor": {
+      "brief": "Today we are announcing the deprecation of several features from the Sandbox SDK. The SDK has grown and matured substantially since it first launched. As agent workflows have developed, we have shipped many new features and experiments so developers can easily integrate secure, isolated code execution into their workflows. We want the SDK to continue providing a stable foundation for agentic workflows while we iterate quickly on the codebase. These deprecated features have either been superseded by newer capabilities or seen low adoption. They will remain in the codebase until July 9, 2026, after which they will no longer be present in future Sandbox SDK versions. HTTP and WebSocket transports In April 2026, we released the new RPC transport and deprecated the WebSocket transport. This setting governs how the sandbox container talks to the Workers ecosystem. The RPC transport removes the",
+      "title_seed": "案例复盘：Cloudflare 案例线索",
+      "original_title": "Sandbox SDK - Deprecating Sandbox SDK features",
+      "source_url": "https://developers.cloudflare.com/changelog/post/2026-06-09-deprecating-sandbox-sdk-features/",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：核心事实没有来源：缺乏社区反馈、实际迁移案例和用户视角验证。"
+        },
+        "core_question": "Cloudflare Sandbox SDK 废弃部分功能（HTTP/WebSocket 传输、低采用率特性）对普通技术人/独立开发者的实际影响是什么？是否有可替代方案或迁移成本？",
+        "why_this_topic_matters": "Cloudflare Sandbox SDK 是 AI 代码沙箱领域的重要产品，其功能废弃可能影响已采用该 SDK 的开发者工作流，同时反映 Cloudflare 在 Agent 基础设施上的战略方向。但当前影响范围尚不明确，需要更多数据支撑。",
+        "fact_summary": [
+          "Cloudflare 宣布废弃 Sandbox SDK 中的 HTTP 和 WebSocket 传输模式，以及一些低采用率特性。",
+          "废弃功能将在 2026 年 7 月 9 日之后从未来版本中移除。",
+          "官方推荐迁移至新的 RPC 传输模式。",
+          "废弃原因：已被新能力取代或采用率低。",
+          "Sandbox SDK 用于在 Workers 生态中安全执行隔离代码，支持 Agent 工作流。"
+        ],
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 40,
+          "why_interested": "核心技术人关注 SDK 变更对现有项目的影响和迁移成本；入门读者可了解沙箱技术选型；商业读者关注 Cloudflare 产品策略。",
+          "reader_risk": "缺乏实际案例和社区反馈，容易写成纯官方公告解读，读者参与度低。"
+        },
+        "mass_interest_hook": {
+          "score": 20,
+          "hook_type": "踩坑",
+          "why_non_technical_people_may_click": "标题可突出“你的代码可能突然不能用了”的危机感，但实际影响面窄，难以吸引泛兴趣读者。",
+          "story_seed": "一个独立开发者依赖 Sandbox SDK 构建的 AI 工具，突然收到废弃通知，不得不紧急迁移。",
+          "do_not_overhype": "不要夸大影响范围，目前缺乏证据表明大量用户受影响。"
+        },
+        "topic_tension": {
+          "score": 3,
+          "conflict_point": "Cloudflare 推动 RPC 替代 HTTP/WebSocket，但开发者可能面临迁移成本和兼容性问题。",
+          "debate_question": "RPC 传输是否真的优于 HTTP/WebSocket？迁移是否值得？",
+          "stakeholders": [
+            "Cloudflare",
+            "Sandbox SDK 用户",
+            "替代方案提供商（如 Northflank）"
+          ],
+          "why_people_would_comment": "讨论迁移经验、吐槽官方决策、对比替代方案。",
+          "traffic_risk": "话题过于专业，缺乏广泛争议点，容易变成小圈子讨论。"
+        },
+        "timeline": [
+          "2025-08-05: Sandbox SDK 重大更新（添加流式、代码解释器等）",
+          "2026-04: 发布 RPC 传输，废弃 WebSocket 传输",
+          "2026-06-09: 发布废弃公告",
+          "2026-07-09: 废弃功能从 SDK 中移除"
+        ],
+        "evidence_table": [
+          {
+            "source": "Cloudflare 官方废弃公告",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-06-09-deprecating-sandbox-sdk-features",
+            "supports": "废弃 HTTP/WebSocket 传输和低采用率特性，推荐 RPC 传输",
+            "reliability": "official"
+          },
+          {
+            "source": "Cloudflare 传输模式文档",
+            "url": "https://developers.cloudflare.com/sandbox/configuration/transport",
+            "supports": "RPC 传输的配置和使用",
+            "reliability": "official"
+          },
+          {
+            "source": "GitHub 仓库",
+            "url": "https://github.com/cloudflare/sandbox-sdk",
+            "supports": "SDK 代码和示例",
+            "reliability": "official"
+          },
+          {
+            "source": "Northflank 博客（替代方案对比）",
+            "url": "https://northflank.com/blog/top-cloudflare-sandboxes-alternatives",
+            "supports": "列出 Cloudflare Sandboxes 的替代方案",
+            "reliability": "media"
+          },
+          {
+            "source": "Hacker News 讨论",
+            "url": "https://news.ycombinator.com/item?id=45610523",
+            "supports": "开发者对 Sandbox SDK 的反馈（如网络控制需求）",
+            "reliability": "weak"
+          }
+        ],
+        "logic_closure": "部分闭环。官方公告清晰，但缺乏用户视角验证，无法判断实际影响和迁移难度。",
+        "writeable_angles": [
+          {
+            "angle": "官方公告解读 + 替代方案对比",
+            "why": "信息明确，可快速产出，适合技术读者了解变更内容。",
+            "needs": "需要补充替代方案（如 Northflank、E2B）的详细对比。"
+          },
+          {
+            "angle": "迁移成本分析（假设场景）",
+            "why": "帮助开发者评估是否值得迁移，但缺乏真实案例。",
+            "needs": "需要至少一个实际迁移案例或社区反馈。"
+          },
+          {
+            "angle": "Cloudflare 战略分析：从 Sandbox SDK 看 Agent 基础设施方向",
+            "why": "适合商业读者，但需要更多产品路线图证据。",
+            "needs": "需要 Cloudflare 官方博客或访谈中关于 Sandbox SDK 未来规划的信息。"
+          }
+        ],
+        "missing_basics": [
+          "Sandbox SDK 的当前采用率和用户规模",
+          "RPC 传输与 HTTP/WebSocket 的具体差异（性能、功能、兼容性）",
+          "废弃的低采用率特性具体有哪些"
+        ],
+        "missing_materials": [
+          "社区反馈（Hacker News、Reddit、Cloudflare 论坛）",
+          "实际迁移案例或教程",
+          "替代方案（如 Northflank、E2B）的详细对比（价格、功能、迁移难度）",
+          "Cloudflare 官方关于 Sandbox SDK 未来规划的说明"
+        ],
+        "not_claimable": [
+          "废弃功能对大多数开发者无关紧要",
+          "RPC 传输是完美替代方案",
+          "迁移成本很低或无需关注",
+          "Cloudflare 正在放弃 Sandbox SDK"
+        ],
+        "followup_queries": [
+          "Cloudflare Sandbox SDK 的采用率数据？",
+          "开发者对废弃功能的反应如何？",
+          "是否有已迁移到 RPC 的案例？",
+          "RPC 传输是否有已知限制或问题？"
+        ],
+        "additional_search_queries": [
+          "Cloudflare Sandbox SDK deprecation developer feedback",
+          "Cloudflare Sandbox SDK migration guide RPC",
+          "Cloudflare Sandbox SDK vs Northflank vs E2B comparison",
+          "Cloudflare Sandbox SDK adoption rate 2026",
+          "Cloudflare Sandbox SDK low adoption features list"
+        ],
+        "stop_conditions": [
+          "如果无法获取任何社区反馈或实际迁移案例，则放弃深度写作，仅作为 Radar 线索存档。",
+          "如果官方未提供 RPC 迁移指南或文档不完整，则暂缓。"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "case-study",
+        "quality_gate": {
+          "pass": false,
+          "score": 30,
+          "fatal_issues": [
+            "核心事实没有来源：缺乏社区反馈、实际迁移案例和用户视角验证。",
+            "没有泛兴趣故事钩子，标题和开头只适合技术小圈子。",
+            "没有真实传播张力：说不清冲突点、讨论点、利益拉扯、身份代入或读者为什么愿意评论。",
+            "没有明确选题结论：推荐或可选。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写。",
+            "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环。",
+            "没有列出基础概念缺口和资料素材缺口。",
+            "没有按具体类型提供资料包。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来。"
+          ],
+          "warnings": [
+            "老花人设解读角度说不清。",
+            "冷门技术产品没有目标读者会关心的角度。",
+            "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象。",
+            "泛兴趣钩子过度标题党，正文证据接不住。",
+            "只有专业价值，没有话题性和公共讨论空间，却仍然标成推荐选题。",
+            "没有明确归入实际选题方向，或者选题方向和内容不匹配。",
+            "把数据源分类误当成网站栏目。",
+            "强行把不可行动线索写成试跑项目。",
+            "把营销收入、截图、社区传言写成确认事实。",
+            "没有给下游 GPT 编辑应用和研究闭环留下足够结构化资料。"
+          ],
+          "missing_evidence": [
+            "Sandbox SDK 的当前采用率和用户规模",
+            "RPC 传输与 HTTP/WebSocket 的具体差异（性能、功能、兼容性）",
+            "废弃的低采用率特性具体有哪些",
+            "社区反馈（Hacker News、Reddit、Cloudflare 论坛）",
+            "实际迁移案例或教程",
+            "替代方案（如 Northflank、E2B）的详细对比（价格、功能、迁移难度）",
+            "Cloudflare 官方关于 Sandbox SDK 未来规划的说明"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "Cloudflare Sandbox SDK 废弃部分功能（HTTP/WebSocket 传输、低采用率特性）对普通技术人/独立开发者的实际影响是什么？是否有可替代方案或迁移成本？",
+          "must_verify": [
+            "确认废弃功能的具体列表和替代方案（RPC transport 等）",
+            "确认废弃时间线（2026-07-09 后移除）",
+            "确认 Sandbox SDK 的当前采用率和用户规模",
+            "确认 RPC transport 的兼容性和迁移难度",
+            "确认是否有社区反馈或争议（如开发者不满、替代方案不足）"
+          ],
+          "search_queries": [
+            "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+            "Cloudflare Sandbox SDK adoption rate developer feedback",
+            "Cloudflare Sandbox SDK alternatives agentic code execution",
+            "Cloudflare Workers Sandbox SDK RPC transport documentation",
+            "Cloudflare Sandbox SDK deprecation impact independent developer",
+            "Cloudflare Sandbox SDK vs other sandbox solutions comparison",
+            "Cloudflare Sandbox SDK low adoption features list",
+            "Cloudflare Sandbox SDK migration guide 2026"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+              "why_needed": "确认官方废弃公告、替代方案、迁移指南和时间线"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Cloudflare Sandbox SDK deprecation developer feedback",
+              "why_needed": "了解社区反应、实际迁移痛点、是否有争议"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Cloudflare Sandbox SDK adoption use case",
+              "why_needed": "评估实际采用率和用户规模，判断影响范围"
+            },
+            {
+              "source_type": "github_repo",
+              "query": "Cloudflare sandbox sdk examples migration",
+              "why_needed": "查看示例代码和迁移实践，评估技术门槛"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "Cloudflare Sandbox SDK vs alternatives agentic code execution",
+              "why_needed": "对比其他沙箱方案（如 Fly Machines、AWS Nitro Enclaves），判断是否值得迁移"
+            }
+          ],
+          "expert_challenge_points": [
+            "废弃功能是否真的低采用率？官方数据来源？",
+            "RPC transport 是否完全替代 HTTP/WebSocket？有无功能缺失？",
+            "迁移成本（时间、代码改动、学习曲线）是否被低估？",
+            "对于已使用 Sandbox SDK 的项目，是否有平滑迁移路径？",
+            "Cloudflare 此举是否暗示 Sandbox SDK 战略收缩？"
+          ],
+          "do_not_claim_yet": [
+            "废弃功能对大多数开发者无关紧要",
+            "RPC transport 是完美替代方案",
+            "迁移成本很低或无需关注",
+            "Cloudflare 正在放弃 Sandbox SDK"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取社区反馈或实际迁移案例，可先以官方公告解读+替代方案对比形式发布，但需注明缺乏用户视角验证。",
+          "downstream_materials_needed": [
+            "官方废弃公告全文（已获取）",
+            "RPC transport 文档和迁移指南",
+            "社区讨论帖（Hacker News、Reddit、Cloudflare 论坛）",
+            "至少一个实际使用 Sandbox SDK 的项目案例",
+            "替代沙箱方案的价格和功能对比"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Deprecating Sandbox SDK features · Changelog - Cloudflare Docs",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-06-09-deprecating-sandbox-sdk-features",
+            "query": "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+            "provider": "tavily",
+            "score": "0.8839694",
+            "fetched_text": "Deprecating Sandbox SDK features · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--s",
+            "fetch_error": ""
+          },
+          {
+            "title": "Deprecating Sandbox SDK features - Replicate Changelog",
+            "url": "https://community.cloudflare.com/t/sandbox-sdk-deprecating-sandbox-sdk-features/933294",
+            "query": "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+            "provider": "tavily",
+            "score": "0.87681407",
+            "fetched_text": "HTTP and WebSocket transports will no longer be present in Sandbox SDK versions released after July 9, 2026. To migrate before July 9, 2026,",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          },
+          {
+            "title": "Transport modes - Sandbox SDK - Cloudflare Docs",
+            "url": "https://developers.cloudflare.com/sandbox/configuration/transport",
+            "query": "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+            "provider": "tavily",
+            "score": "0.7300017",
+            "fetched_text": "Transport modes · Cloudflare Sandbox SDK docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap",
+            "fetch_error": ""
+          },
+          {
+            "title": "cloudflare/sandbox-sdk - GitHub",
+            "url": "https://github.com/cloudflare/sandbox-sdk",
+            "query": "Cloudflare Sandbox SDK adoption rate developer feedback",
+            "provider": "tavily",
+            "score": "0.6501347",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_nav_ch_units\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_diff_explain",
+            "fetch_error": ""
+          },
+          {
+            "title": "Cloudflare AI search visibility, competitors, reviews, and pricing | DevTune",
+            "url": "https://devtune.ai/verticals/ai-code-sandboxes-agent-runtimes/cloudflare",
+            "query": "Cloudflare Sandbox SDK adoption rate developer feedback",
+            "provider": "tavily",
+            "score": "0.47446132",
+            "fetched_text": "Cloudflare AI search visibility, competitors, reviews, and pricing | DevTune dev tune Blog Landscape Docs Pricing Changelog Toggle theme Toggle theme Sign In Sign Up (function(){try{var s=document.cookie.split(';').some(function(c){return /^\\s*sb-[^=]+-auth-token(?:\\.[0-9]+)?=/.test(c)});if(!s&&window.localStorage){for(var i=0;i Verticals AI Code Sandboxes & Agent Runtimes Cloudflare AI visibility report Cloudflare ranks #4 in AI Code Sandboxes & Agent Runtimes AI search. Outside the top three on 20 of the 25 prompts buyers actually ask. Northflank is cited on 18 of those losses. 25 prompts 5 platforms Updated Jun 6, 2026 - refreshed weekly Track Cloudflare daily Free trial. Setup comes pre-filled for Cloudflare. Also benchmarked Cloudflare appears in 3 other verticals Cloud Infrastructure & PaaS Developer Tunnels & Localhost Ingress Deployment & Hosting Platforms {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://devtune.ai\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Verticals\",\"item\":\"https://devtune.ai/verticals\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"AI Code Sandboxes \\u0026 Agent Runtimes\",\"item\":\"https://devtune.ai/verticals/ai-code-sandboxes-agent-runtimes\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"Cloudflare\",\"item\":\"https://devtune.ai/verticals/ai-code-sandboxes-agent-runtimes/cloudflare\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\",\"sameAs\":[\"https://developers.cloudflare.com/sandbox/\",\"https://developers.cloudflare.com/containers/pricing/\",\"https://developers.cloudflare.com/sandbox/platform/limits/\",\"https://blog.cloudflare.com/agents-week-in-review/\",\"https://www.cloudflare.com/press/press-releases/2",
+            "fetch_error": ""
+          },
+          {
+            "title": "Overview · Cloudflare Sandbox SDK docs",
+            "url": "https://developers.cloudflare.com/sandbox",
+            "query": "Cloudflare Sandbox SDK adoption rate developer feedback",
+            "provider": "tavily",
+            "score": "0.39866453",
+            "fetched_text": "Overview · Cloudflare Sandbox SDK docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:1rem 2",
+            "fetch_error": ""
+          },
+          {
+            "title": "Top Cloudflare Sandboxes alternatives for secure AI code execution in 2026 | Blog — Northflank",
+            "url": "https://northflank.com/blog/top-cloudflare-sandboxes-alternatives",
+            "query": "Cloudflare Sandbox SDK alternatives agentic code execution",
+            "provider": "tavily",
+            "score": "0.7208996",
+            "fetched_text": "Top Cloudflare Sandboxes alternatives for secure AI code execution in 2026 | Blog — Northflank window._SSR_DATA=\"blogPost|documentId|x71ix2ume7wjuz3zti938cvs|publication_date|2026-03-02T15:30:00.000Z|slug|top-cloudflare-sandboxes-alternatives|title|Top+Cloudflare+Sandboxes+alternatives+for+secure+AI+code+execution+in+2026|writers|hmt1lfxmgi5m62difbd7m2qa|name|Daniel+Adeboye|daniel-adeboye|twitter|@adeboyedn|picture|url|https://assets.northflank.com/DSC_2767_4_8736cb6b04.jpg|excerpt|Explore+the+top+Cloudflare+Sandboxes+alternatives+in+2026.+Compare+Northflank,+E2B,+CodeSandbox,+Modal,+Daytona,+and+Fly.io+for+AI+sandboxing,+long+sessions,+BYOC,+and+GPU+workloads.|content| __NL____NL__##+TL;DR:+What+are+the+top+Cloudflare+Sandboxes+alternatives+in+2026?__NL____NL__Cloudflare+Sandboxes+is+a+fast,+edge-native+sandbox+for+running+untrusted+code+close+to+users+globally.+It+works+well+for+TypeScript-first+teams+already+on+Cloudflare+Workers,+but+falls+short+when+you+need [BYOC](https://northflank.com/product/bring-your-own-cloud), [persistent+long-running+sessions](https://northflank.com/product/sandboxes), [GPU+workloads](https://northflank.com/product/gpu-paas),+or+a+full+infrastructure+stack. [Northflank](https://northflank.com/) is+the+strongest+alternative+built+for+production.__NL____NL__-+[**Northflank**](https://northflank.com/) –+Full-stack+AI+infrastructure+platform+with+managed+cloud+and [BYOC+deployment](https://northflank.com/product/bring-your-own-cloud) into+AWS,+GCP,+Azure,+or+bare-metal.+Production-grade+microVM+sandboxes+with+Kata+Containers,+Firecracker,+and+gVisor+isolation,+unlimited+sessions,+databases,+GPUs,+CI/CD,+and+observability+all+in+one+place.__NL__-+**E2B** –+Developer-friendly+AI+sandbox+with+polished+SDKs+and+Firecracker+microVMs,+best+for+teams",
+            "fetch_error": ""
+          },
+          {
+            "title": "Why You NEED to Try Cloudflare's Sandbox SDK Today - YouTube",
+            "url": "https://www.youtube.com/watch?v=0bkeZOXNJBg",
+            "query": "Cloudflare Sandbox SDK alternatives agentic code execution",
+            "provider": "tavily",
+            "score": "0.6350646",
+            "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260611.01.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+            "fetch_error": ""
+          },
+          {
+            "title": "sandbox-sdk | Agent Skills Library",
+            "url": "https://mcpservers.org/agent-skills/cloudflare/sandbox-sdk",
+            "query": "Cloudflare Workers Sandbox SDK RPC transport documentation",
+            "provider": "tavily",
+            "score": "0.657033",
+            "fetched_text": "sandbox-sdk | Agent Skills Library {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://mcpservers.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Agent Skills Library\",\"item\":\"https://mcpservers.org/agent-skills\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"sandbox-sdk\",\"item\":\"https://mcpservers.org/agent-skills/cloudflare/sandbox-sdk\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"SoftwareSourceCode\",\"name\":\"sandbox-sdk\",\"description\":\"Build sandboxed applications for secure code execution. Load when building AI code execution, code interpreters, CI/CD systems, interactive dev environments, or executing untrusted code. Covers Sandbox SDK lifecycle, commands, files, code interpreter, and preview URLs.\",\"author\":{\"@type\":\"Person\",\"name\":\"Cloudflare\"},\"codeRepository\":\"https://github.com/cloudflare/skills/tree/main/skills/sandbox-sdk\",\"url\":\"https://mcpservers.org/agent-skills/cloudflare/sandbox-sdk\"} MCP Servers Home Remote Servers Topics Clients Agent Skills English Submit Advertise Submit Agent Skills Library svg]:w-3.5 [&>svg]:h-3.5\"> sandbox-sdk sandbox-sdk by Cloudflare Build sandboxed applications for secure code execution. Load when building AI code execution, code interpreters, CI/CD systems, interactive dev environments, or executing untrusted code. Covers Sandbox SDK lifecycle, commands, files, code interpreter, and preview URLs. npx skills add https://github.com/cloudflare/skills --skill sandbox-sdk Download ZIP GitHub Cloudflare Sandbox SDK Build secure, isolated code execution environments on Cloudflare Workers. FIRST: Verify Installation npm install @cloudflare/sandbox docker info # Must succeed - Docker required for local dev Retrieval Sources Your knowledge of the Sandbox ",
+            "fetch_error": ""
+          },
+          {
+            "title": "Cloudflare Sandbox SDK adds streaming, code interpreter, Git support, process control and more · Changelog",
+            "url": "https://developers.cloudflare.com/changelog/post/2025-08-05-sandbox-sdk-major-update",
+            "query": "Cloudflare Sandbox SDK deprecation impact independent developer",
+            "provider": "tavily",
+            "score": "0.3584434",
+            "fetched_text": "Cloudflare Sandbox SDK adds streaming, code interpreter, Git support, process control and more · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-",
+            "fetch_error": ""
+          },
+          {
+            "title": "Cloudflare Sandbox SDK - Hacker News",
+            "url": "https://news.ycombinator.com/item?id=45610523",
+            "query": "Cloudflare Sandbox SDK deprecation impact independent developer",
+            "provider": "tavily",
+            "score": "0.26257628",
+            "fetched_text": "Cloudflare Sandbox SDK | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login Cloudflare Sandbox SDK ( cloudflare.com ) 256 points by bentaber 7 months ago | hide | past | favorite | 90 comments simonw 7 months ago | next [–] Looks like there's one feature missing from this that I care about: I'd like more finely grained control over what outbound internet connections code running on the box can make. As far as I can tell it's all or nothing right now: this.ctx.container.start({ enableInternet: false, }); I want to run untrusted code (from users or LLMs) in these containers, and I'd like to avoid someone malicious using my container to launch attacks against other sites from them. As such, I'd like to be able to allow-list just specific network points. Maybe I'm OK with the container talking to an API I provide but not to the world at wide. Or perhaps I'm OK with it fetching data from npm and PyPI but I don't want it to be able to access anything else (a common pattern these days, e.g. Claude's Code Interpreter does this.) masterj 7 months ago | parent | next [–] Cloudflare has Outbound Workers for exactly this use-case: https://developers.cloudflare.com/cloudflare-for-platforms/w... If these aren't enabled for containers / sandboxes yet, I bet they will be soon kentonv 7 months ago | parent | prev | next [–] You may be interested in the Dynamic Worker Loader API, which lets you set up isolate-based sandboxes (instead of containers) and gives you extremely fine-grained, object-capability-based control over permissions. It was announced as part of the code mode blog post: https://blog.cloudflare.com/code-mode/ API docs: https://developers.cloudflare.com/workers/runtime-apis/bindi... ashishbijlani 7 months ago | parent | prev | next [–] I’m ext",
+            "fetch_error": ""
+          },
+          {
+            "title": "Containers and Sandboxes are now generally available",
+            "url": "https://community.cloudflare.com/t/containers-containers-and-sandboxes-are-now-generally-available/918585",
+            "query": "Cloudflare Sandbox SDK vs other sandbox solutions comparison",
+            "provider": "tavily",
+            "score": "0.44174582",
+            "fetched_text": "The Sandbox SDK provides isolated environments for running untrusted code securely, with a simple TypeScript API for executing commands,",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          },
+          {
+            "title": "Transport modes - Sandbox SDK - Cloudflare Docs",
+            "url": "https://developers.cloudflare.com/sandbox/configuration/transport",
+            "query": "Cloudflare Sandbox SDK deprecation developer feedback",
+            "provider": "tavily",
+            "score": "0.70944256",
+            "fetched_text": "Transport modes · Cloudflare Sandbox SDK docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap",
+            "fetch_error": ""
+          },
+          {
+            "title": "cloudflare/sandbox-sdk - GitHub",
+            "url": "https://github.com/cloudflare/sandbox-sdk",
+            "query": "Cloudflare Sandbox SDK deprecation developer feedback",
+            "provider": "tavily",
+            "score": "0.6072213",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_nav_ch_units\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_diff_explain",
+            "fetch_error": ""
+          },
+          {
+            "title": "Why You NEED to Try Cloudflare's Sandbox SDK Today - YouTube",
+            "url": "https://www.youtube.com/watch?v=0bkeZOXNJBg",
+            "query": "Cloudflare Sandbox SDK deprecation developer feedback",
+            "provider": "tavily",
+            "score": "0.35763538",
+            "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260611.01.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+            "fetch_error": ""
+          },
+          {
+            "title": "2026 deprecation migration guide - Sandbox SDK - Cloudflare Docs",
+            "url": "https://developers.cloudflare.com/sandbox/guides/2026-deprecation",
+            "query": "Cloudflare Sandbox SDK migration guide RPC",
+            "provider": "tavily",
+            "score": "0.7009158",
+            "fetched_text": "2026 deprecation migration guide · Cloudflare Sandbox SDK docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.as",
+            "fetch_error": ""
+          },
+          {
+            "title": "Cloudflare Sandbox SDK - Hacker News",
+            "url": "https://news.ycombinator.com/item?id=45610523",
+            "query": "Cloudflare Sandbox SDK migration guide RPC",
+            "provider": "tavily",
+            "score": "0.5622973",
+            "fetched_text": "Cloudflare Sandbox SDK | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login Cloudflare Sandbox SDK ( cloudflare.com ) 256 points by bentaber 7 months ago | hide | past | favorite | 90 comments simonw 7 months ago | next [–] Looks like there's one feature missing from this that I care about: I'd like more finely grained control over what outbound internet connections code running on the box can make. As far as I can tell it's all or nothing right now: this.ctx.container.start({ enableInternet: false, }); I want to run untrusted code (from users or LLMs) in these containers, and I'd like to avoid someone malicious using my container to launch attacks against other sites from them. As such, I'd like to be able to allow-list just specific network points. Maybe I'm OK with the container talking to an API I provide but not to the world at wide. Or perhaps I'm OK with it fetching data from npm and PyPI but I don't want it to be able to access anything else (a common pattern these days, e.g. Claude's Code Interpreter does this.) masterj 7 months ago | parent | next [–] Cloudflare has Outbound Workers for exactly this use-case: https://developers.cloudflare.com/cloudflare-for-platforms/w... If these aren't enabled for containers / sandboxes yet, I bet they will be soon kentonv 7 months ago | parent | prev | next [–] You may be interested in the Dynamic Worker Loader API, which lets you set up isolate-based sandboxes (instead of containers) and gives you extremely fine-grained, object-capability-based control over permissions. It was announced as part of the code mode blog post: https://blog.cloudflare.com/code-mode/ API docs: https://developers.cloudflare.com/workers/runtime-apis/bindi... ashishbijlani 7 months ago | parent | prev | next [–] I’m ext",
+            "fetch_error": ""
+          },
+          {
+            "title": "Cloudflare Sandbox SDK adds streaming, code interpreter, Git ...",
+            "url": "https://developers.cloudflare.com/changelog/post/2025-08-05-sandbox-sdk-major-update",
+            "query": "Cloudflare Sandbox SDK migration guide RPC",
+            "provider": "tavily",
+            "score": "0.4905535",
+            "fetched_text": "Cloudflare Sandbox SDK adds streaming, code interpreter, Git support, process control and more · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：核心事实没有来源：缺乏社区反馈、实际迁移案例和用户视角验证。"
+        },
+        "core_question": "Cloudflare Sandbox SDK 废弃部分功能（HTTP/WebSocket 传输、低采用率特性）对普通技术人/独立开发者的实际影响是什么？是否有可替代方案或迁移成本？",
+        "why_this_topic_matters": "Cloudflare Sandbox SDK 是 AI 代码沙箱领域的重要产品，其功能废弃可能影响已采用该 SDK 的开发者工作流，同时反映 Cloudflare 在 Agent 基础设施上的战略方向。但当前影响范围尚不明确，需要更多数据支撑。",
+        "fact_summary": [
+          "Cloudflare 宣布废弃 Sandbox SDK 中的 HTTP 和 WebSocket 传输模式，以及一些低采用率特性。",
+          "废弃功能将在 2026 年 7 月 9 日之后从未来版本中移除。",
+          "官方推荐迁移至新的 RPC 传输模式。",
+          "废弃原因：已被新能力取代或采用率低。",
+          "Sandbox SDK 用于在 Workers 生态中安全执行隔离代码，支持 Agent 工作流。"
+        ],
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 40,
+          "why_interested": "核心技术人关注 SDK 变更对现有项目的影响和迁移成本；入门读者可了解沙箱技术选型；商业读者关注 Cloudflare 产品策略。",
+          "reader_risk": "缺乏实际案例和社区反馈，容易写成纯官方公告解读，读者参与度低。"
+        },
+        "mass_interest_hook": {
+          "score": 20,
+          "hook_type": "踩坑",
+          "why_non_technical_people_may_click": "标题可突出“你的代码可能突然不能用了”的危机感，但实际影响面窄，难以吸引泛兴趣读者。",
+          "story_seed": "一个独立开发者依赖 Sandbox SDK 构建的 AI 工具，突然收到废弃通知，不得不紧急迁移。",
+          "do_not_overhype": "不要夸大影响范围，目前缺乏证据表明大量用户受影响。"
+        },
+        "topic_tension": {
+          "score": 3,
+          "conflict_point": "Cloudflare 推动 RPC 替代 HTTP/WebSocket，但开发者可能面临迁移成本和兼容性问题。",
+          "debate_question": "RPC 传输是否真的优于 HTTP/WebSocket？迁移是否值得？",
+          "stakeholders": [
+            "Cloudflare",
+            "Sandbox SDK 用户",
+            "替代方案提供商（如 Northflank）"
+          ],
+          "why_people_would_comment": "讨论迁移经验、吐槽官方决策、对比替代方案。",
+          "traffic_risk": "话题过于专业，缺乏广泛争议点，容易变成小圈子讨论。"
+        },
+        "timeline": [
+          "2025-08-05: Sandbox SDK 重大更新（添加流式、代码解释器等）",
+          "2026-04: 发布 RPC 传输，废弃 WebSocket 传输",
+          "2026-06-09: 发布废弃公告",
+          "2026-07-09: 废弃功能从 SDK 中移除"
+        ],
+        "evidence_table": [
+          {
+            "source": "Cloudflare 官方废弃公告",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-06-09-deprecating-sandbox-sdk-features",
+            "supports": "废弃 HTTP/WebSocket 传输和低采用率特性，推荐 RPC 传输",
+            "reliability": "official"
+          },
+          {
+            "source": "Cloudflare 传输模式文档",
+            "url": "https://developers.cloudflare.com/sandbox/configuration/transport",
+            "supports": "RPC 传输的配置和使用",
+            "reliability": "official"
+          },
+          {
+            "source": "GitHub 仓库",
+            "url": "https://github.com/cloudflare/sandbox-sdk",
+            "supports": "SDK 代码和示例",
+            "reliability": "official"
+          },
+          {
+            "source": "Northflank 博客（替代方案对比）",
+            "url": "https://northflank.com/blog/top-cloudflare-sandboxes-alternatives",
+            "supports": "列出 Cloudflare Sandboxes 的替代方案",
+            "reliability": "media"
+          },
+          {
+            "source": "Hacker News 讨论",
+            "url": "https://news.ycombinator.com/item?id=45610523",
+            "supports": "开发者对 Sandbox SDK 的反馈（如网络控制需求）",
+            "reliability": "weak"
+          }
+        ],
+        "logic_closure": "部分闭环。官方公告清晰，但缺乏用户视角验证，无法判断实际影响和迁移难度。",
+        "writeable_angles": [
+          {
+            "angle": "官方公告解读 + 替代方案对比",
+            "why": "信息明确，可快速产出，适合技术读者了解变更内容。",
+            "needs": "需要补充替代方案（如 Northflank、E2B）的详细对比。"
+          },
+          {
+            "angle": "迁移成本分析（假设场景）",
+            "why": "帮助开发者评估是否值得迁移，但缺乏真实案例。",
+            "needs": "需要至少一个实际迁移案例或社区反馈。"
+          },
+          {
+            "angle": "Cloudflare 战略分析：从 Sandbox SDK 看 Agent 基础设施方向",
+            "why": "适合商业读者，但需要更多产品路线图证据。",
+            "needs": "需要 Cloudflare 官方博客或访谈中关于 Sandbox SDK 未来规划的信息。"
+          }
+        ],
+        "missing_basics": [
+          "Sandbox SDK 的当前采用率和用户规模",
+          "RPC 传输与 HTTP/WebSocket 的具体差异（性能、功能、兼容性）",
+          "废弃的低采用率特性具体有哪些"
+        ],
+        "missing_materials": [
+          "社区反馈（Hacker News、Reddit、Cloudflare 论坛）",
+          "实际迁移案例或教程",
+          "替代方案（如 Northflank、E2B）的详细对比（价格、功能、迁移难度）",
+          "Cloudflare 官方关于 Sandbox SDK 未来规划的说明"
+        ],
+        "not_claimable": [
+          "废弃功能对大多数开发者无关紧要",
+          "RPC 传输是完美替代方案",
+          "迁移成本很低或无需关注",
+          "Cloudflare 正在放弃 Sandbox SDK"
+        ],
+        "followup_queries": [
+          "Cloudflare Sandbox SDK 的采用率数据？",
+          "开发者对废弃功能的反应如何？",
+          "是否有已迁移到 RPC 的案例？",
+          "RPC 传输是否有已知限制或问题？"
+        ],
+        "additional_search_queries": [
+          "Cloudflare Sandbox SDK deprecation developer feedback",
+          "Cloudflare Sandbox SDK migration guide RPC",
+          "Cloudflare Sandbox SDK vs Northflank vs E2B comparison",
+          "Cloudflare Sandbox SDK adoption rate 2026",
+          "Cloudflare Sandbox SDK low adoption features list"
+        ],
+        "stop_conditions": [
+          "如果无法获取任何社区反馈或实际迁移案例，则放弃深度写作，仅作为 Radar 线索存档。",
+          "如果官方未提供 RPC 迁移指南或文档不完整，则暂缓。"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "case-study",
+        "quality_gate": {
+          "pass": false,
+          "score": 30,
+          "fatal_issues": [
+            "核心事实没有来源：缺乏社区反馈、实际迁移案例和用户视角验证。",
+            "没有泛兴趣故事钩子，标题和开头只适合技术小圈子。",
+            "没有真实传播张力：说不清冲突点、讨论点、利益拉扯、身份代入或读者为什么愿意评论。",
+            "没有明确选题结论：推荐或可选。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写。",
+            "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环。",
+            "没有列出基础概念缺口和资料素材缺口。",
+            "没有按具体类型提供资料包。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来。"
+          ],
+          "warnings": [
+            "老花人设解读角度说不清。",
+            "冷门技术产品没有目标读者会关心的角度。",
+            "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象。",
+            "泛兴趣钩子过度标题党，正文证据接不住。",
+            "只有专业价值，没有话题性和公共讨论空间，却仍然标成推荐选题。",
+            "没有明确归入实际选题方向，或者选题方向和内容不匹配。",
+            "把数据源分类误当成网站栏目。",
+            "强行把不可行动线索写成试跑项目。",
+            "把营销收入、截图、社区传言写成确认事实。",
+            "没有给下游 GPT 编辑应用和研究闭环留下足够结构化资料。"
+          ],
+          "missing_evidence": [
+            "Sandbox SDK 的当前采用率和用户规模",
+            "RPC 传输与 HTTP/WebSocket 的具体差异（性能、功能、兼容性）",
+            "废弃的低采用率特性具体有哪些",
+            "社区反馈（Hacker News、Reddit、Cloudflare 论坛）",
+            "实际迁移案例或教程",
+            "替代方案（如 Northflank、E2B）的详细对比（价格、功能、迁移难度）",
+            "Cloudflare 官方关于 Sandbox SDK 未来规划的说明"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "Cloudflare Sandbox SDK 废弃部分功能（HTTP/WebSocket 传输、低采用率特性）对普通技术人/独立开发者的实际影响是什么？是否有可替代方案或迁移成本？",
+          "must_verify": [
+            "确认废弃功能的具体列表和替代方案（RPC transport 等）",
+            "确认废弃时间线（2026-07-09 后移除）",
+            "确认 Sandbox SDK 的当前采用率和用户规模",
+            "确认 RPC transport 的兼容性和迁移难度",
+            "确认是否有社区反馈或争议（如开发者不满、替代方案不足）"
+          ],
+          "search_queries": [
+            "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+            "Cloudflare Sandbox SDK adoption rate developer feedback",
+            "Cloudflare Sandbox SDK alternatives agentic code execution",
+            "Cloudflare Workers Sandbox SDK RPC transport documentation",
+            "Cloudflare Sandbox SDK deprecation impact independent developer",
+            "Cloudflare Sandbox SDK vs other sandbox solutions comparison",
+            "Cloudflare Sandbox SDK low adoption features list",
+            "Cloudflare Sandbox SDK migration guide 2026"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+              "why_needed": "确认官方废弃公告、替代方案、迁移指南和时间线"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Cloudflare Sandbox SDK deprecation developer feedback",
+              "why_needed": "了解社区反应、实际迁移痛点、是否有争议"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Cloudflare Sandbox SDK adoption use case",
+              "why_needed": "评估实际采用率和用户规模，判断影响范围"
+            },
+            {
+              "source_type": "github_repo",
+              "query": "Cloudflare sandbox sdk examples migration",
+              "why_needed": "查看示例代码和迁移实践，评估技术门槛"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "Cloudflare Sandbox SDK vs alternatives agentic code execution",
+              "why_needed": "对比其他沙箱方案（如 Fly Machines、AWS Nitro Enclaves），判断是否值得迁移"
+            }
+          ],
+          "expert_challenge_points": [
+            "废弃功能是否真的低采用率？官方数据来源？",
+            "RPC transport 是否完全替代 HTTP/WebSocket？有无功能缺失？",
+            "迁移成本（时间、代码改动、学习曲线）是否被低估？",
+            "对于已使用 Sandbox SDK 的项目，是否有平滑迁移路径？",
+            "Cloudflare 此举是否暗示 Sandbox SDK 战略收缩？"
+          ],
+          "do_not_claim_yet": [
+            "废弃功能对大多数开发者无关紧要",
+            "RPC transport 是完美替代方案",
+            "迁移成本很低或无需关注",
+            "Cloudflare 正在放弃 Sandbox SDK"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取社区反馈或实际迁移案例，可先以官方公告解读+替代方案对比形式发布，但需注明缺乏用户视角验证。",
+          "downstream_materials_needed": [
+            "官方废弃公告全文（已获取）",
+            "RPC transport 文档和迁移指南",
+            "社区讨论帖（Hacker News、Reddit、Cloudflare 论坛）",
+            "至少一个实际使用 Sandbox SDK 的项目案例",
+            "替代沙箱方案的价格和功能对比"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Deprecating Sandbox SDK features · Changelog - Cloudflare Docs",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-06-09-deprecating-sandbox-sdk-features",
+            "query": "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+            "provider": "tavily",
+            "score": "0.8839694",
+            "fetched_text": "Deprecating Sandbox SDK features · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--s",
+            "fetch_error": ""
+          },
+          {
+            "title": "Deprecating Sandbox SDK features - Replicate Changelog",
+            "url": "https://community.cloudflare.com/t/sandbox-sdk-deprecating-sandbox-sdk-features/933294",
+            "query": "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+            "provider": "tavily",
+            "score": "0.87681407",
+            "fetched_text": "HTTP and WebSocket transports will no longer be present in Sandbox SDK versions released after July 9, 2026. To migrate before July 9, 2026,",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          },
+          {
+            "title": "Transport modes - Sandbox SDK - Cloudflare Docs",
+            "url": "https://developers.cloudflare.com/sandbox/configuration/transport",
+            "query": "Cloudflare Sandbox SDK deprecation HTTP WebSocket transport RPC migration",
+            "provider": "tavily",
+            "score": "0.7300017",
+            "fetched_text": "Transport modes · Cloudflare Sandbox SDK docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap",
+            "fetch_error": ""
+          },
+          {
+            "title": "cloudflare/sandbox-sdk - GitHub",
+            "url": "https://github.com/cloudflare/sandbox-sdk",
+            "query": "Cloudflare Sandbox SDK adoption rate developer feedback",
+            "provider": "tavily",
+            "score": "0.6501347",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_nav_ch_units\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_diff_explain",
+            "fetch_error": ""
+          },
+          {
+            "title": "Cloudflare AI search visibility, competitors, reviews, and pricing | DevTune",
+            "url": "https://devtune.ai/verticals/ai-code-sandboxes-agent-runtimes/cloudflare",
+            "query": "Cloudflare Sandbox SDK adoption rate developer feedback",
+            "provider": "tavily",
+            "score": "0.47446132",
+            "fetched_text": "Cloudflare AI search visibility, competitors, reviews, and pricing | DevTune dev tune Blog Landscape Docs Pricing Changelog Toggle theme Toggle theme Sign In Sign Up (function(){try{var s=document.cookie.split(';').some(function(c){return /^\\s*sb-[^=]+-auth-token(?:\\.[0-9]+)?=/.test(c)});if(!s&&window.localStorage){for(var i=0;i Verticals AI Code Sandboxes & Agent Runtimes Cloudflare AI visibility report Cloudflare ranks #4 in AI Code Sandboxes & Agent Runtimes AI search. Outside the top three on 20 of the 25 prompts buyers actually ask. Northflank is cited on 18 of those losses. 25 prompts 5 platforms Updated Jun 6, 2026 - refreshed weekly Track Cloudflare daily Free trial. Setup comes pre-filled for Cloudflare. Also benchmarked Cloudflare appears in 3 other verticals Cloud Infrastructure & PaaS Developer Tunnels & Localhost Ingress Deployment & Hosting Platforms {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://devtune.ai\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Verticals\",\"item\":\"https://devtune.ai/verticals\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"AI Code Sandboxes \\u0026 Agent Runtimes\",\"item\":\"https://devtune.ai/verticals/ai-code-sandboxes-agent-runtimes\"},{\"@type\":\"ListItem\",\"position\":4,\"name\":\"Cloudflare\",\"item\":\"https://devtune.ai/verticals/ai-code-sandboxes-agent-runtimes/cloudflare\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\",\"sameAs\":[\"https://developers.cloudflare.com/sandbox/\",\"https://developers.cloudflare.com/containers/pricing/\",\"https://developers.cloudflare.com/sandbox/platform/limits/\",\"https://blog.cloudflare.com/agents-week-in-review/\",\"https://www.cloudflare.com/press/press-releases/2",
+            "fetch_error": ""
+          },
+          {
+            "title": "Overview · Cloudflare Sandbox SDK docs",
+            "url": "https://developers.cloudflare.com/sandbox",
+            "query": "Cloudflare Sandbox SDK adoption rate developer feedback",
+            "provider": "tavily",
+            "score": "0.39866453",
+            "fetched_text": "Overview · Cloudflare Sandbox SDK docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:1rem 2",
+            "fetch_error": ""
+          },
+          {
+            "title": "Top Cloudflare Sandboxes alternatives for secure AI code execution in 2026 | Blog — Northflank",
+            "url": "https://northflank.com/blog/top-cloudflare-sandboxes-alternatives",
+            "query": "Cloudflare Sandbox SDK alternatives agentic code execution",
+            "provider": "tavily",
+            "score": "0.7208996",
+            "fetched_text": "Top Cloudflare Sandboxes alternatives for secure AI code execution in 2026 | Blog — Northflank window._SSR_DATA=\"blogPost|documentId|x71ix2ume7wjuz3zti938cvs|publication_date|2026-03-02T15:30:00.000Z|slug|top-cloudflare-sandboxes-alternatives|title|Top+Cloudflare+Sandboxes+alternatives+for+secure+AI+code+execution+in+2026|writers|hmt1lfxmgi5m62difbd7m2qa|name|Daniel+Adeboye|daniel-adeboye|twitter|@adeboyedn|picture|url|https://assets.northflank.com/DSC_2767_4_8736cb6b04.jpg|excerpt|Explore+the+top+Cloudflare+Sandboxes+alternatives+in+2026.+Compare+Northflank,+E2B,+CodeSandbox,+Modal,+Daytona,+and+Fly.io+for+AI+sandboxing,+long+sessions,+BYOC,+and+GPU+workloads.|content| __NL____NL__##+TL;DR:+What+are+the+top+Cloudflare+Sandboxes+alternatives+in+2026?__NL____NL__Cloudflare+Sandboxes+is+a+fast,+edge-native+sandbox+for+running+untrusted+code+close+to+users+globally.+It+works+well+for+TypeScript-first+teams+already+on+Cloudflare+Workers,+but+falls+short+when+you+need [BYOC](https://northflank.com/product/bring-your-own-cloud), [persistent+long-running+sessions](https://northflank.com/product/sandboxes), [GPU+workloads](https://northflank.com/product/gpu-paas),+or+a+full+infrastructure+stack. [Northflank](https://northflank.com/) is+the+strongest+alternative+built+for+production.__NL____NL__-+[**Northflank**](https://northflank.com/) –+Full-stack+AI+infrastructure+platform+with+managed+cloud+and [BYOC+deployment](https://northflank.com/product/bring-your-own-cloud) into+AWS,+GCP,+Azure,+or+bare-metal.+Production-grade+microVM+sandboxes+with+Kata+Containers,+Firecracker,+and+gVisor+isolation,+unlimited+sessions,+databases,+GPUs,+CI/CD,+and+observability+all+in+one+place.__NL__-+**E2B** –+Developer-friendly+AI+sandbox+with+polished+SDKs+and+Firecracker+microVMs,+best+for+teams",
+            "fetch_error": ""
+          },
+          {
+            "title": "Why You NEED to Try Cloudflare's Sandbox SDK Today - YouTube",
+            "url": "https://www.youtube.com/watch?v=0bkeZOXNJBg",
+            "query": "Cloudflare Sandbox SDK alternatives agentic code execution",
+            "provider": "tavily",
+            "score": "0.6350646",
+            "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260611.01.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+            "fetch_error": ""
+          },
+          {
+            "title": "sandbox-sdk | Agent Skills Library",
+            "url": "https://mcpservers.org/agent-skills/cloudflare/sandbox-sdk",
+            "query": "Cloudflare Workers Sandbox SDK RPC transport documentation",
+            "provider": "tavily",
+            "score": "0.657033",
+            "fetched_text": "sandbox-sdk | Agent Skills Library {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://mcpservers.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Agent Skills Library\",\"item\":\"https://mcpservers.org/agent-skills\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"sandbox-sdk\",\"item\":\"https://mcpservers.org/agent-skills/cloudflare/sandbox-sdk\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"SoftwareSourceCode\",\"name\":\"sandbox-sdk\",\"description\":\"Build sandboxed applications for secure code execution. Load when building AI code execution, code interpreters, CI/CD systems, interactive dev environments, or executing untrusted code. Covers Sandbox SDK lifecycle, commands, files, code interpreter, and preview URLs.\",\"author\":{\"@type\":\"Person\",\"name\":\"Cloudflare\"},\"codeRepository\":\"https://github.com/cloudflare/skills/tree/main/skills/sandbox-sdk\",\"url\":\"https://mcpservers.org/agent-skills/cloudflare/sandbox-sdk\"} MCP Servers Home Remote Servers Topics Clients Agent Skills English Submit Advertise Submit Agent Skills Library svg]:w-3.5 [&>svg]:h-3.5\"> sandbox-sdk sandbox-sdk by Cloudflare Build sandboxed applications for secure code execution. Load when building AI code execution, code interpreters, CI/CD systems, interactive dev environments, or executing untrusted code. Covers Sandbox SDK lifecycle, commands, files, code interpreter, and preview URLs. npx skills add https://github.com/cloudflare/skills --skill sandbox-sdk Download ZIP GitHub Cloudflare Sandbox SDK Build secure, isolated code execution environments on Cloudflare Workers. FIRST: Verify Installation npm install @cloudflare/sandbox docker info # Must succeed - Docker required for local dev Retrieval Sources Your knowledge of the Sandbox ",
+            "fetch_error": ""
+          },
+          {
+            "title": "Cloudflare Sandbox SDK adds streaming, code interpreter, Git support, process control and more · Changelog",
+            "url": "https://developers.cloudflare.com/changelog/post/2025-08-05-sandbox-sdk-major-update",
+            "query": "Cloudflare Sandbox SDK deprecation impact independent developer",
+            "provider": "tavily",
+            "score": "0.3584434",
+            "fetched_text": "Cloudflare Sandbox SDK adds streaming, code interpreter, Git support, process control and more · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-",
+            "fetch_error": ""
+          },
+          {
+            "title": "Cloudflare Sandbox SDK - Hacker News",
+            "url": "https://news.ycombinator.com/item?id=45610523",
+            "query": "Cloudflare Sandbox SDK deprecation impact independent developer",
+            "provider": "tavily",
+            "score": "0.26257628",
+            "fetched_text": "Cloudflare Sandbox SDK | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login Cloudflare Sandbox SDK ( cloudflare.com ) 256 points by bentaber 7 months ago | hide | past | favorite | 90 comments simonw 7 months ago | next [–] Looks like there's one feature missing from this that I care about: I'd like more finely grained control over what outbound internet connections code running on the box can make. As far as I can tell it's all or nothing right now: this.ctx.container.start({ enableInternet: false, }); I want to run untrusted code (from users or LLMs) in these containers, and I'd like to avoid someone malicious using my container to launch attacks against other sites from them. As such, I'd like to be able to allow-list just specific network points. Maybe I'm OK with the container talking to an API I provide but not to the world at wide. Or perhaps I'm OK with it fetching data from npm and PyPI but I don't want it to be able to access anything else (a common pattern these days, e.g. Claude's Code Interpreter does this.) masterj 7 months ago | parent | next [–] Cloudflare has Outbound Workers for exactly this use-case: https://developers.cloudflare.com/cloudflare-for-platforms/w... If these aren't enabled for containers / sandboxes yet, I bet they will be soon kentonv 7 months ago | parent | prev | next [–] You may be interested in the Dynamic Worker Loader API, which lets you set up isolate-based sandboxes (instead of containers) and gives you extremely fine-grained, object-capability-based control over permissions. It was announced as part of the code mode blog post: https://blog.cloudflare.com/code-mode/ API docs: https://developers.cloudflare.com/workers/runtime-apis/bindi... ashishbijlani 7 months ago | parent | prev | next [–] I’m ext",
+            "fetch_error": ""
+          },
+          {
+            "title": "Containers and Sandboxes are now generally available",
+            "url": "https://community.cloudflare.com/t/containers-containers-and-sandboxes-are-now-generally-available/918585",
+            "query": "Cloudflare Sandbox SDK vs other sandbox solutions comparison",
+            "provider": "tavily",
+            "score": "0.44174582",
+            "fetched_text": "The Sandbox SDK provides isolated environments for running untrusted code securely, with a simple TypeScript API for executing commands,",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          },
+          {
+            "title": "Transport modes - Sandbox SDK - Cloudflare Docs",
+            "url": "https://developers.cloudflare.com/sandbox/configuration/transport",
+            "query": "Cloudflare Sandbox SDK deprecation developer feedback",
+            "provider": "tavily",
+            "score": "0.70944256",
+            "fetched_text": "Transport modes · Cloudflare Sandbox SDK docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap",
+            "fetch_error": ""
+          },
+          {
+            "title": "cloudflare/sandbox-sdk - GitHub",
+            "url": "https://github.com/cloudflare/sandbox-sdk",
+            "query": "Cloudflare Sandbox SDK deprecation developer feedback",
+            "provider": "tavily",
+            "score": "0.6072213",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_nav_ch_units\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_diff_explain",
+            "fetch_error": ""
+          },
+          {
+            "title": "Why You NEED to Try Cloudflare's Sandbox SDK Today - YouTube",
+            "url": "https://www.youtube.com/watch?v=0bkeZOXNJBg",
+            "query": "Cloudflare Sandbox SDK deprecation developer feedback",
+            "provider": "tavily",
+            "score": "0.35763538",
+            "fetched_text": "window.WIZ_global_data = {\"AfY8Hf\":false,\"FL1an\":false,\"HiPsbb\":0,\"MUE6Ne\":\"youtube_web\",\"MuJWjd\":false,\"UUFaWc\":\"%.@.null,1000,2]\",\"cfb2h\":\"youtube.web-front-end-critical_20260608.09_p0\",\"fPDxwd\":[],\"hsFLT\":\"%.@.null,10,3]\",\"iCzhFc\":false,\"nQyAE\":{},\"oxN3nb\":{\"1\":false,\"0\":false,\"610401301\":false,\"899588437\":false,\"772657768\":true,\"513659523\":false,\"568333945\":true,\"1331761403\":false,\"651175828\":false,\"722764542\":false,\"748402145\":false,\"748402146\":false,\"748402147\":true,\"333098724\":false,\"861377723\":false,\"861377724\":false,\"869336903\":false,\"882674507\":false,\"869336904\":false,\"869336905\":false,\"1675845485\":false,\"919444824\":false,\"916544035\":false,\"923536252\":false,\"482019471\":false},\"u4g7r\":\"%.@.null,1,3]\",\"vJQk6\":false,\"xnI9P\":false,\"xwAfE\":true,\"yFnxrf\":2486}; var ytcfg={d:function(){return window.yt&&yt.config_||ytcfg.data_||(ytcfg.data_={})},get:function(k,o){return k in ytcfg.d()?ytcfg.d()[k]:o},set:function(){var a=arguments;if(a.length>1)ytcfg.d()[a[0]]=a[1];else{var k;for(k in a[0])ytcfg.d()[k]=a[0][k]}}}; window.ytcfg.set('EMERGENCY_BASE_URL', '\\/error_204?t\\x3djserror\\x26level\\x3dERROR\\x26client.name\\x3d1\\x26client.version\\x3d2.20260611.01.00'); (function(){window.yterr=window.yterr||true;window.unhandledErrorMessages={};window.unhandledErrorCount=0; window.onerror=function(msg,url,line,columnNumber,error){var err;if(error)err=error;else{err=new Error;err.stack=\"\";err.message=msg;err.fileName=url;err.lineNumber=line;if(!isNaN(columnNumber))err[\"columnNumber\"]=columnNumber}var message=String(err.message);if(!err.message||message in window.unhandledErrorMessages||window.unhandledErrorCount>=5)return;window.unhandledErrorCount+=1;window.unhandledErrorMessages[message]=true;var img=new Image;window.emergencyTimeoutImg=img;img.onload=img.onerror=function(){delet",
+            "fetch_error": ""
+          },
+          {
+            "title": "2026 deprecation migration guide - Sandbox SDK - Cloudflare Docs",
+            "url": "https://developers.cloudflare.com/sandbox/guides/2026-deprecation",
+            "query": "Cloudflare Sandbox SDK migration guide RPC",
+            "provider": "tavily",
+            "score": "0.7009158",
+            "fetched_text": "2026 deprecation migration guide · Cloudflare Sandbox SDK docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.as",
+            "fetch_error": ""
+          },
+          {
+            "title": "Cloudflare Sandbox SDK - Hacker News",
+            "url": "https://news.ycombinator.com/item?id=45610523",
+            "query": "Cloudflare Sandbox SDK migration guide RPC",
+            "provider": "tavily",
+            "score": "0.5622973",
+            "fetched_text": "Cloudflare Sandbox SDK | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login Cloudflare Sandbox SDK ( cloudflare.com ) 256 points by bentaber 7 months ago | hide | past | favorite | 90 comments simonw 7 months ago | next [–] Looks like there's one feature missing from this that I care about: I'd like more finely grained control over what outbound internet connections code running on the box can make. As far as I can tell it's all or nothing right now: this.ctx.container.start({ enableInternet: false, }); I want to run untrusted code (from users or LLMs) in these containers, and I'd like to avoid someone malicious using my container to launch attacks against other sites from them. As such, I'd like to be able to allow-list just specific network points. Maybe I'm OK with the container talking to an API I provide but not to the world at wide. Or perhaps I'm OK with it fetching data from npm and PyPI but I don't want it to be able to access anything else (a common pattern these days, e.g. Claude's Code Interpreter does this.) masterj 7 months ago | parent | next [–] Cloudflare has Outbound Workers for exactly this use-case: https://developers.cloudflare.com/cloudflare-for-platforms/w... If these aren't enabled for containers / sandboxes yet, I bet they will be soon kentonv 7 months ago | parent | prev | next [–] You may be interested in the Dynamic Worker Loader API, which lets you set up isolate-based sandboxes (instead of containers) and gives you extremely fine-grained, object-capability-based control over permissions. It was announced as part of the code mode blog post: https://blog.cloudflare.com/code-mode/ API docs: https://developers.cloudflare.com/workers/runtime-apis/bindi... ashishbijlani 7 months ago | parent | prev | next [–] I’m ext",
+            "fetch_error": ""
+          },
+          {
+            "title": "Cloudflare Sandbox SDK adds streaming, code interpreter, Git ...",
+            "url": "https://developers.cloudflare.com/changelog/post/2025-08-05-sandbox-sdk-major-update",
+            "query": "Cloudflare Sandbox SDK migration guide RPC",
+            "provider": "tavily",
+            "score": "0.4905535",
+            "fetched_text": "Cloudflare Sandbox SDK adds streaming, code interpreter, Git support, process control and more · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "可复制条件",
+        "不可复制条件",
+        "失败或成功背后的非技术因素"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "案例复盘：Cloudflare 案例线索 原始项目 GitHub 复盘",
+        "案例复盘：Cloudflare 案例线索 收入 增长 证据",
+        "案例复盘：Cloudflare 案例线索 失败 限制 反方证据"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
