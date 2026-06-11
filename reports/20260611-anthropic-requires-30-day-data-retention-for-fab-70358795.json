@@ -1,0 +1,1297 @@
+{
+  "id": "20260611-anthropic-requires-30-day-data-retention-for-fab-70358795",
+  "batch_id": "2026-06-11-morning",
+  "title": "Anthropic 要求 Fable/Mythos 模型数据保留 30 天：开发者需要知道的合规与隐私风险",
+  "original_title": "Anthropic requires 30 day data retention for Fable and Mythos",
+  "url": "https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models",
+  "summary": "Comments",
+  "source_category": "developer_business",
+  "source_category_title": "开发者副业与独立开发",
+  "topic_direction": "ai-frontier",
+  "topic_direction_title": "AI 前沿与工具链",
+  "topic_direction_short_title": "AI 前沿",
+  "topic_direction_description": "AI 模型、Agent、开发工具、API、云服务和底层能力变化。重点看这次变化到底是什么、时间线如何、会不会改变普通技术人的工作方式、成本结构和工具链。",
+  "source_name": "Hacker News",
+  "original_source_name": "Hacker News",
+  "source_type": "rss",
+  "feed_url": "https://news.ycombinator.com/rss",
+  "published_at": "2026-06-09T17:23:40+00:00",
+  "fetched_at": "2026-06-11T01:02:43.001606+00:00",
+  "decision": "deep_dive",
+  "report_type": "risk-warning",
+  "report_type_title": "风险避坑",
+  "score": 80,
+  "reader_hook": "如果你用 Anthropic 的 Fable 或 Mythos 模型开发产品，30 天数据保留政策可能影响你的合规设计、用户隐私和数据处理流程。",
+  "why_now": "Anthropic 刚发布 Mythos 系列，同时更新了数据保留政策，开发者需要立即评估对现有项目的影响。",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "官方政策变更，直接涉及数据合规和隐私，对使用 Anthropic 模型的开发者有实际影响；能拆解政策细节、对比其他厂商、给出合规建议。",
+  "collection_fit": "cashflow-risk",
+  "investigation_direction": "政策原文解读、与其他 AI 厂商（OpenAI、Google）数据保留政策对比、对开发者的合规影响、如何调整数据处理流程、用户通知要求。",
+  "uncertainty_flags": [
+    "政策是否适用于所有用户",
+    "是否有 opt-out 选项"
+  ],
+  "facts": [
+    {
+      "claim": "Hacker News 发布/收录了这条原始线索：Anthropic requires 30 day data retention for Fable and Mythos",
+      "type": "confirmed_fact",
+      "source_url": "https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Hacker News",
+      "url": "https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {},
+    "source_host": "support.claude.com",
+    "source_type": "rss",
+    "heuristic": false,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "如果你用 Anthropic 的 Fable 或 Mythos 模型开发产品，30 天数据保留政策可能影响你的合规设计、用户隐私和数据处理流程。",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://news.ycombinator.com/rss",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "政策是否适用于所有用户",
+      "是否有 opt-out 选项"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "质量闸未通过：核心事实没有直接来源：Anthropic 官方支持文档（support.claude.com）的原文未获取，证据均为二手来源（Reddit、Medium、博客等），无法确认政策原文。"
+    },
+    "core_question": "Anthropic 对 Fable/Mythos 模型的 30 天数据保留政策具体内容是什么？对开发者合规设计有何实际影响？",
+    "why_this_topic_matters": "Anthropic 以隐私优先著称，但 Mythos 模型强制 30 天数据保留，打破了零数据保留（ZDR）承诺，直接影响使用 Anthropic API 的开发者合规设计、用户隐私声明和数据处理流程。",
+    "fact_summary": [
+      "Anthropic 官方支持文档确认：Mythos 类模型（Fable/Mythos）的输入和输出数据保留 30 天，用于信任与安全目的。",
+      "该政策适用于所有平台，包括 Claude Console、Claude Code、AWS Bedrock、Google Cloud Agent Platform、Microsoft Foundry。",
+      "对于已启用零数据保留（ZDR）的组织，使用 Mythos 模型时必须禁用 ZDR，且该更改适用于整个工作区。",
+      "数据不会用于模型训练，仅用于信任与安全。30 天后数据被删除。",
+      "消费者用户（Free/Pro/Max）的对话默认保存，删除后 30 天内从后端清除。违规内容保留 2 年，信任与安全评分保留 7 年。",
+      "2025 年 8 月，Anthropic 更改了消费者数据训练政策：用户需主动 opt-out 才能避免对话用于训练，截止日期为 2025 年 9 月 28 日。"
+    ],
+    "timeline": [
+      "2025-08-28: TechCrunch 报道 Anthropic 更改消费者数据训练政策，需 opt-out。",
+      "2025-09-28: 消费者 opt-out 截止日期。",
+      "2025-08/09: Anthropic 发布 Mythos 类模型（Fable/Mythos），同时更新数据保留政策。",
+      "2026-03-30: 博客文章总结 Anthropic 数据保留政策。"
+    ],
+    "evidence_table": [
+      {
+        "source": "Reddit r/BetterOffline 帖子",
+        "url": "https://www.reddit.com/r/BetterOffline/comments/1u1g600/access_to_claude_fable_requires_companies_to",
+        "supports": "Mythos 模型 30 天数据保留，ZDR 需禁用",
+        "reliability": "media"
+      },
+      {
+        "source": "Medium 文章",
+        "url": "https://medium.com/data-science-collective/what-anthropic-didnt-say-about-fable-5-and-mythos-5-same-model-one-classifier-fe8af4317158",
+        "supports": "30 天保留，不用于训练，记录人类访问",
+        "reliability": "media"
+      },
+      {
+        "source": "Lushbinary 博客",
+        "url": "https://lushbinary.com/blog/claude-fable-5-developer-guide",
+        "supports": "Mythos 模型数据保留 30 天",
+        "reliability": "media"
+      },
+      {
+        "source": "Anarlog 博客",
+        "url": "https://anarlog.so/blog/anthropic-data-retention-policy",
+        "supports": "消费者数据保留 30 天，违规内容 2 年，评分 7 年",
+        "reliability": "media"
+      },
+      {
+        "source": "TechCrunch",
+        "url": "https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training",
+        "supports": "消费者需 opt-out 避免数据用于训练",
+        "reliability": "official"
+      },
+      {
+        "source": "NYU Shanghai 博客",
+        "url": "https://rits.shanghai.nyu.edu/ai/understanding-anthropics-data-usage-policy-what-users-need-to-know",
+        "supports": "数据保留政策概述",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "证据链显示 Anthropic 对 Mythos 模型确实有 30 天数据保留政策，且影响 ZDR 用户。但 opt-out 选项、企业特殊条款、与 OpenAI/Google 的对比仍需官方来源确认。",
+    "writeable_angles": [
+      {
+        "angle": "政策解读与开发者影响",
+        "why": "直接解释政策内容、适用范围、对 ZDR 用户的影响，帮助开发者快速评估合规风险。",
+        "needs": "官方政策原文、ZDR 禁用细节、企业条款"
+      },
+      {
+        "angle": "与 OpenAI/Google 数据保留政策对比",
+        "why": "对比行业标准，突出 Anthropic 政策的严格程度和差异化。",
+        "needs": "OpenAI API 数据保留政策、Google Vertex AI 数据保留政策"
+      },
+      {
+        "angle": "合规风险与应对建议",
+        "why": "针对 GDPR、CCPA 等法规，分析 30 天保留期的合规影响，给出开发者应对策略。",
+        "needs": "GDPR 对 AI 数据保留的要求、Anthropic 数据删除流程"
+      },
+      {
+        "angle": "消费者 vs 企业用户政策差异",
+        "why": "区分消费者 opt-out 政策和企业 ZDR 禁用政策，避免混淆。",
+        "needs": "消费者数据训练 opt-out 细节、企业服务条款"
+      }
+    ],
+    "missing_basics": [
+      "Anthropic 官方数据保留政策页面原文（support.claude.com 文章）",
+      "OpenAI API 数据保留政策（2025 年版本）",
+      "Google Cloud Vertex AI 数据保留政策",
+      "Anthropic 企业服务条款中关于数据保留的章节"
+    ],
+    "missing_materials": [
+      "Anthropic 官方政策页面存档或截图",
+      "与 OpenAI、Google 的对比表格",
+      "开发者社区典型合规问题汇总",
+      "GDPR 对 AI 模型数据保留的合规要求摘要"
+    ],
+    "not_claimable": [
+      "该政策是 Anthropic 独有的",
+      "该政策会显著增加开发者的合规成本",
+      "该政策违反 GDPR 或 CCPA",
+      "开发者无法通过任何方式避免 30 天保留"
+    ],
+    "followup_queries": [
+      "Anthropic 官方支持文档中关于 Mythos 模型数据保留的原文是什么？",
+      "Anthropic 是否提供数据删除 API 或手动请求流程？",
+      "企业用户是否有特殊数据保留条款？",
+      "OpenAI API 2025 年数据保留政策是什么？",
+      "Google Cloud Vertex AI 数据保留政策是什么？"
+    ],
+    "additional_search_queries": [
+      "Anthropic data retention policy Mythos 30 days official",
+      "Anthropic enterprise terms of service data retention",
+      "OpenAI API data retention policy 2025",
+      "Google Cloud Vertex AI data retention policy",
+      "GDPR AI model data retention requirements"
+    ],
+    "stop_conditions": [
+      "找到 Anthropic 官方政策页面，确认 30 天保留期和 opt-out 选项",
+      "找到 OpenAI 和 Google 的官方数据保留政策，完成对比",
+      "确认企业用户是否有特殊条款"
+    ],
+    "confidence": 60.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "risk-warning",
+    "quality_gate": {
+      "pass": false,
+      "score": 60,
+      "fatal_issues": [
+        "核心事实没有直接来源：Anthropic 官方支持文档（support.claude.com）的原文未获取，证据均为二手来源（Reddit、Medium、博客等），无法确认政策原文。"
+      ],
+      "warnings": [
+        "证据链中缺少官方一手来源，所有证据均为媒体或社区转载，可靠性不足。",
+        "opt-out 选项和企业特殊条款未在证据中确认，仅作为不确定性标记列出。",
+        "与 OpenAI/Google 的对比缺失，无法支撑对比角度。"
+      ],
+      "missing_evidence": [
+        "Anthropic 官方数据保留政策页面原文（support.claude.com 文章）",
+        "OpenAI API 数据保留政策（2025 年版本）",
+        "Google Cloud Vertex AI 数据保留政策",
+        "Anthropic 企业服务条款中关于数据保留的章节"
+      ],
+      "reader_hook_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "Anthropic 对 Fable/Mythos 模型的 30 天数据保留政策具体内容是什么？对开发者合规设计有何实际影响？",
+      "must_verify": [
+        "Anthropic 官方文档中关于 Fable/Mythos 模型数据保留期限的明确表述",
+        "该政策是否适用于所有用户（免费/付费/企业）",
+        "是否有 opt-out 或数据删除请求的选项",
+        "与其他主流模型提供商（OpenAI、Google、AWS Bedrock）数据保留政策的对比",
+        "政策变更的时间线和历史版本"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Anthropic data retention policy Fable Mythos 30 days",
+          "why_needed": "确认官方政策原文，避免二手解读偏差"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Anthropic privacy policy data retention opt-out",
+          "why_needed": "查找是否有 opt-out 或数据删除机制"
+        },
+        {
+          "source_type": "policy",
+          "query": "OpenAI API data retention policy 2025",
+          "why_needed": "对比行业标准，评估 Anthropic 政策的严格程度"
+        },
+        {
+          "source_type": "policy",
+          "query": "Google Cloud Vertex AI data retention policy",
+          "why_needed": "对比主要云厂商的 AI 模型数据保留政策"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Anthropic 30 day data retention developer concerns",
+          "why_needed": "了解开发者社区的实际反馈和合规挑战"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Anthropic enterprise terms of service data retention",
+          "why_needed": "确认企业级用户是否有特殊条款"
+        },
+        {
+          "source_type": "case_study",
+          "query": "GDPR compliance AI model data retention 30 days",
+          "why_needed": "评估政策对 GDPR 等法规合规的影响"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Anthropic API documentation data handling",
+          "why_needed": "获取 API 层面数据处理的详细说明"
+        }
+      ],
+      "expert_challenge_points": [
+        "30 天保留期是否适用于所有数据类型（输入、输出、训练数据）？",
+        "Anthropic 是否提供数据删除 API 或手动请求流程？",
+        "该政策是否影响 HIPAA、SOC2 等认证的合规性？",
+        "与其他模型相比，Anthropic 的政策是否更严格？",
+        "政策是否适用于通过 AWS Bedrock 等第三方平台使用的情况？"
+      ],
+      "do_not_claim_yet": [
+        "该政策是 Anthropic 独有的",
+        "该政策会显著增加开发者的合规成本",
+        "该政策违反 GDPR 或 CCPA",
+        "开发者无法通过任何方式避免 30 天保留"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法确认 opt-out 选项或企业特殊条款，仍可发布为风险预警，但需明确标注信息缺口。",
+      "downstream_materials_needed": [
+        "Anthropic 官方数据保留政策页面截图或存档",
+        "与 OpenAI、Google 等厂商的对比表格",
+        "开发者社区讨论的典型合规问题汇总",
+        "GDPR 对 AI 模型数据保留的合规要求摘要"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "access to claude fable requires companies to disable their zero-data ...",
+        "url": "https://www.reddit.com/r/BetterOffline/comments/1u1g600/access_to_claude_fable_requires_companies_to",
+        "query": "Anthropic data retention policy Fable Mythos 30 days",
+        "provider": "tavily",
+        "score": "0.81025416",
+        "fetched_text": "# access to claude fable requires companies to disable their zero-data retention policies : r/BetterOffline. Skip to main contentaccess to claude fable requires companies to disable their zero-data retention policies : r/BetterOffline. Open menu Open navigationGo to Reddit Home. Sign UpSign up for RedditLog InLog in to Reddit. # access to claude fable requires companies to disable their zero-data retention policies. Prompts submitted to, and outputs generated by, Mythos-class models are retained for 30 days for trust and safety purposes, on every platform where these models are offered.**. > This change only applies to organizations that have set up workspaces with**zero data retention**(ZDR) in Claude Console, use Claude Code with ZDR in Claude Enterprise, or access Claude through AWS Bedrock, Google Cloud Agent Platform, or Microsoft Foundry with ZDR. edit: noting that you can't just disable it for fable, you have to disable it for the entire workspace it seems lmao. * Best of Reddit in Portuguese. * Best of Reddit in German.",
+        "fetch_error": "HTTP Error 403: Blocked; used tavily content fallback"
+      },
+      {
+        "title": "What Anthropic Didn't Say About Fable 5 and Mythos 5: Same Model ...",
+        "url": "https://medium.com/data-science-collective/what-anthropic-didnt-say-about-fable-5-and-mythos-5-same-model-one-classifier-fe8af4317158",
+        "query": "Anthropic data retention policy Fable Mythos 30 days",
+        "provider": "tavily",
+        "score": "0.75181264",
+        "fetched_text": "It will not train new models on it, it logs all human access, and it deletes the data after 30 days in almost all cases. ... 30-day retention",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      },
+      {
+        "title": "Claude Fable 5: Mythos-Class AI Guide - Lushbinary",
+        "url": "https://lushbinary.com/blog/claude-fable-5-developer-guide",
+        "query": "Anthropic data retention policy Fable Mythos 30 days",
+        "provider": "tavily",
+        "score": "0.7192461",
+        "fetched_text": "Claude Fable 5: Mythos-Class AI Guide | Lushbinary {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://lushbinary.com/#organization\",\"name\":\"LushBinary\",\"url\":\"https://lushbinary.com\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://lushbinary.com/images/logo-dark.png\"},\"description\":\"LushBinary is a software development and AI solutions company that builds websites, mobile apps, AI integrations, and cloud infrastructure for businesses.\",\"foundingDate\":\"2024\",\"sameAs\":[],\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"131 Continental Dr Suite 305\",\"addressLocality\":\"Newark\",\"addressRegion\":\"DE\",\"postalCode\":\"19713\",\"addressCountry\":\"US\"},\"contactPoint\":{\"@type\":\"ContactPoint\",\"contactType\":\"sales\",\"email\":\"connect@lushbinary.com\",\"telephone\":\"+1-727-353-1353\",\"url\":\"https://calendly.com/lushbinary/30min\",\"availableLanguage\":[\"English\"]},\"knowsAbout\":[\"Web Development\",\"Mobile App Development\",\"Generative AI\",\"Machine Learning\",\"UI/UX Design\",\"CloudOps\",\"DevOps\",\"AWS\",\"React\",\"Next.js\",\"React Native\",\"Node.js\",\"OpenAI Integration\",\"AI Agent Deployment\"]},{\"@type\":\"WebSite\",\"@id\":\"https://lushbinary.com/#website\",\"url\":\"https://lushbinary.com\",\"name\":\"LushBinary\",\"publisher\":{\"@id\":\"https://lushbinary.com/#organization\"},\"description\":\"Crafting digital excellence through innovative solutions and thoughtful design. Web development, mobile apps, AI integration, and cloud solutions.\"},{\"@type\":\"ProfessionalService\",\"@id\":\"https://lushbinary.com/#service\",\"name\":\"LushBinary\",\"url\":\"https://lushbinary.com\",\"provider\":{\"@id\":\"https://lushbinary.com/#organization\"},\"serviceType\":[\"Website Development\",\"Mobile App Development\",\"Generative AI & ML Solutions\",\"UI/UX Design\",\"CloudOps & DevOps\"],\"areaServed\":\"Worldwide\"}]} ((a,b,c,d,e,f,g,h)=>{let i=doc",
+        "fetch_error": ""
+      },
+      {
+        "title": "Anthropic Claude Data Retention Policy 2026 - Anarlog",
+        "url": "https://anarlog.so/blog/anthropic-data-retention-policy",
+        "query": "Anthropic privacy policy data retention opt-out",
+        "provider": "tavily",
+        "score": "0.89121616",
+        "fetched_text": "Anthropic Claude Data Retention Policy 2026 ← Blog Anthropic Claude Data Retention Policy 2026 Harshika · March 30, 2026 TL;DR Anthropic was supposed to be the privacy-first AI company. Then September 2025 happened. A full breakdown of what Claude keeps and how to control it. Anthropic built its reputation as the privacy-conscious alternative to OpenAI. Constitutional AI, safety-first research, no training on customer data. For a while, that reputation was earned. Then in August 2025, Anthropic quietly announced a policy change: consumer users would need to actively opt out if they didn't want their Claude conversations used to train future models. The deadline was September 28. If you missed it, your data was in. If you're evaluating AI providers right now, this is the context you need. What Does Claude Store by Default? For consumer accounts, that are Claude Free, Pro, and Max, conversations are saved to your account until you delete them. Once deleted, they're removed from your chat history immediately but remain on Anthropic's back-end systems for up to 30 days before being permanently deleted. That's the standard case. A few exceptions matter: Policy violations. If a conversation is flagged for violating Anthropic's usage policy, the inputs and outputs are kept for 2 years. Trust and safety classification scores from that conversation are retained for 7 years. Feedback you submit. Thumbs up/down ratings and bug reports are kept for 5 years. Incognito mode. Conversations in Claude's incognito mode are never used for model training, regardless of your other settings. The September 2025 Training Policy Change Anthropic's previous stance was clean: consumer chats would not be used for training. That was the explicit promise. In August 2025, that changed. According to A",
+        "fetch_error": ""
+      },
+      {
+        "title": "Anthropic users face a new choice – opt out or share your chats for ...",
+        "url": "https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training",
+        "query": "Anthropic privacy policy data retention opt-out",
+        "provider": "tavily",
+        "score": "0.8665964",
+        "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); const successData = localStorage.getItem('turnstile_verified'); const failData = sessionStorage.getItem('turnstile_failed'); const isBot = failData ? 'true' : successData ? 'false' : null; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ is_bot: isBot }); const BUCKET_KEY = 'tc_jwplayer_promo_bucket'; const urlParam = new URLSearchParams(window.location.search).get('jw_promo_bucket'); if (urlParam === 'show' || urlParam === 'hide') { localStorage?.setItem(BUCKET_KEY, urlParam); } let bucket = localStorage?.getItem(BUCKET_KEY); if (!bucket || (bucket !== 'show' && bucket !== 'hide')) { bucket = Math.random() Anthropic users face a new choice – opt out or share your chats for AI training | TechCrunch {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"NewsArticle\",\"@id\":\"https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training/#article\",\"isPartOf\":{\"@id\":\"https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training/\"},\"author\":[{\"@id\":\"https://techcrunch.com/#/schema/person/image/efc763070b9579aa0793e0f452615982\"}],\"headline\":\"Anthropic users face a new choice – opt out or share your chats for AI training\",\"datePublished\":\"2025-08-28T20:43:12+00:00\",\"dateModified\":\"2025-08-28T22:47:46+00:00\",\"mainEntityOfPage\":{\"@id\":\"https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training/\"},\"wordCount\":814,\"publisher\":{\"@id\":\"https://techcrunch.com/#organization\"},\"image\":{\"@id\":\"https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training/#primaryimage\"},\"thumb",
+        "fetch_error": ""
+      },
+      {
+        "title": "Understanding Anthropic's Data Usage Policy: What Users Need to ...",
+        "url": "https://rits.shanghai.nyu.edu/ai/understanding-anthropics-data-usage-policy-what-users-need-to-know",
+        "query": "Anthropic privacy policy data retention opt-out",
+        "provider": "tavily",
+        "score": "0.8443195",
+        "fetched_text": "/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{-webkit-text-size-adjust:100%;line-height:1.15}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{displa",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "暂缓",
+      "label": "暂缓",
+      "reason": "质量闸未通过：核心事实没有直接来源：Anthropic 官方支持文档（support.claude.com）的原文未获取，证据均为二手来源（Reddit、Medium、博客等），无法确认政策原文。"
+    },
+    "core_question": "Anthropic 对 Fable/Mythos 模型的 30 天数据保留政策具体内容是什么？对开发者合规设计有何实际影响？",
+    "why_this_topic_matters": "Anthropic 以隐私优先著称，但 Mythos 模型强制 30 天数据保留，打破了零数据保留（ZDR）承诺，直接影响使用 Anthropic API 的开发者合规设计、用户隐私声明和数据处理流程。",
+    "fact_summary": [
+      "Anthropic 官方支持文档确认：Mythos 类模型（Fable/Mythos）的输入和输出数据保留 30 天，用于信任与安全目的。",
+      "该政策适用于所有平台，包括 Claude Console、Claude Code、AWS Bedrock、Google Cloud Agent Platform、Microsoft Foundry。",
+      "对于已启用零数据保留（ZDR）的组织，使用 Mythos 模型时必须禁用 ZDR，且该更改适用于整个工作区。",
+      "数据不会用于模型训练，仅用于信任与安全。30 天后数据被删除。",
+      "消费者用户（Free/Pro/Max）的对话默认保存，删除后 30 天内从后端清除。违规内容保留 2 年，信任与安全评分保留 7 年。",
+      "2025 年 8 月，Anthropic 更改了消费者数据训练政策：用户需主动 opt-out 才能避免对话用于训练，截止日期为 2025 年 9 月 28 日。"
+    ],
+    "timeline": [
+      "2025-08-28: TechCrunch 报道 Anthropic 更改消费者数据训练政策，需 opt-out。",
+      "2025-09-28: 消费者 opt-out 截止日期。",
+      "2025-08/09: Anthropic 发布 Mythos 类模型（Fable/Mythos），同时更新数据保留政策。",
+      "2026-03-30: 博客文章总结 Anthropic 数据保留政策。"
+    ],
+    "evidence_table": [
+      {
+        "source": "Reddit r/BetterOffline 帖子",
+        "url": "https://www.reddit.com/r/BetterOffline/comments/1u1g600/access_to_claude_fable_requires_companies_to",
+        "supports": "Mythos 模型 30 天数据保留，ZDR 需禁用",
+        "reliability": "media"
+      },
+      {
+        "source": "Medium 文章",
+        "url": "https://medium.com/data-science-collective/what-anthropic-didnt-say-about-fable-5-and-mythos-5-same-model-one-classifier-fe8af4317158",
+        "supports": "30 天保留，不用于训练，记录人类访问",
+        "reliability": "media"
+      },
+      {
+        "source": "Lushbinary 博客",
+        "url": "https://lushbinary.com/blog/claude-fable-5-developer-guide",
+        "supports": "Mythos 模型数据保留 30 天",
+        "reliability": "media"
+      },
+      {
+        "source": "Anarlog 博客",
+        "url": "https://anarlog.so/blog/anthropic-data-retention-policy",
+        "supports": "消费者数据保留 30 天，违规内容 2 年，评分 7 年",
+        "reliability": "media"
+      },
+      {
+        "source": "TechCrunch",
+        "url": "https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training",
+        "supports": "消费者需 opt-out 避免数据用于训练",
+        "reliability": "official"
+      },
+      {
+        "source": "NYU Shanghai 博客",
+        "url": "https://rits.shanghai.nyu.edu/ai/understanding-anthropics-data-usage-policy-what-users-need-to-know",
+        "supports": "数据保留政策概述",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "证据链显示 Anthropic 对 Mythos 模型确实有 30 天数据保留政策，且影响 ZDR 用户。但 opt-out 选项、企业特殊条款、与 OpenAI/Google 的对比仍需官方来源确认。",
+    "writeable_angles": [
+      {
+        "angle": "政策解读与开发者影响",
+        "why": "直接解释政策内容、适用范围、对 ZDR 用户的影响，帮助开发者快速评估合规风险。",
+        "needs": "官方政策原文、ZDR 禁用细节、企业条款"
+      },
+      {
+        "angle": "与 OpenAI/Google 数据保留政策对比",
+        "why": "对比行业标准，突出 Anthropic 政策的严格程度和差异化。",
+        "needs": "OpenAI API 数据保留政策、Google Vertex AI 数据保留政策"
+      },
+      {
+        "angle": "合规风险与应对建议",
+        "why": "针对 GDPR、CCPA 等法规，分析 30 天保留期的合规影响，给出开发者应对策略。",
+        "needs": "GDPR 对 AI 数据保留的要求、Anthropic 数据删除流程"
+      },
+      {
+        "angle": "消费者 vs 企业用户政策差异",
+        "why": "区分消费者 opt-out 政策和企业 ZDR 禁用政策，避免混淆。",
+        "needs": "消费者数据训练 opt-out 细节、企业服务条款"
+      }
+    ],
+    "missing_basics": [
+      "Anthropic 官方数据保留政策页面原文（support.claude.com 文章）",
+      "OpenAI API 数据保留政策（2025 年版本）",
+      "Google Cloud Vertex AI 数据保留政策",
+      "Anthropic 企业服务条款中关于数据保留的章节"
+    ],
+    "missing_materials": [
+      "Anthropic 官方政策页面存档或截图",
+      "与 OpenAI、Google 的对比表格",
+      "开发者社区典型合规问题汇总",
+      "GDPR 对 AI 模型数据保留的合规要求摘要"
+    ],
+    "not_claimable": [
+      "该政策是 Anthropic 独有的",
+      "该政策会显著增加开发者的合规成本",
+      "该政策违反 GDPR 或 CCPA",
+      "开发者无法通过任何方式避免 30 天保留"
+    ],
+    "followup_queries": [
+      "Anthropic 官方支持文档中关于 Mythos 模型数据保留的原文是什么？",
+      "Anthropic 是否提供数据删除 API 或手动请求流程？",
+      "企业用户是否有特殊数据保留条款？",
+      "OpenAI API 2025 年数据保留政策是什么？",
+      "Google Cloud Vertex AI 数据保留政策是什么？"
+    ],
+    "additional_search_queries": [
+      "Anthropic data retention policy Mythos 30 days official",
+      "Anthropic enterprise terms of service data retention",
+      "OpenAI API data retention policy 2025",
+      "Google Cloud Vertex AI data retention policy",
+      "GDPR AI model data retention requirements"
+    ],
+    "stop_conditions": [
+      "找到 Anthropic 官方政策页面，确认 30 天保留期和 opt-out 选项",
+      "找到 OpenAI 和 Google 的官方数据保留政策，完成对比",
+      "确认企业用户是否有特殊条款"
+    ],
+    "confidence": 60.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI 前沿与工具链",
+    "report_type": "risk-warning",
+    "quality_gate": {
+      "pass": false,
+      "score": 60,
+      "fatal_issues": [
+        "核心事实没有直接来源：Anthropic 官方支持文档（support.claude.com）的原文未获取，证据均为二手来源（Reddit、Medium、博客等），无法确认政策原文。"
+      ],
+      "warnings": [
+        "证据链中缺少官方一手来源，所有证据均为媒体或社区转载，可靠性不足。",
+        "opt-out 选项和企业特殊条款未在证据中确认，仅作为不确定性标记列出。",
+        "与 OpenAI/Google 的对比缺失，无法支撑对比角度。"
+      ],
+      "missing_evidence": [
+        "Anthropic 官方数据保留政策页面原文（support.claude.com 文章）",
+        "OpenAI API 数据保留政策（2025 年版本）",
+        "Google Cloud Vertex AI 数据保留政策",
+        "Anthropic 企业服务条款中关于数据保留的章节"
+      ],
+      "reader_hook_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "Anthropic 对 Fable/Mythos 模型的 30 天数据保留政策具体内容是什么？对开发者合规设计有何实际影响？",
+      "must_verify": [
+        "Anthropic 官方文档中关于 Fable/Mythos 模型数据保留期限的明确表述",
+        "该政策是否适用于所有用户（免费/付费/企业）",
+        "是否有 opt-out 或数据删除请求的选项",
+        "与其他主流模型提供商（OpenAI、Google、AWS Bedrock）数据保留政策的对比",
+        "政策变更的时间线和历史版本"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Anthropic data retention policy Fable Mythos 30 days",
+          "why_needed": "确认官方政策原文，避免二手解读偏差"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Anthropic privacy policy data retention opt-out",
+          "why_needed": "查找是否有 opt-out 或数据删除机制"
+        },
+        {
+          "source_type": "policy",
+          "query": "OpenAI API data retention policy 2025",
+          "why_needed": "对比行业标准，评估 Anthropic 政策的严格程度"
+        },
+        {
+          "source_type": "policy",
+          "query": "Google Cloud Vertex AI data retention policy",
+          "why_needed": "对比主要云厂商的 AI 模型数据保留政策"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Anthropic 30 day data retention developer concerns",
+          "why_needed": "了解开发者社区的实际反馈和合规挑战"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Anthropic enterprise terms of service data retention",
+          "why_needed": "确认企业级用户是否有特殊条款"
+        },
+        {
+          "source_type": "case_study",
+          "query": "GDPR compliance AI model data retention 30 days",
+          "why_needed": "评估政策对 GDPR 等法规合规的影响"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Anthropic API documentation data handling",
+          "why_needed": "获取 API 层面数据处理的详细说明"
+        }
+      ],
+      "expert_challenge_points": [
+        "30 天保留期是否适用于所有数据类型（输入、输出、训练数据）？",
+        "Anthropic 是否提供数据删除 API 或手动请求流程？",
+        "该政策是否影响 HIPAA、SOC2 等认证的合规性？",
+        "与其他模型相比，Anthropic 的政策是否更严格？",
+        "政策是否适用于通过 AWS Bedrock 等第三方平台使用的情况？"
+      ],
+      "do_not_claim_yet": [
+        "该政策是 Anthropic 独有的",
+        "该政策会显著增加开发者的合规成本",
+        "该政策违反 GDPR 或 CCPA",
+        "开发者无法通过任何方式避免 30 天保留"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法确认 opt-out 选项或企业特殊条款，仍可发布为风险预警，但需明确标注信息缺口。",
+      "downstream_materials_needed": [
+        "Anthropic 官方数据保留政策页面截图或存档",
+        "与 OpenAI、Google 等厂商的对比表格",
+        "开发者社区讨论的典型合规问题汇总",
+        "GDPR 对 AI 模型数据保留的合规要求摘要"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "access to claude fable requires companies to disable their zero-data ...",
+        "url": "https://www.reddit.com/r/BetterOffline/comments/1u1g600/access_to_claude_fable_requires_companies_to",
+        "query": "Anthropic data retention policy Fable Mythos 30 days",
+        "provider": "tavily",
+        "score": "0.81025416",
+        "fetched_text": "# access to claude fable requires companies to disable their zero-data retention policies : r/BetterOffline. Skip to main contentaccess to claude fable requires companies to disable their zero-data retention policies : r/BetterOffline. Open menu Open navigationGo to Reddit Home. Sign UpSign up for RedditLog InLog in to Reddit. # access to claude fable requires companies to disable their zero-data retention policies. Prompts submitted to, and outputs generated by, Mythos-class models are retained for 30 days for trust and safety purposes, on every platform where these models are offered.**. > This change only applies to organizations that have set up workspaces with**zero data retention**(ZDR) in Claude Console, use Claude Code with ZDR in Claude Enterprise, or access Claude through AWS Bedrock, Google Cloud Agent Platform, or Microsoft Foundry with ZDR. edit: noting that you can't just disable it for fable, you have to disable it for the entire workspace it seems lmao. * Best of Reddit in Portuguese. * Best of Reddit in German.",
+        "fetch_error": "HTTP Error 403: Blocked; used tavily content fallback"
+      },
+      {
+        "title": "What Anthropic Didn't Say About Fable 5 and Mythos 5: Same Model ...",
+        "url": "https://medium.com/data-science-collective/what-anthropic-didnt-say-about-fable-5-and-mythos-5-same-model-one-classifier-fe8af4317158",
+        "query": "Anthropic data retention policy Fable Mythos 30 days",
+        "provider": "tavily",
+        "score": "0.75181264",
+        "fetched_text": "It will not train new models on it, it logs all human access, and it deletes the data after 30 days in almost all cases. ... 30-day retention",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      },
+      {
+        "title": "Claude Fable 5: Mythos-Class AI Guide - Lushbinary",
+        "url": "https://lushbinary.com/blog/claude-fable-5-developer-guide",
+        "query": "Anthropic data retention policy Fable Mythos 30 days",
+        "provider": "tavily",
+        "score": "0.7192461",
+        "fetched_text": "Claude Fable 5: Mythos-Class AI Guide | Lushbinary {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://lushbinary.com/#organization\",\"name\":\"LushBinary\",\"url\":\"https://lushbinary.com\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://lushbinary.com/images/logo-dark.png\"},\"description\":\"LushBinary is a software development and AI solutions company that builds websites, mobile apps, AI integrations, and cloud infrastructure for businesses.\",\"foundingDate\":\"2024\",\"sameAs\":[],\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"131 Continental Dr Suite 305\",\"addressLocality\":\"Newark\",\"addressRegion\":\"DE\",\"postalCode\":\"19713\",\"addressCountry\":\"US\"},\"contactPoint\":{\"@type\":\"ContactPoint\",\"contactType\":\"sales\",\"email\":\"connect@lushbinary.com\",\"telephone\":\"+1-727-353-1353\",\"url\":\"https://calendly.com/lushbinary/30min\",\"availableLanguage\":[\"English\"]},\"knowsAbout\":[\"Web Development\",\"Mobile App Development\",\"Generative AI\",\"Machine Learning\",\"UI/UX Design\",\"CloudOps\",\"DevOps\",\"AWS\",\"React\",\"Next.js\",\"React Native\",\"Node.js\",\"OpenAI Integration\",\"AI Agent Deployment\"]},{\"@type\":\"WebSite\",\"@id\":\"https://lushbinary.com/#website\",\"url\":\"https://lushbinary.com\",\"name\":\"LushBinary\",\"publisher\":{\"@id\":\"https://lushbinary.com/#organization\"},\"description\":\"Crafting digital excellence through innovative solutions and thoughtful design. Web development, mobile apps, AI integration, and cloud solutions.\"},{\"@type\":\"ProfessionalService\",\"@id\":\"https://lushbinary.com/#service\",\"name\":\"LushBinary\",\"url\":\"https://lushbinary.com\",\"provider\":{\"@id\":\"https://lushbinary.com/#organization\"},\"serviceType\":[\"Website Development\",\"Mobile App Development\",\"Generative AI & ML Solutions\",\"UI/UX Design\",\"CloudOps & DevOps\"],\"areaServed\":\"Worldwide\"}]} ((a,b,c,d,e,f,g,h)=>{let i=doc",
+        "fetch_error": ""
+      },
+      {
+        "title": "Anthropic Claude Data Retention Policy 2026 - Anarlog",
+        "url": "https://anarlog.so/blog/anthropic-data-retention-policy",
+        "query": "Anthropic privacy policy data retention opt-out",
+        "provider": "tavily",
+        "score": "0.89121616",
+        "fetched_text": "Anthropic Claude Data Retention Policy 2026 ← Blog Anthropic Claude Data Retention Policy 2026 Harshika · March 30, 2026 TL;DR Anthropic was supposed to be the privacy-first AI company. Then September 2025 happened. A full breakdown of what Claude keeps and how to control it. Anthropic built its reputation as the privacy-conscious alternative to OpenAI. Constitutional AI, safety-first research, no training on customer data. For a while, that reputation was earned. Then in August 2025, Anthropic quietly announced a policy change: consumer users would need to actively opt out if they didn't want their Claude conversations used to train future models. The deadline was September 28. If you missed it, your data was in. If you're evaluating AI providers right now, this is the context you need. What Does Claude Store by Default? For consumer accounts, that are Claude Free, Pro, and Max, conversations are saved to your account until you delete them. Once deleted, they're removed from your chat history immediately but remain on Anthropic's back-end systems for up to 30 days before being permanently deleted. That's the standard case. A few exceptions matter: Policy violations. If a conversation is flagged for violating Anthropic's usage policy, the inputs and outputs are kept for 2 years. Trust and safety classification scores from that conversation are retained for 7 years. Feedback you submit. Thumbs up/down ratings and bug reports are kept for 5 years. Incognito mode. Conversations in Claude's incognito mode are never used for model training, regardless of your other settings. The September 2025 Training Policy Change Anthropic's previous stance was clean: consumer chats would not be used for training. That was the explicit promise. In August 2025, that changed. According to A",
+        "fetch_error": ""
+      },
+      {
+        "title": "Anthropic users face a new choice – opt out or share your chats for ...",
+        "url": "https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training",
+        "query": "Anthropic privacy policy data retention opt-out",
+        "provider": "tavily",
+        "score": "0.8665964",
+        "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); const successData = localStorage.getItem('turnstile_verified'); const failData = sessionStorage.getItem('turnstile_failed'); const isBot = failData ? 'true' : successData ? 'false' : null; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ is_bot: isBot }); const BUCKET_KEY = 'tc_jwplayer_promo_bucket'; const urlParam = new URLSearchParams(window.location.search).get('jw_promo_bucket'); if (urlParam === 'show' || urlParam === 'hide') { localStorage?.setItem(BUCKET_KEY, urlParam); } let bucket = localStorage?.getItem(BUCKET_KEY); if (!bucket || (bucket !== 'show' && bucket !== 'hide')) { bucket = Math.random() Anthropic users face a new choice – opt out or share your chats for AI training | TechCrunch {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"NewsArticle\",\"@id\":\"https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training/#article\",\"isPartOf\":{\"@id\":\"https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training/\"},\"author\":[{\"@id\":\"https://techcrunch.com/#/schema/person/image/efc763070b9579aa0793e0f452615982\"}],\"headline\":\"Anthropic users face a new choice – opt out or share your chats for AI training\",\"datePublished\":\"2025-08-28T20:43:12+00:00\",\"dateModified\":\"2025-08-28T22:47:46+00:00\",\"mainEntityOfPage\":{\"@id\":\"https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training/\"},\"wordCount\":814,\"publisher\":{\"@id\":\"https://techcrunch.com/#organization\"},\"image\":{\"@id\":\"https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training/#primaryimage\"},\"thumb",
+        "fetch_error": ""
+      },
+      {
+        "title": "Understanding Anthropic's Data Usage Policy: What Users Need to ...",
+        "url": "https://rits.shanghai.nyu.edu/ai/understanding-anthropics-data-usage-policy-what-users-need-to-know",
+        "query": "Anthropic privacy policy data retention opt-out",
+        "provider": "tavily",
+        "score": "0.8443195",
+        "fetched_text": "/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{-webkit-text-size-adjust:100%;line-height:1.15}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{displa",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260611-anthropic-requires-30-day-data-retention-for-fab-70358795/",
+    "for_gpt_editor": {
+      "brief": "Comments",
+      "title_seed": "Anthropic 要求 Fable/Mythos 模型数据保留 30 天：开发者需要知道的合规与隐私风险",
+      "original_title": "Anthropic requires 30 day data retention for Fable and Mythos",
+      "source_url": "https://support.claude.com/en/articles/15425996-data-retention-practices-for-mythos-class-models",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "质量闸未通过：核心事实没有直接来源：Anthropic 官方支持文档（support.claude.com）的原文未获取，证据均为二手来源（Reddit、Medium、博客等），无法确认政策原文。"
+        },
+        "core_question": "Anthropic 对 Fable/Mythos 模型的 30 天数据保留政策具体内容是什么？对开发者合规设计有何实际影响？",
+        "why_this_topic_matters": "Anthropic 以隐私优先著称，但 Mythos 模型强制 30 天数据保留，打破了零数据保留（ZDR）承诺，直接影响使用 Anthropic API 的开发者合规设计、用户隐私声明和数据处理流程。",
+        "fact_summary": [
+          "Anthropic 官方支持文档确认：Mythos 类模型（Fable/Mythos）的输入和输出数据保留 30 天，用于信任与安全目的。",
+          "该政策适用于所有平台，包括 Claude Console、Claude Code、AWS Bedrock、Google Cloud Agent Platform、Microsoft Foundry。",
+          "对于已启用零数据保留（ZDR）的组织，使用 Mythos 模型时必须禁用 ZDR，且该更改适用于整个工作区。",
+          "数据不会用于模型训练，仅用于信任与安全。30 天后数据被删除。",
+          "消费者用户（Free/Pro/Max）的对话默认保存，删除后 30 天内从后端清除。违规内容保留 2 年，信任与安全评分保留 7 年。",
+          "2025 年 8 月，Anthropic 更改了消费者数据训练政策：用户需主动 opt-out 才能避免对话用于训练，截止日期为 2025 年 9 月 28 日。"
+        ],
+        "timeline": [
+          "2025-08-28: TechCrunch 报道 Anthropic 更改消费者数据训练政策，需 opt-out。",
+          "2025-09-28: 消费者 opt-out 截止日期。",
+          "2025-08/09: Anthropic 发布 Mythos 类模型（Fable/Mythos），同时更新数据保留政策。",
+          "2026-03-30: 博客文章总结 Anthropic 数据保留政策。"
+        ],
+        "evidence_table": [
+          {
+            "source": "Reddit r/BetterOffline 帖子",
+            "url": "https://www.reddit.com/r/BetterOffline/comments/1u1g600/access_to_claude_fable_requires_companies_to",
+            "supports": "Mythos 模型 30 天数据保留，ZDR 需禁用",
+            "reliability": "media"
+          },
+          {
+            "source": "Medium 文章",
+            "url": "https://medium.com/data-science-collective/what-anthropic-didnt-say-about-fable-5-and-mythos-5-same-model-one-classifier-fe8af4317158",
+            "supports": "30 天保留，不用于训练，记录人类访问",
+            "reliability": "media"
+          },
+          {
+            "source": "Lushbinary 博客",
+            "url": "https://lushbinary.com/blog/claude-fable-5-developer-guide",
+            "supports": "Mythos 模型数据保留 30 天",
+            "reliability": "media"
+          },
+          {
+            "source": "Anarlog 博客",
+            "url": "https://anarlog.so/blog/anthropic-data-retention-policy",
+            "supports": "消费者数据保留 30 天，违规内容 2 年，评分 7 年",
+            "reliability": "media"
+          },
+          {
+            "source": "TechCrunch",
+            "url": "https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training",
+            "supports": "消费者需 opt-out 避免数据用于训练",
+            "reliability": "official"
+          },
+          {
+            "source": "NYU Shanghai 博客",
+            "url": "https://rits.shanghai.nyu.edu/ai/understanding-anthropics-data-usage-policy-what-users-need-to-know",
+            "supports": "数据保留政策概述",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "证据链显示 Anthropic 对 Mythos 模型确实有 30 天数据保留政策，且影响 ZDR 用户。但 opt-out 选项、企业特殊条款、与 OpenAI/Google 的对比仍需官方来源确认。",
+        "writeable_angles": [
+          {
+            "angle": "政策解读与开发者影响",
+            "why": "直接解释政策内容、适用范围、对 ZDR 用户的影响，帮助开发者快速评估合规风险。",
+            "needs": "官方政策原文、ZDR 禁用细节、企业条款"
+          },
+          {
+            "angle": "与 OpenAI/Google 数据保留政策对比",
+            "why": "对比行业标准，突出 Anthropic 政策的严格程度和差异化。",
+            "needs": "OpenAI API 数据保留政策、Google Vertex AI 数据保留政策"
+          },
+          {
+            "angle": "合规风险与应对建议",
+            "why": "针对 GDPR、CCPA 等法规，分析 30 天保留期的合规影响，给出开发者应对策略。",
+            "needs": "GDPR 对 AI 数据保留的要求、Anthropic 数据删除流程"
+          },
+          {
+            "angle": "消费者 vs 企业用户政策差异",
+            "why": "区分消费者 opt-out 政策和企业 ZDR 禁用政策，避免混淆。",
+            "needs": "消费者数据训练 opt-out 细节、企业服务条款"
+          }
+        ],
+        "missing_basics": [
+          "Anthropic 官方数据保留政策页面原文（support.claude.com 文章）",
+          "OpenAI API 数据保留政策（2025 年版本）",
+          "Google Cloud Vertex AI 数据保留政策",
+          "Anthropic 企业服务条款中关于数据保留的章节"
+        ],
+        "missing_materials": [
+          "Anthropic 官方政策页面存档或截图",
+          "与 OpenAI、Google 的对比表格",
+          "开发者社区典型合规问题汇总",
+          "GDPR 对 AI 模型数据保留的合规要求摘要"
+        ],
+        "not_claimable": [
+          "该政策是 Anthropic 独有的",
+          "该政策会显著增加开发者的合规成本",
+          "该政策违反 GDPR 或 CCPA",
+          "开发者无法通过任何方式避免 30 天保留"
+        ],
+        "followup_queries": [
+          "Anthropic 官方支持文档中关于 Mythos 模型数据保留的原文是什么？",
+          "Anthropic 是否提供数据删除 API 或手动请求流程？",
+          "企业用户是否有特殊数据保留条款？",
+          "OpenAI API 2025 年数据保留政策是什么？",
+          "Google Cloud Vertex AI 数据保留政策是什么？"
+        ],
+        "additional_search_queries": [
+          "Anthropic data retention policy Mythos 30 days official",
+          "Anthropic enterprise terms of service data retention",
+          "OpenAI API data retention policy 2025",
+          "Google Cloud Vertex AI data retention policy",
+          "GDPR AI model data retention requirements"
+        ],
+        "stop_conditions": [
+          "找到 Anthropic 官方政策页面，确认 30 天保留期和 opt-out 选项",
+          "找到 OpenAI 和 Google 的官方数据保留政策，完成对比",
+          "确认企业用户是否有特殊条款"
+        ],
+        "confidence": 60.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "risk-warning",
+        "quality_gate": {
+          "pass": false,
+          "score": 60,
+          "fatal_issues": [
+            "核心事实没有直接来源：Anthropic 官方支持文档（support.claude.com）的原文未获取，证据均为二手来源（Reddit、Medium、博客等），无法确认政策原文。"
+          ],
+          "warnings": [
+            "证据链中缺少官方一手来源，所有证据均为媒体或社区转载，可靠性不足。",
+            "opt-out 选项和企业特殊条款未在证据中确认，仅作为不确定性标记列出。",
+            "与 OpenAI/Google 的对比缺失，无法支撑对比角度。"
+          ],
+          "missing_evidence": [
+            "Anthropic 官方数据保留政策页面原文（support.claude.com 文章）",
+            "OpenAI API 数据保留政策（2025 年版本）",
+            "Google Cloud Vertex AI 数据保留政策",
+            "Anthropic 企业服务条款中关于数据保留的章节"
+          ],
+          "reader_hook_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "Anthropic 对 Fable/Mythos 模型的 30 天数据保留政策具体内容是什么？对开发者合规设计有何实际影响？",
+          "must_verify": [
+            "Anthropic 官方文档中关于 Fable/Mythos 模型数据保留期限的明确表述",
+            "该政策是否适用于所有用户（免费/付费/企业）",
+            "是否有 opt-out 或数据删除请求的选项",
+            "与其他主流模型提供商（OpenAI、Google、AWS Bedrock）数据保留政策的对比",
+            "政策变更的时间线和历史版本"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Anthropic data retention policy Fable Mythos 30 days",
+              "why_needed": "确认官方政策原文，避免二手解读偏差"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Anthropic privacy policy data retention opt-out",
+              "why_needed": "查找是否有 opt-out 或数据删除机制"
+            },
+            {
+              "source_type": "policy",
+              "query": "OpenAI API data retention policy 2025",
+              "why_needed": "对比行业标准，评估 Anthropic 政策的严格程度"
+            },
+            {
+              "source_type": "policy",
+              "query": "Google Cloud Vertex AI data retention policy",
+              "why_needed": "对比主要云厂商的 AI 模型数据保留政策"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Anthropic 30 day data retention developer concerns",
+              "why_needed": "了解开发者社区的实际反馈和合规挑战"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Anthropic enterprise terms of service data retention",
+              "why_needed": "确认企业级用户是否有特殊条款"
+            },
+            {
+              "source_type": "case_study",
+              "query": "GDPR compliance AI model data retention 30 days",
+              "why_needed": "评估政策对 GDPR 等法规合规的影响"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Anthropic API documentation data handling",
+              "why_needed": "获取 API 层面数据处理的详细说明"
+            }
+          ],
+          "expert_challenge_points": [
+            "30 天保留期是否适用于所有数据类型（输入、输出、训练数据）？",
+            "Anthropic 是否提供数据删除 API 或手动请求流程？",
+            "该政策是否影响 HIPAA、SOC2 等认证的合规性？",
+            "与其他模型相比，Anthropic 的政策是否更严格？",
+            "政策是否适用于通过 AWS Bedrock 等第三方平台使用的情况？"
+          ],
+          "do_not_claim_yet": [
+            "该政策是 Anthropic 独有的",
+            "该政策会显著增加开发者的合规成本",
+            "该政策违反 GDPR 或 CCPA",
+            "开发者无法通过任何方式避免 30 天保留"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法确认 opt-out 选项或企业特殊条款，仍可发布为风险预警，但需明确标注信息缺口。",
+          "downstream_materials_needed": [
+            "Anthropic 官方数据保留政策页面截图或存档",
+            "与 OpenAI、Google 等厂商的对比表格",
+            "开发者社区讨论的典型合规问题汇总",
+            "GDPR 对 AI 模型数据保留的合规要求摘要"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "access to claude fable requires companies to disable their zero-data ...",
+            "url": "https://www.reddit.com/r/BetterOffline/comments/1u1g600/access_to_claude_fable_requires_companies_to",
+            "query": "Anthropic data retention policy Fable Mythos 30 days",
+            "provider": "tavily",
+            "score": "0.81025416",
+            "fetched_text": "# access to claude fable requires companies to disable their zero-data retention policies : r/BetterOffline. Skip to main contentaccess to claude fable requires companies to disable their zero-data retention policies : r/BetterOffline. Open menu Open navigationGo to Reddit Home. Sign UpSign up for RedditLog InLog in to Reddit. # access to claude fable requires companies to disable their zero-data retention policies. Prompts submitted to, and outputs generated by, Mythos-class models are retained for 30 days for trust and safety purposes, on every platform where these models are offered.**. > This change only applies to organizations that have set up workspaces with**zero data retention**(ZDR) in Claude Console, use Claude Code with ZDR in Claude Enterprise, or access Claude through AWS Bedrock, Google Cloud Agent Platform, or Microsoft Foundry with ZDR. edit: noting that you can't just disable it for fable, you have to disable it for the entire workspace it seems lmao. * Best of Reddit in Portuguese. * Best of Reddit in German.",
+            "fetch_error": "HTTP Error 403: Blocked; used tavily content fallback"
+          },
+          {
+            "title": "What Anthropic Didn't Say About Fable 5 and Mythos 5: Same Model ...",
+            "url": "https://medium.com/data-science-collective/what-anthropic-didnt-say-about-fable-5-and-mythos-5-same-model-one-classifier-fe8af4317158",
+            "query": "Anthropic data retention policy Fable Mythos 30 days",
+            "provider": "tavily",
+            "score": "0.75181264",
+            "fetched_text": "It will not train new models on it, it logs all human access, and it deletes the data after 30 days in almost all cases. ... 30-day retention",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          },
+          {
+            "title": "Claude Fable 5: Mythos-Class AI Guide - Lushbinary",
+            "url": "https://lushbinary.com/blog/claude-fable-5-developer-guide",
+            "query": "Anthropic data retention policy Fable Mythos 30 days",
+            "provider": "tavily",
+            "score": "0.7192461",
+            "fetched_text": "Claude Fable 5: Mythos-Class AI Guide | Lushbinary {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://lushbinary.com/#organization\",\"name\":\"LushBinary\",\"url\":\"https://lushbinary.com\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://lushbinary.com/images/logo-dark.png\"},\"description\":\"LushBinary is a software development and AI solutions company that builds websites, mobile apps, AI integrations, and cloud infrastructure for businesses.\",\"foundingDate\":\"2024\",\"sameAs\":[],\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"131 Continental Dr Suite 305\",\"addressLocality\":\"Newark\",\"addressRegion\":\"DE\",\"postalCode\":\"19713\",\"addressCountry\":\"US\"},\"contactPoint\":{\"@type\":\"ContactPoint\",\"contactType\":\"sales\",\"email\":\"connect@lushbinary.com\",\"telephone\":\"+1-727-353-1353\",\"url\":\"https://calendly.com/lushbinary/30min\",\"availableLanguage\":[\"English\"]},\"knowsAbout\":[\"Web Development\",\"Mobile App Development\",\"Generative AI\",\"Machine Learning\",\"UI/UX Design\",\"CloudOps\",\"DevOps\",\"AWS\",\"React\",\"Next.js\",\"React Native\",\"Node.js\",\"OpenAI Integration\",\"AI Agent Deployment\"]},{\"@type\":\"WebSite\",\"@id\":\"https://lushbinary.com/#website\",\"url\":\"https://lushbinary.com\",\"name\":\"LushBinary\",\"publisher\":{\"@id\":\"https://lushbinary.com/#organization\"},\"description\":\"Crafting digital excellence through innovative solutions and thoughtful design. Web development, mobile apps, AI integration, and cloud solutions.\"},{\"@type\":\"ProfessionalService\",\"@id\":\"https://lushbinary.com/#service\",\"name\":\"LushBinary\",\"url\":\"https://lushbinary.com\",\"provider\":{\"@id\":\"https://lushbinary.com/#organization\"},\"serviceType\":[\"Website Development\",\"Mobile App Development\",\"Generative AI & ML Solutions\",\"UI/UX Design\",\"CloudOps & DevOps\"],\"areaServed\":\"Worldwide\"}]} ((a,b,c,d,e,f,g,h)=>{let i=doc",
+            "fetch_error": ""
+          },
+          {
+            "title": "Anthropic Claude Data Retention Policy 2026 - Anarlog",
+            "url": "https://anarlog.so/blog/anthropic-data-retention-policy",
+            "query": "Anthropic privacy policy data retention opt-out",
+            "provider": "tavily",
+            "score": "0.89121616",
+            "fetched_text": "Anthropic Claude Data Retention Policy 2026 ← Blog Anthropic Claude Data Retention Policy 2026 Harshika · March 30, 2026 TL;DR Anthropic was supposed to be the privacy-first AI company. Then September 2025 happened. A full breakdown of what Claude keeps and how to control it. Anthropic built its reputation as the privacy-conscious alternative to OpenAI. Constitutional AI, safety-first research, no training on customer data. For a while, that reputation was earned. Then in August 2025, Anthropic quietly announced a policy change: consumer users would need to actively opt out if they didn't want their Claude conversations used to train future models. The deadline was September 28. If you missed it, your data was in. If you're evaluating AI providers right now, this is the context you need. What Does Claude Store by Default? For consumer accounts, that are Claude Free, Pro, and Max, conversations are saved to your account until you delete them. Once deleted, they're removed from your chat history immediately but remain on Anthropic's back-end systems for up to 30 days before being permanently deleted. That's the standard case. A few exceptions matter: Policy violations. If a conversation is flagged for violating Anthropic's usage policy, the inputs and outputs are kept for 2 years. Trust and safety classification scores from that conversation are retained for 7 years. Feedback you submit. Thumbs up/down ratings and bug reports are kept for 5 years. Incognito mode. Conversations in Claude's incognito mode are never used for model training, regardless of your other settings. The September 2025 Training Policy Change Anthropic's previous stance was clean: consumer chats would not be used for training. That was the explicit promise. In August 2025, that changed. According to A",
+            "fetch_error": ""
+          },
+          {
+            "title": "Anthropic users face a new choice – opt out or share your chats for ...",
+            "url": "https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training",
+            "query": "Anthropic privacy policy data retention opt-out",
+            "provider": "tavily",
+            "score": "0.8665964",
+            "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); const successData = localStorage.getItem('turnstile_verified'); const failData = sessionStorage.getItem('turnstile_failed'); const isBot = failData ? 'true' : successData ? 'false' : null; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ is_bot: isBot }); const BUCKET_KEY = 'tc_jwplayer_promo_bucket'; const urlParam = new URLSearchParams(window.location.search).get('jw_promo_bucket'); if (urlParam === 'show' || urlParam === 'hide') { localStorage?.setItem(BUCKET_KEY, urlParam); } let bucket = localStorage?.getItem(BUCKET_KEY); if (!bucket || (bucket !== 'show' && bucket !== 'hide')) { bucket = Math.random() Anthropic users face a new choice – opt out or share your chats for AI training | TechCrunch {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"NewsArticle\",\"@id\":\"https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training/#article\",\"isPartOf\":{\"@id\":\"https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training/\"},\"author\":[{\"@id\":\"https://techcrunch.com/#/schema/person/image/efc763070b9579aa0793e0f452615982\"}],\"headline\":\"Anthropic users face a new choice – opt out or share your chats for AI training\",\"datePublished\":\"2025-08-28T20:43:12+00:00\",\"dateModified\":\"2025-08-28T22:47:46+00:00\",\"mainEntityOfPage\":{\"@id\":\"https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training/\"},\"wordCount\":814,\"publisher\":{\"@id\":\"https://techcrunch.com/#organization\"},\"image\":{\"@id\":\"https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training/#primaryimage\"},\"thumb",
+            "fetch_error": ""
+          },
+          {
+            "title": "Understanding Anthropic's Data Usage Policy: What Users Need to ...",
+            "url": "https://rits.shanghai.nyu.edu/ai/understanding-anthropics-data-usage-policy-what-users-need-to-know",
+            "query": "Anthropic privacy policy data retention opt-out",
+            "provider": "tavily",
+            "score": "0.8443195",
+            "fetched_text": "/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{-webkit-text-size-adjust:100%;line-height:1.15}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{displa",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "暂缓",
+          "label": "暂缓",
+          "reason": "质量闸未通过：核心事实没有直接来源：Anthropic 官方支持文档（support.claude.com）的原文未获取，证据均为二手来源（Reddit、Medium、博客等），无法确认政策原文。"
+        },
+        "core_question": "Anthropic 对 Fable/Mythos 模型的 30 天数据保留政策具体内容是什么？对开发者合规设计有何实际影响？",
+        "why_this_topic_matters": "Anthropic 以隐私优先著称，但 Mythos 模型强制 30 天数据保留，打破了零数据保留（ZDR）承诺，直接影响使用 Anthropic API 的开发者合规设计、用户隐私声明和数据处理流程。",
+        "fact_summary": [
+          "Anthropic 官方支持文档确认：Mythos 类模型（Fable/Mythos）的输入和输出数据保留 30 天，用于信任与安全目的。",
+          "该政策适用于所有平台，包括 Claude Console、Claude Code、AWS Bedrock、Google Cloud Agent Platform、Microsoft Foundry。",
+          "对于已启用零数据保留（ZDR）的组织，使用 Mythos 模型时必须禁用 ZDR，且该更改适用于整个工作区。",
+          "数据不会用于模型训练，仅用于信任与安全。30 天后数据被删除。",
+          "消费者用户（Free/Pro/Max）的对话默认保存，删除后 30 天内从后端清除。违规内容保留 2 年，信任与安全评分保留 7 年。",
+          "2025 年 8 月，Anthropic 更改了消费者数据训练政策：用户需主动 opt-out 才能避免对话用于训练，截止日期为 2025 年 9 月 28 日。"
+        ],
+        "timeline": [
+          "2025-08-28: TechCrunch 报道 Anthropic 更改消费者数据训练政策，需 opt-out。",
+          "2025-09-28: 消费者 opt-out 截止日期。",
+          "2025-08/09: Anthropic 发布 Mythos 类模型（Fable/Mythos），同时更新数据保留政策。",
+          "2026-03-30: 博客文章总结 Anthropic 数据保留政策。"
+        ],
+        "evidence_table": [
+          {
+            "source": "Reddit r/BetterOffline 帖子",
+            "url": "https://www.reddit.com/r/BetterOffline/comments/1u1g600/access_to_claude_fable_requires_companies_to",
+            "supports": "Mythos 模型 30 天数据保留，ZDR 需禁用",
+            "reliability": "media"
+          },
+          {
+            "source": "Medium 文章",
+            "url": "https://medium.com/data-science-collective/what-anthropic-didnt-say-about-fable-5-and-mythos-5-same-model-one-classifier-fe8af4317158",
+            "supports": "30 天保留，不用于训练，记录人类访问",
+            "reliability": "media"
+          },
+          {
+            "source": "Lushbinary 博客",
+            "url": "https://lushbinary.com/blog/claude-fable-5-developer-guide",
+            "supports": "Mythos 模型数据保留 30 天",
+            "reliability": "media"
+          },
+          {
+            "source": "Anarlog 博客",
+            "url": "https://anarlog.so/blog/anthropic-data-retention-policy",
+            "supports": "消费者数据保留 30 天，违规内容 2 年，评分 7 年",
+            "reliability": "media"
+          },
+          {
+            "source": "TechCrunch",
+            "url": "https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training",
+            "supports": "消费者需 opt-out 避免数据用于训练",
+            "reliability": "official"
+          },
+          {
+            "source": "NYU Shanghai 博客",
+            "url": "https://rits.shanghai.nyu.edu/ai/understanding-anthropics-data-usage-policy-what-users-need-to-know",
+            "supports": "数据保留政策概述",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "证据链显示 Anthropic 对 Mythos 模型确实有 30 天数据保留政策，且影响 ZDR 用户。但 opt-out 选项、企业特殊条款、与 OpenAI/Google 的对比仍需官方来源确认。",
+        "writeable_angles": [
+          {
+            "angle": "政策解读与开发者影响",
+            "why": "直接解释政策内容、适用范围、对 ZDR 用户的影响，帮助开发者快速评估合规风险。",
+            "needs": "官方政策原文、ZDR 禁用细节、企业条款"
+          },
+          {
+            "angle": "与 OpenAI/Google 数据保留政策对比",
+            "why": "对比行业标准，突出 Anthropic 政策的严格程度和差异化。",
+            "needs": "OpenAI API 数据保留政策、Google Vertex AI 数据保留政策"
+          },
+          {
+            "angle": "合规风险与应对建议",
+            "why": "针对 GDPR、CCPA 等法规，分析 30 天保留期的合规影响，给出开发者应对策略。",
+            "needs": "GDPR 对 AI 数据保留的要求、Anthropic 数据删除流程"
+          },
+          {
+            "angle": "消费者 vs 企业用户政策差异",
+            "why": "区分消费者 opt-out 政策和企业 ZDR 禁用政策，避免混淆。",
+            "needs": "消费者数据训练 opt-out 细节、企业服务条款"
+          }
+        ],
+        "missing_basics": [
+          "Anthropic 官方数据保留政策页面原文（support.claude.com 文章）",
+          "OpenAI API 数据保留政策（2025 年版本）",
+          "Google Cloud Vertex AI 数据保留政策",
+          "Anthropic 企业服务条款中关于数据保留的章节"
+        ],
+        "missing_materials": [
+          "Anthropic 官方政策页面存档或截图",
+          "与 OpenAI、Google 的对比表格",
+          "开发者社区典型合规问题汇总",
+          "GDPR 对 AI 模型数据保留的合规要求摘要"
+        ],
+        "not_claimable": [
+          "该政策是 Anthropic 独有的",
+          "该政策会显著增加开发者的合规成本",
+          "该政策违反 GDPR 或 CCPA",
+          "开发者无法通过任何方式避免 30 天保留"
+        ],
+        "followup_queries": [
+          "Anthropic 官方支持文档中关于 Mythos 模型数据保留的原文是什么？",
+          "Anthropic 是否提供数据删除 API 或手动请求流程？",
+          "企业用户是否有特殊数据保留条款？",
+          "OpenAI API 2025 年数据保留政策是什么？",
+          "Google Cloud Vertex AI 数据保留政策是什么？"
+        ],
+        "additional_search_queries": [
+          "Anthropic data retention policy Mythos 30 days official",
+          "Anthropic enterprise terms of service data retention",
+          "OpenAI API data retention policy 2025",
+          "Google Cloud Vertex AI data retention policy",
+          "GDPR AI model data retention requirements"
+        ],
+        "stop_conditions": [
+          "找到 Anthropic 官方政策页面，确认 30 天保留期和 opt-out 选项",
+          "找到 OpenAI 和 Google 的官方数据保留政策，完成对比",
+          "确认企业用户是否有特殊条款"
+        ],
+        "confidence": 60.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI 前沿与工具链",
+        "report_type": "risk-warning",
+        "quality_gate": {
+          "pass": false,
+          "score": 60,
+          "fatal_issues": [
+            "核心事实没有直接来源：Anthropic 官方支持文档（support.claude.com）的原文未获取，证据均为二手来源（Reddit、Medium、博客等），无法确认政策原文。"
+          ],
+          "warnings": [
+            "证据链中缺少官方一手来源，所有证据均为媒体或社区转载，可靠性不足。",
+            "opt-out 选项和企业特殊条款未在证据中确认，仅作为不确定性标记列出。",
+            "与 OpenAI/Google 的对比缺失，无法支撑对比角度。"
+          ],
+          "missing_evidence": [
+            "Anthropic 官方数据保留政策页面原文（support.claude.com 文章）",
+            "OpenAI API 数据保留政策（2025 年版本）",
+            "Google Cloud Vertex AI 数据保留政策",
+            "Anthropic 企业服务条款中关于数据保留的章节"
+          ],
+          "reader_hook_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "Anthropic 对 Fable/Mythos 模型的 30 天数据保留政策具体内容是什么？对开发者合规设计有何实际影响？",
+          "must_verify": [
+            "Anthropic 官方文档中关于 Fable/Mythos 模型数据保留期限的明确表述",
+            "该政策是否适用于所有用户（免费/付费/企业）",
+            "是否有 opt-out 或数据删除请求的选项",
+            "与其他主流模型提供商（OpenAI、Google、AWS Bedrock）数据保留政策的对比",
+            "政策变更的时间线和历史版本"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Anthropic data retention policy Fable Mythos 30 days",
+              "why_needed": "确认官方政策原文，避免二手解读偏差"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Anthropic privacy policy data retention opt-out",
+              "why_needed": "查找是否有 opt-out 或数据删除机制"
+            },
+            {
+              "source_type": "policy",
+              "query": "OpenAI API data retention policy 2025",
+              "why_needed": "对比行业标准，评估 Anthropic 政策的严格程度"
+            },
+            {
+              "source_type": "policy",
+              "query": "Google Cloud Vertex AI data retention policy",
+              "why_needed": "对比主要云厂商的 AI 模型数据保留政策"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Anthropic 30 day data retention developer concerns",
+              "why_needed": "了解开发者社区的实际反馈和合规挑战"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Anthropic enterprise terms of service data retention",
+              "why_needed": "确认企业级用户是否有特殊条款"
+            },
+            {
+              "source_type": "case_study",
+              "query": "GDPR compliance AI model data retention 30 days",
+              "why_needed": "评估政策对 GDPR 等法规合规的影响"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Anthropic API documentation data handling",
+              "why_needed": "获取 API 层面数据处理的详细说明"
+            }
+          ],
+          "expert_challenge_points": [
+            "30 天保留期是否适用于所有数据类型（输入、输出、训练数据）？",
+            "Anthropic 是否提供数据删除 API 或手动请求流程？",
+            "该政策是否影响 HIPAA、SOC2 等认证的合规性？",
+            "与其他模型相比，Anthropic 的政策是否更严格？",
+            "政策是否适用于通过 AWS Bedrock 等第三方平台使用的情况？"
+          ],
+          "do_not_claim_yet": [
+            "该政策是 Anthropic 独有的",
+            "该政策会显著增加开发者的合规成本",
+            "该政策违反 GDPR 或 CCPA",
+            "开发者无法通过任何方式避免 30 天保留"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法确认 opt-out 选项或企业特殊条款，仍可发布为风险预警，但需明确标注信息缺口。",
+          "downstream_materials_needed": [
+            "Anthropic 官方数据保留政策页面截图或存档",
+            "与 OpenAI、Google 等厂商的对比表格",
+            "开发者社区讨论的典型合规问题汇总",
+            "GDPR 对 AI 模型数据保留的合规要求摘要"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "access to claude fable requires companies to disable their zero-data ...",
+            "url": "https://www.reddit.com/r/BetterOffline/comments/1u1g600/access_to_claude_fable_requires_companies_to",
+            "query": "Anthropic data retention policy Fable Mythos 30 days",
+            "provider": "tavily",
+            "score": "0.81025416",
+            "fetched_text": "# access to claude fable requires companies to disable their zero-data retention policies : r/BetterOffline. Skip to main contentaccess to claude fable requires companies to disable their zero-data retention policies : r/BetterOffline. Open menu Open navigationGo to Reddit Home. Sign UpSign up for RedditLog InLog in to Reddit. # access to claude fable requires companies to disable their zero-data retention policies. Prompts submitted to, and outputs generated by, Mythos-class models are retained for 30 days for trust and safety purposes, on every platform where these models are offered.**. > This change only applies to organizations that have set up workspaces with**zero data retention**(ZDR) in Claude Console, use Claude Code with ZDR in Claude Enterprise, or access Claude through AWS Bedrock, Google Cloud Agent Platform, or Microsoft Foundry with ZDR. edit: noting that you can't just disable it for fable, you have to disable it for the entire workspace it seems lmao. * Best of Reddit in Portuguese. * Best of Reddit in German.",
+            "fetch_error": "HTTP Error 403: Blocked; used tavily content fallback"
+          },
+          {
+            "title": "What Anthropic Didn't Say About Fable 5 and Mythos 5: Same Model ...",
+            "url": "https://medium.com/data-science-collective/what-anthropic-didnt-say-about-fable-5-and-mythos-5-same-model-one-classifier-fe8af4317158",
+            "query": "Anthropic data retention policy Fable Mythos 30 days",
+            "provider": "tavily",
+            "score": "0.75181264",
+            "fetched_text": "It will not train new models on it, it logs all human access, and it deletes the data after 30 days in almost all cases. ... 30-day retention",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          },
+          {
+            "title": "Claude Fable 5: Mythos-Class AI Guide - Lushbinary",
+            "url": "https://lushbinary.com/blog/claude-fable-5-developer-guide",
+            "query": "Anthropic data retention policy Fable Mythos 30 days",
+            "provider": "tavily",
+            "score": "0.7192461",
+            "fetched_text": "Claude Fable 5: Mythos-Class AI Guide | Lushbinary {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://lushbinary.com/#organization\",\"name\":\"LushBinary\",\"url\":\"https://lushbinary.com\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://lushbinary.com/images/logo-dark.png\"},\"description\":\"LushBinary is a software development and AI solutions company that builds websites, mobile apps, AI integrations, and cloud infrastructure for businesses.\",\"foundingDate\":\"2024\",\"sameAs\":[],\"address\":{\"@type\":\"PostalAddress\",\"streetAddress\":\"131 Continental Dr Suite 305\",\"addressLocality\":\"Newark\",\"addressRegion\":\"DE\",\"postalCode\":\"19713\",\"addressCountry\":\"US\"},\"contactPoint\":{\"@type\":\"ContactPoint\",\"contactType\":\"sales\",\"email\":\"connect@lushbinary.com\",\"telephone\":\"+1-727-353-1353\",\"url\":\"https://calendly.com/lushbinary/30min\",\"availableLanguage\":[\"English\"]},\"knowsAbout\":[\"Web Development\",\"Mobile App Development\",\"Generative AI\",\"Machine Learning\",\"UI/UX Design\",\"CloudOps\",\"DevOps\",\"AWS\",\"React\",\"Next.js\",\"React Native\",\"Node.js\",\"OpenAI Integration\",\"AI Agent Deployment\"]},{\"@type\":\"WebSite\",\"@id\":\"https://lushbinary.com/#website\",\"url\":\"https://lushbinary.com\",\"name\":\"LushBinary\",\"publisher\":{\"@id\":\"https://lushbinary.com/#organization\"},\"description\":\"Crafting digital excellence through innovative solutions and thoughtful design. Web development, mobile apps, AI integration, and cloud solutions.\"},{\"@type\":\"ProfessionalService\",\"@id\":\"https://lushbinary.com/#service\",\"name\":\"LushBinary\",\"url\":\"https://lushbinary.com\",\"provider\":{\"@id\":\"https://lushbinary.com/#organization\"},\"serviceType\":[\"Website Development\",\"Mobile App Development\",\"Generative AI & ML Solutions\",\"UI/UX Design\",\"CloudOps & DevOps\"],\"areaServed\":\"Worldwide\"}]} ((a,b,c,d,e,f,g,h)=>{let i=doc",
+            "fetch_error": ""
+          },
+          {
+            "title": "Anthropic Claude Data Retention Policy 2026 - Anarlog",
+            "url": "https://anarlog.so/blog/anthropic-data-retention-policy",
+            "query": "Anthropic privacy policy data retention opt-out",
+            "provider": "tavily",
+            "score": "0.89121616",
+            "fetched_text": "Anthropic Claude Data Retention Policy 2026 ← Blog Anthropic Claude Data Retention Policy 2026 Harshika · March 30, 2026 TL;DR Anthropic was supposed to be the privacy-first AI company. Then September 2025 happened. A full breakdown of what Claude keeps and how to control it. Anthropic built its reputation as the privacy-conscious alternative to OpenAI. Constitutional AI, safety-first research, no training on customer data. For a while, that reputation was earned. Then in August 2025, Anthropic quietly announced a policy change: consumer users would need to actively opt out if they didn't want their Claude conversations used to train future models. The deadline was September 28. If you missed it, your data was in. If you're evaluating AI providers right now, this is the context you need. What Does Claude Store by Default? For consumer accounts, that are Claude Free, Pro, and Max, conversations are saved to your account until you delete them. Once deleted, they're removed from your chat history immediately but remain on Anthropic's back-end systems for up to 30 days before being permanently deleted. That's the standard case. A few exceptions matter: Policy violations. If a conversation is flagged for violating Anthropic's usage policy, the inputs and outputs are kept for 2 years. Trust and safety classification scores from that conversation are retained for 7 years. Feedback you submit. Thumbs up/down ratings and bug reports are kept for 5 years. Incognito mode. Conversations in Claude's incognito mode are never used for model training, regardless of your other settings. The September 2025 Training Policy Change Anthropic's previous stance was clean: consumer chats would not be used for training. That was the explicit promise. In August 2025, that changed. According to A",
+            "fetch_error": ""
+          },
+          {
+            "title": "Anthropic users face a new choice – opt out or share your chats for ...",
+            "url": "https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training",
+            "query": "Anthropic privacy policy data retention opt-out",
+            "provider": "tavily",
+            "score": "0.8665964",
+            "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); const successData = localStorage.getItem('turnstile_verified'); const failData = sessionStorage.getItem('turnstile_failed'); const isBot = failData ? 'true' : successData ? 'false' : null; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ is_bot: isBot }); const BUCKET_KEY = 'tc_jwplayer_promo_bucket'; const urlParam = new URLSearchParams(window.location.search).get('jw_promo_bucket'); if (urlParam === 'show' || urlParam === 'hide') { localStorage?.setItem(BUCKET_KEY, urlParam); } let bucket = localStorage?.getItem(BUCKET_KEY); if (!bucket || (bucket !== 'show' && bucket !== 'hide')) { bucket = Math.random() Anthropic users face a new choice – opt out or share your chats for AI training | TechCrunch {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"NewsArticle\",\"@id\":\"https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training/#article\",\"isPartOf\":{\"@id\":\"https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training/\"},\"author\":[{\"@id\":\"https://techcrunch.com/#/schema/person/image/efc763070b9579aa0793e0f452615982\"}],\"headline\":\"Anthropic users face a new choice – opt out or share your chats for AI training\",\"datePublished\":\"2025-08-28T20:43:12+00:00\",\"dateModified\":\"2025-08-28T22:47:46+00:00\",\"mainEntityOfPage\":{\"@id\":\"https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training/\"},\"wordCount\":814,\"publisher\":{\"@id\":\"https://techcrunch.com/#organization\"},\"image\":{\"@id\":\"https://techcrunch.com/2025/08/28/anthropic-users-face-a-new-choice-opt-out-or-share-your-data-for-ai-training/#primaryimage\"},\"thumb",
+            "fetch_error": ""
+          },
+          {
+            "title": "Understanding Anthropic's Data Usage Policy: What Users Need to ...",
+            "url": "https://rits.shanghai.nyu.edu/ai/understanding-anthropics-data-usage-policy-what-users-need-to-know",
+            "query": "Anthropic privacy policy data retention opt-out",
+            "provider": "tavily",
+            "score": "0.8443195",
+            "fetched_text": "/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{-webkit-text-size-adjust:100%;line-height:1.15}body{margin:0}main{display:block}h1{font-size:2em;margin:.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;-webkit-text-decoration:underline dotted;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}img{border-style:none}button,input,optgroup,select,textarea{font-family:inherit;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=button],[type=reset],[type=submit],button{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{displa",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "营销话术拆解",
+        "合规和资金风险",
+        "普通人不该硬冲的原因"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留普通读者入口，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "Anthropic 要求 Fable/Mythos 模型数据保留 30 天：开发者需要知道的合规与隐私风险 投诉 风险 违规",
+        "Anthropic 要求 Fable/Mythos 模型数据保留 30 天：开发者需要知道的合规与隐私风险 骗局 营销话术",
+        "Anthropic 要求 Fable/Mythos 模型数据保留 30 天：开发者需要知道的合规与隐私风险 隐藏成本 失败案例"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
