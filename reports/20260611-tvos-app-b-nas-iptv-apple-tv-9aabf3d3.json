@@ -1,0 +1,1836 @@
+{
+  "id": "20260611-tvos-app-b-nas-iptv-apple-tv-9aabf3d3",
+  "batch_id": "2026-06-11-evening",
+  "title": "Apple TV投屏工具DLPlay：技术实现与独立开发账本",
+  "original_title": "写了个 tvOS App，把 B 站 / NAS / IPTV / 小红书投屏都塞进了 Apple TV",
+  "url": "https://www.v2ex.com/t/1219499",
+  "summary": "明天世界杯就开赛了。这一届小红书拿了转播权，所以家里有 Apple TV 的 V 友，估计也会有\"我想从小红书 App 把球赛投到大屏看\"的小需求。 我自己实测过几次，DLPlay 对小红书 App 的 DLNA 投屏是通的。所以赶在开赛前发个帖。 关于 DLPlay 这是一个 tvOS 应用，定位是\"补齐 Apple TV 在国内场景里缺的那一块\"。在 App Store 上的副标是 DLNA Player + Clock ，但实际功能已经长出去不少了。 主要能力分四块。 1. 国内主流平台 → 投到 Apple TV 走 DLNA 协议接收，目前 B 站、优酷、爱奇艺、腾讯、芒果、小红书都能投。 原画推送 ，不走 AirPlay 镜像 —— 也就是说不会被 iPhone 二次压缩、不会出现状态栏 / 通知遮挡画面 B 站投屏支持弹幕同屏渲染 ，弹幕密度可调 投屏过来直接全屏，不需要二次操作 2. NAS / 远程文件直连 WebDAV / Alist / SMB 都支持。 群晖 / 极空间 / Alist 的片库可以直接挂载，浏览体验接近 Apple 自家的 TV.app 外挂字幕自动匹配同名文件，中英多轨可切换 多源混合，一个首页统一管 3. IPTV 支持 M3U 源 + XMLTV 节目单 + Catchup 时移回看。 频道分组、收藏列表、多源管理 适合给家里老人房那台 Apple TV 当电视用 关于源：请自备合法授权的 IPTV 源，App 本身不附带任何源。 4. IdleScreen Apple TV 待机时本身就是黑屏，挺浪费这块大屏。DLPlay 提供两个闲置态： 相册轮播 ：可以接 NAS / iCloud 相册，缓缓飞过家里的照片 翻页时钟 ：极简黑底白字翻页风 这个功能我个人最满意，客厅没人看电视的时候它就是一面\"温柔的墙\"，比黑屏强太多。 关于\"明天的世界杯\" 主要是说：如果你 Apple TV 想从小红书 App 把球赛投到大屏，DLPlay 是个备选方案。 我用自己家的环境测了几次，从小红书选投屏 → 选择 DLPlay → 大屏出图",
+  "source_category": "developer_business",
+  "source_category_title": "开发者副业与独立开发",
+  "topic_direction": "tools-rules",
+  "topic_direction_title": "工具&规则",
+  "topic_direction_short_title": "工具&规则",
+  "topic_direction_description": "开发工具、AI 实操、API、云服务、自动化工作流、平台政策、账号规则、搜索流量和内容分发生态变化。重点看工具怎么用、规则怎么变、成本和边界在哪里。",
+  "source_name": "V2EX 分享创造",
+  "original_source_name": "分享创造",
+  "source_type": "rss",
+  "feed_url": "https://v2ex.com/feed/create.xml",
+  "published_at": "2026-06-11T00:41:35Z",
+  "fetched_at": "2026-06-11T10:03:27.578363+00:00",
+  "decision": "brief",
+  "report_type": "tool-ledger",
+  "report_type_title": "工具账本",
+  "score": 65,
+  "reader_hook": "工具账本角度：tvOS投屏应用，解决B站/NAS/小红书投屏需求，可分析开发成本、定价策略和获客渠道。",
+  "why_now": "世界杯期间投屏需求增加，小红书获得转播权，投屏工具有短期流量机会。",
+  "evidence_level": "weak",
+  "source_priority": "P2 可参考源",
+  "reason": "主要服务核心技术人（Apple TV用户/开发者），次要触达副业普通人（想找机会）。兴趣中等：产品有明确场景，但缺乏收入数据、用户规模和获客成本。",
+  "collection_fit": "tools-rules",
+  "investigation_direction": "调研Apple TV投屏工具市场（如Infuse、Plex），分析DLPlay的定价策略（免费/付费/内购），评估开发成本（Swift/Objective-C）和App Store审核风险。",
+  "uncertainty_flags": [
+    "无收入数据",
+    "无用户规模",
+    "获客成本未知",
+    "竞品分析不足"
+  ],
+  "facts": [
+    {
+      "claim": "V2EX 分享创造 发布/收录了这条原始线索：写了个 tvOS App，把 B 站 / NAS / IPTV / 小红书投屏都塞进了 Apple TV",
+      "type": "confirmed_fact",
+      "source_url": "https://www.v2ex.com/t/1219499",
+      "confidence": 0.55
+    }
+  ],
+  "sources": [
+    {
+      "title": "V2EX 分享创造",
+      "url": "https://www.v2ex.com/t/1219499",
+      "source_type": "weak",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "ai"
+      ],
+      "platform": [
+        "平台"
+      ]
+    },
+    "source_host": "www.v2ex.com",
+    "source_type": "rss",
+    "heuristic": false,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "工具账本角度：tvOS投屏应用，解决B站/NAS/小红书投屏需求，可分析开发成本、定价策略和获客渠道。",
+    "fit_for_radar": false
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://v2ex.com/feed/create.xml",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "无收入数据",
+      "无用户规模",
+      "获客成本未知",
+      "竞品分析不足"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：核心事实没有来源：DLPlay的定价、收入、用户规模等关键商业数据缺失，无法支撑工具账本分析。"
+    },
+    "core_question": "DLPlay 作为一款 tvOS 投屏工具，其技术实现、开发成本、定价策略和获客渠道是否构成一个可持续的独立开发项目？",
+    "why_this_topic_matters": "世界杯期间小红书投屏需求激增，Apple TV 用户有明确的投屏痛点，DLPlay 填补了国内平台 DLNA 投屏的空白，但商业可行性未知。",
+    "fact_summary": [
+      "DLPlay 是一款 tvOS 应用，支持 B 站、优酷、爱奇艺、腾讯、芒果、小红书等平台的 DLNA 投屏，不走 AirPlay 镜像。",
+      "支持 NAS（WebDAV/Alist/SMB）文件直连、IPTV（M3U+XMLTV）和待机时钟/相册轮播。",
+      "App Store 评分 3.9，共 7 个评分，用户反馈正面但数量极少。",
+      "小红书获得 2025 世界杯转播权，投屏需求可能短期上升。",
+      "竞品 Infuse 功能强大但价格高（订阅制），不支持国内平台 DLNA 投屏。"
+    ],
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "副业普通人",
+        "高价值商业读者"
+      ],
+      "interest_score": 65,
+      "why_interested": "核心技术人关注技术实现和 Apple TV 生态；副业普通人关注独立开发机会；商业读者关注市场空间。",
+      "reader_risk": "缺乏收入数据，可能误导读者高估商业潜力。"
+    },
+    "mass_interest_hook": {
+      "score": 70,
+      "hook_type": "踩坑",
+      "why_non_technical_people_may_click": "世界杯看球投屏是刚需，Apple TV 用户常被投屏问题困扰，标题可引发共鸣。",
+      "story_seed": "世界杯来了，小红书能看球，但 Apple TV 投屏却卡在 AirPlay 镜像？一个独立开发者用 DLNA 协议解决了这个痛点。",
+      "do_not_overhype": "不要夸大用户规模或收入，明确说明数据缺口。"
+    },
+    "timeline": [
+      "2024-01-14: 小众软件、搜狐等媒体报道 DLPlay。",
+      "2025-12-11: App Store 出现用户评分（共 7 条）。",
+      "2025-12: 小红书官宣获得世界杯转播权。",
+      "2026-01-12: 苹果公布 2025 年服务业务成绩单，Apple TV 收视创新高。"
+    ],
+    "evidence_table": [
+      {
+        "source": "V2EX 原帖",
+        "url": "https://www.v2ex.com/t/1219499",
+        "supports": "DLPlay 功能描述、世界杯投屏场景、开发者自述",
+        "reliability": "near_source"
+      },
+      {
+        "source": "App Store 页面",
+        "url": "https://apps.apple.com/cn/app/dlplay-dlna-%E6%8A%95%E5%B1%8F%E4%B8%8E%E6%97%B6%E9%92%9F/id6448221325",
+        "supports": "评分 3.9，7 个评分，用户评论正面",
+        "reliability": "official"
+      },
+      {
+        "source": "小众软件评测",
+        "url": "https://www.appinn.com/dlplay-for-apple-tv",
+        "supports": "功能详细介绍，确认 DLNA 投屏能力",
+        "reliability": "media"
+      },
+      {
+        "source": "搜狐转载",
+        "url": "https://www.sohu.com/a/751839522_121124379",
+        "supports": "功能复述，无新增信息",
+        "reliability": "weak"
+      },
+      {
+        "source": "小红书世界杯版权新闻",
+        "url": "https://m.sohu.com/a/1028725360_120988576",
+        "supports": "小红书获得世界杯转播权，投屏需求可能增加",
+        "reliability": "media"
+      },
+      {
+        "source": "Infuse 官网",
+        "url": "https://firecore.cn/infuse",
+        "supports": "竞品功能对比：Infuse 不支持国内平台 DLNA 投屏",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "部分闭环：技术实现和功能价值清晰，但商业模型（收入、用户规模、获客成本）缺失，无法判断可持续性。",
+    "writeable_angles": [
+      {
+        "angle": "工具账本：DLPlay 的技术实现与开发成本分析",
+        "why": "适合核心技术人，可拆解 DLNA 协议实现、tvOS 开发难点、功能模块成本。",
+        "needs": "需要开发者访谈或公开的开发成本数据。"
+      },
+      {
+        "angle": "独立开发案例复盘：DLPlay 的定价策略与获客渠道",
+        "why": "适合副业普通人，分析如何在小众市场获客、定价是否合理。",
+        "needs": "需要收入数据、下载量、用户获取成本。"
+      },
+      {
+        "angle": "风险避坑：Apple TV 投屏工具的商业化陷阱",
+        "why": "适合高价值商业读者，分析市场规模、竞品压力、平台风险。",
+        "needs": "需要 Apple TV 国内用户规模、竞品市场份额。"
+      }
+    ],
+    "missing_basics": [
+      "DLPlay 的定价（免费/付费/内购）",
+      "Apple TV 在国内的用户规模",
+      "DLNA 投屏协议在 Apple TV 上的兼容性细节"
+    ],
+    "missing_materials": [
+      "DLPlay 的 App Store 页面截图（含价格、内购、评分）",
+      "开发者访谈或公开的博客/推文",
+      "竞品功能对比表（Infuse、VLC、Plex 等）",
+      "Apple TV 国内用户规模报告或估算",
+      "小红书投屏功能的使用教程或用户反馈"
+    ],
+    "not_claimable": [
+      "DLPlay 有稳定的收入或用户增长",
+      "DLPlay 是唯一或最好的 Apple TV 投屏方案",
+      "世界杯投屏需求是可持续的商业模式",
+      "Apple TV 在国内有足够大的用户群"
+    ],
+    "followup_queries": [
+      "DLPlay 在 App Store 的定价是多少？是否有内购或订阅？",
+      "DLPlay 的下载量和评分趋势如何？",
+      "DLPlay 的开发者背景和开发周期？",
+      "Apple TV 在国内的市场份额和用户规模？",
+      "是否存在其他类似功能的竞品（如 UnPlay、AirReceiver）？"
+    ],
+    "additional_search_queries": [
+      "DLPlay App Store 价格 内购",
+      "DLPlay 下载量 评分 2025",
+      "Apple TV 中国 用户 数量 2025",
+      "tvOS DLNA 投屏 应用 对比",
+      "UnPlay Apple TV DLNA",
+      "独立开发者 tvOS 应用 收入 案例"
+    ],
+    "stop_conditions": [
+      "如果无法获取任何收入或用户数据，停止商业化分析，仅保留技术实现角度。",
+      "如果竞品已占据大部分市场，停止推荐作为独立开发机会。",
+      "如果小红书投屏功能在世界杯后无持续需求，停止长期价值分析。"
+    ],
+    "confidence": 55.0,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "tool-ledger",
+    "quality_gate": {
+      "pass": false,
+      "score": 55,
+      "fatal_issues": [
+        "核心事实没有来源：DLPlay的定价、收入、用户规模等关键商业数据缺失，无法支撑工具账本分析。"
+      ],
+      "warnings": [
+        "成本估算没有公式、单位或边界：缺乏开发成本、定价策略等量化分析。",
+        "没有明确主要服务哪层读者：读者分层模糊，核心技术人与副业普通人混为一谈。",
+        "泛兴趣钩子过度标题党：标题暗示世界杯投屏刚需，但正文证据不足，用户规模小。",
+        "没有明确选题结论：推荐或可选不清晰，仅给出可选但未解释。",
+        "没有解释为什么这个题值得选：缺乏对选题价值的充分论证。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：证据链不完整，逻辑部分闭环。",
+        "没有列出基础概念缺口和资料素材缺口：未明确缺失的定价、用户规模等关键信息。",
+        "没有按具体类型提供资料包：工具账本缺少收入、成本、获客等数据。"
+      ],
+      "missing_evidence": [
+        "DLPlay的定价（免费/付费/内购）",
+        "Apple TV在国内的用户规模",
+        "DLPlay的下载量和评分趋势",
+        "开发者背景和开发周期",
+        "竞品功能对比表（Infuse、UnPlay等）",
+        "小红书投屏功能的使用教程或用户反馈"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "DLPlay 作为一款 tvOS 投屏工具，其技术实现、开发成本、定价策略和获客渠道是否构成一个可持续的独立开发项目？",
+      "must_verify": [
+        "DLPlay 是否确实支持 B 站、优酷、爱奇艺、腾讯、芒果、小红书等平台的 DLNA 投屏，且不走 AirPlay 镜像？",
+        "DLPlay 的定价是多少？是否有内购或订阅？",
+        "DLPlay 在 App Store 的下载量和评分如何？",
+        "DLPlay 的开发者背景和开发周期？",
+        "Apple TV 在国内的市场份额和用户规模？",
+        "是否存在其他类似功能的竞品（如 Infuse、VLC、Plex 等）？",
+        "小红书投屏功能在世界杯期间的实际使用场景和用户需求？"
+      ],
+      "search_queries": [
+        "DLPlay tvOS App Store 价格 内购",
+        "DLPlay Apple TV 投屏 评测 2025",
+        "Apple TV 国内用户 规模 2025",
+        "tvOS DLNA 投屏 应用 对比",
+        "Infuse Apple TV 投屏 功能",
+        "小红书 投屏 Apple TV 世界杯 2025",
+        "独立开发者 tvOS 应用 收入 案例",
+        "DLPlay 开发者 背景"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "pricing_page",
+          "query": "DLPlay App Store 价格",
+          "why_needed": "确认定价策略和收入模型"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "DLPlay 功能说明 开发者",
+          "why_needed": "验证技术实现细节和功能范围"
+        },
+        {
+          "source_type": "case_study",
+          "query": "独立开发者 tvOS 应用 收入 2025",
+          "why_needed": "了解类似应用的商业可行性"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Apple TV 国内用户 规模 2025",
+          "why_needed": "评估目标市场规模"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "Infuse vs DLPlay 投屏 功能",
+          "why_needed": "竞品对比，判断差异化"
+        },
+        {
+          "source_type": "policy",
+          "query": "小红书 投屏 协议 DLNA 合规",
+          "why_needed": "确认投屏功能的合法性和稳定性"
+        }
+      ],
+      "expert_challenge_points": [
+        "DLNA 投屏在 Apple TV 上的兼容性和稳定性如何？是否所有平台都能稳定工作？",
+        "DLPlay 的定价是否合理？用户是否愿意为投屏功能付费？",
+        "Apple TV 在国内的用户基数是否足够支撑一个独立开发项目？",
+        "世界杯期间的小红书投屏需求是短期热点还是长期需求？",
+        "DLPlay 如何获取用户？获客成本是多少？"
+      ],
+      "do_not_claim_yet": [
+        "DLPlay 有稳定的收入或用户增长",
+        "DLPlay 是唯一或最好的 Apple TV 投屏方案",
+        "世界杯投屏需求是可持续的商业模式",
+        "Apple TV 在国内有足够大的用户群"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取收入数据和用户规模，但能确认技术实现和定价，可以发布为工具账本，重点分析开发成本和定价策略，但需注明数据缺口。",
+      "downstream_materials_needed": [
+        "DLPlay App Store 页面截图（含价格、内购、评分）",
+        "开发者访谈或公开的博客/推文",
+        "竞品功能对比表（Infuse、VLC、Plex 等）",
+        "Apple TV 国内用户规模报告或估算",
+        "小红书投屏功能的使用教程或用户反馈"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "关于App Store 苹果商店价格的那些事（历上最全版） - 腾讯云",
+        "url": "https://cloud.tencent.com/developer/article/2230981",
+        "query": "DLPlay tvOS App Store 价格 内购",
+        "provider": "tavily",
+        "score": "0.2619528",
+        "fetched_text": "关于 App Store 苹果商店价格的那些事（历上最全版）-腾讯云开发者社区-腾讯云 .rno-markdown p * { white-space: pre-wrap; word-break: break-all; } .tea-overlay { z-index: 99999!important; } .cdc-mcp-page2__main.is-fixed .cdc-mcp-page2__toolbar { top: 57px !important; } if (typeof Aegis !== 'undefined') { new Aegis({ id: 'dWlmyFvjDnalkbZO8q', env: 'production', onError: true, pagePerformance: true, reportAssetSpeed: true, api: { reportRequest: true, resHeaders: ['x-req-id'], }, reportApiSpeed: true, beforeRequest: function (data) { // load js failed if (data.logType === 'log') { if (data.logs.level === '32' && data.logs.msg.indexOf('google') > -1) return false; } var ignoreKeys = [ 'Script error', 'chrome-extension', 'qq.com', 'queryWeappQrcodeStatus', 'login/ajax/info', 'woa.com', 'trafficCollect.php', 'google', 'dscache', 'act-api', 'set_qc_cookie', 'opc.cloud.tencent.com', 'uc_gre_ad_buss', 'eb.xcj.pub', 'UCShellJava', '/developer/labs/quick/loader', 'edgeImmersiveReaderDOM', 'sendBeacon', 'error-decoder.html', 'qcloud-community-track.min.js' ]; var alarmMsg = [data.logs.url, data.logs.msg].join('|'); for (var i = 0; i 37手游iOS技术运营团队 关于 App Store 苹果商店价格的那些事（历上最全版） 原创 关注作者 腾讯云 开发者社区 文档 建议反馈 控制台 登录/注册 首页 学习 活动 专区 圈层 工具 MCP广场 文章/答案/技术大牛 搜索 搜索 关闭 发布 37手游iOS技术运营团队 社区首页 > 专栏 > 关于 App Store 苹果商店价格的那些事（历上最全版） 关于 App Store 苹果商店价格的那些事（历上最全版） 原创 37手游iOS技术运营团队 关注 修改 于 2023-04-21 19:16:54 修改 于 2023-04-21 19:16:54 8.2K 0 举报 文章被收录于专栏： 37手游iOS技术运营团队 37手游iOS技术运营团队 作者：iHTCboy 一、前言 苹果 2022 年 12 月 6 日宣布 App Store 定价机制最重大升级，新增 700 个价格点 。小编当时的总结和分析： App Store 新价格 ： 最低可设 $0.29 美元！ 最高可设 $10,000 美元！（人民币 RMB 74,999 元） 新增 700 个价格点 全新定价工具（机制） 1.1 定价机制升级总结 新增 700 个价格点，其中 600 个价格点开发者可直接用，另外 100 个高价价格点需要申请。 新价格点从 美元 $0.29 起，最高可根据申请升至 $10,000。（人民币 RMB 1 ~ RMB 74,999） 新增约定的价格规则：以整数结尾的价格（如 X.00 或 X.90）。 全新定价机制: 自动定价 ：自动随外币汇率和税率的变化而更新 本地",
+        "fetch_error": ""
+      },
+      {
+        "title": "发现全球App Store 最低价 - App Store Price",
+        "url": "https://appstoreprice.org/zh",
+        "query": "DLPlay tvOS App Store 价格 内购",
+        "provider": "tavily",
+        "score": "0.1721304",
+        "fetched_text": "首页 订阅 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://appstoreprice.org/#organization\",\"name\":\"App Store Price\",\"url\":\"https://appstoreprice.org\",\"logo\":\"https://appstoreprice.org/appstoreprice.png\",\"sameAs\":[\"https://t.me/appstoreprice\",\"https://x.com/qingnianxiaozhe\"]},{\"@type\":\"WebSite\",\"@id\":\"https://appstoreprice.org/#website\",\"url\":\"https://appstoreprice.org\",\"name\":\"App Store Price\",\"publisher\":{\"@id\":\"https://appstoreprice.org/#organization\"}}]} 加入群组 关注我们 iOS App NEW App Store 全球最低价 实时抓取并对比全球各大区 App Store 的应用价格 帮您找到购买数字产品的最佳时机 查看所有应用 查看所有应用 礼品卡商城 礼品卡商城 NEW 🇺🇸 US Store $24.99 BEST 🇹🇷 Turkey Store ₺169.00 节省 78% 🇯🇵 JP Store ¥2,900 法律 隐私政策 服务条款 工具 应用列表 在线商城 切换语言 博客 开通指引 使用经验 注意事项 联系 联系我们 Telegram Twitter / X 关于 关于我们 服务状态 更新日志 © 2026 App Store Price. 保留所有权利 requestAnimationFrame(function(){$RT=performance.now()}); $RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b a&&2E3 App Store Price - 发现全球 App Store 最低价 document.querySelectorAll('body link[rel=\"icon\"], body link[rel=\"apple-touch-icon\"]').forEach(el => document.head.appendChild(el)) $RC(\"B:0\",\"S:0\") (self.__next_f=self.__next_f||[]).push([0]) self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n2:I[367,[],\\\"\\\"]\\n3:I[26291,[],\\\"\\\"]\\n5:I[70994,[\\\"9966\\\",\\\"static/chunks/95c09b69-6bac77df8a5dd44d.js\\\",\\\"3542\\\",\\\"static/chunks/3542-5e9b03cdd83d068c.js\\\",\\\"6145\\\",\\\"static/chunks/6145-e16ef77eb1d2976d.js\\\",\\\"2789\\\",\\\"static/chunks/2789-f354fcfa5b1bad22.js\\\",\\\"6212\\\",\\\"static/chunks/6212-c37d07008c8e7ba2.js\\\",\\\"6909\\\",\\\"static/chunks/6909-a5ef63b663f46768.js\\\",\\\"6363\\\",\\\"static/chunks/6363-30d09803dfb9e54a.js\\\",\\\"2384\\\",\\\"static/chunks/2384-627280a3eb63b269.js\\\",\\\"1969\\\",\\\"static/chunks/app/%5Blocale%5D/(main)/layout-c826bad22db04c94.js\\\"],\\\"Header\\\"]\\n6:I[20664,[\\\"3542\\\",\\\"static/chun",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple 宣布 App Store 定价机制最重大升级，新增 700 个价格点 - Apple (中国大陆)",
+        "url": "https://www.apple.com.cn/newsroom/2022/12/apple-announces-biggest-upgrade-to-app-store-pricing-adding-700-new-price-points",
+        "query": "DLPlay tvOS App Store 价格 内购",
+        "provider": "tavily",
+        "score": "0.17179666",
+        "fetched_text": "{ \"@context\": \"https://ziyuan.baidu.com/contexts/cambrian.jsonld\", \"@id\": \"https://www.apple.com.cn/newsroom/2022/12/apple-announces-biggest-upgrade-to-app-store-pricing-adding-700-new-price-points/\", \"appid\": \"1648269209122770\", \"title\": \" Apple 宣布 App Store\", \"images\":[\"https://www.apple.com.cn/newsroom/images/product/app-store/Apple-App-Store-pricing-flexibility-hero.jpg.og.jpg\"], \"pubDate\": \"2022-12-06T18:02:52Z\", \"upDate\":\"2022-12-06T18:02:52Z\" } Apple 宣布 App Store 定价机制最重大升级，新增 700 个价格点 - Apple (中国大陆) Apple 商店 Mac iPad iPhone Watch Vision AirPods 家居 娱乐 配件 技术支持 0 + {\"props\":{\"globalNavData\":{\"locale\":\"zh_CN\",\"ariaLabel\":\"全部网页\",\"analyticsAttributes\":[{\"name\":\"data-analytics-activitymap-region-id\",\"value\":\"global nav\"},{\"name\":\"data-analytics-region\",\"value\":\"global nav\"}],\"links\":[{\"id\":\"2758e8127e4ab787ae4e849277f79b83b3522719ae4b96a595421e50ea2d03f7\",\"name\":\"apple\",\"text\":\"Apple\",\"url\":\"/\",\"ariaLabel\":\"Apple\",\"submenuAriaLabel\":\"Apple 目录\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"},{\"name\":\"compact\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"apple home\"}]},{\"id\":\"75b9dea386fab56ffd38d8479802cbd97bdfeb93b86ccd649fd8acce1676dc0e\",\"name\":\"store\",\"text\":\"商店\",\"url\":\"/cn/shop/goto/store\",\"ariaLabel\":\"商店\",\"submenuAriaLabel\":\"商店目录\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"store\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - store\"}]},{\"id\":\"9a82f08a3cc17e59a61372a40e7ecb17783e9c10aef163465f29bb5b00d4725a\",\"name\":\"mac\",\"text\":\"Mac\",\"url\":\"/mac/\",\"ariaLabel\":\"Mac\",\"submenuAriaLabel\":\"Mac 目录\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"mac\"},{\"name\":\"data-analytics-element-engagement",
+        "fetch_error": ""
+      },
+      {
+        "title": "DLPlay: DLNA 投屏与时钟- 评分及评论 - App Store",
+        "url": "https://apps.apple.com/cn/app/dlplay-dlna-%E6%8A%95%E5%B1%8F%E4%B8%8E%E6%97%B6%E9%92%9F/id6448221325?see-all=reviews&platform=iphone",
+        "query": "DLPlay Apple TV 投屏 评测 2025",
+        "provider": "tavily",
+        "score": "0.86331123",
+        "fetched_text": "‎DLPlay: DLNA 投屏与时钟 - 评分及评论 - App Store {\"@context\":\"https://schema.org\",\"@id\":\"https://apps.apple.com/#organization\",\"@type\":\"Organization\",\"name\":\"App Store\",\"url\":\"https://apps.apple.com\",\"logo\":\"https://apps.apple.com/assets/app-store.png\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q368215\",\"https://twitter.com/AppStore\",\"https://www.instagram.com/appstore/\",\"https://www.facebook.com/appstore/\"],\"parentOrganization\":{\"@type\":\"Organization\",\"name\":\"Apple\",\"@id\":\"https://www.apple.com/#organization\",\"url\":\"https://www.apple.com/\"}} import.meta.url;import(\"_\").catch(()=>1);async function* g(){};window.__vite_is_modern_browser=true; !function(){if(window.__vite_is_modern_browser)return;console.warn(\"vite: loading legacy chunks, syntax error above and the same error below should be ignored\");var e=document.getElementById(\"vite-legacy-polyfill\"),n=document.createElement(\"script\");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}(); iPhone 专区 iPhone iPad Mac Vision Watch 搜索 Today 游戏 App 平台 iPhone iPad Mac Vision Watch DLPlay: DLNA 投屏与时钟 评分及评论 3.9 满分 5 分 7 个评分 很棒的一款dlna投屏软件 2025/12/11 我没得姓名 很多其他dlna投屏软件无法播放的链接都可以使用。如果在未来的更新中，可以针对ipad进行播放器优化和添加复制链接的功能对我来说就真无敌了 很棒的一款dlna投屏软件 2025/12/11 我没得姓名 很多其他dlna投屏软件无法播放的链接都可以使用。如果在未来的更新中，可以针对ipad进行播放器优化和添加复制链接的功能对我来说就真无敌了 DLNA投屏，好用 2024/10/04 b168368 DLNA投屏，好用 DLNA投屏，好用 2024/10/04 b168368 DLNA投屏，好用 能把 快进 暂停 慢放 的按键弄到下面吗 2月9日 古古怪怪古古怪怪刚 请速速更新 能把 快进 暂停 慢放 的按键弄到下面吗 2月9日 古古怪怪古古怪怪刚 请速速更新 选择国家或地区 非洲、中东和印度 查看全部 Algeria Angola Armenia Azerbaijan Bahrain Benin Botswana Burkina Faso Cameroun Cape Verde Chad Côte d’Ivoire Congo, The Democratic Republic Of The Egypt Eswatini Gabon Gambia Ghana Guinea-Bissau India Iraq Israel Jordan Kenya Kuwait Lebanon Libe",
+        "fetch_error": ""
+      },
+      {
+        "title": "从iOS、Android、Windows 向Apple TV 投屏，实现国产视频 ...",
+        "url": "https://www.appinn.com/dlplay-for-apple-tv",
+        "query": "DLPlay Apple TV 投屏 评测 2025",
+        "provider": "tavily",
+        "score": "0.5324014",
+        "fetched_text": "if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf(\"?\")==-1){if(href.indexOf(\"#\")==-1){document.location.href=href+\"?nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"?nowprocket=1#\")}}else{if(href.indexOf(\"#\")==-1){document.location.href=href+\"&nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"&nowprocket=1#\")}}}} (()=>{class RocketLazyLoadScripts{constructor(){this.v=\"2.0.5\",this.userEvents=[\"keydown\",\"keyup\",\"mousedown\",\"mouseup\",\"mousemove\",\"mouseover\",\"mouseout\",\"touchmove\",\"touchstart\",\"touchend\",\"touchcancel\",\"wheel\",\"click\",\"dblclick\",\"input\"],this.attributeEvents=[\"onblur\",\"onclick\",\"oncontextmenu\",\"ondblclick\",\"onfocus\",\"onmousedown\",\"onmouseenter\",\"onmouseleave\",\"onmousemove\",\"onmouseout\",\"onmouseover\",\"onmouseup\",\"onmousewheel\",\"onscroll\",\"onsubmit\"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event(\"rocket-allScriptsLoaded\")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem(\"rocketCSPIssue\"),document.addEventListener(\"securitypolicyviolation\",t=>{this.CSPIssue||\"script-src-elem\"!==t.violatedDirective||\"data\"!==t.blockedURI||(this.CSPIssue=!0,session",
+        "fetch_error": ""
+      },
+      {
+        "title": "从iOS、Android、Windows 向Apple TV 投屏：DLPlay 投屏",
+        "url": "https://www.sohu.com/a/751839522_121124379",
+        "query": "DLPlay Apple TV 投屏 评测 2025",
+        "provider": "tavily",
+        "score": "0.49465415",
+        "fetched_text": "从 iOS、Android、Windows 向 Apple TV 投屏：DLPlay 投屏_视频_软件_国产 window._taboola = window._taboola || []; _taboola.push({article:'auto'}); !function (e, f, u, i) { if (!document.getElementById(i)){ e.async = 1; e.src = u; e.id = i; f.parentNode.insertBefore(e, f); } }(document.createElement('script'), document.getElementsByTagName('script')[0], '//cdn.taboola.com/libtrc/sohuchina-sohucom/loader.js', 'tb_loader_script'); if(window.performance && typeof window.performance.mark == 'function') {window.performance.mark('tbl_ic');} window.deployEnv = \"prod\" { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"BreadcrumbList\", \"itemListElement\": [ { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"首页\", \"item\": \"https://www.sohu.com\" }, { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"文章页\", \"item\": \"https://www.sohu.com/a/751839522_121124379\" }, { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"未来数字城市探索者\", \"item\": \"https://mp.sohu.com/profile?xpt=NDA2YTlhMzYtZmQ5MS00NmUxLWIxZDEtOTE2NzljZGY1NGE1\" } ] }, { \"@type\": \"NewsArticle\", \"headline\": \"从 iOS、Android、Windows 向 Apple TV 投屏：DLPlay 投屏\", \"description\": \"在《小众软件》看到了这篇文章：DLPlay投屏–从iOS、Android、Windows向AppleTV投屏，实现国产视频软件DLNA投屏能让Android、Windows用户和AppleTV更好联动能在Ap…\", \"datePublished\": \"2024-01-14T22:11:38+0800\", \"url\": \"https://www.sohu.com/a/751839522_121124379\", \"thumbnailUrl\": \"\", \"image\": [ { \"@type\": \"ImageObject\", \"url\": \"\", \"width\": 800, \"height\": 450 } ], \"publisher\": { \"@type\": \"NewsMediaOrganization\", \"name\": \"搜狐网\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://statics.itc.cn/web/static/images/pic/sohu-logo/favicon.ico\", \"width\": 32, \"height\": 32 } }, \"author\": { \"@type\": \"Person\", \"name\": \"未来数字城市探索者\", \"url\": \"https://mp.sohu.com/profile?xpt=NDA2YTlhMzYtZmQ5MS00NmUxLWIxZDEtOTE2NzljZGY1NGE1\" }, \"mainEntityOfPage\": { \"@type\": \"WebPage\",",
+        "fetch_error": ""
+      },
+      {
+        "title": "小摩：不要小看Apple TV+ 到2025年订户将突破1亿 - 财联社",
+        "url": "https://www.cls.cn/detail/510692",
+        "query": "Apple TV 国内用户 规模 2025",
+        "provider": "tavily",
+        "score": "0.85421735",
+        "fetched_text": "小摩：不要小看Apple TV+ 到2025年订户将突破1亿 很抱歉，当前没有启用javascript，网站无法正常访问。请开启以便继续访问。 关于我们 网站声明 联系方式 用户反馈 网站地图 帮助 首页 电报 话题 盯盘 VIP FM 投研 下载 小摩：不要小看Apple TV+ 到2025年订户将突破1亿 原创 美股动态 2020-06-05 11:07 星期五 财联社 卞纯 责编 林琦 尽管2019年推出的Apple TV +尚未得到蓬勃发展，但是华尔街投行摩根大通告诉投资者，不要小看这项服务，预计它的用户数将在五年内突破1亿。 财联社 （上海，编辑卞纯）讯 ，尽管2019年推出的Apple TV +尚未得到蓬勃发展，但是华尔街投行摩根大通（JP Morgan）告诉投资者，不要小看这项服务，预计它的用户将在五年内突破1亿。 小摩首席分析师Samik Chatterjee认为，到2025财年，Apple TV+的付费用户可能会达到1亿。尽管价格高昂的苹果流媒体服务的内容和应用“基本上平平无奇”。 Chatterjee预测，目前大多数订户都在利用免费促销活动，而且合格用户对促销活动的激活率很低。 为了抢攻串流服务市场，苹果在去年推出 Apple TV+ 后，同时祭出购买苹果新设备即赠送一年免费订阅的促销活动。不过该计划成效甚微。数据显示，在所有符合资格的苹果设备及装置中，仅有 5-15% 的用户启动免费服务。 人们对Apple TV+反应冷淡的部分原因可能是其节目种类太少，对于这一点苹果正在积极改进。Apple TV+推出时有8个原创节目，但现在已经增加至28个。但尽管如此，内容仍比其竞争对手少得多——即便是像Disney+等这样的新平台。 除了内容的数量，Chatterjee认为质量也很重要。眼下，Apple TV+正通过争夺杰出人才来使内容脱颖而出。这位分析师补充称，提高内容的质量和数量将增加将促销活动用户转化为付费用户的可能性。 除了快速增加新内容外，苹果在投资方面似乎也超越了竞争对手。此前的报告显示，苹果将拨款10亿美元用于内容开发，但现在这个数字可能高达60亿美元。其中一些投资或可能被用来通过播客吸引Apple TV+订户。 这位分析师还概述了Apple TV+正在快速发展的一些迹象。比如说，Apple TV+可以为苹果的服务业务“更加广泛地发展并超越iOS生态系统”打开了一个机会。 “尽管 Apple TV+起步较慢，但我们认为投资者不应小看其长期前景，我们认为内容质量、数量和预算都将成为提升用户使用率的重要驱动力，”Chatterjee 表示。他预计，Apple TV+的付费用户在整个2020年将缓慢增长，到2025年将达到1亿。 今年1月，Apple TV+拥有约3400万用户，不过该公司没有定期更新这一数据。相比之下，奈飞将旗下串流媒体服务与 DVD 邮寄业务拆分约 6 年后，其订阅用户在 2017 年突破 1 亿，目前其全球订阅用户达约 1.67 亿。 摩根大通将苹果目标股价维持在365美元不变，基于22倍的市盈率和16.86美元的预期每股收益。 苹果股价美东时间周四（6月4日）收盘下跌0.86%或2.8美元，报322.32美元，市值为1.4万亿美元。 阅 244.02W 要闻 股市 查看更多 关联话题 美股动态 6.16W 人关注 TMT行业观察 2.47W 人关注 环球市场情报 15.88W 人关注 关于我们 | 网站声明 | 联系方式 | 用户反馈 | 网站地图 | 友情链接 | 举报电话：021-54679377转617 举报邮箱：editor@cls.cn 财联社 ©2018-2026 上海界面财联社科技股份有限公司 版权所有 沪ICP备14040942号-9 沪公网安备31010402006047号 互联网新闻信息服务许可证：31120170007 沪金信备 [2021] 2号 {\"props\":{\"pageProps\":{\"query\":{\"id\":\"510692\"},\"articleDetail\":{\"id\":510692,\"column\":{\"columnID\":-1,\"columnName\":\"文章\"},\"isFree\":true,\"title\":\"小摩：不要小看Apple TV+ 到2025",
+        "fetch_error": ""
+      },
+      {
+        "title": "苹果公布2025 年服务业务成绩单：多项数据刷新纪录 - IT之家",
+        "url": "https://www.ithome.com/0/912/642.htm",
+        "query": "Apple TV 国内用户 规模 2025",
+        "provider": "tavily",
+        "score": "0.6803909",
+        "fetched_text": "苹果公布 2025 年服务业务成绩单：多项数据刷新纪录，App Store 周活用户超 8.5 亿 - IT之家 (window.jQuery || document.write(\" \")); 首页 IT圈 最会买 设置 日夜间 随系统 浅色 深色 主题色 黑色 投稿 订阅 RSS订阅 收藏IT之家 软媒应用 App客户端 要知App 软媒魔方 nightModeHelper.init(); var nightMode = nightModeHelper.isNight(); var navColor = \"\"; if (document.cookie.indexOf(\"navColor=red\") >= 0) { document.body.className += \" red\"; navColor = \"red\"; } 业界 手机 电脑 测评 视频 AI 苹果 iPhone 鸿蒙 软件 智车 数码 学院 游戏 直播 5G 微软 Win10 Win11 专题 搜索 首页 > IT资讯 > 苹果 苹果公布 2025 年服务业务成绩单：多项数据刷新纪录，App Store 周活用户超 8.5 亿 2026/1/12 23:13:56 来源： IT之家 作者： 远洋 责编： 远洋 评论： IT之家 1 月 12 日消息，苹果今日发布 最新新闻稿 ，庆祝其服务部门在 2025 年取得的斐然成绩。苹果公司称，2025 年是“苹果服务业务的破纪录之年”，旗下 Apple Music、Apple TV 等多项服务均实现了里程碑式的突破。 新闻稿开篇援引了苹果服务部门高级副总裁埃迪・库伊的一份备忘录。库伊表示，Apple Music 的听众规模与新增订阅用户数双双创下历史新高；与此同时，Apple TV 在 2025 年 12 月的收视数据“打破以往所有纪录”，该月总观看时长较去年同期激增 36%。 以下为库伊的完整发言内容： 2025 年是苹果服务业务的破纪录之年，实现了显著的增长、全球化扩张与持续性创新的三重突破。从 Apple TV、Apple Music、Apple News 资讯平台，到 Apple Pay 支付服务、iCloud 云存储等日常必备工具，我们为全球用户打造了丰富多元的体验。回望 2025 年，我们始终致力于提升用户的日常生活品质，尤其在节假日期间，用户活跃度达到了空前高度。 过去一年，苹果服务业务成绩斐然。我们为用户推出了具有变革意义的功能，同时不断刷新各项数据纪录。这些亮眼数字，恰恰印证了消费者对我们的高度热忱 —— 无论是下载新奇有趣的应用与游戏、与亲友共赏热门剧集、聆听挚爱金曲，还是安心享受购物乐趣，苹果服务都渗透在生活的方方面面。仅苹果 App Store，全球周均活跃用户就突破 8.5 亿人次；自 2008 年平台上线以来，开发者通过该平台获得的总收入已超 5500 亿美元。 Apple Pay 同样成效显著：不仅为全球用户规避了超 10 亿美元的欺诈损失，还帮助全球商家实现超 1000 亿美元的增量销售额。在 11 至 12 月的假日购物高峰期，Apple Pay 的交易额增速远超整体消费支出的增长水平。此外，Apple TV 在 2025 年 12 月刷新了收视纪录，Apple Music 的听众与新增订阅量也双双登顶。 过去一年，Apple Podcasts、Apple Music、Apple News 等多项服务均迎来了里程碑式的周年纪念。这些成就的取得，离不开每一位艺术家、创作者、记者与故事讲述者的心血，正是他们，赋予了这些平台鲜活的生命力。同时，我们的服务版图持续向全球扩张，触达了前所未有的用户群体：目前 Apple Pay 已登陆全球 89 个市场；Find My 功能正式在韩国上线；Apple Fitness+ 健身服务也新增覆盖 28 个国家和地区。 服务业务的全新升级，为用户带来了更具个性化、趣味性与便捷性的体验。Apple Wallet 依托 Apple Intelligence 技术，帮助用户轻松追踪订单状态；苹果地图（Apple Maps）则借助设备端智能技术，让用户的“偏好路线”与“常去地点”一目了然。 Apple Music 推出的智能混音功能（AutoMix），能像专业 DJ 一样",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple 服務2025 年創佳績",
+        "url": "https://www.apple.com/hk/newsroom/2026/01/2025-marked-a-record-breaking-year-for-apple-services",
+        "query": "Apple TV 国内用户 规模 2025",
+        "provider": "tavily",
+        "score": "0.64128816",
+        "fetched_text": "Apple 服務 2025 年創佳績 - Apple (香港) Apple Store Mac iPad iPhone Watch Vision AirPods TV 與家居 娛樂 配件 支援服務 0 + {\"props\":{\"globalNavData\":{\"locale\":\"zh_HK\",\"ariaLabel\":\"全網站\",\"analyticsAttributes\":[{\"name\":\"data-analytics-activitymap-region-id\",\"value\":\"global nav\"},{\"name\":\"data-analytics-region\",\"value\":\"global nav\"}],\"links\":[{\"id\":\"a8c92520d7f5cdc15f280a04e0618933acfce488cc553fb4783a68be789e7694\",\"name\":\"apple\",\"text\":\"Apple\",\"url\":\"/hk/\",\"ariaLabel\":\"Apple\",\"submenuAriaLabel\":\"Apple 選單\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"},{\"name\":\"compact\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"apple home\"}]},{\"id\":\"54c0ba637f7907a0159f10121797711bfd870ee9dc9abd82c9fd41edd07fbf1e\",\"name\":\"store\",\"text\":\"Store\",\"url\":\"/hk-zh/shop/goto/store\",\"ariaLabel\":\"Store\",\"submenuAriaLabel\":\"Store 選單\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"store\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - store\"}]},{\"id\":\"588f1468921347b261954cb757deb7ffa4f2884facfb65a830b08922449df426\",\"name\":\"mac\",\"text\":\"Mac\",\"url\":\"/hk/mac/\",\"ariaLabel\":\"Mac\",\"submenuAriaLabel\":\"Mac 選單\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"mac\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - mac\"}]},{\"id\":\"5aa91574dda31d39c210568c81db163fbe45d1f4e539614b0cc83fa7e00fb7fb\",\"name\":\"ipad\",\"text\":\"iPad\",\"url\":\"/hk/ipad/\",\"ariaLabel\":\"iPad\",\"submenuAriaLabel\":\"iPad 選單\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"ipad\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - ipad\"}]},{\"id\":\"5c52d8dbf1aa1fcb5dc5377663e30c4815d2f38d2ad928813fce40d5df81324f\",",
+        "fetch_error": ""
+      },
+      {
+        "title": "DLNA投屏和镜像投屏两种不同的投屏方法的对比 - 知乎专栏",
+        "url": "https://zhuanlan.zhihu.com/p/19806757978",
+        "query": "tvOS DLNA 投屏 应用 对比",
+        "provider": "tavily",
+        "score": "0.6562404",
+        "fetched_text": "综上所述，DLNA投屏与镜像投屏在投屏协议、投屏效果、使用场景以及其他特点方面都存在显著差异。用户可以根据自己的需求和场景选择合适的投屏方式。",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      },
+      {
+        "title": "AirPlay、DLNA、Miracast无线投屏协议优缺点对比 - 新浪财经",
+        "url": "https://cj.sina.cn/articles/view/7857141524/1d452771401901t2fg?froms=ggmp&vt=4",
+        "query": "tvOS DLNA 投屏 应用 对比",
+        "provider": "tavily",
+        "score": "0.57952",
+        "fetched_text": "无线投屏-AirPlay、DLNA、Miracast无线投屏协议优缺点对比__财经头条__新浪财经 var author_uid = 7857141524; var article_id = \"1d452771401901t2fg\"; var baseUrl = \"//cj.sina.com.cn/k/api\"; var baseHost = \"cj.sina.com.cn\"; var pageUrl = \"http://cj.sina.cn/articles/view/7857141524/1d452771401901t2fg\"; //设定为提前一屏触发 window.onload = function() { SinaPage.config.triggerDistance = 500; } var SINA_TEXT_PAGE_INFO = { entry: 'account', channel: 'mp', newsid: '7857141524-1d452771401901t2fg', encoding: 'utf-8', // 是否隐藏评论入口 hideComment: false, // 是否隐藏评论列表(0,1) hideCommentList: 0, // 微博分享后面的@用户uid uid: '5902314049', // 文章docid，用来检测是否已收藏 docID: 'http://doc.sina.cn/?id=comos:fyqptqv7004083', //财经 pagepubtime: '2016-05-30', difDay: 180, ADIDs: [\"PublicRelation1\", \"PublicRelation2\", \"PublicRelation3\", \"PublicRelation4\", \"PublicRelation5\", \"PublicRelation6\", \"PublicRelation7\", \"PublicRelation8\", \"PublicRelation9\", \"PublicRelation10\", \"PublicRelation11\", \"PublicRelation12\", \"PublicRelation14\", \"PublicRelation16\"], // 底部微博推荐，如果没有，不填即可 weiboGroupID: 35 }; window.sina_survey_config = { surveyCss: true, //调查问答样式true, false, http （不使用默认样式配置false或者不传此参数） resultCss: true, //调查结果样式true, false, http （不使用默认样式配置false或者不传此参数） source: 'vote', //通过来源设置图片宽高 sina(手浪), vote(默认) } 注册 登录 新闻 头条号 新浪财经APP 宏观经济 A股 港股 美股 基金 理财 黄金 期货 能源 互联网金融 房地产 更多 外汇 管理 消费 科技 互联网 手机 保险 数码 科普 创业 银行 新三板 其他 无线投屏-AirPlay、DLNA、Miracast无线投屏协议优缺点对比 无线投屏-AirPlay、DLNA、Miracast无线投屏协议优缺点对比 2026年04月02日 14:48 看点资讯 语音播报 缩小字体 放大字体 微博 微信 分享 0 腾讯QQ QQ空间 无线投屏 技术除了投屏解决方案供应商的进一步研发之外，在最开始就有三种移动终端自带的 投屏协议 ，分别是AirPlay、Miracast和DLAN，不同品牌或操作系统的移动终端支持对应的投屏协议。不同的协议有不同的特点，下面来对比分析一下。 AirPlay 是苹果开发的一种无线技术，可以通过WiFi将iPhone 、iPad、iPodtouch 等iOS 设备上的包括图片、音频、视频通过无线的方式传输到支持AirPlay 设备。售价99美元的Apple TV就具备这样的功能，现在一些传统的家庭影院和网络播放器已经支持AirPlay功能。 AirPlay 支持镜像功能，可以将iPhone 或iPad 上的画面无线投屏到支持AirPlay协议的电视上，即",
+        "fetch_error": ""
+      },
+      {
+        "title": "UnPlay - iOS、macOS) Apple TV DLNA投屏接收器· GitHub",
+        "url": "https://github.com/suaptv/UnPlay",
+        "query": "tvOS DLNA 投屏 应用 对比",
+        "provider": "tavily",
+        "score": "0.49553296",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_collapse_cssom_rules\",\"code_view_shared_line_height\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_diff_explain_conversation_intent\",\"c",
+        "fetch_error": ""
+      },
+      {
+        "title": "你们的Infuse 能投屏到电视吗 - V2EX",
+        "url": "https://www.v2ex.com/t/967829",
+        "query": "Infuse Apple TV 投屏 功能",
+        "provider": "tavily",
+        "score": "0.7913865",
+        "fetched_text": "你们的 Infuse 能投屏到电视吗 - V2EX body { min-width: 820px; font-family: \"Helvetica Neue\", \"Luxi Sans\", \"Segoe UI\", \"Hiragino Sans GB\", \"Microsoft Yahei\", sans-serif, \"Apple Logo\"; } const SITE_NIGHT = 0; const LANG = 'enus'; const FEATURES = ['search', 'favorite-nodes-sort']; {\"comment\": [{\"text\": \"同问\", \"datePublished\": \"2023-08-24T01:18:36Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/hanliu\", \"@type\": \"Person\", \"name\": \"hanliu\"}}, {\"text\": \"你把 mac 直接接电视上呗\", \"datePublished\": \"2023-08-24T01:25:06Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/iovekkk\", \"@type\": \"Person\", \"name\": \"iovekkk\"}}, {\"text\": \"apple tv 可以投，Android tv 上装的投屏软件不能投\", \"datePublished\": \"2023-08-24T01:27:22Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/Navee\", \"@type\": \"Person\", \"name\": \"Navee\"}}, {\"text\": \"所以还是整个 apple TV ，直接投屏这个步骤都省了\", \"interactionStatistic\": {\"userInteractionCount\": 1, \"@type\": \"InteractionCounter\", \"interactionType\": \"https://schema.org/LikeAction\"}, \"datePublished\": \"2023-08-24T01:35:03Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/PanuiQ\", \"@type\": \"Person\", \"name\": \"PanuiQ\"}}, {\"text\": \"可以投，用的是索尼智能电视\", \"datePublished\": \"2023-08-24T03:02:14Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/beholder\", \"@type\": \"Person\", \"name\": \"beholder\"}}, {\"text\": \"我只能投过去音频，可能是版权的关系？\", \"datePublished\": \"2023-08-24T14:04:12Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/Sting\", \"@type\": \"Person\", \"name\": \"Sting\"}}, {\"text\": \"Apple TV ，随便投\", \"datePublished\": \"2023-08-24T21:59:59Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/seanzxx\", \"@type\": \"Person\", \"name\": \"seanzxx\"}}, {\"text\": \"试了下 iPhone 投 MacBook ，只要声音没有画面\", \"datePublished\": \"2023-08-24T2",
+        "fetch_error": ""
+      },
+      {
+        "title": "Infuse 8 一款优雅的视频播放器 | Firecore",
+        "url": "https://firecore.cn/infuse",
+        "query": "Infuse Apple TV 投屏 功能",
+        "provider": "tavily",
+        "score": "0.7373288",
+        "fetched_text": "{ \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"WebPage\", \"description\": \"适用于 iPhone、iPad、Apple TV 和 Mac 的视频播放器\" }, { \"name\": \"Firecore\", \"url\": \"https://firecore.cn/\", \"publisher\": { \"@type\": \"Organization\", \"name\": \"Firecore\", \"url\": \"https://firecore.cn/\", \"sameAs\": \"https://twitter.com/firecore\", \"logo\": { \"@type\": \"ImageObject\", \"representativeOfPage\": \"False\", \"url\": \"/images/fav/firecore.png\", \"width\": \"512\", \"height\": \"512\" } } } ] } Infuse 8 一款优雅的视频播放器 | Firecore ul.dropdown-menu {display: none;} var dxpr_themeNavBreakpoint = 830; var dxpr_themeWindowWidth = window.innerWidth; if (dxpr_themeWindowWidth > dxpr_themeNavBreakpoint) { document.body.className += ' body--dxpr-theme-nav-desktop'; } else { document.body.className += ' body--dxpr-theme-nav-mobile'; } Toggle menu 特点 支持 博客 联系方式 账户 Infuse 8 一款优雅的视频播放器 下载 Infuse App 免费，可选择购买高级功能 玩转一切 超越 iTunes，避免浪费时间对文件转码。Infuse 强大高效的播放引擎支持几乎所有视频文件，包括：MKV、MP4、AVI、ISO、DVD、BDMV 等。 随时随地进行流媒体传输 浏览和播放存储在 Mac、PC、NAS、Plex、Emby、Jellyfin 等媒体服务器，或 Dropbox、Google Drive、OneDrive、Box、阿里云盘等云服务中的视频。此外，来自多个来源的视频都可以整齐地显示在一个媒体库中。 自动整理 只需几秒钟，就能自动下载电影和电视节目的元数据和封面图片，并将所有内容归类整理。更妙的是，电影续集可以归类到不同的系列中，让查找可看内容变得轻而易举。 保持同步 使用 iCloud，可让元数据、媒体库设置和播放进度在所有设备间保持同步。在 iPhone 上播放视频，然后在 Apple TV 上轻松的继续播放。无需设置就可以快速的自动同步。 “界面非常漂亮，能够播放各种内容，强大得令人惊叹。” Lifehacker 强大的免费功能 高性能播放 通过高效的 h.264 和 h.265 硬件解码，4K（超高清）HDR 和 HDR10+ 视频播放如丝般顺滑。 便捷查找字幕 自带字幕，或从 OpenSubtitles 免费一键下载，在几秒钟内添加字幕。 无线传输 使用 AirDrop、iTunes、FTP 或普通的网络浏览器，即可快速传输视频。无需数据线。（仅限 iOS） 与 Trakt 同步 与 Trakt 连接，通过将播放历史和评级添加到你的账户，随时查看你观看过的内容。 跳过片头片尾 新功能 自动跳过电影和电视剧的片头片尾——由 IntroDB.app 和 TheIntroDB.org 提供支持。 自定义系列和播放列表 轻松创建电影、电视节目和家庭视频的系列和播放列表。随心所欲地随机播放和循环播放。 旅途中观看视频 无论您身在何处，都可以从 AirStash®、 SanDisk® Connect 和其他 Wi-Fi 旅行硬盘串流播放内容。 家庭影院和投影仪 多功能缩放、裁剪、宽高比和对齐选项可用于高端影院环境。 多语言支持 我们支持 40 多种国家或地区的语言，无论你说 “你好”、“hello”、",
+        "fetch_error": ""
+      },
+      {
+        "title": "‎Infuse App - App Store",
+        "url": "https://apps.apple.com/cn/app/infuse/id1136220934",
+        "query": "Infuse Apple TV 投屏 功能",
+        "provider": "tavily",
+        "score": "0.7197191",
+        "fetched_text": "‎Infuse App - App Store {\"@context\":\"https://schema.org\",\"@id\":\"https://apps.apple.com/#organization\",\"@type\":\"Organization\",\"name\":\"App Store\",\"url\":\"https://apps.apple.com\",\"logo\":\"https://apps.apple.com/assets/app-store.png\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q368215\",\"https://twitter.com/AppStore\",\"https://www.instagram.com/appstore/\",\"https://www.facebook.com/appstore/\"],\"parentOrganization\":{\"@type\":\"Organization\",\"name\":\"Apple\",\"@id\":\"https://www.apple.com/#organization\",\"url\":\"https://www.apple.com/\"}} {\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"Infuse\",\"description\":\"一口通吃您的视频文件 - Infuse将把您从永无宁日的视频转换中解放出来，用极美的方式在您的iPhone、iPad、Apple TV、Mac以及Vision上观赏几乎所有视频格式。Infuse已适配iOS 26 并添加更加强大的在线视频，trakt同步，AirPlay以及字幕功能。一切尽在随手掌控中。\\n\\n- 播放更多类型的视频。\\nInfuse 支持标准的 MP4、M4V 和 MOV – 再加上 MKV、AVI、WMV、MTS、ISO、VIDEO_TS、FLV、OGM、OGV、ASF、3GP、DVR-MS、WebM 和 WTV。包括对杜比®数码 Plus (AC3/E-AC3)、DTS® 和 DTS-HD® 音频的支持。\\n\\n- 从其他设备接收媒体流\\n浏览并播放储存在您Mac、PC、NAS、带有Wi-Fi功能的硬盘以及程序如Plex、Emby、Jellyfin和Kodi(XBMC)中的视频。Dropbox、Google Drive、Box、OneDrive、pCloud、Yandex.Disk、MEGA、阿里云盘、123 云盘、115 网盘和百度网盘也支持喔 —— 无需同步。\\n\\n- 强大的AirPlay 以及 Google Cast 支持。\\n串流播放多种视频格式例如：MKV、MP4、M4V、AVI 等等，经由 AirPlay 支持完整环绕音效与字幕。\\n\\n- TRAKT.TV 同步\\n同步 Infuse 到 trakt.tv 的拨放项目，上传评比及发表评论。\\n\\n- OPENSUBTITLES 支持的最佳化字幕\\n使用您自己的字幕或快速下载（免费）各种语言字幕。\\n\\n=====\\n\\n“iOS 平台上最智能、最强大的播放器！”\\n- Appdp.com\\n\\n“看起来很棒，可播放您丢进来的任何档案。”\\n- Lifehacker\\n\\n“iPhone 和 iPad 上最好的媒体播放器。”\\n- Cult of Mac\\n\\n“我已经无法给它的用户界面更高的评价了，实在是太棒了。”\\n- 9to5Mac\\n\\n“我真心找不到任何理由从我的屏幕上把 Infuse 移除。”\\n- iDownloadBlog\\n\\n“完全超越 VLC。”\\n- Alex Heath、Business Insider\\n\\n“精美的用户界面。”\\n- trakt.tv 联合创始人\\n\\n“小型的 KODI 媒体中心！”\\n- Infuse 用户\\n\\n=====\\n\\n不只是漂亮的脸蛋\\n\\n基础功能\\n- 最佳化播放引擎（播放全 4K）\\n- 经由 Mac、PC 或 NAS 串流播放\\n- 与 Plex、Emby、Jellyfin、Kodi (XBMC)、WMC以及其他UPnP/DLNA服务联通。\\n- 漂亮的介面并可快速存取视",
+        "fetch_error": ""
+      },
+      {
+        "title": "小红书官宣获得世界杯版权平台足球兴趣用户超1亿 - 搜狐",
+        "url": "https://m.sohu.com/a/1028725360_120988576?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334",
+        "query": "小红书 投屏 Apple TV 世界杯 2025",
+        "provider": "tavily",
+        "score": "0.62523276",
+        "fetched_text": "!function(a,b){function c(){var b=f.getBoundingClientRect().width;b/i>540&&(b=540*i);var c=b/10;f.style.fontSize=c+\"px\",k.rem=a.rem=c}var d,e=a.document,f=e.documentElement,g=e.querySelector('meta[name=\"viewport\"]'),h=e.querySelector('meta[name=\"flexible\"]'),i=0,j=0,k=b.flexible||(b.flexible={});if(g){var l=g.getAttribute(\"content\").match(/initial\\-scale=([\\d\\.]+)/);l&&(j=parseFloat(l[1]),i=parseInt(1/j))}else{if(h){var m=h.getAttribute(\"content\");if(m){var n=m.match(/initial\\-dpr=([\\d\\.]+)/),o=m.match(/maximum\\-dpr=([\\d\\.]+)/);n&&(i=parseFloat(n[1]),j=parseFloat((1/i).toFixed(2))),o&&(i=parseFloat(o[1]),j=parseFloat((1/i).toFixed(2)))}}}var isIos=a.navigator.appVersion.match(/iphone/gi);if(isIos){f.setAttribute(\"class\",\"ios\")}else{f.setAttribute(\"class\",\"android\")}if(!i&&!j){var p=(a.navigator.appVersion.match(/android/gi),a.navigator.appVersion.match(/iphone/gi)),q=a.devicePixelRatio;i=p?q>=3&&(!i||i>=3)?3:q>=2&&(!i||i>=2)?2:1:1,j=1/i}if(f.setAttribute(\"data-dpr\",i),!g){if(g=e.createElement(\"meta\"),g.setAttribute(\"name\",\"viewport\"),g.setAttribute(\"content\",\"initial-scale=\"+j+\", maximum-scale=\"+j+\", minimum-scale=\"+j+\", user-scalable=no\"),f.firstElementChild){f.firstElementChild.appendChild(g)}else{var r=e.createElement(\"div\");r.appendChild(g),e.write(r.innerHTML)}}a.addEventListener(\"resize\",function(){clearTimeout(d),d=setTimeout(c,300)},!1),a.addEventListener(\"pageshow\",function(a){a.persisted&&(clearTimeout(d),d=setTimeout(c,300))},!1),\"complete\"===e.readyState?e.body.style.fontSize=12*i+\"px\":e.addEventListener(\"DOMContentLoaded\",function(){e.body.style.fontSize=12*i+\"px\"},!1),c(),k.dpr=a.dpr=i,k.refreshRem=c,k.rem2px=function(a){var b=parseFloat(a)*this.rem;return\"string\"==typeof a&&a.match(/rem$/)&&(b+=\"px\"),b},k.px2rem=function(a){var b=parseFloat(a)/this.rem;re",
+        "fetch_error": ""
+      },
+      {
+        "title": "为世界杯2026 做准备 Apple Sports 开放给更多国家包括大马用户 ...",
+        "url": "https://www.instagram.com/p/DYjuXqtkyDY?img_index=4",
+        "query": "小红书 投屏 Apple TV 世界杯 2025",
+        "provider": "tavily",
+        "score": "0.61307496",
+        "fetched_text": ":root, .__ig-light-mode:root, .__ig-light-mode {--fds-black:#000000;--fds-black-alpha-05:rgba(0, 0, 0, 0.05);--fds-black-alpha-10:rgba(0, 0, 0, 0.1);--fds-black-alpha-15:rgba(0, 0, 0, 0.15);--fds-black-alpha-20:rgba(0, 0, 0, 0.2);--fds-black-alpha-30:rgba(0, 0, 0, 0.3);--fds-black-alpha-40:rgba(0, 0, 0, 0.4);--fds-black-alpha-50:rgba(0, 0, 0, 0.5);--fds-black-alpha-60:rgba(0, 0, 0, 0.6);--fds-black-alpha-80:rgba(0, 0, 0, 0.8);--fds-blue-05:#ECF3FF;--fds-blue-30:#AAC9FF;--fds-blue-40:#77A7FF;--fds-blue-60:#1877F2;--fds-blue-70:#2851A3;--fds-blue-80:#1D3C78;--fds-button-text:#444950;--fds-comment-background:#F2F3F5;--fds-dark-mode-gray-35:#CCCCCC;--fds-dark-mode-gray-50:#828282;--fds-dark-mode-gray-70:#4A4A4A;--fds-dark-mode-gray-80:#373737;--fds-dark-mode-gray-90:#282828;--fds-dark-mode-gray-100:#1C1C1C;--fds-gray-00:#F5F6F7;--fds-gray-05:#F2F3F5;--fds-gray-10:#EBEDF0;--fds-gray-20:#DADDE1;--fds-gray-25:#CCD0D5;--fds-gray-30:#BEC3C9;--fds-gray-45:#8D949E;--fds-gray-70:#606770;--fds-gray-80:#444950;--fds-gray-90:#303338;--fds-gray-100:#1C1E21;--fds-green-55:#00A400;--fds-green-60:#31A73B;--fds-green-65:#51CE70;--fds-highlight:#3578E5;--fds-highlight-cell-background:#ECF3FF;--fds-primary-icon:#1C1E21;--fds-primary-text:#1C1E21;--fds-red-55:#FA383E;--fds-soft:cubic-bezier(.08,.52,.52,1);--fds-spectrum-aluminum-tint-70:#E4F0F6;--fds-spectrum-blue-gray-tint-70:#CFD1D5;--fds-spectrum-cherry:#F35369;--fds-spectrum-cherry-tint-70:#FBCCD2;--fds-spectrum-grape-tint-70:#DDD5F0;--fds-spectrum-grape-tint-90:#F4F1FA;--fds-spectrum-lemon-dark-1:#F5C33B;--fds-spectrum-lemon-tint-70:#FEF2D1;--fds-spectrum-lime:#A3CE71;--fds-spectrum-lime-tint-70:#E4F0D5;--fds-spectrum-orange-tint-70:#FCDEC5;--fds-spectrum-orange-tint-90:#FEF4EC;--fds-spectrum-seafoam-tint-70:#CAEEF9;--fds-spectrum-slate-",
+        "fetch_error": ""
+      },
+      {
+        "title": "‏‫تطبيق 小红书 – 世界杯直播‬ - App Store",
+        "url": "https://apps.apple.com/us/app/%E5%B0%8F%E7%BA%A2%E4%B9%A6-%E4%B8%96%E7%95%8C%E6%9D%AF%E7%9B%B4%E6%92%AD/id741292507?l=ar",
+        "query": "小红书 投屏 Apple TV 世界杯 2025",
+        "provider": "tavily",
+        "score": "0.55623144",
+        "fetched_text": "‏‫تطبيق 小红书 – 世界杯直播‬ - App Store {\"@context\":\"https://schema.org\",\"@id\":\"https://apps.apple.com/#organization\",\"@type\":\"Organization\",\"name\":\"App Store\",\"url\":\"https://apps.apple.com\",\"logo\":\"https://apps.apple.com/assets/app-store.png\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q368215\",\"https://twitter.com/AppStore\",\"https://www.instagram.com/appstore/\",\"https://www.facebook.com/appstore/\"],\"parentOrganization\":{\"@type\":\"Organization\",\"name\":\"Apple\",\"@id\":\"https://www.apple.com/#organization\",\"url\":\"https://www.apple.com/\"}} {\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"小红书 – 世界杯直播\",\"description\":\"欢迎来到小红书，这里是你专属的生活兴趣社区！\\n\\n在这里，热爱闪闪发光，好奇找到回响，一起来开启属于你的兴趣宇宙吧！\\n\\n发现精彩： 世界那么大，兴趣那么多！无数和你一样充满好奇心的人，在这里分享着他们的热爱与探索，等你来挖掘属于你的那份心动。无论你是痴迷手作、沉醉音乐、钻研美食，还是向往远行、热衷穿搭、好奇科技……在这里，总有让你眼前一亮的兴趣宝藏。兴趣无边界，热爱无高低，都在这里自由流淌。\\n\\n遇见同好： 独乐乐，当然不如众乐乐！世界很大，但同好很近。在这里，你不是一个人在热爱。和兴趣相投的小红薯们，一起真诚交流、互相启发。一句评论，一次点赞，可能就会转角遇到灵魂拍档。在这里，每一份兴趣被听见，每一种热爱被温柔以待。即使我们都独一无二，也不会是一座孤岛。\\n\\n勇敢发光： 你的每一次尝试、每一点进步、每一份感动都值得被珍藏。小红书就是你记录兴趣生活的成长手账！大胆分享你的故事、心得、哪怕是小小的尝试。让我们勇敢发光吧！你的真实记录，不仅点亮了自己的热爱，更可能成为照亮另一个“兴趣同路人”的微光。\\n\\n热爱成真：兴趣不息，体验不止！在小红书，发现让你感兴趣的好物，一键种草，轻松下单拔草！看到超酷的线下活动，呼朋引伴，说走就走！这里不光是灵感的源头，更是你兴趣旅程的起点站——从线上汲取灵感，到线下亲身体验，再到回来分享你的精彩故事。让每一次心动都落地生根，让每一份热爱都玩出花样。\\n\\n带上好奇心，在小红书，开启属于你的兴趣之旅吧！\",\"image\":\"https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ac/ac/76/acac76ef-82f9-ea45-7602-3ef88e8d6f34/AppIcon-0-0-1x_U007epad-0-11-0-85-220.png/1200x630wa.png\",\"availableOnDevice\":\"iPhone, iPad, iPod\",\"operatingSystem\":\"‫يتطلب iOS 13.0 أو أحدث. ‫‏متوافق مع iPhone,‏ iPad و ‫iPod touch.‏\",\"offers\":{\"@type\":\"Offer\",\"price\":0,\"priceCurrency\":\"USD\",\"category\":\"free\"},\"applicationCategory\":\"التواصل الاجتماعي\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":4.9,\"reviewCount\":266123},\"author\":{\"@type\":\"Organization\",\"name\"",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：核心事实没有来源：DLPlay的定价、收入、用户规模等关键商业数据缺失，无法支撑工具账本分析。"
+    },
+    "core_question": "DLPlay 作为一款 tvOS 投屏工具，其技术实现、开发成本、定价策略和获客渠道是否构成一个可持续的独立开发项目？",
+    "why_this_topic_matters": "世界杯期间小红书投屏需求激增，Apple TV 用户有明确的投屏痛点，DLPlay 填补了国内平台 DLNA 投屏的空白，但商业可行性未知。",
+    "fact_summary": [
+      "DLPlay 是一款 tvOS 应用，支持 B 站、优酷、爱奇艺、腾讯、芒果、小红书等平台的 DLNA 投屏，不走 AirPlay 镜像。",
+      "支持 NAS（WebDAV/Alist/SMB）文件直连、IPTV（M3U+XMLTV）和待机时钟/相册轮播。",
+      "App Store 评分 3.9，共 7 个评分，用户反馈正面但数量极少。",
+      "小红书获得 2025 世界杯转播权，投屏需求可能短期上升。",
+      "竞品 Infuse 功能强大但价格高（订阅制），不支持国内平台 DLNA 投屏。"
+    ],
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "副业普通人",
+        "高价值商业读者"
+      ],
+      "interest_score": 65,
+      "why_interested": "核心技术人关注技术实现和 Apple TV 生态；副业普通人关注独立开发机会；商业读者关注市场空间。",
+      "reader_risk": "缺乏收入数据，可能误导读者高估商业潜力。"
+    },
+    "mass_interest_hook": {
+      "score": 70,
+      "hook_type": "踩坑",
+      "why_non_technical_people_may_click": "世界杯看球投屏是刚需，Apple TV 用户常被投屏问题困扰，标题可引发共鸣。",
+      "story_seed": "世界杯来了，小红书能看球，但 Apple TV 投屏却卡在 AirPlay 镜像？一个独立开发者用 DLNA 协议解决了这个痛点。",
+      "do_not_overhype": "不要夸大用户规模或收入，明确说明数据缺口。"
+    },
+    "timeline": [
+      "2024-01-14: 小众软件、搜狐等媒体报道 DLPlay。",
+      "2025-12-11: App Store 出现用户评分（共 7 条）。",
+      "2025-12: 小红书官宣获得世界杯转播权。",
+      "2026-01-12: 苹果公布 2025 年服务业务成绩单，Apple TV 收视创新高。"
+    ],
+    "evidence_table": [
+      {
+        "source": "V2EX 原帖",
+        "url": "https://www.v2ex.com/t/1219499",
+        "supports": "DLPlay 功能描述、世界杯投屏场景、开发者自述",
+        "reliability": "near_source"
+      },
+      {
+        "source": "App Store 页面",
+        "url": "https://apps.apple.com/cn/app/dlplay-dlna-%E6%8A%95%E5%B1%8F%E4%B8%8E%E6%97%B6%E9%92%9F/id6448221325",
+        "supports": "评分 3.9，7 个评分，用户评论正面",
+        "reliability": "official"
+      },
+      {
+        "source": "小众软件评测",
+        "url": "https://www.appinn.com/dlplay-for-apple-tv",
+        "supports": "功能详细介绍，确认 DLNA 投屏能力",
+        "reliability": "media"
+      },
+      {
+        "source": "搜狐转载",
+        "url": "https://www.sohu.com/a/751839522_121124379",
+        "supports": "功能复述，无新增信息",
+        "reliability": "weak"
+      },
+      {
+        "source": "小红书世界杯版权新闻",
+        "url": "https://m.sohu.com/a/1028725360_120988576",
+        "supports": "小红书获得世界杯转播权，投屏需求可能增加",
+        "reliability": "media"
+      },
+      {
+        "source": "Infuse 官网",
+        "url": "https://firecore.cn/infuse",
+        "supports": "竞品功能对比：Infuse 不支持国内平台 DLNA 投屏",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "部分闭环：技术实现和功能价值清晰，但商业模型（收入、用户规模、获客成本）缺失，无法判断可持续性。",
+    "writeable_angles": [
+      {
+        "angle": "工具账本：DLPlay 的技术实现与开发成本分析",
+        "why": "适合核心技术人，可拆解 DLNA 协议实现、tvOS 开发难点、功能模块成本。",
+        "needs": "需要开发者访谈或公开的开发成本数据。"
+      },
+      {
+        "angle": "独立开发案例复盘：DLPlay 的定价策略与获客渠道",
+        "why": "适合副业普通人，分析如何在小众市场获客、定价是否合理。",
+        "needs": "需要收入数据、下载量、用户获取成本。"
+      },
+      {
+        "angle": "风险避坑：Apple TV 投屏工具的商业化陷阱",
+        "why": "适合高价值商业读者，分析市场规模、竞品压力、平台风险。",
+        "needs": "需要 Apple TV 国内用户规模、竞品市场份额。"
+      }
+    ],
+    "missing_basics": [
+      "DLPlay 的定价（免费/付费/内购）",
+      "Apple TV 在国内的用户规模",
+      "DLNA 投屏协议在 Apple TV 上的兼容性细节"
+    ],
+    "missing_materials": [
+      "DLPlay 的 App Store 页面截图（含价格、内购、评分）",
+      "开发者访谈或公开的博客/推文",
+      "竞品功能对比表（Infuse、VLC、Plex 等）",
+      "Apple TV 国内用户规模报告或估算",
+      "小红书投屏功能的使用教程或用户反馈"
+    ],
+    "not_claimable": [
+      "DLPlay 有稳定的收入或用户增长",
+      "DLPlay 是唯一或最好的 Apple TV 投屏方案",
+      "世界杯投屏需求是可持续的商业模式",
+      "Apple TV 在国内有足够大的用户群"
+    ],
+    "followup_queries": [
+      "DLPlay 在 App Store 的定价是多少？是否有内购或订阅？",
+      "DLPlay 的下载量和评分趋势如何？",
+      "DLPlay 的开发者背景和开发周期？",
+      "Apple TV 在国内的市场份额和用户规模？",
+      "是否存在其他类似功能的竞品（如 UnPlay、AirReceiver）？"
+    ],
+    "additional_search_queries": [
+      "DLPlay App Store 价格 内购",
+      "DLPlay 下载量 评分 2025",
+      "Apple TV 中国 用户 数量 2025",
+      "tvOS DLNA 投屏 应用 对比",
+      "UnPlay Apple TV DLNA",
+      "独立开发者 tvOS 应用 收入 案例"
+    ],
+    "stop_conditions": [
+      "如果无法获取任何收入或用户数据，停止商业化分析，仅保留技术实现角度。",
+      "如果竞品已占据大部分市场，停止推荐作为独立开发机会。",
+      "如果小红书投屏功能在世界杯后无持续需求，停止长期价值分析。"
+    ],
+    "confidence": 55.0,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "tool-ledger",
+    "quality_gate": {
+      "pass": false,
+      "score": 55,
+      "fatal_issues": [
+        "核心事实没有来源：DLPlay的定价、收入、用户规模等关键商业数据缺失，无法支撑工具账本分析。"
+      ],
+      "warnings": [
+        "成本估算没有公式、单位或边界：缺乏开发成本、定价策略等量化分析。",
+        "没有明确主要服务哪层读者：读者分层模糊，核心技术人与副业普通人混为一谈。",
+        "泛兴趣钩子过度标题党：标题暗示世界杯投屏刚需，但正文证据不足，用户规模小。",
+        "没有明确选题结论：推荐或可选不清晰，仅给出可选但未解释。",
+        "没有解释为什么这个题值得选：缺乏对选题价值的充分论证。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：证据链不完整，逻辑部分闭环。",
+        "没有列出基础概念缺口和资料素材缺口：未明确缺失的定价、用户规模等关键信息。",
+        "没有按具体类型提供资料包：工具账本缺少收入、成本、获客等数据。"
+      ],
+      "missing_evidence": [
+        "DLPlay的定价（免费/付费/内购）",
+        "Apple TV在国内的用户规模",
+        "DLPlay的下载量和评分趋势",
+        "开发者背景和开发周期",
+        "竞品功能对比表（Infuse、UnPlay等）",
+        "小红书投屏功能的使用教程或用户反馈"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "DLPlay 作为一款 tvOS 投屏工具，其技术实现、开发成本、定价策略和获客渠道是否构成一个可持续的独立开发项目？",
+      "must_verify": [
+        "DLPlay 是否确实支持 B 站、优酷、爱奇艺、腾讯、芒果、小红书等平台的 DLNA 投屏，且不走 AirPlay 镜像？",
+        "DLPlay 的定价是多少？是否有内购或订阅？",
+        "DLPlay 在 App Store 的下载量和评分如何？",
+        "DLPlay 的开发者背景和开发周期？",
+        "Apple TV 在国内的市场份额和用户规模？",
+        "是否存在其他类似功能的竞品（如 Infuse、VLC、Plex 等）？",
+        "小红书投屏功能在世界杯期间的实际使用场景和用户需求？"
+      ],
+      "search_queries": [
+        "DLPlay tvOS App Store 价格 内购",
+        "DLPlay Apple TV 投屏 评测 2025",
+        "Apple TV 国内用户 规模 2025",
+        "tvOS DLNA 投屏 应用 对比",
+        "Infuse Apple TV 投屏 功能",
+        "小红书 投屏 Apple TV 世界杯 2025",
+        "独立开发者 tvOS 应用 收入 案例",
+        "DLPlay 开发者 背景"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "pricing_page",
+          "query": "DLPlay App Store 价格",
+          "why_needed": "确认定价策略和收入模型"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "DLPlay 功能说明 开发者",
+          "why_needed": "验证技术实现细节和功能范围"
+        },
+        {
+          "source_type": "case_study",
+          "query": "独立开发者 tvOS 应用 收入 2025",
+          "why_needed": "了解类似应用的商业可行性"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Apple TV 国内用户 规模 2025",
+          "why_needed": "评估目标市场规模"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "Infuse vs DLPlay 投屏 功能",
+          "why_needed": "竞品对比，判断差异化"
+        },
+        {
+          "source_type": "policy",
+          "query": "小红书 投屏 协议 DLNA 合规",
+          "why_needed": "确认投屏功能的合法性和稳定性"
+        }
+      ],
+      "expert_challenge_points": [
+        "DLNA 投屏在 Apple TV 上的兼容性和稳定性如何？是否所有平台都能稳定工作？",
+        "DLPlay 的定价是否合理？用户是否愿意为投屏功能付费？",
+        "Apple TV 在国内的用户基数是否足够支撑一个独立开发项目？",
+        "世界杯期间的小红书投屏需求是短期热点还是长期需求？",
+        "DLPlay 如何获取用户？获客成本是多少？"
+      ],
+      "do_not_claim_yet": [
+        "DLPlay 有稳定的收入或用户增长",
+        "DLPlay 是唯一或最好的 Apple TV 投屏方案",
+        "世界杯投屏需求是可持续的商业模式",
+        "Apple TV 在国内有足够大的用户群"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取收入数据和用户规模，但能确认技术实现和定价，可以发布为工具账本，重点分析开发成本和定价策略，但需注明数据缺口。",
+      "downstream_materials_needed": [
+        "DLPlay App Store 页面截图（含价格、内购、评分）",
+        "开发者访谈或公开的博客/推文",
+        "竞品功能对比表（Infuse、VLC、Plex 等）",
+        "Apple TV 国内用户规模报告或估算",
+        "小红书投屏功能的使用教程或用户反馈"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "关于App Store 苹果商店价格的那些事（历上最全版） - 腾讯云",
+        "url": "https://cloud.tencent.com/developer/article/2230981",
+        "query": "DLPlay tvOS App Store 价格 内购",
+        "provider": "tavily",
+        "score": "0.2619528",
+        "fetched_text": "关于 App Store 苹果商店价格的那些事（历上最全版）-腾讯云开发者社区-腾讯云 .rno-markdown p * { white-space: pre-wrap; word-break: break-all; } .tea-overlay { z-index: 99999!important; } .cdc-mcp-page2__main.is-fixed .cdc-mcp-page2__toolbar { top: 57px !important; } if (typeof Aegis !== 'undefined') { new Aegis({ id: 'dWlmyFvjDnalkbZO8q', env: 'production', onError: true, pagePerformance: true, reportAssetSpeed: true, api: { reportRequest: true, resHeaders: ['x-req-id'], }, reportApiSpeed: true, beforeRequest: function (data) { // load js failed if (data.logType === 'log') { if (data.logs.level === '32' && data.logs.msg.indexOf('google') > -1) return false; } var ignoreKeys = [ 'Script error', 'chrome-extension', 'qq.com', 'queryWeappQrcodeStatus', 'login/ajax/info', 'woa.com', 'trafficCollect.php', 'google', 'dscache', 'act-api', 'set_qc_cookie', 'opc.cloud.tencent.com', 'uc_gre_ad_buss', 'eb.xcj.pub', 'UCShellJava', '/developer/labs/quick/loader', 'edgeImmersiveReaderDOM', 'sendBeacon', 'error-decoder.html', 'qcloud-community-track.min.js' ]; var alarmMsg = [data.logs.url, data.logs.msg].join('|'); for (var i = 0; i 37手游iOS技术运营团队 关于 App Store 苹果商店价格的那些事（历上最全版） 原创 关注作者 腾讯云 开发者社区 文档 建议反馈 控制台 登录/注册 首页 学习 活动 专区 圈层 工具 MCP广场 文章/答案/技术大牛 搜索 搜索 关闭 发布 37手游iOS技术运营团队 社区首页 > 专栏 > 关于 App Store 苹果商店价格的那些事（历上最全版） 关于 App Store 苹果商店价格的那些事（历上最全版） 原创 37手游iOS技术运营团队 关注 修改 于 2023-04-21 19:16:54 修改 于 2023-04-21 19:16:54 8.2K 0 举报 文章被收录于专栏： 37手游iOS技术运营团队 37手游iOS技术运营团队 作者：iHTCboy 一、前言 苹果 2022 年 12 月 6 日宣布 App Store 定价机制最重大升级，新增 700 个价格点 。小编当时的总结和分析： App Store 新价格 ： 最低可设 $0.29 美元！ 最高可设 $10,000 美元！（人民币 RMB 74,999 元） 新增 700 个价格点 全新定价工具（机制） 1.1 定价机制升级总结 新增 700 个价格点，其中 600 个价格点开发者可直接用，另外 100 个高价价格点需要申请。 新价格点从 美元 $0.29 起，最高可根据申请升至 $10,000。（人民币 RMB 1 ~ RMB 74,999） 新增约定的价格规则：以整数结尾的价格（如 X.00 或 X.90）。 全新定价机制: 自动定价 ：自动随外币汇率和税率的变化而更新 本地",
+        "fetch_error": ""
+      },
+      {
+        "title": "发现全球App Store 最低价 - App Store Price",
+        "url": "https://appstoreprice.org/zh",
+        "query": "DLPlay tvOS App Store 价格 内购",
+        "provider": "tavily",
+        "score": "0.1721304",
+        "fetched_text": "首页 订阅 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://appstoreprice.org/#organization\",\"name\":\"App Store Price\",\"url\":\"https://appstoreprice.org\",\"logo\":\"https://appstoreprice.org/appstoreprice.png\",\"sameAs\":[\"https://t.me/appstoreprice\",\"https://x.com/qingnianxiaozhe\"]},{\"@type\":\"WebSite\",\"@id\":\"https://appstoreprice.org/#website\",\"url\":\"https://appstoreprice.org\",\"name\":\"App Store Price\",\"publisher\":{\"@id\":\"https://appstoreprice.org/#organization\"}}]} 加入群组 关注我们 iOS App NEW App Store 全球最低价 实时抓取并对比全球各大区 App Store 的应用价格 帮您找到购买数字产品的最佳时机 查看所有应用 查看所有应用 礼品卡商城 礼品卡商城 NEW 🇺🇸 US Store $24.99 BEST 🇹🇷 Turkey Store ₺169.00 节省 78% 🇯🇵 JP Store ¥2,900 法律 隐私政策 服务条款 工具 应用列表 在线商城 切换语言 博客 开通指引 使用经验 注意事项 联系 联系我们 Telegram Twitter / X 关于 关于我们 服务状态 更新日志 © 2026 App Store Price. 保留所有权利 requestAnimationFrame(function(){$RT=performance.now()}); $RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b a&&2E3 App Store Price - 发现全球 App Store 最低价 document.querySelectorAll('body link[rel=\"icon\"], body link[rel=\"apple-touch-icon\"]').forEach(el => document.head.appendChild(el)) $RC(\"B:0\",\"S:0\") (self.__next_f=self.__next_f||[]).push([0]) self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n2:I[367,[],\\\"\\\"]\\n3:I[26291,[],\\\"\\\"]\\n5:I[70994,[\\\"9966\\\",\\\"static/chunks/95c09b69-6bac77df8a5dd44d.js\\\",\\\"3542\\\",\\\"static/chunks/3542-5e9b03cdd83d068c.js\\\",\\\"6145\\\",\\\"static/chunks/6145-e16ef77eb1d2976d.js\\\",\\\"2789\\\",\\\"static/chunks/2789-f354fcfa5b1bad22.js\\\",\\\"6212\\\",\\\"static/chunks/6212-c37d07008c8e7ba2.js\\\",\\\"6909\\\",\\\"static/chunks/6909-a5ef63b663f46768.js\\\",\\\"6363\\\",\\\"static/chunks/6363-30d09803dfb9e54a.js\\\",\\\"2384\\\",\\\"static/chunks/2384-627280a3eb63b269.js\\\",\\\"1969\\\",\\\"static/chunks/app/%5Blocale%5D/(main)/layout-c826bad22db04c94.js\\\"],\\\"Header\\\"]\\n6:I[20664,[\\\"3542\\\",\\\"static/chun",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple 宣布 App Store 定价机制最重大升级，新增 700 个价格点 - Apple (中国大陆)",
+        "url": "https://www.apple.com.cn/newsroom/2022/12/apple-announces-biggest-upgrade-to-app-store-pricing-adding-700-new-price-points",
+        "query": "DLPlay tvOS App Store 价格 内购",
+        "provider": "tavily",
+        "score": "0.17179666",
+        "fetched_text": "{ \"@context\": \"https://ziyuan.baidu.com/contexts/cambrian.jsonld\", \"@id\": \"https://www.apple.com.cn/newsroom/2022/12/apple-announces-biggest-upgrade-to-app-store-pricing-adding-700-new-price-points/\", \"appid\": \"1648269209122770\", \"title\": \" Apple 宣布 App Store\", \"images\":[\"https://www.apple.com.cn/newsroom/images/product/app-store/Apple-App-Store-pricing-flexibility-hero.jpg.og.jpg\"], \"pubDate\": \"2022-12-06T18:02:52Z\", \"upDate\":\"2022-12-06T18:02:52Z\" } Apple 宣布 App Store 定价机制最重大升级，新增 700 个价格点 - Apple (中国大陆) Apple 商店 Mac iPad iPhone Watch Vision AirPods 家居 娱乐 配件 技术支持 0 + {\"props\":{\"globalNavData\":{\"locale\":\"zh_CN\",\"ariaLabel\":\"全部网页\",\"analyticsAttributes\":[{\"name\":\"data-analytics-activitymap-region-id\",\"value\":\"global nav\"},{\"name\":\"data-analytics-region\",\"value\":\"global nav\"}],\"links\":[{\"id\":\"2758e8127e4ab787ae4e849277f79b83b3522719ae4b96a595421e50ea2d03f7\",\"name\":\"apple\",\"text\":\"Apple\",\"url\":\"/\",\"ariaLabel\":\"Apple\",\"submenuAriaLabel\":\"Apple 目录\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"},{\"name\":\"compact\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"apple home\"}]},{\"id\":\"75b9dea386fab56ffd38d8479802cbd97bdfeb93b86ccd649fd8acce1676dc0e\",\"name\":\"store\",\"text\":\"商店\",\"url\":\"/cn/shop/goto/store\",\"ariaLabel\":\"商店\",\"submenuAriaLabel\":\"商店目录\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"store\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - store\"}]},{\"id\":\"9a82f08a3cc17e59a61372a40e7ecb17783e9c10aef163465f29bb5b00d4725a\",\"name\":\"mac\",\"text\":\"Mac\",\"url\":\"/mac/\",\"ariaLabel\":\"Mac\",\"submenuAriaLabel\":\"Mac 目录\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"mac\"},{\"name\":\"data-analytics-element-engagement",
+        "fetch_error": ""
+      },
+      {
+        "title": "DLPlay: DLNA 投屏与时钟- 评分及评论 - App Store",
+        "url": "https://apps.apple.com/cn/app/dlplay-dlna-%E6%8A%95%E5%B1%8F%E4%B8%8E%E6%97%B6%E9%92%9F/id6448221325?see-all=reviews&platform=iphone",
+        "query": "DLPlay Apple TV 投屏 评测 2025",
+        "provider": "tavily",
+        "score": "0.86331123",
+        "fetched_text": "‎DLPlay: DLNA 投屏与时钟 - 评分及评论 - App Store {\"@context\":\"https://schema.org\",\"@id\":\"https://apps.apple.com/#organization\",\"@type\":\"Organization\",\"name\":\"App Store\",\"url\":\"https://apps.apple.com\",\"logo\":\"https://apps.apple.com/assets/app-store.png\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q368215\",\"https://twitter.com/AppStore\",\"https://www.instagram.com/appstore/\",\"https://www.facebook.com/appstore/\"],\"parentOrganization\":{\"@type\":\"Organization\",\"name\":\"Apple\",\"@id\":\"https://www.apple.com/#organization\",\"url\":\"https://www.apple.com/\"}} import.meta.url;import(\"_\").catch(()=>1);async function* g(){};window.__vite_is_modern_browser=true; !function(){if(window.__vite_is_modern_browser)return;console.warn(\"vite: loading legacy chunks, syntax error above and the same error below should be ignored\");var e=document.getElementById(\"vite-legacy-polyfill\"),n=document.createElement(\"script\");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}(); iPhone 专区 iPhone iPad Mac Vision Watch 搜索 Today 游戏 App 平台 iPhone iPad Mac Vision Watch DLPlay: DLNA 投屏与时钟 评分及评论 3.9 满分 5 分 7 个评分 很棒的一款dlna投屏软件 2025/12/11 我没得姓名 很多其他dlna投屏软件无法播放的链接都可以使用。如果在未来的更新中，可以针对ipad进行播放器优化和添加复制链接的功能对我来说就真无敌了 很棒的一款dlna投屏软件 2025/12/11 我没得姓名 很多其他dlna投屏软件无法播放的链接都可以使用。如果在未来的更新中，可以针对ipad进行播放器优化和添加复制链接的功能对我来说就真无敌了 DLNA投屏，好用 2024/10/04 b168368 DLNA投屏，好用 DLNA投屏，好用 2024/10/04 b168368 DLNA投屏，好用 能把 快进 暂停 慢放 的按键弄到下面吗 2月9日 古古怪怪古古怪怪刚 请速速更新 能把 快进 暂停 慢放 的按键弄到下面吗 2月9日 古古怪怪古古怪怪刚 请速速更新 选择国家或地区 非洲、中东和印度 查看全部 Algeria Angola Armenia Azerbaijan Bahrain Benin Botswana Burkina Faso Cameroun Cape Verde Chad Côte d’Ivoire Congo, The Democratic Republic Of The Egypt Eswatini Gabon Gambia Ghana Guinea-Bissau India Iraq Israel Jordan Kenya Kuwait Lebanon Libe",
+        "fetch_error": ""
+      },
+      {
+        "title": "从iOS、Android、Windows 向Apple TV 投屏，实现国产视频 ...",
+        "url": "https://www.appinn.com/dlplay-for-apple-tv",
+        "query": "DLPlay Apple TV 投屏 评测 2025",
+        "provider": "tavily",
+        "score": "0.5324014",
+        "fetched_text": "if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf(\"?\")==-1){if(href.indexOf(\"#\")==-1){document.location.href=href+\"?nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"?nowprocket=1#\")}}else{if(href.indexOf(\"#\")==-1){document.location.href=href+\"&nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"&nowprocket=1#\")}}}} (()=>{class RocketLazyLoadScripts{constructor(){this.v=\"2.0.5\",this.userEvents=[\"keydown\",\"keyup\",\"mousedown\",\"mouseup\",\"mousemove\",\"mouseover\",\"mouseout\",\"touchmove\",\"touchstart\",\"touchend\",\"touchcancel\",\"wheel\",\"click\",\"dblclick\",\"input\"],this.attributeEvents=[\"onblur\",\"onclick\",\"oncontextmenu\",\"ondblclick\",\"onfocus\",\"onmousedown\",\"onmouseenter\",\"onmouseleave\",\"onmousemove\",\"onmouseout\",\"onmouseover\",\"onmouseup\",\"onmousewheel\",\"onscroll\",\"onsubmit\"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event(\"rocket-allScriptsLoaded\")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem(\"rocketCSPIssue\"),document.addEventListener(\"securitypolicyviolation\",t=>{this.CSPIssue||\"script-src-elem\"!==t.violatedDirective||\"data\"!==t.blockedURI||(this.CSPIssue=!0,session",
+        "fetch_error": ""
+      },
+      {
+        "title": "从iOS、Android、Windows 向Apple TV 投屏：DLPlay 投屏",
+        "url": "https://www.sohu.com/a/751839522_121124379",
+        "query": "DLPlay Apple TV 投屏 评测 2025",
+        "provider": "tavily",
+        "score": "0.49465415",
+        "fetched_text": "从 iOS、Android、Windows 向 Apple TV 投屏：DLPlay 投屏_视频_软件_国产 window._taboola = window._taboola || []; _taboola.push({article:'auto'}); !function (e, f, u, i) { if (!document.getElementById(i)){ e.async = 1; e.src = u; e.id = i; f.parentNode.insertBefore(e, f); } }(document.createElement('script'), document.getElementsByTagName('script')[0], '//cdn.taboola.com/libtrc/sohuchina-sohucom/loader.js', 'tb_loader_script'); if(window.performance && typeof window.performance.mark == 'function') {window.performance.mark('tbl_ic');} window.deployEnv = \"prod\" { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"BreadcrumbList\", \"itemListElement\": [ { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"首页\", \"item\": \"https://www.sohu.com\" }, { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"文章页\", \"item\": \"https://www.sohu.com/a/751839522_121124379\" }, { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"未来数字城市探索者\", \"item\": \"https://mp.sohu.com/profile?xpt=NDA2YTlhMzYtZmQ5MS00NmUxLWIxZDEtOTE2NzljZGY1NGE1\" } ] }, { \"@type\": \"NewsArticle\", \"headline\": \"从 iOS、Android、Windows 向 Apple TV 投屏：DLPlay 投屏\", \"description\": \"在《小众软件》看到了这篇文章：DLPlay投屏–从iOS、Android、Windows向AppleTV投屏，实现国产视频软件DLNA投屏能让Android、Windows用户和AppleTV更好联动能在Ap…\", \"datePublished\": \"2024-01-14T22:11:38+0800\", \"url\": \"https://www.sohu.com/a/751839522_121124379\", \"thumbnailUrl\": \"\", \"image\": [ { \"@type\": \"ImageObject\", \"url\": \"\", \"width\": 800, \"height\": 450 } ], \"publisher\": { \"@type\": \"NewsMediaOrganization\", \"name\": \"搜狐网\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://statics.itc.cn/web/static/images/pic/sohu-logo/favicon.ico\", \"width\": 32, \"height\": 32 } }, \"author\": { \"@type\": \"Person\", \"name\": \"未来数字城市探索者\", \"url\": \"https://mp.sohu.com/profile?xpt=NDA2YTlhMzYtZmQ5MS00NmUxLWIxZDEtOTE2NzljZGY1NGE1\" }, \"mainEntityOfPage\": { \"@type\": \"WebPage\",",
+        "fetch_error": ""
+      },
+      {
+        "title": "小摩：不要小看Apple TV+ 到2025年订户将突破1亿 - 财联社",
+        "url": "https://www.cls.cn/detail/510692",
+        "query": "Apple TV 国内用户 规模 2025",
+        "provider": "tavily",
+        "score": "0.85421735",
+        "fetched_text": "小摩：不要小看Apple TV+ 到2025年订户将突破1亿 很抱歉，当前没有启用javascript，网站无法正常访问。请开启以便继续访问。 关于我们 网站声明 联系方式 用户反馈 网站地图 帮助 首页 电报 话题 盯盘 VIP FM 投研 下载 小摩：不要小看Apple TV+ 到2025年订户将突破1亿 原创 美股动态 2020-06-05 11:07 星期五 财联社 卞纯 责编 林琦 尽管2019年推出的Apple TV +尚未得到蓬勃发展，但是华尔街投行摩根大通告诉投资者，不要小看这项服务，预计它的用户数将在五年内突破1亿。 财联社 （上海，编辑卞纯）讯 ，尽管2019年推出的Apple TV +尚未得到蓬勃发展，但是华尔街投行摩根大通（JP Morgan）告诉投资者，不要小看这项服务，预计它的用户将在五年内突破1亿。 小摩首席分析师Samik Chatterjee认为，到2025财年，Apple TV+的付费用户可能会达到1亿。尽管价格高昂的苹果流媒体服务的内容和应用“基本上平平无奇”。 Chatterjee预测，目前大多数订户都在利用免费促销活动，而且合格用户对促销活动的激活率很低。 为了抢攻串流服务市场，苹果在去年推出 Apple TV+ 后，同时祭出购买苹果新设备即赠送一年免费订阅的促销活动。不过该计划成效甚微。数据显示，在所有符合资格的苹果设备及装置中，仅有 5-15% 的用户启动免费服务。 人们对Apple TV+反应冷淡的部分原因可能是其节目种类太少，对于这一点苹果正在积极改进。Apple TV+推出时有8个原创节目，但现在已经增加至28个。但尽管如此，内容仍比其竞争对手少得多——即便是像Disney+等这样的新平台。 除了内容的数量，Chatterjee认为质量也很重要。眼下，Apple TV+正通过争夺杰出人才来使内容脱颖而出。这位分析师补充称，提高内容的质量和数量将增加将促销活动用户转化为付费用户的可能性。 除了快速增加新内容外，苹果在投资方面似乎也超越了竞争对手。此前的报告显示，苹果将拨款10亿美元用于内容开发，但现在这个数字可能高达60亿美元。其中一些投资或可能被用来通过播客吸引Apple TV+订户。 这位分析师还概述了Apple TV+正在快速发展的一些迹象。比如说，Apple TV+可以为苹果的服务业务“更加广泛地发展并超越iOS生态系统”打开了一个机会。 “尽管 Apple TV+起步较慢，但我们认为投资者不应小看其长期前景，我们认为内容质量、数量和预算都将成为提升用户使用率的重要驱动力，”Chatterjee 表示。他预计，Apple TV+的付费用户在整个2020年将缓慢增长，到2025年将达到1亿。 今年1月，Apple TV+拥有约3400万用户，不过该公司没有定期更新这一数据。相比之下，奈飞将旗下串流媒体服务与 DVD 邮寄业务拆分约 6 年后，其订阅用户在 2017 年突破 1 亿，目前其全球订阅用户达约 1.67 亿。 摩根大通将苹果目标股价维持在365美元不变，基于22倍的市盈率和16.86美元的预期每股收益。 苹果股价美东时间周四（6月4日）收盘下跌0.86%或2.8美元，报322.32美元，市值为1.4万亿美元。 阅 244.02W 要闻 股市 查看更多 关联话题 美股动态 6.16W 人关注 TMT行业观察 2.47W 人关注 环球市场情报 15.88W 人关注 关于我们 | 网站声明 | 联系方式 | 用户反馈 | 网站地图 | 友情链接 | 举报电话：021-54679377转617 举报邮箱：editor@cls.cn 财联社 ©2018-2026 上海界面财联社科技股份有限公司 版权所有 沪ICP备14040942号-9 沪公网安备31010402006047号 互联网新闻信息服务许可证：31120170007 沪金信备 [2021] 2号 {\"props\":{\"pageProps\":{\"query\":{\"id\":\"510692\"},\"articleDetail\":{\"id\":510692,\"column\":{\"columnID\":-1,\"columnName\":\"文章\"},\"isFree\":true,\"title\":\"小摩：不要小看Apple TV+ 到2025",
+        "fetch_error": ""
+      },
+      {
+        "title": "苹果公布2025 年服务业务成绩单：多项数据刷新纪录 - IT之家",
+        "url": "https://www.ithome.com/0/912/642.htm",
+        "query": "Apple TV 国内用户 规模 2025",
+        "provider": "tavily",
+        "score": "0.6803909",
+        "fetched_text": "苹果公布 2025 年服务业务成绩单：多项数据刷新纪录，App Store 周活用户超 8.5 亿 - IT之家 (window.jQuery || document.write(\" \")); 首页 IT圈 最会买 设置 日夜间 随系统 浅色 深色 主题色 黑色 投稿 订阅 RSS订阅 收藏IT之家 软媒应用 App客户端 要知App 软媒魔方 nightModeHelper.init(); var nightMode = nightModeHelper.isNight(); var navColor = \"\"; if (document.cookie.indexOf(\"navColor=red\") >= 0) { document.body.className += \" red\"; navColor = \"red\"; } 业界 手机 电脑 测评 视频 AI 苹果 iPhone 鸿蒙 软件 智车 数码 学院 游戏 直播 5G 微软 Win10 Win11 专题 搜索 首页 > IT资讯 > 苹果 苹果公布 2025 年服务业务成绩单：多项数据刷新纪录，App Store 周活用户超 8.5 亿 2026/1/12 23:13:56 来源： IT之家 作者： 远洋 责编： 远洋 评论： IT之家 1 月 12 日消息，苹果今日发布 最新新闻稿 ，庆祝其服务部门在 2025 年取得的斐然成绩。苹果公司称，2025 年是“苹果服务业务的破纪录之年”，旗下 Apple Music、Apple TV 等多项服务均实现了里程碑式的突破。 新闻稿开篇援引了苹果服务部门高级副总裁埃迪・库伊的一份备忘录。库伊表示，Apple Music 的听众规模与新增订阅用户数双双创下历史新高；与此同时，Apple TV 在 2025 年 12 月的收视数据“打破以往所有纪录”，该月总观看时长较去年同期激增 36%。 以下为库伊的完整发言内容： 2025 年是苹果服务业务的破纪录之年，实现了显著的增长、全球化扩张与持续性创新的三重突破。从 Apple TV、Apple Music、Apple News 资讯平台，到 Apple Pay 支付服务、iCloud 云存储等日常必备工具，我们为全球用户打造了丰富多元的体验。回望 2025 年，我们始终致力于提升用户的日常生活品质，尤其在节假日期间，用户活跃度达到了空前高度。 过去一年，苹果服务业务成绩斐然。我们为用户推出了具有变革意义的功能，同时不断刷新各项数据纪录。这些亮眼数字，恰恰印证了消费者对我们的高度热忱 —— 无论是下载新奇有趣的应用与游戏、与亲友共赏热门剧集、聆听挚爱金曲，还是安心享受购物乐趣，苹果服务都渗透在生活的方方面面。仅苹果 App Store，全球周均活跃用户就突破 8.5 亿人次；自 2008 年平台上线以来，开发者通过该平台获得的总收入已超 5500 亿美元。 Apple Pay 同样成效显著：不仅为全球用户规避了超 10 亿美元的欺诈损失，还帮助全球商家实现超 1000 亿美元的增量销售额。在 11 至 12 月的假日购物高峰期，Apple Pay 的交易额增速远超整体消费支出的增长水平。此外，Apple TV 在 2025 年 12 月刷新了收视纪录，Apple Music 的听众与新增订阅量也双双登顶。 过去一年，Apple Podcasts、Apple Music、Apple News 等多项服务均迎来了里程碑式的周年纪念。这些成就的取得，离不开每一位艺术家、创作者、记者与故事讲述者的心血，正是他们，赋予了这些平台鲜活的生命力。同时，我们的服务版图持续向全球扩张，触达了前所未有的用户群体：目前 Apple Pay 已登陆全球 89 个市场；Find My 功能正式在韩国上线；Apple Fitness+ 健身服务也新增覆盖 28 个国家和地区。 服务业务的全新升级，为用户带来了更具个性化、趣味性与便捷性的体验。Apple Wallet 依托 Apple Intelligence 技术，帮助用户轻松追踪订单状态；苹果地图（Apple Maps）则借助设备端智能技术，让用户的“偏好路线”与“常去地点”一目了然。 Apple Music 推出的智能混音功能（AutoMix），能像专业 DJ 一样",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple 服務2025 年創佳績",
+        "url": "https://www.apple.com/hk/newsroom/2026/01/2025-marked-a-record-breaking-year-for-apple-services",
+        "query": "Apple TV 国内用户 规模 2025",
+        "provider": "tavily",
+        "score": "0.64128816",
+        "fetched_text": "Apple 服務 2025 年創佳績 - Apple (香港) Apple Store Mac iPad iPhone Watch Vision AirPods TV 與家居 娛樂 配件 支援服務 0 + {\"props\":{\"globalNavData\":{\"locale\":\"zh_HK\",\"ariaLabel\":\"全網站\",\"analyticsAttributes\":[{\"name\":\"data-analytics-activitymap-region-id\",\"value\":\"global nav\"},{\"name\":\"data-analytics-region\",\"value\":\"global nav\"}],\"links\":[{\"id\":\"a8c92520d7f5cdc15f280a04e0618933acfce488cc553fb4783a68be789e7694\",\"name\":\"apple\",\"text\":\"Apple\",\"url\":\"/hk/\",\"ariaLabel\":\"Apple\",\"submenuAriaLabel\":\"Apple 選單\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"},{\"name\":\"compact\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"apple home\"}]},{\"id\":\"54c0ba637f7907a0159f10121797711bfd870ee9dc9abd82c9fd41edd07fbf1e\",\"name\":\"store\",\"text\":\"Store\",\"url\":\"/hk-zh/shop/goto/store\",\"ariaLabel\":\"Store\",\"submenuAriaLabel\":\"Store 選單\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"store\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - store\"}]},{\"id\":\"588f1468921347b261954cb757deb7ffa4f2884facfb65a830b08922449df426\",\"name\":\"mac\",\"text\":\"Mac\",\"url\":\"/hk/mac/\",\"ariaLabel\":\"Mac\",\"submenuAriaLabel\":\"Mac 選單\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"mac\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - mac\"}]},{\"id\":\"5aa91574dda31d39c210568c81db163fbe45d1f4e539614b0cc83fa7e00fb7fb\",\"name\":\"ipad\",\"text\":\"iPad\",\"url\":\"/hk/ipad/\",\"ariaLabel\":\"iPad\",\"submenuAriaLabel\":\"iPad 選單\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"ipad\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - ipad\"}]},{\"id\":\"5c52d8dbf1aa1fcb5dc5377663e30c4815d2f38d2ad928813fce40d5df81324f\",",
+        "fetch_error": ""
+      },
+      {
+        "title": "DLNA投屏和镜像投屏两种不同的投屏方法的对比 - 知乎专栏",
+        "url": "https://zhuanlan.zhihu.com/p/19806757978",
+        "query": "tvOS DLNA 投屏 应用 对比",
+        "provider": "tavily",
+        "score": "0.6562404",
+        "fetched_text": "综上所述，DLNA投屏与镜像投屏在投屏协议、投屏效果、使用场景以及其他特点方面都存在显著差异。用户可以根据自己的需求和场景选择合适的投屏方式。",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      },
+      {
+        "title": "AirPlay、DLNA、Miracast无线投屏协议优缺点对比 - 新浪财经",
+        "url": "https://cj.sina.cn/articles/view/7857141524/1d452771401901t2fg?froms=ggmp&vt=4",
+        "query": "tvOS DLNA 投屏 应用 对比",
+        "provider": "tavily",
+        "score": "0.57952",
+        "fetched_text": "无线投屏-AirPlay、DLNA、Miracast无线投屏协议优缺点对比__财经头条__新浪财经 var author_uid = 7857141524; var article_id = \"1d452771401901t2fg\"; var baseUrl = \"//cj.sina.com.cn/k/api\"; var baseHost = \"cj.sina.com.cn\"; var pageUrl = \"http://cj.sina.cn/articles/view/7857141524/1d452771401901t2fg\"; //设定为提前一屏触发 window.onload = function() { SinaPage.config.triggerDistance = 500; } var SINA_TEXT_PAGE_INFO = { entry: 'account', channel: 'mp', newsid: '7857141524-1d452771401901t2fg', encoding: 'utf-8', // 是否隐藏评论入口 hideComment: false, // 是否隐藏评论列表(0,1) hideCommentList: 0, // 微博分享后面的@用户uid uid: '5902314049', // 文章docid，用来检测是否已收藏 docID: 'http://doc.sina.cn/?id=comos:fyqptqv7004083', //财经 pagepubtime: '2016-05-30', difDay: 180, ADIDs: [\"PublicRelation1\", \"PublicRelation2\", \"PublicRelation3\", \"PublicRelation4\", \"PublicRelation5\", \"PublicRelation6\", \"PublicRelation7\", \"PublicRelation8\", \"PublicRelation9\", \"PublicRelation10\", \"PublicRelation11\", \"PublicRelation12\", \"PublicRelation14\", \"PublicRelation16\"], // 底部微博推荐，如果没有，不填即可 weiboGroupID: 35 }; window.sina_survey_config = { surveyCss: true, //调查问答样式true, false, http （不使用默认样式配置false或者不传此参数） resultCss: true, //调查结果样式true, false, http （不使用默认样式配置false或者不传此参数） source: 'vote', //通过来源设置图片宽高 sina(手浪), vote(默认) } 注册 登录 新闻 头条号 新浪财经APP 宏观经济 A股 港股 美股 基金 理财 黄金 期货 能源 互联网金融 房地产 更多 外汇 管理 消费 科技 互联网 手机 保险 数码 科普 创业 银行 新三板 其他 无线投屏-AirPlay、DLNA、Miracast无线投屏协议优缺点对比 无线投屏-AirPlay、DLNA、Miracast无线投屏协议优缺点对比 2026年04月02日 14:48 看点资讯 语音播报 缩小字体 放大字体 微博 微信 分享 0 腾讯QQ QQ空间 无线投屏 技术除了投屏解决方案供应商的进一步研发之外，在最开始就有三种移动终端自带的 投屏协议 ，分别是AirPlay、Miracast和DLAN，不同品牌或操作系统的移动终端支持对应的投屏协议。不同的协议有不同的特点，下面来对比分析一下。 AirPlay 是苹果开发的一种无线技术，可以通过WiFi将iPhone 、iPad、iPodtouch 等iOS 设备上的包括图片、音频、视频通过无线的方式传输到支持AirPlay 设备。售价99美元的Apple TV就具备这样的功能，现在一些传统的家庭影院和网络播放器已经支持AirPlay功能。 AirPlay 支持镜像功能，可以将iPhone 或iPad 上的画面无线投屏到支持AirPlay协议的电视上，即",
+        "fetch_error": ""
+      },
+      {
+        "title": "UnPlay - iOS、macOS) Apple TV DLNA投屏接收器· GitHub",
+        "url": "https://github.com/suaptv/UnPlay",
+        "query": "tvOS DLNA 投屏 应用 对比",
+        "provider": "tavily",
+        "score": "0.49553296",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_collapse_cssom_rules\",\"code_view_shared_line_height\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_diff_explain_conversation_intent\",\"c",
+        "fetch_error": ""
+      },
+      {
+        "title": "你们的Infuse 能投屏到电视吗 - V2EX",
+        "url": "https://www.v2ex.com/t/967829",
+        "query": "Infuse Apple TV 投屏 功能",
+        "provider": "tavily",
+        "score": "0.7913865",
+        "fetched_text": "你们的 Infuse 能投屏到电视吗 - V2EX body { min-width: 820px; font-family: \"Helvetica Neue\", \"Luxi Sans\", \"Segoe UI\", \"Hiragino Sans GB\", \"Microsoft Yahei\", sans-serif, \"Apple Logo\"; } const SITE_NIGHT = 0; const LANG = 'enus'; const FEATURES = ['search', 'favorite-nodes-sort']; {\"comment\": [{\"text\": \"同问\", \"datePublished\": \"2023-08-24T01:18:36Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/hanliu\", \"@type\": \"Person\", \"name\": \"hanliu\"}}, {\"text\": \"你把 mac 直接接电视上呗\", \"datePublished\": \"2023-08-24T01:25:06Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/iovekkk\", \"@type\": \"Person\", \"name\": \"iovekkk\"}}, {\"text\": \"apple tv 可以投，Android tv 上装的投屏软件不能投\", \"datePublished\": \"2023-08-24T01:27:22Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/Navee\", \"@type\": \"Person\", \"name\": \"Navee\"}}, {\"text\": \"所以还是整个 apple TV ，直接投屏这个步骤都省了\", \"interactionStatistic\": {\"userInteractionCount\": 1, \"@type\": \"InteractionCounter\", \"interactionType\": \"https://schema.org/LikeAction\"}, \"datePublished\": \"2023-08-24T01:35:03Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/PanuiQ\", \"@type\": \"Person\", \"name\": \"PanuiQ\"}}, {\"text\": \"可以投，用的是索尼智能电视\", \"datePublished\": \"2023-08-24T03:02:14Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/beholder\", \"@type\": \"Person\", \"name\": \"beholder\"}}, {\"text\": \"我只能投过去音频，可能是版权的关系？\", \"datePublished\": \"2023-08-24T14:04:12Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/Sting\", \"@type\": \"Person\", \"name\": \"Sting\"}}, {\"text\": \"Apple TV ，随便投\", \"datePublished\": \"2023-08-24T21:59:59Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/seanzxx\", \"@type\": \"Person\", \"name\": \"seanzxx\"}}, {\"text\": \"试了下 iPhone 投 MacBook ，只要声音没有画面\", \"datePublished\": \"2023-08-24T2",
+        "fetch_error": ""
+      },
+      {
+        "title": "Infuse 8 一款优雅的视频播放器 | Firecore",
+        "url": "https://firecore.cn/infuse",
+        "query": "Infuse Apple TV 投屏 功能",
+        "provider": "tavily",
+        "score": "0.7373288",
+        "fetched_text": "{ \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"WebPage\", \"description\": \"适用于 iPhone、iPad、Apple TV 和 Mac 的视频播放器\" }, { \"name\": \"Firecore\", \"url\": \"https://firecore.cn/\", \"publisher\": { \"@type\": \"Organization\", \"name\": \"Firecore\", \"url\": \"https://firecore.cn/\", \"sameAs\": \"https://twitter.com/firecore\", \"logo\": { \"@type\": \"ImageObject\", \"representativeOfPage\": \"False\", \"url\": \"/images/fav/firecore.png\", \"width\": \"512\", \"height\": \"512\" } } } ] } Infuse 8 一款优雅的视频播放器 | Firecore ul.dropdown-menu {display: none;} var dxpr_themeNavBreakpoint = 830; var dxpr_themeWindowWidth = window.innerWidth; if (dxpr_themeWindowWidth > dxpr_themeNavBreakpoint) { document.body.className += ' body--dxpr-theme-nav-desktop'; } else { document.body.className += ' body--dxpr-theme-nav-mobile'; } Toggle menu 特点 支持 博客 联系方式 账户 Infuse 8 一款优雅的视频播放器 下载 Infuse App 免费，可选择购买高级功能 玩转一切 超越 iTunes，避免浪费时间对文件转码。Infuse 强大高效的播放引擎支持几乎所有视频文件，包括：MKV、MP4、AVI、ISO、DVD、BDMV 等。 随时随地进行流媒体传输 浏览和播放存储在 Mac、PC、NAS、Plex、Emby、Jellyfin 等媒体服务器，或 Dropbox、Google Drive、OneDrive、Box、阿里云盘等云服务中的视频。此外，来自多个来源的视频都可以整齐地显示在一个媒体库中。 自动整理 只需几秒钟，就能自动下载电影和电视节目的元数据和封面图片，并将所有内容归类整理。更妙的是，电影续集可以归类到不同的系列中，让查找可看内容变得轻而易举。 保持同步 使用 iCloud，可让元数据、媒体库设置和播放进度在所有设备间保持同步。在 iPhone 上播放视频，然后在 Apple TV 上轻松的继续播放。无需设置就可以快速的自动同步。 “界面非常漂亮，能够播放各种内容，强大得令人惊叹。” Lifehacker 强大的免费功能 高性能播放 通过高效的 h.264 和 h.265 硬件解码，4K（超高清）HDR 和 HDR10+ 视频播放如丝般顺滑。 便捷查找字幕 自带字幕，或从 OpenSubtitles 免费一键下载，在几秒钟内添加字幕。 无线传输 使用 AirDrop、iTunes、FTP 或普通的网络浏览器，即可快速传输视频。无需数据线。（仅限 iOS） 与 Trakt 同步 与 Trakt 连接，通过将播放历史和评级添加到你的账户，随时查看你观看过的内容。 跳过片头片尾 新功能 自动跳过电影和电视剧的片头片尾——由 IntroDB.app 和 TheIntroDB.org 提供支持。 自定义系列和播放列表 轻松创建电影、电视节目和家庭视频的系列和播放列表。随心所欲地随机播放和循环播放。 旅途中观看视频 无论您身在何处，都可以从 AirStash®、 SanDisk® Connect 和其他 Wi-Fi 旅行硬盘串流播放内容。 家庭影院和投影仪 多功能缩放、裁剪、宽高比和对齐选项可用于高端影院环境。 多语言支持 我们支持 40 多种国家或地区的语言，无论你说 “你好”、“hello”、",
+        "fetch_error": ""
+      },
+      {
+        "title": "‎Infuse App - App Store",
+        "url": "https://apps.apple.com/cn/app/infuse/id1136220934",
+        "query": "Infuse Apple TV 投屏 功能",
+        "provider": "tavily",
+        "score": "0.7197191",
+        "fetched_text": "‎Infuse App - App Store {\"@context\":\"https://schema.org\",\"@id\":\"https://apps.apple.com/#organization\",\"@type\":\"Organization\",\"name\":\"App Store\",\"url\":\"https://apps.apple.com\",\"logo\":\"https://apps.apple.com/assets/app-store.png\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q368215\",\"https://twitter.com/AppStore\",\"https://www.instagram.com/appstore/\",\"https://www.facebook.com/appstore/\"],\"parentOrganization\":{\"@type\":\"Organization\",\"name\":\"Apple\",\"@id\":\"https://www.apple.com/#organization\",\"url\":\"https://www.apple.com/\"}} {\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"Infuse\",\"description\":\"一口通吃您的视频文件 - Infuse将把您从永无宁日的视频转换中解放出来，用极美的方式在您的iPhone、iPad、Apple TV、Mac以及Vision上观赏几乎所有视频格式。Infuse已适配iOS 26 并添加更加强大的在线视频，trakt同步，AirPlay以及字幕功能。一切尽在随手掌控中。\\n\\n- 播放更多类型的视频。\\nInfuse 支持标准的 MP4、M4V 和 MOV – 再加上 MKV、AVI、WMV、MTS、ISO、VIDEO_TS、FLV、OGM、OGV、ASF、3GP、DVR-MS、WebM 和 WTV。包括对杜比®数码 Plus (AC3/E-AC3)、DTS® 和 DTS-HD® 音频的支持。\\n\\n- 从其他设备接收媒体流\\n浏览并播放储存在您Mac、PC、NAS、带有Wi-Fi功能的硬盘以及程序如Plex、Emby、Jellyfin和Kodi(XBMC)中的视频。Dropbox、Google Drive、Box、OneDrive、pCloud、Yandex.Disk、MEGA、阿里云盘、123 云盘、115 网盘和百度网盘也支持喔 —— 无需同步。\\n\\n- 强大的AirPlay 以及 Google Cast 支持。\\n串流播放多种视频格式例如：MKV、MP4、M4V、AVI 等等，经由 AirPlay 支持完整环绕音效与字幕。\\n\\n- TRAKT.TV 同步\\n同步 Infuse 到 trakt.tv 的拨放项目，上传评比及发表评论。\\n\\n- OPENSUBTITLES 支持的最佳化字幕\\n使用您自己的字幕或快速下载（免费）各种语言字幕。\\n\\n=====\\n\\n“iOS 平台上最智能、最强大的播放器！”\\n- Appdp.com\\n\\n“看起来很棒，可播放您丢进来的任何档案。”\\n- Lifehacker\\n\\n“iPhone 和 iPad 上最好的媒体播放器。”\\n- Cult of Mac\\n\\n“我已经无法给它的用户界面更高的评价了，实在是太棒了。”\\n- 9to5Mac\\n\\n“我真心找不到任何理由从我的屏幕上把 Infuse 移除。”\\n- iDownloadBlog\\n\\n“完全超越 VLC。”\\n- Alex Heath、Business Insider\\n\\n“精美的用户界面。”\\n- trakt.tv 联合创始人\\n\\n“小型的 KODI 媒体中心！”\\n- Infuse 用户\\n\\n=====\\n\\n不只是漂亮的脸蛋\\n\\n基础功能\\n- 最佳化播放引擎（播放全 4K）\\n- 经由 Mac、PC 或 NAS 串流播放\\n- 与 Plex、Emby、Jellyfin、Kodi (XBMC)、WMC以及其他UPnP/DLNA服务联通。\\n- 漂亮的介面并可快速存取视",
+        "fetch_error": ""
+      },
+      {
+        "title": "小红书官宣获得世界杯版权平台足球兴趣用户超1亿 - 搜狐",
+        "url": "https://m.sohu.com/a/1028725360_120988576?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334",
+        "query": "小红书 投屏 Apple TV 世界杯 2025",
+        "provider": "tavily",
+        "score": "0.62523276",
+        "fetched_text": "!function(a,b){function c(){var b=f.getBoundingClientRect().width;b/i>540&&(b=540*i);var c=b/10;f.style.fontSize=c+\"px\",k.rem=a.rem=c}var d,e=a.document,f=e.documentElement,g=e.querySelector('meta[name=\"viewport\"]'),h=e.querySelector('meta[name=\"flexible\"]'),i=0,j=0,k=b.flexible||(b.flexible={});if(g){var l=g.getAttribute(\"content\").match(/initial\\-scale=([\\d\\.]+)/);l&&(j=parseFloat(l[1]),i=parseInt(1/j))}else{if(h){var m=h.getAttribute(\"content\");if(m){var n=m.match(/initial\\-dpr=([\\d\\.]+)/),o=m.match(/maximum\\-dpr=([\\d\\.]+)/);n&&(i=parseFloat(n[1]),j=parseFloat((1/i).toFixed(2))),o&&(i=parseFloat(o[1]),j=parseFloat((1/i).toFixed(2)))}}}var isIos=a.navigator.appVersion.match(/iphone/gi);if(isIos){f.setAttribute(\"class\",\"ios\")}else{f.setAttribute(\"class\",\"android\")}if(!i&&!j){var p=(a.navigator.appVersion.match(/android/gi),a.navigator.appVersion.match(/iphone/gi)),q=a.devicePixelRatio;i=p?q>=3&&(!i||i>=3)?3:q>=2&&(!i||i>=2)?2:1:1,j=1/i}if(f.setAttribute(\"data-dpr\",i),!g){if(g=e.createElement(\"meta\"),g.setAttribute(\"name\",\"viewport\"),g.setAttribute(\"content\",\"initial-scale=\"+j+\", maximum-scale=\"+j+\", minimum-scale=\"+j+\", user-scalable=no\"),f.firstElementChild){f.firstElementChild.appendChild(g)}else{var r=e.createElement(\"div\");r.appendChild(g),e.write(r.innerHTML)}}a.addEventListener(\"resize\",function(){clearTimeout(d),d=setTimeout(c,300)},!1),a.addEventListener(\"pageshow\",function(a){a.persisted&&(clearTimeout(d),d=setTimeout(c,300))},!1),\"complete\"===e.readyState?e.body.style.fontSize=12*i+\"px\":e.addEventListener(\"DOMContentLoaded\",function(){e.body.style.fontSize=12*i+\"px\"},!1),c(),k.dpr=a.dpr=i,k.refreshRem=c,k.rem2px=function(a){var b=parseFloat(a)*this.rem;return\"string\"==typeof a&&a.match(/rem$/)&&(b+=\"px\"),b},k.px2rem=function(a){var b=parseFloat(a)/this.rem;re",
+        "fetch_error": ""
+      },
+      {
+        "title": "为世界杯2026 做准备 Apple Sports 开放给更多国家包括大马用户 ...",
+        "url": "https://www.instagram.com/p/DYjuXqtkyDY?img_index=4",
+        "query": "小红书 投屏 Apple TV 世界杯 2025",
+        "provider": "tavily",
+        "score": "0.61307496",
+        "fetched_text": ":root, .__ig-light-mode:root, .__ig-light-mode {--fds-black:#000000;--fds-black-alpha-05:rgba(0, 0, 0, 0.05);--fds-black-alpha-10:rgba(0, 0, 0, 0.1);--fds-black-alpha-15:rgba(0, 0, 0, 0.15);--fds-black-alpha-20:rgba(0, 0, 0, 0.2);--fds-black-alpha-30:rgba(0, 0, 0, 0.3);--fds-black-alpha-40:rgba(0, 0, 0, 0.4);--fds-black-alpha-50:rgba(0, 0, 0, 0.5);--fds-black-alpha-60:rgba(0, 0, 0, 0.6);--fds-black-alpha-80:rgba(0, 0, 0, 0.8);--fds-blue-05:#ECF3FF;--fds-blue-30:#AAC9FF;--fds-blue-40:#77A7FF;--fds-blue-60:#1877F2;--fds-blue-70:#2851A3;--fds-blue-80:#1D3C78;--fds-button-text:#444950;--fds-comment-background:#F2F3F5;--fds-dark-mode-gray-35:#CCCCCC;--fds-dark-mode-gray-50:#828282;--fds-dark-mode-gray-70:#4A4A4A;--fds-dark-mode-gray-80:#373737;--fds-dark-mode-gray-90:#282828;--fds-dark-mode-gray-100:#1C1C1C;--fds-gray-00:#F5F6F7;--fds-gray-05:#F2F3F5;--fds-gray-10:#EBEDF0;--fds-gray-20:#DADDE1;--fds-gray-25:#CCD0D5;--fds-gray-30:#BEC3C9;--fds-gray-45:#8D949E;--fds-gray-70:#606770;--fds-gray-80:#444950;--fds-gray-90:#303338;--fds-gray-100:#1C1E21;--fds-green-55:#00A400;--fds-green-60:#31A73B;--fds-green-65:#51CE70;--fds-highlight:#3578E5;--fds-highlight-cell-background:#ECF3FF;--fds-primary-icon:#1C1E21;--fds-primary-text:#1C1E21;--fds-red-55:#FA383E;--fds-soft:cubic-bezier(.08,.52,.52,1);--fds-spectrum-aluminum-tint-70:#E4F0F6;--fds-spectrum-blue-gray-tint-70:#CFD1D5;--fds-spectrum-cherry:#F35369;--fds-spectrum-cherry-tint-70:#FBCCD2;--fds-spectrum-grape-tint-70:#DDD5F0;--fds-spectrum-grape-tint-90:#F4F1FA;--fds-spectrum-lemon-dark-1:#F5C33B;--fds-spectrum-lemon-tint-70:#FEF2D1;--fds-spectrum-lime:#A3CE71;--fds-spectrum-lime-tint-70:#E4F0D5;--fds-spectrum-orange-tint-70:#FCDEC5;--fds-spectrum-orange-tint-90:#FEF4EC;--fds-spectrum-seafoam-tint-70:#CAEEF9;--fds-spectrum-slate-",
+        "fetch_error": ""
+      },
+      {
+        "title": "‏‫تطبيق 小红书 – 世界杯直播‬ - App Store",
+        "url": "https://apps.apple.com/us/app/%E5%B0%8F%E7%BA%A2%E4%B9%A6-%E4%B8%96%E7%95%8C%E6%9D%AF%E7%9B%B4%E6%92%AD/id741292507?l=ar",
+        "query": "小红书 投屏 Apple TV 世界杯 2025",
+        "provider": "tavily",
+        "score": "0.55623144",
+        "fetched_text": "‏‫تطبيق 小红书 – 世界杯直播‬ - App Store {\"@context\":\"https://schema.org\",\"@id\":\"https://apps.apple.com/#organization\",\"@type\":\"Organization\",\"name\":\"App Store\",\"url\":\"https://apps.apple.com\",\"logo\":\"https://apps.apple.com/assets/app-store.png\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q368215\",\"https://twitter.com/AppStore\",\"https://www.instagram.com/appstore/\",\"https://www.facebook.com/appstore/\"],\"parentOrganization\":{\"@type\":\"Organization\",\"name\":\"Apple\",\"@id\":\"https://www.apple.com/#organization\",\"url\":\"https://www.apple.com/\"}} {\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"小红书 – 世界杯直播\",\"description\":\"欢迎来到小红书，这里是你专属的生活兴趣社区！\\n\\n在这里，热爱闪闪发光，好奇找到回响，一起来开启属于你的兴趣宇宙吧！\\n\\n发现精彩： 世界那么大，兴趣那么多！无数和你一样充满好奇心的人，在这里分享着他们的热爱与探索，等你来挖掘属于你的那份心动。无论你是痴迷手作、沉醉音乐、钻研美食，还是向往远行、热衷穿搭、好奇科技……在这里，总有让你眼前一亮的兴趣宝藏。兴趣无边界，热爱无高低，都在这里自由流淌。\\n\\n遇见同好： 独乐乐，当然不如众乐乐！世界很大，但同好很近。在这里，你不是一个人在热爱。和兴趣相投的小红薯们，一起真诚交流、互相启发。一句评论，一次点赞，可能就会转角遇到灵魂拍档。在这里，每一份兴趣被听见，每一种热爱被温柔以待。即使我们都独一无二，也不会是一座孤岛。\\n\\n勇敢发光： 你的每一次尝试、每一点进步、每一份感动都值得被珍藏。小红书就是你记录兴趣生活的成长手账！大胆分享你的故事、心得、哪怕是小小的尝试。让我们勇敢发光吧！你的真实记录，不仅点亮了自己的热爱，更可能成为照亮另一个“兴趣同路人”的微光。\\n\\n热爱成真：兴趣不息，体验不止！在小红书，发现让你感兴趣的好物，一键种草，轻松下单拔草！看到超酷的线下活动，呼朋引伴，说走就走！这里不光是灵感的源头，更是你兴趣旅程的起点站——从线上汲取灵感，到线下亲身体验，再到回来分享你的精彩故事。让每一次心动都落地生根，让每一份热爱都玩出花样。\\n\\n带上好奇心，在小红书，开启属于你的兴趣之旅吧！\",\"image\":\"https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ac/ac/76/acac76ef-82f9-ea45-7602-3ef88e8d6f34/AppIcon-0-0-1x_U007epad-0-11-0-85-220.png/1200x630wa.png\",\"availableOnDevice\":\"iPhone, iPad, iPod\",\"operatingSystem\":\"‫يتطلب iOS 13.0 أو أحدث. ‫‏متوافق مع iPhone,‏ iPad و ‫iPod touch.‏\",\"offers\":{\"@type\":\"Offer\",\"price\":0,\"priceCurrency\":\"USD\",\"category\":\"free\"},\"applicationCategory\":\"التواصل الاجتماعي\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":4.9,\"reviewCount\":266123},\"author\":{\"@type\":\"Organization\",\"name\"",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260611-tvos-app-b-nas-iptv-apple-tv-9aabf3d3/",
+    "for_gpt_editor": {
+      "brief": "明天世界杯就开赛了。这一届小红书拿了转播权，所以家里有 Apple TV 的 V 友，估计也会有\"我想从小红书 App 把球赛投到大屏看\"的小需求。 我自己实测过几次，DLPlay 对小红书 App 的 DLNA 投屏是通的。所以赶在开赛前发个帖。 关于 DLPlay 这是一个 tvOS 应用，定位是\"补齐 Apple TV 在国内场景里缺的那一块\"。在 App Store 上的副标是 DLNA Player + Clock ，但实际功能已经长出去不少了。 主要能力分四块。 1. 国内主流平台 → 投到 Apple TV 走 DLNA 协议接收，目前 B 站、优酷、爱奇艺、腾讯、芒果、小红书都能投。 原画推送 ，不走 AirPlay 镜像 —— 也就是说不会被 iPhone 二次压缩、不会出现状态栏 / 通知遮挡画面 B 站投屏支持弹幕同屏渲染 ，弹幕密度可调 投屏过来直接全屏，不需要二次操作 2. NAS / 远程文件直连 WebDAV / Alist / SMB 都支持。 群晖 / 极空间 / Alist 的片库可以直接挂载，浏览体验接近 Apple 自家的 TV.app 外挂字幕自动匹配同名文件，中英多轨可切换 多源混合，一个首页统一管 3. IPTV 支持 M3U 源 + XMLTV 节目单 + Catchup 时移回看。 频道分组、收藏列表、多源管理 适合给家里老人房那台 Apple TV 当电视用 关于源：请自备合法授权的 IPTV 源，App 本身不附带任何源。 4. IdleScreen Apple TV 待机时本身就是黑屏，挺浪费这块大屏。DLPlay 提供两个闲置态： 相册轮播 ：可以接 NAS / iCloud 相册，缓缓飞过家里的照片 翻页时钟 ：极简黑底白字翻页风 这个功能我个人最满意，客厅没人看电视的时候它就是一面\"温柔的墙\"，比黑屏强太多。 关于\"明天的世界杯\" 主要是说：如果你 Apple TV 想从小红书 App 把球赛投到大屏，DLPlay 是个备选方案。 我用自己家的环境测了几次，从小红书选投屏 → 选择 DLPlay → 大屏出图",
+      "title_seed": "Apple TV投屏工具DLPlay：技术实现与独立开发账本",
+      "original_title": "写了个 tvOS App，把 B 站 / NAS / IPTV / 小红书投屏都塞进了 Apple TV",
+      "source_url": "https://www.v2ex.com/t/1219499",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：核心事实没有来源：DLPlay的定价、收入、用户规模等关键商业数据缺失，无法支撑工具账本分析。"
+        },
+        "core_question": "DLPlay 作为一款 tvOS 投屏工具，其技术实现、开发成本、定价策略和获客渠道是否构成一个可持续的独立开发项目？",
+        "why_this_topic_matters": "世界杯期间小红书投屏需求激增，Apple TV 用户有明确的投屏痛点，DLPlay 填补了国内平台 DLNA 投屏的空白，但商业可行性未知。",
+        "fact_summary": [
+          "DLPlay 是一款 tvOS 应用，支持 B 站、优酷、爱奇艺、腾讯、芒果、小红书等平台的 DLNA 投屏，不走 AirPlay 镜像。",
+          "支持 NAS（WebDAV/Alist/SMB）文件直连、IPTV（M3U+XMLTV）和待机时钟/相册轮播。",
+          "App Store 评分 3.9，共 7 个评分，用户反馈正面但数量极少。",
+          "小红书获得 2025 世界杯转播权，投屏需求可能短期上升。",
+          "竞品 Infuse 功能强大但价格高（订阅制），不支持国内平台 DLNA 投屏。"
+        ],
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "副业普通人",
+            "高价值商业读者"
+          ],
+          "interest_score": 65,
+          "why_interested": "核心技术人关注技术实现和 Apple TV 生态；副业普通人关注独立开发机会；商业读者关注市场空间。",
+          "reader_risk": "缺乏收入数据，可能误导读者高估商业潜力。"
+        },
+        "mass_interest_hook": {
+          "score": 70,
+          "hook_type": "踩坑",
+          "why_non_technical_people_may_click": "世界杯看球投屏是刚需，Apple TV 用户常被投屏问题困扰，标题可引发共鸣。",
+          "story_seed": "世界杯来了，小红书能看球，但 Apple TV 投屏却卡在 AirPlay 镜像？一个独立开发者用 DLNA 协议解决了这个痛点。",
+          "do_not_overhype": "不要夸大用户规模或收入，明确说明数据缺口。"
+        },
+        "timeline": [
+          "2024-01-14: 小众软件、搜狐等媒体报道 DLPlay。",
+          "2025-12-11: App Store 出现用户评分（共 7 条）。",
+          "2025-12: 小红书官宣获得世界杯转播权。",
+          "2026-01-12: 苹果公布 2025 年服务业务成绩单，Apple TV 收视创新高。"
+        ],
+        "evidence_table": [
+          {
+            "source": "V2EX 原帖",
+            "url": "https://www.v2ex.com/t/1219499",
+            "supports": "DLPlay 功能描述、世界杯投屏场景、开发者自述",
+            "reliability": "near_source"
+          },
+          {
+            "source": "App Store 页面",
+            "url": "https://apps.apple.com/cn/app/dlplay-dlna-%E6%8A%95%E5%B1%8F%E4%B8%8E%E6%97%B6%E9%92%9F/id6448221325",
+            "supports": "评分 3.9，7 个评分，用户评论正面",
+            "reliability": "official"
+          },
+          {
+            "source": "小众软件评测",
+            "url": "https://www.appinn.com/dlplay-for-apple-tv",
+            "supports": "功能详细介绍，确认 DLNA 投屏能力",
+            "reliability": "media"
+          },
+          {
+            "source": "搜狐转载",
+            "url": "https://www.sohu.com/a/751839522_121124379",
+            "supports": "功能复述，无新增信息",
+            "reliability": "weak"
+          },
+          {
+            "source": "小红书世界杯版权新闻",
+            "url": "https://m.sohu.com/a/1028725360_120988576",
+            "supports": "小红书获得世界杯转播权，投屏需求可能增加",
+            "reliability": "media"
+          },
+          {
+            "source": "Infuse 官网",
+            "url": "https://firecore.cn/infuse",
+            "supports": "竞品功能对比：Infuse 不支持国内平台 DLNA 投屏",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "部分闭环：技术实现和功能价值清晰，但商业模型（收入、用户规模、获客成本）缺失，无法判断可持续性。",
+        "writeable_angles": [
+          {
+            "angle": "工具账本：DLPlay 的技术实现与开发成本分析",
+            "why": "适合核心技术人，可拆解 DLNA 协议实现、tvOS 开发难点、功能模块成本。",
+            "needs": "需要开发者访谈或公开的开发成本数据。"
+          },
+          {
+            "angle": "独立开发案例复盘：DLPlay 的定价策略与获客渠道",
+            "why": "适合副业普通人，分析如何在小众市场获客、定价是否合理。",
+            "needs": "需要收入数据、下载量、用户获取成本。"
+          },
+          {
+            "angle": "风险避坑：Apple TV 投屏工具的商业化陷阱",
+            "why": "适合高价值商业读者，分析市场规模、竞品压力、平台风险。",
+            "needs": "需要 Apple TV 国内用户规模、竞品市场份额。"
+          }
+        ],
+        "missing_basics": [
+          "DLPlay 的定价（免费/付费/内购）",
+          "Apple TV 在国内的用户规模",
+          "DLNA 投屏协议在 Apple TV 上的兼容性细节"
+        ],
+        "missing_materials": [
+          "DLPlay 的 App Store 页面截图（含价格、内购、评分）",
+          "开发者访谈或公开的博客/推文",
+          "竞品功能对比表（Infuse、VLC、Plex 等）",
+          "Apple TV 国内用户规模报告或估算",
+          "小红书投屏功能的使用教程或用户反馈"
+        ],
+        "not_claimable": [
+          "DLPlay 有稳定的收入或用户增长",
+          "DLPlay 是唯一或最好的 Apple TV 投屏方案",
+          "世界杯投屏需求是可持续的商业模式",
+          "Apple TV 在国内有足够大的用户群"
+        ],
+        "followup_queries": [
+          "DLPlay 在 App Store 的定价是多少？是否有内购或订阅？",
+          "DLPlay 的下载量和评分趋势如何？",
+          "DLPlay 的开发者背景和开发周期？",
+          "Apple TV 在国内的市场份额和用户规模？",
+          "是否存在其他类似功能的竞品（如 UnPlay、AirReceiver）？"
+        ],
+        "additional_search_queries": [
+          "DLPlay App Store 价格 内购",
+          "DLPlay 下载量 评分 2025",
+          "Apple TV 中国 用户 数量 2025",
+          "tvOS DLNA 投屏 应用 对比",
+          "UnPlay Apple TV DLNA",
+          "独立开发者 tvOS 应用 收入 案例"
+        ],
+        "stop_conditions": [
+          "如果无法获取任何收入或用户数据，停止商业化分析，仅保留技术实现角度。",
+          "如果竞品已占据大部分市场，停止推荐作为独立开发机会。",
+          "如果小红书投屏功能在世界杯后无持续需求，停止长期价值分析。"
+        ],
+        "confidence": 55.0,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "tool-ledger",
+        "quality_gate": {
+          "pass": false,
+          "score": 55,
+          "fatal_issues": [
+            "核心事实没有来源：DLPlay的定价、收入、用户规模等关键商业数据缺失，无法支撑工具账本分析。"
+          ],
+          "warnings": [
+            "成本估算没有公式、单位或边界：缺乏开发成本、定价策略等量化分析。",
+            "没有明确主要服务哪层读者：读者分层模糊，核心技术人与副业普通人混为一谈。",
+            "泛兴趣钩子过度标题党：标题暗示世界杯投屏刚需，但正文证据不足，用户规模小。",
+            "没有明确选题结论：推荐或可选不清晰，仅给出可选但未解释。",
+            "没有解释为什么这个题值得选：缺乏对选题价值的充分论证。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：证据链不完整，逻辑部分闭环。",
+            "没有列出基础概念缺口和资料素材缺口：未明确缺失的定价、用户规模等关键信息。",
+            "没有按具体类型提供资料包：工具账本缺少收入、成本、获客等数据。"
+          ],
+          "missing_evidence": [
+            "DLPlay的定价（免费/付费/内购）",
+            "Apple TV在国内的用户规模",
+            "DLPlay的下载量和评分趋势",
+            "开发者背景和开发周期",
+            "竞品功能对比表（Infuse、UnPlay等）",
+            "小红书投屏功能的使用教程或用户反馈"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "DLPlay 作为一款 tvOS 投屏工具，其技术实现、开发成本、定价策略和获客渠道是否构成一个可持续的独立开发项目？",
+          "must_verify": [
+            "DLPlay 是否确实支持 B 站、优酷、爱奇艺、腾讯、芒果、小红书等平台的 DLNA 投屏，且不走 AirPlay 镜像？",
+            "DLPlay 的定价是多少？是否有内购或订阅？",
+            "DLPlay 在 App Store 的下载量和评分如何？",
+            "DLPlay 的开发者背景和开发周期？",
+            "Apple TV 在国内的市场份额和用户规模？",
+            "是否存在其他类似功能的竞品（如 Infuse、VLC、Plex 等）？",
+            "小红书投屏功能在世界杯期间的实际使用场景和用户需求？"
+          ],
+          "search_queries": [
+            "DLPlay tvOS App Store 价格 内购",
+            "DLPlay Apple TV 投屏 评测 2025",
+            "Apple TV 国内用户 规模 2025",
+            "tvOS DLNA 投屏 应用 对比",
+            "Infuse Apple TV 投屏 功能",
+            "小红书 投屏 Apple TV 世界杯 2025",
+            "独立开发者 tvOS 应用 收入 案例",
+            "DLPlay 开发者 背景"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "pricing_page",
+              "query": "DLPlay App Store 价格",
+              "why_needed": "确认定价策略和收入模型"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "DLPlay 功能说明 开发者",
+              "why_needed": "验证技术实现细节和功能范围"
+            },
+            {
+              "source_type": "case_study",
+              "query": "独立开发者 tvOS 应用 收入 2025",
+              "why_needed": "了解类似应用的商业可行性"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Apple TV 国内用户 规模 2025",
+              "why_needed": "评估目标市场规模"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "Infuse vs DLPlay 投屏 功能",
+              "why_needed": "竞品对比，判断差异化"
+            },
+            {
+              "source_type": "policy",
+              "query": "小红书 投屏 协议 DLNA 合规",
+              "why_needed": "确认投屏功能的合法性和稳定性"
+            }
+          ],
+          "expert_challenge_points": [
+            "DLNA 投屏在 Apple TV 上的兼容性和稳定性如何？是否所有平台都能稳定工作？",
+            "DLPlay 的定价是否合理？用户是否愿意为投屏功能付费？",
+            "Apple TV 在国内的用户基数是否足够支撑一个独立开发项目？",
+            "世界杯期间的小红书投屏需求是短期热点还是长期需求？",
+            "DLPlay 如何获取用户？获客成本是多少？"
+          ],
+          "do_not_claim_yet": [
+            "DLPlay 有稳定的收入或用户增长",
+            "DLPlay 是唯一或最好的 Apple TV 投屏方案",
+            "世界杯投屏需求是可持续的商业模式",
+            "Apple TV 在国内有足够大的用户群"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取收入数据和用户规模，但能确认技术实现和定价，可以发布为工具账本，重点分析开发成本和定价策略，但需注明数据缺口。",
+          "downstream_materials_needed": [
+            "DLPlay App Store 页面截图（含价格、内购、评分）",
+            "开发者访谈或公开的博客/推文",
+            "竞品功能对比表（Infuse、VLC、Plex 等）",
+            "Apple TV 国内用户规模报告或估算",
+            "小红书投屏功能的使用教程或用户反馈"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "关于App Store 苹果商店价格的那些事（历上最全版） - 腾讯云",
+            "url": "https://cloud.tencent.com/developer/article/2230981",
+            "query": "DLPlay tvOS App Store 价格 内购",
+            "provider": "tavily",
+            "score": "0.2619528",
+            "fetched_text": "关于 App Store 苹果商店价格的那些事（历上最全版）-腾讯云开发者社区-腾讯云 .rno-markdown p * { white-space: pre-wrap; word-break: break-all; } .tea-overlay { z-index: 99999!important; } .cdc-mcp-page2__main.is-fixed .cdc-mcp-page2__toolbar { top: 57px !important; } if (typeof Aegis !== 'undefined') { new Aegis({ id: 'dWlmyFvjDnalkbZO8q', env: 'production', onError: true, pagePerformance: true, reportAssetSpeed: true, api: { reportRequest: true, resHeaders: ['x-req-id'], }, reportApiSpeed: true, beforeRequest: function (data) { // load js failed if (data.logType === 'log') { if (data.logs.level === '32' && data.logs.msg.indexOf('google') > -1) return false; } var ignoreKeys = [ 'Script error', 'chrome-extension', 'qq.com', 'queryWeappQrcodeStatus', 'login/ajax/info', 'woa.com', 'trafficCollect.php', 'google', 'dscache', 'act-api', 'set_qc_cookie', 'opc.cloud.tencent.com', 'uc_gre_ad_buss', 'eb.xcj.pub', 'UCShellJava', '/developer/labs/quick/loader', 'edgeImmersiveReaderDOM', 'sendBeacon', 'error-decoder.html', 'qcloud-community-track.min.js' ]; var alarmMsg = [data.logs.url, data.logs.msg].join('|'); for (var i = 0; i 37手游iOS技术运营团队 关于 App Store 苹果商店价格的那些事（历上最全版） 原创 关注作者 腾讯云 开发者社区 文档 建议反馈 控制台 登录/注册 首页 学习 活动 专区 圈层 工具 MCP广场 文章/答案/技术大牛 搜索 搜索 关闭 发布 37手游iOS技术运营团队 社区首页 > 专栏 > 关于 App Store 苹果商店价格的那些事（历上最全版） 关于 App Store 苹果商店价格的那些事（历上最全版） 原创 37手游iOS技术运营团队 关注 修改 于 2023-04-21 19:16:54 修改 于 2023-04-21 19:16:54 8.2K 0 举报 文章被收录于专栏： 37手游iOS技术运营团队 37手游iOS技术运营团队 作者：iHTCboy 一、前言 苹果 2022 年 12 月 6 日宣布 App Store 定价机制最重大升级，新增 700 个价格点 。小编当时的总结和分析： App Store 新价格 ： 最低可设 $0.29 美元！ 最高可设 $10,000 美元！（人民币 RMB 74,999 元） 新增 700 个价格点 全新定价工具（机制） 1.1 定价机制升级总结 新增 700 个价格点，其中 600 个价格点开发者可直接用，另外 100 个高价价格点需要申请。 新价格点从 美元 $0.29 起，最高可根据申请升至 $10,000。（人民币 RMB 1 ~ RMB 74,999） 新增约定的价格规则：以整数结尾的价格（如 X.00 或 X.90）。 全新定价机制: 自动定价 ：自动随外币汇率和税率的变化而更新 本地",
+            "fetch_error": ""
+          },
+          {
+            "title": "发现全球App Store 最低价 - App Store Price",
+            "url": "https://appstoreprice.org/zh",
+            "query": "DLPlay tvOS App Store 价格 内购",
+            "provider": "tavily",
+            "score": "0.1721304",
+            "fetched_text": "首页 订阅 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://appstoreprice.org/#organization\",\"name\":\"App Store Price\",\"url\":\"https://appstoreprice.org\",\"logo\":\"https://appstoreprice.org/appstoreprice.png\",\"sameAs\":[\"https://t.me/appstoreprice\",\"https://x.com/qingnianxiaozhe\"]},{\"@type\":\"WebSite\",\"@id\":\"https://appstoreprice.org/#website\",\"url\":\"https://appstoreprice.org\",\"name\":\"App Store Price\",\"publisher\":{\"@id\":\"https://appstoreprice.org/#organization\"}}]} 加入群组 关注我们 iOS App NEW App Store 全球最低价 实时抓取并对比全球各大区 App Store 的应用价格 帮您找到购买数字产品的最佳时机 查看所有应用 查看所有应用 礼品卡商城 礼品卡商城 NEW 🇺🇸 US Store $24.99 BEST 🇹🇷 Turkey Store ₺169.00 节省 78% 🇯🇵 JP Store ¥2,900 法律 隐私政策 服务条款 工具 应用列表 在线商城 切换语言 博客 开通指引 使用经验 注意事项 联系 联系我们 Telegram Twitter / X 关于 关于我们 服务状态 更新日志 © 2026 App Store Price. 保留所有权利 requestAnimationFrame(function(){$RT=performance.now()}); $RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b a&&2E3 App Store Price - 发现全球 App Store 最低价 document.querySelectorAll('body link[rel=\"icon\"], body link[rel=\"apple-touch-icon\"]').forEach(el => document.head.appendChild(el)) $RC(\"B:0\",\"S:0\") (self.__next_f=self.__next_f||[]).push([0]) self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n2:I[367,[],\\\"\\\"]\\n3:I[26291,[],\\\"\\\"]\\n5:I[70994,[\\\"9966\\\",\\\"static/chunks/95c09b69-6bac77df8a5dd44d.js\\\",\\\"3542\\\",\\\"static/chunks/3542-5e9b03cdd83d068c.js\\\",\\\"6145\\\",\\\"static/chunks/6145-e16ef77eb1d2976d.js\\\",\\\"2789\\\",\\\"static/chunks/2789-f354fcfa5b1bad22.js\\\",\\\"6212\\\",\\\"static/chunks/6212-c37d07008c8e7ba2.js\\\",\\\"6909\\\",\\\"static/chunks/6909-a5ef63b663f46768.js\\\",\\\"6363\\\",\\\"static/chunks/6363-30d09803dfb9e54a.js\\\",\\\"2384\\\",\\\"static/chunks/2384-627280a3eb63b269.js\\\",\\\"1969\\\",\\\"static/chunks/app/%5Blocale%5D/(main)/layout-c826bad22db04c94.js\\\"],\\\"Header\\\"]\\n6:I[20664,[\\\"3542\\\",\\\"static/chun",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple 宣布 App Store 定价机制最重大升级，新增 700 个价格点 - Apple (中国大陆)",
+            "url": "https://www.apple.com.cn/newsroom/2022/12/apple-announces-biggest-upgrade-to-app-store-pricing-adding-700-new-price-points",
+            "query": "DLPlay tvOS App Store 价格 内购",
+            "provider": "tavily",
+            "score": "0.17179666",
+            "fetched_text": "{ \"@context\": \"https://ziyuan.baidu.com/contexts/cambrian.jsonld\", \"@id\": \"https://www.apple.com.cn/newsroom/2022/12/apple-announces-biggest-upgrade-to-app-store-pricing-adding-700-new-price-points/\", \"appid\": \"1648269209122770\", \"title\": \" Apple 宣布 App Store\", \"images\":[\"https://www.apple.com.cn/newsroom/images/product/app-store/Apple-App-Store-pricing-flexibility-hero.jpg.og.jpg\"], \"pubDate\": \"2022-12-06T18:02:52Z\", \"upDate\":\"2022-12-06T18:02:52Z\" } Apple 宣布 App Store 定价机制最重大升级，新增 700 个价格点 - Apple (中国大陆) Apple 商店 Mac iPad iPhone Watch Vision AirPods 家居 娱乐 配件 技术支持 0 + {\"props\":{\"globalNavData\":{\"locale\":\"zh_CN\",\"ariaLabel\":\"全部网页\",\"analyticsAttributes\":[{\"name\":\"data-analytics-activitymap-region-id\",\"value\":\"global nav\"},{\"name\":\"data-analytics-region\",\"value\":\"global nav\"}],\"links\":[{\"id\":\"2758e8127e4ab787ae4e849277f79b83b3522719ae4b96a595421e50ea2d03f7\",\"name\":\"apple\",\"text\":\"Apple\",\"url\":\"/\",\"ariaLabel\":\"Apple\",\"submenuAriaLabel\":\"Apple 目录\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"},{\"name\":\"compact\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"apple home\"}]},{\"id\":\"75b9dea386fab56ffd38d8479802cbd97bdfeb93b86ccd649fd8acce1676dc0e\",\"name\":\"store\",\"text\":\"商店\",\"url\":\"/cn/shop/goto/store\",\"ariaLabel\":\"商店\",\"submenuAriaLabel\":\"商店目录\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"store\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - store\"}]},{\"id\":\"9a82f08a3cc17e59a61372a40e7ecb17783e9c10aef163465f29bb5b00d4725a\",\"name\":\"mac\",\"text\":\"Mac\",\"url\":\"/mac/\",\"ariaLabel\":\"Mac\",\"submenuAriaLabel\":\"Mac 目录\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"mac\"},{\"name\":\"data-analytics-element-engagement",
+            "fetch_error": ""
+          },
+          {
+            "title": "DLPlay: DLNA 投屏与时钟- 评分及评论 - App Store",
+            "url": "https://apps.apple.com/cn/app/dlplay-dlna-%E6%8A%95%E5%B1%8F%E4%B8%8E%E6%97%B6%E9%92%9F/id6448221325?see-all=reviews&platform=iphone",
+            "query": "DLPlay Apple TV 投屏 评测 2025",
+            "provider": "tavily",
+            "score": "0.86331123",
+            "fetched_text": "‎DLPlay: DLNA 投屏与时钟 - 评分及评论 - App Store {\"@context\":\"https://schema.org\",\"@id\":\"https://apps.apple.com/#organization\",\"@type\":\"Organization\",\"name\":\"App Store\",\"url\":\"https://apps.apple.com\",\"logo\":\"https://apps.apple.com/assets/app-store.png\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q368215\",\"https://twitter.com/AppStore\",\"https://www.instagram.com/appstore/\",\"https://www.facebook.com/appstore/\"],\"parentOrganization\":{\"@type\":\"Organization\",\"name\":\"Apple\",\"@id\":\"https://www.apple.com/#organization\",\"url\":\"https://www.apple.com/\"}} import.meta.url;import(\"_\").catch(()=>1);async function* g(){};window.__vite_is_modern_browser=true; !function(){if(window.__vite_is_modern_browser)return;console.warn(\"vite: loading legacy chunks, syntax error above and the same error below should be ignored\");var e=document.getElementById(\"vite-legacy-polyfill\"),n=document.createElement(\"script\");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}(); iPhone 专区 iPhone iPad Mac Vision Watch 搜索 Today 游戏 App 平台 iPhone iPad Mac Vision Watch DLPlay: DLNA 投屏与时钟 评分及评论 3.9 满分 5 分 7 个评分 很棒的一款dlna投屏软件 2025/12/11 我没得姓名 很多其他dlna投屏软件无法播放的链接都可以使用。如果在未来的更新中，可以针对ipad进行播放器优化和添加复制链接的功能对我来说就真无敌了 很棒的一款dlna投屏软件 2025/12/11 我没得姓名 很多其他dlna投屏软件无法播放的链接都可以使用。如果在未来的更新中，可以针对ipad进行播放器优化和添加复制链接的功能对我来说就真无敌了 DLNA投屏，好用 2024/10/04 b168368 DLNA投屏，好用 DLNA投屏，好用 2024/10/04 b168368 DLNA投屏，好用 能把 快进 暂停 慢放 的按键弄到下面吗 2月9日 古古怪怪古古怪怪刚 请速速更新 能把 快进 暂停 慢放 的按键弄到下面吗 2月9日 古古怪怪古古怪怪刚 请速速更新 选择国家或地区 非洲、中东和印度 查看全部 Algeria Angola Armenia Azerbaijan Bahrain Benin Botswana Burkina Faso Cameroun Cape Verde Chad Côte d’Ivoire Congo, The Democratic Republic Of The Egypt Eswatini Gabon Gambia Ghana Guinea-Bissau India Iraq Israel Jordan Kenya Kuwait Lebanon Libe",
+            "fetch_error": ""
+          },
+          {
+            "title": "从iOS、Android、Windows 向Apple TV 投屏，实现国产视频 ...",
+            "url": "https://www.appinn.com/dlplay-for-apple-tv",
+            "query": "DLPlay Apple TV 投屏 评测 2025",
+            "provider": "tavily",
+            "score": "0.5324014",
+            "fetched_text": "if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf(\"?\")==-1){if(href.indexOf(\"#\")==-1){document.location.href=href+\"?nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"?nowprocket=1#\")}}else{if(href.indexOf(\"#\")==-1){document.location.href=href+\"&nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"&nowprocket=1#\")}}}} (()=>{class RocketLazyLoadScripts{constructor(){this.v=\"2.0.5\",this.userEvents=[\"keydown\",\"keyup\",\"mousedown\",\"mouseup\",\"mousemove\",\"mouseover\",\"mouseout\",\"touchmove\",\"touchstart\",\"touchend\",\"touchcancel\",\"wheel\",\"click\",\"dblclick\",\"input\"],this.attributeEvents=[\"onblur\",\"onclick\",\"oncontextmenu\",\"ondblclick\",\"onfocus\",\"onmousedown\",\"onmouseenter\",\"onmouseleave\",\"onmousemove\",\"onmouseout\",\"onmouseover\",\"onmouseup\",\"onmousewheel\",\"onscroll\",\"onsubmit\"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event(\"rocket-allScriptsLoaded\")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem(\"rocketCSPIssue\"),document.addEventListener(\"securitypolicyviolation\",t=>{this.CSPIssue||\"script-src-elem\"!==t.violatedDirective||\"data\"!==t.blockedURI||(this.CSPIssue=!0,session",
+            "fetch_error": ""
+          },
+          {
+            "title": "从iOS、Android、Windows 向Apple TV 投屏：DLPlay 投屏",
+            "url": "https://www.sohu.com/a/751839522_121124379",
+            "query": "DLPlay Apple TV 投屏 评测 2025",
+            "provider": "tavily",
+            "score": "0.49465415",
+            "fetched_text": "从 iOS、Android、Windows 向 Apple TV 投屏：DLPlay 投屏_视频_软件_国产 window._taboola = window._taboola || []; _taboola.push({article:'auto'}); !function (e, f, u, i) { if (!document.getElementById(i)){ e.async = 1; e.src = u; e.id = i; f.parentNode.insertBefore(e, f); } }(document.createElement('script'), document.getElementsByTagName('script')[0], '//cdn.taboola.com/libtrc/sohuchina-sohucom/loader.js', 'tb_loader_script'); if(window.performance && typeof window.performance.mark == 'function') {window.performance.mark('tbl_ic');} window.deployEnv = \"prod\" { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"BreadcrumbList\", \"itemListElement\": [ { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"首页\", \"item\": \"https://www.sohu.com\" }, { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"文章页\", \"item\": \"https://www.sohu.com/a/751839522_121124379\" }, { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"未来数字城市探索者\", \"item\": \"https://mp.sohu.com/profile?xpt=NDA2YTlhMzYtZmQ5MS00NmUxLWIxZDEtOTE2NzljZGY1NGE1\" } ] }, { \"@type\": \"NewsArticle\", \"headline\": \"从 iOS、Android、Windows 向 Apple TV 投屏：DLPlay 投屏\", \"description\": \"在《小众软件》看到了这篇文章：DLPlay投屏–从iOS、Android、Windows向AppleTV投屏，实现国产视频软件DLNA投屏能让Android、Windows用户和AppleTV更好联动能在Ap…\", \"datePublished\": \"2024-01-14T22:11:38+0800\", \"url\": \"https://www.sohu.com/a/751839522_121124379\", \"thumbnailUrl\": \"\", \"image\": [ { \"@type\": \"ImageObject\", \"url\": \"\", \"width\": 800, \"height\": 450 } ], \"publisher\": { \"@type\": \"NewsMediaOrganization\", \"name\": \"搜狐网\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://statics.itc.cn/web/static/images/pic/sohu-logo/favicon.ico\", \"width\": 32, \"height\": 32 } }, \"author\": { \"@type\": \"Person\", \"name\": \"未来数字城市探索者\", \"url\": \"https://mp.sohu.com/profile?xpt=NDA2YTlhMzYtZmQ5MS00NmUxLWIxZDEtOTE2NzljZGY1NGE1\" }, \"mainEntityOfPage\": { \"@type\": \"WebPage\",",
+            "fetch_error": ""
+          },
+          {
+            "title": "小摩：不要小看Apple TV+ 到2025年订户将突破1亿 - 财联社",
+            "url": "https://www.cls.cn/detail/510692",
+            "query": "Apple TV 国内用户 规模 2025",
+            "provider": "tavily",
+            "score": "0.85421735",
+            "fetched_text": "小摩：不要小看Apple TV+ 到2025年订户将突破1亿 很抱歉，当前没有启用javascript，网站无法正常访问。请开启以便继续访问。 关于我们 网站声明 联系方式 用户反馈 网站地图 帮助 首页 电报 话题 盯盘 VIP FM 投研 下载 小摩：不要小看Apple TV+ 到2025年订户将突破1亿 原创 美股动态 2020-06-05 11:07 星期五 财联社 卞纯 责编 林琦 尽管2019年推出的Apple TV +尚未得到蓬勃发展，但是华尔街投行摩根大通告诉投资者，不要小看这项服务，预计它的用户数将在五年内突破1亿。 财联社 （上海，编辑卞纯）讯 ，尽管2019年推出的Apple TV +尚未得到蓬勃发展，但是华尔街投行摩根大通（JP Morgan）告诉投资者，不要小看这项服务，预计它的用户将在五年内突破1亿。 小摩首席分析师Samik Chatterjee认为，到2025财年，Apple TV+的付费用户可能会达到1亿。尽管价格高昂的苹果流媒体服务的内容和应用“基本上平平无奇”。 Chatterjee预测，目前大多数订户都在利用免费促销活动，而且合格用户对促销活动的激活率很低。 为了抢攻串流服务市场，苹果在去年推出 Apple TV+ 后，同时祭出购买苹果新设备即赠送一年免费订阅的促销活动。不过该计划成效甚微。数据显示，在所有符合资格的苹果设备及装置中，仅有 5-15% 的用户启动免费服务。 人们对Apple TV+反应冷淡的部分原因可能是其节目种类太少，对于这一点苹果正在积极改进。Apple TV+推出时有8个原创节目，但现在已经增加至28个。但尽管如此，内容仍比其竞争对手少得多——即便是像Disney+等这样的新平台。 除了内容的数量，Chatterjee认为质量也很重要。眼下，Apple TV+正通过争夺杰出人才来使内容脱颖而出。这位分析师补充称，提高内容的质量和数量将增加将促销活动用户转化为付费用户的可能性。 除了快速增加新内容外，苹果在投资方面似乎也超越了竞争对手。此前的报告显示，苹果将拨款10亿美元用于内容开发，但现在这个数字可能高达60亿美元。其中一些投资或可能被用来通过播客吸引Apple TV+订户。 这位分析师还概述了Apple TV+正在快速发展的一些迹象。比如说，Apple TV+可以为苹果的服务业务“更加广泛地发展并超越iOS生态系统”打开了一个机会。 “尽管 Apple TV+起步较慢，但我们认为投资者不应小看其长期前景，我们认为内容质量、数量和预算都将成为提升用户使用率的重要驱动力，”Chatterjee 表示。他预计，Apple TV+的付费用户在整个2020年将缓慢增长，到2025年将达到1亿。 今年1月，Apple TV+拥有约3400万用户，不过该公司没有定期更新这一数据。相比之下，奈飞将旗下串流媒体服务与 DVD 邮寄业务拆分约 6 年后，其订阅用户在 2017 年突破 1 亿，目前其全球订阅用户达约 1.67 亿。 摩根大通将苹果目标股价维持在365美元不变，基于22倍的市盈率和16.86美元的预期每股收益。 苹果股价美东时间周四（6月4日）收盘下跌0.86%或2.8美元，报322.32美元，市值为1.4万亿美元。 阅 244.02W 要闻 股市 查看更多 关联话题 美股动态 6.16W 人关注 TMT行业观察 2.47W 人关注 环球市场情报 15.88W 人关注 关于我们 | 网站声明 | 联系方式 | 用户反馈 | 网站地图 | 友情链接 | 举报电话：021-54679377转617 举报邮箱：editor@cls.cn 财联社 ©2018-2026 上海界面财联社科技股份有限公司 版权所有 沪ICP备14040942号-9 沪公网安备31010402006047号 互联网新闻信息服务许可证：31120170007 沪金信备 [2021] 2号 {\"props\":{\"pageProps\":{\"query\":{\"id\":\"510692\"},\"articleDetail\":{\"id\":510692,\"column\":{\"columnID\":-1,\"columnName\":\"文章\"},\"isFree\":true,\"title\":\"小摩：不要小看Apple TV+ 到2025",
+            "fetch_error": ""
+          },
+          {
+            "title": "苹果公布2025 年服务业务成绩单：多项数据刷新纪录 - IT之家",
+            "url": "https://www.ithome.com/0/912/642.htm",
+            "query": "Apple TV 国内用户 规模 2025",
+            "provider": "tavily",
+            "score": "0.6803909",
+            "fetched_text": "苹果公布 2025 年服务业务成绩单：多项数据刷新纪录，App Store 周活用户超 8.5 亿 - IT之家 (window.jQuery || document.write(\" \")); 首页 IT圈 最会买 设置 日夜间 随系统 浅色 深色 主题色 黑色 投稿 订阅 RSS订阅 收藏IT之家 软媒应用 App客户端 要知App 软媒魔方 nightModeHelper.init(); var nightMode = nightModeHelper.isNight(); var navColor = \"\"; if (document.cookie.indexOf(\"navColor=red\") >= 0) { document.body.className += \" red\"; navColor = \"red\"; } 业界 手机 电脑 测评 视频 AI 苹果 iPhone 鸿蒙 软件 智车 数码 学院 游戏 直播 5G 微软 Win10 Win11 专题 搜索 首页 > IT资讯 > 苹果 苹果公布 2025 年服务业务成绩单：多项数据刷新纪录，App Store 周活用户超 8.5 亿 2026/1/12 23:13:56 来源： IT之家 作者： 远洋 责编： 远洋 评论： IT之家 1 月 12 日消息，苹果今日发布 最新新闻稿 ，庆祝其服务部门在 2025 年取得的斐然成绩。苹果公司称，2025 年是“苹果服务业务的破纪录之年”，旗下 Apple Music、Apple TV 等多项服务均实现了里程碑式的突破。 新闻稿开篇援引了苹果服务部门高级副总裁埃迪・库伊的一份备忘录。库伊表示，Apple Music 的听众规模与新增订阅用户数双双创下历史新高；与此同时，Apple TV 在 2025 年 12 月的收视数据“打破以往所有纪录”，该月总观看时长较去年同期激增 36%。 以下为库伊的完整发言内容： 2025 年是苹果服务业务的破纪录之年，实现了显著的增长、全球化扩张与持续性创新的三重突破。从 Apple TV、Apple Music、Apple News 资讯平台，到 Apple Pay 支付服务、iCloud 云存储等日常必备工具，我们为全球用户打造了丰富多元的体验。回望 2025 年，我们始终致力于提升用户的日常生活品质，尤其在节假日期间，用户活跃度达到了空前高度。 过去一年，苹果服务业务成绩斐然。我们为用户推出了具有变革意义的功能，同时不断刷新各项数据纪录。这些亮眼数字，恰恰印证了消费者对我们的高度热忱 —— 无论是下载新奇有趣的应用与游戏、与亲友共赏热门剧集、聆听挚爱金曲，还是安心享受购物乐趣，苹果服务都渗透在生活的方方面面。仅苹果 App Store，全球周均活跃用户就突破 8.5 亿人次；自 2008 年平台上线以来，开发者通过该平台获得的总收入已超 5500 亿美元。 Apple Pay 同样成效显著：不仅为全球用户规避了超 10 亿美元的欺诈损失，还帮助全球商家实现超 1000 亿美元的增量销售额。在 11 至 12 月的假日购物高峰期，Apple Pay 的交易额增速远超整体消费支出的增长水平。此外，Apple TV 在 2025 年 12 月刷新了收视纪录，Apple Music 的听众与新增订阅量也双双登顶。 过去一年，Apple Podcasts、Apple Music、Apple News 等多项服务均迎来了里程碑式的周年纪念。这些成就的取得，离不开每一位艺术家、创作者、记者与故事讲述者的心血，正是他们，赋予了这些平台鲜活的生命力。同时，我们的服务版图持续向全球扩张，触达了前所未有的用户群体：目前 Apple Pay 已登陆全球 89 个市场；Find My 功能正式在韩国上线；Apple Fitness+ 健身服务也新增覆盖 28 个国家和地区。 服务业务的全新升级，为用户带来了更具个性化、趣味性与便捷性的体验。Apple Wallet 依托 Apple Intelligence 技术，帮助用户轻松追踪订单状态；苹果地图（Apple Maps）则借助设备端智能技术，让用户的“偏好路线”与“常去地点”一目了然。 Apple Music 推出的智能混音功能（AutoMix），能像专业 DJ 一样",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple 服務2025 年創佳績",
+            "url": "https://www.apple.com/hk/newsroom/2026/01/2025-marked-a-record-breaking-year-for-apple-services",
+            "query": "Apple TV 国内用户 规模 2025",
+            "provider": "tavily",
+            "score": "0.64128816",
+            "fetched_text": "Apple 服務 2025 年創佳績 - Apple (香港) Apple Store Mac iPad iPhone Watch Vision AirPods TV 與家居 娛樂 配件 支援服務 0 + {\"props\":{\"globalNavData\":{\"locale\":\"zh_HK\",\"ariaLabel\":\"全網站\",\"analyticsAttributes\":[{\"name\":\"data-analytics-activitymap-region-id\",\"value\":\"global nav\"},{\"name\":\"data-analytics-region\",\"value\":\"global nav\"}],\"links\":[{\"id\":\"a8c92520d7f5cdc15f280a04e0618933acfce488cc553fb4783a68be789e7694\",\"name\":\"apple\",\"text\":\"Apple\",\"url\":\"/hk/\",\"ariaLabel\":\"Apple\",\"submenuAriaLabel\":\"Apple 選單\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"},{\"name\":\"compact\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"apple home\"}]},{\"id\":\"54c0ba637f7907a0159f10121797711bfd870ee9dc9abd82c9fd41edd07fbf1e\",\"name\":\"store\",\"text\":\"Store\",\"url\":\"/hk-zh/shop/goto/store\",\"ariaLabel\":\"Store\",\"submenuAriaLabel\":\"Store 選單\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"store\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - store\"}]},{\"id\":\"588f1468921347b261954cb757deb7ffa4f2884facfb65a830b08922449df426\",\"name\":\"mac\",\"text\":\"Mac\",\"url\":\"/hk/mac/\",\"ariaLabel\":\"Mac\",\"submenuAriaLabel\":\"Mac 選單\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"mac\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - mac\"}]},{\"id\":\"5aa91574dda31d39c210568c81db163fbe45d1f4e539614b0cc83fa7e00fb7fb\",\"name\":\"ipad\",\"text\":\"iPad\",\"url\":\"/hk/ipad/\",\"ariaLabel\":\"iPad\",\"submenuAriaLabel\":\"iPad 選單\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"ipad\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - ipad\"}]},{\"id\":\"5c52d8dbf1aa1fcb5dc5377663e30c4815d2f38d2ad928813fce40d5df81324f\",",
+            "fetch_error": ""
+          },
+          {
+            "title": "DLNA投屏和镜像投屏两种不同的投屏方法的对比 - 知乎专栏",
+            "url": "https://zhuanlan.zhihu.com/p/19806757978",
+            "query": "tvOS DLNA 投屏 应用 对比",
+            "provider": "tavily",
+            "score": "0.6562404",
+            "fetched_text": "综上所述，DLNA投屏与镜像投屏在投屏协议、投屏效果、使用场景以及其他特点方面都存在显著差异。用户可以根据自己的需求和场景选择合适的投屏方式。",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          },
+          {
+            "title": "AirPlay、DLNA、Miracast无线投屏协议优缺点对比 - 新浪财经",
+            "url": "https://cj.sina.cn/articles/view/7857141524/1d452771401901t2fg?froms=ggmp&vt=4",
+            "query": "tvOS DLNA 投屏 应用 对比",
+            "provider": "tavily",
+            "score": "0.57952",
+            "fetched_text": "无线投屏-AirPlay、DLNA、Miracast无线投屏协议优缺点对比__财经头条__新浪财经 var author_uid = 7857141524; var article_id = \"1d452771401901t2fg\"; var baseUrl = \"//cj.sina.com.cn/k/api\"; var baseHost = \"cj.sina.com.cn\"; var pageUrl = \"http://cj.sina.cn/articles/view/7857141524/1d452771401901t2fg\"; //设定为提前一屏触发 window.onload = function() { SinaPage.config.triggerDistance = 500; } var SINA_TEXT_PAGE_INFO = { entry: 'account', channel: 'mp', newsid: '7857141524-1d452771401901t2fg', encoding: 'utf-8', // 是否隐藏评论入口 hideComment: false, // 是否隐藏评论列表(0,1) hideCommentList: 0, // 微博分享后面的@用户uid uid: '5902314049', // 文章docid，用来检测是否已收藏 docID: 'http://doc.sina.cn/?id=comos:fyqptqv7004083', //财经 pagepubtime: '2016-05-30', difDay: 180, ADIDs: [\"PublicRelation1\", \"PublicRelation2\", \"PublicRelation3\", \"PublicRelation4\", \"PublicRelation5\", \"PublicRelation6\", \"PublicRelation7\", \"PublicRelation8\", \"PublicRelation9\", \"PublicRelation10\", \"PublicRelation11\", \"PublicRelation12\", \"PublicRelation14\", \"PublicRelation16\"], // 底部微博推荐，如果没有，不填即可 weiboGroupID: 35 }; window.sina_survey_config = { surveyCss: true, //调查问答样式true, false, http （不使用默认样式配置false或者不传此参数） resultCss: true, //调查结果样式true, false, http （不使用默认样式配置false或者不传此参数） source: 'vote', //通过来源设置图片宽高 sina(手浪), vote(默认) } 注册 登录 新闻 头条号 新浪财经APP 宏观经济 A股 港股 美股 基金 理财 黄金 期货 能源 互联网金融 房地产 更多 外汇 管理 消费 科技 互联网 手机 保险 数码 科普 创业 银行 新三板 其他 无线投屏-AirPlay、DLNA、Miracast无线投屏协议优缺点对比 无线投屏-AirPlay、DLNA、Miracast无线投屏协议优缺点对比 2026年04月02日 14:48 看点资讯 语音播报 缩小字体 放大字体 微博 微信 分享 0 腾讯QQ QQ空间 无线投屏 技术除了投屏解决方案供应商的进一步研发之外，在最开始就有三种移动终端自带的 投屏协议 ，分别是AirPlay、Miracast和DLAN，不同品牌或操作系统的移动终端支持对应的投屏协议。不同的协议有不同的特点，下面来对比分析一下。 AirPlay 是苹果开发的一种无线技术，可以通过WiFi将iPhone 、iPad、iPodtouch 等iOS 设备上的包括图片、音频、视频通过无线的方式传输到支持AirPlay 设备。售价99美元的Apple TV就具备这样的功能，现在一些传统的家庭影院和网络播放器已经支持AirPlay功能。 AirPlay 支持镜像功能，可以将iPhone 或iPad 上的画面无线投屏到支持AirPlay协议的电视上，即",
+            "fetch_error": ""
+          },
+          {
+            "title": "UnPlay - iOS、macOS) Apple TV DLNA投屏接收器· GitHub",
+            "url": "https://github.com/suaptv/UnPlay",
+            "query": "tvOS DLNA 投屏 应用 对比",
+            "provider": "tavily",
+            "score": "0.49553296",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_collapse_cssom_rules\",\"code_view_shared_line_height\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_diff_explain_conversation_intent\",\"c",
+            "fetch_error": ""
+          },
+          {
+            "title": "你们的Infuse 能投屏到电视吗 - V2EX",
+            "url": "https://www.v2ex.com/t/967829",
+            "query": "Infuse Apple TV 投屏 功能",
+            "provider": "tavily",
+            "score": "0.7913865",
+            "fetched_text": "你们的 Infuse 能投屏到电视吗 - V2EX body { min-width: 820px; font-family: \"Helvetica Neue\", \"Luxi Sans\", \"Segoe UI\", \"Hiragino Sans GB\", \"Microsoft Yahei\", sans-serif, \"Apple Logo\"; } const SITE_NIGHT = 0; const LANG = 'enus'; const FEATURES = ['search', 'favorite-nodes-sort']; {\"comment\": [{\"text\": \"同问\", \"datePublished\": \"2023-08-24T01:18:36Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/hanliu\", \"@type\": \"Person\", \"name\": \"hanliu\"}}, {\"text\": \"你把 mac 直接接电视上呗\", \"datePublished\": \"2023-08-24T01:25:06Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/iovekkk\", \"@type\": \"Person\", \"name\": \"iovekkk\"}}, {\"text\": \"apple tv 可以投，Android tv 上装的投屏软件不能投\", \"datePublished\": \"2023-08-24T01:27:22Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/Navee\", \"@type\": \"Person\", \"name\": \"Navee\"}}, {\"text\": \"所以还是整个 apple TV ，直接投屏这个步骤都省了\", \"interactionStatistic\": {\"userInteractionCount\": 1, \"@type\": \"InteractionCounter\", \"interactionType\": \"https://schema.org/LikeAction\"}, \"datePublished\": \"2023-08-24T01:35:03Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/PanuiQ\", \"@type\": \"Person\", \"name\": \"PanuiQ\"}}, {\"text\": \"可以投，用的是索尼智能电视\", \"datePublished\": \"2023-08-24T03:02:14Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/beholder\", \"@type\": \"Person\", \"name\": \"beholder\"}}, {\"text\": \"我只能投过去音频，可能是版权的关系？\", \"datePublished\": \"2023-08-24T14:04:12Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/Sting\", \"@type\": \"Person\", \"name\": \"Sting\"}}, {\"text\": \"Apple TV ，随便投\", \"datePublished\": \"2023-08-24T21:59:59Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/seanzxx\", \"@type\": \"Person\", \"name\": \"seanzxx\"}}, {\"text\": \"试了下 iPhone 投 MacBook ，只要声音没有画面\", \"datePublished\": \"2023-08-24T2",
+            "fetch_error": ""
+          },
+          {
+            "title": "Infuse 8 一款优雅的视频播放器 | Firecore",
+            "url": "https://firecore.cn/infuse",
+            "query": "Infuse Apple TV 投屏 功能",
+            "provider": "tavily",
+            "score": "0.7373288",
+            "fetched_text": "{ \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"WebPage\", \"description\": \"适用于 iPhone、iPad、Apple TV 和 Mac 的视频播放器\" }, { \"name\": \"Firecore\", \"url\": \"https://firecore.cn/\", \"publisher\": { \"@type\": \"Organization\", \"name\": \"Firecore\", \"url\": \"https://firecore.cn/\", \"sameAs\": \"https://twitter.com/firecore\", \"logo\": { \"@type\": \"ImageObject\", \"representativeOfPage\": \"False\", \"url\": \"/images/fav/firecore.png\", \"width\": \"512\", \"height\": \"512\" } } } ] } Infuse 8 一款优雅的视频播放器 | Firecore ul.dropdown-menu {display: none;} var dxpr_themeNavBreakpoint = 830; var dxpr_themeWindowWidth = window.innerWidth; if (dxpr_themeWindowWidth > dxpr_themeNavBreakpoint) { document.body.className += ' body--dxpr-theme-nav-desktop'; } else { document.body.className += ' body--dxpr-theme-nav-mobile'; } Toggle menu 特点 支持 博客 联系方式 账户 Infuse 8 一款优雅的视频播放器 下载 Infuse App 免费，可选择购买高级功能 玩转一切 超越 iTunes，避免浪费时间对文件转码。Infuse 强大高效的播放引擎支持几乎所有视频文件，包括：MKV、MP4、AVI、ISO、DVD、BDMV 等。 随时随地进行流媒体传输 浏览和播放存储在 Mac、PC、NAS、Plex、Emby、Jellyfin 等媒体服务器，或 Dropbox、Google Drive、OneDrive、Box、阿里云盘等云服务中的视频。此外，来自多个来源的视频都可以整齐地显示在一个媒体库中。 自动整理 只需几秒钟，就能自动下载电影和电视节目的元数据和封面图片，并将所有内容归类整理。更妙的是，电影续集可以归类到不同的系列中，让查找可看内容变得轻而易举。 保持同步 使用 iCloud，可让元数据、媒体库设置和播放进度在所有设备间保持同步。在 iPhone 上播放视频，然后在 Apple TV 上轻松的继续播放。无需设置就可以快速的自动同步。 “界面非常漂亮，能够播放各种内容，强大得令人惊叹。” Lifehacker 强大的免费功能 高性能播放 通过高效的 h.264 和 h.265 硬件解码，4K（超高清）HDR 和 HDR10+ 视频播放如丝般顺滑。 便捷查找字幕 自带字幕，或从 OpenSubtitles 免费一键下载，在几秒钟内添加字幕。 无线传输 使用 AirDrop、iTunes、FTP 或普通的网络浏览器，即可快速传输视频。无需数据线。（仅限 iOS） 与 Trakt 同步 与 Trakt 连接，通过将播放历史和评级添加到你的账户，随时查看你观看过的内容。 跳过片头片尾 新功能 自动跳过电影和电视剧的片头片尾——由 IntroDB.app 和 TheIntroDB.org 提供支持。 自定义系列和播放列表 轻松创建电影、电视节目和家庭视频的系列和播放列表。随心所欲地随机播放和循环播放。 旅途中观看视频 无论您身在何处，都可以从 AirStash®、 SanDisk® Connect 和其他 Wi-Fi 旅行硬盘串流播放内容。 家庭影院和投影仪 多功能缩放、裁剪、宽高比和对齐选项可用于高端影院环境。 多语言支持 我们支持 40 多种国家或地区的语言，无论你说 “你好”、“hello”、",
+            "fetch_error": ""
+          },
+          {
+            "title": "‎Infuse App - App Store",
+            "url": "https://apps.apple.com/cn/app/infuse/id1136220934",
+            "query": "Infuse Apple TV 投屏 功能",
+            "provider": "tavily",
+            "score": "0.7197191",
+            "fetched_text": "‎Infuse App - App Store {\"@context\":\"https://schema.org\",\"@id\":\"https://apps.apple.com/#organization\",\"@type\":\"Organization\",\"name\":\"App Store\",\"url\":\"https://apps.apple.com\",\"logo\":\"https://apps.apple.com/assets/app-store.png\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q368215\",\"https://twitter.com/AppStore\",\"https://www.instagram.com/appstore/\",\"https://www.facebook.com/appstore/\"],\"parentOrganization\":{\"@type\":\"Organization\",\"name\":\"Apple\",\"@id\":\"https://www.apple.com/#organization\",\"url\":\"https://www.apple.com/\"}} {\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"Infuse\",\"description\":\"一口通吃您的视频文件 - Infuse将把您从永无宁日的视频转换中解放出来，用极美的方式在您的iPhone、iPad、Apple TV、Mac以及Vision上观赏几乎所有视频格式。Infuse已适配iOS 26 并添加更加强大的在线视频，trakt同步，AirPlay以及字幕功能。一切尽在随手掌控中。\\n\\n- 播放更多类型的视频。\\nInfuse 支持标准的 MP4、M4V 和 MOV – 再加上 MKV、AVI、WMV、MTS、ISO、VIDEO_TS、FLV、OGM、OGV、ASF、3GP、DVR-MS、WebM 和 WTV。包括对杜比®数码 Plus (AC3/E-AC3)、DTS® 和 DTS-HD® 音频的支持。\\n\\n- 从其他设备接收媒体流\\n浏览并播放储存在您Mac、PC、NAS、带有Wi-Fi功能的硬盘以及程序如Plex、Emby、Jellyfin和Kodi(XBMC)中的视频。Dropbox、Google Drive、Box、OneDrive、pCloud、Yandex.Disk、MEGA、阿里云盘、123 云盘、115 网盘和百度网盘也支持喔 —— 无需同步。\\n\\n- 强大的AirPlay 以及 Google Cast 支持。\\n串流播放多种视频格式例如：MKV、MP4、M4V、AVI 等等，经由 AirPlay 支持完整环绕音效与字幕。\\n\\n- TRAKT.TV 同步\\n同步 Infuse 到 trakt.tv 的拨放项目，上传评比及发表评论。\\n\\n- OPENSUBTITLES 支持的最佳化字幕\\n使用您自己的字幕或快速下载（免费）各种语言字幕。\\n\\n=====\\n\\n“iOS 平台上最智能、最强大的播放器！”\\n- Appdp.com\\n\\n“看起来很棒，可播放您丢进来的任何档案。”\\n- Lifehacker\\n\\n“iPhone 和 iPad 上最好的媒体播放器。”\\n- Cult of Mac\\n\\n“我已经无法给它的用户界面更高的评价了，实在是太棒了。”\\n- 9to5Mac\\n\\n“我真心找不到任何理由从我的屏幕上把 Infuse 移除。”\\n- iDownloadBlog\\n\\n“完全超越 VLC。”\\n- Alex Heath、Business Insider\\n\\n“精美的用户界面。”\\n- trakt.tv 联合创始人\\n\\n“小型的 KODI 媒体中心！”\\n- Infuse 用户\\n\\n=====\\n\\n不只是漂亮的脸蛋\\n\\n基础功能\\n- 最佳化播放引擎（播放全 4K）\\n- 经由 Mac、PC 或 NAS 串流播放\\n- 与 Plex、Emby、Jellyfin、Kodi (XBMC)、WMC以及其他UPnP/DLNA服务联通。\\n- 漂亮的介面并可快速存取视",
+            "fetch_error": ""
+          },
+          {
+            "title": "小红书官宣获得世界杯版权平台足球兴趣用户超1亿 - 搜狐",
+            "url": "https://m.sohu.com/a/1028725360_120988576?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334",
+            "query": "小红书 投屏 Apple TV 世界杯 2025",
+            "provider": "tavily",
+            "score": "0.62523276",
+            "fetched_text": "!function(a,b){function c(){var b=f.getBoundingClientRect().width;b/i>540&&(b=540*i);var c=b/10;f.style.fontSize=c+\"px\",k.rem=a.rem=c}var d,e=a.document,f=e.documentElement,g=e.querySelector('meta[name=\"viewport\"]'),h=e.querySelector('meta[name=\"flexible\"]'),i=0,j=0,k=b.flexible||(b.flexible={});if(g){var l=g.getAttribute(\"content\").match(/initial\\-scale=([\\d\\.]+)/);l&&(j=parseFloat(l[1]),i=parseInt(1/j))}else{if(h){var m=h.getAttribute(\"content\");if(m){var n=m.match(/initial\\-dpr=([\\d\\.]+)/),o=m.match(/maximum\\-dpr=([\\d\\.]+)/);n&&(i=parseFloat(n[1]),j=parseFloat((1/i).toFixed(2))),o&&(i=parseFloat(o[1]),j=parseFloat((1/i).toFixed(2)))}}}var isIos=a.navigator.appVersion.match(/iphone/gi);if(isIos){f.setAttribute(\"class\",\"ios\")}else{f.setAttribute(\"class\",\"android\")}if(!i&&!j){var p=(a.navigator.appVersion.match(/android/gi),a.navigator.appVersion.match(/iphone/gi)),q=a.devicePixelRatio;i=p?q>=3&&(!i||i>=3)?3:q>=2&&(!i||i>=2)?2:1:1,j=1/i}if(f.setAttribute(\"data-dpr\",i),!g){if(g=e.createElement(\"meta\"),g.setAttribute(\"name\",\"viewport\"),g.setAttribute(\"content\",\"initial-scale=\"+j+\", maximum-scale=\"+j+\", minimum-scale=\"+j+\", user-scalable=no\"),f.firstElementChild){f.firstElementChild.appendChild(g)}else{var r=e.createElement(\"div\");r.appendChild(g),e.write(r.innerHTML)}}a.addEventListener(\"resize\",function(){clearTimeout(d),d=setTimeout(c,300)},!1),a.addEventListener(\"pageshow\",function(a){a.persisted&&(clearTimeout(d),d=setTimeout(c,300))},!1),\"complete\"===e.readyState?e.body.style.fontSize=12*i+\"px\":e.addEventListener(\"DOMContentLoaded\",function(){e.body.style.fontSize=12*i+\"px\"},!1),c(),k.dpr=a.dpr=i,k.refreshRem=c,k.rem2px=function(a){var b=parseFloat(a)*this.rem;return\"string\"==typeof a&&a.match(/rem$/)&&(b+=\"px\"),b},k.px2rem=function(a){var b=parseFloat(a)/this.rem;re",
+            "fetch_error": ""
+          },
+          {
+            "title": "为世界杯2026 做准备 Apple Sports 开放给更多国家包括大马用户 ...",
+            "url": "https://www.instagram.com/p/DYjuXqtkyDY?img_index=4",
+            "query": "小红书 投屏 Apple TV 世界杯 2025",
+            "provider": "tavily",
+            "score": "0.61307496",
+            "fetched_text": ":root, .__ig-light-mode:root, .__ig-light-mode {--fds-black:#000000;--fds-black-alpha-05:rgba(0, 0, 0, 0.05);--fds-black-alpha-10:rgba(0, 0, 0, 0.1);--fds-black-alpha-15:rgba(0, 0, 0, 0.15);--fds-black-alpha-20:rgba(0, 0, 0, 0.2);--fds-black-alpha-30:rgba(0, 0, 0, 0.3);--fds-black-alpha-40:rgba(0, 0, 0, 0.4);--fds-black-alpha-50:rgba(0, 0, 0, 0.5);--fds-black-alpha-60:rgba(0, 0, 0, 0.6);--fds-black-alpha-80:rgba(0, 0, 0, 0.8);--fds-blue-05:#ECF3FF;--fds-blue-30:#AAC9FF;--fds-blue-40:#77A7FF;--fds-blue-60:#1877F2;--fds-blue-70:#2851A3;--fds-blue-80:#1D3C78;--fds-button-text:#444950;--fds-comment-background:#F2F3F5;--fds-dark-mode-gray-35:#CCCCCC;--fds-dark-mode-gray-50:#828282;--fds-dark-mode-gray-70:#4A4A4A;--fds-dark-mode-gray-80:#373737;--fds-dark-mode-gray-90:#282828;--fds-dark-mode-gray-100:#1C1C1C;--fds-gray-00:#F5F6F7;--fds-gray-05:#F2F3F5;--fds-gray-10:#EBEDF0;--fds-gray-20:#DADDE1;--fds-gray-25:#CCD0D5;--fds-gray-30:#BEC3C9;--fds-gray-45:#8D949E;--fds-gray-70:#606770;--fds-gray-80:#444950;--fds-gray-90:#303338;--fds-gray-100:#1C1E21;--fds-green-55:#00A400;--fds-green-60:#31A73B;--fds-green-65:#51CE70;--fds-highlight:#3578E5;--fds-highlight-cell-background:#ECF3FF;--fds-primary-icon:#1C1E21;--fds-primary-text:#1C1E21;--fds-red-55:#FA383E;--fds-soft:cubic-bezier(.08,.52,.52,1);--fds-spectrum-aluminum-tint-70:#E4F0F6;--fds-spectrum-blue-gray-tint-70:#CFD1D5;--fds-spectrum-cherry:#F35369;--fds-spectrum-cherry-tint-70:#FBCCD2;--fds-spectrum-grape-tint-70:#DDD5F0;--fds-spectrum-grape-tint-90:#F4F1FA;--fds-spectrum-lemon-dark-1:#F5C33B;--fds-spectrum-lemon-tint-70:#FEF2D1;--fds-spectrum-lime:#A3CE71;--fds-spectrum-lime-tint-70:#E4F0D5;--fds-spectrum-orange-tint-70:#FCDEC5;--fds-spectrum-orange-tint-90:#FEF4EC;--fds-spectrum-seafoam-tint-70:#CAEEF9;--fds-spectrum-slate-",
+            "fetch_error": ""
+          },
+          {
+            "title": "‏‫تطبيق 小红书 – 世界杯直播‬ - App Store",
+            "url": "https://apps.apple.com/us/app/%E5%B0%8F%E7%BA%A2%E4%B9%A6-%E4%B8%96%E7%95%8C%E6%9D%AF%E7%9B%B4%E6%92%AD/id741292507?l=ar",
+            "query": "小红书 投屏 Apple TV 世界杯 2025",
+            "provider": "tavily",
+            "score": "0.55623144",
+            "fetched_text": "‏‫تطبيق 小红书 – 世界杯直播‬ - App Store {\"@context\":\"https://schema.org\",\"@id\":\"https://apps.apple.com/#organization\",\"@type\":\"Organization\",\"name\":\"App Store\",\"url\":\"https://apps.apple.com\",\"logo\":\"https://apps.apple.com/assets/app-store.png\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q368215\",\"https://twitter.com/AppStore\",\"https://www.instagram.com/appstore/\",\"https://www.facebook.com/appstore/\"],\"parentOrganization\":{\"@type\":\"Organization\",\"name\":\"Apple\",\"@id\":\"https://www.apple.com/#organization\",\"url\":\"https://www.apple.com/\"}} {\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"小红书 – 世界杯直播\",\"description\":\"欢迎来到小红书，这里是你专属的生活兴趣社区！\\n\\n在这里，热爱闪闪发光，好奇找到回响，一起来开启属于你的兴趣宇宙吧！\\n\\n发现精彩： 世界那么大，兴趣那么多！无数和你一样充满好奇心的人，在这里分享着他们的热爱与探索，等你来挖掘属于你的那份心动。无论你是痴迷手作、沉醉音乐、钻研美食，还是向往远行、热衷穿搭、好奇科技……在这里，总有让你眼前一亮的兴趣宝藏。兴趣无边界，热爱无高低，都在这里自由流淌。\\n\\n遇见同好： 独乐乐，当然不如众乐乐！世界很大，但同好很近。在这里，你不是一个人在热爱。和兴趣相投的小红薯们，一起真诚交流、互相启发。一句评论，一次点赞，可能就会转角遇到灵魂拍档。在这里，每一份兴趣被听见，每一种热爱被温柔以待。即使我们都独一无二，也不会是一座孤岛。\\n\\n勇敢发光： 你的每一次尝试、每一点进步、每一份感动都值得被珍藏。小红书就是你记录兴趣生活的成长手账！大胆分享你的故事、心得、哪怕是小小的尝试。让我们勇敢发光吧！你的真实记录，不仅点亮了自己的热爱，更可能成为照亮另一个“兴趣同路人”的微光。\\n\\n热爱成真：兴趣不息，体验不止！在小红书，发现让你感兴趣的好物，一键种草，轻松下单拔草！看到超酷的线下活动，呼朋引伴，说走就走！这里不光是灵感的源头，更是你兴趣旅程的起点站——从线上汲取灵感，到线下亲身体验，再到回来分享你的精彩故事。让每一次心动都落地生根，让每一份热爱都玩出花样。\\n\\n带上好奇心，在小红书，开启属于你的兴趣之旅吧！\",\"image\":\"https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ac/ac/76/acac76ef-82f9-ea45-7602-3ef88e8d6f34/AppIcon-0-0-1x_U007epad-0-11-0-85-220.png/1200x630wa.png\",\"availableOnDevice\":\"iPhone, iPad, iPod\",\"operatingSystem\":\"‫يتطلب iOS 13.0 أو أحدث. ‫‏متوافق مع iPhone,‏ iPad و ‫iPod touch.‏\",\"offers\":{\"@type\":\"Offer\",\"price\":0,\"priceCurrency\":\"USD\",\"category\":\"free\"},\"applicationCategory\":\"التواصل الاجتماعي\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":4.9,\"reviewCount\":266123},\"author\":{\"@type\":\"Organization\",\"name\"",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：核心事实没有来源：DLPlay的定价、收入、用户规模等关键商业数据缺失，无法支撑工具账本分析。"
+        },
+        "core_question": "DLPlay 作为一款 tvOS 投屏工具，其技术实现、开发成本、定价策略和获客渠道是否构成一个可持续的独立开发项目？",
+        "why_this_topic_matters": "世界杯期间小红书投屏需求激增，Apple TV 用户有明确的投屏痛点，DLPlay 填补了国内平台 DLNA 投屏的空白，但商业可行性未知。",
+        "fact_summary": [
+          "DLPlay 是一款 tvOS 应用，支持 B 站、优酷、爱奇艺、腾讯、芒果、小红书等平台的 DLNA 投屏，不走 AirPlay 镜像。",
+          "支持 NAS（WebDAV/Alist/SMB）文件直连、IPTV（M3U+XMLTV）和待机时钟/相册轮播。",
+          "App Store 评分 3.9，共 7 个评分，用户反馈正面但数量极少。",
+          "小红书获得 2025 世界杯转播权，投屏需求可能短期上升。",
+          "竞品 Infuse 功能强大但价格高（订阅制），不支持国内平台 DLNA 投屏。"
+        ],
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "副业普通人",
+            "高价值商业读者"
+          ],
+          "interest_score": 65,
+          "why_interested": "核心技术人关注技术实现和 Apple TV 生态；副业普通人关注独立开发机会；商业读者关注市场空间。",
+          "reader_risk": "缺乏收入数据，可能误导读者高估商业潜力。"
+        },
+        "mass_interest_hook": {
+          "score": 70,
+          "hook_type": "踩坑",
+          "why_non_technical_people_may_click": "世界杯看球投屏是刚需，Apple TV 用户常被投屏问题困扰，标题可引发共鸣。",
+          "story_seed": "世界杯来了，小红书能看球，但 Apple TV 投屏却卡在 AirPlay 镜像？一个独立开发者用 DLNA 协议解决了这个痛点。",
+          "do_not_overhype": "不要夸大用户规模或收入，明确说明数据缺口。"
+        },
+        "timeline": [
+          "2024-01-14: 小众软件、搜狐等媒体报道 DLPlay。",
+          "2025-12-11: App Store 出现用户评分（共 7 条）。",
+          "2025-12: 小红书官宣获得世界杯转播权。",
+          "2026-01-12: 苹果公布 2025 年服务业务成绩单，Apple TV 收视创新高。"
+        ],
+        "evidence_table": [
+          {
+            "source": "V2EX 原帖",
+            "url": "https://www.v2ex.com/t/1219499",
+            "supports": "DLPlay 功能描述、世界杯投屏场景、开发者自述",
+            "reliability": "near_source"
+          },
+          {
+            "source": "App Store 页面",
+            "url": "https://apps.apple.com/cn/app/dlplay-dlna-%E6%8A%95%E5%B1%8F%E4%B8%8E%E6%97%B6%E9%92%9F/id6448221325",
+            "supports": "评分 3.9，7 个评分，用户评论正面",
+            "reliability": "official"
+          },
+          {
+            "source": "小众软件评测",
+            "url": "https://www.appinn.com/dlplay-for-apple-tv",
+            "supports": "功能详细介绍，确认 DLNA 投屏能力",
+            "reliability": "media"
+          },
+          {
+            "source": "搜狐转载",
+            "url": "https://www.sohu.com/a/751839522_121124379",
+            "supports": "功能复述，无新增信息",
+            "reliability": "weak"
+          },
+          {
+            "source": "小红书世界杯版权新闻",
+            "url": "https://m.sohu.com/a/1028725360_120988576",
+            "supports": "小红书获得世界杯转播权，投屏需求可能增加",
+            "reliability": "media"
+          },
+          {
+            "source": "Infuse 官网",
+            "url": "https://firecore.cn/infuse",
+            "supports": "竞品功能对比：Infuse 不支持国内平台 DLNA 投屏",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "部分闭环：技术实现和功能价值清晰，但商业模型（收入、用户规模、获客成本）缺失，无法判断可持续性。",
+        "writeable_angles": [
+          {
+            "angle": "工具账本：DLPlay 的技术实现与开发成本分析",
+            "why": "适合核心技术人，可拆解 DLNA 协议实现、tvOS 开发难点、功能模块成本。",
+            "needs": "需要开发者访谈或公开的开发成本数据。"
+          },
+          {
+            "angle": "独立开发案例复盘：DLPlay 的定价策略与获客渠道",
+            "why": "适合副业普通人，分析如何在小众市场获客、定价是否合理。",
+            "needs": "需要收入数据、下载量、用户获取成本。"
+          },
+          {
+            "angle": "风险避坑：Apple TV 投屏工具的商业化陷阱",
+            "why": "适合高价值商业读者，分析市场规模、竞品压力、平台风险。",
+            "needs": "需要 Apple TV 国内用户规模、竞品市场份额。"
+          }
+        ],
+        "missing_basics": [
+          "DLPlay 的定价（免费/付费/内购）",
+          "Apple TV 在国内的用户规模",
+          "DLNA 投屏协议在 Apple TV 上的兼容性细节"
+        ],
+        "missing_materials": [
+          "DLPlay 的 App Store 页面截图（含价格、内购、评分）",
+          "开发者访谈或公开的博客/推文",
+          "竞品功能对比表（Infuse、VLC、Plex 等）",
+          "Apple TV 国内用户规模报告或估算",
+          "小红书投屏功能的使用教程或用户反馈"
+        ],
+        "not_claimable": [
+          "DLPlay 有稳定的收入或用户增长",
+          "DLPlay 是唯一或最好的 Apple TV 投屏方案",
+          "世界杯投屏需求是可持续的商业模式",
+          "Apple TV 在国内有足够大的用户群"
+        ],
+        "followup_queries": [
+          "DLPlay 在 App Store 的定价是多少？是否有内购或订阅？",
+          "DLPlay 的下载量和评分趋势如何？",
+          "DLPlay 的开发者背景和开发周期？",
+          "Apple TV 在国内的市场份额和用户规模？",
+          "是否存在其他类似功能的竞品（如 UnPlay、AirReceiver）？"
+        ],
+        "additional_search_queries": [
+          "DLPlay App Store 价格 内购",
+          "DLPlay 下载量 评分 2025",
+          "Apple TV 中国 用户 数量 2025",
+          "tvOS DLNA 投屏 应用 对比",
+          "UnPlay Apple TV DLNA",
+          "独立开发者 tvOS 应用 收入 案例"
+        ],
+        "stop_conditions": [
+          "如果无法获取任何收入或用户数据，停止商业化分析，仅保留技术实现角度。",
+          "如果竞品已占据大部分市场，停止推荐作为独立开发机会。",
+          "如果小红书投屏功能在世界杯后无持续需求，停止长期价值分析。"
+        ],
+        "confidence": 55.0,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "tool-ledger",
+        "quality_gate": {
+          "pass": false,
+          "score": 55,
+          "fatal_issues": [
+            "核心事实没有来源：DLPlay的定价、收入、用户规模等关键商业数据缺失，无法支撑工具账本分析。"
+          ],
+          "warnings": [
+            "成本估算没有公式、单位或边界：缺乏开发成本、定价策略等量化分析。",
+            "没有明确主要服务哪层读者：读者分层模糊，核心技术人与副业普通人混为一谈。",
+            "泛兴趣钩子过度标题党：标题暗示世界杯投屏刚需，但正文证据不足，用户规模小。",
+            "没有明确选题结论：推荐或可选不清晰，仅给出可选但未解释。",
+            "没有解释为什么这个题值得选：缺乏对选题价值的充分论证。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：证据链不完整，逻辑部分闭环。",
+            "没有列出基础概念缺口和资料素材缺口：未明确缺失的定价、用户规模等关键信息。",
+            "没有按具体类型提供资料包：工具账本缺少收入、成本、获客等数据。"
+          ],
+          "missing_evidence": [
+            "DLPlay的定价（免费/付费/内购）",
+            "Apple TV在国内的用户规模",
+            "DLPlay的下载量和评分趋势",
+            "开发者背景和开发周期",
+            "竞品功能对比表（Infuse、UnPlay等）",
+            "小红书投屏功能的使用教程或用户反馈"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "DLPlay 作为一款 tvOS 投屏工具，其技术实现、开发成本、定价策略和获客渠道是否构成一个可持续的独立开发项目？",
+          "must_verify": [
+            "DLPlay 是否确实支持 B 站、优酷、爱奇艺、腾讯、芒果、小红书等平台的 DLNA 投屏，且不走 AirPlay 镜像？",
+            "DLPlay 的定价是多少？是否有内购或订阅？",
+            "DLPlay 在 App Store 的下载量和评分如何？",
+            "DLPlay 的开发者背景和开发周期？",
+            "Apple TV 在国内的市场份额和用户规模？",
+            "是否存在其他类似功能的竞品（如 Infuse、VLC、Plex 等）？",
+            "小红书投屏功能在世界杯期间的实际使用场景和用户需求？"
+          ],
+          "search_queries": [
+            "DLPlay tvOS App Store 价格 内购",
+            "DLPlay Apple TV 投屏 评测 2025",
+            "Apple TV 国内用户 规模 2025",
+            "tvOS DLNA 投屏 应用 对比",
+            "Infuse Apple TV 投屏 功能",
+            "小红书 投屏 Apple TV 世界杯 2025",
+            "独立开发者 tvOS 应用 收入 案例",
+            "DLPlay 开发者 背景"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "pricing_page",
+              "query": "DLPlay App Store 价格",
+              "why_needed": "确认定价策略和收入模型"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "DLPlay 功能说明 开发者",
+              "why_needed": "验证技术实现细节和功能范围"
+            },
+            {
+              "source_type": "case_study",
+              "query": "独立开发者 tvOS 应用 收入 2025",
+              "why_needed": "了解类似应用的商业可行性"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Apple TV 国内用户 规模 2025",
+              "why_needed": "评估目标市场规模"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "Infuse vs DLPlay 投屏 功能",
+              "why_needed": "竞品对比，判断差异化"
+            },
+            {
+              "source_type": "policy",
+              "query": "小红书 投屏 协议 DLNA 合规",
+              "why_needed": "确认投屏功能的合法性和稳定性"
+            }
+          ],
+          "expert_challenge_points": [
+            "DLNA 投屏在 Apple TV 上的兼容性和稳定性如何？是否所有平台都能稳定工作？",
+            "DLPlay 的定价是否合理？用户是否愿意为投屏功能付费？",
+            "Apple TV 在国内的用户基数是否足够支撑一个独立开发项目？",
+            "世界杯期间的小红书投屏需求是短期热点还是长期需求？",
+            "DLPlay 如何获取用户？获客成本是多少？"
+          ],
+          "do_not_claim_yet": [
+            "DLPlay 有稳定的收入或用户增长",
+            "DLPlay 是唯一或最好的 Apple TV 投屏方案",
+            "世界杯投屏需求是可持续的商业模式",
+            "Apple TV 在国内有足够大的用户群"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取收入数据和用户规模，但能确认技术实现和定价，可以发布为工具账本，重点分析开发成本和定价策略，但需注明数据缺口。",
+          "downstream_materials_needed": [
+            "DLPlay App Store 页面截图（含价格、内购、评分）",
+            "开发者访谈或公开的博客/推文",
+            "竞品功能对比表（Infuse、VLC、Plex 等）",
+            "Apple TV 国内用户规模报告或估算",
+            "小红书投屏功能的使用教程或用户反馈"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "关于App Store 苹果商店价格的那些事（历上最全版） - 腾讯云",
+            "url": "https://cloud.tencent.com/developer/article/2230981",
+            "query": "DLPlay tvOS App Store 价格 内购",
+            "provider": "tavily",
+            "score": "0.2619528",
+            "fetched_text": "关于 App Store 苹果商店价格的那些事（历上最全版）-腾讯云开发者社区-腾讯云 .rno-markdown p * { white-space: pre-wrap; word-break: break-all; } .tea-overlay { z-index: 99999!important; } .cdc-mcp-page2__main.is-fixed .cdc-mcp-page2__toolbar { top: 57px !important; } if (typeof Aegis !== 'undefined') { new Aegis({ id: 'dWlmyFvjDnalkbZO8q', env: 'production', onError: true, pagePerformance: true, reportAssetSpeed: true, api: { reportRequest: true, resHeaders: ['x-req-id'], }, reportApiSpeed: true, beforeRequest: function (data) { // load js failed if (data.logType === 'log') { if (data.logs.level === '32' && data.logs.msg.indexOf('google') > -1) return false; } var ignoreKeys = [ 'Script error', 'chrome-extension', 'qq.com', 'queryWeappQrcodeStatus', 'login/ajax/info', 'woa.com', 'trafficCollect.php', 'google', 'dscache', 'act-api', 'set_qc_cookie', 'opc.cloud.tencent.com', 'uc_gre_ad_buss', 'eb.xcj.pub', 'UCShellJava', '/developer/labs/quick/loader', 'edgeImmersiveReaderDOM', 'sendBeacon', 'error-decoder.html', 'qcloud-community-track.min.js' ]; var alarmMsg = [data.logs.url, data.logs.msg].join('|'); for (var i = 0; i 37手游iOS技术运营团队 关于 App Store 苹果商店价格的那些事（历上最全版） 原创 关注作者 腾讯云 开发者社区 文档 建议反馈 控制台 登录/注册 首页 学习 活动 专区 圈层 工具 MCP广场 文章/答案/技术大牛 搜索 搜索 关闭 发布 37手游iOS技术运营团队 社区首页 > 专栏 > 关于 App Store 苹果商店价格的那些事（历上最全版） 关于 App Store 苹果商店价格的那些事（历上最全版） 原创 37手游iOS技术运营团队 关注 修改 于 2023-04-21 19:16:54 修改 于 2023-04-21 19:16:54 8.2K 0 举报 文章被收录于专栏： 37手游iOS技术运营团队 37手游iOS技术运营团队 作者：iHTCboy 一、前言 苹果 2022 年 12 月 6 日宣布 App Store 定价机制最重大升级，新增 700 个价格点 。小编当时的总结和分析： App Store 新价格 ： 最低可设 $0.29 美元！ 最高可设 $10,000 美元！（人民币 RMB 74,999 元） 新增 700 个价格点 全新定价工具（机制） 1.1 定价机制升级总结 新增 700 个价格点，其中 600 个价格点开发者可直接用，另外 100 个高价价格点需要申请。 新价格点从 美元 $0.29 起，最高可根据申请升至 $10,000。（人民币 RMB 1 ~ RMB 74,999） 新增约定的价格规则：以整数结尾的价格（如 X.00 或 X.90）。 全新定价机制: 自动定价 ：自动随外币汇率和税率的变化而更新 本地",
+            "fetch_error": ""
+          },
+          {
+            "title": "发现全球App Store 最低价 - App Store Price",
+            "url": "https://appstoreprice.org/zh",
+            "query": "DLPlay tvOS App Store 价格 内购",
+            "provider": "tavily",
+            "score": "0.1721304",
+            "fetched_text": "首页 订阅 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://appstoreprice.org/#organization\",\"name\":\"App Store Price\",\"url\":\"https://appstoreprice.org\",\"logo\":\"https://appstoreprice.org/appstoreprice.png\",\"sameAs\":[\"https://t.me/appstoreprice\",\"https://x.com/qingnianxiaozhe\"]},{\"@type\":\"WebSite\",\"@id\":\"https://appstoreprice.org/#website\",\"url\":\"https://appstoreprice.org\",\"name\":\"App Store Price\",\"publisher\":{\"@id\":\"https://appstoreprice.org/#organization\"}}]} 加入群组 关注我们 iOS App NEW App Store 全球最低价 实时抓取并对比全球各大区 App Store 的应用价格 帮您找到购买数字产品的最佳时机 查看所有应用 查看所有应用 礼品卡商城 礼品卡商城 NEW 🇺🇸 US Store $24.99 BEST 🇹🇷 Turkey Store ₺169.00 节省 78% 🇯🇵 JP Store ¥2,900 法律 隐私政策 服务条款 工具 应用列表 在线商城 切换语言 博客 开通指引 使用经验 注意事项 联系 联系我们 Telegram Twitter / X 关于 关于我们 服务状态 更新日志 © 2026 App Store Price. 保留所有权利 requestAnimationFrame(function(){$RT=performance.now()}); $RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b a&&2E3 App Store Price - 发现全球 App Store 最低价 document.querySelectorAll('body link[rel=\"icon\"], body link[rel=\"apple-touch-icon\"]').forEach(el => document.head.appendChild(el)) $RC(\"B:0\",\"S:0\") (self.__next_f=self.__next_f||[]).push([0]) self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n2:I[367,[],\\\"\\\"]\\n3:I[26291,[],\\\"\\\"]\\n5:I[70994,[\\\"9966\\\",\\\"static/chunks/95c09b69-6bac77df8a5dd44d.js\\\",\\\"3542\\\",\\\"static/chunks/3542-5e9b03cdd83d068c.js\\\",\\\"6145\\\",\\\"static/chunks/6145-e16ef77eb1d2976d.js\\\",\\\"2789\\\",\\\"static/chunks/2789-f354fcfa5b1bad22.js\\\",\\\"6212\\\",\\\"static/chunks/6212-c37d07008c8e7ba2.js\\\",\\\"6909\\\",\\\"static/chunks/6909-a5ef63b663f46768.js\\\",\\\"6363\\\",\\\"static/chunks/6363-30d09803dfb9e54a.js\\\",\\\"2384\\\",\\\"static/chunks/2384-627280a3eb63b269.js\\\",\\\"1969\\\",\\\"static/chunks/app/%5Blocale%5D/(main)/layout-c826bad22db04c94.js\\\"],\\\"Header\\\"]\\n6:I[20664,[\\\"3542\\\",\\\"static/chun",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple 宣布 App Store 定价机制最重大升级，新增 700 个价格点 - Apple (中国大陆)",
+            "url": "https://www.apple.com.cn/newsroom/2022/12/apple-announces-biggest-upgrade-to-app-store-pricing-adding-700-new-price-points",
+            "query": "DLPlay tvOS App Store 价格 内购",
+            "provider": "tavily",
+            "score": "0.17179666",
+            "fetched_text": "{ \"@context\": \"https://ziyuan.baidu.com/contexts/cambrian.jsonld\", \"@id\": \"https://www.apple.com.cn/newsroom/2022/12/apple-announces-biggest-upgrade-to-app-store-pricing-adding-700-new-price-points/\", \"appid\": \"1648269209122770\", \"title\": \" Apple 宣布 App Store\", \"images\":[\"https://www.apple.com.cn/newsroom/images/product/app-store/Apple-App-Store-pricing-flexibility-hero.jpg.og.jpg\"], \"pubDate\": \"2022-12-06T18:02:52Z\", \"upDate\":\"2022-12-06T18:02:52Z\" } Apple 宣布 App Store 定价机制最重大升级，新增 700 个价格点 - Apple (中国大陆) Apple 商店 Mac iPad iPhone Watch Vision AirPods 家居 娱乐 配件 技术支持 0 + {\"props\":{\"globalNavData\":{\"locale\":\"zh_CN\",\"ariaLabel\":\"全部网页\",\"analyticsAttributes\":[{\"name\":\"data-analytics-activitymap-region-id\",\"value\":\"global nav\"},{\"name\":\"data-analytics-region\",\"value\":\"global nav\"}],\"links\":[{\"id\":\"2758e8127e4ab787ae4e849277f79b83b3522719ae4b96a595421e50ea2d03f7\",\"name\":\"apple\",\"text\":\"Apple\",\"url\":\"/\",\"ariaLabel\":\"Apple\",\"submenuAriaLabel\":\"Apple 目录\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"},{\"name\":\"compact\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"apple home\"}]},{\"id\":\"75b9dea386fab56ffd38d8479802cbd97bdfeb93b86ccd649fd8acce1676dc0e\",\"name\":\"store\",\"text\":\"商店\",\"url\":\"/cn/shop/goto/store\",\"ariaLabel\":\"商店\",\"submenuAriaLabel\":\"商店目录\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"store\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - store\"}]},{\"id\":\"9a82f08a3cc17e59a61372a40e7ecb17783e9c10aef163465f29bb5b00d4725a\",\"name\":\"mac\",\"text\":\"Mac\",\"url\":\"/mac/\",\"ariaLabel\":\"Mac\",\"submenuAriaLabel\":\"Mac 目录\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"mac\"},{\"name\":\"data-analytics-element-engagement",
+            "fetch_error": ""
+          },
+          {
+            "title": "DLPlay: DLNA 投屏与时钟- 评分及评论 - App Store",
+            "url": "https://apps.apple.com/cn/app/dlplay-dlna-%E6%8A%95%E5%B1%8F%E4%B8%8E%E6%97%B6%E9%92%9F/id6448221325?see-all=reviews&platform=iphone",
+            "query": "DLPlay Apple TV 投屏 评测 2025",
+            "provider": "tavily",
+            "score": "0.86331123",
+            "fetched_text": "‎DLPlay: DLNA 投屏与时钟 - 评分及评论 - App Store {\"@context\":\"https://schema.org\",\"@id\":\"https://apps.apple.com/#organization\",\"@type\":\"Organization\",\"name\":\"App Store\",\"url\":\"https://apps.apple.com\",\"logo\":\"https://apps.apple.com/assets/app-store.png\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q368215\",\"https://twitter.com/AppStore\",\"https://www.instagram.com/appstore/\",\"https://www.facebook.com/appstore/\"],\"parentOrganization\":{\"@type\":\"Organization\",\"name\":\"Apple\",\"@id\":\"https://www.apple.com/#organization\",\"url\":\"https://www.apple.com/\"}} import.meta.url;import(\"_\").catch(()=>1);async function* g(){};window.__vite_is_modern_browser=true; !function(){if(window.__vite_is_modern_browser)return;console.warn(\"vite: loading legacy chunks, syntax error above and the same error below should be ignored\");var e=document.getElementById(\"vite-legacy-polyfill\"),n=document.createElement(\"script\");n.src=e.src,n.onload=function(){System.import(document.getElementById('vite-legacy-entry').getAttribute('data-src'))},document.body.appendChild(n)}(); iPhone 专区 iPhone iPad Mac Vision Watch 搜索 Today 游戏 App 平台 iPhone iPad Mac Vision Watch DLPlay: DLNA 投屏与时钟 评分及评论 3.9 满分 5 分 7 个评分 很棒的一款dlna投屏软件 2025/12/11 我没得姓名 很多其他dlna投屏软件无法播放的链接都可以使用。如果在未来的更新中，可以针对ipad进行播放器优化和添加复制链接的功能对我来说就真无敌了 很棒的一款dlna投屏软件 2025/12/11 我没得姓名 很多其他dlna投屏软件无法播放的链接都可以使用。如果在未来的更新中，可以针对ipad进行播放器优化和添加复制链接的功能对我来说就真无敌了 DLNA投屏，好用 2024/10/04 b168368 DLNA投屏，好用 DLNA投屏，好用 2024/10/04 b168368 DLNA投屏，好用 能把 快进 暂停 慢放 的按键弄到下面吗 2月9日 古古怪怪古古怪怪刚 请速速更新 能把 快进 暂停 慢放 的按键弄到下面吗 2月9日 古古怪怪古古怪怪刚 请速速更新 选择国家或地区 非洲、中东和印度 查看全部 Algeria Angola Armenia Azerbaijan Bahrain Benin Botswana Burkina Faso Cameroun Cape Verde Chad Côte d’Ivoire Congo, The Democratic Republic Of The Egypt Eswatini Gabon Gambia Ghana Guinea-Bissau India Iraq Israel Jordan Kenya Kuwait Lebanon Libe",
+            "fetch_error": ""
+          },
+          {
+            "title": "从iOS、Android、Windows 向Apple TV 投屏，实现国产视频 ...",
+            "url": "https://www.appinn.com/dlplay-for-apple-tv",
+            "query": "DLPlay Apple TV 投屏 评测 2025",
+            "provider": "tavily",
+            "score": "0.5324014",
+            "fetched_text": "if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf(\"?\")==-1){if(href.indexOf(\"#\")==-1){document.location.href=href+\"?nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"?nowprocket=1#\")}}else{if(href.indexOf(\"#\")==-1){document.location.href=href+\"&nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"&nowprocket=1#\")}}}} (()=>{class RocketLazyLoadScripts{constructor(){this.v=\"2.0.5\",this.userEvents=[\"keydown\",\"keyup\",\"mousedown\",\"mouseup\",\"mousemove\",\"mouseover\",\"mouseout\",\"touchmove\",\"touchstart\",\"touchend\",\"touchcancel\",\"wheel\",\"click\",\"dblclick\",\"input\"],this.attributeEvents=[\"onblur\",\"onclick\",\"oncontextmenu\",\"ondblclick\",\"onfocus\",\"onmousedown\",\"onmouseenter\",\"onmouseleave\",\"onmousemove\",\"onmouseout\",\"onmouseover\",\"onmouseup\",\"onmousewheel\",\"onscroll\",\"onsubmit\"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event(\"rocket-allScriptsLoaded\")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem(\"rocketCSPIssue\"),document.addEventListener(\"securitypolicyviolation\",t=>{this.CSPIssue||\"script-src-elem\"!==t.violatedDirective||\"data\"!==t.blockedURI||(this.CSPIssue=!0,session",
+            "fetch_error": ""
+          },
+          {
+            "title": "从iOS、Android、Windows 向Apple TV 投屏：DLPlay 投屏",
+            "url": "https://www.sohu.com/a/751839522_121124379",
+            "query": "DLPlay Apple TV 投屏 评测 2025",
+            "provider": "tavily",
+            "score": "0.49465415",
+            "fetched_text": "从 iOS、Android、Windows 向 Apple TV 投屏：DLPlay 投屏_视频_软件_国产 window._taboola = window._taboola || []; _taboola.push({article:'auto'}); !function (e, f, u, i) { if (!document.getElementById(i)){ e.async = 1; e.src = u; e.id = i; f.parentNode.insertBefore(e, f); } }(document.createElement('script'), document.getElementsByTagName('script')[0], '//cdn.taboola.com/libtrc/sohuchina-sohucom/loader.js', 'tb_loader_script'); if(window.performance && typeof window.performance.mark == 'function') {window.performance.mark('tbl_ic');} window.deployEnv = \"prod\" { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"BreadcrumbList\", \"itemListElement\": [ { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"首页\", \"item\": \"https://www.sohu.com\" }, { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"文章页\", \"item\": \"https://www.sohu.com/a/751839522_121124379\" }, { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"未来数字城市探索者\", \"item\": \"https://mp.sohu.com/profile?xpt=NDA2YTlhMzYtZmQ5MS00NmUxLWIxZDEtOTE2NzljZGY1NGE1\" } ] }, { \"@type\": \"NewsArticle\", \"headline\": \"从 iOS、Android、Windows 向 Apple TV 投屏：DLPlay 投屏\", \"description\": \"在《小众软件》看到了这篇文章：DLPlay投屏–从iOS、Android、Windows向AppleTV投屏，实现国产视频软件DLNA投屏能让Android、Windows用户和AppleTV更好联动能在Ap…\", \"datePublished\": \"2024-01-14T22:11:38+0800\", \"url\": \"https://www.sohu.com/a/751839522_121124379\", \"thumbnailUrl\": \"\", \"image\": [ { \"@type\": \"ImageObject\", \"url\": \"\", \"width\": 800, \"height\": 450 } ], \"publisher\": { \"@type\": \"NewsMediaOrganization\", \"name\": \"搜狐网\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://statics.itc.cn/web/static/images/pic/sohu-logo/favicon.ico\", \"width\": 32, \"height\": 32 } }, \"author\": { \"@type\": \"Person\", \"name\": \"未来数字城市探索者\", \"url\": \"https://mp.sohu.com/profile?xpt=NDA2YTlhMzYtZmQ5MS00NmUxLWIxZDEtOTE2NzljZGY1NGE1\" }, \"mainEntityOfPage\": { \"@type\": \"WebPage\",",
+            "fetch_error": ""
+          },
+          {
+            "title": "小摩：不要小看Apple TV+ 到2025年订户将突破1亿 - 财联社",
+            "url": "https://www.cls.cn/detail/510692",
+            "query": "Apple TV 国内用户 规模 2025",
+            "provider": "tavily",
+            "score": "0.85421735",
+            "fetched_text": "小摩：不要小看Apple TV+ 到2025年订户将突破1亿 很抱歉，当前没有启用javascript，网站无法正常访问。请开启以便继续访问。 关于我们 网站声明 联系方式 用户反馈 网站地图 帮助 首页 电报 话题 盯盘 VIP FM 投研 下载 小摩：不要小看Apple TV+ 到2025年订户将突破1亿 原创 美股动态 2020-06-05 11:07 星期五 财联社 卞纯 责编 林琦 尽管2019年推出的Apple TV +尚未得到蓬勃发展，但是华尔街投行摩根大通告诉投资者，不要小看这项服务，预计它的用户数将在五年内突破1亿。 财联社 （上海，编辑卞纯）讯 ，尽管2019年推出的Apple TV +尚未得到蓬勃发展，但是华尔街投行摩根大通（JP Morgan）告诉投资者，不要小看这项服务，预计它的用户将在五年内突破1亿。 小摩首席分析师Samik Chatterjee认为，到2025财年，Apple TV+的付费用户可能会达到1亿。尽管价格高昂的苹果流媒体服务的内容和应用“基本上平平无奇”。 Chatterjee预测，目前大多数订户都在利用免费促销活动，而且合格用户对促销活动的激活率很低。 为了抢攻串流服务市场，苹果在去年推出 Apple TV+ 后，同时祭出购买苹果新设备即赠送一年免费订阅的促销活动。不过该计划成效甚微。数据显示，在所有符合资格的苹果设备及装置中，仅有 5-15% 的用户启动免费服务。 人们对Apple TV+反应冷淡的部分原因可能是其节目种类太少，对于这一点苹果正在积极改进。Apple TV+推出时有8个原创节目，但现在已经增加至28个。但尽管如此，内容仍比其竞争对手少得多——即便是像Disney+等这样的新平台。 除了内容的数量，Chatterjee认为质量也很重要。眼下，Apple TV+正通过争夺杰出人才来使内容脱颖而出。这位分析师补充称，提高内容的质量和数量将增加将促销活动用户转化为付费用户的可能性。 除了快速增加新内容外，苹果在投资方面似乎也超越了竞争对手。此前的报告显示，苹果将拨款10亿美元用于内容开发，但现在这个数字可能高达60亿美元。其中一些投资或可能被用来通过播客吸引Apple TV+订户。 这位分析师还概述了Apple TV+正在快速发展的一些迹象。比如说，Apple TV+可以为苹果的服务业务“更加广泛地发展并超越iOS生态系统”打开了一个机会。 “尽管 Apple TV+起步较慢，但我们认为投资者不应小看其长期前景，我们认为内容质量、数量和预算都将成为提升用户使用率的重要驱动力，”Chatterjee 表示。他预计，Apple TV+的付费用户在整个2020年将缓慢增长，到2025年将达到1亿。 今年1月，Apple TV+拥有约3400万用户，不过该公司没有定期更新这一数据。相比之下，奈飞将旗下串流媒体服务与 DVD 邮寄业务拆分约 6 年后，其订阅用户在 2017 年突破 1 亿，目前其全球订阅用户达约 1.67 亿。 摩根大通将苹果目标股价维持在365美元不变，基于22倍的市盈率和16.86美元的预期每股收益。 苹果股价美东时间周四（6月4日）收盘下跌0.86%或2.8美元，报322.32美元，市值为1.4万亿美元。 阅 244.02W 要闻 股市 查看更多 关联话题 美股动态 6.16W 人关注 TMT行业观察 2.47W 人关注 环球市场情报 15.88W 人关注 关于我们 | 网站声明 | 联系方式 | 用户反馈 | 网站地图 | 友情链接 | 举报电话：021-54679377转617 举报邮箱：editor@cls.cn 财联社 ©2018-2026 上海界面财联社科技股份有限公司 版权所有 沪ICP备14040942号-9 沪公网安备31010402006047号 互联网新闻信息服务许可证：31120170007 沪金信备 [2021] 2号 {\"props\":{\"pageProps\":{\"query\":{\"id\":\"510692\"},\"articleDetail\":{\"id\":510692,\"column\":{\"columnID\":-1,\"columnName\":\"文章\"},\"isFree\":true,\"title\":\"小摩：不要小看Apple TV+ 到2025",
+            "fetch_error": ""
+          },
+          {
+            "title": "苹果公布2025 年服务业务成绩单：多项数据刷新纪录 - IT之家",
+            "url": "https://www.ithome.com/0/912/642.htm",
+            "query": "Apple TV 国内用户 规模 2025",
+            "provider": "tavily",
+            "score": "0.6803909",
+            "fetched_text": "苹果公布 2025 年服务业务成绩单：多项数据刷新纪录，App Store 周活用户超 8.5 亿 - IT之家 (window.jQuery || document.write(\" \")); 首页 IT圈 最会买 设置 日夜间 随系统 浅色 深色 主题色 黑色 投稿 订阅 RSS订阅 收藏IT之家 软媒应用 App客户端 要知App 软媒魔方 nightModeHelper.init(); var nightMode = nightModeHelper.isNight(); var navColor = \"\"; if (document.cookie.indexOf(\"navColor=red\") >= 0) { document.body.className += \" red\"; navColor = \"red\"; } 业界 手机 电脑 测评 视频 AI 苹果 iPhone 鸿蒙 软件 智车 数码 学院 游戏 直播 5G 微软 Win10 Win11 专题 搜索 首页 > IT资讯 > 苹果 苹果公布 2025 年服务业务成绩单：多项数据刷新纪录，App Store 周活用户超 8.5 亿 2026/1/12 23:13:56 来源： IT之家 作者： 远洋 责编： 远洋 评论： IT之家 1 月 12 日消息，苹果今日发布 最新新闻稿 ，庆祝其服务部门在 2025 年取得的斐然成绩。苹果公司称，2025 年是“苹果服务业务的破纪录之年”，旗下 Apple Music、Apple TV 等多项服务均实现了里程碑式的突破。 新闻稿开篇援引了苹果服务部门高级副总裁埃迪・库伊的一份备忘录。库伊表示，Apple Music 的听众规模与新增订阅用户数双双创下历史新高；与此同时，Apple TV 在 2025 年 12 月的收视数据“打破以往所有纪录”，该月总观看时长较去年同期激增 36%。 以下为库伊的完整发言内容： 2025 年是苹果服务业务的破纪录之年，实现了显著的增长、全球化扩张与持续性创新的三重突破。从 Apple TV、Apple Music、Apple News 资讯平台，到 Apple Pay 支付服务、iCloud 云存储等日常必备工具，我们为全球用户打造了丰富多元的体验。回望 2025 年，我们始终致力于提升用户的日常生活品质，尤其在节假日期间，用户活跃度达到了空前高度。 过去一年，苹果服务业务成绩斐然。我们为用户推出了具有变革意义的功能，同时不断刷新各项数据纪录。这些亮眼数字，恰恰印证了消费者对我们的高度热忱 —— 无论是下载新奇有趣的应用与游戏、与亲友共赏热门剧集、聆听挚爱金曲，还是安心享受购物乐趣，苹果服务都渗透在生活的方方面面。仅苹果 App Store，全球周均活跃用户就突破 8.5 亿人次；自 2008 年平台上线以来，开发者通过该平台获得的总收入已超 5500 亿美元。 Apple Pay 同样成效显著：不仅为全球用户规避了超 10 亿美元的欺诈损失，还帮助全球商家实现超 1000 亿美元的增量销售额。在 11 至 12 月的假日购物高峰期，Apple Pay 的交易额增速远超整体消费支出的增长水平。此外，Apple TV 在 2025 年 12 月刷新了收视纪录，Apple Music 的听众与新增订阅量也双双登顶。 过去一年，Apple Podcasts、Apple Music、Apple News 等多项服务均迎来了里程碑式的周年纪念。这些成就的取得，离不开每一位艺术家、创作者、记者与故事讲述者的心血，正是他们，赋予了这些平台鲜活的生命力。同时，我们的服务版图持续向全球扩张，触达了前所未有的用户群体：目前 Apple Pay 已登陆全球 89 个市场；Find My 功能正式在韩国上线；Apple Fitness+ 健身服务也新增覆盖 28 个国家和地区。 服务业务的全新升级，为用户带来了更具个性化、趣味性与便捷性的体验。Apple Wallet 依托 Apple Intelligence 技术，帮助用户轻松追踪订单状态；苹果地图（Apple Maps）则借助设备端智能技术，让用户的“偏好路线”与“常去地点”一目了然。 Apple Music 推出的智能混音功能（AutoMix），能像专业 DJ 一样",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple 服務2025 年創佳績",
+            "url": "https://www.apple.com/hk/newsroom/2026/01/2025-marked-a-record-breaking-year-for-apple-services",
+            "query": "Apple TV 国内用户 规模 2025",
+            "provider": "tavily",
+            "score": "0.64128816",
+            "fetched_text": "Apple 服務 2025 年創佳績 - Apple (香港) Apple Store Mac iPad iPhone Watch Vision AirPods TV 與家居 娛樂 配件 支援服務 0 + {\"props\":{\"globalNavData\":{\"locale\":\"zh_HK\",\"ariaLabel\":\"全網站\",\"analyticsAttributes\":[{\"name\":\"data-analytics-activitymap-region-id\",\"value\":\"global nav\"},{\"name\":\"data-analytics-region\",\"value\":\"global nav\"}],\"links\":[{\"id\":\"a8c92520d7f5cdc15f280a04e0618933acfce488cc553fb4783a68be789e7694\",\"name\":\"apple\",\"text\":\"Apple\",\"url\":\"/hk/\",\"ariaLabel\":\"Apple\",\"submenuAriaLabel\":\"Apple 選單\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"},{\"name\":\"compact\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"apple home\"}]},{\"id\":\"54c0ba637f7907a0159f10121797711bfd870ee9dc9abd82c9fd41edd07fbf1e\",\"name\":\"store\",\"text\":\"Store\",\"url\":\"/hk-zh/shop/goto/store\",\"ariaLabel\":\"Store\",\"submenuAriaLabel\":\"Store 選單\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"store\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - store\"}]},{\"id\":\"588f1468921347b261954cb757deb7ffa4f2884facfb65a830b08922449df426\",\"name\":\"mac\",\"text\":\"Mac\",\"url\":\"/hk/mac/\",\"ariaLabel\":\"Mac\",\"submenuAriaLabel\":\"Mac 選單\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"mac\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - mac\"}]},{\"id\":\"5aa91574dda31d39c210568c81db163fbe45d1f4e539614b0cc83fa7e00fb7fb\",\"name\":\"ipad\",\"text\":\"iPad\",\"url\":\"/hk/ipad/\",\"ariaLabel\":\"iPad\",\"submenuAriaLabel\":\"iPad 選單\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"ipad\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - ipad\"}]},{\"id\":\"5c52d8dbf1aa1fcb5dc5377663e30c4815d2f38d2ad928813fce40d5df81324f\",",
+            "fetch_error": ""
+          },
+          {
+            "title": "DLNA投屏和镜像投屏两种不同的投屏方法的对比 - 知乎专栏",
+            "url": "https://zhuanlan.zhihu.com/p/19806757978",
+            "query": "tvOS DLNA 投屏 应用 对比",
+            "provider": "tavily",
+            "score": "0.6562404",
+            "fetched_text": "综上所述，DLNA投屏与镜像投屏在投屏协议、投屏效果、使用场景以及其他特点方面都存在显著差异。用户可以根据自己的需求和场景选择合适的投屏方式。",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          },
+          {
+            "title": "AirPlay、DLNA、Miracast无线投屏协议优缺点对比 - 新浪财经",
+            "url": "https://cj.sina.cn/articles/view/7857141524/1d452771401901t2fg?froms=ggmp&vt=4",
+            "query": "tvOS DLNA 投屏 应用 对比",
+            "provider": "tavily",
+            "score": "0.57952",
+            "fetched_text": "无线投屏-AirPlay、DLNA、Miracast无线投屏协议优缺点对比__财经头条__新浪财经 var author_uid = 7857141524; var article_id = \"1d452771401901t2fg\"; var baseUrl = \"//cj.sina.com.cn/k/api\"; var baseHost = \"cj.sina.com.cn\"; var pageUrl = \"http://cj.sina.cn/articles/view/7857141524/1d452771401901t2fg\"; //设定为提前一屏触发 window.onload = function() { SinaPage.config.triggerDistance = 500; } var SINA_TEXT_PAGE_INFO = { entry: 'account', channel: 'mp', newsid: '7857141524-1d452771401901t2fg', encoding: 'utf-8', // 是否隐藏评论入口 hideComment: false, // 是否隐藏评论列表(0,1) hideCommentList: 0, // 微博分享后面的@用户uid uid: '5902314049', // 文章docid，用来检测是否已收藏 docID: 'http://doc.sina.cn/?id=comos:fyqptqv7004083', //财经 pagepubtime: '2016-05-30', difDay: 180, ADIDs: [\"PublicRelation1\", \"PublicRelation2\", \"PublicRelation3\", \"PublicRelation4\", \"PublicRelation5\", \"PublicRelation6\", \"PublicRelation7\", \"PublicRelation8\", \"PublicRelation9\", \"PublicRelation10\", \"PublicRelation11\", \"PublicRelation12\", \"PublicRelation14\", \"PublicRelation16\"], // 底部微博推荐，如果没有，不填即可 weiboGroupID: 35 }; window.sina_survey_config = { surveyCss: true, //调查问答样式true, false, http （不使用默认样式配置false或者不传此参数） resultCss: true, //调查结果样式true, false, http （不使用默认样式配置false或者不传此参数） source: 'vote', //通过来源设置图片宽高 sina(手浪), vote(默认) } 注册 登录 新闻 头条号 新浪财经APP 宏观经济 A股 港股 美股 基金 理财 黄金 期货 能源 互联网金融 房地产 更多 外汇 管理 消费 科技 互联网 手机 保险 数码 科普 创业 银行 新三板 其他 无线投屏-AirPlay、DLNA、Miracast无线投屏协议优缺点对比 无线投屏-AirPlay、DLNA、Miracast无线投屏协议优缺点对比 2026年04月02日 14:48 看点资讯 语音播报 缩小字体 放大字体 微博 微信 分享 0 腾讯QQ QQ空间 无线投屏 技术除了投屏解决方案供应商的进一步研发之外，在最开始就有三种移动终端自带的 投屏协议 ，分别是AirPlay、Miracast和DLAN，不同品牌或操作系统的移动终端支持对应的投屏协议。不同的协议有不同的特点，下面来对比分析一下。 AirPlay 是苹果开发的一种无线技术，可以通过WiFi将iPhone 、iPad、iPodtouch 等iOS 设备上的包括图片、音频、视频通过无线的方式传输到支持AirPlay 设备。售价99美元的Apple TV就具备这样的功能，现在一些传统的家庭影院和网络播放器已经支持AirPlay功能。 AirPlay 支持镜像功能，可以将iPhone 或iPad 上的画面无线投屏到支持AirPlay协议的电视上，即",
+            "fetch_error": ""
+          },
+          {
+            "title": "UnPlay - iOS、macOS) Apple TV DLNA投屏接收器· GitHub",
+            "url": "https://github.com/suaptv/UnPlay",
+            "query": "tvOS DLNA 投屏 应用 对比",
+            "provider": "tavily",
+            "score": "0.49553296",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_collapse_cssom_rules\",\"code_view_shared_line_height\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_defer_message_list_render\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_input_performance_optimizations\",\"copilot_chat_max_upsell\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_structured_list_refs\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_delete_cli_sessions\",\"copilot_diff_explain_conversation_intent\",\"c",
+            "fetch_error": ""
+          },
+          {
+            "title": "你们的Infuse 能投屏到电视吗 - V2EX",
+            "url": "https://www.v2ex.com/t/967829",
+            "query": "Infuse Apple TV 投屏 功能",
+            "provider": "tavily",
+            "score": "0.7913865",
+            "fetched_text": "你们的 Infuse 能投屏到电视吗 - V2EX body { min-width: 820px; font-family: \"Helvetica Neue\", \"Luxi Sans\", \"Segoe UI\", \"Hiragino Sans GB\", \"Microsoft Yahei\", sans-serif, \"Apple Logo\"; } const SITE_NIGHT = 0; const LANG = 'enus'; const FEATURES = ['search', 'favorite-nodes-sort']; {\"comment\": [{\"text\": \"同问\", \"datePublished\": \"2023-08-24T01:18:36Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/hanliu\", \"@type\": \"Person\", \"name\": \"hanliu\"}}, {\"text\": \"你把 mac 直接接电视上呗\", \"datePublished\": \"2023-08-24T01:25:06Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/iovekkk\", \"@type\": \"Person\", \"name\": \"iovekkk\"}}, {\"text\": \"apple tv 可以投，Android tv 上装的投屏软件不能投\", \"datePublished\": \"2023-08-24T01:27:22Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/Navee\", \"@type\": \"Person\", \"name\": \"Navee\"}}, {\"text\": \"所以还是整个 apple TV ，直接投屏这个步骤都省了\", \"interactionStatistic\": {\"userInteractionCount\": 1, \"@type\": \"InteractionCounter\", \"interactionType\": \"https://schema.org/LikeAction\"}, \"datePublished\": \"2023-08-24T01:35:03Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/PanuiQ\", \"@type\": \"Person\", \"name\": \"PanuiQ\"}}, {\"text\": \"可以投，用的是索尼智能电视\", \"datePublished\": \"2023-08-24T03:02:14Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/beholder\", \"@type\": \"Person\", \"name\": \"beholder\"}}, {\"text\": \"我只能投过去音频，可能是版权的关系？\", \"datePublished\": \"2023-08-24T14:04:12Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/Sting\", \"@type\": \"Person\", \"name\": \"Sting\"}}, {\"text\": \"Apple TV ，随便投\", \"datePublished\": \"2023-08-24T21:59:59Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/seanzxx\", \"@type\": \"Person\", \"name\": \"seanzxx\"}}, {\"text\": \"试了下 iPhone 投 MacBook ，只要声音没有画面\", \"datePublished\": \"2023-08-24T2",
+            "fetch_error": ""
+          },
+          {
+            "title": "Infuse 8 一款优雅的视频播放器 | Firecore",
+            "url": "https://firecore.cn/infuse",
+            "query": "Infuse Apple TV 投屏 功能",
+            "provider": "tavily",
+            "score": "0.7373288",
+            "fetched_text": "{ \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"WebPage\", \"description\": \"适用于 iPhone、iPad、Apple TV 和 Mac 的视频播放器\" }, { \"name\": \"Firecore\", \"url\": \"https://firecore.cn/\", \"publisher\": { \"@type\": \"Organization\", \"name\": \"Firecore\", \"url\": \"https://firecore.cn/\", \"sameAs\": \"https://twitter.com/firecore\", \"logo\": { \"@type\": \"ImageObject\", \"representativeOfPage\": \"False\", \"url\": \"/images/fav/firecore.png\", \"width\": \"512\", \"height\": \"512\" } } } ] } Infuse 8 一款优雅的视频播放器 | Firecore ul.dropdown-menu {display: none;} var dxpr_themeNavBreakpoint = 830; var dxpr_themeWindowWidth = window.innerWidth; if (dxpr_themeWindowWidth > dxpr_themeNavBreakpoint) { document.body.className += ' body--dxpr-theme-nav-desktop'; } else { document.body.className += ' body--dxpr-theme-nav-mobile'; } Toggle menu 特点 支持 博客 联系方式 账户 Infuse 8 一款优雅的视频播放器 下载 Infuse App 免费，可选择购买高级功能 玩转一切 超越 iTunes，避免浪费时间对文件转码。Infuse 强大高效的播放引擎支持几乎所有视频文件，包括：MKV、MP4、AVI、ISO、DVD、BDMV 等。 随时随地进行流媒体传输 浏览和播放存储在 Mac、PC、NAS、Plex、Emby、Jellyfin 等媒体服务器，或 Dropbox、Google Drive、OneDrive、Box、阿里云盘等云服务中的视频。此外，来自多个来源的视频都可以整齐地显示在一个媒体库中。 自动整理 只需几秒钟，就能自动下载电影和电视节目的元数据和封面图片，并将所有内容归类整理。更妙的是，电影续集可以归类到不同的系列中，让查找可看内容变得轻而易举。 保持同步 使用 iCloud，可让元数据、媒体库设置和播放进度在所有设备间保持同步。在 iPhone 上播放视频，然后在 Apple TV 上轻松的继续播放。无需设置就可以快速的自动同步。 “界面非常漂亮，能够播放各种内容，强大得令人惊叹。” Lifehacker 强大的免费功能 高性能播放 通过高效的 h.264 和 h.265 硬件解码，4K（超高清）HDR 和 HDR10+ 视频播放如丝般顺滑。 便捷查找字幕 自带字幕，或从 OpenSubtitles 免费一键下载，在几秒钟内添加字幕。 无线传输 使用 AirDrop、iTunes、FTP 或普通的网络浏览器，即可快速传输视频。无需数据线。（仅限 iOS） 与 Trakt 同步 与 Trakt 连接，通过将播放历史和评级添加到你的账户，随时查看你观看过的内容。 跳过片头片尾 新功能 自动跳过电影和电视剧的片头片尾——由 IntroDB.app 和 TheIntroDB.org 提供支持。 自定义系列和播放列表 轻松创建电影、电视节目和家庭视频的系列和播放列表。随心所欲地随机播放和循环播放。 旅途中观看视频 无论您身在何处，都可以从 AirStash®、 SanDisk® Connect 和其他 Wi-Fi 旅行硬盘串流播放内容。 家庭影院和投影仪 多功能缩放、裁剪、宽高比和对齐选项可用于高端影院环境。 多语言支持 我们支持 40 多种国家或地区的语言，无论你说 “你好”、“hello”、",
+            "fetch_error": ""
+          },
+          {
+            "title": "‎Infuse App - App Store",
+            "url": "https://apps.apple.com/cn/app/infuse/id1136220934",
+            "query": "Infuse Apple TV 投屏 功能",
+            "provider": "tavily",
+            "score": "0.7197191",
+            "fetched_text": "‎Infuse App - App Store {\"@context\":\"https://schema.org\",\"@id\":\"https://apps.apple.com/#organization\",\"@type\":\"Organization\",\"name\":\"App Store\",\"url\":\"https://apps.apple.com\",\"logo\":\"https://apps.apple.com/assets/app-store.png\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q368215\",\"https://twitter.com/AppStore\",\"https://www.instagram.com/appstore/\",\"https://www.facebook.com/appstore/\"],\"parentOrganization\":{\"@type\":\"Organization\",\"name\":\"Apple\",\"@id\":\"https://www.apple.com/#organization\",\"url\":\"https://www.apple.com/\"}} {\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"Infuse\",\"description\":\"一口通吃您的视频文件 - Infuse将把您从永无宁日的视频转换中解放出来，用极美的方式在您的iPhone、iPad、Apple TV、Mac以及Vision上观赏几乎所有视频格式。Infuse已适配iOS 26 并添加更加强大的在线视频，trakt同步，AirPlay以及字幕功能。一切尽在随手掌控中。\\n\\n- 播放更多类型的视频。\\nInfuse 支持标准的 MP4、M4V 和 MOV – 再加上 MKV、AVI、WMV、MTS、ISO、VIDEO_TS、FLV、OGM、OGV、ASF、3GP、DVR-MS、WebM 和 WTV。包括对杜比®数码 Plus (AC3/E-AC3)、DTS® 和 DTS-HD® 音频的支持。\\n\\n- 从其他设备接收媒体流\\n浏览并播放储存在您Mac、PC、NAS、带有Wi-Fi功能的硬盘以及程序如Plex、Emby、Jellyfin和Kodi(XBMC)中的视频。Dropbox、Google Drive、Box、OneDrive、pCloud、Yandex.Disk、MEGA、阿里云盘、123 云盘、115 网盘和百度网盘也支持喔 —— 无需同步。\\n\\n- 强大的AirPlay 以及 Google Cast 支持。\\n串流播放多种视频格式例如：MKV、MP4、M4V、AVI 等等，经由 AirPlay 支持完整环绕音效与字幕。\\n\\n- TRAKT.TV 同步\\n同步 Infuse 到 trakt.tv 的拨放项目，上传评比及发表评论。\\n\\n- OPENSUBTITLES 支持的最佳化字幕\\n使用您自己的字幕或快速下载（免费）各种语言字幕。\\n\\n=====\\n\\n“iOS 平台上最智能、最强大的播放器！”\\n- Appdp.com\\n\\n“看起来很棒，可播放您丢进来的任何档案。”\\n- Lifehacker\\n\\n“iPhone 和 iPad 上最好的媒体播放器。”\\n- Cult of Mac\\n\\n“我已经无法给它的用户界面更高的评价了，实在是太棒了。”\\n- 9to5Mac\\n\\n“我真心找不到任何理由从我的屏幕上把 Infuse 移除。”\\n- iDownloadBlog\\n\\n“完全超越 VLC。”\\n- Alex Heath、Business Insider\\n\\n“精美的用户界面。”\\n- trakt.tv 联合创始人\\n\\n“小型的 KODI 媒体中心！”\\n- Infuse 用户\\n\\n=====\\n\\n不只是漂亮的脸蛋\\n\\n基础功能\\n- 最佳化播放引擎（播放全 4K）\\n- 经由 Mac、PC 或 NAS 串流播放\\n- 与 Plex、Emby、Jellyfin、Kodi (XBMC)、WMC以及其他UPnP/DLNA服务联通。\\n- 漂亮的介面并可快速存取视",
+            "fetch_error": ""
+          },
+          {
+            "title": "小红书官宣获得世界杯版权平台足球兴趣用户超1亿 - 搜狐",
+            "url": "https://m.sohu.com/a/1028725360_120988576?scm=10001.325_13-325_13.0.0-0-0-0-0.5_1334",
+            "query": "小红书 投屏 Apple TV 世界杯 2025",
+            "provider": "tavily",
+            "score": "0.62523276",
+            "fetched_text": "!function(a,b){function c(){var b=f.getBoundingClientRect().width;b/i>540&&(b=540*i);var c=b/10;f.style.fontSize=c+\"px\",k.rem=a.rem=c}var d,e=a.document,f=e.documentElement,g=e.querySelector('meta[name=\"viewport\"]'),h=e.querySelector('meta[name=\"flexible\"]'),i=0,j=0,k=b.flexible||(b.flexible={});if(g){var l=g.getAttribute(\"content\").match(/initial\\-scale=([\\d\\.]+)/);l&&(j=parseFloat(l[1]),i=parseInt(1/j))}else{if(h){var m=h.getAttribute(\"content\");if(m){var n=m.match(/initial\\-dpr=([\\d\\.]+)/),o=m.match(/maximum\\-dpr=([\\d\\.]+)/);n&&(i=parseFloat(n[1]),j=parseFloat((1/i).toFixed(2))),o&&(i=parseFloat(o[1]),j=parseFloat((1/i).toFixed(2)))}}}var isIos=a.navigator.appVersion.match(/iphone/gi);if(isIos){f.setAttribute(\"class\",\"ios\")}else{f.setAttribute(\"class\",\"android\")}if(!i&&!j){var p=(a.navigator.appVersion.match(/android/gi),a.navigator.appVersion.match(/iphone/gi)),q=a.devicePixelRatio;i=p?q>=3&&(!i||i>=3)?3:q>=2&&(!i||i>=2)?2:1:1,j=1/i}if(f.setAttribute(\"data-dpr\",i),!g){if(g=e.createElement(\"meta\"),g.setAttribute(\"name\",\"viewport\"),g.setAttribute(\"content\",\"initial-scale=\"+j+\", maximum-scale=\"+j+\", minimum-scale=\"+j+\", user-scalable=no\"),f.firstElementChild){f.firstElementChild.appendChild(g)}else{var r=e.createElement(\"div\");r.appendChild(g),e.write(r.innerHTML)}}a.addEventListener(\"resize\",function(){clearTimeout(d),d=setTimeout(c,300)},!1),a.addEventListener(\"pageshow\",function(a){a.persisted&&(clearTimeout(d),d=setTimeout(c,300))},!1),\"complete\"===e.readyState?e.body.style.fontSize=12*i+\"px\":e.addEventListener(\"DOMContentLoaded\",function(){e.body.style.fontSize=12*i+\"px\"},!1),c(),k.dpr=a.dpr=i,k.refreshRem=c,k.rem2px=function(a){var b=parseFloat(a)*this.rem;return\"string\"==typeof a&&a.match(/rem$/)&&(b+=\"px\"),b},k.px2rem=function(a){var b=parseFloat(a)/this.rem;re",
+            "fetch_error": ""
+          },
+          {
+            "title": "为世界杯2026 做准备 Apple Sports 开放给更多国家包括大马用户 ...",
+            "url": "https://www.instagram.com/p/DYjuXqtkyDY?img_index=4",
+            "query": "小红书 投屏 Apple TV 世界杯 2025",
+            "provider": "tavily",
+            "score": "0.61307496",
+            "fetched_text": ":root, .__ig-light-mode:root, .__ig-light-mode {--fds-black:#000000;--fds-black-alpha-05:rgba(0, 0, 0, 0.05);--fds-black-alpha-10:rgba(0, 0, 0, 0.1);--fds-black-alpha-15:rgba(0, 0, 0, 0.15);--fds-black-alpha-20:rgba(0, 0, 0, 0.2);--fds-black-alpha-30:rgba(0, 0, 0, 0.3);--fds-black-alpha-40:rgba(0, 0, 0, 0.4);--fds-black-alpha-50:rgba(0, 0, 0, 0.5);--fds-black-alpha-60:rgba(0, 0, 0, 0.6);--fds-black-alpha-80:rgba(0, 0, 0, 0.8);--fds-blue-05:#ECF3FF;--fds-blue-30:#AAC9FF;--fds-blue-40:#77A7FF;--fds-blue-60:#1877F2;--fds-blue-70:#2851A3;--fds-blue-80:#1D3C78;--fds-button-text:#444950;--fds-comment-background:#F2F3F5;--fds-dark-mode-gray-35:#CCCCCC;--fds-dark-mode-gray-50:#828282;--fds-dark-mode-gray-70:#4A4A4A;--fds-dark-mode-gray-80:#373737;--fds-dark-mode-gray-90:#282828;--fds-dark-mode-gray-100:#1C1C1C;--fds-gray-00:#F5F6F7;--fds-gray-05:#F2F3F5;--fds-gray-10:#EBEDF0;--fds-gray-20:#DADDE1;--fds-gray-25:#CCD0D5;--fds-gray-30:#BEC3C9;--fds-gray-45:#8D949E;--fds-gray-70:#606770;--fds-gray-80:#444950;--fds-gray-90:#303338;--fds-gray-100:#1C1E21;--fds-green-55:#00A400;--fds-green-60:#31A73B;--fds-green-65:#51CE70;--fds-highlight:#3578E5;--fds-highlight-cell-background:#ECF3FF;--fds-primary-icon:#1C1E21;--fds-primary-text:#1C1E21;--fds-red-55:#FA383E;--fds-soft:cubic-bezier(.08,.52,.52,1);--fds-spectrum-aluminum-tint-70:#E4F0F6;--fds-spectrum-blue-gray-tint-70:#CFD1D5;--fds-spectrum-cherry:#F35369;--fds-spectrum-cherry-tint-70:#FBCCD2;--fds-spectrum-grape-tint-70:#DDD5F0;--fds-spectrum-grape-tint-90:#F4F1FA;--fds-spectrum-lemon-dark-1:#F5C33B;--fds-spectrum-lemon-tint-70:#FEF2D1;--fds-spectrum-lime:#A3CE71;--fds-spectrum-lime-tint-70:#E4F0D5;--fds-spectrum-orange-tint-70:#FCDEC5;--fds-spectrum-orange-tint-90:#FEF4EC;--fds-spectrum-seafoam-tint-70:#CAEEF9;--fds-spectrum-slate-",
+            "fetch_error": ""
+          },
+          {
+            "title": "‏‫تطبيق 小红书 – 世界杯直播‬ - App Store",
+            "url": "https://apps.apple.com/us/app/%E5%B0%8F%E7%BA%A2%E4%B9%A6-%E4%B8%96%E7%95%8C%E6%9D%AF%E7%9B%B4%E6%92%AD/id741292507?l=ar",
+            "query": "小红书 投屏 Apple TV 世界杯 2025",
+            "provider": "tavily",
+            "score": "0.55623144",
+            "fetched_text": "‏‫تطبيق 小红书 – 世界杯直播‬ - App Store {\"@context\":\"https://schema.org\",\"@id\":\"https://apps.apple.com/#organization\",\"@type\":\"Organization\",\"name\":\"App Store\",\"url\":\"https://apps.apple.com\",\"logo\":\"https://apps.apple.com/assets/app-store.png\",\"sameAs\":[\"https://www.wikidata.org/wiki/Q368215\",\"https://twitter.com/AppStore\",\"https://www.instagram.com/appstore/\",\"https://www.facebook.com/appstore/\"],\"parentOrganization\":{\"@type\":\"Organization\",\"name\":\"Apple\",\"@id\":\"https://www.apple.com/#organization\",\"url\":\"https://www.apple.com/\"}} {\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"小红书 – 世界杯直播\",\"description\":\"欢迎来到小红书，这里是你专属的生活兴趣社区！\\n\\n在这里，热爱闪闪发光，好奇找到回响，一起来开启属于你的兴趣宇宙吧！\\n\\n发现精彩： 世界那么大，兴趣那么多！无数和你一样充满好奇心的人，在这里分享着他们的热爱与探索，等你来挖掘属于你的那份心动。无论你是痴迷手作、沉醉音乐、钻研美食，还是向往远行、热衷穿搭、好奇科技……在这里，总有让你眼前一亮的兴趣宝藏。兴趣无边界，热爱无高低，都在这里自由流淌。\\n\\n遇见同好： 独乐乐，当然不如众乐乐！世界很大，但同好很近。在这里，你不是一个人在热爱。和兴趣相投的小红薯们，一起真诚交流、互相启发。一句评论，一次点赞，可能就会转角遇到灵魂拍档。在这里，每一份兴趣被听见，每一种热爱被温柔以待。即使我们都独一无二，也不会是一座孤岛。\\n\\n勇敢发光： 你的每一次尝试、每一点进步、每一份感动都值得被珍藏。小红书就是你记录兴趣生活的成长手账！大胆分享你的故事、心得、哪怕是小小的尝试。让我们勇敢发光吧！你的真实记录，不仅点亮了自己的热爱，更可能成为照亮另一个“兴趣同路人”的微光。\\n\\n热爱成真：兴趣不息，体验不止！在小红书，发现让你感兴趣的好物，一键种草，轻松下单拔草！看到超酷的线下活动，呼朋引伴，说走就走！这里不光是灵感的源头，更是你兴趣旅程的起点站——从线上汲取灵感，到线下亲身体验，再到回来分享你的精彩故事。让每一次心动都落地生根，让每一份热爱都玩出花样。\\n\\n带上好奇心，在小红书，开启属于你的兴趣之旅吧！\",\"image\":\"https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/ac/ac/76/acac76ef-82f9-ea45-7602-3ef88e8d6f34/AppIcon-0-0-1x_U007epad-0-11-0-85-220.png/1200x630wa.png\",\"availableOnDevice\":\"iPhone, iPad, iPod\",\"operatingSystem\":\"‫يتطلب iOS 13.0 أو أحدث. ‫‏متوافق مع iPhone,‏ iPad و ‫iPod touch.‏\",\"offers\":{\"@type\":\"Offer\",\"price\":0,\"priceCurrency\":\"USD\",\"category\":\"free\"},\"applicationCategory\":\"التواصل الاجتماعي\",\"aggregateRating\":{\"@type\":\"AggregateRating\",\"ratingValue\":4.9,\"reviewCount\":266123},\"author\":{\"@type\":\"Organization\",\"name\"",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "成本是否真的下降",
+        "免费额度和爆账单风险",
+        "替代方案值不值得换"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "Apple TV投屏工具DLPlay：技术实现与独立开发账本 官方公告 价格 成本",
+        "Apple TV投屏工具DLPlay：技术实现与独立开发账本 API 文档 额度 限制",
+        "Apple TV投屏工具DLPlay：技术实现与独立开发账本 替代方案 真实使用 成本"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
