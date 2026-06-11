@@ -1440,22 +1440,22 @@ def topic_direction_for_item(item: SourceItem, report_type: str, site: dict[str,
         return item.source_category, {"title": item.source_category, "short_title": item.source_category, "description": ""}
 
     text = f"{item.title} {item.summary} {item.source_name} {item.url}".lower()
-    if any(word in text for word in ["freelance", "contract", "invoice", "chargeback", "debt", "lawsuit", "scam", "arbitrage", "外包", "接项目", "合同", "回款", "发票", "催收", "债务", "起诉", "骗局", "套利", "卖课"]):
-        meta = directions.get("cashflow-risk")
+    if any(word in text for word in ["freelance", "contract", "invoice", "chargeback", "debt", "lawsuit", "scam", "arbitrage", "外包", "接项目", "合同", "回款", "发票", "催收", "债务", "起诉", "骗局", "套利", "卖课", "信息差"]):
+        meta = directions.get("side-info")
         if meta:
-            return "cashflow-risk", meta
+            return "side-info", meta
     if any(word in text for word in ["google search", "seo", "ai seo", "ranking", "traffic", "recommendation", "policy", "license", "terms", "compliance", "公众号", "小红书", "视频号", "搜索", "流量", "推荐", "规则", "合规", "账号"]):
-        meta = directions.get("traffic-rules")
+        meta = directions.get("tools-rules")
         if meta:
-            return "traffic-rules", meta
+            return "tools-rules", meta
     if any(word in text for word in ["stripe", "shopify", "payment", "commerce", "cross-border", "global demand", "出海", "跨境", "支付", "收款", "独立站"]):
         meta = directions.get("cross-border")
         if meta:
             return "cross-border", meta
     if any(word in text for word in ["automation", "workflow", "assistant", "agentic", "template", "no-code", "n8n", "zapier", "个人助手", "自动化", "工作流", "实操", "办公", "内容生产", "健康助手", "客服", "运营工具"]):
-        meta = directions.get("ai-practice")
+        meta = directions.get("tools-rules")
         if meta:
-            return "ai-practice", meta
+            return "tools-rules", meta
     best_key = ""
     best_score = -1
     for key, meta in directions.items():
@@ -1467,19 +1467,19 @@ def topic_direction_for_item(item: SourceItem, report_type: str, site: dict[str,
         for keyword in meta.get("keywords", []):
             if keyword.lower() in text:
                 score += 3
-        if key == "traffic-rules" and report_type == "platform-rules":
+        if key == "tools-rules" and report_type == "platform-rules":
             score += 2
         if key == "cross-border" and any(word in text for word in ["stripe", "shopify", "payment", "commerce", "cross-border", "global demand", "出海", "跨境", "支付", "收款", "独立站"]):
             score += 10
         if key == "ai-frontier" and any(word in text for word in ["ai", "llm", "agent", "model", "anthropic", "openai", "claude", "codex", "copilot", "frontier", "模型", "智能体"]):
             score += 6
-        if key == "ai-practice" and any(word in text for word in ["automation", "workflow", "assistant", "agentic", "template", "no-code", "个人助手", "自动化", "工作流", "实操"]):
+        if key == "tools-rules" and any(word in text for word in ["automation", "workflow", "assistant", "agentic", "template", "no-code", "个人助手", "自动化", "工作流", "实操"]):
             score += 8
-        if key == "traffic-rules" and any(word in text for word in ["policy", "license", "terms", "compliance", "regulation", "search", "seo", "traffic", "规则", "合规", "协议", "搜索", "流量", "推荐"]):
+        if key == "tools-rules" and any(word in text for word in ["policy", "license", "terms", "compliance", "regulation", "search", "seo", "traffic", "规则", "合规", "协议", "搜索", "流量", "推荐"]):
             score += 6
-        if key == "indie-builder" and any(word in text for word in ["show hn", "producthunt", "product hunt", "v2ex", "mrr", "saas", "独立开发", "副业", "工具站", "开源"]):
+        if key == "side-info" and any(word in text for word in ["show hn", "producthunt", "product hunt", "v2ex", "mrr", "saas", "独立开发", "副业", "工具站", "开源", "信息差"]):
             score += 5
-        if key == "cashflow-risk" and any(word in text for word in ["freelance", "contract", "invoice", "chargeback", "debt", "lawsuit", "scam", "arbitrage", "外包", "合同", "回款", "催收", "债务", "骗局", "套利"]):
+        if key == "side-info" and any(word in text for word in ["freelance", "contract", "invoice", "chargeback", "debt", "lawsuit", "scam", "arbitrage", "外包", "合同", "回款", "催收", "债务", "骗局", "套利"]):
             score += 8
         if score > best_score:
             best_key = key
@@ -1950,13 +1950,11 @@ def report_template_key(report: dict[str, Any]) -> str:
     text = f"{report.get('title', '')} {report.get('original_title', '')} {report.get('summary', '')}".lower()
     if topic == "ai-frontier" and any(word in text for word in ["release", "launch", "update", "available", "announce", "introduce", "new", "发布", "更新", "上线", "推出"]):
         return "ai_major_update"
-    if topic == "ai-practice":
-        return "ai_practice"
-    if topic in {"indie-builder", "cross-border"} or report_type in {"opportunity", "case-study"}:
+    if topic == "tools-rules":
+        return "ai_practice" if report_type != "platform-rules" else "platform_rule_change"
+    if topic in {"side-info", "cross-border"} or report_type in {"opportunity", "case-study"}:
         return "business_teardown"
-    if topic == "traffic-rules" or report_type == "platform-rules":
-        return "platform_rule_change"
-    if topic == "cashflow-risk" or report_type == "risk-warning":
+    if topic == "side-info" and report_type == "risk-warning":
         return "risk_case"
     if report_type == "tool-ledger":
         return "tool_cost_ledger"
@@ -2101,18 +2099,18 @@ def topic_selection_rules(topic_key: str) -> dict[str, list[str]]:
             "missing_basics": ["产品/模型/Agent 基础概念", "本次更新前后的差异", "开放范围和使用门槛", "价格、额度和地区限制"],
             "missing_materials": ["官方公告", "文档或 changelog", "价格页", "真实使用反馈", "竞品对比材料"],
         },
-        "ai-practice": {
+        "tools-rules": {
             "selection_questions": [
-                "它是不是一个具体需求场景，而不是空泛地说 AI 很强？",
-                "读者能不能想象自己也有类似需求，比如个人助手、办公、健康、内容、客服或运营？",
-                "能不能拆出输入、处理流程、输出、人工兜底和失败信号？",
-                "能不能低成本验证，而不是必须完整开发一个大系统？",
+                "它是不是一个具体工具、工作流、平台规则或搜索流量变化，而不是空泛地说 AI 很强？",
+                "普通读者能不能理解它怎么用、怎么变、会影响什么成本或边界？",
+                "能不能拆出输入输出、执行规则、人工兜底、失败信号或账号/合规风险？",
+                "有没有官方文档、帮助中心、价格页、规则原文、实测材料或反例？",
             ],
-            "valuable_signals": ["需求具体", "输入输出清楚", "能一两天做 MVP", "有人工兜底", "非技术读者也能理解"],
-            "reject_signals": ["只有工具名", "只有炫技", "需求不真实", "必须编一堆操作细节"],
-            "writeable_angles": ["如果是我会怎么把需求说清楚", "AI 能放大的到底是哪一段", "最低成本验证流程", "哪些环节必须人工兜底"],
-            "missing_basics": ["具体使用者是谁", "输入数据从哪里来", "输出物怎么验收", "失败后怎么回滚"],
-            "missing_materials": ["工具文档", "示例工作流", "输入输出样例", "成本估算", "失败案例"],
+            "valuable_signals": ["工具或规则明确", "输入输出清楚", "影响成本/效率/流量/账号", "有官方或近源材料", "普通读者能理解"],
+            "reject_signals": ["只有工具名", "只有炫技", "只有玄学猜测", "没有规则原文", "必须编一堆操作细节"],
+            "writeable_angles": ["这个工具或规则到底改变了什么", "最低成本怎么验证", "哪些环节必须人工兜底", "哪些行为可能失效或踩坑"],
+            "missing_basics": ["具体使用者是谁", "输入输出或规则原文", "影响对象", "执行时间", "失败后怎么回滚"],
+            "missing_materials": ["工具文档", "示例工作流", "价格页", "帮助中心/规则原文", "社区实测和反例"],
         },
         "cross-border": {
             "selection_questions": [
@@ -2127,44 +2125,18 @@ def topic_selection_rules(topic_key: str) -> dict[str, list[str]]:
             "missing_basics": ["支付链路", "手续费和汇率", "税务/合规边界", "平台账号要求", "地域限制"],
             "missing_materials": ["官方费率页", "服务条款", "合规说明", "真实用户案例", "反方风险材料"],
         },
-        "indie-builder": {
+        "side-info": {
             "selection_questions": [
-                "它是不是一个真实项目、开源项目、工具站、SaaS 或副业案例？",
-                "需求、用户、流量、变现、交付和运营能不能拆清楚？",
-                "技术是不是只是其中一环，非技术门槛能不能说出来？",
-                "有没有数据、代码、用户反馈、收入证据或失败证据？",
+                "它是不是一个真实项目、副业机会、工具站、SaaS、开源项目、信息差线索或风险案例？",
+                "需求、用户、流量、变现、交付、现金流和风险能不能拆清楚？",
+                "技术是不是只是其中一环，非技术门槛、失败信号和停止条件能不能说出来？",
+                "有没有数据、代码、用户反馈、收入证据、合同/条款、投诉或失败证据？",
             ],
-            "valuable_signals": ["真实项目", "有用户或数据", "能拆需求和变现", "技术人有切口", "失败信号清楚"],
-            "reject_signals": ["只有 idea", "只有 GitHub 星数", "没有用户证据", "只能强行写我会怎么做"],
-            "writeable_angles": ["技术之外真正难的是什么", "这个项目为什么有人用", "流量和变现能不能闭环", "最小验证应该验证哪一件事"],
-            "missing_basics": ["目标用户", "核心需求", "流量来源", "收费方式", "运营和客服成本"],
-            "missing_materials": ["项目仓库", "产品页面", "用户反馈", "收入或订阅证据", "竞品和失败案例"],
-        },
-        "traffic-rules": {
-            "selection_questions": [
-                "它是不是平台规则、搜索、推荐、账号、SEO、AI SEO 或内容分发生态变化？",
-                "它会不会影响公众号、小红书、视频号、博客、独立站或后续变现？",
-                "规则来自官方、近源实测还是社区猜测？证据边界能不能标清？",
-                "能不能形成时间线、规则变化、影响范围和应对材料？",
-            ],
-            "valuable_signals": ["官方规则变化", "影响流量和账号", "影响内容分发", "有实测材料", "有明确应对边界"],
-            "reject_signals": ["只有玄学猜测", "只有营销号二手解读", "没有平台或账号关系", "不能落到内容生产"],
-            "writeable_angles": ["平台到底改了什么", "对普通创作者和技术人有什么影响", "哪些行为可能失效", "哪些材料还不能当结论"],
-            "missing_basics": ["原规则", "新规则", "影响对象", "执行时间", "处罚或收益机制"],
-            "missing_materials": ["官方公告", "帮助中心", "社区实测", "流量数据", "反例和边界案例"],
-        },
-        "cashflow-risk": {
-            "selection_questions": [
-                "它是不是会影响技术人的钱、合同、回款、债务、催收、外包、骗局或套利风险？",
-                "利益关系能不能拆清楚：谁赚钱，谁承担成本，谁承担法律和时间风险？",
-                "有没有合同、条款、真实案例、监管材料或可核验事实？",
-                "能不能给出避坑判断，而不是制造焦虑？",
-            ],
-            "valuable_signals": ["利益关系清楚", "有真实案例", "能帮读者避坑", "成本和责任边界明确", "和技术人现金流相关"],
-            "reject_signals": ["只有情绪", "只有截图", "只有吓唬人", "无法核验", "和技术人关系弱"],
-            "writeable_angles": ["钱从哪里来又从哪里没掉", "技术人接项目最容易忽略什么", "什么信号出现就该停", "为什么不能只看表面收益"],
-            "missing_basics": ["合同边界", "回款路径", "责任归属", "税务和发票", "法律或平台规则"],
-            "missing_materials": ["条款原文", "案例材料", "监管/法院/平台资料", "费用清单", "反方说明"],
+            "valuable_signals": ["真实项目或案例", "有用户/数据/收入/条款证据", "能拆需求和变现", "技术人有切口", "失败信号清楚"],
+            "reject_signals": ["只有 idea", "只有 GitHub 星数", "没有用户证据", "只有情绪或截图", "只能强行写我会怎么做"],
+            "writeable_angles": ["技术之外真正难的是什么", "这个项目为什么有人用", "钱从哪里来又从哪里没掉", "最小验证应该验证哪一件事", "什么信号出现就该停"],
+            "missing_basics": ["目标用户", "核心需求", "流量来源", "收费方式", "合同/回款/责任边界"],
+            "missing_materials": ["项目仓库", "产品页面", "用户反馈", "收入或订阅证据", "条款原文", "竞品和失败案例"],
         },
     }
     return rules.get(topic_key, {

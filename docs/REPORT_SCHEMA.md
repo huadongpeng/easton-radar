@@ -11,7 +11,7 @@
   "report_type": "tool-ledger",
   "report_type_title": "工具账本",
   "topic_direction": "ai-frontier",
-  "topic_direction_title": "AI 前沿与工具链",
+  "topic_direction_title": "AI前沿",
   "source_category": "ai_tools",
   "source_name": "OpenAI",
   "source_url": "https://example.com/original",

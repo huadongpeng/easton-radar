@@ -46,11 +46,9 @@
 `topic_direction` 当前可选方向：
 
 - `ai-frontier`
-- `ai-practice`
+- `tools-rules`
 - `cross-border`
-- `indie-builder`
-- `traffic-rules`
-- `cashflow-risk`
+- `side-info`
 
 `report_type` 当前可选分析方法：
 
