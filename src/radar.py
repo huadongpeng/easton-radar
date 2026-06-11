@@ -36,11 +36,12 @@ TAVILY_USAGE_URL = "https://api.tavily.com/usage"
 MAX_ITEMS_PER_SOURCE = 18
 MAX_TOTAL_ITEMS = 220
 MAX_REPORTS_PER_BATCH = 5
-MAX_REPORTS_PER_TOPIC = 3
+MAX_REPORTS_PER_TOPIC = 2
 TRIAGE_BATCH_SIZE = 10
 MAX_REPORTS_PER_SOURCE_HOST = 2
 MIN_DEEP_DIVE_SCORE = 45
 MIN_BRIEF_SCORE = 38
+DUPLICATE_LOOKBACK_DAYS = 30
 SOURCE_CATEGORY_REPORT_CAPS = {
     "ai_tools": 6,
     "developer_business": 4,
@@ -479,13 +480,40 @@ def slugify(text: str, fallback: str = "report") -> str:
 def topic_fingerprint(text: str) -> str:
     text = html.unescape(text or "").lower()
     text = re.sub(r"https?://\S+", " ", text)
+    text = re.sub(r"\b20\d{2}[-/]\d{1,2}[-/]\d{1,2}\b", " ", text)
+    text = re.sub(r"\b20\d{2}\b", " ", text)
+    text = re.sub(r"\bv?\d+(?:\.\d+){1,3}\b", " ", text)
     text = re.sub(r"[^a-z0-9\u4e00-\u9fff]+", " ", text)
     stop_words = {
         "the", "and", "for", "with", "from", "now", "new", "update", "updates",
+        "launch", "launches", "release", "released", "announces", "announced",
+        "introducing", "preview", "beta", "ga", "today", "official", "blog",
+        "发布", "推出", "上线", "更新", "新版", "新功能", "官方", "公告", "预览",
         "工具账本", "案例复盘", "深度调查", "机会拆解", "平台规则", "风险避坑",
     }
     tokens = [token for token in text.split() if token and token not in stop_words]
     return " ".join(tokens[:14])
+
+
+def fingerprint_tokens(fingerprint: str) -> set[str]:
+    return {token for token in fingerprint.split() if len(token) > 1}
+
+
+def similar_fingerprint(left: str, right: str, threshold: float = 0.72) -> bool:
+    if not left or not right:
+        return False
+    if left == right:
+        return True
+    left_tokens = fingerprint_tokens(left)
+    right_tokens = fingerprint_tokens(right)
+    if not left_tokens or not right_tokens:
+        return False
+    overlap = len(left_tokens & right_tokens)
+    smaller = min(len(left_tokens), len(right_tokens))
+    union = len(left_tokens | right_tokens)
+    containment = overlap / smaller if smaller else 0.0
+    jaccard = overlap / union if union else 0.0
+    return containment >= threshold or (overlap >= 4 and jaccard >= 0.55)
 
 
 def load_topic_archive() -> dict[str, Any]:
@@ -546,7 +574,7 @@ def recent_archive_items(archive: dict[str, Any], days: int = 14) -> list[dict[s
     return recent
 
 
-def is_duplicate_topic(decision: "RadarDecision", site: dict[str, Any], archive: dict[str, Any], batch_id: str, days: int = 14) -> tuple[bool, str]:
+def is_duplicate_topic(decision: "RadarDecision", site: dict[str, Any], archive: dict[str, Any], batch_id: str, days: int = DUPLICATE_LOOKBACK_DAYS) -> tuple[bool, str]:
     topic_key, _ = topic_direction_for_item(decision.item, decision.report_type, site)
     url = normalize_url(decision.item.url)
     fingerprint = topic_fingerprint(decision.report_title or decision.item.title)
@@ -555,7 +583,7 @@ def is_duplicate_topic(decision: "RadarDecision", site: dict[str, Any], archive:
             continue
         if item.get("url") and normalize_url(str(item.get("url"))) == url:
             return True, f"近 {days} 天已收录同 URL：{item.get('title', '')}"
-        if item.get("fingerprint") and item.get("fingerprint") == fingerprint:
+        if item.get("fingerprint") and similar_fingerprint(str(item.get("fingerprint")), fingerprint):
             return True, f"近 {days} 天已收录相似选题：{item.get('title', '')}"
     return False, ""
 
@@ -2494,33 +2522,53 @@ def select_reports(decisions: list[RadarDecision], site: dict[str, Any], archive
     topic_counts: dict[str, int] = {}
     source_host_counts: dict[str, int] = {}
     seen_fingerprints: set[str] = set()
+    selected_urls: set[str] = set()
     duplicate_skips: list[dict[str, str]] = []
-
+    topic_order = list(site.get("topic_directions", {}).keys())
+    eligible_by_topic: dict[str, list[RadarDecision]] = {key: [] for key in topic_order}
     for decision in eligible:
+        topic_key, _ = topic_direction_for_item(decision.item, decision.report_type, site)
+        eligible_by_topic.setdefault(topic_key, []).append(decision)
+
+    def try_select(decision: RadarDecision) -> bool:
         category = decision.item.source_category
         topic_key, _ = topic_direction_for_item(decision.item, decision.report_type, site)
         source_host = urllib.parse.urlparse(decision.item.url).netloc.lower()
         fingerprint = topic_fingerprint(decision.report_title or decision.item.title)
-        if fingerprint in seen_fingerprints:
+        url = normalize_url(decision.item.url)
+        if url in selected_urls:
+            return False
+        if any(similar_fingerprint(existing, fingerprint) for existing in seen_fingerprints):
             duplicate_skips.append({"title": decision.report_title or decision.item.title, "url": decision.item.url, "reason": "本批次相似选题已入池"})
-            continue
+            return False
         duplicate, reason = is_duplicate_topic(decision, site, archive, batch_id)
         if duplicate:
             duplicate_skips.append({"title": decision.report_title or decision.item.title, "url": decision.item.url, "reason": reason})
-            continue
+            return False
         cap = SOURCE_CATEGORY_REPORT_CAPS.get(category, limit)
         if category_counts.get(category, 0) >= cap:
-            continue
+            return False
         if topic_counts.get(topic_key, 0) >= MAX_REPORTS_PER_TOPIC:
-            continue
+            return False
         if source_host_counts.get(source_host, 0) >= MAX_REPORTS_PER_SOURCE_HOST:
-            continue
+            return False
         selected.append(decision)
         category_counts[category] = category_counts.get(category, 0) + 1
         topic_counts[topic_key] = topic_counts.get(topic_key, 0) + 1
         source_host_counts[source_host] = source_host_counts.get(source_host, 0) + 1
         seen_fingerprints.add(fingerprint)
+        selected_urls.add(url)
+        return True
+
+    for topic_key in topic_order:
+        for decision in eligible_by_topic.get(topic_key, []):
+            if try_select(decision):
+                break
         if len(selected) >= limit:
+            return selected, duplicate_skips
+
+    for decision in eligible:
+        if try_select(decision) and len(selected) >= limit:
             return selected, duplicate_skips
 
     return selected, duplicate_skips
