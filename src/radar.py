@@ -57,7 +57,7 @@ TOPHUBDATA_DEFAULT_CID_PLAN = [
     {"cid": "11", "name": "wxmp", "limit": 1},
     {"cid": "6", "name": "finance", "limit": 1},
 ]
-TOPHUBDATA_PAID_DETAIL_DEFAULT_LIMIT = 7
+TOPHUBDATA_PAID_DETAIL_DEFAULT_LIMIT = 11
 SEARCH_CACHE: dict[str, list[dict[str, str]]] = {}
 SEARCH_USAGE_STATE: dict[str, Any] = {}
 SEARCH_NOTICE_KEYS: set[str] = set()
@@ -1190,20 +1190,23 @@ def tophubdata_paid_detail_has_budget(cost: int = 1) -> bool:
 def record_tophubdata_paid_detail_call(path: str) -> None:
     global TOPHUBDATA_PAID_DETAIL_CALLS_USED
     TOPHUBDATA_PAID_DETAIL_CALLS_USED += 1
-    info(f"TopHubData paid detail: path={path}, run_calls_used={TOPHUBDATA_PAID_DETAIL_CALLS_USED}/{tophubdata_paid_detail_limit_per_run()}.")
+    info(f"TopHubData paid API: path={path}, run_calls_used={TOPHUBDATA_PAID_DETAIL_CALLS_USED}/{tophubdata_paid_detail_limit_per_run()}.")
 
 
-def fetch_tophubdata_paid_detail(hashid: str) -> dict[str, Any]:
+def fetch_tophubdata_paid_path(path: str) -> dict[str, Any]:
     if not tophubdata_paid_detail_enabled():
         raise RuntimeError("TOPHUBDATA_ENABLE_PAID_DETAIL is not enabled")
     if not tophubdata_paid_detail_has_budget():
-        raise RuntimeError("TopHubData paid detail budget exhausted")
-    path = f"/nodes/{urllib.parse.quote(hashid)}"
+        raise RuntimeError("TopHubData paid API budget exhausted")
     data = fetch_tophubdata_json(path)
     record_tophubdata_paid_detail_call(path)
     if data.get("error"):
         raise RuntimeError(str(data)[:240])
     return data
+
+
+def fetch_tophubdata_paid_detail(hashid: str) -> dict[str, Any]:
+    return fetch_tophubdata_paid_path(f"/nodes/{urllib.parse.quote(hashid)}")
 
 
 def fetch_tophubdata_nodes(max_pages: int = 5) -> list[dict[str, Any]]:
@@ -1315,26 +1318,32 @@ def tophubdata_topic_keywords(group: dict[str, Any]) -> list[str]:
     return [str(value).lower() for value in values if str(value).strip()]
 
 
-def tophubdata_row_matches_direction(node: dict[str, Any], row: dict[str, Any], group: dict[str, Any]) -> bool:
-    cid = str(node.get("cid", ""))
-    domain = str(node.get("domain", "")).lower()
-    node_name = str(node.get("name", "")).lower()
-    if cid == "7":
-        return True
-    if any(value in domain or value in node_name for value in ["v2ex", "github"]):
-        return True
-    keywords = tophubdata_topic_keywords(group)
-    if not keywords:
-        return True
-    text = " ".join(
+def tophubdata_row_text(row: dict[str, Any]) -> str:
+    return " ".join(
         first_text(row, keys)
         for keys in [
             ["title", "name", "word", "query", "keyword"],
             ["summary", "desc", "description", "abstract", "extra"],
             ["url", "link", "source_url", "sourceUrl"],
+            ["domain", "sitename", "views"],
         ]
     ).lower()
-    return any(keyword and keyword in text for keyword in keywords)
+
+
+def tophubdata_row_matches_direction(node: dict[str, Any], row: dict[str, Any], group: dict[str, Any]) -> bool:
+    cid = str(node.get("cid", ""))
+    domain = str(node.get("domain", "")).lower()
+    node_name = str(node.get("name", "")).lower()
+    keywords = tophubdata_topic_keywords(group)
+    if not keywords:
+        return True
+    text = tophubdata_row_text(row)
+    if any(keyword and keyword in text for keyword in keywords):
+        return True
+    if cid == "7" or any(value in domain or value in node_name for value in ["v2ex", "github", "segmentfault"]):
+        developer_terms = ["api", "sdk", "github", "开源", "程序员", "开发", "后端", "前端", "架构", "数据库", "远程", "外包", "岗位", "agent", "ai"]
+        return any(term_in_text(text, term) for term in developer_terms)
+    return False
 
 
 def make_tophubdata_hot_item(source_category: str, node: dict[str, Any], row: dict[str, Any], index: int) -> SourceItem | None:
@@ -1361,6 +1370,43 @@ def make_tophubdata_hot_item(source_category: str, node: dict[str, Any], row: di
     published_at = first_text(row, ["created_at", "createdAt", "updated_at", "updatedAt", "publish_time", "publishTime"])
     feed_url = f"tophubdata:/nodes/{hashid}" if hashid else "tophubdata:/nodes"
     return make_item(source_category, f"TopHubData/{node_name}", "api-paid", title, url, "。".join(summary_parts), published_at, feed_url)
+
+
+def parse_tophubdata_search_items(source_category: str, group: dict[str, Any]) -> list[SourceItem]:
+    if not group.get("tophubdata_search_enabled", False) or not tophubdata_paid_detail_enabled():
+        return []
+    queries = group.get("tophubdata_search_queries", [])
+    if not isinstance(queries, list):
+        return []
+    item_limit = max(1, int(group.get("tophubdata_search_limit_per_query", 4) or 4))
+    items: list[SourceItem] = []
+    for query_config in queries:
+        if not isinstance(query_config, dict):
+            continue
+        query = clean_text(str(query_config.get("q", "")))
+        if not query or not tophubdata_paid_detail_has_budget():
+            continue
+        params = urllib.parse.urlencode({"q": query, "p": 1})
+        try:
+            data = fetch_tophubdata_paid_path(f"/search?{params}")
+        except Exception as exc:
+            info(f"TopHubData search failed for {query}: {str(exc)[:160]}")
+            continue
+        rows = tophubdata_hot_rows(data)
+        accepted = 0
+        for index, row in enumerate(rows):
+            if not tophubdata_row_matches_direction({}, row, group):
+                continue
+            item = make_tophubdata_hot_item(source_category, {"name": f"Search:{query}", "hashid": ""}, row, index)
+            if item:
+                item.source_name = f"TopHubData/Search:{query}"
+                item.feed_url = f"tophubdata:/search?q={query}"
+                items.append(item)
+                accepted += 1
+            if accepted >= item_limit:
+                break
+    info(f"TopHubData search imported {len(items)} hot items from configured queries.")
+    return items
 
 
 def parse_tophubdata_hot_items(source_category: str, group: dict[str, Any]) -> list[SourceItem]:
@@ -1395,6 +1441,7 @@ def parse_tophubdata_hot_items(source_category: str, group: dict[str, Any]) -> l
             if len(items) >= MAX_ITEMS_PER_SOURCE:
                 break
     info(f"TopHubData paid detail imported {len(items)} hot items from {TOPHUBDATA_PAID_DETAIL_CALLS_USED} paid calls.")
+    items.extend(parse_tophubdata_search_items(source_category, group))
     return items
 
 
@@ -1562,7 +1609,7 @@ def heuristic_decision(item: SourceItem, site: dict[str, Any]) -> RadarDecision:
     evidence_level = "official" if any(x in host for x in official_hosts) else "near_source"
     if evidence_level == "official":
         score += 12
-    if item.source_type == "api":
+    if item.source_type.startswith("api"):
         score += 5
     if "heat" in hits:
         score += 10
@@ -1647,6 +1694,11 @@ def normalize_triage_decision(decision: RadarDecision) -> RadarDecision:
         if decision.decision != "skip":
             decision.decision = "skip"
         decision.reject_reason = decision.reject_reason or "标题仍停留在泛化公司/平台变化层面，未形成具体冲突、成本、规则或选择题。"
+    if decision.decision == "deep_dive" and decision.score < MIN_DEEP_DIVE_SCORE:
+        decision.decision = "brief" if decision.score >= MIN_BRIEF_SCORE else "skip"
+    if decision.decision == "brief" and decision.score < MIN_BRIEF_SCORE:
+        decision.decision = "skip"
+        decision.reject_reason = decision.reject_reason or "分数低于 brief 入池线，未达到选题候选标准。"
     decision.traceability = {**decision.traceability, "topic_tension_score": tension.get("score", 0)}
     return decision
 
