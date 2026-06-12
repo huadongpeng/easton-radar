@@ -3174,6 +3174,18 @@ def select_reports(decisions: list[RadarDecision], site: dict[str, Any], archive
     eligible.extend(d for d in decisions if d.decision == "brief" and d.score >= MIN_BRIEF_SCORE)
     if not eligible:
         eligible = [d for d in decisions if d.decision != "skip" and d.score >= MIN_BRIEF_SCORE]
+    eligible_ids = {d.item.id for d in eligible}
+    for decision in decisions:
+        if decision.item.id in eligible_ids:
+            continue
+        topic_key, _ = topic_direction_for_item(decision.item, decision.report_type, site)
+        reason = decision.reject_reason or "未达到入池分数线或已被初筛判定为 skip"
+        info(
+            "Selection filter: "
+            f"stage=eligibility, score={decision.score}, decision={decision.decision}, topic={topic_key}, "
+            f"source={decision.item.source_name}/{decision.item.source_type}, title={decision.report_title}, "
+            f"original={decision.item.title}, reason={reason}"
+        )
     selected: list[RadarDecision] = []
     category_counts: dict[str, int] = {}
     topic_counts: dict[str, int] = {}
@@ -3194,20 +3206,53 @@ def select_reports(decisions: list[RadarDecision], site: dict[str, Any], archive
         fingerprints = decision_fingerprints(decision)
         url = normalize_url(decision.item.url)
         if url in selected_urls:
+            info(
+                "Selection filter: "
+                f"stage=batch-url, score={decision.score}, decision={decision.decision}, topic={topic_key}, "
+                f"source={decision.item.source_name}/{decision.item.source_type}, title={decision.report_title}, reason=本批次同 URL 已入池"
+            )
             return False
         if any_similar_fingerprint(seen_fingerprints, fingerprints):
             duplicate_skips.append({"title": decision.report_title or decision.item.title, "url": decision.item.url, "reason": "本批次相似选题已入池"})
+            info(
+                "Selection filter: "
+                f"stage=batch-similar, score={decision.score}, decision={decision.decision}, topic={topic_key}, "
+                f"source={decision.item.source_name}/{decision.item.source_type}, title={decision.report_title}, reason=本批次相似选题已入池"
+            )
             return False
         duplicate, reason = is_duplicate_topic(decision, site, archive, batch_id)
         if duplicate:
             duplicate_skips.append({"title": decision.report_title or decision.item.title, "url": decision.item.url, "reason": reason})
+            info(
+                "Selection filter: "
+                f"stage=archive-duplicate, score={decision.score}, decision={decision.decision}, topic={topic_key}, "
+                f"source={decision.item.source_name}/{decision.item.source_type}, title={decision.report_title}, reason={reason}"
+            )
             return False
         cap = SOURCE_CATEGORY_REPORT_CAPS.get(category, limit)
         if category_counts.get(category, 0) >= cap:
+            info(
+                "Selection filter: "
+                f"stage=source-category-cap, score={decision.score}, decision={decision.decision}, topic={topic_key}, "
+                f"source={decision.item.source_name}/{decision.item.source_type}, title={decision.report_title}, "
+                f"reason=source_category {category} reached {cap}"
+            )
             return False
         if topic_counts.get(topic_key, 0) >= MAX_REPORTS_PER_TOPIC:
+            info(
+                "Selection filter: "
+                f"stage=topic-cap, score={decision.score}, decision={decision.decision}, topic={topic_key}, "
+                f"source={decision.item.source_name}/{decision.item.source_type}, title={decision.report_title}, "
+                f"reason=topic {topic_key} reached {MAX_REPORTS_PER_TOPIC}"
+            )
             return False
         if source_host_counts.get(source_host, 0) >= MAX_REPORTS_PER_SOURCE_HOST:
+            info(
+                "Selection filter: "
+                f"stage=source-host-cap, score={decision.score}, decision={decision.decision}, topic={topic_key}, "
+                f"source={decision.item.source_name}/{decision.item.source_type}, title={decision.report_title}, "
+                f"reason=source host {source_host} reached {MAX_REPORTS_PER_SOURCE_HOST}"
+            )
             return False
         selected.append(decision)
         category_counts[category] = category_counts.get(category, 0) + 1
@@ -3215,6 +3260,11 @@ def select_reports(decisions: list[RadarDecision], site: dict[str, Any], archive
         source_host_counts[source_host] = source_host_counts.get(source_host, 0) + 1
         seen_fingerprints.update(fingerprints)
         selected_urls.add(url)
+        info(
+            "Selection accept: "
+            f"score={decision.score}, decision={decision.decision}, topic={topic_key}, "
+            f"source={decision.item.source_name}/{decision.item.source_type}, title={decision.report_title}, original={decision.item.title}"
+        )
         return True
 
     for topic_key in topic_order:
@@ -3259,6 +3309,21 @@ def decision_log_sample(decisions: list[RadarDecision], limit: int = 8) -> list[
             "url": decision.item.url,
         })
     return sample
+
+
+def log_triage_decisions(decisions: list[RadarDecision], site: dict[str, Any]) -> None:
+    for index, decision in enumerate(decisions, 1):
+        topic_key, _ = topic_direction_for_item(decision.item, decision.report_type, site)
+        source_mode = "heuristic" if decision.traceability.get("heuristic") else "llm"
+        tension = decision.traceability.get("topic_tension_score", "")
+        reason = decision.reject_reason or decision.reason
+        info(
+            "Triage decision: "
+            f"rank={index}, score={decision.score}, decision={decision.decision}, report_type={decision.report_type}, "
+            f"topic={topic_key}, mode={source_mode}, tension={tension}, "
+            f"source={decision.item.source_name}/{decision.item.source_type}, "
+            f"title={decision.report_title}, original={decision.item.title}, reason={reason}"
+        )
 
 
 class StaticSite:
@@ -3944,6 +4009,7 @@ def main() -> int:
         f"brief={sum(1 for d in decisions if d.decision == 'brief')}, "
         f"skip={sum(1 for d in decisions if d.decision == 'skip')}"
     )
+    log_triage_decisions(decisions, site)
     info(
         "TopHubData triage: "
         f"items={tophubdata_summary['total']}, llm={tophubdata_summary['llm']}, heuristic={tophubdata_summary['heuristic']}, "
