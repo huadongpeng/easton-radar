@@ -52,11 +52,13 @@ SOURCE_CATEGORY_REPORT_CAPS = {
 }
 TOPHUBDATA_DEFAULT_NODE_NAMES = ["知乎", "微博", "百度", "今日头条", "V2EX", "GitHub", "少数派", "IT之家", "36氪"]
 TOPHUBDATA_DEFAULT_CIDS = {"1", "2", "4", "7", "10", "11"}
+TOPHUBDATA_PAID_DETAIL_DEFAULT_LIMIT = 8
 SEARCH_CACHE: dict[str, list[dict[str, str]]] = {}
 SEARCH_USAGE_STATE: dict[str, Any] = {}
 SEARCH_NOTICE_KEYS: set[str] = set()
 TAVILY_USAGE_FETCHED = False
 SEARCH_API_CALLS_USED = 0
+TOPHUBDATA_PAID_DETAIL_CALLS_USED = 0
 BJ_TZ = dt.timezone(dt.timedelta(hours=8))
 
 
@@ -183,6 +185,13 @@ def env_int(name: str, default: int) -> int:
         return int(value)
     except ValueError:
         return default
+
+
+def env_bool(name: str, default: bool = False) -> bool:
+    value = os.environ.get(name, "").strip().lower()
+    if not value:
+        return default
+    return value in {"1", "true", "yes", "on"}
 
 
 def search_api_call_limit_per_run() -> int:
@@ -1069,7 +1078,44 @@ def fetch_tophubdata_json(path: str) -> dict[str, Any]:
 
 
 def tophubdata_paid_detail_enabled() -> bool:
-    return False
+    return env_bool("TOPHUBDATA_ENABLE_PAID_DETAIL")
+
+
+def tophubdata_paid_detail_limit_per_run() -> int:
+    return env_int("TOPHUBDATA_PAID_DETAIL_LIMIT_PER_RUN", TOPHUBDATA_PAID_DETAIL_DEFAULT_LIMIT)
+
+
+def tophubdata_paid_detail_has_budget(cost: int = 1) -> bool:
+    limit = tophubdata_paid_detail_limit_per_run()
+    if limit <= 0:
+        info_once("tophubdata-paid-disabled-limit", "TopHubData paid detail: TOPHUBDATA_PAID_DETAIL_LIMIT_PER_RUN<=0, skip paid detail calls.")
+        return False
+    if TOPHUBDATA_PAID_DETAIL_CALLS_USED + cost > limit:
+        info_once(
+            "tophubdata-paid-exhausted",
+            f"TopHubData paid detail: per-run call limit reached, used={TOPHUBDATA_PAID_DETAIL_CALLS_USED}, limit={limit}.",
+        )
+        return False
+    return True
+
+
+def record_tophubdata_paid_detail_call(path: str) -> None:
+    global TOPHUBDATA_PAID_DETAIL_CALLS_USED
+    TOPHUBDATA_PAID_DETAIL_CALLS_USED += 1
+    info(f"TopHubData paid detail: path={path}, run_calls_used={TOPHUBDATA_PAID_DETAIL_CALLS_USED}/{tophubdata_paid_detail_limit_per_run()}.")
+
+
+def fetch_tophubdata_paid_detail(hashid: str) -> dict[str, Any]:
+    if not tophubdata_paid_detail_enabled():
+        raise RuntimeError("TOPHUBDATA_ENABLE_PAID_DETAIL is not enabled")
+    if not tophubdata_paid_detail_has_budget():
+        raise RuntimeError("TopHubData paid detail budget exhausted")
+    path = f"/nodes/{urllib.parse.quote(hashid)}"
+    data = fetch_tophubdata_json(path)
+    record_tophubdata_paid_detail_call(path)
+    if data.get("error"):
+        raise RuntimeError(str(data)[:240])
+    return data
 
 
 def fetch_tophubdata_nodes(max_pages: int = 5) -> list[dict[str, Any]]:
@@ -1137,8 +1183,81 @@ def select_tophubdata_nodes(nodes: list[dict[str, Any]], group: dict[str, Any]) 
     return sorted(selected, key=priority)
 
 
-def parse_tophubdata_hot_items(source_category: str, group: dict[str, Any]) -> list[SourceItem]:
+def first_text(data: dict[str, Any], keys: list[str]) -> str:
+    for key in keys:
+        value = data.get(key)
+        if value is not None:
+            text = clean_text(str(value))
+            if text:
+                return text
+    return ""
+
+
+def tophubdata_hot_rows(data: dict[str, Any]) -> list[dict[str, Any]]:
+    payload: Any = data.get("data", data)
+    if isinstance(payload, list):
+        return [row for row in payload if isinstance(row, dict)]
+    if not isinstance(payload, dict):
+        return []
+    for key in ["items", "list", "data", "hot_list", "hotList", "posts", "topics"]:
+        rows = payload.get(key)
+        if isinstance(rows, list):
+            return [row for row in rows if isinstance(row, dict)]
     return []
+
+
+def make_tophubdata_hot_item(source_category: str, node: dict[str, Any], row: dict[str, Any], index: int) -> SourceItem | None:
+    node_name = first_text(node, ["name", "display", "title"]) or "TopHubData"
+    hashid = first_text(node, ["hashid", "id"])
+    title = first_text(row, ["title", "name", "word", "query", "keyword"])
+    if not title:
+        return None
+    url = first_text(row, ["url", "mobileUrl", "mobile_url", "link", "source_url", "sourceUrl"])
+    if not url and hashid:
+        url = f"https://tophub.today/n/{hashid}"
+    if not url:
+        url = f"tophubdata:{node_name}:{title}"
+    summary_parts = [
+        f"TopHubData 热榜：{node_name}",
+        f"排名：{first_text(row, ['rank', 'index']) or str(index + 1)}",
+    ]
+    hot_value = first_text(row, ["hot", "hotValue", "hot_value", "score", "views", "comment"])
+    if hot_value:
+        summary_parts.append(f"热度：{hot_value}")
+    description = first_text(row, ["summary", "desc", "description", "abstract", "extra"])
+    if description:
+        summary_parts.append(description)
+    published_at = first_text(row, ["created_at", "createdAt", "updated_at", "updatedAt", "publish_time", "publishTime"])
+    feed_url = f"tophubdata:/nodes/{hashid}" if hashid else "tophubdata:/nodes"
+    return make_item(source_category, f"TopHubData/{node_name}", "api-paid", title, url, "。".join(summary_parts), published_at, feed_url)
+
+
+def parse_tophubdata_hot_items(source_category: str, group: dict[str, Any]) -> list[SourceItem]:
+    if not tophubdata_paid_detail_enabled():
+        info_once("tophubdata-paid-disabled", "TopHubData paid detail disabled: set TOPHUBDATA_ENABLE_PAID_DETAIL=true to import hot list items.")
+        return []
+    nodes = fetch_tophubdata_nodes(int(group.get("tophubdata_node_pages", 5) or 5))
+    selected_nodes = select_tophubdata_nodes(nodes, group)
+    items: list[SourceItem] = []
+    for node in selected_nodes:
+        if len(items) >= MAX_ITEMS_PER_SOURCE or not tophubdata_paid_detail_has_budget():
+            break
+        hashid = first_text(node, ["hashid", "id"])
+        if not hashid:
+            continue
+        try:
+            data = fetch_tophubdata_paid_detail(hashid)
+        except Exception as exc:
+            info(f"TopHubData paid detail failed for {hashid}: {str(exc)[:160]}")
+            continue
+        for index, row in enumerate(tophubdata_hot_rows(data)):
+            item = make_tophubdata_hot_item(source_category, node, row, index)
+            if item:
+                items.append(item)
+            if len(items) >= MAX_ITEMS_PER_SOURCE:
+                break
+    info(f"TopHubData paid detail imported {len(items)} hot items from {TOPHUBDATA_PAID_DETAIL_CALLS_USED} paid calls.")
+    return items
 
 
 def collect_items(sources: dict[str, Any]) -> tuple[list[SourceItem], list[dict[str, str]]]:
