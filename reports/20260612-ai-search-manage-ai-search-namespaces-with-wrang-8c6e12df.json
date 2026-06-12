@@ -1,0 +1,1937 @@
+{
+  "id": "20260612-ai-search-manage-ai-search-namespaces-with-wrang-8c6e12df",
+  "batch_id": "2026-06-12-noon",
+  "title": "平台规则：Cloudflare 搜索生态变化",
+  "original_title": "AI Search - Manage AI Search namespaces with Wrangler CLI",
+  "url": "https://developers.cloudflare.com/changelog/post/2026-06-10-ai-search-namespace-wrangler-commands/",
+  "summary": "AI Search now supports namespace-level Wrangler commands, making it easier to manage namespaces from your terminal, scripts, and agent workflows. The following commands are available: Command Description wrangler ai-search namespace list List AI Search namespaces wrangler ai-search namespace create Create a new AI Search namespace wrangler ai-search namespace get Get details for a namespace wrangler ai-search namespace update Update a namespace description wrangler ai-search namespace delete Delete an AI Search namespace Create a namespace for a new application or tenant directly from the CLI: wrangler ai-search namespace create docs-production --description \"Production documentation search\" List namespaces with pagination or filter by name or description: wrangler ai-search namespace list --search docs --page 1 --per-page 10 Use --json with list , create , get , and update to return str",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "tools-rules",
+  "topic_direction_title": "工具&规则",
+  "topic_direction_short_title": "工具&规则",
+  "topic_direction_description": "开发工具、AI 实操、API、云服务、自动化工作流、平台政策、账号规则、搜索流量和内容分发生态变化。重点看工具怎么用、规则怎么变、成本和边界在哪里。",
+  "source_name": "Cloudflare Developers",
+  "original_source_name": "Cloudflare changelogs | Developer platform",
+  "source_type": "rss",
+  "feed_url": "https://developers.cloudflare.com/changelog/rss/developer-platform.xml",
+  "published_at": "2026-06-10T00:00:00+00:00",
+  "fetched_at": "2026-06-12T04:00:54.099044+00:00",
+  "decision": "brief",
+  "report_type": "platform-rules",
+  "report_type_title": "平台规则",
+  "score": 45,
+  "reader_hook": "适合按老花的规则避坑视角拆：平台规则、搜索流量、出海路径或合规边界怎么影响小团队。",
+  "topic_tension": {
+    "score": 9,
+    "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+    "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+    "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+  },
+  "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "命中老花主线关键词，且来源可复查。",
+  "collection_fit": "部分符合收集原则：可以进入可选池，但证据链、人设解读角度或目标读者兴趣还不够完整。",
+  "investigation_direction": "优先追官方政策、开发者公告、执行范围、受影响人群和合规边界。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。",
+    "当前仅适合观察，不宜写成深度结论。"
+  ],
+  "facts": [
+    {
+      "claim": "Cloudflare Developers 发布/收录了这条原始线索：AI Search - Manage AI Search namespaces with Wrangler CLI",
+      "type": "confirmed_fact",
+      "source_url": "https://developers.cloudflare.com/changelog/post/2026-06-10-ai-search-namespace-wrangler-commands/",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Cloudflare Developers",
+      "url": "https://developers.cloudflare.com/changelog/post/2026-06-10-ai-search-namespace-wrangler-commands/",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "ai",
+        "agent"
+      ],
+      "platform": [
+        "search"
+      ]
+    },
+    "source_host": "developers.cloudflare.com",
+    "source_type": "rss",
+    "heuristic": true
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "适合按老花的规则避坑视角拆：平台规则、搜索流量、出海路径或合规边界怎么影响小团队。",
+    "fit_for_radar": false
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://developers.cloudflare.com/changelog/rss/developer-platform.xml",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。",
+      "当前仅适合观察，不宜写成深度结论。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：核心事实没有来源：AI Search 独立定价页面缺失，成本估算无法进行。"
+    },
+    "core_question": "Cloudflare AI Search 的 Wrangler CLI 命名空间管理功能，对普通开发者和小团队的实际成本、操作门槛和搜索流量生态影响是什么？",
+    "why_this_topic_matters": "Cloudflare 正在将 AI Search 从边缘功能升级为可编程基础设施，Wrangler CLI 支持命名空间管理意味着多租户、自动化部署和 CI/CD 集成成为可能。这对小团队和独立开发者可能意味着更低成本的搜索方案，但定价和性能数据缺失，存在信息差风险。",
+    "fact_summary": [
+      "Cloudflare 于 2026-06-10 发布 Wrangler CLI 支持 AI Search 命名空间管理，包括 list/create/get/update/delete 命令。",
+      "命名空间是 AI Search 的逻辑隔离单元，每个实例自带存储和 Workers Bindings（2026-04-16 更新）。",
+      "Cloudflare 提供 Startup Program 免费额度（最高 $250K），但 AI Search 是否包含在内未明确。",
+      "Workers AI 有免费额度（每日 10k 神经元/10k 推理请求），但 AI Search 的定价页面未找到。",
+      "Reddit 相关讨论因 403 无法获取，缺乏真实用户反馈。"
+    ],
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 7,
+      "why_interested": "核心技术人关注 Wrangler CLI 集成、命名空间设计、与 Workers 的绑定能力；入门读者想了解是否能用免费额度搭建搜索；商业读者关注与 Algolia 的成本对比。",
+      "reader_risk": "如果定价不透明或免费额度有限，可能误导读者投入时间学习后才发现成本过高。"
+    },
+    "mass_interest_hook": {
+      "score": 6,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "标题暗示“Cloudflare 推出免费 AI 搜索，小团队也能用”，普通人可能误以为可以零成本搭建搜索功能。",
+      "story_seed": "一个独立开发者用 Cloudflare AI Search 替代 Algolia，每月省下 $500，但发现搜索质量不如预期。",
+      "do_not_overhype": "不能声称“免费”或“替代 Algolia”，因为定价和性能未验证。"
+    },
+    "topic_tension": {
+      "score": 8,
+      "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+      "debate_question": "Cloudflare AI Search 的命名空间管理是降低还是提高了小团队的搜索部署门槛？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "Cloudflare",
+        "Algolia/Meilisearch 等竞品"
+      ],
+      "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2026-04-01: Cloudflare 发布 AI Search Wrangler 命令（实例管理）",
+      "2026-04-16: AI Search 实例内置存储和 Workers Bindings",
+      "2026-06-10: 新增命名空间管理命令（本次更新）"
+    ],
+    "evidence_table": [
+      {
+        "source": "Cloudflare Changelog",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-06-10-ai-search-namespace-wrangler-commands/",
+        "supports": "Wrangler CLI 新增命名空间管理命令",
+        "reliability": "official"
+      },
+      {
+        "source": "Cloudflare AI Search docs - Namespaces",
+        "url": "https://developers.cloudflare.com/ai-search/concepts/namespaces/",
+        "supports": "命名空间概念和用法",
+        "reliability": "official"
+      },
+      {
+        "source": "Cloudflare Changelog - AI Search namespace binding",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-04-16-ai-search-namespace-binding/",
+        "supports": "实例内置存储和 Workers Bindings",
+        "reliability": "official"
+      },
+      {
+        "source": "Cloudflare Workers AI Pricing",
+        "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+        "supports": "Workers AI 定价（但 AI Search 独立定价未找到）",
+        "reliability": "official"
+      },
+      {
+        "source": "Costbench - Cloudflare Workers AI Free Tier",
+        "url": "https://costbench.com/software/llm-api-providers/cloudflare-workers-ai/free-plan/",
+        "supports": "Workers AI 免费额度信息",
+        "reliability": "media"
+      },
+      {
+        "source": "AgentDeals - Cloudflare Free Tier",
+        "url": "https://agentdeals.dev/vendor/cloudflare",
+        "supports": "Startup Program 免费额度",
+        "reliability": "media"
+      },
+      {
+        "source": "DEV Community - RAG System for $5/month",
+        "url": "https://dev.to/dannwaneri/i-built-a-production-rag-system-for-5month-most-alternatives-cost-100-200-21hj",
+        "supports": "低成本 RAG 方案（非 Cloudflare AI Search 直接案例）",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "部分闭环：功能更新明确，但成本、性能、竞品对比数据缺失，无法形成完整判断。",
+    "writeable_angles": [
+      {
+        "angle": "工具账本：Cloudflare AI Search 命名空间管理功能详解与成本估算",
+        "why": "适合入门读者和核心技术人，提供操作指南和成本估算（基于 Workers AI 定价推测）。",
+        "needs": "需要 AI Search 独立定价或至少一个真实案例的成本数据。"
+      },
+      {
+        "angle": "风险避坑：Cloudflare AI Search 的隐藏成本与性能陷阱",
+        "why": "适合高价值商业读者，分析定价不透明、搜索质量未知、依赖 Workers 生态等风险。",
+        "needs": "需要真实用户反馈或性能基准测试。"
+      },
+      {
+        "angle": "案例复盘：从 Algolia 迁移到 Cloudflare AI Search 的决策框架",
+        "why": "适合小团队/独立开发者，提供迁移决策 checklist。",
+        "needs": "需要至少一个迁移案例或详细的对比数据。"
+      }
+    ],
+    "missing_basics": [
+      "AI Search 的定价模式（免费额度、超出费用、命名空间限制）",
+      "AI Search 是否依赖 Workers AI 或向量数据库",
+      "搜索质量（召回率、延迟）基准数据",
+      "命名空间数量限制（免费/付费计划）"
+    ],
+    "missing_materials": [
+      "Cloudflare AI Search 定价页面截图或数据",
+      "至少一个真实用户案例（博客、论坛帖子）",
+      "与 Algolia/Meilisearch 的对比表格（功能、价格、限制）",
+      "Wrangler CLI 命令的完整文档链接（已部分获取）"
+    ],
+    "not_claimable": [
+      "AI Search 比 Algolia 更便宜或更好用",
+      "所有开发者都能轻松上手",
+      "搜索质量达到生产级标准",
+      "对 SEO 或搜索流量有显著影响"
+    ],
+    "followup_queries": [
+      "Cloudflare AI Search 的定价页面在哪里？",
+      "是否有开发者社区讨论（如 Hacker News）关于成本或性能的反馈？",
+      "Cloudflare AI Search 是否支持自定义排序或过滤？",
+      "命名空间数量是否有限制？"
+    ],
+    "additional_search_queries": [
+      "Cloudflare AI Search pricing per query",
+      "Cloudflare AI Search free tier limits",
+      "Cloudflare AI Search vs Algolia cost comparison",
+      "Cloudflare AI Search namespace limits",
+      "Cloudflare AI Search developer review reddit",
+      "Cloudflare AI Search benchmark latency",
+      "Cloudflare Workers AI Search integration cost"
+    ],
+    "stop_conditions": [
+      "如果 Cloudflare 官方未公开 AI Search 独立定价，则无法进行成本分析。",
+      "如果 Reddit/HN 上无真实用户反馈，则无法评估搜索质量和易用性。",
+      "如果竞品对比数据不可获取，则无法判断替代价值。"
+    ],
+    "confidence": 35.0,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "platform-rules",
+    "quality_gate": {
+      "pass": false,
+      "score": 35,
+      "fatal_issues": [
+        "核心事实没有来源：AI Search 独立定价页面缺失，成本估算无法进行。",
+        "成本估算没有公式、单位或边界：仅依赖 Workers AI 定价推测，无 AI Search 具体定价。",
+        "没有泛兴趣故事钩子：标题和开头仅适合技术小圈子，缺乏泛兴趣吸引力。",
+        "没有真实传播张力：冲突点（成本/门槛）缺乏证据支撑，讨论空间有限。",
+        "没有明确归入实际选题方向：选题方向为 tools-rules，但内容偏向平台规则，匹配度不足。",
+        "没有给下游 GPT 编辑应用和研究闭环留下足够结构化资料：缺少定价、用户反馈、竞品对比等关键材料。",
+        "没有明确选题结论：dossier 中 verdict 为“可选”，但未明确推荐或放弃。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写：reason 仅说“命中老花主线关键词”，缺乏深度判断。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：逻辑部分闭环，但关键事实缺失。",
+        "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在质检中强调。",
+        "没有按具体类型提供资料包：对于 platform-rules 类型，缺少时间线、更新摘要、成本对比等。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来：18 条证据中 14 条来自 Cloudflare 官方，缺乏第三方验证。"
+      ],
+      "warnings": [
+        "读者分层不清晰：primary_layer 为“核心技术人”，但 secondary_layers 包含“入门读者”和“高价值商业读者”，三者兴趣点差异大，难以兼顾。",
+        "泛兴趣钩子过度标题党：hook_type 为“反差”，但正文证据无法支撑“免费”或“替代 Algolia”的暗示。",
+        "传播张力评分过高（8/9），但实际证据不足，存在虚高风险。"
+      ],
+      "missing_evidence": [
+        "Cloudflare AI Search 独立定价页面或数据",
+        "真实用户案例或社区反馈（Reddit 403 无法获取）",
+        "与 Algolia/Meilisearch 的对比数据",
+        "搜索质量基准测试（召回率、延迟）",
+        "命名空间数量限制（免费/付费计划）"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "topic_direction_ok": false,
+      "report_type_ok": false,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "Cloudflare AI Search 的 Wrangler CLI 命名空间管理功能，对普通开发者和小团队的实际成本、操作门槛和搜索流量生态影响是什么？",
+      "must_verify": [
+        "AI Search 的定价模式：是否有免费额度？超出后每单位（查询/文档/存储）费用？",
+        "Wrangler CLI 是否免费使用？是否需要绑定付费计划？",
+        "AI Search 的索引构建是否需要额外计算资源（如 Workers）？",
+        "命名空间数量是否有限制？免费/付费计划各支持多少个？",
+        "AI Search 是否依赖 Cloudflare 的向量数据库或 Workers AI？",
+        "是否有官方文档或案例说明搜索质量（召回率、延迟）？",
+        "是否有开发者社区讨论（如 Reddit、Hacker News）关于成本或性能的反馈？",
+        "Cloudflare 是否有类似竞品（如 Algolia、Meilisearch）的对比信息？"
+      ],
+      "search_queries": [
+        "Cloudflare AI Search pricing per query",
+        "Cloudflare AI Search free tier limits",
+        "Cloudflare AI Search vs Algolia cost comparison",
+        "Cloudflare AI Search namespace limits",
+        "Cloudflare AI Search Wrangler CLI tutorial",
+        "Cloudflare AI Search developer review reddit",
+        "Cloudflare AI Search benchmark latency",
+        "Cloudflare Workers AI Search integration cost"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "pricing_page",
+          "query": "Cloudflare AI Search pricing",
+          "why_needed": "确认免费额度、超出费用、命名空间限制，是成本估算的基础。"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Cloudflare AI Search documentation",
+          "why_needed": "获取功能细节、依赖关系、使用限制，验证操作门槛。"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Cloudflare AI Search reddit",
+          "why_needed": "收集真实用户反馈，了解性能、成本、易用性方面的实际体验。"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Cloudflare AI Search use case",
+          "why_needed": "寻找实际应用案例，评估搜索质量和适用场景。"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "Cloudflare AI Search vs Algolia benchmark",
+          "why_needed": "对比竞品性能，判断是否值得迁移或采用。"
+        },
+        {
+          "source_type": "policy",
+          "query": "Cloudflare AI Search terms of service",
+          "why_needed": "检查是否有隐藏限制或合规要求，特别是对出海项目。"
+        }
+      ],
+      "expert_challenge_points": [
+        "AI Search 的搜索质量是否足够替代传统搜索引擎或专用搜索服务？",
+        "对于小团队，使用 Cloudflare AI Search 相比自建搜索（如 Elasticsearch）或托管服务（如 Algolia）的总拥有成本（TCO）如何？",
+        "Wrangler CLI 的命名空间管理是否真的简化了多租户场景，还是增加了不必要的抽象？",
+        "Cloudflare 的 AI Search 是否依赖其边缘网络，延迟优势是否明显？"
+      ],
+      "do_not_claim_yet": [
+        "AI Search 比 Algolia 更便宜或更好用",
+        "所有开发者都能轻松上手",
+        "搜索质量达到生产级标准",
+        "对 SEO 或搜索流量有显著影响"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取定价信息或真实用户反馈，只能作为工具更新发布，无法深入分析成本或生态影响。",
+      "downstream_materials_needed": [
+        "Cloudflare AI Search 定价页面截图或数据",
+        "至少一个真实用户案例（博客、论坛帖子）",
+        "与竞品的对比表格（功能、价格、限制）",
+        "Wrangler CLI 命令的完整文档链接"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Limits & pricing · Cloudflare AI Search docs",
+        "url": "https://developers.cloudflare.com/ai-search/platform/limits-pricing/",
+        "query": "Cloudflare AI Search pricing per query",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Limits & pricing · Cloudflare AI Search docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:",
+        "fetch_error": ""
+      },
+      {
+        "title": "Cloudflare AI Search · Cloudflare AI Search docs",
+        "url": "https://developers.cloudflare.com/ai-search/",
+        "query": "Cloudflare AI Search pricing per query",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Cloudflare AI Search · Cloudflare AI Search docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){",
+        "fetch_error": ""
+      },
+      {
+        "title": "Pricing · Cloudflare Workers AI docs",
+        "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+        "query": "Cloudflare AI Search pricing per query",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Pricing · Cloudflare Workers AI docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:1rem 2re",
+        "fetch_error": ""
+      },
+      {
+        "title": "Is Cloudflare Workers AI Free? Free Tier Limits & Upgrade Triggers (2026)",
+        "url": "https://costbench.com/software/llm-api-providers/cloudflare-workers-ai/free-plan/",
+        "query": "Cloudflare AI Search free tier limits",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "if(location.hostname==='costbench.pages.dev'||location.hostname==='www.costbench.com')location.replace('https://costbench.com'+location.pathname+location.search+location.hash); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5L34562T'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-N2CF37ZX0R'); !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(\".\");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement(\"script\")).type=\"text/javascript\",p.async=!0,p.src=s.api_host.replace(\".i.posthog.com\",\"-assets.i.posthog.com\")+\"/static/array.js\",(r=t.getElementsByTagName(\"script\")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a=\"posthog\",u.people=u.people||[],u.toString=function(t){var e=\"posthog\";return\"posthog\"!==a&&(e+=\".\"+a),t||(e+=\" (stub)\"),e},u.people.toString=function(){return u.toString(1)+\".people (stub)\"},o=\"init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesFo",
+        "fetch_error": ""
+      },
+      {
+        "title": "Cloudflare Free Tier 2026: Limits, Pricing & What Changed | AgentDeals",
+        "url": "https://agentdeals.dev/vendor/cloudflare",
+        "query": "Cloudflare AI Search free tier limits",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Cloudflare Free Tier 2026: Limits, Pricing & What Changed | AgentDeals {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Cloudflare Free Tier 2026: Limits, Pricing & What Changed | AgentDeals\",\"description\":\"Cloudflare free tier includes Up to $250K in Cloudflare credits across 4 tiers: Bootstrapped ($5K), Up-and-Coming ($25K), Seed-Fun. Verified May 2026. Compare with 12 alternatives in Startup Programs.\",\"url\":\"https://agentdeals.dev/vendor/cloudflare\",\"dateModified\":\"2026-05-11\",\"mainEntity\":{\"@type\":\"SoftwareApplication\",\"name\":\"Cloudflare\",\"description\":\"Up to $250K in Cloudflare credits across 4 tiers: Bootstrapped ($5K), Up-and-Coming ($25K), Seed-Funded ($100K), High Growth ($250K). Covers Workers, R2, Workers AI, Stream, Durable Objects, and more. Credits expire within 1 year. Max $10K toward R2/Cache Reserve, up to $50K for Workers AI\",\"applicationCategory\":\"Startup Programs\",\"url\":\"https://www.cloudflare.com/forstartups/\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\",\"description\":\"Startup Program\",\"priceValidUntil\":\"2026-02-04\"}},\"about\":[{\"@type\":\"Event\",\"name\":\"Cloudflare pricing change: new free tier\",\"startDate\":\"2026-02-04\",\"description\":\"Queues added to Workers free plan — message queuing now free\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is Cloudflare free?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, Cloudflare offers a free tier: Startup Program. Up to $250K in Cloudflare credits across 4 tiers: Bootstrapped ($5K), Up-and-Coming ($25K), Seed-Funded ($100K), High Growth ($250K). Covers Workers, R2, Workers AI, Stream, Durable Objects, and more....\"}},{\"@type\":\"Question\",\"name\":\"What is Cloudflare's free tier?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Cloudflare's free",
+        "fetch_error": ""
+      },
+      {
+        "title": "Cloudflare AI Gateway Pricing Explained For 2026",
+        "url": "https://www.truefoundry.com/blog/cloudflare-ai-gateway-pricing",
+        "query": "Cloudflare AI Search free tier limits",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Cloudflare AI Gateway Pricing Explained For 2026 WebFont.load({ google: { families: [\"Varela:400\",\"Archivo:300,400,500,600,700\",\"Work Sans:300,400,500,600,700\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); (function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push.apply(w[g],Array.isArray(i)?i:[i]);})(window,['G-BCVB8L89W6'],'google_tags_first_party'); window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('set', 'developer_id.dZGVlNj', true);gtag('set', 'developer_id.dYWYxNW', true);gtag('js', new Date());gtag('config', 'G-BCVB8L89W6', {'anonymize_ip': false}); .custom_header { width: 100%; margin: auto; } .nav_menu-wrapper, a.nav-llinks.login.w-nav-link { will-change: transform, opacity; transition: opacity 0.2s ease, transform 0.2s ease; } .hide-nav { opacity: 0; transform: translateY(-20px); pointer-events: none; } .remove-nav { display: none; } .locale-de .talk-content, .locale-es .talk-content, .locale-fr .talk-content, .locale-br .talk-content { max-width: 800px; } .locale-de br, .locale-fr br, .locale-es br, .locale-br br { display: none !important; } .locale-de span.display_block, .locale-fr span.display_block, .locale-es span.display_block, .locale-br span.display_block { display: inline; } .text-style-3lines { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; } .locale-br .talk-content { max-width: 80%; } .locale-br .traces_banner-para-wrapper.is-application-suites.is-52 { max-width: 60rem; } h2.section_banking-title { text-align: center; } .locale-br .traces_banner-para.is-banking.is-mw750 { max-width: 100%; } .locale-br .traces",
+        "fetch_error": ""
+      },
+      {
+        "title": "I Built a Production RAG System for $5/month (Most Alternatives Cost $100-200+) - DEV Community",
+        "url": "https://dev.to/dannwaneri/i-built-a-production-rag-system-for-5month-most-alternatives-cost-100-200-21hj",
+        "query": "Cloudflare AI Search vs Algolia cost comparison",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "I Built a Production RAG System for $5/month (Most Alternatives Cost $100-200+) - DEV Community /* ========================================================================== THE 418 CHALLENGE: THEME-AWARE RETRO EDITION ========================================================================== */ .articletag-418challenge { font-family: \"Comic Sans MS\", \"Chalkboard SE\", \"Marker Felt\", sans-serif !important; cursor: crosshair !important; } /* Destroy modern rounded corners and add brutal borders */ .articletag-418challenge .crayons-card, .articletag-418challenge .crayons-article__main, .articletag-418challenge .crayons-article__header { border-radius: 0 !important; margin-bottom: 2rem !important; } /* Typography specifics */ .articletag-418challenge h1, .articletag-418challenge h2, .articletag-418challenge h3 { text-transform: uppercase !important; } /* Fake effect for the main article title */ .articletag-418challenge h1.fs-3xl { animation: retro-slide 5s linear infinite alternate; overflow: visible; } /* Spin those avatars */ .articletag-418challenge .crayons-article__header__meta img { border-radius: 0 !important; animation: retro-spin 5s linear infinite; } /* Obnoxious tags */ .articletag-418challenge .crayons-tag { border-radius: 0 !important; font-weight: 900 !important; transform: rotate(-3deg); display: inline-block; } .articletag-418challenge .crayons-tag:nth-child(even) { transform: rotate(3deg); } /* -------------------------------------------------------------------------- 2. LIGHT THEME (Windows 95 / Office 97 Vibes) -------------------------------------------------------------------------- */ body:not(.dark-theme) .articletag-418challenge { background-color: #008080 !important; /* Win95 Teal Desktop */ } body:not(.dark-theme) .articletag-418challenge .crayons",
+        "fetch_error": ""
+      },
+      {
+        "title": "Algolia vs Cloudflare comparison 2024 - AppsandReports.com",
+        "url": "https://www.appsandreports.com/compare/Algolia-vs-Cloudflare",
+        "query": "Cloudflare AI Search vs Algolia cost comparison",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Algolia vs Cloudflare comparison 2026 window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-142123687-2'); var truepush=window.truepush||[];truepush.push(function(){truepush.Init({id:\"5db807a2e5e35c4e41c08c85\"},function(u){u&&console.error(u)})}); No Results --> SOFTWARE SERVICES FIND RIGHT SOFTWARE/SERVICE We have received your request. Our expert will be at your service shortly Close Create Leading × --> Name Please enter your name. Email Please enter valid Email address. Phone Valid. Please enter your phone number with country code. ✓ Valid Organization Please enter your organization name. Company Location Please enter your address. Select Employee size : Select Employee Size 1-10 employees 11-50 employees 51-200 employees 201-500 employees 501-1000 employees 1001-5000 employees 5001-10,000 employees 10,001+ employees Please select the employee size. Requirement Please specify your requirements. Submit li.star-sm{ margin: 0; } Algolia CONTACT AN EXPERT Cloudflare CONTACT AN EXPERT Home Algolia vs Cloudflare Algolia vs Cloudflare COMPARISON Algolia CONTACT AN EXPERT Cloudflare CONTACT AN EXPERT OVERVIEW Algolia’s full suite Apis modify groups to develop distinctive search and discovery experiences for his or her customers across all platforms and devices. A question. Click a link. Open associate app. Everything your customers do sends a symbol concerning what they need. Algolia decodes that intent to deliver the correct content - instantly. produce resistance find-to-conversion methods by connecting users with precisely what they’re searching for, with lightning-fast and extremely relevant search. transcend the search box with navigation, browse, and content discovery experiences battery-power",
+        "fetch_error": ""
+      },
+      {
+        "title": "3 Best AI Search Engines for Mobile Apps in 2025 — Winner in One Table",
+        "url": "https://www.ptolemay.com/post/best-in-app-ai-search-2025-algolia-vs-openai-vs-elasticsearch",
+        "query": "Cloudflare AI Search vs Algolia cost comparison",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "3 Best AI Search Engines for Mobile Apps in 2025 — Winner in One Table WebFont.load({ google: { families: [\"Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic\",\"Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic\",\"Inconsolata:400,700\",\"Inter:300,400,500,600,700\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('set', 'developer_id.dZGVlNj', true);gtag('js', new Date());gtag('config', 'G-427NGYFQJZ'); * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; } .rich-text p { margin-bottom: 20px; } (function(h,o,t,j,a,r){ h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)}; h._hjSettings={hjid:3004463,hjsv:6}; a=o.getElementsByTagName('head')[0]; r=o.createElement('script');r.async=1; r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv; a.appendChild(r); })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv='); (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('lAxoEaK9yBD7OYGd'); --> !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createE",
+        "fetch_error": ""
+      },
+      {
+        "title": "Namespaces · Cloudflare AI Search docs",
+        "url": "https://developers.cloudflare.com/ai-search/concepts/namespaces/",
+        "query": "Cloudflare AI Search namespace limits",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Namespaces · Cloudflare AI Search docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:1rem 2",
+        "fetch_error": ""
+      },
+      {
+        "title": "Manage AI Search namespaces with Wrangler CLI · Changelog",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-06-10-ai-search-namespace-wrangler-commands/",
+        "query": "Cloudflare AI Search namespace limits",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Manage AI Search namespaces with Wrangler CLI · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:",
+        "fetch_error": ""
+      },
+      {
+        "title": "AI Search instances now include built-in storage and namespace Workers Bindings · Changelog",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-04-16-ai-search-namespace-binding/",
+        "query": "Cloudflare AI Search namespace limits",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "AI Search instances now include built-in storage and namespace Workers Bindings · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1",
+        "fetch_error": ""
+      },
+      {
+        "title": "Get started - Workers and Wrangler · Cloudflare Workers AI docs",
+        "url": "https://developers.cloudflare.com/workers-ai/get-started/workers-wrangler/",
+        "query": "Cloudflare AI Search Wrangler CLI tutorial",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Get started - Workers and Wrangler · Cloudflare Workers AI docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.a",
+        "fetch_error": ""
+      },
+      {
+        "title": "Wrangler · Cloudflare Workers docs",
+        "url": "https://developers.cloudflare.com/workers/wrangler/",
+        "query": "Cloudflare AI Search Wrangler CLI tutorial",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Wrangler · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:1rem 2rem;",
+        "fetch_error": ""
+      },
+      {
+        "title": "Create, manage, search AI Search instances with Wrangler CLI · Changelog",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-04-01-ai-search-wrangler-commands/",
+        "query": "Cloudflare AI Search Wrangler CLI tutorial",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Create, manage, search AI Search instances with Wrangler CLI · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidl",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/LocalLLaMA on Reddit: Web-Search is coming to a screeching performance halt as Google shuts down their free search index, and traffic defenders like Cloudflare challenge AI at every gateway. What are our options?",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1tcaboi/websearch_is_coming_to_a_screeching_performance/",
+        "query": "Cloudflare AI Search developer review reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/CloudFlare on Reddit: Cloudflare Workers AI — worth it?",
+        "url": "https://www.reddit.com/r/CloudFlare/comments/1svlt79/cloudflare_workers_ai_worth_it/",
+        "query": "Cloudflare AI Search developer review reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/CloudFlare on Reddit: Orchestrating AI Code Review at scale",
+        "url": "https://www.reddit.com/r/CloudFlare/comments/1sqqrq4/orchestrating_ai_code_review_at_scale/",
+        "query": "Cloudflare AI Search developer review reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：核心事实没有来源：AI Search 独立定价页面缺失，成本估算无法进行。"
+    },
+    "core_question": "Cloudflare AI Search 的 Wrangler CLI 命名空间管理功能，对普通开发者和小团队的实际成本、操作门槛和搜索流量生态影响是什么？",
+    "why_this_topic_matters": "Cloudflare 正在将 AI Search 从边缘功能升级为可编程基础设施，Wrangler CLI 支持命名空间管理意味着多租户、自动化部署和 CI/CD 集成成为可能。这对小团队和独立开发者可能意味着更低成本的搜索方案，但定价和性能数据缺失，存在信息差风险。",
+    "fact_summary": [
+      "Cloudflare 于 2026-06-10 发布 Wrangler CLI 支持 AI Search 命名空间管理，包括 list/create/get/update/delete 命令。",
+      "命名空间是 AI Search 的逻辑隔离单元，每个实例自带存储和 Workers Bindings（2026-04-16 更新）。",
+      "Cloudflare 提供 Startup Program 免费额度（最高 $250K），但 AI Search 是否包含在内未明确。",
+      "Workers AI 有免费额度（每日 10k 神经元/10k 推理请求），但 AI Search 的定价页面未找到。",
+      "Reddit 相关讨论因 403 无法获取，缺乏真实用户反馈。"
+    ],
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 7,
+      "why_interested": "核心技术人关注 Wrangler CLI 集成、命名空间设计、与 Workers 的绑定能力；入门读者想了解是否能用免费额度搭建搜索；商业读者关注与 Algolia 的成本对比。",
+      "reader_risk": "如果定价不透明或免费额度有限，可能误导读者投入时间学习后才发现成本过高。"
+    },
+    "mass_interest_hook": {
+      "score": 6,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "标题暗示“Cloudflare 推出免费 AI 搜索，小团队也能用”，普通人可能误以为可以零成本搭建搜索功能。",
+      "story_seed": "一个独立开发者用 Cloudflare AI Search 替代 Algolia，每月省下 $500，但发现搜索质量不如预期。",
+      "do_not_overhype": "不能声称“免费”或“替代 Algolia”，因为定价和性能未验证。"
+    },
+    "topic_tension": {
+      "score": 8,
+      "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+      "debate_question": "Cloudflare AI Search 的命名空间管理是降低还是提高了小团队的搜索部署门槛？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "Cloudflare",
+        "Algolia/Meilisearch 等竞品"
+      ],
+      "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2026-04-01: Cloudflare 发布 AI Search Wrangler 命令（实例管理）",
+      "2026-04-16: AI Search 实例内置存储和 Workers Bindings",
+      "2026-06-10: 新增命名空间管理命令（本次更新）"
+    ],
+    "evidence_table": [
+      {
+        "source": "Cloudflare Changelog",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-06-10-ai-search-namespace-wrangler-commands/",
+        "supports": "Wrangler CLI 新增命名空间管理命令",
+        "reliability": "official"
+      },
+      {
+        "source": "Cloudflare AI Search docs - Namespaces",
+        "url": "https://developers.cloudflare.com/ai-search/concepts/namespaces/",
+        "supports": "命名空间概念和用法",
+        "reliability": "official"
+      },
+      {
+        "source": "Cloudflare Changelog - AI Search namespace binding",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-04-16-ai-search-namespace-binding/",
+        "supports": "实例内置存储和 Workers Bindings",
+        "reliability": "official"
+      },
+      {
+        "source": "Cloudflare Workers AI Pricing",
+        "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+        "supports": "Workers AI 定价（但 AI Search 独立定价未找到）",
+        "reliability": "official"
+      },
+      {
+        "source": "Costbench - Cloudflare Workers AI Free Tier",
+        "url": "https://costbench.com/software/llm-api-providers/cloudflare-workers-ai/free-plan/",
+        "supports": "Workers AI 免费额度信息",
+        "reliability": "media"
+      },
+      {
+        "source": "AgentDeals - Cloudflare Free Tier",
+        "url": "https://agentdeals.dev/vendor/cloudflare",
+        "supports": "Startup Program 免费额度",
+        "reliability": "media"
+      },
+      {
+        "source": "DEV Community - RAG System for $5/month",
+        "url": "https://dev.to/dannwaneri/i-built-a-production-rag-system-for-5month-most-alternatives-cost-100-200-21hj",
+        "supports": "低成本 RAG 方案（非 Cloudflare AI Search 直接案例）",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "部分闭环：功能更新明确，但成本、性能、竞品对比数据缺失，无法形成完整判断。",
+    "writeable_angles": [
+      {
+        "angle": "工具账本：Cloudflare AI Search 命名空间管理功能详解与成本估算",
+        "why": "适合入门读者和核心技术人，提供操作指南和成本估算（基于 Workers AI 定价推测）。",
+        "needs": "需要 AI Search 独立定价或至少一个真实案例的成本数据。"
+      },
+      {
+        "angle": "风险避坑：Cloudflare AI Search 的隐藏成本与性能陷阱",
+        "why": "适合高价值商业读者，分析定价不透明、搜索质量未知、依赖 Workers 生态等风险。",
+        "needs": "需要真实用户反馈或性能基准测试。"
+      },
+      {
+        "angle": "案例复盘：从 Algolia 迁移到 Cloudflare AI Search 的决策框架",
+        "why": "适合小团队/独立开发者，提供迁移决策 checklist。",
+        "needs": "需要至少一个迁移案例或详细的对比数据。"
+      }
+    ],
+    "missing_basics": [
+      "AI Search 的定价模式（免费额度、超出费用、命名空间限制）",
+      "AI Search 是否依赖 Workers AI 或向量数据库",
+      "搜索质量（召回率、延迟）基准数据",
+      "命名空间数量限制（免费/付费计划）"
+    ],
+    "missing_materials": [
+      "Cloudflare AI Search 定价页面截图或数据",
+      "至少一个真实用户案例（博客、论坛帖子）",
+      "与 Algolia/Meilisearch 的对比表格（功能、价格、限制）",
+      "Wrangler CLI 命令的完整文档链接（已部分获取）"
+    ],
+    "not_claimable": [
+      "AI Search 比 Algolia 更便宜或更好用",
+      "所有开发者都能轻松上手",
+      "搜索质量达到生产级标准",
+      "对 SEO 或搜索流量有显著影响"
+    ],
+    "followup_queries": [
+      "Cloudflare AI Search 的定价页面在哪里？",
+      "是否有开发者社区讨论（如 Hacker News）关于成本或性能的反馈？",
+      "Cloudflare AI Search 是否支持自定义排序或过滤？",
+      "命名空间数量是否有限制？"
+    ],
+    "additional_search_queries": [
+      "Cloudflare AI Search pricing per query",
+      "Cloudflare AI Search free tier limits",
+      "Cloudflare AI Search vs Algolia cost comparison",
+      "Cloudflare AI Search namespace limits",
+      "Cloudflare AI Search developer review reddit",
+      "Cloudflare AI Search benchmark latency",
+      "Cloudflare Workers AI Search integration cost"
+    ],
+    "stop_conditions": [
+      "如果 Cloudflare 官方未公开 AI Search 独立定价，则无法进行成本分析。",
+      "如果 Reddit/HN 上无真实用户反馈，则无法评估搜索质量和易用性。",
+      "如果竞品对比数据不可获取，则无法判断替代价值。"
+    ],
+    "confidence": 35.0,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "platform-rules",
+    "quality_gate": {
+      "pass": false,
+      "score": 35,
+      "fatal_issues": [
+        "核心事实没有来源：AI Search 独立定价页面缺失，成本估算无法进行。",
+        "成本估算没有公式、单位或边界：仅依赖 Workers AI 定价推测，无 AI Search 具体定价。",
+        "没有泛兴趣故事钩子：标题和开头仅适合技术小圈子，缺乏泛兴趣吸引力。",
+        "没有真实传播张力：冲突点（成本/门槛）缺乏证据支撑，讨论空间有限。",
+        "没有明确归入实际选题方向：选题方向为 tools-rules，但内容偏向平台规则，匹配度不足。",
+        "没有给下游 GPT 编辑应用和研究闭环留下足够结构化资料：缺少定价、用户反馈、竞品对比等关键材料。",
+        "没有明确选题结论：dossier 中 verdict 为“可选”，但未明确推荐或放弃。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写：reason 仅说“命中老花主线关键词”，缺乏深度判断。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：逻辑部分闭环，但关键事实缺失。",
+        "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在质检中强调。",
+        "没有按具体类型提供资料包：对于 platform-rules 类型，缺少时间线、更新摘要、成本对比等。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来：18 条证据中 14 条来自 Cloudflare 官方，缺乏第三方验证。"
+      ],
+      "warnings": [
+        "读者分层不清晰：primary_layer 为“核心技术人”，但 secondary_layers 包含“入门读者”和“高价值商业读者”，三者兴趣点差异大，难以兼顾。",
+        "泛兴趣钩子过度标题党：hook_type 为“反差”，但正文证据无法支撑“免费”或“替代 Algolia”的暗示。",
+        "传播张力评分过高（8/9），但实际证据不足，存在虚高风险。"
+      ],
+      "missing_evidence": [
+        "Cloudflare AI Search 独立定价页面或数据",
+        "真实用户案例或社区反馈（Reddit 403 无法获取）",
+        "与 Algolia/Meilisearch 的对比数据",
+        "搜索质量基准测试（召回率、延迟）",
+        "命名空间数量限制（免费/付费计划）"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "topic_direction_ok": false,
+      "report_type_ok": false,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "Cloudflare AI Search 的 Wrangler CLI 命名空间管理功能，对普通开发者和小团队的实际成本、操作门槛和搜索流量生态影响是什么？",
+      "must_verify": [
+        "AI Search 的定价模式：是否有免费额度？超出后每单位（查询/文档/存储）费用？",
+        "Wrangler CLI 是否免费使用？是否需要绑定付费计划？",
+        "AI Search 的索引构建是否需要额外计算资源（如 Workers）？",
+        "命名空间数量是否有限制？免费/付费计划各支持多少个？",
+        "AI Search 是否依赖 Cloudflare 的向量数据库或 Workers AI？",
+        "是否有官方文档或案例说明搜索质量（召回率、延迟）？",
+        "是否有开发者社区讨论（如 Reddit、Hacker News）关于成本或性能的反馈？",
+        "Cloudflare 是否有类似竞品（如 Algolia、Meilisearch）的对比信息？"
+      ],
+      "search_queries": [
+        "Cloudflare AI Search pricing per query",
+        "Cloudflare AI Search free tier limits",
+        "Cloudflare AI Search vs Algolia cost comparison",
+        "Cloudflare AI Search namespace limits",
+        "Cloudflare AI Search Wrangler CLI tutorial",
+        "Cloudflare AI Search developer review reddit",
+        "Cloudflare AI Search benchmark latency",
+        "Cloudflare Workers AI Search integration cost"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "pricing_page",
+          "query": "Cloudflare AI Search pricing",
+          "why_needed": "确认免费额度、超出费用、命名空间限制，是成本估算的基础。"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Cloudflare AI Search documentation",
+          "why_needed": "获取功能细节、依赖关系、使用限制，验证操作门槛。"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Cloudflare AI Search reddit",
+          "why_needed": "收集真实用户反馈，了解性能、成本、易用性方面的实际体验。"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Cloudflare AI Search use case",
+          "why_needed": "寻找实际应用案例，评估搜索质量和适用场景。"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "Cloudflare AI Search vs Algolia benchmark",
+          "why_needed": "对比竞品性能，判断是否值得迁移或采用。"
+        },
+        {
+          "source_type": "policy",
+          "query": "Cloudflare AI Search terms of service",
+          "why_needed": "检查是否有隐藏限制或合规要求，特别是对出海项目。"
+        }
+      ],
+      "expert_challenge_points": [
+        "AI Search 的搜索质量是否足够替代传统搜索引擎或专用搜索服务？",
+        "对于小团队，使用 Cloudflare AI Search 相比自建搜索（如 Elasticsearch）或托管服务（如 Algolia）的总拥有成本（TCO）如何？",
+        "Wrangler CLI 的命名空间管理是否真的简化了多租户场景，还是增加了不必要的抽象？",
+        "Cloudflare 的 AI Search 是否依赖其边缘网络，延迟优势是否明显？"
+      ],
+      "do_not_claim_yet": [
+        "AI Search 比 Algolia 更便宜或更好用",
+        "所有开发者都能轻松上手",
+        "搜索质量达到生产级标准",
+        "对 SEO 或搜索流量有显著影响"
+      ],
+      "can_publish_as_radar_if_missing": "如果无法获取定价信息或真实用户反馈，只能作为工具更新发布，无法深入分析成本或生态影响。",
+      "downstream_materials_needed": [
+        "Cloudflare AI Search 定价页面截图或数据",
+        "至少一个真实用户案例（博客、论坛帖子）",
+        "与竞品的对比表格（功能、价格、限制）",
+        "Wrangler CLI 命令的完整文档链接"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Limits & pricing · Cloudflare AI Search docs",
+        "url": "https://developers.cloudflare.com/ai-search/platform/limits-pricing/",
+        "query": "Cloudflare AI Search pricing per query",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Limits & pricing · Cloudflare AI Search docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:",
+        "fetch_error": ""
+      },
+      {
+        "title": "Cloudflare AI Search · Cloudflare AI Search docs",
+        "url": "https://developers.cloudflare.com/ai-search/",
+        "query": "Cloudflare AI Search pricing per query",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Cloudflare AI Search · Cloudflare AI Search docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){",
+        "fetch_error": ""
+      },
+      {
+        "title": "Pricing · Cloudflare Workers AI docs",
+        "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+        "query": "Cloudflare AI Search pricing per query",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Pricing · Cloudflare Workers AI docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:1rem 2re",
+        "fetch_error": ""
+      },
+      {
+        "title": "Is Cloudflare Workers AI Free? Free Tier Limits & Upgrade Triggers (2026)",
+        "url": "https://costbench.com/software/llm-api-providers/cloudflare-workers-ai/free-plan/",
+        "query": "Cloudflare AI Search free tier limits",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "if(location.hostname==='costbench.pages.dev'||location.hostname==='www.costbench.com')location.replace('https://costbench.com'+location.pathname+location.search+location.hash); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5L34562T'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-N2CF37ZX0R'); !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(\".\");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement(\"script\")).type=\"text/javascript\",p.async=!0,p.src=s.api_host.replace(\".i.posthog.com\",\"-assets.i.posthog.com\")+\"/static/array.js\",(r=t.getElementsByTagName(\"script\")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a=\"posthog\",u.people=u.people||[],u.toString=function(t){var e=\"posthog\";return\"posthog\"!==a&&(e+=\".\"+a),t||(e+=\" (stub)\"),e},u.people.toString=function(){return u.toString(1)+\".people (stub)\"},o=\"init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesFo",
+        "fetch_error": ""
+      },
+      {
+        "title": "Cloudflare Free Tier 2026: Limits, Pricing & What Changed | AgentDeals",
+        "url": "https://agentdeals.dev/vendor/cloudflare",
+        "query": "Cloudflare AI Search free tier limits",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Cloudflare Free Tier 2026: Limits, Pricing & What Changed | AgentDeals {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Cloudflare Free Tier 2026: Limits, Pricing & What Changed | AgentDeals\",\"description\":\"Cloudflare free tier includes Up to $250K in Cloudflare credits across 4 tiers: Bootstrapped ($5K), Up-and-Coming ($25K), Seed-Fun. Verified May 2026. Compare with 12 alternatives in Startup Programs.\",\"url\":\"https://agentdeals.dev/vendor/cloudflare\",\"dateModified\":\"2026-05-11\",\"mainEntity\":{\"@type\":\"SoftwareApplication\",\"name\":\"Cloudflare\",\"description\":\"Up to $250K in Cloudflare credits across 4 tiers: Bootstrapped ($5K), Up-and-Coming ($25K), Seed-Funded ($100K), High Growth ($250K). Covers Workers, R2, Workers AI, Stream, Durable Objects, and more. Credits expire within 1 year. Max $10K toward R2/Cache Reserve, up to $50K for Workers AI\",\"applicationCategory\":\"Startup Programs\",\"url\":\"https://www.cloudflare.com/forstartups/\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\",\"description\":\"Startup Program\",\"priceValidUntil\":\"2026-02-04\"}},\"about\":[{\"@type\":\"Event\",\"name\":\"Cloudflare pricing change: new free tier\",\"startDate\":\"2026-02-04\",\"description\":\"Queues added to Workers free plan — message queuing now free\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is Cloudflare free?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, Cloudflare offers a free tier: Startup Program. Up to $250K in Cloudflare credits across 4 tiers: Bootstrapped ($5K), Up-and-Coming ($25K), Seed-Funded ($100K), High Growth ($250K). Covers Workers, R2, Workers AI, Stream, Durable Objects, and more....\"}},{\"@type\":\"Question\",\"name\":\"What is Cloudflare's free tier?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Cloudflare's free",
+        "fetch_error": ""
+      },
+      {
+        "title": "Cloudflare AI Gateway Pricing Explained For 2026",
+        "url": "https://www.truefoundry.com/blog/cloudflare-ai-gateway-pricing",
+        "query": "Cloudflare AI Search free tier limits",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Cloudflare AI Gateway Pricing Explained For 2026 WebFont.load({ google: { families: [\"Varela:400\",\"Archivo:300,400,500,600,700\",\"Work Sans:300,400,500,600,700\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); (function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push.apply(w[g],Array.isArray(i)?i:[i]);})(window,['G-BCVB8L89W6'],'google_tags_first_party'); window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('set', 'developer_id.dZGVlNj', true);gtag('set', 'developer_id.dYWYxNW', true);gtag('js', new Date());gtag('config', 'G-BCVB8L89W6', {'anonymize_ip': false}); .custom_header { width: 100%; margin: auto; } .nav_menu-wrapper, a.nav-llinks.login.w-nav-link { will-change: transform, opacity; transition: opacity 0.2s ease, transform 0.2s ease; } .hide-nav { opacity: 0; transform: translateY(-20px); pointer-events: none; } .remove-nav { display: none; } .locale-de .talk-content, .locale-es .talk-content, .locale-fr .talk-content, .locale-br .talk-content { max-width: 800px; } .locale-de br, .locale-fr br, .locale-es br, .locale-br br { display: none !important; } .locale-de span.display_block, .locale-fr span.display_block, .locale-es span.display_block, .locale-br span.display_block { display: inline; } .text-style-3lines { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; } .locale-br .talk-content { max-width: 80%; } .locale-br .traces_banner-para-wrapper.is-application-suites.is-52 { max-width: 60rem; } h2.section_banking-title { text-align: center; } .locale-br .traces_banner-para.is-banking.is-mw750 { max-width: 100%; } .locale-br .traces",
+        "fetch_error": ""
+      },
+      {
+        "title": "I Built a Production RAG System for $5/month (Most Alternatives Cost $100-200+) - DEV Community",
+        "url": "https://dev.to/dannwaneri/i-built-a-production-rag-system-for-5month-most-alternatives-cost-100-200-21hj",
+        "query": "Cloudflare AI Search vs Algolia cost comparison",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "I Built a Production RAG System for $5/month (Most Alternatives Cost $100-200+) - DEV Community /* ========================================================================== THE 418 CHALLENGE: THEME-AWARE RETRO EDITION ========================================================================== */ .articletag-418challenge { font-family: \"Comic Sans MS\", \"Chalkboard SE\", \"Marker Felt\", sans-serif !important; cursor: crosshair !important; } /* Destroy modern rounded corners and add brutal borders */ .articletag-418challenge .crayons-card, .articletag-418challenge .crayons-article__main, .articletag-418challenge .crayons-article__header { border-radius: 0 !important; margin-bottom: 2rem !important; } /* Typography specifics */ .articletag-418challenge h1, .articletag-418challenge h2, .articletag-418challenge h3 { text-transform: uppercase !important; } /* Fake effect for the main article title */ .articletag-418challenge h1.fs-3xl { animation: retro-slide 5s linear infinite alternate; overflow: visible; } /* Spin those avatars */ .articletag-418challenge .crayons-article__header__meta img { border-radius: 0 !important; animation: retro-spin 5s linear infinite; } /* Obnoxious tags */ .articletag-418challenge .crayons-tag { border-radius: 0 !important; font-weight: 900 !important; transform: rotate(-3deg); display: inline-block; } .articletag-418challenge .crayons-tag:nth-child(even) { transform: rotate(3deg); } /* -------------------------------------------------------------------------- 2. LIGHT THEME (Windows 95 / Office 97 Vibes) -------------------------------------------------------------------------- */ body:not(.dark-theme) .articletag-418challenge { background-color: #008080 !important; /* Win95 Teal Desktop */ } body:not(.dark-theme) .articletag-418challenge .crayons",
+        "fetch_error": ""
+      },
+      {
+        "title": "Algolia vs Cloudflare comparison 2024 - AppsandReports.com",
+        "url": "https://www.appsandreports.com/compare/Algolia-vs-Cloudflare",
+        "query": "Cloudflare AI Search vs Algolia cost comparison",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Algolia vs Cloudflare comparison 2026 window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-142123687-2'); var truepush=window.truepush||[];truepush.push(function(){truepush.Init({id:\"5db807a2e5e35c4e41c08c85\"},function(u){u&&console.error(u)})}); No Results --> SOFTWARE SERVICES FIND RIGHT SOFTWARE/SERVICE We have received your request. Our expert will be at your service shortly Close Create Leading × --> Name Please enter your name. Email Please enter valid Email address. Phone Valid. Please enter your phone number with country code. ✓ Valid Organization Please enter your organization name. Company Location Please enter your address. Select Employee size : Select Employee Size 1-10 employees 11-50 employees 51-200 employees 201-500 employees 501-1000 employees 1001-5000 employees 5001-10,000 employees 10,001+ employees Please select the employee size. Requirement Please specify your requirements. Submit li.star-sm{ margin: 0; } Algolia CONTACT AN EXPERT Cloudflare CONTACT AN EXPERT Home Algolia vs Cloudflare Algolia vs Cloudflare COMPARISON Algolia CONTACT AN EXPERT Cloudflare CONTACT AN EXPERT OVERVIEW Algolia’s full suite Apis modify groups to develop distinctive search and discovery experiences for his or her customers across all platforms and devices. A question. Click a link. Open associate app. Everything your customers do sends a symbol concerning what they need. Algolia decodes that intent to deliver the correct content - instantly. produce resistance find-to-conversion methods by connecting users with precisely what they’re searching for, with lightning-fast and extremely relevant search. transcend the search box with navigation, browse, and content discovery experiences battery-power",
+        "fetch_error": ""
+      },
+      {
+        "title": "3 Best AI Search Engines for Mobile Apps in 2025 — Winner in One Table",
+        "url": "https://www.ptolemay.com/post/best-in-app-ai-search-2025-algolia-vs-openai-vs-elasticsearch",
+        "query": "Cloudflare AI Search vs Algolia cost comparison",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "3 Best AI Search Engines for Mobile Apps in 2025 — Winner in One Table WebFont.load({ google: { families: [\"Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic\",\"Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic\",\"Inconsolata:400,700\",\"Inter:300,400,500,600,700\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('set', 'developer_id.dZGVlNj', true);gtag('js', new Date());gtag('config', 'G-427NGYFQJZ'); * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; } .rich-text p { margin-bottom: 20px; } (function(h,o,t,j,a,r){ h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)}; h._hjSettings={hjid:3004463,hjsv:6}; a=o.getElementsByTagName('head')[0]; r=o.createElement('script');r.async=1; r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv; a.appendChild(r); })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv='); (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('lAxoEaK9yBD7OYGd'); --> !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createE",
+        "fetch_error": ""
+      },
+      {
+        "title": "Namespaces · Cloudflare AI Search docs",
+        "url": "https://developers.cloudflare.com/ai-search/concepts/namespaces/",
+        "query": "Cloudflare AI Search namespace limits",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Namespaces · Cloudflare AI Search docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:1rem 2",
+        "fetch_error": ""
+      },
+      {
+        "title": "Manage AI Search namespaces with Wrangler CLI · Changelog",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-06-10-ai-search-namespace-wrangler-commands/",
+        "query": "Cloudflare AI Search namespace limits",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Manage AI Search namespaces with Wrangler CLI · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:",
+        "fetch_error": ""
+      },
+      {
+        "title": "AI Search instances now include built-in storage and namespace Workers Bindings · Changelog",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-04-16-ai-search-namespace-binding/",
+        "query": "Cloudflare AI Search namespace limits",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "AI Search instances now include built-in storage and namespace Workers Bindings · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1",
+        "fetch_error": ""
+      },
+      {
+        "title": "Get started - Workers and Wrangler · Cloudflare Workers AI docs",
+        "url": "https://developers.cloudflare.com/workers-ai/get-started/workers-wrangler/",
+        "query": "Cloudflare AI Search Wrangler CLI tutorial",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Get started - Workers and Wrangler · Cloudflare Workers AI docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.a",
+        "fetch_error": ""
+      },
+      {
+        "title": "Wrangler · Cloudflare Workers docs",
+        "url": "https://developers.cloudflare.com/workers/wrangler/",
+        "query": "Cloudflare AI Search Wrangler CLI tutorial",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Wrangler · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:1rem 2rem;",
+        "fetch_error": ""
+      },
+      {
+        "title": "Create, manage, search AI Search instances with Wrangler CLI · Changelog",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-04-01-ai-search-wrangler-commands/",
+        "query": "Cloudflare AI Search Wrangler CLI tutorial",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Create, manage, search AI Search instances with Wrangler CLI · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidl",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/LocalLLaMA on Reddit: Web-Search is coming to a screeching performance halt as Google shuts down their free search index, and traffic defenders like Cloudflare challenge AI at every gateway. What are our options?",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1tcaboi/websearch_is_coming_to_a_screeching_performance/",
+        "query": "Cloudflare AI Search developer review reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/CloudFlare on Reddit: Cloudflare Workers AI — worth it?",
+        "url": "https://www.reddit.com/r/CloudFlare/comments/1svlt79/cloudflare_workers_ai_worth_it/",
+        "query": "Cloudflare AI Search developer review reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/CloudFlare on Reddit: Orchestrating AI Code Review at scale",
+        "url": "https://www.reddit.com/r/CloudFlare/comments/1sqqrq4/orchestrating_ai_code_review_at_scale/",
+        "query": "Cloudflare AI Search developer review reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260612-ai-search-manage-ai-search-namespaces-with-wrang-8c6e12df/",
+    "for_gpt_editor": {
+      "brief": "AI Search now supports namespace-level Wrangler commands, making it easier to manage namespaces from your terminal, scripts, and agent workflows. The following commands are available: Command Description wrangler ai-search namespace list List AI Search namespaces wrangler ai-search namespace create Create a new AI Search namespace wrangler ai-search namespace get Get details for a namespace wrangler ai-search namespace update Update a namespace description wrangler ai-search namespace delete Delete an AI Search namespace Create a namespace for a new application or tenant directly from the CLI: wrangler ai-search namespace create docs-production --description \"Production documentation search\" List namespaces with pagination or filter by name or description: wrangler ai-search namespace list --search docs --page 1 --per-page 10 Use --json with list , create , get , and update to return str",
+      "title_seed": "平台规则：Cloudflare 搜索生态变化",
+      "original_title": "AI Search - Manage AI Search namespaces with Wrangler CLI",
+      "source_url": "https://developers.cloudflare.com/changelog/post/2026-06-10-ai-search-namespace-wrangler-commands/",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：核心事实没有来源：AI Search 独立定价页面缺失，成本估算无法进行。"
+        },
+        "core_question": "Cloudflare AI Search 的 Wrangler CLI 命名空间管理功能，对普通开发者和小团队的实际成本、操作门槛和搜索流量生态影响是什么？",
+        "why_this_topic_matters": "Cloudflare 正在将 AI Search 从边缘功能升级为可编程基础设施，Wrangler CLI 支持命名空间管理意味着多租户、自动化部署和 CI/CD 集成成为可能。这对小团队和独立开发者可能意味着更低成本的搜索方案，但定价和性能数据缺失，存在信息差风险。",
+        "fact_summary": [
+          "Cloudflare 于 2026-06-10 发布 Wrangler CLI 支持 AI Search 命名空间管理，包括 list/create/get/update/delete 命令。",
+          "命名空间是 AI Search 的逻辑隔离单元，每个实例自带存储和 Workers Bindings（2026-04-16 更新）。",
+          "Cloudflare 提供 Startup Program 免费额度（最高 $250K），但 AI Search 是否包含在内未明确。",
+          "Workers AI 有免费额度（每日 10k 神经元/10k 推理请求），但 AI Search 的定价页面未找到。",
+          "Reddit 相关讨论因 403 无法获取，缺乏真实用户反馈。"
+        ],
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 7,
+          "why_interested": "核心技术人关注 Wrangler CLI 集成、命名空间设计、与 Workers 的绑定能力；入门读者想了解是否能用免费额度搭建搜索；商业读者关注与 Algolia 的成本对比。",
+          "reader_risk": "如果定价不透明或免费额度有限，可能误导读者投入时间学习后才发现成本过高。"
+        },
+        "mass_interest_hook": {
+          "score": 6,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "标题暗示“Cloudflare 推出免费 AI 搜索，小团队也能用”，普通人可能误以为可以零成本搭建搜索功能。",
+          "story_seed": "一个独立开发者用 Cloudflare AI Search 替代 Algolia，每月省下 $500，但发现搜索质量不如预期。",
+          "do_not_overhype": "不能声称“免费”或“替代 Algolia”，因为定价和性能未验证。"
+        },
+        "topic_tension": {
+          "score": 8,
+          "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+          "debate_question": "Cloudflare AI Search 的命名空间管理是降低还是提高了小团队的搜索部署门槛？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "Cloudflare",
+            "Algolia/Meilisearch 等竞品"
+          ],
+          "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2026-04-01: Cloudflare 发布 AI Search Wrangler 命令（实例管理）",
+          "2026-04-16: AI Search 实例内置存储和 Workers Bindings",
+          "2026-06-10: 新增命名空间管理命令（本次更新）"
+        ],
+        "evidence_table": [
+          {
+            "source": "Cloudflare Changelog",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-06-10-ai-search-namespace-wrangler-commands/",
+            "supports": "Wrangler CLI 新增命名空间管理命令",
+            "reliability": "official"
+          },
+          {
+            "source": "Cloudflare AI Search docs - Namespaces",
+            "url": "https://developers.cloudflare.com/ai-search/concepts/namespaces/",
+            "supports": "命名空间概念和用法",
+            "reliability": "official"
+          },
+          {
+            "source": "Cloudflare Changelog - AI Search namespace binding",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-04-16-ai-search-namespace-binding/",
+            "supports": "实例内置存储和 Workers Bindings",
+            "reliability": "official"
+          },
+          {
+            "source": "Cloudflare Workers AI Pricing",
+            "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+            "supports": "Workers AI 定价（但 AI Search 独立定价未找到）",
+            "reliability": "official"
+          },
+          {
+            "source": "Costbench - Cloudflare Workers AI Free Tier",
+            "url": "https://costbench.com/software/llm-api-providers/cloudflare-workers-ai/free-plan/",
+            "supports": "Workers AI 免费额度信息",
+            "reliability": "media"
+          },
+          {
+            "source": "AgentDeals - Cloudflare Free Tier",
+            "url": "https://agentdeals.dev/vendor/cloudflare",
+            "supports": "Startup Program 免费额度",
+            "reliability": "media"
+          },
+          {
+            "source": "DEV Community - RAG System for $5/month",
+            "url": "https://dev.to/dannwaneri/i-built-a-production-rag-system-for-5month-most-alternatives-cost-100-200-21hj",
+            "supports": "低成本 RAG 方案（非 Cloudflare AI Search 直接案例）",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "部分闭环：功能更新明确，但成本、性能、竞品对比数据缺失，无法形成完整判断。",
+        "writeable_angles": [
+          {
+            "angle": "工具账本：Cloudflare AI Search 命名空间管理功能详解与成本估算",
+            "why": "适合入门读者和核心技术人，提供操作指南和成本估算（基于 Workers AI 定价推测）。",
+            "needs": "需要 AI Search 独立定价或至少一个真实案例的成本数据。"
+          },
+          {
+            "angle": "风险避坑：Cloudflare AI Search 的隐藏成本与性能陷阱",
+            "why": "适合高价值商业读者，分析定价不透明、搜索质量未知、依赖 Workers 生态等风险。",
+            "needs": "需要真实用户反馈或性能基准测试。"
+          },
+          {
+            "angle": "案例复盘：从 Algolia 迁移到 Cloudflare AI Search 的决策框架",
+            "why": "适合小团队/独立开发者，提供迁移决策 checklist。",
+            "needs": "需要至少一个迁移案例或详细的对比数据。"
+          }
+        ],
+        "missing_basics": [
+          "AI Search 的定价模式（免费额度、超出费用、命名空间限制）",
+          "AI Search 是否依赖 Workers AI 或向量数据库",
+          "搜索质量（召回率、延迟）基准数据",
+          "命名空间数量限制（免费/付费计划）"
+        ],
+        "missing_materials": [
+          "Cloudflare AI Search 定价页面截图或数据",
+          "至少一个真实用户案例（博客、论坛帖子）",
+          "与 Algolia/Meilisearch 的对比表格（功能、价格、限制）",
+          "Wrangler CLI 命令的完整文档链接（已部分获取）"
+        ],
+        "not_claimable": [
+          "AI Search 比 Algolia 更便宜或更好用",
+          "所有开发者都能轻松上手",
+          "搜索质量达到生产级标准",
+          "对 SEO 或搜索流量有显著影响"
+        ],
+        "followup_queries": [
+          "Cloudflare AI Search 的定价页面在哪里？",
+          "是否有开发者社区讨论（如 Hacker News）关于成本或性能的反馈？",
+          "Cloudflare AI Search 是否支持自定义排序或过滤？",
+          "命名空间数量是否有限制？"
+        ],
+        "additional_search_queries": [
+          "Cloudflare AI Search pricing per query",
+          "Cloudflare AI Search free tier limits",
+          "Cloudflare AI Search vs Algolia cost comparison",
+          "Cloudflare AI Search namespace limits",
+          "Cloudflare AI Search developer review reddit",
+          "Cloudflare AI Search benchmark latency",
+          "Cloudflare Workers AI Search integration cost"
+        ],
+        "stop_conditions": [
+          "如果 Cloudflare 官方未公开 AI Search 独立定价，则无法进行成本分析。",
+          "如果 Reddit/HN 上无真实用户反馈，则无法评估搜索质量和易用性。",
+          "如果竞品对比数据不可获取，则无法判断替代价值。"
+        ],
+        "confidence": 35.0,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "platform-rules",
+        "quality_gate": {
+          "pass": false,
+          "score": 35,
+          "fatal_issues": [
+            "核心事实没有来源：AI Search 独立定价页面缺失，成本估算无法进行。",
+            "成本估算没有公式、单位或边界：仅依赖 Workers AI 定价推测，无 AI Search 具体定价。",
+            "没有泛兴趣故事钩子：标题和开头仅适合技术小圈子，缺乏泛兴趣吸引力。",
+            "没有真实传播张力：冲突点（成本/门槛）缺乏证据支撑，讨论空间有限。",
+            "没有明确归入实际选题方向：选题方向为 tools-rules，但内容偏向平台规则，匹配度不足。",
+            "没有给下游 GPT 编辑应用和研究闭环留下足够结构化资料：缺少定价、用户反馈、竞品对比等关键材料。",
+            "没有明确选题结论：dossier 中 verdict 为“可选”，但未明确推荐或放弃。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写：reason 仅说“命中老花主线关键词”，缺乏深度判断。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：逻辑部分闭环，但关键事实缺失。",
+            "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在质检中强调。",
+            "没有按具体类型提供资料包：对于 platform-rules 类型，缺少时间线、更新摘要、成本对比等。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来：18 条证据中 14 条来自 Cloudflare 官方，缺乏第三方验证。"
+          ],
+          "warnings": [
+            "读者分层不清晰：primary_layer 为“核心技术人”，但 secondary_layers 包含“入门读者”和“高价值商业读者”，三者兴趣点差异大，难以兼顾。",
+            "泛兴趣钩子过度标题党：hook_type 为“反差”，但正文证据无法支撑“免费”或“替代 Algolia”的暗示。",
+            "传播张力评分过高（8/9），但实际证据不足，存在虚高风险。"
+          ],
+          "missing_evidence": [
+            "Cloudflare AI Search 独立定价页面或数据",
+            "真实用户案例或社区反馈（Reddit 403 无法获取）",
+            "与 Algolia/Meilisearch 的对比数据",
+            "搜索质量基准测试（召回率、延迟）",
+            "命名空间数量限制（免费/付费计划）"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "topic_direction_ok": false,
+          "report_type_ok": false,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "Cloudflare AI Search 的 Wrangler CLI 命名空间管理功能，对普通开发者和小团队的实际成本、操作门槛和搜索流量生态影响是什么？",
+          "must_verify": [
+            "AI Search 的定价模式：是否有免费额度？超出后每单位（查询/文档/存储）费用？",
+            "Wrangler CLI 是否免费使用？是否需要绑定付费计划？",
+            "AI Search 的索引构建是否需要额外计算资源（如 Workers）？",
+            "命名空间数量是否有限制？免费/付费计划各支持多少个？",
+            "AI Search 是否依赖 Cloudflare 的向量数据库或 Workers AI？",
+            "是否有官方文档或案例说明搜索质量（召回率、延迟）？",
+            "是否有开发者社区讨论（如 Reddit、Hacker News）关于成本或性能的反馈？",
+            "Cloudflare 是否有类似竞品（如 Algolia、Meilisearch）的对比信息？"
+          ],
+          "search_queries": [
+            "Cloudflare AI Search pricing per query",
+            "Cloudflare AI Search free tier limits",
+            "Cloudflare AI Search vs Algolia cost comparison",
+            "Cloudflare AI Search namespace limits",
+            "Cloudflare AI Search Wrangler CLI tutorial",
+            "Cloudflare AI Search developer review reddit",
+            "Cloudflare AI Search benchmark latency",
+            "Cloudflare Workers AI Search integration cost"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "pricing_page",
+              "query": "Cloudflare AI Search pricing",
+              "why_needed": "确认免费额度、超出费用、命名空间限制，是成本估算的基础。"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Cloudflare AI Search documentation",
+              "why_needed": "获取功能细节、依赖关系、使用限制，验证操作门槛。"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Cloudflare AI Search reddit",
+              "why_needed": "收集真实用户反馈，了解性能、成本、易用性方面的实际体验。"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Cloudflare AI Search use case",
+              "why_needed": "寻找实际应用案例，评估搜索质量和适用场景。"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "Cloudflare AI Search vs Algolia benchmark",
+              "why_needed": "对比竞品性能，判断是否值得迁移或采用。"
+            },
+            {
+              "source_type": "policy",
+              "query": "Cloudflare AI Search terms of service",
+              "why_needed": "检查是否有隐藏限制或合规要求，特别是对出海项目。"
+            }
+          ],
+          "expert_challenge_points": [
+            "AI Search 的搜索质量是否足够替代传统搜索引擎或专用搜索服务？",
+            "对于小团队，使用 Cloudflare AI Search 相比自建搜索（如 Elasticsearch）或托管服务（如 Algolia）的总拥有成本（TCO）如何？",
+            "Wrangler CLI 的命名空间管理是否真的简化了多租户场景，还是增加了不必要的抽象？",
+            "Cloudflare 的 AI Search 是否依赖其边缘网络，延迟优势是否明显？"
+          ],
+          "do_not_claim_yet": [
+            "AI Search 比 Algolia 更便宜或更好用",
+            "所有开发者都能轻松上手",
+            "搜索质量达到生产级标准",
+            "对 SEO 或搜索流量有显著影响"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取定价信息或真实用户反馈，只能作为工具更新发布，无法深入分析成本或生态影响。",
+          "downstream_materials_needed": [
+            "Cloudflare AI Search 定价页面截图或数据",
+            "至少一个真实用户案例（博客、论坛帖子）",
+            "与竞品的对比表格（功能、价格、限制）",
+            "Wrangler CLI 命令的完整文档链接"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Limits & pricing · Cloudflare AI Search docs",
+            "url": "https://developers.cloudflare.com/ai-search/platform/limits-pricing/",
+            "query": "Cloudflare AI Search pricing per query",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Limits & pricing · Cloudflare AI Search docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:",
+            "fetch_error": ""
+          },
+          {
+            "title": "Cloudflare AI Search · Cloudflare AI Search docs",
+            "url": "https://developers.cloudflare.com/ai-search/",
+            "query": "Cloudflare AI Search pricing per query",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Cloudflare AI Search · Cloudflare AI Search docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){",
+            "fetch_error": ""
+          },
+          {
+            "title": "Pricing · Cloudflare Workers AI docs",
+            "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+            "query": "Cloudflare AI Search pricing per query",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Pricing · Cloudflare Workers AI docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:1rem 2re",
+            "fetch_error": ""
+          },
+          {
+            "title": "Is Cloudflare Workers AI Free? Free Tier Limits & Upgrade Triggers (2026)",
+            "url": "https://costbench.com/software/llm-api-providers/cloudflare-workers-ai/free-plan/",
+            "query": "Cloudflare AI Search free tier limits",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "if(location.hostname==='costbench.pages.dev'||location.hostname==='www.costbench.com')location.replace('https://costbench.com'+location.pathname+location.search+location.hash); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5L34562T'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-N2CF37ZX0R'); !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(\".\");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement(\"script\")).type=\"text/javascript\",p.async=!0,p.src=s.api_host.replace(\".i.posthog.com\",\"-assets.i.posthog.com\")+\"/static/array.js\",(r=t.getElementsByTagName(\"script\")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a=\"posthog\",u.people=u.people||[],u.toString=function(t){var e=\"posthog\";return\"posthog\"!==a&&(e+=\".\"+a),t||(e+=\" (stub)\"),e},u.people.toString=function(){return u.toString(1)+\".people (stub)\"},o=\"init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesFo",
+            "fetch_error": ""
+          },
+          {
+            "title": "Cloudflare Free Tier 2026: Limits, Pricing & What Changed | AgentDeals",
+            "url": "https://agentdeals.dev/vendor/cloudflare",
+            "query": "Cloudflare AI Search free tier limits",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Cloudflare Free Tier 2026: Limits, Pricing & What Changed | AgentDeals {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Cloudflare Free Tier 2026: Limits, Pricing & What Changed | AgentDeals\",\"description\":\"Cloudflare free tier includes Up to $250K in Cloudflare credits across 4 tiers: Bootstrapped ($5K), Up-and-Coming ($25K), Seed-Fun. Verified May 2026. Compare with 12 alternatives in Startup Programs.\",\"url\":\"https://agentdeals.dev/vendor/cloudflare\",\"dateModified\":\"2026-05-11\",\"mainEntity\":{\"@type\":\"SoftwareApplication\",\"name\":\"Cloudflare\",\"description\":\"Up to $250K in Cloudflare credits across 4 tiers: Bootstrapped ($5K), Up-and-Coming ($25K), Seed-Funded ($100K), High Growth ($250K). Covers Workers, R2, Workers AI, Stream, Durable Objects, and more. Credits expire within 1 year. Max $10K toward R2/Cache Reserve, up to $50K for Workers AI\",\"applicationCategory\":\"Startup Programs\",\"url\":\"https://www.cloudflare.com/forstartups/\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\",\"description\":\"Startup Program\",\"priceValidUntil\":\"2026-02-04\"}},\"about\":[{\"@type\":\"Event\",\"name\":\"Cloudflare pricing change: new free tier\",\"startDate\":\"2026-02-04\",\"description\":\"Queues added to Workers free plan — message queuing now free\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is Cloudflare free?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, Cloudflare offers a free tier: Startup Program. Up to $250K in Cloudflare credits across 4 tiers: Bootstrapped ($5K), Up-and-Coming ($25K), Seed-Funded ($100K), High Growth ($250K). Covers Workers, R2, Workers AI, Stream, Durable Objects, and more....\"}},{\"@type\":\"Question\",\"name\":\"What is Cloudflare's free tier?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Cloudflare's free",
+            "fetch_error": ""
+          },
+          {
+            "title": "Cloudflare AI Gateway Pricing Explained For 2026",
+            "url": "https://www.truefoundry.com/blog/cloudflare-ai-gateway-pricing",
+            "query": "Cloudflare AI Search free tier limits",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Cloudflare AI Gateway Pricing Explained For 2026 WebFont.load({ google: { families: [\"Varela:400\",\"Archivo:300,400,500,600,700\",\"Work Sans:300,400,500,600,700\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); (function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push.apply(w[g],Array.isArray(i)?i:[i]);})(window,['G-BCVB8L89W6'],'google_tags_first_party'); window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('set', 'developer_id.dZGVlNj', true);gtag('set', 'developer_id.dYWYxNW', true);gtag('js', new Date());gtag('config', 'G-BCVB8L89W6', {'anonymize_ip': false}); .custom_header { width: 100%; margin: auto; } .nav_menu-wrapper, a.nav-llinks.login.w-nav-link { will-change: transform, opacity; transition: opacity 0.2s ease, transform 0.2s ease; } .hide-nav { opacity: 0; transform: translateY(-20px); pointer-events: none; } .remove-nav { display: none; } .locale-de .talk-content, .locale-es .talk-content, .locale-fr .talk-content, .locale-br .talk-content { max-width: 800px; } .locale-de br, .locale-fr br, .locale-es br, .locale-br br { display: none !important; } .locale-de span.display_block, .locale-fr span.display_block, .locale-es span.display_block, .locale-br span.display_block { display: inline; } .text-style-3lines { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; } .locale-br .talk-content { max-width: 80%; } .locale-br .traces_banner-para-wrapper.is-application-suites.is-52 { max-width: 60rem; } h2.section_banking-title { text-align: center; } .locale-br .traces_banner-para.is-banking.is-mw750 { max-width: 100%; } .locale-br .traces",
+            "fetch_error": ""
+          },
+          {
+            "title": "I Built a Production RAG System for $5/month (Most Alternatives Cost $100-200+) - DEV Community",
+            "url": "https://dev.to/dannwaneri/i-built-a-production-rag-system-for-5month-most-alternatives-cost-100-200-21hj",
+            "query": "Cloudflare AI Search vs Algolia cost comparison",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "I Built a Production RAG System for $5/month (Most Alternatives Cost $100-200+) - DEV Community /* ========================================================================== THE 418 CHALLENGE: THEME-AWARE RETRO EDITION ========================================================================== */ .articletag-418challenge { font-family: \"Comic Sans MS\", \"Chalkboard SE\", \"Marker Felt\", sans-serif !important; cursor: crosshair !important; } /* Destroy modern rounded corners and add brutal borders */ .articletag-418challenge .crayons-card, .articletag-418challenge .crayons-article__main, .articletag-418challenge .crayons-article__header { border-radius: 0 !important; margin-bottom: 2rem !important; } /* Typography specifics */ .articletag-418challenge h1, .articletag-418challenge h2, .articletag-418challenge h3 { text-transform: uppercase !important; } /* Fake effect for the main article title */ .articletag-418challenge h1.fs-3xl { animation: retro-slide 5s linear infinite alternate; overflow: visible; } /* Spin those avatars */ .articletag-418challenge .crayons-article__header__meta img { border-radius: 0 !important; animation: retro-spin 5s linear infinite; } /* Obnoxious tags */ .articletag-418challenge .crayons-tag { border-radius: 0 !important; font-weight: 900 !important; transform: rotate(-3deg); display: inline-block; } .articletag-418challenge .crayons-tag:nth-child(even) { transform: rotate(3deg); } /* -------------------------------------------------------------------------- 2. LIGHT THEME (Windows 95 / Office 97 Vibes) -------------------------------------------------------------------------- */ body:not(.dark-theme) .articletag-418challenge { background-color: #008080 !important; /* Win95 Teal Desktop */ } body:not(.dark-theme) .articletag-418challenge .crayons",
+            "fetch_error": ""
+          },
+          {
+            "title": "Algolia vs Cloudflare comparison 2024 - AppsandReports.com",
+            "url": "https://www.appsandreports.com/compare/Algolia-vs-Cloudflare",
+            "query": "Cloudflare AI Search vs Algolia cost comparison",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Algolia vs Cloudflare comparison 2026 window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-142123687-2'); var truepush=window.truepush||[];truepush.push(function(){truepush.Init({id:\"5db807a2e5e35c4e41c08c85\"},function(u){u&&console.error(u)})}); No Results --> SOFTWARE SERVICES FIND RIGHT SOFTWARE/SERVICE We have received your request. Our expert will be at your service shortly Close Create Leading × --> Name Please enter your name. Email Please enter valid Email address. Phone Valid. Please enter your phone number with country code. ✓ Valid Organization Please enter your organization name. Company Location Please enter your address. Select Employee size : Select Employee Size 1-10 employees 11-50 employees 51-200 employees 201-500 employees 501-1000 employees 1001-5000 employees 5001-10,000 employees 10,001+ employees Please select the employee size. Requirement Please specify your requirements. Submit li.star-sm{ margin: 0; } Algolia CONTACT AN EXPERT Cloudflare CONTACT AN EXPERT Home Algolia vs Cloudflare Algolia vs Cloudflare COMPARISON Algolia CONTACT AN EXPERT Cloudflare CONTACT AN EXPERT OVERVIEW Algolia’s full suite Apis modify groups to develop distinctive search and discovery experiences for his or her customers across all platforms and devices. A question. Click a link. Open associate app. Everything your customers do sends a symbol concerning what they need. Algolia decodes that intent to deliver the correct content - instantly. produce resistance find-to-conversion methods by connecting users with precisely what they’re searching for, with lightning-fast and extremely relevant search. transcend the search box with navigation, browse, and content discovery experiences battery-power",
+            "fetch_error": ""
+          },
+          {
+            "title": "3 Best AI Search Engines for Mobile Apps in 2025 — Winner in One Table",
+            "url": "https://www.ptolemay.com/post/best-in-app-ai-search-2025-algolia-vs-openai-vs-elasticsearch",
+            "query": "Cloudflare AI Search vs Algolia cost comparison",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "3 Best AI Search Engines for Mobile Apps in 2025 — Winner in One Table WebFont.load({ google: { families: [\"Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic\",\"Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic\",\"Inconsolata:400,700\",\"Inter:300,400,500,600,700\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('set', 'developer_id.dZGVlNj', true);gtag('js', new Date());gtag('config', 'G-427NGYFQJZ'); * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; } .rich-text p { margin-bottom: 20px; } (function(h,o,t,j,a,r){ h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)}; h._hjSettings={hjid:3004463,hjsv:6}; a=o.getElementsByTagName('head')[0]; r=o.createElement('script');r.async=1; r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv; a.appendChild(r); })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv='); (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('lAxoEaK9yBD7OYGd'); --> !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createE",
+            "fetch_error": ""
+          },
+          {
+            "title": "Namespaces · Cloudflare AI Search docs",
+            "url": "https://developers.cloudflare.com/ai-search/concepts/namespaces/",
+            "query": "Cloudflare AI Search namespace limits",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Namespaces · Cloudflare AI Search docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:1rem 2",
+            "fetch_error": ""
+          },
+          {
+            "title": "Manage AI Search namespaces with Wrangler CLI · Changelog",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-06-10-ai-search-namespace-wrangler-commands/",
+            "query": "Cloudflare AI Search namespace limits",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Manage AI Search namespaces with Wrangler CLI · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:",
+            "fetch_error": ""
+          },
+          {
+            "title": "AI Search instances now include built-in storage and namespace Workers Bindings · Changelog",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-04-16-ai-search-namespace-binding/",
+            "query": "Cloudflare AI Search namespace limits",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "AI Search instances now include built-in storage and namespace Workers Bindings · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1",
+            "fetch_error": ""
+          },
+          {
+            "title": "Get started - Workers and Wrangler · Cloudflare Workers AI docs",
+            "url": "https://developers.cloudflare.com/workers-ai/get-started/workers-wrangler/",
+            "query": "Cloudflare AI Search Wrangler CLI tutorial",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Get started - Workers and Wrangler · Cloudflare Workers AI docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.a",
+            "fetch_error": ""
+          },
+          {
+            "title": "Wrangler · Cloudflare Workers docs",
+            "url": "https://developers.cloudflare.com/workers/wrangler/",
+            "query": "Cloudflare AI Search Wrangler CLI tutorial",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Wrangler · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:1rem 2rem;",
+            "fetch_error": ""
+          },
+          {
+            "title": "Create, manage, search AI Search instances with Wrangler CLI · Changelog",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-04-01-ai-search-wrangler-commands/",
+            "query": "Cloudflare AI Search Wrangler CLI tutorial",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Create, manage, search AI Search instances with Wrangler CLI · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidl",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/LocalLLaMA on Reddit: Web-Search is coming to a screeching performance halt as Google shuts down their free search index, and traffic defenders like Cloudflare challenge AI at every gateway. What are our options?",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1tcaboi/websearch_is_coming_to_a_screeching_performance/",
+            "query": "Cloudflare AI Search developer review reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/CloudFlare on Reddit: Cloudflare Workers AI — worth it?",
+            "url": "https://www.reddit.com/r/CloudFlare/comments/1svlt79/cloudflare_workers_ai_worth_it/",
+            "query": "Cloudflare AI Search developer review reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/CloudFlare on Reddit: Orchestrating AI Code Review at scale",
+            "url": "https://www.reddit.com/r/CloudFlare/comments/1sqqrq4/orchestrating_ai_code_review_at_scale/",
+            "query": "Cloudflare AI Search developer review reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：核心事实没有来源：AI Search 独立定价页面缺失，成本估算无法进行。"
+        },
+        "core_question": "Cloudflare AI Search 的 Wrangler CLI 命名空间管理功能，对普通开发者和小团队的实际成本、操作门槛和搜索流量生态影响是什么？",
+        "why_this_topic_matters": "Cloudflare 正在将 AI Search 从边缘功能升级为可编程基础设施，Wrangler CLI 支持命名空间管理意味着多租户、自动化部署和 CI/CD 集成成为可能。这对小团队和独立开发者可能意味着更低成本的搜索方案，但定价和性能数据缺失，存在信息差风险。",
+        "fact_summary": [
+          "Cloudflare 于 2026-06-10 发布 Wrangler CLI 支持 AI Search 命名空间管理，包括 list/create/get/update/delete 命令。",
+          "命名空间是 AI Search 的逻辑隔离单元，每个实例自带存储和 Workers Bindings（2026-04-16 更新）。",
+          "Cloudflare 提供 Startup Program 免费额度（最高 $250K），但 AI Search 是否包含在内未明确。",
+          "Workers AI 有免费额度（每日 10k 神经元/10k 推理请求），但 AI Search 的定价页面未找到。",
+          "Reddit 相关讨论因 403 无法获取，缺乏真实用户反馈。"
+        ],
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 7,
+          "why_interested": "核心技术人关注 Wrangler CLI 集成、命名空间设计、与 Workers 的绑定能力；入门读者想了解是否能用免费额度搭建搜索；商业读者关注与 Algolia 的成本对比。",
+          "reader_risk": "如果定价不透明或免费额度有限，可能误导读者投入时间学习后才发现成本过高。"
+        },
+        "mass_interest_hook": {
+          "score": 6,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "标题暗示“Cloudflare 推出免费 AI 搜索，小团队也能用”，普通人可能误以为可以零成本搭建搜索功能。",
+          "story_seed": "一个独立开发者用 Cloudflare AI Search 替代 Algolia，每月省下 $500，但发现搜索质量不如预期。",
+          "do_not_overhype": "不能声称“免费”或“替代 Algolia”，因为定价和性能未验证。"
+        },
+        "topic_tension": {
+          "score": 8,
+          "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+          "debate_question": "Cloudflare AI Search 的命名空间管理是降低还是提高了小团队的搜索部署门槛？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "Cloudflare",
+            "Algolia/Meilisearch 等竞品"
+          ],
+          "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2026-04-01: Cloudflare 发布 AI Search Wrangler 命令（实例管理）",
+          "2026-04-16: AI Search 实例内置存储和 Workers Bindings",
+          "2026-06-10: 新增命名空间管理命令（本次更新）"
+        ],
+        "evidence_table": [
+          {
+            "source": "Cloudflare Changelog",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-06-10-ai-search-namespace-wrangler-commands/",
+            "supports": "Wrangler CLI 新增命名空间管理命令",
+            "reliability": "official"
+          },
+          {
+            "source": "Cloudflare AI Search docs - Namespaces",
+            "url": "https://developers.cloudflare.com/ai-search/concepts/namespaces/",
+            "supports": "命名空间概念和用法",
+            "reliability": "official"
+          },
+          {
+            "source": "Cloudflare Changelog - AI Search namespace binding",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-04-16-ai-search-namespace-binding/",
+            "supports": "实例内置存储和 Workers Bindings",
+            "reliability": "official"
+          },
+          {
+            "source": "Cloudflare Workers AI Pricing",
+            "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+            "supports": "Workers AI 定价（但 AI Search 独立定价未找到）",
+            "reliability": "official"
+          },
+          {
+            "source": "Costbench - Cloudflare Workers AI Free Tier",
+            "url": "https://costbench.com/software/llm-api-providers/cloudflare-workers-ai/free-plan/",
+            "supports": "Workers AI 免费额度信息",
+            "reliability": "media"
+          },
+          {
+            "source": "AgentDeals - Cloudflare Free Tier",
+            "url": "https://agentdeals.dev/vendor/cloudflare",
+            "supports": "Startup Program 免费额度",
+            "reliability": "media"
+          },
+          {
+            "source": "DEV Community - RAG System for $5/month",
+            "url": "https://dev.to/dannwaneri/i-built-a-production-rag-system-for-5month-most-alternatives-cost-100-200-21hj",
+            "supports": "低成本 RAG 方案（非 Cloudflare AI Search 直接案例）",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "部分闭环：功能更新明确，但成本、性能、竞品对比数据缺失，无法形成完整判断。",
+        "writeable_angles": [
+          {
+            "angle": "工具账本：Cloudflare AI Search 命名空间管理功能详解与成本估算",
+            "why": "适合入门读者和核心技术人，提供操作指南和成本估算（基于 Workers AI 定价推测）。",
+            "needs": "需要 AI Search 独立定价或至少一个真实案例的成本数据。"
+          },
+          {
+            "angle": "风险避坑：Cloudflare AI Search 的隐藏成本与性能陷阱",
+            "why": "适合高价值商业读者，分析定价不透明、搜索质量未知、依赖 Workers 生态等风险。",
+            "needs": "需要真实用户反馈或性能基准测试。"
+          },
+          {
+            "angle": "案例复盘：从 Algolia 迁移到 Cloudflare AI Search 的决策框架",
+            "why": "适合小团队/独立开发者，提供迁移决策 checklist。",
+            "needs": "需要至少一个迁移案例或详细的对比数据。"
+          }
+        ],
+        "missing_basics": [
+          "AI Search 的定价模式（免费额度、超出费用、命名空间限制）",
+          "AI Search 是否依赖 Workers AI 或向量数据库",
+          "搜索质量（召回率、延迟）基准数据",
+          "命名空间数量限制（免费/付费计划）"
+        ],
+        "missing_materials": [
+          "Cloudflare AI Search 定价页面截图或数据",
+          "至少一个真实用户案例（博客、论坛帖子）",
+          "与 Algolia/Meilisearch 的对比表格（功能、价格、限制）",
+          "Wrangler CLI 命令的完整文档链接（已部分获取）"
+        ],
+        "not_claimable": [
+          "AI Search 比 Algolia 更便宜或更好用",
+          "所有开发者都能轻松上手",
+          "搜索质量达到生产级标准",
+          "对 SEO 或搜索流量有显著影响"
+        ],
+        "followup_queries": [
+          "Cloudflare AI Search 的定价页面在哪里？",
+          "是否有开发者社区讨论（如 Hacker News）关于成本或性能的反馈？",
+          "Cloudflare AI Search 是否支持自定义排序或过滤？",
+          "命名空间数量是否有限制？"
+        ],
+        "additional_search_queries": [
+          "Cloudflare AI Search pricing per query",
+          "Cloudflare AI Search free tier limits",
+          "Cloudflare AI Search vs Algolia cost comparison",
+          "Cloudflare AI Search namespace limits",
+          "Cloudflare AI Search developer review reddit",
+          "Cloudflare AI Search benchmark latency",
+          "Cloudflare Workers AI Search integration cost"
+        ],
+        "stop_conditions": [
+          "如果 Cloudflare 官方未公开 AI Search 独立定价，则无法进行成本分析。",
+          "如果 Reddit/HN 上无真实用户反馈，则无法评估搜索质量和易用性。",
+          "如果竞品对比数据不可获取，则无法判断替代价值。"
+        ],
+        "confidence": 35.0,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "platform-rules",
+        "quality_gate": {
+          "pass": false,
+          "score": 35,
+          "fatal_issues": [
+            "核心事实没有来源：AI Search 独立定价页面缺失，成本估算无法进行。",
+            "成本估算没有公式、单位或边界：仅依赖 Workers AI 定价推测，无 AI Search 具体定价。",
+            "没有泛兴趣故事钩子：标题和开头仅适合技术小圈子，缺乏泛兴趣吸引力。",
+            "没有真实传播张力：冲突点（成本/门槛）缺乏证据支撑，讨论空间有限。",
+            "没有明确归入实际选题方向：选题方向为 tools-rules，但内容偏向平台规则，匹配度不足。",
+            "没有给下游 GPT 编辑应用和研究闭环留下足够结构化资料：缺少定价、用户反馈、竞品对比等关键材料。",
+            "没有明确选题结论：dossier 中 verdict 为“可选”，但未明确推荐或放弃。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写：reason 仅说“命中老花主线关键词”，缺乏深度判断。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：逻辑部分闭环，但关键事实缺失。",
+            "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在质检中强调。",
+            "没有按具体类型提供资料包：对于 platform-rules 类型，缺少时间线、更新摘要、成本对比等。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来：18 条证据中 14 条来自 Cloudflare 官方，缺乏第三方验证。"
+          ],
+          "warnings": [
+            "读者分层不清晰：primary_layer 为“核心技术人”，但 secondary_layers 包含“入门读者”和“高价值商业读者”，三者兴趣点差异大，难以兼顾。",
+            "泛兴趣钩子过度标题党：hook_type 为“反差”，但正文证据无法支撑“免费”或“替代 Algolia”的暗示。",
+            "传播张力评分过高（8/9），但实际证据不足，存在虚高风险。"
+          ],
+          "missing_evidence": [
+            "Cloudflare AI Search 独立定价页面或数据",
+            "真实用户案例或社区反馈（Reddit 403 无法获取）",
+            "与 Algolia/Meilisearch 的对比数据",
+            "搜索质量基准测试（召回率、延迟）",
+            "命名空间数量限制（免费/付费计划）"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "topic_direction_ok": false,
+          "report_type_ok": false,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "Cloudflare AI Search 的 Wrangler CLI 命名空间管理功能，对普通开发者和小团队的实际成本、操作门槛和搜索流量生态影响是什么？",
+          "must_verify": [
+            "AI Search 的定价模式：是否有免费额度？超出后每单位（查询/文档/存储）费用？",
+            "Wrangler CLI 是否免费使用？是否需要绑定付费计划？",
+            "AI Search 的索引构建是否需要额外计算资源（如 Workers）？",
+            "命名空间数量是否有限制？免费/付费计划各支持多少个？",
+            "AI Search 是否依赖 Cloudflare 的向量数据库或 Workers AI？",
+            "是否有官方文档或案例说明搜索质量（召回率、延迟）？",
+            "是否有开发者社区讨论（如 Reddit、Hacker News）关于成本或性能的反馈？",
+            "Cloudflare 是否有类似竞品（如 Algolia、Meilisearch）的对比信息？"
+          ],
+          "search_queries": [
+            "Cloudflare AI Search pricing per query",
+            "Cloudflare AI Search free tier limits",
+            "Cloudflare AI Search vs Algolia cost comparison",
+            "Cloudflare AI Search namespace limits",
+            "Cloudflare AI Search Wrangler CLI tutorial",
+            "Cloudflare AI Search developer review reddit",
+            "Cloudflare AI Search benchmark latency",
+            "Cloudflare Workers AI Search integration cost"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "pricing_page",
+              "query": "Cloudflare AI Search pricing",
+              "why_needed": "确认免费额度、超出费用、命名空间限制，是成本估算的基础。"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Cloudflare AI Search documentation",
+              "why_needed": "获取功能细节、依赖关系、使用限制，验证操作门槛。"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Cloudflare AI Search reddit",
+              "why_needed": "收集真实用户反馈，了解性能、成本、易用性方面的实际体验。"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Cloudflare AI Search use case",
+              "why_needed": "寻找实际应用案例，评估搜索质量和适用场景。"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "Cloudflare AI Search vs Algolia benchmark",
+              "why_needed": "对比竞品性能，判断是否值得迁移或采用。"
+            },
+            {
+              "source_type": "policy",
+              "query": "Cloudflare AI Search terms of service",
+              "why_needed": "检查是否有隐藏限制或合规要求，特别是对出海项目。"
+            }
+          ],
+          "expert_challenge_points": [
+            "AI Search 的搜索质量是否足够替代传统搜索引擎或专用搜索服务？",
+            "对于小团队，使用 Cloudflare AI Search 相比自建搜索（如 Elasticsearch）或托管服务（如 Algolia）的总拥有成本（TCO）如何？",
+            "Wrangler CLI 的命名空间管理是否真的简化了多租户场景，还是增加了不必要的抽象？",
+            "Cloudflare 的 AI Search 是否依赖其边缘网络，延迟优势是否明显？"
+          ],
+          "do_not_claim_yet": [
+            "AI Search 比 Algolia 更便宜或更好用",
+            "所有开发者都能轻松上手",
+            "搜索质量达到生产级标准",
+            "对 SEO 或搜索流量有显著影响"
+          ],
+          "can_publish_as_radar_if_missing": "如果无法获取定价信息或真实用户反馈，只能作为工具更新发布，无法深入分析成本或生态影响。",
+          "downstream_materials_needed": [
+            "Cloudflare AI Search 定价页面截图或数据",
+            "至少一个真实用户案例（博客、论坛帖子）",
+            "与竞品的对比表格（功能、价格、限制）",
+            "Wrangler CLI 命令的完整文档链接"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Limits & pricing · Cloudflare AI Search docs",
+            "url": "https://developers.cloudflare.com/ai-search/platform/limits-pricing/",
+            "query": "Cloudflare AI Search pricing per query",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Limits & pricing · Cloudflare AI Search docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:",
+            "fetch_error": ""
+          },
+          {
+            "title": "Cloudflare AI Search · Cloudflare AI Search docs",
+            "url": "https://developers.cloudflare.com/ai-search/",
+            "query": "Cloudflare AI Search pricing per query",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Cloudflare AI Search · Cloudflare AI Search docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){",
+            "fetch_error": ""
+          },
+          {
+            "title": "Pricing · Cloudflare Workers AI docs",
+            "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+            "query": "Cloudflare AI Search pricing per query",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Pricing · Cloudflare Workers AI docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:1rem 2re",
+            "fetch_error": ""
+          },
+          {
+            "title": "Is Cloudflare Workers AI Free? Free Tier Limits & Upgrade Triggers (2026)",
+            "url": "https://costbench.com/software/llm-api-providers/cloudflare-workers-ai/free-plan/",
+            "query": "Cloudflare AI Search free tier limits",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "if(location.hostname==='costbench.pages.dev'||location.hostname==='www.costbench.com')location.replace('https://costbench.com'+location.pathname+location.search+location.hash); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5L34562T'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-N2CF37ZX0R'); !function(t,e){var o,n,p,r;e.__SV||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(\".\");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement(\"script\")).type=\"text/javascript\",p.async=!0,p.src=s.api_host.replace(\".i.posthog.com\",\"-assets.i.posthog.com\")+\"/static/array.js\",(r=t.getElementsByTagName(\"script\")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a=\"posthog\",u.people=u.people||[],u.toString=function(t){var e=\"posthog\";return\"posthog\"!==a&&(e+=\".\"+a),t||(e+=\" (stub)\"),e},u.people.toString=function(){return u.toString(1)+\".people (stub)\"},o=\"init capture register register_once register_for_session unregister unregister_for_session getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSessionId getSurveys getActiveMatchingSurveys renderSurvey canRenderSurvey getNextSurveyStep identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesFo",
+            "fetch_error": ""
+          },
+          {
+            "title": "Cloudflare Free Tier 2026: Limits, Pricing & What Changed | AgentDeals",
+            "url": "https://agentdeals.dev/vendor/cloudflare",
+            "query": "Cloudflare AI Search free tier limits",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Cloudflare Free Tier 2026: Limits, Pricing & What Changed | AgentDeals {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Cloudflare Free Tier 2026: Limits, Pricing & What Changed | AgentDeals\",\"description\":\"Cloudflare free tier includes Up to $250K in Cloudflare credits across 4 tiers: Bootstrapped ($5K), Up-and-Coming ($25K), Seed-Fun. Verified May 2026. Compare with 12 alternatives in Startup Programs.\",\"url\":\"https://agentdeals.dev/vendor/cloudflare\",\"dateModified\":\"2026-05-11\",\"mainEntity\":{\"@type\":\"SoftwareApplication\",\"name\":\"Cloudflare\",\"description\":\"Up to $250K in Cloudflare credits across 4 tiers: Bootstrapped ($5K), Up-and-Coming ($25K), Seed-Funded ($100K), High Growth ($250K). Covers Workers, R2, Workers AI, Stream, Durable Objects, and more. Credits expire within 1 year. Max $10K toward R2/Cache Reserve, up to $50K for Workers AI\",\"applicationCategory\":\"Startup Programs\",\"url\":\"https://www.cloudflare.com/forstartups/\",\"offers\":{\"@type\":\"Offer\",\"price\":\"0\",\"priceCurrency\":\"USD\",\"description\":\"Startup Program\",\"priceValidUntil\":\"2026-02-04\"}},\"about\":[{\"@type\":\"Event\",\"name\":\"Cloudflare pricing change: new free tier\",\"startDate\":\"2026-02-04\",\"description\":\"Queues added to Workers free plan — message queuing now free\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is Cloudflare free?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Yes, Cloudflare offers a free tier: Startup Program. Up to $250K in Cloudflare credits across 4 tiers: Bootstrapped ($5K), Up-and-Coming ($25K), Seed-Funded ($100K), High Growth ($250K). Covers Workers, R2, Workers AI, Stream, Durable Objects, and more....\"}},{\"@type\":\"Question\",\"name\":\"What is Cloudflare's free tier?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Cloudflare's free",
+            "fetch_error": ""
+          },
+          {
+            "title": "Cloudflare AI Gateway Pricing Explained For 2026",
+            "url": "https://www.truefoundry.com/blog/cloudflare-ai-gateway-pricing",
+            "query": "Cloudflare AI Search free tier limits",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Cloudflare AI Gateway Pricing Explained For 2026 WebFont.load({ google: { families: [\"Varela:400\",\"Archivo:300,400,500,600,700\",\"Work Sans:300,400,500,600,700\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); (function(w,i,g){w[g]=w[g]||[];if(typeof w[g].push=='function')w[g].push.apply(w[g],Array.isArray(i)?i:[i]);})(window,['G-BCVB8L89W6'],'google_tags_first_party'); window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('set', 'developer_id.dZGVlNj', true);gtag('set', 'developer_id.dYWYxNW', true);gtag('js', new Date());gtag('config', 'G-BCVB8L89W6', {'anonymize_ip': false}); .custom_header { width: 100%; margin: auto; } .nav_menu-wrapper, a.nav-llinks.login.w-nav-link { will-change: transform, opacity; transition: opacity 0.2s ease, transform 0.2s ease; } .hide-nav { opacity: 0; transform: translateY(-20px); pointer-events: none; } .remove-nav { display: none; } .locale-de .talk-content, .locale-es .talk-content, .locale-fr .talk-content, .locale-br .talk-content { max-width: 800px; } .locale-de br, .locale-fr br, .locale-es br, .locale-br br { display: none !important; } .locale-de span.display_block, .locale-fr span.display_block, .locale-es span.display_block, .locale-br span.display_block { display: inline; } .text-style-3lines { display: -webkit-box; overflow: hidden; -webkit-line-clamp: 3; -webkit-box-orient: vertical; } .locale-br .talk-content { max-width: 80%; } .locale-br .traces_banner-para-wrapper.is-application-suites.is-52 { max-width: 60rem; } h2.section_banking-title { text-align: center; } .locale-br .traces_banner-para.is-banking.is-mw750 { max-width: 100%; } .locale-br .traces",
+            "fetch_error": ""
+          },
+          {
+            "title": "I Built a Production RAG System for $5/month (Most Alternatives Cost $100-200+) - DEV Community",
+            "url": "https://dev.to/dannwaneri/i-built-a-production-rag-system-for-5month-most-alternatives-cost-100-200-21hj",
+            "query": "Cloudflare AI Search vs Algolia cost comparison",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "I Built a Production RAG System for $5/month (Most Alternatives Cost $100-200+) - DEV Community /* ========================================================================== THE 418 CHALLENGE: THEME-AWARE RETRO EDITION ========================================================================== */ .articletag-418challenge { font-family: \"Comic Sans MS\", \"Chalkboard SE\", \"Marker Felt\", sans-serif !important; cursor: crosshair !important; } /* Destroy modern rounded corners and add brutal borders */ .articletag-418challenge .crayons-card, .articletag-418challenge .crayons-article__main, .articletag-418challenge .crayons-article__header { border-radius: 0 !important; margin-bottom: 2rem !important; } /* Typography specifics */ .articletag-418challenge h1, .articletag-418challenge h2, .articletag-418challenge h3 { text-transform: uppercase !important; } /* Fake effect for the main article title */ .articletag-418challenge h1.fs-3xl { animation: retro-slide 5s linear infinite alternate; overflow: visible; } /* Spin those avatars */ .articletag-418challenge .crayons-article__header__meta img { border-radius: 0 !important; animation: retro-spin 5s linear infinite; } /* Obnoxious tags */ .articletag-418challenge .crayons-tag { border-radius: 0 !important; font-weight: 900 !important; transform: rotate(-3deg); display: inline-block; } .articletag-418challenge .crayons-tag:nth-child(even) { transform: rotate(3deg); } /* -------------------------------------------------------------------------- 2. LIGHT THEME (Windows 95 / Office 97 Vibes) -------------------------------------------------------------------------- */ body:not(.dark-theme) .articletag-418challenge { background-color: #008080 !important; /* Win95 Teal Desktop */ } body:not(.dark-theme) .articletag-418challenge .crayons",
+            "fetch_error": ""
+          },
+          {
+            "title": "Algolia vs Cloudflare comparison 2024 - AppsandReports.com",
+            "url": "https://www.appsandreports.com/compare/Algolia-vs-Cloudflare",
+            "query": "Cloudflare AI Search vs Algolia cost comparison",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Algolia vs Cloudflare comparison 2026 window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-142123687-2'); var truepush=window.truepush||[];truepush.push(function(){truepush.Init({id:\"5db807a2e5e35c4e41c08c85\"},function(u){u&&console.error(u)})}); No Results --> SOFTWARE SERVICES FIND RIGHT SOFTWARE/SERVICE We have received your request. Our expert will be at your service shortly Close Create Leading × --> Name Please enter your name. Email Please enter valid Email address. Phone Valid. Please enter your phone number with country code. ✓ Valid Organization Please enter your organization name. Company Location Please enter your address. Select Employee size : Select Employee Size 1-10 employees 11-50 employees 51-200 employees 201-500 employees 501-1000 employees 1001-5000 employees 5001-10,000 employees 10,001+ employees Please select the employee size. Requirement Please specify your requirements. Submit li.star-sm{ margin: 0; } Algolia CONTACT AN EXPERT Cloudflare CONTACT AN EXPERT Home Algolia vs Cloudflare Algolia vs Cloudflare COMPARISON Algolia CONTACT AN EXPERT Cloudflare CONTACT AN EXPERT OVERVIEW Algolia’s full suite Apis modify groups to develop distinctive search and discovery experiences for his or her customers across all platforms and devices. A question. Click a link. Open associate app. Everything your customers do sends a symbol concerning what they need. Algolia decodes that intent to deliver the correct content - instantly. produce resistance find-to-conversion methods by connecting users with precisely what they’re searching for, with lightning-fast and extremely relevant search. transcend the search box with navigation, browse, and content discovery experiences battery-power",
+            "fetch_error": ""
+          },
+          {
+            "title": "3 Best AI Search Engines for Mobile Apps in 2025 — Winner in One Table",
+            "url": "https://www.ptolemay.com/post/best-in-app-ai-search-2025-algolia-vs-openai-vs-elasticsearch",
+            "query": "Cloudflare AI Search vs Algolia cost comparison",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "3 Best AI Search Engines for Mobile Apps in 2025 — Winner in One Table WebFont.load({ google: { families: [\"Open Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic\",\"Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic\",\"Inconsolata:400,700\",\"Inter:300,400,500,600,700\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('set', 'developer_id.dZGVlNj', true);gtag('js', new Date());gtag('config', 'G-427NGYFQJZ'); * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; } .rich-text p { margin-bottom: 20px; } (function(h,o,t,j,a,r){ h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)}; h._hjSettings={hjid:3004463,hjsv:6}; a=o.getElementsByTagName('head')[0]; r=o.createElement('script');r.async=1; r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv; a.appendChild(r); })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv='); (function(ss,ex){ window.ldfdr=window.ldfdr||function(){(ldfdr._q=ldfdr._q||[]).push([].slice.call(arguments));}; (function(d,s){ fs=d.getElementsByTagName(s)[0]; function ce(src){ var cs=d.createElement(s); cs.src=src; cs.async=1; fs.parentNode.insertBefore(cs,fs); }; ce('https://sc.lfeeder.com/lftracker_v1_'+ss+(ex?'_'+ex:'')+'.js'); })(document,'script'); })('lAxoEaK9yBD7OYGd'); --> !function(f,b,e,v,n,t,s) {if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createE",
+            "fetch_error": ""
+          },
+          {
+            "title": "Namespaces · Cloudflare AI Search docs",
+            "url": "https://developers.cloudflare.com/ai-search/concepts/namespaces/",
+            "query": "Cloudflare AI Search namespace limits",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Namespaces · Cloudflare AI Search docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:1rem 2",
+            "fetch_error": ""
+          },
+          {
+            "title": "Manage AI Search namespaces with Wrangler CLI · Changelog",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-06-10-ai-search-namespace-wrangler-commands/",
+            "query": "Cloudflare AI Search namespace limits",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Manage AI Search namespaces with Wrangler CLI · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:",
+            "fetch_error": ""
+          },
+          {
+            "title": "AI Search instances now include built-in storage and namespace Workers Bindings · Changelog",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-04-16-ai-search-namespace-binding/",
+            "query": "Cloudflare AI Search namespace limits",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "AI Search instances now include built-in storage and namespace Workers Bindings · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1",
+            "fetch_error": ""
+          },
+          {
+            "title": "Get started - Workers and Wrangler · Cloudflare Workers AI docs",
+            "url": "https://developers.cloudflare.com/workers-ai/get-started/workers-wrangler/",
+            "query": "Cloudflare AI Search Wrangler CLI tutorial",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Get started - Workers and Wrangler · Cloudflare Workers AI docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.a",
+            "fetch_error": ""
+          },
+          {
+            "title": "Wrangler · Cloudflare Workers docs",
+            "url": "https://developers.cloudflare.com/workers/wrangler/",
+            "query": "Cloudflare AI Search Wrangler CLI tutorial",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Wrangler · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidluyl){font-size:clamp(var(--sl-text-3xl),calc(.25rem + 5vw),var(--sl-text-6xl));line-height:var(--sl-line-height-headings);font-weight:600;color:var(--sl-color-white)}.tagline:where(.astro-opidluyl){font-size:clamp(var(--sl-text-base),calc(.0625rem + 2vw),var(--sl-text-xl));color:var(--sl-color-gray-2)}.actions:where(.astro-opidluyl){gap:1rem 2rem;",
+            "fetch_error": ""
+          },
+          {
+            "title": "Create, manage, search AI Search instances with Wrangler CLI · Changelog",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-04-01-ai-search-wrangler-commands/",
+            "query": "Cloudflare AI Search Wrangler CLI tutorial",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Create, manage, search AI Search instances with Wrangler CLI · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-width: 50rem !important;margin-inline:auto!important}#footer-links{justify-content:center} .sl-markdown-content{margin-top:0!important}.content-panel{padding-top:0!important;overflow-x:hidden}@media(max-width:640px){#changelogHeader h1{font-size:1.75rem}#changelogHero{display:none}} .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;margin-inline:auto}.stack:where(.astro-opidluyl){flex-direction:column;gap:clamp(1.5rem,calc(1.5rem + 1vw),2rem);text-align:center}.copy:where(.astro-opidluyl){flex-direction:column;gap:1rem;align-items:center}a:where(.astro-opidluyl){color:var(--sl-color-white)}h1:where(.astro-opidl",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/LocalLLaMA on Reddit: Web-Search is coming to a screeching performance halt as Google shuts down their free search index, and traffic defenders like Cloudflare challenge AI at every gateway. What are our options?",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1tcaboi/websearch_is_coming_to_a_screeching_performance/",
+            "query": "Cloudflare AI Search developer review reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/CloudFlare on Reddit: Cloudflare Workers AI — worth it?",
+            "url": "https://www.reddit.com/r/CloudFlare/comments/1svlt79/cloudflare_workers_ai_worth_it/",
+            "query": "Cloudflare AI Search developer review reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/CloudFlare on Reddit: Orchestrating AI Code Review at scale",
+            "url": "https://www.reddit.com/r/CloudFlare/comments/1sqqrq4/orchestrating_ai_code_review_at_scale/",
+            "query": "Cloudflare AI Search developer review reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          }
+        ]
+      },
+      "angle_candidates": [
+        "规则变动影响谁",
+        "普通技术人的合规边界",
+        "平台红利和封号风险"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "平台规则：Cloudflare 搜索生态变化 官方政策 规则 原文",
+        "平台规则：Cloudflare 搜索生态变化 开发者公告 影响范围",
+        "平台规则：Cloudflare 搜索生态变化 合规 风险 受影响用户"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
