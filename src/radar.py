@@ -509,7 +509,17 @@ def topic_fingerprint(text: str) -> str:
 
 
 def fingerprint_tokens(fingerprint: str) -> set[str]:
-    return {token for token in fingerprint.split() if len(token) > 1}
+    tokens: set[str] = set()
+    for token in fingerprint.split():
+        if len(token) <= 1:
+            continue
+        tokens.add(token)
+        cjk = "".join(ch for ch in token if "\u4e00" <= ch <= "\u9fff")
+        if len(cjk) >= 2:
+            tokens.update(cjk[index:index + 2] for index in range(0, len(cjk) - 1))
+        ascii_parts = re.findall(r"[a-z0-9]{2,}", token)
+        tokens.update(ascii_parts)
+    return tokens
 
 
 def similar_fingerprint(left: str, right: str, threshold: float = 0.72) -> bool:
@@ -527,6 +537,44 @@ def similar_fingerprint(left: str, right: str, threshold: float = 0.72) -> bool:
     containment = overlap / smaller if smaller else 0.0
     jaccard = overlap / union if union else 0.0
     return containment >= threshold or (overlap >= 4 and jaccard >= 0.55)
+
+
+GENERIC_REPORT_TITLE_PATTERNS = [
+    "重要线索",
+    "平台规则变化",
+    "ai 编程工具变化",
+    "模型能力变化",
+    "开发者平台变化",
+    "工具成本变化",
+    "案例线索",
+    "机会线索",
+    "风险线索",
+    "热点争议",
+]
+
+
+def is_generic_report_title(title: str) -> bool:
+    title = clean_text(title).lower()
+    stripped = title
+    for prefix in ["深度调查：", "机会拆解：", "工具账本：", "平台规则：", "案例复盘：", "风险避坑：", "热点观点："]:
+        if stripped.startswith(prefix):
+            stripped = stripped[len(prefix):].strip()
+            break
+    return any(stripped.endswith(pattern) for pattern in GENERIC_REPORT_TITLE_PATTERNS)
+
+
+def same_host_recent_generic_topic(decision: "RadarDecision", site: dict[str, Any], archive: dict[str, Any], days: int = 7) -> str:
+    if not is_generic_report_title(decision.report_title):
+        return ""
+    host = urllib.parse.urlparse(decision.item.url).netloc.lower().replace("www.", "")
+    if not host:
+        return ""
+    topic_key, _ = topic_direction_for_item(decision.item, decision.report_type, site)
+    for item in recent_archive_items(archive, days):
+        item_host = urllib.parse.urlparse(str(item.get("url", ""))).netloc.lower().replace("www.", "")
+        if item_host == host and item.get("topic_direction") == topic_key:
+            return f"近 {days} 天同来源/同栏目已有泛标题选题：{item.get('title', '')}"
+    return ""
 
 
 def report_fingerprints(title: str, original_title: str = "") -> dict[str, str]:
@@ -574,7 +622,7 @@ def load_topic_archive() -> dict[str, Any]:
         return {"version": 1, "items": []}
     data.setdefault("version", 1)
     data.setdefault("items", [])
-    return data
+    return merge_topic_archive_with_reports(data)
 
 
 def rebuild_topic_archive_from_reports() -> dict[str, Any]:
@@ -609,6 +657,25 @@ def rebuild_topic_archive_from_reports() -> dict[str, Any]:
     return {"version": 1, "updated_at": now_bj().isoformat(), "items": items}
 
 
+def merge_topic_archive_with_reports(archive: dict[str, Any]) -> dict[str, Any]:
+    rebuilt = rebuild_topic_archive_from_reports()
+    existing = archive.get("items", [])
+    keys: set[str] = set()
+    for item in existing:
+        for key in [item.get("url"), item.get("original_fingerprint"), item.get("fingerprint"), item.get("id")]:
+            if key:
+                keys.add(str(key))
+    for item in rebuilt.get("items", []):
+        item_keys = {str(key) for key in [item.get("url"), item.get("original_fingerprint"), item.get("fingerprint"), item.get("id")] if key}
+        if not item_keys or keys.isdisjoint(item_keys):
+            existing.append(item)
+            keys.update(item_keys)
+    existing.sort(key=lambda x: x.get("last_seen_at", "") or x.get("first_seen_at", ""), reverse=True)
+    archive["items"] = existing[:240]
+    archive["updated_at"] = archive.get("updated_at") or rebuilt.get("updated_at") or now_bj().isoformat()
+    return archive
+
+
 def recent_archive_items(archive: dict[str, Any], days: int = 14) -> list[dict[str, Any]]:
     cutoff = now_utc() - dt.timedelta(days=days)
     recent: list[dict[str, Any]] = []
@@ -622,9 +689,29 @@ def recent_archive_items(archive: dict[str, Any], days: int = 14) -> list[dict[s
     return recent
 
 
+def today_archive_items(archive: dict[str, Any]) -> list[dict[str, Any]]:
+    today = now_bj().date().isoformat()
+    result: list[dict[str, Any]] = []
+    for item in archive.get("items", []):
+        value = item.get("first_seen_at") or item.get("last_seen_at") or ""
+        if bj_day(value) == today:
+            result.append(item)
+    return result
+
+
 def is_duplicate_topic(decision: "RadarDecision", site: dict[str, Any], archive: dict[str, Any], batch_id: str, days: int = DUPLICATE_LOOKBACK_DAYS) -> tuple[bool, str]:
     url = normalize_url(decision.item.url)
     fingerprints = decision_fingerprints(decision)
+    for item in today_archive_items(archive):
+        if item.get("batch_id") == batch_id:
+            continue
+        if item.get("url") and normalize_url(str(item.get("url"))) == url:
+            return True, f"今日已收录同 URL：{item.get('title', '')}"
+        if any_similar_fingerprint(archive_fingerprints(item), fingerprints, threshold=0.62):
+            return True, f"今日已收录相似选题：{item.get('title', '')}"
+    generic_reason = same_host_recent_generic_topic(decision, site, archive)
+    if generic_reason:
+        return True, generic_reason
     for item in recent_archive_items(archive, days):
         if item.get("batch_id") == batch_id:
             continue
@@ -1504,6 +1591,11 @@ def normalize_triage_decision(decision: RadarDecision) -> RadarDecision:
     elif tension.get("score", 0) < 7 and decision.decision == "deep_dive":
         decision.decision = "brief"
         decision.score = min(decision.score, 54)
+    if is_generic_report_title(decision.report_title):
+        decision.score = min(decision.score, 37)
+        if decision.decision != "skip":
+            decision.decision = "skip"
+        decision.reject_reason = decision.reject_reason or "标题仍停留在泛化公司/平台变化层面，未形成具体冲突、成本、规则或选择题。"
     decision.traceability = {**decision.traceability, "topic_tension_score": tension.get("score", 0)}
     return decision
 
