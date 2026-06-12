@@ -1165,7 +1165,7 @@ def fetch_tophubdata_json(path: str) -> dict[str, Any]:
 
 
 def tophubdata_paid_detail_enabled() -> bool:
-    return env_bool("TOPHUBDATA_ENABLE_PAID_DETAIL")
+    return env_bool("TOPHUBDATA_ENABLE_PAID_DETAIL", True)
 
 
 def tophubdata_paid_detail_limit_per_run() -> int:
@@ -1321,7 +1321,7 @@ def make_tophubdata_hot_item(source_category: str, node: dict[str, Any], row: di
 
 def parse_tophubdata_hot_items(source_category: str, group: dict[str, Any]) -> list[SourceItem]:
     if not tophubdata_paid_detail_enabled():
-        info_once("tophubdata-paid-disabled", "TopHubData paid detail disabled: set TOPHUBDATA_ENABLE_PAID_DETAIL=true to import hot list items.")
+        info_once("tophubdata-paid-disabled", "TopHubData latest hot list disabled: set TOPHUBDATA_ENABLE_PAID_DETAIL=true or unset it to import hot list items.")
         return []
     nodes = fetch_tophubdata_nodes(int(group.get("tophubdata_node_pages", 5) or 5))
     selected_nodes = select_tophubdata_nodes(nodes, group)
