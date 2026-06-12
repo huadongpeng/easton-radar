@@ -175,6 +175,11 @@ def write_json(path: Path, data: Any) -> None:
     path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
+def write_data_json(name: str, data: Any) -> None:
+    write_json(DATA_DIR / name, data)
+    write_json(SITE_DIR / "data" / name, data)
+
+
 def info_once(key: str, message: str) -> None:
     if key in SEARCH_NOTICE_KEYS:
         return
@@ -1226,7 +1231,7 @@ def fetch_tophubdata_nodes(max_pages: int = 5) -> list[dict[str, Any]]:
 
 def parse_tophubdata_nodes(source_category: str, group: dict[str, Any]) -> list[SourceItem]:
     """Free endpoint: node discovery only. It does not include hot item titles."""
-    nodes = fetch_tophubdata_nodes(int(group.get("tophubdata_node_pages", 5) or 5))
+    nodes = fetch_tophubdata_nodes(config_int(group, "tophubdata_node_pages", 5))
     info(f"TopHubData free node discovery returned {len(nodes)} nodes; free mode does not import node names as topic items.")
     if os.environ.get("TOPHUBDATA_INCLUDE_FREE_NODE_ITEMS", "").strip().lower() not in {"1", "true", "yes"}:
         return []
@@ -1330,7 +1335,52 @@ def tophubdata_row_text(row: dict[str, Any]) -> str:
     ).lower()
 
 
+def config_int(group: dict[str, Any], key: str, default: int) -> int:
+    try:
+        return int(group.get(key, default) or default)
+    except (TypeError, ValueError):
+        return default
+
+
+def parse_tophubdata_time(value: str) -> dt.datetime | None:
+    if not value:
+        return None
+    try:
+        if re.fullmatch(r"\d{10}", value):
+            return dt.datetime.fromtimestamp(int(value), tz=dt.timezone.utc)
+        if re.fullmatch(r"\d{13}", value):
+            return dt.datetime.fromtimestamp(int(value) / 1000, tz=dt.timezone.utc)
+    except (OSError, ValueError):
+        return None
+    return parse_timestamp(value)
+
+
+def tophubdata_row_time(row: dict[str, Any]) -> str:
+    raw = first_text(row, ["time", "timestamp", "created_at", "createdAt", "updated_at", "updatedAt", "publish_time", "publishTime"])
+    parsed = parse_tophubdata_time(raw)
+    return parsed.isoformat() if parsed else raw
+
+
+def tophubdata_row_recent(row: dict[str, Any], group: dict[str, Any]) -> bool:
+    max_age_days = config_int(group, "tophubdata_max_item_age_days", 14)
+    if max_age_days <= 0:
+        return True
+    seen = parse_tophubdata_time(first_text(row, ["time", "timestamp", "created_at", "createdAt", "updated_at", "updatedAt", "publish_time", "publishTime"]))
+    if seen and seen < now_utc() - dt.timedelta(days=max_age_days):
+        return False
+    text = tophubdata_row_text(row)
+    current_year = now_bj().year
+    old_years = [int(value) for value in re.findall(r"(?<!\d)(20\d{2})(?!\d)", text) if int(value) < current_year]
+    return not old_years
+
+
 def tophubdata_row_matches_direction(node: dict[str, Any], row: dict[str, Any], group: dict[str, Any]) -> bool:
+    if not tophubdata_row_recent(row, group):
+        return False
+    exclude_keywords = [str(value).lower() for value in group.get("tophubdata_exclude_node_keywords", []) if str(value).strip()]
+    node_text = " ".join(str(node.get(key, "")) for key in ["name", "display", "title", "domain"]).lower()
+    if node_text and any(keyword and keyword in node_text for keyword in exclude_keywords):
+        return False
     cid = str(node.get("cid", ""))
     domain = str(node.get("domain", "")).lower()
     node_name = str(node.get("name", "")).lower()
@@ -1367,7 +1417,7 @@ def make_tophubdata_hot_item(source_category: str, node: dict[str, Any], row: di
     description = first_text(row, ["summary", "desc", "description", "abstract", "extra"])
     if description:
         summary_parts.append(description)
-    published_at = first_text(row, ["created_at", "createdAt", "updated_at", "updatedAt", "publish_time", "publishTime"])
+    published_at = tophubdata_row_time(row)
     feed_url = f"tophubdata:/nodes/{hashid}" if hashid else "tophubdata:/nodes"
     return make_item(source_category, f"TopHubData/{node_name}", "api-paid", title, url, "。".join(summary_parts), published_at, feed_url)
 
@@ -1378,7 +1428,7 @@ def parse_tophubdata_search_items(source_category: str, group: dict[str, Any]) -
     queries = group.get("tophubdata_search_queries", [])
     if not isinstance(queries, list):
         return []
-    item_limit = max(1, int(group.get("tophubdata_search_limit_per_query", 4) or 4))
+    item_limit = max(1, config_int(group, "tophubdata_search_limit_per_query", 4))
     items: list[SourceItem] = []
     for query_config in queries:
         if not isinstance(query_config, dict):
@@ -1413,10 +1463,10 @@ def parse_tophubdata_hot_items(source_category: str, group: dict[str, Any]) -> l
     if not tophubdata_paid_detail_enabled():
         info_once("tophubdata-paid-disabled", "TopHubData latest hot list disabled: set TOPHUBDATA_ENABLE_PAID_DETAIL=true or unset it to import hot list items.")
         return []
-    nodes = fetch_tophubdata_nodes(int(group.get("tophubdata_node_pages", 5) or 5))
+    nodes = fetch_tophubdata_nodes(config_int(group, "tophubdata_node_pages", 5))
     selected_nodes = select_tophubdata_nodes(nodes, group)
     items: list[SourceItem] = []
-    item_limit_per_node = max(1, env_int("TOPHUBDATA_ITEM_LIMIT_PER_NODE", int(group.get("tophubdata_item_limit_per_node", 4) or 4)))
+    item_limit_per_node = max(1, env_int("TOPHUBDATA_ITEM_LIMIT_PER_NODE", config_int(group, "tophubdata_item_limit_per_node", 4)))
     for node in selected_nodes:
         if len(items) >= MAX_ITEMS_PER_SOURCE or not tophubdata_paid_detail_has_budget():
             break
@@ -1664,6 +1714,7 @@ def infer_reader_hook(hits: dict[str, list[str]], report_type: str) -> str:
 
 def normalize_triage_decision(decision: RadarDecision) -> RadarDecision:
     text = f"{decision.item.title} {decision.item.summary}".lower()
+    raw_score = decision.score
     mismatched_brands = ["aws", "amazon", "openai", "stripe", "github", "cloudflare", "vercel", "google", "apple", "shopify"]
     if decision.report_type == "hot-event":
         title_lower = decision.report_title.lower()
@@ -1699,7 +1750,11 @@ def normalize_triage_decision(decision: RadarDecision) -> RadarDecision:
     if decision.decision == "brief" and decision.score < MIN_BRIEF_SCORE:
         decision.decision = "skip"
         decision.reject_reason = decision.reject_reason or "分数低于 brief 入池线，未达到选题候选标准。"
+    if decision.decision == "skip" and decision.score >= MIN_BRIEF_SCORE:
+        decision.score = MIN_BRIEF_SCORE - 1
     decision.traceability = {**decision.traceability, "topic_tension_score": tension.get("score", 0)}
+    if raw_score != decision.score:
+        decision.traceability["raw_score"] = raw_score
     return decision
 
 
@@ -3239,6 +3294,7 @@ def select_reports(decisions: list[RadarDecision], site: dict[str, Any], archive
             f"original={decision.item.title}, reason={reason}"
         )
     selected: list[RadarDecision] = []
+    selected_item_ids: set[str] = set()
     category_counts: dict[str, int] = {}
     topic_counts: dict[str, int] = {}
     source_host_counts: dict[str, int] = {}
@@ -3252,9 +3308,11 @@ def select_reports(decisions: list[RadarDecision], site: dict[str, Any], archive
         eligible_by_topic.setdefault(topic_key, []).append(decision)
 
     def try_select(decision: RadarDecision) -> bool:
+        if decision.item.id in selected_item_ids:
+            return False
         category = decision.item.source_category
         topic_key, _ = topic_direction_for_item(decision.item, decision.report_type, site)
-        source_host = urllib.parse.urlparse(decision.item.url).netloc.lower()
+        source_host = urllib.parse.urlparse(decision.item.url).netloc.lower() or decision.item.source_name.lower()
         fingerprints = decision_fingerprints(decision)
         url = normalize_url(decision.item.url)
         if url in selected_urls:
@@ -3307,6 +3365,7 @@ def select_reports(decisions: list[RadarDecision], site: dict[str, Any], archive
             )
             return False
         selected.append(decision)
+        selected_item_ids.add(decision.item.id)
         category_counts[category] = category_counts.get(category, 0) + 1
         topic_counts[topic_key] = topic_counts.get(topic_key, 0) + 1
         source_host_counts[source_host] = source_host_counts.get(source_host, 0) + 1
@@ -4110,9 +4169,9 @@ def main() -> int:
     info(f"Updated topic archive entries: {len(archive.get('items', []))}")
     clean_generated_outputs()
     info("Cleaned generated output directories.")
-    write_json(DATA_DIR / f"{batch_id}.json", {"batch": batch, "items": [item.__dict__ for item in items], "reports": reports})
-    write_json(DATA_DIR / "latest.json", {"batch": batch, "reports": reports})
-    write_json(TOPIC_ARCHIVE_PATH, archive)
+    write_data_json(f"{batch_id}.json", {"batch": batch, "items": [item.__dict__ for item in items], "reports": reports})
+    write_data_json("latest.json", {"batch": batch, "reports": reports})
+    write_data_json(TOPIC_ARCHIVE_PATH.name, archive)
     save_search_usage_state()
     for report in reports:
         write_json(REPORTS_DIR / f"{report['id']}.json", report)
