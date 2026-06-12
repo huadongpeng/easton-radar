@@ -204,6 +204,16 @@ def env_bool(name: str, default: bool = False) -> bool:
     return value in {"1", "true", "yes", "on"}
 
 
+def triage_score(value: Any, fallback: int) -> int:
+    try:
+        score = int(float(value))
+    except (TypeError, ValueError):
+        return fallback
+    if 0 < score <= 10:
+        return score * 10
+    return max(0, min(score, 100))
+
+
 def search_api_call_limit_per_run() -> int:
     return env_int("SEARCH_API_CALL_LIMIT_PER_RUN", 60)
 
@@ -1750,6 +1760,10 @@ def normalize_triage_decision(decision: RadarDecision) -> RadarDecision:
     if decision.decision == "brief" and decision.score < MIN_BRIEF_SCORE:
         decision.decision = "skip"
         decision.reject_reason = decision.reject_reason or "分数低于 brief 入池线，未达到选题候选标准。"
+    if decision.decision == "skip" and decision.score >= MIN_BRIEF_SCORE and tension.get("score", 0) >= 7:
+        decision.decision = "brief"
+        decision.reject_reason = ""
+        decision.reason = decision.reason or "LLM 给出候选级分数和传播张力，按可选线索保留。"
     if decision.decision == "skip" and decision.score >= MIN_BRIEF_SCORE:
         decision.score = MIN_BRIEF_SCORE - 1
     decision.traceability = {**decision.traceability, "topic_tension_score": tension.get("score", 0)}
@@ -2216,7 +2230,7 @@ def legacy_deepseek_triage_batch(items: list[SourceItem], site: dict[str, Any], 
                     decision=row.get("decision", fallback.decision),
                     report_type=row.get("report_type", fallback.report_type),
                     report_title=row.get("report_title") or fallback.report_title,
-                    score=int(row.get("score", fallback.score)),
+                    score=triage_score(row.get("score"), fallback.score),
                     reader_hook=row.get("reader_hook", fallback.reader_hook),
                     why_now=row.get("why_now", fallback.why_now),
                     evidence_level=row.get("evidence_level", fallback.evidence_level),
@@ -2313,7 +2327,7 @@ def deepseek_triage_batch(items: list[SourceItem], site: dict[str, Any], policy:
                     decision=str(row.get("decision") or fallback.decision),
                     report_type=str(row.get("report_type") or fallback.report_type),
                     report_title=str(row.get("report_title") or fallback.report_title),
-                    score=int(row.get("score", fallback.score) or fallback.score),
+                    score=triage_score(row.get("score"), fallback.score),
                     reader_hook=str(row.get("reader_hook") or fallback.reader_hook),
                     why_now=str(row.get("why_now") or fallback.why_now),
                     evidence_level=str(row.get("evidence_level") or fallback.evidence_level),
