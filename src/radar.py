@@ -3231,6 +3231,36 @@ def select_reports(decisions: list[RadarDecision], site: dict[str, Any], archive
     return selected, duplicate_skips
 
 
+def is_tophubdata_item(item: SourceItem) -> bool:
+    return item.source_type.startswith("api-paid") or item.source_name.startswith("TopHubData")
+
+
+def decision_summary(decisions: list[RadarDecision]) -> dict[str, Any]:
+    return {
+        "total": len(decisions),
+        "deep_dive": sum(1 for d in decisions if d.decision == "deep_dive"),
+        "brief": sum(1 for d in decisions if d.decision == "brief"),
+        "skip": sum(1 for d in decisions if d.decision == "skip"),
+        "llm": sum(1 for d in decisions if not d.traceability.get("heuristic")),
+        "heuristic": sum(1 for d in decisions if d.traceability.get("heuristic")),
+    }
+
+
+def decision_log_sample(decisions: list[RadarDecision], limit: int = 8) -> list[dict[str, Any]]:
+    sample: list[dict[str, Any]] = []
+    for decision in sorted(decisions, key=lambda d: d.score, reverse=True)[:limit]:
+        sample.append({
+            "score": decision.score,
+            "decision": decision.decision,
+            "report_type": decision.report_type,
+            "title": decision.report_title,
+            "original_title": decision.item.title,
+            "source": decision.item.source_name,
+            "url": decision.item.url,
+        })
+    return sample
+
+
 class StaticSite:
     def __init__(self, site: dict[str, Any]) -> None:
         self.site = site
@@ -3904,6 +3934,9 @@ def main() -> int:
     decisions.sort(key=lambda x: x.score, reverse=True)
     llm_count = sum(1 for d in decisions if not d.traceability.get("heuristic"))
     heuristic_count = sum(1 for d in decisions if d.traceability.get("heuristic"))
+    tophubdata_decisions = [d for d in decisions if is_tophubdata_item(d.item)]
+    tophubdata_summary = decision_summary(tophubdata_decisions)
+    tophubdata_sample = decision_log_sample(tophubdata_decisions)
     info(
         "Triage complete: "
         f"decisions={len(decisions)}, llm={llm_count}, heuristic={heuristic_count}, "
@@ -3911,8 +3944,21 @@ def main() -> int:
         f"brief={sum(1 for d in decisions if d.decision == 'brief')}, "
         f"skip={sum(1 for d in decisions if d.decision == 'skip')}"
     )
+    info(
+        "TopHubData triage: "
+        f"items={tophubdata_summary['total']}, llm={tophubdata_summary['llm']}, heuristic={tophubdata_summary['heuristic']}, "
+        f"deep={tophubdata_summary['deep_dive']}, brief={tophubdata_summary['brief']}, skip={tophubdata_summary['skip']}"
+    )
+    for sample in tophubdata_sample[:5]:
+        info(
+            "TopHubData candidate: "
+            f"score={sample['score']}, decision={sample['decision']}, source={sample['source']}, "
+            f"title={sample['title']}, original={sample['original_title']}"
+        )
     selected, duplicate_skips = select_reports(decisions, site, archive, batch_id)
     info(f"Selection complete: selected={len(selected)}, duplicate_skips={len(duplicate_skips)}")
+    selected_tophubdata = [d for d in selected if is_tophubdata_item(d.item)]
+    info(f"TopHubData selection: selected={len(selected_tophubdata)}")
     for index, decision in enumerate(selected, 1):
         topic_key, _ = topic_direction_for_item(decision.item, decision.report_type, site)
         info(f"Selected #{index}: score={decision.score}, decision={decision.decision}, topic={topic_key}, title={decision.report_title}")
@@ -3933,6 +3979,9 @@ def main() -> int:
         "candidate_brief_count": sum(1 for d in decisions if d.decision == "brief"),
         "duplicate_skip_count": len(duplicate_skips),
         "duplicate_skips": duplicate_skips[:30],
+        "tophubdata_decision_summary": tophubdata_summary,
+        "tophubdata_decision_sample": tophubdata_sample,
+        "tophubdata_selected_count": len(selected_tophubdata),
         "source_coverage": source_coverage(items, failures, site),
         "failures": failures,
     }
