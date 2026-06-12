@@ -85,11 +85,8 @@ Radar 宁可少，也不要脏。
 | `TAVILY_SEARCH_DEPTH` | 可选，默认 `basic`；可设 `advanced` 提高相关性但消耗更多额度 |
 | `TAVILY_INCLUDE_RAW_CONTENT` | 可选，默认 `false`；可设 `markdown` 或 `text` 让 Tavily 返回正文内容兜底 |
 | `BRAVE_SEARCH_API_KEY` | 可选，Brave Search API，作为 Tavily 之外的备用搜索后端 |
-| `TOPHUBDATA_ACCESS_KEY` | 可选，TopHubData/榜眼数据访问密钥；默认只调用免费 `/nodes` 节点列表 |
-| `TOPHUBDATA_ENABLE_PAID_DETAIL` | 可选，默认 `false`；设为 `true` 时调用 TopHubData 单个榜单最新详细接口，按官方成本表 1u/节点 |
-| `TOPHUBDATA_DETAIL_LIMIT_PER_RUN` | 可选，默认 `4`；限制每轮最多拉取多少个 TopHubData 榜单详情 |
-| `TOPHUBDATA_ITEMS_PER_NODE` | 可选，默认 `8`；限制每个 TopHubData 榜单最多导入多少条热点 |
-| `SEARCH_API_CALL_LIMIT_PER_RUN` | 可选，默认 `18`；限制每次 Action 的 Tavily/Brave 搜索 API 调用总数，核心控量优先通过减少每批入池选题实现 |
+| `TOPHUBDATA_ACCESS_KEY` | 可选，TopHubData/榜眼数据访问密钥；只调用免费 `/nodes` 节点列表，不调用会扣 u 的详情、搜索、榜中榜或快照详情 |
+| `SEARCH_API_CALL_LIMIT_PER_RUN` | 可选，默认 `60`；限制每次 Action 的 Tavily/Brave 搜索 API 调用总数 |
 | `TELEGRAM_BOT_TOKEN` | Telegram bot |
 | `TELEGRAM_CHAT_ID` | Telegram 接收频道或用户 |
 

@@ -186,7 +186,7 @@ def env_int(name: str, default: int) -> int:
 
 
 def search_api_call_limit_per_run() -> int:
-    return env_int("SEARCH_API_CALL_LIMIT_PER_RUN", 18)
+    return env_int("SEARCH_API_CALL_LIMIT_PER_RUN", 60)
 
 
 def search_run_has_budget(provider: str, cost: int = 1) -> bool:
@@ -520,6 +520,40 @@ def similar_fingerprint(left: str, right: str, threshold: float = 0.72) -> bool:
     return containment >= threshold or (overlap >= 4 and jaccard >= 0.55)
 
 
+def report_fingerprints(title: str, original_title: str = "") -> dict[str, str]:
+    title_fp = topic_fingerprint(title)
+    original_fp = topic_fingerprint(original_title)
+    combined_fp = topic_fingerprint(f"{original_title} {title}")
+    return {
+        "fingerprint": original_fp or title_fp,
+        "title_fingerprint": title_fp,
+        "original_fingerprint": original_fp,
+        "combined_fingerprint": combined_fp or original_fp or title_fp,
+    }
+
+
+def decision_fingerprints(decision: "RadarDecision") -> set[str]:
+    values = report_fingerprints(decision.report_title or "", decision.item.title or "")
+    return {value for value in values.values() if value}
+
+
+def archive_fingerprints(item: dict[str, Any]) -> set[str]:
+    candidates = {
+        str(item.get("fingerprint", "")),
+        str(item.get("title_fingerprint", "")),
+        str(item.get("original_fingerprint", "")),
+        str(item.get("combined_fingerprint", "")),
+        topic_fingerprint(str(item.get("title", ""))),
+        topic_fingerprint(str(item.get("original_title", ""))),
+        topic_fingerprint(f"{item.get('original_title', '')} {item.get('title', '')}"),
+    }
+    return {value for value in candidates if value}
+
+
+def any_similar_fingerprint(left_values: set[str], right_values: set[str], threshold: float = 0.72) -> bool:
+    return any(similar_fingerprint(left, right, threshold) for left in left_values for right in right_values)
+
+
 def load_topic_archive() -> dict[str, Any]:
     if not TOPIC_ARCHIVE_PATH.exists():
         return rebuild_topic_archive_from_reports()
@@ -546,13 +580,14 @@ def rebuild_topic_archive_from_reports() -> dict[str, Any]:
         seen_at = bj_iso(report.get("fetched_at") or report.get("published_at") or now_utc().isoformat())
         dossier = report.get("selection_dossier") or report.get("material_pack") or {}
         verdict = dossier.get("verdict", {}) if isinstance(dossier, dict) else {}
+        fingerprints = report_fingerprints(report.get("title") or "", report.get("original_title", ""))
         items.append({
             "id": report.get("id") or path.stem,
             "batch_id": "rebuilt-from-reports",
             "title": report.get("title") or report.get("original_title") or path.stem,
             "original_title": report.get("original_title", ""),
             "url": report.get("url", ""),
-            "fingerprint": topic_fingerprint(report.get("title") or report.get("original_title", "")),
+            **fingerprints,
             "topic_direction": report.get("topic_direction", ""),
             "topic_direction_title": report.get("topic_direction_title", ""),
             "verdict": verdict.get("label") or verdict.get("status") or "历史",
@@ -579,15 +614,14 @@ def recent_archive_items(archive: dict[str, Any], days: int = 14) -> list[dict[s
 
 
 def is_duplicate_topic(decision: "RadarDecision", site: dict[str, Any], archive: dict[str, Any], batch_id: str, days: int = DUPLICATE_LOOKBACK_DAYS) -> tuple[bool, str]:
-    topic_key, _ = topic_direction_for_item(decision.item, decision.report_type, site)
     url = normalize_url(decision.item.url)
-    fingerprint = topic_fingerprint(decision.report_title or decision.item.title)
+    fingerprints = decision_fingerprints(decision)
     for item in recent_archive_items(archive, days):
         if item.get("batch_id") == batch_id:
             continue
         if item.get("url") and normalize_url(str(item.get("url"))) == url:
             return True, f"近 {days} 天已收录同 URL：{item.get('title', '')}"
-        if item.get("fingerprint") and similar_fingerprint(str(item.get("fingerprint")), fingerprint):
+        if any_similar_fingerprint(archive_fingerprints(item), fingerprints):
             return True, f"近 {days} 天已收录相似选题：{item.get('title', '')}"
     return False, ""
 
@@ -602,7 +636,7 @@ def archive_entry(report: dict[str, Any], batch: dict[str, Any]) -> dict[str, An
         "title": display_report_title(report),
         "original_title": report.get("original_title", ""),
         "url": report.get("url", ""),
-        "fingerprint": topic_fingerprint(report.get("title") or report.get("original_title", "")),
+        **report_fingerprints(display_report_title(report), report.get("original_title", "")),
         "topic_direction": report.get("topic_direction", ""),
         "topic_direction_title": report.get("topic_direction_title", ""),
         "verdict": verdict.get("label") or verdict.get("status") or "待判断",
@@ -616,14 +650,14 @@ def archive_entry(report: dict[str, Any], batch: dict[str, Any]) -> dict[str, An
 
 def update_topic_archive(archive: dict[str, Any], reports: list[dict[str, Any]], batch: dict[str, Any]) -> dict[str, Any]:
     existing = archive.get("items", [])
-    by_key: dict[tuple[str, str], dict[str, Any]] = {}
+    by_key: dict[str, dict[str, Any]] = {}
     for item in existing:
-        key = (str(item.get("topic_direction", "")), str(item.get("fingerprint", "")))
-        if key[1]:
+        key = str(item.get("url") or item.get("original_fingerprint") or item.get("fingerprint") or "")
+        if key:
             by_key[key] = item
     for report in reports:
         entry = archive_entry(report, batch)
-        key = (entry["topic_direction"], entry["fingerprint"])
+        key = str(entry.get("url") or entry.get("original_fingerprint") or entry.get("fingerprint") or "")
         previous = by_key.get(key)
         if previous:
             previous.update({k: v for k, v in entry.items() if k not in {"first_seen_at"}})
@@ -1035,7 +1069,7 @@ def fetch_tophubdata_json(path: str) -> dict[str, Any]:
 
 
 def tophubdata_paid_detail_enabled() -> bool:
-    return os.environ.get("TOPHUBDATA_ENABLE_PAID_DETAIL", "").strip().lower() in {"1", "true", "yes"}
+    return False
 
 
 def fetch_tophubdata_nodes(max_pages: int = 5) -> list[dict[str, Any]]:
@@ -1104,37 +1138,7 @@ def select_tophubdata_nodes(nodes: list[dict[str, Any]], group: dict[str, Any]) 
 
 
 def parse_tophubdata_hot_items(source_category: str, group: dict[str, Any]) -> list[SourceItem]:
-    if not tophubdata_paid_detail_enabled():
-        return []
-    limit = int(os.environ.get("TOPHUBDATA_DETAIL_LIMIT_PER_RUN") or group.get("tophubdata_detail_limit_per_run", 4) or 4)
-    item_limit = int(os.environ.get("TOPHUBDATA_ITEMS_PER_NODE") or group.get("tophubdata_items_per_node", 8) or 8)
-    nodes = select_tophubdata_nodes(fetch_tophubdata_nodes(int(group.get("tophubdata_node_pages", 5) or 5)), group)[:max(0, limit)]
-    items: list[SourceItem] = []
-    for node in nodes:
-        hashid = clean_text(node.get("hashid", ""))
-        name = clean_text(node.get("name", ""))
-        display = clean_text(node.get("display", ""))
-        if not hashid:
-            continue
-        data = fetch_tophubdata_json(f"/nodes/{hashid}")
-        if data.get("error"):
-            raise RuntimeError(str(data)[:240])
-        payload = data.get("data", {})
-        rows = payload.get("items", []) if isinstance(payload, dict) else []
-        source_name = f"TopHubData · {name}{display}"
-        for index, row in enumerate(rows[:item_limit], start=1):
-            if not isinstance(row, dict):
-                continue
-            title = clean_text(row.get("title", ""))
-            url = clean_text(row.get("url", "")) or f"https://tophub.today/n/{hashid}"
-            if not title or not url:
-                continue
-            description = clean_text(row.get("description", ""))
-            extra = clean_text(row.get("extra", ""))
-            summary = "；".join(part for part in [description, extra, f"来源榜单：{name}{display}", f"榜内排名：{index}"] if part)
-            items.append(make_item(source_category, source_name, "api-paid", title, url, summary, now_utc().isoformat(), f"tophubdata:/nodes/{hashid}"))
-    info(f"TopHubData paid detail imported {len(items)} hot items from {len(nodes)} nodes; detail endpoint costs 1u per node.")
-    return items
+    return []
 
 
 def collect_items(sources: dict[str, Any]) -> tuple[list[SourceItem], list[dict[str, str]]]:
@@ -1356,6 +1360,13 @@ def infer_reader_hook(hits: dict[str, list[str]], report_type: str) -> str:
 
 def normalize_triage_decision(decision: RadarDecision) -> RadarDecision:
     text = f"{decision.item.title} {decision.item.summary}".lower()
+    mismatched_brands = ["aws", "amazon", "openai", "stripe", "github", "cloudflare", "vercel", "google", "apple", "shopify"]
+    if decision.report_type == "hot-event":
+        title_lower = decision.report_title.lower()
+        for brand in mismatched_brands:
+            if term_in_text(title_lower, brand) and not term_in_text(text, brand):
+                decision.report_title = make_report_title(decision.item, decision.report_type, load_json(CONFIG_DIR / "site.json"))
+                break
     tension = topic_tension({
         "title": decision.report_title,
         "summary": decision.item.summary,
@@ -1471,7 +1482,7 @@ def make_report_title(item: SourceItem, report_type: str, site: dict[str, Any]) 
     host = urllib.parse.urlparse(item.url).netloc.replace("www.", "")
     source = display_source_name(item) or host
     lower = f"{item.title} {source}".lower()
-    known = ["OpenAI", "Claude", "GitHub", "Copilot", "Cloudflare", "Amazon", "AWS", "Google", "Gemini", "DeepSeek", "Hugging Face", "Vercel", "Stripe", "Microsoft", "Apple", "Siri", "Shopify"]
+    known = ["xAI", "Grok", "OpenAI", "Claude", "GitHub", "Copilot", "Cloudflare", "Amazon", "AWS", "Google", "Gemini", "DeepSeek", "Hugging Face", "Vercel", "Stripe", "Microsoft", "Apple", "Siri", "Shopify"]
     source_label = source or host
     brand = ""
     for name in known:
@@ -1486,6 +1497,14 @@ def make_report_title(item: SourceItem, report_type: str, site: dict[str, Any]) 
         brand = "AWS"
 
     topic = title_subject(item.title, source_label)
+    if report_type == "hot-event":
+        if any(word in lower for word in ["xai", "grok"]):
+            return f"{report_name}：xAI Grok 安全风波"
+        if any(word in lower for word in ["lawsuit", "fired", "whistleblower", "retaliation", "safety"]):
+            return f"{report_name}：{brand or source_label} 员工与安全争议"
+        if ascii_dominant(topic):
+            return f"{report_name}：{brand or source_label} 热点争议"
+        return f"{report_name}：{topic}"
     if ascii_dominant(topic):
         label = brand or source_label
         if (source.startswith("V2EX") or source in {"Product Hunt", "Hacker News"}) and len(topic) <= 20 and len(topic.split()) <= 4:
@@ -2910,11 +2929,11 @@ def select_reports(decisions: list[RadarDecision], site: dict[str, Any], archive
         category = decision.item.source_category
         topic_key, _ = topic_direction_for_item(decision.item, decision.report_type, site)
         source_host = urllib.parse.urlparse(decision.item.url).netloc.lower()
-        fingerprint = topic_fingerprint(decision.report_title or decision.item.title)
+        fingerprints = decision_fingerprints(decision)
         url = normalize_url(decision.item.url)
         if url in selected_urls:
             return False
-        if any(similar_fingerprint(existing, fingerprint) for existing in seen_fingerprints):
+        if any_similar_fingerprint(seen_fingerprints, fingerprints):
             duplicate_skips.append({"title": decision.report_title or decision.item.title, "url": decision.item.url, "reason": "本批次相似选题已入池"})
             return False
         duplicate, reason = is_duplicate_topic(decision, site, archive, batch_id)
@@ -2932,7 +2951,7 @@ def select_reports(decisions: list[RadarDecision], site: dict[str, Any], archive
         category_counts[category] = category_counts.get(category, 0) + 1
         topic_counts[topic_key] = topic_counts.get(topic_key, 0) + 1
         source_host_counts[source_host] = source_host_counts.get(source_host, 0) + 1
-        seen_fingerprints.add(fingerprint)
+        seen_fingerprints.update(fingerprints)
         selected_urls.add(url)
         return True
 
