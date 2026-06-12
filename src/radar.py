@@ -33,6 +33,7 @@ USER_AGENT = "EastonRadar/0.1 (+https://radar.huadongpeng.com)"
 DEEPSEEK_URL = "https://api.deepseek.com/chat/completions"
 TAVILY_URL = "https://api.tavily.com/search"
 TAVILY_USAGE_URL = "https://api.tavily.com/usage"
+TOPHUBDATA_URL = "https://api.tophubdata.com"
 MAX_ITEMS_PER_SOURCE = 18
 MAX_TOTAL_ITEMS = 220
 MAX_REPORTS_PER_BATCH = 5
@@ -44,10 +45,13 @@ MIN_BRIEF_SCORE = 38
 DUPLICATE_LOOKBACK_DAYS = 30
 SOURCE_CATEGORY_REPORT_CAPS = {
     "ai_tools": 6,
+    "hot_events": 3,
     "developer_business": 4,
     "overseas_and_platforms": 4,
     "platform_policy": 4,
 }
+TOPHUBDATA_DEFAULT_NODE_NAMES = ["知乎", "微博", "百度", "今日头条", "V2EX", "GitHub", "少数派", "IT之家", "36氪"]
+TOPHUBDATA_DEFAULT_CIDS = {"1", "2", "4", "7", "10", "11"}
 SEARCH_CACHE: dict[str, list[dict[str, str]]] = {}
 SEARCH_USAGE_STATE: dict[str, Any] = {}
 SEARCH_NOTICE_KEYS: set[str] = set()
@@ -1020,6 +1024,119 @@ def parse_hn_api(source_category: str, api_url: str, payload: bytes) -> list[Sou
     return items
 
 
+def fetch_tophubdata_json(path: str) -> dict[str, Any]:
+    access_key = os.environ.get("TOPHUBDATA_ACCESS_KEY", "").strip()
+    if not access_key:
+        raise RuntimeError("TOPHUBDATA_ACCESS_KEY is not set")
+    url = f"{TOPHUBDATA_URL}{path}"
+    req = urllib.request.Request(url, headers={"Authorization": access_key, "User-Agent": USER_AGENT})
+    with urllib.request.urlopen(req, timeout=20) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+def tophubdata_paid_detail_enabled() -> bool:
+    return os.environ.get("TOPHUBDATA_ENABLE_PAID_DETAIL", "").strip().lower() in {"1", "true", "yes"}
+
+
+def fetch_tophubdata_nodes(max_pages: int = 5) -> list[dict[str, Any]]:
+    nodes: list[dict[str, Any]] = []
+    for page in range(1, max_pages + 1):
+        data = fetch_tophubdata_json(f"/nodes?p={page}")
+        if data.get("error"):
+            raise RuntimeError(str(data)[:240])
+        rows = data.get("data", [])
+        if not isinstance(rows, list):
+            break
+        nodes.extend(row for row in rows if isinstance(row, dict))
+        if len(rows) < 100:
+            break
+    return nodes
+
+
+def parse_tophubdata_nodes(source_category: str, group: dict[str, Any]) -> list[SourceItem]:
+    """Free endpoint: node discovery only. It does not include hot item titles."""
+    nodes = fetch_tophubdata_nodes(int(group.get("tophubdata_node_pages", 5) or 5))
+    info(f"TopHubData free node discovery returned {len(nodes)} nodes; free mode does not import node names as topic items.")
+    if os.environ.get("TOPHUBDATA_INCLUDE_FREE_NODE_ITEMS", "").strip().lower() not in {"1", "true", "yes"}:
+        return []
+    items: list[SourceItem] = []
+    for node in nodes[:MAX_ITEMS_PER_SOURCE]:
+        name = clean_text(node.get("name", ""))
+        display = clean_text(node.get("display", ""))
+        hashid = clean_text(node.get("hashid", ""))
+        domain = clean_text(node.get("domain", ""))
+        if not name or not hashid:
+            continue
+        title = f"{name}{display} 热榜节点"
+        summary = f"TopHubData 免费节点发现：{name} / {display} / {domain}。免费模式只用于确认可用榜单，不拉取会扣费的热点详情。"
+        url = f"https://tophub.today/n/{hashid}"
+        items.append(make_item(source_category, "TopHubData", "api-free", title, url, summary, "", "tophubdata:/nodes"))
+    return items
+
+
+def select_tophubdata_nodes(nodes: list[dict[str, Any]], group: dict[str, Any]) -> list[dict[str, Any]]:
+    names = [str(value) for value in group.get("tophubdata_node_names", TOPHUBDATA_DEFAULT_NODE_NAMES)]
+    cids = {str(value) for value in group.get("tophubdata_cids", TOPHUBDATA_DEFAULT_CIDS)}
+    domains = [str(value).lower() for value in group.get("tophubdata_domains", [])]
+
+    def matches(node: dict[str, Any]) -> bool:
+        name = str(node.get("name", ""))
+        display = str(node.get("display", ""))
+        domain = str(node.get("domain", "")).lower()
+        cid = str(node.get("cid", ""))
+        text = f"{name} {display} {domain}"
+        return (
+            any(keyword and keyword in text for keyword in names)
+            or cid in cids
+            or any(keyword and keyword in domain for keyword in domains)
+        )
+
+    selected = [node for node in nodes if matches(node)]
+
+    def priority(node: dict[str, Any]) -> tuple[int, str]:
+        text = f"{node.get('name', '')} {node.get('display', '')} {node.get('domain', '')}"
+        for index, keyword in enumerate(names):
+            if keyword and keyword in text:
+                return index, text
+        return len(names), text
+
+    return sorted(selected, key=priority)
+
+
+def parse_tophubdata_hot_items(source_category: str, group: dict[str, Any]) -> list[SourceItem]:
+    if not tophubdata_paid_detail_enabled():
+        return []
+    limit = int(os.environ.get("TOPHUBDATA_DETAIL_LIMIT_PER_RUN") or group.get("tophubdata_detail_limit_per_run", 4) or 4)
+    item_limit = int(os.environ.get("TOPHUBDATA_ITEMS_PER_NODE") or group.get("tophubdata_items_per_node", 8) or 8)
+    nodes = select_tophubdata_nodes(fetch_tophubdata_nodes(int(group.get("tophubdata_node_pages", 5) or 5)), group)[:max(0, limit)]
+    items: list[SourceItem] = []
+    for node in nodes:
+        hashid = clean_text(node.get("hashid", ""))
+        name = clean_text(node.get("name", ""))
+        display = clean_text(node.get("display", ""))
+        if not hashid:
+            continue
+        data = fetch_tophubdata_json(f"/nodes/{hashid}")
+        if data.get("error"):
+            raise RuntimeError(str(data)[:240])
+        payload = data.get("data", {})
+        rows = payload.get("items", []) if isinstance(payload, dict) else []
+        source_name = f"TopHubData · {name}{display}"
+        for index, row in enumerate(rows[:item_limit], start=1):
+            if not isinstance(row, dict):
+                continue
+            title = clean_text(row.get("title", ""))
+            url = clean_text(row.get("url", "")) or f"https://tophub.today/n/{hashid}"
+            if not title or not url:
+                continue
+            description = clean_text(row.get("description", ""))
+            extra = clean_text(row.get("extra", ""))
+            summary = "；".join(part for part in [description, extra, f"来源榜单：{name}{display}", f"榜内排名：{index}"] if part)
+            items.append(make_item(source_category, source_name, "api-paid", title, url, summary, now_utc().isoformat(), f"tophubdata:/nodes/{hashid}"))
+    info(f"TopHubData paid detail imported {len(items)} hot items from {len(nodes)} nodes; detail endpoint costs 1u per node.")
+    return items
+
+
 def collect_items(sources: dict[str, Any]) -> tuple[list[SourceItem], list[dict[str, str]]]:
     seen: set[str] = set()
     items: list[SourceItem] = []
@@ -1041,6 +1158,22 @@ def collect_items(sources: dict[str, Any]) -> tuple[list[SourceItem], list[dict[
                         seen.add(item.url)
             except Exception as exc:
                 failures.append({"source_category": source_category, "source": url, "error": str(exc)[:240]})
+        if group.get("tophubdata_free_nodes") and os.environ.get("TOPHUBDATA_ACCESS_KEY", "").strip():
+            try:
+                for item in parse_tophubdata_nodes(source_category, group):
+                    if item.url not in seen and not should_drop_item(item):
+                        items.append(item)
+                        seen.add(item.url)
+            except Exception as exc:
+                failures.append({"source_category": source_category, "source": "tophubdata:/nodes", "error": str(exc)[:240]})
+        if group.get("tophubdata_hot_details") and os.environ.get("TOPHUBDATA_ACCESS_KEY", "").strip():
+            try:
+                for item in parse_tophubdata_hot_items(source_category, group):
+                    if item.url not in seen and not should_drop_item(item):
+                        items.append(item)
+                        seen.add(item.url)
+            except Exception as exc:
+                failures.append({"source_category": source_category, "source": "tophubdata:/nodes/@hashid", "error": str(exc)[:240]})
     items.sort(key=lambda item: item.published_at or item.fetched_at, reverse=True)
     return items[:MAX_TOTAL_ITEMS], failures
 
@@ -1063,13 +1196,15 @@ def source_coverage(items: list[SourceItem], failures: list[dict[str, str]], sit
 
 def infer_report_type(text: str, source_category: str) -> str:
     text = text.lower()
+    if source_category == "hot_events" or any_term_in_text(text, ["backlash", "controversy", "outrage", "protest", "criticism", "lawsuit", "ban", "blocked", "remove", "cap usage", "limit usage", "反弹", "争议", "吐槽", "封禁", "下架", "限制", "起诉", "不满"]):
+        return "hot-event"
     if source_category == "platform_policy":
         return "platform-rules"
     if any(w in text for w in ["pricing", "price", "cost", "token", "bill", "revenue", "mrr", "adsense", "价格", "成本", "收入", "账单"]):
         return "tool-ledger"
     if any(w in text for w in ["policy", "rules", "compliance", "seo", "google", "search", "stripe", "paddle", "规则", "合规", "平台"]):
         return "platform-rules"
-    if any(w in text for w in ["scam", "risk", "ban", "blocked", "lawsuit", "安全", "风险", "封号", "骗局"]):
+    if any_term_in_text(text, ["scam", "risk", "ban", "blocked", "lawsuit", "安全", "风险", "封号", "骗局"]):
         return "risk-warning"
     if any(w in text for w in ["case study", "show hn", "launched", "built", "github", "open source", "开源", "复盘"]):
         return "case-study"
@@ -1078,18 +1213,86 @@ def infer_report_type(text: str, source_category: str) -> str:
     return "investigation"
 
 
+MINOR_CHANGELOG_PATTERNS = [
+    "changelog",
+    "now available",
+    "available through",
+    "manage ",
+    "with wrangler",
+    "rollback support",
+    "smtp submission",
+    "scatter plots",
+    "radar charts",
+    "cost centers",
+    "domain search",
+    "hosted images",
+    "deprecating",
+    "sdk features",
+    "binding",
+    "cli",
+]
+
+MAJOR_IMPACT_TERMS = [
+    "pricing",
+    "price",
+    "cost",
+    "bill",
+    "billing",
+    "limit",
+    "quota",
+    "retention",
+    "privacy",
+    "policy",
+    "compliance",
+    "ban",
+    "remove",
+    "breaking",
+    "migration",
+    "security",
+    "lawsuit",
+    "封号",
+    "下架",
+    "涨价",
+    "成本",
+    "账单",
+    "额度",
+    "隐私",
+    "合规",
+    "迁移",
+    "安全",
+]
+
+
+def term_in_text(text: str, term: str) -> bool:
+    if term.isascii() and re.search(r"[a-zA-Z]", term):
+        return re.search(rf"(?<![a-zA-Z0-9]){re.escape(term)}(?![a-zA-Z0-9])", text) is not None
+    return term in text
+
+
+def any_term_in_text(text: str, terms: list[str]) -> bool:
+    return any(term_in_text(text, term.lower()) for term in terms)
+
+
+def is_minor_changelog_text(text: str) -> bool:
+    lower = text.lower()
+    if not any_term_in_text(lower, MINOR_CHANGELOG_PATTERNS):
+        return False
+    return not any_term_in_text(lower, MAJOR_IMPACT_TERMS)
+
+
 def heuristic_decision(item: SourceItem, site: dict[str, Any]) -> RadarDecision:
     text = f"{item.title} {item.summary}".lower()
     groups = {
         "money": ["pricing", "price", "cost", "revenue", "mrr", "adsense", "affiliate", "payment", "stripe", "paddle", "价格", "成本", "收入", "收款", "变现"],
         "ai": ["ai", "llm", "agent", "openai", "claude", "copilot", "deepseek", "model", "token", "cursor", "自动化"],
         "dev": ["github", "developer", "api", "sdk", "cloudflare", "vercel", "database", "server", "开源", "程序员", "开发"],
-        "platform": ["policy", "rules", "compliance", "seo", "search", "google", "amazon", "shopify", "tiktok", "合规", "平台", "规则", "出海"]
+        "platform": ["policy", "rules", "compliance", "seo", "search", "google", "amazon", "shopify", "tiktok", "合规", "平台", "规则", "出海"],
+        "heat": ["backlash", "controversy", "outrage", "criticism", "lawsuit", "ban", "blocked", "remove", "cap usage", "limit usage", "反弹", "争议", "吐槽", "不满", "封禁", "下架", "限制", "起诉"],
     }
     hits: dict[str, list[str]] = {}
     score = 0
     for group, words in groups.items():
-        matched = [word for word in words if word in text]
+        matched = [word for word in words if term_in_text(text, word)]
         if matched:
             hits[group] = matched[:5]
             score += 12 + min(len(matched), 4) * 3
@@ -1100,10 +1303,14 @@ def heuristic_decision(item: SourceItem, site: dict[str, Any]) -> RadarDecision:
         score += 12
     if item.source_type == "api":
         score += 5
+    if "heat" in hits:
+        score += 10
+    if is_minor_changelog_text(text):
+        score = min(score, 28)
     score = min(score, 100)
     report_type = infer_report_type(text, item.source_category)
     report_title = make_report_title(item, report_type, site)
-    if score >= 55:
+    if score >= 55 and not is_minor_changelog_text(text):
         decision = "deep_dive"
     elif score >= 32:
         decision = "brief"
@@ -1111,7 +1318,7 @@ def heuristic_decision(item: SourceItem, site: dict[str, Any]) -> RadarDecision:
         decision = "skip"
     reader_hook = infer_reader_hook(hits, report_type)
     reject_reason = "" if decision != "skip" else "老花人设解读角度、成本/平台/工具链关联不够明确，先不进入候选池。"
-    return RadarDecision(
+    return normalize_triage_decision(RadarDecision(
         item=item,
         decision=decision,
         report_type=report_type,
@@ -1126,7 +1333,7 @@ def heuristic_decision(item: SourceItem, site: dict[str, Any]) -> RadarDecision:
         investigation_direction=infer_investigation_direction(report_type),
         uncertainty_flags=default_uncertainty_flags(evidence_level, decision),
         traceability={"matched_keywords": hits, "source_host": host, "source_type": item.source_type, "heuristic": True},
-    )
+    ))
 
 
 def infer_reader_hook(hits: dict[str, list[str]], report_type: str) -> str:
@@ -1136,6 +1343,8 @@ def infer_reader_hook(hits: dict[str, list[str]], report_type: str) -> str:
         return "适合按老花的规则避坑视角拆：平台规则、搜索流量、出海路径或合规边界怎么影响小团队。"
     if report_type == "risk-warning":
         return "适合按老花的避坑视角拆：成本、合规、封号或营销话术里有哪些坑。"
+    if report_type == "hot-event":
+        return "适合按老花的热点观点视角拆：这件事里谁在包装叙事、谁承担成本，普通技术人容易在哪一步误判。"
     if report_type == "case-study":
         return "适合按老花的案例复盘视角拆：哪些条件可复制，哪些只是别人自己的局。"
     if report_type == "opportunity":
@@ -1143,6 +1352,30 @@ def infer_reader_hook(hits: dict[str, list[str]], report_type: str) -> str:
     if "ai" in hits and "dev" in hits:
         return "适合按老花的 AI 开发视角拆：它会不会改变工作流、API 成本或程序员工具链。"
     return "需要继续确认它是否符合老花的人设主线，以及目标读者会不会关心其中的成本、岗位、工具链或机会变化。"
+
+
+def normalize_triage_decision(decision: RadarDecision) -> RadarDecision:
+    text = f"{decision.item.title} {decision.item.summary}".lower()
+    tension = topic_tension({
+        "title": decision.report_title,
+        "summary": decision.item.summary,
+        "reader_hook": decision.reader_hook,
+        "report_type": decision.report_type,
+        "evidence_level": decision.evidence_level,
+    })
+    if is_minor_changelog_text(text):
+        decision.score = min(decision.score, 28)
+        decision.decision = "skip"
+        decision.reject_reason = decision.reject_reason or "只是官方 changelog/CLI/API/SDK 单点更新，暂未发现迁移成本、账单风险、用户反弹或普通技术人的选择题。"
+    elif decision.evidence_level == "weak":
+        decision.score = min(decision.score, 50)
+        if decision.decision == "deep_dive":
+            decision.decision = "brief"
+    elif tension.get("score", 0) < 7 and decision.decision == "deep_dive":
+        decision.decision = "brief"
+        decision.score = min(decision.score, 54)
+    decision.traceability = {**decision.traceability, "topic_tension_score": tension.get("score", 0)}
+    return decision
 
 
 def display_source_name(item: SourceItem) -> str:
@@ -1227,6 +1460,7 @@ def chinese_topic_hint(title: str, report_type: str) -> str:
         "case-study": "案例线索",
         "opportunity": "机会线索",
         "risk-warning": "风险线索",
+        "hot-event": "热点争议",
         "investigation": "重要线索",
     }
     return fallback.get(report_type, "重要线索")
@@ -1468,6 +1702,7 @@ def topic_direction_for_item(item: SourceItem, report_type: str, site: dict[str,
         return item.source_category, {"title": item.source_category, "short_title": item.source_category, "description": ""}
 
     text = f"{item.title} {item.summary} {item.source_name} {item.url}".lower()
+    minor_changelog = is_minor_changelog_text(text)
     if any(word in text for word in ["freelance", "contract", "invoice", "chargeback", "debt", "lawsuit", "scam", "arbitrage", "外包", "接项目", "合同", "回款", "发票", "催收", "债务", "起诉", "骗局", "套利", "卖课", "信息差"]):
         meta = directions.get("side-info")
         if meta:
@@ -1501,6 +1736,10 @@ def topic_direction_for_item(item: SourceItem, report_type: str, site: dict[str,
             score += 10
         if key == "ai-frontier" and any(word in text for word in ["ai", "llm", "agent", "model", "anthropic", "openai", "claude", "codex", "copilot", "frontier", "模型", "智能体"]):
             score += 6
+        if key == "ai-frontier" and minor_changelog:
+            score -= 8
+        if key == "tools-rules" and minor_changelog:
+            score += 3
         if key == "tools-rules" and any(word in text for word in ["automation", "workflow", "assistant", "agentic", "template", "no-code", "个人助手", "自动化", "工作流", "实操"]):
             score += 8
         if key == "tools-rules" and any(word in text for word in ["policy", "license", "terms", "compliance", "regulation", "search", "seo", "traffic", "规则", "合规", "协议", "搜索", "流量", "推荐"]):
@@ -1545,7 +1784,7 @@ def legacy_deepseek_triage_batch(items: list[SourceItem], site: dict[str, Any], 
                 "content": (
                     "你是 Easton Radar 的信息初筛员。网站栏目按选题方向分类，报告类型只表示分析方法，不作为主栏目。"
                     "请只输出 JSON：{\"items\":[...]}。每项包含 id, decision(deep_dive|brief|skip), report_type, report_title"
-                    "(investigation|opportunity|tool-ledger|platform-rules|case-study|risk-warning), score(0-100),"
+                    "(investigation|opportunity|tool-ledger|platform-rules|case-study|risk-warning|hot-event), score(0-100),"
                     "reader_hook, why_now, evidence_level(official|near_source|media|weak), reason, reject_reason,"
                     "collection_fit, investigation_direction, uncertainty_flags。\n"
                     "report_title 必须是中文 Radar 标题，可以保留产品名/公司名，但不能整句英文照搬原题。\n"
@@ -1584,7 +1823,7 @@ def legacy_deepseek_triage_batch(items: list[SourceItem], site: dict[str, Any], 
                 continue
             fallback = heuristic_decision(item, site)
             decisions.append(
-                RadarDecision(
+                normalize_triage_decision(RadarDecision(
                     item=item,
                     decision=row.get("decision", fallback.decision),
                     report_type=row.get("report_type", fallback.report_type),
@@ -1599,7 +1838,7 @@ def legacy_deepseek_triage_batch(items: list[SourceItem], site: dict[str, Any], 
                     investigation_direction=row.get("investigation_direction", fallback.investigation_direction),
                     uncertainty_flags=row.get("uncertainty_flags", fallback.uncertainty_flags) or fallback.uncertainty_flags,
                     traceability={**fallback.traceability, "heuristic": False, "model": body["model"]},
-                )
+                ))
             )
         return decisions
     except Exception as exc:
@@ -1681,7 +1920,7 @@ def deepseek_triage_batch(items: list[SourceItem], site: dict[str, Any], policy:
                 continue
             fallback = heuristic_decision(item, site)
             decisions.append(
-                RadarDecision(
+                normalize_triage_decision(RadarDecision(
                     item=item,
                     decision=str(row.get("decision") or fallback.decision),
                     report_type=str(row.get("report_type") or fallback.report_type),
@@ -1696,7 +1935,7 @@ def deepseek_triage_batch(items: list[SourceItem], site: dict[str, Any], policy:
                     investigation_direction=str(row.get("investigation_direction") or fallback.investigation_direction),
                     uncertainty_flags=row.get("uncertainty_flags", fallback.uncertainty_flags) or fallback.uncertainty_flags,
                     traceability={**fallback.traceability, "heuristic": False, "model": body["model"], "triage_batch_size": len(items)},
-                )
+                ))
             )
         return decisions
     except json.JSONDecodeError as exc:
@@ -1757,6 +1996,7 @@ def fallback_pending_dossier(report: dict[str, Any], reason: str) -> dict[str, A
         "audience_fit": audience_fit(report),
         "mass_interest_hook": mass_interest_hook(report),
         "topic_tension": topic_tension(report),
+        "persona_discussion_question": persona_discussion_question(report),
         "core_question": f"这条线索是否值得继续做成选题：{title}",
         "why_this_topic_matters": report.get("reader_hook", ""),
         "fact_summary": [
@@ -1785,7 +2025,7 @@ def fallback_pending_dossier(report: dict[str, Any], reason: str) -> dict[str, A
 def plan_topic_research(report: dict[str, Any], site: dict[str, Any], policy: dict[str, Any]) -> dict[str, Any] | None:
     prompt = (
         f"{load_prompt('02_research_plan_flash.md')}\n\n"
-        "请只输出 JSON：{\"core_question\":\"\",\"must_verify\":[],\"search_queries\":[],\"best_sources_to_find\":[],"
+        "请只输出 JSON：{\"core_question\":\"\",\"persona_discussion_question\":\"\",\"hidden_public_issue\":\"\",\"must_verify\":[],\"search_queries\":[],\"best_sources_to_find\":[],"
         "\"expert_challenge_points\":[],\"do_not_claim_yet\":[],\"can_publish_as_radar_if_missing\":\"\",\"downstream_materials_needed\":[]}。\n"
         "要求：search_queries 给 4-8 个具体搜索词；优先官方、近源、价格页、文档、GitHub、监管/平台规则、真实案例、反方材料。"
         "如果这个题太窄、太冷、人设解读角度弱或目标读者兴趣低，要明确写出来。"
@@ -1863,6 +2103,25 @@ def topic_tension_from(dossier: dict[str, Any], report: dict[str, Any]) -> dict[
     return merged
 
 
+def persona_discussion_question(report: dict[str, Any], tension: dict[str, Any] | None = None) -> str:
+    tension = tension or topic_tension(report)
+    report_type = report.get("report_type", "")
+    title = display_report_title(report)
+    if report_type == "hot-event":
+        return "这件事里，普通技术人应该相信平台/厂商的说法，还是先按成本、规则和风险重新算一遍？"
+    if report_type == "tool-ledger":
+        return "这笔工具账到底是提高效率，还是把不可见成本转嫁给普通程序员和小团队？"
+    if report_type == "platform-rules":
+        return "小团队该不该继续把关键工作流押在这个平台规则上？"
+    if report_type == "risk-warning":
+        return "这是真机会，还是又一个普通技术人容易被包装话术带偏的坑？"
+    if report_type == "opportunity":
+        return "这个机会普通技术人能低成本验证，还是只适合少数有资源的人？"
+    if tension.get("debate_question"):
+        return str(tension["debate_question"])
+    return f"{title} 这件事，普通技术人到底该跟进、观望，还是直接避开？"
+
+
 def topic_level(report: dict[str, Any], dossier: dict[str, Any] | None = None) -> str:
     dossier = dossier or report.get("selection_dossier") or report.get("material_pack") or {}
     verdict = dossier.get("verdict", {}) if isinstance(dossier, dict) else {}
@@ -1902,7 +2161,8 @@ def normalize_selection_dossier(report: dict[str, Any], dossier: dict[str, Any])
         verdict["reason"] = "证据、人设解读角度、目标读者兴趣和传播张力较完整，建议优先进入写作框架。" if level == "推荐" else "可以保留为候选选题，写作前需要按缺口继续补证，尤其确认是否有真实冲突点和讨论空间。"
     dossier.setdefault("audience_fit", audience_fit(report))
     dossier.setdefault("mass_interest_hook", mass_interest_hook(report))
-    dossier.setdefault("topic_tension", topic_tension(report))
+    dossier["topic_tension"] = topic_tension_from(dossier, report)
+    dossier.setdefault("persona_discussion_question", persona_discussion_question(report, dossier["topic_tension"]))
     return dossier
 
 
@@ -1976,6 +2236,7 @@ def compose_topic_dossier(report: dict[str, Any], site: dict[str, Any], policy: 
         "请只输出 JSON：{\"schema\":\"topic-selection-dossier-v3\",\"generated_by\":\"deepseek\","
         "\"verdict\":{\"status\":\"推荐选题|可选选题\",\"label\":\"推荐|可选\",\"reason\":\"\"},"
         "\"core_question\":\"\",\"why_this_topic_matters\":\"\",\"fact_summary\":[],"
+        "\"persona_discussion_question\":\"\",\"old_flower_stance\":\"\","
         "\"audience_fit\":{\"primary_layer\":\"\",\"secondary_layers\":[],\"interest_score\":0,\"why_interested\":\"\",\"reader_risk\":\"\"},"
         "\"mass_interest_hook\":{\"score\":0,\"hook_type\":\"故事|反差|争议|数字|踩坑|普通人关系\",\"why_non_technical_people_may_click\":\"\",\"story_seed\":\"\",\"do_not_overhype\":\"\"},"
         "\"topic_tension\":{\"score\":0,\"conflict_point\":\"\",\"debate_question\":\"\",\"stakeholders\":[],\"why_people_would_comment\":\"\",\"traffic_risk\":\"\"},"
@@ -2183,24 +2444,33 @@ def topic_tension(report: dict[str, Any]) -> dict[str, Any]:
     title = display_report_title(report)
     text = f"{title} {report.get('summary', '')} {report.get('reader_hook', '')}".lower()
     report_type = report.get("report_type", "")
+    minor_changelog = is_minor_changelog_text(text)
     signal_groups = {
         "money": ["price", "pricing", "cost", "bill", "revenue", "mrr", "token", "adsense", "价格", "成本", "账单", "收入", "涨价", "免费", "付费", "流量主"],
         "rules": ["policy", "rule", "compliance", "ban", "search", "seo", "license", "terms", "规则", "合规", "封号", "搜索", "流量", "协议"],
         "risk": ["risk", "scam", "lawsuit", "warning", "failed", "风险", "骗局", "踩坑", "翻车", "失败", "避坑"],
         "people": ["developer", "founder", "user", "creator", "程序员", "开发者", "小团队", "独立开发", "普通人", "新人"],
         "contrast": ["but", "however", "vs", "against", "反而", "但是", "争议", "反差", "冲突", "没想到", "看起来"],
+        "heat": ["backlash", "controversy", "outrage", "criticism", "lawsuit", "ban", "blocked", "remove", "cap usage", "limit usage", "反弹", "争议", "吐槽", "不满", "封禁", "下架", "限制", "起诉"],
     }
-    matched = {name: [word for word in words if word in text] for name, words in signal_groups.items()}
+    matched = {name: [word for word in words if term_in_text(text, word)] for name, words in signal_groups.items()}
     matched = {name: words[:4] for name, words in matched.items() if words}
     base = 3 + min(len(matched), 4)
     if report_type in {"tool-ledger", "platform-rules", "risk-warning", "opportunity", "case-study"}:
         base += 1
+    if report_type == "hot-event" or "heat" in matched:
+        base += 2
     if report.get("evidence_level") in {"official", "near_source"}:
         base += 1
     if {"money", "rules"} & set(matched) and {"risk", "people", "contrast"} & set(matched):
         base += 1
     score = max(3, min(10, base))
-    if "rules" in matched:
+    if minor_changelog and "heat" not in matched:
+        score = min(score, 5)
+    if "heat" in matched:
+        conflict = "热点事件里的平台叙事、用户反弹和普通技术人的真实成本之间有冲突。"
+        debate = "这件事到底是合理规则/正常成本控制，还是平台把风险和成本转嫁给普通使用者？"
+    elif "rules" in matched:
         conflict = "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。"
         debate = "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？"
     elif "money" in matched:
@@ -2406,6 +2676,7 @@ def selection_dossier(report: dict[str, Any]) -> dict[str, Any]:
     audience = audience_fit(report)
     mass_hook = mass_interest_hook(report)
     tension = topic_tension(report)
+    discussion_question = persona_discussion_question(report, tension)
     fact_status = "基本清楚" if original_title and report.get("url") else "事实入口不足"
     summary_status = "有摘要" if summary else "缺少原文摘要"
     closure = [
@@ -2444,11 +2715,13 @@ def selection_dossier(report: dict[str, Any]) -> dict[str, Any]:
         "audience_fit": audience,
         "mass_interest_hook": mass_hook,
         "topic_tension": tension,
+        "persona_discussion_question": discussion_question,
         "core_question": f"这条线索能不能成为一个值得老花继续写的选题：{title}",
         "human_judgment_path": [
             "先确认这件事是不是真的发生，而不是只看标题兴奋。",
             "再确认泛兴趣普通人能不能从故事、反差、数字、踩坑或普通人关系进入。",
             "再确认是否有真实传播张力：冲突点、讨论点、利益拉扯、身份代入或读者愿意评论的问题。",
+            "再确认老花能不能表达一个有辨识度的判断，而不是只复述新闻或官方公告。",
             "再确认它是否符合老花人设：能不能用技术人视角解释机会、成本、规则、坑或工具变化。",
             "然后确认主要服务哪层读者，不能把所有人都当成同一个读者。",
             "然后看证据是否够：有没有官方/近源材料，是否需要二次补证。",
@@ -2462,6 +2735,7 @@ def selection_dossier(report: dict[str, Any]) -> dict[str, Any]:
             {"question": "这是什么？", "judgment": original_title or title},
             {"question": "普通人为什么可能点进来？", "judgment": mass_hook["why_non_technical_people_may_click"]},
             {"question": "这篇有什么冲突点或讨论点？", "judgment": tension["conflict_point"] or tension["traffic_risk"]},
+            {"question": "老花的人设讨论问题是什么？", "judgment": discussion_question},
             {"question": "读者为什么愿意评论？", "judgment": tension["why_people_would_comment"] or "当前还缺少可评论的公共问题。"},
             {"question": "老花可以从什么角度解读？", "judgment": report.get("reader_hook", "暂无明确人设解读角度")},
             {"question": "主要服务哪层读者？", "judgment": f"{audience['primary_layer']}；兴趣 {audience['interest_score']}/10"},
@@ -2542,6 +2816,13 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
         "score": decision.score,
         "reader_hook": decision.reader_hook,
         "topic_tension": topic_tension({
+            "title": decision.report_title,
+            "summary": item.summary,
+            "reader_hook": decision.reader_hook,
+            "report_type": decision.report_type,
+            "evidence_level": decision.evidence_level,
+        }),
+        "persona_discussion_question": persona_discussion_question({
             "title": decision.report_title,
             "summary": item.summary,
             "reader_hook": decision.reader_hook,
@@ -2808,7 +3089,7 @@ def reports_for_topic(reports: list[dict[str, Any]], topic_key: str) -> list[dic
 
 def display_report_title(report: dict[str, Any]) -> str:
     title = report.get("title", "")
-    prefixes = [report.get("report_type_title", ""), "深度调查", "机会拆解", "工具账本", "平台规则", "案例复盘", "风险避坑"]
+    prefixes = [report.get("report_type_title", ""), "深度调查", "机会拆解", "工具账本", "平台规则", "案例复盘", "风险避坑", "热点观点"]
     for prefix in prefixes:
         if prefix and title.startswith(prefix + "："):
             return title[len(prefix) + 1:].strip()

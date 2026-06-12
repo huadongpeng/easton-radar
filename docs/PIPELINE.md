@@ -4,7 +4,7 @@
 
 输入：`config/sources.seed.json`
 
-支持类型：RSS/Atom、公开 JSON API、HN Algolia API 等稳定公开源。
+支持类型：RSS/Atom、公开 JSON API、HN Algolia API、TopHubData 免费节点列表等稳定公开源。
 
 每条原始记录保留：
 
@@ -18,6 +18,13 @@
 - 摘要
 
 注意：`source_category` 只用于内部溯源和后续统计，不是网站栏目。
+
+TopHubData/榜眼数据分两层接入：
+
+- 默认免费层：只调用官方标注免费的“全部榜单列表”接口，用于发现可用热点榜单节点。
+- 显式热点层：只有 `TOPHUBDATA_ENABLE_PAID_DETAIL=true` 时，才调用“单个榜单最新详细”接口拉取中文热榜条目；该接口按官方成本表为 1u/次，`TOPHUBDATA_DETAIL_LIMIT_PER_RUN` 控制每轮最多调用多少个榜单节点。
+
+中文热榜条目进入初筛后，必须由 LLM 判断是否能转化为老花的技术经理/程序员/AI 工具/平台规则/职业风险/副业现金流视角。技术性不强可以保留，但只能复述社会新闻、娱乐八卦或情绪站队的线索必须降级。
 
 ## Step 2：去重
 
