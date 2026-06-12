@@ -22,8 +22,20 @@
     "tophubdata_free_nodes": true,
     "tophubdata_hot_details": true,
     "tophubdata_node_pages": 5,
-    "tophubdata_node_names": ["知乎", "微博", "百度", "今日头条", "V2EX", "GitHub", "少数派", "IT之家", "36氪"],
-    "tophubdata_cids": ["1", "2", "4", "7", "10", "11"],
+    "tophubdata_item_limit_per_node": 4,
+    "tophubdata_cid_plan": [
+      {"cid": "7", "name": "developer", "limit": 2, "reason": "开发者榜单优先，适合工具链、开源、岗位和程序员副业"},
+      {"cid": "2", "name": "tech", "limit": 2, "reason": "科技榜单用于发现 AI、平台规则和产品热点"},
+      {"cid": "10", "name": "blog", "limit": 1, "reason": "博客专栏用于发现深度观点和一手经验"},
+      {"cid": "11", "name": "wxmp", "limit": 1, "reason": "公众号榜单只作中文传播信号，需要关键词门禁"},
+      {"cid": "6", "name": "finance", "limit": 1, "reason": "财经榜单只保留支付、跨境、平台和现金流相关热点"}
+    ],
+    "tophubdata_exclude_node_keywords": ["娱乐", "明星", "电影", "电视剧", "体育", "游戏", "彩票", "星座", "房产"],
+    "tophubdata_topic_keywords": [
+      "AI", "人工智能", "大模型", "模型", "Agent", "智能体", "OpenAI", "Claude", "Gemini", "Grok", "DeepSeek",
+      "程序员", "开发者", "开源", "GitHub", "API", "SaaS", "独立开发", "副业", "出海", "跨境", "支付", "电商",
+      "平台", "规则", "合规", "隐私", "安全", "搜索", "流量", "工具", "自动化", "效率", "成本", "价格", "裁员", "岗位"
+    ],
     "feeds": [
       "https://techcrunch.com/category/artificial-intelligence/feed/",
       "https://www.theverge.com/rss/ai-artificial-intelligence/index.xml",

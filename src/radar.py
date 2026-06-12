@@ -50,9 +50,14 @@ SOURCE_CATEGORY_REPORT_CAPS = {
     "overseas_and_platforms": 4,
     "platform_policy": 4,
 }
-TOPHUBDATA_DEFAULT_NODE_NAMES = ["知乎", "微博", "百度", "今日头条", "V2EX", "GitHub", "少数派", "IT之家", "36氪"]
-TOPHUBDATA_DEFAULT_CIDS = {"1", "2", "4", "7", "10", "11"}
-TOPHUBDATA_PAID_DETAIL_DEFAULT_LIMIT = 8
+TOPHUBDATA_DEFAULT_CID_PLAN = [
+    {"cid": "7", "name": "developer", "limit": 2},
+    {"cid": "2", "name": "tech", "limit": 2},
+    {"cid": "10", "name": "blog", "limit": 1},
+    {"cid": "11", "name": "wxmp", "limit": 1},
+    {"cid": "6", "name": "finance", "limit": 1},
+]
+TOPHUBDATA_PAID_DETAIL_DEFAULT_LIMIT = 7
 SEARCH_CACHE: dict[str, list[dict[str, str]]] = {}
 SEARCH_USAGE_STATE: dict[str, Any] = {}
 SEARCH_NOTICE_KEYS: set[str] = set()
@@ -680,7 +685,7 @@ def recent_archive_items(archive: dict[str, Any], days: int = 14) -> list[dict[s
     cutoff = now_utc() - dt.timedelta(days=days)
     recent: list[dict[str, Any]] = []
     for item in archive.get("items", []):
-        value = item.get("first_seen_at") or item.get("last_seen_at") or ""
+        value = item.get("last_seen_at") or item.get("first_seen_at") or ""
         seen = parse_timestamp(value)
         if seen is None:
             seen = now_utc()
@@ -693,7 +698,7 @@ def today_archive_items(archive: dict[str, Any]) -> list[dict[str, Any]]:
     today = now_bj().date().isoformat()
     result: list[dict[str, Any]] = []
     for item in archive.get("items", []):
-        value = item.get("first_seen_at") or item.get("last_seen_at") or ""
+        value = item.get("last_seen_at") or item.get("first_seen_at") or ""
         if bj_day(value) == today:
             result.append(item)
     return result
@@ -703,8 +708,6 @@ def is_duplicate_topic(decision: "RadarDecision", site: dict[str, Any], archive:
     url = normalize_url(decision.item.url)
     fingerprints = decision_fingerprints(decision)
     for item in today_archive_items(archive):
-        if item.get("batch_id") == batch_id:
-            continue
         if item.get("url") and normalize_url(str(item.get("url"))) == url:
             return True, f"今日已收录同 URL：{item.get('title', '')}"
         if any_similar_fingerprint(archive_fingerprints(item), fingerprints, threshold=0.62):
@@ -713,8 +716,6 @@ def is_duplicate_topic(decision: "RadarDecision", site: dict[str, Any], archive:
     if generic_reason:
         return True, generic_reason
     for item in recent_archive_items(archive, days):
-        if item.get("batch_id") == batch_id:
-            continue
         if item.get("url") and normalize_url(str(item.get("url"))) == url:
             return True, f"近 {days} 天已收录同 URL：{item.get('title', '')}"
         if any_similar_fingerprint(archive_fingerprints(item), fingerprints):
@@ -1242,32 +1243,46 @@ def parse_tophubdata_nodes(source_category: str, group: dict[str, Any]) -> list[
 
 
 def select_tophubdata_nodes(nodes: list[dict[str, Any]], group: dict[str, Any]) -> list[dict[str, Any]]:
-    names = [str(value) for value in group.get("tophubdata_node_names", TOPHUBDATA_DEFAULT_NODE_NAMES)]
-    cids = {str(value) for value in group.get("tophubdata_cids", TOPHUBDATA_DEFAULT_CIDS)}
-    domains = [str(value).lower() for value in group.get("tophubdata_domains", [])]
+    cid_plan = group.get("tophubdata_cid_plan") or TOPHUBDATA_DEFAULT_CID_PLAN
+    if not isinstance(cid_plan, list):
+        cid_plan = TOPHUBDATA_DEFAULT_CID_PLAN
+    exclude_keywords = [str(value).lower() for value in group.get("tophubdata_exclude_node_keywords", []) if str(value).strip()]
 
-    def matches(node: dict[str, Any]) -> bool:
-        name = str(node.get("name", ""))
+    def node_allowed(node: dict[str, Any]) -> bool:
+        text = f"{node.get('name', '')} {node.get('display', '')} {node.get('domain', '')}".lower()
+        return not any(keyword and keyword in text for keyword in exclude_keywords)
+
+    def node_priority(node: dict[str, Any]) -> tuple[int, int, str]:
         display = str(node.get("display", ""))
-        domain = str(node.get("domain", "")).lower()
-        cid = str(node.get("cid", ""))
-        text = f"{name} {display} {domain}"
-        return (
-            any(keyword and keyword in text for keyword in names)
-            or cid in cids
-            or any(keyword and keyword in domain for keyword in domains)
-        )
+        name = str(node.get("name", ""))
+        domain = str(node.get("domain", ""))
+        text = f"{name} {display} {domain}".lower()
+        hot_rank = 0 if any(word in display for word in ["热榜", "热搜", "热门", "热议", "趋势"]) else 1
+        persona_rank = 0 if any(word in text for word in ["v2ex", "github", "少数派", "it之家", "36氪", "机器之心", "量子位"]) else 1
+        return hot_rank, persona_rank, f"{name}/{display}/{domain}"
 
-    selected = [node for node in nodes if matches(node)]
-
-    def priority(node: dict[str, Any]) -> tuple[int, str]:
-        text = f"{node.get('name', '')} {node.get('display', '')} {node.get('domain', '')}"
-        for index, keyword in enumerate(names):
-            if keyword and keyword in text:
-                return index, text
-        return len(names), text
-
-    return sorted(selected, key=priority)
+    selected: list[dict[str, Any]] = []
+    used_hashids: set[str] = set()
+    for plan in cid_plan:
+        if not isinstance(plan, dict):
+            continue
+        cid = str(plan.get("cid", "")).strip()
+        limit = max(0, int(plan.get("limit", 0) or 0))
+        if not cid or limit <= 0:
+            continue
+        matches = [node for node in nodes if str(node.get("cid", "")) == cid and node_allowed(node)]
+        matches.sort(key=node_priority)
+        accepted = 0
+        for node in matches:
+            hashid = first_text(node, ["hashid", "id"])
+            if hashid and hashid not in used_hashids:
+                selected.append(node)
+                used_hashids.add(hashid)
+                accepted += 1
+            if accepted >= limit:
+                break
+    info(f"TopHubData selected cid-plan nodes: {', '.join(str(node.get('cid', '')) + ':' + str(node.get('name', '')) + '/' + str(node.get('display', '')) for node in selected)}")
+    return selected
 
 
 def first_text(data: dict[str, Any], keys: list[str]) -> str:
@@ -1291,6 +1306,35 @@ def tophubdata_hot_rows(data: dict[str, Any]) -> list[dict[str, Any]]:
         if isinstance(rows, list):
             return [row for row in rows if isinstance(row, dict)]
     return []
+
+
+def tophubdata_topic_keywords(group: dict[str, Any]) -> list[str]:
+    values = group.get("tophubdata_topic_keywords", [])
+    if not isinstance(values, list):
+        return []
+    return [str(value).lower() for value in values if str(value).strip()]
+
+
+def tophubdata_row_matches_direction(node: dict[str, Any], row: dict[str, Any], group: dict[str, Any]) -> bool:
+    cid = str(node.get("cid", ""))
+    domain = str(node.get("domain", "")).lower()
+    node_name = str(node.get("name", "")).lower()
+    if cid == "7":
+        return True
+    if any(value in domain or value in node_name for value in ["v2ex", "github"]):
+        return True
+    keywords = tophubdata_topic_keywords(group)
+    if not keywords:
+        return True
+    text = " ".join(
+        first_text(row, keys)
+        for keys in [
+            ["title", "name", "word", "query", "keyword"],
+            ["summary", "desc", "description", "abstract", "extra"],
+            ["url", "link", "source_url", "sourceUrl"],
+        ]
+    ).lower()
+    return any(keyword and keyword in text for keyword in keywords)
 
 
 def make_tophubdata_hot_item(source_category: str, node: dict[str, Any], row: dict[str, Any], index: int) -> SourceItem | None:
@@ -1326,6 +1370,7 @@ def parse_tophubdata_hot_items(source_category: str, group: dict[str, Any]) -> l
     nodes = fetch_tophubdata_nodes(int(group.get("tophubdata_node_pages", 5) or 5))
     selected_nodes = select_tophubdata_nodes(nodes, group)
     items: list[SourceItem] = []
+    item_limit_per_node = max(1, env_int("TOPHUBDATA_ITEM_LIMIT_PER_NODE", int(group.get("tophubdata_item_limit_per_node", 4) or 4)))
     for node in selected_nodes:
         if len(items) >= MAX_ITEMS_PER_SOURCE or not tophubdata_paid_detail_has_budget():
             break
@@ -1337,10 +1382,16 @@ def parse_tophubdata_hot_items(source_category: str, group: dict[str, Any]) -> l
         except Exception as exc:
             info(f"TopHubData paid detail failed for {hashid}: {str(exc)[:160]}")
             continue
+        accepted_for_node = 0
         for index, row in enumerate(tophubdata_hot_rows(data)):
+            if not tophubdata_row_matches_direction(node, row, group):
+                continue
             item = make_tophubdata_hot_item(source_category, node, row, index)
             if item:
                 items.append(item)
+                accepted_for_node += 1
+            if accepted_for_node >= item_limit_per_node:
+                break
             if len(items) >= MAX_ITEMS_PER_SOURCE:
                 break
     info(f"TopHubData paid detail imported {len(items)} hot items from {TOPHUBDATA_PAID_DETAIL_CALLS_USED} paid calls.")
