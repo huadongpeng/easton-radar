@@ -63,6 +63,7 @@ SEARCH_USAGE_STATE: dict[str, Any] = {}
 SEARCH_NOTICE_KEYS: set[str] = set()
 TAVILY_USAGE_FETCHED = False
 SEARCH_API_CALLS_USED = 0
+SEARCH_PROVIDER_ROTATION_INDEX = 0
 TOPHUBDATA_PAID_DETAIL_CALLS_USED = 0
 BJ_TZ = dt.timezone(dt.timedelta(hours=8))
 
@@ -1003,6 +1004,19 @@ def search_web(query: str, limit: int = 5) -> list[dict[str, str]]:
     if not providers:
         info_once("search-no-provider", "Search provider unavailable: missing both TAVILY_API_KEY and BRAVE_SEARCH_API_KEY.")
         return []
+
+    global SEARCH_PROVIDER_ROTATION_INDEX
+    if len(providers) > 1:
+        names = [name for name, _ in providers]
+        if SEARCH_PROVIDER_ROTATION_INDEX == 0:
+            last_provider = str(load_search_usage_state().get("current_run", {}).get("last_provider", ""))
+            start_index = (names.index(last_provider) + 1) % len(providers) if last_provider in names else 0
+        else:
+            start_index = SEARCH_PROVIDER_ROTATION_INDEX % len(providers)
+        SEARCH_PROVIDER_ROTATION_INDEX += 1
+        providers = providers[start_index:] + providers[:start_index]
+        info(f"Search provider order: query={query[:80]}, order={','.join(name for name, _ in providers)}")
+
     for name, func in providers:
         results = func(query, limit=limit)
         if results:
