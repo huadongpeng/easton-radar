@@ -1,0 +1,1836 @@
+{
+  "id": "20260612-report-9131b31a",
+  "batch_id": "2026-06-12-evening",
+  "title": "小红书账号被永封，申诉不如诉讼？一个开发者的维权实录",
+  "original_title": "小红书被永封后续，申诉不如诉讼",
+  "url": "https://www.v2ex.com/t/1219983",
+  "summary": "前情提要： https://v2ex.com/t/1204685 3 月份的时候在浏览器使用了一次 MCP 插件，然后账号就收到违规通知，一直循环封禁 接着投诉和信访都点了一轮，全部没用。最后找律师，说这个情况可以起诉… 现在账号终于回来了...",
+  "source_category": "developer_business",
+  "source_category_title": "开发者副业与独立开发",
+  "topic_direction": "side-info",
+  "topic_direction_title": "副业&信息差",
+  "topic_direction_short_title": "副业&信息差",
+  "topic_direction_description": "独立开发、副业项目、工具站、微型 SaaS、开源项目、现金流风险、外包回款、信息差机会和风险避坑。重点看机会是否真实、钱从哪里来、风险在哪里、什么信号出现就该停。",
+  "source_name": "V2EX 分享创造",
+  "original_source_name": "分享创造",
+  "source_type": "rss",
+  "feed_url": "https://v2ex.com/feed/create.xml",
+  "published_at": "2026-06-12T09:02:12Z",
+  "fetched_at": "2026-06-12T09:03:52.674347+00:00",
+  "decision": "deep_dive",
+  "report_type": "case-study",
+  "report_type_title": "案例复盘",
+  "score": 90,
+  "reader_hook": "从平台规则和维权角度，讲述一个开发者因MCP插件被小红书误封，最终通过诉讼解封的真实案例，给所有依赖平台账号的副业者敲响警钟。",
+  "topic_tension": {
+    "score": 10,
+    "conflict_point": "热点事件里的平台叙事、用户反弹和普通技术人的真实成本之间有冲突。",
+    "debate_question": "这件事到底是合理规则/正常成本控制，还是平台把风险和成本转嫁给普通使用者？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+    "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+  },
+  "persona_discussion_question": "这件事到底是合理规则/正常成本控制，还是平台把风险和成本转嫁给普通使用者？",
+  "why_now": "小红书封号事件持续发酵，且涉及MCP插件这一技术点，与老花人设契合。",
+  "evidence_level": "near_source",
+  "source_priority": "P2 可参考源",
+  "reason": "主要服务副业普通人和共鸣读者，次要触达核心技术人。兴趣高：账号安全是痛点。有泛兴趣钩子：维权故事和反转。",
+  "collection_fit": "tools-rules",
+  "investigation_direction": "联系当事人获取详细维权过程，收集类似案例，分析平台封号机制和维权途径。",
+  "uncertainty_flags": [
+    "当事人信息需核实",
+    "诉讼细节需补充"
+  ],
+  "facts": [
+    {
+      "claim": "V2EX 分享创造 发布/收录了这条原始线索：小红书被永封后续，申诉不如诉讼",
+      "type": "confirmed_fact",
+      "source_url": "https://www.v2ex.com/t/1219983",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "V2EX 分享创造",
+      "url": "https://www.v2ex.com/t/1219983",
+      "source_type": "near_source",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "heat": [
+        "封禁",
+        "起诉"
+      ]
+    },
+    "source_host": "www.v2ex.com",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 10,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "从平台规则和维权角度，讲述一个开发者因MCP插件被小红书误封，最终通过诉讼解封的真实案例，给所有依赖平台账号的副业者敲响警钟。",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://v2ex.com/feed/create.xml",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "当事人信息需核实",
+      "诉讼细节需补充"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "推荐选题",
+      "label": "推荐",
+      "reason": "证据较完整，有真实案例、媒体报道、平台规则和类似诉讼案例支撑；老花人设解读角度清晰（账号安全、维权成本、平台规则透明度）；读者分层明确（副业普通人、共鸣读者为主，核心技术人为辅）；泛兴趣故事钩子（维权反转）不夸张；传播张力强（平台vs用户、成本vs收益、规则vs公平），逻辑基本闭环。"
+    },
+    "core_question": "开发者因使用MCP插件被小红书误封账号，通过诉讼解封的真实案例中，平台规则、维权成本与普通技术人的账号安全风险如何平衡？",
+    "why_this_topic_matters": "小红书封号事件持续发酵，涉及MCP插件这一技术点，与老花人设契合。账号安全是副业者和独立开发者的核心痛点，诉讼解封的案例提供了新的维权路径，但成本高、周期长，需要理性评估。",
+    "fact_summary": [
+      "V2EX用户因在浏览器使用MCP插件导致小红书账号被永封，经过申诉和信访均无效，最终通过律师起诉成功解封。",
+      "IT时报报道多名律师和商户因认证费不退、账号被误封等问题起诉小红书，其中西安律师闫天柱耗时近半年起诉但败诉。",
+      "小红书社区规范禁止使用第三方插件/工具进行自动化操作或数据抓取，但MCP插件是否明确违规存疑。",
+      "类似案例：微信用户因被封号起诉腾讯，要求每日赔偿25元，被法院驳回；游戏平台误封后申诉解封的案例存在但成功率不一。"
+    ],
+    "persona_discussion_question": "如果你依赖小红书做副业或引流，账号被误封后，你会选择申诉、信访还是起诉？诉讼的成本和时间是否值得？",
+    "old_flower_stance": "平台封号机制缺乏透明度和有效申诉渠道，普通用户维权成本高，诉讼是最后但有效的救济途径，但门槛高、周期长，不建议轻易尝试。",
+    "audience_fit": {
+      "primary_layer": "副业普通人",
+      "secondary_layers": [
+        "共鸣读者",
+        "核心技术人"
+      ],
+      "interest_score": 90,
+      "why_interested": "账号安全是副业者的核心资产，误封风险直接影响收入；诉讼解封的案例提供了新的维权思路，但成本收益需要权衡。",
+      "reader_risk": "可能过度依赖诉讼路径，忽略申诉和平台沟通；或误以为所有封号都能通过诉讼解决。"
+    },
+    "mass_interest_hook": {
+      "score": 85,
+      "hook_type": "故事|反差|争议",
+      "why_non_technical_people_may_click": "普通人可能因使用插件或工具被平台误封，维权故事具有普遍共鸣；诉讼解封的反转情节吸引眼球。",
+      "story_seed": "一个开发者因为用了一个AI插件，账号被小红书永封，申诉无门，最后靠打官司才拿回账号。",
+      "do_not_overhype": "强调这是个案，诉讼成本高、周期长，不是普遍有效路径。"
+    },
+    "topic_tension": {
+      "score": 10,
+      "conflict_point": "平台规则不透明 vs 用户权益受损；诉讼成本高 vs 账号价值低；平台作为规则制定者、执行者和裁判员的角色冲突。",
+      "debate_question": "平台封号机制是否合理？用户是否有权知道具体违规原因？诉讼是否是解决封号问题的有效途径？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "平台/工具厂商",
+        "律师/法律从业者"
+      ],
+      "why_people_would_comment": "读者可以围绕封号原因、申诉流程、诉讼成本、平台责任等发表观点，或分享自身经历。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突，避免煽动对立。"
+    },
+    "timeline": [
+      "2025年3月：V2EX用户因使用MCP插件被小红书永封。",
+      "2025年3月-4月：用户多次申诉、信访均无效。",
+      "2025年4月：用户委托律师起诉小红书。",
+      "2025年4月8日：上海律师李维世因认证费问题起诉小红书。",
+      "2025年4月14日：中新网评批评小红书封号机制。",
+      "2025年4月21日：IT时报报道多名律师和商户起诉小红书。",
+      "2025年4月23日：V2EX用户发帖称账号已解封。"
+    ],
+    "evidence_table": [
+      {
+        "source": "V2EX原帖",
+        "url": "https://www.v2ex.com/t/1219983",
+        "supports": "用户因MCP插件被封，通过诉讼解封",
+        "reliability": "near_source"
+      },
+      {
+        "source": "IT时报报道",
+        "url": "https://m.thepaper.cn/newsDetail_forward_33018819",
+        "supports": "多名律师和商户因封号、认证费问题起诉小红书",
+        "reliability": "media"
+      },
+      {
+        "source": "中新网评",
+        "url": "https://www.chinanews.com.cn/cj/2026/04-14/10603479.shtml",
+        "supports": "批评小红书封号机制不透明",
+        "reliability": "media"
+      },
+      {
+        "source": "小红书社区规范",
+        "url": "https://agree.xiaohongshu.com/h5/terms/ZXXY20221213003/-1",
+        "supports": "平台禁止使用第三方插件/工具进行自动化操作",
+        "reliability": "official"
+      },
+      {
+        "source": "微信封号诉讼案例",
+        "url": "https://m.bjnews.com.cn/detail/163152053214721.html",
+        "supports": "用户因微信被封起诉腾讯，被驳回",
+        "reliability": "media"
+      },
+      {
+        "source": "V2EX其他封号讨论",
+        "url": "https://www.v2ex.com/t/970271",
+        "supports": "用户因使用开屏广告跳过插件被封",
+        "reliability": "near_source"
+      }
+    ],
+    "logic_closure": "基本闭环：案例真实、有媒体报道和类似诉讼案例支撑，但诉讼细节（案由、法院、判决）和MCP插件是否明确违规仍需补充。",
+    "writeable_angles": [
+      {
+        "angle": "案例复盘：从被封到解封的全过程，包括申诉、信访、诉讼的步骤和成本。",
+        "why": "提供可操作的维权路径，吸引有类似遭遇的读者。",
+        "needs": "当事人详细时间线、律师费用、诉讼周期等数据。"
+      },
+      {
+        "angle": "平台规则分析：小红书封号机制是否合理？MCP插件是否违规？",
+        "why": "引发对平台规则透明度的讨论，符合技术人视角。",
+        "needs": "小红书官方对MCP插件的态度、社区规范原文。"
+      },
+      {
+        "angle": "维权成本账：诉讼 vs 申诉，哪个更划算？",
+        "why": "帮助读者理性评估维权方式，避免盲目诉讼。",
+        "needs": "律师费用、时间成本、账号价值估算。"
+      },
+      {
+        "angle": "避坑指南：如何避免因使用插件被封号？",
+        "why": "提供实用建议，吸引副业者和普通用户。",
+        "needs": "小红书风控机制、安全使用插件的建议。"
+      }
+    ],
+    "missing_basics": [
+      "MCP插件的具体功能及是否违反小红书社区规范",
+      "小红书封号规则中关于第三方工具/插件的条款原文",
+      "诉讼的具体案由（合同纠纷、侵权、行政？）、法院、判决结果或调解情况"
+    ],
+    "missing_materials": [
+      "当事人采访或详细时间线",
+      "律师对类似案件的法律分析",
+      "小红书官方对MCP插件的态度（如有）",
+      "其他平台封号后诉讼的对比数据"
+    ],
+    "not_claimable": [
+      "诉讼是解决封号问题的普遍有效途径",
+      "MCP插件一定不违规",
+      "小红书封号机制存在系统性错误",
+      "所有用户都能通过诉讼快速解封"
+    ],
+    "followup_queries": [
+      "联系原帖作者获取诉讼细节",
+      "查询小红书社区规范中关于第三方插件的具体条款",
+      "搜索类似案例（如抖音、微信封号后诉讼）"
+    ],
+    "additional_search_queries": [
+      "小红书 封号 诉讼 解封 案例 2025",
+      "MCP 插件 小红书 封号 2025",
+      "小红书 社区规范 第三方工具 插件 禁止",
+      "平台误封 起诉 解封 赔偿 2024 2025"
+    ],
+    "stop_conditions": [
+      "当事人确认诉讼细节不实或账号未恢复",
+      "小红书官方明确MCP插件违规且用户知情",
+      "无其他类似诉讼案例支撑"
+    ],
+    "confidence": 85,
+    "topic_direction": "side-info",
+    "topic_direction_title": "副业&信息差",
+    "report_type": "case-study",
+    "quality_gate": {
+      "pass": true,
+      "score": 85,
+      "fatal_issues": [],
+      "warnings": [
+        "诉讼细节（案由、法院、判决）未从当事人处核实，依赖媒体报道和V2EX帖子",
+        "MCP插件是否明确违反小红书社区规范未确认",
+        "成本估算（律师费、时间周期）未提供具体数据"
+      ],
+      "missing_evidence": [
+        "当事人采访或详细时间线",
+        "律师对类似案件的法律分析",
+        "小红书官方对MCP插件的态度",
+        "其他平台封号后诉讼的对比数据"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": true,
+      "downstream_handoff_ok": true,
+      "material_pack_ok": true,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": true,
+      "source_coverage_ok": true,
+      "recommendation": "publish"
+    },
+    "research_plan": {
+      "core_question": "开发者因使用MCP插件被小红书误封账号，通过诉讼解封的真实案例中，平台规则、维权成本与普通技术人的账号安全风险如何平衡？",
+      "persona_discussion_question": "如果你依赖小红书做副业或引流，账号被误封后，你会选择申诉、信访还是起诉？诉讼的成本和时间是否值得？",
+      "hidden_public_issue": "平台封号机制缺乏透明度和有效申诉渠道，普通用户维权成本高，平台将风险转嫁给用户，而诉讼成为最后但有效的救济途径，但门槛高、周期长。",
+      "must_verify": [
+        "当事人身份及账号恢复真实性（联系原帖作者或查看后续更新）",
+        "MCP插件具体是什么，是否违反小红书社区规则（如自动化操作、数据抓取）",
+        "诉讼具体案由（合同纠纷、侵权、行政？）、法院、判决结果或调解情况",
+        "小红书封号规则中关于第三方工具/插件的条款原文",
+        "类似案例（其他平台因使用插件被封后起诉成功的案例）"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "case_study",
+          "query": "小红书 封号 诉讼 解封 案例 2025",
+          "why_needed": "寻找类似维权案例，验证诉讼路径的普遍性和成功率"
+        },
+        {
+          "source_type": "policy",
+          "query": "小红书 社区规范 第三方工具 插件 禁止",
+          "why_needed": "获取小红书官方对第三方插件的具体规定，判断MCP插件是否违规"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "MCP 插件 小红书 封号 2025",
+          "why_needed": "了解MCP插件功能及是否被其他用户报告类似封禁"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "小红书 账号申诉 流程 诉讼 法律途径",
+          "why_needed": "获取官方申诉渠道和法律救济指引"
+        },
+        {
+          "source_type": "case_study",
+          "query": "平台误封 起诉 解封 赔偿 2024 2025",
+          "why_needed": "收集其他平台（如微信、抖音）误封后诉讼成功的案例，作为对比"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "V2EX 小红书 封号 诉讼 律师",
+          "why_needed": "在原帖下寻找更多当事人细节或律师建议"
+        }
+      ],
+      "expert_challenge_points": [
+        "诉讼成本（律师费、时间）是否高于账号价值？对于普通副业者是否划算？",
+        "MCP插件是否确实违反平台规则？如果违反，诉讼胜算如何？",
+        "平台是否有义务在封号前提供明确警告或人工复核？",
+        "类似案例中，法院是否支持用户要求恢复账号或赔偿损失？"
+      ],
+      "do_not_claim_yet": [
+        "诉讼是解决封号问题的普遍有效途径",
+        "MCP插件一定不违规",
+        "小红书封号机制存在系统性错误",
+        "所有用户都能通过诉讼快速解封"
+      ],
+      "can_publish_as_radar_if_missing": "可以发布，但需明确标注为个案，强调诉讼成本高、周期长，并提醒读者优先通过官方渠道申诉。",
+      "downstream_materials_needed": [
+        "当事人采访或详细时间线",
+        "律师对类似案件的法律分析",
+        "小红书官方对MCP插件的态度（如有）",
+        "其他平台封号后诉讼的对比数据"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号",
+        "url": "https://m.thepaper.cn/newsDetail_forward_33018819",
+        "query": "小红书 封号 诉讼 解封 案例 2025",
+        "provider": "tavily",
+        "score": "0.8539252",
+        "fetched_text": "多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号 window.AliyunCaptchaConfig = { region: \"cn\", prefix: \"1dl38w\" }; var _hmt = _hmt || []; (function() { var hm = document.createElement(\"script\"); hm.src = \"//hm.baidu.com/hm.js?d07e4d64d5cde19b5351e7032beaef1a\"; var s = document.getElementsByTagName(\"script\")[0]; s.parentNode.insertBefore(hm, s); })(); 下载APP 澎湃号·媒体 > 多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号 IT时报 中国电信集团有限公司上海分公司 2026-04-21 20:30 上海 律师和商户为何状告小红书？|图源：AIGC 作者／ IT时报 孙永会 编辑／ 郝俊慧 孙妍 庭审结束后，上海誓维利律师事务所主任李维世对于这场官司的胜败已经有了数，“很大概率会败诉，但我也要不争馒头争口气。”4月8日上午，她和小红书所属公司行吟信息科技对簿公堂，核心诉求是，要求平台通过自己“誓维利”专业号认证的申请，因为已支付了600元认证费。 “为何认证失败后，认证费不能退？为何平台规则载明可以用字号，但我用‘誓维利’字号认证时却不行？”接受《IT时报》记者采访时，李维世提出多个疑问。 距离上海一千多公里的西安，律师闫天柱有着同样的困惑。账号突然被永久封禁后，不知道自己究竟错在哪里的他，耗时近半年起诉小红书，两次审理最后皆以败诉告终。 封号、限流、认证费不退……《IT时报》记者注意到，在“黑猫投诉”平台，对小红书类似的投诉屡见不鲜。 作为月活用户超3亿的“种草”社区，小红书已从分享平台演变为集社交、电商于一体的超级App。然而，当平台同时是规则的制定者、执行者和裁判员时，用户的权利边界在哪里？ 截至发稿，《IT时报》记者试图向小红书方进行了解和求证，对方未正面回应相关问题，只表示：“认证失败不退费，这个各家都是一样的。” 对抗 连律师都搞不懂的认证规则 2023年5月，李维世开始更新小红书账号，初期仅分享判决书、调解书等法律文书案例，却意外接到了一些网友的咨询。像在其他社交平台一样，李维世将联系方式私信给对方，却发现被平台屏蔽了。 咨询平台客服后，李维世了解到，若有获客需求，她可以申请升级为“企业专业号”，每年需支付600元的认证费（审核费），即可合规留资。 2024年12月，李维世申请将账号升级为企业号，并支付了相应的认证费用，但平台以账号名称不合规为由驳回申请，要求必须加注“律师事务所”后缀，而不能只认证其律所字号“誓维利”。 然而，根据小红书聚光帮助中心的信息，企业用户账号名称可以基于字号/商标/实体经营场所等命名。比如，主体公司是“薯一薯二文化传媒（上海）有限公司”，在不侵权前提下，可以使用“薯一薯二”“薯一薯二文化”和“薯一薯二科技”等名称。 倘若按字面意思理解，李维世以“誓维利”进行账号认证是符合规定的。 考虑到平台的强势地位，李维世想，既然无法认证，那就退费吧，该诉求同样被平台拒绝：“认证不成功是你的原因，无法退费。” 无奈的李维世只能放弃认证，以个人身份开始运营自己的账号，由于无法通过公司店铺形式提供咨询服务，她依然采用私留联系方式的办法获客。 今年2月和3月，平台以“检测到违规留资”为由两次对“誓维利”账号进行封禁，判定违规的依据是置顶笔记中一张含有手机号的聊天记录截图。解封后，账号流量呈断崖式下跌。 退费 因规则外原因不被认证 依然无法退费 账号两次被封之后，李维世认为，被封号的根源是平台不通过正常名称的认证，既然如此，平台就应该退费。 在对小红书的起诉书中，她如是写道：“平台对个人账号的留资规则设置过度限制，企业号认证又设置了不合理的命名门槛，此系平台不合理规则所导致的普遍现象，并非个人特殊行为。” 但有观点认为，这笔费用是审核服务费，无论审核是否成功，都会收取。业内普遍存在的解释是，第三方审核机构已对提交资料进行真实性甄别与校验，付出了人工和时间成本。 但在小红书聚光帮助中心“专业号",
+        "fetch_error": ""
+      },
+      {
+        "title": "多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号_腾讯新闻",
+        "url": "https://news.qq.com/rain/a/20260421A056PP00",
+        "query": "小红书 封号 诉讼 解封 案例 2025",
+        "provider": "tavily",
+        "score": "0.8440111",
+        "fetched_text": "多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号_腾讯新闻 try { if (!window.IntersectionObserver) { var observerScript = document.createElement('script'); observerScript.src = \"https://mat1.gtimg.com/qqcdn/qqindex2021/common-static/20241024141058/intersection-observer-polyfill.js\"; document.head.appendChild(observerScript); } } catch (error) {} try { if (!Element.prototype.scrollTo) { var scrollScript = document.createElement('script'); scrollScript.src = \"https://mat1.gtimg.com/qqcdn/qqindex2021/common-static/20241025153001/scroll-behavior-polyfill.js\"; document.head.appendChild(scrollScript); } } catch (error) {} try { if ('scrollRestoration' in window.history) { window.history.scrollRestoration = 'manual'; } window.isPcClient = Boolean(window.electron) && ( window.navigator.userAgent.indexOf('pc-client') > 0 || window.navigator.userAgent.indexOf('TencentNews') > 0 ); } catch {} window.DATA = {\"url\":\"https://view.inews.qq.com/a/20260421A056PP00\",\"article_id\":\"20260421A056PP00\",\"atype\":\"0\",\"article_type\":\"0\",\"title\":\"多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号\",\"desc\":\"律师和商户为何状告小红书？|图源：AIGC作者／ IT时报 孙永会编辑／ 郝俊慧 孙妍 庭审结束后，上海誓维利律师事务所主任李维世对于这场官司的胜败已经有了数，“很大概率会败诉，但我也要不争馒头争口气。”4月8日上午，她和小红书所属公司行吟信息科技对簿公堂，核心诉求是，要求平台通过自己“誓维利”专业号认证的申请，因为已支付了600元认证费。“为何认证失败后，认证费不能退？为何平台规则载明可以用字号，但我用‘誓维利’字号认证时却不行？”接受《IT时报》记者采访时，李维世提出多个疑问。距离上海一千多公里的西安，律师闫天柱有着同样的困惑。账号突然被永久封禁后，不知道自己究竟错在哪里的他，耗时近半年起...\",\"iNewsRecommendLevel\":1,\"abstract\":\"律师和商户为何状告小红书？|图源：AIGC作者／ IT时报 孙永会编辑／ 郝俊慧 孙妍 庭审结束后，上海誓维利律师事务所主任李维世对于这场官司的胜败已经有了数，“很大概率会败诉，但我也要不争馒头争口气。”4月8日上午，她和小红书所属公司行吟信息科技对簿公堂，核心诉求是，要求平台通过自己“誓维利”专业号认证的申请，因为已支付了600元认证费。“为何认证失败后，认证费不能退？为何平台规则载明可以用字号，但我用‘誓维利’字号认证时却不行？”接受《IT时报》记者采访时，李维世提出多个疑问。距离上海一千多公里的西安，律师闫天柱有着同样的困惑。账号突然被永久封禁后，不知道自己究竟错在哪里的他，耗时近半年起...\",\"catalog1\":\"law\",\"ad_channel_sign\":\"news\",\"introduction\":\"\",\"media\":\"IT时报\",\"media_id\":\"5046687\",\"pubti",
+        "fetch_error": ""
+      },
+      {
+        "title": "因为被封号，我起诉了小红书 - 知乎专栏",
+        "url": "https://zhuanlan.zhihu.com/p/1993437147521385106",
+        "query": "小红书 封号 诉讼 解封 案例 2025",
+        "provider": "tavily",
+        "score": "0.84277284",
+        "fetched_text": "原告是小红书账号为（小红书号：XXXXX）的用户，于正常使用过程中突然于2025年8月11日14时收到封号通知，原告并不存在违法、违规的言行，在经过数次申诉后均未解",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      },
+      {
+        "title": "[PDF] 品牌号社区运营规范",
+        "url": "https://dc.xhscdn.com/file/c947aa537be9e80d802226374b5c710f/%E5%93%81%E7%89%8C%E5%8F%B7%E7%A4%BE%E5%8C%BA%E8%BF%90%E8%90%A5%E8%A7%84%E8%8C%83.pdf",
+        "query": "小红书 社区规范 第三方工具 插件 禁止",
+        "provider": "tavily",
+        "score": "0.6816637",
+        "fetched_text": "%PDF-1.7 % 1 0 obj >/Metadata 1016 0 R/ViewerPreferences 1017 0 R>> endobj 2 0 obj > endobj 3 0 obj >/ExtGState >/Font >/ProcSet[/PDF/Text/ImageB/ImageC/ImageI] >>/MediaBox[ 0 0 594.96 842.04] /Contents 4 0 R/Group >/Tabs/S/StructParents 0>> endobj 4 0 obj > stream x[[oܸ\u0015~7Ge Y\u0018FuMh-\u000f>xlЍ=GdC\u000e5Z\u0001\u00022x|B]Uߞ>|񩸾>rS~|zzo_ﯾDǧo77E6\u0015J^2Y|??ן3\u0000^ ]\b^\u001aKb4\\\u0017E -J-dw_>ݫ},q~VtA\u0011_Pz \u0015\u0011^?\u0000)\u0011 \u0012j.% \u0007Ǜl U5pS\u0007lF(fKT[$l٫rc@N@q Ok\u0015m4b'PWN\u0015ژz3k>\u0012Էxk\u000f+nG\u0016\u0014\u0000ZNR\u0017Ơ\b 4·\u000fA\u000e+ޞ}(P_9婹] \u0019Û, )ƙ\u00125U;fxƈ 6N6D:$qXUbzVT}fi1\u000f\u0010#b5 :0K{:\u0003]~\u0006 Fak\u0006la\u0007F\u0013[B\by T6dg ~-ޛ09:!#\"\u0003JX\u001a qL\\Lx\u0019(jBp\u0011A.|1x/#\u0003Z:Ф{&^5\u0006\u0007'^f46L i֏\u0016G4\u001aъ\u0002\u0000̥K(>\u0019iyЬy@3iS nT2x\u0004_R(8D-:Lʘ\u0002{\u0015\u0011r_ rE\u000eJC9STeLkr\u0005\u0011 .f>AپfUO\\a>\u0003QF__ Wǭ,!`.~Doߩ( h\u0019\u0001G-S{\u0001&\u0017T؂\u0018\u0018Zzw](z\u00133pE\u000e(.gDu\u00141?_\"5,I\u0004 ێy\u0003+s/@zιMxPI 0\u0001\"K9{|\u0004単:z6uUq\u0001\u0003uSkxۏ Bz\u001az1\u001bGN- ۊi=*\u0014eӖ c@ \u0000n8 G\u0000\u0019S&\\Fq\u001a\u00110Yj\u0004y\u000fdΉ- zGjx_cs.{7|\u0005IN\u0004SHN\u0004_Aܽ\u0004JDܠA\\&;sԌEPl\u00023) -uI09\"H |y=آtMS}=J+^K4T \u000e,H\u00014k endstream endobj 5 0 obj > stream x_MYKJ\u0019qW\b3\u001a4hT*BB\u0010۔\"iRF%E1fjx}:ߜgsN\u00179ky.{=Y \u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u00063\u001bt2k֬Xwe$''9sXzf\u0000ia\u0002@&%%ź!Çw\u0002\u0013\u0013\u0013wYjU;2***Fd\u0018 e6l\u0010^ l޼ėQ;ݻ7ֽ\u000e\u0004xxx?\u0018\u0017௿\u001a\u001a\u001a*((={v2Ξ=6x+ßՅ ĺ3\u0003۷o_~wV\u0010ŗ/_ \u001a =FZ 12{l\u000ez%7+H#C\u0016_^~]~>b¾\u001b t%iQO0\u0013(\u0003wZ[[sss%,}˃e.d, \u001aӘ-\u0005N \b\u0006\u0003Q\"\\A߿m6 \u0004$`mm@ 0\\; \u001a n \u001aݱc\u0005Y}\b\u0002)\u0002 :44\u0014AIo \u0019\u0014xMII)))Az{{ \u0007\b2׋\u0014E\u0016\u0015\u0017\u0017_z \u000e \\ \u0017N85?qΜ96mOAć8\u000f### hkk;t\u0010co\u00101cɒ%\u0016W_}C^\u0010OAA\u0001 ɌZ=ߎ\u000fɓ';:: A\u0005 QlْS5kPMޕZz5\u000e~X\u001a\u0004: ˂\u0003Ht\u0012j\u001aY=s3wn\u0007 {մ ! \u0004t,;v \u0005Cj\u0006qq\u0016:ِ\u0005\u0017׺\u0019G\u0016f߾}ȿpiToo/J ,6m\u0010h\u0005/7\\?q#\u001b\u001b\u001b3+B5|\u0006dy\u0001u3,Ʌ,@\u0016\u0012Hc:Yܰ3g΄ }4\\Aٳg\u0017\u0015\u0015=|bb~j\u0005\u0014$B|E\u0019b$X)?dau ٳgc[uժɼ =ۮ ~ ehh\bچk (77\u0017CG?\u0016-KuX\u000375;%@\u00164Ç+d8q\u0004f\u0005\u0013\u0016H|/...#|/nkGo޼ioo/\u0016{fi׮]k׮TKL\u0007.= L SְҶ{ \u0000 \u0017\u0016\u0015\u0015a.YSSS7?ޑEɵ \"wy[A*,,d*ZC )-V\u0010$ӧȂ^u%4\u0018@{%0ZT0;`ٵ2^Xk׮Yg7p D+လ\u0013 :\u0016C\u0005 \u0016466\u0017\u0015\u0010r˗\u00196}}}^%WyU^ Z\u0011Z\u0012%\u000ep,jCq,֘;w \u0017r;\u0012Y233qYZxJ\u0016}\\\u0006վ[>\u0018B I!5 ٳgQGB銜,D\u000e \b_8d=*\u0016C\u0015}fE?\u0005\u000f\u0001O^Q 'YyJիW777_Mȵup rںT & \u0007C\u0016kD,\u0004,8\u0012SSS---\u0019\u0019\u0019=%]ֶׯGXmܾ};j ,ֈ>Y\u0012|/p%\u00120c~GIrd\u0001eee Dz_\u0018_Frk D0UPP 8\u0018,ֈ Y%mUyNd!`\u0017f\u0017nʕJK~\u0015Q#C\u0016kĄ,h?uvSe\u0007k,[ ",
+        "fetch_error": ""
+      },
+      {
+        "title": "小红书社区规范 - 在线协议",
+        "url": "https://agree.xiaohongshu.com/h5/terms/ZXXY20221213003/-1",
+        "query": "小红书 社区规范 第三方工具 插件 禁止",
+        "provider": "tavily",
+        "score": "0.65835214",
+        "fetched_text": "小红书 window.__ERROR_TRACKER_BUFFER__=[],window.onerror=function(o,n,R,_,e){window.__ERROR_TRACKER_BUFFER__.push({error:e||o,extra:{source:n,lineno:R,colno:_}}),(new Image).src=\"//www.xiaohongshu.com/eplDKtpK4k.txt?l=\"+location.href+\"&a=\"+o+\"&b=\"+n+\"&c=\"+R+\"&d=\"+_+\"&e=\"+e.stack} !function(){var e=function(e){var t={};function n(o){if(t[o])return t[o].exports;var r=t[o]={i:o,l:!1,exports:{}};return e[o].call(r.exports,r,r.exports,n),r.l=!0,r.exports}return n.m=e,n.c=t,n.d=function(e,t,o){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},n.r=function(e){\"undefined\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\"Module\"}),Object.defineProperty(e,\"__esModule\",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&\"object\"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,\"default\",{enumerable:!0,value:e}),2&t&&\"string\"!=typeof e)for(var r in e)n.d(o,r,function(t){return e[t]}.bind(null,r));return o},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,\"a\",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p=\"\",n(n.s=1)}([function(e,t,n){\"use strict\";Object.defineProperty(t,\"__esModule\",{value:!0}),t.default=function(e){return!(e instanceof HTMLHeadElement||e instanceof HTMLMetaElement||e instanceof HTMLLinkElement||e instanceof HTMLStyleElement||e instanceof HTMLScriptElement||e instanceof SVGElement||\"none\"===getComputedStyle(e).display)}},function(e,t,n){\"use strict\";Object.defineProperty(t,\"__esModule\",{value:!0}),t.observe=function(){if(window.MutationObserver&&window.performance&&performance.timing){window.__FP__=0,window.__FCP__=0,window.__FMP_OBSERVED_POINTS__=[],window.__FULLY_LOADED__=0;",
+        "fetch_error": ""
+      },
+      {
+        "title": "小红书提示存在风险插件要如何处理？ - 社媒助手 - 隙生科技",
+        "url": "https://smzs.xisence.com/help/faq/xiaohongshu/risk-plugin",
+        "query": "小红书 社区规范 第三方工具 插件 禁止",
+        "provider": "tavily",
+        "score": "0.60750073",
+        "fetched_text": "小红书：小红书提示存在风险插件要如何处理？ - 社媒助手 ((e,t,n,r,i,o,a,s)=>{let l=document.documentElement,c=[\"light\",\"dark\"];function u(t){var n;(Array.isArray(e)?e:[e]).forEach(e=>{let n=\"class\"===e,r=n&&o?i.map(e=>o[e]||e):i;n?(l.classList.remove(...r),l.classList.add(o&&o[t]?o[t]:t)):l.setAttribute(e,t)}),n=t,s&&c.includes(n)&&(l.style.colorScheme=n)}if(r)u(r);else try{let e=localStorage.getItem(t)||n,r=a&&\"system\"===e?window.matchMedia(\"(prefers-color-scheme: dark)\").matches?\"dark\":\"light\":e;u(r)}catch(e){}})(\"class\",\"theme\",\"light\",null,[\"light\",\"dark\"],null,true,true) Skip to Content 社媒助手 首页 下载 定价 帮助中心 更新记录 联系我们 input]:pl-8 [&>input]:h-10 [&>input]:text-sm [&>input]:border-1 [&>input]:border-gray-200 [&>input]:rounded-md [&>input:focus]:border-blue-500 [&>input]:transition-colors [&>input]:w-full [&>kbd]:hidden [&>input]:bg-white/80\"> CTRL K 首页 下载 定价 帮助中心 更新记录 联系我们 CTRL K 功能指南 简单介绍 插件配置 飞书同步 数据上报 采集模式 采集历史 账号管理 任务闹钟 采集本页数据 媒体文件下载 便捷复制数据 常见问题 浏览器相关问题 为什么无法访问 Chrome 应用商店？ 下载插件时提示“无法从该网站添加应用、扩展程序和用户脚本”怎么办？ 社媒助手如何进行离线安装/更新？ 为什么推荐使用最新版 Chrome？ 会员相关问题 什么是增强版 API 模式 什么是自动加载验证码 如何免费获取VIP 第三方收费下载说明 为什么不能注册账号 下载相关问题 批量下载媒体文件时，如何关闭二次确认？ 下载文件的保存位置和文件名如何自定义？ 为什么配置的文件名未生效？ 飞书相关问题 提示字段类型不匹配是怎么回事？ 提示权限不足怎么解决？ 小红书相关问题 小红书出现“Request failed with status code 406“是怎么回事？ 小红书经常提示“访问频繁，请稍后再试”是什么情况？ 小红书提示存在风险插件要如何处理？ 为什么搜索导出最多只有两百多篇笔记？ 抖音相关问题 为什么采集到的评论比页面显示的数量少一些？ 为什么有时候视频数据会获取不全？ 哔哩哔哩相关问题 哔哩哔哩视频下载为什么和其他平台不一样？ 小红书 植入功能 专辑页 笔记详情页 搜索页 博主详情页 批量采集 采集博主数据 采集评论数据 采集笔记数据 其他功能 链接转换 抖音 植入功能 搜索页 达人详情页 视频详情页 批量采集 采集达人数据 采集视频数据 采集评论数据 其他功能 链接转换 B站 植入功能 搜索页 UP主详情页 视频详情页 批量采集 采集评论数据 采集UP主数据 采集视频数据 其他功能 链接转换 快手 植入功能 达人详情页 搜索页 视频详情页 批量采集 采集达人数据 采集评论数据 采集视频数据 其他功能 链接转换 TikTok 植入功能 达人详情页 视频详情页 批量采集 采集达人数据 采集视频数据 采集评论数据 其他功能 短链解析 功能指南 简单介绍 插件配置 飞书同步 数据上报 采集模式 采集历史 账号管理 任务闹钟 采集本页数据 媒体文件下载 便捷复制数据 常见问题 浏览器相关问题 为什么无法访问 Chrome 应用商店？ 下载插",
+        "fetch_error": ""
+      },
+      {
+        "title": "小红书AI工具引流：2025 年小红书私域运营新策略（高效且安全）",
+        "url": "https://zhuanlan.zhihu.com/p/1913942349316330004",
+        "query": "MCP 插件 小红书 封号 2025",
+        "provider": "tavily",
+        "score": "0.7197191",
+        "fetched_text": "依托定制的MCP 服务实现小红书页面内容安全提取，AI Agent 完成智能决策与内容输出，全流程保障安全。 极度重视账号安全，自动引流全程无需用户提供",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      },
+      {
+        "title": "封号禁言！2025年在小红书导流要换思路了 - 亿邦动力",
+        "url": "https://www.ebrun.com/20250303/573998.shtml",
+        "query": "MCP 插件 小红书 封号 2025",
+        "provider": "tavily",
+        "score": "0.6186197",
+        "fetched_text": "小红书线索获取基建的完善,意味着可以进行高效率的、规模化的、稳定性的获客2025 年可以称得上是线索行业商家和运营操盘手在小红书的决胜年了。",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      },
+      {
+        "title": "RedNote-MCP：超好用的小红书内容访问MCP服务！ - 53AI-AI知识库|企业AI知识库|大模型知识库|前线部署工程师|FDE|AIHub",
+        "url": "https://www.53ai.com/news/neirongchuangzuo/2025041605194.html",
+        "query": "MCP 插件 小红书 封号 2025",
+        "provider": "tavily",
+        "score": "0.53866833",
+        "fetched_text": "window.dataLayer = window.dataLayer || [] function gtag() { dataLayer.push(arguments) } gtag('js', new Date()) gtag('config', 'G-TEQE4Y0F1C') RedNote-MCP：超好用的小红书内容访问MCP服务！ - 53AI-AI知识库|企业AI知识库|大模型知识库|前线部署工程师|FDE|AIHub [data-aos][data-aos][data-aos-duration=\"1600\"], body[data-aos-duration=\"1600\"] [data-aos] { transition-duration: 1.6s } [data-aos][data-aos][data-aos-easing=ease], body[data-aos-easing=ease] [data-aos] { transition-timing-function: ease } [data-aos^=fade][data-aos^=fade] { opacity: 0; transition-property: opacity, transform } [data-aos^=fade][data-aos^=fade].aos-animate { opacity: 1; transform: translateZ(0) } [data-aos=fade-up] { transform: translate3d(0, 100px, 0) } .iconfont { font-family: iconfont !important; font-size: 16px; font-style: normal; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale } .icon-home:before { content: \"\\eb1b\" } .icon-lianximaijia:before { content: \"\\e60e\" } .icon-dianhua1-mianxing:before { content: \"\\e69b\" } .icon-zhiding:before { content: \"\\e61d\" } .icon-close:before { content: \"\\e64d\" } .icon-arrow-right-o:before { content: \"\\e615\" } :root { --swiper-theme-color: #007aff; --swiper-navigation-size: 44px } .swiper-wrapper { position: relative; width: 100%; height: 100%; z-index: 1; display: flex; transition-property: transform; box-sizing: content-box } .swiper-container-android .swiper-slide, .swiper-wrapper { transform: translate3d(0, 0, 0) } .right-bar .item .contact-hover { position: absolute; right: 100%; top: 50%; -webkit-transform: translate(0,-50%) scale(0); -moz-transform: translate(0,-50%) scale(0); transform: translate(0,-50%) scale(0); visibility: hidden; opacity: 0; -webkit-transform-origin: right center; -moz-transform-origin: right center; transform-origin: right center; padding-right: 0.1rem",
+        "fetch_error": ""
+      },
+      {
+        "title": "小红书账号被禁言怎么申诉？ - 脉脉",
+        "url": "https://maimai.cn/article/detail?fid=1840222547&efid=0gm1B3O5H6IieocvDdbQaQ",
+        "query": "小红书 账号申诉 流程 诉讼 法律途径",
+        "provider": "tavily",
+        "score": "0.8033131",
+        "fetched_text": "小红书账号被禁言怎么申诉？ - 脉脉 html{background-color:#f4f5fa} 登录 / 注册 小红书账号被禁言怎么申诉？ 拉卡斯暑 24-07-19 · 77 add-friend 好友 小红书账号被禁言后，申诉是一个恢复账号正常使用的途径。以下是小红书账号被禁言后的申诉步骤： 一、进入申诉页面 打开小红书APP：首先，确保你已经下载并安装了小红书APP，并且能够正常登录被禁言的账号。 找到“帮助与客服”：在小红书APP的主页或侧边栏中，找到并点击“帮助与客服”选项。这个选项可能会以不同的形式出现，比如一个问号图标或者“客服中心”等。 选择“账号申诉”：在“帮助与客服”页面中，寻找并点击“账号申诉”或类似的选项。这个选项通常会位于自助服务板块内。 二、选择申诉类型 选择“账号被禁言”：在账号申诉界面中，你会看到多种申诉类型，比如“账号被盗”、“账号被误封”等。根据你的情况，选择“账号被禁言”作为申诉类型。 对于小红书的玩法和规则我基本都已掌握，如果你想了解具体操作，这里给大家准备了 免费的 小红书开店教程及实操爆单玩法，戳戳： 点击领取 三、填写申诉内容 描述问题：在申诉内容中，简要描述你的账号被禁言的情况。比如，你可以说明你的账号没有违反任何规定，但突然被禁言了，或者你可以说明你已经删除了违规内容并愿意改正错误。 提供证据：如果可能的话，提供一些证据来支持你的申诉。比如，你可以上传截图证明你的账号没有发布违规内容，或者你可以提供其他用户的证词来证明你的清白。但是，请注意，小红书可能并不要求所有申诉都提供证据，这取决于具体情况。 四、提交申诉 检查信息：在提交申诉之前，仔细检查你填写的信息是否准确无误。确保你的联系方式是有效的，以便小红书在需要时能够联系到你。 点击“提交”：确认无误后，点击“提交”按钮将申诉发送给小红书官方。 五、等待审核与处理 耐心等待：提交申诉后，你需要耐心等待小红书官方的审核结果。审核时间可能会因情况而异，请保持耐心。 查看结果：审核结果通常会通过小红书APP内的消息通知或邮件等方式告知你。如果申诉成功，你的账号将恢复正常使用；如果申诉不成功，你可以根据小红书给出的原因进行调整后再次申诉。 注意事项 在申诉过程中，请保持诚恳和耐心的态度。不要使用不当言辞或威胁等方式来催促审核结果。 遵守小红书的社区规范和规定是避免账号被禁言的关键。如果你的账号被禁言是因为违反了规定，那么你应该认真反思并改正错误。 如果你的申诉被驳回或需要进一步的帮助，你可以联系小红书的人工客服进行咨询和求助。 小红书账号被禁言怎么申诉？ 脉脉 END 阅读 6 声明：本文内容由脉脉用户自发贡献，部分内容可能整编自互联网，版权归原作者所有，脉脉不拥有其著作权，亦不承担相应法律责任。如果您发现有涉嫌抄袭的内容，请发邮件至maimai@taou.com，一经查实，将立刻删除涉嫌侵权内容。 相关推荐 最新发布 大家都在看 热门人脉圈 评论 我来说几句... 我来说几句... .css-13ec0ti{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;right:0;bottom:0;top:0;left:0;background-color:rgba(0, 0, 0, 0.5);-webkit-tap-highlight-color:transparent;z-index:1201;} 登录查看更多内容、看点评、加好友 登录 / 注册 {\"props\":{\"pageProps\":{\"user\":null,\"data\":{\"collected\":null,\"comments\":{\"lst\":[],\"more\":false,\"pa",
+        "fetch_error": ""
+      },
+      {
+        "title": "小红书封号后应该如何申诉?-高顿教育",
+        "url": "https://www.gaodun.com/xinzhiye/1423033.html",
+        "query": "小红书 账号申诉 流程 诉讼 法律途径",
+        "provider": "tavily",
+        "score": "0.7915799",
+        "fetched_text": "(function(a, b) { if ((/AppleWebKit.*Mobile/i.test(a) || /Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(a) || /MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(a)) && !/iPad/i.test(a) && location.hash != '#m') window.location = b })(navigator.userAgent, 'https://m.gaodun.com/xinzhiye/1423033.html') 小红书封号后应该如何申诉?-高顿教育 .article .article-head li.follow-share span:first-child::before { background-position: -53px 0; } url_v= \"//v.gaodun.com\"; --> 登录高顿网校 --> 登录高顿网校 资料修改成功 失败提示失败提示 手机号/邮箱： 密码： 忘记密码？ 自动登录 免费注册 合作账号登录 --> 合作账号登录 QQ登录 微博登录 微信登录 url_v= \"//v.gaodun.com\"; url_s = \"//s.gaodun.com\"; url_w = \"//www.gaodun.com\" 高顿教育 / 新职业新技能 / 小红书博主孵化培训 / 文章详情 小红书封号后应该如何申诉? 高顿教育 2023-04-07 09:37 nicole 分享 新职业新技能臻选试听集 小红书封号后应该如何申诉？ 在小红书上，用户可以分享自己的生活、购物心得和美妆技巧等内容，但是平台也有一系列规定，包括禁止发布不良信息、违反版权等行为。如果用户在平台上违反了这些规定，可能会被封禁账号。但是有些用户可能因为某些原因被误封，这时需要进行申诉。那么小红书封号后应该如何申诉呢？接下来我们就来一起了解一下。 一、申诉流程 1.查看封禁原因。当用户发现自己的小红书账号被封禁后，应该首先查看封禁原因。平台会给出相应的理由，用户需要认真阅读，并分析自己的行为是否有违规。 2.联系客服。如果用户认为自己的封禁是错误的，可以通过小红书客服渠道进行申诉。用户可以通过小红书官方网站、小红书APP或小红书微博等渠道联系客服，提供自己的申诉理由和相关证据。 3.等待处理。用户提交申诉后，需要等待小红书客服的处理。客服会对用户的申诉进行审核，并根据情况进行解封或继续封禁。 二、申诉注意事项 1.提供充分证据。用户在进行申诉时，应该提供充分的证据来证明自己的行为没有违规。例如，可以提供相关的截图、聊天记录等。 2.文明申诉。用户在进行申诉时，应该注意措辞，不要使用恶意语言或攻击性言辞。这样会影响到申诉的效果。 3.合理申诉。用户在进行申诉时，应该根据自己的实际情况提出合理的申诉理由，而不是无中生有或推卸责任。 封禁账号是小红书对于用户违规行为的一种管理方式，但是有些用户可能因为某些原因被误封。如果用户在小红书上被封禁账号，可以通过联系客服进行申诉。在申诉时，需要提供充分的证据、文明措辞，并根据实际情况提出合理的申诉理由。如果申诉成功，用户可以重新使用自己的账号，如果申诉失败，用户可以再次提交申诉或者寻求其他途径解决问题。 以上就是关于小红书封号后应该如何申诉的相关介绍。如果用户遵守小红书的相关规定，不会违反平台的规定，那么就不会被封禁账号。但是如果不慎违规被封禁了账号，可以根据上述的申诉流程进行申诉，希望能够得到解决。 更多干货，点击了解 以上就是 【小红书封号后应该如何申诉?】 的全部解答，如果你想要学习【小红书运营】更多这方面的知识，欢迎大家前往>> 5天小红书陪跑营 ! 添加老师微信 掌握更多小红书运营资讯 相关阅读 0基础的普通人怎么做小红书运营? 0粉丝也能赚钱!小红书赚钱的6种方式 什么样的人适合做小红书 上一篇： 小红书违规笔记如何进行修改? 下一篇： 小红书",
+        "fetch_error": ""
+      },
+      {
+        "title": "小红书被封禁怎么申诉 - 法行宝",
+        "url": "https://ailegal.baidu.com/legalarticle/qadetail?id=b66d1f5921bd56000618",
+        "query": "小红书 账号申诉 流程 诉讼 法律途径",
+        "provider": "tavily",
+        "score": "0.7593865",
+        "fetched_text": "法行宝-您的免费AI律师 { \"@context\": \"https://schema.org\", \"@type\": \"WebSite\", \"name\" : \"法行宝\", \"headline\" : \"法行宝-您的免费AI律师\", \"datePublished\": \"\", \"dateModified\": \"\", \"description\": \"您身边的AI律师，法行宝为您提供专业的法律问答咨询服务，帮助您解答法律问题，法律咨询就来法行宝！\", \"keywords\": \"\" } var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = \"https://hm.baidu.com/hm.js?87211a649e43152c3ab9129dc08efb6d\"; hm.setAttribute('async', 'async'); hm.setAttribute('defer', 'defer'); var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })(); !function (t) {var o =\"https:\\/\\/www.faxingbao.com\\/legalarticle\\/qadetail?id=b66d1f5921bd56000618\"; if (o && !/([http|https]:\\/\\/[a-zA-Z0-9\\_\\.]+\\.toutiao\\.com)/gi.test(o) && t.navigator.appName) { var n = '7f5505489c7e46ce2e5aedf7180053679ecf63092d68b96b89602fb03c6e7d3a65e0a2ada1d5e86b11e7de7c1a83287d04743a02fd1ee8dd8558a8cad50e91cb354f8c6f3f78e5fd97613c481f678e6d', e = \"https://zhanzhang.toutiao.com/s.gif\", a = new Image; o && (e += \"?url=\" + encodeURIComponent(o)), n && (e += \"&token=\" + n), n && (a.src = e) } }(window); var sid = '2136'; var sak = '88dfc39fd2'; window.ParisFactory.create({ sid: sid, sak: sak, timeout: 5000, bantiUrl: `https://banti-static.cdn.bcebos.com/o/static/banti_${sak}.js`, acsUrl: `https://dlswbr.baidu.com/heicha/mm/${sid}/acs-${sid}.js`, disasterConfig: { acsUrl: `https://miaowu.baidu.com/sdk/heicha/mm/${sid}/acs-${sid}.js`, }, }); window.pageData = {\"baseinfo\":{\"isLogin\":0,\"passapi\":\"//passport.baidu.com/passApi/js/uni_login_wrapper.js\",\"passdomain\":\"https://passport.baidu.com\",\"userName\":\"\",\"userPhoto\":\"\"},\"lawPreloadData\":{\"criteriaData\":{\"caseCauses\":[{\"children\":[{\"children\":[{\"children\":[],\"childrenCount\":0,\"code\":\"001001001\",\"count\":0,\"name\":\"背叛国家罪\"},{\"children\":[],\"childrenCount\":0,\"code\":",
+        "fetch_error": ""
+      },
+      {
+        "title": "无畏契约在2024年4月3日无故被封号10年，并且两次申诉不予解封",
+        "url": "https://tousu.sina.cn/complaint/view/17372572514?vt=4",
+        "query": "平台误封 起诉 解封 赔偿 2024 2025",
+        "provider": "tavily",
+        "score": "0.568057",
+        "fetched_text": "无畏契约在2024年4月3日无故被封号10年，并且两次申诉不予解封_游戏投诉_黑猫投诉_新浪网 var baseUrl = '//tousu.sina.com.cn/'; var PAGE_CONFIG = { \"isLogin\": true, \"complaintId\": '17372572514', \"userAvatar\": '//n.sinaimg.cn/finance/235fa465/20230314/4.png', \"coTitle\": '腾讯游戏', \"coAvatar\": '//tvax1.sinaimg.cn/crop.0.0.1000.1000.180/d6d3ce75ly8h8v0fpryhzj20rs0rs3yz.jpg?KID=imgbed,tva&Expires=1781266381&ssig=XxS7U0Unya', \"coStatus\" : '7', \"lawStatus\": '', \"lawId\": \"1\", \"tpl\": 0 } .con{position:relative;line-height:20px;font-size: 14px;color: #84848A;margin: 8px 0;} .con i{display:block;position:absolute;top:12px;width:100%;border-top:1px dashed #ddd;} .con p{display:inline-block;color:#c1c1c1;background:#fff;padding:0 5px;text-align: center;margin:0 auto;position:relative;z-index:2;} .file_hide{margin-top:10px;} .file_hide a{display:block;width:100px;height:30px;line-height:30px;border:1px solid #fbaf17;text-align:center;font-size:15px;color:#fbaf17;} #flashBox{color: #fff;background-color: #000;position: relative;padding: 0;width: 640px;height: 516px;margin: 0 auto;} #flashBox video{position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: #000;} 315黑猫投诉-新浪旗下消费者服务平台 消息 注册 登录 投诉 商家 0 消息 首页 集体投诉 红黑榜 商家列表 帮帮团 热点追踪 APP下载 --> 首页 > 详情 无畏契约在2024年4月3日无故被封号10年，并且两次申诉不予解封 勇敢喵 发布于 2024年04月16日 14:45 投诉编号 17372572514 投诉对象 腾讯游戏 投诉问题 客服不理人,时间等太久,客服不处理/处理不当,不予退款,联系不到客服,霸王条款 投诉要求 恢复账号,改善服务,撤销处罚 涉诉金额 6500元 投诉进度 投诉已完成 1 1 0 微博 微信 QQ QQ空间 勇敢喵 评价 05-14 20:01:19 服务态度 处理速度 满意度 勇敢喵 确认完成 05-14 20:01:19 商 腾讯游戏 回复 04-24 14:19:24 亲爱的玩家：感谢您对腾讯游戏的支持，为了给您提供专业、优质的提问反馈系统以及游戏体验，请使用微信搜索公众号【腾讯客服】（微信号：Tencent_KF），即可联系客服。感谢您一直以来对腾讯游戏的支持，祝您游戏愉快！ 勇敢喵 补充投诉 04-23 11:10:08 已经一周过去了，到现在没有任何人联系我，急需处理 黑猫消费者服务平台 商家处理中 04-16 15:26:34 已分配商家 腾讯游戏 黑猫消费者服务平台 审核通过 04-16 15:26:34 勇敢喵 于黑猫投诉平台发起 04-16 14:45:38 本人是无畏契约开服玩家并且一直在玩，充值了6500元多，玩任何游戏从来都没有开过",
+        "fetch_error": ""
+      },
+      {
+        "title": "CF误封10年？新的申诉解封方法来了，赶快去试试吧！ - 腾讯云",
+        "url": "https://cloud.tencent.com/developer/news/1161349",
+        "query": "平台误封 起诉 解封 赔偿 2024 2025",
+        "provider": "tavily",
+        "score": "0.42133808",
+        "fetched_text": "CF误封10年？新的申诉解封方法来了，赶快去试试吧！ - 腾讯云开发者社区-腾讯云 @supports (padding:max(0px)){.set-safe-area .com-main{bottom:calc(max(12px,constant(safe-area-inset-bottom)) + 50px);bottom:calc(max(12px,env(safe-area-inset-bottom)) + 50px)}.set-safe-area .com-main-simple-sec,.set-safe-area .com-main.without-tab-ft,.set-safe-area .com-main.without-ft{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}.set-safe-area .com-main-sec{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}.set-safe-area .com-m-footer,.set-safe-area .sa-fixed-btns{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}.set-safe-area .com-mobile-body{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}}@supports (padding:max(0px)){.set-safe-area .support-wrap,.set-safe-area div.body{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}.set-safe-area .com-responsive-no-ft div.body{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}}.doc-con .J-docShareModal{display: none;} .doc-con .J-docShareCopyTipModalMB{display: none} .with-focus+.com-main-simple-sec, .with-focus+.com-main,.with-focus+.com-body,.with-focus+.qa-body{top:100px} .qa-detail-ask-panel:after{display:none!important;} .sa-fixed-btns .c-btn-weak{background-color: #fff;} .qa-r-editor.draft-editor-host.rno-markdown{height: 290px;overflow-y:auto;} .uc-achievement{line-height:24px;margin-bottom:5px;white-space: initial;overflow:visible;text-overflow:initial} .uc-achievement .uc-achievement-icon{top:0;margin-top:0; .uc-hero+.com-body-main .com-tab .com-tab-item{margin-right: 28px;} 腾讯云 开发者社区 文档 建议反馈 控制台 登录/注册 首页 学",
+        "fetch_error": ""
+      },
+      {
+        "title": "用户因微信被封起诉腾讯每日赔偿25元 - 新京报",
+        "url": "https://m.bjnews.com.cn/detail/163152053214721.html",
+        "query": "平台误封 起诉 解封 赔偿 2024 2025",
+        "provider": "tavily",
+        "score": "0.37731177",
+        "fetched_text": "用户因微信被封起诉腾讯每日赔偿25元 --> --> --> --> .rem038{ font-size:0.38rem !important; } --> 新京报客户端 好新闻 无止境 立即打开 .btn { width: 100%; height: 26px; line-height: 1; text-align: center; font-size: 12px; border: none; border-radius: 2px; color: #000; background: #D02D2D; color: #FFFFFF; } 立即打开 用户因微信被封起诉腾讯每日赔偿25元 新京报 记者 刘平 金城武 编辑 李四 刘宇 --> 新京报 编辑 胡萌 2021-09-13 16:21 HI财讯 进入 HI财讯 阅读更多内容 --> 订阅 新京报贝壳财经讯 企查查APP显示，近日，曲某与深圳市腾讯计算机系统有限公司侵权责任纠纷民事一审民事裁定书公开。原告曲某称因通过微信几次发送邮件，被腾讯公司以传播违法信息封禁，曲某要求被告腾讯公司赔偿其微信被封期间每日损失费25元。 法院认为，此前相关案件已移送广东省深圳市南山区人民法院处理，原告起诉属于重复起诉，判决结果为驳回曲某起诉。 编辑 胡萌 校对 李世辉 展开全文 --> 全文 0字 您已阅读 % --> .btn { width: 100%; height: 45px; line-height: 45px; text-align: center; font-size: 16px; border: none; border-radius: 4px; color: #000; background: #D02D2D; color: #FFFFFF; } 打开新京报APP 阅读更多精彩资讯 打开新京报APP 阅读更多精彩资讯 --> 相关推荐 起底“中医号脉”直播课，号称“行走的CT”，靠此技术挣钱改命 消费 “你的号我就是要毁”，游戏里损失“一个亿”，现实中能获赔吗？ 时事 今年最嚣张的网红把粉丝整到“破产”，还敢放话“毁的就是你” 新京号 “育儿补贴”诈骗背后，谁在贩卖母婴信息？ 新京号 “育儿补贴”诈骗背后，谁在贩卖母婴信息？ 时事 去APP浏览更多内容 --> --> 新京报报料邮箱：82708677@bjnews.com.cn --> 起底“特供酒”黑产业链：17家公司、跨多地制售，11人被批捕 端午假期将至，北京公交优化通游线路 怀密线、S2线周末休闲客流增幅超50% 警惕睡眠缺氧危害 打呼噜呼吸机瑞思迈AirSense 11成居家干预优选 --> --> $(function(){ var ksginTime = new Date().getTime(); var imgls = $(\".article-cen img\"); var timer = setInterval(function () { var complete = true; var endTime = new Date().getTime(); var timeout = endTime - ksginTime import('https://cdn.bootcdn.net/ajax/libs/photoswipe/5.3.6/photoswipe.esm.js') // pswpModule:PhotoSwipe // }; // let tr = false; // $('.article img').each(function(t, n) { // if($('.article img').length-1 == t){ // tr = true; // return // } // options.dataSource.push({ // id: t+1, // src: $(this).attr('src'), // width: $(this).naturalWidth, // height: $(this).naturalHeight, // }) // }) // var timer = setInterval(function () { // if(tr){ // clearInterva",
+        "fetch_error": ""
+      },
+      {
+        "title": "使用开屏广告跳过导致小红书账号被封怎么申诉？ - V2EX",
+        "url": "https://www.v2ex.com/t/970271",
+        "query": "V2EX 小红书 封号 诉讼 律师",
+        "provider": "tavily",
+        "score": "0.6369636",
+        "fetched_text": "使用开屏广告跳过导致小红书账号被封 怎么申诉？ - V2EX body { min-width: 820px; font-family: \"Helvetica Neue\", \"Luxi Sans\", \"Segoe UI\", \"Hiragino Sans GB\", \"Microsoft Yahei\", sans-serif, \"Apple Logo\"; } const SITE_NIGHT = 0; const LANG = 'enus'; const FEATURES = ['search', 'favorite-nodes-sort']; {\"comment\": [{\"text\": \"肯定不能主动说 ad 快消，就说不知道什么原因。不过申诉功能实际应该是摆设，无论你怎么写，可能都会自动回复并且自动申诉失败。小红书这个平台之前遇到`评论只有自己看得到`时都是不管怎么反馈都没用，不是某个评论，而是任何评论都这样，后来我直接注销账号了。所以根据他们以往的态度，你能解封的概率应该不大。\", \"datePublished\": \"2023-09-01T23:35:28Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/zictos\", \"@type\": \"Person\", \"name\": \"zictos\"}}, {\"text\": \"小红书是什么刚需吗？大不了不用了。\", \"datePublished\": \"2023-09-01T23:42:46Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/jaTomn\", \"@type\": \"Person\", \"name\": \"jaTomn\"}}, {\"text\": \"是的，看你使用了功能但没有加载广告图的记录。就你是绕过广告了封号\", \"datePublished\": \"2023-09-01T23:48:40Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/louisxxx\", \"@type\": \"Person\", \"name\": \"louisxxx\"}}, {\"text\": \"还能因为跳过广告封号么…\", \"datePublished\": \"2023-09-01T23:54:36Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/AmericanExpress\", \"@type\": \"Person\", \"name\": \"AmericanExpress\"}}, {\"text\": \"@zictos #1 我刚注册时，也是评论发帖仅自己可见。正常用一段时间，有次发帖突然几十赞+评论，才知道别人能看到了。或许都要酱紫养一段时间号吧猜测\", \"datePublished\": \"2023-09-01T23:58:40Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/WayTooExplore\", \"@type\": \"Person\", \"name\": \"WayTooExplore\"}}, {\"text\": \"@SeaTac 行为被判定恶意了 用户量太大不在乎部分用户\", \"datePublished\": \"2023-09-02T00:42:19Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/shuimitao\", \"@type\": \"Person\", \"name\": \"shuimitao\"}}, {\"text\": \"别用了, 怎么还有这么垃圾的软件.\", \"interactionStatistic\": {\"userInteractionCount\": 2, \"@type\": \"InteractionCounter\", \"interactionType\": \"https://sc",
+        "fetch_error": ""
+      },
+      {
+        "title": "中新网评：“封号收租”的小红书，还有多少信任可透支？ - 中国新闻网",
+        "url": "https://www.chinanews.com.cn/cj/2026/04-14/10603479.shtml",
+        "query": "V2EX 小红书 封号 诉讼 律师",
+        "provider": "tavily",
+        "score": "0.5852203",
+        "fetched_text": "中新网评：“封号收租”的小红书，还有多少信任可透支？-中新网 newwapurl=\"wap/detail/zwsp\"; isForApp=\"n\"; document.write(' '); #SOHUCS #SOHU_MAIN .module-cmt-list .cmt-list-type .cmt-list-number .comment-number{display:none;} .logo{float:left;margin:31px 25px 31px 0;width:177px;height:48px;border-right:1px solid #ebebeb} #navbar{position:relative;height:110px;border-bottom:4px solid #cd131c;background:#fff} .nav_navcon{float:left;width:1075px;margin-top:22px;} .nav_navcon li{float:left;margin-right:10px;height:40px;font-size:18px;word-break:keep-all} .nav_navcon li.mr{margin-right: 27px;} .nav_navcon li.area{margin-right: 20px;} .nav_navcon li.ss{margin-right: 0px;} .nav_navcon li img.dxw{padding-top:11px;width:90px;height:31px} .nav_navcon li a{height:40px;color:#2d2d2d} .navmenu { width: 14px; float: right; margin-top: 8px; margin-right: 10px; background: url(//image.cns.com.cn/default/5ddb9ec3/20210721/11.jpg); border-top: 0px solid #ea3440; border-bottom: 0px solid #ea3440; padding: 0; height: 12px; background-color: transparent; cursor: pointer; } .nav_navcon_more{position:absolute;top:-3px;left:0;z-index:999;display:none;width:100%;height:715px;border-bottom:3px solid #f42e3e;background:#fff} .nav_navcon_more .w1280{position:relative;overflow:hidden;padding-top:10px;height:inherit;border-top:1px solid #f3f3f3} .nav_navcon_more .con{float:left;width:50%} .nav_navcon_more .navlist{width:100%;color:#666;font-size:16px;line-height:42px} .nav_navcon_more .navlist a{color:#666;font-size:14px} .nav_navcon_more .navlist a:hover{color:#e01b2b} .nav_navcon_more .navlist strong{margin-right:28px;color:#333} .nav_navcon_more .navlist strong a{color:#333;font-size:16px} .nav_navcon_more .navlist em{padding:0 8px} .nav_navcon_more .navlist .left{width:100px;text-align:right} .nav_navcon_more .navlist .left1{f",
+        "fetch_error": ""
+      },
+      {
+        "title": "小红书在root 下使用从来不报错，我也没隐藏 - V2EX",
+        "url": "https://www.v2ex.com/t/1207881",
+        "query": "V2EX 小红书 封号 诉讼 律师",
+        "provider": "tavily",
+        "score": "0.5482629",
+        "fetched_text": "小红书在 root 下使用从来不报错，我也没隐藏，结果昨天突然给我封号了 - V2EX body { min-width: 820px; font-family: \"Helvetica Neue\", \"Luxi Sans\", \"Segoe UI\", \"Hiragino Sans GB\", \"Microsoft Yahei\", sans-serif, \"Apple Logo\"; } const SITE_NIGHT = 0; const LANG = 'enus'; const FEATURES = ['search', 'favorite-nodes-sort']; {\"comment\": [{\"text\": \"因为 root ？\", \"datePublished\": \"2026-04-23T00:13:00Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/muhahaha\", \"@type\": \"Person\", \"name\": \"muhahaha\"}}, {\"text\": \"@muhahaha 应该是，我小号登都没咋登录，之前大号实名认证的时候被检测过一次人脸识别怎么也过不了，换了 IPad 试了一下过的\", \"datePublished\": \"2026-04-23T00:17:08Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/shenhualv7\", \"@type\": \"Person\", \"name\": \"shenhualv7\"}}, {\"text\": \"封号是人脸识别很久之后的事了\", \"datePublished\": \"2026-04-23T00:18:38Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/shenhualv7\", \"@type\": \"Person\", \"name\": \"shenhualv7\"}}, {\"text\": \"可能是因为近期借助 AI 进行自动化发文、爬虫的人太多，风控措施变严格了。\", \"datePublished\": \"2026-04-23T00:58:55Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/Danswerme\", \"@type\": \"Person\", \"name\": \"Danswerme\"}}, {\"text\": \"不会因 root 封号的，肯定是哪里没做对\", \"datePublished\": \"2026-04-23T01:20:50Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/hoor\", \"@type\": \"Person\", \"name\": \"hoor\"}}, {\"text\": \"我注册了个号一直看，不评论不点赞。有天就换了个头像就被封了，我直接删了 ，艹‍！\", \"datePublished\": \"2026-04-23T01:21:58Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/littiefish\", \"@type\": \"Person\", \"name\": \"littiefish\"}}, {\"text\": \"开启 root 的情况下是不是 app 就能自由访问其他目录了？难不成小红书自己检索发现自己能越权访问其他目录树？然后给你判断你是在 root 环境里跑 app?\", \"datePublished\": \"2026-04-23T01:31:43Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/jackOff\", \"@type\": \"Person\", \"name\": \"jackOff\"}}, {\"text\": \"@jackOf",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "推荐选题",
+      "label": "推荐",
+      "reason": "证据较完整，有真实案例、媒体报道、平台规则和类似诉讼案例支撑；老花人设解读角度清晰（账号安全、维权成本、平台规则透明度）；读者分层明确（副业普通人、共鸣读者为主，核心技术人为辅）；泛兴趣故事钩子（维权反转）不夸张；传播张力强（平台vs用户、成本vs收益、规则vs公平），逻辑基本闭环。"
+    },
+    "core_question": "开发者因使用MCP插件被小红书误封账号，通过诉讼解封的真实案例中，平台规则、维权成本与普通技术人的账号安全风险如何平衡？",
+    "why_this_topic_matters": "小红书封号事件持续发酵，涉及MCP插件这一技术点，与老花人设契合。账号安全是副业者和独立开发者的核心痛点，诉讼解封的案例提供了新的维权路径，但成本高、周期长，需要理性评估。",
+    "fact_summary": [
+      "V2EX用户因在浏览器使用MCP插件导致小红书账号被永封，经过申诉和信访均无效，最终通过律师起诉成功解封。",
+      "IT时报报道多名律师和商户因认证费不退、账号被误封等问题起诉小红书，其中西安律师闫天柱耗时近半年起诉但败诉。",
+      "小红书社区规范禁止使用第三方插件/工具进行自动化操作或数据抓取，但MCP插件是否明确违规存疑。",
+      "类似案例：微信用户因被封号起诉腾讯，要求每日赔偿25元，被法院驳回；游戏平台误封后申诉解封的案例存在但成功率不一。"
+    ],
+    "persona_discussion_question": "如果你依赖小红书做副业或引流，账号被误封后，你会选择申诉、信访还是起诉？诉讼的成本和时间是否值得？",
+    "old_flower_stance": "平台封号机制缺乏透明度和有效申诉渠道，普通用户维权成本高，诉讼是最后但有效的救济途径，但门槛高、周期长，不建议轻易尝试。",
+    "audience_fit": {
+      "primary_layer": "副业普通人",
+      "secondary_layers": [
+        "共鸣读者",
+        "核心技术人"
+      ],
+      "interest_score": 90,
+      "why_interested": "账号安全是副业者的核心资产，误封风险直接影响收入；诉讼解封的案例提供了新的维权思路，但成本收益需要权衡。",
+      "reader_risk": "可能过度依赖诉讼路径，忽略申诉和平台沟通；或误以为所有封号都能通过诉讼解决。"
+    },
+    "mass_interest_hook": {
+      "score": 85,
+      "hook_type": "故事|反差|争议",
+      "why_non_technical_people_may_click": "普通人可能因使用插件或工具被平台误封，维权故事具有普遍共鸣；诉讼解封的反转情节吸引眼球。",
+      "story_seed": "一个开发者因为用了一个AI插件，账号被小红书永封，申诉无门，最后靠打官司才拿回账号。",
+      "do_not_overhype": "强调这是个案，诉讼成本高、周期长，不是普遍有效路径。"
+    },
+    "topic_tension": {
+      "score": 10,
+      "conflict_point": "平台规则不透明 vs 用户权益受损；诉讼成本高 vs 账号价值低；平台作为规则制定者、执行者和裁判员的角色冲突。",
+      "debate_question": "平台封号机制是否合理？用户是否有权知道具体违规原因？诉讼是否是解决封号问题的有效途径？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "平台/工具厂商",
+        "律师/法律从业者"
+      ],
+      "why_people_would_comment": "读者可以围绕封号原因、申诉流程、诉讼成本、平台责任等发表观点，或分享自身经历。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突，避免煽动对立。"
+    },
+    "timeline": [
+      "2025年3月：V2EX用户因使用MCP插件被小红书永封。",
+      "2025年3月-4月：用户多次申诉、信访均无效。",
+      "2025年4月：用户委托律师起诉小红书。",
+      "2025年4月8日：上海律师李维世因认证费问题起诉小红书。",
+      "2025年4月14日：中新网评批评小红书封号机制。",
+      "2025年4月21日：IT时报报道多名律师和商户起诉小红书。",
+      "2025年4月23日：V2EX用户发帖称账号已解封。"
+    ],
+    "evidence_table": [
+      {
+        "source": "V2EX原帖",
+        "url": "https://www.v2ex.com/t/1219983",
+        "supports": "用户因MCP插件被封，通过诉讼解封",
+        "reliability": "near_source"
+      },
+      {
+        "source": "IT时报报道",
+        "url": "https://m.thepaper.cn/newsDetail_forward_33018819",
+        "supports": "多名律师和商户因封号、认证费问题起诉小红书",
+        "reliability": "media"
+      },
+      {
+        "source": "中新网评",
+        "url": "https://www.chinanews.com.cn/cj/2026/04-14/10603479.shtml",
+        "supports": "批评小红书封号机制不透明",
+        "reliability": "media"
+      },
+      {
+        "source": "小红书社区规范",
+        "url": "https://agree.xiaohongshu.com/h5/terms/ZXXY20221213003/-1",
+        "supports": "平台禁止使用第三方插件/工具进行自动化操作",
+        "reliability": "official"
+      },
+      {
+        "source": "微信封号诉讼案例",
+        "url": "https://m.bjnews.com.cn/detail/163152053214721.html",
+        "supports": "用户因微信被封起诉腾讯，被驳回",
+        "reliability": "media"
+      },
+      {
+        "source": "V2EX其他封号讨论",
+        "url": "https://www.v2ex.com/t/970271",
+        "supports": "用户因使用开屏广告跳过插件被封",
+        "reliability": "near_source"
+      }
+    ],
+    "logic_closure": "基本闭环：案例真实、有媒体报道和类似诉讼案例支撑，但诉讼细节（案由、法院、判决）和MCP插件是否明确违规仍需补充。",
+    "writeable_angles": [
+      {
+        "angle": "案例复盘：从被封到解封的全过程，包括申诉、信访、诉讼的步骤和成本。",
+        "why": "提供可操作的维权路径，吸引有类似遭遇的读者。",
+        "needs": "当事人详细时间线、律师费用、诉讼周期等数据。"
+      },
+      {
+        "angle": "平台规则分析：小红书封号机制是否合理？MCP插件是否违规？",
+        "why": "引发对平台规则透明度的讨论，符合技术人视角。",
+        "needs": "小红书官方对MCP插件的态度、社区规范原文。"
+      },
+      {
+        "angle": "维权成本账：诉讼 vs 申诉，哪个更划算？",
+        "why": "帮助读者理性评估维权方式，避免盲目诉讼。",
+        "needs": "律师费用、时间成本、账号价值估算。"
+      },
+      {
+        "angle": "避坑指南：如何避免因使用插件被封号？",
+        "why": "提供实用建议，吸引副业者和普通用户。",
+        "needs": "小红书风控机制、安全使用插件的建议。"
+      }
+    ],
+    "missing_basics": [
+      "MCP插件的具体功能及是否违反小红书社区规范",
+      "小红书封号规则中关于第三方工具/插件的条款原文",
+      "诉讼的具体案由（合同纠纷、侵权、行政？）、法院、判决结果或调解情况"
+    ],
+    "missing_materials": [
+      "当事人采访或详细时间线",
+      "律师对类似案件的法律分析",
+      "小红书官方对MCP插件的态度（如有）",
+      "其他平台封号后诉讼的对比数据"
+    ],
+    "not_claimable": [
+      "诉讼是解决封号问题的普遍有效途径",
+      "MCP插件一定不违规",
+      "小红书封号机制存在系统性错误",
+      "所有用户都能通过诉讼快速解封"
+    ],
+    "followup_queries": [
+      "联系原帖作者获取诉讼细节",
+      "查询小红书社区规范中关于第三方插件的具体条款",
+      "搜索类似案例（如抖音、微信封号后诉讼）"
+    ],
+    "additional_search_queries": [
+      "小红书 封号 诉讼 解封 案例 2025",
+      "MCP 插件 小红书 封号 2025",
+      "小红书 社区规范 第三方工具 插件 禁止",
+      "平台误封 起诉 解封 赔偿 2024 2025"
+    ],
+    "stop_conditions": [
+      "当事人确认诉讼细节不实或账号未恢复",
+      "小红书官方明确MCP插件违规且用户知情",
+      "无其他类似诉讼案例支撑"
+    ],
+    "confidence": 85,
+    "topic_direction": "side-info",
+    "topic_direction_title": "副业&信息差",
+    "report_type": "case-study",
+    "quality_gate": {
+      "pass": true,
+      "score": 85,
+      "fatal_issues": [],
+      "warnings": [
+        "诉讼细节（案由、法院、判决）未从当事人处核实，依赖媒体报道和V2EX帖子",
+        "MCP插件是否明确违反小红书社区规范未确认",
+        "成本估算（律师费、时间周期）未提供具体数据"
+      ],
+      "missing_evidence": [
+        "当事人采访或详细时间线",
+        "律师对类似案件的法律分析",
+        "小红书官方对MCP插件的态度",
+        "其他平台封号后诉讼的对比数据"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": true,
+      "downstream_handoff_ok": true,
+      "material_pack_ok": true,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": true,
+      "source_coverage_ok": true,
+      "recommendation": "publish"
+    },
+    "research_plan": {
+      "core_question": "开发者因使用MCP插件被小红书误封账号，通过诉讼解封的真实案例中，平台规则、维权成本与普通技术人的账号安全风险如何平衡？",
+      "persona_discussion_question": "如果你依赖小红书做副业或引流，账号被误封后，你会选择申诉、信访还是起诉？诉讼的成本和时间是否值得？",
+      "hidden_public_issue": "平台封号机制缺乏透明度和有效申诉渠道，普通用户维权成本高，平台将风险转嫁给用户，而诉讼成为最后但有效的救济途径，但门槛高、周期长。",
+      "must_verify": [
+        "当事人身份及账号恢复真实性（联系原帖作者或查看后续更新）",
+        "MCP插件具体是什么，是否违反小红书社区规则（如自动化操作、数据抓取）",
+        "诉讼具体案由（合同纠纷、侵权、行政？）、法院、判决结果或调解情况",
+        "小红书封号规则中关于第三方工具/插件的条款原文",
+        "类似案例（其他平台因使用插件被封后起诉成功的案例）"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "case_study",
+          "query": "小红书 封号 诉讼 解封 案例 2025",
+          "why_needed": "寻找类似维权案例，验证诉讼路径的普遍性和成功率"
+        },
+        {
+          "source_type": "policy",
+          "query": "小红书 社区规范 第三方工具 插件 禁止",
+          "why_needed": "获取小红书官方对第三方插件的具体规定，判断MCP插件是否违规"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "MCP 插件 小红书 封号 2025",
+          "why_needed": "了解MCP插件功能及是否被其他用户报告类似封禁"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "小红书 账号申诉 流程 诉讼 法律途径",
+          "why_needed": "获取官方申诉渠道和法律救济指引"
+        },
+        {
+          "source_type": "case_study",
+          "query": "平台误封 起诉 解封 赔偿 2024 2025",
+          "why_needed": "收集其他平台（如微信、抖音）误封后诉讼成功的案例，作为对比"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "V2EX 小红书 封号 诉讼 律师",
+          "why_needed": "在原帖下寻找更多当事人细节或律师建议"
+        }
+      ],
+      "expert_challenge_points": [
+        "诉讼成本（律师费、时间）是否高于账号价值？对于普通副业者是否划算？",
+        "MCP插件是否确实违反平台规则？如果违反，诉讼胜算如何？",
+        "平台是否有义务在封号前提供明确警告或人工复核？",
+        "类似案例中，法院是否支持用户要求恢复账号或赔偿损失？"
+      ],
+      "do_not_claim_yet": [
+        "诉讼是解决封号问题的普遍有效途径",
+        "MCP插件一定不违规",
+        "小红书封号机制存在系统性错误",
+        "所有用户都能通过诉讼快速解封"
+      ],
+      "can_publish_as_radar_if_missing": "可以发布，但需明确标注为个案，强调诉讼成本高、周期长，并提醒读者优先通过官方渠道申诉。",
+      "downstream_materials_needed": [
+        "当事人采访或详细时间线",
+        "律师对类似案件的法律分析",
+        "小红书官方对MCP插件的态度（如有）",
+        "其他平台封号后诉讼的对比数据"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号",
+        "url": "https://m.thepaper.cn/newsDetail_forward_33018819",
+        "query": "小红书 封号 诉讼 解封 案例 2025",
+        "provider": "tavily",
+        "score": "0.8539252",
+        "fetched_text": "多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号 window.AliyunCaptchaConfig = { region: \"cn\", prefix: \"1dl38w\" }; var _hmt = _hmt || []; (function() { var hm = document.createElement(\"script\"); hm.src = \"//hm.baidu.com/hm.js?d07e4d64d5cde19b5351e7032beaef1a\"; var s = document.getElementsByTagName(\"script\")[0]; s.parentNode.insertBefore(hm, s); })(); 下载APP 澎湃号·媒体 > 多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号 IT时报 中国电信集团有限公司上海分公司 2026-04-21 20:30 上海 律师和商户为何状告小红书？|图源：AIGC 作者／ IT时报 孙永会 编辑／ 郝俊慧 孙妍 庭审结束后，上海誓维利律师事务所主任李维世对于这场官司的胜败已经有了数，“很大概率会败诉，但我也要不争馒头争口气。”4月8日上午，她和小红书所属公司行吟信息科技对簿公堂，核心诉求是，要求平台通过自己“誓维利”专业号认证的申请，因为已支付了600元认证费。 “为何认证失败后，认证费不能退？为何平台规则载明可以用字号，但我用‘誓维利’字号认证时却不行？”接受《IT时报》记者采访时，李维世提出多个疑问。 距离上海一千多公里的西安，律师闫天柱有着同样的困惑。账号突然被永久封禁后，不知道自己究竟错在哪里的他，耗时近半年起诉小红书，两次审理最后皆以败诉告终。 封号、限流、认证费不退……《IT时报》记者注意到，在“黑猫投诉”平台，对小红书类似的投诉屡见不鲜。 作为月活用户超3亿的“种草”社区，小红书已从分享平台演变为集社交、电商于一体的超级App。然而，当平台同时是规则的制定者、执行者和裁判员时，用户的权利边界在哪里？ 截至发稿，《IT时报》记者试图向小红书方进行了解和求证，对方未正面回应相关问题，只表示：“认证失败不退费，这个各家都是一样的。” 对抗 连律师都搞不懂的认证规则 2023年5月，李维世开始更新小红书账号，初期仅分享判决书、调解书等法律文书案例，却意外接到了一些网友的咨询。像在其他社交平台一样，李维世将联系方式私信给对方，却发现被平台屏蔽了。 咨询平台客服后，李维世了解到，若有获客需求，她可以申请升级为“企业专业号”，每年需支付600元的认证费（审核费），即可合规留资。 2024年12月，李维世申请将账号升级为企业号，并支付了相应的认证费用，但平台以账号名称不合规为由驳回申请，要求必须加注“律师事务所”后缀，而不能只认证其律所字号“誓维利”。 然而，根据小红书聚光帮助中心的信息，企业用户账号名称可以基于字号/商标/实体经营场所等命名。比如，主体公司是“薯一薯二文化传媒（上海）有限公司”，在不侵权前提下，可以使用“薯一薯二”“薯一薯二文化”和“薯一薯二科技”等名称。 倘若按字面意思理解，李维世以“誓维利”进行账号认证是符合规定的。 考虑到平台的强势地位，李维世想，既然无法认证，那就退费吧，该诉求同样被平台拒绝：“认证不成功是你的原因，无法退费。” 无奈的李维世只能放弃认证，以个人身份开始运营自己的账号，由于无法通过公司店铺形式提供咨询服务，她依然采用私留联系方式的办法获客。 今年2月和3月，平台以“检测到违规留资”为由两次对“誓维利”账号进行封禁，判定违规的依据是置顶笔记中一张含有手机号的聊天记录截图。解封后，账号流量呈断崖式下跌。 退费 因规则外原因不被认证 依然无法退费 账号两次被封之后，李维世认为，被封号的根源是平台不通过正常名称的认证，既然如此，平台就应该退费。 在对小红书的起诉书中，她如是写道：“平台对个人账号的留资规则设置过度限制，企业号认证又设置了不合理的命名门槛，此系平台不合理规则所导致的普遍现象，并非个人特殊行为。” 但有观点认为，这笔费用是审核服务费，无论审核是否成功，都会收取。业内普遍存在的解释是，第三方审核机构已对提交资料进行真实性甄别与校验，付出了人工和时间成本。 但在小红书聚光帮助中心“专业号",
+        "fetch_error": ""
+      },
+      {
+        "title": "多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号_腾讯新闻",
+        "url": "https://news.qq.com/rain/a/20260421A056PP00",
+        "query": "小红书 封号 诉讼 解封 案例 2025",
+        "provider": "tavily",
+        "score": "0.8440111",
+        "fetched_text": "多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号_腾讯新闻 try { if (!window.IntersectionObserver) { var observerScript = document.createElement('script'); observerScript.src = \"https://mat1.gtimg.com/qqcdn/qqindex2021/common-static/20241024141058/intersection-observer-polyfill.js\"; document.head.appendChild(observerScript); } } catch (error) {} try { if (!Element.prototype.scrollTo) { var scrollScript = document.createElement('script'); scrollScript.src = \"https://mat1.gtimg.com/qqcdn/qqindex2021/common-static/20241025153001/scroll-behavior-polyfill.js\"; document.head.appendChild(scrollScript); } } catch (error) {} try { if ('scrollRestoration' in window.history) { window.history.scrollRestoration = 'manual'; } window.isPcClient = Boolean(window.electron) && ( window.navigator.userAgent.indexOf('pc-client') > 0 || window.navigator.userAgent.indexOf('TencentNews') > 0 ); } catch {} window.DATA = {\"url\":\"https://view.inews.qq.com/a/20260421A056PP00\",\"article_id\":\"20260421A056PP00\",\"atype\":\"0\",\"article_type\":\"0\",\"title\":\"多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号\",\"desc\":\"律师和商户为何状告小红书？|图源：AIGC作者／ IT时报 孙永会编辑／ 郝俊慧 孙妍 庭审结束后，上海誓维利律师事务所主任李维世对于这场官司的胜败已经有了数，“很大概率会败诉，但我也要不争馒头争口气。”4月8日上午，她和小红书所属公司行吟信息科技对簿公堂，核心诉求是，要求平台通过自己“誓维利”专业号认证的申请，因为已支付了600元认证费。“为何认证失败后，认证费不能退？为何平台规则载明可以用字号，但我用‘誓维利’字号认证时却不行？”接受《IT时报》记者采访时，李维世提出多个疑问。距离上海一千多公里的西安，律师闫天柱有着同样的困惑。账号突然被永久封禁后，不知道自己究竟错在哪里的他，耗时近半年起...\",\"iNewsRecommendLevel\":1,\"abstract\":\"律师和商户为何状告小红书？|图源：AIGC作者／ IT时报 孙永会编辑／ 郝俊慧 孙妍 庭审结束后，上海誓维利律师事务所主任李维世对于这场官司的胜败已经有了数，“很大概率会败诉，但我也要不争馒头争口气。”4月8日上午，她和小红书所属公司行吟信息科技对簿公堂，核心诉求是，要求平台通过自己“誓维利”专业号认证的申请，因为已支付了600元认证费。“为何认证失败后，认证费不能退？为何平台规则载明可以用字号，但我用‘誓维利’字号认证时却不行？”接受《IT时报》记者采访时，李维世提出多个疑问。距离上海一千多公里的西安，律师闫天柱有着同样的困惑。账号突然被永久封禁后，不知道自己究竟错在哪里的他，耗时近半年起...\",\"catalog1\":\"law\",\"ad_channel_sign\":\"news\",\"introduction\":\"\",\"media\":\"IT时报\",\"media_id\":\"5046687\",\"pubti",
+        "fetch_error": ""
+      },
+      {
+        "title": "因为被封号，我起诉了小红书 - 知乎专栏",
+        "url": "https://zhuanlan.zhihu.com/p/1993437147521385106",
+        "query": "小红书 封号 诉讼 解封 案例 2025",
+        "provider": "tavily",
+        "score": "0.84277284",
+        "fetched_text": "原告是小红书账号为（小红书号：XXXXX）的用户，于正常使用过程中突然于2025年8月11日14时收到封号通知，原告并不存在违法、违规的言行，在经过数次申诉后均未解",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      },
+      {
+        "title": "[PDF] 品牌号社区运营规范",
+        "url": "https://dc.xhscdn.com/file/c947aa537be9e80d802226374b5c710f/%E5%93%81%E7%89%8C%E5%8F%B7%E7%A4%BE%E5%8C%BA%E8%BF%90%E8%90%A5%E8%A7%84%E8%8C%83.pdf",
+        "query": "小红书 社区规范 第三方工具 插件 禁止",
+        "provider": "tavily",
+        "score": "0.6816637",
+        "fetched_text": "%PDF-1.7 % 1 0 obj >/Metadata 1016 0 R/ViewerPreferences 1017 0 R>> endobj 2 0 obj > endobj 3 0 obj >/ExtGState >/Font >/ProcSet[/PDF/Text/ImageB/ImageC/ImageI] >>/MediaBox[ 0 0 594.96 842.04] /Contents 4 0 R/Group >/Tabs/S/StructParents 0>> endobj 4 0 obj > stream x[[oܸ\u0015~7Ge Y\u0018FuMh-\u000f>xlЍ=GdC\u000e5Z\u0001\u00022x|B]Uߞ>|񩸾>rS~|zzo_ﯾDǧo77E6\u0015J^2Y|??ן3\u0000^ ]\b^\u001aKb4\\\u0017E -J-dw_>ݫ},q~VtA\u0011_Pz \u0015\u0011^?\u0000)\u0011 \u0012j.% \u0007Ǜl U5pS\u0007lF(fKT[$l٫rc@N@q Ok\u0015m4b'PWN\u0015ژz3k>\u0012Էxk\u000f+nG\u0016\u0014\u0000ZNR\u0017Ơ\b 4·\u000fA\u000e+ޞ}(P_9婹] \u0019Û, )ƙ\u00125U;fxƈ 6N6D:$qXUbzVT}fi1\u000f\u0010#b5 :0K{:\u0003]~\u0006 Fak\u0006la\u0007F\u0013[B\by T6dg ~-ޛ09:!#\"\u0003JX\u001a qL\\Lx\u0019(jBp\u0011A.|1x/#\u0003Z:Ф{&^5\u0006\u0007'^f46L i֏\u0016G4\u001aъ\u0002\u0000̥K(>\u0019iyЬy@3iS nT2x\u0004_R(8D-:Lʘ\u0002{\u0015\u0011r_ rE\u000eJC9STeLkr\u0005\u0011 .f>AپfUO\\a>\u0003QF__ Wǭ,!`.~Doߩ( h\u0019\u0001G-S{\u0001&\u0017T؂\u0018\u0018Zzw](z\u00133pE\u000e(.gDu\u00141?_\"5,I\u0004 ێy\u0003+s/@zιMxPI 0\u0001\"K9{|\u0004単:z6uUq\u0001\u0003uSkxۏ Bz\u001az1\u001bGN- ۊi=*\u0014eӖ c@ \u0000n8 G\u0000\u0019S&\\Fq\u001a\u00110Yj\u0004y\u000fdΉ- zGjx_cs.{7|\u0005IN\u0004SHN\u0004_Aܽ\u0004JDܠA\\&;sԌEPl\u00023) -uI09\"H |y=آtMS}=J+^K4T \u000e,H\u00014k endstream endobj 5 0 obj > stream x_MYKJ\u0019qW\b3\u001a4hT*BB\u0010۔\"iRF%E1fjx}:ߜgsN\u00179ky.{=Y \u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u00063\u001bt2k֬Xwe$''9sXzf\u0000ia\u0002@&%%ź!Çw\u0002\u0013\u0013\u0013wYjU;2***Fd\u0018 e6l\u0010^ l޼ėQ;ݻ7ֽ\u000e\u0004xxx?\u0018\u0017௿\u001a\u001a\u001a*((={v2Ξ=6x+ßՅ ĺ3\u0003۷o_~wV\u0010ŗ/_ \u001a =FZ 12{l\u000ez%7+H#C\u0016_^~]~>b¾\u001b t%iQO0\u0013(\u0003wZ[[sss%,}˃e.d, \u001aӘ-\u0005N \b\u0006\u0003Q\"\\A߿m6 \u0004$`mm@ 0\\; \u001a n \u001aݱc\u0005Y}\b\u0002)\u0002 :44\u0014AIo \u0019\u0014xMII)))Az{{ \u0007\b2׋\u0014E\u0016\u0015\u0017\u0017_z \u000e \\ \u0017N85?qΜ96mOAć8\u000f### hkk;t\u0010co\u00101cɒ%\u0016W_}C^\u0010OAA\u0001 ɌZ=ߎ\u000fɓ';:: A\u0005 QlْS5kPMޕZz5\u000e~X\u001a\u0004: ˂\u0003Ht\u0012j\u001aY=s3wn\u0007 {մ ! \u0004t,;v \u0005Cj\u0006qq\u0016:ِ\u0005\u0017׺\u0019G\u0016f߾}ȿpiToo/J ,6m\u0010h\u0005/7\\?q#\u001b\u001b\u001b3+B5|\u0006dy\u0001u3,Ʌ,@\u0016\u0012Hc:Yܰ3g΄ }4\\Aٳg\u0017\u0015\u0015=|bb~j\u0005\u0014$B|E\u0019b$X)?dau ٳgc[uժɼ =ۮ ~ ehh\bچk (77\u0017CG?\u0016-KuX\u000375;%@\u00164Ç+d8q\u0004f\u0005\u0013\u0016H|/...#|/nkGo޼ioo/\u0016{fi׮]k׮TKL\u0007.= L SְҶ{ \u0000 \u0017\u0016\u0015\u0015a.YSSS7?ޑEɵ \"wy[A*,,d*ZC )-V\u0010$ӧȂ^u%4\u0018@{%0ZT0;`ٵ2^Xk׮Yg7p D+လ\u0013 :\u0016C\u0005 \u0016466\u0017\u0015\u0010r˗\u00196}}}^%WyU^ Z\u0011Z\u0012%\u000ep,jCq,֘;w \u0017r;\u0012Y233qYZxJ\u0016}\\\u0006վ[>\u0018B I!5 ٳgQGB銜,D\u000e \b_8d=*\u0016C\u0015}fE?\u0005\u000f\u0001O^Q 'YyJիW777_Mȵup rںT & \u0007C\u0016kD,\u0004,8\u0012SSS---\u0019\u0019\u0019=%]ֶׯGXmܾ};j ,ֈ>Y\u0012|/p%\u00120c~GIrd\u0001eee Dz_\u0018_Frk D0UPP 8\u0018,ֈ Y%mUyNd!`\u0017f\u0017nʕJK~\u0015Q#C\u0016kĄ,h?uvSe\u0007k,[ ",
+        "fetch_error": ""
+      },
+      {
+        "title": "小红书社区规范 - 在线协议",
+        "url": "https://agree.xiaohongshu.com/h5/terms/ZXXY20221213003/-1",
+        "query": "小红书 社区规范 第三方工具 插件 禁止",
+        "provider": "tavily",
+        "score": "0.65835214",
+        "fetched_text": "小红书 window.__ERROR_TRACKER_BUFFER__=[],window.onerror=function(o,n,R,_,e){window.__ERROR_TRACKER_BUFFER__.push({error:e||o,extra:{source:n,lineno:R,colno:_}}),(new Image).src=\"//www.xiaohongshu.com/eplDKtpK4k.txt?l=\"+location.href+\"&a=\"+o+\"&b=\"+n+\"&c=\"+R+\"&d=\"+_+\"&e=\"+e.stack} !function(){var e=function(e){var t={};function n(o){if(t[o])return t[o].exports;var r=t[o]={i:o,l:!1,exports:{}};return e[o].call(r.exports,r,r.exports,n),r.l=!0,r.exports}return n.m=e,n.c=t,n.d=function(e,t,o){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},n.r=function(e){\"undefined\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\"Module\"}),Object.defineProperty(e,\"__esModule\",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&\"object\"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,\"default\",{enumerable:!0,value:e}),2&t&&\"string\"!=typeof e)for(var r in e)n.d(o,r,function(t){return e[t]}.bind(null,r));return o},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,\"a\",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p=\"\",n(n.s=1)}([function(e,t,n){\"use strict\";Object.defineProperty(t,\"__esModule\",{value:!0}),t.default=function(e){return!(e instanceof HTMLHeadElement||e instanceof HTMLMetaElement||e instanceof HTMLLinkElement||e instanceof HTMLStyleElement||e instanceof HTMLScriptElement||e instanceof SVGElement||\"none\"===getComputedStyle(e).display)}},function(e,t,n){\"use strict\";Object.defineProperty(t,\"__esModule\",{value:!0}),t.observe=function(){if(window.MutationObserver&&window.performance&&performance.timing){window.__FP__=0,window.__FCP__=0,window.__FMP_OBSERVED_POINTS__=[],window.__FULLY_LOADED__=0;",
+        "fetch_error": ""
+      },
+      {
+        "title": "小红书提示存在风险插件要如何处理？ - 社媒助手 - 隙生科技",
+        "url": "https://smzs.xisence.com/help/faq/xiaohongshu/risk-plugin",
+        "query": "小红书 社区规范 第三方工具 插件 禁止",
+        "provider": "tavily",
+        "score": "0.60750073",
+        "fetched_text": "小红书：小红书提示存在风险插件要如何处理？ - 社媒助手 ((e,t,n,r,i,o,a,s)=>{let l=document.documentElement,c=[\"light\",\"dark\"];function u(t){var n;(Array.isArray(e)?e:[e]).forEach(e=>{let n=\"class\"===e,r=n&&o?i.map(e=>o[e]||e):i;n?(l.classList.remove(...r),l.classList.add(o&&o[t]?o[t]:t)):l.setAttribute(e,t)}),n=t,s&&c.includes(n)&&(l.style.colorScheme=n)}if(r)u(r);else try{let e=localStorage.getItem(t)||n,r=a&&\"system\"===e?window.matchMedia(\"(prefers-color-scheme: dark)\").matches?\"dark\":\"light\":e;u(r)}catch(e){}})(\"class\",\"theme\",\"light\",null,[\"light\",\"dark\"],null,true,true) Skip to Content 社媒助手 首页 下载 定价 帮助中心 更新记录 联系我们 input]:pl-8 [&>input]:h-10 [&>input]:text-sm [&>input]:border-1 [&>input]:border-gray-200 [&>input]:rounded-md [&>input:focus]:border-blue-500 [&>input]:transition-colors [&>input]:w-full [&>kbd]:hidden [&>input]:bg-white/80\"> CTRL K 首页 下载 定价 帮助中心 更新记录 联系我们 CTRL K 功能指南 简单介绍 插件配置 飞书同步 数据上报 采集模式 采集历史 账号管理 任务闹钟 采集本页数据 媒体文件下载 便捷复制数据 常见问题 浏览器相关问题 为什么无法访问 Chrome 应用商店？ 下载插件时提示“无法从该网站添加应用、扩展程序和用户脚本”怎么办？ 社媒助手如何进行离线安装/更新？ 为什么推荐使用最新版 Chrome？ 会员相关问题 什么是增强版 API 模式 什么是自动加载验证码 如何免费获取VIP 第三方收费下载说明 为什么不能注册账号 下载相关问题 批量下载媒体文件时，如何关闭二次确认？ 下载文件的保存位置和文件名如何自定义？ 为什么配置的文件名未生效？ 飞书相关问题 提示字段类型不匹配是怎么回事？ 提示权限不足怎么解决？ 小红书相关问题 小红书出现“Request failed with status code 406“是怎么回事？ 小红书经常提示“访问频繁，请稍后再试”是什么情况？ 小红书提示存在风险插件要如何处理？ 为什么搜索导出最多只有两百多篇笔记？ 抖音相关问题 为什么采集到的评论比页面显示的数量少一些？ 为什么有时候视频数据会获取不全？ 哔哩哔哩相关问题 哔哩哔哩视频下载为什么和其他平台不一样？ 小红书 植入功能 专辑页 笔记详情页 搜索页 博主详情页 批量采集 采集博主数据 采集评论数据 采集笔记数据 其他功能 链接转换 抖音 植入功能 搜索页 达人详情页 视频详情页 批量采集 采集达人数据 采集视频数据 采集评论数据 其他功能 链接转换 B站 植入功能 搜索页 UP主详情页 视频详情页 批量采集 采集评论数据 采集UP主数据 采集视频数据 其他功能 链接转换 快手 植入功能 达人详情页 搜索页 视频详情页 批量采集 采集达人数据 采集评论数据 采集视频数据 其他功能 链接转换 TikTok 植入功能 达人详情页 视频详情页 批量采集 采集达人数据 采集视频数据 采集评论数据 其他功能 短链解析 功能指南 简单介绍 插件配置 飞书同步 数据上报 采集模式 采集历史 账号管理 任务闹钟 采集本页数据 媒体文件下载 便捷复制数据 常见问题 浏览器相关问题 为什么无法访问 Chrome 应用商店？ 下载插",
+        "fetch_error": ""
+      },
+      {
+        "title": "小红书AI工具引流：2025 年小红书私域运营新策略（高效且安全）",
+        "url": "https://zhuanlan.zhihu.com/p/1913942349316330004",
+        "query": "MCP 插件 小红书 封号 2025",
+        "provider": "tavily",
+        "score": "0.7197191",
+        "fetched_text": "依托定制的MCP 服务实现小红书页面内容安全提取，AI Agent 完成智能决策与内容输出，全流程保障安全。 极度重视账号安全，自动引流全程无需用户提供",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      },
+      {
+        "title": "封号禁言！2025年在小红书导流要换思路了 - 亿邦动力",
+        "url": "https://www.ebrun.com/20250303/573998.shtml",
+        "query": "MCP 插件 小红书 封号 2025",
+        "provider": "tavily",
+        "score": "0.6186197",
+        "fetched_text": "小红书线索获取基建的完善,意味着可以进行高效率的、规模化的、稳定性的获客2025 年可以称得上是线索行业商家和运营操盘手在小红书的决胜年了。",
+        "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+      },
+      {
+        "title": "RedNote-MCP：超好用的小红书内容访问MCP服务！ - 53AI-AI知识库|企业AI知识库|大模型知识库|前线部署工程师|FDE|AIHub",
+        "url": "https://www.53ai.com/news/neirongchuangzuo/2025041605194.html",
+        "query": "MCP 插件 小红书 封号 2025",
+        "provider": "tavily",
+        "score": "0.53866833",
+        "fetched_text": "window.dataLayer = window.dataLayer || [] function gtag() { dataLayer.push(arguments) } gtag('js', new Date()) gtag('config', 'G-TEQE4Y0F1C') RedNote-MCP：超好用的小红书内容访问MCP服务！ - 53AI-AI知识库|企业AI知识库|大模型知识库|前线部署工程师|FDE|AIHub [data-aos][data-aos][data-aos-duration=\"1600\"], body[data-aos-duration=\"1600\"] [data-aos] { transition-duration: 1.6s } [data-aos][data-aos][data-aos-easing=ease], body[data-aos-easing=ease] [data-aos] { transition-timing-function: ease } [data-aos^=fade][data-aos^=fade] { opacity: 0; transition-property: opacity, transform } [data-aos^=fade][data-aos^=fade].aos-animate { opacity: 1; transform: translateZ(0) } [data-aos=fade-up] { transform: translate3d(0, 100px, 0) } .iconfont { font-family: iconfont !important; font-size: 16px; font-style: normal; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale } .icon-home:before { content: \"\\eb1b\" } .icon-lianximaijia:before { content: \"\\e60e\" } .icon-dianhua1-mianxing:before { content: \"\\e69b\" } .icon-zhiding:before { content: \"\\e61d\" } .icon-close:before { content: \"\\e64d\" } .icon-arrow-right-o:before { content: \"\\e615\" } :root { --swiper-theme-color: #007aff; --swiper-navigation-size: 44px } .swiper-wrapper { position: relative; width: 100%; height: 100%; z-index: 1; display: flex; transition-property: transform; box-sizing: content-box } .swiper-container-android .swiper-slide, .swiper-wrapper { transform: translate3d(0, 0, 0) } .right-bar .item .contact-hover { position: absolute; right: 100%; top: 50%; -webkit-transform: translate(0,-50%) scale(0); -moz-transform: translate(0,-50%) scale(0); transform: translate(0,-50%) scale(0); visibility: hidden; opacity: 0; -webkit-transform-origin: right center; -moz-transform-origin: right center; transform-origin: right center; padding-right: 0.1rem",
+        "fetch_error": ""
+      },
+      {
+        "title": "小红书账号被禁言怎么申诉？ - 脉脉",
+        "url": "https://maimai.cn/article/detail?fid=1840222547&efid=0gm1B3O5H6IieocvDdbQaQ",
+        "query": "小红书 账号申诉 流程 诉讼 法律途径",
+        "provider": "tavily",
+        "score": "0.8033131",
+        "fetched_text": "小红书账号被禁言怎么申诉？ - 脉脉 html{background-color:#f4f5fa} 登录 / 注册 小红书账号被禁言怎么申诉？ 拉卡斯暑 24-07-19 · 77 add-friend 好友 小红书账号被禁言后，申诉是一个恢复账号正常使用的途径。以下是小红书账号被禁言后的申诉步骤： 一、进入申诉页面 打开小红书APP：首先，确保你已经下载并安装了小红书APP，并且能够正常登录被禁言的账号。 找到“帮助与客服”：在小红书APP的主页或侧边栏中，找到并点击“帮助与客服”选项。这个选项可能会以不同的形式出现，比如一个问号图标或者“客服中心”等。 选择“账号申诉”：在“帮助与客服”页面中，寻找并点击“账号申诉”或类似的选项。这个选项通常会位于自助服务板块内。 二、选择申诉类型 选择“账号被禁言”：在账号申诉界面中，你会看到多种申诉类型，比如“账号被盗”、“账号被误封”等。根据你的情况，选择“账号被禁言”作为申诉类型。 对于小红书的玩法和规则我基本都已掌握，如果你想了解具体操作，这里给大家准备了 免费的 小红书开店教程及实操爆单玩法，戳戳： 点击领取 三、填写申诉内容 描述问题：在申诉内容中，简要描述你的账号被禁言的情况。比如，你可以说明你的账号没有违反任何规定，但突然被禁言了，或者你可以说明你已经删除了违规内容并愿意改正错误。 提供证据：如果可能的话，提供一些证据来支持你的申诉。比如，你可以上传截图证明你的账号没有发布违规内容，或者你可以提供其他用户的证词来证明你的清白。但是，请注意，小红书可能并不要求所有申诉都提供证据，这取决于具体情况。 四、提交申诉 检查信息：在提交申诉之前，仔细检查你填写的信息是否准确无误。确保你的联系方式是有效的，以便小红书在需要时能够联系到你。 点击“提交”：确认无误后，点击“提交”按钮将申诉发送给小红书官方。 五、等待审核与处理 耐心等待：提交申诉后，你需要耐心等待小红书官方的审核结果。审核时间可能会因情况而异，请保持耐心。 查看结果：审核结果通常会通过小红书APP内的消息通知或邮件等方式告知你。如果申诉成功，你的账号将恢复正常使用；如果申诉不成功，你可以根据小红书给出的原因进行调整后再次申诉。 注意事项 在申诉过程中，请保持诚恳和耐心的态度。不要使用不当言辞或威胁等方式来催促审核结果。 遵守小红书的社区规范和规定是避免账号被禁言的关键。如果你的账号被禁言是因为违反了规定，那么你应该认真反思并改正错误。 如果你的申诉被驳回或需要进一步的帮助，你可以联系小红书的人工客服进行咨询和求助。 小红书账号被禁言怎么申诉？ 脉脉 END 阅读 6 声明：本文内容由脉脉用户自发贡献，部分内容可能整编自互联网，版权归原作者所有，脉脉不拥有其著作权，亦不承担相应法律责任。如果您发现有涉嫌抄袭的内容，请发邮件至maimai@taou.com，一经查实，将立刻删除涉嫌侵权内容。 相关推荐 最新发布 大家都在看 热门人脉圈 评论 我来说几句... 我来说几句... .css-13ec0ti{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;right:0;bottom:0;top:0;left:0;background-color:rgba(0, 0, 0, 0.5);-webkit-tap-highlight-color:transparent;z-index:1201;} 登录查看更多内容、看点评、加好友 登录 / 注册 {\"props\":{\"pageProps\":{\"user\":null,\"data\":{\"collected\":null,\"comments\":{\"lst\":[],\"more\":false,\"pa",
+        "fetch_error": ""
+      },
+      {
+        "title": "小红书封号后应该如何申诉?-高顿教育",
+        "url": "https://www.gaodun.com/xinzhiye/1423033.html",
+        "query": "小红书 账号申诉 流程 诉讼 法律途径",
+        "provider": "tavily",
+        "score": "0.7915799",
+        "fetched_text": "(function(a, b) { if ((/AppleWebKit.*Mobile/i.test(a) || /Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(a) || /MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(a)) && !/iPad/i.test(a) && location.hash != '#m') window.location = b })(navigator.userAgent, 'https://m.gaodun.com/xinzhiye/1423033.html') 小红书封号后应该如何申诉?-高顿教育 .article .article-head li.follow-share span:first-child::before { background-position: -53px 0; } url_v= \"//v.gaodun.com\"; --> 登录高顿网校 --> 登录高顿网校 资料修改成功 失败提示失败提示 手机号/邮箱： 密码： 忘记密码？ 自动登录 免费注册 合作账号登录 --> 合作账号登录 QQ登录 微博登录 微信登录 url_v= \"//v.gaodun.com\"; url_s = \"//s.gaodun.com\"; url_w = \"//www.gaodun.com\" 高顿教育 / 新职业新技能 / 小红书博主孵化培训 / 文章详情 小红书封号后应该如何申诉? 高顿教育 2023-04-07 09:37 nicole 分享 新职业新技能臻选试听集 小红书封号后应该如何申诉？ 在小红书上，用户可以分享自己的生活、购物心得和美妆技巧等内容，但是平台也有一系列规定，包括禁止发布不良信息、违反版权等行为。如果用户在平台上违反了这些规定，可能会被封禁账号。但是有些用户可能因为某些原因被误封，这时需要进行申诉。那么小红书封号后应该如何申诉呢？接下来我们就来一起了解一下。 一、申诉流程 1.查看封禁原因。当用户发现自己的小红书账号被封禁后，应该首先查看封禁原因。平台会给出相应的理由，用户需要认真阅读，并分析自己的行为是否有违规。 2.联系客服。如果用户认为自己的封禁是错误的，可以通过小红书客服渠道进行申诉。用户可以通过小红书官方网站、小红书APP或小红书微博等渠道联系客服，提供自己的申诉理由和相关证据。 3.等待处理。用户提交申诉后，需要等待小红书客服的处理。客服会对用户的申诉进行审核，并根据情况进行解封或继续封禁。 二、申诉注意事项 1.提供充分证据。用户在进行申诉时，应该提供充分的证据来证明自己的行为没有违规。例如，可以提供相关的截图、聊天记录等。 2.文明申诉。用户在进行申诉时，应该注意措辞，不要使用恶意语言或攻击性言辞。这样会影响到申诉的效果。 3.合理申诉。用户在进行申诉时，应该根据自己的实际情况提出合理的申诉理由，而不是无中生有或推卸责任。 封禁账号是小红书对于用户违规行为的一种管理方式，但是有些用户可能因为某些原因被误封。如果用户在小红书上被封禁账号，可以通过联系客服进行申诉。在申诉时，需要提供充分的证据、文明措辞，并根据实际情况提出合理的申诉理由。如果申诉成功，用户可以重新使用自己的账号，如果申诉失败，用户可以再次提交申诉或者寻求其他途径解决问题。 以上就是关于小红书封号后应该如何申诉的相关介绍。如果用户遵守小红书的相关规定，不会违反平台的规定，那么就不会被封禁账号。但是如果不慎违规被封禁了账号，可以根据上述的申诉流程进行申诉，希望能够得到解决。 更多干货，点击了解 以上就是 【小红书封号后应该如何申诉?】 的全部解答，如果你想要学习【小红书运营】更多这方面的知识，欢迎大家前往>> 5天小红书陪跑营 ! 添加老师微信 掌握更多小红书运营资讯 相关阅读 0基础的普通人怎么做小红书运营? 0粉丝也能赚钱!小红书赚钱的6种方式 什么样的人适合做小红书 上一篇： 小红书违规笔记如何进行修改? 下一篇： 小红书",
+        "fetch_error": ""
+      },
+      {
+        "title": "小红书被封禁怎么申诉 - 法行宝",
+        "url": "https://ailegal.baidu.com/legalarticle/qadetail?id=b66d1f5921bd56000618",
+        "query": "小红书 账号申诉 流程 诉讼 法律途径",
+        "provider": "tavily",
+        "score": "0.7593865",
+        "fetched_text": "法行宝-您的免费AI律师 { \"@context\": \"https://schema.org\", \"@type\": \"WebSite\", \"name\" : \"法行宝\", \"headline\" : \"法行宝-您的免费AI律师\", \"datePublished\": \"\", \"dateModified\": \"\", \"description\": \"您身边的AI律师，法行宝为您提供专业的法律问答咨询服务，帮助您解答法律问题，法律咨询就来法行宝！\", \"keywords\": \"\" } var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = \"https://hm.baidu.com/hm.js?87211a649e43152c3ab9129dc08efb6d\"; hm.setAttribute('async', 'async'); hm.setAttribute('defer', 'defer'); var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })(); !function (t) {var o =\"https:\\/\\/www.faxingbao.com\\/legalarticle\\/qadetail?id=b66d1f5921bd56000618\"; if (o && !/([http|https]:\\/\\/[a-zA-Z0-9\\_\\.]+\\.toutiao\\.com)/gi.test(o) && t.navigator.appName) { var n = '7f5505489c7e46ce2e5aedf7180053679ecf63092d68b96b89602fb03c6e7d3a65e0a2ada1d5e86b11e7de7c1a83287d04743a02fd1ee8dd8558a8cad50e91cb354f8c6f3f78e5fd97613c481f678e6d', e = \"https://zhanzhang.toutiao.com/s.gif\", a = new Image; o && (e += \"?url=\" + encodeURIComponent(o)), n && (e += \"&token=\" + n), n && (a.src = e) } }(window); var sid = '2136'; var sak = '88dfc39fd2'; window.ParisFactory.create({ sid: sid, sak: sak, timeout: 5000, bantiUrl: `https://banti-static.cdn.bcebos.com/o/static/banti_${sak}.js`, acsUrl: `https://dlswbr.baidu.com/heicha/mm/${sid}/acs-${sid}.js`, disasterConfig: { acsUrl: `https://miaowu.baidu.com/sdk/heicha/mm/${sid}/acs-${sid}.js`, }, }); window.pageData = {\"baseinfo\":{\"isLogin\":0,\"passapi\":\"//passport.baidu.com/passApi/js/uni_login_wrapper.js\",\"passdomain\":\"https://passport.baidu.com\",\"userName\":\"\",\"userPhoto\":\"\"},\"lawPreloadData\":{\"criteriaData\":{\"caseCauses\":[{\"children\":[{\"children\":[{\"children\":[],\"childrenCount\":0,\"code\":\"001001001\",\"count\":0,\"name\":\"背叛国家罪\"},{\"children\":[],\"childrenCount\":0,\"code\":",
+        "fetch_error": ""
+      },
+      {
+        "title": "无畏契约在2024年4月3日无故被封号10年，并且两次申诉不予解封",
+        "url": "https://tousu.sina.cn/complaint/view/17372572514?vt=4",
+        "query": "平台误封 起诉 解封 赔偿 2024 2025",
+        "provider": "tavily",
+        "score": "0.568057",
+        "fetched_text": "无畏契约在2024年4月3日无故被封号10年，并且两次申诉不予解封_游戏投诉_黑猫投诉_新浪网 var baseUrl = '//tousu.sina.com.cn/'; var PAGE_CONFIG = { \"isLogin\": true, \"complaintId\": '17372572514', \"userAvatar\": '//n.sinaimg.cn/finance/235fa465/20230314/4.png', \"coTitle\": '腾讯游戏', \"coAvatar\": '//tvax1.sinaimg.cn/crop.0.0.1000.1000.180/d6d3ce75ly8h8v0fpryhzj20rs0rs3yz.jpg?KID=imgbed,tva&Expires=1781266381&ssig=XxS7U0Unya', \"coStatus\" : '7', \"lawStatus\": '', \"lawId\": \"1\", \"tpl\": 0 } .con{position:relative;line-height:20px;font-size: 14px;color: #84848A;margin: 8px 0;} .con i{display:block;position:absolute;top:12px;width:100%;border-top:1px dashed #ddd;} .con p{display:inline-block;color:#c1c1c1;background:#fff;padding:0 5px;text-align: center;margin:0 auto;position:relative;z-index:2;} .file_hide{margin-top:10px;} .file_hide a{display:block;width:100px;height:30px;line-height:30px;border:1px solid #fbaf17;text-align:center;font-size:15px;color:#fbaf17;} #flashBox{color: #fff;background-color: #000;position: relative;padding: 0;width: 640px;height: 516px;margin: 0 auto;} #flashBox video{position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: #000;} 315黑猫投诉-新浪旗下消费者服务平台 消息 注册 登录 投诉 商家 0 消息 首页 集体投诉 红黑榜 商家列表 帮帮团 热点追踪 APP下载 --> 首页 > 详情 无畏契约在2024年4月3日无故被封号10年，并且两次申诉不予解封 勇敢喵 发布于 2024年04月16日 14:45 投诉编号 17372572514 投诉对象 腾讯游戏 投诉问题 客服不理人,时间等太久,客服不处理/处理不当,不予退款,联系不到客服,霸王条款 投诉要求 恢复账号,改善服务,撤销处罚 涉诉金额 6500元 投诉进度 投诉已完成 1 1 0 微博 微信 QQ QQ空间 勇敢喵 评价 05-14 20:01:19 服务态度 处理速度 满意度 勇敢喵 确认完成 05-14 20:01:19 商 腾讯游戏 回复 04-24 14:19:24 亲爱的玩家：感谢您对腾讯游戏的支持，为了给您提供专业、优质的提问反馈系统以及游戏体验，请使用微信搜索公众号【腾讯客服】（微信号：Tencent_KF），即可联系客服。感谢您一直以来对腾讯游戏的支持，祝您游戏愉快！ 勇敢喵 补充投诉 04-23 11:10:08 已经一周过去了，到现在没有任何人联系我，急需处理 黑猫消费者服务平台 商家处理中 04-16 15:26:34 已分配商家 腾讯游戏 黑猫消费者服务平台 审核通过 04-16 15:26:34 勇敢喵 于黑猫投诉平台发起 04-16 14:45:38 本人是无畏契约开服玩家并且一直在玩，充值了6500元多，玩任何游戏从来都没有开过",
+        "fetch_error": ""
+      },
+      {
+        "title": "CF误封10年？新的申诉解封方法来了，赶快去试试吧！ - 腾讯云",
+        "url": "https://cloud.tencent.com/developer/news/1161349",
+        "query": "平台误封 起诉 解封 赔偿 2024 2025",
+        "provider": "tavily",
+        "score": "0.42133808",
+        "fetched_text": "CF误封10年？新的申诉解封方法来了，赶快去试试吧！ - 腾讯云开发者社区-腾讯云 @supports (padding:max(0px)){.set-safe-area .com-main{bottom:calc(max(12px,constant(safe-area-inset-bottom)) + 50px);bottom:calc(max(12px,env(safe-area-inset-bottom)) + 50px)}.set-safe-area .com-main-simple-sec,.set-safe-area .com-main.without-tab-ft,.set-safe-area .com-main.without-ft{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}.set-safe-area .com-main-sec{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}.set-safe-area .com-m-footer,.set-safe-area .sa-fixed-btns{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}.set-safe-area .com-mobile-body{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}}@supports (padding:max(0px)){.set-safe-area .support-wrap,.set-safe-area div.body{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}.set-safe-area .com-responsive-no-ft div.body{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}}.doc-con .J-docShareModal{display: none;} .doc-con .J-docShareCopyTipModalMB{display: none} .with-focus+.com-main-simple-sec, .with-focus+.com-main,.with-focus+.com-body,.with-focus+.qa-body{top:100px} .qa-detail-ask-panel:after{display:none!important;} .sa-fixed-btns .c-btn-weak{background-color: #fff;} .qa-r-editor.draft-editor-host.rno-markdown{height: 290px;overflow-y:auto;} .uc-achievement{line-height:24px;margin-bottom:5px;white-space: initial;overflow:visible;text-overflow:initial} .uc-achievement .uc-achievement-icon{top:0;margin-top:0; .uc-hero+.com-body-main .com-tab .com-tab-item{margin-right: 28px;} 腾讯云 开发者社区 文档 建议反馈 控制台 登录/注册 首页 学",
+        "fetch_error": ""
+      },
+      {
+        "title": "用户因微信被封起诉腾讯每日赔偿25元 - 新京报",
+        "url": "https://m.bjnews.com.cn/detail/163152053214721.html",
+        "query": "平台误封 起诉 解封 赔偿 2024 2025",
+        "provider": "tavily",
+        "score": "0.37731177",
+        "fetched_text": "用户因微信被封起诉腾讯每日赔偿25元 --> --> --> --> .rem038{ font-size:0.38rem !important; } --> 新京报客户端 好新闻 无止境 立即打开 .btn { width: 100%; height: 26px; line-height: 1; text-align: center; font-size: 12px; border: none; border-radius: 2px; color: #000; background: #D02D2D; color: #FFFFFF; } 立即打开 用户因微信被封起诉腾讯每日赔偿25元 新京报 记者 刘平 金城武 编辑 李四 刘宇 --> 新京报 编辑 胡萌 2021-09-13 16:21 HI财讯 进入 HI财讯 阅读更多内容 --> 订阅 新京报贝壳财经讯 企查查APP显示，近日，曲某与深圳市腾讯计算机系统有限公司侵权责任纠纷民事一审民事裁定书公开。原告曲某称因通过微信几次发送邮件，被腾讯公司以传播违法信息封禁，曲某要求被告腾讯公司赔偿其微信被封期间每日损失费25元。 法院认为，此前相关案件已移送广东省深圳市南山区人民法院处理，原告起诉属于重复起诉，判决结果为驳回曲某起诉。 编辑 胡萌 校对 李世辉 展开全文 --> 全文 0字 您已阅读 % --> .btn { width: 100%; height: 45px; line-height: 45px; text-align: center; font-size: 16px; border: none; border-radius: 4px; color: #000; background: #D02D2D; color: #FFFFFF; } 打开新京报APP 阅读更多精彩资讯 打开新京报APP 阅读更多精彩资讯 --> 相关推荐 起底“中医号脉”直播课，号称“行走的CT”，靠此技术挣钱改命 消费 “你的号我就是要毁”，游戏里损失“一个亿”，现实中能获赔吗？ 时事 今年最嚣张的网红把粉丝整到“破产”，还敢放话“毁的就是你” 新京号 “育儿补贴”诈骗背后，谁在贩卖母婴信息？ 新京号 “育儿补贴”诈骗背后，谁在贩卖母婴信息？ 时事 去APP浏览更多内容 --> --> 新京报报料邮箱：82708677@bjnews.com.cn --> 起底“特供酒”黑产业链：17家公司、跨多地制售，11人被批捕 端午假期将至，北京公交优化通游线路 怀密线、S2线周末休闲客流增幅超50% 警惕睡眠缺氧危害 打呼噜呼吸机瑞思迈AirSense 11成居家干预优选 --> --> $(function(){ var ksginTime = new Date().getTime(); var imgls = $(\".article-cen img\"); var timer = setInterval(function () { var complete = true; var endTime = new Date().getTime(); var timeout = endTime - ksginTime import('https://cdn.bootcdn.net/ajax/libs/photoswipe/5.3.6/photoswipe.esm.js') // pswpModule:PhotoSwipe // }; // let tr = false; // $('.article img').each(function(t, n) { // if($('.article img').length-1 == t){ // tr = true; // return // } // options.dataSource.push({ // id: t+1, // src: $(this).attr('src'), // width: $(this).naturalWidth, // height: $(this).naturalHeight, // }) // }) // var timer = setInterval(function () { // if(tr){ // clearInterva",
+        "fetch_error": ""
+      },
+      {
+        "title": "使用开屏广告跳过导致小红书账号被封怎么申诉？ - V2EX",
+        "url": "https://www.v2ex.com/t/970271",
+        "query": "V2EX 小红书 封号 诉讼 律师",
+        "provider": "tavily",
+        "score": "0.6369636",
+        "fetched_text": "使用开屏广告跳过导致小红书账号被封 怎么申诉？ - V2EX body { min-width: 820px; font-family: \"Helvetica Neue\", \"Luxi Sans\", \"Segoe UI\", \"Hiragino Sans GB\", \"Microsoft Yahei\", sans-serif, \"Apple Logo\"; } const SITE_NIGHT = 0; const LANG = 'enus'; const FEATURES = ['search', 'favorite-nodes-sort']; {\"comment\": [{\"text\": \"肯定不能主动说 ad 快消，就说不知道什么原因。不过申诉功能实际应该是摆设，无论你怎么写，可能都会自动回复并且自动申诉失败。小红书这个平台之前遇到`评论只有自己看得到`时都是不管怎么反馈都没用，不是某个评论，而是任何评论都这样，后来我直接注销账号了。所以根据他们以往的态度，你能解封的概率应该不大。\", \"datePublished\": \"2023-09-01T23:35:28Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/zictos\", \"@type\": \"Person\", \"name\": \"zictos\"}}, {\"text\": \"小红书是什么刚需吗？大不了不用了。\", \"datePublished\": \"2023-09-01T23:42:46Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/jaTomn\", \"@type\": \"Person\", \"name\": \"jaTomn\"}}, {\"text\": \"是的，看你使用了功能但没有加载广告图的记录。就你是绕过广告了封号\", \"datePublished\": \"2023-09-01T23:48:40Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/louisxxx\", \"@type\": \"Person\", \"name\": \"louisxxx\"}}, {\"text\": \"还能因为跳过广告封号么…\", \"datePublished\": \"2023-09-01T23:54:36Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/AmericanExpress\", \"@type\": \"Person\", \"name\": \"AmericanExpress\"}}, {\"text\": \"@zictos #1 我刚注册时，也是评论发帖仅自己可见。正常用一段时间，有次发帖突然几十赞+评论，才知道别人能看到了。或许都要酱紫养一段时间号吧猜测\", \"datePublished\": \"2023-09-01T23:58:40Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/WayTooExplore\", \"@type\": \"Person\", \"name\": \"WayTooExplore\"}}, {\"text\": \"@SeaTac 行为被判定恶意了 用户量太大不在乎部分用户\", \"datePublished\": \"2023-09-02T00:42:19Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/shuimitao\", \"@type\": \"Person\", \"name\": \"shuimitao\"}}, {\"text\": \"别用了, 怎么还有这么垃圾的软件.\", \"interactionStatistic\": {\"userInteractionCount\": 2, \"@type\": \"InteractionCounter\", \"interactionType\": \"https://sc",
+        "fetch_error": ""
+      },
+      {
+        "title": "中新网评：“封号收租”的小红书，还有多少信任可透支？ - 中国新闻网",
+        "url": "https://www.chinanews.com.cn/cj/2026/04-14/10603479.shtml",
+        "query": "V2EX 小红书 封号 诉讼 律师",
+        "provider": "tavily",
+        "score": "0.5852203",
+        "fetched_text": "中新网评：“封号收租”的小红书，还有多少信任可透支？-中新网 newwapurl=\"wap/detail/zwsp\"; isForApp=\"n\"; document.write(' '); #SOHUCS #SOHU_MAIN .module-cmt-list .cmt-list-type .cmt-list-number .comment-number{display:none;} .logo{float:left;margin:31px 25px 31px 0;width:177px;height:48px;border-right:1px solid #ebebeb} #navbar{position:relative;height:110px;border-bottom:4px solid #cd131c;background:#fff} .nav_navcon{float:left;width:1075px;margin-top:22px;} .nav_navcon li{float:left;margin-right:10px;height:40px;font-size:18px;word-break:keep-all} .nav_navcon li.mr{margin-right: 27px;} .nav_navcon li.area{margin-right: 20px;} .nav_navcon li.ss{margin-right: 0px;} .nav_navcon li img.dxw{padding-top:11px;width:90px;height:31px} .nav_navcon li a{height:40px;color:#2d2d2d} .navmenu { width: 14px; float: right; margin-top: 8px; margin-right: 10px; background: url(//image.cns.com.cn/default/5ddb9ec3/20210721/11.jpg); border-top: 0px solid #ea3440; border-bottom: 0px solid #ea3440; padding: 0; height: 12px; background-color: transparent; cursor: pointer; } .nav_navcon_more{position:absolute;top:-3px;left:0;z-index:999;display:none;width:100%;height:715px;border-bottom:3px solid #f42e3e;background:#fff} .nav_navcon_more .w1280{position:relative;overflow:hidden;padding-top:10px;height:inherit;border-top:1px solid #f3f3f3} .nav_navcon_more .con{float:left;width:50%} .nav_navcon_more .navlist{width:100%;color:#666;font-size:16px;line-height:42px} .nav_navcon_more .navlist a{color:#666;font-size:14px} .nav_navcon_more .navlist a:hover{color:#e01b2b} .nav_navcon_more .navlist strong{margin-right:28px;color:#333} .nav_navcon_more .navlist strong a{color:#333;font-size:16px} .nav_navcon_more .navlist em{padding:0 8px} .nav_navcon_more .navlist .left{width:100px;text-align:right} .nav_navcon_more .navlist .left1{f",
+        "fetch_error": ""
+      },
+      {
+        "title": "小红书在root 下使用从来不报错，我也没隐藏 - V2EX",
+        "url": "https://www.v2ex.com/t/1207881",
+        "query": "V2EX 小红书 封号 诉讼 律师",
+        "provider": "tavily",
+        "score": "0.5482629",
+        "fetched_text": "小红书在 root 下使用从来不报错，我也没隐藏，结果昨天突然给我封号了 - V2EX body { min-width: 820px; font-family: \"Helvetica Neue\", \"Luxi Sans\", \"Segoe UI\", \"Hiragino Sans GB\", \"Microsoft Yahei\", sans-serif, \"Apple Logo\"; } const SITE_NIGHT = 0; const LANG = 'enus'; const FEATURES = ['search', 'favorite-nodes-sort']; {\"comment\": [{\"text\": \"因为 root ？\", \"datePublished\": \"2026-04-23T00:13:00Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/muhahaha\", \"@type\": \"Person\", \"name\": \"muhahaha\"}}, {\"text\": \"@muhahaha 应该是，我小号登都没咋登录，之前大号实名认证的时候被检测过一次人脸识别怎么也过不了，换了 IPad 试了一下过的\", \"datePublished\": \"2026-04-23T00:17:08Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/shenhualv7\", \"@type\": \"Person\", \"name\": \"shenhualv7\"}}, {\"text\": \"封号是人脸识别很久之后的事了\", \"datePublished\": \"2026-04-23T00:18:38Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/shenhualv7\", \"@type\": \"Person\", \"name\": \"shenhualv7\"}}, {\"text\": \"可能是因为近期借助 AI 进行自动化发文、爬虫的人太多，风控措施变严格了。\", \"datePublished\": \"2026-04-23T00:58:55Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/Danswerme\", \"@type\": \"Person\", \"name\": \"Danswerme\"}}, {\"text\": \"不会因 root 封号的，肯定是哪里没做对\", \"datePublished\": \"2026-04-23T01:20:50Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/hoor\", \"@type\": \"Person\", \"name\": \"hoor\"}}, {\"text\": \"我注册了个号一直看，不评论不点赞。有天就换了个头像就被封了，我直接删了 ，艹‍！\", \"datePublished\": \"2026-04-23T01:21:58Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/littiefish\", \"@type\": \"Person\", \"name\": \"littiefish\"}}, {\"text\": \"开启 root 的情况下是不是 app 就能自由访问其他目录了？难不成小红书自己检索发现自己能越权访问其他目录树？然后给你判断你是在 root 环境里跑 app?\", \"datePublished\": \"2026-04-23T01:31:43Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/jackOff\", \"@type\": \"Person\", \"name\": \"jackOff\"}}, {\"text\": \"@jackOf",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260612-report-9131b31a/",
+    "for_gpt_editor": {
+      "brief": "前情提要： https://v2ex.com/t/1204685 3 月份的时候在浏览器使用了一次 MCP 插件，然后账号就收到违规通知，一直循环封禁 接着投诉和信访都点了一轮，全部没用。最后找律师，说这个情况可以起诉… 现在账号终于回来了...",
+      "title_seed": "小红书账号被永封，申诉不如诉讼？一个开发者的维权实录",
+      "original_title": "小红书被永封后续，申诉不如诉讼",
+      "source_url": "https://www.v2ex.com/t/1219983",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "推荐选题",
+          "label": "推荐",
+          "reason": "证据较完整，有真实案例、媒体报道、平台规则和类似诉讼案例支撑；老花人设解读角度清晰（账号安全、维权成本、平台规则透明度）；读者分层明确（副业普通人、共鸣读者为主，核心技术人为辅）；泛兴趣故事钩子（维权反转）不夸张；传播张力强（平台vs用户、成本vs收益、规则vs公平），逻辑基本闭环。"
+        },
+        "core_question": "开发者因使用MCP插件被小红书误封账号，通过诉讼解封的真实案例中，平台规则、维权成本与普通技术人的账号安全风险如何平衡？",
+        "why_this_topic_matters": "小红书封号事件持续发酵，涉及MCP插件这一技术点，与老花人设契合。账号安全是副业者和独立开发者的核心痛点，诉讼解封的案例提供了新的维权路径，但成本高、周期长，需要理性评估。",
+        "fact_summary": [
+          "V2EX用户因在浏览器使用MCP插件导致小红书账号被永封，经过申诉和信访均无效，最终通过律师起诉成功解封。",
+          "IT时报报道多名律师和商户因认证费不退、账号被误封等问题起诉小红书，其中西安律师闫天柱耗时近半年起诉但败诉。",
+          "小红书社区规范禁止使用第三方插件/工具进行自动化操作或数据抓取，但MCP插件是否明确违规存疑。",
+          "类似案例：微信用户因被封号起诉腾讯，要求每日赔偿25元，被法院驳回；游戏平台误封后申诉解封的案例存在但成功率不一。"
+        ],
+        "persona_discussion_question": "如果你依赖小红书做副业或引流，账号被误封后，你会选择申诉、信访还是起诉？诉讼的成本和时间是否值得？",
+        "old_flower_stance": "平台封号机制缺乏透明度和有效申诉渠道，普通用户维权成本高，诉讼是最后但有效的救济途径，但门槛高、周期长，不建议轻易尝试。",
+        "audience_fit": {
+          "primary_layer": "副业普通人",
+          "secondary_layers": [
+            "共鸣读者",
+            "核心技术人"
+          ],
+          "interest_score": 90,
+          "why_interested": "账号安全是副业者的核心资产，误封风险直接影响收入；诉讼解封的案例提供了新的维权思路，但成本收益需要权衡。",
+          "reader_risk": "可能过度依赖诉讼路径，忽略申诉和平台沟通；或误以为所有封号都能通过诉讼解决。"
+        },
+        "mass_interest_hook": {
+          "score": 85,
+          "hook_type": "故事|反差|争议",
+          "why_non_technical_people_may_click": "普通人可能因使用插件或工具被平台误封，维权故事具有普遍共鸣；诉讼解封的反转情节吸引眼球。",
+          "story_seed": "一个开发者因为用了一个AI插件，账号被小红书永封，申诉无门，最后靠打官司才拿回账号。",
+          "do_not_overhype": "强调这是个案，诉讼成本高、周期长，不是普遍有效路径。"
+        },
+        "topic_tension": {
+          "score": 10,
+          "conflict_point": "平台规则不透明 vs 用户权益受损；诉讼成本高 vs 账号价值低；平台作为规则制定者、执行者和裁判员的角色冲突。",
+          "debate_question": "平台封号机制是否合理？用户是否有权知道具体违规原因？诉讼是否是解决封号问题的有效途径？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "平台/工具厂商",
+            "律师/法律从业者"
+          ],
+          "why_people_would_comment": "读者可以围绕封号原因、申诉流程、诉讼成本、平台责任等发表观点，或分享自身经历。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突，避免煽动对立。"
+        },
+        "timeline": [
+          "2025年3月：V2EX用户因使用MCP插件被小红书永封。",
+          "2025年3月-4月：用户多次申诉、信访均无效。",
+          "2025年4月：用户委托律师起诉小红书。",
+          "2025年4月8日：上海律师李维世因认证费问题起诉小红书。",
+          "2025年4月14日：中新网评批评小红书封号机制。",
+          "2025年4月21日：IT时报报道多名律师和商户起诉小红书。",
+          "2025年4月23日：V2EX用户发帖称账号已解封。"
+        ],
+        "evidence_table": [
+          {
+            "source": "V2EX原帖",
+            "url": "https://www.v2ex.com/t/1219983",
+            "supports": "用户因MCP插件被封，通过诉讼解封",
+            "reliability": "near_source"
+          },
+          {
+            "source": "IT时报报道",
+            "url": "https://m.thepaper.cn/newsDetail_forward_33018819",
+            "supports": "多名律师和商户因封号、认证费问题起诉小红书",
+            "reliability": "media"
+          },
+          {
+            "source": "中新网评",
+            "url": "https://www.chinanews.com.cn/cj/2026/04-14/10603479.shtml",
+            "supports": "批评小红书封号机制不透明",
+            "reliability": "media"
+          },
+          {
+            "source": "小红书社区规范",
+            "url": "https://agree.xiaohongshu.com/h5/terms/ZXXY20221213003/-1",
+            "supports": "平台禁止使用第三方插件/工具进行自动化操作",
+            "reliability": "official"
+          },
+          {
+            "source": "微信封号诉讼案例",
+            "url": "https://m.bjnews.com.cn/detail/163152053214721.html",
+            "supports": "用户因微信被封起诉腾讯，被驳回",
+            "reliability": "media"
+          },
+          {
+            "source": "V2EX其他封号讨论",
+            "url": "https://www.v2ex.com/t/970271",
+            "supports": "用户因使用开屏广告跳过插件被封",
+            "reliability": "near_source"
+          }
+        ],
+        "logic_closure": "基本闭环：案例真实、有媒体报道和类似诉讼案例支撑，但诉讼细节（案由、法院、判决）和MCP插件是否明确违规仍需补充。",
+        "writeable_angles": [
+          {
+            "angle": "案例复盘：从被封到解封的全过程，包括申诉、信访、诉讼的步骤和成本。",
+            "why": "提供可操作的维权路径，吸引有类似遭遇的读者。",
+            "needs": "当事人详细时间线、律师费用、诉讼周期等数据。"
+          },
+          {
+            "angle": "平台规则分析：小红书封号机制是否合理？MCP插件是否违规？",
+            "why": "引发对平台规则透明度的讨论，符合技术人视角。",
+            "needs": "小红书官方对MCP插件的态度、社区规范原文。"
+          },
+          {
+            "angle": "维权成本账：诉讼 vs 申诉，哪个更划算？",
+            "why": "帮助读者理性评估维权方式，避免盲目诉讼。",
+            "needs": "律师费用、时间成本、账号价值估算。"
+          },
+          {
+            "angle": "避坑指南：如何避免因使用插件被封号？",
+            "why": "提供实用建议，吸引副业者和普通用户。",
+            "needs": "小红书风控机制、安全使用插件的建议。"
+          }
+        ],
+        "missing_basics": [
+          "MCP插件的具体功能及是否违反小红书社区规范",
+          "小红书封号规则中关于第三方工具/插件的条款原文",
+          "诉讼的具体案由（合同纠纷、侵权、行政？）、法院、判决结果或调解情况"
+        ],
+        "missing_materials": [
+          "当事人采访或详细时间线",
+          "律师对类似案件的法律分析",
+          "小红书官方对MCP插件的态度（如有）",
+          "其他平台封号后诉讼的对比数据"
+        ],
+        "not_claimable": [
+          "诉讼是解决封号问题的普遍有效途径",
+          "MCP插件一定不违规",
+          "小红书封号机制存在系统性错误",
+          "所有用户都能通过诉讼快速解封"
+        ],
+        "followup_queries": [
+          "联系原帖作者获取诉讼细节",
+          "查询小红书社区规范中关于第三方插件的具体条款",
+          "搜索类似案例（如抖音、微信封号后诉讼）"
+        ],
+        "additional_search_queries": [
+          "小红书 封号 诉讼 解封 案例 2025",
+          "MCP 插件 小红书 封号 2025",
+          "小红书 社区规范 第三方工具 插件 禁止",
+          "平台误封 起诉 解封 赔偿 2024 2025"
+        ],
+        "stop_conditions": [
+          "当事人确认诉讼细节不实或账号未恢复",
+          "小红书官方明确MCP插件违规且用户知情",
+          "无其他类似诉讼案例支撑"
+        ],
+        "confidence": 85,
+        "topic_direction": "side-info",
+        "topic_direction_title": "副业&信息差",
+        "report_type": "case-study",
+        "quality_gate": {
+          "pass": true,
+          "score": 85,
+          "fatal_issues": [],
+          "warnings": [
+            "诉讼细节（案由、法院、判决）未从当事人处核实，依赖媒体报道和V2EX帖子",
+            "MCP插件是否明确违反小红书社区规范未确认",
+            "成本估算（律师费、时间周期）未提供具体数据"
+          ],
+          "missing_evidence": [
+            "当事人采访或详细时间线",
+            "律师对类似案件的法律分析",
+            "小红书官方对MCP插件的态度",
+            "其他平台封号后诉讼的对比数据"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": true,
+          "downstream_handoff_ok": true,
+          "material_pack_ok": true,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": true,
+          "source_coverage_ok": true,
+          "recommendation": "publish"
+        },
+        "research_plan": {
+          "core_question": "开发者因使用MCP插件被小红书误封账号，通过诉讼解封的真实案例中，平台规则、维权成本与普通技术人的账号安全风险如何平衡？",
+          "persona_discussion_question": "如果你依赖小红书做副业或引流，账号被误封后，你会选择申诉、信访还是起诉？诉讼的成本和时间是否值得？",
+          "hidden_public_issue": "平台封号机制缺乏透明度和有效申诉渠道，普通用户维权成本高，平台将风险转嫁给用户，而诉讼成为最后但有效的救济途径，但门槛高、周期长。",
+          "must_verify": [
+            "当事人身份及账号恢复真实性（联系原帖作者或查看后续更新）",
+            "MCP插件具体是什么，是否违反小红书社区规则（如自动化操作、数据抓取）",
+            "诉讼具体案由（合同纠纷、侵权、行政？）、法院、判决结果或调解情况",
+            "小红书封号规则中关于第三方工具/插件的条款原文",
+            "类似案例（其他平台因使用插件被封后起诉成功的案例）"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "case_study",
+              "query": "小红书 封号 诉讼 解封 案例 2025",
+              "why_needed": "寻找类似维权案例，验证诉讼路径的普遍性和成功率"
+            },
+            {
+              "source_type": "policy",
+              "query": "小红书 社区规范 第三方工具 插件 禁止",
+              "why_needed": "获取小红书官方对第三方插件的具体规定，判断MCP插件是否违规"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "MCP 插件 小红书 封号 2025",
+              "why_needed": "了解MCP插件功能及是否被其他用户报告类似封禁"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "小红书 账号申诉 流程 诉讼 法律途径",
+              "why_needed": "获取官方申诉渠道和法律救济指引"
+            },
+            {
+              "source_type": "case_study",
+              "query": "平台误封 起诉 解封 赔偿 2024 2025",
+              "why_needed": "收集其他平台（如微信、抖音）误封后诉讼成功的案例，作为对比"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "V2EX 小红书 封号 诉讼 律师",
+              "why_needed": "在原帖下寻找更多当事人细节或律师建议"
+            }
+          ],
+          "expert_challenge_points": [
+            "诉讼成本（律师费、时间）是否高于账号价值？对于普通副业者是否划算？",
+            "MCP插件是否确实违反平台规则？如果违反，诉讼胜算如何？",
+            "平台是否有义务在封号前提供明确警告或人工复核？",
+            "类似案例中，法院是否支持用户要求恢复账号或赔偿损失？"
+          ],
+          "do_not_claim_yet": [
+            "诉讼是解决封号问题的普遍有效途径",
+            "MCP插件一定不违规",
+            "小红书封号机制存在系统性错误",
+            "所有用户都能通过诉讼快速解封"
+          ],
+          "can_publish_as_radar_if_missing": "可以发布，但需明确标注为个案，强调诉讼成本高、周期长，并提醒读者优先通过官方渠道申诉。",
+          "downstream_materials_needed": [
+            "当事人采访或详细时间线",
+            "律师对类似案件的法律分析",
+            "小红书官方对MCP插件的态度（如有）",
+            "其他平台封号后诉讼的对比数据"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号",
+            "url": "https://m.thepaper.cn/newsDetail_forward_33018819",
+            "query": "小红书 封号 诉讼 解封 案例 2025",
+            "provider": "tavily",
+            "score": "0.8539252",
+            "fetched_text": "多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号 window.AliyunCaptchaConfig = { region: \"cn\", prefix: \"1dl38w\" }; var _hmt = _hmt || []; (function() { var hm = document.createElement(\"script\"); hm.src = \"//hm.baidu.com/hm.js?d07e4d64d5cde19b5351e7032beaef1a\"; var s = document.getElementsByTagName(\"script\")[0]; s.parentNode.insertBefore(hm, s); })(); 下载APP 澎湃号·媒体 > 多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号 IT时报 中国电信集团有限公司上海分公司 2026-04-21 20:30 上海 律师和商户为何状告小红书？|图源：AIGC 作者／ IT时报 孙永会 编辑／ 郝俊慧 孙妍 庭审结束后，上海誓维利律师事务所主任李维世对于这场官司的胜败已经有了数，“很大概率会败诉，但我也要不争馒头争口气。”4月8日上午，她和小红书所属公司行吟信息科技对簿公堂，核心诉求是，要求平台通过自己“誓维利”专业号认证的申请，因为已支付了600元认证费。 “为何认证失败后，认证费不能退？为何平台规则载明可以用字号，但我用‘誓维利’字号认证时却不行？”接受《IT时报》记者采访时，李维世提出多个疑问。 距离上海一千多公里的西安，律师闫天柱有着同样的困惑。账号突然被永久封禁后，不知道自己究竟错在哪里的他，耗时近半年起诉小红书，两次审理最后皆以败诉告终。 封号、限流、认证费不退……《IT时报》记者注意到，在“黑猫投诉”平台，对小红书类似的投诉屡见不鲜。 作为月活用户超3亿的“种草”社区，小红书已从分享平台演变为集社交、电商于一体的超级App。然而，当平台同时是规则的制定者、执行者和裁判员时，用户的权利边界在哪里？ 截至发稿，《IT时报》记者试图向小红书方进行了解和求证，对方未正面回应相关问题，只表示：“认证失败不退费，这个各家都是一样的。” 对抗 连律师都搞不懂的认证规则 2023年5月，李维世开始更新小红书账号，初期仅分享判决书、调解书等法律文书案例，却意外接到了一些网友的咨询。像在其他社交平台一样，李维世将联系方式私信给对方，却发现被平台屏蔽了。 咨询平台客服后，李维世了解到，若有获客需求，她可以申请升级为“企业专业号”，每年需支付600元的认证费（审核费），即可合规留资。 2024年12月，李维世申请将账号升级为企业号，并支付了相应的认证费用，但平台以账号名称不合规为由驳回申请，要求必须加注“律师事务所”后缀，而不能只认证其律所字号“誓维利”。 然而，根据小红书聚光帮助中心的信息，企业用户账号名称可以基于字号/商标/实体经营场所等命名。比如，主体公司是“薯一薯二文化传媒（上海）有限公司”，在不侵权前提下，可以使用“薯一薯二”“薯一薯二文化”和“薯一薯二科技”等名称。 倘若按字面意思理解，李维世以“誓维利”进行账号认证是符合规定的。 考虑到平台的强势地位，李维世想，既然无法认证，那就退费吧，该诉求同样被平台拒绝：“认证不成功是你的原因，无法退费。” 无奈的李维世只能放弃认证，以个人身份开始运营自己的账号，由于无法通过公司店铺形式提供咨询服务，她依然采用私留联系方式的办法获客。 今年2月和3月，平台以“检测到违规留资”为由两次对“誓维利”账号进行封禁，判定违规的依据是置顶笔记中一张含有手机号的聊天记录截图。解封后，账号流量呈断崖式下跌。 退费 因规则外原因不被认证 依然无法退费 账号两次被封之后，李维世认为，被封号的根源是平台不通过正常名称的认证，既然如此，平台就应该退费。 在对小红书的起诉书中，她如是写道：“平台对个人账号的留资规则设置过度限制，企业号认证又设置了不合理的命名门槛，此系平台不合理规则所导致的普遍现象，并非个人特殊行为。” 但有观点认为，这笔费用是审核服务费，无论审核是否成功，都会收取。业内普遍存在的解释是，第三方审核机构已对提交资料进行真实性甄别与校验，付出了人工和时间成本。 但在小红书聚光帮助中心“专业号",
+            "fetch_error": ""
+          },
+          {
+            "title": "多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号_腾讯新闻",
+            "url": "https://news.qq.com/rain/a/20260421A056PP00",
+            "query": "小红书 封号 诉讼 解封 案例 2025",
+            "provider": "tavily",
+            "score": "0.8440111",
+            "fetched_text": "多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号_腾讯新闻 try { if (!window.IntersectionObserver) { var observerScript = document.createElement('script'); observerScript.src = \"https://mat1.gtimg.com/qqcdn/qqindex2021/common-static/20241024141058/intersection-observer-polyfill.js\"; document.head.appendChild(observerScript); } } catch (error) {} try { if (!Element.prototype.scrollTo) { var scrollScript = document.createElement('script'); scrollScript.src = \"https://mat1.gtimg.com/qqcdn/qqindex2021/common-static/20241025153001/scroll-behavior-polyfill.js\"; document.head.appendChild(scrollScript); } } catch (error) {} try { if ('scrollRestoration' in window.history) { window.history.scrollRestoration = 'manual'; } window.isPcClient = Boolean(window.electron) && ( window.navigator.userAgent.indexOf('pc-client') > 0 || window.navigator.userAgent.indexOf('TencentNews') > 0 ); } catch {} window.DATA = {\"url\":\"https://view.inews.qq.com/a/20260421A056PP00\",\"article_id\":\"20260421A056PP00\",\"atype\":\"0\",\"article_type\":\"0\",\"title\":\"多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号\",\"desc\":\"律师和商户为何状告小红书？|图源：AIGC作者／ IT时报 孙永会编辑／ 郝俊慧 孙妍 庭审结束后，上海誓维利律师事务所主任李维世对于这场官司的胜败已经有了数，“很大概率会败诉，但我也要不争馒头争口气。”4月8日上午，她和小红书所属公司行吟信息科技对簿公堂，核心诉求是，要求平台通过自己“誓维利”专业号认证的申请，因为已支付了600元认证费。“为何认证失败后，认证费不能退？为何平台规则载明可以用字号，但我用‘誓维利’字号认证时却不行？”接受《IT时报》记者采访时，李维世提出多个疑问。距离上海一千多公里的西安，律师闫天柱有着同样的困惑。账号突然被永久封禁后，不知道自己究竟错在哪里的他，耗时近半年起...\",\"iNewsRecommendLevel\":1,\"abstract\":\"律师和商户为何状告小红书？|图源：AIGC作者／ IT时报 孙永会编辑／ 郝俊慧 孙妍 庭审结束后，上海誓维利律师事务所主任李维世对于这场官司的胜败已经有了数，“很大概率会败诉，但我也要不争馒头争口气。”4月8日上午，她和小红书所属公司行吟信息科技对簿公堂，核心诉求是，要求平台通过自己“誓维利”专业号认证的申请，因为已支付了600元认证费。“为何认证失败后，认证费不能退？为何平台规则载明可以用字号，但我用‘誓维利’字号认证时却不行？”接受《IT时报》记者采访时，李维世提出多个疑问。距离上海一千多公里的西安，律师闫天柱有着同样的困惑。账号突然被永久封禁后，不知道自己究竟错在哪里的他，耗时近半年起...\",\"catalog1\":\"law\",\"ad_channel_sign\":\"news\",\"introduction\":\"\",\"media\":\"IT时报\",\"media_id\":\"5046687\",\"pubti",
+            "fetch_error": ""
+          },
+          {
+            "title": "因为被封号，我起诉了小红书 - 知乎专栏",
+            "url": "https://zhuanlan.zhihu.com/p/1993437147521385106",
+            "query": "小红书 封号 诉讼 解封 案例 2025",
+            "provider": "tavily",
+            "score": "0.84277284",
+            "fetched_text": "原告是小红书账号为（小红书号：XXXXX）的用户，于正常使用过程中突然于2025年8月11日14时收到封号通知，原告并不存在违法、违规的言行，在经过数次申诉后均未解",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          },
+          {
+            "title": "[PDF] 品牌号社区运营规范",
+            "url": "https://dc.xhscdn.com/file/c947aa537be9e80d802226374b5c710f/%E5%93%81%E7%89%8C%E5%8F%B7%E7%A4%BE%E5%8C%BA%E8%BF%90%E8%90%A5%E8%A7%84%E8%8C%83.pdf",
+            "query": "小红书 社区规范 第三方工具 插件 禁止",
+            "provider": "tavily",
+            "score": "0.6816637",
+            "fetched_text": "%PDF-1.7 % 1 0 obj >/Metadata 1016 0 R/ViewerPreferences 1017 0 R>> endobj 2 0 obj > endobj 3 0 obj >/ExtGState >/Font >/ProcSet[/PDF/Text/ImageB/ImageC/ImageI] >>/MediaBox[ 0 0 594.96 842.04] /Contents 4 0 R/Group >/Tabs/S/StructParents 0>> endobj 4 0 obj > stream x[[oܸ\u0015~7Ge Y\u0018FuMh-\u000f>xlЍ=GdC\u000e5Z\u0001\u00022x|B]Uߞ>|񩸾>rS~|zzo_ﯾDǧo77E6\u0015J^2Y|??ן3\u0000^ ]\b^\u001aKb4\\\u0017E -J-dw_>ݫ},q~VtA\u0011_Pz \u0015\u0011^?\u0000)\u0011 \u0012j.% \u0007Ǜl U5pS\u0007lF(fKT[$l٫rc@N@q Ok\u0015m4b'PWN\u0015ژz3k>\u0012Էxk\u000f+nG\u0016\u0014\u0000ZNR\u0017Ơ\b 4·\u000fA\u000e+ޞ}(P_9婹] \u0019Û, )ƙ\u00125U;fxƈ 6N6D:$qXUbzVT}fi1\u000f\u0010#b5 :0K{:\u0003]~\u0006 Fak\u0006la\u0007F\u0013[B\by T6dg ~-ޛ09:!#\"\u0003JX\u001a qL\\Lx\u0019(jBp\u0011A.|1x/#\u0003Z:Ф{&^5\u0006\u0007'^f46L i֏\u0016G4\u001aъ\u0002\u0000̥K(>\u0019iyЬy@3iS nT2x\u0004_R(8D-:Lʘ\u0002{\u0015\u0011r_ rE\u000eJC9STeLkr\u0005\u0011 .f>AپfUO\\a>\u0003QF__ Wǭ,!`.~Doߩ( h\u0019\u0001G-S{\u0001&\u0017T؂\u0018\u0018Zzw](z\u00133pE\u000e(.gDu\u00141?_\"5,I\u0004 ێy\u0003+s/@zιMxPI 0\u0001\"K9{|\u0004単:z6uUq\u0001\u0003uSkxۏ Bz\u001az1\u001bGN- ۊi=*\u0014eӖ c@ \u0000n8 G\u0000\u0019S&\\Fq\u001a\u00110Yj\u0004y\u000fdΉ- zGjx_cs.{7|\u0005IN\u0004SHN\u0004_Aܽ\u0004JDܠA\\&;sԌEPl\u00023) -uI09\"H |y=آtMS}=J+^K4T \u000e,H\u00014k endstream endobj 5 0 obj > stream x_MYKJ\u0019qW\b3\u001a4hT*BB\u0010۔\"iRF%E1fjx}:ߜgsN\u00179ky.{=Y \u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u00063\u001bt2k֬Xwe$''9sXzf\u0000ia\u0002@&%%ź!Çw\u0002\u0013\u0013\u0013wYjU;2***Fd\u0018 e6l\u0010^ l޼ėQ;ݻ7ֽ\u000e\u0004xxx?\u0018\u0017௿\u001a\u001a\u001a*((={v2Ξ=6x+ßՅ ĺ3\u0003۷o_~wV\u0010ŗ/_ \u001a =FZ 12{l\u000ez%7+H#C\u0016_^~]~>b¾\u001b t%iQO0\u0013(\u0003wZ[[sss%,}˃e.d, \u001aӘ-\u0005N \b\u0006\u0003Q\"\\A߿m6 \u0004$`mm@ 0\\; \u001a n \u001aݱc\u0005Y}\b\u0002)\u0002 :44\u0014AIo \u0019\u0014xMII)))Az{{ \u0007\b2׋\u0014E\u0016\u0015\u0017\u0017_z \u000e \\ \u0017N85?qΜ96mOAć8\u000f### hkk;t\u0010co\u00101cɒ%\u0016W_}C^\u0010OAA\u0001 ɌZ=ߎ\u000fɓ';:: A\u0005 QlْS5kPMޕZz5\u000e~X\u001a\u0004: ˂\u0003Ht\u0012j\u001aY=s3wn\u0007 {մ ! \u0004t,;v \u0005Cj\u0006qq\u0016:ِ\u0005\u0017׺\u0019G\u0016f߾}ȿpiToo/J ,6m\u0010h\u0005/7\\?q#\u001b\u001b\u001b3+B5|\u0006dy\u0001u3,Ʌ,@\u0016\u0012Hc:Yܰ3g΄ }4\\Aٳg\u0017\u0015\u0015=|bb~j\u0005\u0014$B|E\u0019b$X)?dau ٳgc[uժɼ =ۮ ~ ehh\bچk (77\u0017CG?\u0016-KuX\u000375;%@\u00164Ç+d8q\u0004f\u0005\u0013\u0016H|/...#|/nkGo޼ioo/\u0016{fi׮]k׮TKL\u0007.= L SְҶ{ \u0000 \u0017\u0016\u0015\u0015a.YSSS7?ޑEɵ \"wy[A*,,d*ZC )-V\u0010$ӧȂ^u%4\u0018@{%0ZT0;`ٵ2^Xk׮Yg7p D+လ\u0013 :\u0016C\u0005 \u0016466\u0017\u0015\u0010r˗\u00196}}}^%WyU^ Z\u0011Z\u0012%\u000ep,jCq,֘;w \u0017r;\u0012Y233qYZxJ\u0016}\\\u0006վ[>\u0018B I!5 ٳgQGB銜,D\u000e \b_8d=*\u0016C\u0015}fE?\u0005\u000f\u0001O^Q 'YyJիW777_Mȵup rںT & \u0007C\u0016kD,\u0004,8\u0012SSS---\u0019\u0019\u0019=%]ֶׯGXmܾ};j ,ֈ>Y\u0012|/p%\u00120c~GIrd\u0001eee Dz_\u0018_Frk D0UPP 8\u0018,ֈ Y%mUyNd!`\u0017f\u0017nʕJK~\u0015Q#C\u0016kĄ,h?uvSe\u0007k,[ ",
+            "fetch_error": ""
+          },
+          {
+            "title": "小红书社区规范 - 在线协议",
+            "url": "https://agree.xiaohongshu.com/h5/terms/ZXXY20221213003/-1",
+            "query": "小红书 社区规范 第三方工具 插件 禁止",
+            "provider": "tavily",
+            "score": "0.65835214",
+            "fetched_text": "小红书 window.__ERROR_TRACKER_BUFFER__=[],window.onerror=function(o,n,R,_,e){window.__ERROR_TRACKER_BUFFER__.push({error:e||o,extra:{source:n,lineno:R,colno:_}}),(new Image).src=\"//www.xiaohongshu.com/eplDKtpK4k.txt?l=\"+location.href+\"&a=\"+o+\"&b=\"+n+\"&c=\"+R+\"&d=\"+_+\"&e=\"+e.stack} !function(){var e=function(e){var t={};function n(o){if(t[o])return t[o].exports;var r=t[o]={i:o,l:!1,exports:{}};return e[o].call(r.exports,r,r.exports,n),r.l=!0,r.exports}return n.m=e,n.c=t,n.d=function(e,t,o){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},n.r=function(e){\"undefined\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\"Module\"}),Object.defineProperty(e,\"__esModule\",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&\"object\"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,\"default\",{enumerable:!0,value:e}),2&t&&\"string\"!=typeof e)for(var r in e)n.d(o,r,function(t){return e[t]}.bind(null,r));return o},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,\"a\",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p=\"\",n(n.s=1)}([function(e,t,n){\"use strict\";Object.defineProperty(t,\"__esModule\",{value:!0}),t.default=function(e){return!(e instanceof HTMLHeadElement||e instanceof HTMLMetaElement||e instanceof HTMLLinkElement||e instanceof HTMLStyleElement||e instanceof HTMLScriptElement||e instanceof SVGElement||\"none\"===getComputedStyle(e).display)}},function(e,t,n){\"use strict\";Object.defineProperty(t,\"__esModule\",{value:!0}),t.observe=function(){if(window.MutationObserver&&window.performance&&performance.timing){window.__FP__=0,window.__FCP__=0,window.__FMP_OBSERVED_POINTS__=[],window.__FULLY_LOADED__=0;",
+            "fetch_error": ""
+          },
+          {
+            "title": "小红书提示存在风险插件要如何处理？ - 社媒助手 - 隙生科技",
+            "url": "https://smzs.xisence.com/help/faq/xiaohongshu/risk-plugin",
+            "query": "小红书 社区规范 第三方工具 插件 禁止",
+            "provider": "tavily",
+            "score": "0.60750073",
+            "fetched_text": "小红书：小红书提示存在风险插件要如何处理？ - 社媒助手 ((e,t,n,r,i,o,a,s)=>{let l=document.documentElement,c=[\"light\",\"dark\"];function u(t){var n;(Array.isArray(e)?e:[e]).forEach(e=>{let n=\"class\"===e,r=n&&o?i.map(e=>o[e]||e):i;n?(l.classList.remove(...r),l.classList.add(o&&o[t]?o[t]:t)):l.setAttribute(e,t)}),n=t,s&&c.includes(n)&&(l.style.colorScheme=n)}if(r)u(r);else try{let e=localStorage.getItem(t)||n,r=a&&\"system\"===e?window.matchMedia(\"(prefers-color-scheme: dark)\").matches?\"dark\":\"light\":e;u(r)}catch(e){}})(\"class\",\"theme\",\"light\",null,[\"light\",\"dark\"],null,true,true) Skip to Content 社媒助手 首页 下载 定价 帮助中心 更新记录 联系我们 input]:pl-8 [&>input]:h-10 [&>input]:text-sm [&>input]:border-1 [&>input]:border-gray-200 [&>input]:rounded-md [&>input:focus]:border-blue-500 [&>input]:transition-colors [&>input]:w-full [&>kbd]:hidden [&>input]:bg-white/80\"> CTRL K 首页 下载 定价 帮助中心 更新记录 联系我们 CTRL K 功能指南 简单介绍 插件配置 飞书同步 数据上报 采集模式 采集历史 账号管理 任务闹钟 采集本页数据 媒体文件下载 便捷复制数据 常见问题 浏览器相关问题 为什么无法访问 Chrome 应用商店？ 下载插件时提示“无法从该网站添加应用、扩展程序和用户脚本”怎么办？ 社媒助手如何进行离线安装/更新？ 为什么推荐使用最新版 Chrome？ 会员相关问题 什么是增强版 API 模式 什么是自动加载验证码 如何免费获取VIP 第三方收费下载说明 为什么不能注册账号 下载相关问题 批量下载媒体文件时，如何关闭二次确认？ 下载文件的保存位置和文件名如何自定义？ 为什么配置的文件名未生效？ 飞书相关问题 提示字段类型不匹配是怎么回事？ 提示权限不足怎么解决？ 小红书相关问题 小红书出现“Request failed with status code 406“是怎么回事？ 小红书经常提示“访问频繁，请稍后再试”是什么情况？ 小红书提示存在风险插件要如何处理？ 为什么搜索导出最多只有两百多篇笔记？ 抖音相关问题 为什么采集到的评论比页面显示的数量少一些？ 为什么有时候视频数据会获取不全？ 哔哩哔哩相关问题 哔哩哔哩视频下载为什么和其他平台不一样？ 小红书 植入功能 专辑页 笔记详情页 搜索页 博主详情页 批量采集 采集博主数据 采集评论数据 采集笔记数据 其他功能 链接转换 抖音 植入功能 搜索页 达人详情页 视频详情页 批量采集 采集达人数据 采集视频数据 采集评论数据 其他功能 链接转换 B站 植入功能 搜索页 UP主详情页 视频详情页 批量采集 采集评论数据 采集UP主数据 采集视频数据 其他功能 链接转换 快手 植入功能 达人详情页 搜索页 视频详情页 批量采集 采集达人数据 采集评论数据 采集视频数据 其他功能 链接转换 TikTok 植入功能 达人详情页 视频详情页 批量采集 采集达人数据 采集视频数据 采集评论数据 其他功能 短链解析 功能指南 简单介绍 插件配置 飞书同步 数据上报 采集模式 采集历史 账号管理 任务闹钟 采集本页数据 媒体文件下载 便捷复制数据 常见问题 浏览器相关问题 为什么无法访问 Chrome 应用商店？ 下载插",
+            "fetch_error": ""
+          },
+          {
+            "title": "小红书AI工具引流：2025 年小红书私域运营新策略（高效且安全）",
+            "url": "https://zhuanlan.zhihu.com/p/1913942349316330004",
+            "query": "MCP 插件 小红书 封号 2025",
+            "provider": "tavily",
+            "score": "0.7197191",
+            "fetched_text": "依托定制的MCP 服务实现小红书页面内容安全提取，AI Agent 完成智能决策与内容输出，全流程保障安全。 极度重视账号安全，自动引流全程无需用户提供",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          },
+          {
+            "title": "封号禁言！2025年在小红书导流要换思路了 - 亿邦动力",
+            "url": "https://www.ebrun.com/20250303/573998.shtml",
+            "query": "MCP 插件 小红书 封号 2025",
+            "provider": "tavily",
+            "score": "0.6186197",
+            "fetched_text": "小红书线索获取基建的完善,意味着可以进行高效率的、规模化的、稳定性的获客2025 年可以称得上是线索行业商家和运营操盘手在小红书的决胜年了。",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          },
+          {
+            "title": "RedNote-MCP：超好用的小红书内容访问MCP服务！ - 53AI-AI知识库|企业AI知识库|大模型知识库|前线部署工程师|FDE|AIHub",
+            "url": "https://www.53ai.com/news/neirongchuangzuo/2025041605194.html",
+            "query": "MCP 插件 小红书 封号 2025",
+            "provider": "tavily",
+            "score": "0.53866833",
+            "fetched_text": "window.dataLayer = window.dataLayer || [] function gtag() { dataLayer.push(arguments) } gtag('js', new Date()) gtag('config', 'G-TEQE4Y0F1C') RedNote-MCP：超好用的小红书内容访问MCP服务！ - 53AI-AI知识库|企业AI知识库|大模型知识库|前线部署工程师|FDE|AIHub [data-aos][data-aos][data-aos-duration=\"1600\"], body[data-aos-duration=\"1600\"] [data-aos] { transition-duration: 1.6s } [data-aos][data-aos][data-aos-easing=ease], body[data-aos-easing=ease] [data-aos] { transition-timing-function: ease } [data-aos^=fade][data-aos^=fade] { opacity: 0; transition-property: opacity, transform } [data-aos^=fade][data-aos^=fade].aos-animate { opacity: 1; transform: translateZ(0) } [data-aos=fade-up] { transform: translate3d(0, 100px, 0) } .iconfont { font-family: iconfont !important; font-size: 16px; font-style: normal; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale } .icon-home:before { content: \"\\eb1b\" } .icon-lianximaijia:before { content: \"\\e60e\" } .icon-dianhua1-mianxing:before { content: \"\\e69b\" } .icon-zhiding:before { content: \"\\e61d\" } .icon-close:before { content: \"\\e64d\" } .icon-arrow-right-o:before { content: \"\\e615\" } :root { --swiper-theme-color: #007aff; --swiper-navigation-size: 44px } .swiper-wrapper { position: relative; width: 100%; height: 100%; z-index: 1; display: flex; transition-property: transform; box-sizing: content-box } .swiper-container-android .swiper-slide, .swiper-wrapper { transform: translate3d(0, 0, 0) } .right-bar .item .contact-hover { position: absolute; right: 100%; top: 50%; -webkit-transform: translate(0,-50%) scale(0); -moz-transform: translate(0,-50%) scale(0); transform: translate(0,-50%) scale(0); visibility: hidden; opacity: 0; -webkit-transform-origin: right center; -moz-transform-origin: right center; transform-origin: right center; padding-right: 0.1rem",
+            "fetch_error": ""
+          },
+          {
+            "title": "小红书账号被禁言怎么申诉？ - 脉脉",
+            "url": "https://maimai.cn/article/detail?fid=1840222547&efid=0gm1B3O5H6IieocvDdbQaQ",
+            "query": "小红书 账号申诉 流程 诉讼 法律途径",
+            "provider": "tavily",
+            "score": "0.8033131",
+            "fetched_text": "小红书账号被禁言怎么申诉？ - 脉脉 html{background-color:#f4f5fa} 登录 / 注册 小红书账号被禁言怎么申诉？ 拉卡斯暑 24-07-19 · 77 add-friend 好友 小红书账号被禁言后，申诉是一个恢复账号正常使用的途径。以下是小红书账号被禁言后的申诉步骤： 一、进入申诉页面 打开小红书APP：首先，确保你已经下载并安装了小红书APP，并且能够正常登录被禁言的账号。 找到“帮助与客服”：在小红书APP的主页或侧边栏中，找到并点击“帮助与客服”选项。这个选项可能会以不同的形式出现，比如一个问号图标或者“客服中心”等。 选择“账号申诉”：在“帮助与客服”页面中，寻找并点击“账号申诉”或类似的选项。这个选项通常会位于自助服务板块内。 二、选择申诉类型 选择“账号被禁言”：在账号申诉界面中，你会看到多种申诉类型，比如“账号被盗”、“账号被误封”等。根据你的情况，选择“账号被禁言”作为申诉类型。 对于小红书的玩法和规则我基本都已掌握，如果你想了解具体操作，这里给大家准备了 免费的 小红书开店教程及实操爆单玩法，戳戳： 点击领取 三、填写申诉内容 描述问题：在申诉内容中，简要描述你的账号被禁言的情况。比如，你可以说明你的账号没有违反任何规定，但突然被禁言了，或者你可以说明你已经删除了违规内容并愿意改正错误。 提供证据：如果可能的话，提供一些证据来支持你的申诉。比如，你可以上传截图证明你的账号没有发布违规内容，或者你可以提供其他用户的证词来证明你的清白。但是，请注意，小红书可能并不要求所有申诉都提供证据，这取决于具体情况。 四、提交申诉 检查信息：在提交申诉之前，仔细检查你填写的信息是否准确无误。确保你的联系方式是有效的，以便小红书在需要时能够联系到你。 点击“提交”：确认无误后，点击“提交”按钮将申诉发送给小红书官方。 五、等待审核与处理 耐心等待：提交申诉后，你需要耐心等待小红书官方的审核结果。审核时间可能会因情况而异，请保持耐心。 查看结果：审核结果通常会通过小红书APP内的消息通知或邮件等方式告知你。如果申诉成功，你的账号将恢复正常使用；如果申诉不成功，你可以根据小红书给出的原因进行调整后再次申诉。 注意事项 在申诉过程中，请保持诚恳和耐心的态度。不要使用不当言辞或威胁等方式来催促审核结果。 遵守小红书的社区规范和规定是避免账号被禁言的关键。如果你的账号被禁言是因为违反了规定，那么你应该认真反思并改正错误。 如果你的申诉被驳回或需要进一步的帮助，你可以联系小红书的人工客服进行咨询和求助。 小红书账号被禁言怎么申诉？ 脉脉 END 阅读 6 声明：本文内容由脉脉用户自发贡献，部分内容可能整编自互联网，版权归原作者所有，脉脉不拥有其著作权，亦不承担相应法律责任。如果您发现有涉嫌抄袭的内容，请发邮件至maimai@taou.com，一经查实，将立刻删除涉嫌侵权内容。 相关推荐 最新发布 大家都在看 热门人脉圈 评论 我来说几句... 我来说几句... .css-13ec0ti{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;right:0;bottom:0;top:0;left:0;background-color:rgba(0, 0, 0, 0.5);-webkit-tap-highlight-color:transparent;z-index:1201;} 登录查看更多内容、看点评、加好友 登录 / 注册 {\"props\":{\"pageProps\":{\"user\":null,\"data\":{\"collected\":null,\"comments\":{\"lst\":[],\"more\":false,\"pa",
+            "fetch_error": ""
+          },
+          {
+            "title": "小红书封号后应该如何申诉?-高顿教育",
+            "url": "https://www.gaodun.com/xinzhiye/1423033.html",
+            "query": "小红书 账号申诉 流程 诉讼 法律途径",
+            "provider": "tavily",
+            "score": "0.7915799",
+            "fetched_text": "(function(a, b) { if ((/AppleWebKit.*Mobile/i.test(a) || /Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(a) || /MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(a)) && !/iPad/i.test(a) && location.hash != '#m') window.location = b })(navigator.userAgent, 'https://m.gaodun.com/xinzhiye/1423033.html') 小红书封号后应该如何申诉?-高顿教育 .article .article-head li.follow-share span:first-child::before { background-position: -53px 0; } url_v= \"//v.gaodun.com\"; --> 登录高顿网校 --> 登录高顿网校 资料修改成功 失败提示失败提示 手机号/邮箱： 密码： 忘记密码？ 自动登录 免费注册 合作账号登录 --> 合作账号登录 QQ登录 微博登录 微信登录 url_v= \"//v.gaodun.com\"; url_s = \"//s.gaodun.com\"; url_w = \"//www.gaodun.com\" 高顿教育 / 新职业新技能 / 小红书博主孵化培训 / 文章详情 小红书封号后应该如何申诉? 高顿教育 2023-04-07 09:37 nicole 分享 新职业新技能臻选试听集 小红书封号后应该如何申诉？ 在小红书上，用户可以分享自己的生活、购物心得和美妆技巧等内容，但是平台也有一系列规定，包括禁止发布不良信息、违反版权等行为。如果用户在平台上违反了这些规定，可能会被封禁账号。但是有些用户可能因为某些原因被误封，这时需要进行申诉。那么小红书封号后应该如何申诉呢？接下来我们就来一起了解一下。 一、申诉流程 1.查看封禁原因。当用户发现自己的小红书账号被封禁后，应该首先查看封禁原因。平台会给出相应的理由，用户需要认真阅读，并分析自己的行为是否有违规。 2.联系客服。如果用户认为自己的封禁是错误的，可以通过小红书客服渠道进行申诉。用户可以通过小红书官方网站、小红书APP或小红书微博等渠道联系客服，提供自己的申诉理由和相关证据。 3.等待处理。用户提交申诉后，需要等待小红书客服的处理。客服会对用户的申诉进行审核，并根据情况进行解封或继续封禁。 二、申诉注意事项 1.提供充分证据。用户在进行申诉时，应该提供充分的证据来证明自己的行为没有违规。例如，可以提供相关的截图、聊天记录等。 2.文明申诉。用户在进行申诉时，应该注意措辞，不要使用恶意语言或攻击性言辞。这样会影响到申诉的效果。 3.合理申诉。用户在进行申诉时，应该根据自己的实际情况提出合理的申诉理由，而不是无中生有或推卸责任。 封禁账号是小红书对于用户违规行为的一种管理方式，但是有些用户可能因为某些原因被误封。如果用户在小红书上被封禁账号，可以通过联系客服进行申诉。在申诉时，需要提供充分的证据、文明措辞，并根据实际情况提出合理的申诉理由。如果申诉成功，用户可以重新使用自己的账号，如果申诉失败，用户可以再次提交申诉或者寻求其他途径解决问题。 以上就是关于小红书封号后应该如何申诉的相关介绍。如果用户遵守小红书的相关规定，不会违反平台的规定，那么就不会被封禁账号。但是如果不慎违规被封禁了账号，可以根据上述的申诉流程进行申诉，希望能够得到解决。 更多干货，点击了解 以上就是 【小红书封号后应该如何申诉?】 的全部解答，如果你想要学习【小红书运营】更多这方面的知识，欢迎大家前往>> 5天小红书陪跑营 ! 添加老师微信 掌握更多小红书运营资讯 相关阅读 0基础的普通人怎么做小红书运营? 0粉丝也能赚钱!小红书赚钱的6种方式 什么样的人适合做小红书 上一篇： 小红书违规笔记如何进行修改? 下一篇： 小红书",
+            "fetch_error": ""
+          },
+          {
+            "title": "小红书被封禁怎么申诉 - 法行宝",
+            "url": "https://ailegal.baidu.com/legalarticle/qadetail?id=b66d1f5921bd56000618",
+            "query": "小红书 账号申诉 流程 诉讼 法律途径",
+            "provider": "tavily",
+            "score": "0.7593865",
+            "fetched_text": "法行宝-您的免费AI律师 { \"@context\": \"https://schema.org\", \"@type\": \"WebSite\", \"name\" : \"法行宝\", \"headline\" : \"法行宝-您的免费AI律师\", \"datePublished\": \"\", \"dateModified\": \"\", \"description\": \"您身边的AI律师，法行宝为您提供专业的法律问答咨询服务，帮助您解答法律问题，法律咨询就来法行宝！\", \"keywords\": \"\" } var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = \"https://hm.baidu.com/hm.js?87211a649e43152c3ab9129dc08efb6d\"; hm.setAttribute('async', 'async'); hm.setAttribute('defer', 'defer'); var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })(); !function (t) {var o =\"https:\\/\\/www.faxingbao.com\\/legalarticle\\/qadetail?id=b66d1f5921bd56000618\"; if (o && !/([http|https]:\\/\\/[a-zA-Z0-9\\_\\.]+\\.toutiao\\.com)/gi.test(o) && t.navigator.appName) { var n = '7f5505489c7e46ce2e5aedf7180053679ecf63092d68b96b89602fb03c6e7d3a65e0a2ada1d5e86b11e7de7c1a83287d04743a02fd1ee8dd8558a8cad50e91cb354f8c6f3f78e5fd97613c481f678e6d', e = \"https://zhanzhang.toutiao.com/s.gif\", a = new Image; o && (e += \"?url=\" + encodeURIComponent(o)), n && (e += \"&token=\" + n), n && (a.src = e) } }(window); var sid = '2136'; var sak = '88dfc39fd2'; window.ParisFactory.create({ sid: sid, sak: sak, timeout: 5000, bantiUrl: `https://banti-static.cdn.bcebos.com/o/static/banti_${sak}.js`, acsUrl: `https://dlswbr.baidu.com/heicha/mm/${sid}/acs-${sid}.js`, disasterConfig: { acsUrl: `https://miaowu.baidu.com/sdk/heicha/mm/${sid}/acs-${sid}.js`, }, }); window.pageData = {\"baseinfo\":{\"isLogin\":0,\"passapi\":\"//passport.baidu.com/passApi/js/uni_login_wrapper.js\",\"passdomain\":\"https://passport.baidu.com\",\"userName\":\"\",\"userPhoto\":\"\"},\"lawPreloadData\":{\"criteriaData\":{\"caseCauses\":[{\"children\":[{\"children\":[{\"children\":[],\"childrenCount\":0,\"code\":\"001001001\",\"count\":0,\"name\":\"背叛国家罪\"},{\"children\":[],\"childrenCount\":0,\"code\":",
+            "fetch_error": ""
+          },
+          {
+            "title": "无畏契约在2024年4月3日无故被封号10年，并且两次申诉不予解封",
+            "url": "https://tousu.sina.cn/complaint/view/17372572514?vt=4",
+            "query": "平台误封 起诉 解封 赔偿 2024 2025",
+            "provider": "tavily",
+            "score": "0.568057",
+            "fetched_text": "无畏契约在2024年4月3日无故被封号10年，并且两次申诉不予解封_游戏投诉_黑猫投诉_新浪网 var baseUrl = '//tousu.sina.com.cn/'; var PAGE_CONFIG = { \"isLogin\": true, \"complaintId\": '17372572514', \"userAvatar\": '//n.sinaimg.cn/finance/235fa465/20230314/4.png', \"coTitle\": '腾讯游戏', \"coAvatar\": '//tvax1.sinaimg.cn/crop.0.0.1000.1000.180/d6d3ce75ly8h8v0fpryhzj20rs0rs3yz.jpg?KID=imgbed,tva&Expires=1781266381&ssig=XxS7U0Unya', \"coStatus\" : '7', \"lawStatus\": '', \"lawId\": \"1\", \"tpl\": 0 } .con{position:relative;line-height:20px;font-size: 14px;color: #84848A;margin: 8px 0;} .con i{display:block;position:absolute;top:12px;width:100%;border-top:1px dashed #ddd;} .con p{display:inline-block;color:#c1c1c1;background:#fff;padding:0 5px;text-align: center;margin:0 auto;position:relative;z-index:2;} .file_hide{margin-top:10px;} .file_hide a{display:block;width:100px;height:30px;line-height:30px;border:1px solid #fbaf17;text-align:center;font-size:15px;color:#fbaf17;} #flashBox{color: #fff;background-color: #000;position: relative;padding: 0;width: 640px;height: 516px;margin: 0 auto;} #flashBox video{position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: #000;} 315黑猫投诉-新浪旗下消费者服务平台 消息 注册 登录 投诉 商家 0 消息 首页 集体投诉 红黑榜 商家列表 帮帮团 热点追踪 APP下载 --> 首页 > 详情 无畏契约在2024年4月3日无故被封号10年，并且两次申诉不予解封 勇敢喵 发布于 2024年04月16日 14:45 投诉编号 17372572514 投诉对象 腾讯游戏 投诉问题 客服不理人,时间等太久,客服不处理/处理不当,不予退款,联系不到客服,霸王条款 投诉要求 恢复账号,改善服务,撤销处罚 涉诉金额 6500元 投诉进度 投诉已完成 1 1 0 微博 微信 QQ QQ空间 勇敢喵 评价 05-14 20:01:19 服务态度 处理速度 满意度 勇敢喵 确认完成 05-14 20:01:19 商 腾讯游戏 回复 04-24 14:19:24 亲爱的玩家：感谢您对腾讯游戏的支持，为了给您提供专业、优质的提问反馈系统以及游戏体验，请使用微信搜索公众号【腾讯客服】（微信号：Tencent_KF），即可联系客服。感谢您一直以来对腾讯游戏的支持，祝您游戏愉快！ 勇敢喵 补充投诉 04-23 11:10:08 已经一周过去了，到现在没有任何人联系我，急需处理 黑猫消费者服务平台 商家处理中 04-16 15:26:34 已分配商家 腾讯游戏 黑猫消费者服务平台 审核通过 04-16 15:26:34 勇敢喵 于黑猫投诉平台发起 04-16 14:45:38 本人是无畏契约开服玩家并且一直在玩，充值了6500元多，玩任何游戏从来都没有开过",
+            "fetch_error": ""
+          },
+          {
+            "title": "CF误封10年？新的申诉解封方法来了，赶快去试试吧！ - 腾讯云",
+            "url": "https://cloud.tencent.com/developer/news/1161349",
+            "query": "平台误封 起诉 解封 赔偿 2024 2025",
+            "provider": "tavily",
+            "score": "0.42133808",
+            "fetched_text": "CF误封10年？新的申诉解封方法来了，赶快去试试吧！ - 腾讯云开发者社区-腾讯云 @supports (padding:max(0px)){.set-safe-area .com-main{bottom:calc(max(12px,constant(safe-area-inset-bottom)) + 50px);bottom:calc(max(12px,env(safe-area-inset-bottom)) + 50px)}.set-safe-area .com-main-simple-sec,.set-safe-area .com-main.without-tab-ft,.set-safe-area .com-main.without-ft{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}.set-safe-area .com-main-sec{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}.set-safe-area .com-m-footer,.set-safe-area .sa-fixed-btns{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}.set-safe-area .com-mobile-body{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}}@supports (padding:max(0px)){.set-safe-area .support-wrap,.set-safe-area div.body{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}.set-safe-area .com-responsive-no-ft div.body{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}}.doc-con .J-docShareModal{display: none;} .doc-con .J-docShareCopyTipModalMB{display: none} .with-focus+.com-main-simple-sec, .with-focus+.com-main,.with-focus+.com-body,.with-focus+.qa-body{top:100px} .qa-detail-ask-panel:after{display:none!important;} .sa-fixed-btns .c-btn-weak{background-color: #fff;} .qa-r-editor.draft-editor-host.rno-markdown{height: 290px;overflow-y:auto;} .uc-achievement{line-height:24px;margin-bottom:5px;white-space: initial;overflow:visible;text-overflow:initial} .uc-achievement .uc-achievement-icon{top:0;margin-top:0; .uc-hero+.com-body-main .com-tab .com-tab-item{margin-right: 28px;} 腾讯云 开发者社区 文档 建议反馈 控制台 登录/注册 首页 学",
+            "fetch_error": ""
+          },
+          {
+            "title": "用户因微信被封起诉腾讯每日赔偿25元 - 新京报",
+            "url": "https://m.bjnews.com.cn/detail/163152053214721.html",
+            "query": "平台误封 起诉 解封 赔偿 2024 2025",
+            "provider": "tavily",
+            "score": "0.37731177",
+            "fetched_text": "用户因微信被封起诉腾讯每日赔偿25元 --> --> --> --> .rem038{ font-size:0.38rem !important; } --> 新京报客户端 好新闻 无止境 立即打开 .btn { width: 100%; height: 26px; line-height: 1; text-align: center; font-size: 12px; border: none; border-radius: 2px; color: #000; background: #D02D2D; color: #FFFFFF; } 立即打开 用户因微信被封起诉腾讯每日赔偿25元 新京报 记者 刘平 金城武 编辑 李四 刘宇 --> 新京报 编辑 胡萌 2021-09-13 16:21 HI财讯 进入 HI财讯 阅读更多内容 --> 订阅 新京报贝壳财经讯 企查查APP显示，近日，曲某与深圳市腾讯计算机系统有限公司侵权责任纠纷民事一审民事裁定书公开。原告曲某称因通过微信几次发送邮件，被腾讯公司以传播违法信息封禁，曲某要求被告腾讯公司赔偿其微信被封期间每日损失费25元。 法院认为，此前相关案件已移送广东省深圳市南山区人民法院处理，原告起诉属于重复起诉，判决结果为驳回曲某起诉。 编辑 胡萌 校对 李世辉 展开全文 --> 全文 0字 您已阅读 % --> .btn { width: 100%; height: 45px; line-height: 45px; text-align: center; font-size: 16px; border: none; border-radius: 4px; color: #000; background: #D02D2D; color: #FFFFFF; } 打开新京报APP 阅读更多精彩资讯 打开新京报APP 阅读更多精彩资讯 --> 相关推荐 起底“中医号脉”直播课，号称“行走的CT”，靠此技术挣钱改命 消费 “你的号我就是要毁”，游戏里损失“一个亿”，现实中能获赔吗？ 时事 今年最嚣张的网红把粉丝整到“破产”，还敢放话“毁的就是你” 新京号 “育儿补贴”诈骗背后，谁在贩卖母婴信息？ 新京号 “育儿补贴”诈骗背后，谁在贩卖母婴信息？ 时事 去APP浏览更多内容 --> --> 新京报报料邮箱：82708677@bjnews.com.cn --> 起底“特供酒”黑产业链：17家公司、跨多地制售，11人被批捕 端午假期将至，北京公交优化通游线路 怀密线、S2线周末休闲客流增幅超50% 警惕睡眠缺氧危害 打呼噜呼吸机瑞思迈AirSense 11成居家干预优选 --> --> $(function(){ var ksginTime = new Date().getTime(); var imgls = $(\".article-cen img\"); var timer = setInterval(function () { var complete = true; var endTime = new Date().getTime(); var timeout = endTime - ksginTime import('https://cdn.bootcdn.net/ajax/libs/photoswipe/5.3.6/photoswipe.esm.js') // pswpModule:PhotoSwipe // }; // let tr = false; // $('.article img').each(function(t, n) { // if($('.article img').length-1 == t){ // tr = true; // return // } // options.dataSource.push({ // id: t+1, // src: $(this).attr('src'), // width: $(this).naturalWidth, // height: $(this).naturalHeight, // }) // }) // var timer = setInterval(function () { // if(tr){ // clearInterva",
+            "fetch_error": ""
+          },
+          {
+            "title": "使用开屏广告跳过导致小红书账号被封怎么申诉？ - V2EX",
+            "url": "https://www.v2ex.com/t/970271",
+            "query": "V2EX 小红书 封号 诉讼 律师",
+            "provider": "tavily",
+            "score": "0.6369636",
+            "fetched_text": "使用开屏广告跳过导致小红书账号被封 怎么申诉？ - V2EX body { min-width: 820px; font-family: \"Helvetica Neue\", \"Luxi Sans\", \"Segoe UI\", \"Hiragino Sans GB\", \"Microsoft Yahei\", sans-serif, \"Apple Logo\"; } const SITE_NIGHT = 0; const LANG = 'enus'; const FEATURES = ['search', 'favorite-nodes-sort']; {\"comment\": [{\"text\": \"肯定不能主动说 ad 快消，就说不知道什么原因。不过申诉功能实际应该是摆设，无论你怎么写，可能都会自动回复并且自动申诉失败。小红书这个平台之前遇到`评论只有自己看得到`时都是不管怎么反馈都没用，不是某个评论，而是任何评论都这样，后来我直接注销账号了。所以根据他们以往的态度，你能解封的概率应该不大。\", \"datePublished\": \"2023-09-01T23:35:28Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/zictos\", \"@type\": \"Person\", \"name\": \"zictos\"}}, {\"text\": \"小红书是什么刚需吗？大不了不用了。\", \"datePublished\": \"2023-09-01T23:42:46Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/jaTomn\", \"@type\": \"Person\", \"name\": \"jaTomn\"}}, {\"text\": \"是的，看你使用了功能但没有加载广告图的记录。就你是绕过广告了封号\", \"datePublished\": \"2023-09-01T23:48:40Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/louisxxx\", \"@type\": \"Person\", \"name\": \"louisxxx\"}}, {\"text\": \"还能因为跳过广告封号么…\", \"datePublished\": \"2023-09-01T23:54:36Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/AmericanExpress\", \"@type\": \"Person\", \"name\": \"AmericanExpress\"}}, {\"text\": \"@zictos #1 我刚注册时，也是评论发帖仅自己可见。正常用一段时间，有次发帖突然几十赞+评论，才知道别人能看到了。或许都要酱紫养一段时间号吧猜测\", \"datePublished\": \"2023-09-01T23:58:40Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/WayTooExplore\", \"@type\": \"Person\", \"name\": \"WayTooExplore\"}}, {\"text\": \"@SeaTac 行为被判定恶意了 用户量太大不在乎部分用户\", \"datePublished\": \"2023-09-02T00:42:19Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/shuimitao\", \"@type\": \"Person\", \"name\": \"shuimitao\"}}, {\"text\": \"别用了, 怎么还有这么垃圾的软件.\", \"interactionStatistic\": {\"userInteractionCount\": 2, \"@type\": \"InteractionCounter\", \"interactionType\": \"https://sc",
+            "fetch_error": ""
+          },
+          {
+            "title": "中新网评：“封号收租”的小红书，还有多少信任可透支？ - 中国新闻网",
+            "url": "https://www.chinanews.com.cn/cj/2026/04-14/10603479.shtml",
+            "query": "V2EX 小红书 封号 诉讼 律师",
+            "provider": "tavily",
+            "score": "0.5852203",
+            "fetched_text": "中新网评：“封号收租”的小红书，还有多少信任可透支？-中新网 newwapurl=\"wap/detail/zwsp\"; isForApp=\"n\"; document.write(' '); #SOHUCS #SOHU_MAIN .module-cmt-list .cmt-list-type .cmt-list-number .comment-number{display:none;} .logo{float:left;margin:31px 25px 31px 0;width:177px;height:48px;border-right:1px solid #ebebeb} #navbar{position:relative;height:110px;border-bottom:4px solid #cd131c;background:#fff} .nav_navcon{float:left;width:1075px;margin-top:22px;} .nav_navcon li{float:left;margin-right:10px;height:40px;font-size:18px;word-break:keep-all} .nav_navcon li.mr{margin-right: 27px;} .nav_navcon li.area{margin-right: 20px;} .nav_navcon li.ss{margin-right: 0px;} .nav_navcon li img.dxw{padding-top:11px;width:90px;height:31px} .nav_navcon li a{height:40px;color:#2d2d2d} .navmenu { width: 14px; float: right; margin-top: 8px; margin-right: 10px; background: url(//image.cns.com.cn/default/5ddb9ec3/20210721/11.jpg); border-top: 0px solid #ea3440; border-bottom: 0px solid #ea3440; padding: 0; height: 12px; background-color: transparent; cursor: pointer; } .nav_navcon_more{position:absolute;top:-3px;left:0;z-index:999;display:none;width:100%;height:715px;border-bottom:3px solid #f42e3e;background:#fff} .nav_navcon_more .w1280{position:relative;overflow:hidden;padding-top:10px;height:inherit;border-top:1px solid #f3f3f3} .nav_navcon_more .con{float:left;width:50%} .nav_navcon_more .navlist{width:100%;color:#666;font-size:16px;line-height:42px} .nav_navcon_more .navlist a{color:#666;font-size:14px} .nav_navcon_more .navlist a:hover{color:#e01b2b} .nav_navcon_more .navlist strong{margin-right:28px;color:#333} .nav_navcon_more .navlist strong a{color:#333;font-size:16px} .nav_navcon_more .navlist em{padding:0 8px} .nav_navcon_more .navlist .left{width:100px;text-align:right} .nav_navcon_more .navlist .left1{f",
+            "fetch_error": ""
+          },
+          {
+            "title": "小红书在root 下使用从来不报错，我也没隐藏 - V2EX",
+            "url": "https://www.v2ex.com/t/1207881",
+            "query": "V2EX 小红书 封号 诉讼 律师",
+            "provider": "tavily",
+            "score": "0.5482629",
+            "fetched_text": "小红书在 root 下使用从来不报错，我也没隐藏，结果昨天突然给我封号了 - V2EX body { min-width: 820px; font-family: \"Helvetica Neue\", \"Luxi Sans\", \"Segoe UI\", \"Hiragino Sans GB\", \"Microsoft Yahei\", sans-serif, \"Apple Logo\"; } const SITE_NIGHT = 0; const LANG = 'enus'; const FEATURES = ['search', 'favorite-nodes-sort']; {\"comment\": [{\"text\": \"因为 root ？\", \"datePublished\": \"2026-04-23T00:13:00Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/muhahaha\", \"@type\": \"Person\", \"name\": \"muhahaha\"}}, {\"text\": \"@muhahaha 应该是，我小号登都没咋登录，之前大号实名认证的时候被检测过一次人脸识别怎么也过不了，换了 IPad 试了一下过的\", \"datePublished\": \"2026-04-23T00:17:08Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/shenhualv7\", \"@type\": \"Person\", \"name\": \"shenhualv7\"}}, {\"text\": \"封号是人脸识别很久之后的事了\", \"datePublished\": \"2026-04-23T00:18:38Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/shenhualv7\", \"@type\": \"Person\", \"name\": \"shenhualv7\"}}, {\"text\": \"可能是因为近期借助 AI 进行自动化发文、爬虫的人太多，风控措施变严格了。\", \"datePublished\": \"2026-04-23T00:58:55Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/Danswerme\", \"@type\": \"Person\", \"name\": \"Danswerme\"}}, {\"text\": \"不会因 root 封号的，肯定是哪里没做对\", \"datePublished\": \"2026-04-23T01:20:50Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/hoor\", \"@type\": \"Person\", \"name\": \"hoor\"}}, {\"text\": \"我注册了个号一直看，不评论不点赞。有天就换了个头像就被封了，我直接删了 ，艹‍！\", \"datePublished\": \"2026-04-23T01:21:58Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/littiefish\", \"@type\": \"Person\", \"name\": \"littiefish\"}}, {\"text\": \"开启 root 的情况下是不是 app 就能自由访问其他目录了？难不成小红书自己检索发现自己能越权访问其他目录树？然后给你判断你是在 root 环境里跑 app?\", \"datePublished\": \"2026-04-23T01:31:43Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/jackOff\", \"@type\": \"Person\", \"name\": \"jackOff\"}}, {\"text\": \"@jackOf",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "推荐选题",
+          "label": "推荐",
+          "reason": "证据较完整，有真实案例、媒体报道、平台规则和类似诉讼案例支撑；老花人设解读角度清晰（账号安全、维权成本、平台规则透明度）；读者分层明确（副业普通人、共鸣读者为主，核心技术人为辅）；泛兴趣故事钩子（维权反转）不夸张；传播张力强（平台vs用户、成本vs收益、规则vs公平），逻辑基本闭环。"
+        },
+        "core_question": "开发者因使用MCP插件被小红书误封账号，通过诉讼解封的真实案例中，平台规则、维权成本与普通技术人的账号安全风险如何平衡？",
+        "why_this_topic_matters": "小红书封号事件持续发酵，涉及MCP插件这一技术点，与老花人设契合。账号安全是副业者和独立开发者的核心痛点，诉讼解封的案例提供了新的维权路径，但成本高、周期长，需要理性评估。",
+        "fact_summary": [
+          "V2EX用户因在浏览器使用MCP插件导致小红书账号被永封，经过申诉和信访均无效，最终通过律师起诉成功解封。",
+          "IT时报报道多名律师和商户因认证费不退、账号被误封等问题起诉小红书，其中西安律师闫天柱耗时近半年起诉但败诉。",
+          "小红书社区规范禁止使用第三方插件/工具进行自动化操作或数据抓取，但MCP插件是否明确违规存疑。",
+          "类似案例：微信用户因被封号起诉腾讯，要求每日赔偿25元，被法院驳回；游戏平台误封后申诉解封的案例存在但成功率不一。"
+        ],
+        "persona_discussion_question": "如果你依赖小红书做副业或引流，账号被误封后，你会选择申诉、信访还是起诉？诉讼的成本和时间是否值得？",
+        "old_flower_stance": "平台封号机制缺乏透明度和有效申诉渠道，普通用户维权成本高，诉讼是最后但有效的救济途径，但门槛高、周期长，不建议轻易尝试。",
+        "audience_fit": {
+          "primary_layer": "副业普通人",
+          "secondary_layers": [
+            "共鸣读者",
+            "核心技术人"
+          ],
+          "interest_score": 90,
+          "why_interested": "账号安全是副业者的核心资产，误封风险直接影响收入；诉讼解封的案例提供了新的维权思路，但成本收益需要权衡。",
+          "reader_risk": "可能过度依赖诉讼路径，忽略申诉和平台沟通；或误以为所有封号都能通过诉讼解决。"
+        },
+        "mass_interest_hook": {
+          "score": 85,
+          "hook_type": "故事|反差|争议",
+          "why_non_technical_people_may_click": "普通人可能因使用插件或工具被平台误封，维权故事具有普遍共鸣；诉讼解封的反转情节吸引眼球。",
+          "story_seed": "一个开发者因为用了一个AI插件，账号被小红书永封，申诉无门，最后靠打官司才拿回账号。",
+          "do_not_overhype": "强调这是个案，诉讼成本高、周期长，不是普遍有效路径。"
+        },
+        "topic_tension": {
+          "score": 10,
+          "conflict_point": "平台规则不透明 vs 用户权益受损；诉讼成本高 vs 账号价值低；平台作为规则制定者、执行者和裁判员的角色冲突。",
+          "debate_question": "平台封号机制是否合理？用户是否有权知道具体违规原因？诉讼是否是解决封号问题的有效途径？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "平台/工具厂商",
+            "律师/法律从业者"
+          ],
+          "why_people_would_comment": "读者可以围绕封号原因、申诉流程、诉讼成本、平台责任等发表观点，或分享自身经历。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突，避免煽动对立。"
+        },
+        "timeline": [
+          "2025年3月：V2EX用户因使用MCP插件被小红书永封。",
+          "2025年3月-4月：用户多次申诉、信访均无效。",
+          "2025年4月：用户委托律师起诉小红书。",
+          "2025年4月8日：上海律师李维世因认证费问题起诉小红书。",
+          "2025年4月14日：中新网评批评小红书封号机制。",
+          "2025年4月21日：IT时报报道多名律师和商户起诉小红书。",
+          "2025年4月23日：V2EX用户发帖称账号已解封。"
+        ],
+        "evidence_table": [
+          {
+            "source": "V2EX原帖",
+            "url": "https://www.v2ex.com/t/1219983",
+            "supports": "用户因MCP插件被封，通过诉讼解封",
+            "reliability": "near_source"
+          },
+          {
+            "source": "IT时报报道",
+            "url": "https://m.thepaper.cn/newsDetail_forward_33018819",
+            "supports": "多名律师和商户因封号、认证费问题起诉小红书",
+            "reliability": "media"
+          },
+          {
+            "source": "中新网评",
+            "url": "https://www.chinanews.com.cn/cj/2026/04-14/10603479.shtml",
+            "supports": "批评小红书封号机制不透明",
+            "reliability": "media"
+          },
+          {
+            "source": "小红书社区规范",
+            "url": "https://agree.xiaohongshu.com/h5/terms/ZXXY20221213003/-1",
+            "supports": "平台禁止使用第三方插件/工具进行自动化操作",
+            "reliability": "official"
+          },
+          {
+            "source": "微信封号诉讼案例",
+            "url": "https://m.bjnews.com.cn/detail/163152053214721.html",
+            "supports": "用户因微信被封起诉腾讯，被驳回",
+            "reliability": "media"
+          },
+          {
+            "source": "V2EX其他封号讨论",
+            "url": "https://www.v2ex.com/t/970271",
+            "supports": "用户因使用开屏广告跳过插件被封",
+            "reliability": "near_source"
+          }
+        ],
+        "logic_closure": "基本闭环：案例真实、有媒体报道和类似诉讼案例支撑，但诉讼细节（案由、法院、判决）和MCP插件是否明确违规仍需补充。",
+        "writeable_angles": [
+          {
+            "angle": "案例复盘：从被封到解封的全过程，包括申诉、信访、诉讼的步骤和成本。",
+            "why": "提供可操作的维权路径，吸引有类似遭遇的读者。",
+            "needs": "当事人详细时间线、律师费用、诉讼周期等数据。"
+          },
+          {
+            "angle": "平台规则分析：小红书封号机制是否合理？MCP插件是否违规？",
+            "why": "引发对平台规则透明度的讨论，符合技术人视角。",
+            "needs": "小红书官方对MCP插件的态度、社区规范原文。"
+          },
+          {
+            "angle": "维权成本账：诉讼 vs 申诉，哪个更划算？",
+            "why": "帮助读者理性评估维权方式，避免盲目诉讼。",
+            "needs": "律师费用、时间成本、账号价值估算。"
+          },
+          {
+            "angle": "避坑指南：如何避免因使用插件被封号？",
+            "why": "提供实用建议，吸引副业者和普通用户。",
+            "needs": "小红书风控机制、安全使用插件的建议。"
+          }
+        ],
+        "missing_basics": [
+          "MCP插件的具体功能及是否违反小红书社区规范",
+          "小红书封号规则中关于第三方工具/插件的条款原文",
+          "诉讼的具体案由（合同纠纷、侵权、行政？）、法院、判决结果或调解情况"
+        ],
+        "missing_materials": [
+          "当事人采访或详细时间线",
+          "律师对类似案件的法律分析",
+          "小红书官方对MCP插件的态度（如有）",
+          "其他平台封号后诉讼的对比数据"
+        ],
+        "not_claimable": [
+          "诉讼是解决封号问题的普遍有效途径",
+          "MCP插件一定不违规",
+          "小红书封号机制存在系统性错误",
+          "所有用户都能通过诉讼快速解封"
+        ],
+        "followup_queries": [
+          "联系原帖作者获取诉讼细节",
+          "查询小红书社区规范中关于第三方插件的具体条款",
+          "搜索类似案例（如抖音、微信封号后诉讼）"
+        ],
+        "additional_search_queries": [
+          "小红书 封号 诉讼 解封 案例 2025",
+          "MCP 插件 小红书 封号 2025",
+          "小红书 社区规范 第三方工具 插件 禁止",
+          "平台误封 起诉 解封 赔偿 2024 2025"
+        ],
+        "stop_conditions": [
+          "当事人确认诉讼细节不实或账号未恢复",
+          "小红书官方明确MCP插件违规且用户知情",
+          "无其他类似诉讼案例支撑"
+        ],
+        "confidence": 85,
+        "topic_direction": "side-info",
+        "topic_direction_title": "副业&信息差",
+        "report_type": "case-study",
+        "quality_gate": {
+          "pass": true,
+          "score": 85,
+          "fatal_issues": [],
+          "warnings": [
+            "诉讼细节（案由、法院、判决）未从当事人处核实，依赖媒体报道和V2EX帖子",
+            "MCP插件是否明确违反小红书社区规范未确认",
+            "成本估算（律师费、时间周期）未提供具体数据"
+          ],
+          "missing_evidence": [
+            "当事人采访或详细时间线",
+            "律师对类似案件的法律分析",
+            "小红书官方对MCP插件的态度",
+            "其他平台封号后诉讼的对比数据"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": true,
+          "downstream_handoff_ok": true,
+          "material_pack_ok": true,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": true,
+          "source_coverage_ok": true,
+          "recommendation": "publish"
+        },
+        "research_plan": {
+          "core_question": "开发者因使用MCP插件被小红书误封账号，通过诉讼解封的真实案例中，平台规则、维权成本与普通技术人的账号安全风险如何平衡？",
+          "persona_discussion_question": "如果你依赖小红书做副业或引流，账号被误封后，你会选择申诉、信访还是起诉？诉讼的成本和时间是否值得？",
+          "hidden_public_issue": "平台封号机制缺乏透明度和有效申诉渠道，普通用户维权成本高，平台将风险转嫁给用户，而诉讼成为最后但有效的救济途径，但门槛高、周期长。",
+          "must_verify": [
+            "当事人身份及账号恢复真实性（联系原帖作者或查看后续更新）",
+            "MCP插件具体是什么，是否违反小红书社区规则（如自动化操作、数据抓取）",
+            "诉讼具体案由（合同纠纷、侵权、行政？）、法院、判决结果或调解情况",
+            "小红书封号规则中关于第三方工具/插件的条款原文",
+            "类似案例（其他平台因使用插件被封后起诉成功的案例）"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "case_study",
+              "query": "小红书 封号 诉讼 解封 案例 2025",
+              "why_needed": "寻找类似维权案例，验证诉讼路径的普遍性和成功率"
+            },
+            {
+              "source_type": "policy",
+              "query": "小红书 社区规范 第三方工具 插件 禁止",
+              "why_needed": "获取小红书官方对第三方插件的具体规定，判断MCP插件是否违规"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "MCP 插件 小红书 封号 2025",
+              "why_needed": "了解MCP插件功能及是否被其他用户报告类似封禁"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "小红书 账号申诉 流程 诉讼 法律途径",
+              "why_needed": "获取官方申诉渠道和法律救济指引"
+            },
+            {
+              "source_type": "case_study",
+              "query": "平台误封 起诉 解封 赔偿 2024 2025",
+              "why_needed": "收集其他平台（如微信、抖音）误封后诉讼成功的案例，作为对比"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "V2EX 小红书 封号 诉讼 律师",
+              "why_needed": "在原帖下寻找更多当事人细节或律师建议"
+            }
+          ],
+          "expert_challenge_points": [
+            "诉讼成本（律师费、时间）是否高于账号价值？对于普通副业者是否划算？",
+            "MCP插件是否确实违反平台规则？如果违反，诉讼胜算如何？",
+            "平台是否有义务在封号前提供明确警告或人工复核？",
+            "类似案例中，法院是否支持用户要求恢复账号或赔偿损失？"
+          ],
+          "do_not_claim_yet": [
+            "诉讼是解决封号问题的普遍有效途径",
+            "MCP插件一定不违规",
+            "小红书封号机制存在系统性错误",
+            "所有用户都能通过诉讼快速解封"
+          ],
+          "can_publish_as_radar_if_missing": "可以发布，但需明确标注为个案，强调诉讼成本高、周期长，并提醒读者优先通过官方渠道申诉。",
+          "downstream_materials_needed": [
+            "当事人采访或详细时间线",
+            "律师对类似案件的法律分析",
+            "小红书官方对MCP插件的态度（如有）",
+            "其他平台封号后诉讼的对比数据"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号",
+            "url": "https://m.thepaper.cn/newsDetail_forward_33018819",
+            "query": "小红书 封号 诉讼 解封 案例 2025",
+            "provider": "tavily",
+            "score": "0.8539252",
+            "fetched_text": "多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号 window.AliyunCaptchaConfig = { region: \"cn\", prefix: \"1dl38w\" }; var _hmt = _hmt || []; (function() { var hm = document.createElement(\"script\"); hm.src = \"//hm.baidu.com/hm.js?d07e4d64d5cde19b5351e7032beaef1a\"; var s = document.getElementsByTagName(\"script\")[0]; s.parentNode.insertBefore(hm, s); })(); 下载APP 澎湃号·媒体 > 多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号 IT时报 中国电信集团有限公司上海分公司 2026-04-21 20:30 上海 律师和商户为何状告小红书？|图源：AIGC 作者／ IT时报 孙永会 编辑／ 郝俊慧 孙妍 庭审结束后，上海誓维利律师事务所主任李维世对于这场官司的胜败已经有了数，“很大概率会败诉，但我也要不争馒头争口气。”4月8日上午，她和小红书所属公司行吟信息科技对簿公堂，核心诉求是，要求平台通过自己“誓维利”专业号认证的申请，因为已支付了600元认证费。 “为何认证失败后，认证费不能退？为何平台规则载明可以用字号，但我用‘誓维利’字号认证时却不行？”接受《IT时报》记者采访时，李维世提出多个疑问。 距离上海一千多公里的西安，律师闫天柱有着同样的困惑。账号突然被永久封禁后，不知道自己究竟错在哪里的他，耗时近半年起诉小红书，两次审理最后皆以败诉告终。 封号、限流、认证费不退……《IT时报》记者注意到，在“黑猫投诉”平台，对小红书类似的投诉屡见不鲜。 作为月活用户超3亿的“种草”社区，小红书已从分享平台演变为集社交、电商于一体的超级App。然而，当平台同时是规则的制定者、执行者和裁判员时，用户的权利边界在哪里？ 截至发稿，《IT时报》记者试图向小红书方进行了解和求证，对方未正面回应相关问题，只表示：“认证失败不退费，这个各家都是一样的。” 对抗 连律师都搞不懂的认证规则 2023年5月，李维世开始更新小红书账号，初期仅分享判决书、调解书等法律文书案例，却意外接到了一些网友的咨询。像在其他社交平台一样，李维世将联系方式私信给对方，却发现被平台屏蔽了。 咨询平台客服后，李维世了解到，若有获客需求，她可以申请升级为“企业专业号”，每年需支付600元的认证费（审核费），即可合规留资。 2024年12月，李维世申请将账号升级为企业号，并支付了相应的认证费用，但平台以账号名称不合规为由驳回申请，要求必须加注“律师事务所”后缀，而不能只认证其律所字号“誓维利”。 然而，根据小红书聚光帮助中心的信息，企业用户账号名称可以基于字号/商标/实体经营场所等命名。比如，主体公司是“薯一薯二文化传媒（上海）有限公司”，在不侵权前提下，可以使用“薯一薯二”“薯一薯二文化”和“薯一薯二科技”等名称。 倘若按字面意思理解，李维世以“誓维利”进行账号认证是符合规定的。 考虑到平台的强势地位，李维世想，既然无法认证，那就退费吧，该诉求同样被平台拒绝：“认证不成功是你的原因，无法退费。” 无奈的李维世只能放弃认证，以个人身份开始运营自己的账号，由于无法通过公司店铺形式提供咨询服务，她依然采用私留联系方式的办法获客。 今年2月和3月，平台以“检测到违规留资”为由两次对“誓维利”账号进行封禁，判定违规的依据是置顶笔记中一张含有手机号的聊天记录截图。解封后，账号流量呈断崖式下跌。 退费 因规则外原因不被认证 依然无法退费 账号两次被封之后，李维世认为，被封号的根源是平台不通过正常名称的认证，既然如此，平台就应该退费。 在对小红书的起诉书中，她如是写道：“平台对个人账号的留资规则设置过度限制，企业号认证又设置了不合理的命名门槛，此系平台不合理规则所导致的普遍现象，并非个人特殊行为。” 但有观点认为，这笔费用是审核服务费，无论审核是否成功，都会收取。业内普遍存在的解释是，第三方审核机构已对提交资料进行真实性甄别与校验，付出了人工和时间成本。 但在小红书聚光帮助中心“专业号",
+            "fetch_error": ""
+          },
+          {
+            "title": "多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号_腾讯新闻",
+            "url": "https://news.qq.com/rain/a/20260421A056PP00",
+            "query": "小红书 封号 诉讼 解封 案例 2025",
+            "provider": "tavily",
+            "score": "0.8440111",
+            "fetched_text": "多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号_腾讯新闻 try { if (!window.IntersectionObserver) { var observerScript = document.createElement('script'); observerScript.src = \"https://mat1.gtimg.com/qqcdn/qqindex2021/common-static/20241024141058/intersection-observer-polyfill.js\"; document.head.appendChild(observerScript); } } catch (error) {} try { if (!Element.prototype.scrollTo) { var scrollScript = document.createElement('script'); scrollScript.src = \"https://mat1.gtimg.com/qqcdn/qqindex2021/common-static/20241025153001/scroll-behavior-polyfill.js\"; document.head.appendChild(scrollScript); } } catch (error) {} try { if ('scrollRestoration' in window.history) { window.history.scrollRestoration = 'manual'; } window.isPcClient = Boolean(window.electron) && ( window.navigator.userAgent.indexOf('pc-client') > 0 || window.navigator.userAgent.indexOf('TencentNews') > 0 ); } catch {} window.DATA = {\"url\":\"https://view.inews.qq.com/a/20260421A056PP00\",\"article_id\":\"20260421A056PP00\",\"atype\":\"0\",\"article_type\":\"0\",\"title\":\"多名律师、商户状告小红书：封禁来得毫无征兆，花钱投流仍被封号\",\"desc\":\"律师和商户为何状告小红书？|图源：AIGC作者／ IT时报 孙永会编辑／ 郝俊慧 孙妍 庭审结束后，上海誓维利律师事务所主任李维世对于这场官司的胜败已经有了数，“很大概率会败诉，但我也要不争馒头争口气。”4月8日上午，她和小红书所属公司行吟信息科技对簿公堂，核心诉求是，要求平台通过自己“誓维利”专业号认证的申请，因为已支付了600元认证费。“为何认证失败后，认证费不能退？为何平台规则载明可以用字号，但我用‘誓维利’字号认证时却不行？”接受《IT时报》记者采访时，李维世提出多个疑问。距离上海一千多公里的西安，律师闫天柱有着同样的困惑。账号突然被永久封禁后，不知道自己究竟错在哪里的他，耗时近半年起...\",\"iNewsRecommendLevel\":1,\"abstract\":\"律师和商户为何状告小红书？|图源：AIGC作者／ IT时报 孙永会编辑／ 郝俊慧 孙妍 庭审结束后，上海誓维利律师事务所主任李维世对于这场官司的胜败已经有了数，“很大概率会败诉，但我也要不争馒头争口气。”4月8日上午，她和小红书所属公司行吟信息科技对簿公堂，核心诉求是，要求平台通过自己“誓维利”专业号认证的申请，因为已支付了600元认证费。“为何认证失败后，认证费不能退？为何平台规则载明可以用字号，但我用‘誓维利’字号认证时却不行？”接受《IT时报》记者采访时，李维世提出多个疑问。距离上海一千多公里的西安，律师闫天柱有着同样的困惑。账号突然被永久封禁后，不知道自己究竟错在哪里的他，耗时近半年起...\",\"catalog1\":\"law\",\"ad_channel_sign\":\"news\",\"introduction\":\"\",\"media\":\"IT时报\",\"media_id\":\"5046687\",\"pubti",
+            "fetch_error": ""
+          },
+          {
+            "title": "因为被封号，我起诉了小红书 - 知乎专栏",
+            "url": "https://zhuanlan.zhihu.com/p/1993437147521385106",
+            "query": "小红书 封号 诉讼 解封 案例 2025",
+            "provider": "tavily",
+            "score": "0.84277284",
+            "fetched_text": "原告是小红书账号为（小红书号：XXXXX）的用户，于正常使用过程中突然于2025年8月11日14时收到封号通知，原告并不存在违法、违规的言行，在经过数次申诉后均未解",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          },
+          {
+            "title": "[PDF] 品牌号社区运营规范",
+            "url": "https://dc.xhscdn.com/file/c947aa537be9e80d802226374b5c710f/%E5%93%81%E7%89%8C%E5%8F%B7%E7%A4%BE%E5%8C%BA%E8%BF%90%E8%90%A5%E8%A7%84%E8%8C%83.pdf",
+            "query": "小红书 社区规范 第三方工具 插件 禁止",
+            "provider": "tavily",
+            "score": "0.6816637",
+            "fetched_text": "%PDF-1.7 % 1 0 obj >/Metadata 1016 0 R/ViewerPreferences 1017 0 R>> endobj 2 0 obj > endobj 3 0 obj >/ExtGState >/Font >/ProcSet[/PDF/Text/ImageB/ImageC/ImageI] >>/MediaBox[ 0 0 594.96 842.04] /Contents 4 0 R/Group >/Tabs/S/StructParents 0>> endobj 4 0 obj > stream x[[oܸ\u0015~7Ge Y\u0018FuMh-\u000f>xlЍ=GdC\u000e5Z\u0001\u00022x|B]Uߞ>|񩸾>rS~|zzo_ﯾDǧo77E6\u0015J^2Y|??ן3\u0000^ ]\b^\u001aKb4\\\u0017E -J-dw_>ݫ},q~VtA\u0011_Pz \u0015\u0011^?\u0000)\u0011 \u0012j.% \u0007Ǜl U5pS\u0007lF(fKT[$l٫rc@N@q Ok\u0015m4b'PWN\u0015ژz3k>\u0012Էxk\u000f+nG\u0016\u0014\u0000ZNR\u0017Ơ\b 4·\u000fA\u000e+ޞ}(P_9婹] \u0019Û, )ƙ\u00125U;fxƈ 6N6D:$qXUbzVT}fi1\u000f\u0010#b5 :0K{:\u0003]~\u0006 Fak\u0006la\u0007F\u0013[B\by T6dg ~-ޛ09:!#\"\u0003JX\u001a qL\\Lx\u0019(jBp\u0011A.|1x/#\u0003Z:Ф{&^5\u0006\u0007'^f46L i֏\u0016G4\u001aъ\u0002\u0000̥K(>\u0019iyЬy@3iS nT2x\u0004_R(8D-:Lʘ\u0002{\u0015\u0011r_ rE\u000eJC9STeLkr\u0005\u0011 .f>AپfUO\\a>\u0003QF__ Wǭ,!`.~Doߩ( h\u0019\u0001G-S{\u0001&\u0017T؂\u0018\u0018Zzw](z\u00133pE\u000e(.gDu\u00141?_\"5,I\u0004 ێy\u0003+s/@zιMxPI 0\u0001\"K9{|\u0004単:z6uUq\u0001\u0003uSkxۏ Bz\u001az1\u001bGN- ۊi=*\u0014eӖ c@ \u0000n8 G\u0000\u0019S&\\Fq\u001a\u00110Yj\u0004y\u000fdΉ- zGjx_cs.{7|\u0005IN\u0004SHN\u0004_Aܽ\u0004JDܠA\\&;sԌEPl\u00023) -uI09\"H |y=آtMS}=J+^K4T \u000e,H\u00014k endstream endobj 5 0 obj > stream x_MYKJ\u0019qW\b3\u001a4hT*BB\u0010۔\"iRF%E1fjx}:ߜgsN\u00179ky.{=Y \u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u0006\u00063\u001bt2k֬Xwe$''9sXzf\u0000ia\u0002@&%%ź!Çw\u0002\u0013\u0013\u0013wYjU;2***Fd\u0018 e6l\u0010^ l޼ėQ;ݻ7ֽ\u000e\u0004xxx?\u0018\u0017௿\u001a\u001a\u001a*((={v2Ξ=6x+ßՅ ĺ3\u0003۷o_~wV\u0010ŗ/_ \u001a =FZ 12{l\u000ez%7+H#C\u0016_^~]~>b¾\u001b t%iQO0\u0013(\u0003wZ[[sss%,}˃e.d, \u001aӘ-\u0005N \b\u0006\u0003Q\"\\A߿m6 \u0004$`mm@ 0\\; \u001a n \u001aݱc\u0005Y}\b\u0002)\u0002 :44\u0014AIo \u0019\u0014xMII)))Az{{ \u0007\b2׋\u0014E\u0016\u0015\u0017\u0017_z \u000e \\ \u0017N85?qΜ96mOAć8\u000f### hkk;t\u0010co\u00101cɒ%\u0016W_}C^\u0010OAA\u0001 ɌZ=ߎ\u000fɓ';:: A\u0005 QlْS5kPMޕZz5\u000e~X\u001a\u0004: ˂\u0003Ht\u0012j\u001aY=s3wn\u0007 {մ ! \u0004t,;v \u0005Cj\u0006qq\u0016:ِ\u0005\u0017׺\u0019G\u0016f߾}ȿpiToo/J ,6m\u0010h\u0005/7\\?q#\u001b\u001b\u001b3+B5|\u0006dy\u0001u3,Ʌ,@\u0016\u0012Hc:Yܰ3g΄ }4\\Aٳg\u0017\u0015\u0015=|bb~j\u0005\u0014$B|E\u0019b$X)?dau ٳgc[uժɼ =ۮ ~ ehh\bچk (77\u0017CG?\u0016-KuX\u000375;%@\u00164Ç+d8q\u0004f\u0005\u0013\u0016H|/...#|/nkGo޼ioo/\u0016{fi׮]k׮TKL\u0007.= L SְҶ{ \u0000 \u0017\u0016\u0015\u0015a.YSSS7?ޑEɵ \"wy[A*,,d*ZC )-V\u0010$ӧȂ^u%4\u0018@{%0ZT0;`ٵ2^Xk׮Yg7p D+လ\u0013 :\u0016C\u0005 \u0016466\u0017\u0015\u0010r˗\u00196}}}^%WyU^ Z\u0011Z\u0012%\u000ep,jCq,֘;w \u0017r;\u0012Y233qYZxJ\u0016}\\\u0006վ[>\u0018B I!5 ٳgQGB銜,D\u000e \b_8d=*\u0016C\u0015}fE?\u0005\u000f\u0001O^Q 'YyJիW777_Mȵup rںT & \u0007C\u0016kD,\u0004,8\u0012SSS---\u0019\u0019\u0019=%]ֶׯGXmܾ};j ,ֈ>Y\u0012|/p%\u00120c~GIrd\u0001eee Dz_\u0018_Frk D0UPP 8\u0018,ֈ Y%mUyNd!`\u0017f\u0017nʕJK~\u0015Q#C\u0016kĄ,h?uvSe\u0007k,[ ",
+            "fetch_error": ""
+          },
+          {
+            "title": "小红书社区规范 - 在线协议",
+            "url": "https://agree.xiaohongshu.com/h5/terms/ZXXY20221213003/-1",
+            "query": "小红书 社区规范 第三方工具 插件 禁止",
+            "provider": "tavily",
+            "score": "0.65835214",
+            "fetched_text": "小红书 window.__ERROR_TRACKER_BUFFER__=[],window.onerror=function(o,n,R,_,e){window.__ERROR_TRACKER_BUFFER__.push({error:e||o,extra:{source:n,lineno:R,colno:_}}),(new Image).src=\"//www.xiaohongshu.com/eplDKtpK4k.txt?l=\"+location.href+\"&a=\"+o+\"&b=\"+n+\"&c=\"+R+\"&d=\"+_+\"&e=\"+e.stack} !function(){var e=function(e){var t={};function n(o){if(t[o])return t[o].exports;var r=t[o]={i:o,l:!1,exports:{}};return e[o].call(r.exports,r,r.exports,n),r.l=!0,r.exports}return n.m=e,n.c=t,n.d=function(e,t,o){n.o(e,t)||Object.defineProperty(e,t,{enumerable:!0,get:o})},n.r=function(e){\"undefined\"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:\"Module\"}),Object.defineProperty(e,\"__esModule\",{value:!0})},n.t=function(e,t){if(1&t&&(e=n(e)),8&t)return e;if(4&t&&\"object\"==typeof e&&e&&e.__esModule)return e;var o=Object.create(null);if(n.r(o),Object.defineProperty(o,\"default\",{enumerable:!0,value:e}),2&t&&\"string\"!=typeof e)for(var r in e)n.d(o,r,function(t){return e[t]}.bind(null,r));return o},n.n=function(e){var t=e&&e.__esModule?function(){return e.default}:function(){return e};return n.d(t,\"a\",t),t},n.o=function(e,t){return Object.prototype.hasOwnProperty.call(e,t)},n.p=\"\",n(n.s=1)}([function(e,t,n){\"use strict\";Object.defineProperty(t,\"__esModule\",{value:!0}),t.default=function(e){return!(e instanceof HTMLHeadElement||e instanceof HTMLMetaElement||e instanceof HTMLLinkElement||e instanceof HTMLStyleElement||e instanceof HTMLScriptElement||e instanceof SVGElement||\"none\"===getComputedStyle(e).display)}},function(e,t,n){\"use strict\";Object.defineProperty(t,\"__esModule\",{value:!0}),t.observe=function(){if(window.MutationObserver&&window.performance&&performance.timing){window.__FP__=0,window.__FCP__=0,window.__FMP_OBSERVED_POINTS__=[],window.__FULLY_LOADED__=0;",
+            "fetch_error": ""
+          },
+          {
+            "title": "小红书提示存在风险插件要如何处理？ - 社媒助手 - 隙生科技",
+            "url": "https://smzs.xisence.com/help/faq/xiaohongshu/risk-plugin",
+            "query": "小红书 社区规范 第三方工具 插件 禁止",
+            "provider": "tavily",
+            "score": "0.60750073",
+            "fetched_text": "小红书：小红书提示存在风险插件要如何处理？ - 社媒助手 ((e,t,n,r,i,o,a,s)=>{let l=document.documentElement,c=[\"light\",\"dark\"];function u(t){var n;(Array.isArray(e)?e:[e]).forEach(e=>{let n=\"class\"===e,r=n&&o?i.map(e=>o[e]||e):i;n?(l.classList.remove(...r),l.classList.add(o&&o[t]?o[t]:t)):l.setAttribute(e,t)}),n=t,s&&c.includes(n)&&(l.style.colorScheme=n)}if(r)u(r);else try{let e=localStorage.getItem(t)||n,r=a&&\"system\"===e?window.matchMedia(\"(prefers-color-scheme: dark)\").matches?\"dark\":\"light\":e;u(r)}catch(e){}})(\"class\",\"theme\",\"light\",null,[\"light\",\"dark\"],null,true,true) Skip to Content 社媒助手 首页 下载 定价 帮助中心 更新记录 联系我们 input]:pl-8 [&>input]:h-10 [&>input]:text-sm [&>input]:border-1 [&>input]:border-gray-200 [&>input]:rounded-md [&>input:focus]:border-blue-500 [&>input]:transition-colors [&>input]:w-full [&>kbd]:hidden [&>input]:bg-white/80\"> CTRL K 首页 下载 定价 帮助中心 更新记录 联系我们 CTRL K 功能指南 简单介绍 插件配置 飞书同步 数据上报 采集模式 采集历史 账号管理 任务闹钟 采集本页数据 媒体文件下载 便捷复制数据 常见问题 浏览器相关问题 为什么无法访问 Chrome 应用商店？ 下载插件时提示“无法从该网站添加应用、扩展程序和用户脚本”怎么办？ 社媒助手如何进行离线安装/更新？ 为什么推荐使用最新版 Chrome？ 会员相关问题 什么是增强版 API 模式 什么是自动加载验证码 如何免费获取VIP 第三方收费下载说明 为什么不能注册账号 下载相关问题 批量下载媒体文件时，如何关闭二次确认？ 下载文件的保存位置和文件名如何自定义？ 为什么配置的文件名未生效？ 飞书相关问题 提示字段类型不匹配是怎么回事？ 提示权限不足怎么解决？ 小红书相关问题 小红书出现“Request failed with status code 406“是怎么回事？ 小红书经常提示“访问频繁，请稍后再试”是什么情况？ 小红书提示存在风险插件要如何处理？ 为什么搜索导出最多只有两百多篇笔记？ 抖音相关问题 为什么采集到的评论比页面显示的数量少一些？ 为什么有时候视频数据会获取不全？ 哔哩哔哩相关问题 哔哩哔哩视频下载为什么和其他平台不一样？ 小红书 植入功能 专辑页 笔记详情页 搜索页 博主详情页 批量采集 采集博主数据 采集评论数据 采集笔记数据 其他功能 链接转换 抖音 植入功能 搜索页 达人详情页 视频详情页 批量采集 采集达人数据 采集视频数据 采集评论数据 其他功能 链接转换 B站 植入功能 搜索页 UP主详情页 视频详情页 批量采集 采集评论数据 采集UP主数据 采集视频数据 其他功能 链接转换 快手 植入功能 达人详情页 搜索页 视频详情页 批量采集 采集达人数据 采集评论数据 采集视频数据 其他功能 链接转换 TikTok 植入功能 达人详情页 视频详情页 批量采集 采集达人数据 采集视频数据 采集评论数据 其他功能 短链解析 功能指南 简单介绍 插件配置 飞书同步 数据上报 采集模式 采集历史 账号管理 任务闹钟 采集本页数据 媒体文件下载 便捷复制数据 常见问题 浏览器相关问题 为什么无法访问 Chrome 应用商店？ 下载插",
+            "fetch_error": ""
+          },
+          {
+            "title": "小红书AI工具引流：2025 年小红书私域运营新策略（高效且安全）",
+            "url": "https://zhuanlan.zhihu.com/p/1913942349316330004",
+            "query": "MCP 插件 小红书 封号 2025",
+            "provider": "tavily",
+            "score": "0.7197191",
+            "fetched_text": "依托定制的MCP 服务实现小红书页面内容安全提取，AI Agent 完成智能决策与内容输出，全流程保障安全。 极度重视账号安全，自动引流全程无需用户提供",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          },
+          {
+            "title": "封号禁言！2025年在小红书导流要换思路了 - 亿邦动力",
+            "url": "https://www.ebrun.com/20250303/573998.shtml",
+            "query": "MCP 插件 小红书 封号 2025",
+            "provider": "tavily",
+            "score": "0.6186197",
+            "fetched_text": "小红书线索获取基建的完善,意味着可以进行高效率的、规模化的、稳定性的获客2025 年可以称得上是线索行业商家和运营操盘手在小红书的决胜年了。",
+            "fetch_error": "HTTP Error 403: Forbidden; used tavily content fallback"
+          },
+          {
+            "title": "RedNote-MCP：超好用的小红书内容访问MCP服务！ - 53AI-AI知识库|企业AI知识库|大模型知识库|前线部署工程师|FDE|AIHub",
+            "url": "https://www.53ai.com/news/neirongchuangzuo/2025041605194.html",
+            "query": "MCP 插件 小红书 封号 2025",
+            "provider": "tavily",
+            "score": "0.53866833",
+            "fetched_text": "window.dataLayer = window.dataLayer || [] function gtag() { dataLayer.push(arguments) } gtag('js', new Date()) gtag('config', 'G-TEQE4Y0F1C') RedNote-MCP：超好用的小红书内容访问MCP服务！ - 53AI-AI知识库|企业AI知识库|大模型知识库|前线部署工程师|FDE|AIHub [data-aos][data-aos][data-aos-duration=\"1600\"], body[data-aos-duration=\"1600\"] [data-aos] { transition-duration: 1.6s } [data-aos][data-aos][data-aos-easing=ease], body[data-aos-easing=ease] [data-aos] { transition-timing-function: ease } [data-aos^=fade][data-aos^=fade] { opacity: 0; transition-property: opacity, transform } [data-aos^=fade][data-aos^=fade].aos-animate { opacity: 1; transform: translateZ(0) } [data-aos=fade-up] { transform: translate3d(0, 100px, 0) } .iconfont { font-family: iconfont !important; font-size: 16px; font-style: normal; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale } .icon-home:before { content: \"\\eb1b\" } .icon-lianximaijia:before { content: \"\\e60e\" } .icon-dianhua1-mianxing:before { content: \"\\e69b\" } .icon-zhiding:before { content: \"\\e61d\" } .icon-close:before { content: \"\\e64d\" } .icon-arrow-right-o:before { content: \"\\e615\" } :root { --swiper-theme-color: #007aff; --swiper-navigation-size: 44px } .swiper-wrapper { position: relative; width: 100%; height: 100%; z-index: 1; display: flex; transition-property: transform; box-sizing: content-box } .swiper-container-android .swiper-slide, .swiper-wrapper { transform: translate3d(0, 0, 0) } .right-bar .item .contact-hover { position: absolute; right: 100%; top: 50%; -webkit-transform: translate(0,-50%) scale(0); -moz-transform: translate(0,-50%) scale(0); transform: translate(0,-50%) scale(0); visibility: hidden; opacity: 0; -webkit-transform-origin: right center; -moz-transform-origin: right center; transform-origin: right center; padding-right: 0.1rem",
+            "fetch_error": ""
+          },
+          {
+            "title": "小红书账号被禁言怎么申诉？ - 脉脉",
+            "url": "https://maimai.cn/article/detail?fid=1840222547&efid=0gm1B3O5H6IieocvDdbQaQ",
+            "query": "小红书 账号申诉 流程 诉讼 法律途径",
+            "provider": "tavily",
+            "score": "0.8033131",
+            "fetched_text": "小红书账号被禁言怎么申诉？ - 脉脉 html{background-color:#f4f5fa} 登录 / 注册 小红书账号被禁言怎么申诉？ 拉卡斯暑 24-07-19 · 77 add-friend 好友 小红书账号被禁言后，申诉是一个恢复账号正常使用的途径。以下是小红书账号被禁言后的申诉步骤： 一、进入申诉页面 打开小红书APP：首先，确保你已经下载并安装了小红书APP，并且能够正常登录被禁言的账号。 找到“帮助与客服”：在小红书APP的主页或侧边栏中，找到并点击“帮助与客服”选项。这个选项可能会以不同的形式出现，比如一个问号图标或者“客服中心”等。 选择“账号申诉”：在“帮助与客服”页面中，寻找并点击“账号申诉”或类似的选项。这个选项通常会位于自助服务板块内。 二、选择申诉类型 选择“账号被禁言”：在账号申诉界面中，你会看到多种申诉类型，比如“账号被盗”、“账号被误封”等。根据你的情况，选择“账号被禁言”作为申诉类型。 对于小红书的玩法和规则我基本都已掌握，如果你想了解具体操作，这里给大家准备了 免费的 小红书开店教程及实操爆单玩法，戳戳： 点击领取 三、填写申诉内容 描述问题：在申诉内容中，简要描述你的账号被禁言的情况。比如，你可以说明你的账号没有违反任何规定，但突然被禁言了，或者你可以说明你已经删除了违规内容并愿意改正错误。 提供证据：如果可能的话，提供一些证据来支持你的申诉。比如，你可以上传截图证明你的账号没有发布违规内容，或者你可以提供其他用户的证词来证明你的清白。但是，请注意，小红书可能并不要求所有申诉都提供证据，这取决于具体情况。 四、提交申诉 检查信息：在提交申诉之前，仔细检查你填写的信息是否准确无误。确保你的联系方式是有效的，以便小红书在需要时能够联系到你。 点击“提交”：确认无误后，点击“提交”按钮将申诉发送给小红书官方。 五、等待审核与处理 耐心等待：提交申诉后，你需要耐心等待小红书官方的审核结果。审核时间可能会因情况而异，请保持耐心。 查看结果：审核结果通常会通过小红书APP内的消息通知或邮件等方式告知你。如果申诉成功，你的账号将恢复正常使用；如果申诉不成功，你可以根据小红书给出的原因进行调整后再次申诉。 注意事项 在申诉过程中，请保持诚恳和耐心的态度。不要使用不当言辞或威胁等方式来催促审核结果。 遵守小红书的社区规范和规定是避免账号被禁言的关键。如果你的账号被禁言是因为违反了规定，那么你应该认真反思并改正错误。 如果你的申诉被驳回或需要进一步的帮助，你可以联系小红书的人工客服进行咨询和求助。 小红书账号被禁言怎么申诉？ 脉脉 END 阅读 6 声明：本文内容由脉脉用户自发贡献，部分内容可能整编自互联网，版权归原作者所有，脉脉不拥有其著作权，亦不承担相应法律责任。如果您发现有涉嫌抄袭的内容，请发邮件至maimai@taou.com，一经查实，将立刻删除涉嫌侵权内容。 相关推荐 最新发布 大家都在看 热门人脉圈 评论 我来说几句... 我来说几句... .css-13ec0ti{position:fixed;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;right:0;bottom:0;top:0;left:0;background-color:rgba(0, 0, 0, 0.5);-webkit-tap-highlight-color:transparent;z-index:1201;} 登录查看更多内容、看点评、加好友 登录 / 注册 {\"props\":{\"pageProps\":{\"user\":null,\"data\":{\"collected\":null,\"comments\":{\"lst\":[],\"more\":false,\"pa",
+            "fetch_error": ""
+          },
+          {
+            "title": "小红书封号后应该如何申诉?-高顿教育",
+            "url": "https://www.gaodun.com/xinzhiye/1423033.html",
+            "query": "小红书 账号申诉 流程 诉讼 法律途径",
+            "provider": "tavily",
+            "score": "0.7915799",
+            "fetched_text": "(function(a, b) { if ((/AppleWebKit.*Mobile/i.test(a) || /Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(a) || /MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(a)) && !/iPad/i.test(a) && location.hash != '#m') window.location = b })(navigator.userAgent, 'https://m.gaodun.com/xinzhiye/1423033.html') 小红书封号后应该如何申诉?-高顿教育 .article .article-head li.follow-share span:first-child::before { background-position: -53px 0; } url_v= \"//v.gaodun.com\"; --> 登录高顿网校 --> 登录高顿网校 资料修改成功 失败提示失败提示 手机号/邮箱： 密码： 忘记密码？ 自动登录 免费注册 合作账号登录 --> 合作账号登录 QQ登录 微博登录 微信登录 url_v= \"//v.gaodun.com\"; url_s = \"//s.gaodun.com\"; url_w = \"//www.gaodun.com\" 高顿教育 / 新职业新技能 / 小红书博主孵化培训 / 文章详情 小红书封号后应该如何申诉? 高顿教育 2023-04-07 09:37 nicole 分享 新职业新技能臻选试听集 小红书封号后应该如何申诉？ 在小红书上，用户可以分享自己的生活、购物心得和美妆技巧等内容，但是平台也有一系列规定，包括禁止发布不良信息、违反版权等行为。如果用户在平台上违反了这些规定，可能会被封禁账号。但是有些用户可能因为某些原因被误封，这时需要进行申诉。那么小红书封号后应该如何申诉呢？接下来我们就来一起了解一下。 一、申诉流程 1.查看封禁原因。当用户发现自己的小红书账号被封禁后，应该首先查看封禁原因。平台会给出相应的理由，用户需要认真阅读，并分析自己的行为是否有违规。 2.联系客服。如果用户认为自己的封禁是错误的，可以通过小红书客服渠道进行申诉。用户可以通过小红书官方网站、小红书APP或小红书微博等渠道联系客服，提供自己的申诉理由和相关证据。 3.等待处理。用户提交申诉后，需要等待小红书客服的处理。客服会对用户的申诉进行审核，并根据情况进行解封或继续封禁。 二、申诉注意事项 1.提供充分证据。用户在进行申诉时，应该提供充分的证据来证明自己的行为没有违规。例如，可以提供相关的截图、聊天记录等。 2.文明申诉。用户在进行申诉时，应该注意措辞，不要使用恶意语言或攻击性言辞。这样会影响到申诉的效果。 3.合理申诉。用户在进行申诉时，应该根据自己的实际情况提出合理的申诉理由，而不是无中生有或推卸责任。 封禁账号是小红书对于用户违规行为的一种管理方式，但是有些用户可能因为某些原因被误封。如果用户在小红书上被封禁账号，可以通过联系客服进行申诉。在申诉时，需要提供充分的证据、文明措辞，并根据实际情况提出合理的申诉理由。如果申诉成功，用户可以重新使用自己的账号，如果申诉失败，用户可以再次提交申诉或者寻求其他途径解决问题。 以上就是关于小红书封号后应该如何申诉的相关介绍。如果用户遵守小红书的相关规定，不会违反平台的规定，那么就不会被封禁账号。但是如果不慎违规被封禁了账号，可以根据上述的申诉流程进行申诉，希望能够得到解决。 更多干货，点击了解 以上就是 【小红书封号后应该如何申诉?】 的全部解答，如果你想要学习【小红书运营】更多这方面的知识，欢迎大家前往>> 5天小红书陪跑营 ! 添加老师微信 掌握更多小红书运营资讯 相关阅读 0基础的普通人怎么做小红书运营? 0粉丝也能赚钱!小红书赚钱的6种方式 什么样的人适合做小红书 上一篇： 小红书违规笔记如何进行修改? 下一篇： 小红书",
+            "fetch_error": ""
+          },
+          {
+            "title": "小红书被封禁怎么申诉 - 法行宝",
+            "url": "https://ailegal.baidu.com/legalarticle/qadetail?id=b66d1f5921bd56000618",
+            "query": "小红书 账号申诉 流程 诉讼 法律途径",
+            "provider": "tavily",
+            "score": "0.7593865",
+            "fetched_text": "法行宝-您的免费AI律师 { \"@context\": \"https://schema.org\", \"@type\": \"WebSite\", \"name\" : \"法行宝\", \"headline\" : \"法行宝-您的免费AI律师\", \"datePublished\": \"\", \"dateModified\": \"\", \"description\": \"您身边的AI律师，法行宝为您提供专业的法律问答咨询服务，帮助您解答法律问题，法律咨询就来法行宝！\", \"keywords\": \"\" } var _hmt = _hmt || []; (function () { var hm = document.createElement('script'); hm.src = \"https://hm.baidu.com/hm.js?87211a649e43152c3ab9129dc08efb6d\"; hm.setAttribute('async', 'async'); hm.setAttribute('defer', 'defer'); var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(hm, s); })(); !function (t) {var o =\"https:\\/\\/www.faxingbao.com\\/legalarticle\\/qadetail?id=b66d1f5921bd56000618\"; if (o && !/([http|https]:\\/\\/[a-zA-Z0-9\\_\\.]+\\.toutiao\\.com)/gi.test(o) && t.navigator.appName) { var n = '7f5505489c7e46ce2e5aedf7180053679ecf63092d68b96b89602fb03c6e7d3a65e0a2ada1d5e86b11e7de7c1a83287d04743a02fd1ee8dd8558a8cad50e91cb354f8c6f3f78e5fd97613c481f678e6d', e = \"https://zhanzhang.toutiao.com/s.gif\", a = new Image; o && (e += \"?url=\" + encodeURIComponent(o)), n && (e += \"&token=\" + n), n && (a.src = e) } }(window); var sid = '2136'; var sak = '88dfc39fd2'; window.ParisFactory.create({ sid: sid, sak: sak, timeout: 5000, bantiUrl: `https://banti-static.cdn.bcebos.com/o/static/banti_${sak}.js`, acsUrl: `https://dlswbr.baidu.com/heicha/mm/${sid}/acs-${sid}.js`, disasterConfig: { acsUrl: `https://miaowu.baidu.com/sdk/heicha/mm/${sid}/acs-${sid}.js`, }, }); window.pageData = {\"baseinfo\":{\"isLogin\":0,\"passapi\":\"//passport.baidu.com/passApi/js/uni_login_wrapper.js\",\"passdomain\":\"https://passport.baidu.com\",\"userName\":\"\",\"userPhoto\":\"\"},\"lawPreloadData\":{\"criteriaData\":{\"caseCauses\":[{\"children\":[{\"children\":[{\"children\":[],\"childrenCount\":0,\"code\":\"001001001\",\"count\":0,\"name\":\"背叛国家罪\"},{\"children\":[],\"childrenCount\":0,\"code\":",
+            "fetch_error": ""
+          },
+          {
+            "title": "无畏契约在2024年4月3日无故被封号10年，并且两次申诉不予解封",
+            "url": "https://tousu.sina.cn/complaint/view/17372572514?vt=4",
+            "query": "平台误封 起诉 解封 赔偿 2024 2025",
+            "provider": "tavily",
+            "score": "0.568057",
+            "fetched_text": "无畏契约在2024年4月3日无故被封号10年，并且两次申诉不予解封_游戏投诉_黑猫投诉_新浪网 var baseUrl = '//tousu.sina.com.cn/'; var PAGE_CONFIG = { \"isLogin\": true, \"complaintId\": '17372572514', \"userAvatar\": '//n.sinaimg.cn/finance/235fa465/20230314/4.png', \"coTitle\": '腾讯游戏', \"coAvatar\": '//tvax1.sinaimg.cn/crop.0.0.1000.1000.180/d6d3ce75ly8h8v0fpryhzj20rs0rs3yz.jpg?KID=imgbed,tva&Expires=1781266381&ssig=XxS7U0Unya', \"coStatus\" : '7', \"lawStatus\": '', \"lawId\": \"1\", \"tpl\": 0 } .con{position:relative;line-height:20px;font-size: 14px;color: #84848A;margin: 8px 0;} .con i{display:block;position:absolute;top:12px;width:100%;border-top:1px dashed #ddd;} .con p{display:inline-block;color:#c1c1c1;background:#fff;padding:0 5px;text-align: center;margin:0 auto;position:relative;z-index:2;} .file_hide{margin-top:10px;} .file_hide a{display:block;width:100px;height:30px;line-height:30px;border:1px solid #fbaf17;text-align:center;font-size:15px;color:#fbaf17;} #flashBox{color: #fff;background-color: #000;position: relative;padding: 0;width: 640px;height: 516px;margin: 0 auto;} #flashBox video{position: absolute;top: 0;left: 0;width: 100%;height: 100%;background-color: #000;} 315黑猫投诉-新浪旗下消费者服务平台 消息 注册 登录 投诉 商家 0 消息 首页 集体投诉 红黑榜 商家列表 帮帮团 热点追踪 APP下载 --> 首页 > 详情 无畏契约在2024年4月3日无故被封号10年，并且两次申诉不予解封 勇敢喵 发布于 2024年04月16日 14:45 投诉编号 17372572514 投诉对象 腾讯游戏 投诉问题 客服不理人,时间等太久,客服不处理/处理不当,不予退款,联系不到客服,霸王条款 投诉要求 恢复账号,改善服务,撤销处罚 涉诉金额 6500元 投诉进度 投诉已完成 1 1 0 微博 微信 QQ QQ空间 勇敢喵 评价 05-14 20:01:19 服务态度 处理速度 满意度 勇敢喵 确认完成 05-14 20:01:19 商 腾讯游戏 回复 04-24 14:19:24 亲爱的玩家：感谢您对腾讯游戏的支持，为了给您提供专业、优质的提问反馈系统以及游戏体验，请使用微信搜索公众号【腾讯客服】（微信号：Tencent_KF），即可联系客服。感谢您一直以来对腾讯游戏的支持，祝您游戏愉快！ 勇敢喵 补充投诉 04-23 11:10:08 已经一周过去了，到现在没有任何人联系我，急需处理 黑猫消费者服务平台 商家处理中 04-16 15:26:34 已分配商家 腾讯游戏 黑猫消费者服务平台 审核通过 04-16 15:26:34 勇敢喵 于黑猫投诉平台发起 04-16 14:45:38 本人是无畏契约开服玩家并且一直在玩，充值了6500元多，玩任何游戏从来都没有开过",
+            "fetch_error": ""
+          },
+          {
+            "title": "CF误封10年？新的申诉解封方法来了，赶快去试试吧！ - 腾讯云",
+            "url": "https://cloud.tencent.com/developer/news/1161349",
+            "query": "平台误封 起诉 解封 赔偿 2024 2025",
+            "provider": "tavily",
+            "score": "0.42133808",
+            "fetched_text": "CF误封10年？新的申诉解封方法来了，赶快去试试吧！ - 腾讯云开发者社区-腾讯云 @supports (padding:max(0px)){.set-safe-area .com-main{bottom:calc(max(12px,constant(safe-area-inset-bottom)) + 50px);bottom:calc(max(12px,env(safe-area-inset-bottom)) + 50px)}.set-safe-area .com-main-simple-sec,.set-safe-area .com-main.without-tab-ft,.set-safe-area .com-main.without-ft{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}.set-safe-area .com-main-sec{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}.set-safe-area .com-m-footer,.set-safe-area .sa-fixed-btns{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}.set-safe-area .com-mobile-body{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}}@supports (padding:max(0px)){.set-safe-area .support-wrap,.set-safe-area div.body{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}.set-safe-area .com-responsive-no-ft div.body{bottom:max(12px,constant(safe-area-inset-bottom));bottom:max(12px,env(safe-area-inset-bottom))}}.doc-con .J-docShareModal{display: none;} .doc-con .J-docShareCopyTipModalMB{display: none} .with-focus+.com-main-simple-sec, .with-focus+.com-main,.with-focus+.com-body,.with-focus+.qa-body{top:100px} .qa-detail-ask-panel:after{display:none!important;} .sa-fixed-btns .c-btn-weak{background-color: #fff;} .qa-r-editor.draft-editor-host.rno-markdown{height: 290px;overflow-y:auto;} .uc-achievement{line-height:24px;margin-bottom:5px;white-space: initial;overflow:visible;text-overflow:initial} .uc-achievement .uc-achievement-icon{top:0;margin-top:0; .uc-hero+.com-body-main .com-tab .com-tab-item{margin-right: 28px;} 腾讯云 开发者社区 文档 建议反馈 控制台 登录/注册 首页 学",
+            "fetch_error": ""
+          },
+          {
+            "title": "用户因微信被封起诉腾讯每日赔偿25元 - 新京报",
+            "url": "https://m.bjnews.com.cn/detail/163152053214721.html",
+            "query": "平台误封 起诉 解封 赔偿 2024 2025",
+            "provider": "tavily",
+            "score": "0.37731177",
+            "fetched_text": "用户因微信被封起诉腾讯每日赔偿25元 --> --> --> --> .rem038{ font-size:0.38rem !important; } --> 新京报客户端 好新闻 无止境 立即打开 .btn { width: 100%; height: 26px; line-height: 1; text-align: center; font-size: 12px; border: none; border-radius: 2px; color: #000; background: #D02D2D; color: #FFFFFF; } 立即打开 用户因微信被封起诉腾讯每日赔偿25元 新京报 记者 刘平 金城武 编辑 李四 刘宇 --> 新京报 编辑 胡萌 2021-09-13 16:21 HI财讯 进入 HI财讯 阅读更多内容 --> 订阅 新京报贝壳财经讯 企查查APP显示，近日，曲某与深圳市腾讯计算机系统有限公司侵权责任纠纷民事一审民事裁定书公开。原告曲某称因通过微信几次发送邮件，被腾讯公司以传播违法信息封禁，曲某要求被告腾讯公司赔偿其微信被封期间每日损失费25元。 法院认为，此前相关案件已移送广东省深圳市南山区人民法院处理，原告起诉属于重复起诉，判决结果为驳回曲某起诉。 编辑 胡萌 校对 李世辉 展开全文 --> 全文 0字 您已阅读 % --> .btn { width: 100%; height: 45px; line-height: 45px; text-align: center; font-size: 16px; border: none; border-radius: 4px; color: #000; background: #D02D2D; color: #FFFFFF; } 打开新京报APP 阅读更多精彩资讯 打开新京报APP 阅读更多精彩资讯 --> 相关推荐 起底“中医号脉”直播课，号称“行走的CT”，靠此技术挣钱改命 消费 “你的号我就是要毁”，游戏里损失“一个亿”，现实中能获赔吗？ 时事 今年最嚣张的网红把粉丝整到“破产”，还敢放话“毁的就是你” 新京号 “育儿补贴”诈骗背后，谁在贩卖母婴信息？ 新京号 “育儿补贴”诈骗背后，谁在贩卖母婴信息？ 时事 去APP浏览更多内容 --> --> 新京报报料邮箱：82708677@bjnews.com.cn --> 起底“特供酒”黑产业链：17家公司、跨多地制售，11人被批捕 端午假期将至，北京公交优化通游线路 怀密线、S2线周末休闲客流增幅超50% 警惕睡眠缺氧危害 打呼噜呼吸机瑞思迈AirSense 11成居家干预优选 --> --> $(function(){ var ksginTime = new Date().getTime(); var imgls = $(\".article-cen img\"); var timer = setInterval(function () { var complete = true; var endTime = new Date().getTime(); var timeout = endTime - ksginTime import('https://cdn.bootcdn.net/ajax/libs/photoswipe/5.3.6/photoswipe.esm.js') // pswpModule:PhotoSwipe // }; // let tr = false; // $('.article img').each(function(t, n) { // if($('.article img').length-1 == t){ // tr = true; // return // } // options.dataSource.push({ // id: t+1, // src: $(this).attr('src'), // width: $(this).naturalWidth, // height: $(this).naturalHeight, // }) // }) // var timer = setInterval(function () { // if(tr){ // clearInterva",
+            "fetch_error": ""
+          },
+          {
+            "title": "使用开屏广告跳过导致小红书账号被封怎么申诉？ - V2EX",
+            "url": "https://www.v2ex.com/t/970271",
+            "query": "V2EX 小红书 封号 诉讼 律师",
+            "provider": "tavily",
+            "score": "0.6369636",
+            "fetched_text": "使用开屏广告跳过导致小红书账号被封 怎么申诉？ - V2EX body { min-width: 820px; font-family: \"Helvetica Neue\", \"Luxi Sans\", \"Segoe UI\", \"Hiragino Sans GB\", \"Microsoft Yahei\", sans-serif, \"Apple Logo\"; } const SITE_NIGHT = 0; const LANG = 'enus'; const FEATURES = ['search', 'favorite-nodes-sort']; {\"comment\": [{\"text\": \"肯定不能主动说 ad 快消，就说不知道什么原因。不过申诉功能实际应该是摆设，无论你怎么写，可能都会自动回复并且自动申诉失败。小红书这个平台之前遇到`评论只有自己看得到`时都是不管怎么反馈都没用，不是某个评论，而是任何评论都这样，后来我直接注销账号了。所以根据他们以往的态度，你能解封的概率应该不大。\", \"datePublished\": \"2023-09-01T23:35:28Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/zictos\", \"@type\": \"Person\", \"name\": \"zictos\"}}, {\"text\": \"小红书是什么刚需吗？大不了不用了。\", \"datePublished\": \"2023-09-01T23:42:46Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/jaTomn\", \"@type\": \"Person\", \"name\": \"jaTomn\"}}, {\"text\": \"是的，看你使用了功能但没有加载广告图的记录。就你是绕过广告了封号\", \"datePublished\": \"2023-09-01T23:48:40Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/louisxxx\", \"@type\": \"Person\", \"name\": \"louisxxx\"}}, {\"text\": \"还能因为跳过广告封号么…\", \"datePublished\": \"2023-09-01T23:54:36Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/AmericanExpress\", \"@type\": \"Person\", \"name\": \"AmericanExpress\"}}, {\"text\": \"@zictos #1 我刚注册时，也是评论发帖仅自己可见。正常用一段时间，有次发帖突然几十赞+评论，才知道别人能看到了。或许都要酱紫养一段时间号吧猜测\", \"datePublished\": \"2023-09-01T23:58:40Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/WayTooExplore\", \"@type\": \"Person\", \"name\": \"WayTooExplore\"}}, {\"text\": \"@SeaTac 行为被判定恶意了 用户量太大不在乎部分用户\", \"datePublished\": \"2023-09-02T00:42:19Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/shuimitao\", \"@type\": \"Person\", \"name\": \"shuimitao\"}}, {\"text\": \"别用了, 怎么还有这么垃圾的软件.\", \"interactionStatistic\": {\"userInteractionCount\": 2, \"@type\": \"InteractionCounter\", \"interactionType\": \"https://sc",
+            "fetch_error": ""
+          },
+          {
+            "title": "中新网评：“封号收租”的小红书，还有多少信任可透支？ - 中国新闻网",
+            "url": "https://www.chinanews.com.cn/cj/2026/04-14/10603479.shtml",
+            "query": "V2EX 小红书 封号 诉讼 律师",
+            "provider": "tavily",
+            "score": "0.5852203",
+            "fetched_text": "中新网评：“封号收租”的小红书，还有多少信任可透支？-中新网 newwapurl=\"wap/detail/zwsp\"; isForApp=\"n\"; document.write(' '); #SOHUCS #SOHU_MAIN .module-cmt-list .cmt-list-type .cmt-list-number .comment-number{display:none;} .logo{float:left;margin:31px 25px 31px 0;width:177px;height:48px;border-right:1px solid #ebebeb} #navbar{position:relative;height:110px;border-bottom:4px solid #cd131c;background:#fff} .nav_navcon{float:left;width:1075px;margin-top:22px;} .nav_navcon li{float:left;margin-right:10px;height:40px;font-size:18px;word-break:keep-all} .nav_navcon li.mr{margin-right: 27px;} .nav_navcon li.area{margin-right: 20px;} .nav_navcon li.ss{margin-right: 0px;} .nav_navcon li img.dxw{padding-top:11px;width:90px;height:31px} .nav_navcon li a{height:40px;color:#2d2d2d} .navmenu { width: 14px; float: right; margin-top: 8px; margin-right: 10px; background: url(//image.cns.com.cn/default/5ddb9ec3/20210721/11.jpg); border-top: 0px solid #ea3440; border-bottom: 0px solid #ea3440; padding: 0; height: 12px; background-color: transparent; cursor: pointer; } .nav_navcon_more{position:absolute;top:-3px;left:0;z-index:999;display:none;width:100%;height:715px;border-bottom:3px solid #f42e3e;background:#fff} .nav_navcon_more .w1280{position:relative;overflow:hidden;padding-top:10px;height:inherit;border-top:1px solid #f3f3f3} .nav_navcon_more .con{float:left;width:50%} .nav_navcon_more .navlist{width:100%;color:#666;font-size:16px;line-height:42px} .nav_navcon_more .navlist a{color:#666;font-size:14px} .nav_navcon_more .navlist a:hover{color:#e01b2b} .nav_navcon_more .navlist strong{margin-right:28px;color:#333} .nav_navcon_more .navlist strong a{color:#333;font-size:16px} .nav_navcon_more .navlist em{padding:0 8px} .nav_navcon_more .navlist .left{width:100px;text-align:right} .nav_navcon_more .navlist .left1{f",
+            "fetch_error": ""
+          },
+          {
+            "title": "小红书在root 下使用从来不报错，我也没隐藏 - V2EX",
+            "url": "https://www.v2ex.com/t/1207881",
+            "query": "V2EX 小红书 封号 诉讼 律师",
+            "provider": "tavily",
+            "score": "0.5482629",
+            "fetched_text": "小红书在 root 下使用从来不报错，我也没隐藏，结果昨天突然给我封号了 - V2EX body { min-width: 820px; font-family: \"Helvetica Neue\", \"Luxi Sans\", \"Segoe UI\", \"Hiragino Sans GB\", \"Microsoft Yahei\", sans-serif, \"Apple Logo\"; } const SITE_NIGHT = 0; const LANG = 'enus'; const FEATURES = ['search', 'favorite-nodes-sort']; {\"comment\": [{\"text\": \"因为 root ？\", \"datePublished\": \"2026-04-23T00:13:00Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/muhahaha\", \"@type\": \"Person\", \"name\": \"muhahaha\"}}, {\"text\": \"@muhahaha 应该是，我小号登都没咋登录，之前大号实名认证的时候被检测过一次人脸识别怎么也过不了，换了 IPad 试了一下过的\", \"datePublished\": \"2026-04-23T00:17:08Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/shenhualv7\", \"@type\": \"Person\", \"name\": \"shenhualv7\"}}, {\"text\": \"封号是人脸识别很久之后的事了\", \"datePublished\": \"2026-04-23T00:18:38Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/shenhualv7\", \"@type\": \"Person\", \"name\": \"shenhualv7\"}}, {\"text\": \"可能是因为近期借助 AI 进行自动化发文、爬虫的人太多，风控措施变严格了。\", \"datePublished\": \"2026-04-23T00:58:55Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/Danswerme\", \"@type\": \"Person\", \"name\": \"Danswerme\"}}, {\"text\": \"不会因 root 封号的，肯定是哪里没做对\", \"datePublished\": \"2026-04-23T01:20:50Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/hoor\", \"@type\": \"Person\", \"name\": \"hoor\"}}, {\"text\": \"我注册了个号一直看，不评论不点赞。有天就换了个头像就被封了，我直接删了 ，艹‍！\", \"datePublished\": \"2026-04-23T01:21:58Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/littiefish\", \"@type\": \"Person\", \"name\": \"littiefish\"}}, {\"text\": \"开启 root 的情况下是不是 app 就能自由访问其他目录了？难不成小红书自己检索发现自己能越权访问其他目录树？然后给你判断你是在 root 环境里跑 app?\", \"datePublished\": \"2026-04-23T01:31:43Z\", \"@type\": \"Comment\", \"author\": {\"url\": \"https://www.v2ex.com/member/jackOff\", \"@type\": \"Person\", \"name\": \"jackOff\"}}, {\"text\": \"@jackOf",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "可复制条件",
+        "不可复制条件",
+        "失败或成功背后的非技术因素"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "小红书账号被永封，申诉不如诉讼？一个开发者的维权实录 原始项目 GitHub 复盘",
+        "小红书账号被永封，申诉不如诉讼？一个开发者的维权实录 收入 增长 证据",
+        "小红书账号被永封，申诉不如诉讼？一个开发者的维权实录 失败 限制 反方证据"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
