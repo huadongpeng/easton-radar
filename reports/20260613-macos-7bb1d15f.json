@@ -1,0 +1,1821 @@
+{
+  "id": "20260613-macos-7bb1d15f",
+  "batch_id": "2026-06-13-evening",
+  "title": "独立开发App被破解站收录：是自豪还是心凉？",
+  "original_title": "独立开发的 macOS 应用让破解站收录了，心里五味杂陈",
+  "url": "https://www.v2ex.com/t/1220128",
+  "summary": "今天早上一看，折腾了很久的 macOS 应用 Aion 让破解站（ MacKed ）给收录了。 当时第一反应有点微妙：一方面有点自豪，毕竟有人愿意花时间去破，说明折腾出来的东西确实有用；另一方面摸摸口袋，最近本来收入就下滑，看着直链下载确实心凉。 简单说说这个 App ，叫 Aion （官网： https://aion.7caifei.com/ ）。 做它的初衷是嫌市面上的自动退出软件太死板，经常把我挂着的下载或者视频会议给强退了。Aion 做的是“上下文感知退出”：不会傻傻地倒计时，而是会检测你的网络流量、音视频播放，甚至摄像头和麦克风使用状态。如果确定你在开会或下大文件，就先保护起来不退；退出也是走标准 Apple 事件，会提示保存，不至于丢数据。软件完全在本地运行。 顺便也想请教下各位前辈：大家做 macOS 独立开发，刚起步遇到破解一般怎么调节心态？技术上有没有什么成本低、见效快的防逆向/防破解手段（比如检测运行时签名）？",
+  "source_category": "developer_business",
+  "source_category_title": "开发者副业与独立开发",
+  "topic_direction": "tools-rules",
+  "topic_direction_title": "工具&规则",
+  "topic_direction_short_title": "工具&规则",
+  "topic_direction_description": "开发工具、AI 实操、API、云服务、自动化工作流、平台政策、账号规则、搜索流量和内容分发生态变化。重点看工具怎么用、规则怎么变、成本和边界在哪里。",
+  "source_name": "V2EX 分享创造",
+  "original_source_name": "分享创造",
+  "source_type": "rss",
+  "feed_url": "https://v2ex.com/feed/create.xml",
+  "published_at": "2026-06-13T04:05:07Z",
+  "fetched_at": "2026-06-13T09:44:45.175577+00:00",
+  "decision": "deep_dive",
+  "report_type": "case-study",
+  "report_type_title": "案例复盘",
+  "score": 78,
+  "reader_hook": "从独立开发者发现自己的macOS应用被破解站收录的复杂心情切入，讨论独立开发者的收入困境、破解对收入的影响、以及如何应对。",
+  "topic_tension": {
+    "score": 9,
+    "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+    "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+    "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+  },
+  "persona_discussion_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+  "why_now": "事件刚发生，具有时效性；独立开发者群体关注度高。",
+  "evidence_level": "near_source",
+  "source_priority": "P2 可参考源",
+  "reason": "主要服务独立开发者和副业普通人。事件真实、有情感冲突、能引发讨论。泛兴趣普通人会被“被破解”的故事吸引。",
+  "collection_fit": "side-info",
+  "investigation_direction": "调查破解站对独立开发者收入的影响、常见的防破解手段及其效果、开发者如何调整定价策略。",
+  "uncertainty_flags": [
+    "该App的具体收入损失？破解站流量多大？开发者是否有采取法律行动？"
+  ],
+  "facts": [
+    {
+      "claim": "V2EX 分享创造 发布/收录了这条原始线索：独立开发的 macOS 应用让破解站收录了，心里五味杂陈",
+      "type": "confirmed_fact",
+      "source_url": "https://www.v2ex.com/t/1220128",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "V2EX 分享创造",
+      "url": "https://www.v2ex.com/t/1220128",
+      "source_type": "near_source",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "money": [
+        "成本",
+        "收入"
+      ],
+      "dev": [
+        "开发"
+      ]
+    },
+    "source_host": "www.v2ex.com",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 9,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "从独立开发者发现自己的macOS应用被破解站收录的复杂心情切入，讨论独立开发者的收入困境、破解对收入的影响、以及如何应对。",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://v2ex.com/feed/create.xml",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "该App的具体收入损失？破解站流量多大？开发者是否有采取法律行动？"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "推荐选题",
+      "label": "推荐",
+      "reason": "事件真实、有情感冲突、能引发独立开发者群体共鸣；证据链基本完整，逻辑可闭环；传播张力强，读者愿意评论分享自己的经历；老花人设解读角度清晰，可拆出心态、技术、法律、商业等多层价值。"
+    },
+    "core_question": "独立开发者的macOS应用被破解站收录后，收入损失有多大？有哪些低成本、有效的防破解手段？",
+    "why_this_topic_matters": "独立开发者群体庞大且活跃，破解问题普遍存在但缺乏系统讨论。该事件提供了一个真实案例，能引发开发者对收入保护、技术投入、法律手段和心态调整的深度思考，具有普遍参考价值。",
+    "fact_summary": [
+      "独立开发者开发了macOS应用Aion（上下文感知自动退出工具），被破解站MacKed收录。",
+      "开发者感到自豪（有人破解说明有用）又心凉（收入下滑，直链下载影响收入）。",
+      "Aion官网：https://aion.7caifei.com/，应用完全本地运行。",
+      "MacKed是专注于Mac破解资源的分享与下载网站，收录了大量macOS应用。",
+      "调查显示大多数Mac开发者不赚钱，80%无法开启独立业务，59%收不回投入。",
+      "Apple提供DMCA下架渠道，但针对破解站的实际执行效果未知。",
+      "GitHub有DMCA下架政策，可参考用于代码泄露场景。"
+    ],
+    "persona_discussion_question": "我的App被破解了，该不该花时间精力去防？还是干脆接受，把精力放在功能迭代上？",
+    "old_flower_stance": "破解是独立开发者绕不开的痛，但与其花大量精力防破解（成本高、效果有限），不如接受现实，把资源投入到产品迭代和用户服务上。同时，可以采取低成本措施（如代码混淆、签名校验）增加破解门槛，并利用DMCA等法律工具维护权益。心态上，把破解视为产品价值的另类证明，但也要算清收入账，避免过度投入。",
+    "audience_fit": {
+      "primary_layer": "副业普通人",
+      "secondary_layers": [
+        "核心技术人",
+        "共鸣读者"
+      ],
+      "interest_score": 85,
+      "why_interested": "副业普通人（独立开发者、小团队）直接面临破解问题，想知道如何应对；核心技术人关注防破解技术细节；共鸣读者（有过类似经历）会感同身受。",
+      "reader_risk": "避免夸大破解对收入的影响，需明确破解用户可能本就不会付费。"
+    },
+    "mass_interest_hook": {
+      "score": 75,
+      "hook_type": "故事",
+      "why_non_technical_people_may_click": "“被破解”自带冲突和故事性，普通人也能理解“自己辛苦做的东西被人免费拿走”的复杂心情。标题如“我的App被破解了，我该自豪还是心凉？”能引发好奇心。",
+      "story_seed": "一个独立开发者早上发现自己的macOS应用被破解站收录，第一反应是自豪（有人破解说明有用），但紧接着是心凉（收入本来就下滑，现在更糟）。他开发的应用有独特功能（上下文感知退出），但破解站直接提供了免费下载。",
+      "do_not_overhype": "不要声称破解导致收入大幅下降（缺乏数据），不要夸大防破解措施的效果，不要暗示所有独立开发者都会遇到同样情况。"
+    },
+    "topic_tension": {
+      "score": 10,
+      "conflict_point": "独立开发者与破解站之间的利益冲突，以及平台（Apple）在保护开发者方面的角色缺失。",
+      "debate_question": "小开发者面对破解几乎无还手之力，平台（Apple）的DRM和审核机制是否足够保护独立开发者？破解站的法律责任谁来追究？",
+      "stakeholders": [
+        "独立开发者",
+        "破解站运营者",
+        "Apple（平台方）",
+        "付费用户",
+        "破解用户"
+      ],
+      "why_people_would_comment": "读者可以分享自己被破解的经历、讨论防破解技术、争论是否值得投入防破解、评价Apple的DRM效果、甚至讨论破解的道德问题。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。避免煽动对破解站的仇恨，保持理性。"
+    },
+    "timeline": [
+      "2025-03-27: 独立开发者在V2EX发帖，称其macOS应用Aion被破解站MacKed收录。",
+      "2019-06-07: 爱范儿文章讨论独立开发者困境。",
+      "2012-05-05: 调查显示大多数Mac开发者不赚钱。"
+    ],
+    "evidence_table": [
+      {
+        "source": "V2EX帖子",
+        "url": "https://www.v2ex.com/t/1220128",
+        "supports": "事件原始线索，开发者自述被破解经历和复杂心情。",
+        "reliability": "near_source"
+      },
+      {
+        "source": "爱范儿文章",
+        "url": "https://www.ifanr.com/1220659",
+        "supports": "独立开发者整体困境背景。",
+        "reliability": "media"
+      },
+      {
+        "source": "cnBeta调查",
+        "url": "https://www.cnbeta.com.tw/articles/tech/185833.htm",
+        "supports": "大多数Mac开发者不赚钱。",
+        "reliability": "media"
+      },
+      {
+        "source": "MacKed网站",
+        "url": "https://macked.app/",
+        "supports": "破解站存在并收录大量macOS应用。",
+        "reliability": "weak"
+      },
+      {
+        "source": "Apple DMCA页面",
+        "url": "https://www.apple.com/legal/contact/copyright-infringement.html",
+        "supports": "Apple提供DMCA下架渠道。",
+        "reliability": "official"
+      },
+      {
+        "source": "GitHub DMCA政策",
+        "url": "https://docs.github.com/zh/site-policy/content-removal-policies/dmca-takedown-policy",
+        "supports": "DMCA下架流程参考。",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "逻辑基本闭环：事件真实（V2EX帖子）→ 背景支持（独立开发者收入困境）→ 破解站存在（MacKed）→ 法律手段可用（DMCA）→ 心态调整建议（老花人设立场）。但收入损失和防破解效果缺乏直接数据，需在文章中明确不确定性。",
+    "writeable_angles": [
+      {
+        "angle": "心态调整：被破解是自豪还是心凉？",
+        "why": "情感冲突强，容易引发共鸣和讨论。",
+        "needs": "开发者自述、社区类似经历、心理建议。"
+      },
+      {
+        "angle": "低成本防破解技术盘点",
+        "why": "核心技术人关注，提供实用价值。",
+        "needs": "代码混淆、签名校验、运行时检测等具体方法及成本。"
+      },
+      {
+        "angle": "法律手段：如何用DMCA下架破解链接",
+        "why": "提供可操作步骤，增加文章实用性。",
+        "needs": "DMCA流程详解、Apple和GitHub的官方渠道、实际案例。"
+      },
+      {
+        "angle": "独立开发者的收入账：破解到底影响多大？",
+        "why": "商业角度，帮助开发者理性评估。",
+        "needs": "收入数据（如有）、破解用户付费意愿分析、替代策略（如订阅制）。"
+      }
+    ],
+    "missing_basics": [
+      "macOS应用破解的常见技术原理（如脱壳、重签名）。",
+      "Apple的Gatekeeper和公证机制如何工作。",
+      "DMCA的基本概念和适用范围。"
+    ],
+    "missing_materials": [
+      "Aion应用的具体收入数据（开发者未公开）。",
+      "MacKed破解站的流量数据（如SimilarWeb排名）。",
+      "其他独立开发者类似遭遇的详细案例。",
+      "防破解技术的实际效果对比（如混淆 vs 签名校验）。"
+    ],
+    "not_claimable": [
+      "破解导致收入大幅下降（需数据支持）。",
+      "防破解措施一定有效（需验证）。",
+      "所有独立开发者都会遇到类似情况（需统计）。"
+    ],
+    "followup_queries": [
+      "Aion应用的定价、销售渠道、近期收入趋势（如有）。",
+      "MacKed破解站的Alexa排名或SimilarWeb数据。",
+      "其他独立开发者关于破解的讨论帖或博客文章。",
+      "macOS应用防破解的低成本技术方案对比。"
+    ],
+    "additional_search_queries": [
+      "macOS app crack prevention low cost",
+      "independent developer DMCA takedown experience",
+      "MacKed crack site traffic",
+      "Aion app revenue independent developer"
+    ],
+    "stop_conditions": [
+      "无法获取任何收入数据或破解站流量数据。",
+      "开发者明确表示不愿公开更多信息。",
+      "社区讨论热度下降，缺乏新案例。"
+    ],
+    "confidence": 80,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "case-study",
+    "quality_gate": {
+      "pass": true,
+      "score": 78,
+      "fatal_issues": [],
+      "warnings": [
+        "收入损失和防破解效果缺乏直接数据，需在文章中明确不确定性。",
+        "破解站流量数据缺失，无法量化影响。"
+      ],
+      "missing_evidence": [
+        "Aion应用的具体收入数据（开发者未公开）。",
+        "MacKed破解站的流量数据（如SimilarWeb排名）。",
+        "其他独立开发者类似遭遇的详细案例。",
+        "防破解技术的实际效果对比（如混淆 vs 签名校验）。"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": true,
+      "downstream_handoff_ok": true,
+      "material_pack_ok": true,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": true,
+      "source_coverage_ok": true,
+      "recommendation": "publish"
+    },
+    "research_plan": {
+      "core_question": "独立开发者的macOS应用被破解站收录后，收入损失有多大？有哪些低成本、有效的防破解手段？",
+      "persona_discussion_question": "我的App被破解了，该不该花时间精力去防？还是干脆接受，把精力放在功能迭代上？",
+      "hidden_public_issue": "小开发者面对破解几乎无还手之力，平台（Apple）的DRM和审核机制是否足够保护独立开发者？破解站的法律责任谁来追究？",
+      "must_verify": [
+        "Aion 应用的实际收入数据（开发者是否公开过？）",
+        "MacKed 破解站的流量和收录方式",
+        "开发者是否尝试过 DMCA 下架或联系破解站",
+        "Apple 对 macOS 应用破解的官方立场和应对措施",
+        "其他独立开发者类似遭遇的案例和应对经验"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "case_study",
+          "query": "独立开发者 macOS 应用被破解 收入影响 案例",
+          "why_needed": "了解其他开发者的实际损失和应对策略"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "macOS 应用防破解 低成本 方法",
+          "why_needed": "收集社区中验证过的低成本防破解技术"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Apple macOS 应用破解 法律措施 DMCA",
+          "why_needed": "确认 Apple 是否提供官方保护机制或法律支持"
+        },
+        {
+          "source_type": "case_study",
+          "query": "MacKed 破解站 流量 收录 方式",
+          "why_needed": "评估破解站对应用分发的影响程度"
+        },
+        {
+          "source_type": "policy",
+          "query": "DMCA 下架 破解站 独立开发者 教程",
+          "why_needed": "了解开发者如何通过法律手段移除破解链接"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "独立开发 破解 心态 调整 经验",
+          "why_needed": "收集心理层面的应对建议，丰富文章角度"
+        }
+      ],
+      "expert_challenge_points": [
+        "破解站收录是否真的会导致收入下降？还是说破解用户本来就不会付费？",
+        "防破解措施是否值得投入？对于小开发者，时间和精力成本可能高于潜在损失。",
+        "Apple 的 Gatekeeper 和公证机制是否足够？如果不够，Apple 是否有责任改进？"
+      ],
+      "do_not_claim_yet": [
+        "破解导致收入大幅下降（需数据支持）",
+        "防破解措施一定有效（需验证）",
+        "所有独立开发者都会遇到类似情况（需统计）"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确收入损失和防破解效果的不确定性，重点放在心态调整和社区经验分享。",
+      "downstream_materials_needed": [
+        "Aion 应用的定价、销售渠道、近期收入趋势（如有）",
+        "MacKed 破解站的 Alexa 排名或 SimilarWeb 数据",
+        "其他独立开发者关于破解的讨论帖或博客文章"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "属于独立开发者的好时代已过去了吗？| WWDC ② - 爱范儿",
+        "url": "https://www.ifanr.com/1220659",
+        "query": "独立开发者 macOS 应用被破解 收入影响 案例",
+        "provider": "tavily",
+        "score": "0.5325473",
+        "fetched_text": "属于独立开发者的好时代已过去了吗？| WWDC ② | 爱范儿 { \"@context\": \"http://schema.org\", \"@type\": \"Article\", \"headline\":\"11 年前 App Store 的诞生催生了 app 经济；11 年后，App Store 和开发者们都遇到了困境。\", \"mainEntityOfPage\": { \"@type\": \"WebPage\", \"@id\": \"https://www.ifanr.com/1220659\" }, \"image\": \"https://s3.ifanr.com/wp-content/uploads/2019/06/1_dhwHUlGtrUKitcxbW65FPQ.jpg\", \"datePublished\": \"2019-06-07 10:08:49\", \"dateModified\":\"2019-06-07 10:38:51\", \"author\": { \"@type\": \"Person\", \"name\":\"吴羚\" }, \"publisher\": { \"@type\": \"Organization\", \"name\": \"ifanr\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://dl.ifanr.cn/ifanr/ifanr-logo.jpg\" } }, \"description\": \"11 年前 App Store 的诞生催生了 app 经济；11 年后，App Store 和开发者们都遇到了困境。\" } /* Try to get out of frames! */ var isAppsoWebsite = /^https?:\\/\\/(www\\.)?ifanr\\.com\\/app\\/?/.test(document.location.href); if (window.top != window.self && !isAppsoWebsite) { window.top.location = self.location.href; } var ga = ga || function() {(ga.q = ga.q || []).push(arguments)}; var STATIC_URL = \"https://images.ifanr.cn/wp-content/themes/ifanr-5.0-pc/static/\"; var POST_DEFAULT_THUMBNAIL_SMALL = \"https://images.ifanr.cn/wp-content/themes/ifanr-5.0-pc/static/images/ifanr/article-default-thumbnail-small.jpg\"; var POST_DEFAULT_THUMBNAIL_MIDDLE = \"https://images.ifanr.cn/wp-content/themes/ifanr-5.0-pc/static/images/ifanr/article-default-thumbnail-middle.jpg\"; var IMG_LARGE = \"720\", IMG_MEDIUM = \"320\", IMG_SMALL = \"260\", IMG_XSMALL = \"100\"; USER = {}; USER.SSO_URL_MYACCOUNT = 'https://sso.ifanr.com/myaccount/'; USER.SSO_URL_LOGIN = 'https://sso.ifanr.com/embed/login/' + '?referer=' + location.origin; USER.SSO_URL_REGISTER = 'https://sso.ifanr.com/embed/login/#register' + '?referer=' + location.origin; USER.SSO_URL_LOGOUT = ''; USER.SSO_USER_ACTIVITY = 'https://sso.ifanr.com/myactivity/'; IFR = {}; IFR.a",
+        "fetch_error": ""
+      },
+      {
+        "title": "调查发现大多数Mac开发者并不赚钱 - cnBeta.COM",
+        "url": "https://www.cnbeta.com.tw/articles/tech/185833.htm",
+        "query": "独立开发者 macOS 应用被破解 收入影响 案例",
+        "provider": "tavily",
+        "score": "0.4766533",
+        "fetched_text": "调查发现大多数Mac开发者并不赚钱 - Apple macOS - cnBeta.COM var GV = {JS_ROOT:\"//www.cnbeta.com.tw/themes/v6/js/\", JS_VERSION:\"\", URL:{HOME:\"//www.cnbeta.com.tw\"}, USER:{ID:0,NICK:'匿名人士',ICON:'https://www.cnbeta.com.tw/images/anonymous.jpg'}}; (function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})(); cnBeta.COM.TW_中文业界资讯站 首页 影视 音乐 游戏 动漫 趣闻 科学 软件 主题 硬件 Apple Google iPhone 科学探索 人物 手机 游戏 视点·观察 阿里云 微软 通信技术 Android 软件和应用 SONY 索尼 the United States美国 Apple iPad Windows Phone Intel英特尔 腾讯 HTC 安全 Mozilla FireFox 小米科技 百度 通信运营商 媒体播放器 / 视频网站 BlackBerry 黑莓 网络应用 / Web Apps Google Chrome Microsoft XBOX 硬件 - 上网本 / 平板电脑 / 超极本 电子商务 - B2C / B2B Lenovo 联想 LG Yahoo! 雅虎 AMD SNS 社交网络 诺基亚 Windows 7 Huawei 华为 中国移动 中国联通 中国电信 更多... 排行 document.addEventListener(\"error\",function(e){var elem=e.target;if(elem.tagName.toLowerCase()==\"img\"){elem.src=\"/images/blank.gif\"}},true); (adsbygoogle = window.adsbygoogle || []).push({}); 调查发现大多数Mac开发者并不赚钱 2012年05月05日 11:08 次阅读 稿源： 条评论 感谢 平 的投递 新闻来源:weiphone 根据国外媒体的消息报导，一项针对Mac开发者（102名）的收入调查揭露：有80%的开发者并没有赚到足够的钱以开启个人的独立业务，而59%的开发者甚至还收不回开发应用时的投入资金。换句话来说，大多数Mac开发者实际上还处于入不敷出的状态。 报导称，出现这种的情况的原因是Mac平台的应用市场已经过度饱和，对于目前的开发者来说，开发新应用很难再获得理想的成绩。实际上，调查发现有63%的开发者所开发出来的应用下载量少于50000次，而将近3/4的开发者在每款应用上只能够获得5000美元或更少的收入。 - (adsbygoogle = window.adsbygoogle || []).push({}); (adsbygoogle = window.adsbygoogle || []).push({}); 对文章打分 调查发现大多数Mac开发者并不赚钱 2 (67%) 1 (33%) (adsbygoogle = window.adsbygoogle || []).push({}); 已有 条意见 登录 [退出] 发布 显示",
+        "fetch_error": ""
+      },
+      {
+        "title": "独立开发两年血泪复盘：App Store 首页推荐后，依然月入不足 3000 | 人人都是产品经理",
+        "url": "https://www.woshipm.com/pd/6198096.html",
+        "query": "独立开发者 macOS 应用被破解 收入影响 案例",
+        "provider": "tavily",
+        "score": "0.31254882",
+        "fetched_text": "独立开发两年血泪复盘：App Store 首页推荐后，依然月入不足 3000 | 人人都是产品经理 { \"@context\": \"http://schema.org\", \"@type\": \"Article\", \"name\": \"独立开发两年血泪复盘：App Store 首页推荐后，依然月入不足 3000 – 人人都是产品经理,\",\"author\": \"Aine\",\"description\": \"到今年 4 月刚好全职独立开发两年了，总结这两年独立开发结果：希望通过独立开发获得一份可持续的收入进入一个相对自由的生活失败了。不过确实做出了自己还算满意的产品，上过 AppStore 首页推荐，也得到了一些用户的认可，不算瞎忙活。 商业上可以说是彻底失败了。\", \"image\": [ \"https:https://image.woshipm.com/wp-files/2025/03/PhjoE31edoTx5hqLwmmG.png\", \"https:https://image.woshipm.com/wp-files/2025/03/DBvdqMEmB2J7JNhNiIKg-scaled.jpeg\", \"https:https://image.woshipm.com/wp-files/2025/03/2xw1btZkDpKTIteiQq9X.png\" ], \"datePublished\": \"2025-03-27T17:03:27\", \"commentCount\": 2, \"interactionStatistic\": { \"@type\": \"InteractionCounter\", \"interactionType\": \"http://schema.org/LikeAction\", \"userInteractionCount\": 0 } } img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } /* */ img.wp-smiley, img.emoji { display: inline !important; border: none !important; box-shadow: none !important; height: 1em !important; width: 1em !important; margin: 0 0.07em !important; vertical-align: -0.1em !important; background: none !important; padding: 0 !important; } /*! This file is auto-generated */ .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none} :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--p",
+        "fetch_error": ""
+      },
+      {
+        "title": "MacKed - 专注于Mac破解资源的分享与下载",
+        "url": "https://macked.app/",
+        "query": "macOS 应用防破解 低成本 方法",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "MacKed - 专注于Mac破解资源的分享与下载 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Person\",\"@id\":\"https://macked.app/#person\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"url\":\"https://macked.app\",\"email\":\"macked@duck.com\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://macked.app/#logo\",\"url\":\"https://macked.app/wp-content/uploads/favicon.png\",\"contentUrl\":\"https://macked.app/wp-content/uploads/favicon.png\",\"caption\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"inLanguage\":\"zh-CN\",\"width\":\"192\",\"height\":\"192\"}},{\"@type\":\"WebSite\",\"@id\":\"https://macked.app/#website\",\"url\":\"https://macked.app\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"alternateName\":\"MacKed\",\"publisher\":{\"@id\":\"https://macked.app/#person\"},\"inLanguage\":\"zh-CN\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":\"https://macked.app/?s={search_term_string}\",\"query-input\":\"required name=search_term_string\"}},{\"@type\":\"CollectionPage\",\"@id\":\"https://macked.app#webpage\",\"url\":\"https://macked.app\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8eMac\\u7834\\u89e3\\u8d44\\u6e90\\u7684\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"about\":{\"@id\":\"https://macked.app/#person\"},\"isPartOf\":{\"@id\":\"https://macked.app/#website\"},\"inLanguage\":\"zh-CN\"}]} body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--c",
+        "fetch_error": ""
+      },
+      {
+        "title": "关于macOS破解软件的一些信息说明-黑苹果星球",
+        "url": "https://heipg.cn/tutorial/about-cracked-macos-apps.html",
+        "query": "macOS 应用防破解 低成本 方法",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "关于macOS破解软件的一些信息说明-黑苹果星球 img:is([sizes=auto i],[sizes^=\"auto,\" i]){contain-intrinsic-size:3000px 1500px} /*# sourceURL=wp-img-auto-sizes-contain-inline-css */ /*! This file is auto-generated */ .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none} /*# sourceURL=/wp-includes/css/classic-themes.min.css */ :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,4",
+        "fetch_error": ""
+      },
+      {
+        "title": "MACMJ - Mac破解软件分享中心",
+        "url": "https://www.macmj.com/",
+        "query": "macOS 应用防破解 低成本 方法",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "MACMJ - Mac破解软件分享中心 img:is([sizes=auto i],[sizes^=\"auto,\" i]){contain-intrinsic-size:3000px 1500px} /*# sourceURL=wp-img-auto-sizes-contain-inline-css */ img.wp-smiley, img.emoji { display: inline !important; border: none !important; box-shadow: none !important; height: 1em !important; width: 1em !important; margin: 0 0.07em !important; vertical-align: -0.1em !important; background: none !important; padding: 0 !important; } /*# sourceURL=wp-emoji-styles-inline-css */ /*! This file is auto-generated */ .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none} /*# sourceURL=/wp-includes/css/classic-themes.min.css */ :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cya",
+        "fetch_error": ""
+      },
+      {
+        "title": "APPLE以違反DMCA法案追訴Psystar - 資策會科技法律研究所",
+        "url": "https://stli.iii.org.tw/article-detail.aspx?tp=1&d=2931&no=64",
+        "query": "Apple macOS 应用破解 法律措施 DMCA",
+        "provider": "tavily",
+        "score": "0.5614318",
+        "fetched_text": "資策會科技法律研究所 var onSubmit = function (token) { // console.log('success!', token); $(\"#token\").val(token); }; var onloadCallback = function () { grecaptcha.render('html_element', { 'sitekey': '6LdYeBwUAAAAAMphg3C-VimQCCfkxE55u6OgFLDK', // 6Le0fGgdAAAAAJheVqFzSLJoIiCSC8w8AedbDARC 'callback': onSubmit }); // 'sitekey': '6LdYeBwUAAAAAMphg3C-VimQCCfkxE55u6OgFLDK', // test: 6Le0fGgdAAAAAJheVqFzSLJoIiCSC8w8AedbDARC }; // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) // })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); // ga('create', 'UA-85744699-1', 'auto'); // ga('send', 'pageview'); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-N2GLX5BD'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8TVQKWJCB9'); 熱門關鍵字 研發成果運用 產學研合作 人工智慧 智財管理 品牌智財 自駕車 資料經濟 貿易戰 訂閱電子報 會員登入 English 關於我們 沿革 實績及貢獻 專業團隊 科法之友 加入我們 本所活動 研究成果 科技法制要聞 科技法律透析 出版品區 專書 工具書 教具及研究報告 科技法律諮詢 諮詢服務 常見問題解答 媒體露出 會員登入 ENGLISH > 研究成果 > 科技法制要聞 返回列表 上一篇 美國基改動物法規研擬中 下一篇 歐盟法院於11月28日對Intel v CPM案依英國上訴法院初審判決闡釋著名商標侵害之認定方式 APPLE以違反DMCA法案追訴Psystar 刊登期別 隸屬計畫成果 摘要項目 根據美國北加州聯邦地方法院之資料公佈，APPLE已於上週對“Mac Clone”（克隆機）廠商PSYSTAR追加控訴，指控PSYSTAR侵犯了APPLE的著作權和商標權，同時，亦違反了美國1998年通過之數位千禧年著作權法（DMCA - Digital Millennium Copyright Act）的規定。APPLE表示，尚有其他廠商涉及本案，但APPLE仍未公佈其他涉案廠商名單。",
+        "fetch_error": ""
+      },
+      {
+        "title": "App Store 上的DMCA 下架通知: r/iOSProgramming - Reddit",
+        "url": "https://www.reddit.com/r/iOSProgramming/comments/qliagi/dmca_takedown_notice_on_app_store?tl=zh-hant",
+        "query": "Apple macOS 应用破解 法律措施 DMCA",
+        "provider": "tavily",
+        "score": "0.3450175",
+        "fetched_text": "有人已經因為App Store 上的侵權行為提出DMCA 申訴了嗎？我的App 被「山寨」了，正在想Apple 什麼時候會介入。 目前，Apple 把我們和對方聯繫上了。",
+        "fetch_error": "HTTP Error 403: Blocked; used tavily content fallback"
+      },
+      {
+        "title": "Apple - Legal - Contact - Copyright Infringement",
+        "url": "https://www.apple.com/legal/contact/copyright-infringement.html",
+        "query": "Apple macOS 应用破解 法律措施 DMCA",
+        "provider": "tavily",
+        "score": "0.34323218",
+        "fetched_text": "Apple - Legal - Contact - Copyright Infringement var isDisputeForm = document.getElementById(\"dispute_category\"); if(isDisputeForm == null) { var LEGAL = LEGAL || {}; var thankyou = 'https://www.apple.com/legal/contact/copyrightinfringementthankyou.html'; if(!thankyou.startsWith(\"http\")){ thankyou = \"https://www.apple.com\" + thankyou; } LEGAL.FormData = { className: 'legal-form', noAjax: true, pageSuccess: thankyou, onsubmit: function(evt) { let isValid = true; const territoryLanguageModals = Array.from( document.querySelectorAll( \"[data-modal-trigger^=disputed-country-region][aria-required=true]\" ) ).map((ele) => document.querySelector(\"#\" + ele.getAttribute(\"data-modal-trigger\")) ); for (const idx in territoryLanguageModals) { if ( !territoryLanguageModals[idx].querySelector(\"input[type=checkbox]:checked\") ) { isValid = false; evt.preventDefault(); const modalTriggerLink = document.querySelector(\"[data-modal-trigger^=\"+territoryLanguageModals[idx].id); const menuWrapper = modalTriggerLink.closest(\".menu-territories-wrapper\") menuWrapper.querySelector(\".error-advice\").classList.remove(\"visuallyhidden\"); modalTriggerLink.querySelector(\".icon\").classList.remove(\"icon-pluscircle\", \"icon-checkcircle\"); modalTriggerLink.querySelector(\".icon\").classList.add(\"icon-infocircle\"); document.querySelector(\".form-error-message\").classList.add(\"show\",\"show-incomplete\"); //break; } } var selectedForm = 'copyright-infringement-questions'; var targetCustomerName = document.getElementById(selectedForm+'-customer_name'); var thankyouURL = document.getElementById('thankyou'); targetCustomerName.setAttribute('value', document.getElementById('first_name').value+' ' +document.getElementById('last_name').value); thankyouURL.setAttribute('value', thankyou); return isValid; } }; } else { docume",
+        "fetch_error": ""
+      },
+      {
+        "title": "马克喵_最新Mac破解软件｜苹果电脑应用资源站 | macat.vip",
+        "url": "https://www.macat.vip/",
+        "query": "MacKed 破解站 流量 收录 方式",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "马克喵_最新Mac破解软件｜苹果电脑应用资源站 | macat.vip /*! This file is auto-generated */ .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none} body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 1",
+        "fetch_error": ""
+      },
+      {
+        "title": "Stash 4.2.0-473 beta 破解版 - Mac强大的Clash规则代理工具/Surge同类型 | MacKed - 专注于Mac破解资源的分享与下载",
+        "url": "https://macked.app/stash-surge-crack-ios-trollstore.html",
+        "query": "MacKed 破解站 流量 收录 方式",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Stash 4.2.0-477 破解版 - Mac强大的Clash规则代理工具/Surge同类型 | MacKed - 专注于Mac破解资源的分享与下载 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Organization\",\"Person\"],\"@id\":\"https://macked.app/#person\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"url\":\"https://macked.app\",\"email\":\"macked@duck.com\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://macked.app/#logo\",\"url\":\"https://macked.app/wp-content/uploads/favicon.png\",\"contentUrl\":\"https://macked.app/wp-content/uploads/favicon.png\",\"caption\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"inLanguage\":\"zh-CN\",\"width\":\"192\",\"height\":\"192\"},\"image\":{\"@id\":\"https://macked.app/#logo\"}},{\"@type\":\"WebSite\",\"@id\":\"https://macked.app/#website\",\"url\":\"https://macked.app\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"alternateName\":\"MacKed\",\"publisher\":{\"@id\":\"https://macked.app/#person\"},\"inLanguage\":\"zh-CN\"},{\"@type\":\"ImageObject\",\"@id\":\"https://pic.macked.app/static/1b0b8b1aae36308fcd2f560b6345c16a-1754285837.webp\",\"url\":\"https://pic.macked.app/static/1b0b8b1aae36308fcd2f560b6345c16a-1754285837.webp\",\"width\":\"200\",\"height\":\"200\",\"inLanguage\":\"zh-CN\"},{\"@type\":\"WebPage\",\"@id\":\"https://macked.app/stash-surge-crack-ios-trollstore.html#webpage\",\"url\":\"https://macked.app/stash-surge-crack-ios-trollstore.html\",\"name\":\"Stash 4.2.0-477 \\u7834\\u89e3\\u7248 - Mac\\u5f3a\\u5927\\u7684Clash\\u89c4\\u5219\\u4ee3\\u7406\\u5de5\\u5177/Surge\\u540c\\u7c7b\\u578b | MacKed - \\u4e13\\u6ce8\\u4e8eMac\\u7834\\u89e3\\u8d44\\u6e90\\u7684\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"datePublished\":\"2023-05-30T12:02:50+08:00\",\"dateModified\":\"2026-06-09T21:36:04+08:00\",\"isPartOf\":{\"@id\":\"https://macked.app/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://pic.macked.app/static/1b0b8b1aae36308fcd2f560",
+        "fetch_error": ""
+      },
+      {
+        "title": "Yojam 1.1.4 开源软件 - Mac链接规则分流器 | MacKed - 专注于Mac破解资源的分享与下载",
+        "url": "https://macked.app/yojam-mac.html",
+        "query": "MacKed 破解站 流量 收录 方式",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Yojam 1.1.4 开源软件 - Mac链接规则分流器 | MacKed - 专注于Mac破解资源的分享与下载 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Organization\",\"Person\"],\"@id\":\"https://macked.app/#person\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"url\":\"https://macked.app\",\"email\":\"macked@duck.com\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://macked.app/#logo\",\"url\":\"https://macked.app/wp-content/uploads/favicon.png\",\"contentUrl\":\"https://macked.app/wp-content/uploads/favicon.png\",\"caption\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"inLanguage\":\"zh-CN\",\"width\":\"192\",\"height\":\"192\"},\"image\":{\"@id\":\"https://macked.app/#logo\"}},{\"@type\":\"WebSite\",\"@id\":\"https://macked.app/#website\",\"url\":\"https://macked.app\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"alternateName\":\"MacKed\",\"publisher\":{\"@id\":\"https://macked.app/#person\"},\"inLanguage\":\"zh-CN\"},{\"@type\":\"ImageObject\",\"@id\":\"https://pic.macked.app/static/2c2f663577b33abc98758f1d3bfe3f00-1778571347.webp\",\"url\":\"https://pic.macked.app/static/2c2f663577b33abc98758f1d3bfe3f00-1778571347.webp\",\"width\":\"200\",\"height\":\"200\",\"inLanguage\":\"zh-CN\"},{\"@type\":\"WebPage\",\"@id\":\"https://macked.app/yojam-mac.html#webpage\",\"url\":\"https://macked.app/yojam-mac.html\",\"name\":\"Yojam 1.1.4 \\u5f00\\u6e90\\u8f6f\\u4ef6 - Mac\\u94fe\\u63a5\\u89c4\\u5219\\u5206\\u6d41\\u5668 | MacKed - \\u4e13\\u6ce8\\u4e8eMac\\u7834\\u89e3\\u8d44\\u6e90\\u7684\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"datePublished\":\"2026-05-12T15:36:22+08:00\",\"dateModified\":\"2026-05-25T16:54:19+08:00\",\"isPartOf\":{\"@id\":\"https://macked.app/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://pic.macked.app/static/2c2f663577b33abc98758f1d3bfe3f00-1778571347.webp\"},\"inLanguage\":\"zh-CN\"},{\"@type\":\"Person\",\"@id\":\"https://macked.app/author/1\",",
+        "fetch_error": ""
+      },
+      {
+        "title": "DMCA 下架政策 - GitHub 文档",
+        "url": "https://docs.github.com/zh/site-policy/content-removal-policies/dmca-takedown-policy",
+        "query": "DMCA 下架 破解站 独立开发者 教程",
+        "provider": "tavily",
+        "score": "0.467308",
+        "fetched_text": "DMCA 下架政策 - GitHub 文档 Skip to main content GitHub 文档 Version: Free, Pro, & Team 搜索或询问 Copilot 搜索或询问 Copilot Select language: current language is Simplified Chinese 搜索或询问 Copilot 搜索或询问 Copilot 打开菜单 Open Sidebar 站点政策 / 内容删除政策 / DMCA 下架政策 主 Site policy GitHub 条款 GitHub 服务条款 GitHub 公司服务条款 GitHub 附加产品和功能条款 GitHub 社区指导方针 GitHub 社区行为准则 GitHub 预发行许可条款 GitHub DPA 约束的预览版 GitHub 赞助商附加条款 GitHub 注册开发人员协议 GitHub Marketplace 服务条款 GitHub Marketplace 开发人员协议 GitHub 研究计划条款 GitHub 开源应用程序条款和条件 GitHub 活动条款 GitHub 活动行为准则 GitHub 教育使用协议 GitHub Copilot 扩展开发人员策略 GitHub 机密扫描合作伙伴计划协议 可接受使用政策 GitHub 可接受使用政策 活跃恶意软件或攻击 欺凌和骚扰 扰乱其他用户的体验 进行人肉搜索和侵犯隐私 仇恨言论和歧视 模拟 虚假信息政策 性淫秽内容 暴力威胁和无端暴力内容 恐怖主义和暴力极端主义内容 CSAM 政策 NCII 合成媒体和 AI 工具 GitHub 申诉和恢复 隐私政策 GitHub 一般隐私声明 GitHub 次级处理者 GitHub Cookie GitHub 全球候选人数据隐私声明 其他站点政策 GitHub 和贸易管制 GitHub 已故用户政策 GitHub 徽标政策 GitHub 政府下架政策 GitHub 用户名政策 用户数据法律请求准则 GitHub 帐户恢复政策 内容删除政策 提交内容删除请求 DMCA 下架政策 GitHub 私人信息删除政策 GitHub 商标政策 DMCA 抗辩通知提交指南 DMCA 下架通知提交指南 安全政策 协调披露安全漏洞 GitHub Bug 赏金计划法律安全港 GitHub SIRT 说明 RFC 2350 GitHub 公司政策 GitHub 反对现代奴役制和童工制的声明 GitHub 反贿赂声明 GitHub GPL 合作承诺 GitHub 礼品和招待政策 站点政策 / 内容删除政策 / DMCA 下架政策 DMCA 下架政策 复制为 Markdown 格式 在本文中 什么是 DMCA？ DMCA 通知概述 A. 此流程实际上是如何运作的？ B. 如何处理复刻 (Fork)？ （或者什么是复刻？） C. 如何处理规避索赔？ D. 如果我无意中错过了更改时限怎么办？ E. 透明度 F. 屡次侵权 G. 提交通知 深入了解并发表意见 欢迎阅读 GitHub 的《千禧年数字著作权法案》（通常称为“DMCA”）指南。 本页面并非该法案的综合入门读物。 但是，如果您收到针对您在 GitHub 上所发布内容的 DMCA 下架通知，或者您是要发出此类通知的权利持有者，此页面将有助于您了解该法案以及我们遵守该法案的政策。 （如果你只是想提交一份通知，可以跳到 G. 提交通知 。） 与所有法律事务一样，就您的具体问题或情况咨询专业人员始终是最好的方式。 我们强烈建议您在采取任何可能影响您权利的行动之前这样做。 本指南不是法律意见，不应被视为法律意见。 什么是 DMCA？ 要了解 DMCA 及其制定的一些政策方针，考虑一下它颁布之前的现实情况，或许有助于理解。 DMCA 为托管用户生成内容的服务提供商提供了安全港。 仅仅一项针对侵犯版权发起的索赔就可能导致高达 150,000 美元的法定赔偿，因此，对用户生成的内容承担责任可能对服务提供商非常不利。 如果面向数以百万计的用户，这种潜在损失将不可估量，可以说，假如没有 DMCA，则 YouTube、Facebook 或 GitHub 等云计算和用户生成内容的网站可能就 不会存在 （或者至少会将部分成本转嫁给用户）。 ",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub项目代码泄露并被fork后如何申请DMCA下架",
+        "url": "https://developer.aliyun.com/article/1601111",
+        "query": "DMCA 下架 破解站 独立开发者 教程",
+        "provider": "tavily",
+        "score": "0.44608507",
+        "fetched_text": "GitHub项目代码泄露并被fork后如何申请DMCA下架-开发者社区-阿里云 var GLOBAL_CONFIG = { \"csrf_key\": 'p_csrf', \"csrf_val\": '3fb5c351-a759-4e9d-aa28-51b8083a1d0c', \"wechat_disable\": false, \"articleId\": '1601111', \"groupCode\": null, \"groupInfo\": null, \"articleRealGroupCode\": null, \"needLarkJs\": false, \"larkContent\": '', \"isLogin\": false, \"isBest\": false, \"authorUccId\": 'xka4gbnmv3vds', \"visitorUccId\": null, \"communityCode\": null, \"community\": null, \"freeTierInfo\":'[]', \"commentSwitch\":true, \"articleRewardEnable\":false, \"isOfficialBlog\":false, \"cloudProductCodeList\":'[]', }; .article-detail #skill-builder-waker-button{ margin-left: 16px; } /* */ /* */ 大模型 产品 解决方案 权益 定价 云市场 伙伴 服务 了解阿里云 查看 \"\" 全部搜索结果 AI 助理 文档 备案 控制台 开发者社区 首页 探索云世界 探索云世界 热门 百炼大模型 Modelscope模型即服务 弹性计算 通义灵码 云原生 数据库 云效DevOps 龙蜥操作系统 云计算 弹性计算 无影 存储 网络 倚天 大数据 大数据计算 实时数仓Hologres 实时计算Flink E-MapReduce DataWorks Elasticsearch 机器学习平台PAI 智能搜索推荐 数据可视化DataV 云原生 容器 serverless 中间件 微服务 可观测 消息队列 人工智能 机器学习平台PAI 视觉智能开放平台 智能语音交互 自然语言处理 多模态模型 pythonsdk 通用模型 数据库 关系型数据库 NoSQL数据库 数据仓库 数据管理工具 PolarDB开源 向量数据库 开发与运维 云效DevOps 钉钉宜搭 镜像站 问产品 动手实践 官方博客 考认证 TIANCHI大赛 活动广场 活动广场 丰富的线上&线下活动，深入探索云世界 任务中心 做任务，得社区积分和周边 训练营 资深技术专家手把手带教 直播 技术交流，直击现场 乘风者计划 让创作激发创新 下载 下载 海量开发者使用工具、手册，免费下载 镜像站 极速、全面、稳定、安全的开源镜像 技术资料 开发手册、白皮书、案例集等实战精华 探索云世界 热门 百炼大模型 Modelscope模型即服务 弹性计算 通义灵码 云原生 数据库 云效DevOps 龙蜥操作系统 云计算 弹性计算 无影 存储 网络 倚天 云原生 容器 serverless 中间件 微服务 可观测 消息队列 数据库 关系型数据库 NoSQL数据库 数据仓库 数据管理工具 PolarDB开源 向量数据库 大数据 大数据计算 实时数仓Hologres 实时计算Flink E-MapReduce DataWorks Elasticsearch 机器学习平台PAI 智能搜索推荐 数据可视化DataV 人工智能 机器学习平台PAI 视觉智能开放平台 智能语音交互 自然语言处理 多模态模型 pythonsdk 通用模型 开发与运维 云效DevOps 钉钉宜搭 镜像站 开发者社区 开发与运维 文章 正文 【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私 2024-08-30 943 版权 版权声明： 本文内容由阿里云实名注册用户自发贡献，版权归原作者所有，阿里云开发者社区不拥有其著作权，亦不承担相应法律责任。具体规则请查看《 阿里云开发者社区用户服务协议 》和 《 阿里云开发者社区知识产权保护指引 》。如果您发现本社区中有涉嫌抄袭的内容",
+        "fetch_error": ""
+      },
+      {
+        "title": "【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA ...",
+        "url": "https://cloud.tencent.com/developer/article/2455560",
+        "query": "DMCA 下架 破解站 独立开发者 教程",
+        "provider": "tavily",
+        "score": "0.37689888",
+        "fetched_text": "【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私-腾讯云开发者社区-腾讯云 .rno-markdown p * { white-space: pre-wrap; word-break: break-all; } .tea-overlay { z-index: 99999!important; } .cdc-mcp-page2__main.is-fixed .cdc-mcp-page2__toolbar { top: 57px !important; } if (typeof Aegis !== 'undefined') { new Aegis({ id: 'dWlmyFvjDnalkbZO8q', env: 'production', onError: true, pagePerformance: true, reportAssetSpeed: true, api: { reportRequest: true, resHeaders: ['x-req-id'], }, reportApiSpeed: true, beforeRequest: function (data) { // load js failed if (data.logType === 'log') { if (data.logs.level === '32' && data.logs.msg.indexOf('google') > -1) return false; } var ignoreKeys = [ 'Script error', 'chrome-extension', 'qq.com', 'queryWeappQrcodeStatus', 'login/ajax/info', 'woa.com', 'trafficCollect.php', 'google', 'dscache', 'act-api', 'set_qc_cookie', 'opc.cloud.tencent.com', 'uc_gre_ad_buss', 'eb.xcj.pub', 'UCShellJava', '/developer/labs/quick/loader', 'edgeImmersiveReaderDOM', 'sendBeacon', 'error-decoder.html', 'qcloud-community-track.min.js' ]; var alarmMsg = [data.logs.url, data.logs.msg].join('|'); for (var i = 0; i JavaDog程序狗 【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私 原创 关注作者 腾讯云 开发者社区 文档 建议反馈 控制台 登录/注册 首页 学习 活动 专区 圈层 工具 MCP广场 文章/答案/技术大牛 搜索 搜索 关闭 发布 JavaDog程序狗 社区首页 > 专栏 > 【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私 【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私 原创 JavaDog程序狗 关注 发布 于 2024-10-09 08:25:39 发布 于 2024-10-09 08:25:39 961 0 举报 文章被收录于专栏： 干货 干货 前言 🍊缘由 在一个月黑风高的夜晚，正准备休息的我突然接到之前 外包老总的亲切问候 。一顿输出才知道 三年前 为了搭建流程化部署，将公司的 测试代码 放到github上后 忘记删除 。现在被甲方的代码扫描机制扫到，并且检查到代码已经 被其他用户fork ，虽没有造成损失，但要求 清除github所有数据及被fork的代码 。以此为戒，特来跟大家分享一下处理流程，重点是 GitHub的DMCA 下架通知提交指南 。 ⏲️本文阅读时长 约10分钟 🎯主要目标 熟悉 GitHub的DMCA 下架通知提交指南 代码涉密 被 别人fork 如何 在GitHub安全下架 掌握 申诉流程 及 申诉时间点 把控 正文 🍋1.判断政策分类 DMCA 下架政策包含如下两种，根据自",
+        "fetch_error": ""
+      },
+      {
+        "title": "作为独立开发者，有哪些可以分享的经验？ - 知乎",
+        "url": "https://www.zhihu.com/question/24667846",
+        "query": "独立开发 破解 心态 调整 经验",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "90% 以上的独立开发者，败在了认知环节 - 知乎",
+        "url": "https://zhuanlan.zhihu.com/p/49483004",
+        "query": "独立开发 破解 心态 调整 经验",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "独立开发者的自我修炼和干货分享 - 少数派",
+        "url": "https://sspai.com/post/89633",
+        "query": "独立开发 破解 心态 调整 经验",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8K169TXENS'); var _hmt = _hmt || []; (function () { var hm = document.createElement(\"script\"); hm.src = \"https://hm.baidu.com/hm.js?b086a9ba5044137b67f8e225a718db01\"; var s = document.getElementsByTagName(\"script\")[0]; s.parentNode.insertBefore(hm, s); })(); 独立开发者的自我修炼和干货分享 - 少数派 let darkMode = 0 if (navigator.cookieEnabled) { darkMode = window.localStorage.getItem('darkMode') ? parseInt(window.localStorage.getItem('darkMode')) : 0 } const matchMedia = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches if ((!darkMode && matchMedia) || darkMode === 2) { document.getElementById('html').className='theme-dark' document.querySelector('meta[name=\"theme-color\"]').setAttribute('content', '#1f1f22') } else { document.getElementById('html').className='' document.querySelector('meta[name=\"theme-color\"]').setAttribute('content', '#ffffff') } {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"独立开发者的自我修炼和干货分享 - 少数派\",\"image\":\"https://cdnfile.sspai.com/2024/06/16/4ecb3cf7892b394d2d4e7c38d9d8fb42.png?imageMogr2/auto-orient/ignore-error/1\",\"datePublished\":\"2024-06-17T00:59:04.000Z\",\"author\":{\"@type\":\"Person\",\"name\":\"徐小夕\",\"url\":\"https://sspai.com/u/k8p9knq6\"},\"description\":\"嗨，大家好，我是徐小夕，一名独立开发者，有百万级产品营收操盘经验，接下来我会根据我自己的实践经验，分享一下独立开发者，如何抓住高价值产品，并持续输出价值。我一直主张以实际经验来作为分享素材，避免空洞的 ...\"} 共创 PRIME Matrix 栏目 Pi Store 无需申请，自由写作 任何用户都可使用写作功能。成功发布 3 篇符合基本规则的内容，可成为正式作者。 了解更多 共创 PRIME Matrix 栏目 Pi Store 独立开发者的自我修炼和干货分享 主作者 关注 徐小夕 少数派作者 前端架构师，H5-Dooring零代码平台作者，知乎专栏作家，掘金签约作者。 徐小夕 关注 徐小夕 少数派作者 前端架构师，H5-Dooring零代码平台作者，知乎专栏作家，掘金签约作者。 联合作者 关注 徐小夕 少数派作者 前端架构师，H5-Dooring零代码平台作者，知乎专栏作家，掘金签约作者。 徐小夕 关注 徐小夕 少数派作者 前端架构师，H5-Dooring零代码平台作者，知乎专栏作家，掘金签约作者",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "推荐选题",
+      "label": "推荐",
+      "reason": "事件真实、有情感冲突、能引发独立开发者群体共鸣；证据链基本完整，逻辑可闭环；传播张力强，读者愿意评论分享自己的经历；老花人设解读角度清晰，可拆出心态、技术、法律、商业等多层价值。"
+    },
+    "core_question": "独立开发者的macOS应用被破解站收录后，收入损失有多大？有哪些低成本、有效的防破解手段？",
+    "why_this_topic_matters": "独立开发者群体庞大且活跃，破解问题普遍存在但缺乏系统讨论。该事件提供了一个真实案例，能引发开发者对收入保护、技术投入、法律手段和心态调整的深度思考，具有普遍参考价值。",
+    "fact_summary": [
+      "独立开发者开发了macOS应用Aion（上下文感知自动退出工具），被破解站MacKed收录。",
+      "开发者感到自豪（有人破解说明有用）又心凉（收入下滑，直链下载影响收入）。",
+      "Aion官网：https://aion.7caifei.com/，应用完全本地运行。",
+      "MacKed是专注于Mac破解资源的分享与下载网站，收录了大量macOS应用。",
+      "调查显示大多数Mac开发者不赚钱，80%无法开启独立业务，59%收不回投入。",
+      "Apple提供DMCA下架渠道，但针对破解站的实际执行效果未知。",
+      "GitHub有DMCA下架政策，可参考用于代码泄露场景。"
+    ],
+    "persona_discussion_question": "我的App被破解了，该不该花时间精力去防？还是干脆接受，把精力放在功能迭代上？",
+    "old_flower_stance": "破解是独立开发者绕不开的痛，但与其花大量精力防破解（成本高、效果有限），不如接受现实，把资源投入到产品迭代和用户服务上。同时，可以采取低成本措施（如代码混淆、签名校验）增加破解门槛，并利用DMCA等法律工具维护权益。心态上，把破解视为产品价值的另类证明，但也要算清收入账，避免过度投入。",
+    "audience_fit": {
+      "primary_layer": "副业普通人",
+      "secondary_layers": [
+        "核心技术人",
+        "共鸣读者"
+      ],
+      "interest_score": 85,
+      "why_interested": "副业普通人（独立开发者、小团队）直接面临破解问题，想知道如何应对；核心技术人关注防破解技术细节；共鸣读者（有过类似经历）会感同身受。",
+      "reader_risk": "避免夸大破解对收入的影响，需明确破解用户可能本就不会付费。"
+    },
+    "mass_interest_hook": {
+      "score": 75,
+      "hook_type": "故事",
+      "why_non_technical_people_may_click": "“被破解”自带冲突和故事性，普通人也能理解“自己辛苦做的东西被人免费拿走”的复杂心情。标题如“我的App被破解了，我该自豪还是心凉？”能引发好奇心。",
+      "story_seed": "一个独立开发者早上发现自己的macOS应用被破解站收录，第一反应是自豪（有人破解说明有用），但紧接着是心凉（收入本来就下滑，现在更糟）。他开发的应用有独特功能（上下文感知退出），但破解站直接提供了免费下载。",
+      "do_not_overhype": "不要声称破解导致收入大幅下降（缺乏数据），不要夸大防破解措施的效果，不要暗示所有独立开发者都会遇到同样情况。"
+    },
+    "topic_tension": {
+      "score": 10,
+      "conflict_point": "独立开发者与破解站之间的利益冲突，以及平台（Apple）在保护开发者方面的角色缺失。",
+      "debate_question": "小开发者面对破解几乎无还手之力，平台（Apple）的DRM和审核机制是否足够保护独立开发者？破解站的法律责任谁来追究？",
+      "stakeholders": [
+        "独立开发者",
+        "破解站运营者",
+        "Apple（平台方）",
+        "付费用户",
+        "破解用户"
+      ],
+      "why_people_would_comment": "读者可以分享自己被破解的经历、讨论防破解技术、争论是否值得投入防破解、评价Apple的DRM效果、甚至讨论破解的道德问题。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。避免煽动对破解站的仇恨，保持理性。"
+    },
+    "timeline": [
+      "2025-03-27: 独立开发者在V2EX发帖，称其macOS应用Aion被破解站MacKed收录。",
+      "2019-06-07: 爱范儿文章讨论独立开发者困境。",
+      "2012-05-05: 调查显示大多数Mac开发者不赚钱。"
+    ],
+    "evidence_table": [
+      {
+        "source": "V2EX帖子",
+        "url": "https://www.v2ex.com/t/1220128",
+        "supports": "事件原始线索，开发者自述被破解经历和复杂心情。",
+        "reliability": "near_source"
+      },
+      {
+        "source": "爱范儿文章",
+        "url": "https://www.ifanr.com/1220659",
+        "supports": "独立开发者整体困境背景。",
+        "reliability": "media"
+      },
+      {
+        "source": "cnBeta调查",
+        "url": "https://www.cnbeta.com.tw/articles/tech/185833.htm",
+        "supports": "大多数Mac开发者不赚钱。",
+        "reliability": "media"
+      },
+      {
+        "source": "MacKed网站",
+        "url": "https://macked.app/",
+        "supports": "破解站存在并收录大量macOS应用。",
+        "reliability": "weak"
+      },
+      {
+        "source": "Apple DMCA页面",
+        "url": "https://www.apple.com/legal/contact/copyright-infringement.html",
+        "supports": "Apple提供DMCA下架渠道。",
+        "reliability": "official"
+      },
+      {
+        "source": "GitHub DMCA政策",
+        "url": "https://docs.github.com/zh/site-policy/content-removal-policies/dmca-takedown-policy",
+        "supports": "DMCA下架流程参考。",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "逻辑基本闭环：事件真实（V2EX帖子）→ 背景支持（独立开发者收入困境）→ 破解站存在（MacKed）→ 法律手段可用（DMCA）→ 心态调整建议（老花人设立场）。但收入损失和防破解效果缺乏直接数据，需在文章中明确不确定性。",
+    "writeable_angles": [
+      {
+        "angle": "心态调整：被破解是自豪还是心凉？",
+        "why": "情感冲突强，容易引发共鸣和讨论。",
+        "needs": "开发者自述、社区类似经历、心理建议。"
+      },
+      {
+        "angle": "低成本防破解技术盘点",
+        "why": "核心技术人关注，提供实用价值。",
+        "needs": "代码混淆、签名校验、运行时检测等具体方法及成本。"
+      },
+      {
+        "angle": "法律手段：如何用DMCA下架破解链接",
+        "why": "提供可操作步骤，增加文章实用性。",
+        "needs": "DMCA流程详解、Apple和GitHub的官方渠道、实际案例。"
+      },
+      {
+        "angle": "独立开发者的收入账：破解到底影响多大？",
+        "why": "商业角度，帮助开发者理性评估。",
+        "needs": "收入数据（如有）、破解用户付费意愿分析、替代策略（如订阅制）。"
+      }
+    ],
+    "missing_basics": [
+      "macOS应用破解的常见技术原理（如脱壳、重签名）。",
+      "Apple的Gatekeeper和公证机制如何工作。",
+      "DMCA的基本概念和适用范围。"
+    ],
+    "missing_materials": [
+      "Aion应用的具体收入数据（开发者未公开）。",
+      "MacKed破解站的流量数据（如SimilarWeb排名）。",
+      "其他独立开发者类似遭遇的详细案例。",
+      "防破解技术的实际效果对比（如混淆 vs 签名校验）。"
+    ],
+    "not_claimable": [
+      "破解导致收入大幅下降（需数据支持）。",
+      "防破解措施一定有效（需验证）。",
+      "所有独立开发者都会遇到类似情况（需统计）。"
+    ],
+    "followup_queries": [
+      "Aion应用的定价、销售渠道、近期收入趋势（如有）。",
+      "MacKed破解站的Alexa排名或SimilarWeb数据。",
+      "其他独立开发者关于破解的讨论帖或博客文章。",
+      "macOS应用防破解的低成本技术方案对比。"
+    ],
+    "additional_search_queries": [
+      "macOS app crack prevention low cost",
+      "independent developer DMCA takedown experience",
+      "MacKed crack site traffic",
+      "Aion app revenue independent developer"
+    ],
+    "stop_conditions": [
+      "无法获取任何收入数据或破解站流量数据。",
+      "开发者明确表示不愿公开更多信息。",
+      "社区讨论热度下降，缺乏新案例。"
+    ],
+    "confidence": 80,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "case-study",
+    "quality_gate": {
+      "pass": true,
+      "score": 78,
+      "fatal_issues": [],
+      "warnings": [
+        "收入损失和防破解效果缺乏直接数据，需在文章中明确不确定性。",
+        "破解站流量数据缺失，无法量化影响。"
+      ],
+      "missing_evidence": [
+        "Aion应用的具体收入数据（开发者未公开）。",
+        "MacKed破解站的流量数据（如SimilarWeb排名）。",
+        "其他独立开发者类似遭遇的详细案例。",
+        "防破解技术的实际效果对比（如混淆 vs 签名校验）。"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": true,
+      "downstream_handoff_ok": true,
+      "material_pack_ok": true,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": true,
+      "source_coverage_ok": true,
+      "recommendation": "publish"
+    },
+    "research_plan": {
+      "core_question": "独立开发者的macOS应用被破解站收录后，收入损失有多大？有哪些低成本、有效的防破解手段？",
+      "persona_discussion_question": "我的App被破解了，该不该花时间精力去防？还是干脆接受，把精力放在功能迭代上？",
+      "hidden_public_issue": "小开发者面对破解几乎无还手之力，平台（Apple）的DRM和审核机制是否足够保护独立开发者？破解站的法律责任谁来追究？",
+      "must_verify": [
+        "Aion 应用的实际收入数据（开发者是否公开过？）",
+        "MacKed 破解站的流量和收录方式",
+        "开发者是否尝试过 DMCA 下架或联系破解站",
+        "Apple 对 macOS 应用破解的官方立场和应对措施",
+        "其他独立开发者类似遭遇的案例和应对经验"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "case_study",
+          "query": "独立开发者 macOS 应用被破解 收入影响 案例",
+          "why_needed": "了解其他开发者的实际损失和应对策略"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "macOS 应用防破解 低成本 方法",
+          "why_needed": "收集社区中验证过的低成本防破解技术"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Apple macOS 应用破解 法律措施 DMCA",
+          "why_needed": "确认 Apple 是否提供官方保护机制或法律支持"
+        },
+        {
+          "source_type": "case_study",
+          "query": "MacKed 破解站 流量 收录 方式",
+          "why_needed": "评估破解站对应用分发的影响程度"
+        },
+        {
+          "source_type": "policy",
+          "query": "DMCA 下架 破解站 独立开发者 教程",
+          "why_needed": "了解开发者如何通过法律手段移除破解链接"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "独立开发 破解 心态 调整 经验",
+          "why_needed": "收集心理层面的应对建议，丰富文章角度"
+        }
+      ],
+      "expert_challenge_points": [
+        "破解站收录是否真的会导致收入下降？还是说破解用户本来就不会付费？",
+        "防破解措施是否值得投入？对于小开发者，时间和精力成本可能高于潜在损失。",
+        "Apple 的 Gatekeeper 和公证机制是否足够？如果不够，Apple 是否有责任改进？"
+      ],
+      "do_not_claim_yet": [
+        "破解导致收入大幅下降（需数据支持）",
+        "防破解措施一定有效（需验证）",
+        "所有独立开发者都会遇到类似情况（需统计）"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确收入损失和防破解效果的不确定性，重点放在心态调整和社区经验分享。",
+      "downstream_materials_needed": [
+        "Aion 应用的定价、销售渠道、近期收入趋势（如有）",
+        "MacKed 破解站的 Alexa 排名或 SimilarWeb 数据",
+        "其他独立开发者关于破解的讨论帖或博客文章"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "属于独立开发者的好时代已过去了吗？| WWDC ② - 爱范儿",
+        "url": "https://www.ifanr.com/1220659",
+        "query": "独立开发者 macOS 应用被破解 收入影响 案例",
+        "provider": "tavily",
+        "score": "0.5325473",
+        "fetched_text": "属于独立开发者的好时代已过去了吗？| WWDC ② | 爱范儿 { \"@context\": \"http://schema.org\", \"@type\": \"Article\", \"headline\":\"11 年前 App Store 的诞生催生了 app 经济；11 年后，App Store 和开发者们都遇到了困境。\", \"mainEntityOfPage\": { \"@type\": \"WebPage\", \"@id\": \"https://www.ifanr.com/1220659\" }, \"image\": \"https://s3.ifanr.com/wp-content/uploads/2019/06/1_dhwHUlGtrUKitcxbW65FPQ.jpg\", \"datePublished\": \"2019-06-07 10:08:49\", \"dateModified\":\"2019-06-07 10:38:51\", \"author\": { \"@type\": \"Person\", \"name\":\"吴羚\" }, \"publisher\": { \"@type\": \"Organization\", \"name\": \"ifanr\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://dl.ifanr.cn/ifanr/ifanr-logo.jpg\" } }, \"description\": \"11 年前 App Store 的诞生催生了 app 经济；11 年后，App Store 和开发者们都遇到了困境。\" } /* Try to get out of frames! */ var isAppsoWebsite = /^https?:\\/\\/(www\\.)?ifanr\\.com\\/app\\/?/.test(document.location.href); if (window.top != window.self && !isAppsoWebsite) { window.top.location = self.location.href; } var ga = ga || function() {(ga.q = ga.q || []).push(arguments)}; var STATIC_URL = \"https://images.ifanr.cn/wp-content/themes/ifanr-5.0-pc/static/\"; var POST_DEFAULT_THUMBNAIL_SMALL = \"https://images.ifanr.cn/wp-content/themes/ifanr-5.0-pc/static/images/ifanr/article-default-thumbnail-small.jpg\"; var POST_DEFAULT_THUMBNAIL_MIDDLE = \"https://images.ifanr.cn/wp-content/themes/ifanr-5.0-pc/static/images/ifanr/article-default-thumbnail-middle.jpg\"; var IMG_LARGE = \"720\", IMG_MEDIUM = \"320\", IMG_SMALL = \"260\", IMG_XSMALL = \"100\"; USER = {}; USER.SSO_URL_MYACCOUNT = 'https://sso.ifanr.com/myaccount/'; USER.SSO_URL_LOGIN = 'https://sso.ifanr.com/embed/login/' + '?referer=' + location.origin; USER.SSO_URL_REGISTER = 'https://sso.ifanr.com/embed/login/#register' + '?referer=' + location.origin; USER.SSO_URL_LOGOUT = ''; USER.SSO_USER_ACTIVITY = 'https://sso.ifanr.com/myactivity/'; IFR = {}; IFR.a",
+        "fetch_error": ""
+      },
+      {
+        "title": "调查发现大多数Mac开发者并不赚钱 - cnBeta.COM",
+        "url": "https://www.cnbeta.com.tw/articles/tech/185833.htm",
+        "query": "独立开发者 macOS 应用被破解 收入影响 案例",
+        "provider": "tavily",
+        "score": "0.4766533",
+        "fetched_text": "调查发现大多数Mac开发者并不赚钱 - Apple macOS - cnBeta.COM var GV = {JS_ROOT:\"//www.cnbeta.com.tw/themes/v6/js/\", JS_VERSION:\"\", URL:{HOME:\"//www.cnbeta.com.tw\"}, USER:{ID:0,NICK:'匿名人士',ICON:'https://www.cnbeta.com.tw/images/anonymous.jpg'}}; (function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})(); cnBeta.COM.TW_中文业界资讯站 首页 影视 音乐 游戏 动漫 趣闻 科学 软件 主题 硬件 Apple Google iPhone 科学探索 人物 手机 游戏 视点·观察 阿里云 微软 通信技术 Android 软件和应用 SONY 索尼 the United States美国 Apple iPad Windows Phone Intel英特尔 腾讯 HTC 安全 Mozilla FireFox 小米科技 百度 通信运营商 媒体播放器 / 视频网站 BlackBerry 黑莓 网络应用 / Web Apps Google Chrome Microsoft XBOX 硬件 - 上网本 / 平板电脑 / 超极本 电子商务 - B2C / B2B Lenovo 联想 LG Yahoo! 雅虎 AMD SNS 社交网络 诺基亚 Windows 7 Huawei 华为 中国移动 中国联通 中国电信 更多... 排行 document.addEventListener(\"error\",function(e){var elem=e.target;if(elem.tagName.toLowerCase()==\"img\"){elem.src=\"/images/blank.gif\"}},true); (adsbygoogle = window.adsbygoogle || []).push({}); 调查发现大多数Mac开发者并不赚钱 2012年05月05日 11:08 次阅读 稿源： 条评论 感谢 平 的投递 新闻来源:weiphone 根据国外媒体的消息报导，一项针对Mac开发者（102名）的收入调查揭露：有80%的开发者并没有赚到足够的钱以开启个人的独立业务，而59%的开发者甚至还收不回开发应用时的投入资金。换句话来说，大多数Mac开发者实际上还处于入不敷出的状态。 报导称，出现这种的情况的原因是Mac平台的应用市场已经过度饱和，对于目前的开发者来说，开发新应用很难再获得理想的成绩。实际上，调查发现有63%的开发者所开发出来的应用下载量少于50000次，而将近3/4的开发者在每款应用上只能够获得5000美元或更少的收入。 - (adsbygoogle = window.adsbygoogle || []).push({}); (adsbygoogle = window.adsbygoogle || []).push({}); 对文章打分 调查发现大多数Mac开发者并不赚钱 2 (67%) 1 (33%) (adsbygoogle = window.adsbygoogle || []).push({}); 已有 条意见 登录 [退出] 发布 显示",
+        "fetch_error": ""
+      },
+      {
+        "title": "独立开发两年血泪复盘：App Store 首页推荐后，依然月入不足 3000 | 人人都是产品经理",
+        "url": "https://www.woshipm.com/pd/6198096.html",
+        "query": "独立开发者 macOS 应用被破解 收入影响 案例",
+        "provider": "tavily",
+        "score": "0.31254882",
+        "fetched_text": "独立开发两年血泪复盘：App Store 首页推荐后，依然月入不足 3000 | 人人都是产品经理 { \"@context\": \"http://schema.org\", \"@type\": \"Article\", \"name\": \"独立开发两年血泪复盘：App Store 首页推荐后，依然月入不足 3000 – 人人都是产品经理,\",\"author\": \"Aine\",\"description\": \"到今年 4 月刚好全职独立开发两年了，总结这两年独立开发结果：希望通过独立开发获得一份可持续的收入进入一个相对自由的生活失败了。不过确实做出了自己还算满意的产品，上过 AppStore 首页推荐，也得到了一些用户的认可，不算瞎忙活。 商业上可以说是彻底失败了。\", \"image\": [ \"https:https://image.woshipm.com/wp-files/2025/03/PhjoE31edoTx5hqLwmmG.png\", \"https:https://image.woshipm.com/wp-files/2025/03/DBvdqMEmB2J7JNhNiIKg-scaled.jpeg\", \"https:https://image.woshipm.com/wp-files/2025/03/2xw1btZkDpKTIteiQq9X.png\" ], \"datePublished\": \"2025-03-27T17:03:27\", \"commentCount\": 2, \"interactionStatistic\": { \"@type\": \"InteractionCounter\", \"interactionType\": \"http://schema.org/LikeAction\", \"userInteractionCount\": 0 } } img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } /* */ img.wp-smiley, img.emoji { display: inline !important; border: none !important; box-shadow: none !important; height: 1em !important; width: 1em !important; margin: 0 0.07em !important; vertical-align: -0.1em !important; background: none !important; padding: 0 !important; } /*! This file is auto-generated */ .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none} :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--p",
+        "fetch_error": ""
+      },
+      {
+        "title": "MacKed - 专注于Mac破解资源的分享与下载",
+        "url": "https://macked.app/",
+        "query": "macOS 应用防破解 低成本 方法",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "MacKed - 专注于Mac破解资源的分享与下载 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Person\",\"@id\":\"https://macked.app/#person\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"url\":\"https://macked.app\",\"email\":\"macked@duck.com\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://macked.app/#logo\",\"url\":\"https://macked.app/wp-content/uploads/favicon.png\",\"contentUrl\":\"https://macked.app/wp-content/uploads/favicon.png\",\"caption\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"inLanguage\":\"zh-CN\",\"width\":\"192\",\"height\":\"192\"}},{\"@type\":\"WebSite\",\"@id\":\"https://macked.app/#website\",\"url\":\"https://macked.app\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"alternateName\":\"MacKed\",\"publisher\":{\"@id\":\"https://macked.app/#person\"},\"inLanguage\":\"zh-CN\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":\"https://macked.app/?s={search_term_string}\",\"query-input\":\"required name=search_term_string\"}},{\"@type\":\"CollectionPage\",\"@id\":\"https://macked.app#webpage\",\"url\":\"https://macked.app\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8eMac\\u7834\\u89e3\\u8d44\\u6e90\\u7684\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"about\":{\"@id\":\"https://macked.app/#person\"},\"isPartOf\":{\"@id\":\"https://macked.app/#website\"},\"inLanguage\":\"zh-CN\"}]} body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--c",
+        "fetch_error": ""
+      },
+      {
+        "title": "关于macOS破解软件的一些信息说明-黑苹果星球",
+        "url": "https://heipg.cn/tutorial/about-cracked-macos-apps.html",
+        "query": "macOS 应用防破解 低成本 方法",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "关于macOS破解软件的一些信息说明-黑苹果星球 img:is([sizes=auto i],[sizes^=\"auto,\" i]){contain-intrinsic-size:3000px 1500px} /*# sourceURL=wp-img-auto-sizes-contain-inline-css */ /*! This file is auto-generated */ .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none} /*# sourceURL=/wp-includes/css/classic-themes.min.css */ :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,4",
+        "fetch_error": ""
+      },
+      {
+        "title": "MACMJ - Mac破解软件分享中心",
+        "url": "https://www.macmj.com/",
+        "query": "macOS 应用防破解 低成本 方法",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "MACMJ - Mac破解软件分享中心 img:is([sizes=auto i],[sizes^=\"auto,\" i]){contain-intrinsic-size:3000px 1500px} /*# sourceURL=wp-img-auto-sizes-contain-inline-css */ img.wp-smiley, img.emoji { display: inline !important; border: none !important; box-shadow: none !important; height: 1em !important; width: 1em !important; margin: 0 0.07em !important; vertical-align: -0.1em !important; background: none !important; padding: 0 !important; } /*# sourceURL=wp-emoji-styles-inline-css */ /*! This file is auto-generated */ .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none} /*# sourceURL=/wp-includes/css/classic-themes.min.css */ :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cya",
+        "fetch_error": ""
+      },
+      {
+        "title": "APPLE以違反DMCA法案追訴Psystar - 資策會科技法律研究所",
+        "url": "https://stli.iii.org.tw/article-detail.aspx?tp=1&d=2931&no=64",
+        "query": "Apple macOS 应用破解 法律措施 DMCA",
+        "provider": "tavily",
+        "score": "0.5614318",
+        "fetched_text": "資策會科技法律研究所 var onSubmit = function (token) { // console.log('success!', token); $(\"#token\").val(token); }; var onloadCallback = function () { grecaptcha.render('html_element', { 'sitekey': '6LdYeBwUAAAAAMphg3C-VimQCCfkxE55u6OgFLDK', // 6Le0fGgdAAAAAJheVqFzSLJoIiCSC8w8AedbDARC 'callback': onSubmit }); // 'sitekey': '6LdYeBwUAAAAAMphg3C-VimQCCfkxE55u6OgFLDK', // test: 6Le0fGgdAAAAAJheVqFzSLJoIiCSC8w8AedbDARC }; // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) // })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); // ga('create', 'UA-85744699-1', 'auto'); // ga('send', 'pageview'); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-N2GLX5BD'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8TVQKWJCB9'); 熱門關鍵字 研發成果運用 產學研合作 人工智慧 智財管理 品牌智財 自駕車 資料經濟 貿易戰 訂閱電子報 會員登入 English 關於我們 沿革 實績及貢獻 專業團隊 科法之友 加入我們 本所活動 研究成果 科技法制要聞 科技法律透析 出版品區 專書 工具書 教具及研究報告 科技法律諮詢 諮詢服務 常見問題解答 媒體露出 會員登入 ENGLISH > 研究成果 > 科技法制要聞 返回列表 上一篇 美國基改動物法規研擬中 下一篇 歐盟法院於11月28日對Intel v CPM案依英國上訴法院初審判決闡釋著名商標侵害之認定方式 APPLE以違反DMCA法案追訴Psystar 刊登期別 隸屬計畫成果 摘要項目 根據美國北加州聯邦地方法院之資料公佈，APPLE已於上週對“Mac Clone”（克隆機）廠商PSYSTAR追加控訴，指控PSYSTAR侵犯了APPLE的著作權和商標權，同時，亦違反了美國1998年通過之數位千禧年著作權法（DMCA - Digital Millennium Copyright Act）的規定。APPLE表示，尚有其他廠商涉及本案，但APPLE仍未公佈其他涉案廠商名單。",
+        "fetch_error": ""
+      },
+      {
+        "title": "App Store 上的DMCA 下架通知: r/iOSProgramming - Reddit",
+        "url": "https://www.reddit.com/r/iOSProgramming/comments/qliagi/dmca_takedown_notice_on_app_store?tl=zh-hant",
+        "query": "Apple macOS 应用破解 法律措施 DMCA",
+        "provider": "tavily",
+        "score": "0.3450175",
+        "fetched_text": "有人已經因為App Store 上的侵權行為提出DMCA 申訴了嗎？我的App 被「山寨」了，正在想Apple 什麼時候會介入。 目前，Apple 把我們和對方聯繫上了。",
+        "fetch_error": "HTTP Error 403: Blocked; used tavily content fallback"
+      },
+      {
+        "title": "Apple - Legal - Contact - Copyright Infringement",
+        "url": "https://www.apple.com/legal/contact/copyright-infringement.html",
+        "query": "Apple macOS 应用破解 法律措施 DMCA",
+        "provider": "tavily",
+        "score": "0.34323218",
+        "fetched_text": "Apple - Legal - Contact - Copyright Infringement var isDisputeForm = document.getElementById(\"dispute_category\"); if(isDisputeForm == null) { var LEGAL = LEGAL || {}; var thankyou = 'https://www.apple.com/legal/contact/copyrightinfringementthankyou.html'; if(!thankyou.startsWith(\"http\")){ thankyou = \"https://www.apple.com\" + thankyou; } LEGAL.FormData = { className: 'legal-form', noAjax: true, pageSuccess: thankyou, onsubmit: function(evt) { let isValid = true; const territoryLanguageModals = Array.from( document.querySelectorAll( \"[data-modal-trigger^=disputed-country-region][aria-required=true]\" ) ).map((ele) => document.querySelector(\"#\" + ele.getAttribute(\"data-modal-trigger\")) ); for (const idx in territoryLanguageModals) { if ( !territoryLanguageModals[idx].querySelector(\"input[type=checkbox]:checked\") ) { isValid = false; evt.preventDefault(); const modalTriggerLink = document.querySelector(\"[data-modal-trigger^=\"+territoryLanguageModals[idx].id); const menuWrapper = modalTriggerLink.closest(\".menu-territories-wrapper\") menuWrapper.querySelector(\".error-advice\").classList.remove(\"visuallyhidden\"); modalTriggerLink.querySelector(\".icon\").classList.remove(\"icon-pluscircle\", \"icon-checkcircle\"); modalTriggerLink.querySelector(\".icon\").classList.add(\"icon-infocircle\"); document.querySelector(\".form-error-message\").classList.add(\"show\",\"show-incomplete\"); //break; } } var selectedForm = 'copyright-infringement-questions'; var targetCustomerName = document.getElementById(selectedForm+'-customer_name'); var thankyouURL = document.getElementById('thankyou'); targetCustomerName.setAttribute('value', document.getElementById('first_name').value+' ' +document.getElementById('last_name').value); thankyouURL.setAttribute('value', thankyou); return isValid; } }; } else { docume",
+        "fetch_error": ""
+      },
+      {
+        "title": "马克喵_最新Mac破解软件｜苹果电脑应用资源站 | macat.vip",
+        "url": "https://www.macat.vip/",
+        "query": "MacKed 破解站 流量 收录 方式",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "马克喵_最新Mac破解软件｜苹果电脑应用资源站 | macat.vip /*! This file is auto-generated */ .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none} body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 1",
+        "fetch_error": ""
+      },
+      {
+        "title": "Stash 4.2.0-473 beta 破解版 - Mac强大的Clash规则代理工具/Surge同类型 | MacKed - 专注于Mac破解资源的分享与下载",
+        "url": "https://macked.app/stash-surge-crack-ios-trollstore.html",
+        "query": "MacKed 破解站 流量 收录 方式",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Stash 4.2.0-477 破解版 - Mac强大的Clash规则代理工具/Surge同类型 | MacKed - 专注于Mac破解资源的分享与下载 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Organization\",\"Person\"],\"@id\":\"https://macked.app/#person\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"url\":\"https://macked.app\",\"email\":\"macked@duck.com\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://macked.app/#logo\",\"url\":\"https://macked.app/wp-content/uploads/favicon.png\",\"contentUrl\":\"https://macked.app/wp-content/uploads/favicon.png\",\"caption\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"inLanguage\":\"zh-CN\",\"width\":\"192\",\"height\":\"192\"},\"image\":{\"@id\":\"https://macked.app/#logo\"}},{\"@type\":\"WebSite\",\"@id\":\"https://macked.app/#website\",\"url\":\"https://macked.app\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"alternateName\":\"MacKed\",\"publisher\":{\"@id\":\"https://macked.app/#person\"},\"inLanguage\":\"zh-CN\"},{\"@type\":\"ImageObject\",\"@id\":\"https://pic.macked.app/static/1b0b8b1aae36308fcd2f560b6345c16a-1754285837.webp\",\"url\":\"https://pic.macked.app/static/1b0b8b1aae36308fcd2f560b6345c16a-1754285837.webp\",\"width\":\"200\",\"height\":\"200\",\"inLanguage\":\"zh-CN\"},{\"@type\":\"WebPage\",\"@id\":\"https://macked.app/stash-surge-crack-ios-trollstore.html#webpage\",\"url\":\"https://macked.app/stash-surge-crack-ios-trollstore.html\",\"name\":\"Stash 4.2.0-477 \\u7834\\u89e3\\u7248 - Mac\\u5f3a\\u5927\\u7684Clash\\u89c4\\u5219\\u4ee3\\u7406\\u5de5\\u5177/Surge\\u540c\\u7c7b\\u578b | MacKed - \\u4e13\\u6ce8\\u4e8eMac\\u7834\\u89e3\\u8d44\\u6e90\\u7684\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"datePublished\":\"2023-05-30T12:02:50+08:00\",\"dateModified\":\"2026-06-09T21:36:04+08:00\",\"isPartOf\":{\"@id\":\"https://macked.app/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://pic.macked.app/static/1b0b8b1aae36308fcd2f560",
+        "fetch_error": ""
+      },
+      {
+        "title": "Yojam 1.1.4 开源软件 - Mac链接规则分流器 | MacKed - 专注于Mac破解资源的分享与下载",
+        "url": "https://macked.app/yojam-mac.html",
+        "query": "MacKed 破解站 流量 收录 方式",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Yojam 1.1.4 开源软件 - Mac链接规则分流器 | MacKed - 专注于Mac破解资源的分享与下载 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Organization\",\"Person\"],\"@id\":\"https://macked.app/#person\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"url\":\"https://macked.app\",\"email\":\"macked@duck.com\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://macked.app/#logo\",\"url\":\"https://macked.app/wp-content/uploads/favicon.png\",\"contentUrl\":\"https://macked.app/wp-content/uploads/favicon.png\",\"caption\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"inLanguage\":\"zh-CN\",\"width\":\"192\",\"height\":\"192\"},\"image\":{\"@id\":\"https://macked.app/#logo\"}},{\"@type\":\"WebSite\",\"@id\":\"https://macked.app/#website\",\"url\":\"https://macked.app\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"alternateName\":\"MacKed\",\"publisher\":{\"@id\":\"https://macked.app/#person\"},\"inLanguage\":\"zh-CN\"},{\"@type\":\"ImageObject\",\"@id\":\"https://pic.macked.app/static/2c2f663577b33abc98758f1d3bfe3f00-1778571347.webp\",\"url\":\"https://pic.macked.app/static/2c2f663577b33abc98758f1d3bfe3f00-1778571347.webp\",\"width\":\"200\",\"height\":\"200\",\"inLanguage\":\"zh-CN\"},{\"@type\":\"WebPage\",\"@id\":\"https://macked.app/yojam-mac.html#webpage\",\"url\":\"https://macked.app/yojam-mac.html\",\"name\":\"Yojam 1.1.4 \\u5f00\\u6e90\\u8f6f\\u4ef6 - Mac\\u94fe\\u63a5\\u89c4\\u5219\\u5206\\u6d41\\u5668 | MacKed - \\u4e13\\u6ce8\\u4e8eMac\\u7834\\u89e3\\u8d44\\u6e90\\u7684\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"datePublished\":\"2026-05-12T15:36:22+08:00\",\"dateModified\":\"2026-05-25T16:54:19+08:00\",\"isPartOf\":{\"@id\":\"https://macked.app/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://pic.macked.app/static/2c2f663577b33abc98758f1d3bfe3f00-1778571347.webp\"},\"inLanguage\":\"zh-CN\"},{\"@type\":\"Person\",\"@id\":\"https://macked.app/author/1\",",
+        "fetch_error": ""
+      },
+      {
+        "title": "DMCA 下架政策 - GitHub 文档",
+        "url": "https://docs.github.com/zh/site-policy/content-removal-policies/dmca-takedown-policy",
+        "query": "DMCA 下架 破解站 独立开发者 教程",
+        "provider": "tavily",
+        "score": "0.467308",
+        "fetched_text": "DMCA 下架政策 - GitHub 文档 Skip to main content GitHub 文档 Version: Free, Pro, & Team 搜索或询问 Copilot 搜索或询问 Copilot Select language: current language is Simplified Chinese 搜索或询问 Copilot 搜索或询问 Copilot 打开菜单 Open Sidebar 站点政策 / 内容删除政策 / DMCA 下架政策 主 Site policy GitHub 条款 GitHub 服务条款 GitHub 公司服务条款 GitHub 附加产品和功能条款 GitHub 社区指导方针 GitHub 社区行为准则 GitHub 预发行许可条款 GitHub DPA 约束的预览版 GitHub 赞助商附加条款 GitHub 注册开发人员协议 GitHub Marketplace 服务条款 GitHub Marketplace 开发人员协议 GitHub 研究计划条款 GitHub 开源应用程序条款和条件 GitHub 活动条款 GitHub 活动行为准则 GitHub 教育使用协议 GitHub Copilot 扩展开发人员策略 GitHub 机密扫描合作伙伴计划协议 可接受使用政策 GitHub 可接受使用政策 活跃恶意软件或攻击 欺凌和骚扰 扰乱其他用户的体验 进行人肉搜索和侵犯隐私 仇恨言论和歧视 模拟 虚假信息政策 性淫秽内容 暴力威胁和无端暴力内容 恐怖主义和暴力极端主义内容 CSAM 政策 NCII 合成媒体和 AI 工具 GitHub 申诉和恢复 隐私政策 GitHub 一般隐私声明 GitHub 次级处理者 GitHub Cookie GitHub 全球候选人数据隐私声明 其他站点政策 GitHub 和贸易管制 GitHub 已故用户政策 GitHub 徽标政策 GitHub 政府下架政策 GitHub 用户名政策 用户数据法律请求准则 GitHub 帐户恢复政策 内容删除政策 提交内容删除请求 DMCA 下架政策 GitHub 私人信息删除政策 GitHub 商标政策 DMCA 抗辩通知提交指南 DMCA 下架通知提交指南 安全政策 协调披露安全漏洞 GitHub Bug 赏金计划法律安全港 GitHub SIRT 说明 RFC 2350 GitHub 公司政策 GitHub 反对现代奴役制和童工制的声明 GitHub 反贿赂声明 GitHub GPL 合作承诺 GitHub 礼品和招待政策 站点政策 / 内容删除政策 / DMCA 下架政策 DMCA 下架政策 复制为 Markdown 格式 在本文中 什么是 DMCA？ DMCA 通知概述 A. 此流程实际上是如何运作的？ B. 如何处理复刻 (Fork)？ （或者什么是复刻？） C. 如何处理规避索赔？ D. 如果我无意中错过了更改时限怎么办？ E. 透明度 F. 屡次侵权 G. 提交通知 深入了解并发表意见 欢迎阅读 GitHub 的《千禧年数字著作权法案》（通常称为“DMCA”）指南。 本页面并非该法案的综合入门读物。 但是，如果您收到针对您在 GitHub 上所发布内容的 DMCA 下架通知，或者您是要发出此类通知的权利持有者，此页面将有助于您了解该法案以及我们遵守该法案的政策。 （如果你只是想提交一份通知，可以跳到 G. 提交通知 。） 与所有法律事务一样，就您的具体问题或情况咨询专业人员始终是最好的方式。 我们强烈建议您在采取任何可能影响您权利的行动之前这样做。 本指南不是法律意见，不应被视为法律意见。 什么是 DMCA？ 要了解 DMCA 及其制定的一些政策方针，考虑一下它颁布之前的现实情况，或许有助于理解。 DMCA 为托管用户生成内容的服务提供商提供了安全港。 仅仅一项针对侵犯版权发起的索赔就可能导致高达 150,000 美元的法定赔偿，因此，对用户生成的内容承担责任可能对服务提供商非常不利。 如果面向数以百万计的用户，这种潜在损失将不可估量，可以说，假如没有 DMCA，则 YouTube、Facebook 或 GitHub 等云计算和用户生成内容的网站可能就 不会存在 （或者至少会将部分成本转嫁给用户）。 ",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub项目代码泄露并被fork后如何申请DMCA下架",
+        "url": "https://developer.aliyun.com/article/1601111",
+        "query": "DMCA 下架 破解站 独立开发者 教程",
+        "provider": "tavily",
+        "score": "0.44608507",
+        "fetched_text": "GitHub项目代码泄露并被fork后如何申请DMCA下架-开发者社区-阿里云 var GLOBAL_CONFIG = { \"csrf_key\": 'p_csrf', \"csrf_val\": '3fb5c351-a759-4e9d-aa28-51b8083a1d0c', \"wechat_disable\": false, \"articleId\": '1601111', \"groupCode\": null, \"groupInfo\": null, \"articleRealGroupCode\": null, \"needLarkJs\": false, \"larkContent\": '', \"isLogin\": false, \"isBest\": false, \"authorUccId\": 'xka4gbnmv3vds', \"visitorUccId\": null, \"communityCode\": null, \"community\": null, \"freeTierInfo\":'[]', \"commentSwitch\":true, \"articleRewardEnable\":false, \"isOfficialBlog\":false, \"cloudProductCodeList\":'[]', }; .article-detail #skill-builder-waker-button{ margin-left: 16px; } /* */ /* */ 大模型 产品 解决方案 权益 定价 云市场 伙伴 服务 了解阿里云 查看 \"\" 全部搜索结果 AI 助理 文档 备案 控制台 开发者社区 首页 探索云世界 探索云世界 热门 百炼大模型 Modelscope模型即服务 弹性计算 通义灵码 云原生 数据库 云效DevOps 龙蜥操作系统 云计算 弹性计算 无影 存储 网络 倚天 大数据 大数据计算 实时数仓Hologres 实时计算Flink E-MapReduce DataWorks Elasticsearch 机器学习平台PAI 智能搜索推荐 数据可视化DataV 云原生 容器 serverless 中间件 微服务 可观测 消息队列 人工智能 机器学习平台PAI 视觉智能开放平台 智能语音交互 自然语言处理 多模态模型 pythonsdk 通用模型 数据库 关系型数据库 NoSQL数据库 数据仓库 数据管理工具 PolarDB开源 向量数据库 开发与运维 云效DevOps 钉钉宜搭 镜像站 问产品 动手实践 官方博客 考认证 TIANCHI大赛 活动广场 活动广场 丰富的线上&线下活动，深入探索云世界 任务中心 做任务，得社区积分和周边 训练营 资深技术专家手把手带教 直播 技术交流，直击现场 乘风者计划 让创作激发创新 下载 下载 海量开发者使用工具、手册，免费下载 镜像站 极速、全面、稳定、安全的开源镜像 技术资料 开发手册、白皮书、案例集等实战精华 探索云世界 热门 百炼大模型 Modelscope模型即服务 弹性计算 通义灵码 云原生 数据库 云效DevOps 龙蜥操作系统 云计算 弹性计算 无影 存储 网络 倚天 云原生 容器 serverless 中间件 微服务 可观测 消息队列 数据库 关系型数据库 NoSQL数据库 数据仓库 数据管理工具 PolarDB开源 向量数据库 大数据 大数据计算 实时数仓Hologres 实时计算Flink E-MapReduce DataWorks Elasticsearch 机器学习平台PAI 智能搜索推荐 数据可视化DataV 人工智能 机器学习平台PAI 视觉智能开放平台 智能语音交互 自然语言处理 多模态模型 pythonsdk 通用模型 开发与运维 云效DevOps 钉钉宜搭 镜像站 开发者社区 开发与运维 文章 正文 【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私 2024-08-30 943 版权 版权声明： 本文内容由阿里云实名注册用户自发贡献，版权归原作者所有，阿里云开发者社区不拥有其著作权，亦不承担相应法律责任。具体规则请查看《 阿里云开发者社区用户服务协议 》和 《 阿里云开发者社区知识产权保护指引 》。如果您发现本社区中有涉嫌抄袭的内容",
+        "fetch_error": ""
+      },
+      {
+        "title": "【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA ...",
+        "url": "https://cloud.tencent.com/developer/article/2455560",
+        "query": "DMCA 下架 破解站 独立开发者 教程",
+        "provider": "tavily",
+        "score": "0.37689888",
+        "fetched_text": "【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私-腾讯云开发者社区-腾讯云 .rno-markdown p * { white-space: pre-wrap; word-break: break-all; } .tea-overlay { z-index: 99999!important; } .cdc-mcp-page2__main.is-fixed .cdc-mcp-page2__toolbar { top: 57px !important; } if (typeof Aegis !== 'undefined') { new Aegis({ id: 'dWlmyFvjDnalkbZO8q', env: 'production', onError: true, pagePerformance: true, reportAssetSpeed: true, api: { reportRequest: true, resHeaders: ['x-req-id'], }, reportApiSpeed: true, beforeRequest: function (data) { // load js failed if (data.logType === 'log') { if (data.logs.level === '32' && data.logs.msg.indexOf('google') > -1) return false; } var ignoreKeys = [ 'Script error', 'chrome-extension', 'qq.com', 'queryWeappQrcodeStatus', 'login/ajax/info', 'woa.com', 'trafficCollect.php', 'google', 'dscache', 'act-api', 'set_qc_cookie', 'opc.cloud.tencent.com', 'uc_gre_ad_buss', 'eb.xcj.pub', 'UCShellJava', '/developer/labs/quick/loader', 'edgeImmersiveReaderDOM', 'sendBeacon', 'error-decoder.html', 'qcloud-community-track.min.js' ]; var alarmMsg = [data.logs.url, data.logs.msg].join('|'); for (var i = 0; i JavaDog程序狗 【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私 原创 关注作者 腾讯云 开发者社区 文档 建议反馈 控制台 登录/注册 首页 学习 活动 专区 圈层 工具 MCP广场 文章/答案/技术大牛 搜索 搜索 关闭 发布 JavaDog程序狗 社区首页 > 专栏 > 【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私 【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私 原创 JavaDog程序狗 关注 发布 于 2024-10-09 08:25:39 发布 于 2024-10-09 08:25:39 961 0 举报 文章被收录于专栏： 干货 干货 前言 🍊缘由 在一个月黑风高的夜晚，正准备休息的我突然接到之前 外包老总的亲切问候 。一顿输出才知道 三年前 为了搭建流程化部署，将公司的 测试代码 放到github上后 忘记删除 。现在被甲方的代码扫描机制扫到，并且检查到代码已经 被其他用户fork ，虽没有造成损失，但要求 清除github所有数据及被fork的代码 。以此为戒，特来跟大家分享一下处理流程，重点是 GitHub的DMCA 下架通知提交指南 。 ⏲️本文阅读时长 约10分钟 🎯主要目标 熟悉 GitHub的DMCA 下架通知提交指南 代码涉密 被 别人fork 如何 在GitHub安全下架 掌握 申诉流程 及 申诉时间点 把控 正文 🍋1.判断政策分类 DMCA 下架政策包含如下两种，根据自",
+        "fetch_error": ""
+      },
+      {
+        "title": "作为独立开发者，有哪些可以分享的经验？ - 知乎",
+        "url": "https://www.zhihu.com/question/24667846",
+        "query": "独立开发 破解 心态 调整 经验",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "90% 以上的独立开发者，败在了认知环节 - 知乎",
+        "url": "https://zhuanlan.zhihu.com/p/49483004",
+        "query": "独立开发 破解 心态 调整 经验",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "独立开发者的自我修炼和干货分享 - 少数派",
+        "url": "https://sspai.com/post/89633",
+        "query": "独立开发 破解 心态 调整 经验",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8K169TXENS'); var _hmt = _hmt || []; (function () { var hm = document.createElement(\"script\"); hm.src = \"https://hm.baidu.com/hm.js?b086a9ba5044137b67f8e225a718db01\"; var s = document.getElementsByTagName(\"script\")[0]; s.parentNode.insertBefore(hm, s); })(); 独立开发者的自我修炼和干货分享 - 少数派 let darkMode = 0 if (navigator.cookieEnabled) { darkMode = window.localStorage.getItem('darkMode') ? parseInt(window.localStorage.getItem('darkMode')) : 0 } const matchMedia = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches if ((!darkMode && matchMedia) || darkMode === 2) { document.getElementById('html').className='theme-dark' document.querySelector('meta[name=\"theme-color\"]').setAttribute('content', '#1f1f22') } else { document.getElementById('html').className='' document.querySelector('meta[name=\"theme-color\"]').setAttribute('content', '#ffffff') } {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"独立开发者的自我修炼和干货分享 - 少数派\",\"image\":\"https://cdnfile.sspai.com/2024/06/16/4ecb3cf7892b394d2d4e7c38d9d8fb42.png?imageMogr2/auto-orient/ignore-error/1\",\"datePublished\":\"2024-06-17T00:59:04.000Z\",\"author\":{\"@type\":\"Person\",\"name\":\"徐小夕\",\"url\":\"https://sspai.com/u/k8p9knq6\"},\"description\":\"嗨，大家好，我是徐小夕，一名独立开发者，有百万级产品营收操盘经验，接下来我会根据我自己的实践经验，分享一下独立开发者，如何抓住高价值产品，并持续输出价值。我一直主张以实际经验来作为分享素材，避免空洞的 ...\"} 共创 PRIME Matrix 栏目 Pi Store 无需申请，自由写作 任何用户都可使用写作功能。成功发布 3 篇符合基本规则的内容，可成为正式作者。 了解更多 共创 PRIME Matrix 栏目 Pi Store 独立开发者的自我修炼和干货分享 主作者 关注 徐小夕 少数派作者 前端架构师，H5-Dooring零代码平台作者，知乎专栏作家，掘金签约作者。 徐小夕 关注 徐小夕 少数派作者 前端架构师，H5-Dooring零代码平台作者，知乎专栏作家，掘金签约作者。 联合作者 关注 徐小夕 少数派作者 前端架构师，H5-Dooring零代码平台作者，知乎专栏作家，掘金签约作者。 徐小夕 关注 徐小夕 少数派作者 前端架构师，H5-Dooring零代码平台作者，知乎专栏作家，掘金签约作者",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260613-macos-7bb1d15f/",
+    "for_gpt_editor": {
+      "brief": "今天早上一看，折腾了很久的 macOS 应用 Aion 让破解站（ MacKed ）给收录了。 当时第一反应有点微妙：一方面有点自豪，毕竟有人愿意花时间去破，说明折腾出来的东西确实有用；另一方面摸摸口袋，最近本来收入就下滑，看着直链下载确实心凉。 简单说说这个 App ，叫 Aion （官网： https://aion.7caifei.com/ ）。 做它的初衷是嫌市面上的自动退出软件太死板，经常把我挂着的下载或者视频会议给强退了。Aion 做的是“上下文感知退出”：不会傻傻地倒计时，而是会检测你的网络流量、音视频播放，甚至摄像头和麦克风使用状态。如果确定你在开会或下大文件，就先保护起来不退；退出也是走标准 Apple 事件，会提示保存，不至于丢数据。软件完全在本地运行。 顺便也想请教下各位前辈：大家做 macOS 独立开发，刚起步遇到破解一般怎么调节心态？技术上有没有什么成本低、见效快的防逆向/防破解手段（比如检测运行时签名）？",
+      "title_seed": "独立开发App被破解站收录：是自豪还是心凉？",
+      "original_title": "独立开发的 macOS 应用让破解站收录了，心里五味杂陈",
+      "source_url": "https://www.v2ex.com/t/1220128",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "推荐选题",
+          "label": "推荐",
+          "reason": "事件真实、有情感冲突、能引发独立开发者群体共鸣；证据链基本完整，逻辑可闭环；传播张力强，读者愿意评论分享自己的经历；老花人设解读角度清晰，可拆出心态、技术、法律、商业等多层价值。"
+        },
+        "core_question": "独立开发者的macOS应用被破解站收录后，收入损失有多大？有哪些低成本、有效的防破解手段？",
+        "why_this_topic_matters": "独立开发者群体庞大且活跃，破解问题普遍存在但缺乏系统讨论。该事件提供了一个真实案例，能引发开发者对收入保护、技术投入、法律手段和心态调整的深度思考，具有普遍参考价值。",
+        "fact_summary": [
+          "独立开发者开发了macOS应用Aion（上下文感知自动退出工具），被破解站MacKed收录。",
+          "开发者感到自豪（有人破解说明有用）又心凉（收入下滑，直链下载影响收入）。",
+          "Aion官网：https://aion.7caifei.com/，应用完全本地运行。",
+          "MacKed是专注于Mac破解资源的分享与下载网站，收录了大量macOS应用。",
+          "调查显示大多数Mac开发者不赚钱，80%无法开启独立业务，59%收不回投入。",
+          "Apple提供DMCA下架渠道，但针对破解站的实际执行效果未知。",
+          "GitHub有DMCA下架政策，可参考用于代码泄露场景。"
+        ],
+        "persona_discussion_question": "我的App被破解了，该不该花时间精力去防？还是干脆接受，把精力放在功能迭代上？",
+        "old_flower_stance": "破解是独立开发者绕不开的痛，但与其花大量精力防破解（成本高、效果有限），不如接受现实，把资源投入到产品迭代和用户服务上。同时，可以采取低成本措施（如代码混淆、签名校验）增加破解门槛，并利用DMCA等法律工具维护权益。心态上，把破解视为产品价值的另类证明，但也要算清收入账，避免过度投入。",
+        "audience_fit": {
+          "primary_layer": "副业普通人",
+          "secondary_layers": [
+            "核心技术人",
+            "共鸣读者"
+          ],
+          "interest_score": 85,
+          "why_interested": "副业普通人（独立开发者、小团队）直接面临破解问题，想知道如何应对；核心技术人关注防破解技术细节；共鸣读者（有过类似经历）会感同身受。",
+          "reader_risk": "避免夸大破解对收入的影响，需明确破解用户可能本就不会付费。"
+        },
+        "mass_interest_hook": {
+          "score": 75,
+          "hook_type": "故事",
+          "why_non_technical_people_may_click": "“被破解”自带冲突和故事性，普通人也能理解“自己辛苦做的东西被人免费拿走”的复杂心情。标题如“我的App被破解了，我该自豪还是心凉？”能引发好奇心。",
+          "story_seed": "一个独立开发者早上发现自己的macOS应用被破解站收录，第一反应是自豪（有人破解说明有用），但紧接着是心凉（收入本来就下滑，现在更糟）。他开发的应用有独特功能（上下文感知退出），但破解站直接提供了免费下载。",
+          "do_not_overhype": "不要声称破解导致收入大幅下降（缺乏数据），不要夸大防破解措施的效果，不要暗示所有独立开发者都会遇到同样情况。"
+        },
+        "topic_tension": {
+          "score": 10,
+          "conflict_point": "独立开发者与破解站之间的利益冲突，以及平台（Apple）在保护开发者方面的角色缺失。",
+          "debate_question": "小开发者面对破解几乎无还手之力，平台（Apple）的DRM和审核机制是否足够保护独立开发者？破解站的法律责任谁来追究？",
+          "stakeholders": [
+            "独立开发者",
+            "破解站运营者",
+            "Apple（平台方）",
+            "付费用户",
+            "破解用户"
+          ],
+          "why_people_would_comment": "读者可以分享自己被破解的经历、讨论防破解技术、争论是否值得投入防破解、评价Apple的DRM效果、甚至讨论破解的道德问题。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。避免煽动对破解站的仇恨，保持理性。"
+        },
+        "timeline": [
+          "2025-03-27: 独立开发者在V2EX发帖，称其macOS应用Aion被破解站MacKed收录。",
+          "2019-06-07: 爱范儿文章讨论独立开发者困境。",
+          "2012-05-05: 调查显示大多数Mac开发者不赚钱。"
+        ],
+        "evidence_table": [
+          {
+            "source": "V2EX帖子",
+            "url": "https://www.v2ex.com/t/1220128",
+            "supports": "事件原始线索，开发者自述被破解经历和复杂心情。",
+            "reliability": "near_source"
+          },
+          {
+            "source": "爱范儿文章",
+            "url": "https://www.ifanr.com/1220659",
+            "supports": "独立开发者整体困境背景。",
+            "reliability": "media"
+          },
+          {
+            "source": "cnBeta调查",
+            "url": "https://www.cnbeta.com.tw/articles/tech/185833.htm",
+            "supports": "大多数Mac开发者不赚钱。",
+            "reliability": "media"
+          },
+          {
+            "source": "MacKed网站",
+            "url": "https://macked.app/",
+            "supports": "破解站存在并收录大量macOS应用。",
+            "reliability": "weak"
+          },
+          {
+            "source": "Apple DMCA页面",
+            "url": "https://www.apple.com/legal/contact/copyright-infringement.html",
+            "supports": "Apple提供DMCA下架渠道。",
+            "reliability": "official"
+          },
+          {
+            "source": "GitHub DMCA政策",
+            "url": "https://docs.github.com/zh/site-policy/content-removal-policies/dmca-takedown-policy",
+            "supports": "DMCA下架流程参考。",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "逻辑基本闭环：事件真实（V2EX帖子）→ 背景支持（独立开发者收入困境）→ 破解站存在（MacKed）→ 法律手段可用（DMCA）→ 心态调整建议（老花人设立场）。但收入损失和防破解效果缺乏直接数据，需在文章中明确不确定性。",
+        "writeable_angles": [
+          {
+            "angle": "心态调整：被破解是自豪还是心凉？",
+            "why": "情感冲突强，容易引发共鸣和讨论。",
+            "needs": "开发者自述、社区类似经历、心理建议。"
+          },
+          {
+            "angle": "低成本防破解技术盘点",
+            "why": "核心技术人关注，提供实用价值。",
+            "needs": "代码混淆、签名校验、运行时检测等具体方法及成本。"
+          },
+          {
+            "angle": "法律手段：如何用DMCA下架破解链接",
+            "why": "提供可操作步骤，增加文章实用性。",
+            "needs": "DMCA流程详解、Apple和GitHub的官方渠道、实际案例。"
+          },
+          {
+            "angle": "独立开发者的收入账：破解到底影响多大？",
+            "why": "商业角度，帮助开发者理性评估。",
+            "needs": "收入数据（如有）、破解用户付费意愿分析、替代策略（如订阅制）。"
+          }
+        ],
+        "missing_basics": [
+          "macOS应用破解的常见技术原理（如脱壳、重签名）。",
+          "Apple的Gatekeeper和公证机制如何工作。",
+          "DMCA的基本概念和适用范围。"
+        ],
+        "missing_materials": [
+          "Aion应用的具体收入数据（开发者未公开）。",
+          "MacKed破解站的流量数据（如SimilarWeb排名）。",
+          "其他独立开发者类似遭遇的详细案例。",
+          "防破解技术的实际效果对比（如混淆 vs 签名校验）。"
+        ],
+        "not_claimable": [
+          "破解导致收入大幅下降（需数据支持）。",
+          "防破解措施一定有效（需验证）。",
+          "所有独立开发者都会遇到类似情况（需统计）。"
+        ],
+        "followup_queries": [
+          "Aion应用的定价、销售渠道、近期收入趋势（如有）。",
+          "MacKed破解站的Alexa排名或SimilarWeb数据。",
+          "其他独立开发者关于破解的讨论帖或博客文章。",
+          "macOS应用防破解的低成本技术方案对比。"
+        ],
+        "additional_search_queries": [
+          "macOS app crack prevention low cost",
+          "independent developer DMCA takedown experience",
+          "MacKed crack site traffic",
+          "Aion app revenue independent developer"
+        ],
+        "stop_conditions": [
+          "无法获取任何收入数据或破解站流量数据。",
+          "开发者明确表示不愿公开更多信息。",
+          "社区讨论热度下降，缺乏新案例。"
+        ],
+        "confidence": 80,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "case-study",
+        "quality_gate": {
+          "pass": true,
+          "score": 78,
+          "fatal_issues": [],
+          "warnings": [
+            "收入损失和防破解效果缺乏直接数据，需在文章中明确不确定性。",
+            "破解站流量数据缺失，无法量化影响。"
+          ],
+          "missing_evidence": [
+            "Aion应用的具体收入数据（开发者未公开）。",
+            "MacKed破解站的流量数据（如SimilarWeb排名）。",
+            "其他独立开发者类似遭遇的详细案例。",
+            "防破解技术的实际效果对比（如混淆 vs 签名校验）。"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": true,
+          "downstream_handoff_ok": true,
+          "material_pack_ok": true,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": true,
+          "source_coverage_ok": true,
+          "recommendation": "publish"
+        },
+        "research_plan": {
+          "core_question": "独立开发者的macOS应用被破解站收录后，收入损失有多大？有哪些低成本、有效的防破解手段？",
+          "persona_discussion_question": "我的App被破解了，该不该花时间精力去防？还是干脆接受，把精力放在功能迭代上？",
+          "hidden_public_issue": "小开发者面对破解几乎无还手之力，平台（Apple）的DRM和审核机制是否足够保护独立开发者？破解站的法律责任谁来追究？",
+          "must_verify": [
+            "Aion 应用的实际收入数据（开发者是否公开过？）",
+            "MacKed 破解站的流量和收录方式",
+            "开发者是否尝试过 DMCA 下架或联系破解站",
+            "Apple 对 macOS 应用破解的官方立场和应对措施",
+            "其他独立开发者类似遭遇的案例和应对经验"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "case_study",
+              "query": "独立开发者 macOS 应用被破解 收入影响 案例",
+              "why_needed": "了解其他开发者的实际损失和应对策略"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "macOS 应用防破解 低成本 方法",
+              "why_needed": "收集社区中验证过的低成本防破解技术"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Apple macOS 应用破解 法律措施 DMCA",
+              "why_needed": "确认 Apple 是否提供官方保护机制或法律支持"
+            },
+            {
+              "source_type": "case_study",
+              "query": "MacKed 破解站 流量 收录 方式",
+              "why_needed": "评估破解站对应用分发的影响程度"
+            },
+            {
+              "source_type": "policy",
+              "query": "DMCA 下架 破解站 独立开发者 教程",
+              "why_needed": "了解开发者如何通过法律手段移除破解链接"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "独立开发 破解 心态 调整 经验",
+              "why_needed": "收集心理层面的应对建议，丰富文章角度"
+            }
+          ],
+          "expert_challenge_points": [
+            "破解站收录是否真的会导致收入下降？还是说破解用户本来就不会付费？",
+            "防破解措施是否值得投入？对于小开发者，时间和精力成本可能高于潜在损失。",
+            "Apple 的 Gatekeeper 和公证机制是否足够？如果不够，Apple 是否有责任改进？"
+          ],
+          "do_not_claim_yet": [
+            "破解导致收入大幅下降（需数据支持）",
+            "防破解措施一定有效（需验证）",
+            "所有独立开发者都会遇到类似情况（需统计）"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确收入损失和防破解效果的不确定性，重点放在心态调整和社区经验分享。",
+          "downstream_materials_needed": [
+            "Aion 应用的定价、销售渠道、近期收入趋势（如有）",
+            "MacKed 破解站的 Alexa 排名或 SimilarWeb 数据",
+            "其他独立开发者关于破解的讨论帖或博客文章"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "属于独立开发者的好时代已过去了吗？| WWDC ② - 爱范儿",
+            "url": "https://www.ifanr.com/1220659",
+            "query": "独立开发者 macOS 应用被破解 收入影响 案例",
+            "provider": "tavily",
+            "score": "0.5325473",
+            "fetched_text": "属于独立开发者的好时代已过去了吗？| WWDC ② | 爱范儿 { \"@context\": \"http://schema.org\", \"@type\": \"Article\", \"headline\":\"11 年前 App Store 的诞生催生了 app 经济；11 年后，App Store 和开发者们都遇到了困境。\", \"mainEntityOfPage\": { \"@type\": \"WebPage\", \"@id\": \"https://www.ifanr.com/1220659\" }, \"image\": \"https://s3.ifanr.com/wp-content/uploads/2019/06/1_dhwHUlGtrUKitcxbW65FPQ.jpg\", \"datePublished\": \"2019-06-07 10:08:49\", \"dateModified\":\"2019-06-07 10:38:51\", \"author\": { \"@type\": \"Person\", \"name\":\"吴羚\" }, \"publisher\": { \"@type\": \"Organization\", \"name\": \"ifanr\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://dl.ifanr.cn/ifanr/ifanr-logo.jpg\" } }, \"description\": \"11 年前 App Store 的诞生催生了 app 经济；11 年后，App Store 和开发者们都遇到了困境。\" } /* Try to get out of frames! */ var isAppsoWebsite = /^https?:\\/\\/(www\\.)?ifanr\\.com\\/app\\/?/.test(document.location.href); if (window.top != window.self && !isAppsoWebsite) { window.top.location = self.location.href; } var ga = ga || function() {(ga.q = ga.q || []).push(arguments)}; var STATIC_URL = \"https://images.ifanr.cn/wp-content/themes/ifanr-5.0-pc/static/\"; var POST_DEFAULT_THUMBNAIL_SMALL = \"https://images.ifanr.cn/wp-content/themes/ifanr-5.0-pc/static/images/ifanr/article-default-thumbnail-small.jpg\"; var POST_DEFAULT_THUMBNAIL_MIDDLE = \"https://images.ifanr.cn/wp-content/themes/ifanr-5.0-pc/static/images/ifanr/article-default-thumbnail-middle.jpg\"; var IMG_LARGE = \"720\", IMG_MEDIUM = \"320\", IMG_SMALL = \"260\", IMG_XSMALL = \"100\"; USER = {}; USER.SSO_URL_MYACCOUNT = 'https://sso.ifanr.com/myaccount/'; USER.SSO_URL_LOGIN = 'https://sso.ifanr.com/embed/login/' + '?referer=' + location.origin; USER.SSO_URL_REGISTER = 'https://sso.ifanr.com/embed/login/#register' + '?referer=' + location.origin; USER.SSO_URL_LOGOUT = ''; USER.SSO_USER_ACTIVITY = 'https://sso.ifanr.com/myactivity/'; IFR = {}; IFR.a",
+            "fetch_error": ""
+          },
+          {
+            "title": "调查发现大多数Mac开发者并不赚钱 - cnBeta.COM",
+            "url": "https://www.cnbeta.com.tw/articles/tech/185833.htm",
+            "query": "独立开发者 macOS 应用被破解 收入影响 案例",
+            "provider": "tavily",
+            "score": "0.4766533",
+            "fetched_text": "调查发现大多数Mac开发者并不赚钱 - Apple macOS - cnBeta.COM var GV = {JS_ROOT:\"//www.cnbeta.com.tw/themes/v6/js/\", JS_VERSION:\"\", URL:{HOME:\"//www.cnbeta.com.tw\"}, USER:{ID:0,NICK:'匿名人士',ICON:'https://www.cnbeta.com.tw/images/anonymous.jpg'}}; (function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})(); cnBeta.COM.TW_中文业界资讯站 首页 影视 音乐 游戏 动漫 趣闻 科学 软件 主题 硬件 Apple Google iPhone 科学探索 人物 手机 游戏 视点·观察 阿里云 微软 通信技术 Android 软件和应用 SONY 索尼 the United States美国 Apple iPad Windows Phone Intel英特尔 腾讯 HTC 安全 Mozilla FireFox 小米科技 百度 通信运营商 媒体播放器 / 视频网站 BlackBerry 黑莓 网络应用 / Web Apps Google Chrome Microsoft XBOX 硬件 - 上网本 / 平板电脑 / 超极本 电子商务 - B2C / B2B Lenovo 联想 LG Yahoo! 雅虎 AMD SNS 社交网络 诺基亚 Windows 7 Huawei 华为 中国移动 中国联通 中国电信 更多... 排行 document.addEventListener(\"error\",function(e){var elem=e.target;if(elem.tagName.toLowerCase()==\"img\"){elem.src=\"/images/blank.gif\"}},true); (adsbygoogle = window.adsbygoogle || []).push({}); 调查发现大多数Mac开发者并不赚钱 2012年05月05日 11:08 次阅读 稿源： 条评论 感谢 平 的投递 新闻来源:weiphone 根据国外媒体的消息报导，一项针对Mac开发者（102名）的收入调查揭露：有80%的开发者并没有赚到足够的钱以开启个人的独立业务，而59%的开发者甚至还收不回开发应用时的投入资金。换句话来说，大多数Mac开发者实际上还处于入不敷出的状态。 报导称，出现这种的情况的原因是Mac平台的应用市场已经过度饱和，对于目前的开发者来说，开发新应用很难再获得理想的成绩。实际上，调查发现有63%的开发者所开发出来的应用下载量少于50000次，而将近3/4的开发者在每款应用上只能够获得5000美元或更少的收入。 - (adsbygoogle = window.adsbygoogle || []).push({}); (adsbygoogle = window.adsbygoogle || []).push({}); 对文章打分 调查发现大多数Mac开发者并不赚钱 2 (67%) 1 (33%) (adsbygoogle = window.adsbygoogle || []).push({}); 已有 条意见 登录 [退出] 发布 显示",
+            "fetch_error": ""
+          },
+          {
+            "title": "独立开发两年血泪复盘：App Store 首页推荐后，依然月入不足 3000 | 人人都是产品经理",
+            "url": "https://www.woshipm.com/pd/6198096.html",
+            "query": "独立开发者 macOS 应用被破解 收入影响 案例",
+            "provider": "tavily",
+            "score": "0.31254882",
+            "fetched_text": "独立开发两年血泪复盘：App Store 首页推荐后，依然月入不足 3000 | 人人都是产品经理 { \"@context\": \"http://schema.org\", \"@type\": \"Article\", \"name\": \"独立开发两年血泪复盘：App Store 首页推荐后，依然月入不足 3000 – 人人都是产品经理,\",\"author\": \"Aine\",\"description\": \"到今年 4 月刚好全职独立开发两年了，总结这两年独立开发结果：希望通过独立开发获得一份可持续的收入进入一个相对自由的生活失败了。不过确实做出了自己还算满意的产品，上过 AppStore 首页推荐，也得到了一些用户的认可，不算瞎忙活。 商业上可以说是彻底失败了。\", \"image\": [ \"https:https://image.woshipm.com/wp-files/2025/03/PhjoE31edoTx5hqLwmmG.png\", \"https:https://image.woshipm.com/wp-files/2025/03/DBvdqMEmB2J7JNhNiIKg-scaled.jpeg\", \"https:https://image.woshipm.com/wp-files/2025/03/2xw1btZkDpKTIteiQq9X.png\" ], \"datePublished\": \"2025-03-27T17:03:27\", \"commentCount\": 2, \"interactionStatistic\": { \"@type\": \"InteractionCounter\", \"interactionType\": \"http://schema.org/LikeAction\", \"userInteractionCount\": 0 } } img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } /* */ img.wp-smiley, img.emoji { display: inline !important; border: none !important; box-shadow: none !important; height: 1em !important; width: 1em !important; margin: 0 0.07em !important; vertical-align: -0.1em !important; background: none !important; padding: 0 !important; } /*! This file is auto-generated */ .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none} :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--p",
+            "fetch_error": ""
+          },
+          {
+            "title": "MacKed - 专注于Mac破解资源的分享与下载",
+            "url": "https://macked.app/",
+            "query": "macOS 应用防破解 低成本 方法",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "MacKed - 专注于Mac破解资源的分享与下载 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Person\",\"@id\":\"https://macked.app/#person\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"url\":\"https://macked.app\",\"email\":\"macked@duck.com\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://macked.app/#logo\",\"url\":\"https://macked.app/wp-content/uploads/favicon.png\",\"contentUrl\":\"https://macked.app/wp-content/uploads/favicon.png\",\"caption\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"inLanguage\":\"zh-CN\",\"width\":\"192\",\"height\":\"192\"}},{\"@type\":\"WebSite\",\"@id\":\"https://macked.app/#website\",\"url\":\"https://macked.app\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"alternateName\":\"MacKed\",\"publisher\":{\"@id\":\"https://macked.app/#person\"},\"inLanguage\":\"zh-CN\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":\"https://macked.app/?s={search_term_string}\",\"query-input\":\"required name=search_term_string\"}},{\"@type\":\"CollectionPage\",\"@id\":\"https://macked.app#webpage\",\"url\":\"https://macked.app\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8eMac\\u7834\\u89e3\\u8d44\\u6e90\\u7684\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"about\":{\"@id\":\"https://macked.app/#person\"},\"isPartOf\":{\"@id\":\"https://macked.app/#website\"},\"inLanguage\":\"zh-CN\"}]} body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--c",
+            "fetch_error": ""
+          },
+          {
+            "title": "关于macOS破解软件的一些信息说明-黑苹果星球",
+            "url": "https://heipg.cn/tutorial/about-cracked-macos-apps.html",
+            "query": "macOS 应用防破解 低成本 方法",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "关于macOS破解软件的一些信息说明-黑苹果星球 img:is([sizes=auto i],[sizes^=\"auto,\" i]){contain-intrinsic-size:3000px 1500px} /*# sourceURL=wp-img-auto-sizes-contain-inline-css */ /*! This file is auto-generated */ .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none} /*# sourceURL=/wp-includes/css/classic-themes.min.css */ :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,4",
+            "fetch_error": ""
+          },
+          {
+            "title": "MACMJ - Mac破解软件分享中心",
+            "url": "https://www.macmj.com/",
+            "query": "macOS 应用防破解 低成本 方法",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "MACMJ - Mac破解软件分享中心 img:is([sizes=auto i],[sizes^=\"auto,\" i]){contain-intrinsic-size:3000px 1500px} /*# sourceURL=wp-img-auto-sizes-contain-inline-css */ img.wp-smiley, img.emoji { display: inline !important; border: none !important; box-shadow: none !important; height: 1em !important; width: 1em !important; margin: 0 0.07em !important; vertical-align: -0.1em !important; background: none !important; padding: 0 !important; } /*# sourceURL=wp-emoji-styles-inline-css */ /*! This file is auto-generated */ .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none} /*# sourceURL=/wp-includes/css/classic-themes.min.css */ :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cya",
+            "fetch_error": ""
+          },
+          {
+            "title": "APPLE以違反DMCA法案追訴Psystar - 資策會科技法律研究所",
+            "url": "https://stli.iii.org.tw/article-detail.aspx?tp=1&d=2931&no=64",
+            "query": "Apple macOS 应用破解 法律措施 DMCA",
+            "provider": "tavily",
+            "score": "0.5614318",
+            "fetched_text": "資策會科技法律研究所 var onSubmit = function (token) { // console.log('success!', token); $(\"#token\").val(token); }; var onloadCallback = function () { grecaptcha.render('html_element', { 'sitekey': '6LdYeBwUAAAAAMphg3C-VimQCCfkxE55u6OgFLDK', // 6Le0fGgdAAAAAJheVqFzSLJoIiCSC8w8AedbDARC 'callback': onSubmit }); // 'sitekey': '6LdYeBwUAAAAAMphg3C-VimQCCfkxE55u6OgFLDK', // test: 6Le0fGgdAAAAAJheVqFzSLJoIiCSC8w8AedbDARC }; // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) // })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); // ga('create', 'UA-85744699-1', 'auto'); // ga('send', 'pageview'); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-N2GLX5BD'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8TVQKWJCB9'); 熱門關鍵字 研發成果運用 產學研合作 人工智慧 智財管理 品牌智財 自駕車 資料經濟 貿易戰 訂閱電子報 會員登入 English 關於我們 沿革 實績及貢獻 專業團隊 科法之友 加入我們 本所活動 研究成果 科技法制要聞 科技法律透析 出版品區 專書 工具書 教具及研究報告 科技法律諮詢 諮詢服務 常見問題解答 媒體露出 會員登入 ENGLISH > 研究成果 > 科技法制要聞 返回列表 上一篇 美國基改動物法規研擬中 下一篇 歐盟法院於11月28日對Intel v CPM案依英國上訴法院初審判決闡釋著名商標侵害之認定方式 APPLE以違反DMCA法案追訴Psystar 刊登期別 隸屬計畫成果 摘要項目 根據美國北加州聯邦地方法院之資料公佈，APPLE已於上週對“Mac Clone”（克隆機）廠商PSYSTAR追加控訴，指控PSYSTAR侵犯了APPLE的著作權和商標權，同時，亦違反了美國1998年通過之數位千禧年著作權法（DMCA - Digital Millennium Copyright Act）的規定。APPLE表示，尚有其他廠商涉及本案，但APPLE仍未公佈其他涉案廠商名單。",
+            "fetch_error": ""
+          },
+          {
+            "title": "App Store 上的DMCA 下架通知: r/iOSProgramming - Reddit",
+            "url": "https://www.reddit.com/r/iOSProgramming/comments/qliagi/dmca_takedown_notice_on_app_store?tl=zh-hant",
+            "query": "Apple macOS 应用破解 法律措施 DMCA",
+            "provider": "tavily",
+            "score": "0.3450175",
+            "fetched_text": "有人已經因為App Store 上的侵權行為提出DMCA 申訴了嗎？我的App 被「山寨」了，正在想Apple 什麼時候會介入。 目前，Apple 把我們和對方聯繫上了。",
+            "fetch_error": "HTTP Error 403: Blocked; used tavily content fallback"
+          },
+          {
+            "title": "Apple - Legal - Contact - Copyright Infringement",
+            "url": "https://www.apple.com/legal/contact/copyright-infringement.html",
+            "query": "Apple macOS 应用破解 法律措施 DMCA",
+            "provider": "tavily",
+            "score": "0.34323218",
+            "fetched_text": "Apple - Legal - Contact - Copyright Infringement var isDisputeForm = document.getElementById(\"dispute_category\"); if(isDisputeForm == null) { var LEGAL = LEGAL || {}; var thankyou = 'https://www.apple.com/legal/contact/copyrightinfringementthankyou.html'; if(!thankyou.startsWith(\"http\")){ thankyou = \"https://www.apple.com\" + thankyou; } LEGAL.FormData = { className: 'legal-form', noAjax: true, pageSuccess: thankyou, onsubmit: function(evt) { let isValid = true; const territoryLanguageModals = Array.from( document.querySelectorAll( \"[data-modal-trigger^=disputed-country-region][aria-required=true]\" ) ).map((ele) => document.querySelector(\"#\" + ele.getAttribute(\"data-modal-trigger\")) ); for (const idx in territoryLanguageModals) { if ( !territoryLanguageModals[idx].querySelector(\"input[type=checkbox]:checked\") ) { isValid = false; evt.preventDefault(); const modalTriggerLink = document.querySelector(\"[data-modal-trigger^=\"+territoryLanguageModals[idx].id); const menuWrapper = modalTriggerLink.closest(\".menu-territories-wrapper\") menuWrapper.querySelector(\".error-advice\").classList.remove(\"visuallyhidden\"); modalTriggerLink.querySelector(\".icon\").classList.remove(\"icon-pluscircle\", \"icon-checkcircle\"); modalTriggerLink.querySelector(\".icon\").classList.add(\"icon-infocircle\"); document.querySelector(\".form-error-message\").classList.add(\"show\",\"show-incomplete\"); //break; } } var selectedForm = 'copyright-infringement-questions'; var targetCustomerName = document.getElementById(selectedForm+'-customer_name'); var thankyouURL = document.getElementById('thankyou'); targetCustomerName.setAttribute('value', document.getElementById('first_name').value+' ' +document.getElementById('last_name').value); thankyouURL.setAttribute('value', thankyou); return isValid; } }; } else { docume",
+            "fetch_error": ""
+          },
+          {
+            "title": "马克喵_最新Mac破解软件｜苹果电脑应用资源站 | macat.vip",
+            "url": "https://www.macat.vip/",
+            "query": "MacKed 破解站 流量 收录 方式",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "马克喵_最新Mac破解软件｜苹果电脑应用资源站 | macat.vip /*! This file is auto-generated */ .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none} body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 1",
+            "fetch_error": ""
+          },
+          {
+            "title": "Stash 4.2.0-473 beta 破解版 - Mac强大的Clash规则代理工具/Surge同类型 | MacKed - 专注于Mac破解资源的分享与下载",
+            "url": "https://macked.app/stash-surge-crack-ios-trollstore.html",
+            "query": "MacKed 破解站 流量 收录 方式",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Stash 4.2.0-477 破解版 - Mac强大的Clash规则代理工具/Surge同类型 | MacKed - 专注于Mac破解资源的分享与下载 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Organization\",\"Person\"],\"@id\":\"https://macked.app/#person\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"url\":\"https://macked.app\",\"email\":\"macked@duck.com\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://macked.app/#logo\",\"url\":\"https://macked.app/wp-content/uploads/favicon.png\",\"contentUrl\":\"https://macked.app/wp-content/uploads/favicon.png\",\"caption\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"inLanguage\":\"zh-CN\",\"width\":\"192\",\"height\":\"192\"},\"image\":{\"@id\":\"https://macked.app/#logo\"}},{\"@type\":\"WebSite\",\"@id\":\"https://macked.app/#website\",\"url\":\"https://macked.app\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"alternateName\":\"MacKed\",\"publisher\":{\"@id\":\"https://macked.app/#person\"},\"inLanguage\":\"zh-CN\"},{\"@type\":\"ImageObject\",\"@id\":\"https://pic.macked.app/static/1b0b8b1aae36308fcd2f560b6345c16a-1754285837.webp\",\"url\":\"https://pic.macked.app/static/1b0b8b1aae36308fcd2f560b6345c16a-1754285837.webp\",\"width\":\"200\",\"height\":\"200\",\"inLanguage\":\"zh-CN\"},{\"@type\":\"WebPage\",\"@id\":\"https://macked.app/stash-surge-crack-ios-trollstore.html#webpage\",\"url\":\"https://macked.app/stash-surge-crack-ios-trollstore.html\",\"name\":\"Stash 4.2.0-477 \\u7834\\u89e3\\u7248 - Mac\\u5f3a\\u5927\\u7684Clash\\u89c4\\u5219\\u4ee3\\u7406\\u5de5\\u5177/Surge\\u540c\\u7c7b\\u578b | MacKed - \\u4e13\\u6ce8\\u4e8eMac\\u7834\\u89e3\\u8d44\\u6e90\\u7684\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"datePublished\":\"2023-05-30T12:02:50+08:00\",\"dateModified\":\"2026-06-09T21:36:04+08:00\",\"isPartOf\":{\"@id\":\"https://macked.app/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://pic.macked.app/static/1b0b8b1aae36308fcd2f560",
+            "fetch_error": ""
+          },
+          {
+            "title": "Yojam 1.1.4 开源软件 - Mac链接规则分流器 | MacKed - 专注于Mac破解资源的分享与下载",
+            "url": "https://macked.app/yojam-mac.html",
+            "query": "MacKed 破解站 流量 收录 方式",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Yojam 1.1.4 开源软件 - Mac链接规则分流器 | MacKed - 专注于Mac破解资源的分享与下载 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Organization\",\"Person\"],\"@id\":\"https://macked.app/#person\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"url\":\"https://macked.app\",\"email\":\"macked@duck.com\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://macked.app/#logo\",\"url\":\"https://macked.app/wp-content/uploads/favicon.png\",\"contentUrl\":\"https://macked.app/wp-content/uploads/favicon.png\",\"caption\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"inLanguage\":\"zh-CN\",\"width\":\"192\",\"height\":\"192\"},\"image\":{\"@id\":\"https://macked.app/#logo\"}},{\"@type\":\"WebSite\",\"@id\":\"https://macked.app/#website\",\"url\":\"https://macked.app\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"alternateName\":\"MacKed\",\"publisher\":{\"@id\":\"https://macked.app/#person\"},\"inLanguage\":\"zh-CN\"},{\"@type\":\"ImageObject\",\"@id\":\"https://pic.macked.app/static/2c2f663577b33abc98758f1d3bfe3f00-1778571347.webp\",\"url\":\"https://pic.macked.app/static/2c2f663577b33abc98758f1d3bfe3f00-1778571347.webp\",\"width\":\"200\",\"height\":\"200\",\"inLanguage\":\"zh-CN\"},{\"@type\":\"WebPage\",\"@id\":\"https://macked.app/yojam-mac.html#webpage\",\"url\":\"https://macked.app/yojam-mac.html\",\"name\":\"Yojam 1.1.4 \\u5f00\\u6e90\\u8f6f\\u4ef6 - Mac\\u94fe\\u63a5\\u89c4\\u5219\\u5206\\u6d41\\u5668 | MacKed - \\u4e13\\u6ce8\\u4e8eMac\\u7834\\u89e3\\u8d44\\u6e90\\u7684\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"datePublished\":\"2026-05-12T15:36:22+08:00\",\"dateModified\":\"2026-05-25T16:54:19+08:00\",\"isPartOf\":{\"@id\":\"https://macked.app/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://pic.macked.app/static/2c2f663577b33abc98758f1d3bfe3f00-1778571347.webp\"},\"inLanguage\":\"zh-CN\"},{\"@type\":\"Person\",\"@id\":\"https://macked.app/author/1\",",
+            "fetch_error": ""
+          },
+          {
+            "title": "DMCA 下架政策 - GitHub 文档",
+            "url": "https://docs.github.com/zh/site-policy/content-removal-policies/dmca-takedown-policy",
+            "query": "DMCA 下架 破解站 独立开发者 教程",
+            "provider": "tavily",
+            "score": "0.467308",
+            "fetched_text": "DMCA 下架政策 - GitHub 文档 Skip to main content GitHub 文档 Version: Free, Pro, & Team 搜索或询问 Copilot 搜索或询问 Copilot Select language: current language is Simplified Chinese 搜索或询问 Copilot 搜索或询问 Copilot 打开菜单 Open Sidebar 站点政策 / 内容删除政策 / DMCA 下架政策 主 Site policy GitHub 条款 GitHub 服务条款 GitHub 公司服务条款 GitHub 附加产品和功能条款 GitHub 社区指导方针 GitHub 社区行为准则 GitHub 预发行许可条款 GitHub DPA 约束的预览版 GitHub 赞助商附加条款 GitHub 注册开发人员协议 GitHub Marketplace 服务条款 GitHub Marketplace 开发人员协议 GitHub 研究计划条款 GitHub 开源应用程序条款和条件 GitHub 活动条款 GitHub 活动行为准则 GitHub 教育使用协议 GitHub Copilot 扩展开发人员策略 GitHub 机密扫描合作伙伴计划协议 可接受使用政策 GitHub 可接受使用政策 活跃恶意软件或攻击 欺凌和骚扰 扰乱其他用户的体验 进行人肉搜索和侵犯隐私 仇恨言论和歧视 模拟 虚假信息政策 性淫秽内容 暴力威胁和无端暴力内容 恐怖主义和暴力极端主义内容 CSAM 政策 NCII 合成媒体和 AI 工具 GitHub 申诉和恢复 隐私政策 GitHub 一般隐私声明 GitHub 次级处理者 GitHub Cookie GitHub 全球候选人数据隐私声明 其他站点政策 GitHub 和贸易管制 GitHub 已故用户政策 GitHub 徽标政策 GitHub 政府下架政策 GitHub 用户名政策 用户数据法律请求准则 GitHub 帐户恢复政策 内容删除政策 提交内容删除请求 DMCA 下架政策 GitHub 私人信息删除政策 GitHub 商标政策 DMCA 抗辩通知提交指南 DMCA 下架通知提交指南 安全政策 协调披露安全漏洞 GitHub Bug 赏金计划法律安全港 GitHub SIRT 说明 RFC 2350 GitHub 公司政策 GitHub 反对现代奴役制和童工制的声明 GitHub 反贿赂声明 GitHub GPL 合作承诺 GitHub 礼品和招待政策 站点政策 / 内容删除政策 / DMCA 下架政策 DMCA 下架政策 复制为 Markdown 格式 在本文中 什么是 DMCA？ DMCA 通知概述 A. 此流程实际上是如何运作的？ B. 如何处理复刻 (Fork)？ （或者什么是复刻？） C. 如何处理规避索赔？ D. 如果我无意中错过了更改时限怎么办？ E. 透明度 F. 屡次侵权 G. 提交通知 深入了解并发表意见 欢迎阅读 GitHub 的《千禧年数字著作权法案》（通常称为“DMCA”）指南。 本页面并非该法案的综合入门读物。 但是，如果您收到针对您在 GitHub 上所发布内容的 DMCA 下架通知，或者您是要发出此类通知的权利持有者，此页面将有助于您了解该法案以及我们遵守该法案的政策。 （如果你只是想提交一份通知，可以跳到 G. 提交通知 。） 与所有法律事务一样，就您的具体问题或情况咨询专业人员始终是最好的方式。 我们强烈建议您在采取任何可能影响您权利的行动之前这样做。 本指南不是法律意见，不应被视为法律意见。 什么是 DMCA？ 要了解 DMCA 及其制定的一些政策方针，考虑一下它颁布之前的现实情况，或许有助于理解。 DMCA 为托管用户生成内容的服务提供商提供了安全港。 仅仅一项针对侵犯版权发起的索赔就可能导致高达 150,000 美元的法定赔偿，因此，对用户生成的内容承担责任可能对服务提供商非常不利。 如果面向数以百万计的用户，这种潜在损失将不可估量，可以说，假如没有 DMCA，则 YouTube、Facebook 或 GitHub 等云计算和用户生成内容的网站可能就 不会存在 （或者至少会将部分成本转嫁给用户）。 ",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub项目代码泄露并被fork后如何申请DMCA下架",
+            "url": "https://developer.aliyun.com/article/1601111",
+            "query": "DMCA 下架 破解站 独立开发者 教程",
+            "provider": "tavily",
+            "score": "0.44608507",
+            "fetched_text": "GitHub项目代码泄露并被fork后如何申请DMCA下架-开发者社区-阿里云 var GLOBAL_CONFIG = { \"csrf_key\": 'p_csrf', \"csrf_val\": '3fb5c351-a759-4e9d-aa28-51b8083a1d0c', \"wechat_disable\": false, \"articleId\": '1601111', \"groupCode\": null, \"groupInfo\": null, \"articleRealGroupCode\": null, \"needLarkJs\": false, \"larkContent\": '', \"isLogin\": false, \"isBest\": false, \"authorUccId\": 'xka4gbnmv3vds', \"visitorUccId\": null, \"communityCode\": null, \"community\": null, \"freeTierInfo\":'[]', \"commentSwitch\":true, \"articleRewardEnable\":false, \"isOfficialBlog\":false, \"cloudProductCodeList\":'[]', }; .article-detail #skill-builder-waker-button{ margin-left: 16px; } /* */ /* */ 大模型 产品 解决方案 权益 定价 云市场 伙伴 服务 了解阿里云 查看 \"\" 全部搜索结果 AI 助理 文档 备案 控制台 开发者社区 首页 探索云世界 探索云世界 热门 百炼大模型 Modelscope模型即服务 弹性计算 通义灵码 云原生 数据库 云效DevOps 龙蜥操作系统 云计算 弹性计算 无影 存储 网络 倚天 大数据 大数据计算 实时数仓Hologres 实时计算Flink E-MapReduce DataWorks Elasticsearch 机器学习平台PAI 智能搜索推荐 数据可视化DataV 云原生 容器 serverless 中间件 微服务 可观测 消息队列 人工智能 机器学习平台PAI 视觉智能开放平台 智能语音交互 自然语言处理 多模态模型 pythonsdk 通用模型 数据库 关系型数据库 NoSQL数据库 数据仓库 数据管理工具 PolarDB开源 向量数据库 开发与运维 云效DevOps 钉钉宜搭 镜像站 问产品 动手实践 官方博客 考认证 TIANCHI大赛 活动广场 活动广场 丰富的线上&线下活动，深入探索云世界 任务中心 做任务，得社区积分和周边 训练营 资深技术专家手把手带教 直播 技术交流，直击现场 乘风者计划 让创作激发创新 下载 下载 海量开发者使用工具、手册，免费下载 镜像站 极速、全面、稳定、安全的开源镜像 技术资料 开发手册、白皮书、案例集等实战精华 探索云世界 热门 百炼大模型 Modelscope模型即服务 弹性计算 通义灵码 云原生 数据库 云效DevOps 龙蜥操作系统 云计算 弹性计算 无影 存储 网络 倚天 云原生 容器 serverless 中间件 微服务 可观测 消息队列 数据库 关系型数据库 NoSQL数据库 数据仓库 数据管理工具 PolarDB开源 向量数据库 大数据 大数据计算 实时数仓Hologres 实时计算Flink E-MapReduce DataWorks Elasticsearch 机器学习平台PAI 智能搜索推荐 数据可视化DataV 人工智能 机器学习平台PAI 视觉智能开放平台 智能语音交互 自然语言处理 多模态模型 pythonsdk 通用模型 开发与运维 云效DevOps 钉钉宜搭 镜像站 开发者社区 开发与运维 文章 正文 【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私 2024-08-30 943 版权 版权声明： 本文内容由阿里云实名注册用户自发贡献，版权归原作者所有，阿里云开发者社区不拥有其著作权，亦不承担相应法律责任。具体规则请查看《 阿里云开发者社区用户服务协议 》和 《 阿里云开发者社区知识产权保护指引 》。如果您发现本社区中有涉嫌抄袭的内容",
+            "fetch_error": ""
+          },
+          {
+            "title": "【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA ...",
+            "url": "https://cloud.tencent.com/developer/article/2455560",
+            "query": "DMCA 下架 破解站 独立开发者 教程",
+            "provider": "tavily",
+            "score": "0.37689888",
+            "fetched_text": "【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私-腾讯云开发者社区-腾讯云 .rno-markdown p * { white-space: pre-wrap; word-break: break-all; } .tea-overlay { z-index: 99999!important; } .cdc-mcp-page2__main.is-fixed .cdc-mcp-page2__toolbar { top: 57px !important; } if (typeof Aegis !== 'undefined') { new Aegis({ id: 'dWlmyFvjDnalkbZO8q', env: 'production', onError: true, pagePerformance: true, reportAssetSpeed: true, api: { reportRequest: true, resHeaders: ['x-req-id'], }, reportApiSpeed: true, beforeRequest: function (data) { // load js failed if (data.logType === 'log') { if (data.logs.level === '32' && data.logs.msg.indexOf('google') > -1) return false; } var ignoreKeys = [ 'Script error', 'chrome-extension', 'qq.com', 'queryWeappQrcodeStatus', 'login/ajax/info', 'woa.com', 'trafficCollect.php', 'google', 'dscache', 'act-api', 'set_qc_cookie', 'opc.cloud.tencent.com', 'uc_gre_ad_buss', 'eb.xcj.pub', 'UCShellJava', '/developer/labs/quick/loader', 'edgeImmersiveReaderDOM', 'sendBeacon', 'error-decoder.html', 'qcloud-community-track.min.js' ]; var alarmMsg = [data.logs.url, data.logs.msg].join('|'); for (var i = 0; i JavaDog程序狗 【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私 原创 关注作者 腾讯云 开发者社区 文档 建议反馈 控制台 登录/注册 首页 学习 活动 专区 圈层 工具 MCP广场 文章/答案/技术大牛 搜索 搜索 关闭 发布 JavaDog程序狗 社区首页 > 专栏 > 【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私 【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私 原创 JavaDog程序狗 关注 发布 于 2024-10-09 08:25:39 发布 于 2024-10-09 08:25:39 961 0 举报 文章被收录于专栏： 干货 干货 前言 🍊缘由 在一个月黑风高的夜晚，正准备休息的我突然接到之前 外包老总的亲切问候 。一顿输出才知道 三年前 为了搭建流程化部署，将公司的 测试代码 放到github上后 忘记删除 。现在被甲方的代码扫描机制扫到，并且检查到代码已经 被其他用户fork ，虽没有造成损失，但要求 清除github所有数据及被fork的代码 。以此为戒，特来跟大家分享一下处理流程，重点是 GitHub的DMCA 下架通知提交指南 。 ⏲️本文阅读时长 约10分钟 🎯主要目标 熟悉 GitHub的DMCA 下架通知提交指南 代码涉密 被 别人fork 如何 在GitHub安全下架 掌握 申诉流程 及 申诉时间点 把控 正文 🍋1.判断政策分类 DMCA 下架政策包含如下两种，根据自",
+            "fetch_error": ""
+          },
+          {
+            "title": "作为独立开发者，有哪些可以分享的经验？ - 知乎",
+            "url": "https://www.zhihu.com/question/24667846",
+            "query": "独立开发 破解 心态 调整 经验",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "90% 以上的独立开发者，败在了认知环节 - 知乎",
+            "url": "https://zhuanlan.zhihu.com/p/49483004",
+            "query": "独立开发 破解 心态 调整 经验",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "独立开发者的自我修炼和干货分享 - 少数派",
+            "url": "https://sspai.com/post/89633",
+            "query": "独立开发 破解 心态 调整 经验",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8K169TXENS'); var _hmt = _hmt || []; (function () { var hm = document.createElement(\"script\"); hm.src = \"https://hm.baidu.com/hm.js?b086a9ba5044137b67f8e225a718db01\"; var s = document.getElementsByTagName(\"script\")[0]; s.parentNode.insertBefore(hm, s); })(); 独立开发者的自我修炼和干货分享 - 少数派 let darkMode = 0 if (navigator.cookieEnabled) { darkMode = window.localStorage.getItem('darkMode') ? parseInt(window.localStorage.getItem('darkMode')) : 0 } const matchMedia = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches if ((!darkMode && matchMedia) || darkMode === 2) { document.getElementById('html').className='theme-dark' document.querySelector('meta[name=\"theme-color\"]').setAttribute('content', '#1f1f22') } else { document.getElementById('html').className='' document.querySelector('meta[name=\"theme-color\"]').setAttribute('content', '#ffffff') } {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"独立开发者的自我修炼和干货分享 - 少数派\",\"image\":\"https://cdnfile.sspai.com/2024/06/16/4ecb3cf7892b394d2d4e7c38d9d8fb42.png?imageMogr2/auto-orient/ignore-error/1\",\"datePublished\":\"2024-06-17T00:59:04.000Z\",\"author\":{\"@type\":\"Person\",\"name\":\"徐小夕\",\"url\":\"https://sspai.com/u/k8p9knq6\"},\"description\":\"嗨，大家好，我是徐小夕，一名独立开发者，有百万级产品营收操盘经验，接下来我会根据我自己的实践经验，分享一下独立开发者，如何抓住高价值产品，并持续输出价值。我一直主张以实际经验来作为分享素材，避免空洞的 ...\"} 共创 PRIME Matrix 栏目 Pi Store 无需申请，自由写作 任何用户都可使用写作功能。成功发布 3 篇符合基本规则的内容，可成为正式作者。 了解更多 共创 PRIME Matrix 栏目 Pi Store 独立开发者的自我修炼和干货分享 主作者 关注 徐小夕 少数派作者 前端架构师，H5-Dooring零代码平台作者，知乎专栏作家，掘金签约作者。 徐小夕 关注 徐小夕 少数派作者 前端架构师，H5-Dooring零代码平台作者，知乎专栏作家，掘金签约作者。 联合作者 关注 徐小夕 少数派作者 前端架构师，H5-Dooring零代码平台作者，知乎专栏作家，掘金签约作者。 徐小夕 关注 徐小夕 少数派作者 前端架构师，H5-Dooring零代码平台作者，知乎专栏作家，掘金签约作者",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "推荐选题",
+          "label": "推荐",
+          "reason": "事件真实、有情感冲突、能引发独立开发者群体共鸣；证据链基本完整，逻辑可闭环；传播张力强，读者愿意评论分享自己的经历；老花人设解读角度清晰，可拆出心态、技术、法律、商业等多层价值。"
+        },
+        "core_question": "独立开发者的macOS应用被破解站收录后，收入损失有多大？有哪些低成本、有效的防破解手段？",
+        "why_this_topic_matters": "独立开发者群体庞大且活跃，破解问题普遍存在但缺乏系统讨论。该事件提供了一个真实案例，能引发开发者对收入保护、技术投入、法律手段和心态调整的深度思考，具有普遍参考价值。",
+        "fact_summary": [
+          "独立开发者开发了macOS应用Aion（上下文感知自动退出工具），被破解站MacKed收录。",
+          "开发者感到自豪（有人破解说明有用）又心凉（收入下滑，直链下载影响收入）。",
+          "Aion官网：https://aion.7caifei.com/，应用完全本地运行。",
+          "MacKed是专注于Mac破解资源的分享与下载网站，收录了大量macOS应用。",
+          "调查显示大多数Mac开发者不赚钱，80%无法开启独立业务，59%收不回投入。",
+          "Apple提供DMCA下架渠道，但针对破解站的实际执行效果未知。",
+          "GitHub有DMCA下架政策，可参考用于代码泄露场景。"
+        ],
+        "persona_discussion_question": "我的App被破解了，该不该花时间精力去防？还是干脆接受，把精力放在功能迭代上？",
+        "old_flower_stance": "破解是独立开发者绕不开的痛，但与其花大量精力防破解（成本高、效果有限），不如接受现实，把资源投入到产品迭代和用户服务上。同时，可以采取低成本措施（如代码混淆、签名校验）增加破解门槛，并利用DMCA等法律工具维护权益。心态上，把破解视为产品价值的另类证明，但也要算清收入账，避免过度投入。",
+        "audience_fit": {
+          "primary_layer": "副业普通人",
+          "secondary_layers": [
+            "核心技术人",
+            "共鸣读者"
+          ],
+          "interest_score": 85,
+          "why_interested": "副业普通人（独立开发者、小团队）直接面临破解问题，想知道如何应对；核心技术人关注防破解技术细节；共鸣读者（有过类似经历）会感同身受。",
+          "reader_risk": "避免夸大破解对收入的影响，需明确破解用户可能本就不会付费。"
+        },
+        "mass_interest_hook": {
+          "score": 75,
+          "hook_type": "故事",
+          "why_non_technical_people_may_click": "“被破解”自带冲突和故事性，普通人也能理解“自己辛苦做的东西被人免费拿走”的复杂心情。标题如“我的App被破解了，我该自豪还是心凉？”能引发好奇心。",
+          "story_seed": "一个独立开发者早上发现自己的macOS应用被破解站收录，第一反应是自豪（有人破解说明有用），但紧接着是心凉（收入本来就下滑，现在更糟）。他开发的应用有独特功能（上下文感知退出），但破解站直接提供了免费下载。",
+          "do_not_overhype": "不要声称破解导致收入大幅下降（缺乏数据），不要夸大防破解措施的效果，不要暗示所有独立开发者都会遇到同样情况。"
+        },
+        "topic_tension": {
+          "score": 10,
+          "conflict_point": "独立开发者与破解站之间的利益冲突，以及平台（Apple）在保护开发者方面的角色缺失。",
+          "debate_question": "小开发者面对破解几乎无还手之力，平台（Apple）的DRM和审核机制是否足够保护独立开发者？破解站的法律责任谁来追究？",
+          "stakeholders": [
+            "独立开发者",
+            "破解站运营者",
+            "Apple（平台方）",
+            "付费用户",
+            "破解用户"
+          ],
+          "why_people_would_comment": "读者可以分享自己被破解的经历、讨论防破解技术、争论是否值得投入防破解、评价Apple的DRM效果、甚至讨论破解的道德问题。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。避免煽动对破解站的仇恨，保持理性。"
+        },
+        "timeline": [
+          "2025-03-27: 独立开发者在V2EX发帖，称其macOS应用Aion被破解站MacKed收录。",
+          "2019-06-07: 爱范儿文章讨论独立开发者困境。",
+          "2012-05-05: 调查显示大多数Mac开发者不赚钱。"
+        ],
+        "evidence_table": [
+          {
+            "source": "V2EX帖子",
+            "url": "https://www.v2ex.com/t/1220128",
+            "supports": "事件原始线索，开发者自述被破解经历和复杂心情。",
+            "reliability": "near_source"
+          },
+          {
+            "source": "爱范儿文章",
+            "url": "https://www.ifanr.com/1220659",
+            "supports": "独立开发者整体困境背景。",
+            "reliability": "media"
+          },
+          {
+            "source": "cnBeta调查",
+            "url": "https://www.cnbeta.com.tw/articles/tech/185833.htm",
+            "supports": "大多数Mac开发者不赚钱。",
+            "reliability": "media"
+          },
+          {
+            "source": "MacKed网站",
+            "url": "https://macked.app/",
+            "supports": "破解站存在并收录大量macOS应用。",
+            "reliability": "weak"
+          },
+          {
+            "source": "Apple DMCA页面",
+            "url": "https://www.apple.com/legal/contact/copyright-infringement.html",
+            "supports": "Apple提供DMCA下架渠道。",
+            "reliability": "official"
+          },
+          {
+            "source": "GitHub DMCA政策",
+            "url": "https://docs.github.com/zh/site-policy/content-removal-policies/dmca-takedown-policy",
+            "supports": "DMCA下架流程参考。",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "逻辑基本闭环：事件真实（V2EX帖子）→ 背景支持（独立开发者收入困境）→ 破解站存在（MacKed）→ 法律手段可用（DMCA）→ 心态调整建议（老花人设立场）。但收入损失和防破解效果缺乏直接数据，需在文章中明确不确定性。",
+        "writeable_angles": [
+          {
+            "angle": "心态调整：被破解是自豪还是心凉？",
+            "why": "情感冲突强，容易引发共鸣和讨论。",
+            "needs": "开发者自述、社区类似经历、心理建议。"
+          },
+          {
+            "angle": "低成本防破解技术盘点",
+            "why": "核心技术人关注，提供实用价值。",
+            "needs": "代码混淆、签名校验、运行时检测等具体方法及成本。"
+          },
+          {
+            "angle": "法律手段：如何用DMCA下架破解链接",
+            "why": "提供可操作步骤，增加文章实用性。",
+            "needs": "DMCA流程详解、Apple和GitHub的官方渠道、实际案例。"
+          },
+          {
+            "angle": "独立开发者的收入账：破解到底影响多大？",
+            "why": "商业角度，帮助开发者理性评估。",
+            "needs": "收入数据（如有）、破解用户付费意愿分析、替代策略（如订阅制）。"
+          }
+        ],
+        "missing_basics": [
+          "macOS应用破解的常见技术原理（如脱壳、重签名）。",
+          "Apple的Gatekeeper和公证机制如何工作。",
+          "DMCA的基本概念和适用范围。"
+        ],
+        "missing_materials": [
+          "Aion应用的具体收入数据（开发者未公开）。",
+          "MacKed破解站的流量数据（如SimilarWeb排名）。",
+          "其他独立开发者类似遭遇的详细案例。",
+          "防破解技术的实际效果对比（如混淆 vs 签名校验）。"
+        ],
+        "not_claimable": [
+          "破解导致收入大幅下降（需数据支持）。",
+          "防破解措施一定有效（需验证）。",
+          "所有独立开发者都会遇到类似情况（需统计）。"
+        ],
+        "followup_queries": [
+          "Aion应用的定价、销售渠道、近期收入趋势（如有）。",
+          "MacKed破解站的Alexa排名或SimilarWeb数据。",
+          "其他独立开发者关于破解的讨论帖或博客文章。",
+          "macOS应用防破解的低成本技术方案对比。"
+        ],
+        "additional_search_queries": [
+          "macOS app crack prevention low cost",
+          "independent developer DMCA takedown experience",
+          "MacKed crack site traffic",
+          "Aion app revenue independent developer"
+        ],
+        "stop_conditions": [
+          "无法获取任何收入数据或破解站流量数据。",
+          "开发者明确表示不愿公开更多信息。",
+          "社区讨论热度下降，缺乏新案例。"
+        ],
+        "confidence": 80,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "case-study",
+        "quality_gate": {
+          "pass": true,
+          "score": 78,
+          "fatal_issues": [],
+          "warnings": [
+            "收入损失和防破解效果缺乏直接数据，需在文章中明确不确定性。",
+            "破解站流量数据缺失，无法量化影响。"
+          ],
+          "missing_evidence": [
+            "Aion应用的具体收入数据（开发者未公开）。",
+            "MacKed破解站的流量数据（如SimilarWeb排名）。",
+            "其他独立开发者类似遭遇的详细案例。",
+            "防破解技术的实际效果对比（如混淆 vs 签名校验）。"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": true,
+          "downstream_handoff_ok": true,
+          "material_pack_ok": true,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": true,
+          "source_coverage_ok": true,
+          "recommendation": "publish"
+        },
+        "research_plan": {
+          "core_question": "独立开发者的macOS应用被破解站收录后，收入损失有多大？有哪些低成本、有效的防破解手段？",
+          "persona_discussion_question": "我的App被破解了，该不该花时间精力去防？还是干脆接受，把精力放在功能迭代上？",
+          "hidden_public_issue": "小开发者面对破解几乎无还手之力，平台（Apple）的DRM和审核机制是否足够保护独立开发者？破解站的法律责任谁来追究？",
+          "must_verify": [
+            "Aion 应用的实际收入数据（开发者是否公开过？）",
+            "MacKed 破解站的流量和收录方式",
+            "开发者是否尝试过 DMCA 下架或联系破解站",
+            "Apple 对 macOS 应用破解的官方立场和应对措施",
+            "其他独立开发者类似遭遇的案例和应对经验"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "case_study",
+              "query": "独立开发者 macOS 应用被破解 收入影响 案例",
+              "why_needed": "了解其他开发者的实际损失和应对策略"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "macOS 应用防破解 低成本 方法",
+              "why_needed": "收集社区中验证过的低成本防破解技术"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Apple macOS 应用破解 法律措施 DMCA",
+              "why_needed": "确认 Apple 是否提供官方保护机制或法律支持"
+            },
+            {
+              "source_type": "case_study",
+              "query": "MacKed 破解站 流量 收录 方式",
+              "why_needed": "评估破解站对应用分发的影响程度"
+            },
+            {
+              "source_type": "policy",
+              "query": "DMCA 下架 破解站 独立开发者 教程",
+              "why_needed": "了解开发者如何通过法律手段移除破解链接"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "独立开发 破解 心态 调整 经验",
+              "why_needed": "收集心理层面的应对建议，丰富文章角度"
+            }
+          ],
+          "expert_challenge_points": [
+            "破解站收录是否真的会导致收入下降？还是说破解用户本来就不会付费？",
+            "防破解措施是否值得投入？对于小开发者，时间和精力成本可能高于潜在损失。",
+            "Apple 的 Gatekeeper 和公证机制是否足够？如果不够，Apple 是否有责任改进？"
+          ],
+          "do_not_claim_yet": [
+            "破解导致收入大幅下降（需数据支持）",
+            "防破解措施一定有效（需验证）",
+            "所有独立开发者都会遇到类似情况（需统计）"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确收入损失和防破解效果的不确定性，重点放在心态调整和社区经验分享。",
+          "downstream_materials_needed": [
+            "Aion 应用的定价、销售渠道、近期收入趋势（如有）",
+            "MacKed 破解站的 Alexa 排名或 SimilarWeb 数据",
+            "其他独立开发者关于破解的讨论帖或博客文章"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "属于独立开发者的好时代已过去了吗？| WWDC ② - 爱范儿",
+            "url": "https://www.ifanr.com/1220659",
+            "query": "独立开发者 macOS 应用被破解 收入影响 案例",
+            "provider": "tavily",
+            "score": "0.5325473",
+            "fetched_text": "属于独立开发者的好时代已过去了吗？| WWDC ② | 爱范儿 { \"@context\": \"http://schema.org\", \"@type\": \"Article\", \"headline\":\"11 年前 App Store 的诞生催生了 app 经济；11 年后，App Store 和开发者们都遇到了困境。\", \"mainEntityOfPage\": { \"@type\": \"WebPage\", \"@id\": \"https://www.ifanr.com/1220659\" }, \"image\": \"https://s3.ifanr.com/wp-content/uploads/2019/06/1_dhwHUlGtrUKitcxbW65FPQ.jpg\", \"datePublished\": \"2019-06-07 10:08:49\", \"dateModified\":\"2019-06-07 10:38:51\", \"author\": { \"@type\": \"Person\", \"name\":\"吴羚\" }, \"publisher\": { \"@type\": \"Organization\", \"name\": \"ifanr\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://dl.ifanr.cn/ifanr/ifanr-logo.jpg\" } }, \"description\": \"11 年前 App Store 的诞生催生了 app 经济；11 年后，App Store 和开发者们都遇到了困境。\" } /* Try to get out of frames! */ var isAppsoWebsite = /^https?:\\/\\/(www\\.)?ifanr\\.com\\/app\\/?/.test(document.location.href); if (window.top != window.self && !isAppsoWebsite) { window.top.location = self.location.href; } var ga = ga || function() {(ga.q = ga.q || []).push(arguments)}; var STATIC_URL = \"https://images.ifanr.cn/wp-content/themes/ifanr-5.0-pc/static/\"; var POST_DEFAULT_THUMBNAIL_SMALL = \"https://images.ifanr.cn/wp-content/themes/ifanr-5.0-pc/static/images/ifanr/article-default-thumbnail-small.jpg\"; var POST_DEFAULT_THUMBNAIL_MIDDLE = \"https://images.ifanr.cn/wp-content/themes/ifanr-5.0-pc/static/images/ifanr/article-default-thumbnail-middle.jpg\"; var IMG_LARGE = \"720\", IMG_MEDIUM = \"320\", IMG_SMALL = \"260\", IMG_XSMALL = \"100\"; USER = {}; USER.SSO_URL_MYACCOUNT = 'https://sso.ifanr.com/myaccount/'; USER.SSO_URL_LOGIN = 'https://sso.ifanr.com/embed/login/' + '?referer=' + location.origin; USER.SSO_URL_REGISTER = 'https://sso.ifanr.com/embed/login/#register' + '?referer=' + location.origin; USER.SSO_URL_LOGOUT = ''; USER.SSO_USER_ACTIVITY = 'https://sso.ifanr.com/myactivity/'; IFR = {}; IFR.a",
+            "fetch_error": ""
+          },
+          {
+            "title": "调查发现大多数Mac开发者并不赚钱 - cnBeta.COM",
+            "url": "https://www.cnbeta.com.tw/articles/tech/185833.htm",
+            "query": "独立开发者 macOS 应用被破解 收入影响 案例",
+            "provider": "tavily",
+            "score": "0.4766533",
+            "fetched_text": "调查发现大多数Mac开发者并不赚钱 - Apple macOS - cnBeta.COM var GV = {JS_ROOT:\"//www.cnbeta.com.tw/themes/v6/js/\", JS_VERSION:\"\", URL:{HOME:\"//www.cnbeta.com.tw\"}, USER:{ID:0,NICK:'匿名人士',ICON:'https://www.cnbeta.com.tw/images/anonymous.jpg'}}; (function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})(); cnBeta.COM.TW_中文业界资讯站 首页 影视 音乐 游戏 动漫 趣闻 科学 软件 主题 硬件 Apple Google iPhone 科学探索 人物 手机 游戏 视点·观察 阿里云 微软 通信技术 Android 软件和应用 SONY 索尼 the United States美国 Apple iPad Windows Phone Intel英特尔 腾讯 HTC 安全 Mozilla FireFox 小米科技 百度 通信运营商 媒体播放器 / 视频网站 BlackBerry 黑莓 网络应用 / Web Apps Google Chrome Microsoft XBOX 硬件 - 上网本 / 平板电脑 / 超极本 电子商务 - B2C / B2B Lenovo 联想 LG Yahoo! 雅虎 AMD SNS 社交网络 诺基亚 Windows 7 Huawei 华为 中国移动 中国联通 中国电信 更多... 排行 document.addEventListener(\"error\",function(e){var elem=e.target;if(elem.tagName.toLowerCase()==\"img\"){elem.src=\"/images/blank.gif\"}},true); (adsbygoogle = window.adsbygoogle || []).push({}); 调查发现大多数Mac开发者并不赚钱 2012年05月05日 11:08 次阅读 稿源： 条评论 感谢 平 的投递 新闻来源:weiphone 根据国外媒体的消息报导，一项针对Mac开发者（102名）的收入调查揭露：有80%的开发者并没有赚到足够的钱以开启个人的独立业务，而59%的开发者甚至还收不回开发应用时的投入资金。换句话来说，大多数Mac开发者实际上还处于入不敷出的状态。 报导称，出现这种的情况的原因是Mac平台的应用市场已经过度饱和，对于目前的开发者来说，开发新应用很难再获得理想的成绩。实际上，调查发现有63%的开发者所开发出来的应用下载量少于50000次，而将近3/4的开发者在每款应用上只能够获得5000美元或更少的收入。 - (adsbygoogle = window.adsbygoogle || []).push({}); (adsbygoogle = window.adsbygoogle || []).push({}); 对文章打分 调查发现大多数Mac开发者并不赚钱 2 (67%) 1 (33%) (adsbygoogle = window.adsbygoogle || []).push({}); 已有 条意见 登录 [退出] 发布 显示",
+            "fetch_error": ""
+          },
+          {
+            "title": "独立开发两年血泪复盘：App Store 首页推荐后，依然月入不足 3000 | 人人都是产品经理",
+            "url": "https://www.woshipm.com/pd/6198096.html",
+            "query": "独立开发者 macOS 应用被破解 收入影响 案例",
+            "provider": "tavily",
+            "score": "0.31254882",
+            "fetched_text": "独立开发两年血泪复盘：App Store 首页推荐后，依然月入不足 3000 | 人人都是产品经理 { \"@context\": \"http://schema.org\", \"@type\": \"Article\", \"name\": \"独立开发两年血泪复盘：App Store 首页推荐后，依然月入不足 3000 – 人人都是产品经理,\",\"author\": \"Aine\",\"description\": \"到今年 4 月刚好全职独立开发两年了，总结这两年独立开发结果：希望通过独立开发获得一份可持续的收入进入一个相对自由的生活失败了。不过确实做出了自己还算满意的产品，上过 AppStore 首页推荐，也得到了一些用户的认可，不算瞎忙活。 商业上可以说是彻底失败了。\", \"image\": [ \"https:https://image.woshipm.com/wp-files/2025/03/PhjoE31edoTx5hqLwmmG.png\", \"https:https://image.woshipm.com/wp-files/2025/03/DBvdqMEmB2J7JNhNiIKg-scaled.jpeg\", \"https:https://image.woshipm.com/wp-files/2025/03/2xw1btZkDpKTIteiQq9X.png\" ], \"datePublished\": \"2025-03-27T17:03:27\", \"commentCount\": 2, \"interactionStatistic\": { \"@type\": \"InteractionCounter\", \"interactionType\": \"http://schema.org/LikeAction\", \"userInteractionCount\": 0 } } img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } /* */ img.wp-smiley, img.emoji { display: inline !important; border: none !important; box-shadow: none !important; height: 1em !important; width: 1em !important; margin: 0 0.07em !important; vertical-align: -0.1em !important; background: none !important; padding: 0 !important; } /*! This file is auto-generated */ .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none} :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--p",
+            "fetch_error": ""
+          },
+          {
+            "title": "MacKed - 专注于Mac破解资源的分享与下载",
+            "url": "https://macked.app/",
+            "query": "macOS 应用防破解 低成本 方法",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "MacKed - 专注于Mac破解资源的分享与下载 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Person\",\"@id\":\"https://macked.app/#person\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"url\":\"https://macked.app\",\"email\":\"macked@duck.com\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://macked.app/#logo\",\"url\":\"https://macked.app/wp-content/uploads/favicon.png\",\"contentUrl\":\"https://macked.app/wp-content/uploads/favicon.png\",\"caption\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"inLanguage\":\"zh-CN\",\"width\":\"192\",\"height\":\"192\"}},{\"@type\":\"WebSite\",\"@id\":\"https://macked.app/#website\",\"url\":\"https://macked.app\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"alternateName\":\"MacKed\",\"publisher\":{\"@id\":\"https://macked.app/#person\"},\"inLanguage\":\"zh-CN\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":\"https://macked.app/?s={search_term_string}\",\"query-input\":\"required name=search_term_string\"}},{\"@type\":\"CollectionPage\",\"@id\":\"https://macked.app#webpage\",\"url\":\"https://macked.app\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8eMac\\u7834\\u89e3\\u8d44\\u6e90\\u7684\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"about\":{\"@id\":\"https://macked.app/#person\"},\"isPartOf\":{\"@id\":\"https://macked.app/#website\"},\"inLanguage\":\"zh-CN\"}]} body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--c",
+            "fetch_error": ""
+          },
+          {
+            "title": "关于macOS破解软件的一些信息说明-黑苹果星球",
+            "url": "https://heipg.cn/tutorial/about-cracked-macos-apps.html",
+            "query": "macOS 应用防破解 低成本 方法",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "关于macOS破解软件的一些信息说明-黑苹果星球 img:is([sizes=auto i],[sizes^=\"auto,\" i]){contain-intrinsic-size:3000px 1500px} /*# sourceURL=wp-img-auto-sizes-contain-inline-css */ /*! This file is auto-generated */ .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none} /*# sourceURL=/wp-includes/css/classic-themes.min.css */ :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,4",
+            "fetch_error": ""
+          },
+          {
+            "title": "MACMJ - Mac破解软件分享中心",
+            "url": "https://www.macmj.com/",
+            "query": "macOS 应用防破解 低成本 方法",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "MACMJ - Mac破解软件分享中心 img:is([sizes=auto i],[sizes^=\"auto,\" i]){contain-intrinsic-size:3000px 1500px} /*# sourceURL=wp-img-auto-sizes-contain-inline-css */ img.wp-smiley, img.emoji { display: inline !important; border: none !important; box-shadow: none !important; height: 1em !important; width: 1em !important; margin: 0 0.07em !important; vertical-align: -0.1em !important; background: none !important; padding: 0 !important; } /*# sourceURL=wp-emoji-styles-inline-css */ /*! This file is auto-generated */ .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none} /*# sourceURL=/wp-includes/css/classic-themes.min.css */ :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cya",
+            "fetch_error": ""
+          },
+          {
+            "title": "APPLE以違反DMCA法案追訴Psystar - 資策會科技法律研究所",
+            "url": "https://stli.iii.org.tw/article-detail.aspx?tp=1&d=2931&no=64",
+            "query": "Apple macOS 应用破解 法律措施 DMCA",
+            "provider": "tavily",
+            "score": "0.5614318",
+            "fetched_text": "資策會科技法律研究所 var onSubmit = function (token) { // console.log('success!', token); $(\"#token\").val(token); }; var onloadCallback = function () { grecaptcha.render('html_element', { 'sitekey': '6LdYeBwUAAAAAMphg3C-VimQCCfkxE55u6OgFLDK', // 6Le0fGgdAAAAAJheVqFzSLJoIiCSC8w8AedbDARC 'callback': onSubmit }); // 'sitekey': '6LdYeBwUAAAAAMphg3C-VimQCCfkxE55u6OgFLDK', // test: 6Le0fGgdAAAAAJheVqFzSLJoIiCSC8w8AedbDARC }; // (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ // (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), // m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) // })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); // ga('create', 'UA-85744699-1', 'auto'); // ga('send', 'pageview'); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-N2GLX5BD'); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8TVQKWJCB9'); 熱門關鍵字 研發成果運用 產學研合作 人工智慧 智財管理 品牌智財 自駕車 資料經濟 貿易戰 訂閱電子報 會員登入 English 關於我們 沿革 實績及貢獻 專業團隊 科法之友 加入我們 本所活動 研究成果 科技法制要聞 科技法律透析 出版品區 專書 工具書 教具及研究報告 科技法律諮詢 諮詢服務 常見問題解答 媒體露出 會員登入 ENGLISH > 研究成果 > 科技法制要聞 返回列表 上一篇 美國基改動物法規研擬中 下一篇 歐盟法院於11月28日對Intel v CPM案依英國上訴法院初審判決闡釋著名商標侵害之認定方式 APPLE以違反DMCA法案追訴Psystar 刊登期別 隸屬計畫成果 摘要項目 根據美國北加州聯邦地方法院之資料公佈，APPLE已於上週對“Mac Clone”（克隆機）廠商PSYSTAR追加控訴，指控PSYSTAR侵犯了APPLE的著作權和商標權，同時，亦違反了美國1998年通過之數位千禧年著作權法（DMCA - Digital Millennium Copyright Act）的規定。APPLE表示，尚有其他廠商涉及本案，但APPLE仍未公佈其他涉案廠商名單。",
+            "fetch_error": ""
+          },
+          {
+            "title": "App Store 上的DMCA 下架通知: r/iOSProgramming - Reddit",
+            "url": "https://www.reddit.com/r/iOSProgramming/comments/qliagi/dmca_takedown_notice_on_app_store?tl=zh-hant",
+            "query": "Apple macOS 应用破解 法律措施 DMCA",
+            "provider": "tavily",
+            "score": "0.3450175",
+            "fetched_text": "有人已經因為App Store 上的侵權行為提出DMCA 申訴了嗎？我的App 被「山寨」了，正在想Apple 什麼時候會介入。 目前，Apple 把我們和對方聯繫上了。",
+            "fetch_error": "HTTP Error 403: Blocked; used tavily content fallback"
+          },
+          {
+            "title": "Apple - Legal - Contact - Copyright Infringement",
+            "url": "https://www.apple.com/legal/contact/copyright-infringement.html",
+            "query": "Apple macOS 应用破解 法律措施 DMCA",
+            "provider": "tavily",
+            "score": "0.34323218",
+            "fetched_text": "Apple - Legal - Contact - Copyright Infringement var isDisputeForm = document.getElementById(\"dispute_category\"); if(isDisputeForm == null) { var LEGAL = LEGAL || {}; var thankyou = 'https://www.apple.com/legal/contact/copyrightinfringementthankyou.html'; if(!thankyou.startsWith(\"http\")){ thankyou = \"https://www.apple.com\" + thankyou; } LEGAL.FormData = { className: 'legal-form', noAjax: true, pageSuccess: thankyou, onsubmit: function(evt) { let isValid = true; const territoryLanguageModals = Array.from( document.querySelectorAll( \"[data-modal-trigger^=disputed-country-region][aria-required=true]\" ) ).map((ele) => document.querySelector(\"#\" + ele.getAttribute(\"data-modal-trigger\")) ); for (const idx in territoryLanguageModals) { if ( !territoryLanguageModals[idx].querySelector(\"input[type=checkbox]:checked\") ) { isValid = false; evt.preventDefault(); const modalTriggerLink = document.querySelector(\"[data-modal-trigger^=\"+territoryLanguageModals[idx].id); const menuWrapper = modalTriggerLink.closest(\".menu-territories-wrapper\") menuWrapper.querySelector(\".error-advice\").classList.remove(\"visuallyhidden\"); modalTriggerLink.querySelector(\".icon\").classList.remove(\"icon-pluscircle\", \"icon-checkcircle\"); modalTriggerLink.querySelector(\".icon\").classList.add(\"icon-infocircle\"); document.querySelector(\".form-error-message\").classList.add(\"show\",\"show-incomplete\"); //break; } } var selectedForm = 'copyright-infringement-questions'; var targetCustomerName = document.getElementById(selectedForm+'-customer_name'); var thankyouURL = document.getElementById('thankyou'); targetCustomerName.setAttribute('value', document.getElementById('first_name').value+' ' +document.getElementById('last_name').value); thankyouURL.setAttribute('value', thankyou); return isValid; } }; } else { docume",
+            "fetch_error": ""
+          },
+          {
+            "title": "马克喵_最新Mac破解软件｜苹果电脑应用资源站 | macat.vip",
+            "url": "https://www.macat.vip/",
+            "query": "MacKed 破解站 流量 收录 方式",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "马克喵_最新Mac破解软件｜苹果电脑应用资源站 | macat.vip /*! This file is auto-generated */ .wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none} body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 1",
+            "fetch_error": ""
+          },
+          {
+            "title": "Stash 4.2.0-473 beta 破解版 - Mac强大的Clash规则代理工具/Surge同类型 | MacKed - 专注于Mac破解资源的分享与下载",
+            "url": "https://macked.app/stash-surge-crack-ios-trollstore.html",
+            "query": "MacKed 破解站 流量 收录 方式",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Stash 4.2.0-477 破解版 - Mac强大的Clash规则代理工具/Surge同类型 | MacKed - 专注于Mac破解资源的分享与下载 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Organization\",\"Person\"],\"@id\":\"https://macked.app/#person\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"url\":\"https://macked.app\",\"email\":\"macked@duck.com\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://macked.app/#logo\",\"url\":\"https://macked.app/wp-content/uploads/favicon.png\",\"contentUrl\":\"https://macked.app/wp-content/uploads/favicon.png\",\"caption\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"inLanguage\":\"zh-CN\",\"width\":\"192\",\"height\":\"192\"},\"image\":{\"@id\":\"https://macked.app/#logo\"}},{\"@type\":\"WebSite\",\"@id\":\"https://macked.app/#website\",\"url\":\"https://macked.app\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"alternateName\":\"MacKed\",\"publisher\":{\"@id\":\"https://macked.app/#person\"},\"inLanguage\":\"zh-CN\"},{\"@type\":\"ImageObject\",\"@id\":\"https://pic.macked.app/static/1b0b8b1aae36308fcd2f560b6345c16a-1754285837.webp\",\"url\":\"https://pic.macked.app/static/1b0b8b1aae36308fcd2f560b6345c16a-1754285837.webp\",\"width\":\"200\",\"height\":\"200\",\"inLanguage\":\"zh-CN\"},{\"@type\":\"WebPage\",\"@id\":\"https://macked.app/stash-surge-crack-ios-trollstore.html#webpage\",\"url\":\"https://macked.app/stash-surge-crack-ios-trollstore.html\",\"name\":\"Stash 4.2.0-477 \\u7834\\u89e3\\u7248 - Mac\\u5f3a\\u5927\\u7684Clash\\u89c4\\u5219\\u4ee3\\u7406\\u5de5\\u5177/Surge\\u540c\\u7c7b\\u578b | MacKed - \\u4e13\\u6ce8\\u4e8eMac\\u7834\\u89e3\\u8d44\\u6e90\\u7684\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"datePublished\":\"2023-05-30T12:02:50+08:00\",\"dateModified\":\"2026-06-09T21:36:04+08:00\",\"isPartOf\":{\"@id\":\"https://macked.app/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://pic.macked.app/static/1b0b8b1aae36308fcd2f560",
+            "fetch_error": ""
+          },
+          {
+            "title": "Yojam 1.1.4 开源软件 - Mac链接规则分流器 | MacKed - 专注于Mac破解资源的分享与下载",
+            "url": "https://macked.app/yojam-mac.html",
+            "query": "MacKed 破解站 流量 收录 方式",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Yojam 1.1.4 开源软件 - Mac链接规则分流器 | MacKed - 专注于Mac破解资源的分享与下载 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":[\"Organization\",\"Person\"],\"@id\":\"https://macked.app/#person\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"url\":\"https://macked.app\",\"email\":\"macked@duck.com\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://macked.app/#logo\",\"url\":\"https://macked.app/wp-content/uploads/favicon.png\",\"contentUrl\":\"https://macked.app/wp-content/uploads/favicon.png\",\"caption\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"inLanguage\":\"zh-CN\",\"width\":\"192\",\"height\":\"192\"},\"image\":{\"@id\":\"https://macked.app/#logo\"}},{\"@type\":\"WebSite\",\"@id\":\"https://macked.app/#website\",\"url\":\"https://macked.app\",\"name\":\"MacKed - \\u4e13\\u6ce8\\u4e8emac\\u8f6f\\u4ef6\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"alternateName\":\"MacKed\",\"publisher\":{\"@id\":\"https://macked.app/#person\"},\"inLanguage\":\"zh-CN\"},{\"@type\":\"ImageObject\",\"@id\":\"https://pic.macked.app/static/2c2f663577b33abc98758f1d3bfe3f00-1778571347.webp\",\"url\":\"https://pic.macked.app/static/2c2f663577b33abc98758f1d3bfe3f00-1778571347.webp\",\"width\":\"200\",\"height\":\"200\",\"inLanguage\":\"zh-CN\"},{\"@type\":\"WebPage\",\"@id\":\"https://macked.app/yojam-mac.html#webpage\",\"url\":\"https://macked.app/yojam-mac.html\",\"name\":\"Yojam 1.1.4 \\u5f00\\u6e90\\u8f6f\\u4ef6 - Mac\\u94fe\\u63a5\\u89c4\\u5219\\u5206\\u6d41\\u5668 | MacKed - \\u4e13\\u6ce8\\u4e8eMac\\u7834\\u89e3\\u8d44\\u6e90\\u7684\\u5206\\u4eab\\u4e0e\\u4e0b\\u8f7d\",\"datePublished\":\"2026-05-12T15:36:22+08:00\",\"dateModified\":\"2026-05-25T16:54:19+08:00\",\"isPartOf\":{\"@id\":\"https://macked.app/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://pic.macked.app/static/2c2f663577b33abc98758f1d3bfe3f00-1778571347.webp\"},\"inLanguage\":\"zh-CN\"},{\"@type\":\"Person\",\"@id\":\"https://macked.app/author/1\",",
+            "fetch_error": ""
+          },
+          {
+            "title": "DMCA 下架政策 - GitHub 文档",
+            "url": "https://docs.github.com/zh/site-policy/content-removal-policies/dmca-takedown-policy",
+            "query": "DMCA 下架 破解站 独立开发者 教程",
+            "provider": "tavily",
+            "score": "0.467308",
+            "fetched_text": "DMCA 下架政策 - GitHub 文档 Skip to main content GitHub 文档 Version: Free, Pro, & Team 搜索或询问 Copilot 搜索或询问 Copilot Select language: current language is Simplified Chinese 搜索或询问 Copilot 搜索或询问 Copilot 打开菜单 Open Sidebar 站点政策 / 内容删除政策 / DMCA 下架政策 主 Site policy GitHub 条款 GitHub 服务条款 GitHub 公司服务条款 GitHub 附加产品和功能条款 GitHub 社区指导方针 GitHub 社区行为准则 GitHub 预发行许可条款 GitHub DPA 约束的预览版 GitHub 赞助商附加条款 GitHub 注册开发人员协议 GitHub Marketplace 服务条款 GitHub Marketplace 开发人员协议 GitHub 研究计划条款 GitHub 开源应用程序条款和条件 GitHub 活动条款 GitHub 活动行为准则 GitHub 教育使用协议 GitHub Copilot 扩展开发人员策略 GitHub 机密扫描合作伙伴计划协议 可接受使用政策 GitHub 可接受使用政策 活跃恶意软件或攻击 欺凌和骚扰 扰乱其他用户的体验 进行人肉搜索和侵犯隐私 仇恨言论和歧视 模拟 虚假信息政策 性淫秽内容 暴力威胁和无端暴力内容 恐怖主义和暴力极端主义内容 CSAM 政策 NCII 合成媒体和 AI 工具 GitHub 申诉和恢复 隐私政策 GitHub 一般隐私声明 GitHub 次级处理者 GitHub Cookie GitHub 全球候选人数据隐私声明 其他站点政策 GitHub 和贸易管制 GitHub 已故用户政策 GitHub 徽标政策 GitHub 政府下架政策 GitHub 用户名政策 用户数据法律请求准则 GitHub 帐户恢复政策 内容删除政策 提交内容删除请求 DMCA 下架政策 GitHub 私人信息删除政策 GitHub 商标政策 DMCA 抗辩通知提交指南 DMCA 下架通知提交指南 安全政策 协调披露安全漏洞 GitHub Bug 赏金计划法律安全港 GitHub SIRT 说明 RFC 2350 GitHub 公司政策 GitHub 反对现代奴役制和童工制的声明 GitHub 反贿赂声明 GitHub GPL 合作承诺 GitHub 礼品和招待政策 站点政策 / 内容删除政策 / DMCA 下架政策 DMCA 下架政策 复制为 Markdown 格式 在本文中 什么是 DMCA？ DMCA 通知概述 A. 此流程实际上是如何运作的？ B. 如何处理复刻 (Fork)？ （或者什么是复刻？） C. 如何处理规避索赔？ D. 如果我无意中错过了更改时限怎么办？ E. 透明度 F. 屡次侵权 G. 提交通知 深入了解并发表意见 欢迎阅读 GitHub 的《千禧年数字著作权法案》（通常称为“DMCA”）指南。 本页面并非该法案的综合入门读物。 但是，如果您收到针对您在 GitHub 上所发布内容的 DMCA 下架通知，或者您是要发出此类通知的权利持有者，此页面将有助于您了解该法案以及我们遵守该法案的政策。 （如果你只是想提交一份通知，可以跳到 G. 提交通知 。） 与所有法律事务一样，就您的具体问题或情况咨询专业人员始终是最好的方式。 我们强烈建议您在采取任何可能影响您权利的行动之前这样做。 本指南不是法律意见，不应被视为法律意见。 什么是 DMCA？ 要了解 DMCA 及其制定的一些政策方针，考虑一下它颁布之前的现实情况，或许有助于理解。 DMCA 为托管用户生成内容的服务提供商提供了安全港。 仅仅一项针对侵犯版权发起的索赔就可能导致高达 150,000 美元的法定赔偿，因此，对用户生成的内容承担责任可能对服务提供商非常不利。 如果面向数以百万计的用户，这种潜在损失将不可估量，可以说，假如没有 DMCA，则 YouTube、Facebook 或 GitHub 等云计算和用户生成内容的网站可能就 不会存在 （或者至少会将部分成本转嫁给用户）。 ",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub项目代码泄露并被fork后如何申请DMCA下架",
+            "url": "https://developer.aliyun.com/article/1601111",
+            "query": "DMCA 下架 破解站 独立开发者 教程",
+            "provider": "tavily",
+            "score": "0.44608507",
+            "fetched_text": "GitHub项目代码泄露并被fork后如何申请DMCA下架-开发者社区-阿里云 var GLOBAL_CONFIG = { \"csrf_key\": 'p_csrf', \"csrf_val\": '3fb5c351-a759-4e9d-aa28-51b8083a1d0c', \"wechat_disable\": false, \"articleId\": '1601111', \"groupCode\": null, \"groupInfo\": null, \"articleRealGroupCode\": null, \"needLarkJs\": false, \"larkContent\": '', \"isLogin\": false, \"isBest\": false, \"authorUccId\": 'xka4gbnmv3vds', \"visitorUccId\": null, \"communityCode\": null, \"community\": null, \"freeTierInfo\":'[]', \"commentSwitch\":true, \"articleRewardEnable\":false, \"isOfficialBlog\":false, \"cloudProductCodeList\":'[]', }; .article-detail #skill-builder-waker-button{ margin-left: 16px; } /* */ /* */ 大模型 产品 解决方案 权益 定价 云市场 伙伴 服务 了解阿里云 查看 \"\" 全部搜索结果 AI 助理 文档 备案 控制台 开发者社区 首页 探索云世界 探索云世界 热门 百炼大模型 Modelscope模型即服务 弹性计算 通义灵码 云原生 数据库 云效DevOps 龙蜥操作系统 云计算 弹性计算 无影 存储 网络 倚天 大数据 大数据计算 实时数仓Hologres 实时计算Flink E-MapReduce DataWorks Elasticsearch 机器学习平台PAI 智能搜索推荐 数据可视化DataV 云原生 容器 serverless 中间件 微服务 可观测 消息队列 人工智能 机器学习平台PAI 视觉智能开放平台 智能语音交互 自然语言处理 多模态模型 pythonsdk 通用模型 数据库 关系型数据库 NoSQL数据库 数据仓库 数据管理工具 PolarDB开源 向量数据库 开发与运维 云效DevOps 钉钉宜搭 镜像站 问产品 动手实践 官方博客 考认证 TIANCHI大赛 活动广场 活动广场 丰富的线上&线下活动，深入探索云世界 任务中心 做任务，得社区积分和周边 训练营 资深技术专家手把手带教 直播 技术交流，直击现场 乘风者计划 让创作激发创新 下载 下载 海量开发者使用工具、手册，免费下载 镜像站 极速、全面、稳定、安全的开源镜像 技术资料 开发手册、白皮书、案例集等实战精华 探索云世界 热门 百炼大模型 Modelscope模型即服务 弹性计算 通义灵码 云原生 数据库 云效DevOps 龙蜥操作系统 云计算 弹性计算 无影 存储 网络 倚天 云原生 容器 serverless 中间件 微服务 可观测 消息队列 数据库 关系型数据库 NoSQL数据库 数据仓库 数据管理工具 PolarDB开源 向量数据库 大数据 大数据计算 实时数仓Hologres 实时计算Flink E-MapReduce DataWorks Elasticsearch 机器学习平台PAI 智能搜索推荐 数据可视化DataV 人工智能 机器学习平台PAI 视觉智能开放平台 智能语音交互 自然语言处理 多模态模型 pythonsdk 通用模型 开发与运维 云效DevOps 钉钉宜搭 镜像站 开发者社区 开发与运维 文章 正文 【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私 2024-08-30 943 版权 版权声明： 本文内容由阿里云实名注册用户自发贡献，版权归原作者所有，阿里云开发者社区不拥有其著作权，亦不承担相应法律责任。具体规则请查看《 阿里云开发者社区用户服务协议 》和 《 阿里云开发者社区知识产权保护指引 》。如果您发现本社区中有涉嫌抄袭的内容",
+            "fetch_error": ""
+          },
+          {
+            "title": "【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA ...",
+            "url": "https://cloud.tencent.com/developer/article/2455560",
+            "query": "DMCA 下架 破解站 独立开发者 教程",
+            "provider": "tavily",
+            "score": "0.37689888",
+            "fetched_text": "【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私-腾讯云开发者社区-腾讯云 .rno-markdown p * { white-space: pre-wrap; word-break: break-all; } .tea-overlay { z-index: 99999!important; } .cdc-mcp-page2__main.is-fixed .cdc-mcp-page2__toolbar { top: 57px !important; } if (typeof Aegis !== 'undefined') { new Aegis({ id: 'dWlmyFvjDnalkbZO8q', env: 'production', onError: true, pagePerformance: true, reportAssetSpeed: true, api: { reportRequest: true, resHeaders: ['x-req-id'], }, reportApiSpeed: true, beforeRequest: function (data) { // load js failed if (data.logType === 'log') { if (data.logs.level === '32' && data.logs.msg.indexOf('google') > -1) return false; } var ignoreKeys = [ 'Script error', 'chrome-extension', 'qq.com', 'queryWeappQrcodeStatus', 'login/ajax/info', 'woa.com', 'trafficCollect.php', 'google', 'dscache', 'act-api', 'set_qc_cookie', 'opc.cloud.tencent.com', 'uc_gre_ad_buss', 'eb.xcj.pub', 'UCShellJava', '/developer/labs/quick/loader', 'edgeImmersiveReaderDOM', 'sendBeacon', 'error-decoder.html', 'qcloud-community-track.min.js' ]; var alarmMsg = [data.logs.url, data.logs.msg].join('|'); for (var i = 0; i JavaDog程序狗 【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私 原创 关注作者 腾讯云 开发者社区 文档 建议反馈 控制台 登录/注册 首页 学习 活动 专区 圈层 工具 MCP广场 文章/答案/技术大牛 搜索 搜索 关闭 发布 JavaDog程序狗 社区首页 > 专栏 > 【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私 【事故】记一次意外把公司项目放到GitHub并被fork，如何使用DMCA下架政策保障隐私 原创 JavaDog程序狗 关注 发布 于 2024-10-09 08:25:39 发布 于 2024-10-09 08:25:39 961 0 举报 文章被收录于专栏： 干货 干货 前言 🍊缘由 在一个月黑风高的夜晚，正准备休息的我突然接到之前 外包老总的亲切问候 。一顿输出才知道 三年前 为了搭建流程化部署，将公司的 测试代码 放到github上后 忘记删除 。现在被甲方的代码扫描机制扫到，并且检查到代码已经 被其他用户fork ，虽没有造成损失，但要求 清除github所有数据及被fork的代码 。以此为戒，特来跟大家分享一下处理流程，重点是 GitHub的DMCA 下架通知提交指南 。 ⏲️本文阅读时长 约10分钟 🎯主要目标 熟悉 GitHub的DMCA 下架通知提交指南 代码涉密 被 别人fork 如何 在GitHub安全下架 掌握 申诉流程 及 申诉时间点 把控 正文 🍋1.判断政策分类 DMCA 下架政策包含如下两种，根据自",
+            "fetch_error": ""
+          },
+          {
+            "title": "作为独立开发者，有哪些可以分享的经验？ - 知乎",
+            "url": "https://www.zhihu.com/question/24667846",
+            "query": "独立开发 破解 心态 调整 经验",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "90% 以上的独立开发者，败在了认知环节 - 知乎",
+            "url": "https://zhuanlan.zhihu.com/p/49483004",
+            "query": "独立开发 破解 心态 调整 经验",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "独立开发者的自我修炼和干货分享 - 少数派",
+            "url": "https://sspai.com/post/89633",
+            "query": "独立开发 破解 心态 调整 经验",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-8K169TXENS'); var _hmt = _hmt || []; (function () { var hm = document.createElement(\"script\"); hm.src = \"https://hm.baidu.com/hm.js?b086a9ba5044137b67f8e225a718db01\"; var s = document.getElementsByTagName(\"script\")[0]; s.parentNode.insertBefore(hm, s); })(); 独立开发者的自我修炼和干货分享 - 少数派 let darkMode = 0 if (navigator.cookieEnabled) { darkMode = window.localStorage.getItem('darkMode') ? parseInt(window.localStorage.getItem('darkMode')) : 0 } const matchMedia = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches if ((!darkMode && matchMedia) || darkMode === 2) { document.getElementById('html').className='theme-dark' document.querySelector('meta[name=\"theme-color\"]').setAttribute('content', '#1f1f22') } else { document.getElementById('html').className='' document.querySelector('meta[name=\"theme-color\"]').setAttribute('content', '#ffffff') } {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"独立开发者的自我修炼和干货分享 - 少数派\",\"image\":\"https://cdnfile.sspai.com/2024/06/16/4ecb3cf7892b394d2d4e7c38d9d8fb42.png?imageMogr2/auto-orient/ignore-error/1\",\"datePublished\":\"2024-06-17T00:59:04.000Z\",\"author\":{\"@type\":\"Person\",\"name\":\"徐小夕\",\"url\":\"https://sspai.com/u/k8p9knq6\"},\"description\":\"嗨，大家好，我是徐小夕，一名独立开发者，有百万级产品营收操盘经验，接下来我会根据我自己的实践经验，分享一下独立开发者，如何抓住高价值产品，并持续输出价值。我一直主张以实际经验来作为分享素材，避免空洞的 ...\"} 共创 PRIME Matrix 栏目 Pi Store 无需申请，自由写作 任何用户都可使用写作功能。成功发布 3 篇符合基本规则的内容，可成为正式作者。 了解更多 共创 PRIME Matrix 栏目 Pi Store 独立开发者的自我修炼和干货分享 主作者 关注 徐小夕 少数派作者 前端架构师，H5-Dooring零代码平台作者，知乎专栏作家，掘金签约作者。 徐小夕 关注 徐小夕 少数派作者 前端架构师，H5-Dooring零代码平台作者，知乎专栏作家，掘金签约作者。 联合作者 关注 徐小夕 少数派作者 前端架构师，H5-Dooring零代码平台作者，知乎专栏作家，掘金签约作者。 徐小夕 关注 徐小夕 少数派作者 前端架构师，H5-Dooring零代码平台作者，知乎专栏作家，掘金签约作者",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "可复制条件",
+        "不可复制条件",
+        "失败或成功背后的非技术因素"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "独立开发App被破解站收录：是自豪还是心凉？ 原始项目 GitHub 复盘",
+        "独立开发App被破解站收录：是自豪还是心凉？ 收入 增长 证据",
+        "独立开发App被破解站收录：是自豪还是心凉？ 失败 限制 反方证据"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
