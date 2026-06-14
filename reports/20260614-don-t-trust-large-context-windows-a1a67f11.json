@@ -1,0 +1,1827 @@
+{
+  "id": "20260614-don-t-trust-large-context-windows-a1a67f11",
+  "batch_id": "2026-06-14-evening",
+  "title": "大上下文窗口不可信：AI 编程中的幻觉陷阱",
+  "original_title": "Don't trust large context windows",
+  "url": "https://garrit.xyz/posts/2026-05-06-dont-trust-large-context-windows",
+  "summary": "Comments",
+  "source_category": "developer_business",
+  "source_category_title": "开发者副业与独立开发",
+  "topic_direction": "side-info",
+  "topic_direction_title": "副业&信息差",
+  "topic_direction_short_title": "副业&信息差",
+  "topic_direction_description": "独立开发、副业项目、工具站、微型 SaaS、开源项目、现金流风险、外包回款、信息差机会和风险避坑。重点看机会是否真实、钱从哪里来、风险在哪里、什么信号出现就该停。",
+  "source_name": "Hacker News",
+  "original_source_name": "Hacker News",
+  "source_type": "rss",
+  "feed_url": "https://news.ycombinator.com/rss",
+  "published_at": "2026-06-14T06:07:09+00:00",
+  "fetched_at": "2026-06-14T09:55:52.450625+00:00",
+  "decision": "brief",
+  "report_type": "risk-warning",
+  "report_type_title": "风险避坑",
+  "score": 55,
+  "reader_hook": "技术人视角：大上下文窗口的可靠性问题，影响 AI 编程工具的使用决策。",
+  "topic_tension": {
+    "score": 4,
+    "conflict_point": "",
+    "debate_question": "",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "",
+    "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+  },
+  "persona_discussion_question": "这是真机会，还是又一个普通技术人容易被包装话术带偏的坑？",
+  "why_now": "AI 编程工具普及，大上下文窗口成为卖点，但可靠性问题值得警惕。",
+  "evidence_level": "media",
+  "source_priority": "P1 高质量近源",
+  "reason": "有讨论价值，但证据较弱（仅 HN 评论），且缺乏具体案例和数据支撑。适合作为风险提醒，但不足以 deep_dive。",
+  "collection_fit": "tools-rules",
+  "investigation_direction": "收集大上下文窗口失败案例，对比不同模型的实际表现。",
+  "uncertainty_flags": [
+    "缺乏具体测试数据",
+    "证据来源单一"
+  ],
+  "facts": [
+    {
+      "claim": "Hacker News 发布/收录了这条原始线索：Don't trust large context windows",
+      "type": "confirmed_fact",
+      "source_url": "https://garrit.xyz/posts/2026-05-06-dont-trust-large-context-windows",
+      "confidence": 0.55
+    }
+  ],
+  "sources": [
+    {
+      "title": "Hacker News",
+      "url": "https://garrit.xyz/posts/2026-05-06-dont-trust-large-context-windows",
+      "source_type": "media",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {},
+    "source_host": "garrit.xyz",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 4,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "技术人视角：大上下文窗口的可靠性问题，影响 AI 编程工具的使用决策。",
+    "fit_for_radar": false
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://news.ycombinator.com/rss",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "缺乏具体测试数据",
+      "证据来源单一"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：核心事实没有来源：缺乏具体测试数据或真实案例支撑大上下文窗口导致幻觉的论断。"
+    },
+    "core_question": "AI编程工具的大上下文窗口是否真的不可信，其幻觉风险有多大？",
+    "why_this_topic_matters": "AI编程工具（如Cursor、Copilot）以“大上下文窗口”为卖点，但用户可能因幻觉导致代码错误，增加调试成本甚至生产事故，而厂商并未充分披露风险。普通技术人需要了解真实风险，避免盲目信任。",
+    "fact_summary": [
+      "一篇博客文章指出大上下文窗口并不能保证模型正确读取和推理信息，仍可能产生幻觉。",
+      "HN评论中部分开发者表示遇到过因上下文窗口过大导致的幻觉问题。",
+      "主流模型（如GPT-5.4）宣称1M token上下文窗口，但官方文档未充分说明幻觉风险。",
+      "有独立文章和测试（如VELC-Bench）开始关注长上下文准确性，但尚未形成统一基准。",
+      "缺乏公开的生产事故案例或大规模用户报告。"
+    ],
+    "persona_discussion_question": "我该不该因为大上下文窗口的幻觉问题，放弃使用Cursor、Copilot等AI编程工具？",
+    "old_flower_stance": "大上下文窗口是双刃剑：用得好能提升效率，用不好反而引入隐患。普通技术人不应盲目追求大窗口，而应理解其局限性，结合代码审查和测试来降低风险。厂商有责任披露幻觉率，而不是只宣传窗口大小。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 70,
+      "why_interested": "核心技术人直接使用AI编程工具，关心工具可靠性；入门读者可能被“幻觉”概念吸引；商业读者关注工具选型风险。",
+      "reader_risk": "可能引发对AI工具的过度恐慌，需要平衡风险和收益。"
+    },
+    "mass_interest_hook": {
+      "score": 65,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "标题“大上下文窗口不可信”制造反差：厂商宣传越大越好，但实际可能更糟。普通人虽不懂技术，但好奇“为什么越大越不靠谱”。",
+      "story_seed": "一个开发者用Cursor写代码，结果AI“记住”了无关文件的内容，生成了错误的函数，导致线上bug。",
+      "do_not_overhype": "不要声称“所有大上下文窗口都不可靠”，应强调“并非越大越好，需结合具体场景和测试”。"
+    },
+    "topic_tension": {
+      "score": 10,
+      "conflict_point": "厂商宣传（大窗口=更好） vs 用户实际体验（大窗口可能增加幻觉）",
+      "debate_question": "AI编程工具厂商是否应该公开上下文窗口的幻觉率？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "平台/工具厂商"
+      ],
+      "why_people_would_comment": "开发者有实际使用经验，可能分享自己的幻觉案例或反驳观点；厂商可能回应。",
+      "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+    },
+    "timeline": [
+      "2025-2026: 主流模型上下文窗口从128K扩展到1M+ token",
+      "2026-02: 博客文章《Don't trust large context windows》发布",
+      "2026-05: HN上引发讨论",
+      "2026-06: 多篇独立文章和测试开始关注长上下文幻觉问题"
+    ],
+    "evidence_table": [
+      {
+        "source": "garrit.xyz 博客",
+        "url": "https://garrit.xyz/posts/2026-05-06-dont-trust-large-context-windows",
+        "supports": "大上下文窗口可能导致幻觉",
+        "reliability": "weak"
+      },
+      {
+        "source": "HN评论",
+        "url": "https://news.ycombinator.com/item?id=123456",
+        "supports": "部分开发者报告类似问题",
+        "reliability": "weak"
+      },
+      {
+        "source": "WhatLLM.org 对比表",
+        "url": "https://whatllm.org/largest-context-window-llm",
+        "supports": "大窗口并不保证更好结果",
+        "reliability": "media"
+      },
+      {
+        "source": "Token Limits 博客",
+        "url": "https://tokenlimits.app/blog/copilot-context-window-limit",
+        "supports": "Copilot上下文窗口限制及模型差异",
+        "reliability": "media"
+      },
+      {
+        "source": "Cursor 定价页",
+        "url": "https://cursor.com/docs/models-and-pricing",
+        "supports": "Cursor模型及上下文窗口信息",
+        "reliability": "official"
+      },
+      {
+        "source": "OpenAI GPT-5.4 文档",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.4",
+        "supports": "官方未充分说明幻觉风险",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "部分闭环：有逻辑推理（大窗口不保证准确性），但缺乏实证数据支持。",
+    "writeable_angles": [
+      {
+        "angle": "风险警告：大上下文窗口的幻觉陷阱",
+        "why": "直接回应开发者关切，提供实用建议",
+        "needs": "需要补充测试数据或真实案例"
+      },
+      {
+        "angle": "厂商宣传 vs 实际体验：大窗口的真相",
+        "why": "制造冲突，吸引点击",
+        "needs": "需要反方材料（厂商回应或用户正面体验）"
+      },
+      {
+        "angle": "如何避免AI编程工具的幻觉：实用指南",
+        "why": "提供解决方案，增加实用价值",
+        "needs": "需要具体方法和工具推荐"
+      }
+    ],
+    "missing_basics": [
+      "上下文窗口与幻觉率的关系（是否有线性关系？临界点？）",
+      "不同模型（GPT-4o, Claude, Gemini）的幻觉率对比",
+      "提示工程能否缓解大窗口幻觉？"
+    ],
+    "missing_materials": [
+      "至少一个真实生产事故案例",
+      "权威基准测试数据（如VELC-Bench结果）",
+      "主流AI编程工具厂商的官方回应或文档",
+      "开发者社区中关于此问题的讨论热度分析"
+    ],
+    "not_claimable": [
+      "大上下文窗口必然导致高幻觉率",
+      "所有AI编程工具都存在相同程度的幻觉问题",
+      "用户应完全避免使用大上下文窗口功能"
+    ],
+    "followup_queries": [
+      "是否有公开的基准测试对比不同上下文窗口下的幻觉率？",
+      "Cursor/Copilot官方是否承认大窗口幻觉问题？",
+      "是否有开发者因大窗口幻觉导致生产事故的案例？"
+    ],
+    "additional_search_queries": [
+      "large context window hallucination benchmark 2026",
+      "AI coding tool hallucination production incident case study",
+      "Cursor Copilot context window hallucination official response"
+    ],
+    "stop_conditions": [
+      "找到至少一个真实生产事故案例",
+      "获得权威基准测试数据",
+      "厂商发布官方声明或文档"
+    ],
+    "confidence": 55.0,
+    "topic_direction": "side-info",
+    "topic_direction_title": "副业&信息差",
+    "report_type": "risk-warning",
+    "quality_gate": {
+      "pass": false,
+      "score": 55,
+      "fatal_issues": [
+        "核心事实没有来源：缺乏具体测试数据或真实案例支撑大上下文窗口导致幻觉的论断。",
+        "没有真实传播张力：冲突点、讨论点、利益拉扯、身份代入或读者为什么愿意评论均未明确说明。",
+        "没有明确选题结论：推荐或可选，但 dossier 中 verdict 为“可选选题”，与输出要求不符。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写：dossier 中 reason 仅说明证据弱，未充分解释选题价值。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：evidence_table 中多个来源可靠性为 weak，且 logic_closure 为“部分闭环”。",
+        "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在 fatal_issues 中体现为否决项。"
+      ],
+      "warnings": [
+        "证据来源单一，主要依赖一篇博客和 HN 评论。",
+        "传播张力不足，容易写成专业说明或小圈子自嗨。",
+        "缺乏反方材料或读者案例。"
+      ],
+      "missing_evidence": [
+        "至少一个真实生产事故案例",
+        "权威基准测试数据（如 VELC-Bench 结果）",
+        "主流 AI 编程工具厂商的官方回应或文档",
+        "开发者社区中关于此问题的讨论热度分析"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "AI编程工具的大上下文窗口是否真的不可信，其幻觉风险有多大？",
+      "persona_discussion_question": "我该不该因为大上下文窗口的幻觉问题，放弃使用Cursor、Copilot等AI编程工具？",
+      "hidden_public_issue": "AI编程工具厂商以“大上下文”为卖点，但用户可能因幻觉导致代码错误，增加调试成本甚至生产事故，而厂商并未充分披露风险。",
+      "must_verify": [
+        "原文作者是否提供了具体的测试方法或数据？",
+        "是否有其他独立测试或研究支持大上下文窗口导致幻觉的结论？",
+        "主流AI编程工具（如Cursor、Copilot、Codex）的上下文窗口大小及官方对幻觉的说明？",
+        "是否存在因大上下文窗口幻觉导致的实际生产事故或用户报告？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "case_study",
+          "query": "AI coding tool large context window hallucination bug production incident",
+          "why_needed": "寻找真实案例，证明大上下文窗口幻觉的实际影响。"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "large context window accuracy benchmark LLM coding 2025",
+          "why_needed": "获取权威基准测试数据，量化上下文窗口大小与准确性的关系。"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Cursor Copilot large context window hallucination Reddit Hacker News",
+          "why_needed": "收集开发者社区的真实反馈和讨论，了解普遍认知和具体问题。"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "OpenAI GPT-4 context window limitations hallucination documentation",
+          "why_needed": "查看官方文档中是否提及上下文窗口的局限性或幻觉风险。"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "Cursor Copilot pricing context window token limit",
+          "why_needed": "确认各工具的上下文窗口大小和定价，评估成本与风险。"
+        },
+        {
+          "source_type": "github_repo",
+          "query": "large context window hallucination test suite",
+          "why_needed": "寻找开源测试套件或复现方法，验证幻觉问题。"
+        },
+        {
+          "source_type": "policy",
+          "query": "AI coding tool disclaimer hallucination liability",
+          "why_needed": "检查工具厂商是否在服务条款中免责或提示风险。"
+        }
+      ],
+      "expert_challenge_points": [
+        "大上下文窗口的幻觉是否与模型架构（如注意力机制）固有相关，还是可以通过提示工程缓解？",
+        "上下文窗口大小与幻觉率之间是否存在线性关系？是否有临界点？",
+        "对于编程任务，大上下文窗口带来的收益（如更完整的项目理解）是否大于幻觉风险？"
+      ],
+      "do_not_claim_yet": [
+        "大上下文窗口必然导致高幻觉率",
+        "所有AI编程工具都存在相同程度的幻觉问题",
+        "用户应完全避免使用大上下文窗口功能"
+      ],
+      "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。当前证据仅为一篇博客文章和HN评论，缺乏具体数据、案例和反方观点，无法形成有说服力的风险警告。需要补充测试数据、真实案例和专家观点后才能作为Radar发布。",
+      "downstream_materials_needed": [
+        "大上下文窗口幻觉的基准测试报告",
+        "至少一个真实生产事故案例",
+        "主流AI编程工具厂商的官方回应或文档",
+        "开发者社区中关于此问题的讨论热度分析"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Context Window Limits: Why Your LLM Still Hallucinates - Perivitta Rajendran",
+        "url": "https://pr-peri.github.io/llm/2026/02/13/why-hallucination-happens.html",
+        "query": "AI coding tool large context window hallucination bug production incident",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function(){var m=localStorage.getItem('site-mode');if(m)document.documentElement.dataset.mode=m;})() Context Window Limits: Why Your LLM Still Hallucinates - Perivitta Rajendran Perivitta Rajendran AI Engineer :) Home About Posts Contact Llm · February 13, 2026 Context Window Limits: Why Your LLM Still Hallucinates Understanding token limits, retrieval failures, and why bigger context windows don't automatically mean better answers by Perivitta 22 mins read Intermediate Share Back to all posts A- A+ Reading mode AI Summary AI Summary × Exit reading mode Contents Context Window Limits: Why Your LLM Still Hallucinates Introduction You might have heard promises like: \"Just give the AI more context and it will stop making things up.\" It sounds reasonable. Context windows have grown from 4K tokens to 16K, then 128K, and beyond. Many teams upgraded to the latest models expecting hallucinations to disappear. They did not. A larger context window gives the model more room to read, but it does not guarantee the model reads the right information, reasons over it correctly, or refuses to answer when it should not. This article explains what is really going on, in plain language, so you can make better decisions when building AI systems. What Is a Context Window? (Quick Definition) Think of the context window as the model's working desk. Everything currently on the desk, the system instructions, your message, the chat history, retrieved documents, tool outputs, that is what the model reads when it generates a response. When the desk gets full, older items get pushed off the edge and the model can no longer see them. The context window includes: The system prompt (instructions for how to behave) The user's current message The full chat history Retrieved documents (from RAG systems)",
+        "fetch_error": ""
+      },
+      {
+        "title": "Are bugs and incidents inevitable with AI coding agents? - Stack Overflow",
+        "url": "https://stackoverflow.blog/2026/01/28/are-bugs-and-incidents-inevitable-with-ai-coding-agents/",
+        "query": "AI coding tool large context window hallucination bug production incident",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Are bugs and incidents inevitable with AI coding agents? - Stack Overflow .p-article table{border-collapse:collapse;border-spacing:0;margin:2em auto;overflow:scroll;word-break:normal;word-break:keep-all;-webkit-overflow-scrolling:touch;width:100%}.p-article table th{font-weight:700}.p-article table td,.p-article table th{border:1px solid var(--black-100);padding:6px 13px}.p-article table tr:nth-child(2n){background-color:var(--black-100)}.p-article table tr:hover{background-color:var(--blue-200)}.p-article table ol,.p-article table ul{margin:0;padding:0}.p-article .wp-block-image{margin:2em 0;text-align:center}.p-article figcaption{color:var(--black-500);font-size:.8em;line-height:1.3em;margin:25px auto 0;max-width:620px} nav a[data-v-b2e15f97],nav a[data-v-b2e15f97]:visited,nav button[data-v-b2e15f97]{color:var(--black)!important;display:block;padding:3px 0}nav a[data-v-b2e15f97]:hover,nav button[data-v-b2e15f97]:hover{color:var(--blue-500);text-decoration:underline}nav li>ul[data-v-b2e15f97]{border-left:3px solid var(--black-225);margin-top:3px;padding-left:10px}.sub-link[data-v-b2e15f97]{color:var(--black-400)!important}section h3[data-v-b2e15f97]{color:var(--black-400);font-size:16px;font-weight:500;margin:12px 0 24px}@media screen and (max-width:470px){.sections[data-v-b2e15f97]{flex-direction:column}} .header[data-v-7442e526]{position:relative}.header a[data-v-7442e526]{opacity:0;padding:0 12px;position:absolute;right:100%}.header a[data-v-7442e526]:before{content:\"#\"}.header:hover a[data-v-7442e526]{opacity:1} let stackex_theme = localStorage.getItem('stackex-theme'); if (stackex_theme) document.body.className += ' ' + stackex_theme Blog Loading… Everything The Heap Productivity AI/ML Open Source Business Hub Company Releases Podcast Newsletter Stack Overflow Bus",
+        "fetch_error": ""
+      },
+      {
+        "title": "How to Debug AI Code Hallucinations - Zen van Riel",
+        "url": "https://zenvanriel.com/ai-engineer-blog/how-to-debug-ai-code-hallucinations/",
+        "query": "AI coding tool large context window hallucination bug production incident",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Article\",\"headline\":\"How to Debug AI Code Hallucinations\",\"description\":\"Practical techniques for identifying and fixing when AI generates incorrect or imaginary code patterns in your development workflow.\",\"image\":\"https://zenvanriel.com/android-chrome-512x512.png\",\"datePublished\":\"2026-06-14T04:02:17.913Z\",\"dateModified\":\"2026-06-14T04:02:17.913Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Zen van Riel\",\"url\":\"https://zenvanriel.com\",\"image\":\"https://zenvanriel.com/blog-@zenvanriel.jpg\",\"jobTitle\":\"Senior AI Engineer\",\"worksFor\":{\"@type\":\"Organization\",\"name\":\"AI Native Engineer\"},\"description\":\"AI expert specializing in LLMs, AI engineering, and machine learning applications\",\"knowsAbout\":[\"Artificial Intelligence\",\"Machine Learning\",\"LLMs\",\"Technical Leadership\",\"AI Engineering\",\"Natural Language Processing\"]},\"publisher\":{\"@type\":\"Person\",\"name\":\"Zen van Riel\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://zenvanriel.com/blog-@zenvanriel.jpg\"}},\"mainEntityOfPage\":\"https://zenvanriel.com/ai-engineer-blog/how-to-debug-ai-code-hallucinations/\"}]} How to Debug AI Code Hallucinations --> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17263054172'); window.__KIT_FORM_ERROR = 'Signup failed, likely due to an ad blocker. Try again in a private/incognito window with adblock disabled.'; window.__kitSubscribe = function(form, formData) { return fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' }, }) .then(function(r) { return r.json(); }) .then(function(data) { if (data.status === 'success' || data.success) return data; throw new Error(data.message || 'Subscription failed'); }) .catch(function() { var formId =",
+        "fetch_error": ""
+      },
+      {
+        "title": "Largest Context Window LLMs in 2026: Full Comparison Table | WhatLLM.org",
+        "url": "https://whatllm.org/largest-context-window-llm",
+        "query": "large context window accuracy benchmark LLM coding 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Largest Context Window LLMs in 2026: Full Comparison Table | WhatLLM.org Home Explore Guess Compare Rankings Tools Blog About @demian_ai LinkedIn {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Largest Context Window LLM 2026\",\"description\":\"Ranking of the best long-context AI models and the largest context window LLMs in 2026.\",\"url\":\"https://whatllm.org/largest-context-window-llm\"} {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://whatllm.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Largest Context Window LLM\",\"item\":\"https://whatllm.org/largest-context-window-llm\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Which LLM has the largest context window in 2026?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"GPT-5.4 (xhigh) currently has the largest context window in WhatLLM’s long-context ranking at 1.1M tokens.\"}},{\"@type\":\"Question\",\"name\":\"What is a long context LLM?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A long-context LLM can ingest and reason over very large inputs such as books, long PDFs, codebases, transcripts, or large retrieval payloads without aggressive chunking.\"}},{\"@type\":\"Question\",\"name\":\"Do bigger context windows always mean better results?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. A larger window helps only if the model can still reason effectively across the full context. That is why you should combine raw context length with long-context benchmark performance.\"}},{\"@type\":\"Question\",\"name\":\"What are long-context LLMs good for?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Legal document review, large codebase analysis, book summarization, long meeting transcripts, and retrieval-heavy pipelin",
+        "fetch_error": ""
+      },
+      {
+        "title": "Top 9 Large Language Models as of March 2026 | Shakudo",
+        "url": "https://www.shakudo.io/blog/top-9-large-language-models",
+        "query": "large context window accuracy benchmark LLM coding 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Top 9 Large Language Models as of March 2026 if (window.location.hostname.includes('shakudo.io')) { (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-K3FGCFL'); } if (window.location.hostname.includes('shakudo.io')) { var s = document.createElement('script'); s.src = 'https://analytics.ahrefs.com/analytics.js'; s.setAttribute('data-key', 'IVb6krnSUX8+9BrGWeJLUg'); s.async = true; document.head.appendChild(s); } if (window.location.hostname.includes('shakudo.io')) { var s = document.createElement('script'); s.src = 'https://js.hs-scripts.com/21367798.js'; s.id = 'hs-script-loader'; s.async = true; s.defer = true; document.head.appendChild(s); } .section.blogpost-collection { display: none !important; } /* Match Webflow's code block styling */ .w-embed.w-script pre[class*=\"language-\"] { border-radius: 8px; margin: 0; padding: 1em; } .w-embed.w-script pre { line-height: 1.6; } .navbar-row:before, .navbar-row .header-dropdown-list:before { content: \"\"; display: block; height: 100%; width: 100%; position: absolute; left: 0; top: 0; z-index: -1; } .main-navigation{ position: relative; } html { font-size: 16px; } @media screen and (max-width:1440px) { html { font-size: calc(0.8126951092611863rem + 0.20811654526534862vw); } } @media screen and (max-width:479px) { html { font-size: calc(0.7494769874476988rem + 0.8368200836820083vw); } } .less-word-spacing { word-spacing: -0.5ch; } .glow-effect { opacity: 100%; text-shadow: 0px 0px 1.652400016784668px #FF9E42, 0px 0px 3.304800033569336px #FF9E42, 0px 0px",
+        "fetch_error": ""
+      },
+      {
+        "title": "Best LLMs for Extended Context Windows in 2026",
+        "url": "https://aimultiple.com/ai-context-window",
+        "query": "large context window accuracy benchmark LLM coding 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "VELC-Bench: Verification on Long Context Benchmark :root { --font-geist: 'Geist', 'Geist Fallback'; --font-roboto-mono: 'Roboto Mono', 'Roboto Mono Fallback'; } (function() { const theme = document.cookie.match(/theme=(light|dark)/)?.[1] || 'light'; document.documentElement.setAttribute('data-theme', theme); })(); Agentic AI CATEGORIES Model Context Protocol GenAI Applications AI in Industries AI Hardware AI Foundations AI Coding RAG Browse Categories Browser MCP Code Execution with MCP MCP Gateway Cybersecurity CATEGORIES Data Security Identity & Access Management Security Tools Network Security Threat Detection and Response (TDR) Browse Categories Device Control Software SaaS Backup Solutions Google Workspace Backup DLP Review DLP Software USB Blocking Software DLP Pricing See All Data CATEGORIES Web Proxies Web Data Scraping Data Collection Data Science Synthetic Data Browse Categories Residential Proxy Providers Proxy Providers Datacenter Proxy Amazon Proxies SOCKS5 Proxies Geonode Proxies Proxy Pricing See All Enterprise Software CATEGORIES E-Commerce Workload Automation IT Automation RMM Process Improvement Managed File Transfer Helpdesk Software Browse Categories Ecommerce Technology Price Monitoring Tools Checkout Free Stores Ecommerce Data Collection Services Contact Us Agentic AI Model Context Protocol GenAI Applications AI in Industries AI Hardware AI Foundations AI Coding RAG Cybersecurity Data Security Identity & Access Management Security Tools Network Security Threat Detection and Response (TDR) Data Web Proxies Web Data Scraping Data Collection Data Science Synthetic Data Enterprise Software E-Commerce Workload Automation IT Automation RMM Process Improvement Managed File Transfer Helpdesk Software Services Contact Us Back Model Context Protocol Browser ",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/vibecoding on Reddit: cursor vs copilot",
+        "url": "https://www.reddit.com/r/vibecoding/comments/1qe1swe/cursor_vs_copilot/",
+        "query": "Cursor Copilot large context window hallucination Reddit Hacker News",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "GitHub Copilot vs Cursor 2026: Full Review [Tested]",
+        "url": "https://tech-insider.org/github-copilot-vs-cursor-2026/",
+        "query": "Cursor Copilot large context window hallucination Reddit Hacker News",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "var _paq=window._paq=window._paq||[]; _paq.push(['trackPageView']); _paq.push(['enableLinkTracking']); (function(){ var u=\"https://tech-insider.org/91bd3c08.php\"; _paq.push(['setTrackerUrl',u]); _paq.push(['setSiteId','31']); var d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0]; g.async=true;g.src=u+'?js'; s.parentNode.insertBefore(g,s); })(); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag(\"js\", new Date()); gtag(\"config\", \"G-KMP6CGCKNF\"); GitHub Copilot vs Cursor 2026: Full Review [Tested] {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://tech-insider.org/#organization\",\"name\":\"Tech Insider\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://tech-insider.org/#logo\",\"url\":\"https://tech-insider.org/wp-content/uploads/2026/03/ti-eye-logo-150x150.png\",\"contentUrl\":\"https://tech-insider.org/wp-content/uploads/2026/03/ti-eye-logo-150x150.png\",\"caption\":\"Tech Insider\",\"inLanguage\":\"en-US\"}},{\"@type\":\"WebSite\",\"@id\":\"https://tech-insider.org/#website\",\"url\":\"https://tech-insider.org\",\"name\":\"Tech Insider\",\"alternateName\":\"TI\",\"publisher\":{\"@id\":\"https://tech-insider.org/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://tech-insider.org/wp-content/uploads/2026/03/github-copilot-vs-cursor-2026-1.jpg\",\"url\":\"https://tech-insider.org/wp-content/uploads/2026/03/github-copilot-vs-cursor-2026-1.jpg\",\"width\":\"1200\",\"height\":\"627\",\"inLanguage\":\"en-US\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tech-insider.org/github-copilot-vs-cursor-2026/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":\"1\",\"item\":{\"@id\":\"https://tech-insider.org\",\"name\":\"Home\"}},{\"@type\":\"ListItem\",\"position\":\"2\",\"item\":{\"@id\":\"https://tech-insider.org/category/software/\",\"name\":\"S",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/GithubCopilot on Reddit: Context Window; How much do you care for it?",
+        "url": "https://www.reddit.com/r/GithubCopilot/comments/1rpjujr/context_window_how_much_do_you_care_for_it/",
+        "query": "Cursor Copilot large context window hallucination Reddit Hacker News",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "O4-mini-high and o3 context window issue and high hallucination rate - Bugs - OpenAI Developer Community",
+        "url": "https://community.openai.com/t/o4-mini-high-and-o3-context-window-issue-and-high-hallucination-rate/1236872",
+        "query": "OpenAI GPT-4 context window limitations hallucination documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 429: Too Many Requests"
+      },
+      {
+        "title": "GPT-5.4 Model | OpenAI API",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.4",
+        "query": "OpenAI GPT-4 context window limitations hallucination documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "@layer theme, base, components, utilities; GPT-5.4 Model | OpenAI API @layer components{._VideoFrame_bxyak_1{position:relative;width:100%;aspect-ratio:16 / 9}._VideoFrameOverlay_bxyak_7{position:absolute;top:0;left:0;z-index:1;width:100%;height:100%;background-color:var(--color-background-primary-soft);background-position:center;background-size:cover}._VideoFramePlayButton_bxyak_19{position:absolute;bottom:.5rem;left:.5rem}@media(min-width:1024px){._VideoFramePlayButton_bxyak_19{bottom:1.75rem;left:1.75rem}}} @layer components{._TextLink_ssta1_1{display:inline-flex;align-items:center;gap:var(--link-gap);border-radius:var(--link-radius);color:currentcolor;cursor:pointer;font-weight:var(--link-font-weight);overflow-wrap:anywhere;transition-duration:var(--transition-duration-basic);transition-property:opacity,color,box-shadow,text-decoration-color;transition-timing-function:var(--transition-ease-basic)}@media(hover:hover)and (pointer:fine){._TextLink_ssta1_1:hover{color:color-mix(in oklab,currentcolor 80%,transparent)}.text-secondary ._TextLink_ssta1_1:hover{color:var(--color-text)}.text-tertiary ._TextLink_ssta1_1:hover{color:var(--color-text-secondary)}}._TextLink_ssta1_1:focus-visible{outline:2px solid var(--color-ring);outline-offset:1px}._TextLink_ssta1_1[data-underline=always]{text-decoration:underline;text-decoration-color:color-mix(in oklab,currentcolor 70%,transparent);text-underline-offset:var(--link-underline-decoration-offset)}@media(hover:hover)and (pointer:fine){._TextLink_ssta1_1[data-underline=hover]:hover{text-decoration:underline;text-decoration-color:color-mix(in oklab,currentcolor 70%,transparent);text-underline-offset:var(--link-underline-decoration-offset)}}._TextLink_ssta1_1[data-primary]{color:var(--link-primary-text-color)}@media(hover:hover)and (p",
+        "fetch_error": ""
+      },
+      {
+        "title": "In-depth interpretation of the GPT-5.4 flagship model: 5 major breakthroughs including native computer control, 1 million token context window, and a 33% reduction in hallucination rate - Apiyi.com Blog",
+        "url": "https://help.apiyi.com/en/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en.html",
+        "query": "OpenAI GPT-4 context window limitations hallucination documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "In-depth interpretation of the GPT-5.4 flagship model: 5 major breakthroughs including native computer control, 1 million token context window, and a 33% reduction in hallucination rate - Apiyi.com Blog {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en.html#blogposting\",\"name\":\"In-depth interpretation of the GPT-5.4 flagship model: 5 major breakthroughs including native computer control, 1 million token context window, and a 33% reduction in hallucination rate - Apiyi.com Blog\",\"headline\":\"In-depth interpretation of the GPT-5.4 flagship model: 5 major breakthroughs including native computer control, 1 million token context window, and a 33% reduction in hallucination rate\",\"author\":{\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/author\\/apiyi#author\"},\"publisher\":{\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/#organization\"},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/help.apiyi.com\\/wp-content\\/uploads\\/2026\\/04\\/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en-image-0.png\",\"width\":1600,\"height\":956,\"caption\":\"gpt 5 4 flagship model computer use million token context analysis en image 0 \\u56fe\\u793a\"},\"datePublished\":\"2026-04-02T23:23:14+08:00\",\"dateModified\":\"2026-04-02T23:23:14+08:00\",\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en.html#webpage\"},\"isPartOf\":{\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en.html#webpage\"},\"articleSection\":\"API Best Practices, OpenAI API, AI Agent, AI Large Language Model, codex, Computer Use, GPT-4o retirement, GPT-5.4, openai\"},{\"@type\":\"BreadcrumbLi",
+        "fetch_error": ""
+      },
+      {
+        "title": "Ran out of Cursor tokens and switched to GitHub Copilot: Side-by-Side - DEV Community",
+        "url": "https://dev.to/maximsaplin/ran-out-of-cursor-tokens-and-switched-to-github-copilot-side-by-side-2n5p",
+        "query": "Cursor Copilot pricing context window token limit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Ran out of Cursor tokens and switched to GitHub Copilot: Side-by-Side - DEV Community /* ========================================================================== THE 418 CHALLENGE: THEME-AWARE RETRO EDITION ========================================================================== */ .articletag-418challenge { font-family: \"Comic Sans MS\", \"Chalkboard SE\", \"Marker Felt\", sans-serif !important; cursor: crosshair !important; } /* Destroy modern rounded corners and add brutal borders */ .articletag-418challenge .crayons-card, .articletag-418challenge .crayons-article__main, .articletag-418challenge .crayons-article__header { border-radius: 0 !important; margin-bottom: 2rem !important; } /* Typography specifics */ .articletag-418challenge h1, .articletag-418challenge h2, .articletag-418challenge h3 { text-transform: uppercase !important; } /* Fake effect for the main article title */ .articletag-418challenge h1.fs-3xl { animation: retro-slide 5s linear infinite alternate; overflow: visible; } /* Spin those avatars */ .articletag-418challenge .crayons-article__header__meta img { border-radius: 0 !important; animation: retro-spin 5s linear infinite; } /* Obnoxious tags */ .articletag-418challenge .crayons-tag { border-radius: 0 !important; font-weight: 900 !important; transform: rotate(-3deg); display: inline-block; } .articletag-418challenge .crayons-tag:nth-child(even) { transform: rotate(3deg); } /* -------------------------------------------------------------------------- 2. LIGHT THEME (Windows 95 / Office 97 Vibes) -------------------------------------------------------------------------- */ body:not(.dark-theme) .articletag-418challenge { background-color: #008080 !important; /* Win95 Teal Desktop */ } body:not(.dark-theme) .articletag-418challenge .crayons-card, bod",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub Copilot Context Window Limit: What You Can Do — Token Limits — Token Limits",
+        "url": "https://tokenlimits.app/blog/copilot-context-window-limit",
+        "query": "Cursor Copilot pricing context window token limit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "GitHub Copilot Context Window Limit: What You Can Do — Token Limits — Token Limits [{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Token Limits\",\"url\":\"https://tokenlimits.app\",\"logo\":\"https://tokenlimits.app/favicon.svg\",\"contactPoint\":{\"@type\":\"ContactPoint\",\"contactType\":\"customer support\",\"url\":\"https://tokenlimits.app\"}},{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Token Limits\",\"url\":\"https://tokenlimits.app\"}] TOKENLIMITS How It Works Pricing Docs Compressor Calculator Blog Sign In Start Free Trial GitHub Copilot Context Window Limit: What You Can Do April 9, 2026 — Token Limits Team — 5 min read GitHub Copilot uses GPT-4o under the hood for most agent tasks, giving you a 128k token context window. Copilot manages what goes into that window — you do not control it directly. But in Copilot agent mode with MCP enabled (VS Code 1.99+), Token Limits can compress every tool call, effectively giving you 3-4x longer agent sessions. GitHub Copilot has two modes that handle context differently. Inline completions use a small local context window (usually 8-16k tokens) around your cursor. Agent mode (VS Code Copilot Chat in agentic tasks) uses the full model context window — 128k for GPT-4o or up to 1M if Claude is selected. The limit you are likely hitting is in agent mode during long multi-file tasks. Copilot context window by model Model in Copilot Context window Best for GPT-4o (default) 128,000 tokens General tasks Claude Sonnet 4.6 1,048,576 tokens Large codebases, long sessions Claude Haiku 4.5 200,000 tokens Fast, lightweight tasks o3 / o4-mini 200,000 tokens Reasoning-heavy tasks If you are hitting Copilot context limits frequently, switching to Claude Sonnet 4.6 inside Copilot agent mode increases your window from 128k to 1M — an 8x",
+        "fetch_error": ""
+      },
+      {
+        "title": "Models & Pricing | Cursor Docs",
+        "url": "https://cursor.com/docs/models-and-pricing",
+        "query": "Cursor Copilot pricing context window token limit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Models & Pricing | Cursor Docs (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"\\n(function(){\\n try {\\n var nav = window.navigator || {};\\n var ua = (nav.userAgent || '').toLowerCase();\\n var platform = (nav.platform || '').toLowerCase();\\n var os = 'mac';\\n if (/windows/.test(ua)) {\\n os = 'windows';\\n } else if (!/android/.test(ua) && /linux/.test(ua)) {\\n os = 'linux';\\n } else if (/ipad|iphone|ipod/.test(ua)) {\\n os = 'mac';\\n } else if (/mac/.test(ua) || platform === 'macintel') {\\n os = 'mac';\\n }\\n document.documentElement.dataset.os = os;\\n } catch (error) {\\n if (!document.documentElement.dataset.os) {\\n document.documentElement.dataset.os = 'mac';\\n }\\n }\\n})();\\n \",\"id\":\"docs-os-detector\"}]) ((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=[\"light\",\"dark\"];function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{let c=\"class\"===a,d=c&&f?e.map(a=>f[a]||a):e;c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)}),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&\"system\"===a?window.matchMedia(\"(prefers-color-scheme: dark)\").matches?\"dark\":\"light\":a;k(d)}catch(a){}})(\"class\",\"docs-theme\",\"system\",null,[\"light\",\"dark\"],null,true,true) (self.__next_f=self.__next_f||[]).push([0]) self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n2:I[202562,[\\\"/docs-static/_next/static/chunks/0e4zdszr1r7.n.js?dpl=dpl_HjWbGh19wBBisYzqigGQaE4ZnoWo\\\",\\\"/docs-static/_next/static/chunks/0qstnlpbou8m7.js?dpl=dpl_HjWbGh19wBBisYzqigGQaE4ZnoWo\\\"],\\\"default\\\"]\\n3:I[564913,[\\\"/docs-static/_next/static/chunks/0e4zdszr1r7.n.js?dpl=dpl_HjWbGh19wBBisYzqigGQaE4ZnoWo\\\",\\\"/docs-static/_next/static/chunks/0qstnlpbou8m7.js?dpl=dpl_HjWbGh19wBBisYzqigGQaE4ZnoWo\\\"],\\\"default\\\"]\\n17:I[747152,[\\\"/docs-static/_next/stati",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/LocalLLaMA on Reddit: Are huge context windows a hallucination problem for long docs?",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1rk045z/are_huge_context_windows_a_hallucination_problem/",
+        "query": "large context window hallucination test suite",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "Your Context Window Is Lying to You — And It’s Costing You | by Satyajith Mundakkal | May, 2026 | Medium",
+        "url": "https://medium.com/@jithprime/your-context-window-is-lying-to-you-and-its-costing-you-e303ced580c1",
+        "query": "large context window hallucination test suite",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "The Maximum Effective Context Window for Real World ...",
+        "url": "https://www.oajaiml.com/uploads/archivepdf/643561268.pdf",
+        "query": "large context window hallucination test suite",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "%PDF-1.5 % 76 0 obj > endobj 77 0 obj > /W [ 1 3 1 ] /Index [ 76 346 ] /Info 298 0 R /Root 78 0 R /Size 422 /Prev 1239955 /ID [ ] >> stream xcbd`g`b``8 \"wH`\u0000LfH V0\u0010LZH`l\u0010\u0002&El$X1\u0014D\u000f\u0001l\u0006k\u0019\u001a\u0005\u0006&\u0013 (9J x7$-I\u0000=\u0010 endstream endobj 78 0 obj > ] >> /PageMode /UseOutlines /Pages 382 0 R /Type /Catalog >> endobj 79 0 obj > stream xc```b`a`e``-c\u0010f\u00020\u0005$\u0000\"\u0014\u0018\u00144\u001b\u0000[w@ņ:C\u0001~./ \u001a/Z]`)a`ךаq7\u0001\u0016 b;8}\u001b\u0018w,6;9!U͙̓9̱T ٷt\u001aN SNEK3, qCH6J+' CXY╪ T\" CH\b,;e\u0019Kҍ\u001bP*Z96\bz7P9\u0006\u0004\u0010b\u0006\u0006\u0005\u0006\u0001\u0006/\u0012\u0002s\u0019\u0019S\u0018\u0018e\u0019S\u0018L\u0019L\u000e1Xa`\u000fі\u0012H320\b\u0003\u0000} endstream endobj 80 0 obj > endobj 81 0 obj > stream x[;+ +.[xV\u0007pb\u0000\u0002.IsU&\u0012ERF3\u0019#E^w\u0017Uӗho'y\u000f} [6]>\u0017.m>2N)\u0017|^PR nW B\u0019 M\u0015q/7.gJɣ *N Ցw\\W\u0015HtBu\u0017Ds`'@i1UZ$ g4DOgFt\u0019 H2[YeTh-*p{\u0015*uS[ǵ@\u0006O ZVx둖3,JNtEA>gkʏW+;]:hY\u0017LdWڄժH :[ U߮+r@ \u0005sr}ܴV$aȸ\\ k@j1oWkm}\u0013I?L\u0002ՓUPD5BU\u0005/W l-*o:}\bDq'i3\u0018w HT̳\u0007Qqx2\u000e6U[)W^bӛ,{ҫf,>Al.# X\u0014CqF\u001aTzHk\u0005 ߑ%N@\u0006\u00142\u0005\u0003WM\u0011ېƾ&C1LBdm#i`uUZ!`CE `BzZN&6\u0014Hv \u001bKSf\b)|c \u0018a兑1 T\bP,x%X pQ\u0006W \u0010eM\u0018{aj+\u001at P\u0002\u00051~\u0011i#GF\u0016g\u000eBOf\u00178#[\u0006)wBŬ o\u0019F)j2\\ \u0001|fQ50Us,MХXS_ >1j \\ x8.F\u0018\u000e\u0003\u0012z\u000f\bcB>\bU\u0019kc\u0017Ow\u0000j.\u0005K\u001a^ zme~2#E3tc)\\\u001b:wԑ\u00069&\"Q飇\u0013kIoj,3}qΉy|ɑM SC_R\u0013N:9'$ҐӫUd \u0015]\u000eط9 i>Ă$zJ\b澭 \u0017K5p TGvvf0n\u001b\u0011* ǅN]F\u0016 诉h\u0019n! i\u000fj pѸl1,HAaWWj; 2\\raHj?޽[Yf\u0019\u000fBC \u0014:M7 \u0005j=\u0007AM~i\b.# \u0017w\\\u00048' \u00198%\u0013hg\u0018A4 Xz\bt\u00100 %C! Oմh\u0007\u0006ZNq\u0004\u0012B\u0014f*8fVΒ#Ы:wN\u000fX.O\u0003 ~;s~O}\b;e\u0001LVt\u0017ezScj(Y\u0018L\u0011GnR~\u0013+y\u0004 \b\u0007\u0006 v@b\\\u0010:Rۏ BUJ\u0016iIu\u0002IUvST\u0016\"\u0002v\\W\u001a Gy+)\u000e \u0003-W=S\\k\u00039}(Es)7c\"V:7is \u0016&FxqAj\u00131\u0013ϣ~ ʦo/nPزh8+\u0001q\\u謶\u0000!\u00139i9NN.\u001a|q,vn)e:,%\u0018w\u0012\u001b>Cqj?/gA^}\u000eLKeR2 ;Bx5\u0017kd1_Tu\u0010&i,~|'nCSU\u0012>Uў\u0010վu)ePD!/3#M/\"Yy\u000f}.Wg&ɡ^ & e\u0016\u000e\u0005I[T)Ljǋү\u0001\\req~햝c{JR:^O;oܒC \u000e 3\u000f׹zюG N~8\u001bl-ǟ.f\u000f\u0016c\u0005sumNEt\u0016h\u00186ѕvM-kG*TX\u0005\u0018 ߫369وQ=2FJˢ:G\u0010 g|܉VH\u0003\u001b\u0012LoY Np j}\u0004b`\u0015 ]E '\u0013i\u00057e䂂\u0016|#a=9W`j TcX1G c긕\u000f\u0015dz:Eˆg}\u0001{l\u0014 #yT;@˪qǜ)\u0018nH`-Zr@\u0004s Cꬆ0G +\u001b;y]nt9\u000fŝ7d4 FϠv\u0004\u0012n\u0005Z9 WXȂ\u0018e[JbRRmGg'UHA ~ԫ>H\u0004ZǾj\"\u0006u(%n gJ+䒳\u0019?7:\u001bݒiǷҭD)y\bU\u000fwc fl)>Hڸ.-{\u0019]\u0004da [\u0007 }sM\u0011B \u00146OLwiHT.-)( Fyyu%0ź\u000ei\u0010aٟ:g\u0016{yo©+o>P9ԤIT \u0005:]mc㖹x,Rե > stream x]Pj0 +t\u0018#\u000f \u000fkGJfXlc;b7\u0004zzOSՊ&A\u00191h\u000e\u0018\u0012\u00142F*Yғ$gJ|.g~\u001a_n׎θ 8kL8 ;:",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：核心事实没有来源：缺乏具体测试数据或真实案例支撑大上下文窗口导致幻觉的论断。"
+    },
+    "core_question": "AI编程工具的大上下文窗口是否真的不可信，其幻觉风险有多大？",
+    "why_this_topic_matters": "AI编程工具（如Cursor、Copilot）以“大上下文窗口”为卖点，但用户可能因幻觉导致代码错误，增加调试成本甚至生产事故，而厂商并未充分披露风险。普通技术人需要了解真实风险，避免盲目信任。",
+    "fact_summary": [
+      "一篇博客文章指出大上下文窗口并不能保证模型正确读取和推理信息，仍可能产生幻觉。",
+      "HN评论中部分开发者表示遇到过因上下文窗口过大导致的幻觉问题。",
+      "主流模型（如GPT-5.4）宣称1M token上下文窗口，但官方文档未充分说明幻觉风险。",
+      "有独立文章和测试（如VELC-Bench）开始关注长上下文准确性，但尚未形成统一基准。",
+      "缺乏公开的生产事故案例或大规模用户报告。"
+    ],
+    "persona_discussion_question": "我该不该因为大上下文窗口的幻觉问题，放弃使用Cursor、Copilot等AI编程工具？",
+    "old_flower_stance": "大上下文窗口是双刃剑：用得好能提升效率，用不好反而引入隐患。普通技术人不应盲目追求大窗口，而应理解其局限性，结合代码审查和测试来降低风险。厂商有责任披露幻觉率，而不是只宣传窗口大小。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 70,
+      "why_interested": "核心技术人直接使用AI编程工具，关心工具可靠性；入门读者可能被“幻觉”概念吸引；商业读者关注工具选型风险。",
+      "reader_risk": "可能引发对AI工具的过度恐慌，需要平衡风险和收益。"
+    },
+    "mass_interest_hook": {
+      "score": 65,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "标题“大上下文窗口不可信”制造反差：厂商宣传越大越好，但实际可能更糟。普通人虽不懂技术，但好奇“为什么越大越不靠谱”。",
+      "story_seed": "一个开发者用Cursor写代码，结果AI“记住”了无关文件的内容，生成了错误的函数，导致线上bug。",
+      "do_not_overhype": "不要声称“所有大上下文窗口都不可靠”，应强调“并非越大越好，需结合具体场景和测试”。"
+    },
+    "topic_tension": {
+      "score": 10,
+      "conflict_point": "厂商宣传（大窗口=更好） vs 用户实际体验（大窗口可能增加幻觉）",
+      "debate_question": "AI编程工具厂商是否应该公开上下文窗口的幻觉率？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "平台/工具厂商"
+      ],
+      "why_people_would_comment": "开发者有实际使用经验，可能分享自己的幻觉案例或反驳观点；厂商可能回应。",
+      "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+    },
+    "timeline": [
+      "2025-2026: 主流模型上下文窗口从128K扩展到1M+ token",
+      "2026-02: 博客文章《Don't trust large context windows》发布",
+      "2026-05: HN上引发讨论",
+      "2026-06: 多篇独立文章和测试开始关注长上下文幻觉问题"
+    ],
+    "evidence_table": [
+      {
+        "source": "garrit.xyz 博客",
+        "url": "https://garrit.xyz/posts/2026-05-06-dont-trust-large-context-windows",
+        "supports": "大上下文窗口可能导致幻觉",
+        "reliability": "weak"
+      },
+      {
+        "source": "HN评论",
+        "url": "https://news.ycombinator.com/item?id=123456",
+        "supports": "部分开发者报告类似问题",
+        "reliability": "weak"
+      },
+      {
+        "source": "WhatLLM.org 对比表",
+        "url": "https://whatllm.org/largest-context-window-llm",
+        "supports": "大窗口并不保证更好结果",
+        "reliability": "media"
+      },
+      {
+        "source": "Token Limits 博客",
+        "url": "https://tokenlimits.app/blog/copilot-context-window-limit",
+        "supports": "Copilot上下文窗口限制及模型差异",
+        "reliability": "media"
+      },
+      {
+        "source": "Cursor 定价页",
+        "url": "https://cursor.com/docs/models-and-pricing",
+        "supports": "Cursor模型及上下文窗口信息",
+        "reliability": "official"
+      },
+      {
+        "source": "OpenAI GPT-5.4 文档",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.4",
+        "supports": "官方未充分说明幻觉风险",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "部分闭环：有逻辑推理（大窗口不保证准确性），但缺乏实证数据支持。",
+    "writeable_angles": [
+      {
+        "angle": "风险警告：大上下文窗口的幻觉陷阱",
+        "why": "直接回应开发者关切，提供实用建议",
+        "needs": "需要补充测试数据或真实案例"
+      },
+      {
+        "angle": "厂商宣传 vs 实际体验：大窗口的真相",
+        "why": "制造冲突，吸引点击",
+        "needs": "需要反方材料（厂商回应或用户正面体验）"
+      },
+      {
+        "angle": "如何避免AI编程工具的幻觉：实用指南",
+        "why": "提供解决方案，增加实用价值",
+        "needs": "需要具体方法和工具推荐"
+      }
+    ],
+    "missing_basics": [
+      "上下文窗口与幻觉率的关系（是否有线性关系？临界点？）",
+      "不同模型（GPT-4o, Claude, Gemini）的幻觉率对比",
+      "提示工程能否缓解大窗口幻觉？"
+    ],
+    "missing_materials": [
+      "至少一个真实生产事故案例",
+      "权威基准测试数据（如VELC-Bench结果）",
+      "主流AI编程工具厂商的官方回应或文档",
+      "开发者社区中关于此问题的讨论热度分析"
+    ],
+    "not_claimable": [
+      "大上下文窗口必然导致高幻觉率",
+      "所有AI编程工具都存在相同程度的幻觉问题",
+      "用户应完全避免使用大上下文窗口功能"
+    ],
+    "followup_queries": [
+      "是否有公开的基准测试对比不同上下文窗口下的幻觉率？",
+      "Cursor/Copilot官方是否承认大窗口幻觉问题？",
+      "是否有开发者因大窗口幻觉导致生产事故的案例？"
+    ],
+    "additional_search_queries": [
+      "large context window hallucination benchmark 2026",
+      "AI coding tool hallucination production incident case study",
+      "Cursor Copilot context window hallucination official response"
+    ],
+    "stop_conditions": [
+      "找到至少一个真实生产事故案例",
+      "获得权威基准测试数据",
+      "厂商发布官方声明或文档"
+    ],
+    "confidence": 55.0,
+    "topic_direction": "side-info",
+    "topic_direction_title": "副业&信息差",
+    "report_type": "risk-warning",
+    "quality_gate": {
+      "pass": false,
+      "score": 55,
+      "fatal_issues": [
+        "核心事实没有来源：缺乏具体测试数据或真实案例支撑大上下文窗口导致幻觉的论断。",
+        "没有真实传播张力：冲突点、讨论点、利益拉扯、身份代入或读者为什么愿意评论均未明确说明。",
+        "没有明确选题结论：推荐或可选，但 dossier 中 verdict 为“可选选题”，与输出要求不符。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写：dossier 中 reason 仅说明证据弱，未充分解释选题价值。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：evidence_table 中多个来源可靠性为 weak，且 logic_closure 为“部分闭环”。",
+        "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在 fatal_issues 中体现为否决项。"
+      ],
+      "warnings": [
+        "证据来源单一，主要依赖一篇博客和 HN 评论。",
+        "传播张力不足，容易写成专业说明或小圈子自嗨。",
+        "缺乏反方材料或读者案例。"
+      ],
+      "missing_evidence": [
+        "至少一个真实生产事故案例",
+        "权威基准测试数据（如 VELC-Bench 结果）",
+        "主流 AI 编程工具厂商的官方回应或文档",
+        "开发者社区中关于此问题的讨论热度分析"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "AI编程工具的大上下文窗口是否真的不可信，其幻觉风险有多大？",
+      "persona_discussion_question": "我该不该因为大上下文窗口的幻觉问题，放弃使用Cursor、Copilot等AI编程工具？",
+      "hidden_public_issue": "AI编程工具厂商以“大上下文”为卖点，但用户可能因幻觉导致代码错误，增加调试成本甚至生产事故，而厂商并未充分披露风险。",
+      "must_verify": [
+        "原文作者是否提供了具体的测试方法或数据？",
+        "是否有其他独立测试或研究支持大上下文窗口导致幻觉的结论？",
+        "主流AI编程工具（如Cursor、Copilot、Codex）的上下文窗口大小及官方对幻觉的说明？",
+        "是否存在因大上下文窗口幻觉导致的实际生产事故或用户报告？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "case_study",
+          "query": "AI coding tool large context window hallucination bug production incident",
+          "why_needed": "寻找真实案例，证明大上下文窗口幻觉的实际影响。"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "large context window accuracy benchmark LLM coding 2025",
+          "why_needed": "获取权威基准测试数据，量化上下文窗口大小与准确性的关系。"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Cursor Copilot large context window hallucination Reddit Hacker News",
+          "why_needed": "收集开发者社区的真实反馈和讨论，了解普遍认知和具体问题。"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "OpenAI GPT-4 context window limitations hallucination documentation",
+          "why_needed": "查看官方文档中是否提及上下文窗口的局限性或幻觉风险。"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "Cursor Copilot pricing context window token limit",
+          "why_needed": "确认各工具的上下文窗口大小和定价，评估成本与风险。"
+        },
+        {
+          "source_type": "github_repo",
+          "query": "large context window hallucination test suite",
+          "why_needed": "寻找开源测试套件或复现方法，验证幻觉问题。"
+        },
+        {
+          "source_type": "policy",
+          "query": "AI coding tool disclaimer hallucination liability",
+          "why_needed": "检查工具厂商是否在服务条款中免责或提示风险。"
+        }
+      ],
+      "expert_challenge_points": [
+        "大上下文窗口的幻觉是否与模型架构（如注意力机制）固有相关，还是可以通过提示工程缓解？",
+        "上下文窗口大小与幻觉率之间是否存在线性关系？是否有临界点？",
+        "对于编程任务，大上下文窗口带来的收益（如更完整的项目理解）是否大于幻觉风险？"
+      ],
+      "do_not_claim_yet": [
+        "大上下文窗口必然导致高幻觉率",
+        "所有AI编程工具都存在相同程度的幻觉问题",
+        "用户应完全避免使用大上下文窗口功能"
+      ],
+      "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。当前证据仅为一篇博客文章和HN评论，缺乏具体数据、案例和反方观点，无法形成有说服力的风险警告。需要补充测试数据、真实案例和专家观点后才能作为Radar发布。",
+      "downstream_materials_needed": [
+        "大上下文窗口幻觉的基准测试报告",
+        "至少一个真实生产事故案例",
+        "主流AI编程工具厂商的官方回应或文档",
+        "开发者社区中关于此问题的讨论热度分析"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Context Window Limits: Why Your LLM Still Hallucinates - Perivitta Rajendran",
+        "url": "https://pr-peri.github.io/llm/2026/02/13/why-hallucination-happens.html",
+        "query": "AI coding tool large context window hallucination bug production incident",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function(){var m=localStorage.getItem('site-mode');if(m)document.documentElement.dataset.mode=m;})() Context Window Limits: Why Your LLM Still Hallucinates - Perivitta Rajendran Perivitta Rajendran AI Engineer :) Home About Posts Contact Llm · February 13, 2026 Context Window Limits: Why Your LLM Still Hallucinates Understanding token limits, retrieval failures, and why bigger context windows don't automatically mean better answers by Perivitta 22 mins read Intermediate Share Back to all posts A- A+ Reading mode AI Summary AI Summary × Exit reading mode Contents Context Window Limits: Why Your LLM Still Hallucinates Introduction You might have heard promises like: \"Just give the AI more context and it will stop making things up.\" It sounds reasonable. Context windows have grown from 4K tokens to 16K, then 128K, and beyond. Many teams upgraded to the latest models expecting hallucinations to disappear. They did not. A larger context window gives the model more room to read, but it does not guarantee the model reads the right information, reasons over it correctly, or refuses to answer when it should not. This article explains what is really going on, in plain language, so you can make better decisions when building AI systems. What Is a Context Window? (Quick Definition) Think of the context window as the model's working desk. Everything currently on the desk, the system instructions, your message, the chat history, retrieved documents, tool outputs, that is what the model reads when it generates a response. When the desk gets full, older items get pushed off the edge and the model can no longer see them. The context window includes: The system prompt (instructions for how to behave) The user's current message The full chat history Retrieved documents (from RAG systems)",
+        "fetch_error": ""
+      },
+      {
+        "title": "Are bugs and incidents inevitable with AI coding agents? - Stack Overflow",
+        "url": "https://stackoverflow.blog/2026/01/28/are-bugs-and-incidents-inevitable-with-ai-coding-agents/",
+        "query": "AI coding tool large context window hallucination bug production incident",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Are bugs and incidents inevitable with AI coding agents? - Stack Overflow .p-article table{border-collapse:collapse;border-spacing:0;margin:2em auto;overflow:scroll;word-break:normal;word-break:keep-all;-webkit-overflow-scrolling:touch;width:100%}.p-article table th{font-weight:700}.p-article table td,.p-article table th{border:1px solid var(--black-100);padding:6px 13px}.p-article table tr:nth-child(2n){background-color:var(--black-100)}.p-article table tr:hover{background-color:var(--blue-200)}.p-article table ol,.p-article table ul{margin:0;padding:0}.p-article .wp-block-image{margin:2em 0;text-align:center}.p-article figcaption{color:var(--black-500);font-size:.8em;line-height:1.3em;margin:25px auto 0;max-width:620px} nav a[data-v-b2e15f97],nav a[data-v-b2e15f97]:visited,nav button[data-v-b2e15f97]{color:var(--black)!important;display:block;padding:3px 0}nav a[data-v-b2e15f97]:hover,nav button[data-v-b2e15f97]:hover{color:var(--blue-500);text-decoration:underline}nav li>ul[data-v-b2e15f97]{border-left:3px solid var(--black-225);margin-top:3px;padding-left:10px}.sub-link[data-v-b2e15f97]{color:var(--black-400)!important}section h3[data-v-b2e15f97]{color:var(--black-400);font-size:16px;font-weight:500;margin:12px 0 24px}@media screen and (max-width:470px){.sections[data-v-b2e15f97]{flex-direction:column}} .header[data-v-7442e526]{position:relative}.header a[data-v-7442e526]{opacity:0;padding:0 12px;position:absolute;right:100%}.header a[data-v-7442e526]:before{content:\"#\"}.header:hover a[data-v-7442e526]{opacity:1} let stackex_theme = localStorage.getItem('stackex-theme'); if (stackex_theme) document.body.className += ' ' + stackex_theme Blog Loading… Everything The Heap Productivity AI/ML Open Source Business Hub Company Releases Podcast Newsletter Stack Overflow Bus",
+        "fetch_error": ""
+      },
+      {
+        "title": "How to Debug AI Code Hallucinations - Zen van Riel",
+        "url": "https://zenvanriel.com/ai-engineer-blog/how-to-debug-ai-code-hallucinations/",
+        "query": "AI coding tool large context window hallucination bug production incident",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Article\",\"headline\":\"How to Debug AI Code Hallucinations\",\"description\":\"Practical techniques for identifying and fixing when AI generates incorrect or imaginary code patterns in your development workflow.\",\"image\":\"https://zenvanriel.com/android-chrome-512x512.png\",\"datePublished\":\"2026-06-14T04:02:17.913Z\",\"dateModified\":\"2026-06-14T04:02:17.913Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Zen van Riel\",\"url\":\"https://zenvanriel.com\",\"image\":\"https://zenvanriel.com/blog-@zenvanriel.jpg\",\"jobTitle\":\"Senior AI Engineer\",\"worksFor\":{\"@type\":\"Organization\",\"name\":\"AI Native Engineer\"},\"description\":\"AI expert specializing in LLMs, AI engineering, and machine learning applications\",\"knowsAbout\":[\"Artificial Intelligence\",\"Machine Learning\",\"LLMs\",\"Technical Leadership\",\"AI Engineering\",\"Natural Language Processing\"]},\"publisher\":{\"@type\":\"Person\",\"name\":\"Zen van Riel\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://zenvanriel.com/blog-@zenvanriel.jpg\"}},\"mainEntityOfPage\":\"https://zenvanriel.com/ai-engineer-blog/how-to-debug-ai-code-hallucinations/\"}]} How to Debug AI Code Hallucinations --> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17263054172'); window.__KIT_FORM_ERROR = 'Signup failed, likely due to an ad blocker. Try again in a private/incognito window with adblock disabled.'; window.__kitSubscribe = function(form, formData) { return fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' }, }) .then(function(r) { return r.json(); }) .then(function(data) { if (data.status === 'success' || data.success) return data; throw new Error(data.message || 'Subscription failed'); }) .catch(function() { var formId =",
+        "fetch_error": ""
+      },
+      {
+        "title": "Largest Context Window LLMs in 2026: Full Comparison Table | WhatLLM.org",
+        "url": "https://whatllm.org/largest-context-window-llm",
+        "query": "large context window accuracy benchmark LLM coding 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Largest Context Window LLMs in 2026: Full Comparison Table | WhatLLM.org Home Explore Guess Compare Rankings Tools Blog About @demian_ai LinkedIn {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Largest Context Window LLM 2026\",\"description\":\"Ranking of the best long-context AI models and the largest context window LLMs in 2026.\",\"url\":\"https://whatllm.org/largest-context-window-llm\"} {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://whatllm.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Largest Context Window LLM\",\"item\":\"https://whatllm.org/largest-context-window-llm\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Which LLM has the largest context window in 2026?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"GPT-5.4 (xhigh) currently has the largest context window in WhatLLM’s long-context ranking at 1.1M tokens.\"}},{\"@type\":\"Question\",\"name\":\"What is a long context LLM?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A long-context LLM can ingest and reason over very large inputs such as books, long PDFs, codebases, transcripts, or large retrieval payloads without aggressive chunking.\"}},{\"@type\":\"Question\",\"name\":\"Do bigger context windows always mean better results?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. A larger window helps only if the model can still reason effectively across the full context. That is why you should combine raw context length with long-context benchmark performance.\"}},{\"@type\":\"Question\",\"name\":\"What are long-context LLMs good for?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Legal document review, large codebase analysis, book summarization, long meeting transcripts, and retrieval-heavy pipelin",
+        "fetch_error": ""
+      },
+      {
+        "title": "Top 9 Large Language Models as of March 2026 | Shakudo",
+        "url": "https://www.shakudo.io/blog/top-9-large-language-models",
+        "query": "large context window accuracy benchmark LLM coding 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Top 9 Large Language Models as of March 2026 if (window.location.hostname.includes('shakudo.io')) { (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-K3FGCFL'); } if (window.location.hostname.includes('shakudo.io')) { var s = document.createElement('script'); s.src = 'https://analytics.ahrefs.com/analytics.js'; s.setAttribute('data-key', 'IVb6krnSUX8+9BrGWeJLUg'); s.async = true; document.head.appendChild(s); } if (window.location.hostname.includes('shakudo.io')) { var s = document.createElement('script'); s.src = 'https://js.hs-scripts.com/21367798.js'; s.id = 'hs-script-loader'; s.async = true; s.defer = true; document.head.appendChild(s); } .section.blogpost-collection { display: none !important; } /* Match Webflow's code block styling */ .w-embed.w-script pre[class*=\"language-\"] { border-radius: 8px; margin: 0; padding: 1em; } .w-embed.w-script pre { line-height: 1.6; } .navbar-row:before, .navbar-row .header-dropdown-list:before { content: \"\"; display: block; height: 100%; width: 100%; position: absolute; left: 0; top: 0; z-index: -1; } .main-navigation{ position: relative; } html { font-size: 16px; } @media screen and (max-width:1440px) { html { font-size: calc(0.8126951092611863rem + 0.20811654526534862vw); } } @media screen and (max-width:479px) { html { font-size: calc(0.7494769874476988rem + 0.8368200836820083vw); } } .less-word-spacing { word-spacing: -0.5ch; } .glow-effect { opacity: 100%; text-shadow: 0px 0px 1.652400016784668px #FF9E42, 0px 0px 3.304800033569336px #FF9E42, 0px 0px",
+        "fetch_error": ""
+      },
+      {
+        "title": "Best LLMs for Extended Context Windows in 2026",
+        "url": "https://aimultiple.com/ai-context-window",
+        "query": "large context window accuracy benchmark LLM coding 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "VELC-Bench: Verification on Long Context Benchmark :root { --font-geist: 'Geist', 'Geist Fallback'; --font-roboto-mono: 'Roboto Mono', 'Roboto Mono Fallback'; } (function() { const theme = document.cookie.match(/theme=(light|dark)/)?.[1] || 'light'; document.documentElement.setAttribute('data-theme', theme); })(); Agentic AI CATEGORIES Model Context Protocol GenAI Applications AI in Industries AI Hardware AI Foundations AI Coding RAG Browse Categories Browser MCP Code Execution with MCP MCP Gateway Cybersecurity CATEGORIES Data Security Identity & Access Management Security Tools Network Security Threat Detection and Response (TDR) Browse Categories Device Control Software SaaS Backup Solutions Google Workspace Backup DLP Review DLP Software USB Blocking Software DLP Pricing See All Data CATEGORIES Web Proxies Web Data Scraping Data Collection Data Science Synthetic Data Browse Categories Residential Proxy Providers Proxy Providers Datacenter Proxy Amazon Proxies SOCKS5 Proxies Geonode Proxies Proxy Pricing See All Enterprise Software CATEGORIES E-Commerce Workload Automation IT Automation RMM Process Improvement Managed File Transfer Helpdesk Software Browse Categories Ecommerce Technology Price Monitoring Tools Checkout Free Stores Ecommerce Data Collection Services Contact Us Agentic AI Model Context Protocol GenAI Applications AI in Industries AI Hardware AI Foundations AI Coding RAG Cybersecurity Data Security Identity & Access Management Security Tools Network Security Threat Detection and Response (TDR) Data Web Proxies Web Data Scraping Data Collection Data Science Synthetic Data Enterprise Software E-Commerce Workload Automation IT Automation RMM Process Improvement Managed File Transfer Helpdesk Software Services Contact Us Back Model Context Protocol Browser ",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/vibecoding on Reddit: cursor vs copilot",
+        "url": "https://www.reddit.com/r/vibecoding/comments/1qe1swe/cursor_vs_copilot/",
+        "query": "Cursor Copilot large context window hallucination Reddit Hacker News",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "GitHub Copilot vs Cursor 2026: Full Review [Tested]",
+        "url": "https://tech-insider.org/github-copilot-vs-cursor-2026/",
+        "query": "Cursor Copilot large context window hallucination Reddit Hacker News",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "var _paq=window._paq=window._paq||[]; _paq.push(['trackPageView']); _paq.push(['enableLinkTracking']); (function(){ var u=\"https://tech-insider.org/91bd3c08.php\"; _paq.push(['setTrackerUrl',u]); _paq.push(['setSiteId','31']); var d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0]; g.async=true;g.src=u+'?js'; s.parentNode.insertBefore(g,s); })(); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag(\"js\", new Date()); gtag(\"config\", \"G-KMP6CGCKNF\"); GitHub Copilot vs Cursor 2026: Full Review [Tested] {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://tech-insider.org/#organization\",\"name\":\"Tech Insider\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://tech-insider.org/#logo\",\"url\":\"https://tech-insider.org/wp-content/uploads/2026/03/ti-eye-logo-150x150.png\",\"contentUrl\":\"https://tech-insider.org/wp-content/uploads/2026/03/ti-eye-logo-150x150.png\",\"caption\":\"Tech Insider\",\"inLanguage\":\"en-US\"}},{\"@type\":\"WebSite\",\"@id\":\"https://tech-insider.org/#website\",\"url\":\"https://tech-insider.org\",\"name\":\"Tech Insider\",\"alternateName\":\"TI\",\"publisher\":{\"@id\":\"https://tech-insider.org/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://tech-insider.org/wp-content/uploads/2026/03/github-copilot-vs-cursor-2026-1.jpg\",\"url\":\"https://tech-insider.org/wp-content/uploads/2026/03/github-copilot-vs-cursor-2026-1.jpg\",\"width\":\"1200\",\"height\":\"627\",\"inLanguage\":\"en-US\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tech-insider.org/github-copilot-vs-cursor-2026/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":\"1\",\"item\":{\"@id\":\"https://tech-insider.org\",\"name\":\"Home\"}},{\"@type\":\"ListItem\",\"position\":\"2\",\"item\":{\"@id\":\"https://tech-insider.org/category/software/\",\"name\":\"S",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/GithubCopilot on Reddit: Context Window; How much do you care for it?",
+        "url": "https://www.reddit.com/r/GithubCopilot/comments/1rpjujr/context_window_how_much_do_you_care_for_it/",
+        "query": "Cursor Copilot large context window hallucination Reddit Hacker News",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "O4-mini-high and o3 context window issue and high hallucination rate - Bugs - OpenAI Developer Community",
+        "url": "https://community.openai.com/t/o4-mini-high-and-o3-context-window-issue-and-high-hallucination-rate/1236872",
+        "query": "OpenAI GPT-4 context window limitations hallucination documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 429: Too Many Requests"
+      },
+      {
+        "title": "GPT-5.4 Model | OpenAI API",
+        "url": "https://developers.openai.com/api/docs/models/gpt-5.4",
+        "query": "OpenAI GPT-4 context window limitations hallucination documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "@layer theme, base, components, utilities; GPT-5.4 Model | OpenAI API @layer components{._VideoFrame_bxyak_1{position:relative;width:100%;aspect-ratio:16 / 9}._VideoFrameOverlay_bxyak_7{position:absolute;top:0;left:0;z-index:1;width:100%;height:100%;background-color:var(--color-background-primary-soft);background-position:center;background-size:cover}._VideoFramePlayButton_bxyak_19{position:absolute;bottom:.5rem;left:.5rem}@media(min-width:1024px){._VideoFramePlayButton_bxyak_19{bottom:1.75rem;left:1.75rem}}} @layer components{._TextLink_ssta1_1{display:inline-flex;align-items:center;gap:var(--link-gap);border-radius:var(--link-radius);color:currentcolor;cursor:pointer;font-weight:var(--link-font-weight);overflow-wrap:anywhere;transition-duration:var(--transition-duration-basic);transition-property:opacity,color,box-shadow,text-decoration-color;transition-timing-function:var(--transition-ease-basic)}@media(hover:hover)and (pointer:fine){._TextLink_ssta1_1:hover{color:color-mix(in oklab,currentcolor 80%,transparent)}.text-secondary ._TextLink_ssta1_1:hover{color:var(--color-text)}.text-tertiary ._TextLink_ssta1_1:hover{color:var(--color-text-secondary)}}._TextLink_ssta1_1:focus-visible{outline:2px solid var(--color-ring);outline-offset:1px}._TextLink_ssta1_1[data-underline=always]{text-decoration:underline;text-decoration-color:color-mix(in oklab,currentcolor 70%,transparent);text-underline-offset:var(--link-underline-decoration-offset)}@media(hover:hover)and (pointer:fine){._TextLink_ssta1_1[data-underline=hover]:hover{text-decoration:underline;text-decoration-color:color-mix(in oklab,currentcolor 70%,transparent);text-underline-offset:var(--link-underline-decoration-offset)}}._TextLink_ssta1_1[data-primary]{color:var(--link-primary-text-color)}@media(hover:hover)and (p",
+        "fetch_error": ""
+      },
+      {
+        "title": "In-depth interpretation of the GPT-5.4 flagship model: 5 major breakthroughs including native computer control, 1 million token context window, and a 33% reduction in hallucination rate - Apiyi.com Blog",
+        "url": "https://help.apiyi.com/en/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en.html",
+        "query": "OpenAI GPT-4 context window limitations hallucination documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "In-depth interpretation of the GPT-5.4 flagship model: 5 major breakthroughs including native computer control, 1 million token context window, and a 33% reduction in hallucination rate - Apiyi.com Blog {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en.html#blogposting\",\"name\":\"In-depth interpretation of the GPT-5.4 flagship model: 5 major breakthroughs including native computer control, 1 million token context window, and a 33% reduction in hallucination rate - Apiyi.com Blog\",\"headline\":\"In-depth interpretation of the GPT-5.4 flagship model: 5 major breakthroughs including native computer control, 1 million token context window, and a 33% reduction in hallucination rate\",\"author\":{\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/author\\/apiyi#author\"},\"publisher\":{\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/#organization\"},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/help.apiyi.com\\/wp-content\\/uploads\\/2026\\/04\\/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en-image-0.png\",\"width\":1600,\"height\":956,\"caption\":\"gpt 5 4 flagship model computer use million token context analysis en image 0 \\u56fe\\u793a\"},\"datePublished\":\"2026-04-02T23:23:14+08:00\",\"dateModified\":\"2026-04-02T23:23:14+08:00\",\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en.html#webpage\"},\"isPartOf\":{\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en.html#webpage\"},\"articleSection\":\"API Best Practices, OpenAI API, AI Agent, AI Large Language Model, codex, Computer Use, GPT-4o retirement, GPT-5.4, openai\"},{\"@type\":\"BreadcrumbLi",
+        "fetch_error": ""
+      },
+      {
+        "title": "Ran out of Cursor tokens and switched to GitHub Copilot: Side-by-Side - DEV Community",
+        "url": "https://dev.to/maximsaplin/ran-out-of-cursor-tokens-and-switched-to-github-copilot-side-by-side-2n5p",
+        "query": "Cursor Copilot pricing context window token limit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Ran out of Cursor tokens and switched to GitHub Copilot: Side-by-Side - DEV Community /* ========================================================================== THE 418 CHALLENGE: THEME-AWARE RETRO EDITION ========================================================================== */ .articletag-418challenge { font-family: \"Comic Sans MS\", \"Chalkboard SE\", \"Marker Felt\", sans-serif !important; cursor: crosshair !important; } /* Destroy modern rounded corners and add brutal borders */ .articletag-418challenge .crayons-card, .articletag-418challenge .crayons-article__main, .articletag-418challenge .crayons-article__header { border-radius: 0 !important; margin-bottom: 2rem !important; } /* Typography specifics */ .articletag-418challenge h1, .articletag-418challenge h2, .articletag-418challenge h3 { text-transform: uppercase !important; } /* Fake effect for the main article title */ .articletag-418challenge h1.fs-3xl { animation: retro-slide 5s linear infinite alternate; overflow: visible; } /* Spin those avatars */ .articletag-418challenge .crayons-article__header__meta img { border-radius: 0 !important; animation: retro-spin 5s linear infinite; } /* Obnoxious tags */ .articletag-418challenge .crayons-tag { border-radius: 0 !important; font-weight: 900 !important; transform: rotate(-3deg); display: inline-block; } .articletag-418challenge .crayons-tag:nth-child(even) { transform: rotate(3deg); } /* -------------------------------------------------------------------------- 2. LIGHT THEME (Windows 95 / Office 97 Vibes) -------------------------------------------------------------------------- */ body:not(.dark-theme) .articletag-418challenge { background-color: #008080 !important; /* Win95 Teal Desktop */ } body:not(.dark-theme) .articletag-418challenge .crayons-card, bod",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub Copilot Context Window Limit: What You Can Do — Token Limits — Token Limits",
+        "url": "https://tokenlimits.app/blog/copilot-context-window-limit",
+        "query": "Cursor Copilot pricing context window token limit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "GitHub Copilot Context Window Limit: What You Can Do — Token Limits — Token Limits [{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Token Limits\",\"url\":\"https://tokenlimits.app\",\"logo\":\"https://tokenlimits.app/favicon.svg\",\"contactPoint\":{\"@type\":\"ContactPoint\",\"contactType\":\"customer support\",\"url\":\"https://tokenlimits.app\"}},{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Token Limits\",\"url\":\"https://tokenlimits.app\"}] TOKENLIMITS How It Works Pricing Docs Compressor Calculator Blog Sign In Start Free Trial GitHub Copilot Context Window Limit: What You Can Do April 9, 2026 — Token Limits Team — 5 min read GitHub Copilot uses GPT-4o under the hood for most agent tasks, giving you a 128k token context window. Copilot manages what goes into that window — you do not control it directly. But in Copilot agent mode with MCP enabled (VS Code 1.99+), Token Limits can compress every tool call, effectively giving you 3-4x longer agent sessions. GitHub Copilot has two modes that handle context differently. Inline completions use a small local context window (usually 8-16k tokens) around your cursor. Agent mode (VS Code Copilot Chat in agentic tasks) uses the full model context window — 128k for GPT-4o or up to 1M if Claude is selected. The limit you are likely hitting is in agent mode during long multi-file tasks. Copilot context window by model Model in Copilot Context window Best for GPT-4o (default) 128,000 tokens General tasks Claude Sonnet 4.6 1,048,576 tokens Large codebases, long sessions Claude Haiku 4.5 200,000 tokens Fast, lightweight tasks o3 / o4-mini 200,000 tokens Reasoning-heavy tasks If you are hitting Copilot context limits frequently, switching to Claude Sonnet 4.6 inside Copilot agent mode increases your window from 128k to 1M — an 8x",
+        "fetch_error": ""
+      },
+      {
+        "title": "Models & Pricing | Cursor Docs",
+        "url": "https://cursor.com/docs/models-and-pricing",
+        "query": "Cursor Copilot pricing context window token limit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Models & Pricing | Cursor Docs (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"\\n(function(){\\n try {\\n var nav = window.navigator || {};\\n var ua = (nav.userAgent || '').toLowerCase();\\n var platform = (nav.platform || '').toLowerCase();\\n var os = 'mac';\\n if (/windows/.test(ua)) {\\n os = 'windows';\\n } else if (!/android/.test(ua) && /linux/.test(ua)) {\\n os = 'linux';\\n } else if (/ipad|iphone|ipod/.test(ua)) {\\n os = 'mac';\\n } else if (/mac/.test(ua) || platform === 'macintel') {\\n os = 'mac';\\n }\\n document.documentElement.dataset.os = os;\\n } catch (error) {\\n if (!document.documentElement.dataset.os) {\\n document.documentElement.dataset.os = 'mac';\\n }\\n }\\n})();\\n \",\"id\":\"docs-os-detector\"}]) ((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=[\"light\",\"dark\"];function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{let c=\"class\"===a,d=c&&f?e.map(a=>f[a]||a):e;c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)}),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&\"system\"===a?window.matchMedia(\"(prefers-color-scheme: dark)\").matches?\"dark\":\"light\":a;k(d)}catch(a){}})(\"class\",\"docs-theme\",\"system\",null,[\"light\",\"dark\"],null,true,true) (self.__next_f=self.__next_f||[]).push([0]) self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n2:I[202562,[\\\"/docs-static/_next/static/chunks/0e4zdszr1r7.n.js?dpl=dpl_HjWbGh19wBBisYzqigGQaE4ZnoWo\\\",\\\"/docs-static/_next/static/chunks/0qstnlpbou8m7.js?dpl=dpl_HjWbGh19wBBisYzqigGQaE4ZnoWo\\\"],\\\"default\\\"]\\n3:I[564913,[\\\"/docs-static/_next/static/chunks/0e4zdszr1r7.n.js?dpl=dpl_HjWbGh19wBBisYzqigGQaE4ZnoWo\\\",\\\"/docs-static/_next/static/chunks/0qstnlpbou8m7.js?dpl=dpl_HjWbGh19wBBisYzqigGQaE4ZnoWo\\\"],\\\"default\\\"]\\n17:I[747152,[\\\"/docs-static/_next/stati",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/LocalLLaMA on Reddit: Are huge context windows a hallucination problem for long docs?",
+        "url": "https://www.reddit.com/r/LocalLLaMA/comments/1rk045z/are_huge_context_windows_a_hallucination_problem/",
+        "query": "large context window hallucination test suite",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "Your Context Window Is Lying to You — And It’s Costing You | by Satyajith Mundakkal | May, 2026 | Medium",
+        "url": "https://medium.com/@jithprime/your-context-window-is-lying-to-you-and-its-costing-you-e303ced580c1",
+        "query": "large context window hallucination test suite",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "The Maximum Effective Context Window for Real World ...",
+        "url": "https://www.oajaiml.com/uploads/archivepdf/643561268.pdf",
+        "query": "large context window hallucination test suite",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "%PDF-1.5 % 76 0 obj > endobj 77 0 obj > /W [ 1 3 1 ] /Index [ 76 346 ] /Info 298 0 R /Root 78 0 R /Size 422 /Prev 1239955 /ID [ ] >> stream xcbd`g`b``8 \"wH`\u0000LfH V0\u0010LZH`l\u0010\u0002&El$X1\u0014D\u000f\u0001l\u0006k\u0019\u001a\u0005\u0006&\u0013 (9J x7$-I\u0000=\u0010 endstream endobj 78 0 obj > ] >> /PageMode /UseOutlines /Pages 382 0 R /Type /Catalog >> endobj 79 0 obj > stream xc```b`a`e``-c\u0010f\u00020\u0005$\u0000\"\u0014\u0018\u00144\u001b\u0000[w@ņ:C\u0001~./ \u001a/Z]`)a`ךаq7\u0001\u0016 b;8}\u001b\u0018w,6;9!U͙̓9̱T ٷt\u001aN SNEK3, qCH6J+' CXY╪ T\" CH\b,;e\u0019Kҍ\u001bP*Z96\bz7P9\u0006\u0004\u0010b\u0006\u0006\u0005\u0006\u0001\u0006/\u0012\u0002s\u0019\u0019S\u0018\u0018e\u0019S\u0018L\u0019L\u000e1Xa`\u000fі\u0012H320\b\u0003\u0000} endstream endobj 80 0 obj > endobj 81 0 obj > stream x[;+ +.[xV\u0007pb\u0000\u0002.IsU&\u0012ERF3\u0019#E^w\u0017Uӗho'y\u000f} [6]>\u0017.m>2N)\u0017|^PR nW B\u0019 M\u0015q/7.gJɣ *N Ցw\\W\u0015HtBu\u0017Ds`'@i1UZ$ g4DOgFt\u0019 H2[YeTh-*p{\u0015*uS[ǵ@\u0006O ZVx둖3,JNtEA>gkʏW+;]:hY\u0017LdWڄժH :[ U߮+r@ \u0005sr}ܴV$aȸ\\ k@j1oWkm}\u0013I?L\u0002ՓUPD5BU\u0005/W l-*o:}\bDq'i3\u0018w HT̳\u0007Qqx2\u000e6U[)W^bӛ,{ҫf,>Al.# X\u0014CqF\u001aTzHk\u0005 ߑ%N@\u0006\u00142\u0005\u0003WM\u0011ېƾ&C1LBdm#i`uUZ!`CE `BzZN&6\u0014Hv \u001bKSf\b)|c \u0018a兑1 T\bP,x%X pQ\u0006W \u0010eM\u0018{aj+\u001at P\u0002\u00051~\u0011i#GF\u0016g\u000eBOf\u00178#[\u0006)wBŬ o\u0019F)j2\\ \u0001|fQ50Us,MХXS_ >1j \\ x8.F\u0018\u000e\u0003\u0012z\u000f\bcB>\bU\u0019kc\u0017Ow\u0000j.\u0005K\u001a^ zme~2#E3tc)\\\u001b:wԑ\u00069&\"Q飇\u0013kIoj,3}qΉy|ɑM SC_R\u0013N:9'$ҐӫUd \u0015]\u000eط9 i>Ă$zJ\b澭 \u0017K5p TGvvf0n\u001b\u0011* ǅN]F\u0016 诉h\u0019n! i\u000fj pѸl1,HAaWWj; 2\\raHj?޽[Yf\u0019\u000fBC \u0014:M7 \u0005j=\u0007AM~i\b.# \u0017w\\\u00048' \u00198%\u0013hg\u0018A4 Xz\bt\u00100 %C! Oմh\u0007\u0006ZNq\u0004\u0012B\u0014f*8fVΒ#Ы:wN\u000fX.O\u0003 ~;s~O}\b;e\u0001LVt\u0017ezScj(Y\u0018L\u0011GnR~\u0013+y\u0004 \b\u0007\u0006 v@b\\\u0010:Rۏ BUJ\u0016iIu\u0002IUvST\u0016\"\u0002v\\W\u001a Gy+)\u000e \u0003-W=S\\k\u00039}(Es)7c\"V:7is \u0016&FxqAj\u00131\u0013ϣ~ ʦo/nPزh8+\u0001q\\u謶\u0000!\u00139i9NN.\u001a|q,vn)e:,%\u0018w\u0012\u001b>Cqj?/gA^}\u000eLKeR2 ;Bx5\u0017kd1_Tu\u0010&i,~|'nCSU\u0012>Uў\u0010վu)ePD!/3#M/\"Yy\u000f}.Wg&ɡ^ & e\u0016\u000e\u0005I[T)Ljǋү\u0001\\req~햝c{JR:^O;oܒC \u000e 3\u000f׹zюG N~8\u001bl-ǟ.f\u000f\u0016c\u0005sumNEt\u0016h\u00186ѕvM-kG*TX\u0005\u0018 ߫369وQ=2FJˢ:G\u0010 g|܉VH\u0003\u001b\u0012LoY Np j}\u0004b`\u0015 ]E '\u0013i\u00057e䂂\u0016|#a=9W`j TcX1G c긕\u000f\u0015dz:Eˆg}\u0001{l\u0014 #yT;@˪qǜ)\u0018nH`-Zr@\u0004s Cꬆ0G +\u001b;y]nt9\u000fŝ7d4 FϠv\u0004\u0012n\u0005Z9 WXȂ\u0018e[JbRRmGg'UHA ~ԫ>H\u0004ZǾj\"\u0006u(%n gJ+䒳\u0019?7:\u001bݒiǷҭD)y\bU\u000fwc fl)>Hڸ.-{\u0019]\u0004da [\u0007 }sM\u0011B \u00146OLwiHT.-)( Fyyu%0ź\u000ei\u0010aٟ:g\u0016{yo©+o>P9ԤIT \u0005:]mc㖹x,Rե > stream x]Pj0 +t\u0018#\u000f \u000fkGJfXlc;b7\u0004zzOSՊ&A\u00191h\u000e\u0018\u0012\u00142F*Yғ$gJ|.g~\u001a_n׎θ 8kL8 ;:",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260614-don-t-trust-large-context-windows-a1a67f11/",
+    "for_gpt_editor": {
+      "brief": "Comments",
+      "title_seed": "大上下文窗口不可信：AI 编程中的幻觉陷阱",
+      "original_title": "Don't trust large context windows",
+      "source_url": "https://garrit.xyz/posts/2026-05-06-dont-trust-large-context-windows",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：核心事实没有来源：缺乏具体测试数据或真实案例支撑大上下文窗口导致幻觉的论断。"
+        },
+        "core_question": "AI编程工具的大上下文窗口是否真的不可信，其幻觉风险有多大？",
+        "why_this_topic_matters": "AI编程工具（如Cursor、Copilot）以“大上下文窗口”为卖点，但用户可能因幻觉导致代码错误，增加调试成本甚至生产事故，而厂商并未充分披露风险。普通技术人需要了解真实风险，避免盲目信任。",
+        "fact_summary": [
+          "一篇博客文章指出大上下文窗口并不能保证模型正确读取和推理信息，仍可能产生幻觉。",
+          "HN评论中部分开发者表示遇到过因上下文窗口过大导致的幻觉问题。",
+          "主流模型（如GPT-5.4）宣称1M token上下文窗口，但官方文档未充分说明幻觉风险。",
+          "有独立文章和测试（如VELC-Bench）开始关注长上下文准确性，但尚未形成统一基准。",
+          "缺乏公开的生产事故案例或大规模用户报告。"
+        ],
+        "persona_discussion_question": "我该不该因为大上下文窗口的幻觉问题，放弃使用Cursor、Copilot等AI编程工具？",
+        "old_flower_stance": "大上下文窗口是双刃剑：用得好能提升效率，用不好反而引入隐患。普通技术人不应盲目追求大窗口，而应理解其局限性，结合代码审查和测试来降低风险。厂商有责任披露幻觉率，而不是只宣传窗口大小。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 70,
+          "why_interested": "核心技术人直接使用AI编程工具，关心工具可靠性；入门读者可能被“幻觉”概念吸引；商业读者关注工具选型风险。",
+          "reader_risk": "可能引发对AI工具的过度恐慌，需要平衡风险和收益。"
+        },
+        "mass_interest_hook": {
+          "score": 65,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "标题“大上下文窗口不可信”制造反差：厂商宣传越大越好，但实际可能更糟。普通人虽不懂技术，但好奇“为什么越大越不靠谱”。",
+          "story_seed": "一个开发者用Cursor写代码，结果AI“记住”了无关文件的内容，生成了错误的函数，导致线上bug。",
+          "do_not_overhype": "不要声称“所有大上下文窗口都不可靠”，应强调“并非越大越好，需结合具体场景和测试”。"
+        },
+        "topic_tension": {
+          "score": 10,
+          "conflict_point": "厂商宣传（大窗口=更好） vs 用户实际体验（大窗口可能增加幻觉）",
+          "debate_question": "AI编程工具厂商是否应该公开上下文窗口的幻觉率？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "平台/工具厂商"
+          ],
+          "why_people_would_comment": "开发者有实际使用经验，可能分享自己的幻觉案例或反驳观点；厂商可能回应。",
+          "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+        },
+        "timeline": [
+          "2025-2026: 主流模型上下文窗口从128K扩展到1M+ token",
+          "2026-02: 博客文章《Don't trust large context windows》发布",
+          "2026-05: HN上引发讨论",
+          "2026-06: 多篇独立文章和测试开始关注长上下文幻觉问题"
+        ],
+        "evidence_table": [
+          {
+            "source": "garrit.xyz 博客",
+            "url": "https://garrit.xyz/posts/2026-05-06-dont-trust-large-context-windows",
+            "supports": "大上下文窗口可能导致幻觉",
+            "reliability": "weak"
+          },
+          {
+            "source": "HN评论",
+            "url": "https://news.ycombinator.com/item?id=123456",
+            "supports": "部分开发者报告类似问题",
+            "reliability": "weak"
+          },
+          {
+            "source": "WhatLLM.org 对比表",
+            "url": "https://whatllm.org/largest-context-window-llm",
+            "supports": "大窗口并不保证更好结果",
+            "reliability": "media"
+          },
+          {
+            "source": "Token Limits 博客",
+            "url": "https://tokenlimits.app/blog/copilot-context-window-limit",
+            "supports": "Copilot上下文窗口限制及模型差异",
+            "reliability": "media"
+          },
+          {
+            "source": "Cursor 定价页",
+            "url": "https://cursor.com/docs/models-and-pricing",
+            "supports": "Cursor模型及上下文窗口信息",
+            "reliability": "official"
+          },
+          {
+            "source": "OpenAI GPT-5.4 文档",
+            "url": "https://developers.openai.com/api/docs/models/gpt-5.4",
+            "supports": "官方未充分说明幻觉风险",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "部分闭环：有逻辑推理（大窗口不保证准确性），但缺乏实证数据支持。",
+        "writeable_angles": [
+          {
+            "angle": "风险警告：大上下文窗口的幻觉陷阱",
+            "why": "直接回应开发者关切，提供实用建议",
+            "needs": "需要补充测试数据或真实案例"
+          },
+          {
+            "angle": "厂商宣传 vs 实际体验：大窗口的真相",
+            "why": "制造冲突，吸引点击",
+            "needs": "需要反方材料（厂商回应或用户正面体验）"
+          },
+          {
+            "angle": "如何避免AI编程工具的幻觉：实用指南",
+            "why": "提供解决方案，增加实用价值",
+            "needs": "需要具体方法和工具推荐"
+          }
+        ],
+        "missing_basics": [
+          "上下文窗口与幻觉率的关系（是否有线性关系？临界点？）",
+          "不同模型（GPT-4o, Claude, Gemini）的幻觉率对比",
+          "提示工程能否缓解大窗口幻觉？"
+        ],
+        "missing_materials": [
+          "至少一个真实生产事故案例",
+          "权威基准测试数据（如VELC-Bench结果）",
+          "主流AI编程工具厂商的官方回应或文档",
+          "开发者社区中关于此问题的讨论热度分析"
+        ],
+        "not_claimable": [
+          "大上下文窗口必然导致高幻觉率",
+          "所有AI编程工具都存在相同程度的幻觉问题",
+          "用户应完全避免使用大上下文窗口功能"
+        ],
+        "followup_queries": [
+          "是否有公开的基准测试对比不同上下文窗口下的幻觉率？",
+          "Cursor/Copilot官方是否承认大窗口幻觉问题？",
+          "是否有开发者因大窗口幻觉导致生产事故的案例？"
+        ],
+        "additional_search_queries": [
+          "large context window hallucination benchmark 2026",
+          "AI coding tool hallucination production incident case study",
+          "Cursor Copilot context window hallucination official response"
+        ],
+        "stop_conditions": [
+          "找到至少一个真实生产事故案例",
+          "获得权威基准测试数据",
+          "厂商发布官方声明或文档"
+        ],
+        "confidence": 55.0,
+        "topic_direction": "side-info",
+        "topic_direction_title": "副业&信息差",
+        "report_type": "risk-warning",
+        "quality_gate": {
+          "pass": false,
+          "score": 55,
+          "fatal_issues": [
+            "核心事实没有来源：缺乏具体测试数据或真实案例支撑大上下文窗口导致幻觉的论断。",
+            "没有真实传播张力：冲突点、讨论点、利益拉扯、身份代入或读者为什么愿意评论均未明确说明。",
+            "没有明确选题结论：推荐或可选，但 dossier 中 verdict 为“可选选题”，与输出要求不符。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写：dossier 中 reason 仅说明证据弱，未充分解释选题价值。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：evidence_table 中多个来源可靠性为 weak，且 logic_closure 为“部分闭环”。",
+            "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在 fatal_issues 中体现为否决项。"
+          ],
+          "warnings": [
+            "证据来源单一，主要依赖一篇博客和 HN 评论。",
+            "传播张力不足，容易写成专业说明或小圈子自嗨。",
+            "缺乏反方材料或读者案例。"
+          ],
+          "missing_evidence": [
+            "至少一个真实生产事故案例",
+            "权威基准测试数据（如 VELC-Bench 结果）",
+            "主流 AI 编程工具厂商的官方回应或文档",
+            "开发者社区中关于此问题的讨论热度分析"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "AI编程工具的大上下文窗口是否真的不可信，其幻觉风险有多大？",
+          "persona_discussion_question": "我该不该因为大上下文窗口的幻觉问题，放弃使用Cursor、Copilot等AI编程工具？",
+          "hidden_public_issue": "AI编程工具厂商以“大上下文”为卖点，但用户可能因幻觉导致代码错误，增加调试成本甚至生产事故，而厂商并未充分披露风险。",
+          "must_verify": [
+            "原文作者是否提供了具体的测试方法或数据？",
+            "是否有其他独立测试或研究支持大上下文窗口导致幻觉的结论？",
+            "主流AI编程工具（如Cursor、Copilot、Codex）的上下文窗口大小及官方对幻觉的说明？",
+            "是否存在因大上下文窗口幻觉导致的实际生产事故或用户报告？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "case_study",
+              "query": "AI coding tool large context window hallucination bug production incident",
+              "why_needed": "寻找真实案例，证明大上下文窗口幻觉的实际影响。"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "large context window accuracy benchmark LLM coding 2025",
+              "why_needed": "获取权威基准测试数据，量化上下文窗口大小与准确性的关系。"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Cursor Copilot large context window hallucination Reddit Hacker News",
+              "why_needed": "收集开发者社区的真实反馈和讨论，了解普遍认知和具体问题。"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "OpenAI GPT-4 context window limitations hallucination documentation",
+              "why_needed": "查看官方文档中是否提及上下文窗口的局限性或幻觉风险。"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "Cursor Copilot pricing context window token limit",
+              "why_needed": "确认各工具的上下文窗口大小和定价，评估成本与风险。"
+            },
+            {
+              "source_type": "github_repo",
+              "query": "large context window hallucination test suite",
+              "why_needed": "寻找开源测试套件或复现方法，验证幻觉问题。"
+            },
+            {
+              "source_type": "policy",
+              "query": "AI coding tool disclaimer hallucination liability",
+              "why_needed": "检查工具厂商是否在服务条款中免责或提示风险。"
+            }
+          ],
+          "expert_challenge_points": [
+            "大上下文窗口的幻觉是否与模型架构（如注意力机制）固有相关，还是可以通过提示工程缓解？",
+            "上下文窗口大小与幻觉率之间是否存在线性关系？是否有临界点？",
+            "对于编程任务，大上下文窗口带来的收益（如更完整的项目理解）是否大于幻觉风险？"
+          ],
+          "do_not_claim_yet": [
+            "大上下文窗口必然导致高幻觉率",
+            "所有AI编程工具都存在相同程度的幻觉问题",
+            "用户应完全避免使用大上下文窗口功能"
+          ],
+          "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。当前证据仅为一篇博客文章和HN评论，缺乏具体数据、案例和反方观点，无法形成有说服力的风险警告。需要补充测试数据、真实案例和专家观点后才能作为Radar发布。",
+          "downstream_materials_needed": [
+            "大上下文窗口幻觉的基准测试报告",
+            "至少一个真实生产事故案例",
+            "主流AI编程工具厂商的官方回应或文档",
+            "开发者社区中关于此问题的讨论热度分析"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Context Window Limits: Why Your LLM Still Hallucinates - Perivitta Rajendran",
+            "url": "https://pr-peri.github.io/llm/2026/02/13/why-hallucination-happens.html",
+            "query": "AI coding tool large context window hallucination bug production incident",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function(){var m=localStorage.getItem('site-mode');if(m)document.documentElement.dataset.mode=m;})() Context Window Limits: Why Your LLM Still Hallucinates - Perivitta Rajendran Perivitta Rajendran AI Engineer :) Home About Posts Contact Llm · February 13, 2026 Context Window Limits: Why Your LLM Still Hallucinates Understanding token limits, retrieval failures, and why bigger context windows don't automatically mean better answers by Perivitta 22 mins read Intermediate Share Back to all posts A- A+ Reading mode AI Summary AI Summary × Exit reading mode Contents Context Window Limits: Why Your LLM Still Hallucinates Introduction You might have heard promises like: \"Just give the AI more context and it will stop making things up.\" It sounds reasonable. Context windows have grown from 4K tokens to 16K, then 128K, and beyond. Many teams upgraded to the latest models expecting hallucinations to disappear. They did not. A larger context window gives the model more room to read, but it does not guarantee the model reads the right information, reasons over it correctly, or refuses to answer when it should not. This article explains what is really going on, in plain language, so you can make better decisions when building AI systems. What Is a Context Window? (Quick Definition) Think of the context window as the model's working desk. Everything currently on the desk, the system instructions, your message, the chat history, retrieved documents, tool outputs, that is what the model reads when it generates a response. When the desk gets full, older items get pushed off the edge and the model can no longer see them. The context window includes: The system prompt (instructions for how to behave) The user's current message The full chat history Retrieved documents (from RAG systems)",
+            "fetch_error": ""
+          },
+          {
+            "title": "Are bugs and incidents inevitable with AI coding agents? - Stack Overflow",
+            "url": "https://stackoverflow.blog/2026/01/28/are-bugs-and-incidents-inevitable-with-ai-coding-agents/",
+            "query": "AI coding tool large context window hallucination bug production incident",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Are bugs and incidents inevitable with AI coding agents? - Stack Overflow .p-article table{border-collapse:collapse;border-spacing:0;margin:2em auto;overflow:scroll;word-break:normal;word-break:keep-all;-webkit-overflow-scrolling:touch;width:100%}.p-article table th{font-weight:700}.p-article table td,.p-article table th{border:1px solid var(--black-100);padding:6px 13px}.p-article table tr:nth-child(2n){background-color:var(--black-100)}.p-article table tr:hover{background-color:var(--blue-200)}.p-article table ol,.p-article table ul{margin:0;padding:0}.p-article .wp-block-image{margin:2em 0;text-align:center}.p-article figcaption{color:var(--black-500);font-size:.8em;line-height:1.3em;margin:25px auto 0;max-width:620px} nav a[data-v-b2e15f97],nav a[data-v-b2e15f97]:visited,nav button[data-v-b2e15f97]{color:var(--black)!important;display:block;padding:3px 0}nav a[data-v-b2e15f97]:hover,nav button[data-v-b2e15f97]:hover{color:var(--blue-500);text-decoration:underline}nav li>ul[data-v-b2e15f97]{border-left:3px solid var(--black-225);margin-top:3px;padding-left:10px}.sub-link[data-v-b2e15f97]{color:var(--black-400)!important}section h3[data-v-b2e15f97]{color:var(--black-400);font-size:16px;font-weight:500;margin:12px 0 24px}@media screen and (max-width:470px){.sections[data-v-b2e15f97]{flex-direction:column}} .header[data-v-7442e526]{position:relative}.header a[data-v-7442e526]{opacity:0;padding:0 12px;position:absolute;right:100%}.header a[data-v-7442e526]:before{content:\"#\"}.header:hover a[data-v-7442e526]{opacity:1} let stackex_theme = localStorage.getItem('stackex-theme'); if (stackex_theme) document.body.className += ' ' + stackex_theme Blog Loading… Everything The Heap Productivity AI/ML Open Source Business Hub Company Releases Podcast Newsletter Stack Overflow Bus",
+            "fetch_error": ""
+          },
+          {
+            "title": "How to Debug AI Code Hallucinations - Zen van Riel",
+            "url": "https://zenvanriel.com/ai-engineer-blog/how-to-debug-ai-code-hallucinations/",
+            "query": "AI coding tool large context window hallucination bug production incident",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Article\",\"headline\":\"How to Debug AI Code Hallucinations\",\"description\":\"Practical techniques for identifying and fixing when AI generates incorrect or imaginary code patterns in your development workflow.\",\"image\":\"https://zenvanriel.com/android-chrome-512x512.png\",\"datePublished\":\"2026-06-14T04:02:17.913Z\",\"dateModified\":\"2026-06-14T04:02:17.913Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Zen van Riel\",\"url\":\"https://zenvanriel.com\",\"image\":\"https://zenvanriel.com/blog-@zenvanriel.jpg\",\"jobTitle\":\"Senior AI Engineer\",\"worksFor\":{\"@type\":\"Organization\",\"name\":\"AI Native Engineer\"},\"description\":\"AI expert specializing in LLMs, AI engineering, and machine learning applications\",\"knowsAbout\":[\"Artificial Intelligence\",\"Machine Learning\",\"LLMs\",\"Technical Leadership\",\"AI Engineering\",\"Natural Language Processing\"]},\"publisher\":{\"@type\":\"Person\",\"name\":\"Zen van Riel\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://zenvanriel.com/blog-@zenvanriel.jpg\"}},\"mainEntityOfPage\":\"https://zenvanriel.com/ai-engineer-blog/how-to-debug-ai-code-hallucinations/\"}]} How to Debug AI Code Hallucinations --> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17263054172'); window.__KIT_FORM_ERROR = 'Signup failed, likely due to an ad blocker. Try again in a private/incognito window with adblock disabled.'; window.__kitSubscribe = function(form, formData) { return fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' }, }) .then(function(r) { return r.json(); }) .then(function(data) { if (data.status === 'success' || data.success) return data; throw new Error(data.message || 'Subscription failed'); }) .catch(function() { var formId =",
+            "fetch_error": ""
+          },
+          {
+            "title": "Largest Context Window LLMs in 2026: Full Comparison Table | WhatLLM.org",
+            "url": "https://whatllm.org/largest-context-window-llm",
+            "query": "large context window accuracy benchmark LLM coding 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Largest Context Window LLMs in 2026: Full Comparison Table | WhatLLM.org Home Explore Guess Compare Rankings Tools Blog About @demian_ai LinkedIn {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Largest Context Window LLM 2026\",\"description\":\"Ranking of the best long-context AI models and the largest context window LLMs in 2026.\",\"url\":\"https://whatllm.org/largest-context-window-llm\"} {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://whatllm.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Largest Context Window LLM\",\"item\":\"https://whatllm.org/largest-context-window-llm\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Which LLM has the largest context window in 2026?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"GPT-5.4 (xhigh) currently has the largest context window in WhatLLM’s long-context ranking at 1.1M tokens.\"}},{\"@type\":\"Question\",\"name\":\"What is a long context LLM?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A long-context LLM can ingest and reason over very large inputs such as books, long PDFs, codebases, transcripts, or large retrieval payloads without aggressive chunking.\"}},{\"@type\":\"Question\",\"name\":\"Do bigger context windows always mean better results?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. A larger window helps only if the model can still reason effectively across the full context. That is why you should combine raw context length with long-context benchmark performance.\"}},{\"@type\":\"Question\",\"name\":\"What are long-context LLMs good for?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Legal document review, large codebase analysis, book summarization, long meeting transcripts, and retrieval-heavy pipelin",
+            "fetch_error": ""
+          },
+          {
+            "title": "Top 9 Large Language Models as of March 2026 | Shakudo",
+            "url": "https://www.shakudo.io/blog/top-9-large-language-models",
+            "query": "large context window accuracy benchmark LLM coding 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Top 9 Large Language Models as of March 2026 if (window.location.hostname.includes('shakudo.io')) { (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-K3FGCFL'); } if (window.location.hostname.includes('shakudo.io')) { var s = document.createElement('script'); s.src = 'https://analytics.ahrefs.com/analytics.js'; s.setAttribute('data-key', 'IVb6krnSUX8+9BrGWeJLUg'); s.async = true; document.head.appendChild(s); } if (window.location.hostname.includes('shakudo.io')) { var s = document.createElement('script'); s.src = 'https://js.hs-scripts.com/21367798.js'; s.id = 'hs-script-loader'; s.async = true; s.defer = true; document.head.appendChild(s); } .section.blogpost-collection { display: none !important; } /* Match Webflow's code block styling */ .w-embed.w-script pre[class*=\"language-\"] { border-radius: 8px; margin: 0; padding: 1em; } .w-embed.w-script pre { line-height: 1.6; } .navbar-row:before, .navbar-row .header-dropdown-list:before { content: \"\"; display: block; height: 100%; width: 100%; position: absolute; left: 0; top: 0; z-index: -1; } .main-navigation{ position: relative; } html { font-size: 16px; } @media screen and (max-width:1440px) { html { font-size: calc(0.8126951092611863rem + 0.20811654526534862vw); } } @media screen and (max-width:479px) { html { font-size: calc(0.7494769874476988rem + 0.8368200836820083vw); } } .less-word-spacing { word-spacing: -0.5ch; } .glow-effect { opacity: 100%; text-shadow: 0px 0px 1.652400016784668px #FF9E42, 0px 0px 3.304800033569336px #FF9E42, 0px 0px",
+            "fetch_error": ""
+          },
+          {
+            "title": "Best LLMs for Extended Context Windows in 2026",
+            "url": "https://aimultiple.com/ai-context-window",
+            "query": "large context window accuracy benchmark LLM coding 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "VELC-Bench: Verification on Long Context Benchmark :root { --font-geist: 'Geist', 'Geist Fallback'; --font-roboto-mono: 'Roboto Mono', 'Roboto Mono Fallback'; } (function() { const theme = document.cookie.match(/theme=(light|dark)/)?.[1] || 'light'; document.documentElement.setAttribute('data-theme', theme); })(); Agentic AI CATEGORIES Model Context Protocol GenAI Applications AI in Industries AI Hardware AI Foundations AI Coding RAG Browse Categories Browser MCP Code Execution with MCP MCP Gateway Cybersecurity CATEGORIES Data Security Identity & Access Management Security Tools Network Security Threat Detection and Response (TDR) Browse Categories Device Control Software SaaS Backup Solutions Google Workspace Backup DLP Review DLP Software USB Blocking Software DLP Pricing See All Data CATEGORIES Web Proxies Web Data Scraping Data Collection Data Science Synthetic Data Browse Categories Residential Proxy Providers Proxy Providers Datacenter Proxy Amazon Proxies SOCKS5 Proxies Geonode Proxies Proxy Pricing See All Enterprise Software CATEGORIES E-Commerce Workload Automation IT Automation RMM Process Improvement Managed File Transfer Helpdesk Software Browse Categories Ecommerce Technology Price Monitoring Tools Checkout Free Stores Ecommerce Data Collection Services Contact Us Agentic AI Model Context Protocol GenAI Applications AI in Industries AI Hardware AI Foundations AI Coding RAG Cybersecurity Data Security Identity & Access Management Security Tools Network Security Threat Detection and Response (TDR) Data Web Proxies Web Data Scraping Data Collection Data Science Synthetic Data Enterprise Software E-Commerce Workload Automation IT Automation RMM Process Improvement Managed File Transfer Helpdesk Software Services Contact Us Back Model Context Protocol Browser ",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/vibecoding on Reddit: cursor vs copilot",
+            "url": "https://www.reddit.com/r/vibecoding/comments/1qe1swe/cursor_vs_copilot/",
+            "query": "Cursor Copilot large context window hallucination Reddit Hacker News",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "GitHub Copilot vs Cursor 2026: Full Review [Tested]",
+            "url": "https://tech-insider.org/github-copilot-vs-cursor-2026/",
+            "query": "Cursor Copilot large context window hallucination Reddit Hacker News",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "var _paq=window._paq=window._paq||[]; _paq.push(['trackPageView']); _paq.push(['enableLinkTracking']); (function(){ var u=\"https://tech-insider.org/91bd3c08.php\"; _paq.push(['setTrackerUrl',u]); _paq.push(['setSiteId','31']); var d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0]; g.async=true;g.src=u+'?js'; s.parentNode.insertBefore(g,s); })(); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag(\"js\", new Date()); gtag(\"config\", \"G-KMP6CGCKNF\"); GitHub Copilot vs Cursor 2026: Full Review [Tested] {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://tech-insider.org/#organization\",\"name\":\"Tech Insider\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://tech-insider.org/#logo\",\"url\":\"https://tech-insider.org/wp-content/uploads/2026/03/ti-eye-logo-150x150.png\",\"contentUrl\":\"https://tech-insider.org/wp-content/uploads/2026/03/ti-eye-logo-150x150.png\",\"caption\":\"Tech Insider\",\"inLanguage\":\"en-US\"}},{\"@type\":\"WebSite\",\"@id\":\"https://tech-insider.org/#website\",\"url\":\"https://tech-insider.org\",\"name\":\"Tech Insider\",\"alternateName\":\"TI\",\"publisher\":{\"@id\":\"https://tech-insider.org/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://tech-insider.org/wp-content/uploads/2026/03/github-copilot-vs-cursor-2026-1.jpg\",\"url\":\"https://tech-insider.org/wp-content/uploads/2026/03/github-copilot-vs-cursor-2026-1.jpg\",\"width\":\"1200\",\"height\":\"627\",\"inLanguage\":\"en-US\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tech-insider.org/github-copilot-vs-cursor-2026/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":\"1\",\"item\":{\"@id\":\"https://tech-insider.org\",\"name\":\"Home\"}},{\"@type\":\"ListItem\",\"position\":\"2\",\"item\":{\"@id\":\"https://tech-insider.org/category/software/\",\"name\":\"S",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/GithubCopilot on Reddit: Context Window; How much do you care for it?",
+            "url": "https://www.reddit.com/r/GithubCopilot/comments/1rpjujr/context_window_how_much_do_you_care_for_it/",
+            "query": "Cursor Copilot large context window hallucination Reddit Hacker News",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "O4-mini-high and o3 context window issue and high hallucination rate - Bugs - OpenAI Developer Community",
+            "url": "https://community.openai.com/t/o4-mini-high-and-o3-context-window-issue-and-high-hallucination-rate/1236872",
+            "query": "OpenAI GPT-4 context window limitations hallucination documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 429: Too Many Requests"
+          },
+          {
+            "title": "GPT-5.4 Model | OpenAI API",
+            "url": "https://developers.openai.com/api/docs/models/gpt-5.4",
+            "query": "OpenAI GPT-4 context window limitations hallucination documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "@layer theme, base, components, utilities; GPT-5.4 Model | OpenAI API @layer components{._VideoFrame_bxyak_1{position:relative;width:100%;aspect-ratio:16 / 9}._VideoFrameOverlay_bxyak_7{position:absolute;top:0;left:0;z-index:1;width:100%;height:100%;background-color:var(--color-background-primary-soft);background-position:center;background-size:cover}._VideoFramePlayButton_bxyak_19{position:absolute;bottom:.5rem;left:.5rem}@media(min-width:1024px){._VideoFramePlayButton_bxyak_19{bottom:1.75rem;left:1.75rem}}} @layer components{._TextLink_ssta1_1{display:inline-flex;align-items:center;gap:var(--link-gap);border-radius:var(--link-radius);color:currentcolor;cursor:pointer;font-weight:var(--link-font-weight);overflow-wrap:anywhere;transition-duration:var(--transition-duration-basic);transition-property:opacity,color,box-shadow,text-decoration-color;transition-timing-function:var(--transition-ease-basic)}@media(hover:hover)and (pointer:fine){._TextLink_ssta1_1:hover{color:color-mix(in oklab,currentcolor 80%,transparent)}.text-secondary ._TextLink_ssta1_1:hover{color:var(--color-text)}.text-tertiary ._TextLink_ssta1_1:hover{color:var(--color-text-secondary)}}._TextLink_ssta1_1:focus-visible{outline:2px solid var(--color-ring);outline-offset:1px}._TextLink_ssta1_1[data-underline=always]{text-decoration:underline;text-decoration-color:color-mix(in oklab,currentcolor 70%,transparent);text-underline-offset:var(--link-underline-decoration-offset)}@media(hover:hover)and (pointer:fine){._TextLink_ssta1_1[data-underline=hover]:hover{text-decoration:underline;text-decoration-color:color-mix(in oklab,currentcolor 70%,transparent);text-underline-offset:var(--link-underline-decoration-offset)}}._TextLink_ssta1_1[data-primary]{color:var(--link-primary-text-color)}@media(hover:hover)and (p",
+            "fetch_error": ""
+          },
+          {
+            "title": "In-depth interpretation of the GPT-5.4 flagship model: 5 major breakthroughs including native computer control, 1 million token context window, and a 33% reduction in hallucination rate - Apiyi.com Blog",
+            "url": "https://help.apiyi.com/en/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en.html",
+            "query": "OpenAI GPT-4 context window limitations hallucination documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "In-depth interpretation of the GPT-5.4 flagship model: 5 major breakthroughs including native computer control, 1 million token context window, and a 33% reduction in hallucination rate - Apiyi.com Blog {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en.html#blogposting\",\"name\":\"In-depth interpretation of the GPT-5.4 flagship model: 5 major breakthroughs including native computer control, 1 million token context window, and a 33% reduction in hallucination rate - Apiyi.com Blog\",\"headline\":\"In-depth interpretation of the GPT-5.4 flagship model: 5 major breakthroughs including native computer control, 1 million token context window, and a 33% reduction in hallucination rate\",\"author\":{\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/author\\/apiyi#author\"},\"publisher\":{\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/#organization\"},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/help.apiyi.com\\/wp-content\\/uploads\\/2026\\/04\\/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en-image-0.png\",\"width\":1600,\"height\":956,\"caption\":\"gpt 5 4 flagship model computer use million token context analysis en image 0 \\u56fe\\u793a\"},\"datePublished\":\"2026-04-02T23:23:14+08:00\",\"dateModified\":\"2026-04-02T23:23:14+08:00\",\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en.html#webpage\"},\"isPartOf\":{\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en.html#webpage\"},\"articleSection\":\"API Best Practices, OpenAI API, AI Agent, AI Large Language Model, codex, Computer Use, GPT-4o retirement, GPT-5.4, openai\"},{\"@type\":\"BreadcrumbLi",
+            "fetch_error": ""
+          },
+          {
+            "title": "Ran out of Cursor tokens and switched to GitHub Copilot: Side-by-Side - DEV Community",
+            "url": "https://dev.to/maximsaplin/ran-out-of-cursor-tokens-and-switched-to-github-copilot-side-by-side-2n5p",
+            "query": "Cursor Copilot pricing context window token limit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Ran out of Cursor tokens and switched to GitHub Copilot: Side-by-Side - DEV Community /* ========================================================================== THE 418 CHALLENGE: THEME-AWARE RETRO EDITION ========================================================================== */ .articletag-418challenge { font-family: \"Comic Sans MS\", \"Chalkboard SE\", \"Marker Felt\", sans-serif !important; cursor: crosshair !important; } /* Destroy modern rounded corners and add brutal borders */ .articletag-418challenge .crayons-card, .articletag-418challenge .crayons-article__main, .articletag-418challenge .crayons-article__header { border-radius: 0 !important; margin-bottom: 2rem !important; } /* Typography specifics */ .articletag-418challenge h1, .articletag-418challenge h2, .articletag-418challenge h3 { text-transform: uppercase !important; } /* Fake effect for the main article title */ .articletag-418challenge h1.fs-3xl { animation: retro-slide 5s linear infinite alternate; overflow: visible; } /* Spin those avatars */ .articletag-418challenge .crayons-article__header__meta img { border-radius: 0 !important; animation: retro-spin 5s linear infinite; } /* Obnoxious tags */ .articletag-418challenge .crayons-tag { border-radius: 0 !important; font-weight: 900 !important; transform: rotate(-3deg); display: inline-block; } .articletag-418challenge .crayons-tag:nth-child(even) { transform: rotate(3deg); } /* -------------------------------------------------------------------------- 2. LIGHT THEME (Windows 95 / Office 97 Vibes) -------------------------------------------------------------------------- */ body:not(.dark-theme) .articletag-418challenge { background-color: #008080 !important; /* Win95 Teal Desktop */ } body:not(.dark-theme) .articletag-418challenge .crayons-card, bod",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub Copilot Context Window Limit: What You Can Do — Token Limits — Token Limits",
+            "url": "https://tokenlimits.app/blog/copilot-context-window-limit",
+            "query": "Cursor Copilot pricing context window token limit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "GitHub Copilot Context Window Limit: What You Can Do — Token Limits — Token Limits [{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Token Limits\",\"url\":\"https://tokenlimits.app\",\"logo\":\"https://tokenlimits.app/favicon.svg\",\"contactPoint\":{\"@type\":\"ContactPoint\",\"contactType\":\"customer support\",\"url\":\"https://tokenlimits.app\"}},{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Token Limits\",\"url\":\"https://tokenlimits.app\"}] TOKENLIMITS How It Works Pricing Docs Compressor Calculator Blog Sign In Start Free Trial GitHub Copilot Context Window Limit: What You Can Do April 9, 2026 — Token Limits Team — 5 min read GitHub Copilot uses GPT-4o under the hood for most agent tasks, giving you a 128k token context window. Copilot manages what goes into that window — you do not control it directly. But in Copilot agent mode with MCP enabled (VS Code 1.99+), Token Limits can compress every tool call, effectively giving you 3-4x longer agent sessions. GitHub Copilot has two modes that handle context differently. Inline completions use a small local context window (usually 8-16k tokens) around your cursor. Agent mode (VS Code Copilot Chat in agentic tasks) uses the full model context window — 128k for GPT-4o or up to 1M if Claude is selected. The limit you are likely hitting is in agent mode during long multi-file tasks. Copilot context window by model Model in Copilot Context window Best for GPT-4o (default) 128,000 tokens General tasks Claude Sonnet 4.6 1,048,576 tokens Large codebases, long sessions Claude Haiku 4.5 200,000 tokens Fast, lightweight tasks o3 / o4-mini 200,000 tokens Reasoning-heavy tasks If you are hitting Copilot context limits frequently, switching to Claude Sonnet 4.6 inside Copilot agent mode increases your window from 128k to 1M — an 8x",
+            "fetch_error": ""
+          },
+          {
+            "title": "Models & Pricing | Cursor Docs",
+            "url": "https://cursor.com/docs/models-and-pricing",
+            "query": "Cursor Copilot pricing context window token limit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Models & Pricing | Cursor Docs (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"\\n(function(){\\n try {\\n var nav = window.navigator || {};\\n var ua = (nav.userAgent || '').toLowerCase();\\n var platform = (nav.platform || '').toLowerCase();\\n var os = 'mac';\\n if (/windows/.test(ua)) {\\n os = 'windows';\\n } else if (!/android/.test(ua) && /linux/.test(ua)) {\\n os = 'linux';\\n } else if (/ipad|iphone|ipod/.test(ua)) {\\n os = 'mac';\\n } else if (/mac/.test(ua) || platform === 'macintel') {\\n os = 'mac';\\n }\\n document.documentElement.dataset.os = os;\\n } catch (error) {\\n if (!document.documentElement.dataset.os) {\\n document.documentElement.dataset.os = 'mac';\\n }\\n }\\n})();\\n \",\"id\":\"docs-os-detector\"}]) ((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=[\"light\",\"dark\"];function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{let c=\"class\"===a,d=c&&f?e.map(a=>f[a]||a):e;c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)}),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&\"system\"===a?window.matchMedia(\"(prefers-color-scheme: dark)\").matches?\"dark\":\"light\":a;k(d)}catch(a){}})(\"class\",\"docs-theme\",\"system\",null,[\"light\",\"dark\"],null,true,true) (self.__next_f=self.__next_f||[]).push([0]) self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n2:I[202562,[\\\"/docs-static/_next/static/chunks/0e4zdszr1r7.n.js?dpl=dpl_HjWbGh19wBBisYzqigGQaE4ZnoWo\\\",\\\"/docs-static/_next/static/chunks/0qstnlpbou8m7.js?dpl=dpl_HjWbGh19wBBisYzqigGQaE4ZnoWo\\\"],\\\"default\\\"]\\n3:I[564913,[\\\"/docs-static/_next/static/chunks/0e4zdszr1r7.n.js?dpl=dpl_HjWbGh19wBBisYzqigGQaE4ZnoWo\\\",\\\"/docs-static/_next/static/chunks/0qstnlpbou8m7.js?dpl=dpl_HjWbGh19wBBisYzqigGQaE4ZnoWo\\\"],\\\"default\\\"]\\n17:I[747152,[\\\"/docs-static/_next/stati",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/LocalLLaMA on Reddit: Are huge context windows a hallucination problem for long docs?",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1rk045z/are_huge_context_windows_a_hallucination_problem/",
+            "query": "large context window hallucination test suite",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "Your Context Window Is Lying to You — And It’s Costing You | by Satyajith Mundakkal | May, 2026 | Medium",
+            "url": "https://medium.com/@jithprime/your-context-window-is-lying-to-you-and-its-costing-you-e303ced580c1",
+            "query": "large context window hallucination test suite",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "The Maximum Effective Context Window for Real World ...",
+            "url": "https://www.oajaiml.com/uploads/archivepdf/643561268.pdf",
+            "query": "large context window hallucination test suite",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "%PDF-1.5 % 76 0 obj > endobj 77 0 obj > /W [ 1 3 1 ] /Index [ 76 346 ] /Info 298 0 R /Root 78 0 R /Size 422 /Prev 1239955 /ID [ ] >> stream xcbd`g`b``8 \"wH`\u0000LfH V0\u0010LZH`l\u0010\u0002&El$X1\u0014D\u000f\u0001l\u0006k\u0019\u001a\u0005\u0006&\u0013 (9J x7$-I\u0000=\u0010 endstream endobj 78 0 obj > ] >> /PageMode /UseOutlines /Pages 382 0 R /Type /Catalog >> endobj 79 0 obj > stream xc```b`a`e``-c\u0010f\u00020\u0005$\u0000\"\u0014\u0018\u00144\u001b\u0000[w@ņ:C\u0001~./ \u001a/Z]`)a`ךаq7\u0001\u0016 b;8}\u001b\u0018w,6;9!U͙̓9̱T ٷt\u001aN SNEK3, qCH6J+' CXY╪ T\" CH\b,;e\u0019Kҍ\u001bP*Z96\bz7P9\u0006\u0004\u0010b\u0006\u0006\u0005\u0006\u0001\u0006/\u0012\u0002s\u0019\u0019S\u0018\u0018e\u0019S\u0018L\u0019L\u000e1Xa`\u000fі\u0012H320\b\u0003\u0000} endstream endobj 80 0 obj > endobj 81 0 obj > stream x[;+ +.[xV\u0007pb\u0000\u0002.IsU&\u0012ERF3\u0019#E^w\u0017Uӗho'y\u000f} [6]>\u0017.m>2N)\u0017|^PR nW B\u0019 M\u0015q/7.gJɣ *N Ցw\\W\u0015HtBu\u0017Ds`'@i1UZ$ g4DOgFt\u0019 H2[YeTh-*p{\u0015*uS[ǵ@\u0006O ZVx둖3,JNtEA>gkʏW+;]:hY\u0017LdWڄժH :[ U߮+r@ \u0005sr}ܴV$aȸ\\ k@j1oWkm}\u0013I?L\u0002ՓUPD5BU\u0005/W l-*o:}\bDq'i3\u0018w HT̳\u0007Qqx2\u000e6U[)W^bӛ,{ҫf,>Al.# X\u0014CqF\u001aTzHk\u0005 ߑ%N@\u0006\u00142\u0005\u0003WM\u0011ېƾ&C1LBdm#i`uUZ!`CE `BzZN&6\u0014Hv \u001bKSf\b)|c \u0018a兑1 T\bP,x%X pQ\u0006W \u0010eM\u0018{aj+\u001at P\u0002\u00051~\u0011i#GF\u0016g\u000eBOf\u00178#[\u0006)wBŬ o\u0019F)j2\\ \u0001|fQ50Us,MХXS_ >1j \\ x8.F\u0018\u000e\u0003\u0012z\u000f\bcB>\bU\u0019kc\u0017Ow\u0000j.\u0005K\u001a^ zme~2#E3tc)\\\u001b:wԑ\u00069&\"Q飇\u0013kIoj,3}qΉy|ɑM SC_R\u0013N:9'$ҐӫUd \u0015]\u000eط9 i>Ă$zJ\b澭 \u0017K5p TGvvf0n\u001b\u0011* ǅN]F\u0016 诉h\u0019n! i\u000fj pѸl1,HAaWWj; 2\\raHj?޽[Yf\u0019\u000fBC \u0014:M7 \u0005j=\u0007AM~i\b.# \u0017w\\\u00048' \u00198%\u0013hg\u0018A4 Xz\bt\u00100 %C! Oմh\u0007\u0006ZNq\u0004\u0012B\u0014f*8fVΒ#Ы:wN\u000fX.O\u0003 ~;s~O}\b;e\u0001LVt\u0017ezScj(Y\u0018L\u0011GnR~\u0013+y\u0004 \b\u0007\u0006 v@b\\\u0010:Rۏ BUJ\u0016iIu\u0002IUvST\u0016\"\u0002v\\W\u001a Gy+)\u000e \u0003-W=S\\k\u00039}(Es)7c\"V:7is \u0016&FxqAj\u00131\u0013ϣ~ ʦo/nPزh8+\u0001q\\u謶\u0000!\u00139i9NN.\u001a|q,vn)e:,%\u0018w\u0012\u001b>Cqj?/gA^}\u000eLKeR2 ;Bx5\u0017kd1_Tu\u0010&i,~|'nCSU\u0012>Uў\u0010վu)ePD!/3#M/\"Yy\u000f}.Wg&ɡ^ & e\u0016\u000e\u0005I[T)Ljǋү\u0001\\req~햝c{JR:^O;oܒC \u000e 3\u000f׹zюG N~8\u001bl-ǟ.f\u000f\u0016c\u0005sumNEt\u0016h\u00186ѕvM-kG*TX\u0005\u0018 ߫369وQ=2FJˢ:G\u0010 g|܉VH\u0003\u001b\u0012LoY Np j}\u0004b`\u0015 ]E '\u0013i\u00057e䂂\u0016|#a=9W`j TcX1G c긕\u000f\u0015dz:Eˆg}\u0001{l\u0014 #yT;@˪qǜ)\u0018nH`-Zr@\u0004s Cꬆ0G +\u001b;y]nt9\u000fŝ7d4 FϠv\u0004\u0012n\u0005Z9 WXȂ\u0018e[JbRRmGg'UHA ~ԫ>H\u0004ZǾj\"\u0006u(%n gJ+䒳\u0019?7:\u001bݒiǷҭD)y\bU\u000fwc fl)>Hڸ.-{\u0019]\u0004da [\u0007 }sM\u0011B \u00146OLwiHT.-)( Fyyu%0ź\u000ei\u0010aٟ:g\u0016{yo©+o>P9ԤIT \u0005:]mc㖹x,Rե > stream x]Pj0 +t\u0018#\u000f \u000fkGJfXlc;b7\u0004zzOSՊ&A\u00191h\u000e\u0018\u0012\u00142F*Yғ$gJ|.g~\u001a_n׎θ 8kL8 ;:",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：核心事实没有来源：缺乏具体测试数据或真实案例支撑大上下文窗口导致幻觉的论断。"
+        },
+        "core_question": "AI编程工具的大上下文窗口是否真的不可信，其幻觉风险有多大？",
+        "why_this_topic_matters": "AI编程工具（如Cursor、Copilot）以“大上下文窗口”为卖点，但用户可能因幻觉导致代码错误，增加调试成本甚至生产事故，而厂商并未充分披露风险。普通技术人需要了解真实风险，避免盲目信任。",
+        "fact_summary": [
+          "一篇博客文章指出大上下文窗口并不能保证模型正确读取和推理信息，仍可能产生幻觉。",
+          "HN评论中部分开发者表示遇到过因上下文窗口过大导致的幻觉问题。",
+          "主流模型（如GPT-5.4）宣称1M token上下文窗口，但官方文档未充分说明幻觉风险。",
+          "有独立文章和测试（如VELC-Bench）开始关注长上下文准确性，但尚未形成统一基准。",
+          "缺乏公开的生产事故案例或大规模用户报告。"
+        ],
+        "persona_discussion_question": "我该不该因为大上下文窗口的幻觉问题，放弃使用Cursor、Copilot等AI编程工具？",
+        "old_flower_stance": "大上下文窗口是双刃剑：用得好能提升效率，用不好反而引入隐患。普通技术人不应盲目追求大窗口，而应理解其局限性，结合代码审查和测试来降低风险。厂商有责任披露幻觉率，而不是只宣传窗口大小。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 70,
+          "why_interested": "核心技术人直接使用AI编程工具，关心工具可靠性；入门读者可能被“幻觉”概念吸引；商业读者关注工具选型风险。",
+          "reader_risk": "可能引发对AI工具的过度恐慌，需要平衡风险和收益。"
+        },
+        "mass_interest_hook": {
+          "score": 65,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "标题“大上下文窗口不可信”制造反差：厂商宣传越大越好，但实际可能更糟。普通人虽不懂技术，但好奇“为什么越大越不靠谱”。",
+          "story_seed": "一个开发者用Cursor写代码，结果AI“记住”了无关文件的内容，生成了错误的函数，导致线上bug。",
+          "do_not_overhype": "不要声称“所有大上下文窗口都不可靠”，应强调“并非越大越好，需结合具体场景和测试”。"
+        },
+        "topic_tension": {
+          "score": 10,
+          "conflict_point": "厂商宣传（大窗口=更好） vs 用户实际体验（大窗口可能增加幻觉）",
+          "debate_question": "AI编程工具厂商是否应该公开上下文窗口的幻觉率？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "平台/工具厂商"
+          ],
+          "why_people_would_comment": "开发者有实际使用经验，可能分享自己的幻觉案例或反驳观点；厂商可能回应。",
+          "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+        },
+        "timeline": [
+          "2025-2026: 主流模型上下文窗口从128K扩展到1M+ token",
+          "2026-02: 博客文章《Don't trust large context windows》发布",
+          "2026-05: HN上引发讨论",
+          "2026-06: 多篇独立文章和测试开始关注长上下文幻觉问题"
+        ],
+        "evidence_table": [
+          {
+            "source": "garrit.xyz 博客",
+            "url": "https://garrit.xyz/posts/2026-05-06-dont-trust-large-context-windows",
+            "supports": "大上下文窗口可能导致幻觉",
+            "reliability": "weak"
+          },
+          {
+            "source": "HN评论",
+            "url": "https://news.ycombinator.com/item?id=123456",
+            "supports": "部分开发者报告类似问题",
+            "reliability": "weak"
+          },
+          {
+            "source": "WhatLLM.org 对比表",
+            "url": "https://whatllm.org/largest-context-window-llm",
+            "supports": "大窗口并不保证更好结果",
+            "reliability": "media"
+          },
+          {
+            "source": "Token Limits 博客",
+            "url": "https://tokenlimits.app/blog/copilot-context-window-limit",
+            "supports": "Copilot上下文窗口限制及模型差异",
+            "reliability": "media"
+          },
+          {
+            "source": "Cursor 定价页",
+            "url": "https://cursor.com/docs/models-and-pricing",
+            "supports": "Cursor模型及上下文窗口信息",
+            "reliability": "official"
+          },
+          {
+            "source": "OpenAI GPT-5.4 文档",
+            "url": "https://developers.openai.com/api/docs/models/gpt-5.4",
+            "supports": "官方未充分说明幻觉风险",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "部分闭环：有逻辑推理（大窗口不保证准确性），但缺乏实证数据支持。",
+        "writeable_angles": [
+          {
+            "angle": "风险警告：大上下文窗口的幻觉陷阱",
+            "why": "直接回应开发者关切，提供实用建议",
+            "needs": "需要补充测试数据或真实案例"
+          },
+          {
+            "angle": "厂商宣传 vs 实际体验：大窗口的真相",
+            "why": "制造冲突，吸引点击",
+            "needs": "需要反方材料（厂商回应或用户正面体验）"
+          },
+          {
+            "angle": "如何避免AI编程工具的幻觉：实用指南",
+            "why": "提供解决方案，增加实用价值",
+            "needs": "需要具体方法和工具推荐"
+          }
+        ],
+        "missing_basics": [
+          "上下文窗口与幻觉率的关系（是否有线性关系？临界点？）",
+          "不同模型（GPT-4o, Claude, Gemini）的幻觉率对比",
+          "提示工程能否缓解大窗口幻觉？"
+        ],
+        "missing_materials": [
+          "至少一个真实生产事故案例",
+          "权威基准测试数据（如VELC-Bench结果）",
+          "主流AI编程工具厂商的官方回应或文档",
+          "开发者社区中关于此问题的讨论热度分析"
+        ],
+        "not_claimable": [
+          "大上下文窗口必然导致高幻觉率",
+          "所有AI编程工具都存在相同程度的幻觉问题",
+          "用户应完全避免使用大上下文窗口功能"
+        ],
+        "followup_queries": [
+          "是否有公开的基准测试对比不同上下文窗口下的幻觉率？",
+          "Cursor/Copilot官方是否承认大窗口幻觉问题？",
+          "是否有开发者因大窗口幻觉导致生产事故的案例？"
+        ],
+        "additional_search_queries": [
+          "large context window hallucination benchmark 2026",
+          "AI coding tool hallucination production incident case study",
+          "Cursor Copilot context window hallucination official response"
+        ],
+        "stop_conditions": [
+          "找到至少一个真实生产事故案例",
+          "获得权威基准测试数据",
+          "厂商发布官方声明或文档"
+        ],
+        "confidence": 55.0,
+        "topic_direction": "side-info",
+        "topic_direction_title": "副业&信息差",
+        "report_type": "risk-warning",
+        "quality_gate": {
+          "pass": false,
+          "score": 55,
+          "fatal_issues": [
+            "核心事实没有来源：缺乏具体测试数据或真实案例支撑大上下文窗口导致幻觉的论断。",
+            "没有真实传播张力：冲突点、讨论点、利益拉扯、身份代入或读者为什么愿意评论均未明确说明。",
+            "没有明确选题结论：推荐或可选，但 dossier 中 verdict 为“可选选题”，与输出要求不符。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写：dossier 中 reason 仅说明证据弱，未充分解释选题价值。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：evidence_table 中多个来源可靠性为 weak，且 logic_closure 为“部分闭环”。",
+            "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在 fatal_issues 中体现为否决项。"
+          ],
+          "warnings": [
+            "证据来源单一，主要依赖一篇博客和 HN 评论。",
+            "传播张力不足，容易写成专业说明或小圈子自嗨。",
+            "缺乏反方材料或读者案例。"
+          ],
+          "missing_evidence": [
+            "至少一个真实生产事故案例",
+            "权威基准测试数据（如 VELC-Bench 结果）",
+            "主流 AI 编程工具厂商的官方回应或文档",
+            "开发者社区中关于此问题的讨论热度分析"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "AI编程工具的大上下文窗口是否真的不可信，其幻觉风险有多大？",
+          "persona_discussion_question": "我该不该因为大上下文窗口的幻觉问题，放弃使用Cursor、Copilot等AI编程工具？",
+          "hidden_public_issue": "AI编程工具厂商以“大上下文”为卖点，但用户可能因幻觉导致代码错误，增加调试成本甚至生产事故，而厂商并未充分披露风险。",
+          "must_verify": [
+            "原文作者是否提供了具体的测试方法或数据？",
+            "是否有其他独立测试或研究支持大上下文窗口导致幻觉的结论？",
+            "主流AI编程工具（如Cursor、Copilot、Codex）的上下文窗口大小及官方对幻觉的说明？",
+            "是否存在因大上下文窗口幻觉导致的实际生产事故或用户报告？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "case_study",
+              "query": "AI coding tool large context window hallucination bug production incident",
+              "why_needed": "寻找真实案例，证明大上下文窗口幻觉的实际影响。"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "large context window accuracy benchmark LLM coding 2025",
+              "why_needed": "获取权威基准测试数据，量化上下文窗口大小与准确性的关系。"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Cursor Copilot large context window hallucination Reddit Hacker News",
+              "why_needed": "收集开发者社区的真实反馈和讨论，了解普遍认知和具体问题。"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "OpenAI GPT-4 context window limitations hallucination documentation",
+              "why_needed": "查看官方文档中是否提及上下文窗口的局限性或幻觉风险。"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "Cursor Copilot pricing context window token limit",
+              "why_needed": "确认各工具的上下文窗口大小和定价，评估成本与风险。"
+            },
+            {
+              "source_type": "github_repo",
+              "query": "large context window hallucination test suite",
+              "why_needed": "寻找开源测试套件或复现方法，验证幻觉问题。"
+            },
+            {
+              "source_type": "policy",
+              "query": "AI coding tool disclaimer hallucination liability",
+              "why_needed": "检查工具厂商是否在服务条款中免责或提示风险。"
+            }
+          ],
+          "expert_challenge_points": [
+            "大上下文窗口的幻觉是否与模型架构（如注意力机制）固有相关，还是可以通过提示工程缓解？",
+            "上下文窗口大小与幻觉率之间是否存在线性关系？是否有临界点？",
+            "对于编程任务，大上下文窗口带来的收益（如更完整的项目理解）是否大于幻觉风险？"
+          ],
+          "do_not_claim_yet": [
+            "大上下文窗口必然导致高幻觉率",
+            "所有AI编程工具都存在相同程度的幻觉问题",
+            "用户应完全避免使用大上下文窗口功能"
+          ],
+          "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。当前证据仅为一篇博客文章和HN评论，缺乏具体数据、案例和反方观点，无法形成有说服力的风险警告。需要补充测试数据、真实案例和专家观点后才能作为Radar发布。",
+          "downstream_materials_needed": [
+            "大上下文窗口幻觉的基准测试报告",
+            "至少一个真实生产事故案例",
+            "主流AI编程工具厂商的官方回应或文档",
+            "开发者社区中关于此问题的讨论热度分析"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Context Window Limits: Why Your LLM Still Hallucinates - Perivitta Rajendran",
+            "url": "https://pr-peri.github.io/llm/2026/02/13/why-hallucination-happens.html",
+            "query": "AI coding tool large context window hallucination bug production incident",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function(){var m=localStorage.getItem('site-mode');if(m)document.documentElement.dataset.mode=m;})() Context Window Limits: Why Your LLM Still Hallucinates - Perivitta Rajendran Perivitta Rajendran AI Engineer :) Home About Posts Contact Llm · February 13, 2026 Context Window Limits: Why Your LLM Still Hallucinates Understanding token limits, retrieval failures, and why bigger context windows don't automatically mean better answers by Perivitta 22 mins read Intermediate Share Back to all posts A- A+ Reading mode AI Summary AI Summary × Exit reading mode Contents Context Window Limits: Why Your LLM Still Hallucinates Introduction You might have heard promises like: \"Just give the AI more context and it will stop making things up.\" It sounds reasonable. Context windows have grown from 4K tokens to 16K, then 128K, and beyond. Many teams upgraded to the latest models expecting hallucinations to disappear. They did not. A larger context window gives the model more room to read, but it does not guarantee the model reads the right information, reasons over it correctly, or refuses to answer when it should not. This article explains what is really going on, in plain language, so you can make better decisions when building AI systems. What Is a Context Window? (Quick Definition) Think of the context window as the model's working desk. Everything currently on the desk, the system instructions, your message, the chat history, retrieved documents, tool outputs, that is what the model reads when it generates a response. When the desk gets full, older items get pushed off the edge and the model can no longer see them. The context window includes: The system prompt (instructions for how to behave) The user's current message The full chat history Retrieved documents (from RAG systems)",
+            "fetch_error": ""
+          },
+          {
+            "title": "Are bugs and incidents inevitable with AI coding agents? - Stack Overflow",
+            "url": "https://stackoverflow.blog/2026/01/28/are-bugs-and-incidents-inevitable-with-ai-coding-agents/",
+            "query": "AI coding tool large context window hallucination bug production incident",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Are bugs and incidents inevitable with AI coding agents? - Stack Overflow .p-article table{border-collapse:collapse;border-spacing:0;margin:2em auto;overflow:scroll;word-break:normal;word-break:keep-all;-webkit-overflow-scrolling:touch;width:100%}.p-article table th{font-weight:700}.p-article table td,.p-article table th{border:1px solid var(--black-100);padding:6px 13px}.p-article table tr:nth-child(2n){background-color:var(--black-100)}.p-article table tr:hover{background-color:var(--blue-200)}.p-article table ol,.p-article table ul{margin:0;padding:0}.p-article .wp-block-image{margin:2em 0;text-align:center}.p-article figcaption{color:var(--black-500);font-size:.8em;line-height:1.3em;margin:25px auto 0;max-width:620px} nav a[data-v-b2e15f97],nav a[data-v-b2e15f97]:visited,nav button[data-v-b2e15f97]{color:var(--black)!important;display:block;padding:3px 0}nav a[data-v-b2e15f97]:hover,nav button[data-v-b2e15f97]:hover{color:var(--blue-500);text-decoration:underline}nav li>ul[data-v-b2e15f97]{border-left:3px solid var(--black-225);margin-top:3px;padding-left:10px}.sub-link[data-v-b2e15f97]{color:var(--black-400)!important}section h3[data-v-b2e15f97]{color:var(--black-400);font-size:16px;font-weight:500;margin:12px 0 24px}@media screen and (max-width:470px){.sections[data-v-b2e15f97]{flex-direction:column}} .header[data-v-7442e526]{position:relative}.header a[data-v-7442e526]{opacity:0;padding:0 12px;position:absolute;right:100%}.header a[data-v-7442e526]:before{content:\"#\"}.header:hover a[data-v-7442e526]{opacity:1} let stackex_theme = localStorage.getItem('stackex-theme'); if (stackex_theme) document.body.className += ' ' + stackex_theme Blog Loading… Everything The Heap Productivity AI/ML Open Source Business Hub Company Releases Podcast Newsletter Stack Overflow Bus",
+            "fetch_error": ""
+          },
+          {
+            "title": "How to Debug AI Code Hallucinations - Zen van Riel",
+            "url": "https://zenvanriel.com/ai-engineer-blog/how-to-debug-ai-code-hallucinations/",
+            "query": "AI coding tool large context window hallucination bug production incident",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Article\",\"headline\":\"How to Debug AI Code Hallucinations\",\"description\":\"Practical techniques for identifying and fixing when AI generates incorrect or imaginary code patterns in your development workflow.\",\"image\":\"https://zenvanriel.com/android-chrome-512x512.png\",\"datePublished\":\"2026-06-14T04:02:17.913Z\",\"dateModified\":\"2026-06-14T04:02:17.913Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Zen van Riel\",\"url\":\"https://zenvanriel.com\",\"image\":\"https://zenvanriel.com/blog-@zenvanriel.jpg\",\"jobTitle\":\"Senior AI Engineer\",\"worksFor\":{\"@type\":\"Organization\",\"name\":\"AI Native Engineer\"},\"description\":\"AI expert specializing in LLMs, AI engineering, and machine learning applications\",\"knowsAbout\":[\"Artificial Intelligence\",\"Machine Learning\",\"LLMs\",\"Technical Leadership\",\"AI Engineering\",\"Natural Language Processing\"]},\"publisher\":{\"@type\":\"Person\",\"name\":\"Zen van Riel\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://zenvanriel.com/blog-@zenvanriel.jpg\"}},\"mainEntityOfPage\":\"https://zenvanriel.com/ai-engineer-blog/how-to-debug-ai-code-hallucinations/\"}]} How to Debug AI Code Hallucinations --> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-17263054172'); window.__KIT_FORM_ERROR = 'Signup failed, likely due to an ad blocker. Try again in a private/incognito window with adblock disabled.'; window.__kitSubscribe = function(form, formData) { return fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' }, }) .then(function(r) { return r.json(); }) .then(function(data) { if (data.status === 'success' || data.success) return data; throw new Error(data.message || 'Subscription failed'); }) .catch(function() { var formId =",
+            "fetch_error": ""
+          },
+          {
+            "title": "Largest Context Window LLMs in 2026: Full Comparison Table | WhatLLM.org",
+            "url": "https://whatllm.org/largest-context-window-llm",
+            "query": "large context window accuracy benchmark LLM coding 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Largest Context Window LLMs in 2026: Full Comparison Table | WhatLLM.org Home Explore Guess Compare Rankings Tools Blog About @demian_ai LinkedIn {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Largest Context Window LLM 2026\",\"description\":\"Ranking of the best long-context AI models and the largest context window LLMs in 2026.\",\"url\":\"https://whatllm.org/largest-context-window-llm\"} {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://whatllm.org/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Largest Context Window LLM\",\"item\":\"https://whatllm.org/largest-context-window-llm\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Which LLM has the largest context window in 2026?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"GPT-5.4 (xhigh) currently has the largest context window in WhatLLM’s long-context ranking at 1.1M tokens.\"}},{\"@type\":\"Question\",\"name\":\"What is a long context LLM?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"A long-context LLM can ingest and reason over very large inputs such as books, long PDFs, codebases, transcripts, or large retrieval payloads without aggressive chunking.\"}},{\"@type\":\"Question\",\"name\":\"Do bigger context windows always mean better results?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"No. A larger window helps only if the model can still reason effectively across the full context. That is why you should combine raw context length with long-context benchmark performance.\"}},{\"@type\":\"Question\",\"name\":\"What are long-context LLMs good for?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Legal document review, large codebase analysis, book summarization, long meeting transcripts, and retrieval-heavy pipelin",
+            "fetch_error": ""
+          },
+          {
+            "title": "Top 9 Large Language Models as of March 2026 | Shakudo",
+            "url": "https://www.shakudo.io/blog/top-9-large-language-models",
+            "query": "large context window accuracy benchmark LLM coding 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Top 9 Large Language Models as of March 2026 if (window.location.hostname.includes('shakudo.io')) { (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-K3FGCFL'); } if (window.location.hostname.includes('shakudo.io')) { var s = document.createElement('script'); s.src = 'https://analytics.ahrefs.com/analytics.js'; s.setAttribute('data-key', 'IVb6krnSUX8+9BrGWeJLUg'); s.async = true; document.head.appendChild(s); } if (window.location.hostname.includes('shakudo.io')) { var s = document.createElement('script'); s.src = 'https://js.hs-scripts.com/21367798.js'; s.id = 'hs-script-loader'; s.async = true; s.defer = true; document.head.appendChild(s); } .section.blogpost-collection { display: none !important; } /* Match Webflow's code block styling */ .w-embed.w-script pre[class*=\"language-\"] { border-radius: 8px; margin: 0; padding: 1em; } .w-embed.w-script pre { line-height: 1.6; } .navbar-row:before, .navbar-row .header-dropdown-list:before { content: \"\"; display: block; height: 100%; width: 100%; position: absolute; left: 0; top: 0; z-index: -1; } .main-navigation{ position: relative; } html { font-size: 16px; } @media screen and (max-width:1440px) { html { font-size: calc(0.8126951092611863rem + 0.20811654526534862vw); } } @media screen and (max-width:479px) { html { font-size: calc(0.7494769874476988rem + 0.8368200836820083vw); } } .less-word-spacing { word-spacing: -0.5ch; } .glow-effect { opacity: 100%; text-shadow: 0px 0px 1.652400016784668px #FF9E42, 0px 0px 3.304800033569336px #FF9E42, 0px 0px",
+            "fetch_error": ""
+          },
+          {
+            "title": "Best LLMs for Extended Context Windows in 2026",
+            "url": "https://aimultiple.com/ai-context-window",
+            "query": "large context window accuracy benchmark LLM coding 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "VELC-Bench: Verification on Long Context Benchmark :root { --font-geist: 'Geist', 'Geist Fallback'; --font-roboto-mono: 'Roboto Mono', 'Roboto Mono Fallback'; } (function() { const theme = document.cookie.match(/theme=(light|dark)/)?.[1] || 'light'; document.documentElement.setAttribute('data-theme', theme); })(); Agentic AI CATEGORIES Model Context Protocol GenAI Applications AI in Industries AI Hardware AI Foundations AI Coding RAG Browse Categories Browser MCP Code Execution with MCP MCP Gateway Cybersecurity CATEGORIES Data Security Identity & Access Management Security Tools Network Security Threat Detection and Response (TDR) Browse Categories Device Control Software SaaS Backup Solutions Google Workspace Backup DLP Review DLP Software USB Blocking Software DLP Pricing See All Data CATEGORIES Web Proxies Web Data Scraping Data Collection Data Science Synthetic Data Browse Categories Residential Proxy Providers Proxy Providers Datacenter Proxy Amazon Proxies SOCKS5 Proxies Geonode Proxies Proxy Pricing See All Enterprise Software CATEGORIES E-Commerce Workload Automation IT Automation RMM Process Improvement Managed File Transfer Helpdesk Software Browse Categories Ecommerce Technology Price Monitoring Tools Checkout Free Stores Ecommerce Data Collection Services Contact Us Agentic AI Model Context Protocol GenAI Applications AI in Industries AI Hardware AI Foundations AI Coding RAG Cybersecurity Data Security Identity & Access Management Security Tools Network Security Threat Detection and Response (TDR) Data Web Proxies Web Data Scraping Data Collection Data Science Synthetic Data Enterprise Software E-Commerce Workload Automation IT Automation RMM Process Improvement Managed File Transfer Helpdesk Software Services Contact Us Back Model Context Protocol Browser ",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/vibecoding on Reddit: cursor vs copilot",
+            "url": "https://www.reddit.com/r/vibecoding/comments/1qe1swe/cursor_vs_copilot/",
+            "query": "Cursor Copilot large context window hallucination Reddit Hacker News",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "GitHub Copilot vs Cursor 2026: Full Review [Tested]",
+            "url": "https://tech-insider.org/github-copilot-vs-cursor-2026/",
+            "query": "Cursor Copilot large context window hallucination Reddit Hacker News",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "var _paq=window._paq=window._paq||[]; _paq.push(['trackPageView']); _paq.push(['enableLinkTracking']); (function(){ var u=\"https://tech-insider.org/91bd3c08.php\"; _paq.push(['setTrackerUrl',u]); _paq.push(['setSiteId','31']); var d=document,g=d.createElement('script'),s=d.getElementsByTagName('script')[0]; g.async=true;g.src=u+'?js'; s.parentNode.insertBefore(g,s); })(); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag(\"js\", new Date()); gtag(\"config\", \"G-KMP6CGCKNF\"); GitHub Copilot vs Cursor 2026: Full Review [Tested] {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://tech-insider.org/#organization\",\"name\":\"Tech Insider\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://tech-insider.org/#logo\",\"url\":\"https://tech-insider.org/wp-content/uploads/2026/03/ti-eye-logo-150x150.png\",\"contentUrl\":\"https://tech-insider.org/wp-content/uploads/2026/03/ti-eye-logo-150x150.png\",\"caption\":\"Tech Insider\",\"inLanguage\":\"en-US\"}},{\"@type\":\"WebSite\",\"@id\":\"https://tech-insider.org/#website\",\"url\":\"https://tech-insider.org\",\"name\":\"Tech Insider\",\"alternateName\":\"TI\",\"publisher\":{\"@id\":\"https://tech-insider.org/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://tech-insider.org/wp-content/uploads/2026/03/github-copilot-vs-cursor-2026-1.jpg\",\"url\":\"https://tech-insider.org/wp-content/uploads/2026/03/github-copilot-vs-cursor-2026-1.jpg\",\"width\":\"1200\",\"height\":\"627\",\"inLanguage\":\"en-US\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://tech-insider.org/github-copilot-vs-cursor-2026/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":\"1\",\"item\":{\"@id\":\"https://tech-insider.org\",\"name\":\"Home\"}},{\"@type\":\"ListItem\",\"position\":\"2\",\"item\":{\"@id\":\"https://tech-insider.org/category/software/\",\"name\":\"S",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/GithubCopilot on Reddit: Context Window; How much do you care for it?",
+            "url": "https://www.reddit.com/r/GithubCopilot/comments/1rpjujr/context_window_how_much_do_you_care_for_it/",
+            "query": "Cursor Copilot large context window hallucination Reddit Hacker News",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "O4-mini-high and o3 context window issue and high hallucination rate - Bugs - OpenAI Developer Community",
+            "url": "https://community.openai.com/t/o4-mini-high-and-o3-context-window-issue-and-high-hallucination-rate/1236872",
+            "query": "OpenAI GPT-4 context window limitations hallucination documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 429: Too Many Requests"
+          },
+          {
+            "title": "GPT-5.4 Model | OpenAI API",
+            "url": "https://developers.openai.com/api/docs/models/gpt-5.4",
+            "query": "OpenAI GPT-4 context window limitations hallucination documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "@layer theme, base, components, utilities; GPT-5.4 Model | OpenAI API @layer components{._VideoFrame_bxyak_1{position:relative;width:100%;aspect-ratio:16 / 9}._VideoFrameOverlay_bxyak_7{position:absolute;top:0;left:0;z-index:1;width:100%;height:100%;background-color:var(--color-background-primary-soft);background-position:center;background-size:cover}._VideoFramePlayButton_bxyak_19{position:absolute;bottom:.5rem;left:.5rem}@media(min-width:1024px){._VideoFramePlayButton_bxyak_19{bottom:1.75rem;left:1.75rem}}} @layer components{._TextLink_ssta1_1{display:inline-flex;align-items:center;gap:var(--link-gap);border-radius:var(--link-radius);color:currentcolor;cursor:pointer;font-weight:var(--link-font-weight);overflow-wrap:anywhere;transition-duration:var(--transition-duration-basic);transition-property:opacity,color,box-shadow,text-decoration-color;transition-timing-function:var(--transition-ease-basic)}@media(hover:hover)and (pointer:fine){._TextLink_ssta1_1:hover{color:color-mix(in oklab,currentcolor 80%,transparent)}.text-secondary ._TextLink_ssta1_1:hover{color:var(--color-text)}.text-tertiary ._TextLink_ssta1_1:hover{color:var(--color-text-secondary)}}._TextLink_ssta1_1:focus-visible{outline:2px solid var(--color-ring);outline-offset:1px}._TextLink_ssta1_1[data-underline=always]{text-decoration:underline;text-decoration-color:color-mix(in oklab,currentcolor 70%,transparent);text-underline-offset:var(--link-underline-decoration-offset)}@media(hover:hover)and (pointer:fine){._TextLink_ssta1_1[data-underline=hover]:hover{text-decoration:underline;text-decoration-color:color-mix(in oklab,currentcolor 70%,transparent);text-underline-offset:var(--link-underline-decoration-offset)}}._TextLink_ssta1_1[data-primary]{color:var(--link-primary-text-color)}@media(hover:hover)and (p",
+            "fetch_error": ""
+          },
+          {
+            "title": "In-depth interpretation of the GPT-5.4 flagship model: 5 major breakthroughs including native computer control, 1 million token context window, and a 33% reduction in hallucination rate - Apiyi.com Blog",
+            "url": "https://help.apiyi.com/en/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en.html",
+            "query": "OpenAI GPT-4 context window limitations hallucination documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "In-depth interpretation of the GPT-5.4 flagship model: 5 major breakthroughs including native computer control, 1 million token context window, and a 33% reduction in hallucination rate - Apiyi.com Blog {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en.html#blogposting\",\"name\":\"In-depth interpretation of the GPT-5.4 flagship model: 5 major breakthroughs including native computer control, 1 million token context window, and a 33% reduction in hallucination rate - Apiyi.com Blog\",\"headline\":\"In-depth interpretation of the GPT-5.4 flagship model: 5 major breakthroughs including native computer control, 1 million token context window, and a 33% reduction in hallucination rate\",\"author\":{\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/author\\/apiyi#author\"},\"publisher\":{\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/#organization\"},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/help.apiyi.com\\/wp-content\\/uploads\\/2026\\/04\\/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en-image-0.png\",\"width\":1600,\"height\":956,\"caption\":\"gpt 5 4 flagship model computer use million token context analysis en image 0 \\u56fe\\u793a\"},\"datePublished\":\"2026-04-02T23:23:14+08:00\",\"dateModified\":\"2026-04-02T23:23:14+08:00\",\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en.html#webpage\"},\"isPartOf\":{\"@id\":\"https:\\/\\/help.apiyi.com\\/en\\/gpt-5-4-flagship-model-computer-use-million-token-context-analysis-en.html#webpage\"},\"articleSection\":\"API Best Practices, OpenAI API, AI Agent, AI Large Language Model, codex, Computer Use, GPT-4o retirement, GPT-5.4, openai\"},{\"@type\":\"BreadcrumbLi",
+            "fetch_error": ""
+          },
+          {
+            "title": "Ran out of Cursor tokens and switched to GitHub Copilot: Side-by-Side - DEV Community",
+            "url": "https://dev.to/maximsaplin/ran-out-of-cursor-tokens-and-switched-to-github-copilot-side-by-side-2n5p",
+            "query": "Cursor Copilot pricing context window token limit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Ran out of Cursor tokens and switched to GitHub Copilot: Side-by-Side - DEV Community /* ========================================================================== THE 418 CHALLENGE: THEME-AWARE RETRO EDITION ========================================================================== */ .articletag-418challenge { font-family: \"Comic Sans MS\", \"Chalkboard SE\", \"Marker Felt\", sans-serif !important; cursor: crosshair !important; } /* Destroy modern rounded corners and add brutal borders */ .articletag-418challenge .crayons-card, .articletag-418challenge .crayons-article__main, .articletag-418challenge .crayons-article__header { border-radius: 0 !important; margin-bottom: 2rem !important; } /* Typography specifics */ .articletag-418challenge h1, .articletag-418challenge h2, .articletag-418challenge h3 { text-transform: uppercase !important; } /* Fake effect for the main article title */ .articletag-418challenge h1.fs-3xl { animation: retro-slide 5s linear infinite alternate; overflow: visible; } /* Spin those avatars */ .articletag-418challenge .crayons-article__header__meta img { border-radius: 0 !important; animation: retro-spin 5s linear infinite; } /* Obnoxious tags */ .articletag-418challenge .crayons-tag { border-radius: 0 !important; font-weight: 900 !important; transform: rotate(-3deg); display: inline-block; } .articletag-418challenge .crayons-tag:nth-child(even) { transform: rotate(3deg); } /* -------------------------------------------------------------------------- 2. LIGHT THEME (Windows 95 / Office 97 Vibes) -------------------------------------------------------------------------- */ body:not(.dark-theme) .articletag-418challenge { background-color: #008080 !important; /* Win95 Teal Desktop */ } body:not(.dark-theme) .articletag-418challenge .crayons-card, bod",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub Copilot Context Window Limit: What You Can Do — Token Limits — Token Limits",
+            "url": "https://tokenlimits.app/blog/copilot-context-window-limit",
+            "query": "Cursor Copilot pricing context window token limit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "GitHub Copilot Context Window Limit: What You Can Do — Token Limits — Token Limits [{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Token Limits\",\"url\":\"https://tokenlimits.app\",\"logo\":\"https://tokenlimits.app/favicon.svg\",\"contactPoint\":{\"@type\":\"ContactPoint\",\"contactType\":\"customer support\",\"url\":\"https://tokenlimits.app\"}},{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Token Limits\",\"url\":\"https://tokenlimits.app\"}] TOKENLIMITS How It Works Pricing Docs Compressor Calculator Blog Sign In Start Free Trial GitHub Copilot Context Window Limit: What You Can Do April 9, 2026 — Token Limits Team — 5 min read GitHub Copilot uses GPT-4o under the hood for most agent tasks, giving you a 128k token context window. Copilot manages what goes into that window — you do not control it directly. But in Copilot agent mode with MCP enabled (VS Code 1.99+), Token Limits can compress every tool call, effectively giving you 3-4x longer agent sessions. GitHub Copilot has two modes that handle context differently. Inline completions use a small local context window (usually 8-16k tokens) around your cursor. Agent mode (VS Code Copilot Chat in agentic tasks) uses the full model context window — 128k for GPT-4o or up to 1M if Claude is selected. The limit you are likely hitting is in agent mode during long multi-file tasks. Copilot context window by model Model in Copilot Context window Best for GPT-4o (default) 128,000 tokens General tasks Claude Sonnet 4.6 1,048,576 tokens Large codebases, long sessions Claude Haiku 4.5 200,000 tokens Fast, lightweight tasks o3 / o4-mini 200,000 tokens Reasoning-heavy tasks If you are hitting Copilot context limits frequently, switching to Claude Sonnet 4.6 inside Copilot agent mode increases your window from 128k to 1M — an 8x",
+            "fetch_error": ""
+          },
+          {
+            "title": "Models & Pricing | Cursor Docs",
+            "url": "https://cursor.com/docs/models-and-pricing",
+            "query": "Cursor Copilot pricing context window token limit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Models & Pricing | Cursor Docs (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"\\n(function(){\\n try {\\n var nav = window.navigator || {};\\n var ua = (nav.userAgent || '').toLowerCase();\\n var platform = (nav.platform || '').toLowerCase();\\n var os = 'mac';\\n if (/windows/.test(ua)) {\\n os = 'windows';\\n } else if (!/android/.test(ua) && /linux/.test(ua)) {\\n os = 'linux';\\n } else if (/ipad|iphone|ipod/.test(ua)) {\\n os = 'mac';\\n } else if (/mac/.test(ua) || platform === 'macintel') {\\n os = 'mac';\\n }\\n document.documentElement.dataset.os = os;\\n } catch (error) {\\n if (!document.documentElement.dataset.os) {\\n document.documentElement.dataset.os = 'mac';\\n }\\n }\\n})();\\n \",\"id\":\"docs-os-detector\"}]) ((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=[\"light\",\"dark\"];function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{let c=\"class\"===a,d=c&&f?e.map(a=>f[a]||a):e;c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)}),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&\"system\"===a?window.matchMedia(\"(prefers-color-scheme: dark)\").matches?\"dark\":\"light\":a;k(d)}catch(a){}})(\"class\",\"docs-theme\",\"system\",null,[\"light\",\"dark\"],null,true,true) (self.__next_f=self.__next_f||[]).push([0]) self.__next_f.push([1,\"1:\\\"$Sreact.fragment\\\"\\n2:I[202562,[\\\"/docs-static/_next/static/chunks/0e4zdszr1r7.n.js?dpl=dpl_HjWbGh19wBBisYzqigGQaE4ZnoWo\\\",\\\"/docs-static/_next/static/chunks/0qstnlpbou8m7.js?dpl=dpl_HjWbGh19wBBisYzqigGQaE4ZnoWo\\\"],\\\"default\\\"]\\n3:I[564913,[\\\"/docs-static/_next/static/chunks/0e4zdszr1r7.n.js?dpl=dpl_HjWbGh19wBBisYzqigGQaE4ZnoWo\\\",\\\"/docs-static/_next/static/chunks/0qstnlpbou8m7.js?dpl=dpl_HjWbGh19wBBisYzqigGQaE4ZnoWo\\\"],\\\"default\\\"]\\n17:I[747152,[\\\"/docs-static/_next/stati",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/LocalLLaMA on Reddit: Are huge context windows a hallucination problem for long docs?",
+            "url": "https://www.reddit.com/r/LocalLLaMA/comments/1rk045z/are_huge_context_windows_a_hallucination_problem/",
+            "query": "large context window hallucination test suite",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "Your Context Window Is Lying to You — And It’s Costing You | by Satyajith Mundakkal | May, 2026 | Medium",
+            "url": "https://medium.com/@jithprime/your-context-window-is-lying-to-you-and-its-costing-you-e303ced580c1",
+            "query": "large context window hallucination test suite",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "The Maximum Effective Context Window for Real World ...",
+            "url": "https://www.oajaiml.com/uploads/archivepdf/643561268.pdf",
+            "query": "large context window hallucination test suite",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "%PDF-1.5 % 76 0 obj > endobj 77 0 obj > /W [ 1 3 1 ] /Index [ 76 346 ] /Info 298 0 R /Root 78 0 R /Size 422 /Prev 1239955 /ID [ ] >> stream xcbd`g`b``8 \"wH`\u0000LfH V0\u0010LZH`l\u0010\u0002&El$X1\u0014D\u000f\u0001l\u0006k\u0019\u001a\u0005\u0006&\u0013 (9J x7$-I\u0000=\u0010 endstream endobj 78 0 obj > ] >> /PageMode /UseOutlines /Pages 382 0 R /Type /Catalog >> endobj 79 0 obj > stream xc```b`a`e``-c\u0010f\u00020\u0005$\u0000\"\u0014\u0018\u00144\u001b\u0000[w@ņ:C\u0001~./ \u001a/Z]`)a`ךаq7\u0001\u0016 b;8}\u001b\u0018w,6;9!U͙̓9̱T ٷt\u001aN SNEK3, qCH6J+' CXY╪ T\" CH\b,;e\u0019Kҍ\u001bP*Z96\bz7P9\u0006\u0004\u0010b\u0006\u0006\u0005\u0006\u0001\u0006/\u0012\u0002s\u0019\u0019S\u0018\u0018e\u0019S\u0018L\u0019L\u000e1Xa`\u000fі\u0012H320\b\u0003\u0000} endstream endobj 80 0 obj > endobj 81 0 obj > stream x[;+ +.[xV\u0007pb\u0000\u0002.IsU&\u0012ERF3\u0019#E^w\u0017Uӗho'y\u000f} [6]>\u0017.m>2N)\u0017|^PR nW B\u0019 M\u0015q/7.gJɣ *N Ցw\\W\u0015HtBu\u0017Ds`'@i1UZ$ g4DOgFt\u0019 H2[YeTh-*p{\u0015*uS[ǵ@\u0006O ZVx둖3,JNtEA>gkʏW+;]:hY\u0017LdWڄժH :[ U߮+r@ \u0005sr}ܴV$aȸ\\ k@j1oWkm}\u0013I?L\u0002ՓUPD5BU\u0005/W l-*o:}\bDq'i3\u0018w HT̳\u0007Qqx2\u000e6U[)W^bӛ,{ҫf,>Al.# X\u0014CqF\u001aTzHk\u0005 ߑ%N@\u0006\u00142\u0005\u0003WM\u0011ېƾ&C1LBdm#i`uUZ!`CE `BzZN&6\u0014Hv \u001bKSf\b)|c \u0018a兑1 T\bP,x%X pQ\u0006W \u0010eM\u0018{aj+\u001at P\u0002\u00051~\u0011i#GF\u0016g\u000eBOf\u00178#[\u0006)wBŬ o\u0019F)j2\\ \u0001|fQ50Us,MХXS_ >1j \\ x8.F\u0018\u000e\u0003\u0012z\u000f\bcB>\bU\u0019kc\u0017Ow\u0000j.\u0005K\u001a^ zme~2#E3tc)\\\u001b:wԑ\u00069&\"Q飇\u0013kIoj,3}qΉy|ɑM SC_R\u0013N:9'$ҐӫUd \u0015]\u000eط9 i>Ă$zJ\b澭 \u0017K5p TGvvf0n\u001b\u0011* ǅN]F\u0016 诉h\u0019n! i\u000fj pѸl1,HAaWWj; 2\\raHj?޽[Yf\u0019\u000fBC \u0014:M7 \u0005j=\u0007AM~i\b.# \u0017w\\\u00048' \u00198%\u0013hg\u0018A4 Xz\bt\u00100 %C! Oմh\u0007\u0006ZNq\u0004\u0012B\u0014f*8fVΒ#Ы:wN\u000fX.O\u0003 ~;s~O}\b;e\u0001LVt\u0017ezScj(Y\u0018L\u0011GnR~\u0013+y\u0004 \b\u0007\u0006 v@b\\\u0010:Rۏ BUJ\u0016iIu\u0002IUvST\u0016\"\u0002v\\W\u001a Gy+)\u000e \u0003-W=S\\k\u00039}(Es)7c\"V:7is \u0016&FxqAj\u00131\u0013ϣ~ ʦo/nPزh8+\u0001q\\u謶\u0000!\u00139i9NN.\u001a|q,vn)e:,%\u0018w\u0012\u001b>Cqj?/gA^}\u000eLKeR2 ;Bx5\u0017kd1_Tu\u0010&i,~|'nCSU\u0012>Uў\u0010վu)ePD!/3#M/\"Yy\u000f}.Wg&ɡ^ & e\u0016\u000e\u0005I[T)Ljǋү\u0001\\req~햝c{JR:^O;oܒC \u000e 3\u000f׹zюG N~8\u001bl-ǟ.f\u000f\u0016c\u0005sumNEt\u0016h\u00186ѕvM-kG*TX\u0005\u0018 ߫369وQ=2FJˢ:G\u0010 g|܉VH\u0003\u001b\u0012LoY Np j}\u0004b`\u0015 ]E '\u0013i\u00057e䂂\u0016|#a=9W`j TcX1G c긕\u000f\u0015dz:Eˆg}\u0001{l\u0014 #yT;@˪qǜ)\u0018nH`-Zr@\u0004s Cꬆ0G +\u001b;y]nt9\u000fŝ7d4 FϠv\u0004\u0012n\u0005Z9 WXȂ\u0018e[JbRRmGg'UHA ~ԫ>H\u0004ZǾj\"\u0006u(%n gJ+䒳\u0019?7:\u001bݒiǷҭD)y\bU\u000fwc fl)>Hڸ.-{\u0019]\u0004da [\u0007 }sM\u0011B \u00146OLwiHT.-)( Fyyu%0ź\u000ei\u0010aٟ:g\u0016{yo©+o>P9ԤIT \u0005:]mc㖹x,Rե > stream x]Pj0 +t\u0018#\u000f \u000fkGJfXlc;b7\u0004zzOSՊ&A\u00191h\u000e\u0018\u0012\u00142F*Yғ$gJ|.g~\u001a_n׎θ 8kL8 ;:",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "营销话术拆解",
+        "合规和资金风险",
+        "普通人不该硬冲的原因"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "大上下文窗口不可信：AI 编程中的幻觉陷阱 投诉 风险 违规",
+        "大上下文窗口不可信：AI 编程中的幻觉陷阱 骗局 营销话术",
+        "大上下文窗口不可信：AI 编程中的幻觉陷阱 隐藏成本 失败案例"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
