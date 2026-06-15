@@ -121,7 +121,7 @@ class DuplicatePolicyTest(unittest.TestCase):
 
         self.assertEqual(normalized["verdict"]["label"], "可选")
 
-    def test_topic_level_grades_recommendations(self):
+    def test_topic_level_keeps_two_public_levels(self):
         base_report = {
             "decision": "deep_dive",
             "score": 82,
@@ -143,9 +143,43 @@ class DuplicatePolicyTest(unittest.TestCase):
         }
         optional_report = {**base_report, "score": 70, "evidence_level": "media"}
 
-        self.assertEqual(radar.topic_level(base_report, strong_dossier), "最推荐")
-        self.assertEqual(radar.topic_level(secondary_report, secondary_dossier), "次推荐")
+        self.assertEqual(radar.topic_level(base_report, strong_dossier), "推荐")
+        self.assertEqual(radar.topic_level(secondary_report, secondary_dossier), "推荐")
         self.assertEqual(radar.topic_level(optional_report, {"topic_tension": {"score": 6}}), "可选")
+
+    def test_optional_topic_can_upgrade_only_with_stronger_evidence(self):
+        archived = archive_item(
+            "KPMG AI 报告翻车",
+            "KPMG pulls report on AI usage due to apparent hallucinations",
+            "https://techcrunch.com/2026/06/15/kpmg-ai-report/",
+        )
+        archived["verdict"] = "可选"
+        archived["evidence_level"] = "media"
+        archived["score"] = 58
+        archived["first_seen_at"] = "2026-06-10T08:00:00+08:00"
+        archived["last_seen_at"] = "2026-06-10T08:00:00+08:00"
+        archive = {"items": [archived]}
+        upgraded = decision(
+            "KPMG AI 报告翻车",
+            "KPMG pulls report on AI usage due to apparent hallucinations",
+            "https://techcrunch.com/2026/06/15/kpmg-ai-report/",
+        )
+        upgraded.evidence_level = "near_source"
+        upgraded.score = 72
+        upgraded.reader_hook = "有明确证据补足和传播张力。"
+        stale = decision(
+            "KPMG AI 报告翻车",
+            "KPMG pulls report on AI usage due to apparent hallucinations",
+            "https://techcrunch.com/2026/06/15/kpmg-ai-report/",
+        )
+        stale.evidence_level = "media"
+        stale.score = 60
+
+        duplicate, reason = radar.is_duplicate_topic(upgraded, SITE, archive, "2026-06-16-morning")
+        stale_duplicate, stale_reason = radar.is_duplicate_topic(stale, SITE, archive, "2026-06-16-morning")
+
+        self.assertFalse(duplicate, reason)
+        self.assertTrue(stale_duplicate, stale_reason)
 
 
 if __name__ == "__main__":
