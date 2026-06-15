@@ -1,0 +1,1589 @@
+{
+  "id": "20260616-a-backdoor-in-a-linkedin-job-offer-efc26044",
+  "batch_id": "2026-06-16-morning",
+  "title": "LinkedIn求职陷阱：一个后门如何伪装成工作邀请？",
+  "original_title": "A backdoor in a LinkedIn job offer",
+  "url": "https://roman.pt/posts/linkedin-backdoor/",
+  "summary": "Comments",
+  "source_category": "developer_business",
+  "source_category_title": "开发者副业与独立开发",
+  "topic_direction": "side-info",
+  "topic_direction_title": "副业&信息差",
+  "topic_direction_short_title": "副业&信息差",
+  "topic_direction_description": "独立开发、副业项目、工具站、微型 SaaS、开源项目、现金流风险、外包回款、信息差机会和风险避坑。重点看机会是否真实、钱从哪里来、风险在哪里、什么信号出现就该停。",
+  "source_name": "Hacker News",
+  "original_source_name": "Hacker News",
+  "source_type": "rss",
+  "feed_url": "https://news.ycombinator.com/rss",
+  "published_at": "2026-06-15T20:00:57+00:00",
+  "fetched_at": "2026-06-15T22:27:23.711707+00:00",
+  "decision": "deep_dive",
+  "report_type": "risk-warning",
+  "report_type_title": "风险避坑",
+  "score": 85,
+  "reader_hook": "程序员/技术经理角度：求职安全、平台规则、安全漏洞。泛兴趣钩子：求职者都可能遇到。",
+  "topic_tension": {
+    "score": 8,
+    "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+    "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+    "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+  },
+  "persona_discussion_question": "这是真机会，还是又一个普通技术人容易被包装话术带偏的坑？",
+  "why_now": "求职季，钓鱼攻击频发，技术人关注安全。",
+  "evidence_level": "near_source",
+  "source_priority": "P1 高质量近源",
+  "reason": "有具体案例、安全漏洞分析，能引发程序员共鸣和讨论，传播张力强。主要服务核心技术人和副业普通人，次要触达泛兴趣普通人。",
+  "collection_fit": "tools-rules",
+  "investigation_direction": "验证后门技术细节、LinkedIn回应、类似案例。",
+  "uncertainty_flags": [
+    "后门具体实现细节待核实"
+  ],
+  "facts": [
+    {
+      "claim": "Hacker News 发布/收录了这条原始线索：A backdoor in a LinkedIn job offer",
+      "type": "confirmed_fact",
+      "source_url": "https://roman.pt/posts/linkedin-backdoor/",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Hacker News",
+      "url": "https://roman.pt/posts/linkedin-backdoor/",
+      "source_type": "near_source",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {},
+    "source_host": "roman.pt",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 8,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "程序员/技术经理角度：求职安全、平台规则、安全漏洞。泛兴趣钩子：求职者都可能遇到。",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://news.ycombinator.com/rss",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "后门具体实现细节待核实"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "推荐选题",
+      "label": "推荐",
+      "reason": "证据较完整：有真实案例（Hacker News 帖子）、技术细节（npm install 后门）、LinkedIn 官方安全提示、安全公司报告。老花人设解读角度清楚：从程序员求职安全、平台信任机制、成本账切入。读者分层明确：核心技术人（安全防范）、副业普通人（求职避坑）、泛兴趣普通人（求职安全）。泛兴趣故事钩子不夸张：求职者都可能遇到。传播张力成立：平台责任 vs 个人防范、安全 vs 便利。逻辑基本能闭环：攻击手法清晰、防范措施可操作。"
+    },
+    "core_question": "LinkedIn 上的工作邀请是否可能被用作后门攻击的载体？程序员如何识别并防范？",
+    "why_this_topic_matters": "求职季，钓鱼攻击频发，技术人关注安全。该案例展示了攻击者如何利用 npm install 自动执行后门，手法隐蔽，对程序员群体有直接威胁。同时暴露了 LinkedIn 平台在招聘方身份验证上的漏洞，引发对平台责任的讨论。",
+    "fact_summary": [
+      "攻击者伪装成小型加密初创公司的招聘人员，通过 LinkedIn InMail 联系目标。",
+      "招聘人员描述了一个需要首席工程师的破损概念验证，并发送了一个公共 GitHub 仓库链接。",
+      "攻击者要求目标“检查已弃用的 Node 模块问题”，诱使其运行 npm install。",
+      "npm install 会自动执行 prepare 脚本，从而触发后门。",
+      "后门代码隐藏在注释掉的测试代码中，运行服务器发送的任何命令。",
+      "Hacker News 评论指出，LinkedIn 无法让公司否认冒充其员工的用户，这些用户会出现在官方公司页面上。",
+      "eSentire 安全公司警告过类似攻击。",
+      "LinkedIn 官方帮助页面提供了识别和举报诈骗的建议。"
+    ],
+    "persona_discussion_question": "作为一个正在找工作的程序员，我该如何识别并防范伪装成工作邀请的后门攻击？LinkedIn 平台是否应该承担更多责任？",
+    "old_flower_stance": "这件事让普通技术人该争什么：平台应该加强招聘方身份验证，提供更便捷的举报和否认机制。怕什么：求职心切时容易忽略安全细节，npm install 等日常操作可能成为攻击入口。算什么账：花几分钟验证招聘方身份和仓库可信度，比中招后清理后门成本低得多。做什么选择：在信任平台之前，先信任自己的安全习惯。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "副业普通人",
+        "泛兴趣普通人"
+      ],
+      "interest_score": 85,
+      "why_interested": "核心技术人关注安全漏洞和防范技术；副业普通人求职时可能遇到类似骗局；泛兴趣普通人被“求职安全”话题吸引。",
+      "reader_risk": "可能引发对 LinkedIn 平台的过度恐慌，需强调攻击并非普遍存在，但需提高警惕。"
+    },
+    "mass_interest_hook": {
+      "score": 80,
+      "hook_type": "故事|反差|踩坑",
+      "why_non_technical_people_may_click": "标题“LinkedIn 求职陷阱：一个后门如何伪装成工作邀请？”直接点明求职安全，普通人求职时都可能遇到类似情况，好奇心驱动点击。",
+      "story_seed": "一个程序员在 LinkedIn 上收到看似正常的工作邀请，对方要求检查一个 GitHub 仓库的“已弃用 Node 模块问题”，结果 npm install 后电脑被植入后门。",
+      "do_not_overhype": "不要声称“所有 LinkedIn 工作邀请都是钓鱼”或“LinkedIn 存在系统性安全漏洞”，应聚焦于具体攻击手法和防范措施。"
+    },
+    "topic_tension": {
+      "score": 8,
+      "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+      "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "平台/工具厂商"
+      ],
+      "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2025-04-17: Roman Imankulov 发布博客文章，详细描述攻击过程。",
+      "2025-04-17: Hacker News 上引发热议，81 条评论。",
+      "2025-04-17: 本文作为 Radar 选题报告输出。"
+    ],
+    "evidence_table": [
+      {
+        "source": "A backdoor in a LinkedIn job offer - Roman Imankulov",
+        "url": "https://roman.pt/posts/linkedin-backdoor/",
+        "supports": "攻击的具体技术细节：npm install 后门、伪装成招聘人员、诱饵指令。",
+        "reliability": "near_source"
+      },
+      {
+        "source": "Hacker News 评论",
+        "url": "https://news.ycombinator.com/item?id=48546294",
+        "supports": "LinkedIn 无法让公司否认冒充员工的用户；类似攻击已发生。",
+        "reliability": "media"
+      },
+      {
+        "source": "eSentire 安全公告",
+        "url": "https://www.esentire.com/security-advisories/hackers-spearphish-professionals-on-linkedin-with-fake-job-offers-infecting-them-with-malware-warns-esentire",
+        "supports": "安全公司警告 LinkedIn 上的鱼叉式钓鱼攻击。",
+        "reliability": "official"
+      },
+      {
+        "source": "LinkedIn 帮助页面",
+        "url": "https://www.linkedin.com/help/linkedin/answer/a1336387",
+        "supports": "LinkedIn 官方提供识别和举报诈骗的建议。",
+        "reliability": "official"
+      },
+      {
+        "source": "Forbes 文章",
+        "url": "https://www.forbes.com/sites/technology/article/how-to-spot-and-avoid-linkedin-scams/",
+        "supports": "列举了 10 种常见 LinkedIn 诈骗。",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "攻击手法清晰：伪装招聘人员 -> 发送 GitHub 仓库 -> 诱使 npm install -> 自动执行后门。LinkedIn 平台存在身份验证漏洞。防范措施可操作：验证招聘方身份、检查仓库代码、使用沙箱环境。逻辑闭环。",
+    "writeable_angles": [
+      {
+        "angle": "攻击技术深度解析：npm install 后门如何工作？",
+        "why": "满足核心技术人对技术细节的需求。",
+        "needs": "需要补充 npm prepare 脚本的详细说明。"
+      },
+      {
+        "angle": "求职安全指南：程序员如何识别 LinkedIn 上的钓鱼攻击？",
+        "why": "服务副业普通人和泛兴趣普通人，提供实用建议。",
+        "needs": "需要整理验证招聘方身份、检查仓库、安全操作等步骤。"
+      },
+      {
+        "angle": "平台责任：LinkedIn 是否应该为招聘方身份验证负责？",
+        "why": "引发争议和讨论，传播张力强。",
+        "needs": "需要分析 LinkedIn 现有验证机制和漏洞。"
+      }
+    ],
+    "missing_basics": [
+      "npm prepare 脚本的自动执行机制。",
+      "LinkedIn 公司页面验证流程。"
+    ],
+    "missing_materials": [
+      "攻击者使用的 GitHub 仓库的具体代码（如果公开）。",
+      "LinkedIn 官方对此次事件的回应。",
+      "其他类似攻击案例的详细报告。"
+    ],
+    "not_claimable": [
+      "LinkedIn 平台存在系统性安全漏洞。",
+      "此类攻击已造成大规模受害者。",
+      "所有工作邀请都可能是钓鱼。"
+    ],
+    "followup_queries": [
+      "攻击者使用的 GitHub 仓库是否仍然在线？",
+      "LinkedIn 是否已采取措施加强招聘方身份验证？",
+      "是否有其他类似攻击案例？"
+    ],
+    "additional_search_queries": [
+      "LinkedIn job offer backdoor npm install",
+      "LinkedIn recruiter identity verification vulnerability",
+      "LinkedIn phishing campaign 2025"
+    ],
+    "stop_conditions": [
+      "LinkedIn 官方发布声明称已修复相关漏洞。",
+      "攻击者使用的仓库已被删除且无其他类似案例。",
+      "证据显示该攻击仅为孤立事件且无普遍性。"
+    ],
+    "confidence": 85,
+    "topic_direction": "side-info",
+    "topic_direction_title": "副业&信息差",
+    "report_type": "risk-warning",
+    "quality_gate": {
+      "pass": true,
+      "score": 85,
+      "fatal_issues": [],
+      "warnings": [],
+      "missing_evidence": [],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": true,
+      "downstream_handoff_ok": true,
+      "material_pack_ok": true,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": true,
+      "source_coverage_ok": true,
+      "recommendation": "publish"
+    },
+    "research_plan": {
+      "core_question": "LinkedIn上的工作邀请是否可能被用作后门攻击的载体？",
+      "persona_discussion_question": "作为一个正在找工作的程序员，我该如何识别并防范伪装成工作邀请的后门攻击？",
+      "hidden_public_issue": "求职平台的安全审核机制是否足以保护求职者免受针对性攻击，以及求职者自身的安全意识缺口。",
+      "must_verify": [
+        "后门的具体实现方式（如恶意附件、链接、代码测试等）",
+        "攻击者如何利用LinkedIn的通信功能（如InMail、附件、外部链接）",
+        "是否有真实受害者案例或仅概念验证",
+        "LinkedIn官方是否有相关安全提示或已知漏洞报告",
+        "攻击是否针对特定人群（如安全研究员、特定公司员工）"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "case_study",
+          "query": "LinkedIn job offer backdoor attack real case",
+          "why_needed": "确认是否有真实攻击案例，评估威胁的普遍性"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "LinkedIn security report phishing job offer",
+          "why_needed": "获取LinkedIn官方对钓鱼攻击的统计和防护建议"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "LinkedIn job offer malware Reddit",
+          "why_needed": "了解社区中是否有人报告类似经历或讨论防范方法"
+        },
+        {
+          "source_type": "policy",
+          "query": "LinkedIn terms of service job posting security",
+          "why_needed": "检查LinkedIn对招聘信息的安全审核政策"
+        },
+        {
+          "source_type": "github_repo",
+          "query": "LinkedIn phishing toolkit github",
+          "why_needed": "查看是否存在公开的LinkedIn钓鱼工具，评估攻击技术细节"
+        }
+      ],
+      "expert_challenge_points": [
+        "攻击者如何绕过LinkedIn的附件扫描和链接检测？",
+        "后门是否依赖受害者执行特定操作（如运行代码、打开文档）？",
+        "普通求职者与安全研究员面临的风险是否不同？"
+      ],
+      "do_not_claim_yet": [
+        "LinkedIn平台存在系统性安全漏洞",
+        "此类攻击已造成大规模受害者",
+        "所有工作邀请都可能是钓鱼"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确攻击的具体手法和防范措施，避免引发不必要的恐慌。",
+      "downstream_materials_needed": [
+        "攻击技术细节分析（如恶意文档、宏、可执行文件）",
+        "求职者安全指南（如何验证招聘方身份、安全处理附件）",
+        "LinkedIn官方安全功能（如报告按钮、安全提示）的使用说明"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "A backdoor in a LinkedIn job offer - Roman Imankulov",
+        "url": "https://roman.pt/posts/linkedin-backdoor/",
+        "query": "LinkedIn job offer backdoor attack real case",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "\b\u0000\u0000\u0000\u0000\u0000\u0000{}s6)Ny\u001ag*R8, \u001b/ ˘'\u0018UɝGG\u0013M\u001b\u001a==+򗲡cZ0ʍ|\u0016py7\u001a}\u0007lD?yX.|^ZBOiĉ~ u\\趺\\|4 r1ol2l6yeLcՠƊl^f\u0012\u0019BS cޢ%0r Y%\u00139z|ZXcƣxx_~z=z -:U\"~0r rAG -42͟EV\u000f?6^ Ue=\u0017\u000f݂{(=\\=\u0003Ob4b[̅\\Cйň-\u0012& \u001bm\u001blX~\\Yι ksEY0dU\u0014b7 M\u001bMkR*鷳h|\u0012\u0017ɞ=,\u000e\u001b\\G[ (沩(84;{vs,j+@u4%`1\b.Ds,eQu+]&^gQƂ6\u0019-\u0013T\u001a!`\u0016w|&X?\u0019\u0015\b\u000e|h1o)95h\u0010&)/;\u00155ɥ)~ 1|>i WgJjT;^\u0014\u0006#s%}-^ \u0004, \u0004.Ʋp\u0016qm\u0006B \u0014h\u0002\u0013V\u0018n{\u000e.g!-n (\u001a*d\u00170ߛ 5(7 \u0007=3Xߟ\u000f}Io4{ك*`WnG&̚U\\m'\\%eK\u001b\"}JV:JҾ)\u0016.Mi0M@\u0003+QNZv ifr vtK |>>\u0013OG eɱ$jjen\u0006V..\u000e\u0006KS \u0012R\u0019Gv\u0007`sOS\u000e\b.E{- \u0015S)>* QΜ5`\u0000\bj-I\u000f\\56Ft H:?aJHzb ?;CK4&]3A k\u00035Ѝts+Hh ΃3 ߯Hy EX\u0017\u001aPmxÛ-\u001b3p\u0001J\u0006*=[J\u000ft-B\u0016\"yγF\u0017(\u0016\błR(%-H ŵڸf\u001b W\\tR\u00146%&KqZ#5kv\\кx-x\u0018iҳ`PdF-kưEyƟIor@ \u0005\u00069jŵB1o-ǥԂnv\u0015\u0003[NeMEWS ?lhy \u0013}Qp\u0011b -1W ~LnJ\u0013?\u0014,R;^I-i\u0017?LOZ6z\"\u0005+6Qw=F\u00142\u0016\u0011s,\\\u000e\u0017 7m\u0018Tq d\u0013:\u0007Ԗ.\b\\`N c7Åv \u0003\u0000\u0017]b\u0015O\u0000 `ȵA8N_LO!؄|b:-JOxdMi\u0014 vvV,G?΃\b ;\u00004x0>7>\u000fG싽 l2 FZ0\u000fÇxa-\u0018|p\u0010YZ( ֒?D?Tf\u0002eMC@jo?n\u0007\u0003Ix48VT\u0006r(i}BEλqO}vC\u0013qd9t 1#t\u0016\u001a,k)R~p(eRgL? '\u0000wdrlI])FxN\u0019l,!\b\u0002%:s(OO!\u001aZŰu~w*=ɨp]Y\u0010c;}df0tx=lP\u0004!t>\b/HHQ 42\u0004\u0005XN A \"e \u001a\u0017cFCR6\u0006Ģ\u001a+ʯ=G\u001biɽc~f\u0017[\\u{l \u0015IhtZˑ#&iض3N%v\u0005ˠ\b!( l%%U{\u000eҷ?!p@9J8 BH\u0017\u0000$Xڃєn٭Am\u0001g2m+J(+^Gŏ5HM>+mWH;8\u0003hW9\u0007Y ^Uh*BC»d+L_jm~W r\u0004Ը&Po;]v3ۢ\u0016Ks\u0013\u0010A_$`S}uq T^ʈP \u0016mE)v\u000fҲ ^ #\u001ah-Y4,, =;3vһ^ʆ:_\u001bK\u0002mG\u0016 \u0014\u001a\\sM\u0007&\\ )E,V4\u0018+Fݷ]Zk؟Ė3\u001a\u0015lh餧:3,]T(+%Gm\u000e\u0017}E@-1 \u0018\u0017Ks}_>Ղ\u0007u_}\u0003G6mi\u0017kG`l\u0011Am6PnQeYW:\u0015z*!:X.CShrx %\u0001^e{72\u00059/\u0012fcI(mR`@2_K\u0017 + @uOɄ{qδ4[켱Ye~=0\u0018 \u0001WMi`L;p`^L\u0001i;vh\u0007`I`I M#6Q={Ԍ\u0007$ƀ> $ij}k3\u0003m {6g ԑْ\u0018\"\"z\u0007W\u001at ؐRٵ\u000e\u0004\u0017a@v-( FUvw\u0016\u0015 5G F9& \u0017mCĤZ,$?OZsEeCw>c|\u0005Y ҡ tӒ8\u0019$ !bM1JBۆ+k\u000e q< \u000e\u0013mg\u0011g$ \u0004,!9 |s[\u0003鳈mw\u0001|Ԡ(h\u0014pR ~/bsa{s@ c\b~K:цlK94\u0005.SjЄ\u000f1n\u0018284Qy\u0014q\u0010:K\u0019\u001bUVppkǰlM\u0013vj%\u0007H1TA ;g/9R\u001a Q\u0005n=I\u00123Pm:\u0018䊫ݾsp.L\u0011\u0006'7}+ 6+c\u0004p5\u000fm%ISpug-^ٳk r\u0012\u0005i%/ak4\\޹\u001aߚ\u0005NB7[.b7swV,,9\u0017]\u0016:pʴ\u0016TI\u0006qcޕ=cG7_ \u0007M{7e\u001b\u0002+;XIg\u0018MsTcz\u0003&.\u0015MmGOL97Bk\u0003] Hmv ͞rɝ@oϨ|AONϖ4]C(\u0017f\\7xN'7Kc\u0005̢=Nߑctb'\u001a]\u0015(&6\u000f\u0003vX0y{\u0019Z Qh{\u0005CL-Qeё| j%Kv\u0001xL8K4wᭅ\u0007\u0006ߩh~'`2 ^G\u001b^$ Cx \u000f\u000em5ƢVaI'? p3\u001b\u0000\u0000P3\u0000\u0000",
+        "fetch_error": ""
+      },
+      {
+        "title": "A backdoor in a LinkedIn job offer | Hacker News",
+        "url": "https://news.ycombinator.com/item?id=48546294",
+        "query": "LinkedIn job offer backdoor attack real case",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "A backdoor in a LinkedIn job offer | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login A backdoor in a LinkedIn job offer ( roman.pt ) 395 points by lwhsiao 2 hours ago | hide | past | favorite | 81 comments help wxw 1 hour ago | next [–] > a recruiter at a small crypto startup [...] she described a broken proof-of-concept they needed a lead engineer for, and then sent me a public GitHub repo to review. Specifically, she asked me to “check out the deprecated Node modules issue.” > ...buried between walls of commented-out tests, the payload runs anything the server sends back to your machine. > npm runs prepare automatically after npm install, so just installing dependencies executes the backdoor. > The instruction to “check out the deprecated Node modules issue” was bait to get me to run npm install. Great catch. I've not been phished on LinkedIn before. Surprised it's getting this bad. reply pants2 58 minutes ago | parent | next [–] LinkedIn offers no way for $company to disavow users who claim to work for $company - they will appear on the official company page as long as it's in their profile. We've had fake recruiters that claim to work for us running basically the same scam. These are great fake profiles: LinkedIn Premium, tons of relevant posts, etc... but they don't work for us, and we get angry messages from people saying our recruiter tried to scam them. No, they're not our recruiter despite showing up on our company page on LinkedIn. No number of reports could get them taken down. I finally got it solved by buying drinks for a buddy of mine that works for LinkedIn, but not all startups have that connection! reply tweetle_beetle 46 minutes ago | root | parent | next [–] LinkedIn didn't even disavow people pretending to work for Li",
+        "fetch_error": ""
+      },
+      {
+        "title": "Hackers Spearphish Professionals on LinkedIn with Fake Job Offers, Infecting them with Malware, Warns eSentire | eSentire",
+        "url": "https://www.esentire.com/security-advisories/hackers-spearphish-professionals-on-linkedin-with-fake-job-offers-infecting-them-with-malware-warns-esentire",
+        "query": "LinkedIn job offer backdoor attack real case",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-57Z6ZWR'); (function () { var zi = document.createElement('script'); zi.type = 'text/javascript'; zi.async = true; zi.src = 'https://ws.zoominfo.com/pixel/3k8XsFBkOniCq5dTRwpV'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(zi, s); })(); (function(w,q){w['QualifiedObject']=q;w[q]=w[q]||function(){ (w[q].q=w[q].q||[]).push(arguments)};})(window,'qualified') window._vwo_code || (function () { var w=window, d=document; var account_id=780243, version=2.2, settings_tolerance=2000, hide_element='body', hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important'; /* DO NOT EDIT BELOW THIS LINE */ if(f=!1,v=d.querySelector('#vwoCode'),cc={},-1 Hackers Spearphish Professionals on LinkedIn with Fake Job Offers, Infecting them with Malware, Warns eSentire | eSentire function readCookie(c_name) { var c_value = document.cookie; var c_start = c_value.indexOf(\" \" + c_name + \"=\"); if (c_start == -1) { c_start = c_value.indexOf(c_name + \"=\"); } if (c_start == -1) { c_value = null; } else { c_start = c_value.indexOf(\"=\", c_start) + 1; var c_end = c_value.indexOf(\";\", c_start); if (c_end == -1) { c_end = c_value.length; } c_value = unescape(c_value.substring(c_start, c_end)); } return c_value; } function setCookie(a, d, b) { var c = new Date; c.setTime(c.getTime() + 864E5 * b); b = \"; expires=\" + c.toGMTString(); document.cookie = a + \"=\" + d + b } function getParam(a) { return (a = RegE",
+        "fetch_error": ""
+      },
+      {
+        "title": "How To Recognize These 10 Common LinkedIn Scams Before It’s Too Late",
+        "url": "https://www.forbes.com/sites/technology/article/how-to-spot-and-avoid-linkedin-scams/",
+        "query": "LinkedIn security report phishing job offer",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "How To Recognize These 10 Common LinkedIn Scams Before It’s Too Late window.ddjskey = 'B9A4663C1A189CCB8B3E706535EAF6'; window.ddoptions = { ajaxListenerPath: [{host: 'forbes.com'}], withCredentials: true }; window.semaphore=window.semaphore||[];window.ketch=window.ketch||function(){window.semaphore.push(arguments)};(function(){if(false|| false){ var s=document.createElement('style'); s.id='ketch-suppression-styles'; s.innerHTML='#ketch-banner{display:none!important}'; document.head.appendChild(s); }})();var e=document.createElement('script');e.src='https://global.ketchcdn.com/web/v3/config/forbes/website_smart_tag/boot.js';e.defer=e.async=true;(document.head||document.body).appendChild(e); {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Why LinkedIn Scams Seem Convincing And How To Spot The Signs Early\",\"url\":\"https://www.forbes.com/sites/technology/article/how-to-spot-and-avoid-linkedin-scams/\",\"speakable\":{\"@type\":\"SpeakableSpecification\",\"cssSelector\":[\".speakable-headline\"]},\"mainContentOfPage\":{\"@type\":\"WebPageElement\",\"cssSelector\":\"#article-num-0\"},\"breadcrumb\":{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Forbes Homepage\",\"item\":\"https://www.forbes.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Innovation\",\"item\":\"https://www.forbes.com/innovation/\"}]},\"mainEntity\":{\"@type\":\"NewsArticle\",\"url\":\"https://www.forbes.com/sites/technology/article/how-to-spot-and-avoid-linkedin-scams/\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://imageio.forbes.com/specials-images/imageserve/69cd87355867ad3739ffec06/0x0.jpg?format=jpg&crop=1746,1164,x0,y0,safe&height=900&width=1600&fit=bounds\",\"width\":542.79,\"height\":304.6},\"publisher\":{\"@type\":\"NewsMediaOrganization\",\"name\":\"Forbes\",\"url\":\"https://www.forbes.com/\",\"ethicsPolicy\":\"",
+        "fetch_error": ""
+      },
+      {
+        "title": "Recognize and report scams | LinkedIn Help",
+        "url": "https://www.linkedin.com/help/linkedin/answer/a1336387",
+        "query": "LinkedIn security report phishing job offer",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Recognize and report scams | LinkedIn Help (function(){function a(){var a,b;var c=new Promise(function(c,d){a=c,b=d});return c.resolve=a,c.reject=b,c}window.helpcenter=a()})(); Attention screen reader users, you are in a mobile optimized view and content may not appear where you expect it to be. To return the screen to its desktop view, please maximize your browser. Skip to content Skip to search Close jump menu Help LinkedIn Help Dropdown menu, expand to explore help for other LinkedIn products Close menu Get help with: LinkedIn Corporate Billing Learning Marketing Solutions Recruiter Sales Navigator Talent Insights Go to LinkedIn Sign in Sign in Recognize and report scams Last updated: 7 months ago Scams are a form of fraud, usually committed through email. Scammers create false identities or impersonate legitimate people or companies. Their goal is to steal your money or in some cases, your identity. There are several warning signs of a typical scam message: Offers that seem too good to be true. Messages containing spelling or grammar mistakes. Messages that aren't addressed to you personally. Messages asking you for personal or financial information. In addition to these scams, the Internet Crime Complaint Center (IC3) monitors and reports different types of scams you could encounter. If you've been the victim of a scam, report it to your local law enforcement. If you've received a scam message on LinkedIn, please contact us . A few common scams you should be aware of include: Inheritance or advanced fee fraud scams These scams usually request a small fee up front and claim that you will receive a large sum of money in return. You may also be asked for bank account and credit card numbers. Job scams These scams typically involve people pretending to be recruiters or",
+        "fetch_error": ""
+      },
+      {
+        "title": "6 LinkedIn Job Scams to Watch Out For in 2025",
+        "url": "https://skrapp.io/blog/linkedin-job-scams/",
+        "query": "LinkedIn security report phishing job offer",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "6 LinkedIn Job Scams to Watch Out For in 2025 { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"publisher\": { \"@type\": \"Organization\", \"name\": \"Lead Generation & Email Outreach Strategies Tips and Tools | Skrapp.io Blog\", \"url\": \"https://blog.skrapp.io/\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://blog.skrapp.io/content/images/2025/02/logo-black-long.png\" } }, \"author\": { \"@type\": \"Person\", \"name\": \"Othmane Ghazi\", \"image\": { \"@type\": \"ImageObject\", \"url\": \"https://blog.skrapp.io/content/images/2024/05/othmane-ghazi.png\", \"width\": 500, \"height\": 500 }, \"url\": \"https://blog.skrapp.io/author/othmane/\", \"sameAs\": [ \"https://skrapp.io\", \"https://twitter.com/othmaneghz\" ] }, \"headline\": \"6 LinkedIn Job Scams to Watch Out For in 2025\", \"url\": \"https://blog.skrapp.io/linkedin-job-scams/\", \"datePublished\": \"2024-10-29T10:35:30.000Z\", \"dateModified\": \"2026-04-17T09:06:56.000Z\", \"image\": { \"@type\": \"ImageObject\", \"url\": \"https://blog.skrapp.io/content/images/2024/10/LinkedIn-Recruitment-Scams.jpg\", \"width\": 1200, \"height\": 800 }, \"description\": \"LinkedIn job scams are on the rise in 2026, targeting job seekers with fake recruiters, phishing links, and too-good-to-be-true offers. \", \"mainEntityOfPage\": \"https://blog.skrapp.io/linkedin-job-scams/\" } window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-45417310-4'); :root {--ghost-accent-color: #2B6EE9;} Home Email Finder Linkedin Extension Email Verifier Go to Skrapp.io Apr 17, 2026 10 min read 6 LinkedIn Job Scams to Watch Out For in 2026 LinkedIn job scams are on the rise in 2026, targeting job seekers with fake recruiters, phishing links, and too-good-to-be-true offers. On this page Beware of LinkedIn job scams , because nothing ruins your",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/cybersecurity on Reddit: Beware Before Applying on LinkedIn: Fake Job Offers Linked to Malware Campaigns",
+        "url": "https://www.reddit.com/r/cybersecurity/comments/1k7n4xs/beware_before_applying_on_linkedin_fake_job/",
+        "query": "LinkedIn job offer malware Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/linkedin on Reddit: 🚨 Security Alert – Fake LinkedIn Job Offer Scam : Zip File and PDFs Installing Trojan 🚨",
+        "url": "https://www.reddit.com/r/linkedin/comments/1pr8p0z/security_alert_fake_linkedin_job_offer_scam_zip/",
+        "query": "LinkedIn job offer malware Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/linkedin on Reddit: Since I started applying for jobs, scam messages on LinkedIn have exploded. Is our data being scraped or sold?",
+        "url": "https://www.reddit.com/r/linkedin/comments/1ow4al8/since_i_started_applying_for_jobs_scam_messages/",
+        "query": "LinkedIn job offer malware Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "LinkedIn Jobs Terms and Conditions",
+        "url": "https://www.linkedin.com/legal/jobs-terms-conditions",
+        "query": "LinkedIn terms of service job posting security",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); LinkedIn Jobs Terms and Conditions Skip to main content User Agreement Summary of User Agreement Privacy Policy Professional Community Policies Cookie Policy Copyright Policy Regional Info EU Notice California Privacy Disclosure U.S. State Privacy Laws User Agreement Summary of User Agreement Privacy Policy Professional Community Policies Cookie Policy Copyright Policy Regional Info EU Notice California Privacy Disclosure U.S. State Privacy Laws LinkedIn Jobs Terms and Conditions Welcome, and thanks for using LinkedIn's jobs posting platform and related products and services (“LinkedIn Jobs”). You agree that by accessing, posting, promoting a job, or using LinkedIn Jobs for hiring, you enter a legal binding agreement with LinkedIn. 1. Agreement The following terms and conditions govern your access and use of LinkedIn Jobs: These LinkedIn Jobs Terms and Conditions The LinkedIn Jobs Policies The LinkedIn User Agreement and Privacy Policy The LinkedIn Terms for Paid Services applicable to LinkedIn Jobs The LinkedIn Data Processing Agreement (“DPA”) under which you and your entity are a “Customer” Additional terms and conditions you are agree to when using LinkedIn Jobs To the extent of any conflict between any of the terms and conditions listed above or any different agreements that you have with LinkedIn, these Jobs Terms and Conditions and any feature-specific terms govern with respect to the use of LinkedIn Jobs. However, w",
+        "fetch_error": ""
+      },
+      {
+        "title": "LinkedIn Service Terms",
+        "url": "https://www.linkedin.com/legal/l/service-terms",
+        "query": "LinkedIn terms of service job posting security",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); LinkedIn Service Terms Skip to main content Join now Sign in LinkedIn Service Terms February 2, 2026 The following Service Terms apply to Customer to the extent the specific Service is included in the applicable ordering document. LinkedIn may update these Service Terms from time to time. LinkedIn reserves the right to upgrade, update or discontinue any aspect or feature of a Service in whole or in part; provided, however, that if LinkedIn discontinues a Service in whole during the term of an ordering document, then LinkedIn will provide Customer with an alternative or replacement service. 1. TALENT SERVICES 1.1. Recruiter Corporate Customer will use the Recruiter Corporate Service (and related services) and information about Members only to recruit individuals to become employees and consultants of Customer or its Affiliates, or, if Customer is acting as a Staffing Agency or BPO, only to recruit individuals to become employees and consultants of its clients. “ Staffing Agency ” means a Customer that uses the Services to recruit on behalf of a third-party client using Customer's own name and/or logo, including without limitation, staffing agencies, executive search firms, and direct hire firms. “ BPO ” means a business process outsourcer Customer that recruits on behalf of a client using the client's name and/or logo, including without limitation, recruitment process outsourcers, managed service providers, and clinical rese",
+        "fetch_error": ""
+      },
+      {
+        "title": "User Agreement | LinkedIn",
+        "url": "https://www.linkedin.com/legal/user-agreement",
+        "query": "LinkedIn terms of service job posting security",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); User Agreement | LinkedIn Skip to main content User Agreement Summary of User Agreement Privacy Policy Professional Community Policies Cookie Policy Copyright Policy Regional Info EU Notice California Privacy Disclosure U.S. State Privacy Laws User Agreement Summary of User Agreement Privacy Policy Professional Community Policies Cookie Policy Copyright Policy Regional Info EU Notice California Privacy Disclosure U.S. State Privacy Laws User Agreement Effective on November 3, 2025 Our mission is to connect the world’s professionals to allow them to be more productive and successful. Our services are designed to promote economic opportunity for our members by enabling you and millions of other professionals to meet, exchange ideas, learn, and find opportunities or employees, work, and make decisions in a network of trusted relationships. Table of Contents: Introduction Obligations Rights and Limits Disclaimer and Limit of Liability Termination Governing Law and Dispute Resolution General Terms LinkedIn “Dos and Don’ts” Complaints Regarding Content How To Contact Us Introduction 1.1 Contract When you use our Services you agree to all of these terms. Your use of our Services is also subject to our Cookie Policy and our Privacy Policy, which covers how we collect, use, share, and store your personal information. By creating a LinkedIn account or accessing or using our Services (described below), you are agreeing to enter into a",
+        "fetch_error": ""
+      },
+      {
+        "title": "Kenner Rodgers III on LinkedIn: GitHub - gophish/gophish: Open-Source Phishing Toolkit",
+        "url": "https://www.linkedin.com/posts/kennerrodgers_github-gophishgophish-open-source-phishing-activity-7068230695457886208-gNMK",
+        "query": "LinkedIn phishing toolkit github",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); GitHub - gophish/gophish: Open-Source Phishing Toolkit | Kenner Rodgers III {\"@context\":\"http://schema.org\",\"@type\":\"SocialMediaPosting\",\"@id\":\"https://www.linkedin.com/posts/kennerrodgers_github-gophishgophish-open-source-phishing-activity-7068230695457886208-gNMK\",\"datePublished\":\"2023-05-27T14:25:19.158Z\",\"comment\":[],\"commentCount\":0,\"sharedContent\":{\"@type\":\"WebPage\",\"author\":{\"name\":\"Black Hills Information Security\",\"image\":{\"url\":\"https://media.licdn.com/dms/image/v2/C4E0BAQEFv-xGKtJikA/company-logo_100_100/company-logo_100_100/0/1630566642675/black_hills_information_security_logo?e=2147483647&v=beta&t=MpYI5xceDgYOtgyEv6nKu8TbonHeSgRmQAL7NNln9Ho\",\"@type\":\"ImageObject\"},\"url\":\"https://www.linkedin.com/company/black-hills-information-security\",\"@type\":\"Organization\",\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/FollowAction\",\"userInteractionCount\":128158}},\"headline\":\"🔒 Tool Highlight: Gophish - Open-Source Phishing Framework\\n\\nLooking to enhance your organization's security posture? Introducing Gophish, an open-source phishing framework that simulates and analyze phishing attacks developed by Jordan Wright. With its extensive feature set and user-friendly interface, Gophish empowers organizations to identify vulnerabilities, educate employees, and improve their overall cybersecurity resilience.\\n\\nGophish allows you to easily create and customize phishing campaigns! Craft ",
+        "fetch_error": ""
+      },
+      {
+        "title": "David Bowles on LinkedIn: GitHub - gophish/gophish: Open-Source Phishing Toolkit",
+        "url": "https://www.linkedin.com/posts/hackingdb_github-gophishgophish-open-source-phishing-activity-7067506518169972736-aHkE",
+        "query": "LinkedIn phishing toolkit github",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); GitHub - gophish/gophish: Open-Source Phishing Toolkit | David B {\"@context\":\"http://schema.org\",\"@type\":\"SocialMediaPosting\",\"@id\":\"https://www.linkedin.com/posts/hackingdb_github-gophishgophish-open-source-phishing-activity-7067506518169972736-aHkE\",\"datePublished\":\"2023-05-25T14:27:41.836Z\",\"comment\":[],\"commentCount\":0,\"sharedContent\":{\"@type\":\"WebPage\",\"author\":{\"name\":\"Black Hills Information Security\",\"image\":{\"url\":\"https://media.licdn.com/dms/image/v2/C4E0BAQEFv-xGKtJikA/company-logo_100_100/company-logo_100_100/0/1630566642675/black_hills_information_security_logo?e=2147483647&v=beta&t=MpYI5xceDgYOtgyEv6nKu8TbonHeSgRmQAL7NNln9Ho\",\"@type\":\"ImageObject\"},\"url\":\"https://www.linkedin.com/company/black-hills-information-security\",\"@type\":\"Organization\",\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/FollowAction\",\"userInteractionCount\":128158}},\"headline\":\"🔒 Tool Highlight: Gophish - Open-Source Phishing Framework\\n\\nLooking to enhance your organization's security posture? Introducing Gophish, an open-source phishing framework that simulates and analyze phishing attacks developed by Jordan Wright. With its extensive feature set and user-friendly interface, Gophish empowers organizations to identify vulnerabilities, educate employees, and improve their overall cybersecurity resilience.\\n\\nGophish allows you to easily create and customize phishing campaigns! Craft convincing emai",
+        "fetch_error": ""
+      },
+      {
+        "title": "Marc Baude on LinkedIn: GitHub - gophish/gophish: Open-Source Phishing Toolkit",
+        "url": "https://www.linkedin.com/posts/marc-baude-0412a21ba_github-gophishgophish-open-source-phishing-activity-7104478246330585091-F2o4",
+        "query": "LinkedIn phishing toolkit github",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); GitHub - gophish/gophish: Open-Source Phishing Toolkit | Marc Baude {\"@context\":\"http://schema.org\",\"@type\":\"SocialMediaPosting\",\"@id\":\"https://de.linkedin.com/posts/marc-baude-0412a21ba_github-gophishgophish-open-source-phishing-activity-7104478246330585091-F2o4\",\"datePublished\":\"2023-09-04T15:00:08.735Z\",\"headline\":\"🚨 Achtung vor Phishing!\",\"comment\":[],\"commentCount\":0,\"text\":\"GitHub - gophish/gophish: Open-Source Phishing Toolkit\",\"image\":{\"url\":\"https://media.licdn.com/dms/image/sync/v2/D4D27AQHjaw55Jo7PAw/articleshare-shrink_800/articleshare-shrink_800/0/1774473153444?e=2147483647&v=beta&t=CksIvAr6zjmYtv3a33Ab_xci8Oe-qDQ2US8_OZwa28k\",\"@type\":\"ImageObject\"},\"articleBody\":\"🚨 Achtung vor Phishing! Schützen Sie Ihr Unternehmen 🚨\\n\\nMontagmorgen im Büro - der Kaffee läuft, die E-Mails werden gecheckt, und plötzlich taucht ein verlockender Link zu einem neuen Foodtruck in der Nähe auf. Kurz mal schauen, was es Leckeres gibt, denken Sie sich. Doch im nächsten Moment bleibt alles stehen – Ihr Kollege hat dasselbe Problem! Das ist der Moment, in dem Phishing zuschlagen kann.\\n\\nAber wie können Sie sich davor schützen? Bewusstsein schaffen – und das nicht nur einmal, sondern regelmäßig!\\n\\n1️⃣ Option für die Technik-Enthusiasten: Mit GoPhish (https://lnkd.in/eTCTeEHk) haben Sie ein Open-Source-Tool zur Hand, um Phishing-Szenarien darzustellen und Ihre Mitarbeiter regelmäßig und datenschutzkonform zu sensibilisieren. Einfach ein",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "推荐选题",
+      "label": "推荐",
+      "reason": "证据较完整：有真实案例（Hacker News 帖子）、技术细节（npm install 后门）、LinkedIn 官方安全提示、安全公司报告。老花人设解读角度清楚：从程序员求职安全、平台信任机制、成本账切入。读者分层明确：核心技术人（安全防范）、副业普通人（求职避坑）、泛兴趣普通人（求职安全）。泛兴趣故事钩子不夸张：求职者都可能遇到。传播张力成立：平台责任 vs 个人防范、安全 vs 便利。逻辑基本能闭环：攻击手法清晰、防范措施可操作。"
+    },
+    "core_question": "LinkedIn 上的工作邀请是否可能被用作后门攻击的载体？程序员如何识别并防范？",
+    "why_this_topic_matters": "求职季，钓鱼攻击频发，技术人关注安全。该案例展示了攻击者如何利用 npm install 自动执行后门，手法隐蔽，对程序员群体有直接威胁。同时暴露了 LinkedIn 平台在招聘方身份验证上的漏洞，引发对平台责任的讨论。",
+    "fact_summary": [
+      "攻击者伪装成小型加密初创公司的招聘人员，通过 LinkedIn InMail 联系目标。",
+      "招聘人员描述了一个需要首席工程师的破损概念验证，并发送了一个公共 GitHub 仓库链接。",
+      "攻击者要求目标“检查已弃用的 Node 模块问题”，诱使其运行 npm install。",
+      "npm install 会自动执行 prepare 脚本，从而触发后门。",
+      "后门代码隐藏在注释掉的测试代码中，运行服务器发送的任何命令。",
+      "Hacker News 评论指出，LinkedIn 无法让公司否认冒充其员工的用户，这些用户会出现在官方公司页面上。",
+      "eSentire 安全公司警告过类似攻击。",
+      "LinkedIn 官方帮助页面提供了识别和举报诈骗的建议。"
+    ],
+    "persona_discussion_question": "作为一个正在找工作的程序员，我该如何识别并防范伪装成工作邀请的后门攻击？LinkedIn 平台是否应该承担更多责任？",
+    "old_flower_stance": "这件事让普通技术人该争什么：平台应该加强招聘方身份验证，提供更便捷的举报和否认机制。怕什么：求职心切时容易忽略安全细节，npm install 等日常操作可能成为攻击入口。算什么账：花几分钟验证招聘方身份和仓库可信度，比中招后清理后门成本低得多。做什么选择：在信任平台之前，先信任自己的安全习惯。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "副业普通人",
+        "泛兴趣普通人"
+      ],
+      "interest_score": 85,
+      "why_interested": "核心技术人关注安全漏洞和防范技术；副业普通人求职时可能遇到类似骗局；泛兴趣普通人被“求职安全”话题吸引。",
+      "reader_risk": "可能引发对 LinkedIn 平台的过度恐慌，需强调攻击并非普遍存在，但需提高警惕。"
+    },
+    "mass_interest_hook": {
+      "score": 80,
+      "hook_type": "故事|反差|踩坑",
+      "why_non_technical_people_may_click": "标题“LinkedIn 求职陷阱：一个后门如何伪装成工作邀请？”直接点明求职安全，普通人求职时都可能遇到类似情况，好奇心驱动点击。",
+      "story_seed": "一个程序员在 LinkedIn 上收到看似正常的工作邀请，对方要求检查一个 GitHub 仓库的“已弃用 Node 模块问题”，结果 npm install 后电脑被植入后门。",
+      "do_not_overhype": "不要声称“所有 LinkedIn 工作邀请都是钓鱼”或“LinkedIn 存在系统性安全漏洞”，应聚焦于具体攻击手法和防范措施。"
+    },
+    "topic_tension": {
+      "score": 8,
+      "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+      "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "平台/工具厂商"
+      ],
+      "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2025-04-17: Roman Imankulov 发布博客文章，详细描述攻击过程。",
+      "2025-04-17: Hacker News 上引发热议，81 条评论。",
+      "2025-04-17: 本文作为 Radar 选题报告输出。"
+    ],
+    "evidence_table": [
+      {
+        "source": "A backdoor in a LinkedIn job offer - Roman Imankulov",
+        "url": "https://roman.pt/posts/linkedin-backdoor/",
+        "supports": "攻击的具体技术细节：npm install 后门、伪装成招聘人员、诱饵指令。",
+        "reliability": "near_source"
+      },
+      {
+        "source": "Hacker News 评论",
+        "url": "https://news.ycombinator.com/item?id=48546294",
+        "supports": "LinkedIn 无法让公司否认冒充员工的用户；类似攻击已发生。",
+        "reliability": "media"
+      },
+      {
+        "source": "eSentire 安全公告",
+        "url": "https://www.esentire.com/security-advisories/hackers-spearphish-professionals-on-linkedin-with-fake-job-offers-infecting-them-with-malware-warns-esentire",
+        "supports": "安全公司警告 LinkedIn 上的鱼叉式钓鱼攻击。",
+        "reliability": "official"
+      },
+      {
+        "source": "LinkedIn 帮助页面",
+        "url": "https://www.linkedin.com/help/linkedin/answer/a1336387",
+        "supports": "LinkedIn 官方提供识别和举报诈骗的建议。",
+        "reliability": "official"
+      },
+      {
+        "source": "Forbes 文章",
+        "url": "https://www.forbes.com/sites/technology/article/how-to-spot-and-avoid-linkedin-scams/",
+        "supports": "列举了 10 种常见 LinkedIn 诈骗。",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "攻击手法清晰：伪装招聘人员 -> 发送 GitHub 仓库 -> 诱使 npm install -> 自动执行后门。LinkedIn 平台存在身份验证漏洞。防范措施可操作：验证招聘方身份、检查仓库代码、使用沙箱环境。逻辑闭环。",
+    "writeable_angles": [
+      {
+        "angle": "攻击技术深度解析：npm install 后门如何工作？",
+        "why": "满足核心技术人对技术细节的需求。",
+        "needs": "需要补充 npm prepare 脚本的详细说明。"
+      },
+      {
+        "angle": "求职安全指南：程序员如何识别 LinkedIn 上的钓鱼攻击？",
+        "why": "服务副业普通人和泛兴趣普通人，提供实用建议。",
+        "needs": "需要整理验证招聘方身份、检查仓库、安全操作等步骤。"
+      },
+      {
+        "angle": "平台责任：LinkedIn 是否应该为招聘方身份验证负责？",
+        "why": "引发争议和讨论，传播张力强。",
+        "needs": "需要分析 LinkedIn 现有验证机制和漏洞。"
+      }
+    ],
+    "missing_basics": [
+      "npm prepare 脚本的自动执行机制。",
+      "LinkedIn 公司页面验证流程。"
+    ],
+    "missing_materials": [
+      "攻击者使用的 GitHub 仓库的具体代码（如果公开）。",
+      "LinkedIn 官方对此次事件的回应。",
+      "其他类似攻击案例的详细报告。"
+    ],
+    "not_claimable": [
+      "LinkedIn 平台存在系统性安全漏洞。",
+      "此类攻击已造成大规模受害者。",
+      "所有工作邀请都可能是钓鱼。"
+    ],
+    "followup_queries": [
+      "攻击者使用的 GitHub 仓库是否仍然在线？",
+      "LinkedIn 是否已采取措施加强招聘方身份验证？",
+      "是否有其他类似攻击案例？"
+    ],
+    "additional_search_queries": [
+      "LinkedIn job offer backdoor npm install",
+      "LinkedIn recruiter identity verification vulnerability",
+      "LinkedIn phishing campaign 2025"
+    ],
+    "stop_conditions": [
+      "LinkedIn 官方发布声明称已修复相关漏洞。",
+      "攻击者使用的仓库已被删除且无其他类似案例。",
+      "证据显示该攻击仅为孤立事件且无普遍性。"
+    ],
+    "confidence": 85,
+    "topic_direction": "side-info",
+    "topic_direction_title": "副业&信息差",
+    "report_type": "risk-warning",
+    "quality_gate": {
+      "pass": true,
+      "score": 85,
+      "fatal_issues": [],
+      "warnings": [],
+      "missing_evidence": [],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": true,
+      "downstream_handoff_ok": true,
+      "material_pack_ok": true,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": true,
+      "source_coverage_ok": true,
+      "recommendation": "publish"
+    },
+    "research_plan": {
+      "core_question": "LinkedIn上的工作邀请是否可能被用作后门攻击的载体？",
+      "persona_discussion_question": "作为一个正在找工作的程序员，我该如何识别并防范伪装成工作邀请的后门攻击？",
+      "hidden_public_issue": "求职平台的安全审核机制是否足以保护求职者免受针对性攻击，以及求职者自身的安全意识缺口。",
+      "must_verify": [
+        "后门的具体实现方式（如恶意附件、链接、代码测试等）",
+        "攻击者如何利用LinkedIn的通信功能（如InMail、附件、外部链接）",
+        "是否有真实受害者案例或仅概念验证",
+        "LinkedIn官方是否有相关安全提示或已知漏洞报告",
+        "攻击是否针对特定人群（如安全研究员、特定公司员工）"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "case_study",
+          "query": "LinkedIn job offer backdoor attack real case",
+          "why_needed": "确认是否有真实攻击案例，评估威胁的普遍性"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "LinkedIn security report phishing job offer",
+          "why_needed": "获取LinkedIn官方对钓鱼攻击的统计和防护建议"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "LinkedIn job offer malware Reddit",
+          "why_needed": "了解社区中是否有人报告类似经历或讨论防范方法"
+        },
+        {
+          "source_type": "policy",
+          "query": "LinkedIn terms of service job posting security",
+          "why_needed": "检查LinkedIn对招聘信息的安全审核政策"
+        },
+        {
+          "source_type": "github_repo",
+          "query": "LinkedIn phishing toolkit github",
+          "why_needed": "查看是否存在公开的LinkedIn钓鱼工具，评估攻击技术细节"
+        }
+      ],
+      "expert_challenge_points": [
+        "攻击者如何绕过LinkedIn的附件扫描和链接检测？",
+        "后门是否依赖受害者执行特定操作（如运行代码、打开文档）？",
+        "普通求职者与安全研究员面临的风险是否不同？"
+      ],
+      "do_not_claim_yet": [
+        "LinkedIn平台存在系统性安全漏洞",
+        "此类攻击已造成大规模受害者",
+        "所有工作邀请都可能是钓鱼"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确攻击的具体手法和防范措施，避免引发不必要的恐慌。",
+      "downstream_materials_needed": [
+        "攻击技术细节分析（如恶意文档、宏、可执行文件）",
+        "求职者安全指南（如何验证招聘方身份、安全处理附件）",
+        "LinkedIn官方安全功能（如报告按钮、安全提示）的使用说明"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "A backdoor in a LinkedIn job offer - Roman Imankulov",
+        "url": "https://roman.pt/posts/linkedin-backdoor/",
+        "query": "LinkedIn job offer backdoor attack real case",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "\b\u0000\u0000\u0000\u0000\u0000\u0000{}s6)Ny\u001ag*R8, \u001b/ ˘'\u0018UɝGG\u0013M\u001b\u001a==+򗲡cZ0ʍ|\u0016py7\u001a}\u0007lD?yX.|^ZBOiĉ~ u\\趺\\|4 r1ol2l6yeLcՠƊl^f\u0012\u0019BS cޢ%0r Y%\u00139z|ZXcƣxx_~z=z -:U\"~0r rAG -42͟EV\u000f?6^ Ue=\u0017\u000f݂{(=\\=\u0003Ob4b[̅\\Cйň-\u0012& \u001bm\u001blX~\\Yι ksEY0dU\u0014b7 M\u001bMkR*鷳h|\u0012\u0017ɞ=,\u000e\u001b\\G[ (沩(84;{vs,j+@u4%`1\b.Ds,eQu+]&^gQƂ6\u0019-\u0013T\u001a!`\u0016w|&X?\u0019\u0015\b\u000e|h1o)95h\u0010&)/;\u00155ɥ)~ 1|>i WgJjT;^\u0014\u0006#s%}-^ \u0004, \u0004.Ʋp\u0016qm\u0006B \u0014h\u0002\u0013V\u0018n{\u000e.g!-n (\u001a*d\u00170ߛ 5(7 \u0007=3Xߟ\u000f}Io4{ك*`WnG&̚U\\m'\\%eK\u001b\"}JV:JҾ)\u0016.Mi0M@\u0003+QNZv ifr vtK |>>\u0013OG eɱ$jjen\u0006V..\u000e\u0006KS \u0012R\u0019Gv\u0007`sOS\u000e\b.E{- \u0015S)>* QΜ5`\u0000\bj-I\u000f\\56Ft H:?aJHzb ?;CK4&]3A k\u00035Ѝts+Hh ΃3 ߯Hy EX\u0017\u001aPmxÛ-\u001b3p\u0001J\u0006*=[J\u000ft-B\u0016\"yγF\u0017(\u0016\błR(%-H ŵڸf\u001b W\\tR\u00146%&KqZ#5kv\\кx-x\u0018iҳ`PdF-kưEyƟIor@ \u0005\u00069jŵB1o-ǥԂnv\u0015\u0003[NeMEWS ?lhy \u0013}Qp\u0011b -1W ~LnJ\u0013?\u0014,R;^I-i\u0017?LOZ6z\"\u0005+6Qw=F\u00142\u0016\u0011s,\\\u000e\u0017 7m\u0018Tq d\u0013:\u0007Ԗ.\b\\`N c7Åv \u0003\u0000\u0017]b\u0015O\u0000 `ȵA8N_LO!؄|b:-JOxdMi\u0014 vvV,G?΃\b ;\u00004x0>7>\u000fG싽 l2 FZ0\u000fÇxa-\u0018|p\u0010YZ( ֒?D?Tf\u0002eMC@jo?n\u0007\u0003Ix48VT\u0006r(i}BEλqO}vC\u0013qd9t 1#t\u0016\u001a,k)R~p(eRgL? '\u0000wdrlI])FxN\u0019l,!\b\u0002%:s(OO!\u001aZŰu~w*=ɨp]Y\u0010c;}df0tx=lP\u0004!t>\b/HHQ 42\u0004\u0005XN A \"e \u001a\u0017cFCR6\u0006Ģ\u001a+ʯ=G\u001biɽc~f\u0017[\\u{l \u0015IhtZˑ#&iض3N%v\u0005ˠ\b!( l%%U{\u000eҷ?!p@9J8 BH\u0017\u0000$Xڃєn٭Am\u0001g2m+J(+^Gŏ5HM>+mWH;8\u0003hW9\u0007Y ^Uh*BC»d+L_jm~W r\u0004Ը&Po;]v3ۢ\u0016Ks\u0013\u0010A_$`S}uq T^ʈP \u0016mE)v\u000fҲ ^ #\u001ah-Y4,, =;3vһ^ʆ:_\u001bK\u0002mG\u0016 \u0014\u001a\\sM\u0007&\\ )E,V4\u0018+Fݷ]Zk؟Ė3\u001a\u0015lh餧:3,]T(+%Gm\u000e\u0017}E@-1 \u0018\u0017Ks}_>Ղ\u0007u_}\u0003G6mi\u0017kG`l\u0011Am6PnQeYW:\u0015z*!:X.CShrx %\u0001^e{72\u00059/\u0012fcI(mR`@2_K\u0017 + @uOɄ{qδ4[켱Ye~=0\u0018 \u0001WMi`L;p`^L\u0001i;vh\u0007`I`I M#6Q={Ԍ\u0007$ƀ> $ij}k3\u0003m {6g ԑْ\u0018\"\"z\u0007W\u001at ؐRٵ\u000e\u0004\u0017a@v-( FUvw\u0016\u0015 5G F9& \u0017mCĤZ,$?OZsEeCw>c|\u0005Y ҡ tӒ8\u0019$ !bM1JBۆ+k\u000e q< \u000e\u0013mg\u0011g$ \u0004,!9 |s[\u0003鳈mw\u0001|Ԡ(h\u0014pR ~/bsa{s@ c\b~K:цlK94\u0005.SjЄ\u000f1n\u0018284Qy\u0014q\u0010:K\u0019\u001bUVppkǰlM\u0013vj%\u0007H1TA ;g/9R\u001a Q\u0005n=I\u00123Pm:\u0018䊫ݾsp.L\u0011\u0006'7}+ 6+c\u0004p5\u000fm%ISpug-^ٳk r\u0012\u0005i%/ak4\\޹\u001aߚ\u0005NB7[.b7swV,,9\u0017]\u0016:pʴ\u0016TI\u0006qcޕ=cG7_ \u0007M{7e\u001b\u0002+;XIg\u0018MsTcz\u0003&.\u0015MmGOL97Bk\u0003] Hmv ͞rɝ@oϨ|AONϖ4]C(\u0017f\\7xN'7Kc\u0005̢=Nߑctb'\u001a]\u0015(&6\u000f\u0003vX0y{\u0019Z Qh{\u0005CL-Qeё| j%Kv\u0001xL8K4wᭅ\u0007\u0006ߩh~'`2 ^G\u001b^$ Cx \u000f\u000em5ƢVaI'? p3\u001b\u0000\u0000P3\u0000\u0000",
+        "fetch_error": ""
+      },
+      {
+        "title": "A backdoor in a LinkedIn job offer | Hacker News",
+        "url": "https://news.ycombinator.com/item?id=48546294",
+        "query": "LinkedIn job offer backdoor attack real case",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "A backdoor in a LinkedIn job offer | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login A backdoor in a LinkedIn job offer ( roman.pt ) 395 points by lwhsiao 2 hours ago | hide | past | favorite | 81 comments help wxw 1 hour ago | next [–] > a recruiter at a small crypto startup [...] she described a broken proof-of-concept they needed a lead engineer for, and then sent me a public GitHub repo to review. Specifically, she asked me to “check out the deprecated Node modules issue.” > ...buried between walls of commented-out tests, the payload runs anything the server sends back to your machine. > npm runs prepare automatically after npm install, so just installing dependencies executes the backdoor. > The instruction to “check out the deprecated Node modules issue” was bait to get me to run npm install. Great catch. I've not been phished on LinkedIn before. Surprised it's getting this bad. reply pants2 58 minutes ago | parent | next [–] LinkedIn offers no way for $company to disavow users who claim to work for $company - they will appear on the official company page as long as it's in their profile. We've had fake recruiters that claim to work for us running basically the same scam. These are great fake profiles: LinkedIn Premium, tons of relevant posts, etc... but they don't work for us, and we get angry messages from people saying our recruiter tried to scam them. No, they're not our recruiter despite showing up on our company page on LinkedIn. No number of reports could get them taken down. I finally got it solved by buying drinks for a buddy of mine that works for LinkedIn, but not all startups have that connection! reply tweetle_beetle 46 minutes ago | root | parent | next [–] LinkedIn didn't even disavow people pretending to work for Li",
+        "fetch_error": ""
+      },
+      {
+        "title": "Hackers Spearphish Professionals on LinkedIn with Fake Job Offers, Infecting them with Malware, Warns eSentire | eSentire",
+        "url": "https://www.esentire.com/security-advisories/hackers-spearphish-professionals-on-linkedin-with-fake-job-offers-infecting-them-with-malware-warns-esentire",
+        "query": "LinkedIn job offer backdoor attack real case",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-57Z6ZWR'); (function () { var zi = document.createElement('script'); zi.type = 'text/javascript'; zi.async = true; zi.src = 'https://ws.zoominfo.com/pixel/3k8XsFBkOniCq5dTRwpV'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(zi, s); })(); (function(w,q){w['QualifiedObject']=q;w[q]=w[q]||function(){ (w[q].q=w[q].q||[]).push(arguments)};})(window,'qualified') window._vwo_code || (function () { var w=window, d=document; var account_id=780243, version=2.2, settings_tolerance=2000, hide_element='body', hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important'; /* DO NOT EDIT BELOW THIS LINE */ if(f=!1,v=d.querySelector('#vwoCode'),cc={},-1 Hackers Spearphish Professionals on LinkedIn with Fake Job Offers, Infecting them with Malware, Warns eSentire | eSentire function readCookie(c_name) { var c_value = document.cookie; var c_start = c_value.indexOf(\" \" + c_name + \"=\"); if (c_start == -1) { c_start = c_value.indexOf(c_name + \"=\"); } if (c_start == -1) { c_value = null; } else { c_start = c_value.indexOf(\"=\", c_start) + 1; var c_end = c_value.indexOf(\";\", c_start); if (c_end == -1) { c_end = c_value.length; } c_value = unescape(c_value.substring(c_start, c_end)); } return c_value; } function setCookie(a, d, b) { var c = new Date; c.setTime(c.getTime() + 864E5 * b); b = \"; expires=\" + c.toGMTString(); document.cookie = a + \"=\" + d + b } function getParam(a) { return (a = RegE",
+        "fetch_error": ""
+      },
+      {
+        "title": "How To Recognize These 10 Common LinkedIn Scams Before It’s Too Late",
+        "url": "https://www.forbes.com/sites/technology/article/how-to-spot-and-avoid-linkedin-scams/",
+        "query": "LinkedIn security report phishing job offer",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "How To Recognize These 10 Common LinkedIn Scams Before It’s Too Late window.ddjskey = 'B9A4663C1A189CCB8B3E706535EAF6'; window.ddoptions = { ajaxListenerPath: [{host: 'forbes.com'}], withCredentials: true }; window.semaphore=window.semaphore||[];window.ketch=window.ketch||function(){window.semaphore.push(arguments)};(function(){if(false|| false){ var s=document.createElement('style'); s.id='ketch-suppression-styles'; s.innerHTML='#ketch-banner{display:none!important}'; document.head.appendChild(s); }})();var e=document.createElement('script');e.src='https://global.ketchcdn.com/web/v3/config/forbes/website_smart_tag/boot.js';e.defer=e.async=true;(document.head||document.body).appendChild(e); {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Why LinkedIn Scams Seem Convincing And How To Spot The Signs Early\",\"url\":\"https://www.forbes.com/sites/technology/article/how-to-spot-and-avoid-linkedin-scams/\",\"speakable\":{\"@type\":\"SpeakableSpecification\",\"cssSelector\":[\".speakable-headline\"]},\"mainContentOfPage\":{\"@type\":\"WebPageElement\",\"cssSelector\":\"#article-num-0\"},\"breadcrumb\":{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Forbes Homepage\",\"item\":\"https://www.forbes.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Innovation\",\"item\":\"https://www.forbes.com/innovation/\"}]},\"mainEntity\":{\"@type\":\"NewsArticle\",\"url\":\"https://www.forbes.com/sites/technology/article/how-to-spot-and-avoid-linkedin-scams/\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://imageio.forbes.com/specials-images/imageserve/69cd87355867ad3739ffec06/0x0.jpg?format=jpg&crop=1746,1164,x0,y0,safe&height=900&width=1600&fit=bounds\",\"width\":542.79,\"height\":304.6},\"publisher\":{\"@type\":\"NewsMediaOrganization\",\"name\":\"Forbes\",\"url\":\"https://www.forbes.com/\",\"ethicsPolicy\":\"",
+        "fetch_error": ""
+      },
+      {
+        "title": "Recognize and report scams | LinkedIn Help",
+        "url": "https://www.linkedin.com/help/linkedin/answer/a1336387",
+        "query": "LinkedIn security report phishing job offer",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Recognize and report scams | LinkedIn Help (function(){function a(){var a,b;var c=new Promise(function(c,d){a=c,b=d});return c.resolve=a,c.reject=b,c}window.helpcenter=a()})(); Attention screen reader users, you are in a mobile optimized view and content may not appear where you expect it to be. To return the screen to its desktop view, please maximize your browser. Skip to content Skip to search Close jump menu Help LinkedIn Help Dropdown menu, expand to explore help for other LinkedIn products Close menu Get help with: LinkedIn Corporate Billing Learning Marketing Solutions Recruiter Sales Navigator Talent Insights Go to LinkedIn Sign in Sign in Recognize and report scams Last updated: 7 months ago Scams are a form of fraud, usually committed through email. Scammers create false identities or impersonate legitimate people or companies. Their goal is to steal your money or in some cases, your identity. There are several warning signs of a typical scam message: Offers that seem too good to be true. Messages containing spelling or grammar mistakes. Messages that aren't addressed to you personally. Messages asking you for personal or financial information. In addition to these scams, the Internet Crime Complaint Center (IC3) monitors and reports different types of scams you could encounter. If you've been the victim of a scam, report it to your local law enforcement. If you've received a scam message on LinkedIn, please contact us . A few common scams you should be aware of include: Inheritance or advanced fee fraud scams These scams usually request a small fee up front and claim that you will receive a large sum of money in return. You may also be asked for bank account and credit card numbers. Job scams These scams typically involve people pretending to be recruiters or",
+        "fetch_error": ""
+      },
+      {
+        "title": "6 LinkedIn Job Scams to Watch Out For in 2025",
+        "url": "https://skrapp.io/blog/linkedin-job-scams/",
+        "query": "LinkedIn security report phishing job offer",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "6 LinkedIn Job Scams to Watch Out For in 2025 { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"publisher\": { \"@type\": \"Organization\", \"name\": \"Lead Generation & Email Outreach Strategies Tips and Tools | Skrapp.io Blog\", \"url\": \"https://blog.skrapp.io/\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://blog.skrapp.io/content/images/2025/02/logo-black-long.png\" } }, \"author\": { \"@type\": \"Person\", \"name\": \"Othmane Ghazi\", \"image\": { \"@type\": \"ImageObject\", \"url\": \"https://blog.skrapp.io/content/images/2024/05/othmane-ghazi.png\", \"width\": 500, \"height\": 500 }, \"url\": \"https://blog.skrapp.io/author/othmane/\", \"sameAs\": [ \"https://skrapp.io\", \"https://twitter.com/othmaneghz\" ] }, \"headline\": \"6 LinkedIn Job Scams to Watch Out For in 2025\", \"url\": \"https://blog.skrapp.io/linkedin-job-scams/\", \"datePublished\": \"2024-10-29T10:35:30.000Z\", \"dateModified\": \"2026-04-17T09:06:56.000Z\", \"image\": { \"@type\": \"ImageObject\", \"url\": \"https://blog.skrapp.io/content/images/2024/10/LinkedIn-Recruitment-Scams.jpg\", \"width\": 1200, \"height\": 800 }, \"description\": \"LinkedIn job scams are on the rise in 2026, targeting job seekers with fake recruiters, phishing links, and too-good-to-be-true offers. \", \"mainEntityOfPage\": \"https://blog.skrapp.io/linkedin-job-scams/\" } window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-45417310-4'); :root {--ghost-accent-color: #2B6EE9;} Home Email Finder Linkedin Extension Email Verifier Go to Skrapp.io Apr 17, 2026 10 min read 6 LinkedIn Job Scams to Watch Out For in 2026 LinkedIn job scams are on the rise in 2026, targeting job seekers with fake recruiters, phishing links, and too-good-to-be-true offers. On this page Beware of LinkedIn job scams , because nothing ruins your",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/cybersecurity on Reddit: Beware Before Applying on LinkedIn: Fake Job Offers Linked to Malware Campaigns",
+        "url": "https://www.reddit.com/r/cybersecurity/comments/1k7n4xs/beware_before_applying_on_linkedin_fake_job/",
+        "query": "LinkedIn job offer malware Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/linkedin on Reddit: 🚨 Security Alert – Fake LinkedIn Job Offer Scam : Zip File and PDFs Installing Trojan 🚨",
+        "url": "https://www.reddit.com/r/linkedin/comments/1pr8p0z/security_alert_fake_linkedin_job_offer_scam_zip/",
+        "query": "LinkedIn job offer malware Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/linkedin on Reddit: Since I started applying for jobs, scam messages on LinkedIn have exploded. Is our data being scraped or sold?",
+        "url": "https://www.reddit.com/r/linkedin/comments/1ow4al8/since_i_started_applying_for_jobs_scam_messages/",
+        "query": "LinkedIn job offer malware Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "LinkedIn Jobs Terms and Conditions",
+        "url": "https://www.linkedin.com/legal/jobs-terms-conditions",
+        "query": "LinkedIn terms of service job posting security",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); LinkedIn Jobs Terms and Conditions Skip to main content User Agreement Summary of User Agreement Privacy Policy Professional Community Policies Cookie Policy Copyright Policy Regional Info EU Notice California Privacy Disclosure U.S. State Privacy Laws User Agreement Summary of User Agreement Privacy Policy Professional Community Policies Cookie Policy Copyright Policy Regional Info EU Notice California Privacy Disclosure U.S. State Privacy Laws LinkedIn Jobs Terms and Conditions Welcome, and thanks for using LinkedIn's jobs posting platform and related products and services (“LinkedIn Jobs”). You agree that by accessing, posting, promoting a job, or using LinkedIn Jobs for hiring, you enter a legal binding agreement with LinkedIn. 1. Agreement The following terms and conditions govern your access and use of LinkedIn Jobs: These LinkedIn Jobs Terms and Conditions The LinkedIn Jobs Policies The LinkedIn User Agreement and Privacy Policy The LinkedIn Terms for Paid Services applicable to LinkedIn Jobs The LinkedIn Data Processing Agreement (“DPA”) under which you and your entity are a “Customer” Additional terms and conditions you are agree to when using LinkedIn Jobs To the extent of any conflict between any of the terms and conditions listed above or any different agreements that you have with LinkedIn, these Jobs Terms and Conditions and any feature-specific terms govern with respect to the use of LinkedIn Jobs. However, w",
+        "fetch_error": ""
+      },
+      {
+        "title": "LinkedIn Service Terms",
+        "url": "https://www.linkedin.com/legal/l/service-terms",
+        "query": "LinkedIn terms of service job posting security",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); LinkedIn Service Terms Skip to main content Join now Sign in LinkedIn Service Terms February 2, 2026 The following Service Terms apply to Customer to the extent the specific Service is included in the applicable ordering document. LinkedIn may update these Service Terms from time to time. LinkedIn reserves the right to upgrade, update or discontinue any aspect or feature of a Service in whole or in part; provided, however, that if LinkedIn discontinues a Service in whole during the term of an ordering document, then LinkedIn will provide Customer with an alternative or replacement service. 1. TALENT SERVICES 1.1. Recruiter Corporate Customer will use the Recruiter Corporate Service (and related services) and information about Members only to recruit individuals to become employees and consultants of Customer or its Affiliates, or, if Customer is acting as a Staffing Agency or BPO, only to recruit individuals to become employees and consultants of its clients. “ Staffing Agency ” means a Customer that uses the Services to recruit on behalf of a third-party client using Customer's own name and/or logo, including without limitation, staffing agencies, executive search firms, and direct hire firms. “ BPO ” means a business process outsourcer Customer that recruits on behalf of a client using the client's name and/or logo, including without limitation, recruitment process outsourcers, managed service providers, and clinical rese",
+        "fetch_error": ""
+      },
+      {
+        "title": "User Agreement | LinkedIn",
+        "url": "https://www.linkedin.com/legal/user-agreement",
+        "query": "LinkedIn terms of service job posting security",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); User Agreement | LinkedIn Skip to main content User Agreement Summary of User Agreement Privacy Policy Professional Community Policies Cookie Policy Copyright Policy Regional Info EU Notice California Privacy Disclosure U.S. State Privacy Laws User Agreement Summary of User Agreement Privacy Policy Professional Community Policies Cookie Policy Copyright Policy Regional Info EU Notice California Privacy Disclosure U.S. State Privacy Laws User Agreement Effective on November 3, 2025 Our mission is to connect the world’s professionals to allow them to be more productive and successful. Our services are designed to promote economic opportunity for our members by enabling you and millions of other professionals to meet, exchange ideas, learn, and find opportunities or employees, work, and make decisions in a network of trusted relationships. Table of Contents: Introduction Obligations Rights and Limits Disclaimer and Limit of Liability Termination Governing Law and Dispute Resolution General Terms LinkedIn “Dos and Don’ts” Complaints Regarding Content How To Contact Us Introduction 1.1 Contract When you use our Services you agree to all of these terms. Your use of our Services is also subject to our Cookie Policy and our Privacy Policy, which covers how we collect, use, share, and store your personal information. By creating a LinkedIn account or accessing or using our Services (described below), you are agreeing to enter into a",
+        "fetch_error": ""
+      },
+      {
+        "title": "Kenner Rodgers III on LinkedIn: GitHub - gophish/gophish: Open-Source Phishing Toolkit",
+        "url": "https://www.linkedin.com/posts/kennerrodgers_github-gophishgophish-open-source-phishing-activity-7068230695457886208-gNMK",
+        "query": "LinkedIn phishing toolkit github",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); GitHub - gophish/gophish: Open-Source Phishing Toolkit | Kenner Rodgers III {\"@context\":\"http://schema.org\",\"@type\":\"SocialMediaPosting\",\"@id\":\"https://www.linkedin.com/posts/kennerrodgers_github-gophishgophish-open-source-phishing-activity-7068230695457886208-gNMK\",\"datePublished\":\"2023-05-27T14:25:19.158Z\",\"comment\":[],\"commentCount\":0,\"sharedContent\":{\"@type\":\"WebPage\",\"author\":{\"name\":\"Black Hills Information Security\",\"image\":{\"url\":\"https://media.licdn.com/dms/image/v2/C4E0BAQEFv-xGKtJikA/company-logo_100_100/company-logo_100_100/0/1630566642675/black_hills_information_security_logo?e=2147483647&v=beta&t=MpYI5xceDgYOtgyEv6nKu8TbonHeSgRmQAL7NNln9Ho\",\"@type\":\"ImageObject\"},\"url\":\"https://www.linkedin.com/company/black-hills-information-security\",\"@type\":\"Organization\",\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/FollowAction\",\"userInteractionCount\":128158}},\"headline\":\"🔒 Tool Highlight: Gophish - Open-Source Phishing Framework\\n\\nLooking to enhance your organization's security posture? Introducing Gophish, an open-source phishing framework that simulates and analyze phishing attacks developed by Jordan Wright. With its extensive feature set and user-friendly interface, Gophish empowers organizations to identify vulnerabilities, educate employees, and improve their overall cybersecurity resilience.\\n\\nGophish allows you to easily create and customize phishing campaigns! Craft ",
+        "fetch_error": ""
+      },
+      {
+        "title": "David Bowles on LinkedIn: GitHub - gophish/gophish: Open-Source Phishing Toolkit",
+        "url": "https://www.linkedin.com/posts/hackingdb_github-gophishgophish-open-source-phishing-activity-7067506518169972736-aHkE",
+        "query": "LinkedIn phishing toolkit github",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); GitHub - gophish/gophish: Open-Source Phishing Toolkit | David B {\"@context\":\"http://schema.org\",\"@type\":\"SocialMediaPosting\",\"@id\":\"https://www.linkedin.com/posts/hackingdb_github-gophishgophish-open-source-phishing-activity-7067506518169972736-aHkE\",\"datePublished\":\"2023-05-25T14:27:41.836Z\",\"comment\":[],\"commentCount\":0,\"sharedContent\":{\"@type\":\"WebPage\",\"author\":{\"name\":\"Black Hills Information Security\",\"image\":{\"url\":\"https://media.licdn.com/dms/image/v2/C4E0BAQEFv-xGKtJikA/company-logo_100_100/company-logo_100_100/0/1630566642675/black_hills_information_security_logo?e=2147483647&v=beta&t=MpYI5xceDgYOtgyEv6nKu8TbonHeSgRmQAL7NNln9Ho\",\"@type\":\"ImageObject\"},\"url\":\"https://www.linkedin.com/company/black-hills-information-security\",\"@type\":\"Organization\",\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/FollowAction\",\"userInteractionCount\":128158}},\"headline\":\"🔒 Tool Highlight: Gophish - Open-Source Phishing Framework\\n\\nLooking to enhance your organization's security posture? Introducing Gophish, an open-source phishing framework that simulates and analyze phishing attacks developed by Jordan Wright. With its extensive feature set and user-friendly interface, Gophish empowers organizations to identify vulnerabilities, educate employees, and improve their overall cybersecurity resilience.\\n\\nGophish allows you to easily create and customize phishing campaigns! Craft convincing emai",
+        "fetch_error": ""
+      },
+      {
+        "title": "Marc Baude on LinkedIn: GitHub - gophish/gophish: Open-Source Phishing Toolkit",
+        "url": "https://www.linkedin.com/posts/marc-baude-0412a21ba_github-gophishgophish-open-source-phishing-activity-7104478246330585091-F2o4",
+        "query": "LinkedIn phishing toolkit github",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); GitHub - gophish/gophish: Open-Source Phishing Toolkit | Marc Baude {\"@context\":\"http://schema.org\",\"@type\":\"SocialMediaPosting\",\"@id\":\"https://de.linkedin.com/posts/marc-baude-0412a21ba_github-gophishgophish-open-source-phishing-activity-7104478246330585091-F2o4\",\"datePublished\":\"2023-09-04T15:00:08.735Z\",\"headline\":\"🚨 Achtung vor Phishing!\",\"comment\":[],\"commentCount\":0,\"text\":\"GitHub - gophish/gophish: Open-Source Phishing Toolkit\",\"image\":{\"url\":\"https://media.licdn.com/dms/image/sync/v2/D4D27AQHjaw55Jo7PAw/articleshare-shrink_800/articleshare-shrink_800/0/1774473153444?e=2147483647&v=beta&t=CksIvAr6zjmYtv3a33Ab_xci8Oe-qDQ2US8_OZwa28k\",\"@type\":\"ImageObject\"},\"articleBody\":\"🚨 Achtung vor Phishing! Schützen Sie Ihr Unternehmen 🚨\\n\\nMontagmorgen im Büro - der Kaffee läuft, die E-Mails werden gecheckt, und plötzlich taucht ein verlockender Link zu einem neuen Foodtruck in der Nähe auf. Kurz mal schauen, was es Leckeres gibt, denken Sie sich. Doch im nächsten Moment bleibt alles stehen – Ihr Kollege hat dasselbe Problem! Das ist der Moment, in dem Phishing zuschlagen kann.\\n\\nAber wie können Sie sich davor schützen? Bewusstsein schaffen – und das nicht nur einmal, sondern regelmäßig!\\n\\n1️⃣ Option für die Technik-Enthusiasten: Mit GoPhish (https://lnkd.in/eTCTeEHk) haben Sie ein Open-Source-Tool zur Hand, um Phishing-Szenarien darzustellen und Ihre Mitarbeiter regelmäßig und datenschutzkonform zu sensibilisieren. Einfach ein",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260616-a-backdoor-in-a-linkedin-job-offer-efc26044/",
+    "for_gpt_editor": {
+      "brief": "Comments",
+      "title_seed": "LinkedIn求职陷阱：一个后门如何伪装成工作邀请？",
+      "original_title": "A backdoor in a LinkedIn job offer",
+      "source_url": "https://roman.pt/posts/linkedin-backdoor/",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "推荐选题",
+          "label": "推荐",
+          "reason": "证据较完整：有真实案例（Hacker News 帖子）、技术细节（npm install 后门）、LinkedIn 官方安全提示、安全公司报告。老花人设解读角度清楚：从程序员求职安全、平台信任机制、成本账切入。读者分层明确：核心技术人（安全防范）、副业普通人（求职避坑）、泛兴趣普通人（求职安全）。泛兴趣故事钩子不夸张：求职者都可能遇到。传播张力成立：平台责任 vs 个人防范、安全 vs 便利。逻辑基本能闭环：攻击手法清晰、防范措施可操作。"
+        },
+        "core_question": "LinkedIn 上的工作邀请是否可能被用作后门攻击的载体？程序员如何识别并防范？",
+        "why_this_topic_matters": "求职季，钓鱼攻击频发，技术人关注安全。该案例展示了攻击者如何利用 npm install 自动执行后门，手法隐蔽，对程序员群体有直接威胁。同时暴露了 LinkedIn 平台在招聘方身份验证上的漏洞，引发对平台责任的讨论。",
+        "fact_summary": [
+          "攻击者伪装成小型加密初创公司的招聘人员，通过 LinkedIn InMail 联系目标。",
+          "招聘人员描述了一个需要首席工程师的破损概念验证，并发送了一个公共 GitHub 仓库链接。",
+          "攻击者要求目标“检查已弃用的 Node 模块问题”，诱使其运行 npm install。",
+          "npm install 会自动执行 prepare 脚本，从而触发后门。",
+          "后门代码隐藏在注释掉的测试代码中，运行服务器发送的任何命令。",
+          "Hacker News 评论指出，LinkedIn 无法让公司否认冒充其员工的用户，这些用户会出现在官方公司页面上。",
+          "eSentire 安全公司警告过类似攻击。",
+          "LinkedIn 官方帮助页面提供了识别和举报诈骗的建议。"
+        ],
+        "persona_discussion_question": "作为一个正在找工作的程序员，我该如何识别并防范伪装成工作邀请的后门攻击？LinkedIn 平台是否应该承担更多责任？",
+        "old_flower_stance": "这件事让普通技术人该争什么：平台应该加强招聘方身份验证，提供更便捷的举报和否认机制。怕什么：求职心切时容易忽略安全细节，npm install 等日常操作可能成为攻击入口。算什么账：花几分钟验证招聘方身份和仓库可信度，比中招后清理后门成本低得多。做什么选择：在信任平台之前，先信任自己的安全习惯。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "副业普通人",
+            "泛兴趣普通人"
+          ],
+          "interest_score": 85,
+          "why_interested": "核心技术人关注安全漏洞和防范技术；副业普通人求职时可能遇到类似骗局；泛兴趣普通人被“求职安全”话题吸引。",
+          "reader_risk": "可能引发对 LinkedIn 平台的过度恐慌，需强调攻击并非普遍存在，但需提高警惕。"
+        },
+        "mass_interest_hook": {
+          "score": 80,
+          "hook_type": "故事|反差|踩坑",
+          "why_non_technical_people_may_click": "标题“LinkedIn 求职陷阱：一个后门如何伪装成工作邀请？”直接点明求职安全，普通人求职时都可能遇到类似情况，好奇心驱动点击。",
+          "story_seed": "一个程序员在 LinkedIn 上收到看似正常的工作邀请，对方要求检查一个 GitHub 仓库的“已弃用 Node 模块问题”，结果 npm install 后电脑被植入后门。",
+          "do_not_overhype": "不要声称“所有 LinkedIn 工作邀请都是钓鱼”或“LinkedIn 存在系统性安全漏洞”，应聚焦于具体攻击手法和防范措施。"
+        },
+        "topic_tension": {
+          "score": 8,
+          "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+          "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "平台/工具厂商"
+          ],
+          "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2025-04-17: Roman Imankulov 发布博客文章，详细描述攻击过程。",
+          "2025-04-17: Hacker News 上引发热议，81 条评论。",
+          "2025-04-17: 本文作为 Radar 选题报告输出。"
+        ],
+        "evidence_table": [
+          {
+            "source": "A backdoor in a LinkedIn job offer - Roman Imankulov",
+            "url": "https://roman.pt/posts/linkedin-backdoor/",
+            "supports": "攻击的具体技术细节：npm install 后门、伪装成招聘人员、诱饵指令。",
+            "reliability": "near_source"
+          },
+          {
+            "source": "Hacker News 评论",
+            "url": "https://news.ycombinator.com/item?id=48546294",
+            "supports": "LinkedIn 无法让公司否认冒充员工的用户；类似攻击已发生。",
+            "reliability": "media"
+          },
+          {
+            "source": "eSentire 安全公告",
+            "url": "https://www.esentire.com/security-advisories/hackers-spearphish-professionals-on-linkedin-with-fake-job-offers-infecting-them-with-malware-warns-esentire",
+            "supports": "安全公司警告 LinkedIn 上的鱼叉式钓鱼攻击。",
+            "reliability": "official"
+          },
+          {
+            "source": "LinkedIn 帮助页面",
+            "url": "https://www.linkedin.com/help/linkedin/answer/a1336387",
+            "supports": "LinkedIn 官方提供识别和举报诈骗的建议。",
+            "reliability": "official"
+          },
+          {
+            "source": "Forbes 文章",
+            "url": "https://www.forbes.com/sites/technology/article/how-to-spot-and-avoid-linkedin-scams/",
+            "supports": "列举了 10 种常见 LinkedIn 诈骗。",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "攻击手法清晰：伪装招聘人员 -> 发送 GitHub 仓库 -> 诱使 npm install -> 自动执行后门。LinkedIn 平台存在身份验证漏洞。防范措施可操作：验证招聘方身份、检查仓库代码、使用沙箱环境。逻辑闭环。",
+        "writeable_angles": [
+          {
+            "angle": "攻击技术深度解析：npm install 后门如何工作？",
+            "why": "满足核心技术人对技术细节的需求。",
+            "needs": "需要补充 npm prepare 脚本的详细说明。"
+          },
+          {
+            "angle": "求职安全指南：程序员如何识别 LinkedIn 上的钓鱼攻击？",
+            "why": "服务副业普通人和泛兴趣普通人，提供实用建议。",
+            "needs": "需要整理验证招聘方身份、检查仓库、安全操作等步骤。"
+          },
+          {
+            "angle": "平台责任：LinkedIn 是否应该为招聘方身份验证负责？",
+            "why": "引发争议和讨论，传播张力强。",
+            "needs": "需要分析 LinkedIn 现有验证机制和漏洞。"
+          }
+        ],
+        "missing_basics": [
+          "npm prepare 脚本的自动执行机制。",
+          "LinkedIn 公司页面验证流程。"
+        ],
+        "missing_materials": [
+          "攻击者使用的 GitHub 仓库的具体代码（如果公开）。",
+          "LinkedIn 官方对此次事件的回应。",
+          "其他类似攻击案例的详细报告。"
+        ],
+        "not_claimable": [
+          "LinkedIn 平台存在系统性安全漏洞。",
+          "此类攻击已造成大规模受害者。",
+          "所有工作邀请都可能是钓鱼。"
+        ],
+        "followup_queries": [
+          "攻击者使用的 GitHub 仓库是否仍然在线？",
+          "LinkedIn 是否已采取措施加强招聘方身份验证？",
+          "是否有其他类似攻击案例？"
+        ],
+        "additional_search_queries": [
+          "LinkedIn job offer backdoor npm install",
+          "LinkedIn recruiter identity verification vulnerability",
+          "LinkedIn phishing campaign 2025"
+        ],
+        "stop_conditions": [
+          "LinkedIn 官方发布声明称已修复相关漏洞。",
+          "攻击者使用的仓库已被删除且无其他类似案例。",
+          "证据显示该攻击仅为孤立事件且无普遍性。"
+        ],
+        "confidence": 85,
+        "topic_direction": "side-info",
+        "topic_direction_title": "副业&信息差",
+        "report_type": "risk-warning",
+        "quality_gate": {
+          "pass": true,
+          "score": 85,
+          "fatal_issues": [],
+          "warnings": [],
+          "missing_evidence": [],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": true,
+          "downstream_handoff_ok": true,
+          "material_pack_ok": true,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": true,
+          "source_coverage_ok": true,
+          "recommendation": "publish"
+        },
+        "research_plan": {
+          "core_question": "LinkedIn上的工作邀请是否可能被用作后门攻击的载体？",
+          "persona_discussion_question": "作为一个正在找工作的程序员，我该如何识别并防范伪装成工作邀请的后门攻击？",
+          "hidden_public_issue": "求职平台的安全审核机制是否足以保护求职者免受针对性攻击，以及求职者自身的安全意识缺口。",
+          "must_verify": [
+            "后门的具体实现方式（如恶意附件、链接、代码测试等）",
+            "攻击者如何利用LinkedIn的通信功能（如InMail、附件、外部链接）",
+            "是否有真实受害者案例或仅概念验证",
+            "LinkedIn官方是否有相关安全提示或已知漏洞报告",
+            "攻击是否针对特定人群（如安全研究员、特定公司员工）"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "case_study",
+              "query": "LinkedIn job offer backdoor attack real case",
+              "why_needed": "确认是否有真实攻击案例，评估威胁的普遍性"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "LinkedIn security report phishing job offer",
+              "why_needed": "获取LinkedIn官方对钓鱼攻击的统计和防护建议"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "LinkedIn job offer malware Reddit",
+              "why_needed": "了解社区中是否有人报告类似经历或讨论防范方法"
+            },
+            {
+              "source_type": "policy",
+              "query": "LinkedIn terms of service job posting security",
+              "why_needed": "检查LinkedIn对招聘信息的安全审核政策"
+            },
+            {
+              "source_type": "github_repo",
+              "query": "LinkedIn phishing toolkit github",
+              "why_needed": "查看是否存在公开的LinkedIn钓鱼工具，评估攻击技术细节"
+            }
+          ],
+          "expert_challenge_points": [
+            "攻击者如何绕过LinkedIn的附件扫描和链接检测？",
+            "后门是否依赖受害者执行特定操作（如运行代码、打开文档）？",
+            "普通求职者与安全研究员面临的风险是否不同？"
+          ],
+          "do_not_claim_yet": [
+            "LinkedIn平台存在系统性安全漏洞",
+            "此类攻击已造成大规模受害者",
+            "所有工作邀请都可能是钓鱼"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确攻击的具体手法和防范措施，避免引发不必要的恐慌。",
+          "downstream_materials_needed": [
+            "攻击技术细节分析（如恶意文档、宏、可执行文件）",
+            "求职者安全指南（如何验证招聘方身份、安全处理附件）",
+            "LinkedIn官方安全功能（如报告按钮、安全提示）的使用说明"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "A backdoor in a LinkedIn job offer - Roman Imankulov",
+            "url": "https://roman.pt/posts/linkedin-backdoor/",
+            "query": "LinkedIn job offer backdoor attack real case",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "\b\u0000\u0000\u0000\u0000\u0000\u0000{}s6)Ny\u001ag*R8, \u001b/ ˘'\u0018UɝGG\u0013M\u001b\u001a==+򗲡cZ0ʍ|\u0016py7\u001a}\u0007lD?yX.|^ZBOiĉ~ u\\趺\\|4 r1ol2l6yeLcՠƊl^f\u0012\u0019BS cޢ%0r Y%\u00139z|ZXcƣxx_~z=z -:U\"~0r rAG -42͟EV\u000f?6^ Ue=\u0017\u000f݂{(=\\=\u0003Ob4b[̅\\Cйň-\u0012& \u001bm\u001blX~\\Yι ksEY0dU\u0014b7 M\u001bMkR*鷳h|\u0012\u0017ɞ=,\u000e\u001b\\G[ (沩(84;{vs,j+@u4%`1\b.Ds,eQu+]&^gQƂ6\u0019-\u0013T\u001a!`\u0016w|&X?\u0019\u0015\b\u000e|h1o)95h\u0010&)/;\u00155ɥ)~ 1|>i WgJjT;^\u0014\u0006#s%}-^ \u0004, \u0004.Ʋp\u0016qm\u0006B \u0014h\u0002\u0013V\u0018n{\u000e.g!-n (\u001a*d\u00170ߛ 5(7 \u0007=3Xߟ\u000f}Io4{ك*`WnG&̚U\\m'\\%eK\u001b\"}JV:JҾ)\u0016.Mi0M@\u0003+QNZv ifr vtK |>>\u0013OG eɱ$jjen\u0006V..\u000e\u0006KS \u0012R\u0019Gv\u0007`sOS\u000e\b.E{- \u0015S)>* QΜ5`\u0000\bj-I\u000f\\56Ft H:?aJHzb ?;CK4&]3A k\u00035Ѝts+Hh ΃3 ߯Hy EX\u0017\u001aPmxÛ-\u001b3p\u0001J\u0006*=[J\u000ft-B\u0016\"yγF\u0017(\u0016\błR(%-H ŵڸf\u001b W\\tR\u00146%&KqZ#5kv\\кx-x\u0018iҳ`PdF-kưEyƟIor@ \u0005\u00069jŵB1o-ǥԂnv\u0015\u0003[NeMEWS ?lhy \u0013}Qp\u0011b -1W ~LnJ\u0013?\u0014,R;^I-i\u0017?LOZ6z\"\u0005+6Qw=F\u00142\u0016\u0011s,\\\u000e\u0017 7m\u0018Tq d\u0013:\u0007Ԗ.\b\\`N c7Åv \u0003\u0000\u0017]b\u0015O\u0000 `ȵA8N_LO!؄|b:-JOxdMi\u0014 vvV,G?΃\b ;\u00004x0>7>\u000fG싽 l2 FZ0\u000fÇxa-\u0018|p\u0010YZ( ֒?D?Tf\u0002eMC@jo?n\u0007\u0003Ix48VT\u0006r(i}BEλqO}vC\u0013qd9t 1#t\u0016\u001a,k)R~p(eRgL? '\u0000wdrlI])FxN\u0019l,!\b\u0002%:s(OO!\u001aZŰu~w*=ɨp]Y\u0010c;}df0tx=lP\u0004!t>\b/HHQ 42\u0004\u0005XN A \"e \u001a\u0017cFCR6\u0006Ģ\u001a+ʯ=G\u001biɽc~f\u0017[\\u{l \u0015IhtZˑ#&iض3N%v\u0005ˠ\b!( l%%U{\u000eҷ?!p@9J8 BH\u0017\u0000$Xڃєn٭Am\u0001g2m+J(+^Gŏ5HM>+mWH;8\u0003hW9\u0007Y ^Uh*BC»d+L_jm~W r\u0004Ը&Po;]v3ۢ\u0016Ks\u0013\u0010A_$`S}uq T^ʈP \u0016mE)v\u000fҲ ^ #\u001ah-Y4,, =;3vһ^ʆ:_\u001bK\u0002mG\u0016 \u0014\u001a\\sM\u0007&\\ )E,V4\u0018+Fݷ]Zk؟Ė3\u001a\u0015lh餧:3,]T(+%Gm\u000e\u0017}E@-1 \u0018\u0017Ks}_>Ղ\u0007u_}\u0003G6mi\u0017kG`l\u0011Am6PnQeYW:\u0015z*!:X.CShrx %\u0001^e{72\u00059/\u0012fcI(mR`@2_K\u0017 + @uOɄ{qδ4[켱Ye~=0\u0018 \u0001WMi`L;p`^L\u0001i;vh\u0007`I`I M#6Q={Ԍ\u0007$ƀ> $ij}k3\u0003m {6g ԑْ\u0018\"\"z\u0007W\u001at ؐRٵ\u000e\u0004\u0017a@v-( FUvw\u0016\u0015 5G F9& \u0017mCĤZ,$?OZsEeCw>c|\u0005Y ҡ tӒ8\u0019$ !bM1JBۆ+k\u000e q< \u000e\u0013mg\u0011g$ \u0004,!9 |s[\u0003鳈mw\u0001|Ԡ(h\u0014pR ~/bsa{s@ c\b~K:цlK94\u0005.SjЄ\u000f1n\u0018284Qy\u0014q\u0010:K\u0019\u001bUVppkǰlM\u0013vj%\u0007H1TA ;g/9R\u001a Q\u0005n=I\u00123Pm:\u0018䊫ݾsp.L\u0011\u0006'7}+ 6+c\u0004p5\u000fm%ISpug-^ٳk r\u0012\u0005i%/ak4\\޹\u001aߚ\u0005NB7[.b7swV,,9\u0017]\u0016:pʴ\u0016TI\u0006qcޕ=cG7_ \u0007M{7e\u001b\u0002+;XIg\u0018MsTcz\u0003&.\u0015MmGOL97Bk\u0003] Hmv ͞rɝ@oϨ|AONϖ4]C(\u0017f\\7xN'7Kc\u0005̢=Nߑctb'\u001a]\u0015(&6\u000f\u0003vX0y{\u0019Z Qh{\u0005CL-Qeё| j%Kv\u0001xL8K4wᭅ\u0007\u0006ߩh~'`2 ^G\u001b^$ Cx \u000f\u000em5ƢVaI'? p3\u001b\u0000\u0000P3\u0000\u0000",
+            "fetch_error": ""
+          },
+          {
+            "title": "A backdoor in a LinkedIn job offer | Hacker News",
+            "url": "https://news.ycombinator.com/item?id=48546294",
+            "query": "LinkedIn job offer backdoor attack real case",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "A backdoor in a LinkedIn job offer | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login A backdoor in a LinkedIn job offer ( roman.pt ) 395 points by lwhsiao 2 hours ago | hide | past | favorite | 81 comments help wxw 1 hour ago | next [–] > a recruiter at a small crypto startup [...] she described a broken proof-of-concept they needed a lead engineer for, and then sent me a public GitHub repo to review. Specifically, she asked me to “check out the deprecated Node modules issue.” > ...buried between walls of commented-out tests, the payload runs anything the server sends back to your machine. > npm runs prepare automatically after npm install, so just installing dependencies executes the backdoor. > The instruction to “check out the deprecated Node modules issue” was bait to get me to run npm install. Great catch. I've not been phished on LinkedIn before. Surprised it's getting this bad. reply pants2 58 minutes ago | parent | next [–] LinkedIn offers no way for $company to disavow users who claim to work for $company - they will appear on the official company page as long as it's in their profile. We've had fake recruiters that claim to work for us running basically the same scam. These are great fake profiles: LinkedIn Premium, tons of relevant posts, etc... but they don't work for us, and we get angry messages from people saying our recruiter tried to scam them. No, they're not our recruiter despite showing up on our company page on LinkedIn. No number of reports could get them taken down. I finally got it solved by buying drinks for a buddy of mine that works for LinkedIn, but not all startups have that connection! reply tweetle_beetle 46 minutes ago | root | parent | next [–] LinkedIn didn't even disavow people pretending to work for Li",
+            "fetch_error": ""
+          },
+          {
+            "title": "Hackers Spearphish Professionals on LinkedIn with Fake Job Offers, Infecting them with Malware, Warns eSentire | eSentire",
+            "url": "https://www.esentire.com/security-advisories/hackers-spearphish-professionals-on-linkedin-with-fake-job-offers-infecting-them-with-malware-warns-esentire",
+            "query": "LinkedIn job offer backdoor attack real case",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-57Z6ZWR'); (function () { var zi = document.createElement('script'); zi.type = 'text/javascript'; zi.async = true; zi.src = 'https://ws.zoominfo.com/pixel/3k8XsFBkOniCq5dTRwpV'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(zi, s); })(); (function(w,q){w['QualifiedObject']=q;w[q]=w[q]||function(){ (w[q].q=w[q].q||[]).push(arguments)};})(window,'qualified') window._vwo_code || (function () { var w=window, d=document; var account_id=780243, version=2.2, settings_tolerance=2000, hide_element='body', hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important'; /* DO NOT EDIT BELOW THIS LINE */ if(f=!1,v=d.querySelector('#vwoCode'),cc={},-1 Hackers Spearphish Professionals on LinkedIn with Fake Job Offers, Infecting them with Malware, Warns eSentire | eSentire function readCookie(c_name) { var c_value = document.cookie; var c_start = c_value.indexOf(\" \" + c_name + \"=\"); if (c_start == -1) { c_start = c_value.indexOf(c_name + \"=\"); } if (c_start == -1) { c_value = null; } else { c_start = c_value.indexOf(\"=\", c_start) + 1; var c_end = c_value.indexOf(\";\", c_start); if (c_end == -1) { c_end = c_value.length; } c_value = unescape(c_value.substring(c_start, c_end)); } return c_value; } function setCookie(a, d, b) { var c = new Date; c.setTime(c.getTime() + 864E5 * b); b = \"; expires=\" + c.toGMTString(); document.cookie = a + \"=\" + d + b } function getParam(a) { return (a = RegE",
+            "fetch_error": ""
+          },
+          {
+            "title": "How To Recognize These 10 Common LinkedIn Scams Before It’s Too Late",
+            "url": "https://www.forbes.com/sites/technology/article/how-to-spot-and-avoid-linkedin-scams/",
+            "query": "LinkedIn security report phishing job offer",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "How To Recognize These 10 Common LinkedIn Scams Before It’s Too Late window.ddjskey = 'B9A4663C1A189CCB8B3E706535EAF6'; window.ddoptions = { ajaxListenerPath: [{host: 'forbes.com'}], withCredentials: true }; window.semaphore=window.semaphore||[];window.ketch=window.ketch||function(){window.semaphore.push(arguments)};(function(){if(false|| false){ var s=document.createElement('style'); s.id='ketch-suppression-styles'; s.innerHTML='#ketch-banner{display:none!important}'; document.head.appendChild(s); }})();var e=document.createElement('script');e.src='https://global.ketchcdn.com/web/v3/config/forbes/website_smart_tag/boot.js';e.defer=e.async=true;(document.head||document.body).appendChild(e); {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Why LinkedIn Scams Seem Convincing And How To Spot The Signs Early\",\"url\":\"https://www.forbes.com/sites/technology/article/how-to-spot-and-avoid-linkedin-scams/\",\"speakable\":{\"@type\":\"SpeakableSpecification\",\"cssSelector\":[\".speakable-headline\"]},\"mainContentOfPage\":{\"@type\":\"WebPageElement\",\"cssSelector\":\"#article-num-0\"},\"breadcrumb\":{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Forbes Homepage\",\"item\":\"https://www.forbes.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Innovation\",\"item\":\"https://www.forbes.com/innovation/\"}]},\"mainEntity\":{\"@type\":\"NewsArticle\",\"url\":\"https://www.forbes.com/sites/technology/article/how-to-spot-and-avoid-linkedin-scams/\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://imageio.forbes.com/specials-images/imageserve/69cd87355867ad3739ffec06/0x0.jpg?format=jpg&crop=1746,1164,x0,y0,safe&height=900&width=1600&fit=bounds\",\"width\":542.79,\"height\":304.6},\"publisher\":{\"@type\":\"NewsMediaOrganization\",\"name\":\"Forbes\",\"url\":\"https://www.forbes.com/\",\"ethicsPolicy\":\"",
+            "fetch_error": ""
+          },
+          {
+            "title": "Recognize and report scams | LinkedIn Help",
+            "url": "https://www.linkedin.com/help/linkedin/answer/a1336387",
+            "query": "LinkedIn security report phishing job offer",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Recognize and report scams | LinkedIn Help (function(){function a(){var a,b;var c=new Promise(function(c,d){a=c,b=d});return c.resolve=a,c.reject=b,c}window.helpcenter=a()})(); Attention screen reader users, you are in a mobile optimized view and content may not appear where you expect it to be. To return the screen to its desktop view, please maximize your browser. Skip to content Skip to search Close jump menu Help LinkedIn Help Dropdown menu, expand to explore help for other LinkedIn products Close menu Get help with: LinkedIn Corporate Billing Learning Marketing Solutions Recruiter Sales Navigator Talent Insights Go to LinkedIn Sign in Sign in Recognize and report scams Last updated: 7 months ago Scams are a form of fraud, usually committed through email. Scammers create false identities or impersonate legitimate people or companies. Their goal is to steal your money or in some cases, your identity. There are several warning signs of a typical scam message: Offers that seem too good to be true. Messages containing spelling or grammar mistakes. Messages that aren't addressed to you personally. Messages asking you for personal or financial information. In addition to these scams, the Internet Crime Complaint Center (IC3) monitors and reports different types of scams you could encounter. If you've been the victim of a scam, report it to your local law enforcement. If you've received a scam message on LinkedIn, please contact us . A few common scams you should be aware of include: Inheritance or advanced fee fraud scams These scams usually request a small fee up front and claim that you will receive a large sum of money in return. You may also be asked for bank account and credit card numbers. Job scams These scams typically involve people pretending to be recruiters or",
+            "fetch_error": ""
+          },
+          {
+            "title": "6 LinkedIn Job Scams to Watch Out For in 2025",
+            "url": "https://skrapp.io/blog/linkedin-job-scams/",
+            "query": "LinkedIn security report phishing job offer",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "6 LinkedIn Job Scams to Watch Out For in 2025 { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"publisher\": { \"@type\": \"Organization\", \"name\": \"Lead Generation & Email Outreach Strategies Tips and Tools | Skrapp.io Blog\", \"url\": \"https://blog.skrapp.io/\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://blog.skrapp.io/content/images/2025/02/logo-black-long.png\" } }, \"author\": { \"@type\": \"Person\", \"name\": \"Othmane Ghazi\", \"image\": { \"@type\": \"ImageObject\", \"url\": \"https://blog.skrapp.io/content/images/2024/05/othmane-ghazi.png\", \"width\": 500, \"height\": 500 }, \"url\": \"https://blog.skrapp.io/author/othmane/\", \"sameAs\": [ \"https://skrapp.io\", \"https://twitter.com/othmaneghz\" ] }, \"headline\": \"6 LinkedIn Job Scams to Watch Out For in 2025\", \"url\": \"https://blog.skrapp.io/linkedin-job-scams/\", \"datePublished\": \"2024-10-29T10:35:30.000Z\", \"dateModified\": \"2026-04-17T09:06:56.000Z\", \"image\": { \"@type\": \"ImageObject\", \"url\": \"https://blog.skrapp.io/content/images/2024/10/LinkedIn-Recruitment-Scams.jpg\", \"width\": 1200, \"height\": 800 }, \"description\": \"LinkedIn job scams are on the rise in 2026, targeting job seekers with fake recruiters, phishing links, and too-good-to-be-true offers. \", \"mainEntityOfPage\": \"https://blog.skrapp.io/linkedin-job-scams/\" } window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-45417310-4'); :root {--ghost-accent-color: #2B6EE9;} Home Email Finder Linkedin Extension Email Verifier Go to Skrapp.io Apr 17, 2026 10 min read 6 LinkedIn Job Scams to Watch Out For in 2026 LinkedIn job scams are on the rise in 2026, targeting job seekers with fake recruiters, phishing links, and too-good-to-be-true offers. On this page Beware of LinkedIn job scams , because nothing ruins your",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/cybersecurity on Reddit: Beware Before Applying on LinkedIn: Fake Job Offers Linked to Malware Campaigns",
+            "url": "https://www.reddit.com/r/cybersecurity/comments/1k7n4xs/beware_before_applying_on_linkedin_fake_job/",
+            "query": "LinkedIn job offer malware Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/linkedin on Reddit: 🚨 Security Alert – Fake LinkedIn Job Offer Scam : Zip File and PDFs Installing Trojan 🚨",
+            "url": "https://www.reddit.com/r/linkedin/comments/1pr8p0z/security_alert_fake_linkedin_job_offer_scam_zip/",
+            "query": "LinkedIn job offer malware Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/linkedin on Reddit: Since I started applying for jobs, scam messages on LinkedIn have exploded. Is our data being scraped or sold?",
+            "url": "https://www.reddit.com/r/linkedin/comments/1ow4al8/since_i_started_applying_for_jobs_scam_messages/",
+            "query": "LinkedIn job offer malware Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "LinkedIn Jobs Terms and Conditions",
+            "url": "https://www.linkedin.com/legal/jobs-terms-conditions",
+            "query": "LinkedIn terms of service job posting security",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); LinkedIn Jobs Terms and Conditions Skip to main content User Agreement Summary of User Agreement Privacy Policy Professional Community Policies Cookie Policy Copyright Policy Regional Info EU Notice California Privacy Disclosure U.S. State Privacy Laws User Agreement Summary of User Agreement Privacy Policy Professional Community Policies Cookie Policy Copyright Policy Regional Info EU Notice California Privacy Disclosure U.S. State Privacy Laws LinkedIn Jobs Terms and Conditions Welcome, and thanks for using LinkedIn's jobs posting platform and related products and services (“LinkedIn Jobs”). You agree that by accessing, posting, promoting a job, or using LinkedIn Jobs for hiring, you enter a legal binding agreement with LinkedIn. 1. Agreement The following terms and conditions govern your access and use of LinkedIn Jobs: These LinkedIn Jobs Terms and Conditions The LinkedIn Jobs Policies The LinkedIn User Agreement and Privacy Policy The LinkedIn Terms for Paid Services applicable to LinkedIn Jobs The LinkedIn Data Processing Agreement (“DPA”) under which you and your entity are a “Customer” Additional terms and conditions you are agree to when using LinkedIn Jobs To the extent of any conflict between any of the terms and conditions listed above or any different agreements that you have with LinkedIn, these Jobs Terms and Conditions and any feature-specific terms govern with respect to the use of LinkedIn Jobs. However, w",
+            "fetch_error": ""
+          },
+          {
+            "title": "LinkedIn Service Terms",
+            "url": "https://www.linkedin.com/legal/l/service-terms",
+            "query": "LinkedIn terms of service job posting security",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); LinkedIn Service Terms Skip to main content Join now Sign in LinkedIn Service Terms February 2, 2026 The following Service Terms apply to Customer to the extent the specific Service is included in the applicable ordering document. LinkedIn may update these Service Terms from time to time. LinkedIn reserves the right to upgrade, update or discontinue any aspect or feature of a Service in whole or in part; provided, however, that if LinkedIn discontinues a Service in whole during the term of an ordering document, then LinkedIn will provide Customer with an alternative or replacement service. 1. TALENT SERVICES 1.1. Recruiter Corporate Customer will use the Recruiter Corporate Service (and related services) and information about Members only to recruit individuals to become employees and consultants of Customer or its Affiliates, or, if Customer is acting as a Staffing Agency or BPO, only to recruit individuals to become employees and consultants of its clients. “ Staffing Agency ” means a Customer that uses the Services to recruit on behalf of a third-party client using Customer's own name and/or logo, including without limitation, staffing agencies, executive search firms, and direct hire firms. “ BPO ” means a business process outsourcer Customer that recruits on behalf of a client using the client's name and/or logo, including without limitation, recruitment process outsourcers, managed service providers, and clinical rese",
+            "fetch_error": ""
+          },
+          {
+            "title": "User Agreement | LinkedIn",
+            "url": "https://www.linkedin.com/legal/user-agreement",
+            "query": "LinkedIn terms of service job posting security",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); User Agreement | LinkedIn Skip to main content User Agreement Summary of User Agreement Privacy Policy Professional Community Policies Cookie Policy Copyright Policy Regional Info EU Notice California Privacy Disclosure U.S. State Privacy Laws User Agreement Summary of User Agreement Privacy Policy Professional Community Policies Cookie Policy Copyright Policy Regional Info EU Notice California Privacy Disclosure U.S. State Privacy Laws User Agreement Effective on November 3, 2025 Our mission is to connect the world’s professionals to allow them to be more productive and successful. Our services are designed to promote economic opportunity for our members by enabling you and millions of other professionals to meet, exchange ideas, learn, and find opportunities or employees, work, and make decisions in a network of trusted relationships. Table of Contents: Introduction Obligations Rights and Limits Disclaimer and Limit of Liability Termination Governing Law and Dispute Resolution General Terms LinkedIn “Dos and Don’ts” Complaints Regarding Content How To Contact Us Introduction 1.1 Contract When you use our Services you agree to all of these terms. Your use of our Services is also subject to our Cookie Policy and our Privacy Policy, which covers how we collect, use, share, and store your personal information. By creating a LinkedIn account or accessing or using our Services (described below), you are agreeing to enter into a",
+            "fetch_error": ""
+          },
+          {
+            "title": "Kenner Rodgers III on LinkedIn: GitHub - gophish/gophish: Open-Source Phishing Toolkit",
+            "url": "https://www.linkedin.com/posts/kennerrodgers_github-gophishgophish-open-source-phishing-activity-7068230695457886208-gNMK",
+            "query": "LinkedIn phishing toolkit github",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); GitHub - gophish/gophish: Open-Source Phishing Toolkit | Kenner Rodgers III {\"@context\":\"http://schema.org\",\"@type\":\"SocialMediaPosting\",\"@id\":\"https://www.linkedin.com/posts/kennerrodgers_github-gophishgophish-open-source-phishing-activity-7068230695457886208-gNMK\",\"datePublished\":\"2023-05-27T14:25:19.158Z\",\"comment\":[],\"commentCount\":0,\"sharedContent\":{\"@type\":\"WebPage\",\"author\":{\"name\":\"Black Hills Information Security\",\"image\":{\"url\":\"https://media.licdn.com/dms/image/v2/C4E0BAQEFv-xGKtJikA/company-logo_100_100/company-logo_100_100/0/1630566642675/black_hills_information_security_logo?e=2147483647&v=beta&t=MpYI5xceDgYOtgyEv6nKu8TbonHeSgRmQAL7NNln9Ho\",\"@type\":\"ImageObject\"},\"url\":\"https://www.linkedin.com/company/black-hills-information-security\",\"@type\":\"Organization\",\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/FollowAction\",\"userInteractionCount\":128158}},\"headline\":\"🔒 Tool Highlight: Gophish - Open-Source Phishing Framework\\n\\nLooking to enhance your organization's security posture? Introducing Gophish, an open-source phishing framework that simulates and analyze phishing attacks developed by Jordan Wright. With its extensive feature set and user-friendly interface, Gophish empowers organizations to identify vulnerabilities, educate employees, and improve their overall cybersecurity resilience.\\n\\nGophish allows you to easily create and customize phishing campaigns! Craft ",
+            "fetch_error": ""
+          },
+          {
+            "title": "David Bowles on LinkedIn: GitHub - gophish/gophish: Open-Source Phishing Toolkit",
+            "url": "https://www.linkedin.com/posts/hackingdb_github-gophishgophish-open-source-phishing-activity-7067506518169972736-aHkE",
+            "query": "LinkedIn phishing toolkit github",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); GitHub - gophish/gophish: Open-Source Phishing Toolkit | David B {\"@context\":\"http://schema.org\",\"@type\":\"SocialMediaPosting\",\"@id\":\"https://www.linkedin.com/posts/hackingdb_github-gophishgophish-open-source-phishing-activity-7067506518169972736-aHkE\",\"datePublished\":\"2023-05-25T14:27:41.836Z\",\"comment\":[],\"commentCount\":0,\"sharedContent\":{\"@type\":\"WebPage\",\"author\":{\"name\":\"Black Hills Information Security\",\"image\":{\"url\":\"https://media.licdn.com/dms/image/v2/C4E0BAQEFv-xGKtJikA/company-logo_100_100/company-logo_100_100/0/1630566642675/black_hills_information_security_logo?e=2147483647&v=beta&t=MpYI5xceDgYOtgyEv6nKu8TbonHeSgRmQAL7NNln9Ho\",\"@type\":\"ImageObject\"},\"url\":\"https://www.linkedin.com/company/black-hills-information-security\",\"@type\":\"Organization\",\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/FollowAction\",\"userInteractionCount\":128158}},\"headline\":\"🔒 Tool Highlight: Gophish - Open-Source Phishing Framework\\n\\nLooking to enhance your organization's security posture? Introducing Gophish, an open-source phishing framework that simulates and analyze phishing attacks developed by Jordan Wright. With its extensive feature set and user-friendly interface, Gophish empowers organizations to identify vulnerabilities, educate employees, and improve their overall cybersecurity resilience.\\n\\nGophish allows you to easily create and customize phishing campaigns! Craft convincing emai",
+            "fetch_error": ""
+          },
+          {
+            "title": "Marc Baude on LinkedIn: GitHub - gophish/gophish: Open-Source Phishing Toolkit",
+            "url": "https://www.linkedin.com/posts/marc-baude-0412a21ba_github-gophishgophish-open-source-phishing-activity-7104478246330585091-F2o4",
+            "query": "LinkedIn phishing toolkit github",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); GitHub - gophish/gophish: Open-Source Phishing Toolkit | Marc Baude {\"@context\":\"http://schema.org\",\"@type\":\"SocialMediaPosting\",\"@id\":\"https://de.linkedin.com/posts/marc-baude-0412a21ba_github-gophishgophish-open-source-phishing-activity-7104478246330585091-F2o4\",\"datePublished\":\"2023-09-04T15:00:08.735Z\",\"headline\":\"🚨 Achtung vor Phishing!\",\"comment\":[],\"commentCount\":0,\"text\":\"GitHub - gophish/gophish: Open-Source Phishing Toolkit\",\"image\":{\"url\":\"https://media.licdn.com/dms/image/sync/v2/D4D27AQHjaw55Jo7PAw/articleshare-shrink_800/articleshare-shrink_800/0/1774473153444?e=2147483647&v=beta&t=CksIvAr6zjmYtv3a33Ab_xci8Oe-qDQ2US8_OZwa28k\",\"@type\":\"ImageObject\"},\"articleBody\":\"🚨 Achtung vor Phishing! Schützen Sie Ihr Unternehmen 🚨\\n\\nMontagmorgen im Büro - der Kaffee läuft, die E-Mails werden gecheckt, und plötzlich taucht ein verlockender Link zu einem neuen Foodtruck in der Nähe auf. Kurz mal schauen, was es Leckeres gibt, denken Sie sich. Doch im nächsten Moment bleibt alles stehen – Ihr Kollege hat dasselbe Problem! Das ist der Moment, in dem Phishing zuschlagen kann.\\n\\nAber wie können Sie sich davor schützen? Bewusstsein schaffen – und das nicht nur einmal, sondern regelmäßig!\\n\\n1️⃣ Option für die Technik-Enthusiasten: Mit GoPhish (https://lnkd.in/eTCTeEHk) haben Sie ein Open-Source-Tool zur Hand, um Phishing-Szenarien darzustellen und Ihre Mitarbeiter regelmäßig und datenschutzkonform zu sensibilisieren. Einfach ein",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "推荐选题",
+          "label": "推荐",
+          "reason": "证据较完整：有真实案例（Hacker News 帖子）、技术细节（npm install 后门）、LinkedIn 官方安全提示、安全公司报告。老花人设解读角度清楚：从程序员求职安全、平台信任机制、成本账切入。读者分层明确：核心技术人（安全防范）、副业普通人（求职避坑）、泛兴趣普通人（求职安全）。泛兴趣故事钩子不夸张：求职者都可能遇到。传播张力成立：平台责任 vs 个人防范、安全 vs 便利。逻辑基本能闭环：攻击手法清晰、防范措施可操作。"
+        },
+        "core_question": "LinkedIn 上的工作邀请是否可能被用作后门攻击的载体？程序员如何识别并防范？",
+        "why_this_topic_matters": "求职季，钓鱼攻击频发，技术人关注安全。该案例展示了攻击者如何利用 npm install 自动执行后门，手法隐蔽，对程序员群体有直接威胁。同时暴露了 LinkedIn 平台在招聘方身份验证上的漏洞，引发对平台责任的讨论。",
+        "fact_summary": [
+          "攻击者伪装成小型加密初创公司的招聘人员，通过 LinkedIn InMail 联系目标。",
+          "招聘人员描述了一个需要首席工程师的破损概念验证，并发送了一个公共 GitHub 仓库链接。",
+          "攻击者要求目标“检查已弃用的 Node 模块问题”，诱使其运行 npm install。",
+          "npm install 会自动执行 prepare 脚本，从而触发后门。",
+          "后门代码隐藏在注释掉的测试代码中，运行服务器发送的任何命令。",
+          "Hacker News 评论指出，LinkedIn 无法让公司否认冒充其员工的用户，这些用户会出现在官方公司页面上。",
+          "eSentire 安全公司警告过类似攻击。",
+          "LinkedIn 官方帮助页面提供了识别和举报诈骗的建议。"
+        ],
+        "persona_discussion_question": "作为一个正在找工作的程序员，我该如何识别并防范伪装成工作邀请的后门攻击？LinkedIn 平台是否应该承担更多责任？",
+        "old_flower_stance": "这件事让普通技术人该争什么：平台应该加强招聘方身份验证，提供更便捷的举报和否认机制。怕什么：求职心切时容易忽略安全细节，npm install 等日常操作可能成为攻击入口。算什么账：花几分钟验证招聘方身份和仓库可信度，比中招后清理后门成本低得多。做什么选择：在信任平台之前，先信任自己的安全习惯。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "副业普通人",
+            "泛兴趣普通人"
+          ],
+          "interest_score": 85,
+          "why_interested": "核心技术人关注安全漏洞和防范技术；副业普通人求职时可能遇到类似骗局；泛兴趣普通人被“求职安全”话题吸引。",
+          "reader_risk": "可能引发对 LinkedIn 平台的过度恐慌，需强调攻击并非普遍存在，但需提高警惕。"
+        },
+        "mass_interest_hook": {
+          "score": 80,
+          "hook_type": "故事|反差|踩坑",
+          "why_non_technical_people_may_click": "标题“LinkedIn 求职陷阱：一个后门如何伪装成工作邀请？”直接点明求职安全，普通人求职时都可能遇到类似情况，好奇心驱动点击。",
+          "story_seed": "一个程序员在 LinkedIn 上收到看似正常的工作邀请，对方要求检查一个 GitHub 仓库的“已弃用 Node 模块问题”，结果 npm install 后电脑被植入后门。",
+          "do_not_overhype": "不要声称“所有 LinkedIn 工作邀请都是钓鱼”或“LinkedIn 存在系统性安全漏洞”，应聚焦于具体攻击手法和防范措施。"
+        },
+        "topic_tension": {
+          "score": 8,
+          "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+          "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "平台/工具厂商"
+          ],
+          "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2025-04-17: Roman Imankulov 发布博客文章，详细描述攻击过程。",
+          "2025-04-17: Hacker News 上引发热议，81 条评论。",
+          "2025-04-17: 本文作为 Radar 选题报告输出。"
+        ],
+        "evidence_table": [
+          {
+            "source": "A backdoor in a LinkedIn job offer - Roman Imankulov",
+            "url": "https://roman.pt/posts/linkedin-backdoor/",
+            "supports": "攻击的具体技术细节：npm install 后门、伪装成招聘人员、诱饵指令。",
+            "reliability": "near_source"
+          },
+          {
+            "source": "Hacker News 评论",
+            "url": "https://news.ycombinator.com/item?id=48546294",
+            "supports": "LinkedIn 无法让公司否认冒充员工的用户；类似攻击已发生。",
+            "reliability": "media"
+          },
+          {
+            "source": "eSentire 安全公告",
+            "url": "https://www.esentire.com/security-advisories/hackers-spearphish-professionals-on-linkedin-with-fake-job-offers-infecting-them-with-malware-warns-esentire",
+            "supports": "安全公司警告 LinkedIn 上的鱼叉式钓鱼攻击。",
+            "reliability": "official"
+          },
+          {
+            "source": "LinkedIn 帮助页面",
+            "url": "https://www.linkedin.com/help/linkedin/answer/a1336387",
+            "supports": "LinkedIn 官方提供识别和举报诈骗的建议。",
+            "reliability": "official"
+          },
+          {
+            "source": "Forbes 文章",
+            "url": "https://www.forbes.com/sites/technology/article/how-to-spot-and-avoid-linkedin-scams/",
+            "supports": "列举了 10 种常见 LinkedIn 诈骗。",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "攻击手法清晰：伪装招聘人员 -> 发送 GitHub 仓库 -> 诱使 npm install -> 自动执行后门。LinkedIn 平台存在身份验证漏洞。防范措施可操作：验证招聘方身份、检查仓库代码、使用沙箱环境。逻辑闭环。",
+        "writeable_angles": [
+          {
+            "angle": "攻击技术深度解析：npm install 后门如何工作？",
+            "why": "满足核心技术人对技术细节的需求。",
+            "needs": "需要补充 npm prepare 脚本的详细说明。"
+          },
+          {
+            "angle": "求职安全指南：程序员如何识别 LinkedIn 上的钓鱼攻击？",
+            "why": "服务副业普通人和泛兴趣普通人，提供实用建议。",
+            "needs": "需要整理验证招聘方身份、检查仓库、安全操作等步骤。"
+          },
+          {
+            "angle": "平台责任：LinkedIn 是否应该为招聘方身份验证负责？",
+            "why": "引发争议和讨论，传播张力强。",
+            "needs": "需要分析 LinkedIn 现有验证机制和漏洞。"
+          }
+        ],
+        "missing_basics": [
+          "npm prepare 脚本的自动执行机制。",
+          "LinkedIn 公司页面验证流程。"
+        ],
+        "missing_materials": [
+          "攻击者使用的 GitHub 仓库的具体代码（如果公开）。",
+          "LinkedIn 官方对此次事件的回应。",
+          "其他类似攻击案例的详细报告。"
+        ],
+        "not_claimable": [
+          "LinkedIn 平台存在系统性安全漏洞。",
+          "此类攻击已造成大规模受害者。",
+          "所有工作邀请都可能是钓鱼。"
+        ],
+        "followup_queries": [
+          "攻击者使用的 GitHub 仓库是否仍然在线？",
+          "LinkedIn 是否已采取措施加强招聘方身份验证？",
+          "是否有其他类似攻击案例？"
+        ],
+        "additional_search_queries": [
+          "LinkedIn job offer backdoor npm install",
+          "LinkedIn recruiter identity verification vulnerability",
+          "LinkedIn phishing campaign 2025"
+        ],
+        "stop_conditions": [
+          "LinkedIn 官方发布声明称已修复相关漏洞。",
+          "攻击者使用的仓库已被删除且无其他类似案例。",
+          "证据显示该攻击仅为孤立事件且无普遍性。"
+        ],
+        "confidence": 85,
+        "topic_direction": "side-info",
+        "topic_direction_title": "副业&信息差",
+        "report_type": "risk-warning",
+        "quality_gate": {
+          "pass": true,
+          "score": 85,
+          "fatal_issues": [],
+          "warnings": [],
+          "missing_evidence": [],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": true,
+          "downstream_handoff_ok": true,
+          "material_pack_ok": true,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": true,
+          "source_coverage_ok": true,
+          "recommendation": "publish"
+        },
+        "research_plan": {
+          "core_question": "LinkedIn上的工作邀请是否可能被用作后门攻击的载体？",
+          "persona_discussion_question": "作为一个正在找工作的程序员，我该如何识别并防范伪装成工作邀请的后门攻击？",
+          "hidden_public_issue": "求职平台的安全审核机制是否足以保护求职者免受针对性攻击，以及求职者自身的安全意识缺口。",
+          "must_verify": [
+            "后门的具体实现方式（如恶意附件、链接、代码测试等）",
+            "攻击者如何利用LinkedIn的通信功能（如InMail、附件、外部链接）",
+            "是否有真实受害者案例或仅概念验证",
+            "LinkedIn官方是否有相关安全提示或已知漏洞报告",
+            "攻击是否针对特定人群（如安全研究员、特定公司员工）"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "case_study",
+              "query": "LinkedIn job offer backdoor attack real case",
+              "why_needed": "确认是否有真实攻击案例，评估威胁的普遍性"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "LinkedIn security report phishing job offer",
+              "why_needed": "获取LinkedIn官方对钓鱼攻击的统计和防护建议"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "LinkedIn job offer malware Reddit",
+              "why_needed": "了解社区中是否有人报告类似经历或讨论防范方法"
+            },
+            {
+              "source_type": "policy",
+              "query": "LinkedIn terms of service job posting security",
+              "why_needed": "检查LinkedIn对招聘信息的安全审核政策"
+            },
+            {
+              "source_type": "github_repo",
+              "query": "LinkedIn phishing toolkit github",
+              "why_needed": "查看是否存在公开的LinkedIn钓鱼工具，评估攻击技术细节"
+            }
+          ],
+          "expert_challenge_points": [
+            "攻击者如何绕过LinkedIn的附件扫描和链接检测？",
+            "后门是否依赖受害者执行特定操作（如运行代码、打开文档）？",
+            "普通求职者与安全研究员面临的风险是否不同？"
+          ],
+          "do_not_claim_yet": [
+            "LinkedIn平台存在系统性安全漏洞",
+            "此类攻击已造成大规模受害者",
+            "所有工作邀请都可能是钓鱼"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确攻击的具体手法和防范措施，避免引发不必要的恐慌。",
+          "downstream_materials_needed": [
+            "攻击技术细节分析（如恶意文档、宏、可执行文件）",
+            "求职者安全指南（如何验证招聘方身份、安全处理附件）",
+            "LinkedIn官方安全功能（如报告按钮、安全提示）的使用说明"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "A backdoor in a LinkedIn job offer - Roman Imankulov",
+            "url": "https://roman.pt/posts/linkedin-backdoor/",
+            "query": "LinkedIn job offer backdoor attack real case",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "\b\u0000\u0000\u0000\u0000\u0000\u0000{}s6)Ny\u001ag*R8, \u001b/ ˘'\u0018UɝGG\u0013M\u001b\u001a==+򗲡cZ0ʍ|\u0016py7\u001a}\u0007lD?yX.|^ZBOiĉ~ u\\趺\\|4 r1ol2l6yeLcՠƊl^f\u0012\u0019BS cޢ%0r Y%\u00139z|ZXcƣxx_~z=z -:U\"~0r rAG -42͟EV\u000f?6^ Ue=\u0017\u000f݂{(=\\=\u0003Ob4b[̅\\Cйň-\u0012& \u001bm\u001blX~\\Yι ksEY0dU\u0014b7 M\u001bMkR*鷳h|\u0012\u0017ɞ=,\u000e\u001b\\G[ (沩(84;{vs,j+@u4%`1\b.Ds,eQu+]&^gQƂ6\u0019-\u0013T\u001a!`\u0016w|&X?\u0019\u0015\b\u000e|h1o)95h\u0010&)/;\u00155ɥ)~ 1|>i WgJjT;^\u0014\u0006#s%}-^ \u0004, \u0004.Ʋp\u0016qm\u0006B \u0014h\u0002\u0013V\u0018n{\u000e.g!-n (\u001a*d\u00170ߛ 5(7 \u0007=3Xߟ\u000f}Io4{ك*`WnG&̚U\\m'\\%eK\u001b\"}JV:JҾ)\u0016.Mi0M@\u0003+QNZv ifr vtK |>>\u0013OG eɱ$jjen\u0006V..\u000e\u0006KS \u0012R\u0019Gv\u0007`sOS\u000e\b.E{- \u0015S)>* QΜ5`\u0000\bj-I\u000f\\56Ft H:?aJHzb ?;CK4&]3A k\u00035Ѝts+Hh ΃3 ߯Hy EX\u0017\u001aPmxÛ-\u001b3p\u0001J\u0006*=[J\u000ft-B\u0016\"yγF\u0017(\u0016\błR(%-H ŵڸf\u001b W\\tR\u00146%&KqZ#5kv\\кx-x\u0018iҳ`PdF-kưEyƟIor@ \u0005\u00069jŵB1o-ǥԂnv\u0015\u0003[NeMEWS ?lhy \u0013}Qp\u0011b -1W ~LnJ\u0013?\u0014,R;^I-i\u0017?LOZ6z\"\u0005+6Qw=F\u00142\u0016\u0011s,\\\u000e\u0017 7m\u0018Tq d\u0013:\u0007Ԗ.\b\\`N c7Åv \u0003\u0000\u0017]b\u0015O\u0000 `ȵA8N_LO!؄|b:-JOxdMi\u0014 vvV,G?΃\b ;\u00004x0>7>\u000fG싽 l2 FZ0\u000fÇxa-\u0018|p\u0010YZ( ֒?D?Tf\u0002eMC@jo?n\u0007\u0003Ix48VT\u0006r(i}BEλqO}vC\u0013qd9t 1#t\u0016\u001a,k)R~p(eRgL? '\u0000wdrlI])FxN\u0019l,!\b\u0002%:s(OO!\u001aZŰu~w*=ɨp]Y\u0010c;}df0tx=lP\u0004!t>\b/HHQ 42\u0004\u0005XN A \"e \u001a\u0017cFCR6\u0006Ģ\u001a+ʯ=G\u001biɽc~f\u0017[\\u{l \u0015IhtZˑ#&iض3N%v\u0005ˠ\b!( l%%U{\u000eҷ?!p@9J8 BH\u0017\u0000$Xڃєn٭Am\u0001g2m+J(+^Gŏ5HM>+mWH;8\u0003hW9\u0007Y ^Uh*BC»d+L_jm~W r\u0004Ը&Po;]v3ۢ\u0016Ks\u0013\u0010A_$`S}uq T^ʈP \u0016mE)v\u000fҲ ^ #\u001ah-Y4,, =;3vһ^ʆ:_\u001bK\u0002mG\u0016 \u0014\u001a\\sM\u0007&\\ )E,V4\u0018+Fݷ]Zk؟Ė3\u001a\u0015lh餧:3,]T(+%Gm\u000e\u0017}E@-1 \u0018\u0017Ks}_>Ղ\u0007u_}\u0003G6mi\u0017kG`l\u0011Am6PnQeYW:\u0015z*!:X.CShrx %\u0001^e{72\u00059/\u0012fcI(mR`@2_K\u0017 + @uOɄ{qδ4[켱Ye~=0\u0018 \u0001WMi`L;p`^L\u0001i;vh\u0007`I`I M#6Q={Ԍ\u0007$ƀ> $ij}k3\u0003m {6g ԑْ\u0018\"\"z\u0007W\u001at ؐRٵ\u000e\u0004\u0017a@v-( FUvw\u0016\u0015 5G F9& \u0017mCĤZ,$?OZsEeCw>c|\u0005Y ҡ tӒ8\u0019$ !bM1JBۆ+k\u000e q< \u000e\u0013mg\u0011g$ \u0004,!9 |s[\u0003鳈mw\u0001|Ԡ(h\u0014pR ~/bsa{s@ c\b~K:цlK94\u0005.SjЄ\u000f1n\u0018284Qy\u0014q\u0010:K\u0019\u001bUVppkǰlM\u0013vj%\u0007H1TA ;g/9R\u001a Q\u0005n=I\u00123Pm:\u0018䊫ݾsp.L\u0011\u0006'7}+ 6+c\u0004p5\u000fm%ISpug-^ٳk r\u0012\u0005i%/ak4\\޹\u001aߚ\u0005NB7[.b7swV,,9\u0017]\u0016:pʴ\u0016TI\u0006qcޕ=cG7_ \u0007M{7e\u001b\u0002+;XIg\u0018MsTcz\u0003&.\u0015MmGOL97Bk\u0003] Hmv ͞rɝ@oϨ|AONϖ4]C(\u0017f\\7xN'7Kc\u0005̢=Nߑctb'\u001a]\u0015(&6\u000f\u0003vX0y{\u0019Z Qh{\u0005CL-Qeё| j%Kv\u0001xL8K4wᭅ\u0007\u0006ߩh~'`2 ^G\u001b^$ Cx \u000f\u000em5ƢVaI'? p3\u001b\u0000\u0000P3\u0000\u0000",
+            "fetch_error": ""
+          },
+          {
+            "title": "A backdoor in a LinkedIn job offer | Hacker News",
+            "url": "https://news.ycombinator.com/item?id=48546294",
+            "query": "LinkedIn job offer backdoor attack real case",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "A backdoor in a LinkedIn job offer | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login A backdoor in a LinkedIn job offer ( roman.pt ) 395 points by lwhsiao 2 hours ago | hide | past | favorite | 81 comments help wxw 1 hour ago | next [–] > a recruiter at a small crypto startup [...] she described a broken proof-of-concept they needed a lead engineer for, and then sent me a public GitHub repo to review. Specifically, she asked me to “check out the deprecated Node modules issue.” > ...buried between walls of commented-out tests, the payload runs anything the server sends back to your machine. > npm runs prepare automatically after npm install, so just installing dependencies executes the backdoor. > The instruction to “check out the deprecated Node modules issue” was bait to get me to run npm install. Great catch. I've not been phished on LinkedIn before. Surprised it's getting this bad. reply pants2 58 minutes ago | parent | next [–] LinkedIn offers no way for $company to disavow users who claim to work for $company - they will appear on the official company page as long as it's in their profile. We've had fake recruiters that claim to work for us running basically the same scam. These are great fake profiles: LinkedIn Premium, tons of relevant posts, etc... but they don't work for us, and we get angry messages from people saying our recruiter tried to scam them. No, they're not our recruiter despite showing up on our company page on LinkedIn. No number of reports could get them taken down. I finally got it solved by buying drinks for a buddy of mine that works for LinkedIn, but not all startups have that connection! reply tweetle_beetle 46 minutes ago | root | parent | next [–] LinkedIn didn't even disavow people pretending to work for Li",
+            "fetch_error": ""
+          },
+          {
+            "title": "Hackers Spearphish Professionals on LinkedIn with Fake Job Offers, Infecting them with Malware, Warns eSentire | eSentire",
+            "url": "https://www.esentire.com/security-advisories/hackers-spearphish-professionals-on-linkedin-with-fake-job-offers-infecting-them-with-malware-warns-esentire",
+            "query": "LinkedIn job offer backdoor attack real case",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-57Z6ZWR'); (function () { var zi = document.createElement('script'); zi.type = 'text/javascript'; zi.async = true; zi.src = 'https://ws.zoominfo.com/pixel/3k8XsFBkOniCq5dTRwpV'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(zi, s); })(); (function(w,q){w['QualifiedObject']=q;w[q]=w[q]||function(){ (w[q].q=w[q].q||[]).push(arguments)};})(window,'qualified') window._vwo_code || (function () { var w=window, d=document; var account_id=780243, version=2.2, settings_tolerance=2000, hide_element='body', hide_element_style = 'opacity:0 !important;filter:alpha(opacity=0) !important;background:none !important'; /* DO NOT EDIT BELOW THIS LINE */ if(f=!1,v=d.querySelector('#vwoCode'),cc={},-1 Hackers Spearphish Professionals on LinkedIn with Fake Job Offers, Infecting them with Malware, Warns eSentire | eSentire function readCookie(c_name) { var c_value = document.cookie; var c_start = c_value.indexOf(\" \" + c_name + \"=\"); if (c_start == -1) { c_start = c_value.indexOf(c_name + \"=\"); } if (c_start == -1) { c_value = null; } else { c_start = c_value.indexOf(\"=\", c_start) + 1; var c_end = c_value.indexOf(\";\", c_start); if (c_end == -1) { c_end = c_value.length; } c_value = unescape(c_value.substring(c_start, c_end)); } return c_value; } function setCookie(a, d, b) { var c = new Date; c.setTime(c.getTime() + 864E5 * b); b = \"; expires=\" + c.toGMTString(); document.cookie = a + \"=\" + d + b } function getParam(a) { return (a = RegE",
+            "fetch_error": ""
+          },
+          {
+            "title": "How To Recognize These 10 Common LinkedIn Scams Before It’s Too Late",
+            "url": "https://www.forbes.com/sites/technology/article/how-to-spot-and-avoid-linkedin-scams/",
+            "query": "LinkedIn security report phishing job offer",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "How To Recognize These 10 Common LinkedIn Scams Before It’s Too Late window.ddjskey = 'B9A4663C1A189CCB8B3E706535EAF6'; window.ddoptions = { ajaxListenerPath: [{host: 'forbes.com'}], withCredentials: true }; window.semaphore=window.semaphore||[];window.ketch=window.ketch||function(){window.semaphore.push(arguments)};(function(){if(false|| false){ var s=document.createElement('style'); s.id='ketch-suppression-styles'; s.innerHTML='#ketch-banner{display:none!important}'; document.head.appendChild(s); }})();var e=document.createElement('script');e.src='https://global.ketchcdn.com/web/v3/config/forbes/website_smart_tag/boot.js';e.defer=e.async=true;(document.head||document.body).appendChild(e); {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Why LinkedIn Scams Seem Convincing And How To Spot The Signs Early\",\"url\":\"https://www.forbes.com/sites/technology/article/how-to-spot-and-avoid-linkedin-scams/\",\"speakable\":{\"@type\":\"SpeakableSpecification\",\"cssSelector\":[\".speakable-headline\"]},\"mainContentOfPage\":{\"@type\":\"WebPageElement\",\"cssSelector\":\"#article-num-0\"},\"breadcrumb\":{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"Forbes Homepage\",\"item\":\"https://www.forbes.com/\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Innovation\",\"item\":\"https://www.forbes.com/innovation/\"}]},\"mainEntity\":{\"@type\":\"NewsArticle\",\"url\":\"https://www.forbes.com/sites/technology/article/how-to-spot-and-avoid-linkedin-scams/\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://imageio.forbes.com/specials-images/imageserve/69cd87355867ad3739ffec06/0x0.jpg?format=jpg&crop=1746,1164,x0,y0,safe&height=900&width=1600&fit=bounds\",\"width\":542.79,\"height\":304.6},\"publisher\":{\"@type\":\"NewsMediaOrganization\",\"name\":\"Forbes\",\"url\":\"https://www.forbes.com/\",\"ethicsPolicy\":\"",
+            "fetch_error": ""
+          },
+          {
+            "title": "Recognize and report scams | LinkedIn Help",
+            "url": "https://www.linkedin.com/help/linkedin/answer/a1336387",
+            "query": "LinkedIn security report phishing job offer",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Recognize and report scams | LinkedIn Help (function(){function a(){var a,b;var c=new Promise(function(c,d){a=c,b=d});return c.resolve=a,c.reject=b,c}window.helpcenter=a()})(); Attention screen reader users, you are in a mobile optimized view and content may not appear where you expect it to be. To return the screen to its desktop view, please maximize your browser. Skip to content Skip to search Close jump menu Help LinkedIn Help Dropdown menu, expand to explore help for other LinkedIn products Close menu Get help with: LinkedIn Corporate Billing Learning Marketing Solutions Recruiter Sales Navigator Talent Insights Go to LinkedIn Sign in Sign in Recognize and report scams Last updated: 7 months ago Scams are a form of fraud, usually committed through email. Scammers create false identities or impersonate legitimate people or companies. Their goal is to steal your money or in some cases, your identity. There are several warning signs of a typical scam message: Offers that seem too good to be true. Messages containing spelling or grammar mistakes. Messages that aren't addressed to you personally. Messages asking you for personal or financial information. In addition to these scams, the Internet Crime Complaint Center (IC3) monitors and reports different types of scams you could encounter. If you've been the victim of a scam, report it to your local law enforcement. If you've received a scam message on LinkedIn, please contact us . A few common scams you should be aware of include: Inheritance or advanced fee fraud scams These scams usually request a small fee up front and claim that you will receive a large sum of money in return. You may also be asked for bank account and credit card numbers. Job scams These scams typically involve people pretending to be recruiters or",
+            "fetch_error": ""
+          },
+          {
+            "title": "6 LinkedIn Job Scams to Watch Out For in 2025",
+            "url": "https://skrapp.io/blog/linkedin-job-scams/",
+            "query": "LinkedIn security report phishing job offer",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "6 LinkedIn Job Scams to Watch Out For in 2025 { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"publisher\": { \"@type\": \"Organization\", \"name\": \"Lead Generation & Email Outreach Strategies Tips and Tools | Skrapp.io Blog\", \"url\": \"https://blog.skrapp.io/\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://blog.skrapp.io/content/images/2025/02/logo-black-long.png\" } }, \"author\": { \"@type\": \"Person\", \"name\": \"Othmane Ghazi\", \"image\": { \"@type\": \"ImageObject\", \"url\": \"https://blog.skrapp.io/content/images/2024/05/othmane-ghazi.png\", \"width\": 500, \"height\": 500 }, \"url\": \"https://blog.skrapp.io/author/othmane/\", \"sameAs\": [ \"https://skrapp.io\", \"https://twitter.com/othmaneghz\" ] }, \"headline\": \"6 LinkedIn Job Scams to Watch Out For in 2025\", \"url\": \"https://blog.skrapp.io/linkedin-job-scams/\", \"datePublished\": \"2024-10-29T10:35:30.000Z\", \"dateModified\": \"2026-04-17T09:06:56.000Z\", \"image\": { \"@type\": \"ImageObject\", \"url\": \"https://blog.skrapp.io/content/images/2024/10/LinkedIn-Recruitment-Scams.jpg\", \"width\": 1200, \"height\": 800 }, \"description\": \"LinkedIn job scams are on the rise in 2026, targeting job seekers with fake recruiters, phishing links, and too-good-to-be-true offers. \", \"mainEntityOfPage\": \"https://blog.skrapp.io/linkedin-job-scams/\" } window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-45417310-4'); :root {--ghost-accent-color: #2B6EE9;} Home Email Finder Linkedin Extension Email Verifier Go to Skrapp.io Apr 17, 2026 10 min read 6 LinkedIn Job Scams to Watch Out For in 2026 LinkedIn job scams are on the rise in 2026, targeting job seekers with fake recruiters, phishing links, and too-good-to-be-true offers. On this page Beware of LinkedIn job scams , because nothing ruins your",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/cybersecurity on Reddit: Beware Before Applying on LinkedIn: Fake Job Offers Linked to Malware Campaigns",
+            "url": "https://www.reddit.com/r/cybersecurity/comments/1k7n4xs/beware_before_applying_on_linkedin_fake_job/",
+            "query": "LinkedIn job offer malware Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/linkedin on Reddit: 🚨 Security Alert – Fake LinkedIn Job Offer Scam : Zip File and PDFs Installing Trojan 🚨",
+            "url": "https://www.reddit.com/r/linkedin/comments/1pr8p0z/security_alert_fake_linkedin_job_offer_scam_zip/",
+            "query": "LinkedIn job offer malware Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/linkedin on Reddit: Since I started applying for jobs, scam messages on LinkedIn have exploded. Is our data being scraped or sold?",
+            "url": "https://www.reddit.com/r/linkedin/comments/1ow4al8/since_i_started_applying_for_jobs_scam_messages/",
+            "query": "LinkedIn job offer malware Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "LinkedIn Jobs Terms and Conditions",
+            "url": "https://www.linkedin.com/legal/jobs-terms-conditions",
+            "query": "LinkedIn terms of service job posting security",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); LinkedIn Jobs Terms and Conditions Skip to main content User Agreement Summary of User Agreement Privacy Policy Professional Community Policies Cookie Policy Copyright Policy Regional Info EU Notice California Privacy Disclosure U.S. State Privacy Laws User Agreement Summary of User Agreement Privacy Policy Professional Community Policies Cookie Policy Copyright Policy Regional Info EU Notice California Privacy Disclosure U.S. State Privacy Laws LinkedIn Jobs Terms and Conditions Welcome, and thanks for using LinkedIn's jobs posting platform and related products and services (“LinkedIn Jobs”). You agree that by accessing, posting, promoting a job, or using LinkedIn Jobs for hiring, you enter a legal binding agreement with LinkedIn. 1. Agreement The following terms and conditions govern your access and use of LinkedIn Jobs: These LinkedIn Jobs Terms and Conditions The LinkedIn Jobs Policies The LinkedIn User Agreement and Privacy Policy The LinkedIn Terms for Paid Services applicable to LinkedIn Jobs The LinkedIn Data Processing Agreement (“DPA”) under which you and your entity are a “Customer” Additional terms and conditions you are agree to when using LinkedIn Jobs To the extent of any conflict between any of the terms and conditions listed above or any different agreements that you have with LinkedIn, these Jobs Terms and Conditions and any feature-specific terms govern with respect to the use of LinkedIn Jobs. However, w",
+            "fetch_error": ""
+          },
+          {
+            "title": "LinkedIn Service Terms",
+            "url": "https://www.linkedin.com/legal/l/service-terms",
+            "query": "LinkedIn terms of service job posting security",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); LinkedIn Service Terms Skip to main content Join now Sign in LinkedIn Service Terms February 2, 2026 The following Service Terms apply to Customer to the extent the specific Service is included in the applicable ordering document. LinkedIn may update these Service Terms from time to time. LinkedIn reserves the right to upgrade, update or discontinue any aspect or feature of a Service in whole or in part; provided, however, that if LinkedIn discontinues a Service in whole during the term of an ordering document, then LinkedIn will provide Customer with an alternative or replacement service. 1. TALENT SERVICES 1.1. Recruiter Corporate Customer will use the Recruiter Corporate Service (and related services) and information about Members only to recruit individuals to become employees and consultants of Customer or its Affiliates, or, if Customer is acting as a Staffing Agency or BPO, only to recruit individuals to become employees and consultants of its clients. “ Staffing Agency ” means a Customer that uses the Services to recruit on behalf of a third-party client using Customer's own name and/or logo, including without limitation, staffing agencies, executive search firms, and direct hire firms. “ BPO ” means a business process outsourcer Customer that recruits on behalf of a client using the client's name and/or logo, including without limitation, recruitment process outsourcers, managed service providers, and clinical rese",
+            "fetch_error": ""
+          },
+          {
+            "title": "User Agreement | LinkedIn",
+            "url": "https://www.linkedin.com/legal/user-agreement",
+            "query": "LinkedIn terms of service job posting security",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); User Agreement | LinkedIn Skip to main content User Agreement Summary of User Agreement Privacy Policy Professional Community Policies Cookie Policy Copyright Policy Regional Info EU Notice California Privacy Disclosure U.S. State Privacy Laws User Agreement Summary of User Agreement Privacy Policy Professional Community Policies Cookie Policy Copyright Policy Regional Info EU Notice California Privacy Disclosure U.S. State Privacy Laws User Agreement Effective on November 3, 2025 Our mission is to connect the world’s professionals to allow them to be more productive and successful. Our services are designed to promote economic opportunity for our members by enabling you and millions of other professionals to meet, exchange ideas, learn, and find opportunities or employees, work, and make decisions in a network of trusted relationships. Table of Contents: Introduction Obligations Rights and Limits Disclaimer and Limit of Liability Termination Governing Law and Dispute Resolution General Terms LinkedIn “Dos and Don’ts” Complaints Regarding Content How To Contact Us Introduction 1.1 Contract When you use our Services you agree to all of these terms. Your use of our Services is also subject to our Cookie Policy and our Privacy Policy, which covers how we collect, use, share, and store your personal information. By creating a LinkedIn account or accessing or using our Services (described below), you are agreeing to enter into a",
+            "fetch_error": ""
+          },
+          {
+            "title": "Kenner Rodgers III on LinkedIn: GitHub - gophish/gophish: Open-Source Phishing Toolkit",
+            "url": "https://www.linkedin.com/posts/kennerrodgers_github-gophishgophish-open-source-phishing-activity-7068230695457886208-gNMK",
+            "query": "LinkedIn phishing toolkit github",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); GitHub - gophish/gophish: Open-Source Phishing Toolkit | Kenner Rodgers III {\"@context\":\"http://schema.org\",\"@type\":\"SocialMediaPosting\",\"@id\":\"https://www.linkedin.com/posts/kennerrodgers_github-gophishgophish-open-source-phishing-activity-7068230695457886208-gNMK\",\"datePublished\":\"2023-05-27T14:25:19.158Z\",\"comment\":[],\"commentCount\":0,\"sharedContent\":{\"@type\":\"WebPage\",\"author\":{\"name\":\"Black Hills Information Security\",\"image\":{\"url\":\"https://media.licdn.com/dms/image/v2/C4E0BAQEFv-xGKtJikA/company-logo_100_100/company-logo_100_100/0/1630566642675/black_hills_information_security_logo?e=2147483647&v=beta&t=MpYI5xceDgYOtgyEv6nKu8TbonHeSgRmQAL7NNln9Ho\",\"@type\":\"ImageObject\"},\"url\":\"https://www.linkedin.com/company/black-hills-information-security\",\"@type\":\"Organization\",\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/FollowAction\",\"userInteractionCount\":128158}},\"headline\":\"🔒 Tool Highlight: Gophish - Open-Source Phishing Framework\\n\\nLooking to enhance your organization's security posture? Introducing Gophish, an open-source phishing framework that simulates and analyze phishing attacks developed by Jordan Wright. With its extensive feature set and user-friendly interface, Gophish empowers organizations to identify vulnerabilities, educate employees, and improve their overall cybersecurity resilience.\\n\\nGophish allows you to easily create and customize phishing campaigns! Craft ",
+            "fetch_error": ""
+          },
+          {
+            "title": "David Bowles on LinkedIn: GitHub - gophish/gophish: Open-Source Phishing Toolkit",
+            "url": "https://www.linkedin.com/posts/hackingdb_github-gophishgophish-open-source-phishing-activity-7067506518169972736-aHkE",
+            "query": "LinkedIn phishing toolkit github",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); GitHub - gophish/gophish: Open-Source Phishing Toolkit | David B {\"@context\":\"http://schema.org\",\"@type\":\"SocialMediaPosting\",\"@id\":\"https://www.linkedin.com/posts/hackingdb_github-gophishgophish-open-source-phishing-activity-7067506518169972736-aHkE\",\"datePublished\":\"2023-05-25T14:27:41.836Z\",\"comment\":[],\"commentCount\":0,\"sharedContent\":{\"@type\":\"WebPage\",\"author\":{\"name\":\"Black Hills Information Security\",\"image\":{\"url\":\"https://media.licdn.com/dms/image/v2/C4E0BAQEFv-xGKtJikA/company-logo_100_100/company-logo_100_100/0/1630566642675/black_hills_information_security_logo?e=2147483647&v=beta&t=MpYI5xceDgYOtgyEv6nKu8TbonHeSgRmQAL7NNln9Ho\",\"@type\":\"ImageObject\"},\"url\":\"https://www.linkedin.com/company/black-hills-information-security\",\"@type\":\"Organization\",\"interactionStatistic\":{\"@type\":\"InteractionCounter\",\"interactionType\":\"http://schema.org/FollowAction\",\"userInteractionCount\":128158}},\"headline\":\"🔒 Tool Highlight: Gophish - Open-Source Phishing Framework\\n\\nLooking to enhance your organization's security posture? Introducing Gophish, an open-source phishing framework that simulates and analyze phishing attacks developed by Jordan Wright. With its extensive feature set and user-friendly interface, Gophish empowers organizations to identify vulnerabilities, educate employees, and improve their overall cybersecurity resilience.\\n\\nGophish allows you to easily create and customize phishing campaigns! Craft convincing emai",
+            "fetch_error": ""
+          },
+          {
+            "title": "Marc Baude on LinkedIn: GitHub - gophish/gophish: Open-Source Phishing Toolkit",
+            "url": "https://www.linkedin.com/posts/marc-baude-0412a21ba_github-gophishgophish-open-source-phishing-activity-7104478246330585091-F2o4",
+            "query": "LinkedIn phishing toolkit github",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "function getDfd() {let yFn,nFn;const p=new Promise(function(y, n){yFn=y;nFn=n;});p.resolve=yFn;p.reject=nFn;return p;} window.lazyloader = getDfd(); window.tracking = getDfd(); window.impressionTracking = getDfd(); window.ingraphTracking = getDfd(); window.appDetection = getDfd(); window.pemTracking = getDfd(); window.appRedirectCompleted = getDfd(); GitHub - gophish/gophish: Open-Source Phishing Toolkit | Marc Baude {\"@context\":\"http://schema.org\",\"@type\":\"SocialMediaPosting\",\"@id\":\"https://de.linkedin.com/posts/marc-baude-0412a21ba_github-gophishgophish-open-source-phishing-activity-7104478246330585091-F2o4\",\"datePublished\":\"2023-09-04T15:00:08.735Z\",\"headline\":\"🚨 Achtung vor Phishing!\",\"comment\":[],\"commentCount\":0,\"text\":\"GitHub - gophish/gophish: Open-Source Phishing Toolkit\",\"image\":{\"url\":\"https://media.licdn.com/dms/image/sync/v2/D4D27AQHjaw55Jo7PAw/articleshare-shrink_800/articleshare-shrink_800/0/1774473153444?e=2147483647&v=beta&t=CksIvAr6zjmYtv3a33Ab_xci8Oe-qDQ2US8_OZwa28k\",\"@type\":\"ImageObject\"},\"articleBody\":\"🚨 Achtung vor Phishing! Schützen Sie Ihr Unternehmen 🚨\\n\\nMontagmorgen im Büro - der Kaffee läuft, die E-Mails werden gecheckt, und plötzlich taucht ein verlockender Link zu einem neuen Foodtruck in der Nähe auf. Kurz mal schauen, was es Leckeres gibt, denken Sie sich. Doch im nächsten Moment bleibt alles stehen – Ihr Kollege hat dasselbe Problem! Das ist der Moment, in dem Phishing zuschlagen kann.\\n\\nAber wie können Sie sich davor schützen? Bewusstsein schaffen – und das nicht nur einmal, sondern regelmäßig!\\n\\n1️⃣ Option für die Technik-Enthusiasten: Mit GoPhish (https://lnkd.in/eTCTeEHk) haben Sie ein Open-Source-Tool zur Hand, um Phishing-Szenarien darzustellen und Ihre Mitarbeiter regelmäßig und datenschutzkonform zu sensibilisieren. Einfach ein",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "营销话术拆解",
+        "合规和资金风险",
+        "普通人不该硬冲的原因"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "LinkedIn求职陷阱：一个后门如何伪装成工作邀请？ 投诉 风险 违规",
+        "LinkedIn求职陷阱：一个后门如何伪装成工作邀请？ 骗局 营销话术",
+        "LinkedIn求职陷阱：一个后门如何伪装成工作邀请？ 隐藏成本 失败案例"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}

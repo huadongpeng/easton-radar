@@ -1,0 +1,1819 @@
+{
+  "id": "20260616-they-screwed-us-personality-clashes-sent-anthrop-b91bb577",
+  "batch_id": "2026-06-16-morning",
+  "title": "Anthropic模型下线内幕：性格冲突还是国家安全？普通技术人该担心什么？",
+  "original_title": "\"They screwed us\": Personality clashes sent Anthropic's models offline",
+  "url": "https://simonwillison.net/2026/Jun/15/axios-clashes-anthropics/",
+  "summary": "\"They screwed us\": Personality clashes sent Anthropic's models offline Lots of \"source familiar with the administration's thinking\" and \"source close to Anthropic\" in this Axios piece, which is the best collection of behind-the-scenes gossip I've seen about the US government export control Mythos/Fable story so far. Logan Graham ( I lead the Frontier Red Team at Anthropic ), Dave Orr (Head of Safeguards, previously a Director of Engineering at Google DeepMind), and blog favorite Nicholas Carlini are reported to be meeting with the Commerce Department today in D.C. Good luck to them! (I just noticed Logan was \"Special Adviser to the Prime Minister\" in the Boris Johnson era, covering AI, science, and technology policy - so significant political experience.) This closing notes doesn't give me much optimism that we'll be getting Fable back any time soon: The bottom line : One option is to ma",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "tools-rules",
+  "topic_direction_title": "工具&规则",
+  "topic_direction_short_title": "工具&规则",
+  "topic_direction_description": "开发工具、AI 实操、API、云服务、自动化工作流、平台政策、账号规则、搜索流量和内容分发生态变化。重点看工具怎么用、规则怎么变、成本和边界在哪里。",
+  "source_name": "Simon Willison's Weblog",
+  "original_source_name": "Simon Willison's Weblog",
+  "source_type": "rss",
+  "feed_url": "https://simonwillison.net/atom/everything/",
+  "published_at": "2026-06-15T14:57:33+00:00",
+  "fetched_at": "2026-06-15T22:26:27.182258+00:00",
+  "decision": "deep_dive",
+  "report_type": "hot-event",
+  "report_type_title": "热点观点",
+  "score": 80,
+  "reader_hook": "从AI工具可用性、平台规则、技术人职业风险角度切入，核心读者是核心技术人和高价值商业读者，泛兴趣读者会被“内幕”和“冲突”吸引。",
+  "topic_tension": {
+    "score": 9,
+    "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+    "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+    "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+  },
+  "persona_discussion_question": "这件事里，普通技术人应该相信平台/厂商的说法，还是先按成本、规则和风险重新算一遍？",
+  "why_now": "事件刚发生，有内幕报道，引发对AI模型可用性的讨论。",
+  "evidence_level": "media",
+  "source_priority": "P1 高质量近源",
+  "reason": "事件有冲突点（内部 vs 外部），能引发技术人讨论工具依赖和风险，适合老花从平台规则和工具账本角度解读。主要服务核心技术人和高价值商业读者，次要触达泛兴趣读者。",
+  "collection_fit": "ai-frontier",
+  "investigation_direction": "追踪下线具体原因、对API用户的影响、替代方案、Anthropic的应对策略。",
+  "uncertainty_flags": [
+    "内幕报道来源匿名",
+    "长期影响未知"
+  ],
+  "facts": [
+    {
+      "claim": "Simon Willison's Weblog 发布/收录了这条原始线索：\"They screwed us\": Personality clashes sent Anthropic's models offline",
+      "type": "confirmed_fact",
+      "source_url": "https://simonwillison.net/2026/Jun/15/axios-clashes-anthropics/",
+      "confidence": 0.55
+    }
+  ],
+  "sources": [
+    {
+      "title": "Simon Willison's Weblog",
+      "url": "https://simonwillison.net/2026/Jun/15/axios-clashes-anthropics/",
+      "source_type": "media",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "ai"
+      ],
+      "platform": [
+        "policy",
+        "google"
+      ]
+    },
+    "source_host": "simonwillison.net",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 9,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "从AI工具可用性、平台规则、技术人职业风险角度切入，核心读者是核心技术人和高价值商业读者，泛兴趣读者会被“内幕”和“冲突”吸引。",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://simonwillison.net/atom/everything/",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "内幕报道来源匿名",
+      "长期影响未知"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "推荐选题",
+      "label": "推荐",
+      "reason": "事件有明确冲突点（内部人事 vs 政府出口管制），能引发技术人对AI工具依赖、平台绑定和迁移成本的讨论。证据链较完整：Axios内幕报道、Anthropic官方状态页、Reddit社区讨论、出口管制法规分析。老花可从平台规则和工具账本角度解读，读者分层明确，泛兴趣钩子成立，传播张力高。"
+    },
+    "core_question": "Anthropic模型下线事件中，普通技术人面临哪些实际风险（工具不可用、迁移成本、平台绑定）？",
+    "why_this_topic_matters": "AI模型可用性受非技术因素（内部人事、出口管制）影响时，开发者和小团队如何对冲风险？这是所有依赖第三方AI API的技术人都需要面对的现实问题。",
+    "fact_summary": [
+      "Axios报道称Anthropic因内部性格冲突和/或美国政府出口管制要求，将Claude Fable 5和Mythos 5模型下线。",
+      "Reddit多个子版块讨论显示，下线影响所有用户（不仅非美国用户）。",
+      "Anthropic官方状态页（status.claude.com）未明确提及下线原因，但第三方监控显示近期有重大中断。",
+      "美国商务部2025年发布了AI模型权重出口管制新规（BIS框架），可能构成法律强制下线依据。",
+      "Anthropic服务条款中未明确承诺SLA，开发者索赔可能性低。"
+    ],
+    "persona_discussion_question": "如果Anthropic模型因内部冲突或政府干预下线，我该不该继续依赖Claude API做核心业务？",
+    "old_flower_stance": "不站队，不阴谋论。从工具账本角度分析：依赖单一AI平台的风险、迁移成本、替代方案评估。提醒技术人不要把核心业务绑在单一模型上。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "高价值商业读者",
+        "入门读者"
+      ],
+      "interest_score": 85,
+      "why_interested": "核心技术人关心API可用性和迁移成本；商业读者关心业务连续性风险；入门读者可学习平台依赖风险。",
+      "reader_risk": "可能被解读为唱衰Anthropic或AI行业，需平衡呈现事实和风险。"
+    },
+    "mass_interest_hook": {
+      "score": 80,
+      "hook_type": "争议",
+      "why_non_technical_people_may_click": "标题包含“内幕”“冲突”“下线”等关键词，普通人会被“性格冲突导致AI下线”的戏剧性吸引。",
+      "story_seed": "一个依赖Claude API的小团队，某天突然发现模型不可用，业务中断，原因竟是公司内部吵架和政府禁令。",
+      "do_not_overhype": "不能断言下线是永久性或单一原因，需注明信息缺口。"
+    },
+    "topic_tension": {
+      "score": 9,
+      "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+      "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "平台/工具厂商"
+      ],
+      "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2025年1月：美国商务部发布AI模型权重出口管制框架。",
+      "2025年5月：商务部发布新的AI出口合规期望。",
+      "2026年3月：Anthropic Claude发生重大中断（第三方监控记录）。",
+      "2026年6月15日：Axios报道Anthropic因性格冲突和政府命令下线Fable 5和Mythos 5。",
+      "2026年6月15日：Reddit多个子版块讨论下线影响所有用户。"
+    ],
+    "evidence_table": [
+      {
+        "source": "Simon Willison's Weblog（引用Axios报道）",
+        "url": "https://simonwillison.net/2026/Jun/15/axios-clashes-anthropics/",
+        "supports": "下线事件存在，原因包括内部冲突和政府出口管制。",
+        "reliability": "near_source"
+      },
+      {
+        "source": "Claude Status 官方状态页",
+        "url": "https://status.claude.com/",
+        "supports": "官方状态页存在，但未明确提及下线原因。",
+        "reliability": "official"
+      },
+      {
+        "source": "Reddit r/Anthropic 讨论",
+        "url": "https://www.reddit.com/r/Anthropic/comments/1u4fw8q/",
+        "supports": "下线影响所有用户，不仅非美国用户。",
+        "reliability": "weak"
+      },
+      {
+        "source": "Sidley Austin LLP 法律分析",
+        "url": "https://www.sidley.com/en/insights/newsupdates/2025/01/new-us-export-controls-on-advanced-computing-items-and-artificial-intelligence-model-weights",
+        "supports": "美国出口管制法规可能构成下线法律依据。",
+        "reliability": "official"
+      },
+      {
+        "source": "Mayer Brown 法律分析",
+        "url": "https://www.mayerbrown.com/en/insights/publications/2025/05/us-commerce-department-announces-new-export-compliance-expectations-related-to-artificial-intelligence",
+        "supports": "商务部2025年5月发布新的AI出口合规期望。",
+        "reliability": "official"
+      },
+      {
+        "source": "Anthropic 服务条款（PDF）",
+        "url": "https://www-cdn.anthropic.com/6b68a6508f0210c5fe08f0199caa05c4ee6fb4dc/Anthropic-on-Bedrock-Commercial-Terms-of-Service_Dec_2023.pdf",
+        "supports": "服务条款中未明确SLA，开发者索赔可能性低。",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "逻辑基本闭环：事件真实存在（Axios+Reddit+状态页），原因有双重可能（内部+政府），影响明确（所有用户），风险可分析（迁移成本、平台绑定）。但长期影响和具体模型范围仍需确认。",
+    "writeable_angles": [
+      {
+        "angle": "工具账本：依赖单一AI平台的风险量化",
+        "why": "直接回应核心读者（技术人）的迁移成本和业务连续性顾虑。",
+        "needs": "需要Anthropic API定价、替代模型（GPT-4o、Gemini）定价对比。"
+      },
+      {
+        "angle": "规则解读：出口管制如何影响普通开发者",
+        "why": "从政策角度解释下线原因，帮助读者理解合规风险。",
+        "needs": "需要BIS法规原文摘要、合规专家解读。"
+      },
+      {
+        "angle": "案例复盘：如果我的业务依赖Claude，现在该怎么办",
+        "why": "提供实操建议，如多模型备份、本地模型部署、合同审查。",
+        "needs": "需要真实开发者迁移案例、替代方案成本对比。"
+      }
+    ],
+    "missing_basics": [
+      "Anthropic Fable 5和Mythos 5的具体能力、定价和发布背景。",
+      "美国出口管制法规（BIS框架）的具体条款和适用范围。",
+      "Anthropic服务条款中关于服务中断的免责条款。"
+    ],
+    "missing_materials": [
+      "Axios原文全文（需确认付费墙）。",
+      "至少2个开发者迁移案例（如从Claude转GPT或Gemini）。",
+      "Anthropic官方关于下线原因的正式声明。",
+      "BIS出口管制法规原文或摘要。"
+    ],
+    "not_claimable": [
+      "下线是永久性的。",
+      "原因是单一因素（性格冲突或国家安全）。",
+      "所有Claude模型都受影响。",
+      "Anthropic违反合同或SLA。"
+    ],
+    "followup_queries": [
+      "Anthropic官方是否发布了下线声明？",
+      "Fable 5和Mythos 5是否已恢复？",
+      "其他AI模型（如GPT-4o、Gemini）是否也受类似出口管制影响？",
+      "开发者是否有法律途径索赔？"
+    ],
+    "additional_search_queries": [
+      "Anthropic Fable 5 Mythos 5 announcement",
+      "BIS export control AI model weights 2025 text",
+      "Claude API outage developer impact case study",
+      "Anthropic terms of service SLA guarantee"
+    ],
+    "stop_conditions": [
+      "Anthropic官方发布声明否认下线或澄清原因。",
+      "模型已恢复且无长期影响。",
+      "Axios报道被证伪或撤回。"
+    ],
+    "confidence": 80,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "hot-event",
+    "quality_gate": {
+      "pass": true,
+      "score": 80,
+      "fatal_issues": [],
+      "warnings": [
+        "Reddit证据被403屏蔽，需补充其他社区讨论",
+        "Axios原文未直接获取，依赖Simon Willison的转述",
+        "长期影响未知，需标注不确定性"
+      ],
+      "missing_evidence": [
+        "Axios原文全文",
+        "至少2个开发者迁移案例",
+        "Anthropic官方关于下线原因的正式声明",
+        "BIS出口管制法规原文或摘要"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": true,
+      "downstream_handoff_ok": true,
+      "material_pack_ok": true,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": true,
+      "source_coverage_ok": true,
+      "recommendation": "publish"
+    },
+    "research_plan": {
+      "core_question": "Anthropic模型下线事件中，普通技术人面临哪些实际风险（工具不可用、迁移成本、平台绑定）？",
+      "persona_discussion_question": "如果Anthropic模型因内部冲突或政府干预下线，我该不该继续依赖Claude API做核心业务？",
+      "hidden_public_issue": "AI模型可用性受非技术因素（内部人事、出口管制）影响时，开发者和小团队如何对冲风险？",
+      "must_verify": [
+        "Anthropic模型下线是否真实、具体哪些模型、下线时间线",
+        "下线原因中‘性格冲突’与‘国家安全’的具体权重",
+        "Axios报道中匿名信源的可信度",
+        "Anthropic官方是否有正式声明或回应",
+        "是否有其他开发者或企业报告受影响",
+        "出口管制法规（如BIS）是否直接导致下线"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Anthropic model availability status page",
+          "why_needed": "确认官方是否承认下线及具体模型"
+        },
+        {
+          "source_type": "policy",
+          "query": "US export control AI model BIS 2025",
+          "why_needed": "验证出口管制是否构成法律强制下线"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Anthropic API outage developer impact",
+          "why_needed": "收集真实用户受影响案例"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Anthropic model offline reddit",
+          "why_needed": "了解社区反应和替代方案讨论"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "Anthropic Claude API pricing",
+          "why_needed": "评估迁移到其他模型的成本差异"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Anthropic terms of service service level",
+          "why_needed": "检查是否有SLA保障或免责条款"
+        }
+      ],
+      "expert_challenge_points": [
+        "出口管制是否真的适用于Anthropic模型？具体法规条款？",
+        "性格冲突导致下线是否合理？是否有其他内部文档佐证？",
+        "开发者是否有法律或合同途径索赔？"
+      ],
+      "do_not_claim_yet": [
+        "下线是永久性的",
+        "原因是单一因素（性格冲突或国家安全）",
+        "所有Claude模型都受影响",
+        "Anthropic违反合同或SLA"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确标注信息缺口，重点放在风险分析和应对策略上，避免断言原因。",
+      "downstream_materials_needed": [
+        "Anthropic官方状态页面截图或存档",
+        "Axios原文全文（需确认付费墙）",
+        "BIS出口管制相关法规原文",
+        "至少2个开发者迁移案例（如从Claude转GPT或Gemini）",
+        "Anthropic服务条款中关于服务中断的条款"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Claude Status",
+        "url": "https://status.claude.com/",
+        "query": "Anthropic model availability status page",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Claude Status /* Dynamic Font Stack based on Feature Flag */ /* Using Atlassian Sans & Mono */ :root { --font-stack-a: \"Atlassian Sans\", \"Helvetica Neue\", Helvetica, Arial, Sans-Serif; --font-stack-b: \"Atlassian Mono\", \"SFMono-Medium\", \"SF Mono\", \"Segoe UI Mono\", \"Roboto Mono\", \"Ubuntu Mono\", Menlo, Consolas, Courier, monospace; } window.pageColorData = {\"blue\":\"#2C84DB\",\"border\":\"#DEDCD1\",\"body_background\":\"#FAF9F5\",\"font\":\"#141413\",\"graph\":\"#2C84DB\",\"green\":\"#76AD2A\",\"light_font\":\"#87867F\",\"link\":\"#141413\",\"orange\":\"#E86235\",\"red\":\"#E04343\",\"yellow\":\"#FAA72A\",\"no_data\":\"#B0AEA5\"}; /* BODY BACKGROUND */ /* BODY BACKGROUND */ /* BODY BACKGROUND */ /* BODY BACKGROUND */ /* BODY BACKGROUND */ body, .layout-content.status.status-api .section .example-container .example-opener .color-secondary, .grouped-items-selector, .layout-content.status.status-full-history .history-nav a.current, div[id^=\"subscribe-modal\"] .modal-footer, div[id^=\"subscribe-modal\"], div[id^=\"updates-dropdown\"] .updates-dropdown-section, #uptime-tooltip .tooltip-box { background-color:#FAF9F5; } #uptime-tooltip .pointer-container .pointer-smaller { border-bottom-color:#FAF9F5; } /* PRIMARY FONT COLOR */ /* PRIMARY FONT COLOR */ /* PRIMARY FONT COLOR */ /* PRIMARY FONT COLOR */ body.status, .color-primary, .color-primary:hover, .layout-content.status-index .status-day .update-title.impact-none a, .layout-content.status-index .status-day .update-title.impact-none a:hover, .layout-content.status-index .timeframes-container .timeframe.active, .layout-content.status-full-history .month .incident-container .impact-none, .layout-content.status.status-index .incidents-list .incident-title.impact-none a, .incident-history .impact-none, .layout-content.status .grouped-items-selector.inline .grouped-item.active, .l",
+        "fetch_error": ""
+      },
+      {
+        "title": "Is Claude Down? Anthropic API & Platform Status | Bifrost",
+        "url": "https://www.getmaxim.ai/bifrost/provider-status/anthropic",
+        "query": "Anthropic model availability status page",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Is Claude Down? Anthropic API & Platform Status | Bifrost Try Bifrost Enterprise free for 14 days. Request access P E R F O R M A N C E F E A T U R E S E N T E R P R I S E P R I C I N G D O C S B L O G Discord Github Book a Demo {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"name\":\"Is Claude Down?\",\"url\":\"https://www.getmaxim.ai/bifrost/provider-status/anthropic\",\"description\":\"Live Claude and Anthropic status: uptime, incidents, and components for Claude, Claude API, Claude Code, Claude Sonnet. See whether services are down and what that means for your apps.\",\"dateModified\":\"2026-06-15T20:10:16.190Z\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Bifrost\",\"url\":\"https://www.getmaxim.ai/bifrost\"},\"about\":{\"@type\":\"SoftwareApplication\",\"name\":\"Claude (Anthropic)\",\"applicationCategory\":\"Foundation model platform\"}},{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"AI Provider Status\",\"item\":\"https://www.getmaxim.ai/bifrost/provider-status\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Anthropic\",\"item\":\"https://www.getmaxim.ai/bifrost/provider-status/anthropic\"}]},{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is Claude down right now?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Check the status indicator at the top of this page. It pulls directly from Anthropic's official status page. If Anthropic is experiencing any issues, you'll see it reflected here. This real-time monitoring helps teams quickly identify whether performance problems are caused by Anthropic infrastructure or their own systems.\"}},{\"@type\":\"Question\",\"name\":\"What does this Anthropic status page track?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"This page tracks Claude, Claude API, Claude Code, Claude Sonnet, and Claude Opus using data from Anth",
+        "fetch_error": ""
+      },
+      {
+        "title": "Anthropic Claude Model Release Timeline - Model Family Tree, Capability Evolution, and Platform Availability | hidekazu-konishi.com",
+        "url": "https://hidekazu-konishi.com/entry/anthropic_claude_model_release_timeline.html",
+        "query": "Anthropic model availability status page",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Anthropic Claude Model Release Timeline - Model Family Tree, Capability Evolution, and Platform Availability | hidekazu-konishi.com { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@context\": \"https://schema.org\", \"@type\": \"WebSite\", \"name\": \"Hidekazu Konishi - Profile / Biography | hidekazu-konishi.com\", \"url\": \"https://hidekazu-konishi.com/\", \"description\": \"Hidekazu Konishi is an AI Solutions Architect, Japan AWS Top Engineer, Japan All AWS Certifications Engineer, AI Agent Engineer, Cloud Architect, and Tech Blogger.\", \"image\": [ \"https://hidekazu-konishi.com/img/hidekazu-konishi_com_ogp.jpg\" ], \"sameAs\": [ \"https://hidekazu-konishi.com/\" ], \"mainEntityOfPage\": { \"@type\": \"WebPage\", \"@id\": \"https://hidekazu-konishi.com/\" }, \"headline\": \"Hidekazu Konishi - Profile / Biography | hidekazu-konishi.com\", \"thumbnailUrl\": \"https://hidekazu-konishi.com/img/hidekazu-konishi_com_ogp_icon.png\", \"keywords\": [ \"AI Solutions Architect\", \"Japan AWS Top Engineer\", \"Japan All AWS Certifications Engineer\", \"AI Agent Engineer\", \"Cloud Architect\", \"Cloud Engineer\", \"DevOps Engineer\", \"MLOps Engineer\", \"AIOps Engineer\", \"Application Engineer\", \"Prompt Engineer\", \"Tech Blogger\", \"AI Agent Development\", \"AI-Augmented Development\", \"AI-Powered Development\", \"Multi-Cloud\", \"Hybrid Cloud\", \"Architecting\", \"DevOps\", \"MLOps\", \"AIOps\", \"Generative AI\", \"GenAI\", \"Social Reform Activities\", \"Social Reform Activity\", \"SRA\", \"Hidekazu Konishi\", \"小西 秀和\", \"小西秀和\", \"Profile\", \"Biography\" ], \"encodingFormat\": \"text/html\", \"encoding\": { \"@type\": \"MediaObject\", \"encodingFormat\": \"utf-8\" }, \"inLanguage\": [ \"en\" ], \"genre\": [ \"Profile\", \"Biography\", \"Technology\", \"Cloud Computing\", \"Amazon Web Services\", \"AWS\", \"Blog\", \"Tech Blog\" ], \"isAccessibleForFree\": true, \"copyrightYear\": 2020, \"copyrightHolder\": {",
+        "fetch_error": ""
+      },
+      {
+        "title": "New U.S. Export Controls on Advanced Computing Items and Artificial Intelligence Model Weights: Seven Key Takeaways | Insights | Sidley Austin LLP",
+        "url": "https://www.sidley.com/en/insights/newsupdates/2025/01/new-us-export-controls-on-advanced-computing-items-and-artificial-intelligence-model-weights",
+        "query": "US export control AI model BIS 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(()=>{if(!window.navigator.userAgent.includes(\"Windows\"))return;let e=document.documentElement;e.classList.add(\"windows-device-zoom\");let t=1;(()=>{let a=Math.max((window.devicePixelRatio+1)/2,1);a!==t&&(e.style.setProperty(\"--windows-device-zoom-amount\",a.toFixed(4)),t=a)})()})(); (function () { const { pathname, href } = window.location; if (pathname.startsWith(\"//\")) { window.location.href = href.replace(pathname, pathname.replace(/^\\/{2,}/, \"/\")); } })(); history.scrollRestoration = \"manual\" New U.S. Export Controls on Advanced Computing Items and Artificial Intelligence Model Weights: Seven Key Takeaways | Insights | Sidley Austin LLP {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"mainEntityOfPage\":{\"@type\":\"webPage\",\"@id\":\"https://www.sidley.com/en/insights/newsupdates/2025/01/new-us-export-controls-on-advanced-computing-items-and-artificial-intelligence-model-weights\"},\"headline\":\"New U.S. Export Controls on Advanced Computing Items and Artificial Intelligence Model Weights: Seven Key Takeaways\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Sidley Austin LLP\",\"url\":\"https://www.sidley.com/en\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://www.sidley.com/-/media/images/logo/sidley-logo-white.svg?rev=37d47eaad4f843ce8e6de37431740847\"}},\"datePublished\":\"2025-11-24T21:40:56.0000000Z\",\"dateModified\":\"2026-03-26T22:32:50.0000000Z\"} (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-KKQHWNC'); Skip to main content Languages English 日本語 中文 News Comm",
+        "fetch_error": ""
+      },
+      {
+        "title": "Federal Register :: Framework for Artificial Intelligence Diffusion",
+        "url": "https://www.federalregister.gov/documents/2025/01/15/2025-00636/framework-for-artificial-intelligence-diffusion",
+        "query": "US export control AI model BIS 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Federal Register :: Request Access { \"imports\": { \"application\": \"/assets/application-cc464116.js\", \"@hotwired/turbo-rails\": \"/assets/turbo.min-86bf8853.js\", \"@hotwired/stimulus\": \"/assets/stimulus.min-7ea3d58b.js\", \"@hotwired/stimulus-loading\": \"/assets/stimulus-loading-25917588.js\", \"controllers/application\": \"/assets/controllers/application-e5a449db.js\", \"controllers/site_feedback_controller\": \"/assets/controllers/site_feedback_controller-a99fc93f.js\", \"controllers/unblock_controller\": \"/assets/controllers/unblock_controller-9520f896.js\" } } import \"application\" Request Access Due to aggressive automated scraping of FederalRegister.gov and eCFR.gov, programmatic access to these sites is limited to access to our extensive developer APIs. Please visit FederalRegister.gov API documentation or eCFR.gov API documentation to learn more about how to access the API. Your request has been flagged as potentially automated. If you are human user receiving this message, please complete the CAPTCHA (bot test) below and click \"Request Access\". You may occassionally be asked to complete the CAPTCHA again, this is normal and part of our security measures. unblock#handleSubmit\"> Request Access An official website of the United States government. If you experiencing issues with the CAPTCHA or want to request a wider IP range, you can use the \"Site Help\" button found in the lower, right of this page to make a request. × IP Access Help This contact form is only for IP Access help. Please do not provide confidential information or personal data. site-feedback#submitForm\" novalidate=\"novalidate\" class=\"simple_form site_feedback\" enctype=\"multipart/form-data\" action=\"/site_feedback\" accept-charset=\"UTF-8\" method=\"post\"> * Your Name * Email * How can we help you? Upload Attachment * I am re",
+        "fetch_error": ""
+      },
+      {
+        "title": "US Commerce Department Announces New Export Compliance Expectations Related to Artificial Intelligence | Insights | Mayer Brown",
+        "url": "https://www.mayerbrown.com/en/insights/publications/2025/05/us-commerce-department-announces-new-export-compliance-expectations-related-to-artificial-intelligence",
+        "query": "US export control AI model BIS 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "US Commerce Department Announces New Export Compliance Expectations Related to Artificial Intelligence | Insights | Mayer Brown {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"mainEntityOfPage\":{\"@type\":\"webPage\",\"@id\":\"https://www.mayerbrown.com/en/insights/publications/2025/05/us-commerce-department-announces-new-export-compliance-expectations-related-to-artificial-intelligence\"},\"headline\":\"US Commerce Department Announces New Export Compliance Expectations Related to Artificial Intelligence\",\"publisher\":{\"@type\":\"Organization\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"/-/media/images/logos/mayer-brown/mayerbrownlogoalternate2.png?rev=894826f51de743da87828bfef435d0b2\"}},\"datePublished\":\"5/16/2025\",\"dateModified\":\"5/16/2025\"} (function () { const { pathname, href } = window.location; if (pathname.startsWith(\"//\")) { window.location.href = href.replace(pathname, pathname.replace(/^\\/{2,}/, \"/\")); } })(); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('set','GTM-5KMCJB6',true);gtag('consent','default',{ad_storage:\"denied\",analytics_storage:\"denied\", functionality_storage:\"denied\",personalization_storage:\"denied\",security_storage:\"denied\", ad_user_data:\"denied\",ad_personalization:\"denied\",'wait_for_update':500}); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5KMCJB6'); Skip to main content Global Client Stories Insights People Services Industries Careers About Us Global en de es ja pt fr zh-Hans Main Menu Featured Topics artificial intelligence Cyb",
+        "fetch_error": ""
+      },
+      {
+        "title": "Is Anthropic (Claude) Down? Anthropic (Claude) Status & Outage History (2026)",
+        "url": "https://apistatuscheck.com/api/anthropic",
+        "query": "Anthropic API outage developer impact",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Is Anthropic (Claude) Down? Anthropic (Claude) Status & Outage History (2026) try { const stored = localStorage.getItem('theme'); if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); } } catch(e) {} {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"API Status Check\",\"url\":\"https://apistatuscheck.com\",\"logo\":\"https://apistatuscheck.com/logo.png\",\"description\":\"Real-time API status monitoring for 120+ services\",\"sameAs\":[\"https://twitter.com/apistatuscheck\",\"https://bsky.app/profile/apistatuscheck.bsky.social\"]} {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"API Status Check\",\"url\":\"https://apistatuscheck.com\",\"description\":\"Real-time status monitoring for 117+ developer APIs. Free, no signup required.\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":\"https://apistatuscheck.com/?q={search_term_string}\",\"query-input\":\"required name=search_term_string\"}} API Status Check Outages Blog Tools Recommended Compare Docs API Docs Pricing {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Anthropic (Claude) Status - Is Anthropic (Claude) Down?\",\"description\":\"Check if Anthropic (Claude) is down right now. Real-time status, response times, and outage history for Anthropic (Claude) API.\",\"url\":\"https://apistatuscheck.com/api/anthropic\",\"isPartOf\":{\"@type\":\"WebSite\",\"name\":\"API Status Check\",\"url\":\"https://apistatuscheck.com\"},\"about\":{\"@type\":\"SoftwareApplication\",\"name\":\"Anthropic (Claude)\",\"applicationCategory\":\"WebApplication\",\"operatingSystem\":\"Web\",\"description\":\"AI safety company providing Claude AI assistant\"},\"mainEntity\":{\"@type\":\"WebApplication\",\"name\":\"Anthropic (Claude)\",\"applicationCategory\":\"ai\",\"operatingSystem\":\"Web\",\"url\":\"https://status.",
+        "fetch_error": ""
+      },
+      {
+        "title": "Anthropic's Claude hit by major outage affecting chat, API and developer tools | Mint",
+        "url": "https://www.livemint.com/technology/tech-news/anthropics-claude-hit-by-major-outage-affecting-chat-api-and-developer-tools-11780398312963.html",
+        "query": "Anthropic API outage developer impact",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Anthropic's Claude hit by major outage affecting chat, API and developer tools | Mint var cacheDocument='';var cacheCookies={};window.getCookie=function(k){if(cacheDocument=='')cacheDocument=document.cookie;if(k in cacheCookies)return cacheCookies[k];for(var a=k+\"=\",t=cacheDocument.split(\";\"),n=0;n (function(){var h=window.history,o=h.pushState,r=h.replaceState,f=h.forward,g=h.go;window.__bbOrigPush=o;window.__bbGuardActive=true;var inPop=false;function isNx(s){return s&&typeof s==='object'&&('__N' in s||'__NA' in s||('key' in s&&('url' in s||'as' in s)))}h.pushState=function(s,t,u){if(isNx(s))return o.call(h,s,t,u);return r.call(h,h.state,t,u)};h.forward=function(){if(inPop)return;return f.call(h)};h.go=function(n){if(inPop&&n>0)return;return g.call(h,n)};try{Object.defineProperty(h,'pushState',{configurable:false,writable:false});Object.defineProperty(h,'forward',{configurable:false,writable:false});Object.defineProperty(h,'go',{configurable:false,writable:false})}catch(e){}window.addEventListener('popstate',function(){inPop=true;Promise.resolve().then(function(){inPop=false})},true)})(); @layer story-base;@layer story-base { *,*::before,*::after{padding:0;margin:0;box-sizing:border-box;list-style-type:none}*{border:0;outline:0}body{font-family:\"Inter\",sans-serif;font-weight:400;-webkit-tap-highlight-color:transparent}strong{font-weight:700}a{color:#212121}p:empty{display:none;height:0}html{scroll-behavior:smooth}.skinnyAd #HTDS_Skinning>a{z-index:103}#adfreeDeskSpace{display:flex;display:-webkit-flex;flex-wrap:wrap;align-items:center;flex-direction:column;text-align:center;margin:20px 0;min-height:50px;justify-content:center}#adfreeDeskSpace.sticky{position:sticky;top:0;background-color:#fff;z-index:102}#adfreeDeskSpace.sticky>div{position:sticky;top:0;z-index:301;op",
+        "fetch_error": ""
+      },
+      {
+        "title": "Is Claude Down? March 2026 Anthropic Outage & Failover Tips",
+        "url": "https://deployflow.co/blog/claude-anthropic-outage-protect-claude-infrastructure/",
+        "query": "Anthropic API outage developer impact",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Is Claude Down? March 2026 Anthropic Outage & Failover Tips { \"areaServed\": [ { \"@type\": \"Country\", \"name\": \"United Kingdom\" }, { \"@type\": \"Country\", \"name\": \"United Arab Emirates\" }, { \"@type\": \"Country\", \"name\": \"United States\" } ] } {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[ {\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://deployflow.co/\"} ]} { \"@context\": \"https://schema.org\", \"@type\": \"WebPage\", \"@id\": \"https://deployflow.co/blog/claude-anthropic-outage-protect-claude-infrastructure/\", \"url\": \"https://deployflow.co/blog/claude-anthropic-outage-protect-claude-infrastructure/\", \"dateModified\": \"June 2, 2026\" } {\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Article\",\"datePublished\":\"2026-06-02T09:04:42+00:00\",\"dateModified\":\"2026-06-02T09:04:46+00:00\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/deployflow.co\\/blog\\/claude-anthropic-outage-protect-claude-infrastructure\\/\"},\"headline\":\"Is Claude Down? Anthropic Outage: Protect Your Cloud Infrastructure\",\"author\":{\"@type\":\"Person\",\"name\":\"Nikola Ilic\",\"url\":\"https:\\/\\/deployflow.co\\/blog\\/author\\/nikola\\/\"},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/deployflow.co\\/wp-content\\/uploads\\/2026\\/03\\/Claude-Outage-Message-Server-Error.png\"},\"description\":\"On March 2, 2026, a major disruption hit Claude.ai just days after it climbed to the top of the App Store rankings. What began as elevated error rates quickly escalated into a prolonged outage that affected web access, authentication paths, and, later, specific model endpoints. Fast forward to June 2,…\"} img:is([sizes=auto i],[sizes^=\"auto,\" i]){contain-intrinsic-size:3000px 1500px} /*# sourceURL=wp-img-auto-sizes-contain-inline-css */ /*! This file is auto-generated */ .wp-block-button__link{color:#fff;backgroun",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/Anthropic on Reddit: Anthropic Says It’s Taking Claude Fable 5 Offline to Comply With US Government Order",
+        "url": "https://www.reddit.com/r/Anthropic/comments/1u4fw8q/anthropic_says_its_taking_claude_fable_5_offline/",
+        "query": "Anthropic model offline reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/Anthropic on Reddit: US blocks foreign access to Anthropic's most advanced AI models, Axios reports",
+        "url": "https://www.reddit.com/r/Anthropic/comments/1u4csa7/us_blocks_foreign_access_to_anthropics_most/",
+        "query": "Anthropic model offline reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/singularity on Reddit: Anthropic is suspending access to Fabel/Mythos for ALL users, not just non-Americans",
+        "url": "https://www.reddit.com/r/singularity/comments/1u4f4fu/anthropic_is_suspending_access_to_fabelmythos_for/",
+        "query": "Anthropic model offline reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "Pricing - Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "query": "Anthropic Claude API pricing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Pricing - Claude API Docs window.__GATED_CHUNK_MAP__={};window.__GATED_GATES__={}; requestAnimationFrame(function(){$RT=performance.now()}); Messages Managed Agents Admin Resources   API reference English   Console Log in    Search... ⌘K Models Models overview Model IDs and versioning Choosing a model Introducing Claude Fable 5 and Claude Mythos 5 What's new in Claude Opus 4.8 Upgrade between model versions Model deprecations Model cards System prompts Pricing  Log in  Models & pricing  Pricing Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Solutions AI agents Code modernization Coding Customer support Education Financial services Government Life sciences Partners Amazon Bedrock Google Cloud's Vertex AI Learn Blog Courses Use cases Connectors Customer stories Engineering at Anthropic Events Powered by Claude Service partners Startups program Company Anthropic Careers Economic Futures Research News Responsible Scaling Policy Security and compliance Transparency Learn Blog Courses Use cases Connectors Customer stories Engineering at Anthropic Events Powered by Claude Service partners Startups program Help and security Availability Status Support Discord Terms and policies Privacy policy Responsible disclosure policy Terms of service: Commercial Terms of service: Consumer Usage policy $RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b a&&2E3 *]:max-w-full [&>*]:box-border prose-a:inline-flex prose-a:items-center prose-a:min-h-[44px] prose-a:py-0.5 prose-p:leading-[1.6] prose-li:leading-[1.6] prose-blockquote:leading-[1.6]\"> Models & pricing / Models Pricing Copy page Learn about Anthropic's pricing structure for models and featu",
+        "fetch_error": ""
+      },
+      {
+        "title": "Anthropic API Pricing in 2026: Complete Guide — Models, Caching, Batch & Optimization",
+        "url": "https://www.finout.io/blog/anthropic-api-pricing",
+        "query": "Anthropic Claude API pricing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Anthropic API Pricing in 2026: Complete Guide — Models, Caching, Batch & Optimization body, html {scroll-behavior: smooth;} .post-details-banner .container { max-width: 1204px; margin: 0 auto; padding: 0 32px; display: flex; } .pdb-right { flex: 1; } .pdb-left { width: 57.7%; padding-right: 40px; } .pdb-right img { width: 100%; border-radius: 22px; } .post-details-banner { padding-top: 88px; } .post-content .container { max-width: 1204px; margin: 0 auto; padding: 0 32px; display: flex; gap: 42px; align-items: flex-start;} .post-content .blog-sidebar, .blog-rgtsidebar { width: 200px; position: sticky; top: 110px; } .post-content .blog-main { max-width: 645px; width: calc(100% - 242px);} .content-related-post .container { max-width: 1204px; margin: 0 auto; padding: 0 32px; display: flex; } .content-related-post { padding: 80px 0px; } .content-related-post ul { display: flex; flex-wrap: wrap; padding-left: 20px; } .content-related-post ul>li { width: 50%; list-style-type: disc; color: #0F6D59; padding-right: 50px; } .content-related-post ul>li>a { color: #0F6D59; font-family: 'Poppins'; font-size: 18px; line-height: 30px; font-weight: 600; text-decoration: underline; } .description-summery { font-size: 18px; line-height: 30px; font-weight: 300; font-family: 'Poppins'; color: #0F1F1A; } .pdb-footer { display: flex; justify-content: space-between; margin-top: 116px;flex-wrap:wrap;gap:10px} .pdb-auther { display: flex; gap: 9px; } .pbd-img { height: 50px; width: 50px; background: #0F6D59; border-radius: 50%; font-size: 18px; line-height: 30px; font-weight: 600; color: #fff; font-family: 'Poppins'; display: flex; align-items: center; justify-content: center; } .pbd-text .pbd-name { font-weight: 400; color: #0F1F1A; } .pbd-text { font-size: 16px; line-height: 24px; font-family:",
+        "fetch_error": ""
+      },
+      {
+        "title": "Plans & Pricing | Claude by Anthropic",
+        "url": "https://claude.com/pricing",
+        "query": "Anthropic Claude API pricing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Plans & Pricing | Claude by Anthropic !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); .anti-flicker, .anti-flicker * {visibility: hidden !important; opacity: 0 !important;} [data-wf-hidden-variation], [data-wf-hidden-variation] * { display: none !important; } html:not(.gsap-not-found) [data-prevent-flicker='true'] { visibility: hidden; } .line-mask, .word-mask, .char-mask { padding-block: 0.1em; margin-block: -0.1em; } [data-prevent-flicker='true'] { visibility: visible !important; } .transition_wrap { display: block; } // Hide the transition_wrap in Webflow preview mode w/ custom code enabled if (window.location.hostname.includes('.canvas.webflow.com')) { document.write(' .transition_wrap{display:none!important}[data-prevent-flicker=\"true\"]{visibility:visible!important} '); } (function() { const localeMap = { 'ja': '/ja-jp', 'ja-JP': '/ja-jp', 'de': '/de-de', 'de-DE': '/de-de', 'fr': '/fr-fr', 'fr-FR': '/fr-fr', 'ko': '/ko-kr', 'ko-KR': '/ko-kr' }; const localePaths = ['/ja-jp', '/de-de', '/fr-fr', '/ko-kr']; const currentPath = window.location.pathname; // Don't redirect if already on a locale path if (localePaths.some(p => currentPath.startsWith(p))) return; // Check if user manually switched (came from a locale path on this site) try { const referrer = new URL(document.referrer); if (referrer.hostname === window.location.hostname) { if (localePaths.some(p => referrer.pathname.startsWith(p))) { localStorage.setItem('locale-manual-override', 'true'); } } } catch (e) {} // Respect manual override if (localStorage.getItem('locale-manual-override')) return; // Only check the PRIMARY browser language (first in the list) const primaryLang = ",
+        "fetch_error": ""
+      },
+      {
+        "title": "Terms of Service Updates | Anthropic Privacy Center",
+        "url": "https://privacy.claude.com/en/articles/9190861-terms-of-service-updates",
+        "query": "Anthropic terms of service service level",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/\",\"name\":\"All Collections\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/collections/10663362-consumers\",\"name\":\"Consumers \",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/collections/10672567-policies-terms-of-service\",\"name\":\"Policies & Terms of Service\",\"position\":3},{\"@type\":\"ListItem\",\"name\":\"Terms of Service Updates\",\"position\":4}]} {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"description\":\"\",\"headline\":\"Terms of Service Updates\",\"inLanguage\":\"en\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Anthropic Privacy Center\"},\"url\":\"https://privacy.claude.com/en/articles/9190861-terms-of-service-updates\",\"dateModified\":\"2026-03-16T21:13:59Z\"} Terms of Service Updates | Anthropic Privacy Center :root{--body-bg: rgb(255, 255, 255); --body-image: none; --body-bg-rgb: 255, 255, 255; --body-border: rgb(230, 230, 230); --body-primary-color: #1a1a1a; --body-secondary-color: #737373; --body-reaction-bg: rgb(242, 242, 242); --body-reaction-text-color: rgb(64, 64, 64); --body-toc-active-border: #737373; --body-toc-inactive-border: #f2f2f2; --body-toc-inactive-color: #737373; --body-toc-active-font-weight: 400; --body-table-border: rgb(204, 204, 204); --body-color: hsl(0, 0%, 0%); --footer-bg: rgb(25, 25, 25); --footer-image: none; --footer-border: rgb(50, 50, 50); --footer-color: hsl(60, 14%, 93%); --header-bg: rgb(240, 239, 235); --header-image: none; --header-color: hsl(0, 0%, 10%); --collection-card-bg: rgb(204, 120, 92); --collection-card-image: none; --collection-card-color: hsl(60, 14%, 93%); --card-bg: rgb(255, 255, 255); --card-border-color: rgb(230, 230, 230); --card-border-inner-radi",
+        "fetch_error": ""
+      },
+      {
+        "title": "Consumer Terms of Service Updates | Anthropic Privacy Center",
+        "url": "https://privacy.claude.com/en/articles/9264813-consumer-terms-of-service-updates",
+        "query": "Anthropic terms of service service level",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/\",\"name\":\"All Collections\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/collections/10663362-consumers\",\"name\":\"Consumers \",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/collections/10672567-policies-terms-of-service\",\"name\":\"Policies & Terms of Service\",\"position\":3},{\"@type\":\"ListItem\",\"name\":\"Consumer Terms of Service Updates\",\"position\":4}]} {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"description\":\"\",\"headline\":\"Consumer Terms of Service Updates\",\"inLanguage\":\"en\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Anthropic Privacy Center\"},\"url\":\"https://privacy.claude.com/en/articles/9264813-consumer-terms-of-service-updates\",\"dateModified\":\"2026-03-16T21:13:46Z\"} Consumer Terms of Service Updates | Anthropic Privacy Center :root{--body-bg: rgb(255, 255, 255); --body-image: none; --body-bg-rgb: 255, 255, 255; --body-border: rgb(230, 230, 230); --body-primary-color: #1a1a1a; --body-secondary-color: #737373; --body-reaction-bg: rgb(242, 242, 242); --body-reaction-text-color: rgb(64, 64, 64); --body-toc-active-border: #737373; --body-toc-inactive-border: #f2f2f2; --body-toc-inactive-color: #737373; --body-toc-active-font-weight: 400; --body-table-border: rgb(204, 204, 204); --body-color: hsl(0, 0%, 0%); --footer-bg: rgb(25, 25, 25); --footer-image: none; --footer-border: rgb(50, 50, 50); --footer-color: hsl(60, 14%, 93%); --header-bg: rgb(240, 239, 235); --header-image: none; --header-color: hsl(0, 0%, 10%); --collection-card-bg: rgb(204, 120, 92); --collection-card-image: none; --collection-card-color: hsl(60, 14%, 93%); --card-bg: rgb(255, 255, 255); --card-border-color: rgb(230,",
+        "fetch_error": ""
+      },
+      {
+        "title": "‭Effective: January 2024‬ ‭Anthropic on Bedrock - Commercial Terms‬",
+        "url": "https://www-cdn.anthropic.com/6b68a6508f0210c5fe08f0199caa05c4ee6fb4dc/Anthropic-on-Bedrock-Commercial-Terms-of-Service_Dec_2023.pdf",
+        "query": "Anthropic terms of service service level",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "%PDF-1.4 % 1 0 obj > endobj 3 0 obj > endobj 9 0 obj > stream x]MF\u0012W `\u0001\u0018\u0006 }|۴wl\bqDShS)c٧>}ݘ_6o>˟we\u0013\u001bCl_n? o߾yy{woypys\u001bU \u000741*^MEL[{ \b v߶ ΍PP\u0003hb?\u00187\u0007Ԅ?D0:\u001a\u000eM&=ݸ\u0005_\u0004`\u0002\u0018 \u0007&h@&o eᎸ=\u0010 \u001agHG\u000eqD};)xioځ:Xk%5ۆV~9}~[\u001bJڙB7Ҿ$ʇxA:)cNCc Wt \u0015 ~h>'Rگ W~' \u000e \u0013\"\u0005{\u0000 \u0013+\u00160z|gqNQ%i \u0007}XtD i-n\u0002R5 \u001a\u000e CG8 -DR9 Ӹ\u0014F%qBA\u000f]׼b\u000ft\u0014h\\ M V)j3AQs ikˈ t\u000fi\u0014?N]nY\u000f}ذ/*\u0004m\u0006R \u0017vO-\"6^M &\u0016\u0015SV&-\u0003\u0011\u000e[\"\b ]\u0013 5\u0004[ee¡}/V \u0017F`axOMǅ^xѨN\u00137\u0014kl *u\\t}QBuT^\u0004\u0014U>%/IąƂYo2Nۉʕ\u0018OulZI\u0019\u0006\u0013q\u0019+ V\u0005\u001b`\u0000bt|DcN \u0005\u000eu!7LLl\u000e\u0000n=\\:SMѰVrt>wc\u001bpIx:3T|ꪋ%aB2>;\u0015]\u0016J~v8 U\u00026Y \u0000o #O _ \"Ą7\u0004 bX4\u0012[~Ofv\u0010C`h\u0002@v.\u000eXkRjCϟ\u0001ke\u0000v\u0006RŪ\u0005ZJWm@\u0006`\u001a c s \u0003\u0015(~+L& L\u0017?\u0010b\u0004G = bDk'~\u0013@8, i#CRw\u0018^\u0001\u0014M\u0004aɎh =gYtr&a\u0005w/\"G\u0010.[\u0015}R/ dobU%dHA Kv?Y\u000f>ykz\u0006еh \u0010Q{\" \b.\u0006B*N m@^M v @R?47[Vd \u0016\u0013\u0012R-IhpG$+\u0005N\"r ;@\u0002\u0004ҲH*y \b*B h&C+\u0003\u0011fA\\\u0015KӧFN7\u0007 W\u0012#x𥱪dp9\\\"a\u001a|\u00151C%0 *O^9l 7 6W cd Ou\u0007ۆI0Era\u0013ڑ\u0014NZ\bHN~ =s\b\u0001u \u0013JP^\u0015Aí0b\u0005tn\u0019y!g|j;SRay בRӺ\u0017 aI^ \u0015 lyp\u0010nͳQH DdG\u000eʴFEgt IHRi7 ~ |Q\u0010;5f;zyLU4!\u0002X2!\u0012)b\u000eX.VEx\u000e\u0007 ^B#\u0014 \"\u001auQpKr^=\u00025Ԫ&a5\u000fI!|\u0004..\\rp\"\u0004K-\u0004y`hrj|'rլ5sw};GG\u001b>\u0018#G\bu-XW1hdN&\">V;~^eFT&\u0004_ν\u0005_IP ~\u0014r\u0004 eO(~!}y&{@ _&=0(\u0013X2¼/\u0004N _wIpjGxJdk\u0004#Kz=\\~ )ȕ%,9\u0014\u0015]\bH0\u00036c\u0005e\u0004\u000fb$` R{?\u001a܃\u001bìM4\u0003xqJQ:\u00010b[Z$#H`' z\u0015B2%Wr·i \u001bgmc$\bkQwTv: Rx\u00182\u001bBS\u0010^\u000fr^\\\u0002iMs71\u000f\b,ς\u0019Fa\u0018 *_W\u0000iDyGey\u0016X%T_`\"w_ eO \u001b\u0017ie\u0001w\u001b\"% e^\u000eT] \\>\u0001oo4.'`ǟ;\u0002\\\u0006~hUZ\" 36'mgeDj \\Cֲ|.Zpʚ\u0010}=5;S\b Ϥ Y\u0018\bz\u00119Fah\u0013q|U$2(sE\u0001r8`B\u0016\u0016 !X\u001a\u000eGD$4\"ϛo\u001b82-ކ\u001b\u001b#cϛ_j|8elz\u001bO}(tf/7 ]O§ɍ=_\u0015tȥ4-9 VZ\u0012'; \u0003ܟ endstream endobj 11 0 obj > stream x]Ɏ \u0011Wـ/\u0000A3d\u0002> Z\b\u0018`27zf8SW\u0015:j陖.nuU.\u0011/cya|hj:Y\u001b\u0007߲%_\u0005|_?sÿ?|?ǰgUΦ|x̯ǗϻO7}O}}nݛwt\u0018pu fE\u000e sθ\u0012c)OZkû>ݟ~޿6\u0018O\u0010Hj\\ > \u0004Z; Tޟq\u0012 \"[Ck\u001bRC]\u0005T4T=P\u001bb l;\u001a\u0012 5yài;\u0005\u0003 \u0005e6Q\u0019\u000f$m^n\u0012%Ak~\bt\"! 4N qJcS oqSr\u0000:Cʭ#UB;O؍Rx\u0017\u0013 Ŀ :n7ߋ\u0018//l:47npXnЫ&A6՜EB/3\bcD7T\u000e,'D',%x\u0001ἷ\u0014W vhRw!Mpq^ ;\u000e/>j\u000efD\u0001q yg\u0003 \u0007,(\u0004r\u00060[wv y L\u0018a:1 f14|5iS,R;}|6w\u0015Σ7\u001a\u001bM$B u1=N\u0004H\u0003r6! \u0014\u0012\u0011J \u0016AEǾ\u0002>i\u00022x:\u0014\"fh&\u0007H \u0010 ɴPh\u0003^溜b@l,ANop\u00047&&\u0013C Mi՛\u0010B\u00058&P\u000e\u00145k&,Vzy! \u0010\u0006l4\u0003DIz܌`_/n+qdI*SDj v 2'-݄d+\u0016xn}~{~$]Zi.\u000e⚝vv:U%{3B(sb\u0001w\u0002\u000fB \u001a\u000e):\u0017\u0017GL ;\u0010\u0007^4Gv +3y. ;\u0010ƧͩC\u0004\br}\u000eڜ\\8#kenG) \\B",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "推荐选题",
+      "label": "推荐",
+      "reason": "事件有明确冲突点（内部人事 vs 政府出口管制），能引发技术人对AI工具依赖、平台绑定和迁移成本的讨论。证据链较完整：Axios内幕报道、Anthropic官方状态页、Reddit社区讨论、出口管制法规分析。老花可从平台规则和工具账本角度解读，读者分层明确，泛兴趣钩子成立，传播张力高。"
+    },
+    "core_question": "Anthropic模型下线事件中，普通技术人面临哪些实际风险（工具不可用、迁移成本、平台绑定）？",
+    "why_this_topic_matters": "AI模型可用性受非技术因素（内部人事、出口管制）影响时，开发者和小团队如何对冲风险？这是所有依赖第三方AI API的技术人都需要面对的现实问题。",
+    "fact_summary": [
+      "Axios报道称Anthropic因内部性格冲突和/或美国政府出口管制要求，将Claude Fable 5和Mythos 5模型下线。",
+      "Reddit多个子版块讨论显示，下线影响所有用户（不仅非美国用户）。",
+      "Anthropic官方状态页（status.claude.com）未明确提及下线原因，但第三方监控显示近期有重大中断。",
+      "美国商务部2025年发布了AI模型权重出口管制新规（BIS框架），可能构成法律强制下线依据。",
+      "Anthropic服务条款中未明确承诺SLA，开发者索赔可能性低。"
+    ],
+    "persona_discussion_question": "如果Anthropic模型因内部冲突或政府干预下线，我该不该继续依赖Claude API做核心业务？",
+    "old_flower_stance": "不站队，不阴谋论。从工具账本角度分析：依赖单一AI平台的风险、迁移成本、替代方案评估。提醒技术人不要把核心业务绑在单一模型上。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "高价值商业读者",
+        "入门读者"
+      ],
+      "interest_score": 85,
+      "why_interested": "核心技术人关心API可用性和迁移成本；商业读者关心业务连续性风险；入门读者可学习平台依赖风险。",
+      "reader_risk": "可能被解读为唱衰Anthropic或AI行业，需平衡呈现事实和风险。"
+    },
+    "mass_interest_hook": {
+      "score": 80,
+      "hook_type": "争议",
+      "why_non_technical_people_may_click": "标题包含“内幕”“冲突”“下线”等关键词，普通人会被“性格冲突导致AI下线”的戏剧性吸引。",
+      "story_seed": "一个依赖Claude API的小团队，某天突然发现模型不可用，业务中断，原因竟是公司内部吵架和政府禁令。",
+      "do_not_overhype": "不能断言下线是永久性或单一原因，需注明信息缺口。"
+    },
+    "topic_tension": {
+      "score": 9,
+      "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+      "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "平台/工具厂商"
+      ],
+      "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2025年1月：美国商务部发布AI模型权重出口管制框架。",
+      "2025年5月：商务部发布新的AI出口合规期望。",
+      "2026年3月：Anthropic Claude发生重大中断（第三方监控记录）。",
+      "2026年6月15日：Axios报道Anthropic因性格冲突和政府命令下线Fable 5和Mythos 5。",
+      "2026年6月15日：Reddit多个子版块讨论下线影响所有用户。"
+    ],
+    "evidence_table": [
+      {
+        "source": "Simon Willison's Weblog（引用Axios报道）",
+        "url": "https://simonwillison.net/2026/Jun/15/axios-clashes-anthropics/",
+        "supports": "下线事件存在，原因包括内部冲突和政府出口管制。",
+        "reliability": "near_source"
+      },
+      {
+        "source": "Claude Status 官方状态页",
+        "url": "https://status.claude.com/",
+        "supports": "官方状态页存在，但未明确提及下线原因。",
+        "reliability": "official"
+      },
+      {
+        "source": "Reddit r/Anthropic 讨论",
+        "url": "https://www.reddit.com/r/Anthropic/comments/1u4fw8q/",
+        "supports": "下线影响所有用户，不仅非美国用户。",
+        "reliability": "weak"
+      },
+      {
+        "source": "Sidley Austin LLP 法律分析",
+        "url": "https://www.sidley.com/en/insights/newsupdates/2025/01/new-us-export-controls-on-advanced-computing-items-and-artificial-intelligence-model-weights",
+        "supports": "美国出口管制法规可能构成下线法律依据。",
+        "reliability": "official"
+      },
+      {
+        "source": "Mayer Brown 法律分析",
+        "url": "https://www.mayerbrown.com/en/insights/publications/2025/05/us-commerce-department-announces-new-export-compliance-expectations-related-to-artificial-intelligence",
+        "supports": "商务部2025年5月发布新的AI出口合规期望。",
+        "reliability": "official"
+      },
+      {
+        "source": "Anthropic 服务条款（PDF）",
+        "url": "https://www-cdn.anthropic.com/6b68a6508f0210c5fe08f0199caa05c4ee6fb4dc/Anthropic-on-Bedrock-Commercial-Terms-of-Service_Dec_2023.pdf",
+        "supports": "服务条款中未明确SLA，开发者索赔可能性低。",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "逻辑基本闭环：事件真实存在（Axios+Reddit+状态页），原因有双重可能（内部+政府），影响明确（所有用户），风险可分析（迁移成本、平台绑定）。但长期影响和具体模型范围仍需确认。",
+    "writeable_angles": [
+      {
+        "angle": "工具账本：依赖单一AI平台的风险量化",
+        "why": "直接回应核心读者（技术人）的迁移成本和业务连续性顾虑。",
+        "needs": "需要Anthropic API定价、替代模型（GPT-4o、Gemini）定价对比。"
+      },
+      {
+        "angle": "规则解读：出口管制如何影响普通开发者",
+        "why": "从政策角度解释下线原因，帮助读者理解合规风险。",
+        "needs": "需要BIS法规原文摘要、合规专家解读。"
+      },
+      {
+        "angle": "案例复盘：如果我的业务依赖Claude，现在该怎么办",
+        "why": "提供实操建议，如多模型备份、本地模型部署、合同审查。",
+        "needs": "需要真实开发者迁移案例、替代方案成本对比。"
+      }
+    ],
+    "missing_basics": [
+      "Anthropic Fable 5和Mythos 5的具体能力、定价和发布背景。",
+      "美国出口管制法规（BIS框架）的具体条款和适用范围。",
+      "Anthropic服务条款中关于服务中断的免责条款。"
+    ],
+    "missing_materials": [
+      "Axios原文全文（需确认付费墙）。",
+      "至少2个开发者迁移案例（如从Claude转GPT或Gemini）。",
+      "Anthropic官方关于下线原因的正式声明。",
+      "BIS出口管制法规原文或摘要。"
+    ],
+    "not_claimable": [
+      "下线是永久性的。",
+      "原因是单一因素（性格冲突或国家安全）。",
+      "所有Claude模型都受影响。",
+      "Anthropic违反合同或SLA。"
+    ],
+    "followup_queries": [
+      "Anthropic官方是否发布了下线声明？",
+      "Fable 5和Mythos 5是否已恢复？",
+      "其他AI模型（如GPT-4o、Gemini）是否也受类似出口管制影响？",
+      "开发者是否有法律途径索赔？"
+    ],
+    "additional_search_queries": [
+      "Anthropic Fable 5 Mythos 5 announcement",
+      "BIS export control AI model weights 2025 text",
+      "Claude API outage developer impact case study",
+      "Anthropic terms of service SLA guarantee"
+    ],
+    "stop_conditions": [
+      "Anthropic官方发布声明否认下线或澄清原因。",
+      "模型已恢复且无长期影响。",
+      "Axios报道被证伪或撤回。"
+    ],
+    "confidence": 80,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "hot-event",
+    "quality_gate": {
+      "pass": true,
+      "score": 80,
+      "fatal_issues": [],
+      "warnings": [
+        "Reddit证据被403屏蔽，需补充其他社区讨论",
+        "Axios原文未直接获取，依赖Simon Willison的转述",
+        "长期影响未知，需标注不确定性"
+      ],
+      "missing_evidence": [
+        "Axios原文全文",
+        "至少2个开发者迁移案例",
+        "Anthropic官方关于下线原因的正式声明",
+        "BIS出口管制法规原文或摘要"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": true,
+      "downstream_handoff_ok": true,
+      "material_pack_ok": true,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": true,
+      "source_coverage_ok": true,
+      "recommendation": "publish"
+    },
+    "research_plan": {
+      "core_question": "Anthropic模型下线事件中，普通技术人面临哪些实际风险（工具不可用、迁移成本、平台绑定）？",
+      "persona_discussion_question": "如果Anthropic模型因内部冲突或政府干预下线，我该不该继续依赖Claude API做核心业务？",
+      "hidden_public_issue": "AI模型可用性受非技术因素（内部人事、出口管制）影响时，开发者和小团队如何对冲风险？",
+      "must_verify": [
+        "Anthropic模型下线是否真实、具体哪些模型、下线时间线",
+        "下线原因中‘性格冲突’与‘国家安全’的具体权重",
+        "Axios报道中匿名信源的可信度",
+        "Anthropic官方是否有正式声明或回应",
+        "是否有其他开发者或企业报告受影响",
+        "出口管制法规（如BIS）是否直接导致下线"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Anthropic model availability status page",
+          "why_needed": "确认官方是否承认下线及具体模型"
+        },
+        {
+          "source_type": "policy",
+          "query": "US export control AI model BIS 2025",
+          "why_needed": "验证出口管制是否构成法律强制下线"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Anthropic API outage developer impact",
+          "why_needed": "收集真实用户受影响案例"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Anthropic model offline reddit",
+          "why_needed": "了解社区反应和替代方案讨论"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "Anthropic Claude API pricing",
+          "why_needed": "评估迁移到其他模型的成本差异"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Anthropic terms of service service level",
+          "why_needed": "检查是否有SLA保障或免责条款"
+        }
+      ],
+      "expert_challenge_points": [
+        "出口管制是否真的适用于Anthropic模型？具体法规条款？",
+        "性格冲突导致下线是否合理？是否有其他内部文档佐证？",
+        "开发者是否有法律或合同途径索赔？"
+      ],
+      "do_not_claim_yet": [
+        "下线是永久性的",
+        "原因是单一因素（性格冲突或国家安全）",
+        "所有Claude模型都受影响",
+        "Anthropic违反合同或SLA"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确标注信息缺口，重点放在风险分析和应对策略上，避免断言原因。",
+      "downstream_materials_needed": [
+        "Anthropic官方状态页面截图或存档",
+        "Axios原文全文（需确认付费墙）",
+        "BIS出口管制相关法规原文",
+        "至少2个开发者迁移案例（如从Claude转GPT或Gemini）",
+        "Anthropic服务条款中关于服务中断的条款"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Claude Status",
+        "url": "https://status.claude.com/",
+        "query": "Anthropic model availability status page",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Claude Status /* Dynamic Font Stack based on Feature Flag */ /* Using Atlassian Sans & Mono */ :root { --font-stack-a: \"Atlassian Sans\", \"Helvetica Neue\", Helvetica, Arial, Sans-Serif; --font-stack-b: \"Atlassian Mono\", \"SFMono-Medium\", \"SF Mono\", \"Segoe UI Mono\", \"Roboto Mono\", \"Ubuntu Mono\", Menlo, Consolas, Courier, monospace; } window.pageColorData = {\"blue\":\"#2C84DB\",\"border\":\"#DEDCD1\",\"body_background\":\"#FAF9F5\",\"font\":\"#141413\",\"graph\":\"#2C84DB\",\"green\":\"#76AD2A\",\"light_font\":\"#87867F\",\"link\":\"#141413\",\"orange\":\"#E86235\",\"red\":\"#E04343\",\"yellow\":\"#FAA72A\",\"no_data\":\"#B0AEA5\"}; /* BODY BACKGROUND */ /* BODY BACKGROUND */ /* BODY BACKGROUND */ /* BODY BACKGROUND */ /* BODY BACKGROUND */ body, .layout-content.status.status-api .section .example-container .example-opener .color-secondary, .grouped-items-selector, .layout-content.status.status-full-history .history-nav a.current, div[id^=\"subscribe-modal\"] .modal-footer, div[id^=\"subscribe-modal\"], div[id^=\"updates-dropdown\"] .updates-dropdown-section, #uptime-tooltip .tooltip-box { background-color:#FAF9F5; } #uptime-tooltip .pointer-container .pointer-smaller { border-bottom-color:#FAF9F5; } /* PRIMARY FONT COLOR */ /* PRIMARY FONT COLOR */ /* PRIMARY FONT COLOR */ /* PRIMARY FONT COLOR */ body.status, .color-primary, .color-primary:hover, .layout-content.status-index .status-day .update-title.impact-none a, .layout-content.status-index .status-day .update-title.impact-none a:hover, .layout-content.status-index .timeframes-container .timeframe.active, .layout-content.status-full-history .month .incident-container .impact-none, .layout-content.status.status-index .incidents-list .incident-title.impact-none a, .incident-history .impact-none, .layout-content.status .grouped-items-selector.inline .grouped-item.active, .l",
+        "fetch_error": ""
+      },
+      {
+        "title": "Is Claude Down? Anthropic API & Platform Status | Bifrost",
+        "url": "https://www.getmaxim.ai/bifrost/provider-status/anthropic",
+        "query": "Anthropic model availability status page",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Is Claude Down? Anthropic API & Platform Status | Bifrost Try Bifrost Enterprise free for 14 days. Request access P E R F O R M A N C E F E A T U R E S E N T E R P R I S E P R I C I N G D O C S B L O G Discord Github Book a Demo {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"name\":\"Is Claude Down?\",\"url\":\"https://www.getmaxim.ai/bifrost/provider-status/anthropic\",\"description\":\"Live Claude and Anthropic status: uptime, incidents, and components for Claude, Claude API, Claude Code, Claude Sonnet. See whether services are down and what that means for your apps.\",\"dateModified\":\"2026-06-15T20:10:16.190Z\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Bifrost\",\"url\":\"https://www.getmaxim.ai/bifrost\"},\"about\":{\"@type\":\"SoftwareApplication\",\"name\":\"Claude (Anthropic)\",\"applicationCategory\":\"Foundation model platform\"}},{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"AI Provider Status\",\"item\":\"https://www.getmaxim.ai/bifrost/provider-status\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Anthropic\",\"item\":\"https://www.getmaxim.ai/bifrost/provider-status/anthropic\"}]},{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is Claude down right now?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Check the status indicator at the top of this page. It pulls directly from Anthropic's official status page. If Anthropic is experiencing any issues, you'll see it reflected here. This real-time monitoring helps teams quickly identify whether performance problems are caused by Anthropic infrastructure or their own systems.\"}},{\"@type\":\"Question\",\"name\":\"What does this Anthropic status page track?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"This page tracks Claude, Claude API, Claude Code, Claude Sonnet, and Claude Opus using data from Anth",
+        "fetch_error": ""
+      },
+      {
+        "title": "Anthropic Claude Model Release Timeline - Model Family Tree, Capability Evolution, and Platform Availability | hidekazu-konishi.com",
+        "url": "https://hidekazu-konishi.com/entry/anthropic_claude_model_release_timeline.html",
+        "query": "Anthropic model availability status page",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Anthropic Claude Model Release Timeline - Model Family Tree, Capability Evolution, and Platform Availability | hidekazu-konishi.com { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@context\": \"https://schema.org\", \"@type\": \"WebSite\", \"name\": \"Hidekazu Konishi - Profile / Biography | hidekazu-konishi.com\", \"url\": \"https://hidekazu-konishi.com/\", \"description\": \"Hidekazu Konishi is an AI Solutions Architect, Japan AWS Top Engineer, Japan All AWS Certifications Engineer, AI Agent Engineer, Cloud Architect, and Tech Blogger.\", \"image\": [ \"https://hidekazu-konishi.com/img/hidekazu-konishi_com_ogp.jpg\" ], \"sameAs\": [ \"https://hidekazu-konishi.com/\" ], \"mainEntityOfPage\": { \"@type\": \"WebPage\", \"@id\": \"https://hidekazu-konishi.com/\" }, \"headline\": \"Hidekazu Konishi - Profile / Biography | hidekazu-konishi.com\", \"thumbnailUrl\": \"https://hidekazu-konishi.com/img/hidekazu-konishi_com_ogp_icon.png\", \"keywords\": [ \"AI Solutions Architect\", \"Japan AWS Top Engineer\", \"Japan All AWS Certifications Engineer\", \"AI Agent Engineer\", \"Cloud Architect\", \"Cloud Engineer\", \"DevOps Engineer\", \"MLOps Engineer\", \"AIOps Engineer\", \"Application Engineer\", \"Prompt Engineer\", \"Tech Blogger\", \"AI Agent Development\", \"AI-Augmented Development\", \"AI-Powered Development\", \"Multi-Cloud\", \"Hybrid Cloud\", \"Architecting\", \"DevOps\", \"MLOps\", \"AIOps\", \"Generative AI\", \"GenAI\", \"Social Reform Activities\", \"Social Reform Activity\", \"SRA\", \"Hidekazu Konishi\", \"小西 秀和\", \"小西秀和\", \"Profile\", \"Biography\" ], \"encodingFormat\": \"text/html\", \"encoding\": { \"@type\": \"MediaObject\", \"encodingFormat\": \"utf-8\" }, \"inLanguage\": [ \"en\" ], \"genre\": [ \"Profile\", \"Biography\", \"Technology\", \"Cloud Computing\", \"Amazon Web Services\", \"AWS\", \"Blog\", \"Tech Blog\" ], \"isAccessibleForFree\": true, \"copyrightYear\": 2020, \"copyrightHolder\": {",
+        "fetch_error": ""
+      },
+      {
+        "title": "New U.S. Export Controls on Advanced Computing Items and Artificial Intelligence Model Weights: Seven Key Takeaways | Insights | Sidley Austin LLP",
+        "url": "https://www.sidley.com/en/insights/newsupdates/2025/01/new-us-export-controls-on-advanced-computing-items-and-artificial-intelligence-model-weights",
+        "query": "US export control AI model BIS 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(()=>{if(!window.navigator.userAgent.includes(\"Windows\"))return;let e=document.documentElement;e.classList.add(\"windows-device-zoom\");let t=1;(()=>{let a=Math.max((window.devicePixelRatio+1)/2,1);a!==t&&(e.style.setProperty(\"--windows-device-zoom-amount\",a.toFixed(4)),t=a)})()})(); (function () { const { pathname, href } = window.location; if (pathname.startsWith(\"//\")) { window.location.href = href.replace(pathname, pathname.replace(/^\\/{2,}/, \"/\")); } })(); history.scrollRestoration = \"manual\" New U.S. Export Controls on Advanced Computing Items and Artificial Intelligence Model Weights: Seven Key Takeaways | Insights | Sidley Austin LLP {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"mainEntityOfPage\":{\"@type\":\"webPage\",\"@id\":\"https://www.sidley.com/en/insights/newsupdates/2025/01/new-us-export-controls-on-advanced-computing-items-and-artificial-intelligence-model-weights\"},\"headline\":\"New U.S. Export Controls on Advanced Computing Items and Artificial Intelligence Model Weights: Seven Key Takeaways\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Sidley Austin LLP\",\"url\":\"https://www.sidley.com/en\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://www.sidley.com/-/media/images/logo/sidley-logo-white.svg?rev=37d47eaad4f843ce8e6de37431740847\"}},\"datePublished\":\"2025-11-24T21:40:56.0000000Z\",\"dateModified\":\"2026-03-26T22:32:50.0000000Z\"} (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-KKQHWNC'); Skip to main content Languages English 日本語 中文 News Comm",
+        "fetch_error": ""
+      },
+      {
+        "title": "Federal Register :: Framework for Artificial Intelligence Diffusion",
+        "url": "https://www.federalregister.gov/documents/2025/01/15/2025-00636/framework-for-artificial-intelligence-diffusion",
+        "query": "US export control AI model BIS 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Federal Register :: Request Access { \"imports\": { \"application\": \"/assets/application-cc464116.js\", \"@hotwired/turbo-rails\": \"/assets/turbo.min-86bf8853.js\", \"@hotwired/stimulus\": \"/assets/stimulus.min-7ea3d58b.js\", \"@hotwired/stimulus-loading\": \"/assets/stimulus-loading-25917588.js\", \"controllers/application\": \"/assets/controllers/application-e5a449db.js\", \"controllers/site_feedback_controller\": \"/assets/controllers/site_feedback_controller-a99fc93f.js\", \"controllers/unblock_controller\": \"/assets/controllers/unblock_controller-9520f896.js\" } } import \"application\" Request Access Due to aggressive automated scraping of FederalRegister.gov and eCFR.gov, programmatic access to these sites is limited to access to our extensive developer APIs. Please visit FederalRegister.gov API documentation or eCFR.gov API documentation to learn more about how to access the API. Your request has been flagged as potentially automated. If you are human user receiving this message, please complete the CAPTCHA (bot test) below and click \"Request Access\". You may occassionally be asked to complete the CAPTCHA again, this is normal and part of our security measures. unblock#handleSubmit\"> Request Access An official website of the United States government. If you experiencing issues with the CAPTCHA or want to request a wider IP range, you can use the \"Site Help\" button found in the lower, right of this page to make a request. × IP Access Help This contact form is only for IP Access help. Please do not provide confidential information or personal data. site-feedback#submitForm\" novalidate=\"novalidate\" class=\"simple_form site_feedback\" enctype=\"multipart/form-data\" action=\"/site_feedback\" accept-charset=\"UTF-8\" method=\"post\"> * Your Name * Email * How can we help you? Upload Attachment * I am re",
+        "fetch_error": ""
+      },
+      {
+        "title": "US Commerce Department Announces New Export Compliance Expectations Related to Artificial Intelligence | Insights | Mayer Brown",
+        "url": "https://www.mayerbrown.com/en/insights/publications/2025/05/us-commerce-department-announces-new-export-compliance-expectations-related-to-artificial-intelligence",
+        "query": "US export control AI model BIS 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "US Commerce Department Announces New Export Compliance Expectations Related to Artificial Intelligence | Insights | Mayer Brown {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"mainEntityOfPage\":{\"@type\":\"webPage\",\"@id\":\"https://www.mayerbrown.com/en/insights/publications/2025/05/us-commerce-department-announces-new-export-compliance-expectations-related-to-artificial-intelligence\"},\"headline\":\"US Commerce Department Announces New Export Compliance Expectations Related to Artificial Intelligence\",\"publisher\":{\"@type\":\"Organization\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"/-/media/images/logos/mayer-brown/mayerbrownlogoalternate2.png?rev=894826f51de743da87828bfef435d0b2\"}},\"datePublished\":\"5/16/2025\",\"dateModified\":\"5/16/2025\"} (function () { const { pathname, href } = window.location; if (pathname.startsWith(\"//\")) { window.location.href = href.replace(pathname, pathname.replace(/^\\/{2,}/, \"/\")); } })(); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('set','GTM-5KMCJB6',true);gtag('consent','default',{ad_storage:\"denied\",analytics_storage:\"denied\", functionality_storage:\"denied\",personalization_storage:\"denied\",security_storage:\"denied\", ad_user_data:\"denied\",ad_personalization:\"denied\",'wait_for_update':500}); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5KMCJB6'); Skip to main content Global Client Stories Insights People Services Industries Careers About Us Global en de es ja pt fr zh-Hans Main Menu Featured Topics artificial intelligence Cyb",
+        "fetch_error": ""
+      },
+      {
+        "title": "Is Anthropic (Claude) Down? Anthropic (Claude) Status & Outage History (2026)",
+        "url": "https://apistatuscheck.com/api/anthropic",
+        "query": "Anthropic API outage developer impact",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Is Anthropic (Claude) Down? Anthropic (Claude) Status & Outage History (2026) try { const stored = localStorage.getItem('theme'); if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); } } catch(e) {} {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"API Status Check\",\"url\":\"https://apistatuscheck.com\",\"logo\":\"https://apistatuscheck.com/logo.png\",\"description\":\"Real-time API status monitoring for 120+ services\",\"sameAs\":[\"https://twitter.com/apistatuscheck\",\"https://bsky.app/profile/apistatuscheck.bsky.social\"]} {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"API Status Check\",\"url\":\"https://apistatuscheck.com\",\"description\":\"Real-time status monitoring for 117+ developer APIs. Free, no signup required.\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":\"https://apistatuscheck.com/?q={search_term_string}\",\"query-input\":\"required name=search_term_string\"}} API Status Check Outages Blog Tools Recommended Compare Docs API Docs Pricing {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Anthropic (Claude) Status - Is Anthropic (Claude) Down?\",\"description\":\"Check if Anthropic (Claude) is down right now. Real-time status, response times, and outage history for Anthropic (Claude) API.\",\"url\":\"https://apistatuscheck.com/api/anthropic\",\"isPartOf\":{\"@type\":\"WebSite\",\"name\":\"API Status Check\",\"url\":\"https://apistatuscheck.com\"},\"about\":{\"@type\":\"SoftwareApplication\",\"name\":\"Anthropic (Claude)\",\"applicationCategory\":\"WebApplication\",\"operatingSystem\":\"Web\",\"description\":\"AI safety company providing Claude AI assistant\"},\"mainEntity\":{\"@type\":\"WebApplication\",\"name\":\"Anthropic (Claude)\",\"applicationCategory\":\"ai\",\"operatingSystem\":\"Web\",\"url\":\"https://status.",
+        "fetch_error": ""
+      },
+      {
+        "title": "Anthropic's Claude hit by major outage affecting chat, API and developer tools | Mint",
+        "url": "https://www.livemint.com/technology/tech-news/anthropics-claude-hit-by-major-outage-affecting-chat-api-and-developer-tools-11780398312963.html",
+        "query": "Anthropic API outage developer impact",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Anthropic's Claude hit by major outage affecting chat, API and developer tools | Mint var cacheDocument='';var cacheCookies={};window.getCookie=function(k){if(cacheDocument=='')cacheDocument=document.cookie;if(k in cacheCookies)return cacheCookies[k];for(var a=k+\"=\",t=cacheDocument.split(\";\"),n=0;n (function(){var h=window.history,o=h.pushState,r=h.replaceState,f=h.forward,g=h.go;window.__bbOrigPush=o;window.__bbGuardActive=true;var inPop=false;function isNx(s){return s&&typeof s==='object'&&('__N' in s||'__NA' in s||('key' in s&&('url' in s||'as' in s)))}h.pushState=function(s,t,u){if(isNx(s))return o.call(h,s,t,u);return r.call(h,h.state,t,u)};h.forward=function(){if(inPop)return;return f.call(h)};h.go=function(n){if(inPop&&n>0)return;return g.call(h,n)};try{Object.defineProperty(h,'pushState',{configurable:false,writable:false});Object.defineProperty(h,'forward',{configurable:false,writable:false});Object.defineProperty(h,'go',{configurable:false,writable:false})}catch(e){}window.addEventListener('popstate',function(){inPop=true;Promise.resolve().then(function(){inPop=false})},true)})(); @layer story-base;@layer story-base { *,*::before,*::after{padding:0;margin:0;box-sizing:border-box;list-style-type:none}*{border:0;outline:0}body{font-family:\"Inter\",sans-serif;font-weight:400;-webkit-tap-highlight-color:transparent}strong{font-weight:700}a{color:#212121}p:empty{display:none;height:0}html{scroll-behavior:smooth}.skinnyAd #HTDS_Skinning>a{z-index:103}#adfreeDeskSpace{display:flex;display:-webkit-flex;flex-wrap:wrap;align-items:center;flex-direction:column;text-align:center;margin:20px 0;min-height:50px;justify-content:center}#adfreeDeskSpace.sticky{position:sticky;top:0;background-color:#fff;z-index:102}#adfreeDeskSpace.sticky>div{position:sticky;top:0;z-index:301;op",
+        "fetch_error": ""
+      },
+      {
+        "title": "Is Claude Down? March 2026 Anthropic Outage & Failover Tips",
+        "url": "https://deployflow.co/blog/claude-anthropic-outage-protect-claude-infrastructure/",
+        "query": "Anthropic API outage developer impact",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Is Claude Down? March 2026 Anthropic Outage & Failover Tips { \"areaServed\": [ { \"@type\": \"Country\", \"name\": \"United Kingdom\" }, { \"@type\": \"Country\", \"name\": \"United Arab Emirates\" }, { \"@type\": \"Country\", \"name\": \"United States\" } ] } {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[ {\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://deployflow.co/\"} ]} { \"@context\": \"https://schema.org\", \"@type\": \"WebPage\", \"@id\": \"https://deployflow.co/blog/claude-anthropic-outage-protect-claude-infrastructure/\", \"url\": \"https://deployflow.co/blog/claude-anthropic-outage-protect-claude-infrastructure/\", \"dateModified\": \"June 2, 2026\" } {\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Article\",\"datePublished\":\"2026-06-02T09:04:42+00:00\",\"dateModified\":\"2026-06-02T09:04:46+00:00\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/deployflow.co\\/blog\\/claude-anthropic-outage-protect-claude-infrastructure\\/\"},\"headline\":\"Is Claude Down? Anthropic Outage: Protect Your Cloud Infrastructure\",\"author\":{\"@type\":\"Person\",\"name\":\"Nikola Ilic\",\"url\":\"https:\\/\\/deployflow.co\\/blog\\/author\\/nikola\\/\"},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/deployflow.co\\/wp-content\\/uploads\\/2026\\/03\\/Claude-Outage-Message-Server-Error.png\"},\"description\":\"On March 2, 2026, a major disruption hit Claude.ai just days after it climbed to the top of the App Store rankings. What began as elevated error rates quickly escalated into a prolonged outage that affected web access, authentication paths, and, later, specific model endpoints. Fast forward to June 2,…\"} img:is([sizes=auto i],[sizes^=\"auto,\" i]){contain-intrinsic-size:3000px 1500px} /*# sourceURL=wp-img-auto-sizes-contain-inline-css */ /*! This file is auto-generated */ .wp-block-button__link{color:#fff;backgroun",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/Anthropic on Reddit: Anthropic Says It’s Taking Claude Fable 5 Offline to Comply With US Government Order",
+        "url": "https://www.reddit.com/r/Anthropic/comments/1u4fw8q/anthropic_says_its_taking_claude_fable_5_offline/",
+        "query": "Anthropic model offline reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/Anthropic on Reddit: US blocks foreign access to Anthropic's most advanced AI models, Axios reports",
+        "url": "https://www.reddit.com/r/Anthropic/comments/1u4csa7/us_blocks_foreign_access_to_anthropics_most/",
+        "query": "Anthropic model offline reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/singularity on Reddit: Anthropic is suspending access to Fabel/Mythos for ALL users, not just non-Americans",
+        "url": "https://www.reddit.com/r/singularity/comments/1u4f4fu/anthropic_is_suspending_access_to_fabelmythos_for/",
+        "query": "Anthropic model offline reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "Pricing - Claude API Docs",
+        "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "query": "Anthropic Claude API pricing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Pricing - Claude API Docs window.__GATED_CHUNK_MAP__={};window.__GATED_GATES__={}; requestAnimationFrame(function(){$RT=performance.now()}); Messages Managed Agents Admin Resources   API reference English   Console Log in    Search... ⌘K Models Models overview Model IDs and versioning Choosing a model Introducing Claude Fable 5 and Claude Mythos 5 What's new in Claude Opus 4.8 Upgrade between model versions Model deprecations Model cards System prompts Pricing  Log in  Models & pricing  Pricing Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Solutions AI agents Code modernization Coding Customer support Education Financial services Government Life sciences Partners Amazon Bedrock Google Cloud's Vertex AI Learn Blog Courses Use cases Connectors Customer stories Engineering at Anthropic Events Powered by Claude Service partners Startups program Company Anthropic Careers Economic Futures Research News Responsible Scaling Policy Security and compliance Transparency Learn Blog Courses Use cases Connectors Customer stories Engineering at Anthropic Events Powered by Claude Service partners Startups program Help and security Availability Status Support Discord Terms and policies Privacy policy Responsible disclosure policy Terms of service: Commercial Terms of service: Consumer Usage policy $RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b a&&2E3 *]:max-w-full [&>*]:box-border prose-a:inline-flex prose-a:items-center prose-a:min-h-[44px] prose-a:py-0.5 prose-p:leading-[1.6] prose-li:leading-[1.6] prose-blockquote:leading-[1.6]\"> Models & pricing / Models Pricing Copy page Learn about Anthropic's pricing structure for models and featu",
+        "fetch_error": ""
+      },
+      {
+        "title": "Anthropic API Pricing in 2026: Complete Guide — Models, Caching, Batch & Optimization",
+        "url": "https://www.finout.io/blog/anthropic-api-pricing",
+        "query": "Anthropic Claude API pricing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Anthropic API Pricing in 2026: Complete Guide — Models, Caching, Batch & Optimization body, html {scroll-behavior: smooth;} .post-details-banner .container { max-width: 1204px; margin: 0 auto; padding: 0 32px; display: flex; } .pdb-right { flex: 1; } .pdb-left { width: 57.7%; padding-right: 40px; } .pdb-right img { width: 100%; border-radius: 22px; } .post-details-banner { padding-top: 88px; } .post-content .container { max-width: 1204px; margin: 0 auto; padding: 0 32px; display: flex; gap: 42px; align-items: flex-start;} .post-content .blog-sidebar, .blog-rgtsidebar { width: 200px; position: sticky; top: 110px; } .post-content .blog-main { max-width: 645px; width: calc(100% - 242px);} .content-related-post .container { max-width: 1204px; margin: 0 auto; padding: 0 32px; display: flex; } .content-related-post { padding: 80px 0px; } .content-related-post ul { display: flex; flex-wrap: wrap; padding-left: 20px; } .content-related-post ul>li { width: 50%; list-style-type: disc; color: #0F6D59; padding-right: 50px; } .content-related-post ul>li>a { color: #0F6D59; font-family: 'Poppins'; font-size: 18px; line-height: 30px; font-weight: 600; text-decoration: underline; } .description-summery { font-size: 18px; line-height: 30px; font-weight: 300; font-family: 'Poppins'; color: #0F1F1A; } .pdb-footer { display: flex; justify-content: space-between; margin-top: 116px;flex-wrap:wrap;gap:10px} .pdb-auther { display: flex; gap: 9px; } .pbd-img { height: 50px; width: 50px; background: #0F6D59; border-radius: 50%; font-size: 18px; line-height: 30px; font-weight: 600; color: #fff; font-family: 'Poppins'; display: flex; align-items: center; justify-content: center; } .pbd-text .pbd-name { font-weight: 400; color: #0F1F1A; } .pbd-text { font-size: 16px; line-height: 24px; font-family:",
+        "fetch_error": ""
+      },
+      {
+        "title": "Plans & Pricing | Claude by Anthropic",
+        "url": "https://claude.com/pricing",
+        "query": "Anthropic Claude API pricing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Plans & Pricing | Claude by Anthropic !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); .anti-flicker, .anti-flicker * {visibility: hidden !important; opacity: 0 !important;} [data-wf-hidden-variation], [data-wf-hidden-variation] * { display: none !important; } html:not(.gsap-not-found) [data-prevent-flicker='true'] { visibility: hidden; } .line-mask, .word-mask, .char-mask { padding-block: 0.1em; margin-block: -0.1em; } [data-prevent-flicker='true'] { visibility: visible !important; } .transition_wrap { display: block; } // Hide the transition_wrap in Webflow preview mode w/ custom code enabled if (window.location.hostname.includes('.canvas.webflow.com')) { document.write(' .transition_wrap{display:none!important}[data-prevent-flicker=\"true\"]{visibility:visible!important} '); } (function() { const localeMap = { 'ja': '/ja-jp', 'ja-JP': '/ja-jp', 'de': '/de-de', 'de-DE': '/de-de', 'fr': '/fr-fr', 'fr-FR': '/fr-fr', 'ko': '/ko-kr', 'ko-KR': '/ko-kr' }; const localePaths = ['/ja-jp', '/de-de', '/fr-fr', '/ko-kr']; const currentPath = window.location.pathname; // Don't redirect if already on a locale path if (localePaths.some(p => currentPath.startsWith(p))) return; // Check if user manually switched (came from a locale path on this site) try { const referrer = new URL(document.referrer); if (referrer.hostname === window.location.hostname) { if (localePaths.some(p => referrer.pathname.startsWith(p))) { localStorage.setItem('locale-manual-override', 'true'); } } } catch (e) {} // Respect manual override if (localStorage.getItem('locale-manual-override')) return; // Only check the PRIMARY browser language (first in the list) const primaryLang = ",
+        "fetch_error": ""
+      },
+      {
+        "title": "Terms of Service Updates | Anthropic Privacy Center",
+        "url": "https://privacy.claude.com/en/articles/9190861-terms-of-service-updates",
+        "query": "Anthropic terms of service service level",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/\",\"name\":\"All Collections\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/collections/10663362-consumers\",\"name\":\"Consumers \",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/collections/10672567-policies-terms-of-service\",\"name\":\"Policies & Terms of Service\",\"position\":3},{\"@type\":\"ListItem\",\"name\":\"Terms of Service Updates\",\"position\":4}]} {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"description\":\"\",\"headline\":\"Terms of Service Updates\",\"inLanguage\":\"en\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Anthropic Privacy Center\"},\"url\":\"https://privacy.claude.com/en/articles/9190861-terms-of-service-updates\",\"dateModified\":\"2026-03-16T21:13:59Z\"} Terms of Service Updates | Anthropic Privacy Center :root{--body-bg: rgb(255, 255, 255); --body-image: none; --body-bg-rgb: 255, 255, 255; --body-border: rgb(230, 230, 230); --body-primary-color: #1a1a1a; --body-secondary-color: #737373; --body-reaction-bg: rgb(242, 242, 242); --body-reaction-text-color: rgb(64, 64, 64); --body-toc-active-border: #737373; --body-toc-inactive-border: #f2f2f2; --body-toc-inactive-color: #737373; --body-toc-active-font-weight: 400; --body-table-border: rgb(204, 204, 204); --body-color: hsl(0, 0%, 0%); --footer-bg: rgb(25, 25, 25); --footer-image: none; --footer-border: rgb(50, 50, 50); --footer-color: hsl(60, 14%, 93%); --header-bg: rgb(240, 239, 235); --header-image: none; --header-color: hsl(0, 0%, 10%); --collection-card-bg: rgb(204, 120, 92); --collection-card-image: none; --collection-card-color: hsl(60, 14%, 93%); --card-bg: rgb(255, 255, 255); --card-border-color: rgb(230, 230, 230); --card-border-inner-radi",
+        "fetch_error": ""
+      },
+      {
+        "title": "Consumer Terms of Service Updates | Anthropic Privacy Center",
+        "url": "https://privacy.claude.com/en/articles/9264813-consumer-terms-of-service-updates",
+        "query": "Anthropic terms of service service level",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/\",\"name\":\"All Collections\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/collections/10663362-consumers\",\"name\":\"Consumers \",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/collections/10672567-policies-terms-of-service\",\"name\":\"Policies & Terms of Service\",\"position\":3},{\"@type\":\"ListItem\",\"name\":\"Consumer Terms of Service Updates\",\"position\":4}]} {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"description\":\"\",\"headline\":\"Consumer Terms of Service Updates\",\"inLanguage\":\"en\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Anthropic Privacy Center\"},\"url\":\"https://privacy.claude.com/en/articles/9264813-consumer-terms-of-service-updates\",\"dateModified\":\"2026-03-16T21:13:46Z\"} Consumer Terms of Service Updates | Anthropic Privacy Center :root{--body-bg: rgb(255, 255, 255); --body-image: none; --body-bg-rgb: 255, 255, 255; --body-border: rgb(230, 230, 230); --body-primary-color: #1a1a1a; --body-secondary-color: #737373; --body-reaction-bg: rgb(242, 242, 242); --body-reaction-text-color: rgb(64, 64, 64); --body-toc-active-border: #737373; --body-toc-inactive-border: #f2f2f2; --body-toc-inactive-color: #737373; --body-toc-active-font-weight: 400; --body-table-border: rgb(204, 204, 204); --body-color: hsl(0, 0%, 0%); --footer-bg: rgb(25, 25, 25); --footer-image: none; --footer-border: rgb(50, 50, 50); --footer-color: hsl(60, 14%, 93%); --header-bg: rgb(240, 239, 235); --header-image: none; --header-color: hsl(0, 0%, 10%); --collection-card-bg: rgb(204, 120, 92); --collection-card-image: none; --collection-card-color: hsl(60, 14%, 93%); --card-bg: rgb(255, 255, 255); --card-border-color: rgb(230,",
+        "fetch_error": ""
+      },
+      {
+        "title": "‭Effective: January 2024‬ ‭Anthropic on Bedrock - Commercial Terms‬",
+        "url": "https://www-cdn.anthropic.com/6b68a6508f0210c5fe08f0199caa05c4ee6fb4dc/Anthropic-on-Bedrock-Commercial-Terms-of-Service_Dec_2023.pdf",
+        "query": "Anthropic terms of service service level",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "%PDF-1.4 % 1 0 obj > endobj 3 0 obj > endobj 9 0 obj > stream x]MF\u0012W `\u0001\u0018\u0006 }|۴wl\bqDShS)c٧>}ݘ_6o>˟we\u0013\u001bCl_n? o߾yy{woypys\u001bU \u000741*^MEL[{ \b v߶ ΍PP\u0003hb?\u00187\u0007Ԅ?D0:\u001a\u000eM&=ݸ\u0005_\u0004`\u0002\u0018 \u0007&h@&o eᎸ=\u0010 \u001agHG\u000eqD};)xioځ:Xk%5ۆV~9}~[\u001bJڙB7Ҿ$ʇxA:)cNCc Wt \u0015 ~h>'Rگ W~' \u000e \u0013\"\u0005{\u0000 \u0013+\u00160z|gqNQ%i \u0007}XtD i-n\u0002R5 \u001a\u000e CG8 -DR9 Ӹ\u0014F%qBA\u000f]׼b\u000ft\u0014h\\ M V)j3AQs ikˈ t\u000fi\u0014?N]nY\u000f}ذ/*\u0004m\u0006R \u0017vO-\"6^M &\u0016\u0015SV&-\u0003\u0011\u000e[\"\b ]\u0013 5\u0004[ee¡}/V \u0017F`axOMǅ^xѨN\u00137\u0014kl *u\\t}QBuT^\u0004\u0014U>%/IąƂYo2Nۉʕ\u0018OulZI\u0019\u0006\u0013q\u0019+ V\u0005\u001b`\u0000bt|DcN \u0005\u000eu!7LLl\u000e\u0000n=\\:SMѰVrt>wc\u001bpIx:3T|ꪋ%aB2>;\u0015]\u0016J~v8 U\u00026Y \u0000o #O _ \"Ą7\u0004 bX4\u0012[~Ofv\u0010C`h\u0002@v.\u000eXkRjCϟ\u0001ke\u0000v\u0006RŪ\u0005ZJWm@\u0006`\u001a c s \u0003\u0015(~+L& L\u0017?\u0010b\u0004G = bDk'~\u0013@8, i#CRw\u0018^\u0001\u0014M\u0004aɎh =gYtr&a\u0005w/\"G\u0010.[\u0015}R/ dobU%dHA Kv?Y\u000f>ykz\u0006еh \u0010Q{\" \b.\u0006B*N m@^M v @R?47[Vd \u0016\u0013\u0012R-IhpG$+\u0005N\"r ;@\u0002\u0004ҲH*y \b*B h&C+\u0003\u0011fA\\\u0015KӧFN7\u0007 W\u0012#x𥱪dp9\\\"a\u001a|\u00151C%0 *O^9l 7 6W cd Ou\u0007ۆI0Era\u0013ڑ\u0014NZ\bHN~ =s\b\u0001u \u0013JP^\u0015Aí0b\u0005tn\u0019y!g|j;SRay בRӺ\u0017 aI^ \u0015 lyp\u0010nͳQH DdG\u000eʴFEgt IHRi7 ~ |Q\u0010;5f;zyLU4!\u0002X2!\u0012)b\u000eX.VEx\u000e\u0007 ^B#\u0014 \"\u001auQpKr^=\u00025Ԫ&a5\u000fI!|\u0004..\\rp\"\u0004K-\u0004y`hrj|'rլ5sw};GG\u001b>\u0018#G\bu-XW1hdN&\">V;~^eFT&\u0004_ν\u0005_IP ~\u0014r\u0004 eO(~!}y&{@ _&=0(\u0013X2¼/\u0004N _wIpjGxJdk\u0004#Kz=\\~ )ȕ%,9\u0014\u0015]\bH0\u00036c\u0005e\u0004\u000fb$` R{?\u001a܃\u001bìM4\u0003xqJQ:\u00010b[Z$#H`' z\u0015B2%Wr·i \u001bgmc$\bkQwTv: Rx\u00182\u001bBS\u0010^\u000fr^\\\u0002iMs71\u000f\b,ς\u0019Fa\u0018 *_W\u0000iDyGey\u0016X%T_`\"w_ eO \u001b\u0017ie\u0001w\u001b\"% e^\u000eT] \\>\u0001oo4.'`ǟ;\u0002\\\u0006~hUZ\" 36'mgeDj \\Cֲ|.Zpʚ\u0010}=5;S\b Ϥ Y\u0018\bz\u00119Fah\u0013q|U$2(sE\u0001r8`B\u0016\u0016 !X\u001a\u000eGD$4\"ϛo\u001b82-ކ\u001b\u001b#cϛ_j|8elz\u001bO}(tf/7 ]O§ɍ=_\u0015tȥ4-9 VZ\u0012'; \u0003ܟ endstream endobj 11 0 obj > stream x]Ɏ \u0011Wـ/\u0000A3d\u0002> Z\b\u0018`27zf8SW\u0015:j陖.nuU.\u0011/cya|hj:Y\u001b\u0007߲%_\u0005|_?sÿ?|?ǰgUΦ|x̯ǗϻO7}O}}nݛwt\u0018pu fE\u000e sθ\u0012c)OZkû>ݟ~޿6\u0018O\u0010Hj\\ > \u0004Z; Tޟq\u0012 \"[Ck\u001bRC]\u0005T4T=P\u001bb l;\u001a\u0012 5yài;\u0005\u0003 \u0005e6Q\u0019\u000f$m^n\u0012%Ak~\bt\"! 4N qJcS oqSr\u0000:Cʭ#UB;O؍Rx\u0017\u0013 Ŀ :n7ߋ\u0018//l:47npXnЫ&A6՜EB/3\bcD7T\u000e,'D',%x\u0001ἷ\u0014W vhRw!Mpq^ ;\u000e/>j\u000efD\u0001q yg\u0003 \u0007,(\u0004r\u00060[wv y L\u0018a:1 f14|5iS,R;}|6w\u0015Σ7\u001a\u001bM$B u1=N\u0004H\u0003r6! \u0014\u0012\u0011J \u0016AEǾ\u0002>i\u00022x:\u0014\"fh&\u0007H \u0010 ɴPh\u0003^溜b@l,ANop\u00047&&\u0013C Mi՛\u0010B\u00058&P\u000e\u00145k&,Vzy! \u0010\u0006l4\u0003DIz܌`_/n+qdI*SDj v 2'-݄d+\u0016xn}~{~$]Zi.\u000e⚝vv:U%{3B(sb\u0001w\u0002\u000fB \u001a\u000e):\u0017\u0017GL ;\u0010\u0007^4Gv +3y. ;\u0010ƧͩC\u0004\br}\u000eڜ\\8#kenG) \\B",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260616-they-screwed-us-personality-clashes-sent-anthrop-b91bb577/",
+    "for_gpt_editor": {
+      "brief": "\"They screwed us\": Personality clashes sent Anthropic's models offline Lots of \"source familiar with the administration's thinking\" and \"source close to Anthropic\" in this Axios piece, which is the best collection of behind-the-scenes gossip I've seen about the US government export control Mythos/Fable story so far. Logan Graham ( I lead the Frontier Red Team at Anthropic ), Dave Orr (Head of Safeguards, previously a Director of Engineering at Google DeepMind), and blog favorite Nicholas Carlini are reported to be meeting with the Commerce Department today in D.C. Good luck to them! (I just noticed Logan was \"Special Adviser to the Prime Minister\" in the Boris Johnson era, covering AI, science, and technology policy - so significant political experience.) This closing notes doesn't give me much optimism that we'll be getting Fable back any time soon: The bottom line : One option is to ma",
+      "title_seed": "Anthropic模型下线内幕：性格冲突还是国家安全？普通技术人该担心什么？",
+      "original_title": "\"They screwed us\": Personality clashes sent Anthropic's models offline",
+      "source_url": "https://simonwillison.net/2026/Jun/15/axios-clashes-anthropics/",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "推荐选题",
+          "label": "推荐",
+          "reason": "事件有明确冲突点（内部人事 vs 政府出口管制），能引发技术人对AI工具依赖、平台绑定和迁移成本的讨论。证据链较完整：Axios内幕报道、Anthropic官方状态页、Reddit社区讨论、出口管制法规分析。老花可从平台规则和工具账本角度解读，读者分层明确，泛兴趣钩子成立，传播张力高。"
+        },
+        "core_question": "Anthropic模型下线事件中，普通技术人面临哪些实际风险（工具不可用、迁移成本、平台绑定）？",
+        "why_this_topic_matters": "AI模型可用性受非技术因素（内部人事、出口管制）影响时，开发者和小团队如何对冲风险？这是所有依赖第三方AI API的技术人都需要面对的现实问题。",
+        "fact_summary": [
+          "Axios报道称Anthropic因内部性格冲突和/或美国政府出口管制要求，将Claude Fable 5和Mythos 5模型下线。",
+          "Reddit多个子版块讨论显示，下线影响所有用户（不仅非美国用户）。",
+          "Anthropic官方状态页（status.claude.com）未明确提及下线原因，但第三方监控显示近期有重大中断。",
+          "美国商务部2025年发布了AI模型权重出口管制新规（BIS框架），可能构成法律强制下线依据。",
+          "Anthropic服务条款中未明确承诺SLA，开发者索赔可能性低。"
+        ],
+        "persona_discussion_question": "如果Anthropic模型因内部冲突或政府干预下线，我该不该继续依赖Claude API做核心业务？",
+        "old_flower_stance": "不站队，不阴谋论。从工具账本角度分析：依赖单一AI平台的风险、迁移成本、替代方案评估。提醒技术人不要把核心业务绑在单一模型上。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "高价值商业读者",
+            "入门读者"
+          ],
+          "interest_score": 85,
+          "why_interested": "核心技术人关心API可用性和迁移成本；商业读者关心业务连续性风险；入门读者可学习平台依赖风险。",
+          "reader_risk": "可能被解读为唱衰Anthropic或AI行业，需平衡呈现事实和风险。"
+        },
+        "mass_interest_hook": {
+          "score": 80,
+          "hook_type": "争议",
+          "why_non_technical_people_may_click": "标题包含“内幕”“冲突”“下线”等关键词，普通人会被“性格冲突导致AI下线”的戏剧性吸引。",
+          "story_seed": "一个依赖Claude API的小团队，某天突然发现模型不可用，业务中断，原因竟是公司内部吵架和政府禁令。",
+          "do_not_overhype": "不能断言下线是永久性或单一原因，需注明信息缺口。"
+        },
+        "topic_tension": {
+          "score": 9,
+          "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+          "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "平台/工具厂商"
+          ],
+          "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2025年1月：美国商务部发布AI模型权重出口管制框架。",
+          "2025年5月：商务部发布新的AI出口合规期望。",
+          "2026年3月：Anthropic Claude发生重大中断（第三方监控记录）。",
+          "2026年6月15日：Axios报道Anthropic因性格冲突和政府命令下线Fable 5和Mythos 5。",
+          "2026年6月15日：Reddit多个子版块讨论下线影响所有用户。"
+        ],
+        "evidence_table": [
+          {
+            "source": "Simon Willison's Weblog（引用Axios报道）",
+            "url": "https://simonwillison.net/2026/Jun/15/axios-clashes-anthropics/",
+            "supports": "下线事件存在，原因包括内部冲突和政府出口管制。",
+            "reliability": "near_source"
+          },
+          {
+            "source": "Claude Status 官方状态页",
+            "url": "https://status.claude.com/",
+            "supports": "官方状态页存在，但未明确提及下线原因。",
+            "reliability": "official"
+          },
+          {
+            "source": "Reddit r/Anthropic 讨论",
+            "url": "https://www.reddit.com/r/Anthropic/comments/1u4fw8q/",
+            "supports": "下线影响所有用户，不仅非美国用户。",
+            "reliability": "weak"
+          },
+          {
+            "source": "Sidley Austin LLP 法律分析",
+            "url": "https://www.sidley.com/en/insights/newsupdates/2025/01/new-us-export-controls-on-advanced-computing-items-and-artificial-intelligence-model-weights",
+            "supports": "美国出口管制法规可能构成下线法律依据。",
+            "reliability": "official"
+          },
+          {
+            "source": "Mayer Brown 法律分析",
+            "url": "https://www.mayerbrown.com/en/insights/publications/2025/05/us-commerce-department-announces-new-export-compliance-expectations-related-to-artificial-intelligence",
+            "supports": "商务部2025年5月发布新的AI出口合规期望。",
+            "reliability": "official"
+          },
+          {
+            "source": "Anthropic 服务条款（PDF）",
+            "url": "https://www-cdn.anthropic.com/6b68a6508f0210c5fe08f0199caa05c4ee6fb4dc/Anthropic-on-Bedrock-Commercial-Terms-of-Service_Dec_2023.pdf",
+            "supports": "服务条款中未明确SLA，开发者索赔可能性低。",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "逻辑基本闭环：事件真实存在（Axios+Reddit+状态页），原因有双重可能（内部+政府），影响明确（所有用户），风险可分析（迁移成本、平台绑定）。但长期影响和具体模型范围仍需确认。",
+        "writeable_angles": [
+          {
+            "angle": "工具账本：依赖单一AI平台的风险量化",
+            "why": "直接回应核心读者（技术人）的迁移成本和业务连续性顾虑。",
+            "needs": "需要Anthropic API定价、替代模型（GPT-4o、Gemini）定价对比。"
+          },
+          {
+            "angle": "规则解读：出口管制如何影响普通开发者",
+            "why": "从政策角度解释下线原因，帮助读者理解合规风险。",
+            "needs": "需要BIS法规原文摘要、合规专家解读。"
+          },
+          {
+            "angle": "案例复盘：如果我的业务依赖Claude，现在该怎么办",
+            "why": "提供实操建议，如多模型备份、本地模型部署、合同审查。",
+            "needs": "需要真实开发者迁移案例、替代方案成本对比。"
+          }
+        ],
+        "missing_basics": [
+          "Anthropic Fable 5和Mythos 5的具体能力、定价和发布背景。",
+          "美国出口管制法规（BIS框架）的具体条款和适用范围。",
+          "Anthropic服务条款中关于服务中断的免责条款。"
+        ],
+        "missing_materials": [
+          "Axios原文全文（需确认付费墙）。",
+          "至少2个开发者迁移案例（如从Claude转GPT或Gemini）。",
+          "Anthropic官方关于下线原因的正式声明。",
+          "BIS出口管制法规原文或摘要。"
+        ],
+        "not_claimable": [
+          "下线是永久性的。",
+          "原因是单一因素（性格冲突或国家安全）。",
+          "所有Claude模型都受影响。",
+          "Anthropic违反合同或SLA。"
+        ],
+        "followup_queries": [
+          "Anthropic官方是否发布了下线声明？",
+          "Fable 5和Mythos 5是否已恢复？",
+          "其他AI模型（如GPT-4o、Gemini）是否也受类似出口管制影响？",
+          "开发者是否有法律途径索赔？"
+        ],
+        "additional_search_queries": [
+          "Anthropic Fable 5 Mythos 5 announcement",
+          "BIS export control AI model weights 2025 text",
+          "Claude API outage developer impact case study",
+          "Anthropic terms of service SLA guarantee"
+        ],
+        "stop_conditions": [
+          "Anthropic官方发布声明否认下线或澄清原因。",
+          "模型已恢复且无长期影响。",
+          "Axios报道被证伪或撤回。"
+        ],
+        "confidence": 80,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "hot-event",
+        "quality_gate": {
+          "pass": true,
+          "score": 80,
+          "fatal_issues": [],
+          "warnings": [
+            "Reddit证据被403屏蔽，需补充其他社区讨论",
+            "Axios原文未直接获取，依赖Simon Willison的转述",
+            "长期影响未知，需标注不确定性"
+          ],
+          "missing_evidence": [
+            "Axios原文全文",
+            "至少2个开发者迁移案例",
+            "Anthropic官方关于下线原因的正式声明",
+            "BIS出口管制法规原文或摘要"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": true,
+          "downstream_handoff_ok": true,
+          "material_pack_ok": true,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": true,
+          "source_coverage_ok": true,
+          "recommendation": "publish"
+        },
+        "research_plan": {
+          "core_question": "Anthropic模型下线事件中，普通技术人面临哪些实际风险（工具不可用、迁移成本、平台绑定）？",
+          "persona_discussion_question": "如果Anthropic模型因内部冲突或政府干预下线，我该不该继续依赖Claude API做核心业务？",
+          "hidden_public_issue": "AI模型可用性受非技术因素（内部人事、出口管制）影响时，开发者和小团队如何对冲风险？",
+          "must_verify": [
+            "Anthropic模型下线是否真实、具体哪些模型、下线时间线",
+            "下线原因中‘性格冲突’与‘国家安全’的具体权重",
+            "Axios报道中匿名信源的可信度",
+            "Anthropic官方是否有正式声明或回应",
+            "是否有其他开发者或企业报告受影响",
+            "出口管制法规（如BIS）是否直接导致下线"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Anthropic model availability status page",
+              "why_needed": "确认官方是否承认下线及具体模型"
+            },
+            {
+              "source_type": "policy",
+              "query": "US export control AI model BIS 2025",
+              "why_needed": "验证出口管制是否构成法律强制下线"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Anthropic API outage developer impact",
+              "why_needed": "收集真实用户受影响案例"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Anthropic model offline reddit",
+              "why_needed": "了解社区反应和替代方案讨论"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "Anthropic Claude API pricing",
+              "why_needed": "评估迁移到其他模型的成本差异"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Anthropic terms of service service level",
+              "why_needed": "检查是否有SLA保障或免责条款"
+            }
+          ],
+          "expert_challenge_points": [
+            "出口管制是否真的适用于Anthropic模型？具体法规条款？",
+            "性格冲突导致下线是否合理？是否有其他内部文档佐证？",
+            "开发者是否有法律或合同途径索赔？"
+          ],
+          "do_not_claim_yet": [
+            "下线是永久性的",
+            "原因是单一因素（性格冲突或国家安全）",
+            "所有Claude模型都受影响",
+            "Anthropic违反合同或SLA"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确标注信息缺口，重点放在风险分析和应对策略上，避免断言原因。",
+          "downstream_materials_needed": [
+            "Anthropic官方状态页面截图或存档",
+            "Axios原文全文（需确认付费墙）",
+            "BIS出口管制相关法规原文",
+            "至少2个开发者迁移案例（如从Claude转GPT或Gemini）",
+            "Anthropic服务条款中关于服务中断的条款"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Claude Status",
+            "url": "https://status.claude.com/",
+            "query": "Anthropic model availability status page",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Claude Status /* Dynamic Font Stack based on Feature Flag */ /* Using Atlassian Sans & Mono */ :root { --font-stack-a: \"Atlassian Sans\", \"Helvetica Neue\", Helvetica, Arial, Sans-Serif; --font-stack-b: \"Atlassian Mono\", \"SFMono-Medium\", \"SF Mono\", \"Segoe UI Mono\", \"Roboto Mono\", \"Ubuntu Mono\", Menlo, Consolas, Courier, monospace; } window.pageColorData = {\"blue\":\"#2C84DB\",\"border\":\"#DEDCD1\",\"body_background\":\"#FAF9F5\",\"font\":\"#141413\",\"graph\":\"#2C84DB\",\"green\":\"#76AD2A\",\"light_font\":\"#87867F\",\"link\":\"#141413\",\"orange\":\"#E86235\",\"red\":\"#E04343\",\"yellow\":\"#FAA72A\",\"no_data\":\"#B0AEA5\"}; /* BODY BACKGROUND */ /* BODY BACKGROUND */ /* BODY BACKGROUND */ /* BODY BACKGROUND */ /* BODY BACKGROUND */ body, .layout-content.status.status-api .section .example-container .example-opener .color-secondary, .grouped-items-selector, .layout-content.status.status-full-history .history-nav a.current, div[id^=\"subscribe-modal\"] .modal-footer, div[id^=\"subscribe-modal\"], div[id^=\"updates-dropdown\"] .updates-dropdown-section, #uptime-tooltip .tooltip-box { background-color:#FAF9F5; } #uptime-tooltip .pointer-container .pointer-smaller { border-bottom-color:#FAF9F5; } /* PRIMARY FONT COLOR */ /* PRIMARY FONT COLOR */ /* PRIMARY FONT COLOR */ /* PRIMARY FONT COLOR */ body.status, .color-primary, .color-primary:hover, .layout-content.status-index .status-day .update-title.impact-none a, .layout-content.status-index .status-day .update-title.impact-none a:hover, .layout-content.status-index .timeframes-container .timeframe.active, .layout-content.status-full-history .month .incident-container .impact-none, .layout-content.status.status-index .incidents-list .incident-title.impact-none a, .incident-history .impact-none, .layout-content.status .grouped-items-selector.inline .grouped-item.active, .l",
+            "fetch_error": ""
+          },
+          {
+            "title": "Is Claude Down? Anthropic API & Platform Status | Bifrost",
+            "url": "https://www.getmaxim.ai/bifrost/provider-status/anthropic",
+            "query": "Anthropic model availability status page",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Is Claude Down? Anthropic API & Platform Status | Bifrost Try Bifrost Enterprise free for 14 days. Request access P E R F O R M A N C E F E A T U R E S E N T E R P R I S E P R I C I N G D O C S B L O G Discord Github Book a Demo {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"name\":\"Is Claude Down?\",\"url\":\"https://www.getmaxim.ai/bifrost/provider-status/anthropic\",\"description\":\"Live Claude and Anthropic status: uptime, incidents, and components for Claude, Claude API, Claude Code, Claude Sonnet. See whether services are down and what that means for your apps.\",\"dateModified\":\"2026-06-15T20:10:16.190Z\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Bifrost\",\"url\":\"https://www.getmaxim.ai/bifrost\"},\"about\":{\"@type\":\"SoftwareApplication\",\"name\":\"Claude (Anthropic)\",\"applicationCategory\":\"Foundation model platform\"}},{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"AI Provider Status\",\"item\":\"https://www.getmaxim.ai/bifrost/provider-status\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Anthropic\",\"item\":\"https://www.getmaxim.ai/bifrost/provider-status/anthropic\"}]},{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is Claude down right now?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Check the status indicator at the top of this page. It pulls directly from Anthropic's official status page. If Anthropic is experiencing any issues, you'll see it reflected here. This real-time monitoring helps teams quickly identify whether performance problems are caused by Anthropic infrastructure or their own systems.\"}},{\"@type\":\"Question\",\"name\":\"What does this Anthropic status page track?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"This page tracks Claude, Claude API, Claude Code, Claude Sonnet, and Claude Opus using data from Anth",
+            "fetch_error": ""
+          },
+          {
+            "title": "Anthropic Claude Model Release Timeline - Model Family Tree, Capability Evolution, and Platform Availability | hidekazu-konishi.com",
+            "url": "https://hidekazu-konishi.com/entry/anthropic_claude_model_release_timeline.html",
+            "query": "Anthropic model availability status page",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Anthropic Claude Model Release Timeline - Model Family Tree, Capability Evolution, and Platform Availability | hidekazu-konishi.com { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@context\": \"https://schema.org\", \"@type\": \"WebSite\", \"name\": \"Hidekazu Konishi - Profile / Biography | hidekazu-konishi.com\", \"url\": \"https://hidekazu-konishi.com/\", \"description\": \"Hidekazu Konishi is an AI Solutions Architect, Japan AWS Top Engineer, Japan All AWS Certifications Engineer, AI Agent Engineer, Cloud Architect, and Tech Blogger.\", \"image\": [ \"https://hidekazu-konishi.com/img/hidekazu-konishi_com_ogp.jpg\" ], \"sameAs\": [ \"https://hidekazu-konishi.com/\" ], \"mainEntityOfPage\": { \"@type\": \"WebPage\", \"@id\": \"https://hidekazu-konishi.com/\" }, \"headline\": \"Hidekazu Konishi - Profile / Biography | hidekazu-konishi.com\", \"thumbnailUrl\": \"https://hidekazu-konishi.com/img/hidekazu-konishi_com_ogp_icon.png\", \"keywords\": [ \"AI Solutions Architect\", \"Japan AWS Top Engineer\", \"Japan All AWS Certifications Engineer\", \"AI Agent Engineer\", \"Cloud Architect\", \"Cloud Engineer\", \"DevOps Engineer\", \"MLOps Engineer\", \"AIOps Engineer\", \"Application Engineer\", \"Prompt Engineer\", \"Tech Blogger\", \"AI Agent Development\", \"AI-Augmented Development\", \"AI-Powered Development\", \"Multi-Cloud\", \"Hybrid Cloud\", \"Architecting\", \"DevOps\", \"MLOps\", \"AIOps\", \"Generative AI\", \"GenAI\", \"Social Reform Activities\", \"Social Reform Activity\", \"SRA\", \"Hidekazu Konishi\", \"小西 秀和\", \"小西秀和\", \"Profile\", \"Biography\" ], \"encodingFormat\": \"text/html\", \"encoding\": { \"@type\": \"MediaObject\", \"encodingFormat\": \"utf-8\" }, \"inLanguage\": [ \"en\" ], \"genre\": [ \"Profile\", \"Biography\", \"Technology\", \"Cloud Computing\", \"Amazon Web Services\", \"AWS\", \"Blog\", \"Tech Blog\" ], \"isAccessibleForFree\": true, \"copyrightYear\": 2020, \"copyrightHolder\": {",
+            "fetch_error": ""
+          },
+          {
+            "title": "New U.S. Export Controls on Advanced Computing Items and Artificial Intelligence Model Weights: Seven Key Takeaways | Insights | Sidley Austin LLP",
+            "url": "https://www.sidley.com/en/insights/newsupdates/2025/01/new-us-export-controls-on-advanced-computing-items-and-artificial-intelligence-model-weights",
+            "query": "US export control AI model BIS 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(()=>{if(!window.navigator.userAgent.includes(\"Windows\"))return;let e=document.documentElement;e.classList.add(\"windows-device-zoom\");let t=1;(()=>{let a=Math.max((window.devicePixelRatio+1)/2,1);a!==t&&(e.style.setProperty(\"--windows-device-zoom-amount\",a.toFixed(4)),t=a)})()})(); (function () { const { pathname, href } = window.location; if (pathname.startsWith(\"//\")) { window.location.href = href.replace(pathname, pathname.replace(/^\\/{2,}/, \"/\")); } })(); history.scrollRestoration = \"manual\" New U.S. Export Controls on Advanced Computing Items and Artificial Intelligence Model Weights: Seven Key Takeaways | Insights | Sidley Austin LLP {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"mainEntityOfPage\":{\"@type\":\"webPage\",\"@id\":\"https://www.sidley.com/en/insights/newsupdates/2025/01/new-us-export-controls-on-advanced-computing-items-and-artificial-intelligence-model-weights\"},\"headline\":\"New U.S. Export Controls on Advanced Computing Items and Artificial Intelligence Model Weights: Seven Key Takeaways\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Sidley Austin LLP\",\"url\":\"https://www.sidley.com/en\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://www.sidley.com/-/media/images/logo/sidley-logo-white.svg?rev=37d47eaad4f843ce8e6de37431740847\"}},\"datePublished\":\"2025-11-24T21:40:56.0000000Z\",\"dateModified\":\"2026-03-26T22:32:50.0000000Z\"} (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-KKQHWNC'); Skip to main content Languages English 日本語 中文 News Comm",
+            "fetch_error": ""
+          },
+          {
+            "title": "Federal Register :: Framework for Artificial Intelligence Diffusion",
+            "url": "https://www.federalregister.gov/documents/2025/01/15/2025-00636/framework-for-artificial-intelligence-diffusion",
+            "query": "US export control AI model BIS 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Federal Register :: Request Access { \"imports\": { \"application\": \"/assets/application-cc464116.js\", \"@hotwired/turbo-rails\": \"/assets/turbo.min-86bf8853.js\", \"@hotwired/stimulus\": \"/assets/stimulus.min-7ea3d58b.js\", \"@hotwired/stimulus-loading\": \"/assets/stimulus-loading-25917588.js\", \"controllers/application\": \"/assets/controllers/application-e5a449db.js\", \"controllers/site_feedback_controller\": \"/assets/controllers/site_feedback_controller-a99fc93f.js\", \"controllers/unblock_controller\": \"/assets/controllers/unblock_controller-9520f896.js\" } } import \"application\" Request Access Due to aggressive automated scraping of FederalRegister.gov and eCFR.gov, programmatic access to these sites is limited to access to our extensive developer APIs. Please visit FederalRegister.gov API documentation or eCFR.gov API documentation to learn more about how to access the API. Your request has been flagged as potentially automated. If you are human user receiving this message, please complete the CAPTCHA (bot test) below and click \"Request Access\". You may occassionally be asked to complete the CAPTCHA again, this is normal and part of our security measures. unblock#handleSubmit\"> Request Access An official website of the United States government. If you experiencing issues with the CAPTCHA or want to request a wider IP range, you can use the \"Site Help\" button found in the lower, right of this page to make a request. × IP Access Help This contact form is only for IP Access help. Please do not provide confidential information or personal data. site-feedback#submitForm\" novalidate=\"novalidate\" class=\"simple_form site_feedback\" enctype=\"multipart/form-data\" action=\"/site_feedback\" accept-charset=\"UTF-8\" method=\"post\"> * Your Name * Email * How can we help you? Upload Attachment * I am re",
+            "fetch_error": ""
+          },
+          {
+            "title": "US Commerce Department Announces New Export Compliance Expectations Related to Artificial Intelligence | Insights | Mayer Brown",
+            "url": "https://www.mayerbrown.com/en/insights/publications/2025/05/us-commerce-department-announces-new-export-compliance-expectations-related-to-artificial-intelligence",
+            "query": "US export control AI model BIS 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "US Commerce Department Announces New Export Compliance Expectations Related to Artificial Intelligence | Insights | Mayer Brown {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"mainEntityOfPage\":{\"@type\":\"webPage\",\"@id\":\"https://www.mayerbrown.com/en/insights/publications/2025/05/us-commerce-department-announces-new-export-compliance-expectations-related-to-artificial-intelligence\"},\"headline\":\"US Commerce Department Announces New Export Compliance Expectations Related to Artificial Intelligence\",\"publisher\":{\"@type\":\"Organization\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"/-/media/images/logos/mayer-brown/mayerbrownlogoalternate2.png?rev=894826f51de743da87828bfef435d0b2\"}},\"datePublished\":\"5/16/2025\",\"dateModified\":\"5/16/2025\"} (function () { const { pathname, href } = window.location; if (pathname.startsWith(\"//\")) { window.location.href = href.replace(pathname, pathname.replace(/^\\/{2,}/, \"/\")); } })(); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('set','GTM-5KMCJB6',true);gtag('consent','default',{ad_storage:\"denied\",analytics_storage:\"denied\", functionality_storage:\"denied\",personalization_storage:\"denied\",security_storage:\"denied\", ad_user_data:\"denied\",ad_personalization:\"denied\",'wait_for_update':500}); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5KMCJB6'); Skip to main content Global Client Stories Insights People Services Industries Careers About Us Global en de es ja pt fr zh-Hans Main Menu Featured Topics artificial intelligence Cyb",
+            "fetch_error": ""
+          },
+          {
+            "title": "Is Anthropic (Claude) Down? Anthropic (Claude) Status & Outage History (2026)",
+            "url": "https://apistatuscheck.com/api/anthropic",
+            "query": "Anthropic API outage developer impact",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Is Anthropic (Claude) Down? Anthropic (Claude) Status & Outage History (2026) try { const stored = localStorage.getItem('theme'); if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); } } catch(e) {} {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"API Status Check\",\"url\":\"https://apistatuscheck.com\",\"logo\":\"https://apistatuscheck.com/logo.png\",\"description\":\"Real-time API status monitoring for 120+ services\",\"sameAs\":[\"https://twitter.com/apistatuscheck\",\"https://bsky.app/profile/apistatuscheck.bsky.social\"]} {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"API Status Check\",\"url\":\"https://apistatuscheck.com\",\"description\":\"Real-time status monitoring for 117+ developer APIs. Free, no signup required.\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":\"https://apistatuscheck.com/?q={search_term_string}\",\"query-input\":\"required name=search_term_string\"}} API Status Check Outages Blog Tools Recommended Compare Docs API Docs Pricing {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Anthropic (Claude) Status - Is Anthropic (Claude) Down?\",\"description\":\"Check if Anthropic (Claude) is down right now. Real-time status, response times, and outage history for Anthropic (Claude) API.\",\"url\":\"https://apistatuscheck.com/api/anthropic\",\"isPartOf\":{\"@type\":\"WebSite\",\"name\":\"API Status Check\",\"url\":\"https://apistatuscheck.com\"},\"about\":{\"@type\":\"SoftwareApplication\",\"name\":\"Anthropic (Claude)\",\"applicationCategory\":\"WebApplication\",\"operatingSystem\":\"Web\",\"description\":\"AI safety company providing Claude AI assistant\"},\"mainEntity\":{\"@type\":\"WebApplication\",\"name\":\"Anthropic (Claude)\",\"applicationCategory\":\"ai\",\"operatingSystem\":\"Web\",\"url\":\"https://status.",
+            "fetch_error": ""
+          },
+          {
+            "title": "Anthropic's Claude hit by major outage affecting chat, API and developer tools | Mint",
+            "url": "https://www.livemint.com/technology/tech-news/anthropics-claude-hit-by-major-outage-affecting-chat-api-and-developer-tools-11780398312963.html",
+            "query": "Anthropic API outage developer impact",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Anthropic's Claude hit by major outage affecting chat, API and developer tools | Mint var cacheDocument='';var cacheCookies={};window.getCookie=function(k){if(cacheDocument=='')cacheDocument=document.cookie;if(k in cacheCookies)return cacheCookies[k];for(var a=k+\"=\",t=cacheDocument.split(\";\"),n=0;n (function(){var h=window.history,o=h.pushState,r=h.replaceState,f=h.forward,g=h.go;window.__bbOrigPush=o;window.__bbGuardActive=true;var inPop=false;function isNx(s){return s&&typeof s==='object'&&('__N' in s||'__NA' in s||('key' in s&&('url' in s||'as' in s)))}h.pushState=function(s,t,u){if(isNx(s))return o.call(h,s,t,u);return r.call(h,h.state,t,u)};h.forward=function(){if(inPop)return;return f.call(h)};h.go=function(n){if(inPop&&n>0)return;return g.call(h,n)};try{Object.defineProperty(h,'pushState',{configurable:false,writable:false});Object.defineProperty(h,'forward',{configurable:false,writable:false});Object.defineProperty(h,'go',{configurable:false,writable:false})}catch(e){}window.addEventListener('popstate',function(){inPop=true;Promise.resolve().then(function(){inPop=false})},true)})(); @layer story-base;@layer story-base { *,*::before,*::after{padding:0;margin:0;box-sizing:border-box;list-style-type:none}*{border:0;outline:0}body{font-family:\"Inter\",sans-serif;font-weight:400;-webkit-tap-highlight-color:transparent}strong{font-weight:700}a{color:#212121}p:empty{display:none;height:0}html{scroll-behavior:smooth}.skinnyAd #HTDS_Skinning>a{z-index:103}#adfreeDeskSpace{display:flex;display:-webkit-flex;flex-wrap:wrap;align-items:center;flex-direction:column;text-align:center;margin:20px 0;min-height:50px;justify-content:center}#adfreeDeskSpace.sticky{position:sticky;top:0;background-color:#fff;z-index:102}#adfreeDeskSpace.sticky>div{position:sticky;top:0;z-index:301;op",
+            "fetch_error": ""
+          },
+          {
+            "title": "Is Claude Down? March 2026 Anthropic Outage & Failover Tips",
+            "url": "https://deployflow.co/blog/claude-anthropic-outage-protect-claude-infrastructure/",
+            "query": "Anthropic API outage developer impact",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Is Claude Down? March 2026 Anthropic Outage & Failover Tips { \"areaServed\": [ { \"@type\": \"Country\", \"name\": \"United Kingdom\" }, { \"@type\": \"Country\", \"name\": \"United Arab Emirates\" }, { \"@type\": \"Country\", \"name\": \"United States\" } ] } {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[ {\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://deployflow.co/\"} ]} { \"@context\": \"https://schema.org\", \"@type\": \"WebPage\", \"@id\": \"https://deployflow.co/blog/claude-anthropic-outage-protect-claude-infrastructure/\", \"url\": \"https://deployflow.co/blog/claude-anthropic-outage-protect-claude-infrastructure/\", \"dateModified\": \"June 2, 2026\" } {\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Article\",\"datePublished\":\"2026-06-02T09:04:42+00:00\",\"dateModified\":\"2026-06-02T09:04:46+00:00\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/deployflow.co\\/blog\\/claude-anthropic-outage-protect-claude-infrastructure\\/\"},\"headline\":\"Is Claude Down? Anthropic Outage: Protect Your Cloud Infrastructure\",\"author\":{\"@type\":\"Person\",\"name\":\"Nikola Ilic\",\"url\":\"https:\\/\\/deployflow.co\\/blog\\/author\\/nikola\\/\"},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/deployflow.co\\/wp-content\\/uploads\\/2026\\/03\\/Claude-Outage-Message-Server-Error.png\"},\"description\":\"On March 2, 2026, a major disruption hit Claude.ai just days after it climbed to the top of the App Store rankings. What began as elevated error rates quickly escalated into a prolonged outage that affected web access, authentication paths, and, later, specific model endpoints. Fast forward to June 2,…\"} img:is([sizes=auto i],[sizes^=\"auto,\" i]){contain-intrinsic-size:3000px 1500px} /*# sourceURL=wp-img-auto-sizes-contain-inline-css */ /*! This file is auto-generated */ .wp-block-button__link{color:#fff;backgroun",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/Anthropic on Reddit: Anthropic Says It’s Taking Claude Fable 5 Offline to Comply With US Government Order",
+            "url": "https://www.reddit.com/r/Anthropic/comments/1u4fw8q/anthropic_says_its_taking_claude_fable_5_offline/",
+            "query": "Anthropic model offline reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/Anthropic on Reddit: US blocks foreign access to Anthropic's most advanced AI models, Axios reports",
+            "url": "https://www.reddit.com/r/Anthropic/comments/1u4csa7/us_blocks_foreign_access_to_anthropics_most/",
+            "query": "Anthropic model offline reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/singularity on Reddit: Anthropic is suspending access to Fabel/Mythos for ALL users, not just non-Americans",
+            "url": "https://www.reddit.com/r/singularity/comments/1u4f4fu/anthropic_is_suspending_access_to_fabelmythos_for/",
+            "query": "Anthropic model offline reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "Pricing - Claude API Docs",
+            "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+            "query": "Anthropic Claude API pricing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Pricing - Claude API Docs window.__GATED_CHUNK_MAP__={};window.__GATED_GATES__={}; requestAnimationFrame(function(){$RT=performance.now()}); Messages Managed Agents Admin Resources   API reference English   Console Log in    Search... ⌘K Models Models overview Model IDs and versioning Choosing a model Introducing Claude Fable 5 and Claude Mythos 5 What's new in Claude Opus 4.8 Upgrade between model versions Model deprecations Model cards System prompts Pricing  Log in  Models & pricing  Pricing Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Solutions AI agents Code modernization Coding Customer support Education Financial services Government Life sciences Partners Amazon Bedrock Google Cloud's Vertex AI Learn Blog Courses Use cases Connectors Customer stories Engineering at Anthropic Events Powered by Claude Service partners Startups program Company Anthropic Careers Economic Futures Research News Responsible Scaling Policy Security and compliance Transparency Learn Blog Courses Use cases Connectors Customer stories Engineering at Anthropic Events Powered by Claude Service partners Startups program Help and security Availability Status Support Discord Terms and policies Privacy policy Responsible disclosure policy Terms of service: Commercial Terms of service: Consumer Usage policy $RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b a&&2E3 *]:max-w-full [&>*]:box-border prose-a:inline-flex prose-a:items-center prose-a:min-h-[44px] prose-a:py-0.5 prose-p:leading-[1.6] prose-li:leading-[1.6] prose-blockquote:leading-[1.6]\"> Models & pricing / Models Pricing Copy page Learn about Anthropic's pricing structure for models and featu",
+            "fetch_error": ""
+          },
+          {
+            "title": "Anthropic API Pricing in 2026: Complete Guide — Models, Caching, Batch & Optimization",
+            "url": "https://www.finout.io/blog/anthropic-api-pricing",
+            "query": "Anthropic Claude API pricing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Anthropic API Pricing in 2026: Complete Guide — Models, Caching, Batch & Optimization body, html {scroll-behavior: smooth;} .post-details-banner .container { max-width: 1204px; margin: 0 auto; padding: 0 32px; display: flex; } .pdb-right { flex: 1; } .pdb-left { width: 57.7%; padding-right: 40px; } .pdb-right img { width: 100%; border-radius: 22px; } .post-details-banner { padding-top: 88px; } .post-content .container { max-width: 1204px; margin: 0 auto; padding: 0 32px; display: flex; gap: 42px; align-items: flex-start;} .post-content .blog-sidebar, .blog-rgtsidebar { width: 200px; position: sticky; top: 110px; } .post-content .blog-main { max-width: 645px; width: calc(100% - 242px);} .content-related-post .container { max-width: 1204px; margin: 0 auto; padding: 0 32px; display: flex; } .content-related-post { padding: 80px 0px; } .content-related-post ul { display: flex; flex-wrap: wrap; padding-left: 20px; } .content-related-post ul>li { width: 50%; list-style-type: disc; color: #0F6D59; padding-right: 50px; } .content-related-post ul>li>a { color: #0F6D59; font-family: 'Poppins'; font-size: 18px; line-height: 30px; font-weight: 600; text-decoration: underline; } .description-summery { font-size: 18px; line-height: 30px; font-weight: 300; font-family: 'Poppins'; color: #0F1F1A; } .pdb-footer { display: flex; justify-content: space-between; margin-top: 116px;flex-wrap:wrap;gap:10px} .pdb-auther { display: flex; gap: 9px; } .pbd-img { height: 50px; width: 50px; background: #0F6D59; border-radius: 50%; font-size: 18px; line-height: 30px; font-weight: 600; color: #fff; font-family: 'Poppins'; display: flex; align-items: center; justify-content: center; } .pbd-text .pbd-name { font-weight: 400; color: #0F1F1A; } .pbd-text { font-size: 16px; line-height: 24px; font-family:",
+            "fetch_error": ""
+          },
+          {
+            "title": "Plans & Pricing | Claude by Anthropic",
+            "url": "https://claude.com/pricing",
+            "query": "Anthropic Claude API pricing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Plans & Pricing | Claude by Anthropic !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); .anti-flicker, .anti-flicker * {visibility: hidden !important; opacity: 0 !important;} [data-wf-hidden-variation], [data-wf-hidden-variation] * { display: none !important; } html:not(.gsap-not-found) [data-prevent-flicker='true'] { visibility: hidden; } .line-mask, .word-mask, .char-mask { padding-block: 0.1em; margin-block: -0.1em; } [data-prevent-flicker='true'] { visibility: visible !important; } .transition_wrap { display: block; } // Hide the transition_wrap in Webflow preview mode w/ custom code enabled if (window.location.hostname.includes('.canvas.webflow.com')) { document.write(' .transition_wrap{display:none!important}[data-prevent-flicker=\"true\"]{visibility:visible!important} '); } (function() { const localeMap = { 'ja': '/ja-jp', 'ja-JP': '/ja-jp', 'de': '/de-de', 'de-DE': '/de-de', 'fr': '/fr-fr', 'fr-FR': '/fr-fr', 'ko': '/ko-kr', 'ko-KR': '/ko-kr' }; const localePaths = ['/ja-jp', '/de-de', '/fr-fr', '/ko-kr']; const currentPath = window.location.pathname; // Don't redirect if already on a locale path if (localePaths.some(p => currentPath.startsWith(p))) return; // Check if user manually switched (came from a locale path on this site) try { const referrer = new URL(document.referrer); if (referrer.hostname === window.location.hostname) { if (localePaths.some(p => referrer.pathname.startsWith(p))) { localStorage.setItem('locale-manual-override', 'true'); } } } catch (e) {} // Respect manual override if (localStorage.getItem('locale-manual-override')) return; // Only check the PRIMARY browser language (first in the list) const primaryLang = ",
+            "fetch_error": ""
+          },
+          {
+            "title": "Terms of Service Updates | Anthropic Privacy Center",
+            "url": "https://privacy.claude.com/en/articles/9190861-terms-of-service-updates",
+            "query": "Anthropic terms of service service level",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/\",\"name\":\"All Collections\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/collections/10663362-consumers\",\"name\":\"Consumers \",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/collections/10672567-policies-terms-of-service\",\"name\":\"Policies & Terms of Service\",\"position\":3},{\"@type\":\"ListItem\",\"name\":\"Terms of Service Updates\",\"position\":4}]} {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"description\":\"\",\"headline\":\"Terms of Service Updates\",\"inLanguage\":\"en\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Anthropic Privacy Center\"},\"url\":\"https://privacy.claude.com/en/articles/9190861-terms-of-service-updates\",\"dateModified\":\"2026-03-16T21:13:59Z\"} Terms of Service Updates | Anthropic Privacy Center :root{--body-bg: rgb(255, 255, 255); --body-image: none; --body-bg-rgb: 255, 255, 255; --body-border: rgb(230, 230, 230); --body-primary-color: #1a1a1a; --body-secondary-color: #737373; --body-reaction-bg: rgb(242, 242, 242); --body-reaction-text-color: rgb(64, 64, 64); --body-toc-active-border: #737373; --body-toc-inactive-border: #f2f2f2; --body-toc-inactive-color: #737373; --body-toc-active-font-weight: 400; --body-table-border: rgb(204, 204, 204); --body-color: hsl(0, 0%, 0%); --footer-bg: rgb(25, 25, 25); --footer-image: none; --footer-border: rgb(50, 50, 50); --footer-color: hsl(60, 14%, 93%); --header-bg: rgb(240, 239, 235); --header-image: none; --header-color: hsl(0, 0%, 10%); --collection-card-bg: rgb(204, 120, 92); --collection-card-image: none; --collection-card-color: hsl(60, 14%, 93%); --card-bg: rgb(255, 255, 255); --card-border-color: rgb(230, 230, 230); --card-border-inner-radi",
+            "fetch_error": ""
+          },
+          {
+            "title": "Consumer Terms of Service Updates | Anthropic Privacy Center",
+            "url": "https://privacy.claude.com/en/articles/9264813-consumer-terms-of-service-updates",
+            "query": "Anthropic terms of service service level",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/\",\"name\":\"All Collections\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/collections/10663362-consumers\",\"name\":\"Consumers \",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/collections/10672567-policies-terms-of-service\",\"name\":\"Policies & Terms of Service\",\"position\":3},{\"@type\":\"ListItem\",\"name\":\"Consumer Terms of Service Updates\",\"position\":4}]} {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"description\":\"\",\"headline\":\"Consumer Terms of Service Updates\",\"inLanguage\":\"en\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Anthropic Privacy Center\"},\"url\":\"https://privacy.claude.com/en/articles/9264813-consumer-terms-of-service-updates\",\"dateModified\":\"2026-03-16T21:13:46Z\"} Consumer Terms of Service Updates | Anthropic Privacy Center :root{--body-bg: rgb(255, 255, 255); --body-image: none; --body-bg-rgb: 255, 255, 255; --body-border: rgb(230, 230, 230); --body-primary-color: #1a1a1a; --body-secondary-color: #737373; --body-reaction-bg: rgb(242, 242, 242); --body-reaction-text-color: rgb(64, 64, 64); --body-toc-active-border: #737373; --body-toc-inactive-border: #f2f2f2; --body-toc-inactive-color: #737373; --body-toc-active-font-weight: 400; --body-table-border: rgb(204, 204, 204); --body-color: hsl(0, 0%, 0%); --footer-bg: rgb(25, 25, 25); --footer-image: none; --footer-border: rgb(50, 50, 50); --footer-color: hsl(60, 14%, 93%); --header-bg: rgb(240, 239, 235); --header-image: none; --header-color: hsl(0, 0%, 10%); --collection-card-bg: rgb(204, 120, 92); --collection-card-image: none; --collection-card-color: hsl(60, 14%, 93%); --card-bg: rgb(255, 255, 255); --card-border-color: rgb(230,",
+            "fetch_error": ""
+          },
+          {
+            "title": "‭Effective: January 2024‬ ‭Anthropic on Bedrock - Commercial Terms‬",
+            "url": "https://www-cdn.anthropic.com/6b68a6508f0210c5fe08f0199caa05c4ee6fb4dc/Anthropic-on-Bedrock-Commercial-Terms-of-Service_Dec_2023.pdf",
+            "query": "Anthropic terms of service service level",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "%PDF-1.4 % 1 0 obj > endobj 3 0 obj > endobj 9 0 obj > stream x]MF\u0012W `\u0001\u0018\u0006 }|۴wl\bqDShS)c٧>}ݘ_6o>˟we\u0013\u001bCl_n? o߾yy{woypys\u001bU \u000741*^MEL[{ \b v߶ ΍PP\u0003hb?\u00187\u0007Ԅ?D0:\u001a\u000eM&=ݸ\u0005_\u0004`\u0002\u0018 \u0007&h@&o eᎸ=\u0010 \u001agHG\u000eqD};)xioځ:Xk%5ۆV~9}~[\u001bJڙB7Ҿ$ʇxA:)cNCc Wt \u0015 ~h>'Rگ W~' \u000e \u0013\"\u0005{\u0000 \u0013+\u00160z|gqNQ%i \u0007}XtD i-n\u0002R5 \u001a\u000e CG8 -DR9 Ӹ\u0014F%qBA\u000f]׼b\u000ft\u0014h\\ M V)j3AQs ikˈ t\u000fi\u0014?N]nY\u000f}ذ/*\u0004m\u0006R \u0017vO-\"6^M &\u0016\u0015SV&-\u0003\u0011\u000e[\"\b ]\u0013 5\u0004[ee¡}/V \u0017F`axOMǅ^xѨN\u00137\u0014kl *u\\t}QBuT^\u0004\u0014U>%/IąƂYo2Nۉʕ\u0018OulZI\u0019\u0006\u0013q\u0019+ V\u0005\u001b`\u0000bt|DcN \u0005\u000eu!7LLl\u000e\u0000n=\\:SMѰVrt>wc\u001bpIx:3T|ꪋ%aB2>;\u0015]\u0016J~v8 U\u00026Y \u0000o #O _ \"Ą7\u0004 bX4\u0012[~Ofv\u0010C`h\u0002@v.\u000eXkRjCϟ\u0001ke\u0000v\u0006RŪ\u0005ZJWm@\u0006`\u001a c s \u0003\u0015(~+L& L\u0017?\u0010b\u0004G = bDk'~\u0013@8, i#CRw\u0018^\u0001\u0014M\u0004aɎh =gYtr&a\u0005w/\"G\u0010.[\u0015}R/ dobU%dHA Kv?Y\u000f>ykz\u0006еh \u0010Q{\" \b.\u0006B*N m@^M v @R?47[Vd \u0016\u0013\u0012R-IhpG$+\u0005N\"r ;@\u0002\u0004ҲH*y \b*B h&C+\u0003\u0011fA\\\u0015KӧFN7\u0007 W\u0012#x𥱪dp9\\\"a\u001a|\u00151C%0 *O^9l 7 6W cd Ou\u0007ۆI0Era\u0013ڑ\u0014NZ\bHN~ =s\b\u0001u \u0013JP^\u0015Aí0b\u0005tn\u0019y!g|j;SRay בRӺ\u0017 aI^ \u0015 lyp\u0010nͳQH DdG\u000eʴFEgt IHRi7 ~ |Q\u0010;5f;zyLU4!\u0002X2!\u0012)b\u000eX.VEx\u000e\u0007 ^B#\u0014 \"\u001auQpKr^=\u00025Ԫ&a5\u000fI!|\u0004..\\rp\"\u0004K-\u0004y`hrj|'rլ5sw};GG\u001b>\u0018#G\bu-XW1hdN&\">V;~^eFT&\u0004_ν\u0005_IP ~\u0014r\u0004 eO(~!}y&{@ _&=0(\u0013X2¼/\u0004N _wIpjGxJdk\u0004#Kz=\\~ )ȕ%,9\u0014\u0015]\bH0\u00036c\u0005e\u0004\u000fb$` R{?\u001a܃\u001bìM4\u0003xqJQ:\u00010b[Z$#H`' z\u0015B2%Wr·i \u001bgmc$\bkQwTv: Rx\u00182\u001bBS\u0010^\u000fr^\\\u0002iMs71\u000f\b,ς\u0019Fa\u0018 *_W\u0000iDyGey\u0016X%T_`\"w_ eO \u001b\u0017ie\u0001w\u001b\"% e^\u000eT] \\>\u0001oo4.'`ǟ;\u0002\\\u0006~hUZ\" 36'mgeDj \\Cֲ|.Zpʚ\u0010}=5;S\b Ϥ Y\u0018\bz\u00119Fah\u0013q|U$2(sE\u0001r8`B\u0016\u0016 !X\u001a\u000eGD$4\"ϛo\u001b82-ކ\u001b\u001b#cϛ_j|8elz\u001bO}(tf/7 ]O§ɍ=_\u0015tȥ4-9 VZ\u0012'; \u0003ܟ endstream endobj 11 0 obj > stream x]Ɏ \u0011Wـ/\u0000A3d\u0002> Z\b\u0018`27zf8SW\u0015:j陖.nuU.\u0011/cya|hj:Y\u001b\u0007߲%_\u0005|_?sÿ?|?ǰgUΦ|x̯ǗϻO7}O}}nݛwt\u0018pu fE\u000e sθ\u0012c)OZkû>ݟ~޿6\u0018O\u0010Hj\\ > \u0004Z; Tޟq\u0012 \"[Ck\u001bRC]\u0005T4T=P\u001bb l;\u001a\u0012 5yài;\u0005\u0003 \u0005e6Q\u0019\u000f$m^n\u0012%Ak~\bt\"! 4N qJcS oqSr\u0000:Cʭ#UB;O؍Rx\u0017\u0013 Ŀ :n7ߋ\u0018//l:47npXnЫ&A6՜EB/3\bcD7T\u000e,'D',%x\u0001ἷ\u0014W vhRw!Mpq^ ;\u000e/>j\u000efD\u0001q yg\u0003 \u0007,(\u0004r\u00060[wv y L\u0018a:1 f14|5iS,R;}|6w\u0015Σ7\u001a\u001bM$B u1=N\u0004H\u0003r6! \u0014\u0012\u0011J \u0016AEǾ\u0002>i\u00022x:\u0014\"fh&\u0007H \u0010 ɴPh\u0003^溜b@l,ANop\u00047&&\u0013C Mi՛\u0010B\u00058&P\u000e\u00145k&,Vzy! \u0010\u0006l4\u0003DIz܌`_/n+qdI*SDj v 2'-݄d+\u0016xn}~{~$]Zi.\u000e⚝vv:U%{3B(sb\u0001w\u0002\u000fB \u001a\u000e):\u0017\u0017GL ;\u0010\u0007^4Gv +3y. ;\u0010ƧͩC\u0004\br}\u000eڜ\\8#kenG) \\B",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "推荐选题",
+          "label": "推荐",
+          "reason": "事件有明确冲突点（内部人事 vs 政府出口管制），能引发技术人对AI工具依赖、平台绑定和迁移成本的讨论。证据链较完整：Axios内幕报道、Anthropic官方状态页、Reddit社区讨论、出口管制法规分析。老花可从平台规则和工具账本角度解读，读者分层明确，泛兴趣钩子成立，传播张力高。"
+        },
+        "core_question": "Anthropic模型下线事件中，普通技术人面临哪些实际风险（工具不可用、迁移成本、平台绑定）？",
+        "why_this_topic_matters": "AI模型可用性受非技术因素（内部人事、出口管制）影响时，开发者和小团队如何对冲风险？这是所有依赖第三方AI API的技术人都需要面对的现实问题。",
+        "fact_summary": [
+          "Axios报道称Anthropic因内部性格冲突和/或美国政府出口管制要求，将Claude Fable 5和Mythos 5模型下线。",
+          "Reddit多个子版块讨论显示，下线影响所有用户（不仅非美国用户）。",
+          "Anthropic官方状态页（status.claude.com）未明确提及下线原因，但第三方监控显示近期有重大中断。",
+          "美国商务部2025年发布了AI模型权重出口管制新规（BIS框架），可能构成法律强制下线依据。",
+          "Anthropic服务条款中未明确承诺SLA，开发者索赔可能性低。"
+        ],
+        "persona_discussion_question": "如果Anthropic模型因内部冲突或政府干预下线，我该不该继续依赖Claude API做核心业务？",
+        "old_flower_stance": "不站队，不阴谋论。从工具账本角度分析：依赖单一AI平台的风险、迁移成本、替代方案评估。提醒技术人不要把核心业务绑在单一模型上。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "高价值商业读者",
+            "入门读者"
+          ],
+          "interest_score": 85,
+          "why_interested": "核心技术人关心API可用性和迁移成本；商业读者关心业务连续性风险；入门读者可学习平台依赖风险。",
+          "reader_risk": "可能被解读为唱衰Anthropic或AI行业，需平衡呈现事实和风险。"
+        },
+        "mass_interest_hook": {
+          "score": 80,
+          "hook_type": "争议",
+          "why_non_technical_people_may_click": "标题包含“内幕”“冲突”“下线”等关键词，普通人会被“性格冲突导致AI下线”的戏剧性吸引。",
+          "story_seed": "一个依赖Claude API的小团队，某天突然发现模型不可用，业务中断，原因竟是公司内部吵架和政府禁令。",
+          "do_not_overhype": "不能断言下线是永久性或单一原因，需注明信息缺口。"
+        },
+        "topic_tension": {
+          "score": 9,
+          "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+          "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "平台/工具厂商"
+          ],
+          "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2025年1月：美国商务部发布AI模型权重出口管制框架。",
+          "2025年5月：商务部发布新的AI出口合规期望。",
+          "2026年3月：Anthropic Claude发生重大中断（第三方监控记录）。",
+          "2026年6月15日：Axios报道Anthropic因性格冲突和政府命令下线Fable 5和Mythos 5。",
+          "2026年6月15日：Reddit多个子版块讨论下线影响所有用户。"
+        ],
+        "evidence_table": [
+          {
+            "source": "Simon Willison's Weblog（引用Axios报道）",
+            "url": "https://simonwillison.net/2026/Jun/15/axios-clashes-anthropics/",
+            "supports": "下线事件存在，原因包括内部冲突和政府出口管制。",
+            "reliability": "near_source"
+          },
+          {
+            "source": "Claude Status 官方状态页",
+            "url": "https://status.claude.com/",
+            "supports": "官方状态页存在，但未明确提及下线原因。",
+            "reliability": "official"
+          },
+          {
+            "source": "Reddit r/Anthropic 讨论",
+            "url": "https://www.reddit.com/r/Anthropic/comments/1u4fw8q/",
+            "supports": "下线影响所有用户，不仅非美国用户。",
+            "reliability": "weak"
+          },
+          {
+            "source": "Sidley Austin LLP 法律分析",
+            "url": "https://www.sidley.com/en/insights/newsupdates/2025/01/new-us-export-controls-on-advanced-computing-items-and-artificial-intelligence-model-weights",
+            "supports": "美国出口管制法规可能构成下线法律依据。",
+            "reliability": "official"
+          },
+          {
+            "source": "Mayer Brown 法律分析",
+            "url": "https://www.mayerbrown.com/en/insights/publications/2025/05/us-commerce-department-announces-new-export-compliance-expectations-related-to-artificial-intelligence",
+            "supports": "商务部2025年5月发布新的AI出口合规期望。",
+            "reliability": "official"
+          },
+          {
+            "source": "Anthropic 服务条款（PDF）",
+            "url": "https://www-cdn.anthropic.com/6b68a6508f0210c5fe08f0199caa05c4ee6fb4dc/Anthropic-on-Bedrock-Commercial-Terms-of-Service_Dec_2023.pdf",
+            "supports": "服务条款中未明确SLA，开发者索赔可能性低。",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "逻辑基本闭环：事件真实存在（Axios+Reddit+状态页），原因有双重可能（内部+政府），影响明确（所有用户），风险可分析（迁移成本、平台绑定）。但长期影响和具体模型范围仍需确认。",
+        "writeable_angles": [
+          {
+            "angle": "工具账本：依赖单一AI平台的风险量化",
+            "why": "直接回应核心读者（技术人）的迁移成本和业务连续性顾虑。",
+            "needs": "需要Anthropic API定价、替代模型（GPT-4o、Gemini）定价对比。"
+          },
+          {
+            "angle": "规则解读：出口管制如何影响普通开发者",
+            "why": "从政策角度解释下线原因，帮助读者理解合规风险。",
+            "needs": "需要BIS法规原文摘要、合规专家解读。"
+          },
+          {
+            "angle": "案例复盘：如果我的业务依赖Claude，现在该怎么办",
+            "why": "提供实操建议，如多模型备份、本地模型部署、合同审查。",
+            "needs": "需要真实开发者迁移案例、替代方案成本对比。"
+          }
+        ],
+        "missing_basics": [
+          "Anthropic Fable 5和Mythos 5的具体能力、定价和发布背景。",
+          "美国出口管制法规（BIS框架）的具体条款和适用范围。",
+          "Anthropic服务条款中关于服务中断的免责条款。"
+        ],
+        "missing_materials": [
+          "Axios原文全文（需确认付费墙）。",
+          "至少2个开发者迁移案例（如从Claude转GPT或Gemini）。",
+          "Anthropic官方关于下线原因的正式声明。",
+          "BIS出口管制法规原文或摘要。"
+        ],
+        "not_claimable": [
+          "下线是永久性的。",
+          "原因是单一因素（性格冲突或国家安全）。",
+          "所有Claude模型都受影响。",
+          "Anthropic违反合同或SLA。"
+        ],
+        "followup_queries": [
+          "Anthropic官方是否发布了下线声明？",
+          "Fable 5和Mythos 5是否已恢复？",
+          "其他AI模型（如GPT-4o、Gemini）是否也受类似出口管制影响？",
+          "开发者是否有法律途径索赔？"
+        ],
+        "additional_search_queries": [
+          "Anthropic Fable 5 Mythos 5 announcement",
+          "BIS export control AI model weights 2025 text",
+          "Claude API outage developer impact case study",
+          "Anthropic terms of service SLA guarantee"
+        ],
+        "stop_conditions": [
+          "Anthropic官方发布声明否认下线或澄清原因。",
+          "模型已恢复且无长期影响。",
+          "Axios报道被证伪或撤回。"
+        ],
+        "confidence": 80,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "hot-event",
+        "quality_gate": {
+          "pass": true,
+          "score": 80,
+          "fatal_issues": [],
+          "warnings": [
+            "Reddit证据被403屏蔽，需补充其他社区讨论",
+            "Axios原文未直接获取，依赖Simon Willison的转述",
+            "长期影响未知，需标注不确定性"
+          ],
+          "missing_evidence": [
+            "Axios原文全文",
+            "至少2个开发者迁移案例",
+            "Anthropic官方关于下线原因的正式声明",
+            "BIS出口管制法规原文或摘要"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": true,
+          "downstream_handoff_ok": true,
+          "material_pack_ok": true,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": true,
+          "source_coverage_ok": true,
+          "recommendation": "publish"
+        },
+        "research_plan": {
+          "core_question": "Anthropic模型下线事件中，普通技术人面临哪些实际风险（工具不可用、迁移成本、平台绑定）？",
+          "persona_discussion_question": "如果Anthropic模型因内部冲突或政府干预下线，我该不该继续依赖Claude API做核心业务？",
+          "hidden_public_issue": "AI模型可用性受非技术因素（内部人事、出口管制）影响时，开发者和小团队如何对冲风险？",
+          "must_verify": [
+            "Anthropic模型下线是否真实、具体哪些模型、下线时间线",
+            "下线原因中‘性格冲突’与‘国家安全’的具体权重",
+            "Axios报道中匿名信源的可信度",
+            "Anthropic官方是否有正式声明或回应",
+            "是否有其他开发者或企业报告受影响",
+            "出口管制法规（如BIS）是否直接导致下线"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Anthropic model availability status page",
+              "why_needed": "确认官方是否承认下线及具体模型"
+            },
+            {
+              "source_type": "policy",
+              "query": "US export control AI model BIS 2025",
+              "why_needed": "验证出口管制是否构成法律强制下线"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Anthropic API outage developer impact",
+              "why_needed": "收集真实用户受影响案例"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Anthropic model offline reddit",
+              "why_needed": "了解社区反应和替代方案讨论"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "Anthropic Claude API pricing",
+              "why_needed": "评估迁移到其他模型的成本差异"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Anthropic terms of service service level",
+              "why_needed": "检查是否有SLA保障或免责条款"
+            }
+          ],
+          "expert_challenge_points": [
+            "出口管制是否真的适用于Anthropic模型？具体法规条款？",
+            "性格冲突导致下线是否合理？是否有其他内部文档佐证？",
+            "开发者是否有法律或合同途径索赔？"
+          ],
+          "do_not_claim_yet": [
+            "下线是永久性的",
+            "原因是单一因素（性格冲突或国家安全）",
+            "所有Claude模型都受影响",
+            "Anthropic违反合同或SLA"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确标注信息缺口，重点放在风险分析和应对策略上，避免断言原因。",
+          "downstream_materials_needed": [
+            "Anthropic官方状态页面截图或存档",
+            "Axios原文全文（需确认付费墙）",
+            "BIS出口管制相关法规原文",
+            "至少2个开发者迁移案例（如从Claude转GPT或Gemini）",
+            "Anthropic服务条款中关于服务中断的条款"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Claude Status",
+            "url": "https://status.claude.com/",
+            "query": "Anthropic model availability status page",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Claude Status /* Dynamic Font Stack based on Feature Flag */ /* Using Atlassian Sans & Mono */ :root { --font-stack-a: \"Atlassian Sans\", \"Helvetica Neue\", Helvetica, Arial, Sans-Serif; --font-stack-b: \"Atlassian Mono\", \"SFMono-Medium\", \"SF Mono\", \"Segoe UI Mono\", \"Roboto Mono\", \"Ubuntu Mono\", Menlo, Consolas, Courier, monospace; } window.pageColorData = {\"blue\":\"#2C84DB\",\"border\":\"#DEDCD1\",\"body_background\":\"#FAF9F5\",\"font\":\"#141413\",\"graph\":\"#2C84DB\",\"green\":\"#76AD2A\",\"light_font\":\"#87867F\",\"link\":\"#141413\",\"orange\":\"#E86235\",\"red\":\"#E04343\",\"yellow\":\"#FAA72A\",\"no_data\":\"#B0AEA5\"}; /* BODY BACKGROUND */ /* BODY BACKGROUND */ /* BODY BACKGROUND */ /* BODY BACKGROUND */ /* BODY BACKGROUND */ body, .layout-content.status.status-api .section .example-container .example-opener .color-secondary, .grouped-items-selector, .layout-content.status.status-full-history .history-nav a.current, div[id^=\"subscribe-modal\"] .modal-footer, div[id^=\"subscribe-modal\"], div[id^=\"updates-dropdown\"] .updates-dropdown-section, #uptime-tooltip .tooltip-box { background-color:#FAF9F5; } #uptime-tooltip .pointer-container .pointer-smaller { border-bottom-color:#FAF9F5; } /* PRIMARY FONT COLOR */ /* PRIMARY FONT COLOR */ /* PRIMARY FONT COLOR */ /* PRIMARY FONT COLOR */ body.status, .color-primary, .color-primary:hover, .layout-content.status-index .status-day .update-title.impact-none a, .layout-content.status-index .status-day .update-title.impact-none a:hover, .layout-content.status-index .timeframes-container .timeframe.active, .layout-content.status-full-history .month .incident-container .impact-none, .layout-content.status.status-index .incidents-list .incident-title.impact-none a, .incident-history .impact-none, .layout-content.status .grouped-items-selector.inline .grouped-item.active, .l",
+            "fetch_error": ""
+          },
+          {
+            "title": "Is Claude Down? Anthropic API & Platform Status | Bifrost",
+            "url": "https://www.getmaxim.ai/bifrost/provider-status/anthropic",
+            "query": "Anthropic model availability status page",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Is Claude Down? Anthropic API & Platform Status | Bifrost Try Bifrost Enterprise free for 14 days. Request access P E R F O R M A N C E F E A T U R E S E N T E R P R I S E P R I C I N G D O C S B L O G Discord Github Book a Demo {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"name\":\"Is Claude Down?\",\"url\":\"https://www.getmaxim.ai/bifrost/provider-status/anthropic\",\"description\":\"Live Claude and Anthropic status: uptime, incidents, and components for Claude, Claude API, Claude Code, Claude Sonnet. See whether services are down and what that means for your apps.\",\"dateModified\":\"2026-06-15T20:10:16.190Z\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Bifrost\",\"url\":\"https://www.getmaxim.ai/bifrost\"},\"about\":{\"@type\":\"SoftwareApplication\",\"name\":\"Claude (Anthropic)\",\"applicationCategory\":\"Foundation model platform\"}},{\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"AI Provider Status\",\"item\":\"https://www.getmaxim.ai/bifrost/provider-status\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Anthropic\",\"item\":\"https://www.getmaxim.ai/bifrost/provider-status/anthropic\"}]},{\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"Is Claude down right now?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Check the status indicator at the top of this page. It pulls directly from Anthropic's official status page. If Anthropic is experiencing any issues, you'll see it reflected here. This real-time monitoring helps teams quickly identify whether performance problems are caused by Anthropic infrastructure or their own systems.\"}},{\"@type\":\"Question\",\"name\":\"What does this Anthropic status page track?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"This page tracks Claude, Claude API, Claude Code, Claude Sonnet, and Claude Opus using data from Anth",
+            "fetch_error": ""
+          },
+          {
+            "title": "Anthropic Claude Model Release Timeline - Model Family Tree, Capability Evolution, and Platform Availability | hidekazu-konishi.com",
+            "url": "https://hidekazu-konishi.com/entry/anthropic_claude_model_release_timeline.html",
+            "query": "Anthropic model availability status page",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Anthropic Claude Model Release Timeline - Model Family Tree, Capability Evolution, and Platform Availability | hidekazu-konishi.com { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@context\": \"https://schema.org\", \"@type\": \"WebSite\", \"name\": \"Hidekazu Konishi - Profile / Biography | hidekazu-konishi.com\", \"url\": \"https://hidekazu-konishi.com/\", \"description\": \"Hidekazu Konishi is an AI Solutions Architect, Japan AWS Top Engineer, Japan All AWS Certifications Engineer, AI Agent Engineer, Cloud Architect, and Tech Blogger.\", \"image\": [ \"https://hidekazu-konishi.com/img/hidekazu-konishi_com_ogp.jpg\" ], \"sameAs\": [ \"https://hidekazu-konishi.com/\" ], \"mainEntityOfPage\": { \"@type\": \"WebPage\", \"@id\": \"https://hidekazu-konishi.com/\" }, \"headline\": \"Hidekazu Konishi - Profile / Biography | hidekazu-konishi.com\", \"thumbnailUrl\": \"https://hidekazu-konishi.com/img/hidekazu-konishi_com_ogp_icon.png\", \"keywords\": [ \"AI Solutions Architect\", \"Japan AWS Top Engineer\", \"Japan All AWS Certifications Engineer\", \"AI Agent Engineer\", \"Cloud Architect\", \"Cloud Engineer\", \"DevOps Engineer\", \"MLOps Engineer\", \"AIOps Engineer\", \"Application Engineer\", \"Prompt Engineer\", \"Tech Blogger\", \"AI Agent Development\", \"AI-Augmented Development\", \"AI-Powered Development\", \"Multi-Cloud\", \"Hybrid Cloud\", \"Architecting\", \"DevOps\", \"MLOps\", \"AIOps\", \"Generative AI\", \"GenAI\", \"Social Reform Activities\", \"Social Reform Activity\", \"SRA\", \"Hidekazu Konishi\", \"小西 秀和\", \"小西秀和\", \"Profile\", \"Biography\" ], \"encodingFormat\": \"text/html\", \"encoding\": { \"@type\": \"MediaObject\", \"encodingFormat\": \"utf-8\" }, \"inLanguage\": [ \"en\" ], \"genre\": [ \"Profile\", \"Biography\", \"Technology\", \"Cloud Computing\", \"Amazon Web Services\", \"AWS\", \"Blog\", \"Tech Blog\" ], \"isAccessibleForFree\": true, \"copyrightYear\": 2020, \"copyrightHolder\": {",
+            "fetch_error": ""
+          },
+          {
+            "title": "New U.S. Export Controls on Advanced Computing Items and Artificial Intelligence Model Weights: Seven Key Takeaways | Insights | Sidley Austin LLP",
+            "url": "https://www.sidley.com/en/insights/newsupdates/2025/01/new-us-export-controls-on-advanced-computing-items-and-artificial-intelligence-model-weights",
+            "query": "US export control AI model BIS 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(()=>{if(!window.navigator.userAgent.includes(\"Windows\"))return;let e=document.documentElement;e.classList.add(\"windows-device-zoom\");let t=1;(()=>{let a=Math.max((window.devicePixelRatio+1)/2,1);a!==t&&(e.style.setProperty(\"--windows-device-zoom-amount\",a.toFixed(4)),t=a)})()})(); (function () { const { pathname, href } = window.location; if (pathname.startsWith(\"//\")) { window.location.href = href.replace(pathname, pathname.replace(/^\\/{2,}/, \"/\")); } })(); history.scrollRestoration = \"manual\" New U.S. Export Controls on Advanced Computing Items and Artificial Intelligence Model Weights: Seven Key Takeaways | Insights | Sidley Austin LLP {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"mainEntityOfPage\":{\"@type\":\"webPage\",\"@id\":\"https://www.sidley.com/en/insights/newsupdates/2025/01/new-us-export-controls-on-advanced-computing-items-and-artificial-intelligence-model-weights\"},\"headline\":\"New U.S. Export Controls on Advanced Computing Items and Artificial Intelligence Model Weights: Seven Key Takeaways\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Sidley Austin LLP\",\"url\":\"https://www.sidley.com/en\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://www.sidley.com/-/media/images/logo/sidley-logo-white.svg?rev=37d47eaad4f843ce8e6de37431740847\"}},\"datePublished\":\"2025-11-24T21:40:56.0000000Z\",\"dateModified\":\"2026-03-26T22:32:50.0000000Z\"} (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-KKQHWNC'); Skip to main content Languages English 日本語 中文 News Comm",
+            "fetch_error": ""
+          },
+          {
+            "title": "Federal Register :: Framework for Artificial Intelligence Diffusion",
+            "url": "https://www.federalregister.gov/documents/2025/01/15/2025-00636/framework-for-artificial-intelligence-diffusion",
+            "query": "US export control AI model BIS 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Federal Register :: Request Access { \"imports\": { \"application\": \"/assets/application-cc464116.js\", \"@hotwired/turbo-rails\": \"/assets/turbo.min-86bf8853.js\", \"@hotwired/stimulus\": \"/assets/stimulus.min-7ea3d58b.js\", \"@hotwired/stimulus-loading\": \"/assets/stimulus-loading-25917588.js\", \"controllers/application\": \"/assets/controllers/application-e5a449db.js\", \"controllers/site_feedback_controller\": \"/assets/controllers/site_feedback_controller-a99fc93f.js\", \"controllers/unblock_controller\": \"/assets/controllers/unblock_controller-9520f896.js\" } } import \"application\" Request Access Due to aggressive automated scraping of FederalRegister.gov and eCFR.gov, programmatic access to these sites is limited to access to our extensive developer APIs. Please visit FederalRegister.gov API documentation or eCFR.gov API documentation to learn more about how to access the API. Your request has been flagged as potentially automated. If you are human user receiving this message, please complete the CAPTCHA (bot test) below and click \"Request Access\". You may occassionally be asked to complete the CAPTCHA again, this is normal and part of our security measures. unblock#handleSubmit\"> Request Access An official website of the United States government. If you experiencing issues with the CAPTCHA or want to request a wider IP range, you can use the \"Site Help\" button found in the lower, right of this page to make a request. × IP Access Help This contact form is only for IP Access help. Please do not provide confidential information or personal data. site-feedback#submitForm\" novalidate=\"novalidate\" class=\"simple_form site_feedback\" enctype=\"multipart/form-data\" action=\"/site_feedback\" accept-charset=\"UTF-8\" method=\"post\"> * Your Name * Email * How can we help you? Upload Attachment * I am re",
+            "fetch_error": ""
+          },
+          {
+            "title": "US Commerce Department Announces New Export Compliance Expectations Related to Artificial Intelligence | Insights | Mayer Brown",
+            "url": "https://www.mayerbrown.com/en/insights/publications/2025/05/us-commerce-department-announces-new-export-compliance-expectations-related-to-artificial-intelligence",
+            "query": "US export control AI model BIS 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "US Commerce Department Announces New Export Compliance Expectations Related to Artificial Intelligence | Insights | Mayer Brown {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"mainEntityOfPage\":{\"@type\":\"webPage\",\"@id\":\"https://www.mayerbrown.com/en/insights/publications/2025/05/us-commerce-department-announces-new-export-compliance-expectations-related-to-artificial-intelligence\"},\"headline\":\"US Commerce Department Announces New Export Compliance Expectations Related to Artificial Intelligence\",\"publisher\":{\"@type\":\"Organization\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"/-/media/images/logos/mayer-brown/mayerbrownlogoalternate2.png?rev=894826f51de743da87828bfef435d0b2\"}},\"datePublished\":\"5/16/2025\",\"dateModified\":\"5/16/2025\"} (function () { const { pathname, href } = window.location; if (pathname.startsWith(\"//\")) { window.location.href = href.replace(pathname, pathname.replace(/^\\/{2,}/, \"/\")); } })(); window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('set','GTM-5KMCJB6',true);gtag('consent','default',{ad_storage:\"denied\",analytics_storage:\"denied\", functionality_storage:\"denied\",personalization_storage:\"denied\",security_storage:\"denied\", ad_user_data:\"denied\",ad_personalization:\"denied\",'wait_for_update':500}); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5KMCJB6'); Skip to main content Global Client Stories Insights People Services Industries Careers About Us Global en de es ja pt fr zh-Hans Main Menu Featured Topics artificial intelligence Cyb",
+            "fetch_error": ""
+          },
+          {
+            "title": "Is Anthropic (Claude) Down? Anthropic (Claude) Status & Outage History (2026)",
+            "url": "https://apistatuscheck.com/api/anthropic",
+            "query": "Anthropic API outage developer impact",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Is Anthropic (Claude) Down? Anthropic (Claude) Status & Outage History (2026) try { const stored = localStorage.getItem('theme'); if (stored === 'dark' || (!stored && window.matchMedia('(prefers-color-scheme: dark)').matches)) { document.documentElement.classList.add('dark'); } } catch(e) {} {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"API Status Check\",\"url\":\"https://apistatuscheck.com\",\"logo\":\"https://apistatuscheck.com/logo.png\",\"description\":\"Real-time API status monitoring for 120+ services\",\"sameAs\":[\"https://twitter.com/apistatuscheck\",\"https://bsky.app/profile/apistatuscheck.bsky.social\"]} {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"API Status Check\",\"url\":\"https://apistatuscheck.com\",\"description\":\"Real-time status monitoring for 117+ developer APIs. Free, no signup required.\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":\"https://apistatuscheck.com/?q={search_term_string}\",\"query-input\":\"required name=search_term_string\"}} API Status Check Outages Blog Tools Recommended Compare Docs API Docs Pricing {\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"name\":\"Anthropic (Claude) Status - Is Anthropic (Claude) Down?\",\"description\":\"Check if Anthropic (Claude) is down right now. Real-time status, response times, and outage history for Anthropic (Claude) API.\",\"url\":\"https://apistatuscheck.com/api/anthropic\",\"isPartOf\":{\"@type\":\"WebSite\",\"name\":\"API Status Check\",\"url\":\"https://apistatuscheck.com\"},\"about\":{\"@type\":\"SoftwareApplication\",\"name\":\"Anthropic (Claude)\",\"applicationCategory\":\"WebApplication\",\"operatingSystem\":\"Web\",\"description\":\"AI safety company providing Claude AI assistant\"},\"mainEntity\":{\"@type\":\"WebApplication\",\"name\":\"Anthropic (Claude)\",\"applicationCategory\":\"ai\",\"operatingSystem\":\"Web\",\"url\":\"https://status.",
+            "fetch_error": ""
+          },
+          {
+            "title": "Anthropic's Claude hit by major outage affecting chat, API and developer tools | Mint",
+            "url": "https://www.livemint.com/technology/tech-news/anthropics-claude-hit-by-major-outage-affecting-chat-api-and-developer-tools-11780398312963.html",
+            "query": "Anthropic API outage developer impact",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Anthropic's Claude hit by major outage affecting chat, API and developer tools | Mint var cacheDocument='';var cacheCookies={};window.getCookie=function(k){if(cacheDocument=='')cacheDocument=document.cookie;if(k in cacheCookies)return cacheCookies[k];for(var a=k+\"=\",t=cacheDocument.split(\";\"),n=0;n (function(){var h=window.history,o=h.pushState,r=h.replaceState,f=h.forward,g=h.go;window.__bbOrigPush=o;window.__bbGuardActive=true;var inPop=false;function isNx(s){return s&&typeof s==='object'&&('__N' in s||'__NA' in s||('key' in s&&('url' in s||'as' in s)))}h.pushState=function(s,t,u){if(isNx(s))return o.call(h,s,t,u);return r.call(h,h.state,t,u)};h.forward=function(){if(inPop)return;return f.call(h)};h.go=function(n){if(inPop&&n>0)return;return g.call(h,n)};try{Object.defineProperty(h,'pushState',{configurable:false,writable:false});Object.defineProperty(h,'forward',{configurable:false,writable:false});Object.defineProperty(h,'go',{configurable:false,writable:false})}catch(e){}window.addEventListener('popstate',function(){inPop=true;Promise.resolve().then(function(){inPop=false})},true)})(); @layer story-base;@layer story-base { *,*::before,*::after{padding:0;margin:0;box-sizing:border-box;list-style-type:none}*{border:0;outline:0}body{font-family:\"Inter\",sans-serif;font-weight:400;-webkit-tap-highlight-color:transparent}strong{font-weight:700}a{color:#212121}p:empty{display:none;height:0}html{scroll-behavior:smooth}.skinnyAd #HTDS_Skinning>a{z-index:103}#adfreeDeskSpace{display:flex;display:-webkit-flex;flex-wrap:wrap;align-items:center;flex-direction:column;text-align:center;margin:20px 0;min-height:50px;justify-content:center}#adfreeDeskSpace.sticky{position:sticky;top:0;background-color:#fff;z-index:102}#adfreeDeskSpace.sticky>div{position:sticky;top:0;z-index:301;op",
+            "fetch_error": ""
+          },
+          {
+            "title": "Is Claude Down? March 2026 Anthropic Outage & Failover Tips",
+            "url": "https://deployflow.co/blog/claude-anthropic-outage-protect-claude-infrastructure/",
+            "query": "Anthropic API outage developer impact",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Is Claude Down? March 2026 Anthropic Outage & Failover Tips { \"areaServed\": [ { \"@type\": \"Country\", \"name\": \"United Kingdom\" }, { \"@type\": \"Country\", \"name\": \"United Arab Emirates\" }, { \"@type\": \"Country\", \"name\": \"United States\" } ] } {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[ {\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://deployflow.co/\"} ]} { \"@context\": \"https://schema.org\", \"@type\": \"WebPage\", \"@id\": \"https://deployflow.co/blog/claude-anthropic-outage-protect-claude-infrastructure/\", \"url\": \"https://deployflow.co/blog/claude-anthropic-outage-protect-claude-infrastructure/\", \"dateModified\": \"June 2, 2026\" } {\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Article\",\"datePublished\":\"2026-06-02T09:04:42+00:00\",\"dateModified\":\"2026-06-02T09:04:46+00:00\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/deployflow.co\\/blog\\/claude-anthropic-outage-protect-claude-infrastructure\\/\"},\"headline\":\"Is Claude Down? Anthropic Outage: Protect Your Cloud Infrastructure\",\"author\":{\"@type\":\"Person\",\"name\":\"Nikola Ilic\",\"url\":\"https:\\/\\/deployflow.co\\/blog\\/author\\/nikola\\/\"},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/deployflow.co\\/wp-content\\/uploads\\/2026\\/03\\/Claude-Outage-Message-Server-Error.png\"},\"description\":\"On March 2, 2026, a major disruption hit Claude.ai just days after it climbed to the top of the App Store rankings. What began as elevated error rates quickly escalated into a prolonged outage that affected web access, authentication paths, and, later, specific model endpoints. Fast forward to June 2,…\"} img:is([sizes=auto i],[sizes^=\"auto,\" i]){contain-intrinsic-size:3000px 1500px} /*# sourceURL=wp-img-auto-sizes-contain-inline-css */ /*! This file is auto-generated */ .wp-block-button__link{color:#fff;backgroun",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/Anthropic on Reddit: Anthropic Says It’s Taking Claude Fable 5 Offline to Comply With US Government Order",
+            "url": "https://www.reddit.com/r/Anthropic/comments/1u4fw8q/anthropic_says_its_taking_claude_fable_5_offline/",
+            "query": "Anthropic model offline reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/Anthropic on Reddit: US blocks foreign access to Anthropic's most advanced AI models, Axios reports",
+            "url": "https://www.reddit.com/r/Anthropic/comments/1u4csa7/us_blocks_foreign_access_to_anthropics_most/",
+            "query": "Anthropic model offline reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/singularity on Reddit: Anthropic is suspending access to Fabel/Mythos for ALL users, not just non-Americans",
+            "url": "https://www.reddit.com/r/singularity/comments/1u4f4fu/anthropic_is_suspending_access_to_fabelmythos_for/",
+            "query": "Anthropic model offline reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "Pricing - Claude API Docs",
+            "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+            "query": "Anthropic Claude API pricing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Pricing - Claude API Docs window.__GATED_CHUNK_MAP__={};window.__GATED_GATES__={}; requestAnimationFrame(function(){$RT=performance.now()}); Messages Managed Agents Admin Resources   API reference English   Console Log in    Search... ⌘K Models Models overview Model IDs and versioning Choosing a model Introducing Claude Fable 5 and Claude Mythos 5 What's new in Claude Opus 4.8 Upgrade between model versions Model deprecations Model cards System prompts Pricing  Log in  Models & pricing  Pricing Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Loading... Solutions AI agents Code modernization Coding Customer support Education Financial services Government Life sciences Partners Amazon Bedrock Google Cloud's Vertex AI Learn Blog Courses Use cases Connectors Customer stories Engineering at Anthropic Events Powered by Claude Service partners Startups program Company Anthropic Careers Economic Futures Research News Responsible Scaling Policy Security and compliance Transparency Learn Blog Courses Use cases Connectors Customer stories Engineering at Anthropic Events Powered by Claude Service partners Startups program Help and security Availability Status Support Discord Terms and policies Privacy policy Responsible disclosure policy Terms of service: Commercial Terms of service: Consumer Usage policy $RB=[];$RV=function(a){$RT=performance.now();for(var b=0;b a&&2E3 *]:max-w-full [&>*]:box-border prose-a:inline-flex prose-a:items-center prose-a:min-h-[44px] prose-a:py-0.5 prose-p:leading-[1.6] prose-li:leading-[1.6] prose-blockquote:leading-[1.6]\"> Models & pricing / Models Pricing Copy page Learn about Anthropic's pricing structure for models and featu",
+            "fetch_error": ""
+          },
+          {
+            "title": "Anthropic API Pricing in 2026: Complete Guide — Models, Caching, Batch & Optimization",
+            "url": "https://www.finout.io/blog/anthropic-api-pricing",
+            "query": "Anthropic Claude API pricing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Anthropic API Pricing in 2026: Complete Guide — Models, Caching, Batch & Optimization body, html {scroll-behavior: smooth;} .post-details-banner .container { max-width: 1204px; margin: 0 auto; padding: 0 32px; display: flex; } .pdb-right { flex: 1; } .pdb-left { width: 57.7%; padding-right: 40px; } .pdb-right img { width: 100%; border-radius: 22px; } .post-details-banner { padding-top: 88px; } .post-content .container { max-width: 1204px; margin: 0 auto; padding: 0 32px; display: flex; gap: 42px; align-items: flex-start;} .post-content .blog-sidebar, .blog-rgtsidebar { width: 200px; position: sticky; top: 110px; } .post-content .blog-main { max-width: 645px; width: calc(100% - 242px);} .content-related-post .container { max-width: 1204px; margin: 0 auto; padding: 0 32px; display: flex; } .content-related-post { padding: 80px 0px; } .content-related-post ul { display: flex; flex-wrap: wrap; padding-left: 20px; } .content-related-post ul>li { width: 50%; list-style-type: disc; color: #0F6D59; padding-right: 50px; } .content-related-post ul>li>a { color: #0F6D59; font-family: 'Poppins'; font-size: 18px; line-height: 30px; font-weight: 600; text-decoration: underline; } .description-summery { font-size: 18px; line-height: 30px; font-weight: 300; font-family: 'Poppins'; color: #0F1F1A; } .pdb-footer { display: flex; justify-content: space-between; margin-top: 116px;flex-wrap:wrap;gap:10px} .pdb-auther { display: flex; gap: 9px; } .pbd-img { height: 50px; width: 50px; background: #0F6D59; border-radius: 50%; font-size: 18px; line-height: 30px; font-weight: 600; color: #fff; font-family: 'Poppins'; display: flex; align-items: center; justify-content: center; } .pbd-text .pbd-name { font-weight: 400; color: #0F1F1A; } .pbd-text { font-size: 16px; line-height: 24px; font-family:",
+            "fetch_error": ""
+          },
+          {
+            "title": "Plans & Pricing | Claude by Anthropic",
+            "url": "https://claude.com/pricing",
+            "query": "Anthropic Claude API pricing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Plans & Pricing | Claude by Anthropic !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); .anti-flicker, .anti-flicker * {visibility: hidden !important; opacity: 0 !important;} [data-wf-hidden-variation], [data-wf-hidden-variation] * { display: none !important; } html:not(.gsap-not-found) [data-prevent-flicker='true'] { visibility: hidden; } .line-mask, .word-mask, .char-mask { padding-block: 0.1em; margin-block: -0.1em; } [data-prevent-flicker='true'] { visibility: visible !important; } .transition_wrap { display: block; } // Hide the transition_wrap in Webflow preview mode w/ custom code enabled if (window.location.hostname.includes('.canvas.webflow.com')) { document.write(' .transition_wrap{display:none!important}[data-prevent-flicker=\"true\"]{visibility:visible!important} '); } (function() { const localeMap = { 'ja': '/ja-jp', 'ja-JP': '/ja-jp', 'de': '/de-de', 'de-DE': '/de-de', 'fr': '/fr-fr', 'fr-FR': '/fr-fr', 'ko': '/ko-kr', 'ko-KR': '/ko-kr' }; const localePaths = ['/ja-jp', '/de-de', '/fr-fr', '/ko-kr']; const currentPath = window.location.pathname; // Don't redirect if already on a locale path if (localePaths.some(p => currentPath.startsWith(p))) return; // Check if user manually switched (came from a locale path on this site) try { const referrer = new URL(document.referrer); if (referrer.hostname === window.location.hostname) { if (localePaths.some(p => referrer.pathname.startsWith(p))) { localStorage.setItem('locale-manual-override', 'true'); } } } catch (e) {} // Respect manual override if (localStorage.getItem('locale-manual-override')) return; // Only check the PRIMARY browser language (first in the list) const primaryLang = ",
+            "fetch_error": ""
+          },
+          {
+            "title": "Terms of Service Updates | Anthropic Privacy Center",
+            "url": "https://privacy.claude.com/en/articles/9190861-terms-of-service-updates",
+            "query": "Anthropic terms of service service level",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/\",\"name\":\"All Collections\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/collections/10663362-consumers\",\"name\":\"Consumers \",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/collections/10672567-policies-terms-of-service\",\"name\":\"Policies & Terms of Service\",\"position\":3},{\"@type\":\"ListItem\",\"name\":\"Terms of Service Updates\",\"position\":4}]} {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"description\":\"\",\"headline\":\"Terms of Service Updates\",\"inLanguage\":\"en\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Anthropic Privacy Center\"},\"url\":\"https://privacy.claude.com/en/articles/9190861-terms-of-service-updates\",\"dateModified\":\"2026-03-16T21:13:59Z\"} Terms of Service Updates | Anthropic Privacy Center :root{--body-bg: rgb(255, 255, 255); --body-image: none; --body-bg-rgb: 255, 255, 255; --body-border: rgb(230, 230, 230); --body-primary-color: #1a1a1a; --body-secondary-color: #737373; --body-reaction-bg: rgb(242, 242, 242); --body-reaction-text-color: rgb(64, 64, 64); --body-toc-active-border: #737373; --body-toc-inactive-border: #f2f2f2; --body-toc-inactive-color: #737373; --body-toc-active-font-weight: 400; --body-table-border: rgb(204, 204, 204); --body-color: hsl(0, 0%, 0%); --footer-bg: rgb(25, 25, 25); --footer-image: none; --footer-border: rgb(50, 50, 50); --footer-color: hsl(60, 14%, 93%); --header-bg: rgb(240, 239, 235); --header-image: none; --header-color: hsl(0, 0%, 10%); --collection-card-bg: rgb(204, 120, 92); --collection-card-image: none; --collection-card-color: hsl(60, 14%, 93%); --card-bg: rgb(255, 255, 255); --card-border-color: rgb(230, 230, 230); --card-border-inner-radi",
+            "fetch_error": ""
+          },
+          {
+            "title": "Consumer Terms of Service Updates | Anthropic Privacy Center",
+            "url": "https://privacy.claude.com/en/articles/9264813-consumer-terms-of-service-updates",
+            "query": "Anthropic terms of service service level",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/\",\"name\":\"All Collections\",\"position\":1},{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/collections/10663362-consumers\",\"name\":\"Consumers \",\"position\":2},{\"@type\":\"ListItem\",\"item\":\"https://privacy.claude.com/en/collections/10672567-policies-terms-of-service\",\"name\":\"Policies & Terms of Service\",\"position\":3},{\"@type\":\"ListItem\",\"name\":\"Consumer Terms of Service Updates\",\"position\":4}]} {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"description\":\"\",\"headline\":\"Consumer Terms of Service Updates\",\"inLanguage\":\"en\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Anthropic Privacy Center\"},\"url\":\"https://privacy.claude.com/en/articles/9264813-consumer-terms-of-service-updates\",\"dateModified\":\"2026-03-16T21:13:46Z\"} Consumer Terms of Service Updates | Anthropic Privacy Center :root{--body-bg: rgb(255, 255, 255); --body-image: none; --body-bg-rgb: 255, 255, 255; --body-border: rgb(230, 230, 230); --body-primary-color: #1a1a1a; --body-secondary-color: #737373; --body-reaction-bg: rgb(242, 242, 242); --body-reaction-text-color: rgb(64, 64, 64); --body-toc-active-border: #737373; --body-toc-inactive-border: #f2f2f2; --body-toc-inactive-color: #737373; --body-toc-active-font-weight: 400; --body-table-border: rgb(204, 204, 204); --body-color: hsl(0, 0%, 0%); --footer-bg: rgb(25, 25, 25); --footer-image: none; --footer-border: rgb(50, 50, 50); --footer-color: hsl(60, 14%, 93%); --header-bg: rgb(240, 239, 235); --header-image: none; --header-color: hsl(0, 0%, 10%); --collection-card-bg: rgb(204, 120, 92); --collection-card-image: none; --collection-card-color: hsl(60, 14%, 93%); --card-bg: rgb(255, 255, 255); --card-border-color: rgb(230,",
+            "fetch_error": ""
+          },
+          {
+            "title": "‭Effective: January 2024‬ ‭Anthropic on Bedrock - Commercial Terms‬",
+            "url": "https://www-cdn.anthropic.com/6b68a6508f0210c5fe08f0199caa05c4ee6fb4dc/Anthropic-on-Bedrock-Commercial-Terms-of-Service_Dec_2023.pdf",
+            "query": "Anthropic terms of service service level",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "%PDF-1.4 % 1 0 obj > endobj 3 0 obj > endobj 9 0 obj > stream x]MF\u0012W `\u0001\u0018\u0006 }|۴wl\bqDShS)c٧>}ݘ_6o>˟we\u0013\u001bCl_n? o߾yy{woypys\u001bU \u000741*^MEL[{ \b v߶ ΍PP\u0003hb?\u00187\u0007Ԅ?D0:\u001a\u000eM&=ݸ\u0005_\u0004`\u0002\u0018 \u0007&h@&o eᎸ=\u0010 \u001agHG\u000eqD};)xioځ:Xk%5ۆV~9}~[\u001bJڙB7Ҿ$ʇxA:)cNCc Wt \u0015 ~h>'Rگ W~' \u000e \u0013\"\u0005{\u0000 \u0013+\u00160z|gqNQ%i \u0007}XtD i-n\u0002R5 \u001a\u000e CG8 -DR9 Ӹ\u0014F%qBA\u000f]׼b\u000ft\u0014h\\ M V)j3AQs ikˈ t\u000fi\u0014?N]nY\u000f}ذ/*\u0004m\u0006R \u0017vO-\"6^M &\u0016\u0015SV&-\u0003\u0011\u000e[\"\b ]\u0013 5\u0004[ee¡}/V \u0017F`axOMǅ^xѨN\u00137\u0014kl *u\\t}QBuT^\u0004\u0014U>%/IąƂYo2Nۉʕ\u0018OulZI\u0019\u0006\u0013q\u0019+ V\u0005\u001b`\u0000bt|DcN \u0005\u000eu!7LLl\u000e\u0000n=\\:SMѰVrt>wc\u001bpIx:3T|ꪋ%aB2>;\u0015]\u0016J~v8 U\u00026Y \u0000o #O _ \"Ą7\u0004 bX4\u0012[~Ofv\u0010C`h\u0002@v.\u000eXkRjCϟ\u0001ke\u0000v\u0006RŪ\u0005ZJWm@\u0006`\u001a c s \u0003\u0015(~+L& L\u0017?\u0010b\u0004G = bDk'~\u0013@8, i#CRw\u0018^\u0001\u0014M\u0004aɎh =gYtr&a\u0005w/\"G\u0010.[\u0015}R/ dobU%dHA Kv?Y\u000f>ykz\u0006еh \u0010Q{\" \b.\u0006B*N m@^M v @R?47[Vd \u0016\u0013\u0012R-IhpG$+\u0005N\"r ;@\u0002\u0004ҲH*y \b*B h&C+\u0003\u0011fA\\\u0015KӧFN7\u0007 W\u0012#x𥱪dp9\\\"a\u001a|\u00151C%0 *O^9l 7 6W cd Ou\u0007ۆI0Era\u0013ڑ\u0014NZ\bHN~ =s\b\u0001u \u0013JP^\u0015Aí0b\u0005tn\u0019y!g|j;SRay בRӺ\u0017 aI^ \u0015 lyp\u0010nͳQH DdG\u000eʴFEgt IHRi7 ~ |Q\u0010;5f;zyLU4!\u0002X2!\u0012)b\u000eX.VEx\u000e\u0007 ^B#\u0014 \"\u001auQpKr^=\u00025Ԫ&a5\u000fI!|\u0004..\\rp\"\u0004K-\u0004y`hrj|'rլ5sw};GG\u001b>\u0018#G\bu-XW1hdN&\">V;~^eFT&\u0004_ν\u0005_IP ~\u0014r\u0004 eO(~!}y&{@ _&=0(\u0013X2¼/\u0004N _wIpjGxJdk\u0004#Kz=\\~ )ȕ%,9\u0014\u0015]\bH0\u00036c\u0005e\u0004\u000fb$` R{?\u001a܃\u001bìM4\u0003xqJQ:\u00010b[Z$#H`' z\u0015B2%Wr·i \u001bgmc$\bkQwTv: Rx\u00182\u001bBS\u0010^\u000fr^\\\u0002iMs71\u000f\b,ς\u0019Fa\u0018 *_W\u0000iDyGey\u0016X%T_`\"w_ eO \u001b\u0017ie\u0001w\u001b\"% e^\u000eT] \\>\u0001oo4.'`ǟ;\u0002\\\u0006~hUZ\" 36'mgeDj \\Cֲ|.Zpʚ\u0010}=5;S\b Ϥ Y\u0018\bz\u00119Fah\u0013q|U$2(sE\u0001r8`B\u0016\u0016 !X\u001a\u000eGD$4\"ϛo\u001b82-ކ\u001b\u001b#cϛ_j|8elz\u001bO}(tf/7 ]O§ɍ=_\u0015tȥ4-9 VZ\u0012'; \u0003ܟ endstream endobj 11 0 obj > stream x]Ɏ \u0011Wـ/\u0000A3d\u0002> Z\b\u0018`27zf8SW\u0015:j陖.nuU.\u0011/cya|hj:Y\u001b\u0007߲%_\u0005|_?sÿ?|?ǰgUΦ|x̯ǗϻO7}O}}nݛwt\u0018pu fE\u000e sθ\u0012c)OZkû>ݟ~޿6\u0018O\u0010Hj\\ > \u0004Z; Tޟq\u0012 \"[Ck\u001bRC]\u0005T4T=P\u001bb l;\u001a\u0012 5yài;\u0005\u0003 \u0005e6Q\u0019\u000f$m^n\u0012%Ak~\bt\"! 4N qJcS oqSr\u0000:Cʭ#UB;O؍Rx\u0017\u0013 Ŀ :n7ߋ\u0018//l:47npXnЫ&A6՜EB/3\bcD7T\u000e,'D',%x\u0001ἷ\u0014W vhRw!Mpq^ ;\u000e/>j\u000efD\u0001q yg\u0003 \u0007,(\u0004r\u00060[wv y L\u0018a:1 f14|5iS,R;}|6w\u0015Σ7\u001a\u001bM$B u1=N\u0004H\u0003r6! \u0014\u0012\u0011J \u0016AEǾ\u0002>i\u00022x:\u0014\"fh&\u0007H \u0010 ɴPh\u0003^溜b@l,ANop\u00047&&\u0013C Mi՛\u0010B\u00058&P\u000e\u00145k&,Vzy! \u0010\u0006l4\u0003DIz܌`_/n+qdI*SDj v 2'-݄d+\u0016xn}~{~$]Zi.\u000e⚝vv:U%{3B(sb\u0001w\u0002\u000fB \u001a\u000e):\u0017\u0017GL ;\u0010\u0007^4Gv +3y. ;\u0010ƧͩC\u0004\br}\u000eڜ\\8#kenG) \\B",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "事实时间线",
+        "基础概念澄清",
+        "证据矛盾和影响边界"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "Anthropic模型下线内幕：性格冲突还是国家安全？普通技术人该担心什么？ 官方来源 原始公告",
+        "Anthropic模型下线内幕：性格冲突还是国家安全？普通技术人该担心什么？ 概念解释 证据",
+        "Anthropic模型下线内幕：性格冲突还是国家安全？普通技术人该担心什么？ 反方观点 局限"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
