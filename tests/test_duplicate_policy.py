@@ -1,0 +1,126 @@
+import importlib.util
+import sys
+import unittest
+from pathlib import Path
+
+
+RADAR_PATH = Path(__file__).resolve().parents[1] / "src" / "radar.py"
+SPEC = importlib.util.spec_from_file_location("radar", RADAR_PATH)
+radar = importlib.util.module_from_spec(SPEC)
+assert SPEC and SPEC.loader
+sys.modules[SPEC.name] = radar
+SPEC.loader.exec_module(radar)
+
+
+SITE = {
+    "topic_directions": {
+        "ai-frontier": {"title": "AI前沿", "short_title": "AI前沿", "keywords": ["ai", "模型", "anthropic", "google"]},
+        "tools-rules": {"title": "工具&规则", "short_title": "工具&规则", "keywords": ["规则", "合规", "搜索"]},
+        "side-info": {"title": "副业&信息差", "short_title": "副业&信息差", "keywords": ["副业", "独立开发"]},
+    }
+}
+
+
+def decision(title: str, original: str, url: str, report_type: str = "hot-event"):
+    item = radar.SourceItem(
+        id=str(abs(hash(url or title))),
+        source_category="hot_events",
+        source_name="AI News & Artificial Intelligence | TechCrunch",
+        source_type="rss",
+        title=original,
+        url=url,
+        summary="",
+    )
+    return radar.RadarDecision(
+        item=item,
+        decision="deep_dive",
+        report_type=report_type,
+        report_title=title,
+        score=82,
+        reader_hook="",
+        why_now="",
+        evidence_level="media",
+        reason="",
+    )
+
+
+def archive_item(title: str, original: str, url: str, topic_direction: str = "ai-frontier"):
+    fingerprints = radar.report_fingerprints(title, original)
+    seen_at = radar.now_bj().isoformat()
+    return {
+        "title": title,
+        "original_title": original,
+        "url": url,
+        **fingerprints,
+        "topic_cluster": radar.topic_cluster_key(title, original, url, topic_direction),
+        "topic_direction": topic_direction,
+        "last_seen_at": seen_at,
+        "first_seen_at": seen_at,
+    }
+
+
+class DuplicatePolicyTest(unittest.TestCase):
+    def test_media_host_is_not_entity_for_archive_dedupe(self):
+        archive = {
+            "items": [
+                archive_item(
+                    "xAI Grok 安全风波",
+                    "Grok is hosting deepfake content",
+                    "https://techcrunch.com/2026/06/10/grok-safety/",
+                )
+            ]
+        }
+        candidate = decision(
+            "KPMG 用 AI 写报告翻车：普通程序员还敢信吗？",
+            "KPMG pulls report on AI usage due to apparent hallucinations",
+            "https://techcrunch.com/2026/06/15/kpmg-ai-report/",
+        )
+
+        duplicate, reason = radar.is_duplicate_topic(candidate, SITE, archive, "2026-06-15-morning")
+
+        self.assertFalse(duplicate, reason)
+
+    def test_ios_app_story_does_not_become_apple_entity(self):
+        self.assertEqual(radar.canonical_entity("我开发了个 iOS 话术键盘", "https://v2ex.com/t/123"), "v2ex")
+        self.assertEqual(radar.canonical_entity("WWDC26 Apple 智能大升级", "https://sspai.com/post/123"), "apple")
+
+    def test_same_entity_same_angle_still_dedupes(self):
+        archive = {
+            "items": [
+                archive_item(
+                    "Anthropic最强模型被政府强制下线，AI安全警告反噬？",
+                    "Anthropic cuts off Fable 5 and Mythos 5 access following government order",
+                    "https://www.theverge.com/2026/06/14/anthropic-fable-access",
+                )
+            ]
+        }
+        candidate = decision(
+            "美国政府封禁Fable 5和Mythos 5：普通程序员该不该慌？",
+            "Statement on the US government directive to suspend access to Fable 5 and Mythos 5",
+            "https://simonwillison.net/2026/Jun/15/fable-directive/",
+            report_type="risk-warning",
+        )
+
+        duplicate, reason = radar.is_duplicate_topic(candidate, SITE, archive, "2026-06-15-morning")
+
+        self.assertTrue(duplicate)
+        self.assertTrue(any(text in reason for text in ["同主体/同产品", "同主体/同角度", "相似选题"]))
+
+    def test_optional_verdict_is_preserved(self):
+        report = {
+            "decision": "deep_dive",
+            "score": 70,
+            "evidence_level": "media",
+            "uncertainty_flags": ["缺少反方材料"],
+            "title": "一个值得补证的需求解决类选题",
+            "report_type": "case-study",
+        }
+        dossier = {"verdict": {"label": "可选", "status": "可选选题"}}
+
+        normalized = radar.normalize_selection_dossier(report, dossier)
+
+        self.assertEqual(normalized["verdict"]["label"], "可选")
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -24,7 +24,7 @@
   "selection_dossier_ok": true,
   "logic_closure_ok": true,
   "source_coverage_ok": true,
-  "recommendation": "publish|downgrade_to_brief|hold"
+  "recommendation": "publish|optional|hold"
 }
 ```
 
@@ -60,4 +60,4 @@
 结论分级：
 
 - `publish` 表示推荐选题：证据较完整、老花人设解读角度清楚、读者分层明确、泛兴趣故事钩子成立且不夸张、传播张力成立、逻辑基本能闭环，适合放到首页推荐区。
-- `downgrade_to_brief` 或 `hold` 表示可选选题：方向有价值，但还要补证、补概念、补反方材料或补传播张力。不要再输出观察、暂缓、放弃作为公开级别。
+- `optional` 或 `hold` 表示可选选题：方向有价值，但还要补证、补概念、补反方材料或补传播张力。不要再输出观察、暂缓、放弃作为公开级别。
