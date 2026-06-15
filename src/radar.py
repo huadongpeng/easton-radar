@@ -2035,7 +2035,7 @@ def collection_fit_text(score: int, evidence_level: str, report_type: str, site:
     if score >= 55 and evidence_level in {"official", "near_source"}:
         return f"符合收集原则：来源可复查，且具备进入「{report_name}」类报告的分析价值。"
     if score >= 32:
-        return "部分符合收集原则，但未达到公众号主选题标准，不再进入可选池或简讯池。"
+        return "部分符合收集原则，但未达到推荐标准；如方向仍有价值，可进入可选池等待补证。"
     return "暂不符合深挖原则：相关性、证据质量、人设解读角度或目标读者兴趣不足。"
 
 
@@ -2056,7 +2056,7 @@ def default_uncertainty_flags(evidence_level: str, decision: str) -> list[str]:
     if evidence_level not in {"official", "near_source"}:
         flags.append("当前来源不是官方或近源，结论必须降级。")
     if decision == "brief":
-        flags.append("当前仅适合观察，不进入公众号主选题。")
+        flags.append("当前仅适合观察，不进入推荐层级。")
     return flags
 
 
@@ -2657,12 +2657,6 @@ def topic_level(report: dict[str, Any], dossier: dict[str, Any] | None = None) -
     dossier = dossier or report.get("selection_dossier") or report.get("material_pack") or {}
     verdict = dossier.get("verdict", {}) if isinstance(dossier, dict) else {}
     label = str(verdict.get("label") or verdict.get("status") or "").strip()
-    if label in {"不入池", "跳过"}:
-        return "不入池"
-    if label in {"推荐", "可选"}:
-        if label == "推荐" and topic_tension_from(dossier, report).get("score", 0) < 7:
-            return "可选"
-        return label
     score = int(report.get("score", 0) or 0)
     confidence = confidence_score(dossier.get("confidence", 0)) if isinstance(dossier, dict) else 0
     evidence = report.get("evidence_level", "")
@@ -2670,6 +2664,33 @@ def topic_level(report: dict[str, Any], dossier: dict[str, Any] | None = None) -
     quality_gate = dossier.get("quality_gate", {}) if isinstance(dossier, dict) else {}
     tension = topic_tension_from(dossier, report) if isinstance(dossier, dict) else topic_tension(report)
     gaps = len(report.get("uncertainty_flags", []))
+    if label in {"不入池", "跳过"}:
+        return "不入池"
+    if label in {"最推荐", "强推荐"}:
+        if tension.get("score", 0) < 8 or evidence not in {"official", "near_source"}:
+            return "次推荐"
+        return "最推荐"
+    if label in {"推荐", "次推荐", "可选"}:
+        if label in {"推荐", "次推荐"} and tension.get("score", 0) < 7:
+            return "可选"
+        if label == "推荐" and (
+            evidence in {"official", "near_source"}
+            and score >= 82
+            and (confidence >= 72 or quality_gate.get("pass") is True)
+            and tension.get("score", 0) >= 8
+            and gaps <= 2
+        ):
+            return "最推荐"
+        return "次推荐" if label == "推荐" else label
+    if (
+        decision == "deep_dive"
+        and evidence in {"official", "near_source"}
+        and score >= 82
+        and (confidence >= 72 or quality_gate.get("pass") is True)
+        and tension.get("score", 0) >= 8
+        and gaps <= 2
+    ):
+        return "最推荐"
     if (
         decision == "deep_dive"
         and evidence in {"official", "near_source"}
@@ -2678,7 +2699,7 @@ def topic_level(report: dict[str, Any], dossier: dict[str, Any] | None = None) -
         and tension.get("score", 0) >= 7
         and gaps <= 3
     ):
-        return "推荐"
+        return "次推荐"
     if decision == "deep_dive" and evidence in {"official", "near_source", "media"} and score >= MIN_DEEP_DIVE_SCORE:
         return "可选"
     return "不入池"
@@ -2688,13 +2709,20 @@ def normalize_selection_dossier(report: dict[str, Any], dossier: dict[str, Any])
     verdict = dossier.setdefault("verdict", {})
     previous = str(verdict.get("label") or verdict.get("status") or "").strip()
     level = topic_level(report, dossier)
-    verdict["status"] = "推荐选题" if level == "推荐" else ("可选选题" if level == "可选" else "不入池")
+    verdict["status"] = (
+        "最推荐选题" if level == "最推荐"
+        else "次推荐选题" if level == "次推荐"
+        else "可选选题" if level == "可选"
+        else "不入池"
+    )
     verdict["label"] = level
-    if previous and previous not in {"推荐", "可选", "不入池", "跳过"}:
+    if previous and previous not in {"最推荐", "强推荐", "推荐", "次推荐", "可选", "不入池", "跳过"}:
         verdict["previous_label"] = previous
     if not verdict.get("reason"):
-        if level == "推荐":
-            verdict["reason"] = "证据、人设解读角度、目标读者兴趣和传播张力较完整，建议优先进入写作框架。"
+        if level == "最推荐":
+            verdict["reason"] = "证据、人设解读角度、目标读者兴趣、传播张力和逻辑闭环都较强，建议作为本批次优先写作选题。"
+        elif level == "次推荐":
+            verdict["reason"] = "证据和写作角度基本成立，适合进入写作框架，但优先级低于最推荐选题。"
         elif level == "可选":
             verdict["reason"] = "方向有价值，但证据、传播张力或写作闭环还不够完整，先进入可选池等待补证。"
         else:
@@ -2750,8 +2778,11 @@ def apply_quality_gate(report: dict[str, Any], dossier: dict[str, Any], evidence
     dossier_tension = topic_tension_from(dossier, report)
     if data.get("pass") is True and data.get("recommendation") == "publish" and quality_tension_ok and dossier_tension.get("score", 0) >= 7:
         verdict = dossier.setdefault("verdict", {})
-        verdict["status"] = "推荐选题"
-        verdict["label"] = "推荐"
+        level = topic_level(report, dossier)
+        if level not in {"最推荐", "次推荐"}:
+            level = "次推荐"
+        verdict["status"] = "最推荐选题" if level == "最推荐" else "次推荐选题"
+        verdict["label"] = level
         return dossier
     recommendation = data.get("recommendation", "hold")
     verdict = dossier.setdefault("verdict", {})
@@ -2774,7 +2805,7 @@ def compose_topic_dossier(report: dict[str, Any], site: dict[str, Any], policy: 
     prompt = (
         f"{load_prompt('03_investigation_report_flash.md')}\n\n"
         "请只输出 JSON：{\"schema\":\"topic-selection-dossier-v3\",\"generated_by\":\"deepseek\","
-        "\"verdict\":{\"status\":\"推荐选题|可选选题|不入池\",\"label\":\"推荐|可选|不入池\",\"reason\":\"\"},"
+        "\"verdict\":{\"status\":\"最推荐选题|次推荐选题|可选选题|不入池\",\"label\":\"最推荐|次推荐|可选|不入池\",\"reason\":\"\"},"
         "\"core_question\":\"\",\"why_this_topic_matters\":\"\",\"fact_summary\":[],"
         "\"persona_discussion_question\":\"\",\"old_flower_stance\":\"\","
         "\"audience_fit\":{\"primary_layer\":\"\",\"secondary_layers\":[],\"interest_score\":0,\"why_interested\":\"\",\"reader_risk\":\"\"},"
@@ -3183,11 +3214,17 @@ def selection_verdict(report: dict[str, Any]) -> dict[str, str]:
     decision = report.get("decision", "")
     gaps = len(report.get("uncertainty_flags", []))
     tension = topic_tension(report)
+    if decision == "deep_dive" and evidence in {"official", "near_source"} and score >= 82 and gaps <= 2 and tension["score"] >= 8:
+        return {
+            "status": "最推荐选题",
+            "label": "最推荐",
+            "reason": "当前线索有强事实入口、较完整证据、人设解读角度、目标读者兴趣和传播张力，建议作为本批次优先写作选题。",
+        }
     if decision == "deep_dive" and evidence in {"official", "near_source"} and score >= 68 and gaps <= 3 and tension["score"] >= 7:
         return {
-            "status": "推荐选题",
-            "label": "推荐",
-            "reason": "当前线索有明确来源、人设解读角度、目标读者兴趣、传播张力和分析空间，建议优先进入写作框架。",
+            "status": "次推荐选题",
+            "label": "次推荐",
+            "reason": "当前线索有明确来源、人设解读角度、目标读者兴趣、传播张力和分析空间，可以进入写作框架，但优先级低于最推荐。",
         }
     return {
         "status": "可选选题" if decision == "deep_dive" and score >= MIN_DEEP_DIVE_SCORE else "不入池",
@@ -3236,7 +3273,7 @@ def selection_dossier(report: dict[str, Any]) -> dict[str, Any]:
         },
         {
             "node": "材料是否足够写正文",
-            "status": "建议优先扩写" if verdict["label"] == "推荐" else "不入池",
+            "status": "建议优先扩写" if verdict["label"] in {"最推荐", "次推荐"} else ("可选，需补证" if verdict["label"] == "可选" else "不入池"),
             "note": "Radar 只负责给出选题档案，不在证据不足时强行生成公众号正文。",
         },
     ]
@@ -3795,22 +3832,30 @@ def report_verdict_label(report: dict[str, Any]) -> str:
 
 def archive_item_level(item: dict[str, Any]) -> str:
     verdict = str(item.get("verdict", "")).strip()
-    if verdict == "推荐":
+    if verdict in {"最推荐", "强推荐", "推荐", "次推荐"}:
+        return "最推荐" if verdict in {"最推荐", "强推荐"} else "次推荐"
+    if verdict == "可选":
         return verdict
-    if verdict in {"可选", "不入池", "跳过"}:
+    if verdict in {"不入池", "跳过"}:
         return "不入池"
     score = int(item.get("score", 0) or 0)
     evidence = item.get("evidence_level", "")
+    if evidence in {"official", "near_source"} and score >= 82:
+        return "最推荐"
     if evidence in {"official", "near_source"} and score >= 68:
-        return "推荐"
+        return "次推荐"
+    if evidence in {"official", "near_source", "media"} and score >= MIN_DEEP_DIVE_SCORE:
+        return "可选"
     return "不入池"
 
 
 def pack_verdict_display(pack: dict[str, Any]) -> tuple[str, str]:
     verdict = pack.get("verdict", {}) if isinstance(pack, dict) else {}
     label = str(verdict.get("label") or verdict.get("status") or "").strip()
-    if label == "推荐":
-        status = "推荐选题"
+    if label in {"最推荐", "强推荐"}:
+        status = "最推荐选题"
+    elif label in {"推荐", "次推荐"}:
+        status = "次推荐选题"
     elif label == "可选":
         status = "可选选题"
     else:
@@ -3821,7 +3866,7 @@ def pack_verdict_display(pack: dict[str, Any]) -> tuple[str, str]:
 def render_archive_preview(archive: dict[str, Any], limit_days: int = 5) -> str:
     grouped: dict[str, list[dict[str, Any]]] = {}
     for item in archive.get("items", []):
-        if archive_item_level(item) != "推荐":
+        if archive_item_level(item) == "不入池":
             continue
         day = bj_day(item.get("last_seen_at") or item.get("first_seen_at"))
         grouped.setdefault(day, []).append(item)
@@ -3840,9 +3885,11 @@ def render_home(batch: dict[str, Any], reports: list[dict[str, Any]], site: dict
         f'<span class="badge">{html.escape(v["title"])}：{v["items"]} 条 / 失败 {v["failures"]}</span>'
         for v in batch.get("source_coverage", {}).values()
     )
-    recommended_reports = [r for r in reports if report_verdict_label(r) == "推荐"]
+    top_reports = [r for r in reports if report_verdict_label(r) == "最推荐"]
+    secondary_reports = [r for r in reports if report_verdict_label(r) == "次推荐"]
     optional_reports = [r for r in reports if report_verdict_label(r) == "可选"]
-    recommended_flow = "".join(report_flow_item(r) for r in recommended_reports) or '<p class="meta">本批次没有达到公众号主选题标准的题。</p>'
+    top_flow = "".join(report_flow_item(r) for r in top_reports) or '<p class="meta">本批次暂无最推荐选题。</p>'
+    secondary_flow = "".join(report_flow_item(r) for r in secondary_reports) or '<p class="meta">本批次暂无次推荐选题。</p>'
     optional_flow = "".join(report_flow_item(r) for r in optional_reports) or '<p class="meta">本批次暂无可选储备题。</p>'
     verdict_counts: dict[str, int] = {}
     for report in reports:
@@ -3852,14 +3899,15 @@ def render_home(batch: dict[str, Any], reports: list[dict[str, Any]], site: dict
     duplicate_count = len(batch.get("duplicate_skips", []))
     return f"""
 <section class="hero"><h1>老花的选题雷达站</h1><p>这里不是公众号成稿库，而是上游情报台。每条线索先按选题方向沉淀，再保留来龙去脉、事实、证据、存疑点和与老花人设相关的切入口，给后续博客、公众号、视频和小红书做素材底座。</p></section>
-<section class="section"><h2>公众号主选题</h2><div class="flow">{recommended_flow}</div></section>
+<section class="section"><h2>最推荐</h2><div class="flow">{top_flow}</div></section>
+<section class="section"><h2>次推荐</h2><div class="flow">{secondary_flow}</div></section>
 <section class="section"><h2>可选储备题</h2><div class="flow">{optional_flow}</div></section>
 <section class="section">
   <h2>大选题方向聚合</h2>
   <div class="topic-strip">{topic_summary_chips(reports, site)}</div>
 </section>
 <div class="ad-slot">AdSense 预留位：后续填入 publisher client 后启用</div>
-<section class="section card"><h2>本批次概况</h2><p class="meta">批次：{html.escape(batch["batch_id"])} · 抓取 {batch["fetched_count"]} 条 · 推荐 {len(recommended_reports)} 个 · 可选 {len(optional_reports)} 个 · {verdict_summary} · 近期重复跳过 {duplicate_count} 个</p><p>{coverage}</p></section>
+<section class="section card"><h2>本批次概况</h2><p class="meta">批次：{html.escape(batch["batch_id"])} · 抓取 {batch["fetched_count"]} 条 · 最推荐 {len(top_reports)} 个 · 次推荐 {len(secondary_reports)} 个 · 可选 {len(optional_reports)} 个 · {verdict_summary} · 近期重复跳过 {duplicate_count} 个</p><p>{coverage}</p></section>
 <section class="section card"><h2>历史选题库</h2><p class="meta">按日期回看已入池选题，用来判断哪些题已经看过、哪些方向反复出现。<a href="/archive/">查看完整历史</a></p>{render_archive_preview(archive)}</section>
 <section class="section card"><h2>数据源原则</h2><ul>{principles}</ul></section>
 """
@@ -3884,14 +3932,17 @@ def render_briefings(batch: dict[str, Any], reports: list[dict[str, Any]], site:
 
 def render_topic_direction(key: str, meta: dict[str, Any], reports: list[dict[str, Any]]) -> str:
     sorted_reports = sorted(reports, key=report_time_key, reverse=True)
-    recommended = [report for report in sorted_reports if report_verdict_label(report) == "推荐"]
+    top_reports = [report for report in sorted_reports if report_verdict_label(report) == "最推荐"]
+    secondary_reports = [report for report in sorted_reports if report_verdict_label(report) == "次推荐"]
     optional = [report for report in sorted_reports if report_verdict_label(report) == "可选"]
-    recommended_items = "".join(report_card(r) for r in recommended) or '<p class="meta">本方向暂无公众号主选题。</p>'
+    top_items = "".join(report_card(r) for r in top_reports) or '<p class="meta">本方向暂无最推荐选题。</p>'
+    secondary_items = "".join(report_card(r) for r in secondary_reports) or '<p class="meta">本方向暂无次推荐选题。</p>'
     optional_items = "".join(report_card(r) for r in optional) or '<p class="meta">本方向暂无可选储备题。</p>'
     return f"""
 <section class="hero"><p class="kicker">选题方向</p><h1>{html.escape(meta["title"])}</h1><p>{html.escape(meta.get("description", ""))}</p></section>
 <section class="callout"><h2>这个方向怎么读</h2><p>先看线索和原始来源，再进入详情页看事实收集、证据收集、存疑点和与老花相关的切入口。报告类型只是分析方法，不代表主栏目。</p></section>
-<section id="recommended" class="section"><h2>公众号主选题</h2><div class="list">{recommended_items}</div></section>
+<section id="top" class="section"><h2>最推荐</h2><div class="list">{top_items}</div></section>
+<section id="secondary" class="section"><h2>次推荐</h2><div class="list">{secondary_items}</div></section>
 <section id="optional" class="section"><h2>可选储备题</h2><div class="list">{optional_items}</div></section>
 """
 
@@ -3900,7 +3951,7 @@ def render_archive(archive: dict[str, Any], site: dict[str, Any]) -> str:
     directions = site.get("topic_directions", {})
     grouped: dict[str, list[dict[str, Any]]] = {}
     for item in archive.get("items", [])[:180]:
-        if archive_item_level(item) != "推荐":
+        if archive_item_level(item) == "不入池":
             continue
         day = bj_day(item.get("last_seen_at") or item.get("first_seen_at"))
         grouped.setdefault(day, []).append(item)
@@ -4083,7 +4134,8 @@ def render_item(report: dict[str, Any], site: dict[str, Any]) -> str:
     source_assessment = report.get("source_assessment", {})
     dossier = report.get("selection_dossier") or report.get("material_pack", {})
     verdict = dossier.get("verdict", {})
-    verdict_status = "推荐选题" if report_verdict_label(report) == "推荐" else "不入池"
+    label = report_verdict_label(report)
+    verdict_status = "最推荐选题" if label == "最推荐" else ("次推荐选题" if label == "次推荐" else ("可选选题" if label == "可选" else "不入池"))
     pack_html = render_material_pack(dossier)
     topic_key = report.get("topic_direction", "")
     topic_title = report.get("topic_direction_title") or report.get("source_category_title", "")
@@ -4322,8 +4374,9 @@ def main() -> int:
     }
     info("Building enriched topic reports...")
     built_reports = [build_report(d, site, policy, batch_id) for d in selected]
-    reports = [report for report in built_reports if report_verdict_label(report) in {"推荐", "可选"}]
-    dropped_reports = [report for report in built_reports if report_verdict_label(report) not in {"推荐", "可选"}]
+    publishable_labels = {"最推荐", "次推荐", "可选"}
+    reports = [report for report in built_reports if report_verdict_label(report) in publishable_labels]
+    dropped_reports = [report for report in built_reports if report_verdict_label(report) not in publishable_labels]
     if dropped_reports:
         for report in dropped_reports:
             dossier = report.get("selection_dossier") or report.get("material_pack") or {}

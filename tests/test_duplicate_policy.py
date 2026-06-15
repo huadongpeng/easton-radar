@@ -121,6 +121,32 @@ class DuplicatePolicyTest(unittest.TestCase):
 
         self.assertEqual(normalized["verdict"]["label"], "可选")
 
+    def test_topic_level_grades_recommendations(self):
+        base_report = {
+            "decision": "deep_dive",
+            "score": 82,
+            "evidence_level": "near_source",
+            "uncertainty_flags": [],
+            "title": "强事实入口选题",
+            "report_type": "hot-event",
+        }
+        strong_dossier = {
+            "confidence": 78,
+            "quality_gate": {"pass": True},
+            "topic_tension": {"score": 8, "conflict_point": "平台承诺和实际风险冲突"},
+        }
+        secondary_report = {**base_report, "score": 72, "uncertainty_flags": ["缺少反方材料"]}
+        secondary_dossier = {
+            "confidence": 65,
+            "quality_gate": {"pass": True},
+            "topic_tension": {"score": 7, "conflict_point": "有讨论空间"},
+        }
+        optional_report = {**base_report, "score": 70, "evidence_level": "media"}
+
+        self.assertEqual(radar.topic_level(base_report, strong_dossier), "最推荐")
+        self.assertEqual(radar.topic_level(secondary_report, secondary_dossier), "次推荐")
+        self.assertEqual(radar.topic_level(optional_report, {"topic_tension": {"score": 6}}), "可选")
+
 
 if __name__ == "__main__":
     unittest.main()
