@@ -31,7 +31,7 @@ TopHubData/榜眼数据按零扣费接入：只调用官方标注免费的“全
 
 输出：
 
-- `decision`: `deep_dive` / `brief` / `skip`
+- `decision`: `deep_dive` / `skip`。`brief` 仅作为旧归档兼容字段，不再进入公开输出。
 - `topic_direction`: 选题方向，也是网站主栏目归属
 - `report_type`: 报告类型，只表示分析方法
 - `score`: 相关性和深挖潜力
@@ -68,7 +68,7 @@ TopHubData/榜眼数据按零扣费接入：只调用官方标注免费的“全
 每条入选线索生成的是选题报告，不是文章。必须包含：
 
 - 这是不是一个值得进入写作池的选题
-- 为什么推荐、为什么可选
+- 为什么推荐、为什么不入池
 - 这条具体线索的选题结论
 - 事实是否清楚、证据是否可靠、逻辑能否闭环
 - 线索是什么
@@ -108,7 +108,7 @@ TopHubData/榜眼数据按零扣费接入：只调用官方标注免费的“全
 - `data/latest.json`
 - `reports/{report_id}.json`
 - `site/index.html`
-- `site/briefings/index.html`
+- `site/briefings/index.html`（兼容旧路径；页面只展示主选题分组，不再作为简讯池）
 - `site/topics/{topic_direction}/index.html`
 - `site/items/{report_id}/index.html`
 - `site/robots.txt`
@@ -118,7 +118,7 @@ TopHubData/榜眼数据按零扣费接入：只调用官方标注免费的“全
 
 GitHub Pages 只发布本次 Action 工作区里的 `site/` 目录。`site/*`、`data/latest.json`、`data/search_usage.json` 和批次 JSON 都是运行时产物，不提交回 `main`。
 
-首页先展示本批次 `推荐` 选题，再展示 `可选` 选题；方向聚合和批次概况放在后面。类目页使用历史报告渲染，按时间由近及远排序，并提供 `全部 / 推荐 / 可选` 快捷筛选，默认先展示可选线索。
+首页只展示本批次达到公众号主文标准的 `推荐` 选题；方向聚合和批次概况放在后面。类目页使用历史推荐报告渲染，按时间由近及远排序，不再提供 `可选` 或简讯池。
 
 历史报告和跨批次去重状态保存到 `radar-archive` 分支：
 
