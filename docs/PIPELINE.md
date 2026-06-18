@@ -1,10 +1,12 @@
 # Radar 流程拆解
 
+Radar 现在是早报、午报、晚报式信息简报站，不再承担自动选题职责。
+
 ## Step 1：抓取
 
 输入：`config/sources.seed.json`
 
-支持类型：RSS/Atom、公开 JSON API、HN Algolia API、TopHubData 免费节点列表等稳定公开源。
+支持类型：RSS/Atom、公开 JSON API、HN Algolia API、TopHubData 节点和榜单详情等稳定公开源。
 
 每条原始记录保留：
 
@@ -17,13 +19,13 @@
 - 抓取时间
 - 摘要
 
-注意：`source_category` 只用于内部溯源和后续统计，不是网站栏目。
-
-TopHubData/榜眼数据按零扣费接入：只调用官方标注免费的“全部榜单列表”接口，用于发现可用热点榜单节点；不调用会扣 u 的“单个榜单最新详细”“全网热点内容搜索”“今日热榜榜中榜”“单个榜单快照详情”或“热点日历事件”。中文热点事实必须通过公开来源、搜索补证和 LLM 判断完成。
+`source_category` 只用于内部溯源和统计，不是网站栏目。
 
 ## Step 2：去重
 
-按 URL、标题相似度和同一公告转载关系去重，优先保留更接近一手的来源。
+按 URL、标题相似度、主题簇和同一公告转载关系去重，优先保留更接近一手的来源。
+
+跨批次去重状态保存在 `radar-archive` 分支，避免早报、午报、晚报反复推同一条信息。
 
 ## Step 3：初筛
 
@@ -31,76 +33,41 @@ TopHubData/榜眼数据按零扣费接入：只调用官方标注免费的“全
 
 输出：
 
-- `decision`: `deep_dive` / `skip`。`brief` 仅作为旧归档兼容字段，不再进入公开输出。
-- `topic_direction`: 选题方向，也是网站主栏目归属
-- `report_type`: 报告类型，只表示分析方法
-- `score`: 相关性和深挖潜力
-- `reader_hook`: 兼容旧字段名，实际表示老花人设解读角度和目标读者兴趣理由
-- `audience_fit`: 读者分层匹配，包括主要读者层、次要读者层、兴趣分和读者风险
-- `mass_interest_hook`: 泛兴趣故事钩子，判断普通人不懂技术时是否也可能被标题和故事吸引
-- `why_now`: 为什么现在值得看
-- `evidence_level`: 证据等级
-- `collection_fit`: 是否符合信息收集原则
-- `investigation_direction`: 后续深挖方向
-- `uncertainty_flags`: 存疑点
-- `reject_reason`: 跳过理由
+- `decision`: `deep_dive` / `brief` / `skip`。其中 `deep_dive` 现在只表示“适合进入简报并保留详情页”，不表示推荐写文章。
+- `topic_direction`: 信息分类，也是网站主栏目归属。
+- `report_type`: 内部分析方法，兼容旧字段。
+- `score`: 信息相关性和可查证价值。
+- `reader_hook`: 兼容旧字段名，实际表示这条信息可能关联的关注方向。
+- `why_now`: 为什么现在记录。
+- `evidence_level`: 证据等级。
+- `collection_fit`: 是否符合信息收集原则。
+- `investigation_direction`: 后续补证方向。
+- `uncertainty_flags`: 存疑点。
+- `reject_reason`: 跳过理由。
 
-初筛不是写稿判断，而是选题价值判断：这条线索是否值得进入 Radar、是否值得成为一个候选选题、后续还缺什么证据、能否给下游项目提供足够材料。
+初筛不再判断“是否值得写公众号主文”，只判断这条信息是否真实、可复查、能否用一句话讲清楚发生了什么。
 
-`topic_direction` 当前可选方向：
+## Step 4：简报条目生成
 
-- `ai-frontier`
-- `tools-rules`
-- `cross-border`
-- `side-info`
+每条入选信息生成一个详情 JSON 和静态页。公开页面优先展示一句话摘要：
 
-`report_type` 当前可选分析方法：
+```text
+【来源/主体】一句话讲清楚发生了什么。
+```
 
-- `investigation`
-- `opportunity`
-- `tool-ledger`
-- `platform-rules`
-- `case-study`
-- `risk-warning`
+详情页保留：
 
-## Step 4：选题报告生成
+- 原始线索
+- 原始链接
+- 证据入口
+- 已确认内容
+- 存疑点
+- 不能夸大的地方
+- 继续检索词
 
-每条入选线索生成的是选题报告，不是文章。必须包含：
+内部仍保留 `selection_dossier` / `material_pack` 字段，目的是兼容历史 JSON 和旧归档，不代表当前产品仍在输出选题判断。
 
-- 这是不是一个值得进入写作池的选题
-- 为什么推荐、为什么不入池
-- 这条具体线索的选题结论
-- 事实是否清楚、证据是否可靠、逻辑能否闭环
-- 线索是什么
-- 是否符合信息收集原则
-- 应该沿哪个方向深挖
-- 哪些地方没有证据或仍然存疑
-- 为什么现在值得看
-- 和老花人设的关系
-- 目标读者画像群体的兴趣指数和理由
-- 泛兴趣普通人的故事入口、冲突、反差或踩坑点
-- 程序员/IT 视角
-- 已确认事实
-- 证据链
-- 事实是否清楚
-- 材料是否可靠
-- 逻辑能不能闭环
-- 可以写的方向
-- 基础概念和边界
-- 缺少哪些基础概念和资料素材
-- 风险和缺口
-- 不应夸大的地方
-
-报告不写成内容平台正文，只作为 Radar 的候选选题、证据沉淀、材料包和方向判断。
-
-## Step 5：后续流程交接包
-
-每条报告必须生成面向 GPT 后续创作的 `downstream_handoff`：
-
-- `for_gpt_editor`: 选题结论、原始标题、来源 URL、角度候选、必须保留的信息、不能写成结论的点、待解决问题。
-- `for_research_loop`: 继续检索词、证据缺口、停止信号。
-
-## Step 6：发布
+## Step 5：发布
 
 生成内容：
 
@@ -108,9 +75,10 @@ TopHubData/榜眼数据按零扣费接入：只调用官方标注免费的“全
 - `data/latest.json`
 - `reports/{report_id}.json`
 - `site/index.html`
-- `site/briefings/index.html`（兼容旧路径；页面只展示主选题分组，不再作为简讯池）
+- `site/briefings/index.html`
 - `site/topics/{topic_direction}/index.html`
 - `site/items/{report_id}/index.html`
+- `site/archive/index.html`
 - `site/robots.txt`
 - `site/sitemap.xml`
 - `site/llms.txt`
@@ -118,23 +86,27 @@ TopHubData/榜眼数据按零扣费接入：只调用官方标注免费的“全
 
 GitHub Pages 只发布本次 Action 工作区里的 `site/` 目录。`site/*`、`data/latest.json`、`data/search_usage.json` 和批次 JSON 都是运行时产物，不提交回 `main`。
 
-首页只展示本批次达到公众号主文标准的 `推荐` 选题；方向聚合和批次概况放在后面。类目页使用历史推荐报告渲染，按时间由近及远排序，不再提供 `可选` 或简讯池。
+首页展示本批早报/午报/晚报，按四类信息汇总。分类页展示该类历史信息，归档页按日期回看。
 
-历史报告和跨批次去重状态保存到 `radar-archive` 分支：
-
-- `reports/*.json`：历史选题报告 JSON，用来重新渲染历史详情页。
-- `data/topic_archive.json`：轻量去重状态，只保存 URL/标题指纹/方向/时间等元数据。
-
-Action 每次先从 `radar-archive` 恢复历史报告和指纹库，再生成本次选题，最后把新的报告 JSON 和指纹库推回 `radar-archive`。这样 `main` 保持代码仓库干净，Radar 网站仍能回看历史报告。
-
-## Step 7：Telegram 通知
+## Step 6：Telegram 通知
 
 Telegram 只发摘要和 Radar 链接，不发长文。
+
+通知格式：
+
+```text
+Easton Radar 早报｜信息简报
+抓取 120 条，汇总 8 条。
+
+AI前沿：
+- 【OpenAI】一句话讲清楚发生了什么。
+  https://radar.huadongpeng.com/items/...
+```
 
 ## 失败处理
 
 - 单个源失败：记录失败，不中断全局流程。
 - GitHub Actions 长期抓不到的源：从配置中移除。
-- 补证搜索只使用 Tavily 和 Brave，不再使用 DDG/Bing 这类易被 GitHub Actions 机房 IP 拦截的页面搜索。Tavily 通过官方 `/usage` 接口预检额度；Brave 通过官方 `X-RateLimit-*` 响应头记录秒级窗口和月度剩余额度。`SEARCH_API_CALL_LIMIT_PER_RUN` 限制每次 Action 的 Tavily/Brave 搜索 API 调用总数；核心控量优先通过减少每批入池选题实现。两者都不可用、额度不足或本轮调用上限用尽时，必须降级为证据不足，不能输出高可信选题判断。
-- DeepSeek 不可用：只保留本地启发式线索池，并在 `selection_dossier.generated_by=fallback` 中标记为“待 LLM 判断”，不能伪装成可信选题报告。
-- 没有高潜力线索：只发布空候选池和数据源覆盖情况，不强行生成选题报告。
+- 补证搜索只使用 Tavily 和 Brave，不使用易被 GitHub Actions 机房 IP 拦截的页面搜索。
+- DeepSeek 不可用：使用本地启发式规则保留可查证信息，但不得伪装成完整判断。
+- 没有可记录信息：发布空简报和数据源覆盖情况，不硬凑条目。

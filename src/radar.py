@@ -36,8 +36,8 @@ TAVILY_USAGE_URL = "https://api.tavily.com/usage"
 TOPHUBDATA_URL = "https://api.tophubdata.com"
 MAX_ITEMS_PER_SOURCE = 18
 MAX_TOTAL_ITEMS = 220
-MAX_REPORTS_PER_BATCH = 5
-MAX_REPORTS_PER_TOPIC = 2
+MAX_REPORTS_PER_BATCH = 12
+MAX_REPORTS_PER_TOPIC = 3
 TRIAGE_BATCH_SIZE = 10
 MAX_REPORTS_PER_SOURCE_HOST = 2
 MIN_DEEP_DIVE_SCORE = 45
@@ -1280,9 +1280,7 @@ def should_drop_item(item: SourceItem) -> bool:
     if any(phrase.lower() in text for phrase in noisy_phrases):
         return True
     if "v2ex.com" in host and "jobs.xml" in item.feed_url:
-        job_fit_keywords = ["remote", "远程", "兼职", "外包", "副业", "出海", "跨境", "海外", "独立开发", "saas", "shopify", "stripe"]
-        if not any(word in text for word in job_fit_keywords):
-            return True
+        return True
     if item.source_category == "overseas_and_platforms" and any(word in text for word in ["融资", "ipo", "财报"]) and not any(word in text for word in ["stripe", "shopify", "支付", "跨境", "出海", "开发者", "ai", "api"]):
         return True
     if len(item.title) > 90 and any(mark in item.title for mark in ["丨", "；", ";"]):
@@ -1838,14 +1836,14 @@ def heuristic_decision(item: SourceItem, site: dict[str, Any]) -> RadarDecision:
     score = min(score, 100)
     report_type = infer_report_type(text, item.source_category)
     report_title = make_report_title(item, report_type, site)
-    if score >= 55 and not is_minor_changelog_text(text):
+    if score >= 45 and not is_minor_changelog_text(text):
         decision = "deep_dive"
     elif score >= 32:
         decision = "brief"
     else:
         decision = "skip"
     reader_hook = infer_reader_hook(hits, report_type)
-    reject_reason = "" if decision != "skip" else "老花人设解读角度、成本/平台/工具链关联不够明确，先不进入候选池。"
+    reject_reason = "" if decision != "skip" else "信息关联度或可查证价值不足，先不进入本批简报。"
     return normalize_triage_decision(RadarDecision(
         item=item,
         decision=decision,
@@ -1902,27 +1900,20 @@ def normalize_triage_decision(decision: RadarDecision) -> RadarDecision:
     if is_minor_changelog_text(text):
         decision.score = min(decision.score, 28)
         decision.decision = "skip"
-        decision.reject_reason = decision.reject_reason or "只是官方 changelog/CLI/API/SDK 单点更新，暂未发现迁移成本、账单风险、用户反弹或普通技术人的选择题。"
+        decision.reject_reason = decision.reject_reason or "只是官方 changelog/CLI/API/SDK 单点更新，暂未发现需要记录的明确外部变化。"
     elif decision.evidence_level == "weak":
         decision.score = min(decision.score, 50)
         if decision.decision != "skip":
             decision.decision = "skip"
-            decision.reject_reason = decision.reject_reason or "证据层级偏弱，不进入公众号主选题。"
-    elif tension.get("score", 0) < 7 and decision.decision == "deep_dive":
-        decision.decision = "skip"
-        decision.score = min(decision.score, 54)
-        decision.reject_reason = decision.reject_reason or "传播张力不足，不再降级为简讯或可选线索。"
+            decision.reject_reason = decision.reject_reason or "证据层级偏弱，不进入本批简报。"
     if is_generic_report_title(decision.report_title):
         decision.score = min(decision.score, 37)
         if decision.decision != "skip":
-            decision.decision = "skip"
-        decision.reject_reason = decision.reject_reason or "标题仍停留在泛化公司/平台变化层面，未形成具体冲突、成本、规则或选择题。"
+            decision.decision = "brief"
+        decision.reject_reason = decision.reject_reason or "标题仍停留在泛化公司/平台变化层面，需要详情页补原始来源。"
     if decision.decision == "deep_dive" and decision.score < MIN_DEEP_DIVE_SCORE:
-        decision.decision = "skip"
-        decision.reject_reason = decision.reject_reason or "分数低于主选题入池线，不再降级为简讯或可选线索。"
-    if decision.decision == "brief":
-        decision.decision = "skip"
-        decision.reject_reason = decision.reject_reason or "brief/简讯线索不再进入 Radar 输出。"
+        decision.decision = "brief"
+        decision.reject_reason = decision.reject_reason or "分数低于详情页优先级，作为普通简报信息保留。"
     if decision.decision == "skip" and decision.score >= MIN_BRIEF_SCORE:
         decision.score = MIN_BRIEF_SCORE - 1
     decision.traceability = {**decision.traceability, "topic_tension_score": tension.get("score", 0)}
@@ -3453,8 +3444,8 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
 
 
 def select_reports(decisions: list[RadarDecision], site: dict[str, Any], archive: dict[str, Any], batch_id: str, limit: int = MAX_REPORTS_PER_BATCH) -> tuple[list[RadarDecision], list[dict[str, str]]]:
-    eligible = [d for d in decisions if d.decision == "deep_dive" and d.score >= MIN_DEEP_DIVE_SCORE]
-    info(f"Selection eligible: eligible={len(eligible)}, min_score={MIN_DEEP_DIVE_SCORE}, limit={limit}")
+    eligible = [d for d in decisions if d.decision in {"deep_dive", "brief"} and d.score >= MIN_BRIEF_SCORE]
+    info(f"Selection eligible: eligible={len(eligible)}, min_score={MIN_BRIEF_SCORE}, limit={limit}")
     eligible_ids = {d.item.id for d in eligible}
     for decision in decisions:
         if decision.item.id in eligible_ids:
@@ -3665,7 +3656,7 @@ class StaticSite:
 <body>
   <header><nav><a class="brand" href="/">Easton Radar</a>{nav}</nav></header>
   <main>{body}</main>
-  <footer>Easton Radar · 老花的信息差侦察站 · 内容用于信息收集、证据沉淀和方向判断</footer>
+  <footer>Easton Radar · 老花信息简报 · 内容用于信息收集、证据沉淀和人工判断</footer>
 </body>
 </html>
 """
@@ -3690,8 +3681,8 @@ header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0
 nav{max-width:1120px;margin:0 auto;padding:14px 20px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
 .brand{font-weight:750;color:var(--text);margin-right:auto}nav a{font-size:14px;color:#2c3852}
 main{max-width:1120px;margin:0 auto;padding:28px 20px 56px}.hero{padding:34px 0 18px}.hero h1{font-size:38px;line-height:1.16;margin:0 0 14px}.hero p{max-width:790px;color:var(--muted);font-size:17px;margin:0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.card,.item,.report,.callout{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px}.section{margin-top:32px}
-.list{display:grid;gap:12px}.flow{display:grid;gap:10px}.flow-item{display:grid;grid-template-columns:120px 1fr auto;gap:14px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px}.flow-item h3{margin:0 0 6px;font-size:17px}.flow-item p{margin:5px 0}.topic-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}.topic-chip{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px}.topic-chip strong{display:block;font-size:22px}.archive-day{margin-top:18px}.item h3{margin:0 0 8px;font-size:18px}.item p{margin:8px 0}.meta{color:var(--muted);font-size:13px}.badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:12px;color:#33415f;background:#fafbff;margin:0 6px 6px 0}.score{font-weight:700;color:#0a7f42}.source{word-break:break-all}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.card,.item,.report,.callout,.briefing-topic{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:18px}.section{margin-top:32px}
+.list{display:grid;gap:12px}.flow{display:grid;gap:10px}.flow-item{display:grid;grid-template-columns:120px 1fr auto;gap:14px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:14px}.flow-item h3{margin:0 0 6px;font-size:17px}.flow-item p{margin:5px 0}.briefing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.briefing-topic h3{margin:0 0 10px}.briefing-topic ul{margin:0;padding-left:18px}.briefing-topic li{margin:8px 0;line-height:1.55}.topic-strip{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}.topic-chip{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:12px}.topic-chip strong{display:block;font-size:22px}.archive-day{margin-top:18px}.item h3{margin:0 0 8px;font-size:18px}.item p{margin:8px 0}.meta{color:var(--muted);font-size:13px}.badge{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:12px;color:#33415f;background:#fafbff;margin:0 6px 6px 0}.score{font-weight:700;color:#0a7f42}.source{word-break:break-all}
 .topic-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start}.topic-head h2{margin:0}.kicker{font-size:13px;color:#44516b;font-weight:650;margin:0 0 6px}.topic-list{margin-top:14px}.filter-tabs{position:sticky;top:54px;z-index:4;display:flex;gap:8px;flex-wrap:wrap;background:rgba(246,247,251,.94);padding:10px 0;border-bottom:1px solid var(--line)}.filter-tabs a{border:1px solid var(--line);border-radius:999px;background:#fff;color:#2c3852;padding:6px 12px;font-size:14px}.callout{border-color:#bfd1f8;background:#f8fbff}.evidence-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.evidence-grid h3{margin-top:0}
 .report{max-width:920px}.report h1{line-height:1.25}.report h2{margin-top:28px}.ad-slot{border:1px dashed #c8cfdd;border-radius:8px;color:#7b8496;padding:16px;text-align:center;background:#fff;margin:24px 0}
 footer{border-top:1px solid var(--line);color:var(--muted);font-size:13px;padding:22px 20px;text-align:center}
@@ -3703,7 +3694,7 @@ def render_about(site: dict[str, Any], policy: dict[str, Any]) -> str:
     lines = "".join(f"<li>{html.escape(x)}</li>" for x in policy["persona_lines"])
     filters = "".join(f"<li>{html.escape(x)}</li>" for x in policy["fatal_filters"])
     return f"""
-<section class="hero"><h1>关于 Easton Radar</h1><p>这里是信息雷达和证据层，不是自动写稿机。</p></section>
+<section class="hero"><h1>关于 Easton Radar</h1><p>这里是早报、午报、晚报式的信息简报站，不是自动选题机。</p></section>
 <section class="card"><h2>关注主线</h2><ul>{lines}</ul></section>
 <section class="card section"><h2>直接跳过</h2><ul>{filters}</ul></section>
 <section class="card section"><h2>SEO / AI SEO</h2><p>站点输出结构化 HTML、JSON-LD、sitemap.xml、robots.txt、llms.txt，并保留 Google Search Console 和 AdSense 配置位。</p></section>
@@ -3766,19 +3757,31 @@ def display_report_title(report: dict[str, Any]) -> str:
     return title
 
 
+def short_briefing_sentence(report: dict[str, Any], limit: int = 96) -> str:
+    title = display_report_title(report)
+    summary = clean_text(report.get("summary", ""))
+    reason = clean_text(report.get("reason", ""))
+    source = report.get("source_name", "")
+    sentence = summary or reason or title
+    sentence = re.split(r"(?<=[。！？!?])", sentence)[0].strip() or sentence
+    sentence = re.sub(r"^(这条线索|当前线索|这件事)[，,：:]\s*", "", sentence)
+    if len(sentence) > limit:
+        sentence = sentence[:limit - 1].rstrip(" ，,。") + "…"
+    if source and not sentence.startswith(f"【{source}】"):
+        sentence = f"【{source}】{sentence}"
+    return sentence
+
+
 def report_card(report: dict[str, Any]) -> str:
     topic_title = report.get("topic_direction_short_title") or report.get("topic_direction_title") or report.get("source_category_title", "")
     title = display_report_title(report)
-    dossier = report.get("selection_dossier") or report.get("material_pack") or {}
-    verdict = dossier.get("verdict", {})
-    verdict_label = report_verdict_label(report)
-    core_question = dossier.get("core_question") or report.get("reader_hook", "")
+    briefing = short_briefing_sentence(report)
     return f"""
 <article class="item">
   <p class="kicker">{html.escape(topic_title)}</p>
   <h3><a href="/items/{html.escape(report['id'])}/">{html.escape(title)}</a></h3>
-  <p>{html.escape(core_question)}</p>
-  <p><span class="badge">{html.escape(verdict_label)}</span><span class="badge">{html.escape(report['evidence_level'])}</span><span class="badge">{html.escape(report['report_type_title'])}</span><span class="score">Score {report['score']}</span></p>
+  <p>{html.escape(briefing)}</p>
+  <p><span class="badge">{html.escape(report['evidence_level'])}</span><span class="badge">{html.escape(report['report_type_title'])}</span><span class="score">Score {report['score']}</span></p>
   <p class="meta source">来源：<a href="{html.escape(report['url'])}" rel="nofollow noopener">{html.escape(report['source_name'])}</a> · {html.escape(report.get('original_title', ''))}</p>
 </article>
 """
@@ -3792,30 +3795,39 @@ def topic_summary_chips(reports: list[dict[str, Any]], site: dict[str, Any]) -> 
 <a class="topic-chip" href="{topic_href(key)}">
   <span class="meta">{html.escape(meta.get("short_title", meta.get("title", key)))}</span>
   <strong>{count}</strong>
-  <span class="meta">本批次候选</span>
+  <span class="meta">本批次信息</span>
 </a>
 """)
     return "".join(chips)
 
 
-def report_flow_item(report: dict[str, Any]) -> str:
-    dossier = report.get("selection_dossier") or report.get("material_pack") or {}
-    verdict = dossier.get("verdict", {})
-    label = report_verdict_label(report)
-    reason = verdict.get("reason", "")
+def briefing_flow_item(report: dict[str, Any]) -> str:
     topic = report.get("topic_direction_short_title") or report.get("topic_direction_title") or report.get("source_category_title", "")
     title = display_report_title(report)
+    sentence = short_briefing_sentence(report)
     return f"""
 <article class="flow-item">
-  <div><span class="badge">{html.escape(label)}</span><p class="meta">{html.escape(topic)}</p></div>
+  <div><span class="badge">{html.escape(topic)}</span><p class="meta">{html.escape(report.get("source_name", ""))}</p></div>
   <div>
     <h3><a href="/items/{html.escape(report['id'])}/">{html.escape(title)}</a></h3>
-    <p>{html.escape(reason or report.get("reader_hook", ""))}</p>
+    <p>{html.escape(sentence)}</p>
     <p class="meta source">来源：<a href="{html.escape(report['url'])}" rel="nofollow noopener">{html.escape(report['source_name'])}</a> · {html.escape(report.get('original_title', ''))}</p>
   </div>
   <div class="meta">Score {report["score"]}<br>{html.escape(report["evidence_level"])}</div>
 </article>
 """
+
+
+def reports_by_topic_sections(reports: list[dict[str, Any]], site: dict[str, Any], per_topic: int = 3) -> str:
+    sections = []
+    for key, meta in site.get("topic_directions", {}).items():
+        topic_reports = sorted(reports_for_topic(reports, key), key=report_time_key, reverse=True)[:per_topic]
+        if topic_reports:
+            items = "".join(f'<li>{html.escape(short_briefing_sentence(report))} <a href="/items/{html.escape(report["id"])}/">详情</a></li>' for report in topic_reports)
+        else:
+            items = '<li class="meta">暂无值得记录的信息。</li>'
+        sections.append(f'<section class="briefing-topic"><h3>{html.escape(meta.get("title", key))}</h3><ul>{items}</ul></section>')
+    return "".join(sections)
 
 
 def report_verdict_label(report: dict[str, Any]) -> str:
@@ -3838,6 +3850,10 @@ def archive_item_level(item: dict[str, Any]) -> str:
     if evidence in {"official", "near_source", "media"} and score >= MIN_DEEP_DIVE_SCORE:
         return "可选"
     return "不入池"
+
+
+def archive_item_public_label(item: dict[str, Any]) -> str:
+    return "已记录" if archive_item_level(item) != "不入池" else "跳过"
 
 
 def pack_verdict_display(pack: dict[str, Any]) -> tuple[str, str]:
@@ -3863,7 +3879,7 @@ def render_archive_preview(archive: dict[str, Any], limit_days: int = 5) -> str:
     for day in sorted(grouped.keys(), reverse=True)[:limit_days]:
         rows = []
         for item in grouped[day][:8]:
-            rows.append(f'<li><span class="badge">{html.escape(archive_item_level(item))}</span><a href="{html.escape(item.get("item_url", ""))}">{html.escape(item.get("title", ""))}</a> <span class="meta">· {html.escape(item.get("topic_direction_title", ""))}</span></li>')
+            rows.append(f'<li><span class="badge">{html.escape(archive_item_public_label(item))}</span><a href="{html.escape(item.get("item_url", ""))}">{html.escape(item.get("title", ""))}</a> <span class="meta">· {html.escape(item.get("topic_direction_title", ""))}</span></li>')
         sections.append(f'<section class="archive-day"><h3>{html.escape(day)}</h3><ul>{"".join(rows)}</ul></section>')
     return "".join(sections) or '<p class="meta">暂无历史选题归档。</p>'
 
@@ -3874,27 +3890,20 @@ def render_home(batch: dict[str, Any], reports: list[dict[str, Any]], site: dict
         f'<span class="badge">{html.escape(v["title"])}：{v["items"]} 条 / 失败 {v["failures"]}</span>'
         for v in batch.get("source_coverage", {}).values()
     )
-    recommended_reports = [r for r in reports if report_verdict_label(r) == "推荐"]
-    optional_reports = [r for r in reports if report_verdict_label(r) == "可选"]
-    recommended_flow = "".join(report_flow_item(r) for r in recommended_reports) or '<p class="meta">本批次暂无推荐选题。</p>'
-    optional_flow = "".join(report_flow_item(r) for r in optional_reports) or '<p class="meta">本批次暂无可选储备题。</p>'
-    verdict_counts: dict[str, int] = {}
-    for report in reports:
-        label = report_verdict_label(report)
-        verdict_counts[label] = verdict_counts.get(label, 0) + 1
-    verdict_summary = " / ".join(f"{html.escape(k)} {v}" for k, v in verdict_counts.items()) or "暂无候选"
+    briefing_flow = "".join(briefing_flow_item(r) for r in reports[:8]) or '<p class="meta">本批次暂无值得记录的信息。</p>'
+    topic_sections = reports_by_topic_sections(reports, site)
     duplicate_count = len(batch.get("duplicate_skips", []))
     return f"""
-<section class="hero"><h1>老花的选题雷达站</h1><p>这里不是公众号成稿库，而是上游情报台。每条线索先按选题方向沉淀，再保留来龙去脉、事实、证据、存疑点和与老花人设相关的切入口，给后续博客、公众号、视频和小红书做素材底座。</p></section>
-<section class="section"><h2>推荐选题</h2><div class="flow">{recommended_flow}</div></section>
-<section class="section"><h2>可选储备题</h2><div class="flow">{optional_flow}</div></section>
+<section class="hero"><h1>老花信息简报</h1><p>每天早报、午报、晚报自动汇总公开信息源；不替你选题，只用一句话讲清楚外部世界发生了什么。</p></section>
+<section class="section"><h2>{html.escape(batch.get("slot_label", "本批次"))}</h2><div class="briefing-grid">{topic_sections}</div></section>
+<section class="section"><h2>最新信息</h2><div class="flow">{briefing_flow}</div></section>
 <section class="section">
-  <h2>大选题方向聚合</h2>
+  <h2>信息分类</h2>
   <div class="topic-strip">{topic_summary_chips(reports, site)}</div>
 </section>
 <div class="ad-slot">AdSense 预留位：后续填入 publisher client 后启用</div>
-<section class="section card"><h2>本批次概况</h2><p class="meta">批次：{html.escape(batch["batch_id"])} · 抓取 {batch["fetched_count"]} 条 · 推荐 {len(recommended_reports)} 个 · 可选 {len(optional_reports)} 个 · {verdict_summary} · 近期重复跳过 {duplicate_count} 个</p><p>{coverage}</p></section>
-<section class="section card"><h2>历史选题库</h2><p class="meta">按日期回看已入池选题，用来判断哪些题已经看过、哪些方向反复出现。<a href="/archive/">查看完整历史</a></p>{render_archive_preview(archive)}</section>
+<section class="section card"><h2>本批次概况</h2><p class="meta">批次：{html.escape(batch["batch_id"])} · 抓取 {batch["fetched_count"]} 条 · 汇总 {len(reports)} 条 · 近期重复跳过 {duplicate_count} 条</p><p>{coverage}</p></section>
+<section class="section card"><h2>历史简报</h2><p class="meta">按日期回看已经记录的信息，用来查证外部变化和避免重复。<a href="/archive/">查看完整历史</a></p>{render_archive_preview(archive)}</section>
 <section class="section card"><h2>数据源原则</h2><ul>{principles}</ul></section>
 """
 
@@ -3908,8 +3917,8 @@ def render_briefings(batch: dict[str, Any], reports: list[dict[str, Any]], site:
     failures = "".join(f'<li>{html.escape(f["source"])}：{html.escape(f["error"])}</li>' for f in batch.get("failures", [])[:12]) or "<li>本批次无抓取失败。</li>"
     coverage = "".join(f'<li>{html.escape(v["title"])}：{v["items"]} 条，失败 {v["failures"]}</li>' for v in batch.get("source_coverage", {}).values())
     return f"""
-<section class="hero"><h1>本批次候选选题</h1><p>候选选题按方向归档。先看方向，再看具体话题，最后进入报告确认事实、证据和可写切入口。</p></section>
-<section class="card"><p>批次：{html.escape(batch["batch_id"])}</p><p>抓取 {batch["fetched_count"]} 条；入池 {len(reports)} 条；跳过 {batch["skipped_count"]} 条。</p></section>
+<section class="hero"><h1>{html.escape(batch.get("slot_label", "本批次"))}</h1><p>本页按信息分类归档，每条只保留一句话摘要和原始来源。</p></section>
+<section class="card"><p>批次：{html.escape(batch["batch_id"])}</p><p>抓取 {batch["fetched_count"]} 条；汇总 {len(reports)} 条；跳过 {batch["skipped_count"]} 条。</p></section>
 <section class="section card"><h2>数据源覆盖</h2><ul>{coverage}</ul></section>
 {''.join(topic_sections)}
 <section class="section card"><h2>抓取失败</h2><ul>{failures}</ul></section>
@@ -3918,15 +3927,11 @@ def render_briefings(batch: dict[str, Any], reports: list[dict[str, Any]], site:
 
 def render_topic_direction(key: str, meta: dict[str, Any], reports: list[dict[str, Any]]) -> str:
     sorted_reports = sorted(reports, key=report_time_key, reverse=True)
-    recommended = [report for report in sorted_reports if report_verdict_label(report) == "推荐"]
-    optional = [report for report in sorted_reports if report_verdict_label(report) == "可选"]
-    recommended_items = "".join(report_card(r) for r in recommended) or '<p class="meta">本方向暂无推荐选题。</p>'
-    optional_items = "".join(report_card(r) for r in optional) or '<p class="meta">本方向暂无可选储备题。</p>'
+    items = "".join(report_card(r) for r in sorted_reports) or '<p class="meta">本方向暂无信息。</p>'
     return f"""
-<section class="hero"><p class="kicker">选题方向</p><h1>{html.escape(meta["title"])}</h1><p>{html.escape(meta.get("description", ""))}</p></section>
-<section class="callout"><h2>这个方向怎么读</h2><p>先看线索和原始来源，再进入详情页看事实收集、证据收集、存疑点和与老花相关的切入口。报告类型只是分析方法，不代表主栏目。</p></section>
-<section id="recommended" class="section"><h2>推荐选题</h2><div class="list">{recommended_items}</div></section>
-<section id="optional" class="section"><h2>可选储备题</h2><div class="list">{optional_items}</div></section>
+<section class="hero"><p class="kicker">信息分类</p><h1>{html.escape(meta["title"])}</h1><p>{html.escape(meta.get("description", ""))}</p></section>
+<section class="callout"><h2>这个分类怎么读</h2><p>先看一句话摘要和原始来源；详情页只用于查证事实、证据、存疑点和后续补证方向。</p></section>
+<section class="section"><h2>历史信息</h2><div class="list">{items}</div></section>
 """
 
 
@@ -3946,7 +3951,7 @@ def render_archive(archive: dict[str, Any], site: dict[str, Any]) -> str:
             topic_title = item.get("topic_direction_title") or directions.get(topic_key, {}).get("title", topic_key)
             rows.append(f"""
 <article class="item">
-  <p class="kicker">{html.escape(topic_title)} · {html.escape(archive_item_level(item))}</p>
+  <p class="kicker">{html.escape(topic_title)} · {html.escape(archive_item_public_label(item))}</p>
   <h3><a href="{html.escape(item.get("item_url", ""))}">{html.escape(item.get("title", ""))}</a></h3>
   <p class="meta">Score {html.escape(str(item.get("score", "")))} · {html.escape(item.get("evidence_level", ""))} · 首次入池 {html.escape(bj_time(item.get("first_seen_at")))}</p>
   <p class="meta source"><a href="{html.escape(item.get("url", ""))}">{html.escape(item.get("original_title", "") or item.get("url", ""))}</a></p>
@@ -3955,7 +3960,7 @@ def render_archive(archive: dict[str, Any], site: dict[str, Any]) -> str:
         sections.append(f'<section class="archive-day"><h2>{html.escape(day)}</h2><div class="list">{"".join(rows)}</div></section>')
     items = "".join(sections) or '<p class="meta">暂无历史选题归档。</p>'
     return f"""
-<section class="hero"><h1>历史选题归档</h1><p>这里记录曾经进入候选池的选题，用于回看、去重和判断哪些方向已经反复出现。新的候选选题会和近 14 天归档做重复检查。</p></section>
+<section class="hero"><h1>历史简报归档</h1><p>这里记录已经汇总过的信息，用于回看、查证和避免重复。新的信息会和近 14 天归档做重复检查。</p></section>
 <section class="section list">{items}</section>
 """
 
@@ -4071,7 +4076,7 @@ def render_material_pack(pack: dict[str, Any]) -> str:
     generated_by = pack.get("generated_by", "")
     return f"""
 <section class="section callout">
-  <h2>选题判断</h2>
+  <h2>内部查证记录</h2>
   <p><strong>{html.escape(verdict_status)}</strong>：{html.escape(verdict_reason)}</p>
   <p>{html.escape(pack.get("why_this_topic_matters", ""))}</p>
   <p class="meta">报告来源：{html.escape(generated_by)} · 可信度 {html.escape(str(confidence))} · {html.escape(pack.get("schema", ""))}</p>
@@ -4091,7 +4096,7 @@ def render_material_pack(pack: dict[str, Any]) -> str:
   <p>{logic}</p>
 </section>
 <section class="section card">
-  <h2>可以继续写的方向</h2>
+  <h2>可以继续追的方向</h2>
   <ul>{angles}</ul>
   <h3>还缺哪些基础概念</h3><ul>{missing_basics}</ul>
   <h3>还缺哪些资料素材</h3><ul>{missing_materials}</ul>
@@ -4141,9 +4146,9 @@ def render_item(report: dict[str, Any], site: dict[str, Any]) -> str:
   <p class="meta">原始标题：{html.escape(report.get("original_title", report["title"]))}</p>
 
   <section class="callout">
-    <h2>这是不是一个值得进入写作池的选题</h2>
-    <p><strong>{html.escape(verdict_status)}</strong>：{html.escape(verdict.get("reason", ""))}</p>
-    <p>{html.escape(report["persona_connection"]["why_it_matters"])}</p>
+    <h2>一句话摘要</h2>
+    <p>{html.escape(short_briefing_sentence(report, limit=140))}</p>
+    <p class="meta">内部判断：{html.escape(verdict_status)} · {html.escape(verdict.get("reason", ""))}</p>
   </section>
 
   <section class="section card">
@@ -4165,7 +4170,7 @@ def render_item(report: dict[str, Any], site: dict[str, Any]) -> str:
   </section>
 
   <section class="section card">
-    <h2>给 GPT 前必须知道的边界</h2>
+    <h2>必须知道的边界</h2>
     <h3>存疑点</h3><ul>{uncertainty}</ul>
     <h3>继续深挖方向</h3><p>{html.escape(report.get("investigation_direction", ""))}</p><ul>{follow}</ul>
     <h3>懂行人可能会挑刺</h3><ul>{challenge}</ul>
@@ -4173,8 +4178,8 @@ def render_item(report: dict[str, Any], site: dict[str, Any]) -> str:
   </section>
 
   <section class="section card">
-    <h2>交付给 GPT 的使用入口</h2>
-    <p>后续 GPT 应用应优先读取本静态页里的选题结论、判断链路、证据入口、缺口和可写方向；如果读取 JSON，则优先读取 <code>selection_dossier</code> 和 <code>material_pack</code>。</p>
+    <h2>后续补证入口</h2>
+    <p>这里不替你决定是否写，只保留原始来源、证据入口、存疑点和继续检索词，供个人资产系统或人工判断引用。</p>
     <p><strong>继续检索词：</strong></p><ul>{queries}</ul>
   </section>
 </article>
@@ -4185,7 +4190,8 @@ def render_static(batch: dict[str, Any], reports: list[dict[str, Any]], all_repo
     static = StaticSite(site)
     static.write_assets()
     static.write_page("index.html", "Easton Radar", render_home(batch, reports, site, policy, archive))
-    static.write_page("archive/index.html", "历史选题归档 - Easton Radar", render_archive(archive, site))
+    static.write_page("briefings/index.html", f"{batch.get('slot_label', '本批次')} - Easton Radar", render_briefings(batch, reports, site))
+    static.write_page("archive/index.html", "历史简报归档 - Easton Radar", render_archive(archive, site))
     static.write_page("about/index.html", "关于 - Easton Radar", render_about(site, policy))
     for key, meta in site.get("topic_directions", {}).items():
         static.write_page(f"topics/{key}/index.html", f"{meta['title']} - Easton Radar", render_topic_direction(key, meta, reports_for_topic(all_reports, key)))
@@ -4226,47 +4232,29 @@ def send_telegram(batch: dict[str, Any], reports: list[dict[str, Any]], site: di
         print("Telegram not configured; skip notification.")
         return
     base = site["site_url"].rstrip("/")
-    verdict_counts: dict[str, int] = {}
     topic_counts: dict[str, int] = {}
     for report in reports:
-        label = report_verdict_label(report)
         topic = report.get("topic_direction_short_title") or report.get("topic_direction_title") or report.get("source_category_title", "未分类")
-        verdict_counts[label] = verdict_counts.get(label, 0) + 1
         topic_counts[topic] = topic_counts.get(topic, 0) + 1
 
-    verdict_summary = " / ".join(f"{key} {value}" for key, value in verdict_counts.items()) or "暂无候选"
     topic_summary = " / ".join(f"{key} {value}" for key, value in topic_counts.items()) or "暂无方向"
     lines = [
-        f"Easton Radar {batch['slot_label']}｜候选选题池",
-        f"抓取 {batch['fetched_count']} 条，入池 {len(reports)} 个候选选题（{verdict_summary}）。",
+        f"Easton Radar {batch['slot_label']}｜信息简报",
+        f"抓取 {batch['fetched_count']} 条，汇总 {len(reports)} 条。",
         f"方向分布：{topic_summary}",
         "",
     ]
-    grouped_reports = [
-        ("推荐选题", [report for report in reports if report_verdict_label(report) == "推荐"]),
-        ("可选储备题", [report for report in reports if report_verdict_label(report) == "可选"]),
-    ]
-    for section_title, section_reports in grouped_reports:
+    for key, meta in site.get("topic_directions", {}).items():
+        section_reports = sorted(reports_for_topic(reports, key), key=report_time_key, reverse=True)[:3]
         if not section_reports:
             continue
-        lines.append(section_title + "：")
-        for report in section_reports[:6]:
-            dossier = report.get("selection_dossier") or report.get("material_pack") or {}
-            verdict = dossier.get("verdict", {})
-            label = report_verdict_label(report)
-            reason = verdict.get("reason", "")
-            topic = report.get("topic_direction_short_title") or report.get("topic_direction_title") or report.get("source_category_title", "")
-            title = display_report_title(report)
-            lines.append(f"- [{label}] {title}")
-            lines.append(f"  {topic} | {report['evidence_level']} | Score {report['score']}")
-            if reason:
-                lines.append(f"  判断：{reason[:80]}")
+        lines.append(f"{meta.get('title', key)}：")
+        for report in section_reports:
+            lines.append(f"- {short_briefing_sentence(report, limit=90)}")
             lines.append(f"  {base}/items/{report['id']}/")
-        if section_title == "可选储备题":
-            lines.append("  可选题只有在补足证据或出现新变化后才升级为推荐；否则按重复选题拦截。")
         lines.append("")
     if not reports:
-        lines.append("本批次没有达到入池标准的候选选题，只保留抓取数据和源覆盖统计。")
+        lines.append("本批次没有值得记录的信息，只保留抓取数据和源覆盖统计。")
     payload = urllib.parse.urlencode({"chat_id": chat_id, "text": "\n".join(lines)[:3900], "disable_web_page_preview": "true"}).encode("utf-8")
     try:
         req = urllib.request.Request(f"https://api.telegram.org/bot{token}/sendMessage", data=payload, method="POST")
@@ -4367,16 +4355,10 @@ def main() -> int:
     }
     info("Building enriched topic reports...")
     built_reports = [build_report(d, site, policy, batch_id) for d in selected]
-    publishable_labels = {"推荐", "可选"}
-    reports = [report for report in built_reports if report_verdict_label(report) in publishable_labels]
-    dropped_reports = [report for report in built_reports if report_verdict_label(report) not in publishable_labels]
-    if dropped_reports:
-        for report in dropped_reports:
-            dossier = report.get("selection_dossier") or report.get("material_pack") or {}
-            verdict = dossier.get("verdict", {}) if isinstance(dossier, dict) else {}
-            info(f"Report dropped after quality gate: title={display_report_title(report)}, reason={verdict.get('reason', '')}")
+    reports = built_reports
+    dropped_reports: list[dict[str, Any]] = []
     batch["dropped_after_quality_gate_count"] = len(dropped_reports)
-    info(f"Report build complete: built={len(built_reports)}, publishable={len(reports)}, dropped={len(dropped_reports)}")
+    info(f"Report build complete: built={len(built_reports)}, briefing_items={len(reports)}, dropped={len(dropped_reports)}")
     archive = update_topic_archive(archive, reports, batch)
     info(f"Updated topic archive entries: {len(archive.get('items', []))}")
     clean_generated_outputs()

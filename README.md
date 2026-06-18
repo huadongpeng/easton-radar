@@ -1,52 +1,47 @@
 # 01 Easton Radar
 
-Easton Radar 是老花的信息差侦察站。
+Easton Radar 是老花的信息简报站。
 
-它不负责直接写内容正文，只负责综合稳定、公开、可复查的信息流，初筛出候选选题，判断这些选题是否值得继续写，保留证据链、基础概念、材料缺口、逻辑闭环和可写方向，并发布到 GitHub Pages。
+它不再负责替用户选题，也不判断公众号主文潜力。它只负责每天早报、午报、晚报抓取稳定、公开、可复查的信息源，按分类汇总外部变化，并用一句话讲清楚发生了什么。
 
 ## 项目定位
 
 - 运行环境：GitHub Actions + GitHub Pages。
-- 模型：DeepSeek v4 Flash，负责初筛、选题价值判断、报告类型判断、收集原则判断和轻量调查。
+- 模型：DeepSeek v4 Flash，负责信息初筛、分类、一句话摘要和存疑标记。
 - 频率：每天早、中、晚 3 次定时采集。
-- 输出：静态 Radar 网站、JSON 数据、Telegram 摘要通知。公开只输出达到公众号主文标准的 `推荐` 选题；证据不足、重复、传播张力不够或只能写成简讯的线索直接跳过，不再公开保留为 `可选`。
+- 输出：静态 Radar 网站、JSON 数据、Telegram 简报通知。
 
-## 三项目协作使命
+## 页面形态
 
-Easton Radar 是三项目链路的上游情报层。
+首页按本批次展示：
 
-- `01-easton-radar`：只做信息采集、候选选题、证据沉淀、存疑标记、选题价值判断和调查方向判断。
-- `02-easton-gpt-editor`：读取 Radar 静态网页链接或 JSON 选题包，再结合人设进行多轮创作。
+- 早报 / 午报 / 晚报。
+- `AI前沿`、`工具&规则`、`跨境&出海`、`副业&信息差` 四类。
+- 每类最多保留少量信息；没有就显示暂无值得记录的信息。
+- 每条信息只展示一句话摘要和原始来源入口。
 
-因此每条 Radar 报告都必须给足后续流程所需资料，而不是给一篇模板化文章：
+详情页只用于查证：
 
-- 给 GPT 编辑应用：选题结论、来源、事实、证据、基础概念、逻辑闭环、可写方向、材料缺口、存疑点、不可写成结论的点、需要补证的问题。
-- 给研究闭环：继续检索词、证据缺口、停止信号。
+- 原始标题和链接。
+- 一句话摘要。
+- 事实入口和证据入口。
+- 存疑点、不能夸大的地方、继续检索词。
 
-## 栏目定义
+## 和其他项目的关系
 
-网站主栏目按“选题方向”划分，不按报告类型，也不按数据源分类划分。
+- `01-easton-radar`：只做信息采集、分类汇总、证据入口和一句话简报。
+- 个人资产系统：从用户自身项目、资产、经验、内容缺口出发决定写什么。
+- `02-easton-gpt-editor`：在用户明确选择材料后，再做交互式创作。
+- `03-easton-cms`：负责内容包、发布、微信草稿和数据复盘。
 
-当前选题方向：
+Radar 不再当主编，只当外部事实传感器。
 
-- AI前沿：模型、Agent、OpenAI/Claude/Gemini、底层能力和 AI 产品关键动态。
+## 信息分类
+
+- AI前沿：模型、Agent、OpenAI、Claude、Gemini、底层能力和 AI 产品关键动态。
 - 工具&规则：开发工具、AI 实操、API、云服务、自动化工作流、平台政策、账号规则、搜索流量和内容分发生态变化。
 - 跨境&出海：跨境支付、海外平台、独立站、电商、合规、收款和出海基础设施。
 - 副业&信息差：独立开发、副业项目、工具站、微型 SaaS、开源项目、现金流风险、外包回款、信息差机会和风险避坑。
-
-报告类型只表示分析方法，不承担主栏目职责，也不生成公开栏目页。公开网站只按 `topic_direction` 组织，避免后续 GPT 应用被“分析方法”误导。
-
-当前报告类型：
-
-- 主选题池：当天值得进入公众号框架阶段的推荐选题集合，不做简讯池。
-- 深度调查：事实、证据、概念和影响都需要展开的主题。
-- 机会拆解：看起来能做项目、搞副业、做产品的线索。
-- 工具账本：AI/API/云服务/开发工具的成本、能力和替代方案。
-- 平台规则：支付、账号、广告、分发、合规、生态规则变化。
-- 案例复盘：独立开发、产品增长、失败复盘、真实运营案例。
-- 风险避坑：容易误导、夸大、踩坑或割韭菜的线索。
-
-数据源分类只作为内部字段使用，例如 `ai_tools`、`developer_business`、`overseas_and_platforms`、`platform_policy`，不能直接变成网站主栏目。
 
 ## 信息源原则
 
@@ -56,7 +51,7 @@ Radar 宁可少，也不要脏。
 - 其次使用稳定可访问的高质量开发者和商业信息源。
 - 如果 GitHub Actions 抓不到、需要登录、需要代理、需要绕 Cloudflare、需要浏览器指纹或验证码，直接放弃。
 - Reddit、封闭论坛和强反爬站点不作为核心抓取源。
-- 没有证据链的收入截图、营销话术、二手转述，只能做线索，不能写成事实。
+- 没有证据链的收入截图、营销话术、二手转述，只能做弱线索，不能写成事实。
 
 ## 核心流程
 
@@ -64,14 +59,10 @@ Radar 宁可少，也不要脏。
 稳定信息源
   -> 拉取 RSS/API/公开 JSON
   -> 去重和基础清洗
-  -> 统计数据源覆盖
   -> DeepSeek v4 Flash 初筛
-  -> 判断 topic_direction
-  -> 判断 report_type
-  -> LLM 生成补证计划
-  -> 执行搜索和正文抓取
-  -> LLM 生成选题报告 JSON、selection_dossier/material_pack 和 downstream_handoff
-  -> 生成静态网站
+  -> 判断信息分类和内部报告类型
+  -> 生成一句话摘要、证据入口和存疑点
+  -> 生成早报/午报/晚报静态网站
   -> GitHub Pages 发布
   -> Telegram 通知
 ```
@@ -85,9 +76,9 @@ Radar 宁可少，也不要脏。
 | `TAVILY_SEARCH_DEPTH` | 可选，默认 `basic`；可设 `advanced` 提高相关性但消耗更多额度 |
 | `TAVILY_INCLUDE_RAW_CONTENT` | 可选，默认 `false`；可设 `markdown` 或 `text` 让 Tavily 返回正文内容兜底 |
 | `BRAVE_SEARCH_API_KEY` | 可选，Brave Search API，作为 Tavily 之外的备用搜索后端 |
-| `TOPHUBDATA_ACCESS_KEY` | 可选，TopHubData/榜眼数据访问密钥；配置后会先调用免费 `/nodes` 获取 cid 分类和 hashid，再按 `hot_events.tophubdata_cid_plan` 调用 `/nodes/@hashid` 最新榜单详情，并按 `hot_events.tophubdata_search_queries` 调用 `/search` 导入更细粒度热点内容 |
+| `TOPHUBDATA_ACCESS_KEY` | 可选，TopHubData/榜眼数据访问密钥 |
 | `TOPHUBDATA_ENABLE_PAID_DETAIL` | 可选，默认 `true`；设为 `false` 可强制只用免费节点发现，不导入热点标题 |
-| `TOPHUBDATA_PAID_DETAIL_LIMIT_PER_RUN` | 可选，默认 `11`；限制每次 Radar 运行最多调用多少次 TopHubData 付费 API，默认覆盖 cid 计划和关键词搜索计划，约等于最多 11u/轮 |
+| `TOPHUBDATA_PAID_DETAIL_LIMIT_PER_RUN` | 可选，默认 `11`；限制每次 Radar 运行最多调用多少次 TopHubData 付费 API |
 | `TOPHUBDATA_ITEM_LIMIT_PER_NODE` | 可选，默认 `4`；限制每个 TopHubData 榜单最多导入多少条热点标题 |
 | `SEARCH_API_CALL_LIMIT_PER_RUN` | 可选，默认 `60`；限制每次 Action 的 Tavily/Brave 搜索 API 调用总数 |
 | `TELEGRAM_BOT_TOKEN` | Telegram bot |
@@ -108,7 +99,7 @@ Copy-Item .env.local.example .env.local
 powershell -ExecutionPolicy Bypass -File tools\run-radar-local.ps1 -Slot auto
 ```
 
-默认本地脚本会加 `--no-telegram`，避免测试时发通知；需要测试 Telegram 时加 `-Telegram`。脚本会把输出同步写入 `logs/radar-local-*.log`，便于排查 LLM 和搜索补证耗时。
+默认本地脚本会加 `--no-telegram`，避免测试时发通知；需要测试 Telegram 时加 `-Telegram`。脚本会把输出同步写入 `logs/radar-local-*.log`。
 
 ## 非目标
 
@@ -116,5 +107,5 @@ powershell -ExecutionPolicy Bypass -File tools\run-radar-local.ps1 -Slot auto
 - 不做登录态采集。
 - 不用 Playwright 或代理池硬爬论坛。
 - 不直接生成内容平台正文。
-- 不强行每天产深度文章。
-- 不输出简讯或可选线索来凑数量。
+- 不替用户选题。
+- 不判断公众号主文潜力。
