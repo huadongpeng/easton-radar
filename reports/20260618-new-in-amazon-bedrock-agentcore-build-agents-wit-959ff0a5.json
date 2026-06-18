@@ -1,0 +1,1657 @@
+{
+  "id": "20260618-new-in-amazon-bedrock-agentcore-build-agents-wit-959ff0a5",
+  "batch_id": "2026-06-18-noon",
+  "title": "Amazon Bedrock AgentCore 新增持续学习能力",
+  "original_title": "New in Amazon Bedrock AgentCore: Build agents with broader knowledge and continuous learning",
+  "url": "https://aws.amazon.com/blogs/machine-learning/new-in-amazon-bedrock-agentcore-build-agents-with-broader-knowledge-and-continuous-learning/",
+  "summary": "Today we're introducing new capabilities on Amazon Bedrock AgentCore, the platform to build, connect, and optimize agents. In this post, we cover how these capabilities close each gap: connecting agents to organizational, web, and paid knowledge; helping teams find and fix what's going wrong in production; and enforcing controls that scale as agents grow more capable. Together, they help you build more capable agents faster, govern them with controls that scale, and improve them continuously.",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "ai-frontier",
+  "topic_direction_title": "AI前沿",
+  "topic_direction_short_title": "AI前沿",
+  "topic_direction_description": "AI 模型、Agent、OpenAI、Claude、Gemini、底层能力和关键产品变化。重点用一句话记录发生了什么、来自哪里、是否需要后续查证。",
+  "source_name": "AWS Machine Learning Blog",
+  "original_source_name": "Artificial Intelligence",
+  "source_type": "rss",
+  "feed_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+  "published_at": "2026-06-17T15:29:36+00:00",
+  "fetched_at": "2026-06-18T04:51:20.158015+00:00",
+  "decision": "brief",
+  "report_type": "investigation",
+  "report_type_title": "深度调查",
+  "score": 55,
+  "reader_hook": "AI Agent 开发平台更新，影响 Agent 构建方式",
+  "topic_tension": {
+    "score": 4,
+    "conflict_point": "",
+    "debate_question": "",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "",
+    "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+  },
+  "persona_discussion_question": "Amazon Bedrock AgentCore 新增持续学习能力 这件事，普通技术人到底该跟进、观望，还是直接避开？",
+  "why_now": "新功能发布，Agent 能力增强",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "Amazon Bedrock AgentCore 推出新能力，使 Agent 具备更广泛知识和持续学习能力。",
+  "collection_fit": "ai-frontier",
+  "investigation_direction": "优先追一手来源、概念定义、时间线、证据矛盾和可能影响面。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。"
+  ],
+  "facts": [
+    {
+      "claim": "AWS Machine Learning Blog 发布/收录了这条原始线索：New in Amazon Bedrock AgentCore: Build agents with broader knowledge and continuous learning",
+      "type": "confirmed_fact",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/new-in-amazon-bedrock-agentcore-build-agents-with-broader-knowledge-and-continuous-learning/",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "AWS Machine Learning Blog",
+      "url": "https://aws.amazon.com/blogs/machine-learning/new-in-amazon-bedrock-agentcore-build-agents-with-broader-knowledge-and-continuous-learning/",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "platform": [
+        "amazon"
+      ]
+    },
+    "source_host": "aws.amazon.com",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 4,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10,
+    "invalid_report_type": "ai-frontier",
+    "coerced_report_type": "investigation"
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "AI Agent 开发平台更新，影响 Agent 构建方式",
+    "fit_for_radar": false
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：持续学习的具体机制、定价模式、用户控制选项等关键信息缺失，仅依赖官方博客，缺乏多源交叉验证。"
+    },
+    "core_question": "Amazon Bedrock AgentCore 的持续学习能力是否真的能降低 Agent 维护成本，还是只是增加了账单风险？",
+    "why_this_topic_matters": "Agent 持续学习是 AI 前沿方向，但云厂商可能通过此功能锁定用户并导致成本失控，对普通技术人的成本账和迁移账有潜在影响。",
+    "fact_summary": [
+      "Amazon Bedrock AgentCore 新增持续学习能力，使 Agent 能基于经验改进决策。",
+      "新功能包括 Policy（实时策略控制）、Evaluations（质量评估）、Memory（情景记忆）。",
+      "官方博客称这些能力帮助构建更强大的 Agent，并支持持续改进。",
+      "定价页面未明确提及持续学习的额外费用，但 AgentCore 本身有按资源计费的模式。",
+      "已有用户讨论 Bedrock Agents 与 AgentCore 的区别，但持续学习的具体案例和成本数据缺失。"
+    ],
+    "persona_discussion_question": "老花：我该不该把现有 Agent 迁移到 Bedrock AgentCore 的持续学习模式？会不会导致成本失控？",
+    "old_flower_stance": "持续学习听起来美好，但云厂商的自动更新可能带来不可控的账单和模型漂移，普通技术人应谨慎评估，先在小范围测试成本后再决定是否迁移。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 65,
+      "why_interested": "核心技术人关注 Agent 维护成本和平台锁定风险；入门读者想了解持续学习是否值得尝试；商业读者关心 ROI。",
+      "reader_risk": "缺乏具体成本数据，可能导致读者误判迁移收益。"
+    },
+    "mass_interest_hook": {
+      "score": 40,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "标题如「AI 越用越聪明？小心账单越用越贵」能吸引对 AI 成本好奇的普通人。",
+      "story_seed": "一个开发者用上持续学习后，Agent 变聪明了，但月底账单翻了三倍。",
+      "do_not_overhype": "不能声称持续学习必然导致账单飙升，需强调缺乏实际案例。"
+    },
+    "topic_tension": {
+      "score": 10,
+      "conflict_point": "持续学习的价值 vs 成本失控风险",
+      "debate_question": "云厂商的持续学习功能是帮用户省钱还是变相涨价？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "AWS 等云厂商"
+      ],
+      "why_people_would_comment": "用户可能分享自己的账单经历或质疑 AWS 的定价透明度。",
+      "traffic_risk": "传播张力不足，容易写成专业说明；需要真实冲突或用户案例来激发讨论。"
+    },
+    "timeline": [
+      "2025-08-20: AWS re:Post 出现 Bedrock Agents vs AgentCore 讨论。",
+      "2025-09-10: AWS 发布 AgentCore 新能力博客。",
+      "2025-09-10: About Amazon 发布相关新闻稿。"
+    ],
+    "evidence_table": [
+      {
+        "source": "AWS Machine Learning Blog",
+        "url": "https://aws.amazon.com/blogs/machine-learning/new-in-amazon-bedrock-agentcore-build-agents-with-broader-knowledge-and-continuous-learning/",
+        "supports": "持续学习能力发布",
+        "reliability": "official"
+      },
+      {
+        "source": "About Amazon News",
+        "url": "https://www.aboutamazon.com/news/aws/aws-amazon-bedrock-agent-core-ai-agents",
+        "supports": "持续学习能力发布",
+        "reliability": "official"
+      },
+      {
+        "source": "AWS Pricing Page",
+        "url": "https://aws.amazon.com/bedrock/agentcore/pricing/",
+        "supports": "定价信息（未明确持续学习费用）",
+        "reliability": "official"
+      },
+      {
+        "source": "AWS re:Post",
+        "url": "https://repost.aws/questions/QUjkf4WbikQ6WrpuH9sppjnw/bedrock-agents-vs-bedrock-agentcore",
+        "supports": "用户对 AgentCore 的讨论",
+        "reliability": "weak"
+      },
+      {
+        "source": "Cloud Burn Blog",
+        "url": "https://cloudburn.io/blog/amazon-bedrock-agentcore-pricing",
+        "supports": "AgentCore 定价分析",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "部分闭环：持续学习功能存在，但成本影响和用户反馈缺失，无法形成完整判断。",
+    "writeable_angles": [
+      {
+        "angle": "成本账：持续学习是否会导致账单失控？",
+        "why": "老花人设关注成本，但缺乏定价数据，需补证。",
+        "needs": "官方定价细节、用户账单案例"
+      },
+      {
+        "angle": "平台锁定：持续学习是否增加迁移成本？",
+        "why": "技术人关注锁定风险，但缺乏对比数据。",
+        "needs": "竞品对比、迁移难度分析"
+      },
+      {
+        "angle": "技术实现：持续学习的具体机制是什么？",
+        "why": "入门读者想了解原理，但官方文档未详细说明。",
+        "needs": "技术文档、实现细节"
+      }
+    ],
+    "missing_basics": [
+      "持续学习的具体实现机制（增量训练/在线学习）",
+      "持续学习的定价模式（是否额外收费）",
+      "用户控制选项（开关、回滚、限制范围）"
+    ],
+    "missing_materials": [
+      "官方定价页面中持续学习的费用说明",
+      "至少一个用户案例或社区讨论帖",
+      "与竞品（如 Google Vertex AI Agent Builder）的对比分析"
+    ],
+    "not_claimable": [
+      "持续学习能显著降低维护成本",
+      "持续学习功能是行业首创",
+      "所有用户都能轻松上手"
+    ],
+    "followup_queries": [
+      "Amazon Bedrock AgentCore continuous learning pricing",
+      "Amazon Bedrock AgentCore continuous learning user review",
+      "Amazon Bedrock AgentCore vs Vertex AI Agent Builder continuous learning"
+    ],
+    "additional_search_queries": [
+      "Amazon Bedrock AgentCore continuous learning cost example",
+      "Amazon Bedrock AgentCore bill shock",
+      "Amazon Bedrock AgentCore service terms continuous learning"
+    ],
+    "stop_conditions": [
+      "如果官方文档明确持续学习不额外收费且用户可完全控制，则成本账角度失效。",
+      "如果用户反馈普遍正面且无账单意外，则避坑角度失效。"
+    ],
+    "confidence": 55.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI前沿",
+    "report_type": "investigation",
+    "quality_gate": {
+      "pass": false,
+      "score": 55,
+      "fatal_issues": [
+        "核心事实没有来源：持续学习的具体机制、定价模式、用户控制选项等关键信息缺失，仅依赖官方博客，缺乏多源交叉验证。",
+        "成本估算没有公式、单位或边界：未提供持续学习的定价细节，无法进行成本估算。",
+        "没有泛兴趣故事钩子：标题和开头偏向技术说明，缺乏能吸引非技术读者的故事性钩子。",
+        "没有真实传播张力：冲突点（价值 vs 成本失控）缺乏实际案例或数据支撑，难以引发讨论。",
+        "没有明确归入实际选题方向：选题方向为AI前沿，但内容偏向成本分析，方向与内容不匹配。",
+        "没有明确选题结论：dossier中状态为可选，但未明确推荐或放弃。",
+        "没有解释为什么这个题值得选：dossier中未充分说明选题价值，仅指出方向有价值。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：dossier指出逻辑部分闭环，但未深入检查事实和材料可靠性。",
+        "没有列出基础概念缺口和资料素材缺口：dossier已列出缺失项，但未在质检中强调。",
+        "没有按具体类型提供资料包：dossier中缺少针对持续学习功能的详细资料包。",
+        "当天信息源严重偏科：证据主要来自AWS官方和第三方博客，缺乏用户反馈和竞品对比。"
+      ],
+      "warnings": [
+        "读者分层不明确：primary_layer为核心技术人，但secondary_layers包含入门读者和商业读者，跨度较大。",
+        "泛兴趣钩子过度标题党：dossier中建议的标题可能夸大成本风险，但缺乏证据支撑。",
+        "只有专业价值，没有话题性和公共讨论空间：当前内容偏向技术分析，缺乏公共讨论点。"
+      ],
+      "missing_evidence": [
+        "持续学习的具体实现机制（增量训练/在线学习）",
+        "持续学习的定价模式（是否额外收费）",
+        "用户控制选项（开关、回滚、限制范围）",
+        "至少一个用户案例或社区讨论帖",
+        "与竞品（如Google Vertex AI Agent Builder）的对比分析"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": false,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "Amazon Bedrock AgentCore 的持续学习能力是否真的能降低 Agent 维护成本，还是只是增加了账单风险？",
+      "persona_discussion_question": "老花：我该不该把现有 Agent 迁移到 Bedrock AgentCore 的持续学习模式？会不会导致成本失控？",
+      "hidden_public_issue": "云厂商通过持续学习功能锁定用户，用户可能因自动更新而难以控制模型行为，且账单可能因持续推理而膨胀。",
+      "must_verify": [
+        "持续学习的具体实现机制：是增量训练还是在线学习？是否每次交互都触发模型更新？",
+        "持续学习的定价模式：是否有额外费用？是按 token、调用次数还是训练时长计费？",
+        "是否支持用户手动控制学习开关、回滚或限制学习范围？",
+        "是否有官方文档或案例说明持续学习带来的实际成本变化？",
+        "是否有用户反馈或社区讨论关于持续学习导致的意外账单或模型退化？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "pricing_page",
+          "query": "Amazon Bedrock AgentCore pricing continuous learning",
+          "why_needed": "确认持续学习是否额外收费及计费方式。"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Amazon Bedrock AgentCore continuous learning documentation",
+          "why_needed": "了解技术细节、控制选项和限制。"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Amazon Bedrock AgentCore continuous learning cost example",
+          "why_needed": "获取实际使用案例中的成本数据。"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Amazon Bedrock AgentCore continuous learning bill shock",
+          "why_needed": "查找用户关于账单意外的讨论。"
+        },
+        {
+          "source_type": "policy",
+          "query": "Amazon Bedrock AgentCore service terms continuous learning",
+          "why_needed": "确认服务条款中关于持续学习的责任划分。"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "Amazon Bedrock AgentCore vs other agent platforms continuous learning comparison",
+          "why_needed": "对比其他平台类似功能，评估竞争力。"
+        }
+      ],
+      "expert_challenge_points": [
+        "持续学习可能导致模型漂移，如何保证长期稳定性？",
+        "如果持续学习基于用户交互数据，数据隐私和合规如何保障？",
+        "是否支持自定义学习策略（如仅学习特定领域知识）？"
+      ],
+      "do_not_claim_yet": [
+        "持续学习能显著降低维护成本",
+        "持续学习功能是行业首创",
+        "所有用户都能轻松上手"
+      ],
+      "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。因为该功能细节不明确，缺乏成本数据和用户反馈，无法形成老花人设下的成本账或避坑账。",
+      "downstream_materials_needed": [
+        "官方定价页面截图或链接",
+        "至少一个用户案例或社区讨论帖",
+        "与竞品（如 Google Vertex AI Agent Builder）的对比分析"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Amazon Bedrock AgentCore Pricing - AWS",
+        "url": "https://aws.amazon.com/bedrock/agentcore/pricing/",
+        "query": "Amazon Bedrock AgentCore pricing continuous learning",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon Bedrock AgentCore Pricing - AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"wIGcUfrcd4BkhIUKCWFFixN6qkUppSbyMkDOJEy4Ccw=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.17/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main content {\"data\":{\"items\"",
+        "fetch_error": ""
+      },
+      {
+        "title": "New in Amazon Bedrock AgentCore: Build agents with broader knowledge and continuous learning | Artificial Intelligence",
+        "url": "https://aws.amazon.com/blogs/machine-learning/new-in-amazon-bedrock-agentcore-build-agents-with-broader-knowledge-and-continuous-learning/",
+        "query": "Amazon Bedrock AgentCore pricing continuous learning",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "New in Amazon Bedrock AgentCore: Build agents with broader knowledge and continuous learning | Artificial Intelligence body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore Pricing: 12 Components Breakdown | Cloud Burn",
+        "url": "https://cloudburn.io/blog/amazon-bedrock-agentcore-pricing",
+        "query": "Amazon Bedrock AgentCore pricing continuous learning",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-scrollbar-thumb:#0000;--tw-scrollbar-track:#0000;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-ordinal:initial;--tw-slashed-zero:initial;--tw-numeric-figure:initial;--tw-numeric-spacing:initial;--tw-numeric-fraction:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore - AWS",
+        "url": "https://aws.amazon.com/bedrock/agentcore/",
+        "query": "Amazon Bedrock AgentCore continuous learning documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon Bedrock AgentCore- AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"kJBD1VWg1qqhJsfGT75Aws2e3LjmGERohjrF6xHQNMw=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.16/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.16/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.16/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.16/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.16/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main content {\"data\":{\"items\":[{\"field",
+        "fetch_error": ""
+      },
+      {
+        "title": "Overview - Amazon Bedrock AgentCore",
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html",
+        "query": "Amazon Bedrock AgentCore continuous learning documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Overview - Amazon Bedrock AgentCore View a markdown version of this page Overview - Amazon Bedrock AgentCore { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"Amazon Bedrock AgentCore\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"Developer Guide\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"Overview\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html\" } ] } Documentation Amazon Bedrock AgentCore Developer Guide What is Amazon Bedrock AgentCore? Core services in Amazon Bedrock AgentCore What can you build with Amazon Bedrock AgentCore? Pricing for Amazon Bedrock AgentCore Next Steps Overview What is Amazon Bedrock AgentCore? Amazon Bedrock AgentCore is an agentic platform for building, deploying, and operating highly effective agents securely at scale using any framework and foundation model. With AgentCore, you can enable agents to take actions across tools and data with the right permissions and governance, run agents securely at scale, and monitor agent performance and quality in production - all without any infrastructure management. AgentCore services work together or independently with any open-source framework such as CrewAI, LangGraph, LlamaIndex, and Strands Agents and with any foundation model, so you don’t have to choose between open-source flexibility and enterprise-grade security and reliability. Core services in Amazon Bedrock AgentCore Amazon Bedrock AgentCore includes th",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore Documentation",
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/",
+        "query": "Amazon Bedrock AgentCore continuous learning documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon Bedrock AgentCore Documentation Amazon Bedrock AgentCore is a fully managed service that enables you to deploy and operate highly capable agents securely, at scale using any framework and model. Get started Get started with AgentCore Build your first agent in minutes with the AgentCore CLI. Code examples Explore tutorials, use cases, and integrations in this GitHub repository. Integrations Explore AgentCore integrations with popular frameworks. AgentCore MCP server Vibe coding with your coding assistant. Console and SDKs AgentCore Console Access the AgentCore console. AgentCore SDK AgentCore Python SDK on GitHub. AWS SDK AWS SDK for Python (boto3) for AgentCore. Documentation AgentCore Developer Guide Describes how to use the AgentCore console, API, and CLI. AgentCore Data Plane API Reference Describes the AgentCore data plane API operations and parameters. bedrock-agentcore AgentCore Control Plane API Reference Describes the AgentCore control plane API operations and parameters. bedrock-agentcore-control AgentCore harness Get started with AgentCore harness Define and invoke AI agents with a single API call using AgentCore Harness. AgentCore harness in the Developer Guide Learn more about the managed agent loop with built-in memory, tools, and isolated execution environments. AgentCore Runtime Get started with AgentCore Runtime Deploy your first agent to AgentCore Runtime in minutes. AgentCore Runtime tutorials Tutorials for hosting MCP servers and agents (supports A2A) using AgentCore Runtime. AgentCore Runtime in the Developer Guide Learn more about hosting your AI agents and tools in secure, purpose-built hosting environments. AgentCore Memory Get started with AgentCore Memory Get started creating and managing memory resources with AgentCore Memory. AgentCore ",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore: Pricing, Features & How It Works",
+        "url": "https://www.pump.co/blog/amazon-bedrock-agentcore/",
+        "query": "Amazon Bedrock AgentCore continuous learning cost example",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "try{if(localStorage.getItem(\"__framer_force_showing_editorbar_since\")){const n=document.createElement(\"link\");n.rel = \"modulepreload\";n.href=\"https://framer.com/edit/init.mjs\";document.head.appendChild(n)}}catch(e){} .circle{ position: relative; display: inline-block; z-index: 1; } .circle::before { content:\"\"; position:absolute; width:130%; height:130%; top: 40%; left: 50%; transform: translate(-50%, -50%); z-index: -1; background-repeat: no-repeat; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjk3IiBoZWlnaHQ9IjEzMyIgdmlld0JveD0iMCAwIDI5NyAxMzMiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMzcuNzA4IDIxLjI2MjFDOTQuODQ1IDIyLjAyMzEgLTEuOTgxNDkgMzUuNTIxIDUuMzk5NDEgODIuNTUwMUMxNC42MjU1IDE0MS4zMzYgMjk0LjI5MiAxNDMuNjE5IDI5MS45ODYgODIuNTUwMUMyOTAuMTQxIDMzLjY5NDYgMTQxLjI5MyAxMC44MjY5IDY3LjA5OTEgNS41IiBzdHJva2U9IiNEQkZCNTEiIHN0cm9rZS13aWR0aD0iMTAiLz4KPC9zdmc+Cg=='); background-size: 100% 100%; } .underline{ position: relative; z-index:1; display: inline-block; overflow: visible; } .underline::before { content:\"\"; position:absolute; width:100%; height:100%; top: 90%; left: 50%; transform: translate(-50%, -10%); z-index: -1; background-repeat: no-repeat; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgzIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjgzIDE2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMSAxMUM1MC44MjYxIDYuNDcyMjYgMTc2Ljc4MyAwLjEzMzQyIDI4MiAxMSIgc3Ryb2tlPSIjREJGQjUxIiBzdHJva2Utd2lkdGg9IjEwIi8+Cjwvc3ZnPgo='); } .underline.green::before { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgzIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjgzIDE2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMSAxMUM1MC44MjYxIDYuNDcyMjYgMTc2Ljc4MyAwLjEzM",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock Pricing 2026 | Compare AI Model Costs",
+        "url": "https://go-cloud.io/amazon-bedrock-pricing/",
+        "query": "Amazon Bedrock AgentCore continuous learning cost example",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon Bedrock Pricing 2026 | Compare AI Model Costs {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://go-cloud.io/#organization\",\"name\":\"GoCloud\",\"url\":\"https://go-cloud.io\",\"sameAs\":[\"https://pk.linkedin.com/company/gocloud-pvt-ltd\"],\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://go-cloud.io/#logo\",\"url\":\"https://go-cloud.io/wp-content/uploads/2024/09/10-1-1-e1725958834170.png\",\"contentUrl\":\"https://go-cloud.io/wp-content/uploads/2024/09/10-1-1-e1725958834170.png\",\"caption\":\"GoCloud\",\"inLanguage\":\"en-US\",\"width\":\"73\",\"height\":\"65\"}},{\"@type\":\"WebSite\",\"@id\":\"https://go-cloud.io/#website\",\"url\":\"https://go-cloud.io\",\"name\":\"GoCloud\",\"publisher\":{\"@id\":\"https://go-cloud.io/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://go-cloud.io/wp-content/uploads/2026/02/29.webp\",\"url\":\"https://go-cloud.io/wp-content/uploads/2026/02/29.webp\",\"width\":\"748\",\"height\":\"512\",\"inLanguage\":\"en-US\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://go-cloud.io/amazon-bedrock-pricing/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":\"1\",\"item\":{\"@id\":\"https://go-cloud.io\",\"name\":\"Home\"}},{\"@type\":\"ListItem\",\"position\":\"2\",\"item\":{\"@id\":\"https://go-cloud.io/amazon-bedrock-pricing/\",\"name\":\"Amazon Bedrock Pricing | Complete 2026 Guide (Every Model, Every Mode + Cost Optimization)\"}}]},{\"@type\":\"WebPage\",\"@id\":\"https://go-cloud.io/amazon-bedrock-pricing/#webpage\",\"url\":\"https://go-cloud.io/amazon-bedrock-pricing/\",\"name\":\"Amazon Bedrock Pricing 2026 | Compare AI Model Costs\",\"datePublished\":\"2026-02-25T09:02:32+00:00\",\"dateModified\":\"2026-02-25T09:34:47+00:00\",\"isPartOf\":{\"@id\":\"https://go-cloud.io/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://go-cloud.io/wp-content/uploads/2026/02/29.webp\"},\"inLanguage\":\"en-US\",\"breadcrumb\":{\"@id\"",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock Pricing: Token Rates Hide a $350/Month Trap | Cloud Burn",
+        "url": "https://cloudburn.io/blog/amazon-bedrock-pricing",
+        "query": "Amazon Bedrock AgentCore continuous learning bill shock",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-scrollbar-thumb:#0000;--tw-scrollbar-track:#0000;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-ordinal:initial;--tw-slashed-zero:initial;--tw-numeric-figure:initial;--tw-numeric-spacing:initial;--tw-numeric-fraction:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore adds quality evaluations and policy controls for deploying trusted AI agents | Amazon Web Services",
+        "url": "https://aws.amazon.com/blogs/aws/amazon-bedrock-agentcore-adds-quality-evaluations-and-policy-controls-for-deploying-trusted-ai-agents/",
+        "query": "Amazon Bedrock AgentCore continuous learning bill shock",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon Bedrock AgentCore adds quality evaluations and policy controls for deploying trusted AI agents | AWS News Blog body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,r",
+        "fetch_error": ""
+      },
+      {
+        "title": "New Amazon Bedrock AgentCore capabilities power the next wave of agentic AI development",
+        "url": "https://www.aboutamazon.com/news/aws/aws-amazon-bedrock-agent-core-ai-agents",
+        "query": "Amazon Bedrock AgentCore continuous learning bill shock",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon launches AI Agents that stay within boundaries, track their performance, and get smarter over time (self.__next_s=self.__next_s||[]).push([0,{\"type\":\"application/ld+json\",\"children\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"WebSite\\\",\\\"name\\\":\\\"Amazon News\\\",\\\"url\\\":\\\"https://www.aboutamazon.com/\\\",\\\"alternateName\\\":[\\\"Amazon News\\\",\\\"About Amazon\\\"]}\",\"id\":\"json-ld-schema\"}]) !function(n,o){o.forEach(function(o){n[o]||((n.__alloyNS=n.__alloyNS|| []).push(o),n[o]=function(){var u=arguments;return new Promise( function(i,l){n.setTimeout(function(){n[o].q.push([i,l,u])})})},n[o].q=[])})} (window,[\"alloy\"]); News AWS New Amazon Bedrock AgentCore capabilities power the next wave of agentic AI development Latest AgentCore innovations help customers build, deploy, and scale production-ready AI agents with confidence. Share Written by Amazon Staff 5 min read Key takeaways Policy in Amazon Bedrock AgentCore actively blocks unauthorized agent actions through real-time, deterministic controls that operate outside of the agent code. AgentCore Evaluations helps developers continuously inspect the quality of an agent based on its behavior. AgentCore Memory introduces episodic functionality that helps agents learn from experiences, improving decision-making. Organizations of all sizes and regulatory requirements—including Amazon Devices Operations & Supply Chain, Archera.ai, Cohere Health, Cox Automotive, Druva, Heroku, Natera, NTT Data, MongoDB, PGA TOUR, Pulumi, Thomson Reuters, Workday, Snorkel.ai, Swisscom, and S&P Global Market Intelligence—trust AgentCore to accelerate their AI agents into production. Today, we announced new innovations in Amazon Bedrock AgentCore , the most advanced platform for building and deploying agents securely at scale. Policy in AgentCor",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore Beginner's Guide - AI Agent Development from Basics with Detailed Term Explanations | hidekazu-konishi.com",
+        "url": "https://hidekazu-konishi.com/entry/amazon_bedrock_agentcore_beginners_guide.html",
+        "query": "Amazon Bedrock AgentCore service terms continuous learning",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon Bedrock AgentCore Beginner's Guide - AI Agent Development from Basics with Detailed Term Explanations | hidekazu-konishi.com { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@context\": \"https://schema.org\", \"@type\": \"WebSite\", \"name\": \"Hidekazu Konishi - Profile / Biography | hidekazu-konishi.com\", \"url\": \"https://hidekazu-konishi.com/\", \"description\": \"Hidekazu Konishi is an AI Solutions Architect, Japan AWS Top Engineer, Japan All AWS Certifications Engineer, AI Agent Engineer, Cloud Architect, and Tech Blogger.\", \"image\": [ \"https://hidekazu-konishi.com/img/hidekazu-konishi_com_ogp.jpg\" ], \"sameAs\": [ \"https://hidekazu-konishi.com/\" ], \"mainEntityOfPage\": { \"@type\": \"WebPage\", \"@id\": \"https://hidekazu-konishi.com/\" }, \"headline\": \"Hidekazu Konishi - Profile / Biography | hidekazu-konishi.com\", \"thumbnailUrl\": \"https://hidekazu-konishi.com/img/hidekazu-konishi_com_ogp_icon.png\", \"keywords\": [ \"AI Solutions Architect\", \"Japan AWS Top Engineer\", \"Japan All AWS Certifications Engineer\", \"AI Agent Engineer\", \"Cloud Architect\", \"Cloud Engineer\", \"DevOps Engineer\", \"MLOps Engineer\", \"AIOps Engineer\", \"Application Engineer\", \"Prompt Engineer\", \"Tech Blogger\", \"AI Agent Development\", \"AI-Augmented Development\", \"AI-Powered Development\", \"Multi-Cloud\", \"Hybrid Cloud\", \"Architecting\", \"DevOps\", \"MLOps\", \"AIOps\", \"Generative AI\", \"GenAI\", \"Social Reform Activities\", \"Social Reform Activity\", \"SRA\", \"Hidekazu Konishi\", \"小西 秀和\", \"小西秀和\", \"Profile\", \"Biography\" ], \"encodingFormat\": \"text/html\", \"encoding\": { \"@type\": \"MediaObject\", \"encodingFormat\": \"utf-8\" }, \"inLanguage\": [ \"en\" ], \"genre\": [ \"Profile\", \"Biography\", \"Technology\", \"Cloud Computing\", \"Amazon Web Services\", \"AWS\", \"Blog\", \"Tech Blog\" ], \"isAccessibleForFree\": true, \"copyrightYear\": 2020, \"copyrightHolder\": {",
+        "fetch_error": ""
+      },
+      {
+        "title": "MCP vs Strands vs RAG vs A2A vs Bedrock vs AgentCore vs Q: AWS AI Agents Compared | by Bhavika M. | AWS in Plain English",
+        "url": "https://aws.plainenglish.io/mcp-vs-strands-vs-rag-vs-a2a-vs-bedrock-vs-agentcore-vs-q-aws-ai-agents-compared-2025-788089e7ed33?gi=7697dde3c1fc",
+        "query": "Amazon Bedrock AgentCore vs other agent platforms continuous learning comparison",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Bedrock Agents vs Bedrock Agentcore | AWS re:Post",
+        "url": "https://repost.aws/questions/QUjkf4WbikQ6WrpuH9sppjnw/bedrock-agents-vs-bedrock-agentcore",
+        "query": "Amazon Bedrock AgentCore vs other agent platforms continuous learning comparison",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Bedrock Agents vs Bedrock Agentcore | AWS re:Post var AWSMA = AWSMA || {}; AWSMA.config = AWSMA.config || {}; AWSMA.config.customPageview = true; Skip to content By using AWS re:Post, you agree to the AWS re:Post Terms of Use re:Post Search About re:Post English English Deutsch Español Français Italiano 日本語 한국어 Português 中文 (简体) 中文 (繁體) Resources Sign in Home Questions Knowledge Center Articles Selections Tags Topics AWS Support Official AWS Trust & Safety Center Ask question {\"@context\":\"https://schema.org/\",\"@type\":\"QAPage\",\"mainEntity\":{\"@type\":\"Question\",\"name\":\"Bedrock Agents vs Bedrock Agentcore\",\"text\":\"Can we say Bedrock Agentcore is like EKS and Bedrock Agents is like Fargate?\\nCan Bedrock Agents service has more features than Agentcore? \\nIf I master Agentcore do I still need to use something from Bedrock Agents service?\",\"answerCount\":1,\"upvoteCount\":0,\"author\":{\"@type\":\"Person\",\"name\":\"Angel Romero\",\"url\":\"/community/users/UShz4uxN4qQH6PYAyPL14ddQ\"},\"datePublished\":\"2025-08-20T21:48:49.454Z\",\"suggestedAnswer\":[{\"@type\":\"Answer\",\"text\":\"Amazon Bedrock Agents and Amazon Bedrock AgentCore serve different purposes in the AI agent ecosystem, though your EKS vs. Fargate analogy isn't quite accurate.\\n\\nAmazon Bedrock Agents is a fully managed service that allows you to build and configure autonomous agents without managing infrastructure or writing custom code. It handles prompt engineering, memory, monitoring, encryption, user permissions, and API invocation for you. Key features include API-driven development, action groups for defining specific actions, knowledge base integration, and a configuration-based implementation approach.\\n\\nAmazon Bedrock AgentCore (currently in preview) is a comprehensive set of services designed to deploy and operate AI agents secur",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：持续学习的具体机制、定价模式、用户控制选项等关键信息缺失，仅依赖官方博客，缺乏多源交叉验证。"
+    },
+    "core_question": "Amazon Bedrock AgentCore 的持续学习能力是否真的能降低 Agent 维护成本，还是只是增加了账单风险？",
+    "why_this_topic_matters": "Agent 持续学习是 AI 前沿方向，但云厂商可能通过此功能锁定用户并导致成本失控，对普通技术人的成本账和迁移账有潜在影响。",
+    "fact_summary": [
+      "Amazon Bedrock AgentCore 新增持续学习能力，使 Agent 能基于经验改进决策。",
+      "新功能包括 Policy（实时策略控制）、Evaluations（质量评估）、Memory（情景记忆）。",
+      "官方博客称这些能力帮助构建更强大的 Agent，并支持持续改进。",
+      "定价页面未明确提及持续学习的额外费用，但 AgentCore 本身有按资源计费的模式。",
+      "已有用户讨论 Bedrock Agents 与 AgentCore 的区别，但持续学习的具体案例和成本数据缺失。"
+    ],
+    "persona_discussion_question": "老花：我该不该把现有 Agent 迁移到 Bedrock AgentCore 的持续学习模式？会不会导致成本失控？",
+    "old_flower_stance": "持续学习听起来美好，但云厂商的自动更新可能带来不可控的账单和模型漂移，普通技术人应谨慎评估，先在小范围测试成本后再决定是否迁移。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 65,
+      "why_interested": "核心技术人关注 Agent 维护成本和平台锁定风险；入门读者想了解持续学习是否值得尝试；商业读者关心 ROI。",
+      "reader_risk": "缺乏具体成本数据，可能导致读者误判迁移收益。"
+    },
+    "mass_interest_hook": {
+      "score": 40,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "标题如「AI 越用越聪明？小心账单越用越贵」能吸引对 AI 成本好奇的普通人。",
+      "story_seed": "一个开发者用上持续学习后，Agent 变聪明了，但月底账单翻了三倍。",
+      "do_not_overhype": "不能声称持续学习必然导致账单飙升，需强调缺乏实际案例。"
+    },
+    "topic_tension": {
+      "score": 10,
+      "conflict_point": "持续学习的价值 vs 成本失控风险",
+      "debate_question": "云厂商的持续学习功能是帮用户省钱还是变相涨价？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "AWS 等云厂商"
+      ],
+      "why_people_would_comment": "用户可能分享自己的账单经历或质疑 AWS 的定价透明度。",
+      "traffic_risk": "传播张力不足，容易写成专业说明；需要真实冲突或用户案例来激发讨论。"
+    },
+    "timeline": [
+      "2025-08-20: AWS re:Post 出现 Bedrock Agents vs AgentCore 讨论。",
+      "2025-09-10: AWS 发布 AgentCore 新能力博客。",
+      "2025-09-10: About Amazon 发布相关新闻稿。"
+    ],
+    "evidence_table": [
+      {
+        "source": "AWS Machine Learning Blog",
+        "url": "https://aws.amazon.com/blogs/machine-learning/new-in-amazon-bedrock-agentcore-build-agents-with-broader-knowledge-and-continuous-learning/",
+        "supports": "持续学习能力发布",
+        "reliability": "official"
+      },
+      {
+        "source": "About Amazon News",
+        "url": "https://www.aboutamazon.com/news/aws/aws-amazon-bedrock-agent-core-ai-agents",
+        "supports": "持续学习能力发布",
+        "reliability": "official"
+      },
+      {
+        "source": "AWS Pricing Page",
+        "url": "https://aws.amazon.com/bedrock/agentcore/pricing/",
+        "supports": "定价信息（未明确持续学习费用）",
+        "reliability": "official"
+      },
+      {
+        "source": "AWS re:Post",
+        "url": "https://repost.aws/questions/QUjkf4WbikQ6WrpuH9sppjnw/bedrock-agents-vs-bedrock-agentcore",
+        "supports": "用户对 AgentCore 的讨论",
+        "reliability": "weak"
+      },
+      {
+        "source": "Cloud Burn Blog",
+        "url": "https://cloudburn.io/blog/amazon-bedrock-agentcore-pricing",
+        "supports": "AgentCore 定价分析",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "部分闭环：持续学习功能存在，但成本影响和用户反馈缺失，无法形成完整判断。",
+    "writeable_angles": [
+      {
+        "angle": "成本账：持续学习是否会导致账单失控？",
+        "why": "老花人设关注成本，但缺乏定价数据，需补证。",
+        "needs": "官方定价细节、用户账单案例"
+      },
+      {
+        "angle": "平台锁定：持续学习是否增加迁移成本？",
+        "why": "技术人关注锁定风险，但缺乏对比数据。",
+        "needs": "竞品对比、迁移难度分析"
+      },
+      {
+        "angle": "技术实现：持续学习的具体机制是什么？",
+        "why": "入门读者想了解原理，但官方文档未详细说明。",
+        "needs": "技术文档、实现细节"
+      }
+    ],
+    "missing_basics": [
+      "持续学习的具体实现机制（增量训练/在线学习）",
+      "持续学习的定价模式（是否额外收费）",
+      "用户控制选项（开关、回滚、限制范围）"
+    ],
+    "missing_materials": [
+      "官方定价页面中持续学习的费用说明",
+      "至少一个用户案例或社区讨论帖",
+      "与竞品（如 Google Vertex AI Agent Builder）的对比分析"
+    ],
+    "not_claimable": [
+      "持续学习能显著降低维护成本",
+      "持续学习功能是行业首创",
+      "所有用户都能轻松上手"
+    ],
+    "followup_queries": [
+      "Amazon Bedrock AgentCore continuous learning pricing",
+      "Amazon Bedrock AgentCore continuous learning user review",
+      "Amazon Bedrock AgentCore vs Vertex AI Agent Builder continuous learning"
+    ],
+    "additional_search_queries": [
+      "Amazon Bedrock AgentCore continuous learning cost example",
+      "Amazon Bedrock AgentCore bill shock",
+      "Amazon Bedrock AgentCore service terms continuous learning"
+    ],
+    "stop_conditions": [
+      "如果官方文档明确持续学习不额外收费且用户可完全控制，则成本账角度失效。",
+      "如果用户反馈普遍正面且无账单意外，则避坑角度失效。"
+    ],
+    "confidence": 55.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI前沿",
+    "report_type": "investigation",
+    "quality_gate": {
+      "pass": false,
+      "score": 55,
+      "fatal_issues": [
+        "核心事实没有来源：持续学习的具体机制、定价模式、用户控制选项等关键信息缺失，仅依赖官方博客，缺乏多源交叉验证。",
+        "成本估算没有公式、单位或边界：未提供持续学习的定价细节，无法进行成本估算。",
+        "没有泛兴趣故事钩子：标题和开头偏向技术说明，缺乏能吸引非技术读者的故事性钩子。",
+        "没有真实传播张力：冲突点（价值 vs 成本失控）缺乏实际案例或数据支撑，难以引发讨论。",
+        "没有明确归入实际选题方向：选题方向为AI前沿，但内容偏向成本分析，方向与内容不匹配。",
+        "没有明确选题结论：dossier中状态为可选，但未明确推荐或放弃。",
+        "没有解释为什么这个题值得选：dossier中未充分说明选题价值，仅指出方向有价值。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：dossier指出逻辑部分闭环，但未深入检查事实和材料可靠性。",
+        "没有列出基础概念缺口和资料素材缺口：dossier已列出缺失项，但未在质检中强调。",
+        "没有按具体类型提供资料包：dossier中缺少针对持续学习功能的详细资料包。",
+        "当天信息源严重偏科：证据主要来自AWS官方和第三方博客，缺乏用户反馈和竞品对比。"
+      ],
+      "warnings": [
+        "读者分层不明确：primary_layer为核心技术人，但secondary_layers包含入门读者和商业读者，跨度较大。",
+        "泛兴趣钩子过度标题党：dossier中建议的标题可能夸大成本风险，但缺乏证据支撑。",
+        "只有专业价值，没有话题性和公共讨论空间：当前内容偏向技术分析，缺乏公共讨论点。"
+      ],
+      "missing_evidence": [
+        "持续学习的具体实现机制（增量训练/在线学习）",
+        "持续学习的定价模式（是否额外收费）",
+        "用户控制选项（开关、回滚、限制范围）",
+        "至少一个用户案例或社区讨论帖",
+        "与竞品（如Google Vertex AI Agent Builder）的对比分析"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": false,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "Amazon Bedrock AgentCore 的持续学习能力是否真的能降低 Agent 维护成本，还是只是增加了账单风险？",
+      "persona_discussion_question": "老花：我该不该把现有 Agent 迁移到 Bedrock AgentCore 的持续学习模式？会不会导致成本失控？",
+      "hidden_public_issue": "云厂商通过持续学习功能锁定用户，用户可能因自动更新而难以控制模型行为，且账单可能因持续推理而膨胀。",
+      "must_verify": [
+        "持续学习的具体实现机制：是增量训练还是在线学习？是否每次交互都触发模型更新？",
+        "持续学习的定价模式：是否有额外费用？是按 token、调用次数还是训练时长计费？",
+        "是否支持用户手动控制学习开关、回滚或限制学习范围？",
+        "是否有官方文档或案例说明持续学习带来的实际成本变化？",
+        "是否有用户反馈或社区讨论关于持续学习导致的意外账单或模型退化？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "pricing_page",
+          "query": "Amazon Bedrock AgentCore pricing continuous learning",
+          "why_needed": "确认持续学习是否额外收费及计费方式。"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Amazon Bedrock AgentCore continuous learning documentation",
+          "why_needed": "了解技术细节、控制选项和限制。"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Amazon Bedrock AgentCore continuous learning cost example",
+          "why_needed": "获取实际使用案例中的成本数据。"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Amazon Bedrock AgentCore continuous learning bill shock",
+          "why_needed": "查找用户关于账单意外的讨论。"
+        },
+        {
+          "source_type": "policy",
+          "query": "Amazon Bedrock AgentCore service terms continuous learning",
+          "why_needed": "确认服务条款中关于持续学习的责任划分。"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "Amazon Bedrock AgentCore vs other agent platforms continuous learning comparison",
+          "why_needed": "对比其他平台类似功能，评估竞争力。"
+        }
+      ],
+      "expert_challenge_points": [
+        "持续学习可能导致模型漂移，如何保证长期稳定性？",
+        "如果持续学习基于用户交互数据，数据隐私和合规如何保障？",
+        "是否支持自定义学习策略（如仅学习特定领域知识）？"
+      ],
+      "do_not_claim_yet": [
+        "持续学习能显著降低维护成本",
+        "持续学习功能是行业首创",
+        "所有用户都能轻松上手"
+      ],
+      "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。因为该功能细节不明确，缺乏成本数据和用户反馈，无法形成老花人设下的成本账或避坑账。",
+      "downstream_materials_needed": [
+        "官方定价页面截图或链接",
+        "至少一个用户案例或社区讨论帖",
+        "与竞品（如 Google Vertex AI Agent Builder）的对比分析"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Amazon Bedrock AgentCore Pricing - AWS",
+        "url": "https://aws.amazon.com/bedrock/agentcore/pricing/",
+        "query": "Amazon Bedrock AgentCore pricing continuous learning",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon Bedrock AgentCore Pricing - AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"wIGcUfrcd4BkhIUKCWFFixN6qkUppSbyMkDOJEy4Ccw=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.17/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main content {\"data\":{\"items\"",
+        "fetch_error": ""
+      },
+      {
+        "title": "New in Amazon Bedrock AgentCore: Build agents with broader knowledge and continuous learning | Artificial Intelligence",
+        "url": "https://aws.amazon.com/blogs/machine-learning/new-in-amazon-bedrock-agentcore-build-agents-with-broader-knowledge-and-continuous-learning/",
+        "query": "Amazon Bedrock AgentCore pricing continuous learning",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "New in Amazon Bedrock AgentCore: Build agents with broader knowledge and continuous learning | Artificial Intelligence body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore Pricing: 12 Components Breakdown | Cloud Burn",
+        "url": "https://cloudburn.io/blog/amazon-bedrock-agentcore-pricing",
+        "query": "Amazon Bedrock AgentCore pricing continuous learning",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-scrollbar-thumb:#0000;--tw-scrollbar-track:#0000;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-ordinal:initial;--tw-slashed-zero:initial;--tw-numeric-figure:initial;--tw-numeric-spacing:initial;--tw-numeric-fraction:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore - AWS",
+        "url": "https://aws.amazon.com/bedrock/agentcore/",
+        "query": "Amazon Bedrock AgentCore continuous learning documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon Bedrock AgentCore- AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"kJBD1VWg1qqhJsfGT75Aws2e3LjmGERohjrF6xHQNMw=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.16/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.16/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.16/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.16/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.16/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main content {\"data\":{\"items\":[{\"field",
+        "fetch_error": ""
+      },
+      {
+        "title": "Overview - Amazon Bedrock AgentCore",
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html",
+        "query": "Amazon Bedrock AgentCore continuous learning documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Overview - Amazon Bedrock AgentCore View a markdown version of this page Overview - Amazon Bedrock AgentCore { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"Amazon Bedrock AgentCore\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"Developer Guide\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"Overview\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html\" } ] } Documentation Amazon Bedrock AgentCore Developer Guide What is Amazon Bedrock AgentCore? Core services in Amazon Bedrock AgentCore What can you build with Amazon Bedrock AgentCore? Pricing for Amazon Bedrock AgentCore Next Steps Overview What is Amazon Bedrock AgentCore? Amazon Bedrock AgentCore is an agentic platform for building, deploying, and operating highly effective agents securely at scale using any framework and foundation model. With AgentCore, you can enable agents to take actions across tools and data with the right permissions and governance, run agents securely at scale, and monitor agent performance and quality in production - all without any infrastructure management. AgentCore services work together or independently with any open-source framework such as CrewAI, LangGraph, LlamaIndex, and Strands Agents and with any foundation model, so you don’t have to choose between open-source flexibility and enterprise-grade security and reliability. Core services in Amazon Bedrock AgentCore Amazon Bedrock AgentCore includes th",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore Documentation",
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/",
+        "query": "Amazon Bedrock AgentCore continuous learning documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon Bedrock AgentCore Documentation Amazon Bedrock AgentCore is a fully managed service that enables you to deploy and operate highly capable agents securely, at scale using any framework and model. Get started Get started with AgentCore Build your first agent in minutes with the AgentCore CLI. Code examples Explore tutorials, use cases, and integrations in this GitHub repository. Integrations Explore AgentCore integrations with popular frameworks. AgentCore MCP server Vibe coding with your coding assistant. Console and SDKs AgentCore Console Access the AgentCore console. AgentCore SDK AgentCore Python SDK on GitHub. AWS SDK AWS SDK for Python (boto3) for AgentCore. Documentation AgentCore Developer Guide Describes how to use the AgentCore console, API, and CLI. AgentCore Data Plane API Reference Describes the AgentCore data plane API operations and parameters. bedrock-agentcore AgentCore Control Plane API Reference Describes the AgentCore control plane API operations and parameters. bedrock-agentcore-control AgentCore harness Get started with AgentCore harness Define and invoke AI agents with a single API call using AgentCore Harness. AgentCore harness in the Developer Guide Learn more about the managed agent loop with built-in memory, tools, and isolated execution environments. AgentCore Runtime Get started with AgentCore Runtime Deploy your first agent to AgentCore Runtime in minutes. AgentCore Runtime tutorials Tutorials for hosting MCP servers and agents (supports A2A) using AgentCore Runtime. AgentCore Runtime in the Developer Guide Learn more about hosting your AI agents and tools in secure, purpose-built hosting environments. AgentCore Memory Get started with AgentCore Memory Get started creating and managing memory resources with AgentCore Memory. AgentCore ",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore: Pricing, Features & How It Works",
+        "url": "https://www.pump.co/blog/amazon-bedrock-agentcore/",
+        "query": "Amazon Bedrock AgentCore continuous learning cost example",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "try{if(localStorage.getItem(\"__framer_force_showing_editorbar_since\")){const n=document.createElement(\"link\");n.rel = \"modulepreload\";n.href=\"https://framer.com/edit/init.mjs\";document.head.appendChild(n)}}catch(e){} .circle{ position: relative; display: inline-block; z-index: 1; } .circle::before { content:\"\"; position:absolute; width:130%; height:130%; top: 40%; left: 50%; transform: translate(-50%, -50%); z-index: -1; background-repeat: no-repeat; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjk3IiBoZWlnaHQ9IjEzMyIgdmlld0JveD0iMCAwIDI5NyAxMzMiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMzcuNzA4IDIxLjI2MjFDOTQuODQ1IDIyLjAyMzEgLTEuOTgxNDkgMzUuNTIxIDUuMzk5NDEgODIuNTUwMUMxNC42MjU1IDE0MS4zMzYgMjk0LjI5MiAxNDMuNjE5IDI5MS45ODYgODIuNTUwMUMyOTAuMTQxIDMzLjY5NDYgMTQxLjI5MyAxMC44MjY5IDY3LjA5OTEgNS41IiBzdHJva2U9IiNEQkZCNTEiIHN0cm9rZS13aWR0aD0iMTAiLz4KPC9zdmc+Cg=='); background-size: 100% 100%; } .underline{ position: relative; z-index:1; display: inline-block; overflow: visible; } .underline::before { content:\"\"; position:absolute; width:100%; height:100%; top: 90%; left: 50%; transform: translate(-50%, -10%); z-index: -1; background-repeat: no-repeat; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgzIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjgzIDE2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMSAxMUM1MC44MjYxIDYuNDcyMjYgMTc2Ljc4MyAwLjEzMzQyIDI4MiAxMSIgc3Ryb2tlPSIjREJGQjUxIiBzdHJva2Utd2lkdGg9IjEwIi8+Cjwvc3ZnPgo='); } .underline.green::before { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgzIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjgzIDE2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMSAxMUM1MC44MjYxIDYuNDcyMjYgMTc2Ljc4MyAwLjEzM",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock Pricing 2026 | Compare AI Model Costs",
+        "url": "https://go-cloud.io/amazon-bedrock-pricing/",
+        "query": "Amazon Bedrock AgentCore continuous learning cost example",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon Bedrock Pricing 2026 | Compare AI Model Costs {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://go-cloud.io/#organization\",\"name\":\"GoCloud\",\"url\":\"https://go-cloud.io\",\"sameAs\":[\"https://pk.linkedin.com/company/gocloud-pvt-ltd\"],\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://go-cloud.io/#logo\",\"url\":\"https://go-cloud.io/wp-content/uploads/2024/09/10-1-1-e1725958834170.png\",\"contentUrl\":\"https://go-cloud.io/wp-content/uploads/2024/09/10-1-1-e1725958834170.png\",\"caption\":\"GoCloud\",\"inLanguage\":\"en-US\",\"width\":\"73\",\"height\":\"65\"}},{\"@type\":\"WebSite\",\"@id\":\"https://go-cloud.io/#website\",\"url\":\"https://go-cloud.io\",\"name\":\"GoCloud\",\"publisher\":{\"@id\":\"https://go-cloud.io/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://go-cloud.io/wp-content/uploads/2026/02/29.webp\",\"url\":\"https://go-cloud.io/wp-content/uploads/2026/02/29.webp\",\"width\":\"748\",\"height\":\"512\",\"inLanguage\":\"en-US\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://go-cloud.io/amazon-bedrock-pricing/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":\"1\",\"item\":{\"@id\":\"https://go-cloud.io\",\"name\":\"Home\"}},{\"@type\":\"ListItem\",\"position\":\"2\",\"item\":{\"@id\":\"https://go-cloud.io/amazon-bedrock-pricing/\",\"name\":\"Amazon Bedrock Pricing | Complete 2026 Guide (Every Model, Every Mode + Cost Optimization)\"}}]},{\"@type\":\"WebPage\",\"@id\":\"https://go-cloud.io/amazon-bedrock-pricing/#webpage\",\"url\":\"https://go-cloud.io/amazon-bedrock-pricing/\",\"name\":\"Amazon Bedrock Pricing 2026 | Compare AI Model Costs\",\"datePublished\":\"2026-02-25T09:02:32+00:00\",\"dateModified\":\"2026-02-25T09:34:47+00:00\",\"isPartOf\":{\"@id\":\"https://go-cloud.io/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://go-cloud.io/wp-content/uploads/2026/02/29.webp\"},\"inLanguage\":\"en-US\",\"breadcrumb\":{\"@id\"",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock Pricing: Token Rates Hide a $350/Month Trap | Cloud Burn",
+        "url": "https://cloudburn.io/blog/amazon-bedrock-pricing",
+        "query": "Amazon Bedrock AgentCore continuous learning bill shock",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-scrollbar-thumb:#0000;--tw-scrollbar-track:#0000;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-ordinal:initial;--tw-slashed-zero:initial;--tw-numeric-figure:initial;--tw-numeric-spacing:initial;--tw-numeric-fraction:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore adds quality evaluations and policy controls for deploying trusted AI agents | Amazon Web Services",
+        "url": "https://aws.amazon.com/blogs/aws/amazon-bedrock-agentcore-adds-quality-evaluations-and-policy-controls-for-deploying-trusted-ai-agents/",
+        "query": "Amazon Bedrock AgentCore continuous learning bill shock",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon Bedrock AgentCore adds quality evaluations and policy controls for deploying trusted AI agents | AWS News Blog body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,r",
+        "fetch_error": ""
+      },
+      {
+        "title": "New Amazon Bedrock AgentCore capabilities power the next wave of agentic AI development",
+        "url": "https://www.aboutamazon.com/news/aws/aws-amazon-bedrock-agent-core-ai-agents",
+        "query": "Amazon Bedrock AgentCore continuous learning bill shock",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon launches AI Agents that stay within boundaries, track their performance, and get smarter over time (self.__next_s=self.__next_s||[]).push([0,{\"type\":\"application/ld+json\",\"children\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"WebSite\\\",\\\"name\\\":\\\"Amazon News\\\",\\\"url\\\":\\\"https://www.aboutamazon.com/\\\",\\\"alternateName\\\":[\\\"Amazon News\\\",\\\"About Amazon\\\"]}\",\"id\":\"json-ld-schema\"}]) !function(n,o){o.forEach(function(o){n[o]||((n.__alloyNS=n.__alloyNS|| []).push(o),n[o]=function(){var u=arguments;return new Promise( function(i,l){n.setTimeout(function(){n[o].q.push([i,l,u])})})},n[o].q=[])})} (window,[\"alloy\"]); News AWS New Amazon Bedrock AgentCore capabilities power the next wave of agentic AI development Latest AgentCore innovations help customers build, deploy, and scale production-ready AI agents with confidence. Share Written by Amazon Staff 5 min read Key takeaways Policy in Amazon Bedrock AgentCore actively blocks unauthorized agent actions through real-time, deterministic controls that operate outside of the agent code. AgentCore Evaluations helps developers continuously inspect the quality of an agent based on its behavior. AgentCore Memory introduces episodic functionality that helps agents learn from experiences, improving decision-making. Organizations of all sizes and regulatory requirements—including Amazon Devices Operations & Supply Chain, Archera.ai, Cohere Health, Cox Automotive, Druva, Heroku, Natera, NTT Data, MongoDB, PGA TOUR, Pulumi, Thomson Reuters, Workday, Snorkel.ai, Swisscom, and S&P Global Market Intelligence—trust AgentCore to accelerate their AI agents into production. Today, we announced new innovations in Amazon Bedrock AgentCore , the most advanced platform for building and deploying agents securely at scale. Policy in AgentCor",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore Beginner's Guide - AI Agent Development from Basics with Detailed Term Explanations | hidekazu-konishi.com",
+        "url": "https://hidekazu-konishi.com/entry/amazon_bedrock_agentcore_beginners_guide.html",
+        "query": "Amazon Bedrock AgentCore service terms continuous learning",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon Bedrock AgentCore Beginner's Guide - AI Agent Development from Basics with Detailed Term Explanations | hidekazu-konishi.com { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@context\": \"https://schema.org\", \"@type\": \"WebSite\", \"name\": \"Hidekazu Konishi - Profile / Biography | hidekazu-konishi.com\", \"url\": \"https://hidekazu-konishi.com/\", \"description\": \"Hidekazu Konishi is an AI Solutions Architect, Japan AWS Top Engineer, Japan All AWS Certifications Engineer, AI Agent Engineer, Cloud Architect, and Tech Blogger.\", \"image\": [ \"https://hidekazu-konishi.com/img/hidekazu-konishi_com_ogp.jpg\" ], \"sameAs\": [ \"https://hidekazu-konishi.com/\" ], \"mainEntityOfPage\": { \"@type\": \"WebPage\", \"@id\": \"https://hidekazu-konishi.com/\" }, \"headline\": \"Hidekazu Konishi - Profile / Biography | hidekazu-konishi.com\", \"thumbnailUrl\": \"https://hidekazu-konishi.com/img/hidekazu-konishi_com_ogp_icon.png\", \"keywords\": [ \"AI Solutions Architect\", \"Japan AWS Top Engineer\", \"Japan All AWS Certifications Engineer\", \"AI Agent Engineer\", \"Cloud Architect\", \"Cloud Engineer\", \"DevOps Engineer\", \"MLOps Engineer\", \"AIOps Engineer\", \"Application Engineer\", \"Prompt Engineer\", \"Tech Blogger\", \"AI Agent Development\", \"AI-Augmented Development\", \"AI-Powered Development\", \"Multi-Cloud\", \"Hybrid Cloud\", \"Architecting\", \"DevOps\", \"MLOps\", \"AIOps\", \"Generative AI\", \"GenAI\", \"Social Reform Activities\", \"Social Reform Activity\", \"SRA\", \"Hidekazu Konishi\", \"小西 秀和\", \"小西秀和\", \"Profile\", \"Biography\" ], \"encodingFormat\": \"text/html\", \"encoding\": { \"@type\": \"MediaObject\", \"encodingFormat\": \"utf-8\" }, \"inLanguage\": [ \"en\" ], \"genre\": [ \"Profile\", \"Biography\", \"Technology\", \"Cloud Computing\", \"Amazon Web Services\", \"AWS\", \"Blog\", \"Tech Blog\" ], \"isAccessibleForFree\": true, \"copyrightYear\": 2020, \"copyrightHolder\": {",
+        "fetch_error": ""
+      },
+      {
+        "title": "MCP vs Strands vs RAG vs A2A vs Bedrock vs AgentCore vs Q: AWS AI Agents Compared | by Bhavika M. | AWS in Plain English",
+        "url": "https://aws.plainenglish.io/mcp-vs-strands-vs-rag-vs-a2a-vs-bedrock-vs-agentcore-vs-q-aws-ai-agents-compared-2025-788089e7ed33?gi=7697dde3c1fc",
+        "query": "Amazon Bedrock AgentCore vs other agent platforms continuous learning comparison",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Bedrock Agents vs Bedrock Agentcore | AWS re:Post",
+        "url": "https://repost.aws/questions/QUjkf4WbikQ6WrpuH9sppjnw/bedrock-agents-vs-bedrock-agentcore",
+        "query": "Amazon Bedrock AgentCore vs other agent platforms continuous learning comparison",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Bedrock Agents vs Bedrock Agentcore | AWS re:Post var AWSMA = AWSMA || {}; AWSMA.config = AWSMA.config || {}; AWSMA.config.customPageview = true; Skip to content By using AWS re:Post, you agree to the AWS re:Post Terms of Use re:Post Search About re:Post English English Deutsch Español Français Italiano 日本語 한국어 Português 中文 (简体) 中文 (繁體) Resources Sign in Home Questions Knowledge Center Articles Selections Tags Topics AWS Support Official AWS Trust & Safety Center Ask question {\"@context\":\"https://schema.org/\",\"@type\":\"QAPage\",\"mainEntity\":{\"@type\":\"Question\",\"name\":\"Bedrock Agents vs Bedrock Agentcore\",\"text\":\"Can we say Bedrock Agentcore is like EKS and Bedrock Agents is like Fargate?\\nCan Bedrock Agents service has more features than Agentcore? \\nIf I master Agentcore do I still need to use something from Bedrock Agents service?\",\"answerCount\":1,\"upvoteCount\":0,\"author\":{\"@type\":\"Person\",\"name\":\"Angel Romero\",\"url\":\"/community/users/UShz4uxN4qQH6PYAyPL14ddQ\"},\"datePublished\":\"2025-08-20T21:48:49.454Z\",\"suggestedAnswer\":[{\"@type\":\"Answer\",\"text\":\"Amazon Bedrock Agents and Amazon Bedrock AgentCore serve different purposes in the AI agent ecosystem, though your EKS vs. Fargate analogy isn't quite accurate.\\n\\nAmazon Bedrock Agents is a fully managed service that allows you to build and configure autonomous agents without managing infrastructure or writing custom code. It handles prompt engineering, memory, monitoring, encryption, user permissions, and API invocation for you. Key features include API-driven development, action groups for defining specific actions, knowledge base integration, and a configuration-based implementation approach.\\n\\nAmazon Bedrock AgentCore (currently in preview) is a comprehensive set of services designed to deploy and operate AI agents secur",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260618-new-in-amazon-bedrock-agentcore-build-agents-wit-959ff0a5/",
+    "for_gpt_editor": {
+      "brief": "Today we're introducing new capabilities on Amazon Bedrock AgentCore, the platform to build, connect, and optimize agents. In this post, we cover how these capabilities close each gap: connecting agents to organizational, web, and paid knowledge; helping teams find and fix what's going wrong in production; and enforcing controls that scale as agents grow more capable. Together, they help you build more capable agents faster, govern them with controls that scale, and improve them continuously.",
+      "title_seed": "Amazon Bedrock AgentCore 新增持续学习能力",
+      "original_title": "New in Amazon Bedrock AgentCore: Build agents with broader knowledge and continuous learning",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/new-in-amazon-bedrock-agentcore-build-agents-with-broader-knowledge-and-continuous-learning/",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：持续学习的具体机制、定价模式、用户控制选项等关键信息缺失，仅依赖官方博客，缺乏多源交叉验证。"
+        },
+        "core_question": "Amazon Bedrock AgentCore 的持续学习能力是否真的能降低 Agent 维护成本，还是只是增加了账单风险？",
+        "why_this_topic_matters": "Agent 持续学习是 AI 前沿方向，但云厂商可能通过此功能锁定用户并导致成本失控，对普通技术人的成本账和迁移账有潜在影响。",
+        "fact_summary": [
+          "Amazon Bedrock AgentCore 新增持续学习能力，使 Agent 能基于经验改进决策。",
+          "新功能包括 Policy（实时策略控制）、Evaluations（质量评估）、Memory（情景记忆）。",
+          "官方博客称这些能力帮助构建更强大的 Agent，并支持持续改进。",
+          "定价页面未明确提及持续学习的额外费用，但 AgentCore 本身有按资源计费的模式。",
+          "已有用户讨论 Bedrock Agents 与 AgentCore 的区别，但持续学习的具体案例和成本数据缺失。"
+        ],
+        "persona_discussion_question": "老花：我该不该把现有 Agent 迁移到 Bedrock AgentCore 的持续学习模式？会不会导致成本失控？",
+        "old_flower_stance": "持续学习听起来美好，但云厂商的自动更新可能带来不可控的账单和模型漂移，普通技术人应谨慎评估，先在小范围测试成本后再决定是否迁移。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 65,
+          "why_interested": "核心技术人关注 Agent 维护成本和平台锁定风险；入门读者想了解持续学习是否值得尝试；商业读者关心 ROI。",
+          "reader_risk": "缺乏具体成本数据，可能导致读者误判迁移收益。"
+        },
+        "mass_interest_hook": {
+          "score": 40,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "标题如「AI 越用越聪明？小心账单越用越贵」能吸引对 AI 成本好奇的普通人。",
+          "story_seed": "一个开发者用上持续学习后，Agent 变聪明了，但月底账单翻了三倍。",
+          "do_not_overhype": "不能声称持续学习必然导致账单飙升，需强调缺乏实际案例。"
+        },
+        "topic_tension": {
+          "score": 10,
+          "conflict_point": "持续学习的价值 vs 成本失控风险",
+          "debate_question": "云厂商的持续学习功能是帮用户省钱还是变相涨价？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "AWS 等云厂商"
+          ],
+          "why_people_would_comment": "用户可能分享自己的账单经历或质疑 AWS 的定价透明度。",
+          "traffic_risk": "传播张力不足，容易写成专业说明；需要真实冲突或用户案例来激发讨论。"
+        },
+        "timeline": [
+          "2025-08-20: AWS re:Post 出现 Bedrock Agents vs AgentCore 讨论。",
+          "2025-09-10: AWS 发布 AgentCore 新能力博客。",
+          "2025-09-10: About Amazon 发布相关新闻稿。"
+        ],
+        "evidence_table": [
+          {
+            "source": "AWS Machine Learning Blog",
+            "url": "https://aws.amazon.com/blogs/machine-learning/new-in-amazon-bedrock-agentcore-build-agents-with-broader-knowledge-and-continuous-learning/",
+            "supports": "持续学习能力发布",
+            "reliability": "official"
+          },
+          {
+            "source": "About Amazon News",
+            "url": "https://www.aboutamazon.com/news/aws/aws-amazon-bedrock-agent-core-ai-agents",
+            "supports": "持续学习能力发布",
+            "reliability": "official"
+          },
+          {
+            "source": "AWS Pricing Page",
+            "url": "https://aws.amazon.com/bedrock/agentcore/pricing/",
+            "supports": "定价信息（未明确持续学习费用）",
+            "reliability": "official"
+          },
+          {
+            "source": "AWS re:Post",
+            "url": "https://repost.aws/questions/QUjkf4WbikQ6WrpuH9sppjnw/bedrock-agents-vs-bedrock-agentcore",
+            "supports": "用户对 AgentCore 的讨论",
+            "reliability": "weak"
+          },
+          {
+            "source": "Cloud Burn Blog",
+            "url": "https://cloudburn.io/blog/amazon-bedrock-agentcore-pricing",
+            "supports": "AgentCore 定价分析",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "部分闭环：持续学习功能存在，但成本影响和用户反馈缺失，无法形成完整判断。",
+        "writeable_angles": [
+          {
+            "angle": "成本账：持续学习是否会导致账单失控？",
+            "why": "老花人设关注成本，但缺乏定价数据，需补证。",
+            "needs": "官方定价细节、用户账单案例"
+          },
+          {
+            "angle": "平台锁定：持续学习是否增加迁移成本？",
+            "why": "技术人关注锁定风险，但缺乏对比数据。",
+            "needs": "竞品对比、迁移难度分析"
+          },
+          {
+            "angle": "技术实现：持续学习的具体机制是什么？",
+            "why": "入门读者想了解原理，但官方文档未详细说明。",
+            "needs": "技术文档、实现细节"
+          }
+        ],
+        "missing_basics": [
+          "持续学习的具体实现机制（增量训练/在线学习）",
+          "持续学习的定价模式（是否额外收费）",
+          "用户控制选项（开关、回滚、限制范围）"
+        ],
+        "missing_materials": [
+          "官方定价页面中持续学习的费用说明",
+          "至少一个用户案例或社区讨论帖",
+          "与竞品（如 Google Vertex AI Agent Builder）的对比分析"
+        ],
+        "not_claimable": [
+          "持续学习能显著降低维护成本",
+          "持续学习功能是行业首创",
+          "所有用户都能轻松上手"
+        ],
+        "followup_queries": [
+          "Amazon Bedrock AgentCore continuous learning pricing",
+          "Amazon Bedrock AgentCore continuous learning user review",
+          "Amazon Bedrock AgentCore vs Vertex AI Agent Builder continuous learning"
+        ],
+        "additional_search_queries": [
+          "Amazon Bedrock AgentCore continuous learning cost example",
+          "Amazon Bedrock AgentCore bill shock",
+          "Amazon Bedrock AgentCore service terms continuous learning"
+        ],
+        "stop_conditions": [
+          "如果官方文档明确持续学习不额外收费且用户可完全控制，则成本账角度失效。",
+          "如果用户反馈普遍正面且无账单意外，则避坑角度失效。"
+        ],
+        "confidence": 55.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI前沿",
+        "report_type": "investigation",
+        "quality_gate": {
+          "pass": false,
+          "score": 55,
+          "fatal_issues": [
+            "核心事实没有来源：持续学习的具体机制、定价模式、用户控制选项等关键信息缺失，仅依赖官方博客，缺乏多源交叉验证。",
+            "成本估算没有公式、单位或边界：未提供持续学习的定价细节，无法进行成本估算。",
+            "没有泛兴趣故事钩子：标题和开头偏向技术说明，缺乏能吸引非技术读者的故事性钩子。",
+            "没有真实传播张力：冲突点（价值 vs 成本失控）缺乏实际案例或数据支撑，难以引发讨论。",
+            "没有明确归入实际选题方向：选题方向为AI前沿，但内容偏向成本分析，方向与内容不匹配。",
+            "没有明确选题结论：dossier中状态为可选，但未明确推荐或放弃。",
+            "没有解释为什么这个题值得选：dossier中未充分说明选题价值，仅指出方向有价值。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：dossier指出逻辑部分闭环，但未深入检查事实和材料可靠性。",
+            "没有列出基础概念缺口和资料素材缺口：dossier已列出缺失项，但未在质检中强调。",
+            "没有按具体类型提供资料包：dossier中缺少针对持续学习功能的详细资料包。",
+            "当天信息源严重偏科：证据主要来自AWS官方和第三方博客，缺乏用户反馈和竞品对比。"
+          ],
+          "warnings": [
+            "读者分层不明确：primary_layer为核心技术人，但secondary_layers包含入门读者和商业读者，跨度较大。",
+            "泛兴趣钩子过度标题党：dossier中建议的标题可能夸大成本风险，但缺乏证据支撑。",
+            "只有专业价值，没有话题性和公共讨论空间：当前内容偏向技术分析，缺乏公共讨论点。"
+          ],
+          "missing_evidence": [
+            "持续学习的具体实现机制（增量训练/在线学习）",
+            "持续学习的定价模式（是否额外收费）",
+            "用户控制选项（开关、回滚、限制范围）",
+            "至少一个用户案例或社区讨论帖",
+            "与竞品（如Google Vertex AI Agent Builder）的对比分析"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": false,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "Amazon Bedrock AgentCore 的持续学习能力是否真的能降低 Agent 维护成本，还是只是增加了账单风险？",
+          "persona_discussion_question": "老花：我该不该把现有 Agent 迁移到 Bedrock AgentCore 的持续学习模式？会不会导致成本失控？",
+          "hidden_public_issue": "云厂商通过持续学习功能锁定用户，用户可能因自动更新而难以控制模型行为，且账单可能因持续推理而膨胀。",
+          "must_verify": [
+            "持续学习的具体实现机制：是增量训练还是在线学习？是否每次交互都触发模型更新？",
+            "持续学习的定价模式：是否有额外费用？是按 token、调用次数还是训练时长计费？",
+            "是否支持用户手动控制学习开关、回滚或限制学习范围？",
+            "是否有官方文档或案例说明持续学习带来的实际成本变化？",
+            "是否有用户反馈或社区讨论关于持续学习导致的意外账单或模型退化？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "pricing_page",
+              "query": "Amazon Bedrock AgentCore pricing continuous learning",
+              "why_needed": "确认持续学习是否额外收费及计费方式。"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Amazon Bedrock AgentCore continuous learning documentation",
+              "why_needed": "了解技术细节、控制选项和限制。"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Amazon Bedrock AgentCore continuous learning cost example",
+              "why_needed": "获取实际使用案例中的成本数据。"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Amazon Bedrock AgentCore continuous learning bill shock",
+              "why_needed": "查找用户关于账单意外的讨论。"
+            },
+            {
+              "source_type": "policy",
+              "query": "Amazon Bedrock AgentCore service terms continuous learning",
+              "why_needed": "确认服务条款中关于持续学习的责任划分。"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "Amazon Bedrock AgentCore vs other agent platforms continuous learning comparison",
+              "why_needed": "对比其他平台类似功能，评估竞争力。"
+            }
+          ],
+          "expert_challenge_points": [
+            "持续学习可能导致模型漂移，如何保证长期稳定性？",
+            "如果持续学习基于用户交互数据，数据隐私和合规如何保障？",
+            "是否支持自定义学习策略（如仅学习特定领域知识）？"
+          ],
+          "do_not_claim_yet": [
+            "持续学习能显著降低维护成本",
+            "持续学习功能是行业首创",
+            "所有用户都能轻松上手"
+          ],
+          "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。因为该功能细节不明确，缺乏成本数据和用户反馈，无法形成老花人设下的成本账或避坑账。",
+          "downstream_materials_needed": [
+            "官方定价页面截图或链接",
+            "至少一个用户案例或社区讨论帖",
+            "与竞品（如 Google Vertex AI Agent Builder）的对比分析"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Amazon Bedrock AgentCore Pricing - AWS",
+            "url": "https://aws.amazon.com/bedrock/agentcore/pricing/",
+            "query": "Amazon Bedrock AgentCore pricing continuous learning",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon Bedrock AgentCore Pricing - AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"wIGcUfrcd4BkhIUKCWFFixN6qkUppSbyMkDOJEy4Ccw=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.17/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main content {\"data\":{\"items\"",
+            "fetch_error": ""
+          },
+          {
+            "title": "New in Amazon Bedrock AgentCore: Build agents with broader knowledge and continuous learning | Artificial Intelligence",
+            "url": "https://aws.amazon.com/blogs/machine-learning/new-in-amazon-bedrock-agentcore-build-agents-with-broader-knowledge-and-continuous-learning/",
+            "query": "Amazon Bedrock AgentCore pricing continuous learning",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "New in Amazon Bedrock AgentCore: Build agents with broader knowledge and continuous learning | Artificial Intelligence body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore Pricing: 12 Components Breakdown | Cloud Burn",
+            "url": "https://cloudburn.io/blog/amazon-bedrock-agentcore-pricing",
+            "query": "Amazon Bedrock AgentCore pricing continuous learning",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-scrollbar-thumb:#0000;--tw-scrollbar-track:#0000;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-ordinal:initial;--tw-slashed-zero:initial;--tw-numeric-figure:initial;--tw-numeric-spacing:initial;--tw-numeric-fraction:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore - AWS",
+            "url": "https://aws.amazon.com/bedrock/agentcore/",
+            "query": "Amazon Bedrock AgentCore continuous learning documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon Bedrock AgentCore- AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"kJBD1VWg1qqhJsfGT75Aws2e3LjmGERohjrF6xHQNMw=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.16/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.16/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.16/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.16/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.16/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main content {\"data\":{\"items\":[{\"field",
+            "fetch_error": ""
+          },
+          {
+            "title": "Overview - Amazon Bedrock AgentCore",
+            "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html",
+            "query": "Amazon Bedrock AgentCore continuous learning documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Overview - Amazon Bedrock AgentCore View a markdown version of this page Overview - Amazon Bedrock AgentCore { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"Amazon Bedrock AgentCore\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"Developer Guide\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"Overview\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html\" } ] } Documentation Amazon Bedrock AgentCore Developer Guide What is Amazon Bedrock AgentCore? Core services in Amazon Bedrock AgentCore What can you build with Amazon Bedrock AgentCore? Pricing for Amazon Bedrock AgentCore Next Steps Overview What is Amazon Bedrock AgentCore? Amazon Bedrock AgentCore is an agentic platform for building, deploying, and operating highly effective agents securely at scale using any framework and foundation model. With AgentCore, you can enable agents to take actions across tools and data with the right permissions and governance, run agents securely at scale, and monitor agent performance and quality in production - all without any infrastructure management. AgentCore services work together or independently with any open-source framework such as CrewAI, LangGraph, LlamaIndex, and Strands Agents and with any foundation model, so you don’t have to choose between open-source flexibility and enterprise-grade security and reliability. Core services in Amazon Bedrock AgentCore Amazon Bedrock AgentCore includes th",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore Documentation",
+            "url": "https://docs.aws.amazon.com/bedrock-agentcore/",
+            "query": "Amazon Bedrock AgentCore continuous learning documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon Bedrock AgentCore Documentation Amazon Bedrock AgentCore is a fully managed service that enables you to deploy and operate highly capable agents securely, at scale using any framework and model. Get started Get started with AgentCore Build your first agent in minutes with the AgentCore CLI. Code examples Explore tutorials, use cases, and integrations in this GitHub repository. Integrations Explore AgentCore integrations with popular frameworks. AgentCore MCP server Vibe coding with your coding assistant. Console and SDKs AgentCore Console Access the AgentCore console. AgentCore SDK AgentCore Python SDK on GitHub. AWS SDK AWS SDK for Python (boto3) for AgentCore. Documentation AgentCore Developer Guide Describes how to use the AgentCore console, API, and CLI. AgentCore Data Plane API Reference Describes the AgentCore data plane API operations and parameters. bedrock-agentcore AgentCore Control Plane API Reference Describes the AgentCore control plane API operations and parameters. bedrock-agentcore-control AgentCore harness Get started with AgentCore harness Define and invoke AI agents with a single API call using AgentCore Harness. AgentCore harness in the Developer Guide Learn more about the managed agent loop with built-in memory, tools, and isolated execution environments. AgentCore Runtime Get started with AgentCore Runtime Deploy your first agent to AgentCore Runtime in minutes. AgentCore Runtime tutorials Tutorials for hosting MCP servers and agents (supports A2A) using AgentCore Runtime. AgentCore Runtime in the Developer Guide Learn more about hosting your AI agents and tools in secure, purpose-built hosting environments. AgentCore Memory Get started with AgentCore Memory Get started creating and managing memory resources with AgentCore Memory. AgentCore ",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore: Pricing, Features & How It Works",
+            "url": "https://www.pump.co/blog/amazon-bedrock-agentcore/",
+            "query": "Amazon Bedrock AgentCore continuous learning cost example",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "try{if(localStorage.getItem(\"__framer_force_showing_editorbar_since\")){const n=document.createElement(\"link\");n.rel = \"modulepreload\";n.href=\"https://framer.com/edit/init.mjs\";document.head.appendChild(n)}}catch(e){} .circle{ position: relative; display: inline-block; z-index: 1; } .circle::before { content:\"\"; position:absolute; width:130%; height:130%; top: 40%; left: 50%; transform: translate(-50%, -50%); z-index: -1; background-repeat: no-repeat; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjk3IiBoZWlnaHQ9IjEzMyIgdmlld0JveD0iMCAwIDI5NyAxMzMiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMzcuNzA4IDIxLjI2MjFDOTQuODQ1IDIyLjAyMzEgLTEuOTgxNDkgMzUuNTIxIDUuMzk5NDEgODIuNTUwMUMxNC42MjU1IDE0MS4zMzYgMjk0LjI5MiAxNDMuNjE5IDI5MS45ODYgODIuNTUwMUMyOTAuMTQxIDMzLjY5NDYgMTQxLjI5MyAxMC44MjY5IDY3LjA5OTEgNS41IiBzdHJva2U9IiNEQkZCNTEiIHN0cm9rZS13aWR0aD0iMTAiLz4KPC9zdmc+Cg=='); background-size: 100% 100%; } .underline{ position: relative; z-index:1; display: inline-block; overflow: visible; } .underline::before { content:\"\"; position:absolute; width:100%; height:100%; top: 90%; left: 50%; transform: translate(-50%, -10%); z-index: -1; background-repeat: no-repeat; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgzIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjgzIDE2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMSAxMUM1MC44MjYxIDYuNDcyMjYgMTc2Ljc4MyAwLjEzMzQyIDI4MiAxMSIgc3Ryb2tlPSIjREJGQjUxIiBzdHJva2Utd2lkdGg9IjEwIi8+Cjwvc3ZnPgo='); } .underline.green::before { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgzIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjgzIDE2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMSAxMUM1MC44MjYxIDYuNDcyMjYgMTc2Ljc4MyAwLjEzM",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock Pricing 2026 | Compare AI Model Costs",
+            "url": "https://go-cloud.io/amazon-bedrock-pricing/",
+            "query": "Amazon Bedrock AgentCore continuous learning cost example",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon Bedrock Pricing 2026 | Compare AI Model Costs {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://go-cloud.io/#organization\",\"name\":\"GoCloud\",\"url\":\"https://go-cloud.io\",\"sameAs\":[\"https://pk.linkedin.com/company/gocloud-pvt-ltd\"],\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://go-cloud.io/#logo\",\"url\":\"https://go-cloud.io/wp-content/uploads/2024/09/10-1-1-e1725958834170.png\",\"contentUrl\":\"https://go-cloud.io/wp-content/uploads/2024/09/10-1-1-e1725958834170.png\",\"caption\":\"GoCloud\",\"inLanguage\":\"en-US\",\"width\":\"73\",\"height\":\"65\"}},{\"@type\":\"WebSite\",\"@id\":\"https://go-cloud.io/#website\",\"url\":\"https://go-cloud.io\",\"name\":\"GoCloud\",\"publisher\":{\"@id\":\"https://go-cloud.io/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://go-cloud.io/wp-content/uploads/2026/02/29.webp\",\"url\":\"https://go-cloud.io/wp-content/uploads/2026/02/29.webp\",\"width\":\"748\",\"height\":\"512\",\"inLanguage\":\"en-US\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://go-cloud.io/amazon-bedrock-pricing/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":\"1\",\"item\":{\"@id\":\"https://go-cloud.io\",\"name\":\"Home\"}},{\"@type\":\"ListItem\",\"position\":\"2\",\"item\":{\"@id\":\"https://go-cloud.io/amazon-bedrock-pricing/\",\"name\":\"Amazon Bedrock Pricing | Complete 2026 Guide (Every Model, Every Mode + Cost Optimization)\"}}]},{\"@type\":\"WebPage\",\"@id\":\"https://go-cloud.io/amazon-bedrock-pricing/#webpage\",\"url\":\"https://go-cloud.io/amazon-bedrock-pricing/\",\"name\":\"Amazon Bedrock Pricing 2026 | Compare AI Model Costs\",\"datePublished\":\"2026-02-25T09:02:32+00:00\",\"dateModified\":\"2026-02-25T09:34:47+00:00\",\"isPartOf\":{\"@id\":\"https://go-cloud.io/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://go-cloud.io/wp-content/uploads/2026/02/29.webp\"},\"inLanguage\":\"en-US\",\"breadcrumb\":{\"@id\"",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock Pricing: Token Rates Hide a $350/Month Trap | Cloud Burn",
+            "url": "https://cloudburn.io/blog/amazon-bedrock-pricing",
+            "query": "Amazon Bedrock AgentCore continuous learning bill shock",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-scrollbar-thumb:#0000;--tw-scrollbar-track:#0000;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-ordinal:initial;--tw-slashed-zero:initial;--tw-numeric-figure:initial;--tw-numeric-spacing:initial;--tw-numeric-fraction:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore adds quality evaluations and policy controls for deploying trusted AI agents | Amazon Web Services",
+            "url": "https://aws.amazon.com/blogs/aws/amazon-bedrock-agentcore-adds-quality-evaluations-and-policy-controls-for-deploying-trusted-ai-agents/",
+            "query": "Amazon Bedrock AgentCore continuous learning bill shock",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon Bedrock AgentCore adds quality evaluations and policy controls for deploying trusted AI agents | AWS News Blog body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,r",
+            "fetch_error": ""
+          },
+          {
+            "title": "New Amazon Bedrock AgentCore capabilities power the next wave of agentic AI development",
+            "url": "https://www.aboutamazon.com/news/aws/aws-amazon-bedrock-agent-core-ai-agents",
+            "query": "Amazon Bedrock AgentCore continuous learning bill shock",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon launches AI Agents that stay within boundaries, track their performance, and get smarter over time (self.__next_s=self.__next_s||[]).push([0,{\"type\":\"application/ld+json\",\"children\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"WebSite\\\",\\\"name\\\":\\\"Amazon News\\\",\\\"url\\\":\\\"https://www.aboutamazon.com/\\\",\\\"alternateName\\\":[\\\"Amazon News\\\",\\\"About Amazon\\\"]}\",\"id\":\"json-ld-schema\"}]) !function(n,o){o.forEach(function(o){n[o]||((n.__alloyNS=n.__alloyNS|| []).push(o),n[o]=function(){var u=arguments;return new Promise( function(i,l){n.setTimeout(function(){n[o].q.push([i,l,u])})})},n[o].q=[])})} (window,[\"alloy\"]); News AWS New Amazon Bedrock AgentCore capabilities power the next wave of agentic AI development Latest AgentCore innovations help customers build, deploy, and scale production-ready AI agents with confidence. Share Written by Amazon Staff 5 min read Key takeaways Policy in Amazon Bedrock AgentCore actively blocks unauthorized agent actions through real-time, deterministic controls that operate outside of the agent code. AgentCore Evaluations helps developers continuously inspect the quality of an agent based on its behavior. AgentCore Memory introduces episodic functionality that helps agents learn from experiences, improving decision-making. Organizations of all sizes and regulatory requirements—including Amazon Devices Operations & Supply Chain, Archera.ai, Cohere Health, Cox Automotive, Druva, Heroku, Natera, NTT Data, MongoDB, PGA TOUR, Pulumi, Thomson Reuters, Workday, Snorkel.ai, Swisscom, and S&P Global Market Intelligence—trust AgentCore to accelerate their AI agents into production. Today, we announced new innovations in Amazon Bedrock AgentCore , the most advanced platform for building and deploying agents securely at scale. Policy in AgentCor",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore Beginner's Guide - AI Agent Development from Basics with Detailed Term Explanations | hidekazu-konishi.com",
+            "url": "https://hidekazu-konishi.com/entry/amazon_bedrock_agentcore_beginners_guide.html",
+            "query": "Amazon Bedrock AgentCore service terms continuous learning",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon Bedrock AgentCore Beginner's Guide - AI Agent Development from Basics with Detailed Term Explanations | hidekazu-konishi.com { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@context\": \"https://schema.org\", \"@type\": \"WebSite\", \"name\": \"Hidekazu Konishi - Profile / Biography | hidekazu-konishi.com\", \"url\": \"https://hidekazu-konishi.com/\", \"description\": \"Hidekazu Konishi is an AI Solutions Architect, Japan AWS Top Engineer, Japan All AWS Certifications Engineer, AI Agent Engineer, Cloud Architect, and Tech Blogger.\", \"image\": [ \"https://hidekazu-konishi.com/img/hidekazu-konishi_com_ogp.jpg\" ], \"sameAs\": [ \"https://hidekazu-konishi.com/\" ], \"mainEntityOfPage\": { \"@type\": \"WebPage\", \"@id\": \"https://hidekazu-konishi.com/\" }, \"headline\": \"Hidekazu Konishi - Profile / Biography | hidekazu-konishi.com\", \"thumbnailUrl\": \"https://hidekazu-konishi.com/img/hidekazu-konishi_com_ogp_icon.png\", \"keywords\": [ \"AI Solutions Architect\", \"Japan AWS Top Engineer\", \"Japan All AWS Certifications Engineer\", \"AI Agent Engineer\", \"Cloud Architect\", \"Cloud Engineer\", \"DevOps Engineer\", \"MLOps Engineer\", \"AIOps Engineer\", \"Application Engineer\", \"Prompt Engineer\", \"Tech Blogger\", \"AI Agent Development\", \"AI-Augmented Development\", \"AI-Powered Development\", \"Multi-Cloud\", \"Hybrid Cloud\", \"Architecting\", \"DevOps\", \"MLOps\", \"AIOps\", \"Generative AI\", \"GenAI\", \"Social Reform Activities\", \"Social Reform Activity\", \"SRA\", \"Hidekazu Konishi\", \"小西 秀和\", \"小西秀和\", \"Profile\", \"Biography\" ], \"encodingFormat\": \"text/html\", \"encoding\": { \"@type\": \"MediaObject\", \"encodingFormat\": \"utf-8\" }, \"inLanguage\": [ \"en\" ], \"genre\": [ \"Profile\", \"Biography\", \"Technology\", \"Cloud Computing\", \"Amazon Web Services\", \"AWS\", \"Blog\", \"Tech Blog\" ], \"isAccessibleForFree\": true, \"copyrightYear\": 2020, \"copyrightHolder\": {",
+            "fetch_error": ""
+          },
+          {
+            "title": "MCP vs Strands vs RAG vs A2A vs Bedrock vs AgentCore vs Q: AWS AI Agents Compared | by Bhavika M. | AWS in Plain English",
+            "url": "https://aws.plainenglish.io/mcp-vs-strands-vs-rag-vs-a2a-vs-bedrock-vs-agentcore-vs-q-aws-ai-agents-compared-2025-788089e7ed33?gi=7697dde3c1fc",
+            "query": "Amazon Bedrock AgentCore vs other agent platforms continuous learning comparison",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Bedrock Agents vs Bedrock Agentcore | AWS re:Post",
+            "url": "https://repost.aws/questions/QUjkf4WbikQ6WrpuH9sppjnw/bedrock-agents-vs-bedrock-agentcore",
+            "query": "Amazon Bedrock AgentCore vs other agent platforms continuous learning comparison",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Bedrock Agents vs Bedrock Agentcore | AWS re:Post var AWSMA = AWSMA || {}; AWSMA.config = AWSMA.config || {}; AWSMA.config.customPageview = true; Skip to content By using AWS re:Post, you agree to the AWS re:Post Terms of Use re:Post Search About re:Post English English Deutsch Español Français Italiano 日本語 한국어 Português 中文 (简体) 中文 (繁體) Resources Sign in Home Questions Knowledge Center Articles Selections Tags Topics AWS Support Official AWS Trust & Safety Center Ask question {\"@context\":\"https://schema.org/\",\"@type\":\"QAPage\",\"mainEntity\":{\"@type\":\"Question\",\"name\":\"Bedrock Agents vs Bedrock Agentcore\",\"text\":\"Can we say Bedrock Agentcore is like EKS and Bedrock Agents is like Fargate?\\nCan Bedrock Agents service has more features than Agentcore? \\nIf I master Agentcore do I still need to use something from Bedrock Agents service?\",\"answerCount\":1,\"upvoteCount\":0,\"author\":{\"@type\":\"Person\",\"name\":\"Angel Romero\",\"url\":\"/community/users/UShz4uxN4qQH6PYAyPL14ddQ\"},\"datePublished\":\"2025-08-20T21:48:49.454Z\",\"suggestedAnswer\":[{\"@type\":\"Answer\",\"text\":\"Amazon Bedrock Agents and Amazon Bedrock AgentCore serve different purposes in the AI agent ecosystem, though your EKS vs. Fargate analogy isn't quite accurate.\\n\\nAmazon Bedrock Agents is a fully managed service that allows you to build and configure autonomous agents without managing infrastructure or writing custom code. It handles prompt engineering, memory, monitoring, encryption, user permissions, and API invocation for you. Key features include API-driven development, action groups for defining specific actions, knowledge base integration, and a configuration-based implementation approach.\\n\\nAmazon Bedrock AgentCore (currently in preview) is a comprehensive set of services designed to deploy and operate AI agents secur",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：持续学习的具体机制、定价模式、用户控制选项等关键信息缺失，仅依赖官方博客，缺乏多源交叉验证。"
+        },
+        "core_question": "Amazon Bedrock AgentCore 的持续学习能力是否真的能降低 Agent 维护成本，还是只是增加了账单风险？",
+        "why_this_topic_matters": "Agent 持续学习是 AI 前沿方向，但云厂商可能通过此功能锁定用户并导致成本失控，对普通技术人的成本账和迁移账有潜在影响。",
+        "fact_summary": [
+          "Amazon Bedrock AgentCore 新增持续学习能力，使 Agent 能基于经验改进决策。",
+          "新功能包括 Policy（实时策略控制）、Evaluations（质量评估）、Memory（情景记忆）。",
+          "官方博客称这些能力帮助构建更强大的 Agent，并支持持续改进。",
+          "定价页面未明确提及持续学习的额外费用，但 AgentCore 本身有按资源计费的模式。",
+          "已有用户讨论 Bedrock Agents 与 AgentCore 的区别，但持续学习的具体案例和成本数据缺失。"
+        ],
+        "persona_discussion_question": "老花：我该不该把现有 Agent 迁移到 Bedrock AgentCore 的持续学习模式？会不会导致成本失控？",
+        "old_flower_stance": "持续学习听起来美好，但云厂商的自动更新可能带来不可控的账单和模型漂移，普通技术人应谨慎评估，先在小范围测试成本后再决定是否迁移。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 65,
+          "why_interested": "核心技术人关注 Agent 维护成本和平台锁定风险；入门读者想了解持续学习是否值得尝试；商业读者关心 ROI。",
+          "reader_risk": "缺乏具体成本数据，可能导致读者误判迁移收益。"
+        },
+        "mass_interest_hook": {
+          "score": 40,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "标题如「AI 越用越聪明？小心账单越用越贵」能吸引对 AI 成本好奇的普通人。",
+          "story_seed": "一个开发者用上持续学习后，Agent 变聪明了，但月底账单翻了三倍。",
+          "do_not_overhype": "不能声称持续学习必然导致账单飙升，需强调缺乏实际案例。"
+        },
+        "topic_tension": {
+          "score": 10,
+          "conflict_point": "持续学习的价值 vs 成本失控风险",
+          "debate_question": "云厂商的持续学习功能是帮用户省钱还是变相涨价？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "AWS 等云厂商"
+          ],
+          "why_people_would_comment": "用户可能分享自己的账单经历或质疑 AWS 的定价透明度。",
+          "traffic_risk": "传播张力不足，容易写成专业说明；需要真实冲突或用户案例来激发讨论。"
+        },
+        "timeline": [
+          "2025-08-20: AWS re:Post 出现 Bedrock Agents vs AgentCore 讨论。",
+          "2025-09-10: AWS 发布 AgentCore 新能力博客。",
+          "2025-09-10: About Amazon 发布相关新闻稿。"
+        ],
+        "evidence_table": [
+          {
+            "source": "AWS Machine Learning Blog",
+            "url": "https://aws.amazon.com/blogs/machine-learning/new-in-amazon-bedrock-agentcore-build-agents-with-broader-knowledge-and-continuous-learning/",
+            "supports": "持续学习能力发布",
+            "reliability": "official"
+          },
+          {
+            "source": "About Amazon News",
+            "url": "https://www.aboutamazon.com/news/aws/aws-amazon-bedrock-agent-core-ai-agents",
+            "supports": "持续学习能力发布",
+            "reliability": "official"
+          },
+          {
+            "source": "AWS Pricing Page",
+            "url": "https://aws.amazon.com/bedrock/agentcore/pricing/",
+            "supports": "定价信息（未明确持续学习费用）",
+            "reliability": "official"
+          },
+          {
+            "source": "AWS re:Post",
+            "url": "https://repost.aws/questions/QUjkf4WbikQ6WrpuH9sppjnw/bedrock-agents-vs-bedrock-agentcore",
+            "supports": "用户对 AgentCore 的讨论",
+            "reliability": "weak"
+          },
+          {
+            "source": "Cloud Burn Blog",
+            "url": "https://cloudburn.io/blog/amazon-bedrock-agentcore-pricing",
+            "supports": "AgentCore 定价分析",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "部分闭环：持续学习功能存在，但成本影响和用户反馈缺失，无法形成完整判断。",
+        "writeable_angles": [
+          {
+            "angle": "成本账：持续学习是否会导致账单失控？",
+            "why": "老花人设关注成本，但缺乏定价数据，需补证。",
+            "needs": "官方定价细节、用户账单案例"
+          },
+          {
+            "angle": "平台锁定：持续学习是否增加迁移成本？",
+            "why": "技术人关注锁定风险，但缺乏对比数据。",
+            "needs": "竞品对比、迁移难度分析"
+          },
+          {
+            "angle": "技术实现：持续学习的具体机制是什么？",
+            "why": "入门读者想了解原理，但官方文档未详细说明。",
+            "needs": "技术文档、实现细节"
+          }
+        ],
+        "missing_basics": [
+          "持续学习的具体实现机制（增量训练/在线学习）",
+          "持续学习的定价模式（是否额外收费）",
+          "用户控制选项（开关、回滚、限制范围）"
+        ],
+        "missing_materials": [
+          "官方定价页面中持续学习的费用说明",
+          "至少一个用户案例或社区讨论帖",
+          "与竞品（如 Google Vertex AI Agent Builder）的对比分析"
+        ],
+        "not_claimable": [
+          "持续学习能显著降低维护成本",
+          "持续学习功能是行业首创",
+          "所有用户都能轻松上手"
+        ],
+        "followup_queries": [
+          "Amazon Bedrock AgentCore continuous learning pricing",
+          "Amazon Bedrock AgentCore continuous learning user review",
+          "Amazon Bedrock AgentCore vs Vertex AI Agent Builder continuous learning"
+        ],
+        "additional_search_queries": [
+          "Amazon Bedrock AgentCore continuous learning cost example",
+          "Amazon Bedrock AgentCore bill shock",
+          "Amazon Bedrock AgentCore service terms continuous learning"
+        ],
+        "stop_conditions": [
+          "如果官方文档明确持续学习不额外收费且用户可完全控制，则成本账角度失效。",
+          "如果用户反馈普遍正面且无账单意外，则避坑角度失效。"
+        ],
+        "confidence": 55.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI前沿",
+        "report_type": "investigation",
+        "quality_gate": {
+          "pass": false,
+          "score": 55,
+          "fatal_issues": [
+            "核心事实没有来源：持续学习的具体机制、定价模式、用户控制选项等关键信息缺失，仅依赖官方博客，缺乏多源交叉验证。",
+            "成本估算没有公式、单位或边界：未提供持续学习的定价细节，无法进行成本估算。",
+            "没有泛兴趣故事钩子：标题和开头偏向技术说明，缺乏能吸引非技术读者的故事性钩子。",
+            "没有真实传播张力：冲突点（价值 vs 成本失控）缺乏实际案例或数据支撑，难以引发讨论。",
+            "没有明确归入实际选题方向：选题方向为AI前沿，但内容偏向成本分析，方向与内容不匹配。",
+            "没有明确选题结论：dossier中状态为可选，但未明确推荐或放弃。",
+            "没有解释为什么这个题值得选：dossier中未充分说明选题价值，仅指出方向有价值。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：dossier指出逻辑部分闭环，但未深入检查事实和材料可靠性。",
+            "没有列出基础概念缺口和资料素材缺口：dossier已列出缺失项，但未在质检中强调。",
+            "没有按具体类型提供资料包：dossier中缺少针对持续学习功能的详细资料包。",
+            "当天信息源严重偏科：证据主要来自AWS官方和第三方博客，缺乏用户反馈和竞品对比。"
+          ],
+          "warnings": [
+            "读者分层不明确：primary_layer为核心技术人，但secondary_layers包含入门读者和商业读者，跨度较大。",
+            "泛兴趣钩子过度标题党：dossier中建议的标题可能夸大成本风险，但缺乏证据支撑。",
+            "只有专业价值，没有话题性和公共讨论空间：当前内容偏向技术分析，缺乏公共讨论点。"
+          ],
+          "missing_evidence": [
+            "持续学习的具体实现机制（增量训练/在线学习）",
+            "持续学习的定价模式（是否额外收费）",
+            "用户控制选项（开关、回滚、限制范围）",
+            "至少一个用户案例或社区讨论帖",
+            "与竞品（如Google Vertex AI Agent Builder）的对比分析"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": false,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "Amazon Bedrock AgentCore 的持续学习能力是否真的能降低 Agent 维护成本，还是只是增加了账单风险？",
+          "persona_discussion_question": "老花：我该不该把现有 Agent 迁移到 Bedrock AgentCore 的持续学习模式？会不会导致成本失控？",
+          "hidden_public_issue": "云厂商通过持续学习功能锁定用户，用户可能因自动更新而难以控制模型行为，且账单可能因持续推理而膨胀。",
+          "must_verify": [
+            "持续学习的具体实现机制：是增量训练还是在线学习？是否每次交互都触发模型更新？",
+            "持续学习的定价模式：是否有额外费用？是按 token、调用次数还是训练时长计费？",
+            "是否支持用户手动控制学习开关、回滚或限制学习范围？",
+            "是否有官方文档或案例说明持续学习带来的实际成本变化？",
+            "是否有用户反馈或社区讨论关于持续学习导致的意外账单或模型退化？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "pricing_page",
+              "query": "Amazon Bedrock AgentCore pricing continuous learning",
+              "why_needed": "确认持续学习是否额外收费及计费方式。"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Amazon Bedrock AgentCore continuous learning documentation",
+              "why_needed": "了解技术细节、控制选项和限制。"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Amazon Bedrock AgentCore continuous learning cost example",
+              "why_needed": "获取实际使用案例中的成本数据。"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Amazon Bedrock AgentCore continuous learning bill shock",
+              "why_needed": "查找用户关于账单意外的讨论。"
+            },
+            {
+              "source_type": "policy",
+              "query": "Amazon Bedrock AgentCore service terms continuous learning",
+              "why_needed": "确认服务条款中关于持续学习的责任划分。"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "Amazon Bedrock AgentCore vs other agent platforms continuous learning comparison",
+              "why_needed": "对比其他平台类似功能，评估竞争力。"
+            }
+          ],
+          "expert_challenge_points": [
+            "持续学习可能导致模型漂移，如何保证长期稳定性？",
+            "如果持续学习基于用户交互数据，数据隐私和合规如何保障？",
+            "是否支持自定义学习策略（如仅学习特定领域知识）？"
+          ],
+          "do_not_claim_yet": [
+            "持续学习能显著降低维护成本",
+            "持续学习功能是行业首创",
+            "所有用户都能轻松上手"
+          ],
+          "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。因为该功能细节不明确，缺乏成本数据和用户反馈，无法形成老花人设下的成本账或避坑账。",
+          "downstream_materials_needed": [
+            "官方定价页面截图或链接",
+            "至少一个用户案例或社区讨论帖",
+            "与竞品（如 Google Vertex AI Agent Builder）的对比分析"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Amazon Bedrock AgentCore Pricing - AWS",
+            "url": "https://aws.amazon.com/bedrock/agentcore/pricing/",
+            "query": "Amazon Bedrock AgentCore pricing continuous learning",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon Bedrock AgentCore Pricing - AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"wIGcUfrcd4BkhIUKCWFFixN6qkUppSbyMkDOJEy4Ccw=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.17/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main content {\"data\":{\"items\"",
+            "fetch_error": ""
+          },
+          {
+            "title": "New in Amazon Bedrock AgentCore: Build agents with broader knowledge and continuous learning | Artificial Intelligence",
+            "url": "https://aws.amazon.com/blogs/machine-learning/new-in-amazon-bedrock-agentcore-build-agents-with-broader-knowledge-and-continuous-learning/",
+            "query": "Amazon Bedrock AgentCore pricing continuous learning",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "New in Amazon Bedrock AgentCore: Build agents with broader knowledge and continuous learning | Artificial Intelligence body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore Pricing: 12 Components Breakdown | Cloud Burn",
+            "url": "https://cloudburn.io/blog/amazon-bedrock-agentcore-pricing",
+            "query": "Amazon Bedrock AgentCore pricing continuous learning",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-scrollbar-thumb:#0000;--tw-scrollbar-track:#0000;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-ordinal:initial;--tw-slashed-zero:initial;--tw-numeric-figure:initial;--tw-numeric-spacing:initial;--tw-numeric-fraction:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore - AWS",
+            "url": "https://aws.amazon.com/bedrock/agentcore/",
+            "query": "Amazon Bedrock AgentCore continuous learning documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon Bedrock AgentCore- AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"kJBD1VWg1qqhJsfGT75Aws2e3LjmGERohjrF6xHQNMw=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.16/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.16/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.16/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.16/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.16/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.16/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main content {\"data\":{\"items\":[{\"field",
+            "fetch_error": ""
+          },
+          {
+            "title": "Overview - Amazon Bedrock AgentCore",
+            "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html",
+            "query": "Amazon Bedrock AgentCore continuous learning documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Overview - Amazon Bedrock AgentCore View a markdown version of this page Overview - Amazon Bedrock AgentCore { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"Amazon Bedrock AgentCore\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"Developer Guide\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"Overview\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/what-is-bedrock-agentcore.html\" } ] } Documentation Amazon Bedrock AgentCore Developer Guide What is Amazon Bedrock AgentCore? Core services in Amazon Bedrock AgentCore What can you build with Amazon Bedrock AgentCore? Pricing for Amazon Bedrock AgentCore Next Steps Overview What is Amazon Bedrock AgentCore? Amazon Bedrock AgentCore is an agentic platform for building, deploying, and operating highly effective agents securely at scale using any framework and foundation model. With AgentCore, you can enable agents to take actions across tools and data with the right permissions and governance, run agents securely at scale, and monitor agent performance and quality in production - all without any infrastructure management. AgentCore services work together or independently with any open-source framework such as CrewAI, LangGraph, LlamaIndex, and Strands Agents and with any foundation model, so you don’t have to choose between open-source flexibility and enterprise-grade security and reliability. Core services in Amazon Bedrock AgentCore Amazon Bedrock AgentCore includes th",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore Documentation",
+            "url": "https://docs.aws.amazon.com/bedrock-agentcore/",
+            "query": "Amazon Bedrock AgentCore continuous learning documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon Bedrock AgentCore Documentation Amazon Bedrock AgentCore is a fully managed service that enables you to deploy and operate highly capable agents securely, at scale using any framework and model. Get started Get started with AgentCore Build your first agent in minutes with the AgentCore CLI. Code examples Explore tutorials, use cases, and integrations in this GitHub repository. Integrations Explore AgentCore integrations with popular frameworks. AgentCore MCP server Vibe coding with your coding assistant. Console and SDKs AgentCore Console Access the AgentCore console. AgentCore SDK AgentCore Python SDK on GitHub. AWS SDK AWS SDK for Python (boto3) for AgentCore. Documentation AgentCore Developer Guide Describes how to use the AgentCore console, API, and CLI. AgentCore Data Plane API Reference Describes the AgentCore data plane API operations and parameters. bedrock-agentcore AgentCore Control Plane API Reference Describes the AgentCore control plane API operations and parameters. bedrock-agentcore-control AgentCore harness Get started with AgentCore harness Define and invoke AI agents with a single API call using AgentCore Harness. AgentCore harness in the Developer Guide Learn more about the managed agent loop with built-in memory, tools, and isolated execution environments. AgentCore Runtime Get started with AgentCore Runtime Deploy your first agent to AgentCore Runtime in minutes. AgentCore Runtime tutorials Tutorials for hosting MCP servers and agents (supports A2A) using AgentCore Runtime. AgentCore Runtime in the Developer Guide Learn more about hosting your AI agents and tools in secure, purpose-built hosting environments. AgentCore Memory Get started with AgentCore Memory Get started creating and managing memory resources with AgentCore Memory. AgentCore ",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore: Pricing, Features & How It Works",
+            "url": "https://www.pump.co/blog/amazon-bedrock-agentcore/",
+            "query": "Amazon Bedrock AgentCore continuous learning cost example",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "try{if(localStorage.getItem(\"__framer_force_showing_editorbar_since\")){const n=document.createElement(\"link\");n.rel = \"modulepreload\";n.href=\"https://framer.com/edit/init.mjs\";document.head.appendChild(n)}}catch(e){} .circle{ position: relative; display: inline-block; z-index: 1; } .circle::before { content:\"\"; position:absolute; width:130%; height:130%; top: 40%; left: 50%; transform: translate(-50%, -50%); z-index: -1; background-repeat: no-repeat; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjk3IiBoZWlnaHQ9IjEzMyIgdmlld0JveD0iMCAwIDI5NyAxMzMiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMzcuNzA4IDIxLjI2MjFDOTQuODQ1IDIyLjAyMzEgLTEuOTgxNDkgMzUuNTIxIDUuMzk5NDEgODIuNTUwMUMxNC42MjU1IDE0MS4zMzYgMjk0LjI5MiAxNDMuNjE5IDI5MS45ODYgODIuNTUwMUMyOTAuMTQxIDMzLjY5NDYgMTQxLjI5MyAxMC44MjY5IDY3LjA5OTEgNS41IiBzdHJva2U9IiNEQkZCNTEiIHN0cm9rZS13aWR0aD0iMTAiLz4KPC9zdmc+Cg=='); background-size: 100% 100%; } .underline{ position: relative; z-index:1; display: inline-block; overflow: visible; } .underline::before { content:\"\"; position:absolute; width:100%; height:100%; top: 90%; left: 50%; transform: translate(-50%, -10%); z-index: -1; background-repeat: no-repeat; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgzIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjgzIDE2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMSAxMUM1MC44MjYxIDYuNDcyMjYgMTc2Ljc4MyAwLjEzMzQyIDI4MiAxMSIgc3Ryb2tlPSIjREJGQjUxIiBzdHJva2Utd2lkdGg9IjEwIi8+Cjwvc3ZnPgo='); } .underline.green::before { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgzIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjgzIDE2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMSAxMUM1MC44MjYxIDYuNDcyMjYgMTc2Ljc4MyAwLjEzM",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock Pricing 2026 | Compare AI Model Costs",
+            "url": "https://go-cloud.io/amazon-bedrock-pricing/",
+            "query": "Amazon Bedrock AgentCore continuous learning cost example",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon Bedrock Pricing 2026 | Compare AI Model Costs {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://go-cloud.io/#organization\",\"name\":\"GoCloud\",\"url\":\"https://go-cloud.io\",\"sameAs\":[\"https://pk.linkedin.com/company/gocloud-pvt-ltd\"],\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://go-cloud.io/#logo\",\"url\":\"https://go-cloud.io/wp-content/uploads/2024/09/10-1-1-e1725958834170.png\",\"contentUrl\":\"https://go-cloud.io/wp-content/uploads/2024/09/10-1-1-e1725958834170.png\",\"caption\":\"GoCloud\",\"inLanguage\":\"en-US\",\"width\":\"73\",\"height\":\"65\"}},{\"@type\":\"WebSite\",\"@id\":\"https://go-cloud.io/#website\",\"url\":\"https://go-cloud.io\",\"name\":\"GoCloud\",\"publisher\":{\"@id\":\"https://go-cloud.io/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://go-cloud.io/wp-content/uploads/2026/02/29.webp\",\"url\":\"https://go-cloud.io/wp-content/uploads/2026/02/29.webp\",\"width\":\"748\",\"height\":\"512\",\"inLanguage\":\"en-US\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https://go-cloud.io/amazon-bedrock-pricing/#breadcrumb\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":\"1\",\"item\":{\"@id\":\"https://go-cloud.io\",\"name\":\"Home\"}},{\"@type\":\"ListItem\",\"position\":\"2\",\"item\":{\"@id\":\"https://go-cloud.io/amazon-bedrock-pricing/\",\"name\":\"Amazon Bedrock Pricing | Complete 2026 Guide (Every Model, Every Mode + Cost Optimization)\"}}]},{\"@type\":\"WebPage\",\"@id\":\"https://go-cloud.io/amazon-bedrock-pricing/#webpage\",\"url\":\"https://go-cloud.io/amazon-bedrock-pricing/\",\"name\":\"Amazon Bedrock Pricing 2026 | Compare AI Model Costs\",\"datePublished\":\"2026-02-25T09:02:32+00:00\",\"dateModified\":\"2026-02-25T09:34:47+00:00\",\"isPartOf\":{\"@id\":\"https://go-cloud.io/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://go-cloud.io/wp-content/uploads/2026/02/29.webp\"},\"inLanguage\":\"en-US\",\"breadcrumb\":{\"@id\"",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock Pricing: Token Rates Hide a $350/Month Trap | Cloud Burn",
+            "url": "https://cloudburn.io/blog/amazon-bedrock-pricing",
+            "query": "Amazon Bedrock AgentCore continuous learning bill shock",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-scrollbar-thumb:#0000;--tw-scrollbar-track:#0000;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-ordinal:initial;--tw-slashed-zero:initial;--tw-numeric-figure:initial;--tw-numeric-spacing:initial;--tw-numeric-fraction:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore adds quality evaluations and policy controls for deploying trusted AI agents | Amazon Web Services",
+            "url": "https://aws.amazon.com/blogs/aws/amazon-bedrock-agentcore-adds-quality-evaluations-and-policy-controls-for-deploying-trusted-ai-agents/",
+            "query": "Amazon Bedrock AgentCore continuous learning bill shock",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon Bedrock AgentCore adds quality evaluations and policy controls for deploying trusted AI agents | AWS News Blog body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,r",
+            "fetch_error": ""
+          },
+          {
+            "title": "New Amazon Bedrock AgentCore capabilities power the next wave of agentic AI development",
+            "url": "https://www.aboutamazon.com/news/aws/aws-amazon-bedrock-agent-core-ai-agents",
+            "query": "Amazon Bedrock AgentCore continuous learning bill shock",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon launches AI Agents that stay within boundaries, track their performance, and get smarter over time (self.__next_s=self.__next_s||[]).push([0,{\"type\":\"application/ld+json\",\"children\":\"{\\\"@context\\\":\\\"https://schema.org\\\",\\\"@type\\\":\\\"WebSite\\\",\\\"name\\\":\\\"Amazon News\\\",\\\"url\\\":\\\"https://www.aboutamazon.com/\\\",\\\"alternateName\\\":[\\\"Amazon News\\\",\\\"About Amazon\\\"]}\",\"id\":\"json-ld-schema\"}]) !function(n,o){o.forEach(function(o){n[o]||((n.__alloyNS=n.__alloyNS|| []).push(o),n[o]=function(){var u=arguments;return new Promise( function(i,l){n.setTimeout(function(){n[o].q.push([i,l,u])})})},n[o].q=[])})} (window,[\"alloy\"]); News AWS New Amazon Bedrock AgentCore capabilities power the next wave of agentic AI development Latest AgentCore innovations help customers build, deploy, and scale production-ready AI agents with confidence. Share Written by Amazon Staff 5 min read Key takeaways Policy in Amazon Bedrock AgentCore actively blocks unauthorized agent actions through real-time, deterministic controls that operate outside of the agent code. AgentCore Evaluations helps developers continuously inspect the quality of an agent based on its behavior. AgentCore Memory introduces episodic functionality that helps agents learn from experiences, improving decision-making. Organizations of all sizes and regulatory requirements—including Amazon Devices Operations & Supply Chain, Archera.ai, Cohere Health, Cox Automotive, Druva, Heroku, Natera, NTT Data, MongoDB, PGA TOUR, Pulumi, Thomson Reuters, Workday, Snorkel.ai, Swisscom, and S&P Global Market Intelligence—trust AgentCore to accelerate their AI agents into production. Today, we announced new innovations in Amazon Bedrock AgentCore , the most advanced platform for building and deploying agents securely at scale. Policy in AgentCor",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore Beginner's Guide - AI Agent Development from Basics with Detailed Term Explanations | hidekazu-konishi.com",
+            "url": "https://hidekazu-konishi.com/entry/amazon_bedrock_agentcore_beginners_guide.html",
+            "query": "Amazon Bedrock AgentCore service terms continuous learning",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon Bedrock AgentCore Beginner's Guide - AI Agent Development from Basics with Detailed Term Explanations | hidekazu-konishi.com { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@context\": \"https://schema.org\", \"@type\": \"WebSite\", \"name\": \"Hidekazu Konishi - Profile / Biography | hidekazu-konishi.com\", \"url\": \"https://hidekazu-konishi.com/\", \"description\": \"Hidekazu Konishi is an AI Solutions Architect, Japan AWS Top Engineer, Japan All AWS Certifications Engineer, AI Agent Engineer, Cloud Architect, and Tech Blogger.\", \"image\": [ \"https://hidekazu-konishi.com/img/hidekazu-konishi_com_ogp.jpg\" ], \"sameAs\": [ \"https://hidekazu-konishi.com/\" ], \"mainEntityOfPage\": { \"@type\": \"WebPage\", \"@id\": \"https://hidekazu-konishi.com/\" }, \"headline\": \"Hidekazu Konishi - Profile / Biography | hidekazu-konishi.com\", \"thumbnailUrl\": \"https://hidekazu-konishi.com/img/hidekazu-konishi_com_ogp_icon.png\", \"keywords\": [ \"AI Solutions Architect\", \"Japan AWS Top Engineer\", \"Japan All AWS Certifications Engineer\", \"AI Agent Engineer\", \"Cloud Architect\", \"Cloud Engineer\", \"DevOps Engineer\", \"MLOps Engineer\", \"AIOps Engineer\", \"Application Engineer\", \"Prompt Engineer\", \"Tech Blogger\", \"AI Agent Development\", \"AI-Augmented Development\", \"AI-Powered Development\", \"Multi-Cloud\", \"Hybrid Cloud\", \"Architecting\", \"DevOps\", \"MLOps\", \"AIOps\", \"Generative AI\", \"GenAI\", \"Social Reform Activities\", \"Social Reform Activity\", \"SRA\", \"Hidekazu Konishi\", \"小西 秀和\", \"小西秀和\", \"Profile\", \"Biography\" ], \"encodingFormat\": \"text/html\", \"encoding\": { \"@type\": \"MediaObject\", \"encodingFormat\": \"utf-8\" }, \"inLanguage\": [ \"en\" ], \"genre\": [ \"Profile\", \"Biography\", \"Technology\", \"Cloud Computing\", \"Amazon Web Services\", \"AWS\", \"Blog\", \"Tech Blog\" ], \"isAccessibleForFree\": true, \"copyrightYear\": 2020, \"copyrightHolder\": {",
+            "fetch_error": ""
+          },
+          {
+            "title": "MCP vs Strands vs RAG vs A2A vs Bedrock vs AgentCore vs Q: AWS AI Agents Compared | by Bhavika M. | AWS in Plain English",
+            "url": "https://aws.plainenglish.io/mcp-vs-strands-vs-rag-vs-a2a-vs-bedrock-vs-agentcore-vs-q-aws-ai-agents-compared-2025-788089e7ed33?gi=7697dde3c1fc",
+            "query": "Amazon Bedrock AgentCore vs other agent platforms continuous learning comparison",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Bedrock Agents vs Bedrock Agentcore | AWS re:Post",
+            "url": "https://repost.aws/questions/QUjkf4WbikQ6WrpuH9sppjnw/bedrock-agents-vs-bedrock-agentcore",
+            "query": "Amazon Bedrock AgentCore vs other agent platforms continuous learning comparison",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Bedrock Agents vs Bedrock Agentcore | AWS re:Post var AWSMA = AWSMA || {}; AWSMA.config = AWSMA.config || {}; AWSMA.config.customPageview = true; Skip to content By using AWS re:Post, you agree to the AWS re:Post Terms of Use re:Post Search About re:Post English English Deutsch Español Français Italiano 日本語 한국어 Português 中文 (简体) 中文 (繁體) Resources Sign in Home Questions Knowledge Center Articles Selections Tags Topics AWS Support Official AWS Trust & Safety Center Ask question {\"@context\":\"https://schema.org/\",\"@type\":\"QAPage\",\"mainEntity\":{\"@type\":\"Question\",\"name\":\"Bedrock Agents vs Bedrock Agentcore\",\"text\":\"Can we say Bedrock Agentcore is like EKS and Bedrock Agents is like Fargate?\\nCan Bedrock Agents service has more features than Agentcore? \\nIf I master Agentcore do I still need to use something from Bedrock Agents service?\",\"answerCount\":1,\"upvoteCount\":0,\"author\":{\"@type\":\"Person\",\"name\":\"Angel Romero\",\"url\":\"/community/users/UShz4uxN4qQH6PYAyPL14ddQ\"},\"datePublished\":\"2025-08-20T21:48:49.454Z\",\"suggestedAnswer\":[{\"@type\":\"Answer\",\"text\":\"Amazon Bedrock Agents and Amazon Bedrock AgentCore serve different purposes in the AI agent ecosystem, though your EKS vs. Fargate analogy isn't quite accurate.\\n\\nAmazon Bedrock Agents is a fully managed service that allows you to build and configure autonomous agents without managing infrastructure or writing custom code. It handles prompt engineering, memory, monitoring, encryption, user permissions, and API invocation for you. Key features include API-driven development, action groups for defining specific actions, knowledge base integration, and a configuration-based implementation approach.\\n\\nAmazon Bedrock AgentCore (currently in preview) is a comprehensive set of services designed to deploy and operate AI agents secur",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "事实时间线",
+        "基础概念澄清",
+        "证据矛盾和影响边界"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "Amazon Bedrock AgentCore 新增持续学习能力 官方来源 原始公告",
+        "Amazon Bedrock AgentCore 新增持续学习能力 概念解释 证据",
+        "Amazon Bedrock AgentCore 新增持续学习能力 反方观点 局限"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
