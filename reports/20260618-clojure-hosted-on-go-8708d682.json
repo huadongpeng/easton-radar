@@ -1,0 +1,1107 @@
+{
+  "id": "20260618-clojure-hosted-on-go-8708d682",
+  "batch_id": "2026-06-18-morning",
+  "title": "Clojure 运行在 Go 上：glojure 项目",
+  "original_title": "Clojure Hosted on Go",
+  "url": "https://github.com/glojurelang/glojure",
+  "summary": "Comments",
+  "source_category": "developer_business",
+  "source_category_title": "开发者副业与独立开发",
+  "topic_direction": "side-info",
+  "topic_direction_title": "副业&信息差",
+  "topic_direction_short_title": "副业&信息差",
+  "topic_direction_description": "独立开发、副业项目、工具站、微型 SaaS、开源项目、现金流风险、外包回款、信息差机会和风险避坑。重点记录案例、项目、风险和需求信号。",
+  "source_name": "Hacker News",
+  "original_source_name": "Hacker News",
+  "source_type": "rss",
+  "feed_url": "https://news.ycombinator.com/rss",
+  "published_at": "2026-06-17T23:14:49+00:00",
+  "fetched_at": "2026-06-18T02:26:10.782708+00:00",
+  "decision": "brief",
+  "report_type": "tool-ledger",
+  "report_type_title": "工具账本",
+  "score": 40,
+  "reader_hook": "开发工具、语言生态",
+  "topic_tension": {
+    "score": 5,
+    "conflict_point": "",
+    "debate_question": "",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "",
+    "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+  },
+  "persona_discussion_question": "这笔工具账到底是提高效率，还是把不可见成本转嫁给普通程序员和小团队？",
+  "why_now": "新项目发布。",
+  "evidence_level": "near_source",
+  "source_priority": "P0 官方/一手源",
+  "reason": "小众语言运行时迁移，对多数读者影响小。",
+  "collection_fit": "tools-rules",
+  "investigation_direction": "优先追需求是否真实、用户是谁、付费路径、最小验证成本和停止信号。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。"
+  ],
+  "facts": [
+    {
+      "claim": "Hacker News 发布/收录了这条原始线索：Clojure Hosted on Go",
+      "type": "confirmed_fact",
+      "source_url": "https://github.com/glojurelang/glojure",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Hacker News",
+      "url": "https://github.com/glojurelang/glojure",
+      "source_type": "near_source",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {},
+    "source_host": "github.com",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 5,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "开发工具、语言生态",
+    "fit_for_radar": false
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://news.ycombinator.com/rss",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：glojure 项目存在性仅依赖 Hacker News 评论，无正文或官方文档抓取。"
+    },
+    "core_question": "glojure 项目是否值得 Clojure 开发者或 Go 开发者关注，以及它能否降低 Clojure 的部署成本或运维复杂度？",
+    "why_this_topic_matters": "Clojure 依赖 JVM 导致启动慢、内存高，glojure 尝试用 Go 运行时解决此问题，可能改变 Clojure 的部署场景（如 Serverless、容器化）。但项目成熟度未知，需验证。",
+    "fact_summary": [
+      "glojure 是一个将 Clojure 语言运行在 Go 运行时上的开源项目。",
+      "项目托管在 GitHub (glojurelang/glojure)。",
+      "来源为 Hacker News 评论，尚未抓取正文。",
+      "当前无性能对比、库兼容性、生产案例等证据。"
+    ],
+    "persona_discussion_question": "如果你在用 Clojure，是否应该考虑将部分或全部服务迁移到 glojure 上？迁移成本、性能损失和生态兼容性如何？",
+    "old_flower_stance": "保持观望，不急于推荐。先验证性能、兼容性和维护活跃度，再评估是否值得投入。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 30,
+      "why_interested": "Clojure 开发者关注运行时替代方案；Go 开发者可能好奇如何运行 Lisp。",
+      "reader_risk": "主题太窄，多数读者不关心 Clojure 或 Go 运行时细节。"
+    },
+    "mass_interest_hook": {
+      "score": 20,
+      "hook_type": "故事",
+      "why_non_technical_people_may_click": "标题如「把 Clojure 塞进 Go 里：一个疯狂的项目」可能吸引对编程语言好奇的读者，但缺乏普遍痛点。",
+      "story_seed": "一个开发者试图让古老的 Lisp 方言跑在轻量级 Go 上，挑战 JVM 霸权。",
+      "do_not_overhype": "不要声称 glojure 是 Clojure 的未来或性能优于 JVM。"
+    },
+    "topic_tension": {
+      "score": 5,
+      "conflict_point": "JVM 生态 vs Go 轻量运行时，Clojure 社区是否应该拥抱 Go？",
+      "debate_question": "glojure 是创新还是玩具？",
+      "stakeholders": [
+        "Clojure 开发者",
+        "Go 开发者",
+        "JVM 拥护者",
+        "项目维护者"
+      ],
+      "why_people_would_comment": "Clojure 社区可能争论迁移价值；Go 社区可能质疑必要性。",
+      "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+    },
+    "timeline": [
+      {
+        "date": "2025-03-28",
+        "event": "glojure 项目出现在 Hacker News，引发讨论。"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "Hacker News 评论",
+        "url": "https://github.com/glojurelang/glojure",
+        "supports": "项目存在，有代码和文档。",
+        "reliability": "weak"
+      }
+    ],
+    "logic_closure": "不完整。缺少性能、兼容性、社区反馈等关键证据，无法判断项目价值。",
+    "writeable_angles": [
+      {
+        "angle": "glojure 的技术原理与现状",
+        "why": "适合技术分析，但需补性能数据。",
+        "needs": "性能对比、特性支持清单。"
+      },
+      {
+        "angle": "Clojure 运行时迁移的性价比分析",
+        "why": "可讨论迁移成本与收益，但需真实案例。",
+        "needs": "生产案例、社区评价。"
+      },
+      {
+        "angle": "glojure 对 Clojure 生态的影响",
+        "why": "探讨是否可能改变 Clojure 部署方式。",
+        "needs": "生态兼容性测试、维护活跃度。"
+      }
+    ],
+    "missing_basics": [
+      "glojure 支持的 Clojure 版本和特性范围",
+      "glojure 与 JVM Clojure 的性能对比数据",
+      "glojure 的库兼容性（如 Ring, Compojure）",
+      "glojure 的维护活跃度（commit 频率、贡献者数量）",
+      "glojure 的生产环境案例"
+    ],
+    "missing_materials": [
+      "性能基准测试图表",
+      "社区讨论（Reddit, HN）的典型观点",
+      "项目路线图或维护者声明",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "glojure 是 Clojure 的未来方向",
+      "glojure 性能优于 JVM Clojure",
+      "glojure 已可用于生产环境",
+      "glojure 兼容所有 Clojure 库",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "glojure 当前支持的 Clojure 语言特性范围（是否完整支持 Clojure 1.12？）",
+      "glojure 与 Clojure JVM 实现的性能对比（基准测试数据）",
+      "glojure 是否兼容主流 Clojure 库（如 Ring, Compojure, clojure.java.jdbc 等）",
+      "glojure 的维护活跃度（最近 commit 时间、贡献者数量、issue 响应速度）",
+      "glojure 是否可用于生产环境（是否有已知的严重 bug 或性能瓶颈）",
+      "glojure 的许可证（是否与 Clojure 的 EPL 兼容）"
+    ],
+    "additional_search_queries": [
+      "glojure vs clojure jvm benchmark",
+      "glojure reddit clojure",
+      "glojure hacker news comments",
+      "glojure documentation compatibility",
+      "glojure production use"
+    ],
+    "stop_conditions": [
+      "glojure 项目已超过 6 个月无更新",
+      "性能对比显示 glojure 比 JVM Clojure 慢 10 倍以上",
+      "主流 Clojure 库不兼容",
+      "社区普遍认为 glojure 是玩具项目"
+    ],
+    "confidence": 20.0,
+    "topic_direction": "side-info",
+    "topic_direction_title": "副业&信息差",
+    "report_type": "tool-ledger",
+    "quality_gate": {
+      "pass": false,
+      "score": 20,
+      "fatal_issues": [
+        "核心事实没有来源：glojure 项目存在性仅依赖 Hacker News 评论，无正文或官方文档抓取。",
+        "没有说明主要服务哪层读者：dossier 中 primary_layer 为 '核心技术人'，但 mass_interest_hook 评分仅 20，且 reader_risk 指出主题太窄，实际未明确读者分层。",
+        "没有泛兴趣故事钩子：标题和开头只适合技术小圈子，mass_interest_hook 评分 20，hook_type 为 '故事' 但缺乏普遍痛点。",
+        "没有真实传播张力：topic_tension 评分 5，conflict_point 和 debate_question 模糊，why_people_would_comment 为空，traffic_risk 指出传播张力不足。",
+        "没有明确选题结论：verdict 为 '不入池'，但未给出 publish/optional/hold 的明确结论。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写：reason 仅说 '小众语言运行时迁移，对多数读者影响小'，未深入分析。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：logic_closure 为 '不完整'，evidence_table 仅一条 weak 来源。",
+        "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在 fatal_issues 中体现为否决理由。",
+        "没有按具体类型提供资料包：report_type 为 'tool-ledger'，但未提供性能对比、兼容性清单等资料包。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来：evidence_count 为 0，但未在源覆盖统计中说明。"
+      ],
+      "warnings": [
+        "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。",
+        "mass_interest_hook 评分 20，hook_type 为 '故事'，但 story_seed 缺乏普遍吸引力。",
+        "topic_tension 评分 5，缺乏冲突点和讨论问题。"
+      ],
+      "missing_evidence": [
+        "glojure 支持的 Clojure 版本和特性范围",
+        "glojure 与 JVM Clojure 的性能对比数据",
+        "glojure 的库兼容性（如 Ring, Compojure）",
+        "glojure 的维护活跃度（commit 频率、贡献者数量）",
+        "glojure 的生产环境案例"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "glojure 项目是否值得 Clojure 开发者或 Go 开发者关注，以及它能否降低 Clojure 的部署成本或运维复杂度？",
+      "persona_discussion_question": "如果你在用 Clojure，是否应该考虑将部分或全部服务迁移到 glojure 上？迁移成本、性能损失和生态兼容性如何？",
+      "hidden_public_issue": "小众语言运行时迁移的性价比：谁在推动、谁在受益、谁可能被误导？",
+      "must_verify": [
+        "glojure 当前支持的 Clojure 语言特性范围（是否完整支持 Clojure 1.12？）",
+        "glojure 与 Clojure JVM 实现的性能对比（基准测试数据）",
+        "glojure 是否兼容主流 Clojure 库（如 Ring, Compojure, clojure.java.jdbc 等）",
+        "glojure 的维护活跃度（最近 commit 时间、贡献者数量、issue 响应速度）",
+        "glojure 是否可用于生产环境（是否有已知的严重 bug 或性能瓶颈）",
+        "glojure 的许可证（是否与 Clojure 的 EPL 兼容）"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "github_repo",
+          "query": "glojurelang/glojure",
+          "why_needed": "获取项目状态、文档、issue 和贡献者信息"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "glojure vs clojure jvm benchmark",
+          "why_needed": "获取性能对比数据"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "glojure reddit clojure",
+          "why_needed": "获取社区反馈和实际使用经验"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "glojure hacker news comments",
+          "why_needed": "获取 HN 上的讨论和批评"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "glojure documentation compatibility",
+          "why_needed": "确认支持的 Clojure 版本和库兼容性"
+        },
+        {
+          "source_type": "case_study",
+          "query": "glojure production use",
+          "why_needed": "寻找生产环境案例"
+        }
+      ],
+      "expert_challenge_points": [
+        "glojure 是否真的能降低 Clojure 的部署成本？Go 运行时比 JVM 更轻量，但迁移和调试成本可能抵消收益。",
+        "glojure 是否只是玩具项目？如果长期不维护，采用者将面临技术债务。",
+        "Clojure 社区是否真的需要 Go 后端？JVM 的生态和性能优势是否被低估？"
+      ],
+      "do_not_claim_yet": [
+        "glojure 是 Clojure 的未来方向",
+        "glojure 性能优于 JVM Clojure",
+        "glojure 已可用于生产环境",
+        "glojure 兼容所有 Clojure 库"
+      ],
+      "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。主题太窄，只对同时使用 Clojure 和 Go 的极少数开发者有意义，缺乏公共讨论价值。",
+      "downstream_materials_needed": [
+        "glojure 与 JVM Clojure 的性能对比图表",
+        "glojure 支持的 Clojure 特性清单",
+        "glojure 的依赖和构建方式说明",
+        "社区对 glojure 的典型评价（正面和负面）"
+      ]
+    },
+    "research_evidence": []
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：glojure 项目存在性仅依赖 Hacker News 评论，无正文或官方文档抓取。"
+    },
+    "core_question": "glojure 项目是否值得 Clojure 开发者或 Go 开发者关注，以及它能否降低 Clojure 的部署成本或运维复杂度？",
+    "why_this_topic_matters": "Clojure 依赖 JVM 导致启动慢、内存高，glojure 尝试用 Go 运行时解决此问题，可能改变 Clojure 的部署场景（如 Serverless、容器化）。但项目成熟度未知，需验证。",
+    "fact_summary": [
+      "glojure 是一个将 Clojure 语言运行在 Go 运行时上的开源项目。",
+      "项目托管在 GitHub (glojurelang/glojure)。",
+      "来源为 Hacker News 评论，尚未抓取正文。",
+      "当前无性能对比、库兼容性、生产案例等证据。"
+    ],
+    "persona_discussion_question": "如果你在用 Clojure，是否应该考虑将部分或全部服务迁移到 glojure 上？迁移成本、性能损失和生态兼容性如何？",
+    "old_flower_stance": "保持观望，不急于推荐。先验证性能、兼容性和维护活跃度，再评估是否值得投入。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 30,
+      "why_interested": "Clojure 开发者关注运行时替代方案；Go 开发者可能好奇如何运行 Lisp。",
+      "reader_risk": "主题太窄，多数读者不关心 Clojure 或 Go 运行时细节。"
+    },
+    "mass_interest_hook": {
+      "score": 20,
+      "hook_type": "故事",
+      "why_non_technical_people_may_click": "标题如「把 Clojure 塞进 Go 里：一个疯狂的项目」可能吸引对编程语言好奇的读者，但缺乏普遍痛点。",
+      "story_seed": "一个开发者试图让古老的 Lisp 方言跑在轻量级 Go 上，挑战 JVM 霸权。",
+      "do_not_overhype": "不要声称 glojure 是 Clojure 的未来或性能优于 JVM。"
+    },
+    "topic_tension": {
+      "score": 5,
+      "conflict_point": "JVM 生态 vs Go 轻量运行时，Clojure 社区是否应该拥抱 Go？",
+      "debate_question": "glojure 是创新还是玩具？",
+      "stakeholders": [
+        "Clojure 开发者",
+        "Go 开发者",
+        "JVM 拥护者",
+        "项目维护者"
+      ],
+      "why_people_would_comment": "Clojure 社区可能争论迁移价值；Go 社区可能质疑必要性。",
+      "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+    },
+    "timeline": [
+      {
+        "date": "2025-03-28",
+        "event": "glojure 项目出现在 Hacker News，引发讨论。"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "Hacker News 评论",
+        "url": "https://github.com/glojurelang/glojure",
+        "supports": "项目存在，有代码和文档。",
+        "reliability": "weak"
+      }
+    ],
+    "logic_closure": "不完整。缺少性能、兼容性、社区反馈等关键证据，无法判断项目价值。",
+    "writeable_angles": [
+      {
+        "angle": "glojure 的技术原理与现状",
+        "why": "适合技术分析，但需补性能数据。",
+        "needs": "性能对比、特性支持清单。"
+      },
+      {
+        "angle": "Clojure 运行时迁移的性价比分析",
+        "why": "可讨论迁移成本与收益，但需真实案例。",
+        "needs": "生产案例、社区评价。"
+      },
+      {
+        "angle": "glojure 对 Clojure 生态的影响",
+        "why": "探讨是否可能改变 Clojure 部署方式。",
+        "needs": "生态兼容性测试、维护活跃度。"
+      }
+    ],
+    "missing_basics": [
+      "glojure 支持的 Clojure 版本和特性范围",
+      "glojure 与 JVM Clojure 的性能对比数据",
+      "glojure 的库兼容性（如 Ring, Compojure）",
+      "glojure 的维护活跃度（commit 频率、贡献者数量）",
+      "glojure 的生产环境案例"
+    ],
+    "missing_materials": [
+      "性能基准测试图表",
+      "社区讨论（Reddit, HN）的典型观点",
+      "项目路线图或维护者声明",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "glojure 是 Clojure 的未来方向",
+      "glojure 性能优于 JVM Clojure",
+      "glojure 已可用于生产环境",
+      "glojure 兼容所有 Clojure 库",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "glojure 当前支持的 Clojure 语言特性范围（是否完整支持 Clojure 1.12？）",
+      "glojure 与 Clojure JVM 实现的性能对比（基准测试数据）",
+      "glojure 是否兼容主流 Clojure 库（如 Ring, Compojure, clojure.java.jdbc 等）",
+      "glojure 的维护活跃度（最近 commit 时间、贡献者数量、issue 响应速度）",
+      "glojure 是否可用于生产环境（是否有已知的严重 bug 或性能瓶颈）",
+      "glojure 的许可证（是否与 Clojure 的 EPL 兼容）"
+    ],
+    "additional_search_queries": [
+      "glojure vs clojure jvm benchmark",
+      "glojure reddit clojure",
+      "glojure hacker news comments",
+      "glojure documentation compatibility",
+      "glojure production use"
+    ],
+    "stop_conditions": [
+      "glojure 项目已超过 6 个月无更新",
+      "性能对比显示 glojure 比 JVM Clojure 慢 10 倍以上",
+      "主流 Clojure 库不兼容",
+      "社区普遍认为 glojure 是玩具项目"
+    ],
+    "confidence": 20.0,
+    "topic_direction": "side-info",
+    "topic_direction_title": "副业&信息差",
+    "report_type": "tool-ledger",
+    "quality_gate": {
+      "pass": false,
+      "score": 20,
+      "fatal_issues": [
+        "核心事实没有来源：glojure 项目存在性仅依赖 Hacker News 评论，无正文或官方文档抓取。",
+        "没有说明主要服务哪层读者：dossier 中 primary_layer 为 '核心技术人'，但 mass_interest_hook 评分仅 20，且 reader_risk 指出主题太窄，实际未明确读者分层。",
+        "没有泛兴趣故事钩子：标题和开头只适合技术小圈子，mass_interest_hook 评分 20，hook_type 为 '故事' 但缺乏普遍痛点。",
+        "没有真实传播张力：topic_tension 评分 5，conflict_point 和 debate_question 模糊，why_people_would_comment 为空，traffic_risk 指出传播张力不足。",
+        "没有明确选题结论：verdict 为 '不入池'，但未给出 publish/optional/hold 的明确结论。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写：reason 仅说 '小众语言运行时迁移，对多数读者影响小'，未深入分析。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：logic_closure 为 '不完整'，evidence_table 仅一条 weak 来源。",
+        "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在 fatal_issues 中体现为否决理由。",
+        "没有按具体类型提供资料包：report_type 为 'tool-ledger'，但未提供性能对比、兼容性清单等资料包。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来：evidence_count 为 0，但未在源覆盖统计中说明。"
+      ],
+      "warnings": [
+        "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。",
+        "mass_interest_hook 评分 20，hook_type 为 '故事'，但 story_seed 缺乏普遍吸引力。",
+        "topic_tension 评分 5，缺乏冲突点和讨论问题。"
+      ],
+      "missing_evidence": [
+        "glojure 支持的 Clojure 版本和特性范围",
+        "glojure 与 JVM Clojure 的性能对比数据",
+        "glojure 的库兼容性（如 Ring, Compojure）",
+        "glojure 的维护活跃度（commit 频率、贡献者数量）",
+        "glojure 的生产环境案例"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "glojure 项目是否值得 Clojure 开发者或 Go 开发者关注，以及它能否降低 Clojure 的部署成本或运维复杂度？",
+      "persona_discussion_question": "如果你在用 Clojure，是否应该考虑将部分或全部服务迁移到 glojure 上？迁移成本、性能损失和生态兼容性如何？",
+      "hidden_public_issue": "小众语言运行时迁移的性价比：谁在推动、谁在受益、谁可能被误导？",
+      "must_verify": [
+        "glojure 当前支持的 Clojure 语言特性范围（是否完整支持 Clojure 1.12？）",
+        "glojure 与 Clojure JVM 实现的性能对比（基准测试数据）",
+        "glojure 是否兼容主流 Clojure 库（如 Ring, Compojure, clojure.java.jdbc 等）",
+        "glojure 的维护活跃度（最近 commit 时间、贡献者数量、issue 响应速度）",
+        "glojure 是否可用于生产环境（是否有已知的严重 bug 或性能瓶颈）",
+        "glojure 的许可证（是否与 Clojure 的 EPL 兼容）"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "github_repo",
+          "query": "glojurelang/glojure",
+          "why_needed": "获取项目状态、文档、issue 和贡献者信息"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "glojure vs clojure jvm benchmark",
+          "why_needed": "获取性能对比数据"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "glojure reddit clojure",
+          "why_needed": "获取社区反馈和实际使用经验"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "glojure hacker news comments",
+          "why_needed": "获取 HN 上的讨论和批评"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "glojure documentation compatibility",
+          "why_needed": "确认支持的 Clojure 版本和库兼容性"
+        },
+        {
+          "source_type": "case_study",
+          "query": "glojure production use",
+          "why_needed": "寻找生产环境案例"
+        }
+      ],
+      "expert_challenge_points": [
+        "glojure 是否真的能降低 Clojure 的部署成本？Go 运行时比 JVM 更轻量，但迁移和调试成本可能抵消收益。",
+        "glojure 是否只是玩具项目？如果长期不维护，采用者将面临技术债务。",
+        "Clojure 社区是否真的需要 Go 后端？JVM 的生态和性能优势是否被低估？"
+      ],
+      "do_not_claim_yet": [
+        "glojure 是 Clojure 的未来方向",
+        "glojure 性能优于 JVM Clojure",
+        "glojure 已可用于生产环境",
+        "glojure 兼容所有 Clojure 库"
+      ],
+      "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。主题太窄，只对同时使用 Clojure 和 Go 的极少数开发者有意义，缺乏公共讨论价值。",
+      "downstream_materials_needed": [
+        "glojure 与 JVM Clojure 的性能对比图表",
+        "glojure 支持的 Clojure 特性清单",
+        "glojure 的依赖和构建方式说明",
+        "社区对 glojure 的典型评价（正面和负面）"
+      ]
+    },
+    "research_evidence": []
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260618-clojure-hosted-on-go-8708d682/",
+    "for_gpt_editor": {
+      "brief": "Comments",
+      "title_seed": "Clojure 运行在 Go 上：glojure 项目",
+      "original_title": "Clojure Hosted on Go",
+      "source_url": "https://github.com/glojurelang/glojure",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：glojure 项目存在性仅依赖 Hacker News 评论，无正文或官方文档抓取。"
+        },
+        "core_question": "glojure 项目是否值得 Clojure 开发者或 Go 开发者关注，以及它能否降低 Clojure 的部署成本或运维复杂度？",
+        "why_this_topic_matters": "Clojure 依赖 JVM 导致启动慢、内存高，glojure 尝试用 Go 运行时解决此问题，可能改变 Clojure 的部署场景（如 Serverless、容器化）。但项目成熟度未知，需验证。",
+        "fact_summary": [
+          "glojure 是一个将 Clojure 语言运行在 Go 运行时上的开源项目。",
+          "项目托管在 GitHub (glojurelang/glojure)。",
+          "来源为 Hacker News 评论，尚未抓取正文。",
+          "当前无性能对比、库兼容性、生产案例等证据。"
+        ],
+        "persona_discussion_question": "如果你在用 Clojure，是否应该考虑将部分或全部服务迁移到 glojure 上？迁移成本、性能损失和生态兼容性如何？",
+        "old_flower_stance": "保持观望，不急于推荐。先验证性能、兼容性和维护活跃度，再评估是否值得投入。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 30,
+          "why_interested": "Clojure 开发者关注运行时替代方案；Go 开发者可能好奇如何运行 Lisp。",
+          "reader_risk": "主题太窄，多数读者不关心 Clojure 或 Go 运行时细节。"
+        },
+        "mass_interest_hook": {
+          "score": 20,
+          "hook_type": "故事",
+          "why_non_technical_people_may_click": "标题如「把 Clojure 塞进 Go 里：一个疯狂的项目」可能吸引对编程语言好奇的读者，但缺乏普遍痛点。",
+          "story_seed": "一个开发者试图让古老的 Lisp 方言跑在轻量级 Go 上，挑战 JVM 霸权。",
+          "do_not_overhype": "不要声称 glojure 是 Clojure 的未来或性能优于 JVM。"
+        },
+        "topic_tension": {
+          "score": 5,
+          "conflict_point": "JVM 生态 vs Go 轻量运行时，Clojure 社区是否应该拥抱 Go？",
+          "debate_question": "glojure 是创新还是玩具？",
+          "stakeholders": [
+            "Clojure 开发者",
+            "Go 开发者",
+            "JVM 拥护者",
+            "项目维护者"
+          ],
+          "why_people_would_comment": "Clojure 社区可能争论迁移价值；Go 社区可能质疑必要性。",
+          "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+        },
+        "timeline": [
+          {
+            "date": "2025-03-28",
+            "event": "glojure 项目出现在 Hacker News，引发讨论。"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "Hacker News 评论",
+            "url": "https://github.com/glojurelang/glojure",
+            "supports": "项目存在，有代码和文档。",
+            "reliability": "weak"
+          }
+        ],
+        "logic_closure": "不完整。缺少性能、兼容性、社区反馈等关键证据，无法判断项目价值。",
+        "writeable_angles": [
+          {
+            "angle": "glojure 的技术原理与现状",
+            "why": "适合技术分析，但需补性能数据。",
+            "needs": "性能对比、特性支持清单。"
+          },
+          {
+            "angle": "Clojure 运行时迁移的性价比分析",
+            "why": "可讨论迁移成本与收益，但需真实案例。",
+            "needs": "生产案例、社区评价。"
+          },
+          {
+            "angle": "glojure 对 Clojure 生态的影响",
+            "why": "探讨是否可能改变 Clojure 部署方式。",
+            "needs": "生态兼容性测试、维护活跃度。"
+          }
+        ],
+        "missing_basics": [
+          "glojure 支持的 Clojure 版本和特性范围",
+          "glojure 与 JVM Clojure 的性能对比数据",
+          "glojure 的库兼容性（如 Ring, Compojure）",
+          "glojure 的维护活跃度（commit 频率、贡献者数量）",
+          "glojure 的生产环境案例"
+        ],
+        "missing_materials": [
+          "性能基准测试图表",
+          "社区讨论（Reddit, HN）的典型观点",
+          "项目路线图或维护者声明",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "glojure 是 Clojure 的未来方向",
+          "glojure 性能优于 JVM Clojure",
+          "glojure 已可用于生产环境",
+          "glojure 兼容所有 Clojure 库",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "glojure 当前支持的 Clojure 语言特性范围（是否完整支持 Clojure 1.12？）",
+          "glojure 与 Clojure JVM 实现的性能对比（基准测试数据）",
+          "glojure 是否兼容主流 Clojure 库（如 Ring, Compojure, clojure.java.jdbc 等）",
+          "glojure 的维护活跃度（最近 commit 时间、贡献者数量、issue 响应速度）",
+          "glojure 是否可用于生产环境（是否有已知的严重 bug 或性能瓶颈）",
+          "glojure 的许可证（是否与 Clojure 的 EPL 兼容）"
+        ],
+        "additional_search_queries": [
+          "glojure vs clojure jvm benchmark",
+          "glojure reddit clojure",
+          "glojure hacker news comments",
+          "glojure documentation compatibility",
+          "glojure production use"
+        ],
+        "stop_conditions": [
+          "glojure 项目已超过 6 个月无更新",
+          "性能对比显示 glojure 比 JVM Clojure 慢 10 倍以上",
+          "主流 Clojure 库不兼容",
+          "社区普遍认为 glojure 是玩具项目"
+        ],
+        "confidence": 20.0,
+        "topic_direction": "side-info",
+        "topic_direction_title": "副业&信息差",
+        "report_type": "tool-ledger",
+        "quality_gate": {
+          "pass": false,
+          "score": 20,
+          "fatal_issues": [
+            "核心事实没有来源：glojure 项目存在性仅依赖 Hacker News 评论，无正文或官方文档抓取。",
+            "没有说明主要服务哪层读者：dossier 中 primary_layer 为 '核心技术人'，但 mass_interest_hook 评分仅 20，且 reader_risk 指出主题太窄，实际未明确读者分层。",
+            "没有泛兴趣故事钩子：标题和开头只适合技术小圈子，mass_interest_hook 评分 20，hook_type 为 '故事' 但缺乏普遍痛点。",
+            "没有真实传播张力：topic_tension 评分 5，conflict_point 和 debate_question 模糊，why_people_would_comment 为空，traffic_risk 指出传播张力不足。",
+            "没有明确选题结论：verdict 为 '不入池'，但未给出 publish/optional/hold 的明确结论。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写：reason 仅说 '小众语言运行时迁移，对多数读者影响小'，未深入分析。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：logic_closure 为 '不完整'，evidence_table 仅一条 weak 来源。",
+            "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在 fatal_issues 中体现为否决理由。",
+            "没有按具体类型提供资料包：report_type 为 'tool-ledger'，但未提供性能对比、兼容性清单等资料包。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来：evidence_count 为 0，但未在源覆盖统计中说明。"
+          ],
+          "warnings": [
+            "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。",
+            "mass_interest_hook 评分 20，hook_type 为 '故事'，但 story_seed 缺乏普遍吸引力。",
+            "topic_tension 评分 5，缺乏冲突点和讨论问题。"
+          ],
+          "missing_evidence": [
+            "glojure 支持的 Clojure 版本和特性范围",
+            "glojure 与 JVM Clojure 的性能对比数据",
+            "glojure 的库兼容性（如 Ring, Compojure）",
+            "glojure 的维护活跃度（commit 频率、贡献者数量）",
+            "glojure 的生产环境案例"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "glojure 项目是否值得 Clojure 开发者或 Go 开发者关注，以及它能否降低 Clojure 的部署成本或运维复杂度？",
+          "persona_discussion_question": "如果你在用 Clojure，是否应该考虑将部分或全部服务迁移到 glojure 上？迁移成本、性能损失和生态兼容性如何？",
+          "hidden_public_issue": "小众语言运行时迁移的性价比：谁在推动、谁在受益、谁可能被误导？",
+          "must_verify": [
+            "glojure 当前支持的 Clojure 语言特性范围（是否完整支持 Clojure 1.12？）",
+            "glojure 与 Clojure JVM 实现的性能对比（基准测试数据）",
+            "glojure 是否兼容主流 Clojure 库（如 Ring, Compojure, clojure.java.jdbc 等）",
+            "glojure 的维护活跃度（最近 commit 时间、贡献者数量、issue 响应速度）",
+            "glojure 是否可用于生产环境（是否有已知的严重 bug 或性能瓶颈）",
+            "glojure 的许可证（是否与 Clojure 的 EPL 兼容）"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "github_repo",
+              "query": "glojurelang/glojure",
+              "why_needed": "获取项目状态、文档、issue 和贡献者信息"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "glojure vs clojure jvm benchmark",
+              "why_needed": "获取性能对比数据"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "glojure reddit clojure",
+              "why_needed": "获取社区反馈和实际使用经验"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "glojure hacker news comments",
+              "why_needed": "获取 HN 上的讨论和批评"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "glojure documentation compatibility",
+              "why_needed": "确认支持的 Clojure 版本和库兼容性"
+            },
+            {
+              "source_type": "case_study",
+              "query": "glojure production use",
+              "why_needed": "寻找生产环境案例"
+            }
+          ],
+          "expert_challenge_points": [
+            "glojure 是否真的能降低 Clojure 的部署成本？Go 运行时比 JVM 更轻量，但迁移和调试成本可能抵消收益。",
+            "glojure 是否只是玩具项目？如果长期不维护，采用者将面临技术债务。",
+            "Clojure 社区是否真的需要 Go 后端？JVM 的生态和性能优势是否被低估？"
+          ],
+          "do_not_claim_yet": [
+            "glojure 是 Clojure 的未来方向",
+            "glojure 性能优于 JVM Clojure",
+            "glojure 已可用于生产环境",
+            "glojure 兼容所有 Clojure 库"
+          ],
+          "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。主题太窄，只对同时使用 Clojure 和 Go 的极少数开发者有意义，缺乏公共讨论价值。",
+          "downstream_materials_needed": [
+            "glojure 与 JVM Clojure 的性能对比图表",
+            "glojure 支持的 Clojure 特性清单",
+            "glojure 的依赖和构建方式说明",
+            "社区对 glojure 的典型评价（正面和负面）"
+          ]
+        },
+        "research_evidence": []
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：glojure 项目存在性仅依赖 Hacker News 评论，无正文或官方文档抓取。"
+        },
+        "core_question": "glojure 项目是否值得 Clojure 开发者或 Go 开发者关注，以及它能否降低 Clojure 的部署成本或运维复杂度？",
+        "why_this_topic_matters": "Clojure 依赖 JVM 导致启动慢、内存高，glojure 尝试用 Go 运行时解决此问题，可能改变 Clojure 的部署场景（如 Serverless、容器化）。但项目成熟度未知，需验证。",
+        "fact_summary": [
+          "glojure 是一个将 Clojure 语言运行在 Go 运行时上的开源项目。",
+          "项目托管在 GitHub (glojurelang/glojure)。",
+          "来源为 Hacker News 评论，尚未抓取正文。",
+          "当前无性能对比、库兼容性、生产案例等证据。"
+        ],
+        "persona_discussion_question": "如果你在用 Clojure，是否应该考虑将部分或全部服务迁移到 glojure 上？迁移成本、性能损失和生态兼容性如何？",
+        "old_flower_stance": "保持观望，不急于推荐。先验证性能、兼容性和维护活跃度，再评估是否值得投入。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 30,
+          "why_interested": "Clojure 开发者关注运行时替代方案；Go 开发者可能好奇如何运行 Lisp。",
+          "reader_risk": "主题太窄，多数读者不关心 Clojure 或 Go 运行时细节。"
+        },
+        "mass_interest_hook": {
+          "score": 20,
+          "hook_type": "故事",
+          "why_non_technical_people_may_click": "标题如「把 Clojure 塞进 Go 里：一个疯狂的项目」可能吸引对编程语言好奇的读者，但缺乏普遍痛点。",
+          "story_seed": "一个开发者试图让古老的 Lisp 方言跑在轻量级 Go 上，挑战 JVM 霸权。",
+          "do_not_overhype": "不要声称 glojure 是 Clojure 的未来或性能优于 JVM。"
+        },
+        "topic_tension": {
+          "score": 5,
+          "conflict_point": "JVM 生态 vs Go 轻量运行时，Clojure 社区是否应该拥抱 Go？",
+          "debate_question": "glojure 是创新还是玩具？",
+          "stakeholders": [
+            "Clojure 开发者",
+            "Go 开发者",
+            "JVM 拥护者",
+            "项目维护者"
+          ],
+          "why_people_would_comment": "Clojure 社区可能争论迁移价值；Go 社区可能质疑必要性。",
+          "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+        },
+        "timeline": [
+          {
+            "date": "2025-03-28",
+            "event": "glojure 项目出现在 Hacker News，引发讨论。"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "Hacker News 评论",
+            "url": "https://github.com/glojurelang/glojure",
+            "supports": "项目存在，有代码和文档。",
+            "reliability": "weak"
+          }
+        ],
+        "logic_closure": "不完整。缺少性能、兼容性、社区反馈等关键证据，无法判断项目价值。",
+        "writeable_angles": [
+          {
+            "angle": "glojure 的技术原理与现状",
+            "why": "适合技术分析，但需补性能数据。",
+            "needs": "性能对比、特性支持清单。"
+          },
+          {
+            "angle": "Clojure 运行时迁移的性价比分析",
+            "why": "可讨论迁移成本与收益，但需真实案例。",
+            "needs": "生产案例、社区评价。"
+          },
+          {
+            "angle": "glojure 对 Clojure 生态的影响",
+            "why": "探讨是否可能改变 Clojure 部署方式。",
+            "needs": "生态兼容性测试、维护活跃度。"
+          }
+        ],
+        "missing_basics": [
+          "glojure 支持的 Clojure 版本和特性范围",
+          "glojure 与 JVM Clojure 的性能对比数据",
+          "glojure 的库兼容性（如 Ring, Compojure）",
+          "glojure 的维护活跃度（commit 频率、贡献者数量）",
+          "glojure 的生产环境案例"
+        ],
+        "missing_materials": [
+          "性能基准测试图表",
+          "社区讨论（Reddit, HN）的典型观点",
+          "项目路线图或维护者声明",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "glojure 是 Clojure 的未来方向",
+          "glojure 性能优于 JVM Clojure",
+          "glojure 已可用于生产环境",
+          "glojure 兼容所有 Clojure 库",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "glojure 当前支持的 Clojure 语言特性范围（是否完整支持 Clojure 1.12？）",
+          "glojure 与 Clojure JVM 实现的性能对比（基准测试数据）",
+          "glojure 是否兼容主流 Clojure 库（如 Ring, Compojure, clojure.java.jdbc 等）",
+          "glojure 的维护活跃度（最近 commit 时间、贡献者数量、issue 响应速度）",
+          "glojure 是否可用于生产环境（是否有已知的严重 bug 或性能瓶颈）",
+          "glojure 的许可证（是否与 Clojure 的 EPL 兼容）"
+        ],
+        "additional_search_queries": [
+          "glojure vs clojure jvm benchmark",
+          "glojure reddit clojure",
+          "glojure hacker news comments",
+          "glojure documentation compatibility",
+          "glojure production use"
+        ],
+        "stop_conditions": [
+          "glojure 项目已超过 6 个月无更新",
+          "性能对比显示 glojure 比 JVM Clojure 慢 10 倍以上",
+          "主流 Clojure 库不兼容",
+          "社区普遍认为 glojure 是玩具项目"
+        ],
+        "confidence": 20.0,
+        "topic_direction": "side-info",
+        "topic_direction_title": "副业&信息差",
+        "report_type": "tool-ledger",
+        "quality_gate": {
+          "pass": false,
+          "score": 20,
+          "fatal_issues": [
+            "核心事实没有来源：glojure 项目存在性仅依赖 Hacker News 评论，无正文或官方文档抓取。",
+            "没有说明主要服务哪层读者：dossier 中 primary_layer 为 '核心技术人'，但 mass_interest_hook 评分仅 20，且 reader_risk 指出主题太窄，实际未明确读者分层。",
+            "没有泛兴趣故事钩子：标题和开头只适合技术小圈子，mass_interest_hook 评分 20，hook_type 为 '故事' 但缺乏普遍痛点。",
+            "没有真实传播张力：topic_tension 评分 5，conflict_point 和 debate_question 模糊，why_people_would_comment 为空，traffic_risk 指出传播张力不足。",
+            "没有明确选题结论：verdict 为 '不入池'，但未给出 publish/optional/hold 的明确结论。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写：reason 仅说 '小众语言运行时迁移，对多数读者影响小'，未深入分析。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：logic_closure 为 '不完整'，evidence_table 仅一条 weak 来源。",
+            "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在 fatal_issues 中体现为否决理由。",
+            "没有按具体类型提供资料包：report_type 为 'tool-ledger'，但未提供性能对比、兼容性清单等资料包。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来：evidence_count 为 0，但未在源覆盖统计中说明。"
+          ],
+          "warnings": [
+            "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。",
+            "mass_interest_hook 评分 20，hook_type 为 '故事'，但 story_seed 缺乏普遍吸引力。",
+            "topic_tension 评分 5，缺乏冲突点和讨论问题。"
+          ],
+          "missing_evidence": [
+            "glojure 支持的 Clojure 版本和特性范围",
+            "glojure 与 JVM Clojure 的性能对比数据",
+            "glojure 的库兼容性（如 Ring, Compojure）",
+            "glojure 的维护活跃度（commit 频率、贡献者数量）",
+            "glojure 的生产环境案例"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "glojure 项目是否值得 Clojure 开发者或 Go 开发者关注，以及它能否降低 Clojure 的部署成本或运维复杂度？",
+          "persona_discussion_question": "如果你在用 Clojure，是否应该考虑将部分或全部服务迁移到 glojure 上？迁移成本、性能损失和生态兼容性如何？",
+          "hidden_public_issue": "小众语言运行时迁移的性价比：谁在推动、谁在受益、谁可能被误导？",
+          "must_verify": [
+            "glojure 当前支持的 Clojure 语言特性范围（是否完整支持 Clojure 1.12？）",
+            "glojure 与 Clojure JVM 实现的性能对比（基准测试数据）",
+            "glojure 是否兼容主流 Clojure 库（如 Ring, Compojure, clojure.java.jdbc 等）",
+            "glojure 的维护活跃度（最近 commit 时间、贡献者数量、issue 响应速度）",
+            "glojure 是否可用于生产环境（是否有已知的严重 bug 或性能瓶颈）",
+            "glojure 的许可证（是否与 Clojure 的 EPL 兼容）"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "github_repo",
+              "query": "glojurelang/glojure",
+              "why_needed": "获取项目状态、文档、issue 和贡献者信息"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "glojure vs clojure jvm benchmark",
+              "why_needed": "获取性能对比数据"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "glojure reddit clojure",
+              "why_needed": "获取社区反馈和实际使用经验"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "glojure hacker news comments",
+              "why_needed": "获取 HN 上的讨论和批评"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "glojure documentation compatibility",
+              "why_needed": "确认支持的 Clojure 版本和库兼容性"
+            },
+            {
+              "source_type": "case_study",
+              "query": "glojure production use",
+              "why_needed": "寻找生产环境案例"
+            }
+          ],
+          "expert_challenge_points": [
+            "glojure 是否真的能降低 Clojure 的部署成本？Go 运行时比 JVM 更轻量，但迁移和调试成本可能抵消收益。",
+            "glojure 是否只是玩具项目？如果长期不维护，采用者将面临技术债务。",
+            "Clojure 社区是否真的需要 Go 后端？JVM 的生态和性能优势是否被低估？"
+          ],
+          "do_not_claim_yet": [
+            "glojure 是 Clojure 的未来方向",
+            "glojure 性能优于 JVM Clojure",
+            "glojure 已可用于生产环境",
+            "glojure 兼容所有 Clojure 库"
+          ],
+          "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。主题太窄，只对同时使用 Clojure 和 Go 的极少数开发者有意义，缺乏公共讨论价值。",
+          "downstream_materials_needed": [
+            "glojure 与 JVM Clojure 的性能对比图表",
+            "glojure 支持的 Clojure 特性清单",
+            "glojure 的依赖和构建方式说明",
+            "社区对 glojure 的典型评价（正面和负面）"
+          ]
+        },
+        "research_evidence": []
+      },
+      "angle_candidates": [
+        "成本是否真的下降",
+        "免费额度和爆账单风险",
+        "替代方案值不值得换"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "Clojure 运行在 Go 上：glojure 项目 官方公告 价格 成本",
+        "Clojure 运行在 Go 上：glojure 项目 API 文档 额度 限制",
+        "Clojure 运行在 Go 上：glojure 项目 替代方案 真实使用 成本"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}

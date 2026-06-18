@@ -1,0 +1,1481 @@
+{
+  "id": "20260618-new-app-store-requirements-for-sidekick-app-exte-4051724e",
+  "batch_id": "2026-06-18-morning",
+  "title": "Shopify 对 Sidekick 应用扩展提出 App Store 新要求",
+  "original_title": "New App Store requirements for Sidekick app extensions",
+  "url": "https://shopify.dev/changelog/sidekick-app-extensions-app-store-requirements",
+  "summary": "We’ve introduced two new Shopify App Store requirements for Sidekick app extensions to protect platform integrity, ensure merchant transparency, and preserve trust. Starting today, all Sidekick app extensions must comply with the following guidelines: 2.2.8 Sidekick app extensions must align with stated app functionality : Sidekick app extensions must operate within the scope of your app’s core functionality. To ensure platform integrity and merchant transparency, your extension configuration, public App Store listing , and actual runtime execution must be materially consistent. Tools, intents, and actions exposed to Sidekick must be a logical representation of what your app does for the merchant on its own surface. 2.2.9 Don't display promotions, advertisements, or cross-sell other services in Sidekick app extensions : Don't use Sidekick app extensions to promote your app, promote relat",
+  "source_category": "platform_policy",
+  "source_category_title": "平台规则与搜索生态",
+  "topic_direction": "cross-border",
+  "topic_direction_title": "跨境&出海",
+  "topic_direction_short_title": "跨境&出海",
+  "topic_direction_description": "跨境支付、海外平台、独立站、电商、合规、收款和出海基础设施。重点记录平台、规则、费率和服务范围变化。",
+  "source_name": "Shopify Developer Changelog",
+  "original_source_name": "Recent changes to Shopify's platform",
+  "source_type": "rss",
+  "feed_url": "https://shopify.dev/changelog/feed.xml",
+  "published_at": "2026-06-17T15:45:00+00:00",
+  "fetched_at": "2026-06-18T02:26:26.691244+00:00",
+  "decision": "deep_dive",
+  "report_type": "platform-rules",
+  "report_type_title": "平台规则",
+  "score": 72,
+  "reader_hook": "Shopify 应用开发者需关注合规变化，可能影响应用上架和功能",
+  "topic_tension": {
+    "score": 8,
+    "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+    "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+    "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+  },
+  "persona_discussion_question": "小团队该不该继续把关键工作流押在这个平台规则上？",
+  "why_now": "新要求已发布，开发者需在后续版本中适配",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "平台规则变化直接影响开发者生态，适合记录并提醒合规风险",
+  "collection_fit": "platform-rules",
+  "investigation_direction": "具体新要求内容、对现有应用的影响、合规时间线",
+  "uncertainty_flags": [
+    "具体合规细节未完全公开"
+  ],
+  "facts": [
+    {
+      "claim": "Shopify Developer Changelog 发布/收录了这条原始线索：New App Store requirements for Sidekick app extensions",
+      "type": "confirmed_fact",
+      "source_url": "https://shopify.dev/changelog/sidekick-app-extensions-app-store-requirements",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Shopify Developer Changelog",
+      "url": "https://shopify.dev/changelog/sidekick-app-extensions-app-store-requirements",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "platform": [
+        "shopify"
+      ]
+    },
+    "source_host": "shopify.dev",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 8,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "Shopify 应用开发者需关注合规变化，可能影响应用上架和功能",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://shopify.dev/changelog/feed.xml",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "具体合规细节未完全公开"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：违规处罚措施（下架、封号、罚款等）"
+    },
+    "core_question": "Shopify Sidekick 应用扩展新规对开发者（尤其是小团队）的实际合规成本、功能限制和潜在风险是什么？",
+    "why_this_topic_matters": "平台规则变化直接影响开发者生态，小团队可能面临更高的合规门槛和功能限制，需及时提醒风险。",
+    "fact_summary": [
+      "Shopify 于 2026年6月17日 发布 Sidekick 应用扩展新规，新增两条 App Store 要求：2.2.8 扩展必须与核心功能一致，2.2.9 禁止在扩展中展示促销、广告或交叉销售。",
+      "新规立即生效，适用于所有 Sidekick 应用扩展。",
+      "Sidekick 是 Shopify 内置的 AI 助手，应用扩展允许第三方应用集成数据和工作流。"
+    ],
+    "persona_discussion_question": "作为独立开发者，我是否应该投入资源开发 Sidekick 扩展？新规是否意味着更高的门槛和风险？",
+    "old_flower_stance": "平台规则收紧是常态，但小团队需要评估合规成本与收益。建议先观望，等待更多案例和官方澄清。",
+    "audience_fit": {
+      "primary_layer": "高价值商业读者",
+      "secondary_layers": [
+        "核心技术人",
+        "副业普通人"
+      ],
+      "interest_score": 72,
+      "why_interested": "直接影响 Shopify 应用开发者的上架策略和成本，高价值读者关注合规风险，副业读者关注机会是否可行。",
+      "reader_risk": "可能被误解为‘平台打压小团队’，需避免过度解读。"
+    },
+    "mass_interest_hook": {
+      "score": 6,
+      "hook_type": "规则",
+      "why_non_technical_people_may_click": "标题如‘Shopify 新规：你的应用可能被下架’能吸引普通商家和开发者关注。",
+      "story_seed": "一个独立开发者因为扩展中包含了推广链接，应用被下架的故事（虚构，需注明）。",
+      "do_not_overhype": "不要声称‘大量应用将被下架’，缺乏证据。"
+    },
+    "topic_tension": {
+      "score": 8,
+      "conflict_point": "平台规则收紧 vs 小团队生存空间",
+      "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "平台/工具厂商"
+      ],
+      "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2025-12-10: Shopify 推出 Sidekick 应用扩展",
+      "2026-06-17: 发布新规 2.2.8 和 2.2.9，立即生效"
+    ],
+    "evidence_table": [
+      {
+        "source": "Shopify Developer Changelog",
+        "url": "https://shopify.dev/changelog/sidekick-app-extensions-app-store-requirements",
+        "supports": "新规内容：2.2.8 和 2.2.9 要求",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify 官方文档 - Sidekick app extensions",
+        "url": "https://shopify.dev/docs/apps/build/sidekick",
+        "supports": "Sidekick 扩展的基本概念和功能",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify 官方文档 - App Store requirements",
+        "url": "https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements",
+        "supports": "App Store 总体要求背景",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify 官方文档 - Policy violations",
+        "url": "https://shopify.dev/docs/apps/launch/app-store-review/policy-violations",
+        "supports": "违规处罚框架",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify Developer Community Forums",
+        "url": "https://community.shopify.dev/t/introducing-sidekick-app-extensions/26984",
+        "supports": "开发者讨论，但未涉及新规反馈",
+        "reliability": "weak"
+      }
+    ],
+    "logic_closure": "部分闭环：新规事实清楚，但缺少违规案例、开发者反馈和过渡期信息，无法全面评估影响。",
+    "writeable_angles": [
+      {
+        "angle": "新规解读与合规指南",
+        "why": "直接服务开发者，提供操作建议",
+        "needs": "需要完整规则文本和处罚细节"
+      },
+      {
+        "angle": "小团队生存风险分析",
+        "why": "引发共鸣，讨论平台生态",
+        "needs": "需要开发者社区反馈和案例"
+      },
+      {
+        "angle": "与旧规对比，评估变化幅度",
+        "why": "帮助开发者理解新规影响",
+        "needs": "需要旧规文本和对比分析"
+      }
+    ],
+    "missing_basics": [
+      "Sidekick 扩展的具体技术实现细节",
+      "Shopify 应用审核流程"
+    ],
+    "missing_materials": [
+      "违规处罚措施（下架、封号、罚款等）",
+      "现有 Sidekick 扩展的合规状态（是否有被下架案例）",
+      "开发者社区对新规的反馈（Reddit、Shopify 论坛等）",
+      "新规是否适用于所有应用还是仅限新提交的应用",
+      "是否有过渡期或豁免条款"
+    ],
+    "not_claimable": [
+      "新规会导致大量应用下架",
+      "新规是 Shopify 打压小团队的手段",
+      "开发者普遍反对新规"
+    ],
+    "followup_queries": [
+      "Shopify Sidekick app extension violation enforcement details",
+      "Shopify Sidekick app extension developer feedback 2026",
+      "Shopify app store policy violation removal examples sidekick"
+    ],
+    "additional_search_queries": [
+      "Shopify sidekick app extension transition period",
+      "Shopify sidekick app extension penalty removal",
+      "Shopify sidekick app extension developer forum complaints"
+    ],
+    "stop_conditions": [
+      "找到官方明确的处罚案例或过渡期公告",
+      "开发者社区出现大规模负面反馈",
+      "Shopify 撤回或修改新规"
+    ],
+    "confidence": 65.0,
+    "topic_direction": "cross-border",
+    "topic_direction_title": "跨境&出海",
+    "report_type": "platform-rules",
+    "quality_gate": {
+      "pass": false,
+      "score": 65,
+      "fatal_issues": [],
+      "warnings": [
+        "缺少违规处罚细节、开发者社区反馈、过渡期信息",
+        "泛兴趣钩子强度不足，仅靠规则变化难以吸引非技术读者",
+        "传播张力中等，需补证后才能升级为推荐"
+      ],
+      "missing_evidence": [
+        "违规处罚措施（下架、封号、罚款等）",
+        "现有 Sidekick 扩展的合规状态（是否有被下架案例）",
+        "开发者社区对新规的反馈（Reddit、Shopify 论坛等）",
+        "新规是否适用于所有应用还是仅限新提交的应用",
+        "是否有过渡期或豁免条款"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "Shopify Sidekick 应用扩展新规对开发者（尤其是小团队）的实际合规成本、功能限制和潜在风险是什么？",
+      "persona_discussion_question": "作为独立开发者，我是否应该投入资源开发 Sidekick 扩展？新规是否意味着更高的门槛和风险？",
+      "hidden_public_issue": "平台规则收紧是否在保护生态的同时，挤压了小团队和独立开发者的生存空间，导致创新成本上升？",
+      "must_verify": [
+        "Sidekick 应用扩展的具体合规要求细节（2.2.8 和 2.2.9 的完整文本）",
+        "违规处罚措施（下架、封号、罚款等）",
+        "现有 Sidekick 扩展的合规状态（是否有被下架案例）",
+        "开发者社区对新规的反馈（Reddit、Shopify 论坛等）",
+        "新规是否适用于所有应用还是仅限新提交的应用",
+        "是否有过渡期或豁免条款"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Shopify Sidekick app extensions requirements 2.2.8 2.2.9",
+          "why_needed": "获取官方完整规则文本，确保准确性"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Shopify Sidekick app extension new requirements developer feedback",
+          "why_needed": "了解开发者真实反应和潜在问题"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Shopify app store policy violation removal examples",
+          "why_needed": "寻找违规案例，评估风险严重性"
+        },
+        {
+          "source_type": "policy",
+          "query": "Shopify app store terms of service sidekick extension",
+          "why_needed": "确认处罚条款和申诉流程"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Shopify sidekick app extension migration guide",
+          "why_needed": "检查是否有过渡期或迁移指南"
+        }
+      ],
+      "expert_challenge_points": [
+        "新规是否真的能保护平台完整性，还是增加了不必要的合规负担？",
+        "小团队是否有能力快速适配新规，还是会被迫放弃 Sidekick 扩展？",
+        "Shopify 是否在通过规则变化引导开发者使用其官方工具，而非第三方扩展？"
+      ],
+      "do_not_claim_yet": [
+        "新规会导致大量应用下架（缺乏证据）",
+        "新规是 Shopify 打压小团队的手段（需更多证据）",
+        "开发者普遍反对新规（需社区反馈数据）"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确标注信息缺口，并引导读者关注合规风险。",
+      "downstream_materials_needed": [
+        "官方规则完整文本（PDF 或网页存档）",
+        "开发者社区讨论截图或链接",
+        "违规案例统计或报道",
+        "Shopify 官方对处罚措施的说明"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "New App Store requirements for Sidekick app extensions - Shopify developer changelog",
+        "url": "https://shopify.dev/changelog/sidekick-app-extensions-app-store-requirements",
+        "query": "Shopify Sidekick app extensions requirements 2.2.8 2.2.9",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "New App Store requirements for Sidekick app extensions - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } June 17, 2026 Tags: Shopify App Store New App Store requirements for Sidekick app extensions Ask Copy MD We’ve introduced two new Shopify App Store requirements for Sidekick app extensions to protect platform integrity, ensure merchant transparency, and preserve trust. Starting today, al",
+        "fetch_error": ""
+      },
+      {
+        "title": "Sidekick app extensions",
+        "url": "https://shopify.dev/docs/apps/build/sidekick",
+        "query": "Shopify Sidekick app extensions requirements 2.2.8 2.2.9",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Sidekick app extensions self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Apps Build Design Launch Collapse sidebar Getting started Build apps for Shopify Scaffold an app Build an app Dev tools Shopify AI Toolkit Shopify CLI for apps Dev Dashboard Extending Shopify App surfaces App Home Admin Checkout Customer accounts Flow Online store Point of Sale Sidekick Building blocks Graph QL Extensions Shopify Functions Shopify QL Storefront MCP Events and webhooks App Events Metafields Metaobjects Authentication Use cases Marketing and analytics Discounts Product merchandising Purchase options Global markets Orders and fulfillment Payments Sales channels B2B Shopify Collective Blockchain Best practices Performance Accessibility Localize your app Integrating with Shopify Mobile support Non-deceptive code Compliance Security Full index Expand On this page How Shopify's platform powers tools & app extensions Example: Search in an email app Expose data to Sidekick Expose actions to Sidekick Add an extensions summary to your app Writin",
+        "fetch_error": ""
+      },
+      {
+        "title": "App Store requirements",
+        "url": "https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements",
+        "query": "Shopify Sidekick app extensions requirements 2.2.8 2.2.9",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "App Store requirements self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Apps Build Design Launch Collapse sidebar Quality assurance Going live Shopify App Store Built for Shopify Privacy requirements Work with protected customer data Pricing strategy About billing for your app Shopify App Pricing Manual pricing (legacy) Billing adjustments Deployment About deployment Deploy to Google Cloud Run Deploy to a hosting service About app versions Deploy and release app versions Deploy app components in a CD pipeline Reaching customers About app distribution Select a distribution method Support your customers Sunsetting your app Go-to-market success Track app usage App listing visibility App revenue share Shopify app store review About the Shopify App Store About the app review process Submit your app for review Pass app review App listing categories Policy violations About app quality checks Shopify App Store ads About Shopify App Store ads Create ads Manage ads Check ad performance Ad billing Ad permissions Ads FAQ Marketing you",
+        "fetch_error": ""
+      },
+      {
+        "title": "--- title: Sidekick app extensions",
+        "url": "https://shopify.dev/docs/apps/build/sidekick/index.md",
+        "query": "Shopify Sidekick app extension new requirements developer feedback",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "--- title: Sidekick app extensions description: Use app extensions to integrate your app with Sidekick source_url: html: https://shopify.dev/docs/apps/build/sidekick/index md: https://shopify.dev/docs/apps/build/sidekick/index.md --- # Sidekick app extensions Sidekick is the AI assistant built into Shopify. It helps merchants get things done without leaving their flow. Your app can connect its data and workflows using app extensions. Sidekick can search your app’s data, answer questions with your app’s context, and take merchants straight to the right page in your app. You can also let Sidekick assist directly inside your app. Define safe, scoped actions—like editing an email template, creating a product review, or updating a support issue—and Sidekick will suggest changes and bring up the right UI, but merchants stay in control of what gets updated. This guide shows you how to expose data sources and actions, handle authentication and permissions, and test your integration in development. ![Tools extension flow chart](https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/assets/admin/sidekick/flow-chart-sidekick-Ce1ZsKu6.png) *** ## How Shopify's platform powers tools & app extensions When a merchant invokes an app extension, Shopify's platform powers the interaction. The app extension is executed in the Shopify sandbox, and has access to the same APIs as your app. The app extension returns the result to Sidekick, and Sidekick displays the result to the merchant. ![Tools extension sequence diagram](https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/assets/admin/sidekick/sequence-diagram-sidekick-C-KM2zge.png) *** ## Example: Search in an email app In this example, a merchant can ask Sidekick to find the best performing subject lines in thei",
+        "fetch_error": ""
+      },
+      {
+        "title": "Sidekick app extensions available today - Shopify developer changelog",
+        "url": "https://shopify.dev/changelog/sidekick-app-extensions-available-today",
+        "query": "Shopify Sidekick app extension new requirements developer feedback",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Sidekick app extensions available today - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } June 17, 2026 Tags: Platform Sidekick app extensions available today Ask Copy MD All app developers can now build Sidekick app extensions. These extensions allow your app to integrate with Sidekick, giving Sidekick the ability to access data or take action within your apps. What's available today App d",
+        "fetch_error": ""
+      },
+      {
+        "title": "Introducing Sidekick app extensions - Shopify developer changelog",
+        "url": "https://shopify.dev/changelog/introducing-sidekick-app-extensions",
+        "query": "Shopify Sidekick app extension new requirements developer feedback",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Introducing Sidekick app extensions - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } December 10, 2025 Tags: Platform Introducing Sidekick app extensions Ask Copy MD Today, we're introducing Sidekick app extensions to give your app new ways to integrate your app with Sidekick , Shopify's AI-enabled commerce assistant. What are Sidekick app extensions? Your app can connect its data and work",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify App Store policy violations",
+        "url": "https://shopify.dev/docs/apps/launch/app-store-review/policy-violations",
+        "query": "Shopify app store policy violation removal examples",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Shopify App Store policy violations self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Apps Build Design Launch Collapse sidebar Quality assurance Going live Shopify App Store Built for Shopify Privacy requirements Work with protected customer data Pricing strategy About billing for your app Shopify App Pricing Manual pricing (legacy) Billing adjustments Deployment About deployment Deploy to Google Cloud Run Deploy to a hosting service About app versions Deploy and release app versions Deploy app components in a CD pipeline Reaching customers About app distribution Select a distribution method Support your customers Sunsetting your app Go-to-market success Track app usage App listing visibility App revenue share Shopify app store review About the Shopify App Store About the app review process Submit your app for review Pass app review App listing categories Policy violations About app quality checks Shopify App Store ads About Shopify App Store ads Create ads Manage ads Check ad performance Ad billing Ad permissions Ads FAQ ",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Help Center | Enforcement of Shopify’s Partner Program Policies",
+        "url": "https://help.shopify.com/en/partners/help-support/faq/removal",
+        "query": "Shopify app store policy violation removal examples",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Shopify Help Center | Resolving terms violations",
+        "url": "https://help.shopify.com/en/manual/compliance/legal/terms-violations",
+        "query": "Shopify app store policy violation removal examples",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Sidekick AI ‑ Automated Chat - Sidekick is the AI agent that provides human-level service. | Shopify App Store",
+        "url": "https://apps.shopify.com/sidekick-ai",
+        "query": "Shopify app store terms of service sidekick extension",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Sidekick AI ‑ Automated Chat - Sidekick is the AI agent that provides human-level service. | Shopify App Store {\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"Sidekick AI ‑ Automated Chat\",\"description\":\"Sidekick is an AI agent that supports your customers at every step of their journey, from leads to loyal customers.\",\"image\":[\"https://cdn.shopify.com/app-store/listing_images/d82a5c5d194e86b7e12a3672fbd12a88/icon/CLrQndumwPsCEAE=.png\"],\"operatingSystem\":\"Shopify\",\"applicationCategory\":\"DeveloperApplication\",\"brand\":\"Sidekick AI\"} window.bugsnagApiKey = \"e6295e2834074504b103aaaf32d1afcd\"; (function () { function getData(key) { const dux_info = document.getElementById('dux-data'); if (dux_info && dux_info.dataset && dux_info.dataset[key]) { return dux_info.dataset[key]; } return; } function loadScript(src) { const promise = new Promise(function(resolve, reject){ const script = document.createElement('script'); script.src = src; script.async = true; script.nonce = \"0y8bvM1it1TRaxgz8yr1kA==\"; script.type = 'module'; script.onload = () => { resolve(true); }; script.onerror = () => { reject(false); }; if (document.body) { document.body.appendChild(script); } else { document.addEventListener('DOMContentLoaded', () => { document.body.appendChild(script); }); } }); return promise; } loadScript(`https://cdn.shopify.com/shopifycloud/dux/dux-portal-6.4.1.min.js`).then(() => { Dux.init({ service: 'appstore', mode: getData('mode') || 'development', eventHandlerEndpoint: 'https://apps.shopify.com/.well-known/dux', enableGtm: false, enableGtmLoader: false, enableActiveConsent: true, enableConsentBuffer: true, enableDenormalization: true, disableLegacyTracking: true, countryCode: \"US\", locale: \"en\", shopId: getData('shop_id'), identityUuid: getData('identity_uuid",
+        "fetch_error": ""
+      },
+      {
+        "title": "Introducing Sidekick app extensions - Changelog - Shopify Developer Community Forums",
+        "url": "https://community.shopify.dev/t/introducing-sidekick-app-extensions/26984",
+        "query": "Shopify app store terms of service sidekick extension",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Introducing Sidekick app extensions - Changelog - Shopify Developer Community Forums Shopify Developer Community Forums Introducing Sidekick app extensions Changelog Shoppy December 10, 2025, 3:30pm 1 Today, we're introducing Sidekick app extensions to give your app new ways to integrate your app with Sidekick , Shopify's AI-enabled commerce assistant. This is a companion discussion topic for the original entry at https://shopify.dev/changelog/introducing-sidekick-app-extensions Related topics Topic Replies Views Activity Horizon, Theme App Extensions & Sidekick Extensions theme-app-extension 5 257 June 12, 2025 Intents are not supported for Sidekick Extensions admin-ui-extensions 1 40 May 27, 2026 Sidekick App Data Extension Extensions admin-ui-extensions 4 169 December 19, 2025 New Sidekick App Extension shopify generate doesn't work Extensions theme-app-extension 1 126 December 10, 2025 Sidekick App Extensions - Live? Extensions admin-ui-extensions 3 139 May 8, 2026 Home Categories Guidelines Terms of Service Privacy Policy Powered by Discourse , best viewed with JavaScript enabled",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：违规处罚措施（下架、封号、罚款等）"
+    },
+    "core_question": "Shopify Sidekick 应用扩展新规对开发者（尤其是小团队）的实际合规成本、功能限制和潜在风险是什么？",
+    "why_this_topic_matters": "平台规则变化直接影响开发者生态，小团队可能面临更高的合规门槛和功能限制，需及时提醒风险。",
+    "fact_summary": [
+      "Shopify 于 2026年6月17日 发布 Sidekick 应用扩展新规，新增两条 App Store 要求：2.2.8 扩展必须与核心功能一致，2.2.9 禁止在扩展中展示促销、广告或交叉销售。",
+      "新规立即生效，适用于所有 Sidekick 应用扩展。",
+      "Sidekick 是 Shopify 内置的 AI 助手，应用扩展允许第三方应用集成数据和工作流。"
+    ],
+    "persona_discussion_question": "作为独立开发者，我是否应该投入资源开发 Sidekick 扩展？新规是否意味着更高的门槛和风险？",
+    "old_flower_stance": "平台规则收紧是常态，但小团队需要评估合规成本与收益。建议先观望，等待更多案例和官方澄清。",
+    "audience_fit": {
+      "primary_layer": "高价值商业读者",
+      "secondary_layers": [
+        "核心技术人",
+        "副业普通人"
+      ],
+      "interest_score": 72,
+      "why_interested": "直接影响 Shopify 应用开发者的上架策略和成本，高价值读者关注合规风险，副业读者关注机会是否可行。",
+      "reader_risk": "可能被误解为‘平台打压小团队’，需避免过度解读。"
+    },
+    "mass_interest_hook": {
+      "score": 6,
+      "hook_type": "规则",
+      "why_non_technical_people_may_click": "标题如‘Shopify 新规：你的应用可能被下架’能吸引普通商家和开发者关注。",
+      "story_seed": "一个独立开发者因为扩展中包含了推广链接，应用被下架的故事（虚构，需注明）。",
+      "do_not_overhype": "不要声称‘大量应用将被下架’，缺乏证据。"
+    },
+    "topic_tension": {
+      "score": 8,
+      "conflict_point": "平台规则收紧 vs 小团队生存空间",
+      "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "平台/工具厂商"
+      ],
+      "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2025-12-10: Shopify 推出 Sidekick 应用扩展",
+      "2026-06-17: 发布新规 2.2.8 和 2.2.9，立即生效"
+    ],
+    "evidence_table": [
+      {
+        "source": "Shopify Developer Changelog",
+        "url": "https://shopify.dev/changelog/sidekick-app-extensions-app-store-requirements",
+        "supports": "新规内容：2.2.8 和 2.2.9 要求",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify 官方文档 - Sidekick app extensions",
+        "url": "https://shopify.dev/docs/apps/build/sidekick",
+        "supports": "Sidekick 扩展的基本概念和功能",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify 官方文档 - App Store requirements",
+        "url": "https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements",
+        "supports": "App Store 总体要求背景",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify 官方文档 - Policy violations",
+        "url": "https://shopify.dev/docs/apps/launch/app-store-review/policy-violations",
+        "supports": "违规处罚框架",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify Developer Community Forums",
+        "url": "https://community.shopify.dev/t/introducing-sidekick-app-extensions/26984",
+        "supports": "开发者讨论，但未涉及新规反馈",
+        "reliability": "weak"
+      }
+    ],
+    "logic_closure": "部分闭环：新规事实清楚，但缺少违规案例、开发者反馈和过渡期信息，无法全面评估影响。",
+    "writeable_angles": [
+      {
+        "angle": "新规解读与合规指南",
+        "why": "直接服务开发者，提供操作建议",
+        "needs": "需要完整规则文本和处罚细节"
+      },
+      {
+        "angle": "小团队生存风险分析",
+        "why": "引发共鸣，讨论平台生态",
+        "needs": "需要开发者社区反馈和案例"
+      },
+      {
+        "angle": "与旧规对比，评估变化幅度",
+        "why": "帮助开发者理解新规影响",
+        "needs": "需要旧规文本和对比分析"
+      }
+    ],
+    "missing_basics": [
+      "Sidekick 扩展的具体技术实现细节",
+      "Shopify 应用审核流程"
+    ],
+    "missing_materials": [
+      "违规处罚措施（下架、封号、罚款等）",
+      "现有 Sidekick 扩展的合规状态（是否有被下架案例）",
+      "开发者社区对新规的反馈（Reddit、Shopify 论坛等）",
+      "新规是否适用于所有应用还是仅限新提交的应用",
+      "是否有过渡期或豁免条款"
+    ],
+    "not_claimable": [
+      "新规会导致大量应用下架",
+      "新规是 Shopify 打压小团队的手段",
+      "开发者普遍反对新规"
+    ],
+    "followup_queries": [
+      "Shopify Sidekick app extension violation enforcement details",
+      "Shopify Sidekick app extension developer feedback 2026",
+      "Shopify app store policy violation removal examples sidekick"
+    ],
+    "additional_search_queries": [
+      "Shopify sidekick app extension transition period",
+      "Shopify sidekick app extension penalty removal",
+      "Shopify sidekick app extension developer forum complaints"
+    ],
+    "stop_conditions": [
+      "找到官方明确的处罚案例或过渡期公告",
+      "开发者社区出现大规模负面反馈",
+      "Shopify 撤回或修改新规"
+    ],
+    "confidence": 65.0,
+    "topic_direction": "cross-border",
+    "topic_direction_title": "跨境&出海",
+    "report_type": "platform-rules",
+    "quality_gate": {
+      "pass": false,
+      "score": 65,
+      "fatal_issues": [],
+      "warnings": [
+        "缺少违规处罚细节、开发者社区反馈、过渡期信息",
+        "泛兴趣钩子强度不足，仅靠规则变化难以吸引非技术读者",
+        "传播张力中等，需补证后才能升级为推荐"
+      ],
+      "missing_evidence": [
+        "违规处罚措施（下架、封号、罚款等）",
+        "现有 Sidekick 扩展的合规状态（是否有被下架案例）",
+        "开发者社区对新规的反馈（Reddit、Shopify 论坛等）",
+        "新规是否适用于所有应用还是仅限新提交的应用",
+        "是否有过渡期或豁免条款"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "Shopify Sidekick 应用扩展新规对开发者（尤其是小团队）的实际合规成本、功能限制和潜在风险是什么？",
+      "persona_discussion_question": "作为独立开发者，我是否应该投入资源开发 Sidekick 扩展？新规是否意味着更高的门槛和风险？",
+      "hidden_public_issue": "平台规则收紧是否在保护生态的同时，挤压了小团队和独立开发者的生存空间，导致创新成本上升？",
+      "must_verify": [
+        "Sidekick 应用扩展的具体合规要求细节（2.2.8 和 2.2.9 的完整文本）",
+        "违规处罚措施（下架、封号、罚款等）",
+        "现有 Sidekick 扩展的合规状态（是否有被下架案例）",
+        "开发者社区对新规的反馈（Reddit、Shopify 论坛等）",
+        "新规是否适用于所有应用还是仅限新提交的应用",
+        "是否有过渡期或豁免条款"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Shopify Sidekick app extensions requirements 2.2.8 2.2.9",
+          "why_needed": "获取官方完整规则文本，确保准确性"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Shopify Sidekick app extension new requirements developer feedback",
+          "why_needed": "了解开发者真实反应和潜在问题"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Shopify app store policy violation removal examples",
+          "why_needed": "寻找违规案例，评估风险严重性"
+        },
+        {
+          "source_type": "policy",
+          "query": "Shopify app store terms of service sidekick extension",
+          "why_needed": "确认处罚条款和申诉流程"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Shopify sidekick app extension migration guide",
+          "why_needed": "检查是否有过渡期或迁移指南"
+        }
+      ],
+      "expert_challenge_points": [
+        "新规是否真的能保护平台完整性，还是增加了不必要的合规负担？",
+        "小团队是否有能力快速适配新规，还是会被迫放弃 Sidekick 扩展？",
+        "Shopify 是否在通过规则变化引导开发者使用其官方工具，而非第三方扩展？"
+      ],
+      "do_not_claim_yet": [
+        "新规会导致大量应用下架（缺乏证据）",
+        "新规是 Shopify 打压小团队的手段（需更多证据）",
+        "开发者普遍反对新规（需社区反馈数据）"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确标注信息缺口，并引导读者关注合规风险。",
+      "downstream_materials_needed": [
+        "官方规则完整文本（PDF 或网页存档）",
+        "开发者社区讨论截图或链接",
+        "违规案例统计或报道",
+        "Shopify 官方对处罚措施的说明"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "New App Store requirements for Sidekick app extensions - Shopify developer changelog",
+        "url": "https://shopify.dev/changelog/sidekick-app-extensions-app-store-requirements",
+        "query": "Shopify Sidekick app extensions requirements 2.2.8 2.2.9",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "New App Store requirements for Sidekick app extensions - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } June 17, 2026 Tags: Shopify App Store New App Store requirements for Sidekick app extensions Ask Copy MD We’ve introduced two new Shopify App Store requirements for Sidekick app extensions to protect platform integrity, ensure merchant transparency, and preserve trust. Starting today, al",
+        "fetch_error": ""
+      },
+      {
+        "title": "Sidekick app extensions",
+        "url": "https://shopify.dev/docs/apps/build/sidekick",
+        "query": "Shopify Sidekick app extensions requirements 2.2.8 2.2.9",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Sidekick app extensions self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Apps Build Design Launch Collapse sidebar Getting started Build apps for Shopify Scaffold an app Build an app Dev tools Shopify AI Toolkit Shopify CLI for apps Dev Dashboard Extending Shopify App surfaces App Home Admin Checkout Customer accounts Flow Online store Point of Sale Sidekick Building blocks Graph QL Extensions Shopify Functions Shopify QL Storefront MCP Events and webhooks App Events Metafields Metaobjects Authentication Use cases Marketing and analytics Discounts Product merchandising Purchase options Global markets Orders and fulfillment Payments Sales channels B2B Shopify Collective Blockchain Best practices Performance Accessibility Localize your app Integrating with Shopify Mobile support Non-deceptive code Compliance Security Full index Expand On this page How Shopify's platform powers tools & app extensions Example: Search in an email app Expose data to Sidekick Expose actions to Sidekick Add an extensions summary to your app Writin",
+        "fetch_error": ""
+      },
+      {
+        "title": "App Store requirements",
+        "url": "https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements",
+        "query": "Shopify Sidekick app extensions requirements 2.2.8 2.2.9",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "App Store requirements self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Apps Build Design Launch Collapse sidebar Quality assurance Going live Shopify App Store Built for Shopify Privacy requirements Work with protected customer data Pricing strategy About billing for your app Shopify App Pricing Manual pricing (legacy) Billing adjustments Deployment About deployment Deploy to Google Cloud Run Deploy to a hosting service About app versions Deploy and release app versions Deploy app components in a CD pipeline Reaching customers About app distribution Select a distribution method Support your customers Sunsetting your app Go-to-market success Track app usage App listing visibility App revenue share Shopify app store review About the Shopify App Store About the app review process Submit your app for review Pass app review App listing categories Policy violations About app quality checks Shopify App Store ads About Shopify App Store ads Create ads Manage ads Check ad performance Ad billing Ad permissions Ads FAQ Marketing you",
+        "fetch_error": ""
+      },
+      {
+        "title": "--- title: Sidekick app extensions",
+        "url": "https://shopify.dev/docs/apps/build/sidekick/index.md",
+        "query": "Shopify Sidekick app extension new requirements developer feedback",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "--- title: Sidekick app extensions description: Use app extensions to integrate your app with Sidekick source_url: html: https://shopify.dev/docs/apps/build/sidekick/index md: https://shopify.dev/docs/apps/build/sidekick/index.md --- # Sidekick app extensions Sidekick is the AI assistant built into Shopify. It helps merchants get things done without leaving their flow. Your app can connect its data and workflows using app extensions. Sidekick can search your app’s data, answer questions with your app’s context, and take merchants straight to the right page in your app. You can also let Sidekick assist directly inside your app. Define safe, scoped actions—like editing an email template, creating a product review, or updating a support issue—and Sidekick will suggest changes and bring up the right UI, but merchants stay in control of what gets updated. This guide shows you how to expose data sources and actions, handle authentication and permissions, and test your integration in development. ![Tools extension flow chart](https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/assets/admin/sidekick/flow-chart-sidekick-Ce1ZsKu6.png) *** ## How Shopify's platform powers tools & app extensions When a merchant invokes an app extension, Shopify's platform powers the interaction. The app extension is executed in the Shopify sandbox, and has access to the same APIs as your app. The app extension returns the result to Sidekick, and Sidekick displays the result to the merchant. ![Tools extension sequence diagram](https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/assets/admin/sidekick/sequence-diagram-sidekick-C-KM2zge.png) *** ## Example: Search in an email app In this example, a merchant can ask Sidekick to find the best performing subject lines in thei",
+        "fetch_error": ""
+      },
+      {
+        "title": "Sidekick app extensions available today - Shopify developer changelog",
+        "url": "https://shopify.dev/changelog/sidekick-app-extensions-available-today",
+        "query": "Shopify Sidekick app extension new requirements developer feedback",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Sidekick app extensions available today - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } June 17, 2026 Tags: Platform Sidekick app extensions available today Ask Copy MD All app developers can now build Sidekick app extensions. These extensions allow your app to integrate with Sidekick, giving Sidekick the ability to access data or take action within your apps. What's available today App d",
+        "fetch_error": ""
+      },
+      {
+        "title": "Introducing Sidekick app extensions - Shopify developer changelog",
+        "url": "https://shopify.dev/changelog/introducing-sidekick-app-extensions",
+        "query": "Shopify Sidekick app extension new requirements developer feedback",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Introducing Sidekick app extensions - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } December 10, 2025 Tags: Platform Introducing Sidekick app extensions Ask Copy MD Today, we're introducing Sidekick app extensions to give your app new ways to integrate your app with Sidekick , Shopify's AI-enabled commerce assistant. What are Sidekick app extensions? Your app can connect its data and work",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify App Store policy violations",
+        "url": "https://shopify.dev/docs/apps/launch/app-store-review/policy-violations",
+        "query": "Shopify app store policy violation removal examples",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Shopify App Store policy violations self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Apps Build Design Launch Collapse sidebar Quality assurance Going live Shopify App Store Built for Shopify Privacy requirements Work with protected customer data Pricing strategy About billing for your app Shopify App Pricing Manual pricing (legacy) Billing adjustments Deployment About deployment Deploy to Google Cloud Run Deploy to a hosting service About app versions Deploy and release app versions Deploy app components in a CD pipeline Reaching customers About app distribution Select a distribution method Support your customers Sunsetting your app Go-to-market success Track app usage App listing visibility App revenue share Shopify app store review About the Shopify App Store About the app review process Submit your app for review Pass app review App listing categories Policy violations About app quality checks Shopify App Store ads About Shopify App Store ads Create ads Manage ads Check ad performance Ad billing Ad permissions Ads FAQ ",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Help Center | Enforcement of Shopify’s Partner Program Policies",
+        "url": "https://help.shopify.com/en/partners/help-support/faq/removal",
+        "query": "Shopify app store policy violation removal examples",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Shopify Help Center | Resolving terms violations",
+        "url": "https://help.shopify.com/en/manual/compliance/legal/terms-violations",
+        "query": "Shopify app store policy violation removal examples",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Sidekick AI ‑ Automated Chat - Sidekick is the AI agent that provides human-level service. | Shopify App Store",
+        "url": "https://apps.shopify.com/sidekick-ai",
+        "query": "Shopify app store terms of service sidekick extension",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Sidekick AI ‑ Automated Chat - Sidekick is the AI agent that provides human-level service. | Shopify App Store {\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"Sidekick AI ‑ Automated Chat\",\"description\":\"Sidekick is an AI agent that supports your customers at every step of their journey, from leads to loyal customers.\",\"image\":[\"https://cdn.shopify.com/app-store/listing_images/d82a5c5d194e86b7e12a3672fbd12a88/icon/CLrQndumwPsCEAE=.png\"],\"operatingSystem\":\"Shopify\",\"applicationCategory\":\"DeveloperApplication\",\"brand\":\"Sidekick AI\"} window.bugsnagApiKey = \"e6295e2834074504b103aaaf32d1afcd\"; (function () { function getData(key) { const dux_info = document.getElementById('dux-data'); if (dux_info && dux_info.dataset && dux_info.dataset[key]) { return dux_info.dataset[key]; } return; } function loadScript(src) { const promise = new Promise(function(resolve, reject){ const script = document.createElement('script'); script.src = src; script.async = true; script.nonce = \"0y8bvM1it1TRaxgz8yr1kA==\"; script.type = 'module'; script.onload = () => { resolve(true); }; script.onerror = () => { reject(false); }; if (document.body) { document.body.appendChild(script); } else { document.addEventListener('DOMContentLoaded', () => { document.body.appendChild(script); }); } }); return promise; } loadScript(`https://cdn.shopify.com/shopifycloud/dux/dux-portal-6.4.1.min.js`).then(() => { Dux.init({ service: 'appstore', mode: getData('mode') || 'development', eventHandlerEndpoint: 'https://apps.shopify.com/.well-known/dux', enableGtm: false, enableGtmLoader: false, enableActiveConsent: true, enableConsentBuffer: true, enableDenormalization: true, disableLegacyTracking: true, countryCode: \"US\", locale: \"en\", shopId: getData('shop_id'), identityUuid: getData('identity_uuid",
+        "fetch_error": ""
+      },
+      {
+        "title": "Introducing Sidekick app extensions - Changelog - Shopify Developer Community Forums",
+        "url": "https://community.shopify.dev/t/introducing-sidekick-app-extensions/26984",
+        "query": "Shopify app store terms of service sidekick extension",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Introducing Sidekick app extensions - Changelog - Shopify Developer Community Forums Shopify Developer Community Forums Introducing Sidekick app extensions Changelog Shoppy December 10, 2025, 3:30pm 1 Today, we're introducing Sidekick app extensions to give your app new ways to integrate your app with Sidekick , Shopify's AI-enabled commerce assistant. This is a companion discussion topic for the original entry at https://shopify.dev/changelog/introducing-sidekick-app-extensions Related topics Topic Replies Views Activity Horizon, Theme App Extensions & Sidekick Extensions theme-app-extension 5 257 June 12, 2025 Intents are not supported for Sidekick Extensions admin-ui-extensions 1 40 May 27, 2026 Sidekick App Data Extension Extensions admin-ui-extensions 4 169 December 19, 2025 New Sidekick App Extension shopify generate doesn't work Extensions theme-app-extension 1 126 December 10, 2025 Sidekick App Extensions - Live? Extensions admin-ui-extensions 3 139 May 8, 2026 Home Categories Guidelines Terms of Service Privacy Policy Powered by Discourse , best viewed with JavaScript enabled",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260618-new-app-store-requirements-for-sidekick-app-exte-4051724e/",
+    "for_gpt_editor": {
+      "brief": "We’ve introduced two new Shopify App Store requirements for Sidekick app extensions to protect platform integrity, ensure merchant transparency, and preserve trust. Starting today, all Sidekick app extensions must comply with the following guidelines: 2.2.8 Sidekick app extensions must align with stated app functionality : Sidekick app extensions must operate within the scope of your app’s core functionality. To ensure platform integrity and merchant transparency, your extension configuration, public App Store listing , and actual runtime execution must be materially consistent. Tools, intents, and actions exposed to Sidekick must be a logical representation of what your app does for the merchant on its own surface. 2.2.9 Don't display promotions, advertisements, or cross-sell other services in Sidekick app extensions : Don't use Sidekick app extensions to promote your app, promote relat",
+      "title_seed": "Shopify 对 Sidekick 应用扩展提出 App Store 新要求",
+      "original_title": "New App Store requirements for Sidekick app extensions",
+      "source_url": "https://shopify.dev/changelog/sidekick-app-extensions-app-store-requirements",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：违规处罚措施（下架、封号、罚款等）"
+        },
+        "core_question": "Shopify Sidekick 应用扩展新规对开发者（尤其是小团队）的实际合规成本、功能限制和潜在风险是什么？",
+        "why_this_topic_matters": "平台规则变化直接影响开发者生态，小团队可能面临更高的合规门槛和功能限制，需及时提醒风险。",
+        "fact_summary": [
+          "Shopify 于 2026年6月17日 发布 Sidekick 应用扩展新规，新增两条 App Store 要求：2.2.8 扩展必须与核心功能一致，2.2.9 禁止在扩展中展示促销、广告或交叉销售。",
+          "新规立即生效，适用于所有 Sidekick 应用扩展。",
+          "Sidekick 是 Shopify 内置的 AI 助手，应用扩展允许第三方应用集成数据和工作流。"
+        ],
+        "persona_discussion_question": "作为独立开发者，我是否应该投入资源开发 Sidekick 扩展？新规是否意味着更高的门槛和风险？",
+        "old_flower_stance": "平台规则收紧是常态，但小团队需要评估合规成本与收益。建议先观望，等待更多案例和官方澄清。",
+        "audience_fit": {
+          "primary_layer": "高价值商业读者",
+          "secondary_layers": [
+            "核心技术人",
+            "副业普通人"
+          ],
+          "interest_score": 72,
+          "why_interested": "直接影响 Shopify 应用开发者的上架策略和成本，高价值读者关注合规风险，副业读者关注机会是否可行。",
+          "reader_risk": "可能被误解为‘平台打压小团队’，需避免过度解读。"
+        },
+        "mass_interest_hook": {
+          "score": 6,
+          "hook_type": "规则",
+          "why_non_technical_people_may_click": "标题如‘Shopify 新规：你的应用可能被下架’能吸引普通商家和开发者关注。",
+          "story_seed": "一个独立开发者因为扩展中包含了推广链接，应用被下架的故事（虚构，需注明）。",
+          "do_not_overhype": "不要声称‘大量应用将被下架’，缺乏证据。"
+        },
+        "topic_tension": {
+          "score": 8,
+          "conflict_point": "平台规则收紧 vs 小团队生存空间",
+          "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "平台/工具厂商"
+          ],
+          "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2025-12-10: Shopify 推出 Sidekick 应用扩展",
+          "2026-06-17: 发布新规 2.2.8 和 2.2.9，立即生效"
+        ],
+        "evidence_table": [
+          {
+            "source": "Shopify Developer Changelog",
+            "url": "https://shopify.dev/changelog/sidekick-app-extensions-app-store-requirements",
+            "supports": "新规内容：2.2.8 和 2.2.9 要求",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify 官方文档 - Sidekick app extensions",
+            "url": "https://shopify.dev/docs/apps/build/sidekick",
+            "supports": "Sidekick 扩展的基本概念和功能",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify 官方文档 - App Store requirements",
+            "url": "https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements",
+            "supports": "App Store 总体要求背景",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify 官方文档 - Policy violations",
+            "url": "https://shopify.dev/docs/apps/launch/app-store-review/policy-violations",
+            "supports": "违规处罚框架",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify Developer Community Forums",
+            "url": "https://community.shopify.dev/t/introducing-sidekick-app-extensions/26984",
+            "supports": "开发者讨论，但未涉及新规反馈",
+            "reliability": "weak"
+          }
+        ],
+        "logic_closure": "部分闭环：新规事实清楚，但缺少违规案例、开发者反馈和过渡期信息，无法全面评估影响。",
+        "writeable_angles": [
+          {
+            "angle": "新规解读与合规指南",
+            "why": "直接服务开发者，提供操作建议",
+            "needs": "需要完整规则文本和处罚细节"
+          },
+          {
+            "angle": "小团队生存风险分析",
+            "why": "引发共鸣，讨论平台生态",
+            "needs": "需要开发者社区反馈和案例"
+          },
+          {
+            "angle": "与旧规对比，评估变化幅度",
+            "why": "帮助开发者理解新规影响",
+            "needs": "需要旧规文本和对比分析"
+          }
+        ],
+        "missing_basics": [
+          "Sidekick 扩展的具体技术实现细节",
+          "Shopify 应用审核流程"
+        ],
+        "missing_materials": [
+          "违规处罚措施（下架、封号、罚款等）",
+          "现有 Sidekick 扩展的合规状态（是否有被下架案例）",
+          "开发者社区对新规的反馈（Reddit、Shopify 论坛等）",
+          "新规是否适用于所有应用还是仅限新提交的应用",
+          "是否有过渡期或豁免条款"
+        ],
+        "not_claimable": [
+          "新规会导致大量应用下架",
+          "新规是 Shopify 打压小团队的手段",
+          "开发者普遍反对新规"
+        ],
+        "followup_queries": [
+          "Shopify Sidekick app extension violation enforcement details",
+          "Shopify Sidekick app extension developer feedback 2026",
+          "Shopify app store policy violation removal examples sidekick"
+        ],
+        "additional_search_queries": [
+          "Shopify sidekick app extension transition period",
+          "Shopify sidekick app extension penalty removal",
+          "Shopify sidekick app extension developer forum complaints"
+        ],
+        "stop_conditions": [
+          "找到官方明确的处罚案例或过渡期公告",
+          "开发者社区出现大规模负面反馈",
+          "Shopify 撤回或修改新规"
+        ],
+        "confidence": 65.0,
+        "topic_direction": "cross-border",
+        "topic_direction_title": "跨境&出海",
+        "report_type": "platform-rules",
+        "quality_gate": {
+          "pass": false,
+          "score": 65,
+          "fatal_issues": [],
+          "warnings": [
+            "缺少违规处罚细节、开发者社区反馈、过渡期信息",
+            "泛兴趣钩子强度不足，仅靠规则变化难以吸引非技术读者",
+            "传播张力中等，需补证后才能升级为推荐"
+          ],
+          "missing_evidence": [
+            "违规处罚措施（下架、封号、罚款等）",
+            "现有 Sidekick 扩展的合规状态（是否有被下架案例）",
+            "开发者社区对新规的反馈（Reddit、Shopify 论坛等）",
+            "新规是否适用于所有应用还是仅限新提交的应用",
+            "是否有过渡期或豁免条款"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "Shopify Sidekick 应用扩展新规对开发者（尤其是小团队）的实际合规成本、功能限制和潜在风险是什么？",
+          "persona_discussion_question": "作为独立开发者，我是否应该投入资源开发 Sidekick 扩展？新规是否意味着更高的门槛和风险？",
+          "hidden_public_issue": "平台规则收紧是否在保护生态的同时，挤压了小团队和独立开发者的生存空间，导致创新成本上升？",
+          "must_verify": [
+            "Sidekick 应用扩展的具体合规要求细节（2.2.8 和 2.2.9 的完整文本）",
+            "违规处罚措施（下架、封号、罚款等）",
+            "现有 Sidekick 扩展的合规状态（是否有被下架案例）",
+            "开发者社区对新规的反馈（Reddit、Shopify 论坛等）",
+            "新规是否适用于所有应用还是仅限新提交的应用",
+            "是否有过渡期或豁免条款"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Shopify Sidekick app extensions requirements 2.2.8 2.2.9",
+              "why_needed": "获取官方完整规则文本，确保准确性"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Shopify Sidekick app extension new requirements developer feedback",
+              "why_needed": "了解开发者真实反应和潜在问题"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Shopify app store policy violation removal examples",
+              "why_needed": "寻找违规案例，评估风险严重性"
+            },
+            {
+              "source_type": "policy",
+              "query": "Shopify app store terms of service sidekick extension",
+              "why_needed": "确认处罚条款和申诉流程"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Shopify sidekick app extension migration guide",
+              "why_needed": "检查是否有过渡期或迁移指南"
+            }
+          ],
+          "expert_challenge_points": [
+            "新规是否真的能保护平台完整性，还是增加了不必要的合规负担？",
+            "小团队是否有能力快速适配新规，还是会被迫放弃 Sidekick 扩展？",
+            "Shopify 是否在通过规则变化引导开发者使用其官方工具，而非第三方扩展？"
+          ],
+          "do_not_claim_yet": [
+            "新规会导致大量应用下架（缺乏证据）",
+            "新规是 Shopify 打压小团队的手段（需更多证据）",
+            "开发者普遍反对新规（需社区反馈数据）"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确标注信息缺口，并引导读者关注合规风险。",
+          "downstream_materials_needed": [
+            "官方规则完整文本（PDF 或网页存档）",
+            "开发者社区讨论截图或链接",
+            "违规案例统计或报道",
+            "Shopify 官方对处罚措施的说明"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "New App Store requirements for Sidekick app extensions - Shopify developer changelog",
+            "url": "https://shopify.dev/changelog/sidekick-app-extensions-app-store-requirements",
+            "query": "Shopify Sidekick app extensions requirements 2.2.8 2.2.9",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "New App Store requirements for Sidekick app extensions - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } June 17, 2026 Tags: Shopify App Store New App Store requirements for Sidekick app extensions Ask Copy MD We’ve introduced two new Shopify App Store requirements for Sidekick app extensions to protect platform integrity, ensure merchant transparency, and preserve trust. Starting today, al",
+            "fetch_error": ""
+          },
+          {
+            "title": "Sidekick app extensions",
+            "url": "https://shopify.dev/docs/apps/build/sidekick",
+            "query": "Shopify Sidekick app extensions requirements 2.2.8 2.2.9",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Sidekick app extensions self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Apps Build Design Launch Collapse sidebar Getting started Build apps for Shopify Scaffold an app Build an app Dev tools Shopify AI Toolkit Shopify CLI for apps Dev Dashboard Extending Shopify App surfaces App Home Admin Checkout Customer accounts Flow Online store Point of Sale Sidekick Building blocks Graph QL Extensions Shopify Functions Shopify QL Storefront MCP Events and webhooks App Events Metafields Metaobjects Authentication Use cases Marketing and analytics Discounts Product merchandising Purchase options Global markets Orders and fulfillment Payments Sales channels B2B Shopify Collective Blockchain Best practices Performance Accessibility Localize your app Integrating with Shopify Mobile support Non-deceptive code Compliance Security Full index Expand On this page How Shopify's platform powers tools & app extensions Example: Search in an email app Expose data to Sidekick Expose actions to Sidekick Add an extensions summary to your app Writin",
+            "fetch_error": ""
+          },
+          {
+            "title": "App Store requirements",
+            "url": "https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements",
+            "query": "Shopify Sidekick app extensions requirements 2.2.8 2.2.9",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "App Store requirements self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Apps Build Design Launch Collapse sidebar Quality assurance Going live Shopify App Store Built for Shopify Privacy requirements Work with protected customer data Pricing strategy About billing for your app Shopify App Pricing Manual pricing (legacy) Billing adjustments Deployment About deployment Deploy to Google Cloud Run Deploy to a hosting service About app versions Deploy and release app versions Deploy app components in a CD pipeline Reaching customers About app distribution Select a distribution method Support your customers Sunsetting your app Go-to-market success Track app usage App listing visibility App revenue share Shopify app store review About the Shopify App Store About the app review process Submit your app for review Pass app review App listing categories Policy violations About app quality checks Shopify App Store ads About Shopify App Store ads Create ads Manage ads Check ad performance Ad billing Ad permissions Ads FAQ Marketing you",
+            "fetch_error": ""
+          },
+          {
+            "title": "--- title: Sidekick app extensions",
+            "url": "https://shopify.dev/docs/apps/build/sidekick/index.md",
+            "query": "Shopify Sidekick app extension new requirements developer feedback",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "--- title: Sidekick app extensions description: Use app extensions to integrate your app with Sidekick source_url: html: https://shopify.dev/docs/apps/build/sidekick/index md: https://shopify.dev/docs/apps/build/sidekick/index.md --- # Sidekick app extensions Sidekick is the AI assistant built into Shopify. It helps merchants get things done without leaving their flow. Your app can connect its data and workflows using app extensions. Sidekick can search your app’s data, answer questions with your app’s context, and take merchants straight to the right page in your app. You can also let Sidekick assist directly inside your app. Define safe, scoped actions—like editing an email template, creating a product review, or updating a support issue—and Sidekick will suggest changes and bring up the right UI, but merchants stay in control of what gets updated. This guide shows you how to expose data sources and actions, handle authentication and permissions, and test your integration in development. ![Tools extension flow chart](https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/assets/admin/sidekick/flow-chart-sidekick-Ce1ZsKu6.png) *** ## How Shopify's platform powers tools & app extensions When a merchant invokes an app extension, Shopify's platform powers the interaction. The app extension is executed in the Shopify sandbox, and has access to the same APIs as your app. The app extension returns the result to Sidekick, and Sidekick displays the result to the merchant. ![Tools extension sequence diagram](https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/assets/admin/sidekick/sequence-diagram-sidekick-C-KM2zge.png) *** ## Example: Search in an email app In this example, a merchant can ask Sidekick to find the best performing subject lines in thei",
+            "fetch_error": ""
+          },
+          {
+            "title": "Sidekick app extensions available today - Shopify developer changelog",
+            "url": "https://shopify.dev/changelog/sidekick-app-extensions-available-today",
+            "query": "Shopify Sidekick app extension new requirements developer feedback",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Sidekick app extensions available today - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } June 17, 2026 Tags: Platform Sidekick app extensions available today Ask Copy MD All app developers can now build Sidekick app extensions. These extensions allow your app to integrate with Sidekick, giving Sidekick the ability to access data or take action within your apps. What's available today App d",
+            "fetch_error": ""
+          },
+          {
+            "title": "Introducing Sidekick app extensions - Shopify developer changelog",
+            "url": "https://shopify.dev/changelog/introducing-sidekick-app-extensions",
+            "query": "Shopify Sidekick app extension new requirements developer feedback",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Introducing Sidekick app extensions - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } December 10, 2025 Tags: Platform Introducing Sidekick app extensions Ask Copy MD Today, we're introducing Sidekick app extensions to give your app new ways to integrate your app with Sidekick , Shopify's AI-enabled commerce assistant. What are Sidekick app extensions? Your app can connect its data and work",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify App Store policy violations",
+            "url": "https://shopify.dev/docs/apps/launch/app-store-review/policy-violations",
+            "query": "Shopify app store policy violation removal examples",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Shopify App Store policy violations self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Apps Build Design Launch Collapse sidebar Quality assurance Going live Shopify App Store Built for Shopify Privacy requirements Work with protected customer data Pricing strategy About billing for your app Shopify App Pricing Manual pricing (legacy) Billing adjustments Deployment About deployment Deploy to Google Cloud Run Deploy to a hosting service About app versions Deploy and release app versions Deploy app components in a CD pipeline Reaching customers About app distribution Select a distribution method Support your customers Sunsetting your app Go-to-market success Track app usage App listing visibility App revenue share Shopify app store review About the Shopify App Store About the app review process Submit your app for review Pass app review App listing categories Policy violations About app quality checks Shopify App Store ads About Shopify App Store ads Create ads Manage ads Check ad performance Ad billing Ad permissions Ads FAQ ",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Help Center | Enforcement of Shopify’s Partner Program Policies",
+            "url": "https://help.shopify.com/en/partners/help-support/faq/removal",
+            "query": "Shopify app store policy violation removal examples",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Shopify Help Center | Resolving terms violations",
+            "url": "https://help.shopify.com/en/manual/compliance/legal/terms-violations",
+            "query": "Shopify app store policy violation removal examples",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Sidekick AI ‑ Automated Chat - Sidekick is the AI agent that provides human-level service. | Shopify App Store",
+            "url": "https://apps.shopify.com/sidekick-ai",
+            "query": "Shopify app store terms of service sidekick extension",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Sidekick AI ‑ Automated Chat - Sidekick is the AI agent that provides human-level service. | Shopify App Store {\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"Sidekick AI ‑ Automated Chat\",\"description\":\"Sidekick is an AI agent that supports your customers at every step of their journey, from leads to loyal customers.\",\"image\":[\"https://cdn.shopify.com/app-store/listing_images/d82a5c5d194e86b7e12a3672fbd12a88/icon/CLrQndumwPsCEAE=.png\"],\"operatingSystem\":\"Shopify\",\"applicationCategory\":\"DeveloperApplication\",\"brand\":\"Sidekick AI\"} window.bugsnagApiKey = \"e6295e2834074504b103aaaf32d1afcd\"; (function () { function getData(key) { const dux_info = document.getElementById('dux-data'); if (dux_info && dux_info.dataset && dux_info.dataset[key]) { return dux_info.dataset[key]; } return; } function loadScript(src) { const promise = new Promise(function(resolve, reject){ const script = document.createElement('script'); script.src = src; script.async = true; script.nonce = \"0y8bvM1it1TRaxgz8yr1kA==\"; script.type = 'module'; script.onload = () => { resolve(true); }; script.onerror = () => { reject(false); }; if (document.body) { document.body.appendChild(script); } else { document.addEventListener('DOMContentLoaded', () => { document.body.appendChild(script); }); } }); return promise; } loadScript(`https://cdn.shopify.com/shopifycloud/dux/dux-portal-6.4.1.min.js`).then(() => { Dux.init({ service: 'appstore', mode: getData('mode') || 'development', eventHandlerEndpoint: 'https://apps.shopify.com/.well-known/dux', enableGtm: false, enableGtmLoader: false, enableActiveConsent: true, enableConsentBuffer: true, enableDenormalization: true, disableLegacyTracking: true, countryCode: \"US\", locale: \"en\", shopId: getData('shop_id'), identityUuid: getData('identity_uuid",
+            "fetch_error": ""
+          },
+          {
+            "title": "Introducing Sidekick app extensions - Changelog - Shopify Developer Community Forums",
+            "url": "https://community.shopify.dev/t/introducing-sidekick-app-extensions/26984",
+            "query": "Shopify app store terms of service sidekick extension",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Introducing Sidekick app extensions - Changelog - Shopify Developer Community Forums Shopify Developer Community Forums Introducing Sidekick app extensions Changelog Shoppy December 10, 2025, 3:30pm 1 Today, we're introducing Sidekick app extensions to give your app new ways to integrate your app with Sidekick , Shopify's AI-enabled commerce assistant. This is a companion discussion topic for the original entry at https://shopify.dev/changelog/introducing-sidekick-app-extensions Related topics Topic Replies Views Activity Horizon, Theme App Extensions & Sidekick Extensions theme-app-extension 5 257 June 12, 2025 Intents are not supported for Sidekick Extensions admin-ui-extensions 1 40 May 27, 2026 Sidekick App Data Extension Extensions admin-ui-extensions 4 169 December 19, 2025 New Sidekick App Extension shopify generate doesn't work Extensions theme-app-extension 1 126 December 10, 2025 Sidekick App Extensions - Live? Extensions admin-ui-extensions 3 139 May 8, 2026 Home Categories Guidelines Terms of Service Privacy Policy Powered by Discourse , best viewed with JavaScript enabled",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：违规处罚措施（下架、封号、罚款等）"
+        },
+        "core_question": "Shopify Sidekick 应用扩展新规对开发者（尤其是小团队）的实际合规成本、功能限制和潜在风险是什么？",
+        "why_this_topic_matters": "平台规则变化直接影响开发者生态，小团队可能面临更高的合规门槛和功能限制，需及时提醒风险。",
+        "fact_summary": [
+          "Shopify 于 2026年6月17日 发布 Sidekick 应用扩展新规，新增两条 App Store 要求：2.2.8 扩展必须与核心功能一致，2.2.9 禁止在扩展中展示促销、广告或交叉销售。",
+          "新规立即生效，适用于所有 Sidekick 应用扩展。",
+          "Sidekick 是 Shopify 内置的 AI 助手，应用扩展允许第三方应用集成数据和工作流。"
+        ],
+        "persona_discussion_question": "作为独立开发者，我是否应该投入资源开发 Sidekick 扩展？新规是否意味着更高的门槛和风险？",
+        "old_flower_stance": "平台规则收紧是常态，但小团队需要评估合规成本与收益。建议先观望，等待更多案例和官方澄清。",
+        "audience_fit": {
+          "primary_layer": "高价值商业读者",
+          "secondary_layers": [
+            "核心技术人",
+            "副业普通人"
+          ],
+          "interest_score": 72,
+          "why_interested": "直接影响 Shopify 应用开发者的上架策略和成本，高价值读者关注合规风险，副业读者关注机会是否可行。",
+          "reader_risk": "可能被误解为‘平台打压小团队’，需避免过度解读。"
+        },
+        "mass_interest_hook": {
+          "score": 6,
+          "hook_type": "规则",
+          "why_non_technical_people_may_click": "标题如‘Shopify 新规：你的应用可能被下架’能吸引普通商家和开发者关注。",
+          "story_seed": "一个独立开发者因为扩展中包含了推广链接，应用被下架的故事（虚构，需注明）。",
+          "do_not_overhype": "不要声称‘大量应用将被下架’，缺乏证据。"
+        },
+        "topic_tension": {
+          "score": 8,
+          "conflict_point": "平台规则收紧 vs 小团队生存空间",
+          "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "平台/工具厂商"
+          ],
+          "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2025-12-10: Shopify 推出 Sidekick 应用扩展",
+          "2026-06-17: 发布新规 2.2.8 和 2.2.9，立即生效"
+        ],
+        "evidence_table": [
+          {
+            "source": "Shopify Developer Changelog",
+            "url": "https://shopify.dev/changelog/sidekick-app-extensions-app-store-requirements",
+            "supports": "新规内容：2.2.8 和 2.2.9 要求",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify 官方文档 - Sidekick app extensions",
+            "url": "https://shopify.dev/docs/apps/build/sidekick",
+            "supports": "Sidekick 扩展的基本概念和功能",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify 官方文档 - App Store requirements",
+            "url": "https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements",
+            "supports": "App Store 总体要求背景",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify 官方文档 - Policy violations",
+            "url": "https://shopify.dev/docs/apps/launch/app-store-review/policy-violations",
+            "supports": "违规处罚框架",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify Developer Community Forums",
+            "url": "https://community.shopify.dev/t/introducing-sidekick-app-extensions/26984",
+            "supports": "开发者讨论，但未涉及新规反馈",
+            "reliability": "weak"
+          }
+        ],
+        "logic_closure": "部分闭环：新规事实清楚，但缺少违规案例、开发者反馈和过渡期信息，无法全面评估影响。",
+        "writeable_angles": [
+          {
+            "angle": "新规解读与合规指南",
+            "why": "直接服务开发者，提供操作建议",
+            "needs": "需要完整规则文本和处罚细节"
+          },
+          {
+            "angle": "小团队生存风险分析",
+            "why": "引发共鸣，讨论平台生态",
+            "needs": "需要开发者社区反馈和案例"
+          },
+          {
+            "angle": "与旧规对比，评估变化幅度",
+            "why": "帮助开发者理解新规影响",
+            "needs": "需要旧规文本和对比分析"
+          }
+        ],
+        "missing_basics": [
+          "Sidekick 扩展的具体技术实现细节",
+          "Shopify 应用审核流程"
+        ],
+        "missing_materials": [
+          "违规处罚措施（下架、封号、罚款等）",
+          "现有 Sidekick 扩展的合规状态（是否有被下架案例）",
+          "开发者社区对新规的反馈（Reddit、Shopify 论坛等）",
+          "新规是否适用于所有应用还是仅限新提交的应用",
+          "是否有过渡期或豁免条款"
+        ],
+        "not_claimable": [
+          "新规会导致大量应用下架",
+          "新规是 Shopify 打压小团队的手段",
+          "开发者普遍反对新规"
+        ],
+        "followup_queries": [
+          "Shopify Sidekick app extension violation enforcement details",
+          "Shopify Sidekick app extension developer feedback 2026",
+          "Shopify app store policy violation removal examples sidekick"
+        ],
+        "additional_search_queries": [
+          "Shopify sidekick app extension transition period",
+          "Shopify sidekick app extension penalty removal",
+          "Shopify sidekick app extension developer forum complaints"
+        ],
+        "stop_conditions": [
+          "找到官方明确的处罚案例或过渡期公告",
+          "开发者社区出现大规模负面反馈",
+          "Shopify 撤回或修改新规"
+        ],
+        "confidence": 65.0,
+        "topic_direction": "cross-border",
+        "topic_direction_title": "跨境&出海",
+        "report_type": "platform-rules",
+        "quality_gate": {
+          "pass": false,
+          "score": 65,
+          "fatal_issues": [],
+          "warnings": [
+            "缺少违规处罚细节、开发者社区反馈、过渡期信息",
+            "泛兴趣钩子强度不足，仅靠规则变化难以吸引非技术读者",
+            "传播张力中等，需补证后才能升级为推荐"
+          ],
+          "missing_evidence": [
+            "违规处罚措施（下架、封号、罚款等）",
+            "现有 Sidekick 扩展的合规状态（是否有被下架案例）",
+            "开发者社区对新规的反馈（Reddit、Shopify 论坛等）",
+            "新规是否适用于所有应用还是仅限新提交的应用",
+            "是否有过渡期或豁免条款"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "Shopify Sidekick 应用扩展新规对开发者（尤其是小团队）的实际合规成本、功能限制和潜在风险是什么？",
+          "persona_discussion_question": "作为独立开发者，我是否应该投入资源开发 Sidekick 扩展？新规是否意味着更高的门槛和风险？",
+          "hidden_public_issue": "平台规则收紧是否在保护生态的同时，挤压了小团队和独立开发者的生存空间，导致创新成本上升？",
+          "must_verify": [
+            "Sidekick 应用扩展的具体合规要求细节（2.2.8 和 2.2.9 的完整文本）",
+            "违规处罚措施（下架、封号、罚款等）",
+            "现有 Sidekick 扩展的合规状态（是否有被下架案例）",
+            "开发者社区对新规的反馈（Reddit、Shopify 论坛等）",
+            "新规是否适用于所有应用还是仅限新提交的应用",
+            "是否有过渡期或豁免条款"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Shopify Sidekick app extensions requirements 2.2.8 2.2.9",
+              "why_needed": "获取官方完整规则文本，确保准确性"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Shopify Sidekick app extension new requirements developer feedback",
+              "why_needed": "了解开发者真实反应和潜在问题"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Shopify app store policy violation removal examples",
+              "why_needed": "寻找违规案例，评估风险严重性"
+            },
+            {
+              "source_type": "policy",
+              "query": "Shopify app store terms of service sidekick extension",
+              "why_needed": "确认处罚条款和申诉流程"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Shopify sidekick app extension migration guide",
+              "why_needed": "检查是否有过渡期或迁移指南"
+            }
+          ],
+          "expert_challenge_points": [
+            "新规是否真的能保护平台完整性，还是增加了不必要的合规负担？",
+            "小团队是否有能力快速适配新规，还是会被迫放弃 Sidekick 扩展？",
+            "Shopify 是否在通过规则变化引导开发者使用其官方工具，而非第三方扩展？"
+          ],
+          "do_not_claim_yet": [
+            "新规会导致大量应用下架（缺乏证据）",
+            "新规是 Shopify 打压小团队的手段（需更多证据）",
+            "开发者普遍反对新规（需社区反馈数据）"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确标注信息缺口，并引导读者关注合规风险。",
+          "downstream_materials_needed": [
+            "官方规则完整文本（PDF 或网页存档）",
+            "开发者社区讨论截图或链接",
+            "违规案例统计或报道",
+            "Shopify 官方对处罚措施的说明"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "New App Store requirements for Sidekick app extensions - Shopify developer changelog",
+            "url": "https://shopify.dev/changelog/sidekick-app-extensions-app-store-requirements",
+            "query": "Shopify Sidekick app extensions requirements 2.2.8 2.2.9",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "New App Store requirements for Sidekick app extensions - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } June 17, 2026 Tags: Shopify App Store New App Store requirements for Sidekick app extensions Ask Copy MD We’ve introduced two new Shopify App Store requirements for Sidekick app extensions to protect platform integrity, ensure merchant transparency, and preserve trust. Starting today, al",
+            "fetch_error": ""
+          },
+          {
+            "title": "Sidekick app extensions",
+            "url": "https://shopify.dev/docs/apps/build/sidekick",
+            "query": "Shopify Sidekick app extensions requirements 2.2.8 2.2.9",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Sidekick app extensions self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Apps Build Design Launch Collapse sidebar Getting started Build apps for Shopify Scaffold an app Build an app Dev tools Shopify AI Toolkit Shopify CLI for apps Dev Dashboard Extending Shopify App surfaces App Home Admin Checkout Customer accounts Flow Online store Point of Sale Sidekick Building blocks Graph QL Extensions Shopify Functions Shopify QL Storefront MCP Events and webhooks App Events Metafields Metaobjects Authentication Use cases Marketing and analytics Discounts Product merchandising Purchase options Global markets Orders and fulfillment Payments Sales channels B2B Shopify Collective Blockchain Best practices Performance Accessibility Localize your app Integrating with Shopify Mobile support Non-deceptive code Compliance Security Full index Expand On this page How Shopify's platform powers tools & app extensions Example: Search in an email app Expose data to Sidekick Expose actions to Sidekick Add an extensions summary to your app Writin",
+            "fetch_error": ""
+          },
+          {
+            "title": "App Store requirements",
+            "url": "https://shopify.dev/docs/apps/launch/shopify-app-store/app-store-requirements",
+            "query": "Shopify Sidekick app extensions requirements 2.2.8 2.2.9",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "App Store requirements self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Apps Build Design Launch Collapse sidebar Quality assurance Going live Shopify App Store Built for Shopify Privacy requirements Work with protected customer data Pricing strategy About billing for your app Shopify App Pricing Manual pricing (legacy) Billing adjustments Deployment About deployment Deploy to Google Cloud Run Deploy to a hosting service About app versions Deploy and release app versions Deploy app components in a CD pipeline Reaching customers About app distribution Select a distribution method Support your customers Sunsetting your app Go-to-market success Track app usage App listing visibility App revenue share Shopify app store review About the Shopify App Store About the app review process Submit your app for review Pass app review App listing categories Policy violations About app quality checks Shopify App Store ads About Shopify App Store ads Create ads Manage ads Check ad performance Ad billing Ad permissions Ads FAQ Marketing you",
+            "fetch_error": ""
+          },
+          {
+            "title": "--- title: Sidekick app extensions",
+            "url": "https://shopify.dev/docs/apps/build/sidekick/index.md",
+            "query": "Shopify Sidekick app extension new requirements developer feedback",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "--- title: Sidekick app extensions description: Use app extensions to integrate your app with Sidekick source_url: html: https://shopify.dev/docs/apps/build/sidekick/index md: https://shopify.dev/docs/apps/build/sidekick/index.md --- # Sidekick app extensions Sidekick is the AI assistant built into Shopify. It helps merchants get things done without leaving their flow. Your app can connect its data and workflows using app extensions. Sidekick can search your app’s data, answer questions with your app’s context, and take merchants straight to the right page in your app. You can also let Sidekick assist directly inside your app. Define safe, scoped actions—like editing an email template, creating a product review, or updating a support issue—and Sidekick will suggest changes and bring up the right UI, but merchants stay in control of what gets updated. This guide shows you how to expose data sources and actions, handle authentication and permissions, and test your integration in development. ![Tools extension flow chart](https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/assets/admin/sidekick/flow-chart-sidekick-Ce1ZsKu6.png) *** ## How Shopify's platform powers tools & app extensions When a merchant invokes an app extension, Shopify's platform powers the interaction. The app extension is executed in the Shopify sandbox, and has access to the same APIs as your app. The app extension returns the result to Sidekick, and Sidekick displays the result to the merchant. ![Tools extension sequence diagram](https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/assets/admin/sidekick/sequence-diagram-sidekick-C-KM2zge.png) *** ## Example: Search in an email app In this example, a merchant can ask Sidekick to find the best performing subject lines in thei",
+            "fetch_error": ""
+          },
+          {
+            "title": "Sidekick app extensions available today - Shopify developer changelog",
+            "url": "https://shopify.dev/changelog/sidekick-app-extensions-available-today",
+            "query": "Shopify Sidekick app extension new requirements developer feedback",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Sidekick app extensions available today - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } June 17, 2026 Tags: Platform Sidekick app extensions available today Ask Copy MD All app developers can now build Sidekick app extensions. These extensions allow your app to integrate with Sidekick, giving Sidekick the ability to access data or take action within your apps. What's available today App d",
+            "fetch_error": ""
+          },
+          {
+            "title": "Introducing Sidekick app extensions - Shopify developer changelog",
+            "url": "https://shopify.dev/changelog/introducing-sidekick-app-extensions",
+            "query": "Shopify Sidekick app extension new requirements developer feedback",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Introducing Sidekick app extensions - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } December 10, 2025 Tags: Platform Introducing Sidekick app extensions Ask Copy MD Today, we're introducing Sidekick app extensions to give your app new ways to integrate your app with Sidekick , Shopify's AI-enabled commerce assistant. What are Sidekick app extensions? Your app can connect its data and work",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify App Store policy violations",
+            "url": "https://shopify.dev/docs/apps/launch/app-store-review/policy-violations",
+            "query": "Shopify app store policy violation removal examples",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Shopify App Store policy violations self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Apps Build Design Launch Collapse sidebar Quality assurance Going live Shopify App Store Built for Shopify Privacy requirements Work with protected customer data Pricing strategy About billing for your app Shopify App Pricing Manual pricing (legacy) Billing adjustments Deployment About deployment Deploy to Google Cloud Run Deploy to a hosting service About app versions Deploy and release app versions Deploy app components in a CD pipeline Reaching customers About app distribution Select a distribution method Support your customers Sunsetting your app Go-to-market success Track app usage App listing visibility App revenue share Shopify app store review About the Shopify App Store About the app review process Submit your app for review Pass app review App listing categories Policy violations About app quality checks Shopify App Store ads About Shopify App Store ads Create ads Manage ads Check ad performance Ad billing Ad permissions Ads FAQ ",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Help Center | Enforcement of Shopify’s Partner Program Policies",
+            "url": "https://help.shopify.com/en/partners/help-support/faq/removal",
+            "query": "Shopify app store policy violation removal examples",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Shopify Help Center | Resolving terms violations",
+            "url": "https://help.shopify.com/en/manual/compliance/legal/terms-violations",
+            "query": "Shopify app store policy violation removal examples",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Sidekick AI ‑ Automated Chat - Sidekick is the AI agent that provides human-level service. | Shopify App Store",
+            "url": "https://apps.shopify.com/sidekick-ai",
+            "query": "Shopify app store terms of service sidekick extension",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Sidekick AI ‑ Automated Chat - Sidekick is the AI agent that provides human-level service. | Shopify App Store {\"@context\":\"https://schema.org\",\"@type\":\"SoftwareApplication\",\"name\":\"Sidekick AI ‑ Automated Chat\",\"description\":\"Sidekick is an AI agent that supports your customers at every step of their journey, from leads to loyal customers.\",\"image\":[\"https://cdn.shopify.com/app-store/listing_images/d82a5c5d194e86b7e12a3672fbd12a88/icon/CLrQndumwPsCEAE=.png\"],\"operatingSystem\":\"Shopify\",\"applicationCategory\":\"DeveloperApplication\",\"brand\":\"Sidekick AI\"} window.bugsnagApiKey = \"e6295e2834074504b103aaaf32d1afcd\"; (function () { function getData(key) { const dux_info = document.getElementById('dux-data'); if (dux_info && dux_info.dataset && dux_info.dataset[key]) { return dux_info.dataset[key]; } return; } function loadScript(src) { const promise = new Promise(function(resolve, reject){ const script = document.createElement('script'); script.src = src; script.async = true; script.nonce = \"0y8bvM1it1TRaxgz8yr1kA==\"; script.type = 'module'; script.onload = () => { resolve(true); }; script.onerror = () => { reject(false); }; if (document.body) { document.body.appendChild(script); } else { document.addEventListener('DOMContentLoaded', () => { document.body.appendChild(script); }); } }); return promise; } loadScript(`https://cdn.shopify.com/shopifycloud/dux/dux-portal-6.4.1.min.js`).then(() => { Dux.init({ service: 'appstore', mode: getData('mode') || 'development', eventHandlerEndpoint: 'https://apps.shopify.com/.well-known/dux', enableGtm: false, enableGtmLoader: false, enableActiveConsent: true, enableConsentBuffer: true, enableDenormalization: true, disableLegacyTracking: true, countryCode: \"US\", locale: \"en\", shopId: getData('shop_id'), identityUuid: getData('identity_uuid",
+            "fetch_error": ""
+          },
+          {
+            "title": "Introducing Sidekick app extensions - Changelog - Shopify Developer Community Forums",
+            "url": "https://community.shopify.dev/t/introducing-sidekick-app-extensions/26984",
+            "query": "Shopify app store terms of service sidekick extension",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Introducing Sidekick app extensions - Changelog - Shopify Developer Community Forums Shopify Developer Community Forums Introducing Sidekick app extensions Changelog Shoppy December 10, 2025, 3:30pm 1 Today, we're introducing Sidekick app extensions to give your app new ways to integrate your app with Sidekick , Shopify's AI-enabled commerce assistant. This is a companion discussion topic for the original entry at https://shopify.dev/changelog/introducing-sidekick-app-extensions Related topics Topic Replies Views Activity Horizon, Theme App Extensions & Sidekick Extensions theme-app-extension 5 257 June 12, 2025 Intents are not supported for Sidekick Extensions admin-ui-extensions 1 40 May 27, 2026 Sidekick App Data Extension Extensions admin-ui-extensions 4 169 December 19, 2025 New Sidekick App Extension shopify generate doesn't work Extensions theme-app-extension 1 126 December 10, 2025 Sidekick App Extensions - Live? Extensions admin-ui-extensions 3 139 May 8, 2026 Home Categories Guidelines Terms of Service Privacy Policy Powered by Discourse , best viewed with JavaScript enabled",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "规则变动影响谁",
+        "普通技术人的合规边界",
+        "平台红利和封号风险"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "Shopify 对 Sidekick 应用扩展提出 App Store 新要求 官方政策 规则 原文",
+        "Shopify 对 Sidekick 应用扩展提出 App Store 新要求 开发者公告 影响范围",
+        "Shopify 对 Sidekick 应用扩展提出 App Store 新要求 合规 风险 受影响用户"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}

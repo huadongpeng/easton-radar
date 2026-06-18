@@ -1,0 +1,2082 @@
+{
+  "id": "20260618-flow-automatic-charging-for-vaulted-payment-meth-1b8c1106",
+  "batch_id": "2026-06-18-morning",
+  "title": "Shopify Flow 新增自动扣款功能：支持 B2B 订单 vaulted 支付",
+  "original_title": "Flow: Automatic charging for vaulted payment methods",
+  "url": "https://changelog.shopify.com/posts/flow-automatic-charging-for-vaulted-payment-methods",
+  "summary": "The Charge vaulted payment for B2B order action charges a customer's vaulted credit card or debits a vaulted bank account for an order with payment terms when payment is due. Learn more about the Charge vaulted payment for B2B order Flow action in the Shopify Help Center .",
+  "source_category": "overseas_and_platforms",
+  "source_category_title": "出海、支付与平台",
+  "topic_direction": "tools-rules",
+  "topic_direction_title": "工具&规则",
+  "topic_direction_short_title": "工具&规则",
+  "topic_direction_description": "开发工具、AI 实操、API、云服务、自动化工作流、平台政策、账号规则、搜索流量和内容分发生态变化。重点记录工具或规则发生了什么变化。",
+  "source_name": "Shopify Changelog RSS",
+  "original_source_name": "Shopify Changelog RSS",
+  "source_type": "rss",
+  "feed_url": "https://changelog.shopify.com/feed",
+  "published_at": "2026-06-17T15:50:00+00:00",
+  "fetched_at": "2026-06-18T02:26:20.488518+00:00",
+  "decision": "brief",
+  "report_type": "platform-rules",
+  "report_type_title": "平台规则",
+  "score": 55,
+  "reader_hook": "B2B 自动扣款功能可能影响独立站收款流程和自动化",
+  "topic_tension": {
+    "score": 6,
+    "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+    "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "",
+    "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+  },
+  "persona_discussion_question": "小团队该不该继续把关键工作流押在这个平台规则上？",
+  "why_now": "Shopify 更新，B2B 自动扣款可减少人工操作",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "Shopify Flow 新增自动扣款动作，对 B2B 商家有实际价值，但属于平台功能更新",
+  "collection_fit": "tools-rules",
+  "investigation_direction": "查看具体使用条件和限制",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。"
+  ],
+  "facts": [
+    {
+      "claim": "Shopify Changelog RSS 发布/收录了这条原始线索：Flow: Automatic charging for vaulted payment methods",
+      "type": "confirmed_fact",
+      "source_url": "https://changelog.shopify.com/posts/flow-automatic-charging-for-vaulted-payment-methods",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Shopify Changelog RSS",
+      "url": "https://changelog.shopify.com/posts/flow-automatic-charging-for-vaulted-payment-methods",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "money": [
+        "payment"
+      ],
+      "platform": [
+        "shopify"
+      ]
+    },
+    "source_host": "changelog.shopify.com",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 6,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "B2B 自动扣款功能可能影响独立站收款流程和自动化",
+    "fit_for_radar": false
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://changelog.shopify.com/feed",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：官方帮助中心页面（vaulted-cards, vaulted-bank-accounts, payment-methods, capturing-payments, checkout-and-orders）全部返回403"
+    },
+    "core_question": "Shopify Flow 新增的 B2B 自动扣款功能是否真的能减少人工操作，还是可能带来新的账单风险和平台绑定？",
+    "why_this_topic_matters": "Shopify B2B 商家可自动化收款，减少人工催款，但可能隐藏额外费用、支付失败风险、客户纠纷和平台锁定。对使用 Shopify 的独立开发者和小团队有实际影响。",
+    "fact_summary": [
+      "Shopify Flow 新增 'Charge vaulted payment for B2B order' 动作，可自动扣款 vaulted 信用卡或借记银行账户。",
+      "该功能可基于 fulfillment、到期日或发票触发。",
+      "官方 changelog 发布于 2026 年 6 月 17 日。",
+      "vaulted 支付方式需商家先设置信用卡或银行账户 vaulting。",
+      "该功能属于 B2B 功能，可能仅限 Shopify Plus 或特定套餐。"
+    ],
+    "persona_discussion_question": "作为使用 Shopify B2B 的独立开发者或小团队，该不该启用这个自动扣款功能？会不会因为 vaulted 支付方式导致客户纠纷或额外手续费？",
+    "old_flower_stance": "平台自动化功能在降低操作成本的同时，可能将支付失败、退款、争议等风险转移给商家。小团队需评估自身应对 chargeback 和客户投诉的能力，不要盲目启用。",
+    "audience_fit": {
+      "primary_layer": "高价值商业读者",
+      "secondary_layers": [
+        "核心技术人",
+        "副业普通人"
+      ],
+      "interest_score": 55,
+      "why_interested": "B2B 商家关注自动化收款效率，技术人关注实现细节和风险，副业者关注是否值得投入。",
+      "reader_risk": "可能因缺乏真实案例和费用数据而显得空洞，导致读者认为内容不实用。"
+    },
+    "mass_interest_hook": {
+      "score": 40,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "标题如 'Shopify 自动扣款功能上线，B2B 商家小心账单陷阱' 可吸引对电商收款安全感兴趣的普通人。",
+      "story_seed": "一个 B2B 商家因自动扣款失败导致客户投诉，最终发现是 vaulted 卡过期未更新。",
+      "do_not_overhype": "不要夸大自动扣款的风险，避免制造不必要的恐慌。"
+    },
+    "topic_tension": {
+      "score": 5,
+      "conflict_point": "平台自动化便利 vs 商家风险转移",
+      "debate_question": "自动扣款功能是在帮助商家提效，还是将支付失败和争议的责任推给商家？",
+      "stakeholders": [
+        "Shopify",
+        "B2B 商家",
+        "客户（买家）",
+        "支付网关"
+      ],
+      "why_people_would_comment": "商家分享自动扣款的成功或失败经验，技术人讨论实现细节和替代方案。",
+      "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+    },
+    "timeline": [
+      "2026-06-17: Shopify Changelog 发布 Flow 自动扣款功能",
+      "2026-06-17: 同一 changelog 还提到 Spring '26 Edition 发布，包含 150+ 更新"
+    ],
+    "evidence_table": [
+      {
+        "source": "Shopify Changelog",
+        "url": "https://changelog.shopify.com/posts/flow-automatic-charging-for-vaulted-payment-methods",
+        "supports": "功能存在，支持自动扣款 vaulted 支付方式",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify Changelog (vaulted credit cards)",
+        "url": "https://changelog.shopify.com/posts/vaulted-credit-cards-for-b2b",
+        "supports": "vaulted 信用卡功能已存在",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify Help Center (vaulted cards)",
+        "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/vaulted-cards",
+        "supports": "官方文档，但 403 无法获取",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify Help Center (vaulted bank accounts)",
+        "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/vaulted-bank-accounts",
+        "supports": "官方文档，但 403 无法获取",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify Help Center (payment methods)",
+        "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/payment-methods",
+        "supports": "官方文档，但 403 无法获取",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify Help Center (capturing payments)",
+        "url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/payments/capturing-payments",
+        "supports": "通用支付捕获信息",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify Blog (tokenization)",
+        "url": "https://www.shopify.com/blog/payment-tokenization",
+        "supports": "支付 tokenization 安全说明",
+        "reliability": "official"
+      },
+      {
+        "source": "Interactone (Shopify Flow for B2B)",
+        "url": "https://interactone.com/news/shopify-flow-for-b2b/",
+        "supports": "第三方文章，提及 Flow 用于 B2B 自动化",
+        "reliability": "media"
+      },
+      {
+        "source": "Downpay (automatic payment collection)",
+        "url": "https://getdownpay.com/blog/payment-vaulting-how-to-use-automatic-payment-collection-for-deposits-on-shopify",
+        "supports": "第三方教程，涉及 vaulted 支付自动收款",
+        "reliability": "media"
+      },
+      {
+        "source": "PreProduct (authorization period)",
+        "url": "https://preproduct.io/understanding-shopify-authorization-periods-what-pre-order-merchants-need-to-know/",
+        "supports": "通用授权周期信息",
+        "reliability": "media"
+      },
+      {
+        "source": "Commerce UI (Shopify pricing)",
+        "url": "https://commerce-ui.com/insights/shopify-pricing",
+        "supports": "定价信息，但未涉及 vaulted 支付费用",
+        "reliability": "media"
+      },
+      {
+        "source": "BrokenRubik (Shopify Plus pricing)",
+        "url": "https://www.brokenrubik.com/blog/shopify-plus-pricing-guide",
+        "supports": "Shopify Plus 定价，可能包含 Flow 费用",
+        "reliability": "media"
+      },
+      {
+        "source": "Mavlers (recurring billing)",
+        "url": "https://www.mavlers.com/blog/shopify-recurring-billing/",
+        "supports": "通用 recurring billing 信息",
+        "reliability": "media"
+      },
+      {
+        "source": "Checkout Boost (security)",
+        "url": "https://checkoutboost.com/blogs/shopify-growth/how-secure-is-shopify-payments-an-enterprise-overview",
+        "supports": "Shopify Payments 安全概述",
+        "reliability": "media"
+      },
+      {
+        "source": "Shopify Enterprise (B2B success stories)",
+        "url": "https://www.shopify.com/enterprise/blog/b2b-ecommerce-companies",
+        "supports": "B2B 成功案例，但未涉及自动扣款",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "部分闭环。功能存在，但缺少费用、限制、真实反馈等关键信息，无法形成完整判断。",
+    "writeable_angles": [
+      {
+        "angle": "功能解读与风险分析",
+        "why": "帮助商家了解自动扣款的利弊，避免踩坑",
+        "needs": "官方文档、定价、用户反馈"
+      },
+      {
+        "angle": "与第三方自动收款工具对比",
+        "why": "提供替代方案，增加实用性",
+        "needs": "竞品信息、费用对比"
+      },
+      {
+        "angle": "B2B 商家实操指南",
+        "why": "手把手教商家设置自动扣款",
+        "needs": "详细步骤、截图、注意事项"
+      }
+    ],
+    "missing_basics": [
+      "该功能是否仅限 Shopify Plus？",
+      "是否支持第三方支付网关？",
+      "vaulted 支付的具体 tokenization 实现？",
+      "自动扣款失败的重试机制？",
+      "是否有额外费用？",
+      "是否支持部分付款或分期？"
+    ],
+    "missing_materials": [
+      "官方帮助中心页面全文（403）",
+      "Shopify 定价页面关于 Flow 和 vaulted 支付的费用",
+      "至少 2-3 个商家使用反馈（正面和负面）",
+      "PCI 合规详细说明",
+      "第三方支付网关兼容性列表"
+    ],
+    "not_claimable": [
+      "该功能能显著减少人工操作（需验证实际效果）",
+      "该功能无额外费用（需查定价）",
+      "该功能适用于所有 Shopify 套餐（需确认）",
+      "该功能安全无风险（需验证 PCI 合规）"
+    ],
+    "followup_queries": [
+      "Shopify Flow 自动扣款功能是否仅限 Shopify Plus？",
+      "Shopify Flow 自动扣款是否有额外费用？",
+      "Shopify vaulted 支付 tokenization 如何工作？",
+      "Shopify B2B 自动扣款失败重试机制是什么？",
+      "Shopify B2B 自动扣款支持哪些支付网关？"
+    ],
+    "additional_search_queries": [
+      "Shopify Flow pricing vaulted payment additional fees",
+      "Shopify B2B automatic charge vaulted payment experience Reddit",
+      "Shopify vaulted payment PCI compliance tokenization",
+      "Shopify Flow B2B automatic payment success story",
+      "Shopify Flow actions charge vaulted payment for B2B order"
+    ],
+    "stop_conditions": [
+      "官方文档明确说明费用和限制",
+      "找到至少 2 个真实商家反馈",
+      "确认 PCI 合规细节"
+    ],
+    "confidence": 55.0,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "platform-rules",
+    "quality_gate": {
+      "pass": false,
+      "score": 55,
+      "fatal_issues": [
+        "核心事实没有来源：官方帮助中心页面（vaulted-cards, vaulted-bank-accounts, payment-methods, capturing-payments, checkout-and-orders）全部返回403，无法获取关键文档。",
+        "成本估算没有公式、单位或边界：未提供任何费用信息，无法评估自动扣款的成本。",
+        "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象：读者分层中primary_layer为“高价值商业读者”，但secondary_layers包含“核心技术人”和“副业普通人”，层次模糊，未明确主要服务对象。",
+        "没有泛兴趣故事钩子，标题和开头只适合技术小圈子：标题“Shopify Flow 新增自动扣款功能：支持 B2B 订单 vaulted 支付”过于技术化，缺乏泛兴趣吸引力。",
+        "没有真实传播张力：冲突点“平台自动化便利 vs 商家风险转移”过于抽象，缺乏具体案例或数据支撑，读者评论动力不足。",
+        "没有明确归入实际选题方向，或者选题方向和内容不匹配：选题方向为“工具&规则”，但内容偏向功能解读，缺乏规则层面的深入分析。",
+        "没有明确选题结论：推荐或可选：verdict中status为“可选选题”，但未明确是否推荐。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写：reason中仅说“方向有价值，但证据缺口较大”，未充分解释选题价值。",
+        "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断：内容模板化，缺乏针对该功能的具体分析和判断。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：事实摘要中部分内容（如“该功能属于B2B功能，可能仅限Shopify Plus或特定套餐”）缺乏证据，逻辑未闭环。",
+        "没有列出基础概念缺口和资料素材缺口：missing_basics和missing_materials已列出，但未在fatal_issues中体现。",
+        "没有按具体类型提供资料包：资料包不完整，缺少费用、用户反馈等关键材料。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来：证据中官方来源占多数，但多个官方文档无法访问，第三方来源质量参差不齐，未在统计中说明。"
+      ],
+      "warnings": [
+        "读者钩子（reader_hook）过于平淡，缺乏吸引力。",
+        "传播张力评分（5分）偏低，需要补充真实冲突和反方材料。",
+        "证据缺口较大，多个关键官方文档无法获取。"
+      ],
+      "missing_evidence": [
+        "官方帮助中心页面全文（403）",
+        "Shopify 定价页面关于 Flow 和 vaulted 支付的费用",
+        "至少 2-3 个商家使用反馈（正面和负面）",
+        "PCI 合规详细说明",
+        "第三方支付网关兼容性列表"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": false,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "Shopify Flow 新增的 B2B 自动扣款功能是否真的能减少人工操作，还是可能带来新的账单风险和平台绑定？",
+      "persona_discussion_question": "作为使用 Shopify B2B 的独立开发者或小团队，该不该启用这个自动扣款功能？会不会因为 vaulted 支付方式导致客户纠纷或额外手续费？",
+      "hidden_public_issue": "平台自动化功能在降低操作成本的同时，是否将支付失败、退款、争议等风险转移给了商家？小团队是否有能力应对自动扣款带来的客户投诉和 chargeback？",
+      "must_verify": [
+        "该功能是否仅适用于 Shopify Payments 还是支持第三方支付网关？",
+        "vaulted 支付方式的具体实现：是 token 化存储还是敏感信息留存？是否符合 PCI DSS？",
+        "自动扣款失败后的重试机制和通知流程是什么？",
+        "是否有额外费用（如每笔交易手续费、vault 存储费）？",
+        "B2B 订单的支付条款（如 net 30）下，自动扣款是否支持部分付款或分期？",
+        "该功能是否对 Shopify Plus 或特定套餐有限制？",
+        "是否有商家实际使用案例或反馈（正面/负面）？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Shopify Flow automatic charging vaulted payment B2B documentation",
+          "why_needed": "获取官方详细说明，包括支持条件、限制和费用"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "Shopify Flow pricing vaulted payment additional fees",
+          "why_needed": "确认是否有隐藏费用，如 vault 存储费或交易手续费"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Shopify B2B automatic charge vaulted payment experience Reddit",
+          "why_needed": "获取真实商家使用反馈，包括问题、投诉和最佳实践"
+        },
+        {
+          "source_type": "policy",
+          "query": "Shopify vaulted payment PCI compliance tokenization",
+          "why_needed": "验证支付安全合规性，避免数据泄露风险"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Shopify Flow B2B automatic payment success story",
+          "why_needed": "寻找成功案例，评估实际效果和 ROI"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Shopify Flow actions charge vaulted payment for B2B order",
+          "why_needed": "直接查看帮助中心页面，确认操作细节和限制"
+        }
+      ],
+      "expert_challenge_points": [
+        "自动扣款是否支持多种支付方式（信用卡、ACH）？ACH 扣款失败率如何？",
+        "如果客户对扣款有争议，Shopify 的争议解决流程是否对商家有利？",
+        "该功能是否与 Shopify 的 B2B 批发功能深度集成？是否支持自定义支付条款？",
+        "对于国际 B2B 交易，自动扣款是否支持多币种和跨境支付？"
+      ],
+      "do_not_claim_yet": [
+        "该功能能显著减少人工操作（需验证实际效果和潜在问题）",
+        "该功能无额外费用（需查定价页面）",
+        "该功能适用于所有 Shopify 套餐（需确认套餐限制）",
+        "该功能安全无风险（需验证 PCI 合规和 tokenization 细节）"
+      ],
+      "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。因为该主题过于狭窄，仅针对 Shopify B2B 商家，且属于平台功能更新，缺乏普通技术人的真实选择题和利益冲突。",
+      "downstream_materials_needed": [
+        "Shopify Flow 自动扣款功能的官方帮助中心页面截图或全文",
+        "Shopify 定价页面关于 Flow 和支付处理的费用说明",
+        "至少 2-3 个商家使用该功能的真实反馈（正面和负面）",
+        "PCI 合规相关文档或声明",
+        "与第三方支付网关兼容性的官方说明"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Flow: Automatic charging for vaulted payment methods - Shopify Changelog",
+        "url": "https://documentation-changelog.shopifysvc.com/posts/flow-automatic-charging-for-vaulted-payment-methods",
+        "query": "Shopify Flow automatic charging vaulted payment B2B documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Flow: Automatic charging for vaulted payment methods - Shopify Changelog document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js') 0,'js-has-hint': !state.error && state.hint}\" class=\"marketing-input-wrapper\"> Email address Create your store Skip to Content Shopify Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started Open Main Navigation Home Close Main Navigation Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started About Careers Press and Media Enterprise Sitemap Opens in a new window Opens an external site Opens an external site in a new window Changelog What’s new in Shopify Back to Changelog June 17, 2026 Flow: Automatic charging for vaulted payment methods The Charge vaulted payment for B2B order action charges a customer's vaulted credit card or debits a vaulted bank account for an order with payment terms when payment is due. Learn more about the Charge vaulted payment for B2B order Flow action in the Shopify Help Center . New B2B More resources About Careers Press and Media Enterprise Sitemap Online store Sell online Features Examples Webs",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Help Center | Setting up credit card vaulting for B2B",
+        "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/vaulted-cards",
+        "query": "Shopify Flow automatic charging vaulted payment B2B documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Shopify Help Center | Setting up payment methods for your B2B business",
+        "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/payment-methods",
+        "query": "Shopify Flow automatic charging vaulted payment B2B documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Shopify Authorization Period: Complete Guide for Pre-orders",
+        "url": "https://preproduct.io/understanding-shopify-authorization-periods-what-pre-order-merchants-need-to-know/",
+        "query": "Shopify Flow pricing vaulted payment additional fees",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Shopify Authorization Period: Complete Guide for Pre-orders {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://preproduct.io/#organization\",\"name\":\"PreProduct\",\"url\":\"https://preproduct.io\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://preproduct.io/#logo\",\"url\":\"http://preproduct.io/wp-content/uploads/2025/11/Preproduct_icon.png\",\"contentUrl\":\"http://preproduct.io/wp-content/uploads/2025/11/Preproduct_icon.png\",\"caption\":\"PreProduct\",\"inLanguage\":\"en-US\",\"width\":\"56\",\"height\":\"60\"}},{\"@type\":\"WebSite\",\"@id\":\"https://preproduct.io/#website\",\"url\":\"https://preproduct.io\",\"name\":\"PreProduct\",\"publisher\":{\"@id\":\"https://preproduct.io/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://preproduct.io/wp-content/uploads/2025/11/checkout-4-w-prop.png\",\"url\":\"https://preproduct.io/wp-content/uploads/2025/11/checkout-4-w-prop.png\",\"width\":\"1536\",\"height\":\"640\",\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https://preproduct.io/understanding-shopify-authorization-periods-what-pre-order-merchants-need-to-know/#webpage\",\"url\":\"https://preproduct.io/understanding-shopify-authorization-periods-what-pre-order-merchants-need-to-know/\",\"name\":\"Shopify Authorization Period: Complete Guide for Pre-orders\",\"datePublished\":\"2025-11-05T04:11:00+00:00\",\"dateModified\":\"2026-01-14T04:18:01+00:00\",\"isPartOf\":{\"@id\":\"https://preproduct.io/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://preproduct.io/wp-content/uploads/2025/11/checkout-4-w-prop.png\"},\"inLanguage\":\"en-US\"},{\"@type\":\"Person\",\"@id\":\"https://preproduct.io/author/admin/\",\"name\":\"admin\",\"url\":\"https://preproduct.io/author/admin/\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://secure.gravatar.com/avatar/8de3238e7c975095691494a824bfff86bc603da8b702050c47d3e14eee4fbde3?s=96&d=mm&r=g\",\"",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Pricing (2026): Plans, Fees & Real Cost Breakdown",
+        "url": "https://commerce-ui.com/insights/shopify-pricing",
+        "query": "Shopify Flow pricing vaulted payment additional fees",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Shopify Pricing (2026): Plans, Fees & Real Cost Breakdown --sxs{--sxs:0 t-cFTtYt}@media{:root,.t-cFTtYt{--colors-gray50:#f2f2f2;--colors-gray100:#ececec;--colors-gray200:#dadada;--colors-gray300:#919090;--colors-gray400:#6c6b6b;--colors-gray500:#474646;--colors-gray500_01:rgba(71, 70, 70, 0.1);--colors-gray500_02:rgba(71, 70, 70, 0.2);--colors-gray500_03:rgba(71, 70, 70, 0.3);--colors-gray500_04:rgba(71, 70, 70, 0.4);--colors-gray500_06:rgba(71, 70, 70, 0.6);--colors-gray500_08:rgba(71, 70, 70, 0.8);--colors-gray600:#2B2B2B;--colors-white_005:rgba(255, 255, 255, 0.05);--colors-white_01:rgba(255, 255, 255, 0.1);--colors-white_02:rgba(255, 255, 255, 0.2);--colors-white_024:rgba(255, 255, 255, 0.24);--colors-white_03:rgba(255, 255, 255, 0.3);--colors-white_04:rgba(255, 255, 255, 0.4);--colors-white_05:rgba(255, 255, 255, 0.5);--colors-white_06:rgba(255, 255, 255, 0.6);--colors-white_07:rgba(255, 255, 255, 0.7);--colors-white_08:rgba(255, 255, 255, 0.8);--colors-white_085:rgba(255, 255, 255, 0.85);--colors-white:#FFFFFF;--colors-black:#000;--colors-black_005:rgba(0,0,0,0.05);--colors-black_01:rgba(0,0,0,0.1);--colors-black_02:rgba(0,0,0,0.2);--colors-black_03:rgba(0,0,0,0.3);--colors-black_05:rgba(0,0,0,0.5);--colors-black_06:rgba(0,0,0,0.6);--colors-black_08:rgba(0,0,0,0.8);--colors-focusBlue:rgba(0,113,227,0.5);--colors-errorRed:rgba(248, 46, 71, 1);--colors-successGreen:#1BC651;--colors-socialsGray:#F2F2F2;--colors-darkThemeBackground:#121212;--colors-techstackCardsBackground:#212121;--colors-techstackLinkBlockBackground:#1B1B1B;--colors-aboutPageBackground:#121212;--colors-hydrogenPageBackground:#121212;--colors-textPrimaryBlack:#121212;--radii-r1:1px;--radii-r2:10px;--radii-r3:24px;--radii-r3_mobile:16px;--radii-rMax:9999px;--radii-rBoxes:20px;--space-0:0px;--space-4:4",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Plus Pricing 2026: Real Cost Beyond $2,300/mo",
+        "url": "https://www.brokenrubik.com/blog/shopify-plus-pricing-guide",
+        "query": "Shopify Flow pricing vaulted payment additional fees",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Shopify Plus Pricing 2026: Real Cost Beyond $2,300/mo {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"@id\":\"https://www.brokenrubik.com/#organization\",\"name\":\"BrokenRubik\",\"url\":\"https://www.brokenrubik.com\",\"logo\":\"https://www.brokenrubik.com/logo.png\",\"description\":\"NetSuite development partner specializing in ERP implementation, SuiteCommerce, custom SuiteScript development, and integrations.\",\"sameAs\":[\"https://www.linkedin.com/company/broken-rubik\",\"https://github.com/BrokenRubik\",\"https://x.com/brokenrubik\"],\"contactPoint\":{\"@type\":\"ContactPoint\",\"email\":\"hello@brokenrubik.co\",\"contactType\":\"customer service\"}} {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"@id\":\"https://www.brokenrubik.com/#website\",\"name\":\"BrokenRubik\",\"url\":\"https://www.brokenrubik.com\",\"description\":\"NetSuite development partner specializing in ERP implementation, SuiteCommerce, custom development, and integrations.\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"BrokenRubik\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://www.brokenrubik.com/logo.png\"}},\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.brokenrubik.com/search?q={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}} (({protect:a})=>{function b(a){return new Promise((b,c)=>{if(document.querySelector(`script[src=\"${a}\"]`))return void b();let d=document.createElement(\"script\");d.src=a,d.async=!0,d.onload=()=>b(),d.onerror=a=>{console.error(\"Error loading script\",a),c(a)},document.head.appendChild(d)})}var c=class a{#a;#b;#c=0;constructor(){let{promise:b,resolve:c}=a.#d();this.#a=b,this.#b=c,this.#e(),window.addEventListener(\"online\",this.#f),window.addEventListener(\"visibilitychange\",this.#f)}getChallenge=async()=>(await this.#g(),await this.#a.then(a=>\"f",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/shopify on Reddit: Shopify B2B Now on Non-Plus Plans",
+        "url": "https://www.reddit.com/r/shopify/comments/1sbi6sq/shopify_b2b_now_on_nonplus_plans/",
+        "query": "Shopify B2B automatic charge vaulted payment experience Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "How to use automatic payment collection for deposits on Shopify | Downpay",
+        "url": "https://getdownpay.com/blog/payment-vaulting-how-to-use-automatic-payment-collection-for-deposits-on-shopify",
+        "query": "Shopify B2B automatic charge vaulted payment experience Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Automatic balance collection for Shopify deposits | Downpay 11 proven deposit strategies used by high-AOV Shopify brands. Download the free playbook → window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XYLJH6EWJM'); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5P6JPWW2'); !function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement(\"script\");t.src=\"https://www.redditstatic.com/ads/pixel.js?pixel_id=a2_izppgnz1uh5h\",t.async=!0;var s=d.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(t,s)}}(window,document);rdt('init','a2_izppgnz1uh5h');rdt('track', 'PageVisit'); !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1309228547845036'); fbq('track', 'PageView'); Features Use Cases Industries Resources Pricing Why Downpay BOOK A DEMO TRY FREE Back to Blog Card on file: How to use automatic payment collection for deposits on Shopify For years, Shopify’s buying experience was optimized for “buy now, pay now.” Businesses who had inherent build times or shipping delays for their",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Help Center | Setting up bank account vaulting for B2B",
+        "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/vaulted-bank-accounts",
+        "query": "Shopify B2B automatic charge vaulted payment experience Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Payment Gateway Tokenization: What It Is and How it Works (2026) - Shopify",
+        "url": "https://www.shopify.com/blog/payment-tokenization",
+        "query": "Shopify vaulted payment PCI compliance tokenization",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(()=>{try{if(typeof MutationObserver>\"u\")return;const r=20,f=120,s={injectedElements:[],removedElements:[],attributesChanged:[]},c=t=>t?t.length>f?`${t.slice(0,f)}...`:t:\"\",N=[\"cdn.shopify.com\",\"shopify.com\",\"shopifycloud\"],b=t=>t?N.some(e=>t.includes(e)):!1,m=t=>{const e=t.nodeName;if(!e||e===\"#text\"||e===\"#comment\")return null;const n=t.id?`#${t.id}`:\"\";let o=\"\";if(t.className&&typeof t.className==\"string\"){const p=t.className.trim().split(/\\s+/).slice(0,2).join(\".\");p&&(o=`.${p}`)}const u=t.getAttribute?.(\"src\"),l=t.getAttribute?.(\"href\"),g=t.getAttribute?.(\"type\"),i=[];u?i.push(`src=${c(u)}`):l&&i.push(`href=${c(l)}`),g&&i.push(`type=${g}`);const E=i.length>0?`[${i.join(\",\")}]`:\"\",A=u||l||\"\";return{desc:[e,n,o,E].filter(Boolean).join(\"\"),internal:b(A)}},d=t=>{const{target:e}=t,n=e.nodeName||\"\";return e.id?`${n}#${e.id}`:n},y=t=>{for(const e of t.addedNodes){const n=m(e);!n||n.internal||s.injectedElements.length ${d(t)}`)}},$=t=>{for(const e of t.removedNodes){const n=m(e);!n||n.internal||s.removedElements.length {const e=d(t),n=t.target.getAttribute?.(t.attributeName)||\"\",o=`${e}.${t.attributeName}=${c(n)}`;s.attributesChanged.length {for(const e of t){const n=e.type===\"childList\",o=e.type===\"attributes\";if(n){y(e),$(e);continue}o&&v(e)}}),a=()=>{h.observe(document.documentElement,{childList:!0,subtree:!0,attributes:!0})};document.readyState===\"loading\"?document.addEventListener(\"DOMContentLoaded\",a):a(),window.__preHydrationData=s,window.__stopPreHydrationMonitor=()=>{h.disconnect(),document.removeEventListener(\"DOMContentLoaded\",a),delete window.__preHydrationData,delete window.__stopPreHydrationMonitor}}catch{}})(); Payment Gateway Tokenization: What It Is and How it Works (2026) - Shopify window.__brochureDuxConfig={\"eventHandlerEndpoint\":\"/.well-known/dux?v2&_p",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Recurring Billing in 2026: The Complete No-Code Setup Guide",
+        "url": "https://www.mavlers.com/blog/shopify-recurring-billing/",
+        "query": "Shopify vaulted payment PCI compliance tokenization",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Shopify Recurring Billing in 2026: The Complete No-Code Setup Guide From web development to digital marketing, we build for growth. Head to Mavlers Agency. Services Lifecycle marketing Customer data management Email campaign production Search marketing CMS development About us Who we are How we work Clients Case studies Testimonials Work samples Latest How Acima scaled SFMC success with a dedicated team from Mavlers Go to case study Platforms Marketing Salesforce Marketing Cloud Braze HubSpot Marketo Pardot Data DataBricks Snowflake HighTouch RudderStack Segment by Twilio Resources Blog Ebooks Videos Featured Ebook Retail CRM & lifecycle marketing benchmark report 2026 Go to ebook Book a call Services Services Lifecycle marketing Customer data management Email campaign production Search marketing CMS development About us About us Who we are How we work We are rated 4.9 out of 5 123+ Clutch reviews We are rated 4.9 out of 5 191+ GoodFirms reviews Clients Clients Case studies Testimonials Work samples Latest How Acima scaled SFMC success with a dedicated team from Mavlers Go to case study Platforms Platforms Marketing Salesforce Marketing Cloud Braze HubSpot Marketo Pardot Data DataBricks Snowflake HighTouch RudderStack Segment by Twilio Resources Resources Blog Ebooks Videos Featured Ebook Retail CRM & lifecycle marketing benchmark report 2026 Go to ebook Book a call {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https://www.mavlers.com/blog/shopify-recurring-billing/#article\",\"isPartOf\":{\"@id\":\"https://www.mavlers.com/blog/shopify-recurring-billing/\"},\"author\":[{\"@type\":\"Person\",\"name\":\"Rahul Kaushal - Reviewer\",\"description\":\"Rahul is a web technology expert and web operations manager with a strong background in digital strategy and client relatio",
+        "fetch_error": ""
+      },
+      {
+        "title": "How Secure is Shopify Payments? An Enterprise Overview | Checkout Boost",
+        "url": "https://checkoutboost.com/blogs/shopify-growth/how-secure-is-shopify-payments-an-enterprise-overview",
+        "query": "Shopify vaulted payment PCI compliance tokenization",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "const LCPobserver = new PerformanceObserver((list) => { const entries = list.getEntries(); const lastEntry = entries[entries.length - 1]; // Use the latest LCP candidate }); LCPobserver.observe({ type: \"largest-contentful-paint\", buffered: true }); window.observerSpeed = new MutationObserver((elements) => { elements.forEach(({ addedNodes: nodes }) => { nodes.forEach((e) => { if(e.nodeType == 1 && e.tagName == 'SCRIPT'){ let sourceAttr = e.getAttribute('data-source-attribution'); if(e.src.includes(\"cdn.shopify.com/extensions\")){ console.log(e.src) e.setAttribute(\"data-src\", e.src); e.removeAttribute(\"src\"); }else if(e.src.includes(\"storefront/bars/preview_bar_injector\") || e.innerText.includes(\"new Shopify.PreviewBarInjector\")){ e.parentNode.removeChild(e); } }; }); }); }); observerSpeed.observe(document.head, { childList: !0, subtree: !0 }); How Secure is Shopify Payments? An Enterprise Overview | Checkout Boost window.dataLayer = window.dataLayer || []; window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'}); window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.start'); {\"accessToken\":\"40044a96ec4a73ba97976732531e940a\",\"betas\":[\"rich-media-storefront-analytics\"],\"domain\":\"checkoutboost.com\",\"predictiveSearch\":true,\"shopId\":87117463866,\"locale\":\"en\"} var Shopify = Shopify || {}; Shopify.shop = \"thecheckoutio.myshopify.com\"; Shopify.locale = \"en\"; Shopify.currency = {\"active\":\"INR\",\"rate\":\"1.0\"}; Shopify.country = \"IN\"; Shopify.theme = {\"name\":\"Checkout-Boost\\/main\",\"id\":182772629818,\"schema_name\":\"Fluid Framework\",\"schema_version\":\"3.0.0\",\"theme_store_id\":null,\"role\":\"main\"}; Shopify.theme.handle = \"null\"; Shopify.theme.style = {\"id\":null,\"handle\":null}; Shopify.cdnHost = \"checkoutboost.com/cdn\"; Shopif",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Help Center | Capturing payments for your orders",
+        "url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/payments/capturing-payments",
+        "query": "Shopify Flow B2B automatic payment success story",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Shopify Flow for B2B: Automate and Scale Smarter on the Shopify Platform",
+        "url": "https://interactone.com/news/shopify-flow-for-b2b/",
+        "query": "Shopify Flow B2B automatic payment success story",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "document.documentElement.className = 'js'; /* ---------------------------------------------------------------------------------------------------- IMPORTANT! The code below requires a developer to install and setup. Please do not simply copy/paste this onto your website. ---------------------------------------------------------------------------------------------------- */ // Initiate Web Behaviour Tracking (this section MUST come prior any other dmPt calls) // Do not change this (function(w,d,u,t,o,c){w['dmtrackingobjectname']=o;c=d.createElement(t);c.async=1;c.src=u;t=d.getElementsByTagName (t)[0];t.parentNode.insertBefore(c,t);w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments);}; })(window, document, '//static.trackedweb.net/js/_dmptv4.js', 'script', 'dmPt'); window.dmPt('create', 'DM-187453-02', 'www.interactone.com'); window.dmPt('track'); // window.dmPt(\"identify\", \"test@test.com\"); // Hardcoded example, inject contact email address. /* Original: https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,latin-ext&display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: ital",
+        "fetch_error": ""
+      },
+      {
+        "title": "10 B2B Success Stories to Inspire Your Own Ecommerce Brand (2025) - Shopify",
+        "url": "https://www.shopify.com/enterprise/blog/b2b-ecommerce-companies",
+        "query": "Shopify Flow B2B automatic payment success story",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(()=>{try{if(typeof MutationObserver>\"u\")return;const r=20,f=120,s={injectedElements:[],removedElements:[],attributesChanged:[]},c=t=>t?t.length>f?`${t.slice(0,f)}...`:t:\"\",N=[\"cdn.shopify.com\",\"shopify.com\",\"shopifycloud\"],b=t=>t?N.some(e=>t.includes(e)):!1,m=t=>{const e=t.nodeName;if(!e||e===\"#text\"||e===\"#comment\")return null;const n=t.id?`#${t.id}`:\"\";let o=\"\";if(t.className&&typeof t.className==\"string\"){const p=t.className.trim().split(/\\s+/).slice(0,2).join(\".\");p&&(o=`.${p}`)}const u=t.getAttribute?.(\"src\"),l=t.getAttribute?.(\"href\"),g=t.getAttribute?.(\"type\"),i=[];u?i.push(`src=${c(u)}`):l&&i.push(`href=${c(l)}`),g&&i.push(`type=${g}`);const E=i.length>0?`[${i.join(\",\")}]`:\"\",A=u||l||\"\";return{desc:[e,n,o,E].filter(Boolean).join(\"\"),internal:b(A)}},d=t=>{const{target:e}=t,n=e.nodeName||\"\";return e.id?`${n}#${e.id}`:n},y=t=>{for(const e of t.addedNodes){const n=m(e);!n||n.internal||s.injectedElements.length ${d(t)}`)}},$=t=>{for(const e of t.removedNodes){const n=m(e);!n||n.internal||s.removedElements.length {const e=d(t),n=t.target.getAttribute?.(t.attributeName)||\"\",o=`${e}.${t.attributeName}=${c(n)}`;s.attributesChanged.length {for(const e of t){const n=e.type===\"childList\",o=e.type===\"attributes\";if(n){y(e),$(e);continue}o&&v(e)}}),a=()=>{h.observe(document.documentElement,{childList:!0,subtree:!0,attributes:!0})};document.readyState===\"loading\"?document.addEventListener(\"DOMContentLoaded\",a):a(),window.__preHydrationData=s,window.__stopPreHydrationMonitor=()=>{h.disconnect(),document.removeEventListener(\"DOMContentLoaded\",a),delete window.__preHydrationData,delete window.__stopPreHydrationMonitor}}catch{}})(); 10 B2B Success Stories to Inspire Your Own Ecommerce Brand (2025) - Shopify window.__brochureDuxConfig={\"eventHandlerEndpoint\":\"/.well-known/dux?v2&_",
+        "fetch_error": ""
+      },
+      {
+        "title": "Vaulted credit cards for B2B - Shopify Changelog",
+        "url": "https://changelog.shopify.com/posts/vaulted-credit-cards-for-b2b",
+        "query": "Shopify Flow actions charge vaulted payment for B2B order",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Shopify Changelog document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js') 0,'js-has-hint': !state.error && state.hint}\" class=\"marketing-input-wrapper\"> Email address Create your store Skip to Content Shopify Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started Open Main Navigation Home Close Main Navigation Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started About Careers Press and Media Enterprise Sitemap Opens in a new window Opens an external site Opens an external site in a new window Changelog What’s new in Shopify No posts found June 17 Updated disclosure for subscription purchases on Checkout Effective June 22, 2026, the default disclosure for subscription products shown at checkout will be updated. Changed Admin June 17 The Spring '26 Edition is live Announcing 150+ updates to Shopify. Improvement Admin June 17 Flow: Automatic charging for vaulted payment methods B2B merchants can now automatically charge vaulted payment methods using a new Flow action triggered by fulfillment, due dates, or invoicing. New B2B June 17 Online Store Edit",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Help Center | Checkout, orders, and draft orders in B2B",
+        "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders",
+        "query": "Shopify Flow actions charge vaulted payment for B2B order",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：官方帮助中心页面（vaulted-cards, vaulted-bank-accounts, payment-methods, capturing-payments, checkout-and-orders）全部返回403"
+    },
+    "core_question": "Shopify Flow 新增的 B2B 自动扣款功能是否真的能减少人工操作，还是可能带来新的账单风险和平台绑定？",
+    "why_this_topic_matters": "Shopify B2B 商家可自动化收款，减少人工催款，但可能隐藏额外费用、支付失败风险、客户纠纷和平台锁定。对使用 Shopify 的独立开发者和小团队有实际影响。",
+    "fact_summary": [
+      "Shopify Flow 新增 'Charge vaulted payment for B2B order' 动作，可自动扣款 vaulted 信用卡或借记银行账户。",
+      "该功能可基于 fulfillment、到期日或发票触发。",
+      "官方 changelog 发布于 2026 年 6 月 17 日。",
+      "vaulted 支付方式需商家先设置信用卡或银行账户 vaulting。",
+      "该功能属于 B2B 功能，可能仅限 Shopify Plus 或特定套餐。"
+    ],
+    "persona_discussion_question": "作为使用 Shopify B2B 的独立开发者或小团队，该不该启用这个自动扣款功能？会不会因为 vaulted 支付方式导致客户纠纷或额外手续费？",
+    "old_flower_stance": "平台自动化功能在降低操作成本的同时，可能将支付失败、退款、争议等风险转移给商家。小团队需评估自身应对 chargeback 和客户投诉的能力，不要盲目启用。",
+    "audience_fit": {
+      "primary_layer": "高价值商业读者",
+      "secondary_layers": [
+        "核心技术人",
+        "副业普通人"
+      ],
+      "interest_score": 55,
+      "why_interested": "B2B 商家关注自动化收款效率，技术人关注实现细节和风险，副业者关注是否值得投入。",
+      "reader_risk": "可能因缺乏真实案例和费用数据而显得空洞，导致读者认为内容不实用。"
+    },
+    "mass_interest_hook": {
+      "score": 40,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "标题如 'Shopify 自动扣款功能上线，B2B 商家小心账单陷阱' 可吸引对电商收款安全感兴趣的普通人。",
+      "story_seed": "一个 B2B 商家因自动扣款失败导致客户投诉，最终发现是 vaulted 卡过期未更新。",
+      "do_not_overhype": "不要夸大自动扣款的风险，避免制造不必要的恐慌。"
+    },
+    "topic_tension": {
+      "score": 5,
+      "conflict_point": "平台自动化便利 vs 商家风险转移",
+      "debate_question": "自动扣款功能是在帮助商家提效，还是将支付失败和争议的责任推给商家？",
+      "stakeholders": [
+        "Shopify",
+        "B2B 商家",
+        "客户（买家）",
+        "支付网关"
+      ],
+      "why_people_would_comment": "商家分享自动扣款的成功或失败经验，技术人讨论实现细节和替代方案。",
+      "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+    },
+    "timeline": [
+      "2026-06-17: Shopify Changelog 发布 Flow 自动扣款功能",
+      "2026-06-17: 同一 changelog 还提到 Spring '26 Edition 发布，包含 150+ 更新"
+    ],
+    "evidence_table": [
+      {
+        "source": "Shopify Changelog",
+        "url": "https://changelog.shopify.com/posts/flow-automatic-charging-for-vaulted-payment-methods",
+        "supports": "功能存在，支持自动扣款 vaulted 支付方式",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify Changelog (vaulted credit cards)",
+        "url": "https://changelog.shopify.com/posts/vaulted-credit-cards-for-b2b",
+        "supports": "vaulted 信用卡功能已存在",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify Help Center (vaulted cards)",
+        "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/vaulted-cards",
+        "supports": "官方文档，但 403 无法获取",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify Help Center (vaulted bank accounts)",
+        "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/vaulted-bank-accounts",
+        "supports": "官方文档，但 403 无法获取",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify Help Center (payment methods)",
+        "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/payment-methods",
+        "supports": "官方文档，但 403 无法获取",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify Help Center (capturing payments)",
+        "url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/payments/capturing-payments",
+        "supports": "通用支付捕获信息",
+        "reliability": "official"
+      },
+      {
+        "source": "Shopify Blog (tokenization)",
+        "url": "https://www.shopify.com/blog/payment-tokenization",
+        "supports": "支付 tokenization 安全说明",
+        "reliability": "official"
+      },
+      {
+        "source": "Interactone (Shopify Flow for B2B)",
+        "url": "https://interactone.com/news/shopify-flow-for-b2b/",
+        "supports": "第三方文章，提及 Flow 用于 B2B 自动化",
+        "reliability": "media"
+      },
+      {
+        "source": "Downpay (automatic payment collection)",
+        "url": "https://getdownpay.com/blog/payment-vaulting-how-to-use-automatic-payment-collection-for-deposits-on-shopify",
+        "supports": "第三方教程，涉及 vaulted 支付自动收款",
+        "reliability": "media"
+      },
+      {
+        "source": "PreProduct (authorization period)",
+        "url": "https://preproduct.io/understanding-shopify-authorization-periods-what-pre-order-merchants-need-to-know/",
+        "supports": "通用授权周期信息",
+        "reliability": "media"
+      },
+      {
+        "source": "Commerce UI (Shopify pricing)",
+        "url": "https://commerce-ui.com/insights/shopify-pricing",
+        "supports": "定价信息，但未涉及 vaulted 支付费用",
+        "reliability": "media"
+      },
+      {
+        "source": "BrokenRubik (Shopify Plus pricing)",
+        "url": "https://www.brokenrubik.com/blog/shopify-plus-pricing-guide",
+        "supports": "Shopify Plus 定价，可能包含 Flow 费用",
+        "reliability": "media"
+      },
+      {
+        "source": "Mavlers (recurring billing)",
+        "url": "https://www.mavlers.com/blog/shopify-recurring-billing/",
+        "supports": "通用 recurring billing 信息",
+        "reliability": "media"
+      },
+      {
+        "source": "Checkout Boost (security)",
+        "url": "https://checkoutboost.com/blogs/shopify-growth/how-secure-is-shopify-payments-an-enterprise-overview",
+        "supports": "Shopify Payments 安全概述",
+        "reliability": "media"
+      },
+      {
+        "source": "Shopify Enterprise (B2B success stories)",
+        "url": "https://www.shopify.com/enterprise/blog/b2b-ecommerce-companies",
+        "supports": "B2B 成功案例，但未涉及自动扣款",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "部分闭环。功能存在，但缺少费用、限制、真实反馈等关键信息，无法形成完整判断。",
+    "writeable_angles": [
+      {
+        "angle": "功能解读与风险分析",
+        "why": "帮助商家了解自动扣款的利弊，避免踩坑",
+        "needs": "官方文档、定价、用户反馈"
+      },
+      {
+        "angle": "与第三方自动收款工具对比",
+        "why": "提供替代方案，增加实用性",
+        "needs": "竞品信息、费用对比"
+      },
+      {
+        "angle": "B2B 商家实操指南",
+        "why": "手把手教商家设置自动扣款",
+        "needs": "详细步骤、截图、注意事项"
+      }
+    ],
+    "missing_basics": [
+      "该功能是否仅限 Shopify Plus？",
+      "是否支持第三方支付网关？",
+      "vaulted 支付的具体 tokenization 实现？",
+      "自动扣款失败的重试机制？",
+      "是否有额外费用？",
+      "是否支持部分付款或分期？"
+    ],
+    "missing_materials": [
+      "官方帮助中心页面全文（403）",
+      "Shopify 定价页面关于 Flow 和 vaulted 支付的费用",
+      "至少 2-3 个商家使用反馈（正面和负面）",
+      "PCI 合规详细说明",
+      "第三方支付网关兼容性列表"
+    ],
+    "not_claimable": [
+      "该功能能显著减少人工操作（需验证实际效果）",
+      "该功能无额外费用（需查定价）",
+      "该功能适用于所有 Shopify 套餐（需确认）",
+      "该功能安全无风险（需验证 PCI 合规）"
+    ],
+    "followup_queries": [
+      "Shopify Flow 自动扣款功能是否仅限 Shopify Plus？",
+      "Shopify Flow 自动扣款是否有额外费用？",
+      "Shopify vaulted 支付 tokenization 如何工作？",
+      "Shopify B2B 自动扣款失败重试机制是什么？",
+      "Shopify B2B 自动扣款支持哪些支付网关？"
+    ],
+    "additional_search_queries": [
+      "Shopify Flow pricing vaulted payment additional fees",
+      "Shopify B2B automatic charge vaulted payment experience Reddit",
+      "Shopify vaulted payment PCI compliance tokenization",
+      "Shopify Flow B2B automatic payment success story",
+      "Shopify Flow actions charge vaulted payment for B2B order"
+    ],
+    "stop_conditions": [
+      "官方文档明确说明费用和限制",
+      "找到至少 2 个真实商家反馈",
+      "确认 PCI 合规细节"
+    ],
+    "confidence": 55.0,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "platform-rules",
+    "quality_gate": {
+      "pass": false,
+      "score": 55,
+      "fatal_issues": [
+        "核心事实没有来源：官方帮助中心页面（vaulted-cards, vaulted-bank-accounts, payment-methods, capturing-payments, checkout-and-orders）全部返回403，无法获取关键文档。",
+        "成本估算没有公式、单位或边界：未提供任何费用信息，无法评估自动扣款的成本。",
+        "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象：读者分层中primary_layer为“高价值商业读者”，但secondary_layers包含“核心技术人”和“副业普通人”，层次模糊，未明确主要服务对象。",
+        "没有泛兴趣故事钩子，标题和开头只适合技术小圈子：标题“Shopify Flow 新增自动扣款功能：支持 B2B 订单 vaulted 支付”过于技术化，缺乏泛兴趣吸引力。",
+        "没有真实传播张力：冲突点“平台自动化便利 vs 商家风险转移”过于抽象，缺乏具体案例或数据支撑，读者评论动力不足。",
+        "没有明确归入实际选题方向，或者选题方向和内容不匹配：选题方向为“工具&规则”，但内容偏向功能解读，缺乏规则层面的深入分析。",
+        "没有明确选题结论：推荐或可选：verdict中status为“可选选题”，但未明确是否推荐。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写：reason中仅说“方向有价值，但证据缺口较大”，未充分解释选题价值。",
+        "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断：内容模板化，缺乏针对该功能的具体分析和判断。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：事实摘要中部分内容（如“该功能属于B2B功能，可能仅限Shopify Plus或特定套餐”）缺乏证据，逻辑未闭环。",
+        "没有列出基础概念缺口和资料素材缺口：missing_basics和missing_materials已列出，但未在fatal_issues中体现。",
+        "没有按具体类型提供资料包：资料包不完整，缺少费用、用户反馈等关键材料。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来：证据中官方来源占多数，但多个官方文档无法访问，第三方来源质量参差不齐，未在统计中说明。"
+      ],
+      "warnings": [
+        "读者钩子（reader_hook）过于平淡，缺乏吸引力。",
+        "传播张力评分（5分）偏低，需要补充真实冲突和反方材料。",
+        "证据缺口较大，多个关键官方文档无法获取。"
+      ],
+      "missing_evidence": [
+        "官方帮助中心页面全文（403）",
+        "Shopify 定价页面关于 Flow 和 vaulted 支付的费用",
+        "至少 2-3 个商家使用反馈（正面和负面）",
+        "PCI 合规详细说明",
+        "第三方支付网关兼容性列表"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": false,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "Shopify Flow 新增的 B2B 自动扣款功能是否真的能减少人工操作，还是可能带来新的账单风险和平台绑定？",
+      "persona_discussion_question": "作为使用 Shopify B2B 的独立开发者或小团队，该不该启用这个自动扣款功能？会不会因为 vaulted 支付方式导致客户纠纷或额外手续费？",
+      "hidden_public_issue": "平台自动化功能在降低操作成本的同时，是否将支付失败、退款、争议等风险转移给了商家？小团队是否有能力应对自动扣款带来的客户投诉和 chargeback？",
+      "must_verify": [
+        "该功能是否仅适用于 Shopify Payments 还是支持第三方支付网关？",
+        "vaulted 支付方式的具体实现：是 token 化存储还是敏感信息留存？是否符合 PCI DSS？",
+        "自动扣款失败后的重试机制和通知流程是什么？",
+        "是否有额外费用（如每笔交易手续费、vault 存储费）？",
+        "B2B 订单的支付条款（如 net 30）下，自动扣款是否支持部分付款或分期？",
+        "该功能是否对 Shopify Plus 或特定套餐有限制？",
+        "是否有商家实际使用案例或反馈（正面/负面）？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Shopify Flow automatic charging vaulted payment B2B documentation",
+          "why_needed": "获取官方详细说明，包括支持条件、限制和费用"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "Shopify Flow pricing vaulted payment additional fees",
+          "why_needed": "确认是否有隐藏费用，如 vault 存储费或交易手续费"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Shopify B2B automatic charge vaulted payment experience Reddit",
+          "why_needed": "获取真实商家使用反馈，包括问题、投诉和最佳实践"
+        },
+        {
+          "source_type": "policy",
+          "query": "Shopify vaulted payment PCI compliance tokenization",
+          "why_needed": "验证支付安全合规性，避免数据泄露风险"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Shopify Flow B2B automatic payment success story",
+          "why_needed": "寻找成功案例，评估实际效果和 ROI"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Shopify Flow actions charge vaulted payment for B2B order",
+          "why_needed": "直接查看帮助中心页面，确认操作细节和限制"
+        }
+      ],
+      "expert_challenge_points": [
+        "自动扣款是否支持多种支付方式（信用卡、ACH）？ACH 扣款失败率如何？",
+        "如果客户对扣款有争议，Shopify 的争议解决流程是否对商家有利？",
+        "该功能是否与 Shopify 的 B2B 批发功能深度集成？是否支持自定义支付条款？",
+        "对于国际 B2B 交易，自动扣款是否支持多币种和跨境支付？"
+      ],
+      "do_not_claim_yet": [
+        "该功能能显著减少人工操作（需验证实际效果和潜在问题）",
+        "该功能无额外费用（需查定价页面）",
+        "该功能适用于所有 Shopify 套餐（需确认套餐限制）",
+        "该功能安全无风险（需验证 PCI 合规和 tokenization 细节）"
+      ],
+      "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。因为该主题过于狭窄，仅针对 Shopify B2B 商家，且属于平台功能更新，缺乏普通技术人的真实选择题和利益冲突。",
+      "downstream_materials_needed": [
+        "Shopify Flow 自动扣款功能的官方帮助中心页面截图或全文",
+        "Shopify 定价页面关于 Flow 和支付处理的费用说明",
+        "至少 2-3 个商家使用该功能的真实反馈（正面和负面）",
+        "PCI 合规相关文档或声明",
+        "与第三方支付网关兼容性的官方说明"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Flow: Automatic charging for vaulted payment methods - Shopify Changelog",
+        "url": "https://documentation-changelog.shopifysvc.com/posts/flow-automatic-charging-for-vaulted-payment-methods",
+        "query": "Shopify Flow automatic charging vaulted payment B2B documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Flow: Automatic charging for vaulted payment methods - Shopify Changelog document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js') 0,'js-has-hint': !state.error && state.hint}\" class=\"marketing-input-wrapper\"> Email address Create your store Skip to Content Shopify Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started Open Main Navigation Home Close Main Navigation Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started About Careers Press and Media Enterprise Sitemap Opens in a new window Opens an external site Opens an external site in a new window Changelog What’s new in Shopify Back to Changelog June 17, 2026 Flow: Automatic charging for vaulted payment methods The Charge vaulted payment for B2B order action charges a customer's vaulted credit card or debits a vaulted bank account for an order with payment terms when payment is due. Learn more about the Charge vaulted payment for B2B order Flow action in the Shopify Help Center . New B2B More resources About Careers Press and Media Enterprise Sitemap Online store Sell online Features Examples Webs",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Help Center | Setting up credit card vaulting for B2B",
+        "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/vaulted-cards",
+        "query": "Shopify Flow automatic charging vaulted payment B2B documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Shopify Help Center | Setting up payment methods for your B2B business",
+        "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/payment-methods",
+        "query": "Shopify Flow automatic charging vaulted payment B2B documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Shopify Authorization Period: Complete Guide for Pre-orders",
+        "url": "https://preproduct.io/understanding-shopify-authorization-periods-what-pre-order-merchants-need-to-know/",
+        "query": "Shopify Flow pricing vaulted payment additional fees",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Shopify Authorization Period: Complete Guide for Pre-orders {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://preproduct.io/#organization\",\"name\":\"PreProduct\",\"url\":\"https://preproduct.io\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://preproduct.io/#logo\",\"url\":\"http://preproduct.io/wp-content/uploads/2025/11/Preproduct_icon.png\",\"contentUrl\":\"http://preproduct.io/wp-content/uploads/2025/11/Preproduct_icon.png\",\"caption\":\"PreProduct\",\"inLanguage\":\"en-US\",\"width\":\"56\",\"height\":\"60\"}},{\"@type\":\"WebSite\",\"@id\":\"https://preproduct.io/#website\",\"url\":\"https://preproduct.io\",\"name\":\"PreProduct\",\"publisher\":{\"@id\":\"https://preproduct.io/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://preproduct.io/wp-content/uploads/2025/11/checkout-4-w-prop.png\",\"url\":\"https://preproduct.io/wp-content/uploads/2025/11/checkout-4-w-prop.png\",\"width\":\"1536\",\"height\":\"640\",\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https://preproduct.io/understanding-shopify-authorization-periods-what-pre-order-merchants-need-to-know/#webpage\",\"url\":\"https://preproduct.io/understanding-shopify-authorization-periods-what-pre-order-merchants-need-to-know/\",\"name\":\"Shopify Authorization Period: Complete Guide for Pre-orders\",\"datePublished\":\"2025-11-05T04:11:00+00:00\",\"dateModified\":\"2026-01-14T04:18:01+00:00\",\"isPartOf\":{\"@id\":\"https://preproduct.io/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://preproduct.io/wp-content/uploads/2025/11/checkout-4-w-prop.png\"},\"inLanguage\":\"en-US\"},{\"@type\":\"Person\",\"@id\":\"https://preproduct.io/author/admin/\",\"name\":\"admin\",\"url\":\"https://preproduct.io/author/admin/\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://secure.gravatar.com/avatar/8de3238e7c975095691494a824bfff86bc603da8b702050c47d3e14eee4fbde3?s=96&d=mm&r=g\",\"",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Pricing (2026): Plans, Fees & Real Cost Breakdown",
+        "url": "https://commerce-ui.com/insights/shopify-pricing",
+        "query": "Shopify Flow pricing vaulted payment additional fees",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Shopify Pricing (2026): Plans, Fees & Real Cost Breakdown --sxs{--sxs:0 t-cFTtYt}@media{:root,.t-cFTtYt{--colors-gray50:#f2f2f2;--colors-gray100:#ececec;--colors-gray200:#dadada;--colors-gray300:#919090;--colors-gray400:#6c6b6b;--colors-gray500:#474646;--colors-gray500_01:rgba(71, 70, 70, 0.1);--colors-gray500_02:rgba(71, 70, 70, 0.2);--colors-gray500_03:rgba(71, 70, 70, 0.3);--colors-gray500_04:rgba(71, 70, 70, 0.4);--colors-gray500_06:rgba(71, 70, 70, 0.6);--colors-gray500_08:rgba(71, 70, 70, 0.8);--colors-gray600:#2B2B2B;--colors-white_005:rgba(255, 255, 255, 0.05);--colors-white_01:rgba(255, 255, 255, 0.1);--colors-white_02:rgba(255, 255, 255, 0.2);--colors-white_024:rgba(255, 255, 255, 0.24);--colors-white_03:rgba(255, 255, 255, 0.3);--colors-white_04:rgba(255, 255, 255, 0.4);--colors-white_05:rgba(255, 255, 255, 0.5);--colors-white_06:rgba(255, 255, 255, 0.6);--colors-white_07:rgba(255, 255, 255, 0.7);--colors-white_08:rgba(255, 255, 255, 0.8);--colors-white_085:rgba(255, 255, 255, 0.85);--colors-white:#FFFFFF;--colors-black:#000;--colors-black_005:rgba(0,0,0,0.05);--colors-black_01:rgba(0,0,0,0.1);--colors-black_02:rgba(0,0,0,0.2);--colors-black_03:rgba(0,0,0,0.3);--colors-black_05:rgba(0,0,0,0.5);--colors-black_06:rgba(0,0,0,0.6);--colors-black_08:rgba(0,0,0,0.8);--colors-focusBlue:rgba(0,113,227,0.5);--colors-errorRed:rgba(248, 46, 71, 1);--colors-successGreen:#1BC651;--colors-socialsGray:#F2F2F2;--colors-darkThemeBackground:#121212;--colors-techstackCardsBackground:#212121;--colors-techstackLinkBlockBackground:#1B1B1B;--colors-aboutPageBackground:#121212;--colors-hydrogenPageBackground:#121212;--colors-textPrimaryBlack:#121212;--radii-r1:1px;--radii-r2:10px;--radii-r3:24px;--radii-r3_mobile:16px;--radii-rMax:9999px;--radii-rBoxes:20px;--space-0:0px;--space-4:4",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Plus Pricing 2026: Real Cost Beyond $2,300/mo",
+        "url": "https://www.brokenrubik.com/blog/shopify-plus-pricing-guide",
+        "query": "Shopify Flow pricing vaulted payment additional fees",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Shopify Plus Pricing 2026: Real Cost Beyond $2,300/mo {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"@id\":\"https://www.brokenrubik.com/#organization\",\"name\":\"BrokenRubik\",\"url\":\"https://www.brokenrubik.com\",\"logo\":\"https://www.brokenrubik.com/logo.png\",\"description\":\"NetSuite development partner specializing in ERP implementation, SuiteCommerce, custom SuiteScript development, and integrations.\",\"sameAs\":[\"https://www.linkedin.com/company/broken-rubik\",\"https://github.com/BrokenRubik\",\"https://x.com/brokenrubik\"],\"contactPoint\":{\"@type\":\"ContactPoint\",\"email\":\"hello@brokenrubik.co\",\"contactType\":\"customer service\"}} {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"@id\":\"https://www.brokenrubik.com/#website\",\"name\":\"BrokenRubik\",\"url\":\"https://www.brokenrubik.com\",\"description\":\"NetSuite development partner specializing in ERP implementation, SuiteCommerce, custom development, and integrations.\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"BrokenRubik\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://www.brokenrubik.com/logo.png\"}},\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.brokenrubik.com/search?q={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}} (({protect:a})=>{function b(a){return new Promise((b,c)=>{if(document.querySelector(`script[src=\"${a}\"]`))return void b();let d=document.createElement(\"script\");d.src=a,d.async=!0,d.onload=()=>b(),d.onerror=a=>{console.error(\"Error loading script\",a),c(a)},document.head.appendChild(d)})}var c=class a{#a;#b;#c=0;constructor(){let{promise:b,resolve:c}=a.#d();this.#a=b,this.#b=c,this.#e(),window.addEventListener(\"online\",this.#f),window.addEventListener(\"visibilitychange\",this.#f)}getChallenge=async()=>(await this.#g(),await this.#a.then(a=>\"f",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/shopify on Reddit: Shopify B2B Now on Non-Plus Plans",
+        "url": "https://www.reddit.com/r/shopify/comments/1sbi6sq/shopify_b2b_now_on_nonplus_plans/",
+        "query": "Shopify B2B automatic charge vaulted payment experience Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "How to use automatic payment collection for deposits on Shopify | Downpay",
+        "url": "https://getdownpay.com/blog/payment-vaulting-how-to-use-automatic-payment-collection-for-deposits-on-shopify",
+        "query": "Shopify B2B automatic charge vaulted payment experience Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Automatic balance collection for Shopify deposits | Downpay 11 proven deposit strategies used by high-AOV Shopify brands. Download the free playbook → window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XYLJH6EWJM'); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5P6JPWW2'); !function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement(\"script\");t.src=\"https://www.redditstatic.com/ads/pixel.js?pixel_id=a2_izppgnz1uh5h\",t.async=!0;var s=d.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(t,s)}}(window,document);rdt('init','a2_izppgnz1uh5h');rdt('track', 'PageVisit'); !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1309228547845036'); fbq('track', 'PageView'); Features Use Cases Industries Resources Pricing Why Downpay BOOK A DEMO TRY FREE Back to Blog Card on file: How to use automatic payment collection for deposits on Shopify For years, Shopify’s buying experience was optimized for “buy now, pay now.” Businesses who had inherent build times or shipping delays for their",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Help Center | Setting up bank account vaulting for B2B",
+        "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/vaulted-bank-accounts",
+        "query": "Shopify B2B automatic charge vaulted payment experience Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Payment Gateway Tokenization: What It Is and How it Works (2026) - Shopify",
+        "url": "https://www.shopify.com/blog/payment-tokenization",
+        "query": "Shopify vaulted payment PCI compliance tokenization",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(()=>{try{if(typeof MutationObserver>\"u\")return;const r=20,f=120,s={injectedElements:[],removedElements:[],attributesChanged:[]},c=t=>t?t.length>f?`${t.slice(0,f)}...`:t:\"\",N=[\"cdn.shopify.com\",\"shopify.com\",\"shopifycloud\"],b=t=>t?N.some(e=>t.includes(e)):!1,m=t=>{const e=t.nodeName;if(!e||e===\"#text\"||e===\"#comment\")return null;const n=t.id?`#${t.id}`:\"\";let o=\"\";if(t.className&&typeof t.className==\"string\"){const p=t.className.trim().split(/\\s+/).slice(0,2).join(\".\");p&&(o=`.${p}`)}const u=t.getAttribute?.(\"src\"),l=t.getAttribute?.(\"href\"),g=t.getAttribute?.(\"type\"),i=[];u?i.push(`src=${c(u)}`):l&&i.push(`href=${c(l)}`),g&&i.push(`type=${g}`);const E=i.length>0?`[${i.join(\",\")}]`:\"\",A=u||l||\"\";return{desc:[e,n,o,E].filter(Boolean).join(\"\"),internal:b(A)}},d=t=>{const{target:e}=t,n=e.nodeName||\"\";return e.id?`${n}#${e.id}`:n},y=t=>{for(const e of t.addedNodes){const n=m(e);!n||n.internal||s.injectedElements.length ${d(t)}`)}},$=t=>{for(const e of t.removedNodes){const n=m(e);!n||n.internal||s.removedElements.length {const e=d(t),n=t.target.getAttribute?.(t.attributeName)||\"\",o=`${e}.${t.attributeName}=${c(n)}`;s.attributesChanged.length {for(const e of t){const n=e.type===\"childList\",o=e.type===\"attributes\";if(n){y(e),$(e);continue}o&&v(e)}}),a=()=>{h.observe(document.documentElement,{childList:!0,subtree:!0,attributes:!0})};document.readyState===\"loading\"?document.addEventListener(\"DOMContentLoaded\",a):a(),window.__preHydrationData=s,window.__stopPreHydrationMonitor=()=>{h.disconnect(),document.removeEventListener(\"DOMContentLoaded\",a),delete window.__preHydrationData,delete window.__stopPreHydrationMonitor}}catch{}})(); Payment Gateway Tokenization: What It Is and How it Works (2026) - Shopify window.__brochureDuxConfig={\"eventHandlerEndpoint\":\"/.well-known/dux?v2&_p",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Recurring Billing in 2026: The Complete No-Code Setup Guide",
+        "url": "https://www.mavlers.com/blog/shopify-recurring-billing/",
+        "query": "Shopify vaulted payment PCI compliance tokenization",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Shopify Recurring Billing in 2026: The Complete No-Code Setup Guide From web development to digital marketing, we build for growth. Head to Mavlers Agency. Services Lifecycle marketing Customer data management Email campaign production Search marketing CMS development About us Who we are How we work Clients Case studies Testimonials Work samples Latest How Acima scaled SFMC success with a dedicated team from Mavlers Go to case study Platforms Marketing Salesforce Marketing Cloud Braze HubSpot Marketo Pardot Data DataBricks Snowflake HighTouch RudderStack Segment by Twilio Resources Blog Ebooks Videos Featured Ebook Retail CRM & lifecycle marketing benchmark report 2026 Go to ebook Book a call Services Services Lifecycle marketing Customer data management Email campaign production Search marketing CMS development About us About us Who we are How we work We are rated 4.9 out of 5 123+ Clutch reviews We are rated 4.9 out of 5 191+ GoodFirms reviews Clients Clients Case studies Testimonials Work samples Latest How Acima scaled SFMC success with a dedicated team from Mavlers Go to case study Platforms Platforms Marketing Salesforce Marketing Cloud Braze HubSpot Marketo Pardot Data DataBricks Snowflake HighTouch RudderStack Segment by Twilio Resources Resources Blog Ebooks Videos Featured Ebook Retail CRM & lifecycle marketing benchmark report 2026 Go to ebook Book a call {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https://www.mavlers.com/blog/shopify-recurring-billing/#article\",\"isPartOf\":{\"@id\":\"https://www.mavlers.com/blog/shopify-recurring-billing/\"},\"author\":[{\"@type\":\"Person\",\"name\":\"Rahul Kaushal - Reviewer\",\"description\":\"Rahul is a web technology expert and web operations manager with a strong background in digital strategy and client relatio",
+        "fetch_error": ""
+      },
+      {
+        "title": "How Secure is Shopify Payments? An Enterprise Overview | Checkout Boost",
+        "url": "https://checkoutboost.com/blogs/shopify-growth/how-secure-is-shopify-payments-an-enterprise-overview",
+        "query": "Shopify vaulted payment PCI compliance tokenization",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "const LCPobserver = new PerformanceObserver((list) => { const entries = list.getEntries(); const lastEntry = entries[entries.length - 1]; // Use the latest LCP candidate }); LCPobserver.observe({ type: \"largest-contentful-paint\", buffered: true }); window.observerSpeed = new MutationObserver((elements) => { elements.forEach(({ addedNodes: nodes }) => { nodes.forEach((e) => { if(e.nodeType == 1 && e.tagName == 'SCRIPT'){ let sourceAttr = e.getAttribute('data-source-attribution'); if(e.src.includes(\"cdn.shopify.com/extensions\")){ console.log(e.src) e.setAttribute(\"data-src\", e.src); e.removeAttribute(\"src\"); }else if(e.src.includes(\"storefront/bars/preview_bar_injector\") || e.innerText.includes(\"new Shopify.PreviewBarInjector\")){ e.parentNode.removeChild(e); } }; }); }); }); observerSpeed.observe(document.head, { childList: !0, subtree: !0 }); How Secure is Shopify Payments? An Enterprise Overview | Checkout Boost window.dataLayer = window.dataLayer || []; window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'}); window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.start'); {\"accessToken\":\"40044a96ec4a73ba97976732531e940a\",\"betas\":[\"rich-media-storefront-analytics\"],\"domain\":\"checkoutboost.com\",\"predictiveSearch\":true,\"shopId\":87117463866,\"locale\":\"en\"} var Shopify = Shopify || {}; Shopify.shop = \"thecheckoutio.myshopify.com\"; Shopify.locale = \"en\"; Shopify.currency = {\"active\":\"INR\",\"rate\":\"1.0\"}; Shopify.country = \"IN\"; Shopify.theme = {\"name\":\"Checkout-Boost\\/main\",\"id\":182772629818,\"schema_name\":\"Fluid Framework\",\"schema_version\":\"3.0.0\",\"theme_store_id\":null,\"role\":\"main\"}; Shopify.theme.handle = \"null\"; Shopify.theme.style = {\"id\":null,\"handle\":null}; Shopify.cdnHost = \"checkoutboost.com/cdn\"; Shopif",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Help Center | Capturing payments for your orders",
+        "url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/payments/capturing-payments",
+        "query": "Shopify Flow B2B automatic payment success story",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Shopify Flow for B2B: Automate and Scale Smarter on the Shopify Platform",
+        "url": "https://interactone.com/news/shopify-flow-for-b2b/",
+        "query": "Shopify Flow B2B automatic payment success story",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "document.documentElement.className = 'js'; /* ---------------------------------------------------------------------------------------------------- IMPORTANT! The code below requires a developer to install and setup. Please do not simply copy/paste this onto your website. ---------------------------------------------------------------------------------------------------- */ // Initiate Web Behaviour Tracking (this section MUST come prior any other dmPt calls) // Do not change this (function(w,d,u,t,o,c){w['dmtrackingobjectname']=o;c=d.createElement(t);c.async=1;c.src=u;t=d.getElementsByTagName (t)[0];t.parentNode.insertBefore(c,t);w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments);}; })(window, document, '//static.trackedweb.net/js/_dmptv4.js', 'script', 'dmPt'); window.dmPt('create', 'DM-187453-02', 'www.interactone.com'); window.dmPt('track'); // window.dmPt(\"identify\", \"test@test.com\"); // Hardcoded example, inject contact email address. /* Original: https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,latin-ext&display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: ital",
+        "fetch_error": ""
+      },
+      {
+        "title": "10 B2B Success Stories to Inspire Your Own Ecommerce Brand (2025) - Shopify",
+        "url": "https://www.shopify.com/enterprise/blog/b2b-ecommerce-companies",
+        "query": "Shopify Flow B2B automatic payment success story",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(()=>{try{if(typeof MutationObserver>\"u\")return;const r=20,f=120,s={injectedElements:[],removedElements:[],attributesChanged:[]},c=t=>t?t.length>f?`${t.slice(0,f)}...`:t:\"\",N=[\"cdn.shopify.com\",\"shopify.com\",\"shopifycloud\"],b=t=>t?N.some(e=>t.includes(e)):!1,m=t=>{const e=t.nodeName;if(!e||e===\"#text\"||e===\"#comment\")return null;const n=t.id?`#${t.id}`:\"\";let o=\"\";if(t.className&&typeof t.className==\"string\"){const p=t.className.trim().split(/\\s+/).slice(0,2).join(\".\");p&&(o=`.${p}`)}const u=t.getAttribute?.(\"src\"),l=t.getAttribute?.(\"href\"),g=t.getAttribute?.(\"type\"),i=[];u?i.push(`src=${c(u)}`):l&&i.push(`href=${c(l)}`),g&&i.push(`type=${g}`);const E=i.length>0?`[${i.join(\",\")}]`:\"\",A=u||l||\"\";return{desc:[e,n,o,E].filter(Boolean).join(\"\"),internal:b(A)}},d=t=>{const{target:e}=t,n=e.nodeName||\"\";return e.id?`${n}#${e.id}`:n},y=t=>{for(const e of t.addedNodes){const n=m(e);!n||n.internal||s.injectedElements.length ${d(t)}`)}},$=t=>{for(const e of t.removedNodes){const n=m(e);!n||n.internal||s.removedElements.length {const e=d(t),n=t.target.getAttribute?.(t.attributeName)||\"\",o=`${e}.${t.attributeName}=${c(n)}`;s.attributesChanged.length {for(const e of t){const n=e.type===\"childList\",o=e.type===\"attributes\";if(n){y(e),$(e);continue}o&&v(e)}}),a=()=>{h.observe(document.documentElement,{childList:!0,subtree:!0,attributes:!0})};document.readyState===\"loading\"?document.addEventListener(\"DOMContentLoaded\",a):a(),window.__preHydrationData=s,window.__stopPreHydrationMonitor=()=>{h.disconnect(),document.removeEventListener(\"DOMContentLoaded\",a),delete window.__preHydrationData,delete window.__stopPreHydrationMonitor}}catch{}})(); 10 B2B Success Stories to Inspire Your Own Ecommerce Brand (2025) - Shopify window.__brochureDuxConfig={\"eventHandlerEndpoint\":\"/.well-known/dux?v2&_",
+        "fetch_error": ""
+      },
+      {
+        "title": "Vaulted credit cards for B2B - Shopify Changelog",
+        "url": "https://changelog.shopify.com/posts/vaulted-credit-cards-for-b2b",
+        "query": "Shopify Flow actions charge vaulted payment for B2B order",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Shopify Changelog document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js') 0,'js-has-hint': !state.error && state.hint}\" class=\"marketing-input-wrapper\"> Email address Create your store Skip to Content Shopify Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started Open Main Navigation Home Close Main Navigation Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started About Careers Press and Media Enterprise Sitemap Opens in a new window Opens an external site Opens an external site in a new window Changelog What’s new in Shopify No posts found June 17 Updated disclosure for subscription purchases on Checkout Effective June 22, 2026, the default disclosure for subscription products shown at checkout will be updated. Changed Admin June 17 The Spring '26 Edition is live Announcing 150+ updates to Shopify. Improvement Admin June 17 Flow: Automatic charging for vaulted payment methods B2B merchants can now automatically charge vaulted payment methods using a new Flow action triggered by fulfillment, due dates, or invoicing. New B2B June 17 Online Store Edit",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Help Center | Checkout, orders, and draft orders in B2B",
+        "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders",
+        "query": "Shopify Flow actions charge vaulted payment for B2B order",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260618-flow-automatic-charging-for-vaulted-payment-meth-1b8c1106/",
+    "for_gpt_editor": {
+      "brief": "The Charge vaulted payment for B2B order action charges a customer's vaulted credit card or debits a vaulted bank account for an order with payment terms when payment is due. Learn more about the Charge vaulted payment for B2B order Flow action in the Shopify Help Center .",
+      "title_seed": "Shopify Flow 新增自动扣款功能：支持 B2B 订单 vaulted 支付",
+      "original_title": "Flow: Automatic charging for vaulted payment methods",
+      "source_url": "https://changelog.shopify.com/posts/flow-automatic-charging-for-vaulted-payment-methods",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：官方帮助中心页面（vaulted-cards, vaulted-bank-accounts, payment-methods, capturing-payments, checkout-and-orders）全部返回403"
+        },
+        "core_question": "Shopify Flow 新增的 B2B 自动扣款功能是否真的能减少人工操作，还是可能带来新的账单风险和平台绑定？",
+        "why_this_topic_matters": "Shopify B2B 商家可自动化收款，减少人工催款，但可能隐藏额外费用、支付失败风险、客户纠纷和平台锁定。对使用 Shopify 的独立开发者和小团队有实际影响。",
+        "fact_summary": [
+          "Shopify Flow 新增 'Charge vaulted payment for B2B order' 动作，可自动扣款 vaulted 信用卡或借记银行账户。",
+          "该功能可基于 fulfillment、到期日或发票触发。",
+          "官方 changelog 发布于 2026 年 6 月 17 日。",
+          "vaulted 支付方式需商家先设置信用卡或银行账户 vaulting。",
+          "该功能属于 B2B 功能，可能仅限 Shopify Plus 或特定套餐。"
+        ],
+        "persona_discussion_question": "作为使用 Shopify B2B 的独立开发者或小团队，该不该启用这个自动扣款功能？会不会因为 vaulted 支付方式导致客户纠纷或额外手续费？",
+        "old_flower_stance": "平台自动化功能在降低操作成本的同时，可能将支付失败、退款、争议等风险转移给商家。小团队需评估自身应对 chargeback 和客户投诉的能力，不要盲目启用。",
+        "audience_fit": {
+          "primary_layer": "高价值商业读者",
+          "secondary_layers": [
+            "核心技术人",
+            "副业普通人"
+          ],
+          "interest_score": 55,
+          "why_interested": "B2B 商家关注自动化收款效率，技术人关注实现细节和风险，副业者关注是否值得投入。",
+          "reader_risk": "可能因缺乏真实案例和费用数据而显得空洞，导致读者认为内容不实用。"
+        },
+        "mass_interest_hook": {
+          "score": 40,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "标题如 'Shopify 自动扣款功能上线，B2B 商家小心账单陷阱' 可吸引对电商收款安全感兴趣的普通人。",
+          "story_seed": "一个 B2B 商家因自动扣款失败导致客户投诉，最终发现是 vaulted 卡过期未更新。",
+          "do_not_overhype": "不要夸大自动扣款的风险，避免制造不必要的恐慌。"
+        },
+        "topic_tension": {
+          "score": 5,
+          "conflict_point": "平台自动化便利 vs 商家风险转移",
+          "debate_question": "自动扣款功能是在帮助商家提效，还是将支付失败和争议的责任推给商家？",
+          "stakeholders": [
+            "Shopify",
+            "B2B 商家",
+            "客户（买家）",
+            "支付网关"
+          ],
+          "why_people_would_comment": "商家分享自动扣款的成功或失败经验，技术人讨论实现细节和替代方案。",
+          "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+        },
+        "timeline": [
+          "2026-06-17: Shopify Changelog 发布 Flow 自动扣款功能",
+          "2026-06-17: 同一 changelog 还提到 Spring '26 Edition 发布，包含 150+ 更新"
+        ],
+        "evidence_table": [
+          {
+            "source": "Shopify Changelog",
+            "url": "https://changelog.shopify.com/posts/flow-automatic-charging-for-vaulted-payment-methods",
+            "supports": "功能存在，支持自动扣款 vaulted 支付方式",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify Changelog (vaulted credit cards)",
+            "url": "https://changelog.shopify.com/posts/vaulted-credit-cards-for-b2b",
+            "supports": "vaulted 信用卡功能已存在",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify Help Center (vaulted cards)",
+            "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/vaulted-cards",
+            "supports": "官方文档，但 403 无法获取",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify Help Center (vaulted bank accounts)",
+            "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/vaulted-bank-accounts",
+            "supports": "官方文档，但 403 无法获取",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify Help Center (payment methods)",
+            "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/payment-methods",
+            "supports": "官方文档，但 403 无法获取",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify Help Center (capturing payments)",
+            "url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/payments/capturing-payments",
+            "supports": "通用支付捕获信息",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify Blog (tokenization)",
+            "url": "https://www.shopify.com/blog/payment-tokenization",
+            "supports": "支付 tokenization 安全说明",
+            "reliability": "official"
+          },
+          {
+            "source": "Interactone (Shopify Flow for B2B)",
+            "url": "https://interactone.com/news/shopify-flow-for-b2b/",
+            "supports": "第三方文章，提及 Flow 用于 B2B 自动化",
+            "reliability": "media"
+          },
+          {
+            "source": "Downpay (automatic payment collection)",
+            "url": "https://getdownpay.com/blog/payment-vaulting-how-to-use-automatic-payment-collection-for-deposits-on-shopify",
+            "supports": "第三方教程，涉及 vaulted 支付自动收款",
+            "reliability": "media"
+          },
+          {
+            "source": "PreProduct (authorization period)",
+            "url": "https://preproduct.io/understanding-shopify-authorization-periods-what-pre-order-merchants-need-to-know/",
+            "supports": "通用授权周期信息",
+            "reliability": "media"
+          },
+          {
+            "source": "Commerce UI (Shopify pricing)",
+            "url": "https://commerce-ui.com/insights/shopify-pricing",
+            "supports": "定价信息，但未涉及 vaulted 支付费用",
+            "reliability": "media"
+          },
+          {
+            "source": "BrokenRubik (Shopify Plus pricing)",
+            "url": "https://www.brokenrubik.com/blog/shopify-plus-pricing-guide",
+            "supports": "Shopify Plus 定价，可能包含 Flow 费用",
+            "reliability": "media"
+          },
+          {
+            "source": "Mavlers (recurring billing)",
+            "url": "https://www.mavlers.com/blog/shopify-recurring-billing/",
+            "supports": "通用 recurring billing 信息",
+            "reliability": "media"
+          },
+          {
+            "source": "Checkout Boost (security)",
+            "url": "https://checkoutboost.com/blogs/shopify-growth/how-secure-is-shopify-payments-an-enterprise-overview",
+            "supports": "Shopify Payments 安全概述",
+            "reliability": "media"
+          },
+          {
+            "source": "Shopify Enterprise (B2B success stories)",
+            "url": "https://www.shopify.com/enterprise/blog/b2b-ecommerce-companies",
+            "supports": "B2B 成功案例，但未涉及自动扣款",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "部分闭环。功能存在，但缺少费用、限制、真实反馈等关键信息，无法形成完整判断。",
+        "writeable_angles": [
+          {
+            "angle": "功能解读与风险分析",
+            "why": "帮助商家了解自动扣款的利弊，避免踩坑",
+            "needs": "官方文档、定价、用户反馈"
+          },
+          {
+            "angle": "与第三方自动收款工具对比",
+            "why": "提供替代方案，增加实用性",
+            "needs": "竞品信息、费用对比"
+          },
+          {
+            "angle": "B2B 商家实操指南",
+            "why": "手把手教商家设置自动扣款",
+            "needs": "详细步骤、截图、注意事项"
+          }
+        ],
+        "missing_basics": [
+          "该功能是否仅限 Shopify Plus？",
+          "是否支持第三方支付网关？",
+          "vaulted 支付的具体 tokenization 实现？",
+          "自动扣款失败的重试机制？",
+          "是否有额外费用？",
+          "是否支持部分付款或分期？"
+        ],
+        "missing_materials": [
+          "官方帮助中心页面全文（403）",
+          "Shopify 定价页面关于 Flow 和 vaulted 支付的费用",
+          "至少 2-3 个商家使用反馈（正面和负面）",
+          "PCI 合规详细说明",
+          "第三方支付网关兼容性列表"
+        ],
+        "not_claimable": [
+          "该功能能显著减少人工操作（需验证实际效果）",
+          "该功能无额外费用（需查定价）",
+          "该功能适用于所有 Shopify 套餐（需确认）",
+          "该功能安全无风险（需验证 PCI 合规）"
+        ],
+        "followup_queries": [
+          "Shopify Flow 自动扣款功能是否仅限 Shopify Plus？",
+          "Shopify Flow 自动扣款是否有额外费用？",
+          "Shopify vaulted 支付 tokenization 如何工作？",
+          "Shopify B2B 自动扣款失败重试机制是什么？",
+          "Shopify B2B 自动扣款支持哪些支付网关？"
+        ],
+        "additional_search_queries": [
+          "Shopify Flow pricing vaulted payment additional fees",
+          "Shopify B2B automatic charge vaulted payment experience Reddit",
+          "Shopify vaulted payment PCI compliance tokenization",
+          "Shopify Flow B2B automatic payment success story",
+          "Shopify Flow actions charge vaulted payment for B2B order"
+        ],
+        "stop_conditions": [
+          "官方文档明确说明费用和限制",
+          "找到至少 2 个真实商家反馈",
+          "确认 PCI 合规细节"
+        ],
+        "confidence": 55.0,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "platform-rules",
+        "quality_gate": {
+          "pass": false,
+          "score": 55,
+          "fatal_issues": [
+            "核心事实没有来源：官方帮助中心页面（vaulted-cards, vaulted-bank-accounts, payment-methods, capturing-payments, checkout-and-orders）全部返回403，无法获取关键文档。",
+            "成本估算没有公式、单位或边界：未提供任何费用信息，无法评估自动扣款的成本。",
+            "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象：读者分层中primary_layer为“高价值商业读者”，但secondary_layers包含“核心技术人”和“副业普通人”，层次模糊，未明确主要服务对象。",
+            "没有泛兴趣故事钩子，标题和开头只适合技术小圈子：标题“Shopify Flow 新增自动扣款功能：支持 B2B 订单 vaulted 支付”过于技术化，缺乏泛兴趣吸引力。",
+            "没有真实传播张力：冲突点“平台自动化便利 vs 商家风险转移”过于抽象，缺乏具体案例或数据支撑，读者评论动力不足。",
+            "没有明确归入实际选题方向，或者选题方向和内容不匹配：选题方向为“工具&规则”，但内容偏向功能解读，缺乏规则层面的深入分析。",
+            "没有明确选题结论：推荐或可选：verdict中status为“可选选题”，但未明确是否推荐。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写：reason中仅说“方向有价值，但证据缺口较大”，未充分解释选题价值。",
+            "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断：内容模板化，缺乏针对该功能的具体分析和判断。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：事实摘要中部分内容（如“该功能属于B2B功能，可能仅限Shopify Plus或特定套餐”）缺乏证据，逻辑未闭环。",
+            "没有列出基础概念缺口和资料素材缺口：missing_basics和missing_materials已列出，但未在fatal_issues中体现。",
+            "没有按具体类型提供资料包：资料包不完整，缺少费用、用户反馈等关键材料。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来：证据中官方来源占多数，但多个官方文档无法访问，第三方来源质量参差不齐，未在统计中说明。"
+          ],
+          "warnings": [
+            "读者钩子（reader_hook）过于平淡，缺乏吸引力。",
+            "传播张力评分（5分）偏低，需要补充真实冲突和反方材料。",
+            "证据缺口较大，多个关键官方文档无法获取。"
+          ],
+          "missing_evidence": [
+            "官方帮助中心页面全文（403）",
+            "Shopify 定价页面关于 Flow 和 vaulted 支付的费用",
+            "至少 2-3 个商家使用反馈（正面和负面）",
+            "PCI 合规详细说明",
+            "第三方支付网关兼容性列表"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": false,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "Shopify Flow 新增的 B2B 自动扣款功能是否真的能减少人工操作，还是可能带来新的账单风险和平台绑定？",
+          "persona_discussion_question": "作为使用 Shopify B2B 的独立开发者或小团队，该不该启用这个自动扣款功能？会不会因为 vaulted 支付方式导致客户纠纷或额外手续费？",
+          "hidden_public_issue": "平台自动化功能在降低操作成本的同时，是否将支付失败、退款、争议等风险转移给了商家？小团队是否有能力应对自动扣款带来的客户投诉和 chargeback？",
+          "must_verify": [
+            "该功能是否仅适用于 Shopify Payments 还是支持第三方支付网关？",
+            "vaulted 支付方式的具体实现：是 token 化存储还是敏感信息留存？是否符合 PCI DSS？",
+            "自动扣款失败后的重试机制和通知流程是什么？",
+            "是否有额外费用（如每笔交易手续费、vault 存储费）？",
+            "B2B 订单的支付条款（如 net 30）下，自动扣款是否支持部分付款或分期？",
+            "该功能是否对 Shopify Plus 或特定套餐有限制？",
+            "是否有商家实际使用案例或反馈（正面/负面）？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Shopify Flow automatic charging vaulted payment B2B documentation",
+              "why_needed": "获取官方详细说明，包括支持条件、限制和费用"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "Shopify Flow pricing vaulted payment additional fees",
+              "why_needed": "确认是否有隐藏费用，如 vault 存储费或交易手续费"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Shopify B2B automatic charge vaulted payment experience Reddit",
+              "why_needed": "获取真实商家使用反馈，包括问题、投诉和最佳实践"
+            },
+            {
+              "source_type": "policy",
+              "query": "Shopify vaulted payment PCI compliance tokenization",
+              "why_needed": "验证支付安全合规性，避免数据泄露风险"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Shopify Flow B2B automatic payment success story",
+              "why_needed": "寻找成功案例，评估实际效果和 ROI"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Shopify Flow actions charge vaulted payment for B2B order",
+              "why_needed": "直接查看帮助中心页面，确认操作细节和限制"
+            }
+          ],
+          "expert_challenge_points": [
+            "自动扣款是否支持多种支付方式（信用卡、ACH）？ACH 扣款失败率如何？",
+            "如果客户对扣款有争议，Shopify 的争议解决流程是否对商家有利？",
+            "该功能是否与 Shopify 的 B2B 批发功能深度集成？是否支持自定义支付条款？",
+            "对于国际 B2B 交易，自动扣款是否支持多币种和跨境支付？"
+          ],
+          "do_not_claim_yet": [
+            "该功能能显著减少人工操作（需验证实际效果和潜在问题）",
+            "该功能无额外费用（需查定价页面）",
+            "该功能适用于所有 Shopify 套餐（需确认套餐限制）",
+            "该功能安全无风险（需验证 PCI 合规和 tokenization 细节）"
+          ],
+          "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。因为该主题过于狭窄，仅针对 Shopify B2B 商家，且属于平台功能更新，缺乏普通技术人的真实选择题和利益冲突。",
+          "downstream_materials_needed": [
+            "Shopify Flow 自动扣款功能的官方帮助中心页面截图或全文",
+            "Shopify 定价页面关于 Flow 和支付处理的费用说明",
+            "至少 2-3 个商家使用该功能的真实反馈（正面和负面）",
+            "PCI 合规相关文档或声明",
+            "与第三方支付网关兼容性的官方说明"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Flow: Automatic charging for vaulted payment methods - Shopify Changelog",
+            "url": "https://documentation-changelog.shopifysvc.com/posts/flow-automatic-charging-for-vaulted-payment-methods",
+            "query": "Shopify Flow automatic charging vaulted payment B2B documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Flow: Automatic charging for vaulted payment methods - Shopify Changelog document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js') 0,'js-has-hint': !state.error && state.hint}\" class=\"marketing-input-wrapper\"> Email address Create your store Skip to Content Shopify Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started Open Main Navigation Home Close Main Navigation Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started About Careers Press and Media Enterprise Sitemap Opens in a new window Opens an external site Opens an external site in a new window Changelog What’s new in Shopify Back to Changelog June 17, 2026 Flow: Automatic charging for vaulted payment methods The Charge vaulted payment for B2B order action charges a customer's vaulted credit card or debits a vaulted bank account for an order with payment terms when payment is due. Learn more about the Charge vaulted payment for B2B order Flow action in the Shopify Help Center . New B2B More resources About Careers Press and Media Enterprise Sitemap Online store Sell online Features Examples Webs",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Help Center | Setting up credit card vaulting for B2B",
+            "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/vaulted-cards",
+            "query": "Shopify Flow automatic charging vaulted payment B2B documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Shopify Help Center | Setting up payment methods for your B2B business",
+            "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/payment-methods",
+            "query": "Shopify Flow automatic charging vaulted payment B2B documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Shopify Authorization Period: Complete Guide for Pre-orders",
+            "url": "https://preproduct.io/understanding-shopify-authorization-periods-what-pre-order-merchants-need-to-know/",
+            "query": "Shopify Flow pricing vaulted payment additional fees",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Shopify Authorization Period: Complete Guide for Pre-orders {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://preproduct.io/#organization\",\"name\":\"PreProduct\",\"url\":\"https://preproduct.io\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://preproduct.io/#logo\",\"url\":\"http://preproduct.io/wp-content/uploads/2025/11/Preproduct_icon.png\",\"contentUrl\":\"http://preproduct.io/wp-content/uploads/2025/11/Preproduct_icon.png\",\"caption\":\"PreProduct\",\"inLanguage\":\"en-US\",\"width\":\"56\",\"height\":\"60\"}},{\"@type\":\"WebSite\",\"@id\":\"https://preproduct.io/#website\",\"url\":\"https://preproduct.io\",\"name\":\"PreProduct\",\"publisher\":{\"@id\":\"https://preproduct.io/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://preproduct.io/wp-content/uploads/2025/11/checkout-4-w-prop.png\",\"url\":\"https://preproduct.io/wp-content/uploads/2025/11/checkout-4-w-prop.png\",\"width\":\"1536\",\"height\":\"640\",\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https://preproduct.io/understanding-shopify-authorization-periods-what-pre-order-merchants-need-to-know/#webpage\",\"url\":\"https://preproduct.io/understanding-shopify-authorization-periods-what-pre-order-merchants-need-to-know/\",\"name\":\"Shopify Authorization Period: Complete Guide for Pre-orders\",\"datePublished\":\"2025-11-05T04:11:00+00:00\",\"dateModified\":\"2026-01-14T04:18:01+00:00\",\"isPartOf\":{\"@id\":\"https://preproduct.io/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://preproduct.io/wp-content/uploads/2025/11/checkout-4-w-prop.png\"},\"inLanguage\":\"en-US\"},{\"@type\":\"Person\",\"@id\":\"https://preproduct.io/author/admin/\",\"name\":\"admin\",\"url\":\"https://preproduct.io/author/admin/\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://secure.gravatar.com/avatar/8de3238e7c975095691494a824bfff86bc603da8b702050c47d3e14eee4fbde3?s=96&d=mm&r=g\",\"",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Pricing (2026): Plans, Fees & Real Cost Breakdown",
+            "url": "https://commerce-ui.com/insights/shopify-pricing",
+            "query": "Shopify Flow pricing vaulted payment additional fees",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Shopify Pricing (2026): Plans, Fees & Real Cost Breakdown --sxs{--sxs:0 t-cFTtYt}@media{:root,.t-cFTtYt{--colors-gray50:#f2f2f2;--colors-gray100:#ececec;--colors-gray200:#dadada;--colors-gray300:#919090;--colors-gray400:#6c6b6b;--colors-gray500:#474646;--colors-gray500_01:rgba(71, 70, 70, 0.1);--colors-gray500_02:rgba(71, 70, 70, 0.2);--colors-gray500_03:rgba(71, 70, 70, 0.3);--colors-gray500_04:rgba(71, 70, 70, 0.4);--colors-gray500_06:rgba(71, 70, 70, 0.6);--colors-gray500_08:rgba(71, 70, 70, 0.8);--colors-gray600:#2B2B2B;--colors-white_005:rgba(255, 255, 255, 0.05);--colors-white_01:rgba(255, 255, 255, 0.1);--colors-white_02:rgba(255, 255, 255, 0.2);--colors-white_024:rgba(255, 255, 255, 0.24);--colors-white_03:rgba(255, 255, 255, 0.3);--colors-white_04:rgba(255, 255, 255, 0.4);--colors-white_05:rgba(255, 255, 255, 0.5);--colors-white_06:rgba(255, 255, 255, 0.6);--colors-white_07:rgba(255, 255, 255, 0.7);--colors-white_08:rgba(255, 255, 255, 0.8);--colors-white_085:rgba(255, 255, 255, 0.85);--colors-white:#FFFFFF;--colors-black:#000;--colors-black_005:rgba(0,0,0,0.05);--colors-black_01:rgba(0,0,0,0.1);--colors-black_02:rgba(0,0,0,0.2);--colors-black_03:rgba(0,0,0,0.3);--colors-black_05:rgba(0,0,0,0.5);--colors-black_06:rgba(0,0,0,0.6);--colors-black_08:rgba(0,0,0,0.8);--colors-focusBlue:rgba(0,113,227,0.5);--colors-errorRed:rgba(248, 46, 71, 1);--colors-successGreen:#1BC651;--colors-socialsGray:#F2F2F2;--colors-darkThemeBackground:#121212;--colors-techstackCardsBackground:#212121;--colors-techstackLinkBlockBackground:#1B1B1B;--colors-aboutPageBackground:#121212;--colors-hydrogenPageBackground:#121212;--colors-textPrimaryBlack:#121212;--radii-r1:1px;--radii-r2:10px;--radii-r3:24px;--radii-r3_mobile:16px;--radii-rMax:9999px;--radii-rBoxes:20px;--space-0:0px;--space-4:4",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Plus Pricing 2026: Real Cost Beyond $2,300/mo",
+            "url": "https://www.brokenrubik.com/blog/shopify-plus-pricing-guide",
+            "query": "Shopify Flow pricing vaulted payment additional fees",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Shopify Plus Pricing 2026: Real Cost Beyond $2,300/mo {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"@id\":\"https://www.brokenrubik.com/#organization\",\"name\":\"BrokenRubik\",\"url\":\"https://www.brokenrubik.com\",\"logo\":\"https://www.brokenrubik.com/logo.png\",\"description\":\"NetSuite development partner specializing in ERP implementation, SuiteCommerce, custom SuiteScript development, and integrations.\",\"sameAs\":[\"https://www.linkedin.com/company/broken-rubik\",\"https://github.com/BrokenRubik\",\"https://x.com/brokenrubik\"],\"contactPoint\":{\"@type\":\"ContactPoint\",\"email\":\"hello@brokenrubik.co\",\"contactType\":\"customer service\"}} {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"@id\":\"https://www.brokenrubik.com/#website\",\"name\":\"BrokenRubik\",\"url\":\"https://www.brokenrubik.com\",\"description\":\"NetSuite development partner specializing in ERP implementation, SuiteCommerce, custom development, and integrations.\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"BrokenRubik\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://www.brokenrubik.com/logo.png\"}},\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.brokenrubik.com/search?q={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}} (({protect:a})=>{function b(a){return new Promise((b,c)=>{if(document.querySelector(`script[src=\"${a}\"]`))return void b();let d=document.createElement(\"script\");d.src=a,d.async=!0,d.onload=()=>b(),d.onerror=a=>{console.error(\"Error loading script\",a),c(a)},document.head.appendChild(d)})}var c=class a{#a;#b;#c=0;constructor(){let{promise:b,resolve:c}=a.#d();this.#a=b,this.#b=c,this.#e(),window.addEventListener(\"online\",this.#f),window.addEventListener(\"visibilitychange\",this.#f)}getChallenge=async()=>(await this.#g(),await this.#a.then(a=>\"f",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/shopify on Reddit: Shopify B2B Now on Non-Plus Plans",
+            "url": "https://www.reddit.com/r/shopify/comments/1sbi6sq/shopify_b2b_now_on_nonplus_plans/",
+            "query": "Shopify B2B automatic charge vaulted payment experience Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "How to use automatic payment collection for deposits on Shopify | Downpay",
+            "url": "https://getdownpay.com/blog/payment-vaulting-how-to-use-automatic-payment-collection-for-deposits-on-shopify",
+            "query": "Shopify B2B automatic charge vaulted payment experience Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Automatic balance collection for Shopify deposits | Downpay 11 proven deposit strategies used by high-AOV Shopify brands. Download the free playbook → window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XYLJH6EWJM'); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5P6JPWW2'); !function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement(\"script\");t.src=\"https://www.redditstatic.com/ads/pixel.js?pixel_id=a2_izppgnz1uh5h\",t.async=!0;var s=d.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(t,s)}}(window,document);rdt('init','a2_izppgnz1uh5h');rdt('track', 'PageVisit'); !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1309228547845036'); fbq('track', 'PageView'); Features Use Cases Industries Resources Pricing Why Downpay BOOK A DEMO TRY FREE Back to Blog Card on file: How to use automatic payment collection for deposits on Shopify For years, Shopify’s buying experience was optimized for “buy now, pay now.” Businesses who had inherent build times or shipping delays for their",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Help Center | Setting up bank account vaulting for B2B",
+            "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/vaulted-bank-accounts",
+            "query": "Shopify B2B automatic charge vaulted payment experience Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Payment Gateway Tokenization: What It Is and How it Works (2026) - Shopify",
+            "url": "https://www.shopify.com/blog/payment-tokenization",
+            "query": "Shopify vaulted payment PCI compliance tokenization",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(()=>{try{if(typeof MutationObserver>\"u\")return;const r=20,f=120,s={injectedElements:[],removedElements:[],attributesChanged:[]},c=t=>t?t.length>f?`${t.slice(0,f)}...`:t:\"\",N=[\"cdn.shopify.com\",\"shopify.com\",\"shopifycloud\"],b=t=>t?N.some(e=>t.includes(e)):!1,m=t=>{const e=t.nodeName;if(!e||e===\"#text\"||e===\"#comment\")return null;const n=t.id?`#${t.id}`:\"\";let o=\"\";if(t.className&&typeof t.className==\"string\"){const p=t.className.trim().split(/\\s+/).slice(0,2).join(\".\");p&&(o=`.${p}`)}const u=t.getAttribute?.(\"src\"),l=t.getAttribute?.(\"href\"),g=t.getAttribute?.(\"type\"),i=[];u?i.push(`src=${c(u)}`):l&&i.push(`href=${c(l)}`),g&&i.push(`type=${g}`);const E=i.length>0?`[${i.join(\",\")}]`:\"\",A=u||l||\"\";return{desc:[e,n,o,E].filter(Boolean).join(\"\"),internal:b(A)}},d=t=>{const{target:e}=t,n=e.nodeName||\"\";return e.id?`${n}#${e.id}`:n},y=t=>{for(const e of t.addedNodes){const n=m(e);!n||n.internal||s.injectedElements.length ${d(t)}`)}},$=t=>{for(const e of t.removedNodes){const n=m(e);!n||n.internal||s.removedElements.length {const e=d(t),n=t.target.getAttribute?.(t.attributeName)||\"\",o=`${e}.${t.attributeName}=${c(n)}`;s.attributesChanged.length {for(const e of t){const n=e.type===\"childList\",o=e.type===\"attributes\";if(n){y(e),$(e);continue}o&&v(e)}}),a=()=>{h.observe(document.documentElement,{childList:!0,subtree:!0,attributes:!0})};document.readyState===\"loading\"?document.addEventListener(\"DOMContentLoaded\",a):a(),window.__preHydrationData=s,window.__stopPreHydrationMonitor=()=>{h.disconnect(),document.removeEventListener(\"DOMContentLoaded\",a),delete window.__preHydrationData,delete window.__stopPreHydrationMonitor}}catch{}})(); Payment Gateway Tokenization: What It Is and How it Works (2026) - Shopify window.__brochureDuxConfig={\"eventHandlerEndpoint\":\"/.well-known/dux?v2&_p",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Recurring Billing in 2026: The Complete No-Code Setup Guide",
+            "url": "https://www.mavlers.com/blog/shopify-recurring-billing/",
+            "query": "Shopify vaulted payment PCI compliance tokenization",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Shopify Recurring Billing in 2026: The Complete No-Code Setup Guide From web development to digital marketing, we build for growth. Head to Mavlers Agency. Services Lifecycle marketing Customer data management Email campaign production Search marketing CMS development About us Who we are How we work Clients Case studies Testimonials Work samples Latest How Acima scaled SFMC success with a dedicated team from Mavlers Go to case study Platforms Marketing Salesforce Marketing Cloud Braze HubSpot Marketo Pardot Data DataBricks Snowflake HighTouch RudderStack Segment by Twilio Resources Blog Ebooks Videos Featured Ebook Retail CRM & lifecycle marketing benchmark report 2026 Go to ebook Book a call Services Services Lifecycle marketing Customer data management Email campaign production Search marketing CMS development About us About us Who we are How we work We are rated 4.9 out of 5 123+ Clutch reviews We are rated 4.9 out of 5 191+ GoodFirms reviews Clients Clients Case studies Testimonials Work samples Latest How Acima scaled SFMC success with a dedicated team from Mavlers Go to case study Platforms Platforms Marketing Salesforce Marketing Cloud Braze HubSpot Marketo Pardot Data DataBricks Snowflake HighTouch RudderStack Segment by Twilio Resources Resources Blog Ebooks Videos Featured Ebook Retail CRM & lifecycle marketing benchmark report 2026 Go to ebook Book a call {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https://www.mavlers.com/blog/shopify-recurring-billing/#article\",\"isPartOf\":{\"@id\":\"https://www.mavlers.com/blog/shopify-recurring-billing/\"},\"author\":[{\"@type\":\"Person\",\"name\":\"Rahul Kaushal - Reviewer\",\"description\":\"Rahul is a web technology expert and web operations manager with a strong background in digital strategy and client relatio",
+            "fetch_error": ""
+          },
+          {
+            "title": "How Secure is Shopify Payments? An Enterprise Overview | Checkout Boost",
+            "url": "https://checkoutboost.com/blogs/shopify-growth/how-secure-is-shopify-payments-an-enterprise-overview",
+            "query": "Shopify vaulted payment PCI compliance tokenization",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "const LCPobserver = new PerformanceObserver((list) => { const entries = list.getEntries(); const lastEntry = entries[entries.length - 1]; // Use the latest LCP candidate }); LCPobserver.observe({ type: \"largest-contentful-paint\", buffered: true }); window.observerSpeed = new MutationObserver((elements) => { elements.forEach(({ addedNodes: nodes }) => { nodes.forEach((e) => { if(e.nodeType == 1 && e.tagName == 'SCRIPT'){ let sourceAttr = e.getAttribute('data-source-attribution'); if(e.src.includes(\"cdn.shopify.com/extensions\")){ console.log(e.src) e.setAttribute(\"data-src\", e.src); e.removeAttribute(\"src\"); }else if(e.src.includes(\"storefront/bars/preview_bar_injector\") || e.innerText.includes(\"new Shopify.PreviewBarInjector\")){ e.parentNode.removeChild(e); } }; }); }); }); observerSpeed.observe(document.head, { childList: !0, subtree: !0 }); How Secure is Shopify Payments? An Enterprise Overview | Checkout Boost window.dataLayer = window.dataLayer || []; window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'}); window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.start'); {\"accessToken\":\"40044a96ec4a73ba97976732531e940a\",\"betas\":[\"rich-media-storefront-analytics\"],\"domain\":\"checkoutboost.com\",\"predictiveSearch\":true,\"shopId\":87117463866,\"locale\":\"en\"} var Shopify = Shopify || {}; Shopify.shop = \"thecheckoutio.myshopify.com\"; Shopify.locale = \"en\"; Shopify.currency = {\"active\":\"INR\",\"rate\":\"1.0\"}; Shopify.country = \"IN\"; Shopify.theme = {\"name\":\"Checkout-Boost\\/main\",\"id\":182772629818,\"schema_name\":\"Fluid Framework\",\"schema_version\":\"3.0.0\",\"theme_store_id\":null,\"role\":\"main\"}; Shopify.theme.handle = \"null\"; Shopify.theme.style = {\"id\":null,\"handle\":null}; Shopify.cdnHost = \"checkoutboost.com/cdn\"; Shopif",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Help Center | Capturing payments for your orders",
+            "url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/payments/capturing-payments",
+            "query": "Shopify Flow B2B automatic payment success story",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Shopify Flow for B2B: Automate and Scale Smarter on the Shopify Platform",
+            "url": "https://interactone.com/news/shopify-flow-for-b2b/",
+            "query": "Shopify Flow B2B automatic payment success story",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "document.documentElement.className = 'js'; /* ---------------------------------------------------------------------------------------------------- IMPORTANT! The code below requires a developer to install and setup. Please do not simply copy/paste this onto your website. ---------------------------------------------------------------------------------------------------- */ // Initiate Web Behaviour Tracking (this section MUST come prior any other dmPt calls) // Do not change this (function(w,d,u,t,o,c){w['dmtrackingobjectname']=o;c=d.createElement(t);c.async=1;c.src=u;t=d.getElementsByTagName (t)[0];t.parentNode.insertBefore(c,t);w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments);}; })(window, document, '//static.trackedweb.net/js/_dmptv4.js', 'script', 'dmPt'); window.dmPt('create', 'DM-187453-02', 'www.interactone.com'); window.dmPt('track'); // window.dmPt(\"identify\", \"test@test.com\"); // Hardcoded example, inject contact email address. /* Original: https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,latin-ext&display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: ital",
+            "fetch_error": ""
+          },
+          {
+            "title": "10 B2B Success Stories to Inspire Your Own Ecommerce Brand (2025) - Shopify",
+            "url": "https://www.shopify.com/enterprise/blog/b2b-ecommerce-companies",
+            "query": "Shopify Flow B2B automatic payment success story",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(()=>{try{if(typeof MutationObserver>\"u\")return;const r=20,f=120,s={injectedElements:[],removedElements:[],attributesChanged:[]},c=t=>t?t.length>f?`${t.slice(0,f)}...`:t:\"\",N=[\"cdn.shopify.com\",\"shopify.com\",\"shopifycloud\"],b=t=>t?N.some(e=>t.includes(e)):!1,m=t=>{const e=t.nodeName;if(!e||e===\"#text\"||e===\"#comment\")return null;const n=t.id?`#${t.id}`:\"\";let o=\"\";if(t.className&&typeof t.className==\"string\"){const p=t.className.trim().split(/\\s+/).slice(0,2).join(\".\");p&&(o=`.${p}`)}const u=t.getAttribute?.(\"src\"),l=t.getAttribute?.(\"href\"),g=t.getAttribute?.(\"type\"),i=[];u?i.push(`src=${c(u)}`):l&&i.push(`href=${c(l)}`),g&&i.push(`type=${g}`);const E=i.length>0?`[${i.join(\",\")}]`:\"\",A=u||l||\"\";return{desc:[e,n,o,E].filter(Boolean).join(\"\"),internal:b(A)}},d=t=>{const{target:e}=t,n=e.nodeName||\"\";return e.id?`${n}#${e.id}`:n},y=t=>{for(const e of t.addedNodes){const n=m(e);!n||n.internal||s.injectedElements.length ${d(t)}`)}},$=t=>{for(const e of t.removedNodes){const n=m(e);!n||n.internal||s.removedElements.length {const e=d(t),n=t.target.getAttribute?.(t.attributeName)||\"\",o=`${e}.${t.attributeName}=${c(n)}`;s.attributesChanged.length {for(const e of t){const n=e.type===\"childList\",o=e.type===\"attributes\";if(n){y(e),$(e);continue}o&&v(e)}}),a=()=>{h.observe(document.documentElement,{childList:!0,subtree:!0,attributes:!0})};document.readyState===\"loading\"?document.addEventListener(\"DOMContentLoaded\",a):a(),window.__preHydrationData=s,window.__stopPreHydrationMonitor=()=>{h.disconnect(),document.removeEventListener(\"DOMContentLoaded\",a),delete window.__preHydrationData,delete window.__stopPreHydrationMonitor}}catch{}})(); 10 B2B Success Stories to Inspire Your Own Ecommerce Brand (2025) - Shopify window.__brochureDuxConfig={\"eventHandlerEndpoint\":\"/.well-known/dux?v2&_",
+            "fetch_error": ""
+          },
+          {
+            "title": "Vaulted credit cards for B2B - Shopify Changelog",
+            "url": "https://changelog.shopify.com/posts/vaulted-credit-cards-for-b2b",
+            "query": "Shopify Flow actions charge vaulted payment for B2B order",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Shopify Changelog document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js') 0,'js-has-hint': !state.error && state.hint}\" class=\"marketing-input-wrapper\"> Email address Create your store Skip to Content Shopify Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started Open Main Navigation Home Close Main Navigation Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started About Careers Press and Media Enterprise Sitemap Opens in a new window Opens an external site Opens an external site in a new window Changelog What’s new in Shopify No posts found June 17 Updated disclosure for subscription purchases on Checkout Effective June 22, 2026, the default disclosure for subscription products shown at checkout will be updated. Changed Admin June 17 The Spring '26 Edition is live Announcing 150+ updates to Shopify. Improvement Admin June 17 Flow: Automatic charging for vaulted payment methods B2B merchants can now automatically charge vaulted payment methods using a new Flow action triggered by fulfillment, due dates, or invoicing. New B2B June 17 Online Store Edit",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Help Center | Checkout, orders, and draft orders in B2B",
+            "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders",
+            "query": "Shopify Flow actions charge vaulted payment for B2B order",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：官方帮助中心页面（vaulted-cards, vaulted-bank-accounts, payment-methods, capturing-payments, checkout-and-orders）全部返回403"
+        },
+        "core_question": "Shopify Flow 新增的 B2B 自动扣款功能是否真的能减少人工操作，还是可能带来新的账单风险和平台绑定？",
+        "why_this_topic_matters": "Shopify B2B 商家可自动化收款，减少人工催款，但可能隐藏额外费用、支付失败风险、客户纠纷和平台锁定。对使用 Shopify 的独立开发者和小团队有实际影响。",
+        "fact_summary": [
+          "Shopify Flow 新增 'Charge vaulted payment for B2B order' 动作，可自动扣款 vaulted 信用卡或借记银行账户。",
+          "该功能可基于 fulfillment、到期日或发票触发。",
+          "官方 changelog 发布于 2026 年 6 月 17 日。",
+          "vaulted 支付方式需商家先设置信用卡或银行账户 vaulting。",
+          "该功能属于 B2B 功能，可能仅限 Shopify Plus 或特定套餐。"
+        ],
+        "persona_discussion_question": "作为使用 Shopify B2B 的独立开发者或小团队，该不该启用这个自动扣款功能？会不会因为 vaulted 支付方式导致客户纠纷或额外手续费？",
+        "old_flower_stance": "平台自动化功能在降低操作成本的同时，可能将支付失败、退款、争议等风险转移给商家。小团队需评估自身应对 chargeback 和客户投诉的能力，不要盲目启用。",
+        "audience_fit": {
+          "primary_layer": "高价值商业读者",
+          "secondary_layers": [
+            "核心技术人",
+            "副业普通人"
+          ],
+          "interest_score": 55,
+          "why_interested": "B2B 商家关注自动化收款效率，技术人关注实现细节和风险，副业者关注是否值得投入。",
+          "reader_risk": "可能因缺乏真实案例和费用数据而显得空洞，导致读者认为内容不实用。"
+        },
+        "mass_interest_hook": {
+          "score": 40,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "标题如 'Shopify 自动扣款功能上线，B2B 商家小心账单陷阱' 可吸引对电商收款安全感兴趣的普通人。",
+          "story_seed": "一个 B2B 商家因自动扣款失败导致客户投诉，最终发现是 vaulted 卡过期未更新。",
+          "do_not_overhype": "不要夸大自动扣款的风险，避免制造不必要的恐慌。"
+        },
+        "topic_tension": {
+          "score": 5,
+          "conflict_point": "平台自动化便利 vs 商家风险转移",
+          "debate_question": "自动扣款功能是在帮助商家提效，还是将支付失败和争议的责任推给商家？",
+          "stakeholders": [
+            "Shopify",
+            "B2B 商家",
+            "客户（买家）",
+            "支付网关"
+          ],
+          "why_people_would_comment": "商家分享自动扣款的成功或失败经验，技术人讨论实现细节和替代方案。",
+          "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+        },
+        "timeline": [
+          "2026-06-17: Shopify Changelog 发布 Flow 自动扣款功能",
+          "2026-06-17: 同一 changelog 还提到 Spring '26 Edition 发布，包含 150+ 更新"
+        ],
+        "evidence_table": [
+          {
+            "source": "Shopify Changelog",
+            "url": "https://changelog.shopify.com/posts/flow-automatic-charging-for-vaulted-payment-methods",
+            "supports": "功能存在，支持自动扣款 vaulted 支付方式",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify Changelog (vaulted credit cards)",
+            "url": "https://changelog.shopify.com/posts/vaulted-credit-cards-for-b2b",
+            "supports": "vaulted 信用卡功能已存在",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify Help Center (vaulted cards)",
+            "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/vaulted-cards",
+            "supports": "官方文档，但 403 无法获取",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify Help Center (vaulted bank accounts)",
+            "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/vaulted-bank-accounts",
+            "supports": "官方文档，但 403 无法获取",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify Help Center (payment methods)",
+            "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/payment-methods",
+            "supports": "官方文档，但 403 无法获取",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify Help Center (capturing payments)",
+            "url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/payments/capturing-payments",
+            "supports": "通用支付捕获信息",
+            "reliability": "official"
+          },
+          {
+            "source": "Shopify Blog (tokenization)",
+            "url": "https://www.shopify.com/blog/payment-tokenization",
+            "supports": "支付 tokenization 安全说明",
+            "reliability": "official"
+          },
+          {
+            "source": "Interactone (Shopify Flow for B2B)",
+            "url": "https://interactone.com/news/shopify-flow-for-b2b/",
+            "supports": "第三方文章，提及 Flow 用于 B2B 自动化",
+            "reliability": "media"
+          },
+          {
+            "source": "Downpay (automatic payment collection)",
+            "url": "https://getdownpay.com/blog/payment-vaulting-how-to-use-automatic-payment-collection-for-deposits-on-shopify",
+            "supports": "第三方教程，涉及 vaulted 支付自动收款",
+            "reliability": "media"
+          },
+          {
+            "source": "PreProduct (authorization period)",
+            "url": "https://preproduct.io/understanding-shopify-authorization-periods-what-pre-order-merchants-need-to-know/",
+            "supports": "通用授权周期信息",
+            "reliability": "media"
+          },
+          {
+            "source": "Commerce UI (Shopify pricing)",
+            "url": "https://commerce-ui.com/insights/shopify-pricing",
+            "supports": "定价信息，但未涉及 vaulted 支付费用",
+            "reliability": "media"
+          },
+          {
+            "source": "BrokenRubik (Shopify Plus pricing)",
+            "url": "https://www.brokenrubik.com/blog/shopify-plus-pricing-guide",
+            "supports": "Shopify Plus 定价，可能包含 Flow 费用",
+            "reliability": "media"
+          },
+          {
+            "source": "Mavlers (recurring billing)",
+            "url": "https://www.mavlers.com/blog/shopify-recurring-billing/",
+            "supports": "通用 recurring billing 信息",
+            "reliability": "media"
+          },
+          {
+            "source": "Checkout Boost (security)",
+            "url": "https://checkoutboost.com/blogs/shopify-growth/how-secure-is-shopify-payments-an-enterprise-overview",
+            "supports": "Shopify Payments 安全概述",
+            "reliability": "media"
+          },
+          {
+            "source": "Shopify Enterprise (B2B success stories)",
+            "url": "https://www.shopify.com/enterprise/blog/b2b-ecommerce-companies",
+            "supports": "B2B 成功案例，但未涉及自动扣款",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "部分闭环。功能存在，但缺少费用、限制、真实反馈等关键信息，无法形成完整判断。",
+        "writeable_angles": [
+          {
+            "angle": "功能解读与风险分析",
+            "why": "帮助商家了解自动扣款的利弊，避免踩坑",
+            "needs": "官方文档、定价、用户反馈"
+          },
+          {
+            "angle": "与第三方自动收款工具对比",
+            "why": "提供替代方案，增加实用性",
+            "needs": "竞品信息、费用对比"
+          },
+          {
+            "angle": "B2B 商家实操指南",
+            "why": "手把手教商家设置自动扣款",
+            "needs": "详细步骤、截图、注意事项"
+          }
+        ],
+        "missing_basics": [
+          "该功能是否仅限 Shopify Plus？",
+          "是否支持第三方支付网关？",
+          "vaulted 支付的具体 tokenization 实现？",
+          "自动扣款失败的重试机制？",
+          "是否有额外费用？",
+          "是否支持部分付款或分期？"
+        ],
+        "missing_materials": [
+          "官方帮助中心页面全文（403）",
+          "Shopify 定价页面关于 Flow 和 vaulted 支付的费用",
+          "至少 2-3 个商家使用反馈（正面和负面）",
+          "PCI 合规详细说明",
+          "第三方支付网关兼容性列表"
+        ],
+        "not_claimable": [
+          "该功能能显著减少人工操作（需验证实际效果）",
+          "该功能无额外费用（需查定价）",
+          "该功能适用于所有 Shopify 套餐（需确认）",
+          "该功能安全无风险（需验证 PCI 合规）"
+        ],
+        "followup_queries": [
+          "Shopify Flow 自动扣款功能是否仅限 Shopify Plus？",
+          "Shopify Flow 自动扣款是否有额外费用？",
+          "Shopify vaulted 支付 tokenization 如何工作？",
+          "Shopify B2B 自动扣款失败重试机制是什么？",
+          "Shopify B2B 自动扣款支持哪些支付网关？"
+        ],
+        "additional_search_queries": [
+          "Shopify Flow pricing vaulted payment additional fees",
+          "Shopify B2B automatic charge vaulted payment experience Reddit",
+          "Shopify vaulted payment PCI compliance tokenization",
+          "Shopify Flow B2B automatic payment success story",
+          "Shopify Flow actions charge vaulted payment for B2B order"
+        ],
+        "stop_conditions": [
+          "官方文档明确说明费用和限制",
+          "找到至少 2 个真实商家反馈",
+          "确认 PCI 合规细节"
+        ],
+        "confidence": 55.0,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "platform-rules",
+        "quality_gate": {
+          "pass": false,
+          "score": 55,
+          "fatal_issues": [
+            "核心事实没有来源：官方帮助中心页面（vaulted-cards, vaulted-bank-accounts, payment-methods, capturing-payments, checkout-and-orders）全部返回403，无法获取关键文档。",
+            "成本估算没有公式、单位或边界：未提供任何费用信息，无法评估自动扣款的成本。",
+            "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象：读者分层中primary_layer为“高价值商业读者”，但secondary_layers包含“核心技术人”和“副业普通人”，层次模糊，未明确主要服务对象。",
+            "没有泛兴趣故事钩子，标题和开头只适合技术小圈子：标题“Shopify Flow 新增自动扣款功能：支持 B2B 订单 vaulted 支付”过于技术化，缺乏泛兴趣吸引力。",
+            "没有真实传播张力：冲突点“平台自动化便利 vs 商家风险转移”过于抽象，缺乏具体案例或数据支撑，读者评论动力不足。",
+            "没有明确归入实际选题方向，或者选题方向和内容不匹配：选题方向为“工具&规则”，但内容偏向功能解读，缺乏规则层面的深入分析。",
+            "没有明确选题结论：推荐或可选：verdict中status为“可选选题”，但未明确是否推荐。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写：reason中仅说“方向有价值，但证据缺口较大”，未充分解释选题价值。",
+            "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断：内容模板化，缺乏针对该功能的具体分析和判断。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：事实摘要中部分内容（如“该功能属于B2B功能，可能仅限Shopify Plus或特定套餐”）缺乏证据，逻辑未闭环。",
+            "没有列出基础概念缺口和资料素材缺口：missing_basics和missing_materials已列出，但未在fatal_issues中体现。",
+            "没有按具体类型提供资料包：资料包不完整，缺少费用、用户反馈等关键材料。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来：证据中官方来源占多数，但多个官方文档无法访问，第三方来源质量参差不齐，未在统计中说明。"
+          ],
+          "warnings": [
+            "读者钩子（reader_hook）过于平淡，缺乏吸引力。",
+            "传播张力评分（5分）偏低，需要补充真实冲突和反方材料。",
+            "证据缺口较大，多个关键官方文档无法获取。"
+          ],
+          "missing_evidence": [
+            "官方帮助中心页面全文（403）",
+            "Shopify 定价页面关于 Flow 和 vaulted 支付的费用",
+            "至少 2-3 个商家使用反馈（正面和负面）",
+            "PCI 合规详细说明",
+            "第三方支付网关兼容性列表"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": false,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "Shopify Flow 新增的 B2B 自动扣款功能是否真的能减少人工操作，还是可能带来新的账单风险和平台绑定？",
+          "persona_discussion_question": "作为使用 Shopify B2B 的独立开发者或小团队，该不该启用这个自动扣款功能？会不会因为 vaulted 支付方式导致客户纠纷或额外手续费？",
+          "hidden_public_issue": "平台自动化功能在降低操作成本的同时，是否将支付失败、退款、争议等风险转移给了商家？小团队是否有能力应对自动扣款带来的客户投诉和 chargeback？",
+          "must_verify": [
+            "该功能是否仅适用于 Shopify Payments 还是支持第三方支付网关？",
+            "vaulted 支付方式的具体实现：是 token 化存储还是敏感信息留存？是否符合 PCI DSS？",
+            "自动扣款失败后的重试机制和通知流程是什么？",
+            "是否有额外费用（如每笔交易手续费、vault 存储费）？",
+            "B2B 订单的支付条款（如 net 30）下，自动扣款是否支持部分付款或分期？",
+            "该功能是否对 Shopify Plus 或特定套餐有限制？",
+            "是否有商家实际使用案例或反馈（正面/负面）？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Shopify Flow automatic charging vaulted payment B2B documentation",
+              "why_needed": "获取官方详细说明，包括支持条件、限制和费用"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "Shopify Flow pricing vaulted payment additional fees",
+              "why_needed": "确认是否有隐藏费用，如 vault 存储费或交易手续费"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Shopify B2B automatic charge vaulted payment experience Reddit",
+              "why_needed": "获取真实商家使用反馈，包括问题、投诉和最佳实践"
+            },
+            {
+              "source_type": "policy",
+              "query": "Shopify vaulted payment PCI compliance tokenization",
+              "why_needed": "验证支付安全合规性，避免数据泄露风险"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Shopify Flow B2B automatic payment success story",
+              "why_needed": "寻找成功案例，评估实际效果和 ROI"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Shopify Flow actions charge vaulted payment for B2B order",
+              "why_needed": "直接查看帮助中心页面，确认操作细节和限制"
+            }
+          ],
+          "expert_challenge_points": [
+            "自动扣款是否支持多种支付方式（信用卡、ACH）？ACH 扣款失败率如何？",
+            "如果客户对扣款有争议，Shopify 的争议解决流程是否对商家有利？",
+            "该功能是否与 Shopify 的 B2B 批发功能深度集成？是否支持自定义支付条款？",
+            "对于国际 B2B 交易，自动扣款是否支持多币种和跨境支付？"
+          ],
+          "do_not_claim_yet": [
+            "该功能能显著减少人工操作（需验证实际效果和潜在问题）",
+            "该功能无额外费用（需查定价页面）",
+            "该功能适用于所有 Shopify 套餐（需确认套餐限制）",
+            "该功能安全无风险（需验证 PCI 合规和 tokenization 细节）"
+          ],
+          "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。因为该主题过于狭窄，仅针对 Shopify B2B 商家，且属于平台功能更新，缺乏普通技术人的真实选择题和利益冲突。",
+          "downstream_materials_needed": [
+            "Shopify Flow 自动扣款功能的官方帮助中心页面截图或全文",
+            "Shopify 定价页面关于 Flow 和支付处理的费用说明",
+            "至少 2-3 个商家使用该功能的真实反馈（正面和负面）",
+            "PCI 合规相关文档或声明",
+            "与第三方支付网关兼容性的官方说明"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Flow: Automatic charging for vaulted payment methods - Shopify Changelog",
+            "url": "https://documentation-changelog.shopifysvc.com/posts/flow-automatic-charging-for-vaulted-payment-methods",
+            "query": "Shopify Flow automatic charging vaulted payment B2B documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Flow: Automatic charging for vaulted payment methods - Shopify Changelog document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js') 0,'js-has-hint': !state.error && state.hint}\" class=\"marketing-input-wrapper\"> Email address Create your store Skip to Content Shopify Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started Open Main Navigation Home Close Main Navigation Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started About Careers Press and Media Enterprise Sitemap Opens in a new window Opens an external site Opens an external site in a new window Changelog What’s new in Shopify Back to Changelog June 17, 2026 Flow: Automatic charging for vaulted payment methods The Charge vaulted payment for B2B order action charges a customer's vaulted credit card or debits a vaulted bank account for an order with payment terms when payment is due. Learn more about the Charge vaulted payment for B2B order Flow action in the Shopify Help Center . New B2B More resources About Careers Press and Media Enterprise Sitemap Online store Sell online Features Examples Webs",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Help Center | Setting up credit card vaulting for B2B",
+            "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/vaulted-cards",
+            "query": "Shopify Flow automatic charging vaulted payment B2B documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Shopify Help Center | Setting up payment methods for your B2B business",
+            "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/payment-methods",
+            "query": "Shopify Flow automatic charging vaulted payment B2B documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Shopify Authorization Period: Complete Guide for Pre-orders",
+            "url": "https://preproduct.io/understanding-shopify-authorization-periods-what-pre-order-merchants-need-to-know/",
+            "query": "Shopify Flow pricing vaulted payment additional fees",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Shopify Authorization Period: Complete Guide for Pre-orders {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://preproduct.io/#organization\",\"name\":\"PreProduct\",\"url\":\"https://preproduct.io\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://preproduct.io/#logo\",\"url\":\"http://preproduct.io/wp-content/uploads/2025/11/Preproduct_icon.png\",\"contentUrl\":\"http://preproduct.io/wp-content/uploads/2025/11/Preproduct_icon.png\",\"caption\":\"PreProduct\",\"inLanguage\":\"en-US\",\"width\":\"56\",\"height\":\"60\"}},{\"@type\":\"WebSite\",\"@id\":\"https://preproduct.io/#website\",\"url\":\"https://preproduct.io\",\"name\":\"PreProduct\",\"publisher\":{\"@id\":\"https://preproduct.io/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://preproduct.io/wp-content/uploads/2025/11/checkout-4-w-prop.png\",\"url\":\"https://preproduct.io/wp-content/uploads/2025/11/checkout-4-w-prop.png\",\"width\":\"1536\",\"height\":\"640\",\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https://preproduct.io/understanding-shopify-authorization-periods-what-pre-order-merchants-need-to-know/#webpage\",\"url\":\"https://preproduct.io/understanding-shopify-authorization-periods-what-pre-order-merchants-need-to-know/\",\"name\":\"Shopify Authorization Period: Complete Guide for Pre-orders\",\"datePublished\":\"2025-11-05T04:11:00+00:00\",\"dateModified\":\"2026-01-14T04:18:01+00:00\",\"isPartOf\":{\"@id\":\"https://preproduct.io/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://preproduct.io/wp-content/uploads/2025/11/checkout-4-w-prop.png\"},\"inLanguage\":\"en-US\"},{\"@type\":\"Person\",\"@id\":\"https://preproduct.io/author/admin/\",\"name\":\"admin\",\"url\":\"https://preproduct.io/author/admin/\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://secure.gravatar.com/avatar/8de3238e7c975095691494a824bfff86bc603da8b702050c47d3e14eee4fbde3?s=96&d=mm&r=g\",\"",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Pricing (2026): Plans, Fees & Real Cost Breakdown",
+            "url": "https://commerce-ui.com/insights/shopify-pricing",
+            "query": "Shopify Flow pricing vaulted payment additional fees",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Shopify Pricing (2026): Plans, Fees & Real Cost Breakdown --sxs{--sxs:0 t-cFTtYt}@media{:root,.t-cFTtYt{--colors-gray50:#f2f2f2;--colors-gray100:#ececec;--colors-gray200:#dadada;--colors-gray300:#919090;--colors-gray400:#6c6b6b;--colors-gray500:#474646;--colors-gray500_01:rgba(71, 70, 70, 0.1);--colors-gray500_02:rgba(71, 70, 70, 0.2);--colors-gray500_03:rgba(71, 70, 70, 0.3);--colors-gray500_04:rgba(71, 70, 70, 0.4);--colors-gray500_06:rgba(71, 70, 70, 0.6);--colors-gray500_08:rgba(71, 70, 70, 0.8);--colors-gray600:#2B2B2B;--colors-white_005:rgba(255, 255, 255, 0.05);--colors-white_01:rgba(255, 255, 255, 0.1);--colors-white_02:rgba(255, 255, 255, 0.2);--colors-white_024:rgba(255, 255, 255, 0.24);--colors-white_03:rgba(255, 255, 255, 0.3);--colors-white_04:rgba(255, 255, 255, 0.4);--colors-white_05:rgba(255, 255, 255, 0.5);--colors-white_06:rgba(255, 255, 255, 0.6);--colors-white_07:rgba(255, 255, 255, 0.7);--colors-white_08:rgba(255, 255, 255, 0.8);--colors-white_085:rgba(255, 255, 255, 0.85);--colors-white:#FFFFFF;--colors-black:#000;--colors-black_005:rgba(0,0,0,0.05);--colors-black_01:rgba(0,0,0,0.1);--colors-black_02:rgba(0,0,0,0.2);--colors-black_03:rgba(0,0,0,0.3);--colors-black_05:rgba(0,0,0,0.5);--colors-black_06:rgba(0,0,0,0.6);--colors-black_08:rgba(0,0,0,0.8);--colors-focusBlue:rgba(0,113,227,0.5);--colors-errorRed:rgba(248, 46, 71, 1);--colors-successGreen:#1BC651;--colors-socialsGray:#F2F2F2;--colors-darkThemeBackground:#121212;--colors-techstackCardsBackground:#212121;--colors-techstackLinkBlockBackground:#1B1B1B;--colors-aboutPageBackground:#121212;--colors-hydrogenPageBackground:#121212;--colors-textPrimaryBlack:#121212;--radii-r1:1px;--radii-r2:10px;--radii-r3:24px;--radii-r3_mobile:16px;--radii-rMax:9999px;--radii-rBoxes:20px;--space-0:0px;--space-4:4",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Plus Pricing 2026: Real Cost Beyond $2,300/mo",
+            "url": "https://www.brokenrubik.com/blog/shopify-plus-pricing-guide",
+            "query": "Shopify Flow pricing vaulted payment additional fees",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Shopify Plus Pricing 2026: Real Cost Beyond $2,300/mo {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"@id\":\"https://www.brokenrubik.com/#organization\",\"name\":\"BrokenRubik\",\"url\":\"https://www.brokenrubik.com\",\"logo\":\"https://www.brokenrubik.com/logo.png\",\"description\":\"NetSuite development partner specializing in ERP implementation, SuiteCommerce, custom SuiteScript development, and integrations.\",\"sameAs\":[\"https://www.linkedin.com/company/broken-rubik\",\"https://github.com/BrokenRubik\",\"https://x.com/brokenrubik\"],\"contactPoint\":{\"@type\":\"ContactPoint\",\"email\":\"hello@brokenrubik.co\",\"contactType\":\"customer service\"}} {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"@id\":\"https://www.brokenrubik.com/#website\",\"name\":\"BrokenRubik\",\"url\":\"https://www.brokenrubik.com\",\"description\":\"NetSuite development partner specializing in ERP implementation, SuiteCommerce, custom development, and integrations.\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"BrokenRubik\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://www.brokenrubik.com/logo.png\"}},\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https://www.brokenrubik.com/search?q={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}} (({protect:a})=>{function b(a){return new Promise((b,c)=>{if(document.querySelector(`script[src=\"${a}\"]`))return void b();let d=document.createElement(\"script\");d.src=a,d.async=!0,d.onload=()=>b(),d.onerror=a=>{console.error(\"Error loading script\",a),c(a)},document.head.appendChild(d)})}var c=class a{#a;#b;#c=0;constructor(){let{promise:b,resolve:c}=a.#d();this.#a=b,this.#b=c,this.#e(),window.addEventListener(\"online\",this.#f),window.addEventListener(\"visibilitychange\",this.#f)}getChallenge=async()=>(await this.#g(),await this.#a.then(a=>\"f",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/shopify on Reddit: Shopify B2B Now on Non-Plus Plans",
+            "url": "https://www.reddit.com/r/shopify/comments/1sbi6sq/shopify_b2b_now_on_nonplus_plans/",
+            "query": "Shopify B2B automatic charge vaulted payment experience Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "How to use automatic payment collection for deposits on Shopify | Downpay",
+            "url": "https://getdownpay.com/blog/payment-vaulting-how-to-use-automatic-payment-collection-for-deposits-on-shopify",
+            "query": "Shopify B2B automatic charge vaulted payment experience Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Automatic balance collection for Shopify deposits | Downpay 11 proven deposit strategies used by high-AOV Shopify brands. Download the free playbook → window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-XYLJH6EWJM'); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-5P6JPWW2'); !function(w,d){if(!w.rdt){var p=w.rdt=function(){p.sendEvent?p.sendEvent.apply(p,arguments):p.callQueue.push(arguments)};p.callQueue=[];var t=d.createElement(\"script\");t.src=\"https://www.redditstatic.com/ads/pixel.js?pixel_id=a2_izppgnz1uh5h\",t.async=!0;var s=d.getElementsByTagName(\"script\")[0];s.parentNode.insertBefore(t,s)}}(window,document);rdt('init','a2_izppgnz1uh5h');rdt('track', 'PageVisit'); !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod? n.callMethod.apply(n,arguments):n.queue.push(arguments)}; if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0'; n.queue=[];t=b.createElement(e);t.async=!0; t.src=v;s=b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t,s)}(window, document,'script', 'https://connect.facebook.net/en_US/fbevents.js'); fbq('init', '1309228547845036'); fbq('track', 'PageView'); Features Use Cases Industries Resources Pricing Why Downpay BOOK A DEMO TRY FREE Back to Blog Card on file: How to use automatic payment collection for deposits on Shopify For years, Shopify’s buying experience was optimized for “buy now, pay now.” Businesses who had inherent build times or shipping delays for their",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Help Center | Setting up bank account vaulting for B2B",
+            "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders/vaulted-bank-accounts",
+            "query": "Shopify B2B automatic charge vaulted payment experience Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Payment Gateway Tokenization: What It Is and How it Works (2026) - Shopify",
+            "url": "https://www.shopify.com/blog/payment-tokenization",
+            "query": "Shopify vaulted payment PCI compliance tokenization",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(()=>{try{if(typeof MutationObserver>\"u\")return;const r=20,f=120,s={injectedElements:[],removedElements:[],attributesChanged:[]},c=t=>t?t.length>f?`${t.slice(0,f)}...`:t:\"\",N=[\"cdn.shopify.com\",\"shopify.com\",\"shopifycloud\"],b=t=>t?N.some(e=>t.includes(e)):!1,m=t=>{const e=t.nodeName;if(!e||e===\"#text\"||e===\"#comment\")return null;const n=t.id?`#${t.id}`:\"\";let o=\"\";if(t.className&&typeof t.className==\"string\"){const p=t.className.trim().split(/\\s+/).slice(0,2).join(\".\");p&&(o=`.${p}`)}const u=t.getAttribute?.(\"src\"),l=t.getAttribute?.(\"href\"),g=t.getAttribute?.(\"type\"),i=[];u?i.push(`src=${c(u)}`):l&&i.push(`href=${c(l)}`),g&&i.push(`type=${g}`);const E=i.length>0?`[${i.join(\",\")}]`:\"\",A=u||l||\"\";return{desc:[e,n,o,E].filter(Boolean).join(\"\"),internal:b(A)}},d=t=>{const{target:e}=t,n=e.nodeName||\"\";return e.id?`${n}#${e.id}`:n},y=t=>{for(const e of t.addedNodes){const n=m(e);!n||n.internal||s.injectedElements.length ${d(t)}`)}},$=t=>{for(const e of t.removedNodes){const n=m(e);!n||n.internal||s.removedElements.length {const e=d(t),n=t.target.getAttribute?.(t.attributeName)||\"\",o=`${e}.${t.attributeName}=${c(n)}`;s.attributesChanged.length {for(const e of t){const n=e.type===\"childList\",o=e.type===\"attributes\";if(n){y(e),$(e);continue}o&&v(e)}}),a=()=>{h.observe(document.documentElement,{childList:!0,subtree:!0,attributes:!0})};document.readyState===\"loading\"?document.addEventListener(\"DOMContentLoaded\",a):a(),window.__preHydrationData=s,window.__stopPreHydrationMonitor=()=>{h.disconnect(),document.removeEventListener(\"DOMContentLoaded\",a),delete window.__preHydrationData,delete window.__stopPreHydrationMonitor}}catch{}})(); Payment Gateway Tokenization: What It Is and How it Works (2026) - Shopify window.__brochureDuxConfig={\"eventHandlerEndpoint\":\"/.well-known/dux?v2&_p",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Recurring Billing in 2026: The Complete No-Code Setup Guide",
+            "url": "https://www.mavlers.com/blog/shopify-recurring-billing/",
+            "query": "Shopify vaulted payment PCI compliance tokenization",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Shopify Recurring Billing in 2026: The Complete No-Code Setup Guide From web development to digital marketing, we build for growth. Head to Mavlers Agency. Services Lifecycle marketing Customer data management Email campaign production Search marketing CMS development About us Who we are How we work Clients Case studies Testimonials Work samples Latest How Acima scaled SFMC success with a dedicated team from Mavlers Go to case study Platforms Marketing Salesforce Marketing Cloud Braze HubSpot Marketo Pardot Data DataBricks Snowflake HighTouch RudderStack Segment by Twilio Resources Blog Ebooks Videos Featured Ebook Retail CRM & lifecycle marketing benchmark report 2026 Go to ebook Book a call Services Services Lifecycle marketing Customer data management Email campaign production Search marketing CMS development About us About us Who we are How we work We are rated 4.9 out of 5 123+ Clutch reviews We are rated 4.9 out of 5 191+ GoodFirms reviews Clients Clients Case studies Testimonials Work samples Latest How Acima scaled SFMC success with a dedicated team from Mavlers Go to case study Platforms Platforms Marketing Salesforce Marketing Cloud Braze HubSpot Marketo Pardot Data DataBricks Snowflake HighTouch RudderStack Segment by Twilio Resources Resources Blog Ebooks Videos Featured Ebook Retail CRM & lifecycle marketing benchmark report 2026 Go to ebook Book a call {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https://www.mavlers.com/blog/shopify-recurring-billing/#article\",\"isPartOf\":{\"@id\":\"https://www.mavlers.com/blog/shopify-recurring-billing/\"},\"author\":[{\"@type\":\"Person\",\"name\":\"Rahul Kaushal - Reviewer\",\"description\":\"Rahul is a web technology expert and web operations manager with a strong background in digital strategy and client relatio",
+            "fetch_error": ""
+          },
+          {
+            "title": "How Secure is Shopify Payments? An Enterprise Overview | Checkout Boost",
+            "url": "https://checkoutboost.com/blogs/shopify-growth/how-secure-is-shopify-payments-an-enterprise-overview",
+            "query": "Shopify vaulted payment PCI compliance tokenization",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "const LCPobserver = new PerformanceObserver((list) => { const entries = list.getEntries(); const lastEntry = entries[entries.length - 1]; // Use the latest LCP candidate }); LCPobserver.observe({ type: \"largest-contentful-paint\", buffered: true }); window.observerSpeed = new MutationObserver((elements) => { elements.forEach(({ addedNodes: nodes }) => { nodes.forEach((e) => { if(e.nodeType == 1 && e.tagName == 'SCRIPT'){ let sourceAttr = e.getAttribute('data-source-attribution'); if(e.src.includes(\"cdn.shopify.com/extensions\")){ console.log(e.src) e.setAttribute(\"data-src\", e.src); e.removeAttribute(\"src\"); }else if(e.src.includes(\"storefront/bars/preview_bar_injector\") || e.innerText.includes(\"new Shopify.PreviewBarInjector\")){ e.parentNode.removeChild(e); } }; }); }); }); observerSpeed.observe(document.head, { childList: !0, subtree: !0 }); How Secure is Shopify Payments? An Enterprise Overview | Checkout Boost window.dataLayer = window.dataLayer || []; window.dataLayer.push({'gtm.start': new Date().getTime(), event: 'gtm.js'}); window.performance && window.performance.mark && window.performance.mark('shopify.content_for_header.start'); {\"accessToken\":\"40044a96ec4a73ba97976732531e940a\",\"betas\":[\"rich-media-storefront-analytics\"],\"domain\":\"checkoutboost.com\",\"predictiveSearch\":true,\"shopId\":87117463866,\"locale\":\"en\"} var Shopify = Shopify || {}; Shopify.shop = \"thecheckoutio.myshopify.com\"; Shopify.locale = \"en\"; Shopify.currency = {\"active\":\"INR\",\"rate\":\"1.0\"}; Shopify.country = \"IN\"; Shopify.theme = {\"name\":\"Checkout-Boost\\/main\",\"id\":182772629818,\"schema_name\":\"Fluid Framework\",\"schema_version\":\"3.0.0\",\"theme_store_id\":null,\"role\":\"main\"}; Shopify.theme.handle = \"null\"; Shopify.theme.style = {\"id\":null,\"handle\":null}; Shopify.cdnHost = \"checkoutboost.com/cdn\"; Shopif",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Help Center | Capturing payments for your orders",
+            "url": "https://help.shopify.com/en/manual/fulfillment/managing-orders/payments/capturing-payments",
+            "query": "Shopify Flow B2B automatic payment success story",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Shopify Flow for B2B: Automate and Scale Smarter on the Shopify Platform",
+            "url": "https://interactone.com/news/shopify-flow-for-b2b/",
+            "query": "Shopify Flow B2B automatic payment success story",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "document.documentElement.className = 'js'; /* ---------------------------------------------------------------------------------------------------- IMPORTANT! The code below requires a developer to install and setup. Please do not simply copy/paste this onto your website. ---------------------------------------------------------------------------------------------------- */ // Initiate Web Behaviour Tracking (this section MUST come prior any other dmPt calls) // Do not change this (function(w,d,u,t,o,c){w['dmtrackingobjectname']=o;c=d.createElement(t);c.async=1;c.src=u;t=d.getElementsByTagName (t)[0];t.parentNode.insertBefore(c,t);w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments);}; })(window, document, '//static.trackedweb.net/js/_dmptv4.js', 'script', 'dmPt'); window.dmPt('create', 'DM-187453-02', 'www.interactone.com'); window.dmPt('track'); // window.dmPt(\"identify\", \"test@test.com\"); // Hardcoded example, inject contact email address. /* Original: https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&subset=latin,latin-ext&display=swap *//* User Agent: Mozilla/5.0 (Unknown; Linux x86_64) AppleWebKit/538.1 (KHTML, like Gecko) Safari/538.1 Daum/4.1 */@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 300;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk5hkWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: italic;font-weight: 400;font-stretch: normal;font-display: swap;src: url(https://fonts.gstatic.com/s/opensans/v44/memQYaGs126MiZpBA-UFUIcVXSCEkx2cmqvXlWq8tWZ0Pw86hd0Rk8ZkWV4exQ.ttf) format('truetype');}@font-face {font-family: 'Open Sans';font-style: ital",
+            "fetch_error": ""
+          },
+          {
+            "title": "10 B2B Success Stories to Inspire Your Own Ecommerce Brand (2025) - Shopify",
+            "url": "https://www.shopify.com/enterprise/blog/b2b-ecommerce-companies",
+            "query": "Shopify Flow B2B automatic payment success story",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(()=>{try{if(typeof MutationObserver>\"u\")return;const r=20,f=120,s={injectedElements:[],removedElements:[],attributesChanged:[]},c=t=>t?t.length>f?`${t.slice(0,f)}...`:t:\"\",N=[\"cdn.shopify.com\",\"shopify.com\",\"shopifycloud\"],b=t=>t?N.some(e=>t.includes(e)):!1,m=t=>{const e=t.nodeName;if(!e||e===\"#text\"||e===\"#comment\")return null;const n=t.id?`#${t.id}`:\"\";let o=\"\";if(t.className&&typeof t.className==\"string\"){const p=t.className.trim().split(/\\s+/).slice(0,2).join(\".\");p&&(o=`.${p}`)}const u=t.getAttribute?.(\"src\"),l=t.getAttribute?.(\"href\"),g=t.getAttribute?.(\"type\"),i=[];u?i.push(`src=${c(u)}`):l&&i.push(`href=${c(l)}`),g&&i.push(`type=${g}`);const E=i.length>0?`[${i.join(\",\")}]`:\"\",A=u||l||\"\";return{desc:[e,n,o,E].filter(Boolean).join(\"\"),internal:b(A)}},d=t=>{const{target:e}=t,n=e.nodeName||\"\";return e.id?`${n}#${e.id}`:n},y=t=>{for(const e of t.addedNodes){const n=m(e);!n||n.internal||s.injectedElements.length ${d(t)}`)}},$=t=>{for(const e of t.removedNodes){const n=m(e);!n||n.internal||s.removedElements.length {const e=d(t),n=t.target.getAttribute?.(t.attributeName)||\"\",o=`${e}.${t.attributeName}=${c(n)}`;s.attributesChanged.length {for(const e of t){const n=e.type===\"childList\",o=e.type===\"attributes\";if(n){y(e),$(e);continue}o&&v(e)}}),a=()=>{h.observe(document.documentElement,{childList:!0,subtree:!0,attributes:!0})};document.readyState===\"loading\"?document.addEventListener(\"DOMContentLoaded\",a):a(),window.__preHydrationData=s,window.__stopPreHydrationMonitor=()=>{h.disconnect(),document.removeEventListener(\"DOMContentLoaded\",a),delete window.__preHydrationData,delete window.__stopPreHydrationMonitor}}catch{}})(); 10 B2B Success Stories to Inspire Your Own Ecommerce Brand (2025) - Shopify window.__brochureDuxConfig={\"eventHandlerEndpoint\":\"/.well-known/dux?v2&_",
+            "fetch_error": ""
+          },
+          {
+            "title": "Vaulted credit cards for B2B - Shopify Changelog",
+            "url": "https://changelog.shopify.com/posts/vaulted-credit-cards-for-b2b",
+            "query": "Shopify Flow actions charge vaulted payment for B2B order",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Shopify Changelog document.documentElement.classList.remove('no-js'); document.documentElement.classList.add('js') 0,'js-has-hint': !state.error && state.hint}\" class=\"marketing-input-wrapper\"> Email address Create your store Skip to Content Shopify Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started Open Main Navigation Home Close Main Navigation Help Topics Intro to Shopify Your account Migrating to Shopify Shopify community Selling online Selling in person Products Locations Themes for your online store Payments Domains Shipping Orders Taxes Customers Analytics Productivity tools Apps Dropshipping Services Marketplace Marketing and discounts Support Contact Support Video tutorials Shopify community Changelog Shopify.com Log in Get started About Careers Press and Media Enterprise Sitemap Opens in a new window Opens an external site Opens an external site in a new window Changelog What’s new in Shopify No posts found June 17 Updated disclosure for subscription purchases on Checkout Effective June 22, 2026, the default disclosure for subscription products shown at checkout will be updated. Changed Admin June 17 The Spring '26 Edition is live Announcing 150+ updates to Shopify. Improvement Admin June 17 Flow: Automatic charging for vaulted payment methods B2B merchants can now automatically charge vaulted payment methods using a new Flow action triggered by fulfillment, due dates, or invoicing. New B2B June 17 Online Store Edit",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Help Center | Checkout, orders, and draft orders in B2B",
+            "url": "https://help.shopify.com/en/manual/b2b/checkout-and-orders",
+            "query": "Shopify Flow actions charge vaulted payment for B2B order",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          }
+        ]
+      },
+      "angle_candidates": [
+        "规则变动影响谁",
+        "普通技术人的合规边界",
+        "平台红利和封号风险"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "Shopify Flow 新增自动扣款功能：支持 B2B 订单 vaulted 支付 官方政策 规则 原文",
+        "Shopify Flow 新增自动扣款功能：支持 B2B 订单 vaulted 支付 开发者公告 影响范围",
+        "Shopify Flow 新增自动扣款功能：支持 B2B 订单 vaulted 支付 合规 风险 受影响用户"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}

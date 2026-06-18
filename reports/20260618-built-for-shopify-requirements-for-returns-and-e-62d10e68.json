@@ -1,0 +1,1804 @@
+{
+  "id": "20260618-built-for-shopify-requirements-for-returns-and-e-62d10e68",
+  "batch_id": "2026-06-18-morning",
+  "title": "Shopify 要求退货/换货和订阅应用在 2026 年底前强制客户认证",
+  "original_title": "Built for Shopify requirements for Returns and exchanges apps and Subscription apps (effective December 1, 2026)",
+  "url": "https://shopify.dev/changelog/built-for-shopify-requirements-for-returns-and-exchanges-and-subscription-apps",
+  "summary": "Effective December 1, 2026 , Returns and exchanges apps and Subscription apps that provide buyer-facing self-service experiences must authenticate customers using the Customer Account API. Apps that don't meet this requirement by the deadline are at risk of losing Built for Shopify status . What's changing Returns and exchanges and Subscription apps with buyer-facing self-service experiences must use the Customer Account API for customer authentication. This gives buyers and merchants a single, secure sign-in across their storefront, apps, and customer accounts. Who this affects Your app is affected if it falls into either category and offers buyers a self-service experience (for example, managing returns, tracking exchanges, or updating a subscription). What you need to do Integrate the Customer Account API for customer authentication in your buyer-facing flows. Review the updated Built",
+  "source_category": "platform_policy",
+  "source_category_title": "平台规则与搜索生态",
+  "topic_direction": "cross-border",
+  "topic_direction_title": "跨境&出海",
+  "topic_direction_short_title": "跨境&出海",
+  "topic_direction_description": "跨境支付、海外平台、独立站、电商、合规、收款和出海基础设施。重点记录平台、规则、费率和服务范围变化。",
+  "source_name": "Shopify Developer Changelog",
+  "original_source_name": "Recent changes to Shopify's platform",
+  "source_type": "rss",
+  "feed_url": "https://shopify.dev/changelog/feed.xml",
+  "published_at": "2026-06-17T15:45:00+00:00",
+  "fetched_at": "2026-06-18T02:26:26.691529+00:00",
+  "decision": "deep_dive",
+  "report_type": "platform-rules",
+  "report_type_title": "平台规则",
+  "score": 78,
+  "reader_hook": "Shopify 应用开发者需在截止日期前完成合规改造",
+  "topic_tension": {
+    "score": 9,
+    "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+    "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+    "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+  },
+  "persona_discussion_question": "小团队该不该继续把关键工作流押在这个平台规则上？",
+  "why_now": "截止日期明确，开发者需尽快行动",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "平台规则变化有明确时间线，对开发者有强制约束力，适合记录并提醒",
+  "collection_fit": "platform-rules",
+  "investigation_direction": "具体认证要求、改造难度、对现有应用的影响",
+  "uncertainty_flags": [
+    "认证具体实现细节未完全公布"
+  ],
+  "facts": [
+    {
+      "claim": "Shopify Developer Changelog 发布/收录了这条原始线索：Built for Shopify requirements for Returns and exchanges apps and Subscription apps (effective December 1, 2026)",
+      "type": "confirmed_fact",
+      "source_url": "https://shopify.dev/changelog/built-for-shopify-requirements-for-returns-and-exchanges-and-subscription-apps",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Shopify Developer Changelog",
+      "url": "https://shopify.dev/changelog/built-for-shopify-requirements-for-returns-and-exchanges-and-subscription-apps",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "dev": [
+        "api"
+      ],
+      "platform": [
+        "shopify"
+      ]
+    },
+    "source_host": "shopify.dev",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 9,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "Shopify 应用开发者需在截止日期前完成合规改造",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://shopify.dev/changelog/feed.xml",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "认证具体实现细节未完全公布"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：Customer Account API与现有认证方式的具体差异"
+    },
+    "core_question": "Shopify 强制退货/换货和订阅应用在 2026 年底前使用 Customer Account API 进行客户认证，这对现有应用开发者（尤其是小团队和独立开发者）的改造成本、时间压力和业务风险有多大？",
+    "why_this_topic_matters": "平台规则变化有明确时间线，对开发者有强制约束力，直接影响现有应用的合规状态和商店可见性。截止日期 2026 年 12 月 1 日，开发者需尽快评估改造工作量并规划迁移。",
+    "fact_summary": [
+      "Shopify 要求退货/换货和订阅应用在 2026 年 12 月 1 日前使用 Customer Account API 进行客户认证。",
+      "未按时改造的应用可能失去 Built for Shopify 状态。",
+      "Customer Account API 已有完整文档和入门指南。",
+      "社区已有开发者报告集成问题（如“Called Customer Account API in the last 30 days”要求）。",
+      "失去 Built for Shopify 状态后可通过满足要求重新获得。"
+    ],
+    "persona_discussion_question": "老花：我开发的退货/换货应用需要接入 Customer Account API，改造工作量有多大？会不会影响现有用户？如果我不做，失去 Built for Shopify 状态会怎样？",
+    "old_flower_stance": "平台规则变化是生态成熟的表现，但小团队需要算清楚改造成本和时间账，不要盲目投入。先评估现有认证方式与 Customer Account API 的差异，再决定是改造还是放弃。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 85,
+      "why_interested": "直接涉及应用合规和商店运营，开发者需要了解具体要求和时间线。",
+      "reader_risk": "标题可能被误解为所有 Shopify 应用都需要改造，实际仅限退货/换货和订阅应用。"
+    },
+    "mass_interest_hook": {
+      "score": 70,
+      "hook_type": "踩坑",
+      "why_non_technical_people_may_click": "小团队/独立开发者担心平台规则变化导致应用被下架，影响收入。",
+      "story_seed": "一个独立开发者开发的退货应用，因为没及时改造，失去 Built for Shopify 标签，搜索排名下降，订单量腰斩。",
+      "do_not_overhype": "不要声称改造工作量巨大或简单，需基于实际文档和案例。"
+    },
+    "topic_tension": {
+      "score": 9,
+      "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+      "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "平台/工具厂商"
+      ],
+      "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2026-06-17: Shopify 发布 changelog，要求退货/换货和订阅应用在 2026-12-01 前使用 Customer Account API。",
+      "2026-12-01: 截止日期，未改造的应用可能失去 Built for Shopify 状态。"
+    ],
+    "evidence_table": [
+      {
+        "source": "Shopify Developer Changelog",
+        "url": "https://shopify.dev/changelog/built-for-shopify-requirements-for-returns-and-exchanges-and-subscription-apps",
+        "supports": "官方要求，截止日期，受影响应用类型",
+        "reliability": "official"
+      },
+      {
+        "source": "Customer Account API reference",
+        "url": "https://shopify.dev/docs/api/customer/latest",
+        "supports": "API 文档存在，可集成",
+        "reliability": "official"
+      },
+      {
+        "source": "Getting started with the Customer Account API",
+        "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/getting-started",
+        "supports": "集成指南存在",
+        "reliability": "official"
+      },
+      {
+        "source": "Built for Shopify: Called Customer Account API in the last 30 days issue",
+        "url": "https://community.shopify.dev/t/built-for-shopify-called-customer-account-api-in-the-last-30-days-issue/25111",
+        "supports": "开发者遇到集成问题，但已解决",
+        "reliability": "media"
+      },
+      {
+        "source": "Regain lost status",
+        "url": "https://shopify.dev/docs/apps/store/built-for-shopify/losing-status",
+        "supports": "失去 Built for Shopify 状态后可重新获得",
+        "reliability": "official"
+      },
+      {
+        "source": "Built for Shopify Status Removed Without Warning",
+        "url": "https://community.shopify.dev/t/built-for-shopify-status-removed-without-warning-new-category-specific-criteria-applied-early/17570",
+        "supports": "有开发者反映状态被移除，但 Shopify 已增加 60 天宽限期",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "官方要求明确，截止日期清晰，API 文档和集成指南已提供，社区有反馈。逻辑上，开发者需要评估改造成本并在截止日期前完成。失去 Built for Shopify 状态的具体后果（如搜索排名下降）尚未完全公开，但已有案例表明状态可恢复。",
+    "writeable_angles": [
+      {
+        "angle": "改造成本评估：小团队需要多少时间和资源完成 Customer Account API 集成？",
+        "why": "直接回应开发者最关心的问题，提供可操作的估算框架。",
+        "needs": "需要实际案例或社区反馈来估算工时。"
+      },
+      {
+        "angle": "失去 Built for Shopify 状态的实际影响：搜索排名、推荐、功能限制？",
+        "why": "帮助开发者判断是否值得改造。",
+        "needs": "需要官方明确说明或更多社区案例。"
+      },
+      {
+        "angle": "平台规则变化趋势：Shopify 是否在逐步提高应用生态准入门槛？",
+        "why": "引发更广泛的讨论，吸引高价值商业读者。",
+        "needs": "需要分析 Shopify 近年的规则变化趋势。"
+      }
+    ],
+    "missing_basics": [
+      "Customer Account API 与现有认证方式（如 Storefront API）的具体差异。",
+      "失去 Built for Shopify 状态的具体后果（如搜索排名下降、功能限制）。",
+      "改造的平均工时和成本估算。"
+    ],
+    "missing_materials": [
+      "至少一个开发者迁移案例或社区讨论帖。",
+      "Shopify 应用市场当前退货/换货和订阅应用的数量和规模数据。",
+      "Shopify 官方关于失去 Built for Shopify 状态后果的详细说明。"
+    ],
+    "not_claimable": [
+      "不要声称改造工作量巨大或简单，需基于实际文档和案例。",
+      "不要声称小团队必然被淘汰，需基于政策后果和社区反馈。",
+      "不要声称这是 Shopify 垄断策略，需基于官方意图和行业趋势。"
+    ],
+    "followup_queries": [
+      "Customer Account API 的具体集成要求、文档和示例代码是否已发布？",
+      "现有应用如果不改造，是否会被下架或仅失去 Built for Shopify 标签？失去标签的具体后果是什么？",
+      "是否有其他类型的应用未来也会被要求强制认证？",
+      "Shopify 是否提供迁移工具、文档或支持计划来帮助开发者过渡？",
+      "截止日期 2026 年 12 月 1 日是否可能延期？",
+      "是否有开发者社区讨论或反馈关于此变更的担忧？"
+    ],
+    "additional_search_queries": [
+      "Shopify Customer Account API integration example",
+      "Shopify Built for Shopify requirements returns subscriptions 2026",
+      "Shopify Customer Account API mandatory returns subscription app developer forum",
+      "Shopify app migration Customer Account API cost time small team",
+      "Shopify app removal consequences losing Built for Shopify status"
+    ],
+    "stop_conditions": [
+      "如果官方明确失去 Built for Shopify 状态无实际影响（如仅标签变化），则选题价值降低。",
+      "如果截止日期延期超过一年，则紧迫性下降。",
+      "如果社区反馈改造极其简单（如仅需几行代码），则冲突减弱。"
+    ],
+    "confidence": 85.0,
+    "topic_direction": "cross-border",
+    "topic_direction_title": "跨境&出海",
+    "report_type": "platform-rules",
+    "quality_gate": {
+      "pass": true,
+      "score": 85,
+      "fatal_issues": [],
+      "warnings": [
+        "缺少开发者迁移案例或社区讨论帖",
+        "缺少失去Built for Shopify状态的具体后果说明",
+        "缺少改造平均工时和成本估算"
+      ],
+      "missing_evidence": [
+        "Customer Account API与现有认证方式的具体差异",
+        "失去Built for Shopify状态的具体后果",
+        "改造的平均工时和成本估算"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": true,
+      "downstream_handoff_ok": true,
+      "material_pack_ok": true,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": true,
+      "source_coverage_ok": true,
+      "recommendation": "optional"
+    },
+    "research_plan": {
+      "core_question": "Shopify 强制退货/换货和订阅应用在 2026 年底前使用 Customer Account API 进行客户认证，这对现有应用开发者（尤其是小团队和独立开发者）的改造成本、时间压力和业务风险有多大？",
+      "persona_discussion_question": "老花：我开发的退货/换货应用需要接入 Customer Account API，改造工作量有多大？会不会影响现有用户？如果我不做，失去 Built for Shopify 状态会怎样？",
+      "hidden_public_issue": "平台规则变化是否在逐步提高应用生态的准入门槛，挤压小团队和独立开发者的生存空间，最终导致应用市场被大公司垄断？",
+      "must_verify": [
+        "Customer Account API 的具体集成要求、文档和示例代码是否已发布？",
+        "现有应用如果不改造，是否会被下架或仅失去 Built for Shopify 标签？失去标签的具体后果是什么（如搜索排名、推荐、功能限制）？",
+        "是否有其他类型的应用（如订单管理、客户支持）未来也会被要求强制认证？",
+        "Shopify 是否提供迁移工具、文档或支持计划来帮助开发者过渡？",
+        "截止日期 2026 年 12 月 1 日是否可能延期？",
+        "是否有开发者社区讨论或反馈关于此变更的担忧？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Shopify Customer Account API documentation",
+          "why_needed": "确认 API 的具体集成要求、认证流程和示例代码，评估改造成本。"
+        },
+        {
+          "source_type": "policy",
+          "query": "Shopify Built for Shopify requirements returns subscriptions 2026",
+          "why_needed": "获取官方政策原文，确认强制要求的具体范围、截止日期和失去 Built for Shopify 状态的后果。"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Shopify Customer Account API mandatory returns subscription app developer forum",
+          "why_needed": "了解开发者社区的反馈、改造经验、常见问题和潜在风险。"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Shopify app migration Customer Account API cost time small team",
+          "why_needed": "寻找实际案例，了解小团队或独立开发者完成类似迁移所需的时间和成本。"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Shopify app removal consequences losing Built for Shopify status",
+          "why_needed": "确认失去 Built for Shopify 状态的具体影响，如搜索排名下降、功能限制等。"
+        },
+        {
+          "source_type": "github_repo",
+          "query": "Shopify Customer Account API integration example",
+          "why_needed": "查找开源示例代码，评估集成难度和最佳实践。"
+        }
+      ],
+      "expert_challenge_points": [
+        "Customer Account API 是否支持现有应用的无缝迁移？是否需要修改数据库或用户流程？",
+        "对于只提供后台管理界面、无买家自助服务的应用，是否也需要改造？",
+        "Shopify 是否提供测试沙箱或过渡期支持？",
+        "如果应用同时涉及退货和订阅，是否需要双重认证？",
+        "改造后是否会影响应用性能或用户体验？"
+      ],
+      "do_not_claim_yet": [
+        "不要声称改造工作量巨大或简单，需基于实际文档和案例。",
+        "不要声称小团队必然被淘汰，需基于政策后果和社区反馈。",
+        "不要声称这是 Shopify 垄断策略，需基于官方意图和行业趋势。"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确改造细节和后果尚未完全公开，建议持续跟踪。",
+      "downstream_materials_needed": [
+        "Customer Account API 集成指南和代码示例",
+        "Shopify 官方关于 Built for Shopify 状态丧失后果的说明",
+        "至少一个开发者迁移案例或社区讨论帖",
+        "Shopify 应用市场当前退货/换货和订阅应用的数量和规模数据"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Customer Account API reference",
+        "url": "https://shopify.dev/docs/api/customer/latest",
+        "query": "Shopify Customer Account API documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Customer Account API reference self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar Customer Account API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Overview Authentication Endpoints and queries Directives Rate limits Status and error codes Common objects Graph QL Types Full index .Mode-Dark { ._HeroImage_14vd5_9-httpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagescustomer-api-hero-dark-Beyr53jMpnghttpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagescustomer-api-hero-dark-Beyr53jMpng { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/assets/images/customer-api-hero-dark-Beyr53jM.png); } } .Mode-Light { ._HeroImage_14vd5_9-httpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagescustomer-api-hero-dark-Beyr53jMpnghttpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagescustomer-api-hero-dark-Beyr53jMpng { background-image: url(https://cdn.shopify.com/shop",
+        "fetch_error": ""
+      },
+      {
+        "title": "Getting started with the Customer Account API",
+        "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/getting-started",
+        "query": "Shopify Customer Account API documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Getting started with the Customer Account API self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Storefronts Overview Themes Web API / Headless Mobile Collapse sidebar Getting started Overview Getting started Developer preview Hydrogen and Oxygen Getting started Fundamentals Analytics Cart Content security policy Data fetching Caching Markets SEO Storefronts Environments Deployments Debugging and testing Performance Migrate and upgrade Production checklist Hydrogen CLI commands Hydrogen API reference Cookbook Bring your own stack Overview Headless with B2B Shopify Plugin for Word Press Storefront Web Components Hydrogen with account component Headless APIs Building with the Storefront API Building with the Customer Account API Additional SDKs Full index Expand On this page What you'll learn Requirements Step 1: Enable customer accounts Step 2: Configure Customer Account API access Step 3: Perform authorization requests and make queries Rotate credentials Next steps Getting started with the Customer Account API Ask Copy MD Th",
+        "fetch_error": ""
+      },
+      {
+        "title": "Build a personalized headless experience with Customer Account API - Shopify",
+        "url": "https://www.shopify.com/partners/blog/introducing-customer-account-api-for-headless-stores",
+        "query": "Shopify Customer Account API documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(()=>{try{if(typeof MutationObserver>\"u\")return;const r=20,f=120,s={injectedElements:[],removedElements:[],attributesChanged:[]},c=t=>t?t.length>f?`${t.slice(0,f)}...`:t:\"\",N=[\"cdn.shopify.com\",\"shopify.com\",\"shopifycloud\"],b=t=>t?N.some(e=>t.includes(e)):!1,m=t=>{const e=t.nodeName;if(!e||e===\"#text\"||e===\"#comment\")return null;const n=t.id?`#${t.id}`:\"\";let o=\"\";if(t.className&&typeof t.className==\"string\"){const p=t.className.trim().split(/\\s+/).slice(0,2).join(\".\");p&&(o=`.${p}`)}const u=t.getAttribute?.(\"src\"),l=t.getAttribute?.(\"href\"),g=t.getAttribute?.(\"type\"),i=[];u?i.push(`src=${c(u)}`):l&&i.push(`href=${c(l)}`),g&&i.push(`type=${g}`);const E=i.length>0?`[${i.join(\",\")}]`:\"\",A=u||l||\"\";return{desc:[e,n,o,E].filter(Boolean).join(\"\"),internal:b(A)}},d=t=>{const{target:e}=t,n=e.nodeName||\"\";return e.id?`${n}#${e.id}`:n},y=t=>{for(const e of t.addedNodes){const n=m(e);!n||n.internal||s.injectedElements.length ${d(t)}`)}},$=t=>{for(const e of t.removedNodes){const n=m(e);!n||n.internal||s.removedElements.length {const e=d(t),n=t.target.getAttribute?.(t.attributeName)||\"\",o=`${e}.${t.attributeName}=${c(n)}`;s.attributesChanged.length {for(const e of t){const n=e.type===\"childList\",o=e.type===\"attributes\";if(n){y(e),$(e);continue}o&&v(e)}}),a=()=>{h.observe(document.documentElement,{childList:!0,subtree:!0,attributes:!0})};document.readyState===\"loading\"?document.addEventListener(\"DOMContentLoaded\",a):a(),window.__preHydrationData=s,window.__stopPreHydrationMonitor=()=>{h.disconnect(),document.removeEventListener(\"DOMContentLoaded\",a),delete window.__preHydrationData,delete window.__stopPreHydrationMonitor}}catch{}})(); Build a personalized headless experience with Customer Account API - Shopify window.__brochureDuxConfig={\"eventHandlerEndpoint\":\"/.well-known/dux?v2&",
+        "fetch_error": ""
+      },
+      {
+        "title": "Built for Shopify requirements for Returns and exchanges apps and Subscription apps (effective December 1, 2026) - Shopify developer changelog",
+        "url": "https://shopify.dev/changelog/built-for-shopify-requirements-for-returns-and-exchanges-and-subscription-apps",
+        "query": "Shopify Built for Shopify requirements returns subscriptions 2026",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Built for Shopify requirements for Returns and exchanges apps and Subscription apps (effective December 1, 2026) - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } June 17, 2026 Tags: Action Required Built for Shopify Built for Shopify requirements for Returns and exchanges apps and Subscription apps (effective December 1, 2026) Ask Copy MD Effective December 1, 2026 , Returns and exchanges ",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Help Center | Subscriptions",
+        "url": "https://help.shopify.com/en/manual/products/purchase-options/subscriptions",
+        "query": "Shopify Built for Shopify requirements returns subscriptions 2026",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Shopify Editions | Spring ’26",
+        "url": "https://www.shopify.com/editions/spring2026",
+        "query": "Shopify Built for Shopify requirements returns subscriptions 2026",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Shopify Editions | Spring ’26 html{color-scheme:dark}html,body{margin:0;padding:0;background-color:#090909;color:#fff}img{max-width:100%} window.__S26_THEATRE_CLIENT_ENABLED__=false (function(){var c=document.createElement('div');c.id='ssr-paint-cover';c.setAttribute('aria-hidden','true');c.style.cssText='position:fixed;inset:0;z-index:100000;background-color:#090909;pointer-events:none';(document.body||document.documentElement).appendChild(c);var twReady=false,domReady=false,dropped=false;function dropCover(){if(dropped)return;dropped=true;if(c&&c.parentNode)c.parentNode.removeChild(c);}function maybeDrop(){if(twReady&&domReady)requestAnimationFrame(dropCover);}function reveal(l){var primary=l.hasAttribute('data-tw-primary');var swapped=false;var t;function swap(loaded){if(!swapped){swapped=true;if(t)clearTimeout(t);l.media='all';}if(primary&&loaded){twReady=true;maybeDrop();}}if(l.sheet){swap(true);}else{l.addEventListener('load',function(){swap(true);});l.addEventListener('error',function(){swap(true);});t=setTimeout(function(){swap(false);},1500);}}var links=document.querySelectorAll('link[data-async-css]');for(var i=0;i #page-loading-overlay { position: fixed; inset: 0; z-index: 2147483647; display: flex; align-items: center; justify-content: center; background-color: #090909; opacity: 1; transition-property: opacity; transition-timing-function: ease-out; transition-delay: 500ms; transition-duration: 800ms; } #page-loading-overlay[data-loaded] { opacity: 0; pointer-events: none; } @keyframes page-loading-noscript-dismiss { to { opacity: 0; visibility: hidden; } } #page-loading-overlay { animation: page-loading-noscript-dismiss 800ms ease-out 2500ms forwards; } .page-loading-preloader { width: 160px; height: 150px; display: grid; place-items: center; contain: layout",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify API access scopes",
+        "url": "https://shopify.dev/docs/api/usage/access-scopes",
+        "query": "Shopify Customer Account API mandatory returns subscription app developer forum",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Shopify API access scopes self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar Get started Shopify APIs, libraries, and tools About Shopify APIs Shopify CLI React Router app package Stores Libraries and templates App data and logic Graph QL Admin API Shopify Functions Events Webhooks Payments Apps API REST Admin API (legacy) Polaris Polaris references App Home (iframe) App Home (UI extension) Admin Checkout Customer accounts POS Using Polaris web components Storefronts Storefront API Shopify QL for analytics Liquid Ajax API Hydrogen framework Hydrogen React library Storefront Web Components Customer Privacy API Customer Account API App management Partner API App Events API Additional APIs Customer authentication Web pixel Shop Minis Shop Pay Wallet API Full index Expand On this page How it works Authenticated access scopes Unauthenticated access scopes Customer access scopes Checking granted access scopes Limitations Shopify API access scopes Ask Copy MD All apps need to request access to specific store data d",
+        "fetch_error": ""
+      },
+      {
+        "title": "Built for Shopify: Called Customer Account API in the last 30 days issue - Built for Shopify - Shopify Developer Community Forums",
+        "url": "https://community.shopify.dev/t/built-for-shopify-called-customer-account-api-in-the-last-30-days-issue/25111",
+        "query": "Shopify Customer Account API mandatory returns subscription app developer forum",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Built for Shopify: Called Customer Account API in the last 30 days issue - Built for Shopify - Shopify Developer Community Forums {\"@context\":\"http://schema.org\",\"@type\":\"QAPage\",\"name\":\"Built for Shopify: Called Customer Account API in the last 30 days issue\",\"datePublished\":\"2025-11-06T19:26:51.598Z\",\"mainEntity\":{\"@type\":\"Question\",\"answerCount\":2,\"author\":{\"@type\":\"Person\",\"name\":\"PapaZulu\",\"url\":\"https://community.shopify.dev/u/PapaZulu\"},\"dateModified\":\"2025-11-06T19:26:51.691Z\",\"datePublished\":\"2025-11-06T19:26:51.598Z\",\"name\":\"Built for Shopify: Called Customer Account API in the last 30 days issue\",\"text\":\"Hi,\\n\\nWe have a subscription app in Shopify App Store and recently, a Built for Shopify requirement “Called Customer Account API in the last 30 days” popped up in the Built for Shopify dashboard.\\n\\nWe are trying all we can to fulfill this requirement, but nothing seems to work.\\n\\nWe contacted Shopify P…\",\"upvoteCount\":0,\"acceptedAnswer\":{\"@type\":\"Answer\",\"author\":{\"@type\":\"Person\",\"name\":\"PapaZulu\",\"url\":\"https://community.shopify.dev/u/PapaZulu\"},\"dateModified\":\"2025-11-07T16:10:57.622Z\",\"datePublished\":\"2025-11-07T16:10:32.510Z\",\"text\":\"Just a quick update. It seems that this was resolved as this requirement is now ticked again.\",\"upvoteCount\":0,\"url\":\"https://community.shopify.dev/t/built-for-shopify-called-customer-account-api-in-the-last-30-days-issue/25111/3\"},\"suggestedAnswer\":[{\"@type\":\"Answer\",\"author\":{\"@type\":\"Person\",\"name\":\"Liam-Shopify\",\"url\":\"https://community.shopify.dev/u/Liam-Shopify\"},\"dateModified\":\"2025-12-09T12:45:22.533Z\",\"datePublished\":\"2025-12-09T12:45:22.514Z\",\"text\":\"Glad this was resolved!\",\"upvoteCount\":0,\"url\":\"https://community.shopify.dev/t/built-for-shopify-called-customer-account-api-in-the-last-30-days-issue/25111/4\"}]}}",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/shopify on Reddit: Billing API for subscription outside App",
+        "url": "https://www.reddit.com/r/shopify/comments/1dfsry1/billing_api_for_subscription_outside_app/",
+        "query": "Shopify Customer Account API mandatory returns subscription app developer forum",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "How Much Does a Shopify Migration Cost? (2026 Pricing Guide) - Soda Web Media",
+        "url": "https://www.sodawebmedia.com/insights/how-much-does-a-shopify-migration-cost/",
+        "query": "Shopify app migration Customer Account API cost time small team",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf(\"?\")==-1){if(href.indexOf(\"#\")==-1){document.location.href=href+\"?nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"?nowprocket=1#\")}}else{if(href.indexOf(\"#\")==-1){document.location.href=href+\"&nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"&nowprocket=1#\")}}}} (()=>{class RocketLazyLoadScripts{constructor(){this.v=\"2.0.5\",this.userEvents=[\"keydown\",\"keyup\",\"mousedown\",\"mouseup\",\"mousemove\",\"mouseover\",\"mouseout\",\"touchmove\",\"touchstart\",\"touchend\",\"touchcancel\",\"wheel\",\"click\",\"dblclick\",\"input\"],this.attributeEvents=[\"onblur\",\"onclick\",\"oncontextmenu\",\"ondblclick\",\"onfocus\",\"onmousedown\",\"onmouseenter\",\"onmouseleave\",\"onmousemove\",\"onmouseout\",\"onmouseover\",\"onmouseup\",\"onmousewheel\",\"onscroll\",\"onsubmit\"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event(\"rocket-allScriptsLoaded\")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem(\"rocketCSPIssue\"),document.addEventListener(\"securitypolicyviolation\",t=>{this.CSPIssue||\"script-src-elem\"!==t.violatedDirective||\"data\"!==t.blockedURI||(this.CSPIssue=!0,session",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Migration Guide: Costs, Data & SEO Tips",
+        "url": "https://www.yotpo.com/blog/shopify-migration-cost-data-seo/",
+        "query": "Shopify app migration Customer Account API cost time small team",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Migration Cost: What You Should Actually Pay (2026 Guide)",
+        "url": "https://shopexperts.com/help/pricing/shopify-migration-cost",
+        "query": "Shopify app migration Customer Account API cost time small team",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Shopify Migration Cost: What You Should Actually Pay (2026 Guide) {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://shopexperts.com/help/pricing/shopify-migration-cost#blog-posting\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://shopexperts.com/help/pricing/shopify-migration-cost\"},\"headline\":\"Shopify Migration Cost: What You Should Actually Pay (2026 Guide)\",\"description\":\"What Shopify migration actually costs in 2026 — WooCommerce, Magento, BigCommerce, Squarespace, custom platforms. With the decision framework and risk math.\",\"datePublished\":\"2026-05-28\",\"dateModified\":\"2026-06-08T10:38:17.000Z\",\"author\":{\"@type\":\"Organization\",\"name\":\"ShopExperts\",\"url\":\"https://shopexperts.com\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"ShopExperts\",\"url\":\"https://shopexperts.com\"},\"url\":\"https://shopexperts.com/help/pricing/shopify-migration-cost\"} {\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How much does Shopify migration cost?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Realistic ranges: $2,000-$8,000 for a small migration (Squarespace, Wix, BigCartel with under 500 products); $8,000-$30,000 for mid-market migration (WooCommerce or BigCommerce with 500-5,000 products); $20,000-$75,000 for complex mid-market with subscriptions or B2B; $30,000-$150,000 for Magento 2 / Adobe Commerce migration; $75,000-$500,000+ for enterprise (SFCC, custom platforms, large Magento). Hourly rates run $100-$400+ depending on geography, seniority, and agency vs freelancer.\"}},{\"@type\":\"Question\",\"name\":\"How much does WooCommerce to Shopify migration cost?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Realistic ranges: $5,000-$15,000 for a simple WooCommerce store (default theme, basic plugins, under 1,000 products); $15,000-$4",
+        "fetch_error": ""
+      },
+      {
+        "title": "Regain lost status",
+        "url": "https://shopify.dev/docs/apps/store/built-for-shopify/losing-status",
+        "query": "Shopify app removal consequences losing Built for Shopify status",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Regain lost status self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Apps Build Design Launch Collapse sidebar Quality assurance Going live Shopify App Store Built for Shopify Privacy requirements Work with protected customer data Pricing strategy About billing for your app Shopify App Pricing Manual pricing (legacy) Billing adjustments Deployment About deployment Deploy to Google Cloud Run Deploy to a hosting service About app versions Deploy and release app versions Deploy app components in a CD pipeline Reaching customers About app distribution Select a distribution method Support your customers Sunsetting your app Go-to-market success Track app usage App listing visibility App revenue share Shopify app store review About the Shopify App Store About the app review process Submit your app for review Pass app review App listing categories Policy violations About app quality checks Shopify App Store ads About Shopify App Store ads Create ads Manage ads Check ad performance Ad billing Ad permissions Ads FAQ Marketing your ap",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Help Center | Enforcement of Shopify’s Partner Program Policies",
+        "url": "https://help.shopify.com/en/partners/help-support/faq/removal",
+        "query": "Shopify app removal consequences losing Built for Shopify status",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Built for Shopify Status Removed Without Warning - New Category-Specific Criteria Applied Early? - Built for Shopify - Shopify Developer Community Forums",
+        "url": "https://community.shopify.dev/t/built-for-shopify-status-removed-without-warning-new-category-specific-criteria-applied-early/17570",
+        "query": "Shopify app removal consequences losing Built for Shopify status",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Built for Shopify Status Removed Without Warning - New Category-Specific Criteria Applied Early? - Built for Shopify - Shopify Developer Community Forums {\"@context\":\"http://schema.org\",\"@type\":\"QAPage\",\"name\":\"Built for Shopify Status Removed Without Warning - New Category-Specific Criteria Applied Early?\",\"datePublished\":\"2025-06-18T18:39:28.310Z\",\"mainEntity\":{\"@type\":\"Question\",\"answerCount\":9,\"author\":{\"@type\":\"Person\",\"name\":\"abueler\",\"url\":\"https://community.shopify.dev/u/abueler\"},\"dateModified\":\"2025-06-18T18:49:06.361Z\",\"datePublished\":\"2025-06-18T18:39:28.310Z\",\"name\":\"Built for Shopify Status Removed Without Warning - New Category-Specific Criteria Applied Early?\",\"text\":\"Our Built for Shopify status has been removed without prior warning following yesterday’s acknowledged system error where Shopify sent false alerts about performance metrics showing as 0.\\n\\nThe removal email states this could be due to:\\n\\nMissing criteria that result in immediate loss of status\\n\\nNeces…\",\"upvoteCount\":0,\"suggestedAnswer\":[{\"@type\":\"Answer\",\"author\":{\"@type\":\"Person\",\"name\":\"MarkT\",\"url\":\"https://community.shopify.dev/u/MarkT\"},\"dateModified\":\"2025-06-18T22:43:43.994Z\",\"datePublished\":\"2025-06-18T22:43:43.980Z\",\"text\":\"Hey Andreas, The team is currently investigating this. It appears that a call to the Fulfillment API triggered an immediate flag for unmet requirements.\\n\\nTo prevent this from happening in the future, the team updating the system to include a 60-day grace period for new rules being applied to apps.\",\"upvoteCount\":0,\"url\":\"https://community.shopify.dev/t/built-for-shopify-status-removed-without-warning-new-category-specific-criteria-applied-early/17570/2\"},{\"@type\":\"Answer\",\"author\":{\"@type\":\"Person\",\"name\":\"abueler\",\"url\":\"https://community.shopify.dev/u/a",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Customer API: How to Get Customer Data Easily in 2026",
+        "url": "https://api2cart.com/api-technology/shopify-customer-api/",
+        "query": "Shopify Customer Account API integration example",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf(\"?\")==-1){if(href.indexOf(\"#\")==-1){document.location.href=href+\"?nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"?nowprocket=1#\")}}else{if(href.indexOf(\"#\")==-1){document.location.href=href+\"&nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"&nowprocket=1#\")}}}} (()=>{class RocketLazyLoadScripts{constructor(){this.v=\"2.0.5\",this.userEvents=[\"keydown\",\"keyup\",\"mousedown\",\"mouseup\",\"mousemove\",\"mouseover\",\"mouseout\",\"touchmove\",\"touchstart\",\"touchend\",\"touchcancel\",\"wheel\",\"click\",\"dblclick\",\"input\"],this.attributeEvents=[\"onblur\",\"onclick\",\"oncontextmenu\",\"ondblclick\",\"onfocus\",\"onmousedown\",\"onmouseenter\",\"onmouseleave\",\"onmousemove\",\"onmouseout\",\"onmouseover\",\"onmouseup\",\"onmousewheel\",\"onscroll\",\"onsubmit\"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event(\"rocket-allScriptsLoaded\")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem(\"rocketCSPIssue\"),document.addEventListener(\"securitypolicyviolation\",t=>{this.CSPIssue||\"script-src-elem\"!==t.violatedDirective||\"data\"!==t.blockedURI||(this.CSPIssue=!0,session",
+        "fetch_error": ""
+      },
+      {
+        "title": "Customer Account API - Shopify.dev",
+        "url": "https://shopify.dev/docs/api/customer-account-ui-extensions/2025-04/apis/customer-account-api",
+        "query": "Shopify Customer Account API integration example",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 404: Not Found"
+      },
+      {
+        "title": "Manage customer accounts with the Customer Account API",
+        "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/customer-accounts",
+        "query": "Shopify Customer Account API integration example",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Manage customer accounts with the Customer Account API self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Storefronts Overview Themes Web API / Headless Mobile Collapse sidebar Getting started Overview Getting started Developer preview Hydrogen and Oxygen Getting started Fundamentals Analytics Cart Content security policy Data fetching Caching Markets SEO Storefronts Environments Deployments Debugging and testing Performance Migrate and upgrade Production checklist Hydrogen CLI commands Hydrogen API reference Cookbook Bring your own stack Overview Headless with B2B Shopify Plugin for Word Press Storefront Web Components Hydrogen with account component Headless APIs Building with the Storefront API Building with the Customer Account API Additional SDKs Full index Expand On this page Requirements Step 1: Update a customer Step 2: Create an address Step 3: Update an address Step 4: Delete an address Next steps Manage customer accounts with the Customer Account API Ask Copy MD You can update customer accounts using the Customer ",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "可选选题",
+      "label": "可选",
+      "reason": "质量闸提示缺口：Customer Account API与现有认证方式的具体差异"
+    },
+    "core_question": "Shopify 强制退货/换货和订阅应用在 2026 年底前使用 Customer Account API 进行客户认证，这对现有应用开发者（尤其是小团队和独立开发者）的改造成本、时间压力和业务风险有多大？",
+    "why_this_topic_matters": "平台规则变化有明确时间线，对开发者有强制约束力，直接影响现有应用的合规状态和商店可见性。截止日期 2026 年 12 月 1 日，开发者需尽快评估改造工作量并规划迁移。",
+    "fact_summary": [
+      "Shopify 要求退货/换货和订阅应用在 2026 年 12 月 1 日前使用 Customer Account API 进行客户认证。",
+      "未按时改造的应用可能失去 Built for Shopify 状态。",
+      "Customer Account API 已有完整文档和入门指南。",
+      "社区已有开发者报告集成问题（如“Called Customer Account API in the last 30 days”要求）。",
+      "失去 Built for Shopify 状态后可通过满足要求重新获得。"
+    ],
+    "persona_discussion_question": "老花：我开发的退货/换货应用需要接入 Customer Account API，改造工作量有多大？会不会影响现有用户？如果我不做，失去 Built for Shopify 状态会怎样？",
+    "old_flower_stance": "平台规则变化是生态成熟的表现，但小团队需要算清楚改造成本和时间账，不要盲目投入。先评估现有认证方式与 Customer Account API 的差异，再决定是改造还是放弃。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 85,
+      "why_interested": "直接涉及应用合规和商店运营，开发者需要了解具体要求和时间线。",
+      "reader_risk": "标题可能被误解为所有 Shopify 应用都需要改造，实际仅限退货/换货和订阅应用。"
+    },
+    "mass_interest_hook": {
+      "score": 70,
+      "hook_type": "踩坑",
+      "why_non_technical_people_may_click": "小团队/独立开发者担心平台规则变化导致应用被下架，影响收入。",
+      "story_seed": "一个独立开发者开发的退货应用，因为没及时改造，失去 Built for Shopify 标签，搜索排名下降，订单量腰斩。",
+      "do_not_overhype": "不要声称改造工作量巨大或简单，需基于实际文档和案例。"
+    },
+    "topic_tension": {
+      "score": 9,
+      "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+      "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "平台/工具厂商"
+      ],
+      "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2026-06-17: Shopify 发布 changelog，要求退货/换货和订阅应用在 2026-12-01 前使用 Customer Account API。",
+      "2026-12-01: 截止日期，未改造的应用可能失去 Built for Shopify 状态。"
+    ],
+    "evidence_table": [
+      {
+        "source": "Shopify Developer Changelog",
+        "url": "https://shopify.dev/changelog/built-for-shopify-requirements-for-returns-and-exchanges-and-subscription-apps",
+        "supports": "官方要求，截止日期，受影响应用类型",
+        "reliability": "official"
+      },
+      {
+        "source": "Customer Account API reference",
+        "url": "https://shopify.dev/docs/api/customer/latest",
+        "supports": "API 文档存在，可集成",
+        "reliability": "official"
+      },
+      {
+        "source": "Getting started with the Customer Account API",
+        "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/getting-started",
+        "supports": "集成指南存在",
+        "reliability": "official"
+      },
+      {
+        "source": "Built for Shopify: Called Customer Account API in the last 30 days issue",
+        "url": "https://community.shopify.dev/t/built-for-shopify-called-customer-account-api-in-the-last-30-days-issue/25111",
+        "supports": "开发者遇到集成问题，但已解决",
+        "reliability": "media"
+      },
+      {
+        "source": "Regain lost status",
+        "url": "https://shopify.dev/docs/apps/store/built-for-shopify/losing-status",
+        "supports": "失去 Built for Shopify 状态后可重新获得",
+        "reliability": "official"
+      },
+      {
+        "source": "Built for Shopify Status Removed Without Warning",
+        "url": "https://community.shopify.dev/t/built-for-shopify-status-removed-without-warning-new-category-specific-criteria-applied-early/17570",
+        "supports": "有开发者反映状态被移除，但 Shopify 已增加 60 天宽限期",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "官方要求明确，截止日期清晰，API 文档和集成指南已提供，社区有反馈。逻辑上，开发者需要评估改造成本并在截止日期前完成。失去 Built for Shopify 状态的具体后果（如搜索排名下降）尚未完全公开，但已有案例表明状态可恢复。",
+    "writeable_angles": [
+      {
+        "angle": "改造成本评估：小团队需要多少时间和资源完成 Customer Account API 集成？",
+        "why": "直接回应开发者最关心的问题，提供可操作的估算框架。",
+        "needs": "需要实际案例或社区反馈来估算工时。"
+      },
+      {
+        "angle": "失去 Built for Shopify 状态的实际影响：搜索排名、推荐、功能限制？",
+        "why": "帮助开发者判断是否值得改造。",
+        "needs": "需要官方明确说明或更多社区案例。"
+      },
+      {
+        "angle": "平台规则变化趋势：Shopify 是否在逐步提高应用生态准入门槛？",
+        "why": "引发更广泛的讨论，吸引高价值商业读者。",
+        "needs": "需要分析 Shopify 近年的规则变化趋势。"
+      }
+    ],
+    "missing_basics": [
+      "Customer Account API 与现有认证方式（如 Storefront API）的具体差异。",
+      "失去 Built for Shopify 状态的具体后果（如搜索排名下降、功能限制）。",
+      "改造的平均工时和成本估算。"
+    ],
+    "missing_materials": [
+      "至少一个开发者迁移案例或社区讨论帖。",
+      "Shopify 应用市场当前退货/换货和订阅应用的数量和规模数据。",
+      "Shopify 官方关于失去 Built for Shopify 状态后果的详细说明。"
+    ],
+    "not_claimable": [
+      "不要声称改造工作量巨大或简单，需基于实际文档和案例。",
+      "不要声称小团队必然被淘汰，需基于政策后果和社区反馈。",
+      "不要声称这是 Shopify 垄断策略，需基于官方意图和行业趋势。"
+    ],
+    "followup_queries": [
+      "Customer Account API 的具体集成要求、文档和示例代码是否已发布？",
+      "现有应用如果不改造，是否会被下架或仅失去 Built for Shopify 标签？失去标签的具体后果是什么？",
+      "是否有其他类型的应用未来也会被要求强制认证？",
+      "Shopify 是否提供迁移工具、文档或支持计划来帮助开发者过渡？",
+      "截止日期 2026 年 12 月 1 日是否可能延期？",
+      "是否有开发者社区讨论或反馈关于此变更的担忧？"
+    ],
+    "additional_search_queries": [
+      "Shopify Customer Account API integration example",
+      "Shopify Built for Shopify requirements returns subscriptions 2026",
+      "Shopify Customer Account API mandatory returns subscription app developer forum",
+      "Shopify app migration Customer Account API cost time small team",
+      "Shopify app removal consequences losing Built for Shopify status"
+    ],
+    "stop_conditions": [
+      "如果官方明确失去 Built for Shopify 状态无实际影响（如仅标签变化），则选题价值降低。",
+      "如果截止日期延期超过一年，则紧迫性下降。",
+      "如果社区反馈改造极其简单（如仅需几行代码），则冲突减弱。"
+    ],
+    "confidence": 85.0,
+    "topic_direction": "cross-border",
+    "topic_direction_title": "跨境&出海",
+    "report_type": "platform-rules",
+    "quality_gate": {
+      "pass": true,
+      "score": 85,
+      "fatal_issues": [],
+      "warnings": [
+        "缺少开发者迁移案例或社区讨论帖",
+        "缺少失去Built for Shopify状态的具体后果说明",
+        "缺少改造平均工时和成本估算"
+      ],
+      "missing_evidence": [
+        "Customer Account API与现有认证方式的具体差异",
+        "失去Built for Shopify状态的具体后果",
+        "改造的平均工时和成本估算"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": true,
+      "downstream_handoff_ok": true,
+      "material_pack_ok": true,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": true,
+      "source_coverage_ok": true,
+      "recommendation": "optional"
+    },
+    "research_plan": {
+      "core_question": "Shopify 强制退货/换货和订阅应用在 2026 年底前使用 Customer Account API 进行客户认证，这对现有应用开发者（尤其是小团队和独立开发者）的改造成本、时间压力和业务风险有多大？",
+      "persona_discussion_question": "老花：我开发的退货/换货应用需要接入 Customer Account API，改造工作量有多大？会不会影响现有用户？如果我不做，失去 Built for Shopify 状态会怎样？",
+      "hidden_public_issue": "平台规则变化是否在逐步提高应用生态的准入门槛，挤压小团队和独立开发者的生存空间，最终导致应用市场被大公司垄断？",
+      "must_verify": [
+        "Customer Account API 的具体集成要求、文档和示例代码是否已发布？",
+        "现有应用如果不改造，是否会被下架或仅失去 Built for Shopify 标签？失去标签的具体后果是什么（如搜索排名、推荐、功能限制）？",
+        "是否有其他类型的应用（如订单管理、客户支持）未来也会被要求强制认证？",
+        "Shopify 是否提供迁移工具、文档或支持计划来帮助开发者过渡？",
+        "截止日期 2026 年 12 月 1 日是否可能延期？",
+        "是否有开发者社区讨论或反馈关于此变更的担忧？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Shopify Customer Account API documentation",
+          "why_needed": "确认 API 的具体集成要求、认证流程和示例代码，评估改造成本。"
+        },
+        {
+          "source_type": "policy",
+          "query": "Shopify Built for Shopify requirements returns subscriptions 2026",
+          "why_needed": "获取官方政策原文，确认强制要求的具体范围、截止日期和失去 Built for Shopify 状态的后果。"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Shopify Customer Account API mandatory returns subscription app developer forum",
+          "why_needed": "了解开发者社区的反馈、改造经验、常见问题和潜在风险。"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Shopify app migration Customer Account API cost time small team",
+          "why_needed": "寻找实际案例，了解小团队或独立开发者完成类似迁移所需的时间和成本。"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Shopify app removal consequences losing Built for Shopify status",
+          "why_needed": "确认失去 Built for Shopify 状态的具体影响，如搜索排名下降、功能限制等。"
+        },
+        {
+          "source_type": "github_repo",
+          "query": "Shopify Customer Account API integration example",
+          "why_needed": "查找开源示例代码，评估集成难度和最佳实践。"
+        }
+      ],
+      "expert_challenge_points": [
+        "Customer Account API 是否支持现有应用的无缝迁移？是否需要修改数据库或用户流程？",
+        "对于只提供后台管理界面、无买家自助服务的应用，是否也需要改造？",
+        "Shopify 是否提供测试沙箱或过渡期支持？",
+        "如果应用同时涉及退货和订阅，是否需要双重认证？",
+        "改造后是否会影响应用性能或用户体验？"
+      ],
+      "do_not_claim_yet": [
+        "不要声称改造工作量巨大或简单，需基于实际文档和案例。",
+        "不要声称小团队必然被淘汰，需基于政策后果和社区反馈。",
+        "不要声称这是 Shopify 垄断策略，需基于官方意图和行业趋势。"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确改造细节和后果尚未完全公开，建议持续跟踪。",
+      "downstream_materials_needed": [
+        "Customer Account API 集成指南和代码示例",
+        "Shopify 官方关于 Built for Shopify 状态丧失后果的说明",
+        "至少一个开发者迁移案例或社区讨论帖",
+        "Shopify 应用市场当前退货/换货和订阅应用的数量和规模数据"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Customer Account API reference",
+        "url": "https://shopify.dev/docs/api/customer/latest",
+        "query": "Shopify Customer Account API documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Customer Account API reference self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar Customer Account API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Overview Authentication Endpoints and queries Directives Rate limits Status and error codes Common objects Graph QL Types Full index .Mode-Dark { ._HeroImage_14vd5_9-httpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagescustomer-api-hero-dark-Beyr53jMpnghttpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagescustomer-api-hero-dark-Beyr53jMpng { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/assets/images/customer-api-hero-dark-Beyr53jM.png); } } .Mode-Light { ._HeroImage_14vd5_9-httpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagescustomer-api-hero-dark-Beyr53jMpnghttpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagescustomer-api-hero-dark-Beyr53jMpng { background-image: url(https://cdn.shopify.com/shop",
+        "fetch_error": ""
+      },
+      {
+        "title": "Getting started with the Customer Account API",
+        "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/getting-started",
+        "query": "Shopify Customer Account API documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Getting started with the Customer Account API self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Storefronts Overview Themes Web API / Headless Mobile Collapse sidebar Getting started Overview Getting started Developer preview Hydrogen and Oxygen Getting started Fundamentals Analytics Cart Content security policy Data fetching Caching Markets SEO Storefronts Environments Deployments Debugging and testing Performance Migrate and upgrade Production checklist Hydrogen CLI commands Hydrogen API reference Cookbook Bring your own stack Overview Headless with B2B Shopify Plugin for Word Press Storefront Web Components Hydrogen with account component Headless APIs Building with the Storefront API Building with the Customer Account API Additional SDKs Full index Expand On this page What you'll learn Requirements Step 1: Enable customer accounts Step 2: Configure Customer Account API access Step 3: Perform authorization requests and make queries Rotate credentials Next steps Getting started with the Customer Account API Ask Copy MD Th",
+        "fetch_error": ""
+      },
+      {
+        "title": "Build a personalized headless experience with Customer Account API - Shopify",
+        "url": "https://www.shopify.com/partners/blog/introducing-customer-account-api-for-headless-stores",
+        "query": "Shopify Customer Account API documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(()=>{try{if(typeof MutationObserver>\"u\")return;const r=20,f=120,s={injectedElements:[],removedElements:[],attributesChanged:[]},c=t=>t?t.length>f?`${t.slice(0,f)}...`:t:\"\",N=[\"cdn.shopify.com\",\"shopify.com\",\"shopifycloud\"],b=t=>t?N.some(e=>t.includes(e)):!1,m=t=>{const e=t.nodeName;if(!e||e===\"#text\"||e===\"#comment\")return null;const n=t.id?`#${t.id}`:\"\";let o=\"\";if(t.className&&typeof t.className==\"string\"){const p=t.className.trim().split(/\\s+/).slice(0,2).join(\".\");p&&(o=`.${p}`)}const u=t.getAttribute?.(\"src\"),l=t.getAttribute?.(\"href\"),g=t.getAttribute?.(\"type\"),i=[];u?i.push(`src=${c(u)}`):l&&i.push(`href=${c(l)}`),g&&i.push(`type=${g}`);const E=i.length>0?`[${i.join(\",\")}]`:\"\",A=u||l||\"\";return{desc:[e,n,o,E].filter(Boolean).join(\"\"),internal:b(A)}},d=t=>{const{target:e}=t,n=e.nodeName||\"\";return e.id?`${n}#${e.id}`:n},y=t=>{for(const e of t.addedNodes){const n=m(e);!n||n.internal||s.injectedElements.length ${d(t)}`)}},$=t=>{for(const e of t.removedNodes){const n=m(e);!n||n.internal||s.removedElements.length {const e=d(t),n=t.target.getAttribute?.(t.attributeName)||\"\",o=`${e}.${t.attributeName}=${c(n)}`;s.attributesChanged.length {for(const e of t){const n=e.type===\"childList\",o=e.type===\"attributes\";if(n){y(e),$(e);continue}o&&v(e)}}),a=()=>{h.observe(document.documentElement,{childList:!0,subtree:!0,attributes:!0})};document.readyState===\"loading\"?document.addEventListener(\"DOMContentLoaded\",a):a(),window.__preHydrationData=s,window.__stopPreHydrationMonitor=()=>{h.disconnect(),document.removeEventListener(\"DOMContentLoaded\",a),delete window.__preHydrationData,delete window.__stopPreHydrationMonitor}}catch{}})(); Build a personalized headless experience with Customer Account API - Shopify window.__brochureDuxConfig={\"eventHandlerEndpoint\":\"/.well-known/dux?v2&",
+        "fetch_error": ""
+      },
+      {
+        "title": "Built for Shopify requirements for Returns and exchanges apps and Subscription apps (effective December 1, 2026) - Shopify developer changelog",
+        "url": "https://shopify.dev/changelog/built-for-shopify-requirements-for-returns-and-exchanges-and-subscription-apps",
+        "query": "Shopify Built for Shopify requirements returns subscriptions 2026",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Built for Shopify requirements for Returns and exchanges apps and Subscription apps (effective December 1, 2026) - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } June 17, 2026 Tags: Action Required Built for Shopify Built for Shopify requirements for Returns and exchanges apps and Subscription apps (effective December 1, 2026) Ask Copy MD Effective December 1, 2026 , Returns and exchanges ",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Help Center | Subscriptions",
+        "url": "https://help.shopify.com/en/manual/products/purchase-options/subscriptions",
+        "query": "Shopify Built for Shopify requirements returns subscriptions 2026",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Shopify Editions | Spring ’26",
+        "url": "https://www.shopify.com/editions/spring2026",
+        "query": "Shopify Built for Shopify requirements returns subscriptions 2026",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Shopify Editions | Spring ’26 html{color-scheme:dark}html,body{margin:0;padding:0;background-color:#090909;color:#fff}img{max-width:100%} window.__S26_THEATRE_CLIENT_ENABLED__=false (function(){var c=document.createElement('div');c.id='ssr-paint-cover';c.setAttribute('aria-hidden','true');c.style.cssText='position:fixed;inset:0;z-index:100000;background-color:#090909;pointer-events:none';(document.body||document.documentElement).appendChild(c);var twReady=false,domReady=false,dropped=false;function dropCover(){if(dropped)return;dropped=true;if(c&&c.parentNode)c.parentNode.removeChild(c);}function maybeDrop(){if(twReady&&domReady)requestAnimationFrame(dropCover);}function reveal(l){var primary=l.hasAttribute('data-tw-primary');var swapped=false;var t;function swap(loaded){if(!swapped){swapped=true;if(t)clearTimeout(t);l.media='all';}if(primary&&loaded){twReady=true;maybeDrop();}}if(l.sheet){swap(true);}else{l.addEventListener('load',function(){swap(true);});l.addEventListener('error',function(){swap(true);});t=setTimeout(function(){swap(false);},1500);}}var links=document.querySelectorAll('link[data-async-css]');for(var i=0;i #page-loading-overlay { position: fixed; inset: 0; z-index: 2147483647; display: flex; align-items: center; justify-content: center; background-color: #090909; opacity: 1; transition-property: opacity; transition-timing-function: ease-out; transition-delay: 500ms; transition-duration: 800ms; } #page-loading-overlay[data-loaded] { opacity: 0; pointer-events: none; } @keyframes page-loading-noscript-dismiss { to { opacity: 0; visibility: hidden; } } #page-loading-overlay { animation: page-loading-noscript-dismiss 800ms ease-out 2500ms forwards; } .page-loading-preloader { width: 160px; height: 150px; display: grid; place-items: center; contain: layout",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify API access scopes",
+        "url": "https://shopify.dev/docs/api/usage/access-scopes",
+        "query": "Shopify Customer Account API mandatory returns subscription app developer forum",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Shopify API access scopes self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar Get started Shopify APIs, libraries, and tools About Shopify APIs Shopify CLI React Router app package Stores Libraries and templates App data and logic Graph QL Admin API Shopify Functions Events Webhooks Payments Apps API REST Admin API (legacy) Polaris Polaris references App Home (iframe) App Home (UI extension) Admin Checkout Customer accounts POS Using Polaris web components Storefronts Storefront API Shopify QL for analytics Liquid Ajax API Hydrogen framework Hydrogen React library Storefront Web Components Customer Privacy API Customer Account API App management Partner API App Events API Additional APIs Customer authentication Web pixel Shop Minis Shop Pay Wallet API Full index Expand On this page How it works Authenticated access scopes Unauthenticated access scopes Customer access scopes Checking granted access scopes Limitations Shopify API access scopes Ask Copy MD All apps need to request access to specific store data d",
+        "fetch_error": ""
+      },
+      {
+        "title": "Built for Shopify: Called Customer Account API in the last 30 days issue - Built for Shopify - Shopify Developer Community Forums",
+        "url": "https://community.shopify.dev/t/built-for-shopify-called-customer-account-api-in-the-last-30-days-issue/25111",
+        "query": "Shopify Customer Account API mandatory returns subscription app developer forum",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Built for Shopify: Called Customer Account API in the last 30 days issue - Built for Shopify - Shopify Developer Community Forums {\"@context\":\"http://schema.org\",\"@type\":\"QAPage\",\"name\":\"Built for Shopify: Called Customer Account API in the last 30 days issue\",\"datePublished\":\"2025-11-06T19:26:51.598Z\",\"mainEntity\":{\"@type\":\"Question\",\"answerCount\":2,\"author\":{\"@type\":\"Person\",\"name\":\"PapaZulu\",\"url\":\"https://community.shopify.dev/u/PapaZulu\"},\"dateModified\":\"2025-11-06T19:26:51.691Z\",\"datePublished\":\"2025-11-06T19:26:51.598Z\",\"name\":\"Built for Shopify: Called Customer Account API in the last 30 days issue\",\"text\":\"Hi,\\n\\nWe have a subscription app in Shopify App Store and recently, a Built for Shopify requirement “Called Customer Account API in the last 30 days” popped up in the Built for Shopify dashboard.\\n\\nWe are trying all we can to fulfill this requirement, but nothing seems to work.\\n\\nWe contacted Shopify P…\",\"upvoteCount\":0,\"acceptedAnswer\":{\"@type\":\"Answer\",\"author\":{\"@type\":\"Person\",\"name\":\"PapaZulu\",\"url\":\"https://community.shopify.dev/u/PapaZulu\"},\"dateModified\":\"2025-11-07T16:10:57.622Z\",\"datePublished\":\"2025-11-07T16:10:32.510Z\",\"text\":\"Just a quick update. It seems that this was resolved as this requirement is now ticked again.\",\"upvoteCount\":0,\"url\":\"https://community.shopify.dev/t/built-for-shopify-called-customer-account-api-in-the-last-30-days-issue/25111/3\"},\"suggestedAnswer\":[{\"@type\":\"Answer\",\"author\":{\"@type\":\"Person\",\"name\":\"Liam-Shopify\",\"url\":\"https://community.shopify.dev/u/Liam-Shopify\"},\"dateModified\":\"2025-12-09T12:45:22.533Z\",\"datePublished\":\"2025-12-09T12:45:22.514Z\",\"text\":\"Glad this was resolved!\",\"upvoteCount\":0,\"url\":\"https://community.shopify.dev/t/built-for-shopify-called-customer-account-api-in-the-last-30-days-issue/25111/4\"}]}}",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/shopify on Reddit: Billing API for subscription outside App",
+        "url": "https://www.reddit.com/r/shopify/comments/1dfsry1/billing_api_for_subscription_outside_app/",
+        "query": "Shopify Customer Account API mandatory returns subscription app developer forum",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "How Much Does a Shopify Migration Cost? (2026 Pricing Guide) - Soda Web Media",
+        "url": "https://www.sodawebmedia.com/insights/how-much-does-a-shopify-migration-cost/",
+        "query": "Shopify app migration Customer Account API cost time small team",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf(\"?\")==-1){if(href.indexOf(\"#\")==-1){document.location.href=href+\"?nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"?nowprocket=1#\")}}else{if(href.indexOf(\"#\")==-1){document.location.href=href+\"&nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"&nowprocket=1#\")}}}} (()=>{class RocketLazyLoadScripts{constructor(){this.v=\"2.0.5\",this.userEvents=[\"keydown\",\"keyup\",\"mousedown\",\"mouseup\",\"mousemove\",\"mouseover\",\"mouseout\",\"touchmove\",\"touchstart\",\"touchend\",\"touchcancel\",\"wheel\",\"click\",\"dblclick\",\"input\"],this.attributeEvents=[\"onblur\",\"onclick\",\"oncontextmenu\",\"ondblclick\",\"onfocus\",\"onmousedown\",\"onmouseenter\",\"onmouseleave\",\"onmousemove\",\"onmouseout\",\"onmouseover\",\"onmouseup\",\"onmousewheel\",\"onscroll\",\"onsubmit\"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event(\"rocket-allScriptsLoaded\")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem(\"rocketCSPIssue\"),document.addEventListener(\"securitypolicyviolation\",t=>{this.CSPIssue||\"script-src-elem\"!==t.violatedDirective||\"data\"!==t.blockedURI||(this.CSPIssue=!0,session",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Migration Guide: Costs, Data & SEO Tips",
+        "url": "https://www.yotpo.com/blog/shopify-migration-cost-data-seo/",
+        "query": "Shopify app migration Customer Account API cost time small team",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Migration Cost: What You Should Actually Pay (2026 Guide)",
+        "url": "https://shopexperts.com/help/pricing/shopify-migration-cost",
+        "query": "Shopify app migration Customer Account API cost time small team",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Shopify Migration Cost: What You Should Actually Pay (2026 Guide) {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://shopexperts.com/help/pricing/shopify-migration-cost#blog-posting\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://shopexperts.com/help/pricing/shopify-migration-cost\"},\"headline\":\"Shopify Migration Cost: What You Should Actually Pay (2026 Guide)\",\"description\":\"What Shopify migration actually costs in 2026 — WooCommerce, Magento, BigCommerce, Squarespace, custom platforms. With the decision framework and risk math.\",\"datePublished\":\"2026-05-28\",\"dateModified\":\"2026-06-08T10:38:17.000Z\",\"author\":{\"@type\":\"Organization\",\"name\":\"ShopExperts\",\"url\":\"https://shopexperts.com\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"ShopExperts\",\"url\":\"https://shopexperts.com\"},\"url\":\"https://shopexperts.com/help/pricing/shopify-migration-cost\"} {\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How much does Shopify migration cost?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Realistic ranges: $2,000-$8,000 for a small migration (Squarespace, Wix, BigCartel with under 500 products); $8,000-$30,000 for mid-market migration (WooCommerce or BigCommerce with 500-5,000 products); $20,000-$75,000 for complex mid-market with subscriptions or B2B; $30,000-$150,000 for Magento 2 / Adobe Commerce migration; $75,000-$500,000+ for enterprise (SFCC, custom platforms, large Magento). Hourly rates run $100-$400+ depending on geography, seniority, and agency vs freelancer.\"}},{\"@type\":\"Question\",\"name\":\"How much does WooCommerce to Shopify migration cost?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Realistic ranges: $5,000-$15,000 for a simple WooCommerce store (default theme, basic plugins, under 1,000 products); $15,000-$4",
+        "fetch_error": ""
+      },
+      {
+        "title": "Regain lost status",
+        "url": "https://shopify.dev/docs/apps/store/built-for-shopify/losing-status",
+        "query": "Shopify app removal consequences losing Built for Shopify status",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Regain lost status self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Apps Build Design Launch Collapse sidebar Quality assurance Going live Shopify App Store Built for Shopify Privacy requirements Work with protected customer data Pricing strategy About billing for your app Shopify App Pricing Manual pricing (legacy) Billing adjustments Deployment About deployment Deploy to Google Cloud Run Deploy to a hosting service About app versions Deploy and release app versions Deploy app components in a CD pipeline Reaching customers About app distribution Select a distribution method Support your customers Sunsetting your app Go-to-market success Track app usage App listing visibility App revenue share Shopify app store review About the Shopify App Store About the app review process Submit your app for review Pass app review App listing categories Policy violations About app quality checks Shopify App Store ads About Shopify App Store ads Create ads Manage ads Check ad performance Ad billing Ad permissions Ads FAQ Marketing your ap",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Help Center | Enforcement of Shopify’s Partner Program Policies",
+        "url": "https://help.shopify.com/en/partners/help-support/faq/removal",
+        "query": "Shopify app removal consequences losing Built for Shopify status",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Built for Shopify Status Removed Without Warning - New Category-Specific Criteria Applied Early? - Built for Shopify - Shopify Developer Community Forums",
+        "url": "https://community.shopify.dev/t/built-for-shopify-status-removed-without-warning-new-category-specific-criteria-applied-early/17570",
+        "query": "Shopify app removal consequences losing Built for Shopify status",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Built for Shopify Status Removed Without Warning - New Category-Specific Criteria Applied Early? - Built for Shopify - Shopify Developer Community Forums {\"@context\":\"http://schema.org\",\"@type\":\"QAPage\",\"name\":\"Built for Shopify Status Removed Without Warning - New Category-Specific Criteria Applied Early?\",\"datePublished\":\"2025-06-18T18:39:28.310Z\",\"mainEntity\":{\"@type\":\"Question\",\"answerCount\":9,\"author\":{\"@type\":\"Person\",\"name\":\"abueler\",\"url\":\"https://community.shopify.dev/u/abueler\"},\"dateModified\":\"2025-06-18T18:49:06.361Z\",\"datePublished\":\"2025-06-18T18:39:28.310Z\",\"name\":\"Built for Shopify Status Removed Without Warning - New Category-Specific Criteria Applied Early?\",\"text\":\"Our Built for Shopify status has been removed without prior warning following yesterday’s acknowledged system error where Shopify sent false alerts about performance metrics showing as 0.\\n\\nThe removal email states this could be due to:\\n\\nMissing criteria that result in immediate loss of status\\n\\nNeces…\",\"upvoteCount\":0,\"suggestedAnswer\":[{\"@type\":\"Answer\",\"author\":{\"@type\":\"Person\",\"name\":\"MarkT\",\"url\":\"https://community.shopify.dev/u/MarkT\"},\"dateModified\":\"2025-06-18T22:43:43.994Z\",\"datePublished\":\"2025-06-18T22:43:43.980Z\",\"text\":\"Hey Andreas, The team is currently investigating this. It appears that a call to the Fulfillment API triggered an immediate flag for unmet requirements.\\n\\nTo prevent this from happening in the future, the team updating the system to include a 60-day grace period for new rules being applied to apps.\",\"upvoteCount\":0,\"url\":\"https://community.shopify.dev/t/built-for-shopify-status-removed-without-warning-new-category-specific-criteria-applied-early/17570/2\"},{\"@type\":\"Answer\",\"author\":{\"@type\":\"Person\",\"name\":\"abueler\",\"url\":\"https://community.shopify.dev/u/a",
+        "fetch_error": ""
+      },
+      {
+        "title": "Shopify Customer API: How to Get Customer Data Easily in 2026",
+        "url": "https://api2cart.com/api-technology/shopify-customer-api/",
+        "query": "Shopify Customer Account API integration example",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf(\"?\")==-1){if(href.indexOf(\"#\")==-1){document.location.href=href+\"?nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"?nowprocket=1#\")}}else{if(href.indexOf(\"#\")==-1){document.location.href=href+\"&nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"&nowprocket=1#\")}}}} (()=>{class RocketLazyLoadScripts{constructor(){this.v=\"2.0.5\",this.userEvents=[\"keydown\",\"keyup\",\"mousedown\",\"mouseup\",\"mousemove\",\"mouseover\",\"mouseout\",\"touchmove\",\"touchstart\",\"touchend\",\"touchcancel\",\"wheel\",\"click\",\"dblclick\",\"input\"],this.attributeEvents=[\"onblur\",\"onclick\",\"oncontextmenu\",\"ondblclick\",\"onfocus\",\"onmousedown\",\"onmouseenter\",\"onmouseleave\",\"onmousemove\",\"onmouseout\",\"onmouseover\",\"onmouseup\",\"onmousewheel\",\"onscroll\",\"onsubmit\"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event(\"rocket-allScriptsLoaded\")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem(\"rocketCSPIssue\"),document.addEventListener(\"securitypolicyviolation\",t=>{this.CSPIssue||\"script-src-elem\"!==t.violatedDirective||\"data\"!==t.blockedURI||(this.CSPIssue=!0,session",
+        "fetch_error": ""
+      },
+      {
+        "title": "Customer Account API - Shopify.dev",
+        "url": "https://shopify.dev/docs/api/customer-account-ui-extensions/2025-04/apis/customer-account-api",
+        "query": "Shopify Customer Account API integration example",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 404: Not Found"
+      },
+      {
+        "title": "Manage customer accounts with the Customer Account API",
+        "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/customer-accounts",
+        "query": "Shopify Customer Account API integration example",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Manage customer accounts with the Customer Account API self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Storefronts Overview Themes Web API / Headless Mobile Collapse sidebar Getting started Overview Getting started Developer preview Hydrogen and Oxygen Getting started Fundamentals Analytics Cart Content security policy Data fetching Caching Markets SEO Storefronts Environments Deployments Debugging and testing Performance Migrate and upgrade Production checklist Hydrogen CLI commands Hydrogen API reference Cookbook Bring your own stack Overview Headless with B2B Shopify Plugin for Word Press Storefront Web Components Hydrogen with account component Headless APIs Building with the Storefront API Building with the Customer Account API Additional SDKs Full index Expand On this page Requirements Step 1: Update a customer Step 2: Create an address Step 3: Update an address Step 4: Delete an address Next steps Manage customer accounts with the Customer Account API Ask Copy MD You can update customer accounts using the Customer ",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260618-built-for-shopify-requirements-for-returns-and-e-62d10e68/",
+    "for_gpt_editor": {
+      "brief": "Effective December 1, 2026 , Returns and exchanges apps and Subscription apps that provide buyer-facing self-service experiences must authenticate customers using the Customer Account API. Apps that don't meet this requirement by the deadline are at risk of losing Built for Shopify status . What's changing Returns and exchanges and Subscription apps with buyer-facing self-service experiences must use the Customer Account API for customer authentication. This gives buyers and merchants a single, secure sign-in across their storefront, apps, and customer accounts. Who this affects Your app is affected if it falls into either category and offers buyers a self-service experience (for example, managing returns, tracking exchanges, or updating a subscription). What you need to do Integrate the Customer Account API for customer authentication in your buyer-facing flows. Review the updated Built",
+      "title_seed": "Shopify 要求退货/换货和订阅应用在 2026 年底前强制客户认证",
+      "original_title": "Built for Shopify requirements for Returns and exchanges apps and Subscription apps (effective December 1, 2026)",
+      "source_url": "https://shopify.dev/changelog/built-for-shopify-requirements-for-returns-and-exchanges-and-subscription-apps",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：Customer Account API与现有认证方式的具体差异"
+        },
+        "core_question": "Shopify 强制退货/换货和订阅应用在 2026 年底前使用 Customer Account API 进行客户认证，这对现有应用开发者（尤其是小团队和独立开发者）的改造成本、时间压力和业务风险有多大？",
+        "why_this_topic_matters": "平台规则变化有明确时间线，对开发者有强制约束力，直接影响现有应用的合规状态和商店可见性。截止日期 2026 年 12 月 1 日，开发者需尽快评估改造工作量并规划迁移。",
+        "fact_summary": [
+          "Shopify 要求退货/换货和订阅应用在 2026 年 12 月 1 日前使用 Customer Account API 进行客户认证。",
+          "未按时改造的应用可能失去 Built for Shopify 状态。",
+          "Customer Account API 已有完整文档和入门指南。",
+          "社区已有开发者报告集成问题（如“Called Customer Account API in the last 30 days”要求）。",
+          "失去 Built for Shopify 状态后可通过满足要求重新获得。"
+        ],
+        "persona_discussion_question": "老花：我开发的退货/换货应用需要接入 Customer Account API，改造工作量有多大？会不会影响现有用户？如果我不做，失去 Built for Shopify 状态会怎样？",
+        "old_flower_stance": "平台规则变化是生态成熟的表现，但小团队需要算清楚改造成本和时间账，不要盲目投入。先评估现有认证方式与 Customer Account API 的差异，再决定是改造还是放弃。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 85,
+          "why_interested": "直接涉及应用合规和商店运营，开发者需要了解具体要求和时间线。",
+          "reader_risk": "标题可能被误解为所有 Shopify 应用都需要改造，实际仅限退货/换货和订阅应用。"
+        },
+        "mass_interest_hook": {
+          "score": 70,
+          "hook_type": "踩坑",
+          "why_non_technical_people_may_click": "小团队/独立开发者担心平台规则变化导致应用被下架，影响收入。",
+          "story_seed": "一个独立开发者开发的退货应用，因为没及时改造，失去 Built for Shopify 标签，搜索排名下降，订单量腰斩。",
+          "do_not_overhype": "不要声称改造工作量巨大或简单，需基于实际文档和案例。"
+        },
+        "topic_tension": {
+          "score": 9,
+          "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+          "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "平台/工具厂商"
+          ],
+          "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2026-06-17: Shopify 发布 changelog，要求退货/换货和订阅应用在 2026-12-01 前使用 Customer Account API。",
+          "2026-12-01: 截止日期，未改造的应用可能失去 Built for Shopify 状态。"
+        ],
+        "evidence_table": [
+          {
+            "source": "Shopify Developer Changelog",
+            "url": "https://shopify.dev/changelog/built-for-shopify-requirements-for-returns-and-exchanges-and-subscription-apps",
+            "supports": "官方要求，截止日期，受影响应用类型",
+            "reliability": "official"
+          },
+          {
+            "source": "Customer Account API reference",
+            "url": "https://shopify.dev/docs/api/customer/latest",
+            "supports": "API 文档存在，可集成",
+            "reliability": "official"
+          },
+          {
+            "source": "Getting started with the Customer Account API",
+            "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/getting-started",
+            "supports": "集成指南存在",
+            "reliability": "official"
+          },
+          {
+            "source": "Built for Shopify: Called Customer Account API in the last 30 days issue",
+            "url": "https://community.shopify.dev/t/built-for-shopify-called-customer-account-api-in-the-last-30-days-issue/25111",
+            "supports": "开发者遇到集成问题，但已解决",
+            "reliability": "media"
+          },
+          {
+            "source": "Regain lost status",
+            "url": "https://shopify.dev/docs/apps/store/built-for-shopify/losing-status",
+            "supports": "失去 Built for Shopify 状态后可重新获得",
+            "reliability": "official"
+          },
+          {
+            "source": "Built for Shopify Status Removed Without Warning",
+            "url": "https://community.shopify.dev/t/built-for-shopify-status-removed-without-warning-new-category-specific-criteria-applied-early/17570",
+            "supports": "有开发者反映状态被移除，但 Shopify 已增加 60 天宽限期",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "官方要求明确，截止日期清晰，API 文档和集成指南已提供，社区有反馈。逻辑上，开发者需要评估改造成本并在截止日期前完成。失去 Built for Shopify 状态的具体后果（如搜索排名下降）尚未完全公开，但已有案例表明状态可恢复。",
+        "writeable_angles": [
+          {
+            "angle": "改造成本评估：小团队需要多少时间和资源完成 Customer Account API 集成？",
+            "why": "直接回应开发者最关心的问题，提供可操作的估算框架。",
+            "needs": "需要实际案例或社区反馈来估算工时。"
+          },
+          {
+            "angle": "失去 Built for Shopify 状态的实际影响：搜索排名、推荐、功能限制？",
+            "why": "帮助开发者判断是否值得改造。",
+            "needs": "需要官方明确说明或更多社区案例。"
+          },
+          {
+            "angle": "平台规则变化趋势：Shopify 是否在逐步提高应用生态准入门槛？",
+            "why": "引发更广泛的讨论，吸引高价值商业读者。",
+            "needs": "需要分析 Shopify 近年的规则变化趋势。"
+          }
+        ],
+        "missing_basics": [
+          "Customer Account API 与现有认证方式（如 Storefront API）的具体差异。",
+          "失去 Built for Shopify 状态的具体后果（如搜索排名下降、功能限制）。",
+          "改造的平均工时和成本估算。"
+        ],
+        "missing_materials": [
+          "至少一个开发者迁移案例或社区讨论帖。",
+          "Shopify 应用市场当前退货/换货和订阅应用的数量和规模数据。",
+          "Shopify 官方关于失去 Built for Shopify 状态后果的详细说明。"
+        ],
+        "not_claimable": [
+          "不要声称改造工作量巨大或简单，需基于实际文档和案例。",
+          "不要声称小团队必然被淘汰，需基于政策后果和社区反馈。",
+          "不要声称这是 Shopify 垄断策略，需基于官方意图和行业趋势。"
+        ],
+        "followup_queries": [
+          "Customer Account API 的具体集成要求、文档和示例代码是否已发布？",
+          "现有应用如果不改造，是否会被下架或仅失去 Built for Shopify 标签？失去标签的具体后果是什么？",
+          "是否有其他类型的应用未来也会被要求强制认证？",
+          "Shopify 是否提供迁移工具、文档或支持计划来帮助开发者过渡？",
+          "截止日期 2026 年 12 月 1 日是否可能延期？",
+          "是否有开发者社区讨论或反馈关于此变更的担忧？"
+        ],
+        "additional_search_queries": [
+          "Shopify Customer Account API integration example",
+          "Shopify Built for Shopify requirements returns subscriptions 2026",
+          "Shopify Customer Account API mandatory returns subscription app developer forum",
+          "Shopify app migration Customer Account API cost time small team",
+          "Shopify app removal consequences losing Built for Shopify status"
+        ],
+        "stop_conditions": [
+          "如果官方明确失去 Built for Shopify 状态无实际影响（如仅标签变化），则选题价值降低。",
+          "如果截止日期延期超过一年，则紧迫性下降。",
+          "如果社区反馈改造极其简单（如仅需几行代码），则冲突减弱。"
+        ],
+        "confidence": 85.0,
+        "topic_direction": "cross-border",
+        "topic_direction_title": "跨境&出海",
+        "report_type": "platform-rules",
+        "quality_gate": {
+          "pass": true,
+          "score": 85,
+          "fatal_issues": [],
+          "warnings": [
+            "缺少开发者迁移案例或社区讨论帖",
+            "缺少失去Built for Shopify状态的具体后果说明",
+            "缺少改造平均工时和成本估算"
+          ],
+          "missing_evidence": [
+            "Customer Account API与现有认证方式的具体差异",
+            "失去Built for Shopify状态的具体后果",
+            "改造的平均工时和成本估算"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": true,
+          "downstream_handoff_ok": true,
+          "material_pack_ok": true,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": true,
+          "source_coverage_ok": true,
+          "recommendation": "optional"
+        },
+        "research_plan": {
+          "core_question": "Shopify 强制退货/换货和订阅应用在 2026 年底前使用 Customer Account API 进行客户认证，这对现有应用开发者（尤其是小团队和独立开发者）的改造成本、时间压力和业务风险有多大？",
+          "persona_discussion_question": "老花：我开发的退货/换货应用需要接入 Customer Account API，改造工作量有多大？会不会影响现有用户？如果我不做，失去 Built for Shopify 状态会怎样？",
+          "hidden_public_issue": "平台规则变化是否在逐步提高应用生态的准入门槛，挤压小团队和独立开发者的生存空间，最终导致应用市场被大公司垄断？",
+          "must_verify": [
+            "Customer Account API 的具体集成要求、文档和示例代码是否已发布？",
+            "现有应用如果不改造，是否会被下架或仅失去 Built for Shopify 标签？失去标签的具体后果是什么（如搜索排名、推荐、功能限制）？",
+            "是否有其他类型的应用（如订单管理、客户支持）未来也会被要求强制认证？",
+            "Shopify 是否提供迁移工具、文档或支持计划来帮助开发者过渡？",
+            "截止日期 2026 年 12 月 1 日是否可能延期？",
+            "是否有开发者社区讨论或反馈关于此变更的担忧？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Shopify Customer Account API documentation",
+              "why_needed": "确认 API 的具体集成要求、认证流程和示例代码，评估改造成本。"
+            },
+            {
+              "source_type": "policy",
+              "query": "Shopify Built for Shopify requirements returns subscriptions 2026",
+              "why_needed": "获取官方政策原文，确认强制要求的具体范围、截止日期和失去 Built for Shopify 状态的后果。"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Shopify Customer Account API mandatory returns subscription app developer forum",
+              "why_needed": "了解开发者社区的反馈、改造经验、常见问题和潜在风险。"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Shopify app migration Customer Account API cost time small team",
+              "why_needed": "寻找实际案例，了解小团队或独立开发者完成类似迁移所需的时间和成本。"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Shopify app removal consequences losing Built for Shopify status",
+              "why_needed": "确认失去 Built for Shopify 状态的具体影响，如搜索排名下降、功能限制等。"
+            },
+            {
+              "source_type": "github_repo",
+              "query": "Shopify Customer Account API integration example",
+              "why_needed": "查找开源示例代码，评估集成难度和最佳实践。"
+            }
+          ],
+          "expert_challenge_points": [
+            "Customer Account API 是否支持现有应用的无缝迁移？是否需要修改数据库或用户流程？",
+            "对于只提供后台管理界面、无买家自助服务的应用，是否也需要改造？",
+            "Shopify 是否提供测试沙箱或过渡期支持？",
+            "如果应用同时涉及退货和订阅，是否需要双重认证？",
+            "改造后是否会影响应用性能或用户体验？"
+          ],
+          "do_not_claim_yet": [
+            "不要声称改造工作量巨大或简单，需基于实际文档和案例。",
+            "不要声称小团队必然被淘汰，需基于政策后果和社区反馈。",
+            "不要声称这是 Shopify 垄断策略，需基于官方意图和行业趋势。"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确改造细节和后果尚未完全公开，建议持续跟踪。",
+          "downstream_materials_needed": [
+            "Customer Account API 集成指南和代码示例",
+            "Shopify 官方关于 Built for Shopify 状态丧失后果的说明",
+            "至少一个开发者迁移案例或社区讨论帖",
+            "Shopify 应用市场当前退货/换货和订阅应用的数量和规模数据"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Customer Account API reference",
+            "url": "https://shopify.dev/docs/api/customer/latest",
+            "query": "Shopify Customer Account API documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Customer Account API reference self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar Customer Account API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Overview Authentication Endpoints and queries Directives Rate limits Status and error codes Common objects Graph QL Types Full index .Mode-Dark { ._HeroImage_14vd5_9-httpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagescustomer-api-hero-dark-Beyr53jMpnghttpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagescustomer-api-hero-dark-Beyr53jMpng { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/assets/images/customer-api-hero-dark-Beyr53jM.png); } } .Mode-Light { ._HeroImage_14vd5_9-httpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagescustomer-api-hero-dark-Beyr53jMpnghttpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagescustomer-api-hero-dark-Beyr53jMpng { background-image: url(https://cdn.shopify.com/shop",
+            "fetch_error": ""
+          },
+          {
+            "title": "Getting started with the Customer Account API",
+            "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/getting-started",
+            "query": "Shopify Customer Account API documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Getting started with the Customer Account API self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Storefronts Overview Themes Web API / Headless Mobile Collapse sidebar Getting started Overview Getting started Developer preview Hydrogen and Oxygen Getting started Fundamentals Analytics Cart Content security policy Data fetching Caching Markets SEO Storefronts Environments Deployments Debugging and testing Performance Migrate and upgrade Production checklist Hydrogen CLI commands Hydrogen API reference Cookbook Bring your own stack Overview Headless with B2B Shopify Plugin for Word Press Storefront Web Components Hydrogen with account component Headless APIs Building with the Storefront API Building with the Customer Account API Additional SDKs Full index Expand On this page What you'll learn Requirements Step 1: Enable customer accounts Step 2: Configure Customer Account API access Step 3: Perform authorization requests and make queries Rotate credentials Next steps Getting started with the Customer Account API Ask Copy MD Th",
+            "fetch_error": ""
+          },
+          {
+            "title": "Build a personalized headless experience with Customer Account API - Shopify",
+            "url": "https://www.shopify.com/partners/blog/introducing-customer-account-api-for-headless-stores",
+            "query": "Shopify Customer Account API documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(()=>{try{if(typeof MutationObserver>\"u\")return;const r=20,f=120,s={injectedElements:[],removedElements:[],attributesChanged:[]},c=t=>t?t.length>f?`${t.slice(0,f)}...`:t:\"\",N=[\"cdn.shopify.com\",\"shopify.com\",\"shopifycloud\"],b=t=>t?N.some(e=>t.includes(e)):!1,m=t=>{const e=t.nodeName;if(!e||e===\"#text\"||e===\"#comment\")return null;const n=t.id?`#${t.id}`:\"\";let o=\"\";if(t.className&&typeof t.className==\"string\"){const p=t.className.trim().split(/\\s+/).slice(0,2).join(\".\");p&&(o=`.${p}`)}const u=t.getAttribute?.(\"src\"),l=t.getAttribute?.(\"href\"),g=t.getAttribute?.(\"type\"),i=[];u?i.push(`src=${c(u)}`):l&&i.push(`href=${c(l)}`),g&&i.push(`type=${g}`);const E=i.length>0?`[${i.join(\",\")}]`:\"\",A=u||l||\"\";return{desc:[e,n,o,E].filter(Boolean).join(\"\"),internal:b(A)}},d=t=>{const{target:e}=t,n=e.nodeName||\"\";return e.id?`${n}#${e.id}`:n},y=t=>{for(const e of t.addedNodes){const n=m(e);!n||n.internal||s.injectedElements.length ${d(t)}`)}},$=t=>{for(const e of t.removedNodes){const n=m(e);!n||n.internal||s.removedElements.length {const e=d(t),n=t.target.getAttribute?.(t.attributeName)||\"\",o=`${e}.${t.attributeName}=${c(n)}`;s.attributesChanged.length {for(const e of t){const n=e.type===\"childList\",o=e.type===\"attributes\";if(n){y(e),$(e);continue}o&&v(e)}}),a=()=>{h.observe(document.documentElement,{childList:!0,subtree:!0,attributes:!0})};document.readyState===\"loading\"?document.addEventListener(\"DOMContentLoaded\",a):a(),window.__preHydrationData=s,window.__stopPreHydrationMonitor=()=>{h.disconnect(),document.removeEventListener(\"DOMContentLoaded\",a),delete window.__preHydrationData,delete window.__stopPreHydrationMonitor}}catch{}})(); Build a personalized headless experience with Customer Account API - Shopify window.__brochureDuxConfig={\"eventHandlerEndpoint\":\"/.well-known/dux?v2&",
+            "fetch_error": ""
+          },
+          {
+            "title": "Built for Shopify requirements for Returns and exchanges apps and Subscription apps (effective December 1, 2026) - Shopify developer changelog",
+            "url": "https://shopify.dev/changelog/built-for-shopify-requirements-for-returns-and-exchanges-and-subscription-apps",
+            "query": "Shopify Built for Shopify requirements returns subscriptions 2026",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Built for Shopify requirements for Returns and exchanges apps and Subscription apps (effective December 1, 2026) - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } June 17, 2026 Tags: Action Required Built for Shopify Built for Shopify requirements for Returns and exchanges apps and Subscription apps (effective December 1, 2026) Ask Copy MD Effective December 1, 2026 , Returns and exchanges ",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Help Center | Subscriptions",
+            "url": "https://help.shopify.com/en/manual/products/purchase-options/subscriptions",
+            "query": "Shopify Built for Shopify requirements returns subscriptions 2026",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Shopify Editions | Spring ’26",
+            "url": "https://www.shopify.com/editions/spring2026",
+            "query": "Shopify Built for Shopify requirements returns subscriptions 2026",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Shopify Editions | Spring ’26 html{color-scheme:dark}html,body{margin:0;padding:0;background-color:#090909;color:#fff}img{max-width:100%} window.__S26_THEATRE_CLIENT_ENABLED__=false (function(){var c=document.createElement('div');c.id='ssr-paint-cover';c.setAttribute('aria-hidden','true');c.style.cssText='position:fixed;inset:0;z-index:100000;background-color:#090909;pointer-events:none';(document.body||document.documentElement).appendChild(c);var twReady=false,domReady=false,dropped=false;function dropCover(){if(dropped)return;dropped=true;if(c&&c.parentNode)c.parentNode.removeChild(c);}function maybeDrop(){if(twReady&&domReady)requestAnimationFrame(dropCover);}function reveal(l){var primary=l.hasAttribute('data-tw-primary');var swapped=false;var t;function swap(loaded){if(!swapped){swapped=true;if(t)clearTimeout(t);l.media='all';}if(primary&&loaded){twReady=true;maybeDrop();}}if(l.sheet){swap(true);}else{l.addEventListener('load',function(){swap(true);});l.addEventListener('error',function(){swap(true);});t=setTimeout(function(){swap(false);},1500);}}var links=document.querySelectorAll('link[data-async-css]');for(var i=0;i #page-loading-overlay { position: fixed; inset: 0; z-index: 2147483647; display: flex; align-items: center; justify-content: center; background-color: #090909; opacity: 1; transition-property: opacity; transition-timing-function: ease-out; transition-delay: 500ms; transition-duration: 800ms; } #page-loading-overlay[data-loaded] { opacity: 0; pointer-events: none; } @keyframes page-loading-noscript-dismiss { to { opacity: 0; visibility: hidden; } } #page-loading-overlay { animation: page-loading-noscript-dismiss 800ms ease-out 2500ms forwards; } .page-loading-preloader { width: 160px; height: 150px; display: grid; place-items: center; contain: layout",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify API access scopes",
+            "url": "https://shopify.dev/docs/api/usage/access-scopes",
+            "query": "Shopify Customer Account API mandatory returns subscription app developer forum",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Shopify API access scopes self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar Get started Shopify APIs, libraries, and tools About Shopify APIs Shopify CLI React Router app package Stores Libraries and templates App data and logic Graph QL Admin API Shopify Functions Events Webhooks Payments Apps API REST Admin API (legacy) Polaris Polaris references App Home (iframe) App Home (UI extension) Admin Checkout Customer accounts POS Using Polaris web components Storefronts Storefront API Shopify QL for analytics Liquid Ajax API Hydrogen framework Hydrogen React library Storefront Web Components Customer Privacy API Customer Account API App management Partner API App Events API Additional APIs Customer authentication Web pixel Shop Minis Shop Pay Wallet API Full index Expand On this page How it works Authenticated access scopes Unauthenticated access scopes Customer access scopes Checking granted access scopes Limitations Shopify API access scopes Ask Copy MD All apps need to request access to specific store data d",
+            "fetch_error": ""
+          },
+          {
+            "title": "Built for Shopify: Called Customer Account API in the last 30 days issue - Built for Shopify - Shopify Developer Community Forums",
+            "url": "https://community.shopify.dev/t/built-for-shopify-called-customer-account-api-in-the-last-30-days-issue/25111",
+            "query": "Shopify Customer Account API mandatory returns subscription app developer forum",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Built for Shopify: Called Customer Account API in the last 30 days issue - Built for Shopify - Shopify Developer Community Forums {\"@context\":\"http://schema.org\",\"@type\":\"QAPage\",\"name\":\"Built for Shopify: Called Customer Account API in the last 30 days issue\",\"datePublished\":\"2025-11-06T19:26:51.598Z\",\"mainEntity\":{\"@type\":\"Question\",\"answerCount\":2,\"author\":{\"@type\":\"Person\",\"name\":\"PapaZulu\",\"url\":\"https://community.shopify.dev/u/PapaZulu\"},\"dateModified\":\"2025-11-06T19:26:51.691Z\",\"datePublished\":\"2025-11-06T19:26:51.598Z\",\"name\":\"Built for Shopify: Called Customer Account API in the last 30 days issue\",\"text\":\"Hi,\\n\\nWe have a subscription app in Shopify App Store and recently, a Built for Shopify requirement “Called Customer Account API in the last 30 days” popped up in the Built for Shopify dashboard.\\n\\nWe are trying all we can to fulfill this requirement, but nothing seems to work.\\n\\nWe contacted Shopify P…\",\"upvoteCount\":0,\"acceptedAnswer\":{\"@type\":\"Answer\",\"author\":{\"@type\":\"Person\",\"name\":\"PapaZulu\",\"url\":\"https://community.shopify.dev/u/PapaZulu\"},\"dateModified\":\"2025-11-07T16:10:57.622Z\",\"datePublished\":\"2025-11-07T16:10:32.510Z\",\"text\":\"Just a quick update. It seems that this was resolved as this requirement is now ticked again.\",\"upvoteCount\":0,\"url\":\"https://community.shopify.dev/t/built-for-shopify-called-customer-account-api-in-the-last-30-days-issue/25111/3\"},\"suggestedAnswer\":[{\"@type\":\"Answer\",\"author\":{\"@type\":\"Person\",\"name\":\"Liam-Shopify\",\"url\":\"https://community.shopify.dev/u/Liam-Shopify\"},\"dateModified\":\"2025-12-09T12:45:22.533Z\",\"datePublished\":\"2025-12-09T12:45:22.514Z\",\"text\":\"Glad this was resolved!\",\"upvoteCount\":0,\"url\":\"https://community.shopify.dev/t/built-for-shopify-called-customer-account-api-in-the-last-30-days-issue/25111/4\"}]}}",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/shopify on Reddit: Billing API for subscription outside App",
+            "url": "https://www.reddit.com/r/shopify/comments/1dfsry1/billing_api_for_subscription_outside_app/",
+            "query": "Shopify Customer Account API mandatory returns subscription app developer forum",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "How Much Does a Shopify Migration Cost? (2026 Pricing Guide) - Soda Web Media",
+            "url": "https://www.sodawebmedia.com/insights/how-much-does-a-shopify-migration-cost/",
+            "query": "Shopify app migration Customer Account API cost time small team",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf(\"?\")==-1){if(href.indexOf(\"#\")==-1){document.location.href=href+\"?nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"?nowprocket=1#\")}}else{if(href.indexOf(\"#\")==-1){document.location.href=href+\"&nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"&nowprocket=1#\")}}}} (()=>{class RocketLazyLoadScripts{constructor(){this.v=\"2.0.5\",this.userEvents=[\"keydown\",\"keyup\",\"mousedown\",\"mouseup\",\"mousemove\",\"mouseover\",\"mouseout\",\"touchmove\",\"touchstart\",\"touchend\",\"touchcancel\",\"wheel\",\"click\",\"dblclick\",\"input\"],this.attributeEvents=[\"onblur\",\"onclick\",\"oncontextmenu\",\"ondblclick\",\"onfocus\",\"onmousedown\",\"onmouseenter\",\"onmouseleave\",\"onmousemove\",\"onmouseout\",\"onmouseover\",\"onmouseup\",\"onmousewheel\",\"onscroll\",\"onsubmit\"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event(\"rocket-allScriptsLoaded\")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem(\"rocketCSPIssue\"),document.addEventListener(\"securitypolicyviolation\",t=>{this.CSPIssue||\"script-src-elem\"!==t.violatedDirective||\"data\"!==t.blockedURI||(this.CSPIssue=!0,session",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Migration Guide: Costs, Data & SEO Tips",
+            "url": "https://www.yotpo.com/blog/shopify-migration-cost-data-seo/",
+            "query": "Shopify app migration Customer Account API cost time small team",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Migration Cost: What You Should Actually Pay (2026 Guide)",
+            "url": "https://shopexperts.com/help/pricing/shopify-migration-cost",
+            "query": "Shopify app migration Customer Account API cost time small team",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Shopify Migration Cost: What You Should Actually Pay (2026 Guide) {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://shopexperts.com/help/pricing/shopify-migration-cost#blog-posting\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://shopexperts.com/help/pricing/shopify-migration-cost\"},\"headline\":\"Shopify Migration Cost: What You Should Actually Pay (2026 Guide)\",\"description\":\"What Shopify migration actually costs in 2026 — WooCommerce, Magento, BigCommerce, Squarespace, custom platforms. With the decision framework and risk math.\",\"datePublished\":\"2026-05-28\",\"dateModified\":\"2026-06-08T10:38:17.000Z\",\"author\":{\"@type\":\"Organization\",\"name\":\"ShopExperts\",\"url\":\"https://shopexperts.com\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"ShopExperts\",\"url\":\"https://shopexperts.com\"},\"url\":\"https://shopexperts.com/help/pricing/shopify-migration-cost\"} {\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How much does Shopify migration cost?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Realistic ranges: $2,000-$8,000 for a small migration (Squarespace, Wix, BigCartel with under 500 products); $8,000-$30,000 for mid-market migration (WooCommerce or BigCommerce with 500-5,000 products); $20,000-$75,000 for complex mid-market with subscriptions or B2B; $30,000-$150,000 for Magento 2 / Adobe Commerce migration; $75,000-$500,000+ for enterprise (SFCC, custom platforms, large Magento). Hourly rates run $100-$400+ depending on geography, seniority, and agency vs freelancer.\"}},{\"@type\":\"Question\",\"name\":\"How much does WooCommerce to Shopify migration cost?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Realistic ranges: $5,000-$15,000 for a simple WooCommerce store (default theme, basic plugins, under 1,000 products); $15,000-$4",
+            "fetch_error": ""
+          },
+          {
+            "title": "Regain lost status",
+            "url": "https://shopify.dev/docs/apps/store/built-for-shopify/losing-status",
+            "query": "Shopify app removal consequences losing Built for Shopify status",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Regain lost status self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Apps Build Design Launch Collapse sidebar Quality assurance Going live Shopify App Store Built for Shopify Privacy requirements Work with protected customer data Pricing strategy About billing for your app Shopify App Pricing Manual pricing (legacy) Billing adjustments Deployment About deployment Deploy to Google Cloud Run Deploy to a hosting service About app versions Deploy and release app versions Deploy app components in a CD pipeline Reaching customers About app distribution Select a distribution method Support your customers Sunsetting your app Go-to-market success Track app usage App listing visibility App revenue share Shopify app store review About the Shopify App Store About the app review process Submit your app for review Pass app review App listing categories Policy violations About app quality checks Shopify App Store ads About Shopify App Store ads Create ads Manage ads Check ad performance Ad billing Ad permissions Ads FAQ Marketing your ap",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Help Center | Enforcement of Shopify’s Partner Program Policies",
+            "url": "https://help.shopify.com/en/partners/help-support/faq/removal",
+            "query": "Shopify app removal consequences losing Built for Shopify status",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Built for Shopify Status Removed Without Warning - New Category-Specific Criteria Applied Early? - Built for Shopify - Shopify Developer Community Forums",
+            "url": "https://community.shopify.dev/t/built-for-shopify-status-removed-without-warning-new-category-specific-criteria-applied-early/17570",
+            "query": "Shopify app removal consequences losing Built for Shopify status",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Built for Shopify Status Removed Without Warning - New Category-Specific Criteria Applied Early? - Built for Shopify - Shopify Developer Community Forums {\"@context\":\"http://schema.org\",\"@type\":\"QAPage\",\"name\":\"Built for Shopify Status Removed Without Warning - New Category-Specific Criteria Applied Early?\",\"datePublished\":\"2025-06-18T18:39:28.310Z\",\"mainEntity\":{\"@type\":\"Question\",\"answerCount\":9,\"author\":{\"@type\":\"Person\",\"name\":\"abueler\",\"url\":\"https://community.shopify.dev/u/abueler\"},\"dateModified\":\"2025-06-18T18:49:06.361Z\",\"datePublished\":\"2025-06-18T18:39:28.310Z\",\"name\":\"Built for Shopify Status Removed Without Warning - New Category-Specific Criteria Applied Early?\",\"text\":\"Our Built for Shopify status has been removed without prior warning following yesterday’s acknowledged system error where Shopify sent false alerts about performance metrics showing as 0.\\n\\nThe removal email states this could be due to:\\n\\nMissing criteria that result in immediate loss of status\\n\\nNeces…\",\"upvoteCount\":0,\"suggestedAnswer\":[{\"@type\":\"Answer\",\"author\":{\"@type\":\"Person\",\"name\":\"MarkT\",\"url\":\"https://community.shopify.dev/u/MarkT\"},\"dateModified\":\"2025-06-18T22:43:43.994Z\",\"datePublished\":\"2025-06-18T22:43:43.980Z\",\"text\":\"Hey Andreas, The team is currently investigating this. It appears that a call to the Fulfillment API triggered an immediate flag for unmet requirements.\\n\\nTo prevent this from happening in the future, the team updating the system to include a 60-day grace period for new rules being applied to apps.\",\"upvoteCount\":0,\"url\":\"https://community.shopify.dev/t/built-for-shopify-status-removed-without-warning-new-category-specific-criteria-applied-early/17570/2\"},{\"@type\":\"Answer\",\"author\":{\"@type\":\"Person\",\"name\":\"abueler\",\"url\":\"https://community.shopify.dev/u/a",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Customer API: How to Get Customer Data Easily in 2026",
+            "url": "https://api2cart.com/api-technology/shopify-customer-api/",
+            "query": "Shopify Customer Account API integration example",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf(\"?\")==-1){if(href.indexOf(\"#\")==-1){document.location.href=href+\"?nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"?nowprocket=1#\")}}else{if(href.indexOf(\"#\")==-1){document.location.href=href+\"&nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"&nowprocket=1#\")}}}} (()=>{class RocketLazyLoadScripts{constructor(){this.v=\"2.0.5\",this.userEvents=[\"keydown\",\"keyup\",\"mousedown\",\"mouseup\",\"mousemove\",\"mouseover\",\"mouseout\",\"touchmove\",\"touchstart\",\"touchend\",\"touchcancel\",\"wheel\",\"click\",\"dblclick\",\"input\"],this.attributeEvents=[\"onblur\",\"onclick\",\"oncontextmenu\",\"ondblclick\",\"onfocus\",\"onmousedown\",\"onmouseenter\",\"onmouseleave\",\"onmousemove\",\"onmouseout\",\"onmouseover\",\"onmouseup\",\"onmousewheel\",\"onscroll\",\"onsubmit\"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event(\"rocket-allScriptsLoaded\")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem(\"rocketCSPIssue\"),document.addEventListener(\"securitypolicyviolation\",t=>{this.CSPIssue||\"script-src-elem\"!==t.violatedDirective||\"data\"!==t.blockedURI||(this.CSPIssue=!0,session",
+            "fetch_error": ""
+          },
+          {
+            "title": "Customer Account API - Shopify.dev",
+            "url": "https://shopify.dev/docs/api/customer-account-ui-extensions/2025-04/apis/customer-account-api",
+            "query": "Shopify Customer Account API integration example",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 404: Not Found"
+          },
+          {
+            "title": "Manage customer accounts with the Customer Account API",
+            "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/customer-accounts",
+            "query": "Shopify Customer Account API integration example",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Manage customer accounts with the Customer Account API self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Storefronts Overview Themes Web API / Headless Mobile Collapse sidebar Getting started Overview Getting started Developer preview Hydrogen and Oxygen Getting started Fundamentals Analytics Cart Content security policy Data fetching Caching Markets SEO Storefronts Environments Deployments Debugging and testing Performance Migrate and upgrade Production checklist Hydrogen CLI commands Hydrogen API reference Cookbook Bring your own stack Overview Headless with B2B Shopify Plugin for Word Press Storefront Web Components Hydrogen with account component Headless APIs Building with the Storefront API Building with the Customer Account API Additional SDKs Full index Expand On this page Requirements Step 1: Update a customer Step 2: Create an address Step 3: Update an address Step 4: Delete an address Next steps Manage customer accounts with the Customer Account API Ask Copy MD You can update customer accounts using the Customer ",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "可选选题",
+          "label": "可选",
+          "reason": "质量闸提示缺口：Customer Account API与现有认证方式的具体差异"
+        },
+        "core_question": "Shopify 强制退货/换货和订阅应用在 2026 年底前使用 Customer Account API 进行客户认证，这对现有应用开发者（尤其是小团队和独立开发者）的改造成本、时间压力和业务风险有多大？",
+        "why_this_topic_matters": "平台规则变化有明确时间线，对开发者有强制约束力，直接影响现有应用的合规状态和商店可见性。截止日期 2026 年 12 月 1 日，开发者需尽快评估改造工作量并规划迁移。",
+        "fact_summary": [
+          "Shopify 要求退货/换货和订阅应用在 2026 年 12 月 1 日前使用 Customer Account API 进行客户认证。",
+          "未按时改造的应用可能失去 Built for Shopify 状态。",
+          "Customer Account API 已有完整文档和入门指南。",
+          "社区已有开发者报告集成问题（如“Called Customer Account API in the last 30 days”要求）。",
+          "失去 Built for Shopify 状态后可通过满足要求重新获得。"
+        ],
+        "persona_discussion_question": "老花：我开发的退货/换货应用需要接入 Customer Account API，改造工作量有多大？会不会影响现有用户？如果我不做，失去 Built for Shopify 状态会怎样？",
+        "old_flower_stance": "平台规则变化是生态成熟的表现，但小团队需要算清楚改造成本和时间账，不要盲目投入。先评估现有认证方式与 Customer Account API 的差异，再决定是改造还是放弃。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 85,
+          "why_interested": "直接涉及应用合规和商店运营，开发者需要了解具体要求和时间线。",
+          "reader_risk": "标题可能被误解为所有 Shopify 应用都需要改造，实际仅限退货/换货和订阅应用。"
+        },
+        "mass_interest_hook": {
+          "score": 70,
+          "hook_type": "踩坑",
+          "why_non_technical_people_may_click": "小团队/独立开发者担心平台规则变化导致应用被下架，影响收入。",
+          "story_seed": "一个独立开发者开发的退货应用，因为没及时改造，失去 Built for Shopify 标签，搜索排名下降，订单量腰斩。",
+          "do_not_overhype": "不要声称改造工作量巨大或简单，需基于实际文档和案例。"
+        },
+        "topic_tension": {
+          "score": 9,
+          "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+          "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "平台/工具厂商"
+          ],
+          "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2026-06-17: Shopify 发布 changelog，要求退货/换货和订阅应用在 2026-12-01 前使用 Customer Account API。",
+          "2026-12-01: 截止日期，未改造的应用可能失去 Built for Shopify 状态。"
+        ],
+        "evidence_table": [
+          {
+            "source": "Shopify Developer Changelog",
+            "url": "https://shopify.dev/changelog/built-for-shopify-requirements-for-returns-and-exchanges-and-subscription-apps",
+            "supports": "官方要求，截止日期，受影响应用类型",
+            "reliability": "official"
+          },
+          {
+            "source": "Customer Account API reference",
+            "url": "https://shopify.dev/docs/api/customer/latest",
+            "supports": "API 文档存在，可集成",
+            "reliability": "official"
+          },
+          {
+            "source": "Getting started with the Customer Account API",
+            "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/getting-started",
+            "supports": "集成指南存在",
+            "reliability": "official"
+          },
+          {
+            "source": "Built for Shopify: Called Customer Account API in the last 30 days issue",
+            "url": "https://community.shopify.dev/t/built-for-shopify-called-customer-account-api-in-the-last-30-days-issue/25111",
+            "supports": "开发者遇到集成问题，但已解决",
+            "reliability": "media"
+          },
+          {
+            "source": "Regain lost status",
+            "url": "https://shopify.dev/docs/apps/store/built-for-shopify/losing-status",
+            "supports": "失去 Built for Shopify 状态后可重新获得",
+            "reliability": "official"
+          },
+          {
+            "source": "Built for Shopify Status Removed Without Warning",
+            "url": "https://community.shopify.dev/t/built-for-shopify-status-removed-without-warning-new-category-specific-criteria-applied-early/17570",
+            "supports": "有开发者反映状态被移除，但 Shopify 已增加 60 天宽限期",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "官方要求明确，截止日期清晰，API 文档和集成指南已提供，社区有反馈。逻辑上，开发者需要评估改造成本并在截止日期前完成。失去 Built for Shopify 状态的具体后果（如搜索排名下降）尚未完全公开，但已有案例表明状态可恢复。",
+        "writeable_angles": [
+          {
+            "angle": "改造成本评估：小团队需要多少时间和资源完成 Customer Account API 集成？",
+            "why": "直接回应开发者最关心的问题，提供可操作的估算框架。",
+            "needs": "需要实际案例或社区反馈来估算工时。"
+          },
+          {
+            "angle": "失去 Built for Shopify 状态的实际影响：搜索排名、推荐、功能限制？",
+            "why": "帮助开发者判断是否值得改造。",
+            "needs": "需要官方明确说明或更多社区案例。"
+          },
+          {
+            "angle": "平台规则变化趋势：Shopify 是否在逐步提高应用生态准入门槛？",
+            "why": "引发更广泛的讨论，吸引高价值商业读者。",
+            "needs": "需要分析 Shopify 近年的规则变化趋势。"
+          }
+        ],
+        "missing_basics": [
+          "Customer Account API 与现有认证方式（如 Storefront API）的具体差异。",
+          "失去 Built for Shopify 状态的具体后果（如搜索排名下降、功能限制）。",
+          "改造的平均工时和成本估算。"
+        ],
+        "missing_materials": [
+          "至少一个开发者迁移案例或社区讨论帖。",
+          "Shopify 应用市场当前退货/换货和订阅应用的数量和规模数据。",
+          "Shopify 官方关于失去 Built for Shopify 状态后果的详细说明。"
+        ],
+        "not_claimable": [
+          "不要声称改造工作量巨大或简单，需基于实际文档和案例。",
+          "不要声称小团队必然被淘汰，需基于政策后果和社区反馈。",
+          "不要声称这是 Shopify 垄断策略，需基于官方意图和行业趋势。"
+        ],
+        "followup_queries": [
+          "Customer Account API 的具体集成要求、文档和示例代码是否已发布？",
+          "现有应用如果不改造，是否会被下架或仅失去 Built for Shopify 标签？失去标签的具体后果是什么？",
+          "是否有其他类型的应用未来也会被要求强制认证？",
+          "Shopify 是否提供迁移工具、文档或支持计划来帮助开发者过渡？",
+          "截止日期 2026 年 12 月 1 日是否可能延期？",
+          "是否有开发者社区讨论或反馈关于此变更的担忧？"
+        ],
+        "additional_search_queries": [
+          "Shopify Customer Account API integration example",
+          "Shopify Built for Shopify requirements returns subscriptions 2026",
+          "Shopify Customer Account API mandatory returns subscription app developer forum",
+          "Shopify app migration Customer Account API cost time small team",
+          "Shopify app removal consequences losing Built for Shopify status"
+        ],
+        "stop_conditions": [
+          "如果官方明确失去 Built for Shopify 状态无实际影响（如仅标签变化），则选题价值降低。",
+          "如果截止日期延期超过一年，则紧迫性下降。",
+          "如果社区反馈改造极其简单（如仅需几行代码），则冲突减弱。"
+        ],
+        "confidence": 85.0,
+        "topic_direction": "cross-border",
+        "topic_direction_title": "跨境&出海",
+        "report_type": "platform-rules",
+        "quality_gate": {
+          "pass": true,
+          "score": 85,
+          "fatal_issues": [],
+          "warnings": [
+            "缺少开发者迁移案例或社区讨论帖",
+            "缺少失去Built for Shopify状态的具体后果说明",
+            "缺少改造平均工时和成本估算"
+          ],
+          "missing_evidence": [
+            "Customer Account API与现有认证方式的具体差异",
+            "失去Built for Shopify状态的具体后果",
+            "改造的平均工时和成本估算"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": true,
+          "downstream_handoff_ok": true,
+          "material_pack_ok": true,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": true,
+          "source_coverage_ok": true,
+          "recommendation": "optional"
+        },
+        "research_plan": {
+          "core_question": "Shopify 强制退货/换货和订阅应用在 2026 年底前使用 Customer Account API 进行客户认证，这对现有应用开发者（尤其是小团队和独立开发者）的改造成本、时间压力和业务风险有多大？",
+          "persona_discussion_question": "老花：我开发的退货/换货应用需要接入 Customer Account API，改造工作量有多大？会不会影响现有用户？如果我不做，失去 Built for Shopify 状态会怎样？",
+          "hidden_public_issue": "平台规则变化是否在逐步提高应用生态的准入门槛，挤压小团队和独立开发者的生存空间，最终导致应用市场被大公司垄断？",
+          "must_verify": [
+            "Customer Account API 的具体集成要求、文档和示例代码是否已发布？",
+            "现有应用如果不改造，是否会被下架或仅失去 Built for Shopify 标签？失去标签的具体后果是什么（如搜索排名、推荐、功能限制）？",
+            "是否有其他类型的应用（如订单管理、客户支持）未来也会被要求强制认证？",
+            "Shopify 是否提供迁移工具、文档或支持计划来帮助开发者过渡？",
+            "截止日期 2026 年 12 月 1 日是否可能延期？",
+            "是否有开发者社区讨论或反馈关于此变更的担忧？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Shopify Customer Account API documentation",
+              "why_needed": "确认 API 的具体集成要求、认证流程和示例代码，评估改造成本。"
+            },
+            {
+              "source_type": "policy",
+              "query": "Shopify Built for Shopify requirements returns subscriptions 2026",
+              "why_needed": "获取官方政策原文，确认强制要求的具体范围、截止日期和失去 Built for Shopify 状态的后果。"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Shopify Customer Account API mandatory returns subscription app developer forum",
+              "why_needed": "了解开发者社区的反馈、改造经验、常见问题和潜在风险。"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Shopify app migration Customer Account API cost time small team",
+              "why_needed": "寻找实际案例，了解小团队或独立开发者完成类似迁移所需的时间和成本。"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Shopify app removal consequences losing Built for Shopify status",
+              "why_needed": "确认失去 Built for Shopify 状态的具体影响，如搜索排名下降、功能限制等。"
+            },
+            {
+              "source_type": "github_repo",
+              "query": "Shopify Customer Account API integration example",
+              "why_needed": "查找开源示例代码，评估集成难度和最佳实践。"
+            }
+          ],
+          "expert_challenge_points": [
+            "Customer Account API 是否支持现有应用的无缝迁移？是否需要修改数据库或用户流程？",
+            "对于只提供后台管理界面、无买家自助服务的应用，是否也需要改造？",
+            "Shopify 是否提供测试沙箱或过渡期支持？",
+            "如果应用同时涉及退货和订阅，是否需要双重认证？",
+            "改造后是否会影响应用性能或用户体验？"
+          ],
+          "do_not_claim_yet": [
+            "不要声称改造工作量巨大或简单，需基于实际文档和案例。",
+            "不要声称小团队必然被淘汰，需基于政策后果和社区反馈。",
+            "不要声称这是 Shopify 垄断策略，需基于官方意图和行业趋势。"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确改造细节和后果尚未完全公开，建议持续跟踪。",
+          "downstream_materials_needed": [
+            "Customer Account API 集成指南和代码示例",
+            "Shopify 官方关于 Built for Shopify 状态丧失后果的说明",
+            "至少一个开发者迁移案例或社区讨论帖",
+            "Shopify 应用市场当前退货/换货和订阅应用的数量和规模数据"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Customer Account API reference",
+            "url": "https://shopify.dev/docs/api/customer/latest",
+            "query": "Shopify Customer Account API documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Customer Account API reference self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar Customer Account API Choose a version: unstable 2026-07 release candidate 2026-04 latest 2026-01 2025-10 2025-07 2026-04 latest Overview Authentication Endpoints and queries Directives Rate limits Status and error codes Common objects Graph QL Types Full index .Mode-Dark { ._HeroImage_14vd5_9-httpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagescustomer-api-hero-dark-Beyr53jMpnghttpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagescustomer-api-hero-dark-Beyr53jMpng { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/assets/images/customer-api-hero-dark-Beyr53jM.png); } } .Mode-Light { ._HeroImage_14vd5_9-httpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagescustomer-api-hero-dark-Beyr53jMpnghttpscdnshopifycomshopifycloudshopify-devproductionassetsassetsimagescustomer-api-hero-dark-Beyr53jMpng { background-image: url(https://cdn.shopify.com/shop",
+            "fetch_error": ""
+          },
+          {
+            "title": "Getting started with the Customer Account API",
+            "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/getting-started",
+            "query": "Shopify Customer Account API documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Getting started with the Customer Account API self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Storefronts Overview Themes Web API / Headless Mobile Collapse sidebar Getting started Overview Getting started Developer preview Hydrogen and Oxygen Getting started Fundamentals Analytics Cart Content security policy Data fetching Caching Markets SEO Storefronts Environments Deployments Debugging and testing Performance Migrate and upgrade Production checklist Hydrogen CLI commands Hydrogen API reference Cookbook Bring your own stack Overview Headless with B2B Shopify Plugin for Word Press Storefront Web Components Hydrogen with account component Headless APIs Building with the Storefront API Building with the Customer Account API Additional SDKs Full index Expand On this page What you'll learn Requirements Step 1: Enable customer accounts Step 2: Configure Customer Account API access Step 3: Perform authorization requests and make queries Rotate credentials Next steps Getting started with the Customer Account API Ask Copy MD Th",
+            "fetch_error": ""
+          },
+          {
+            "title": "Build a personalized headless experience with Customer Account API - Shopify",
+            "url": "https://www.shopify.com/partners/blog/introducing-customer-account-api-for-headless-stores",
+            "query": "Shopify Customer Account API documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(()=>{try{if(typeof MutationObserver>\"u\")return;const r=20,f=120,s={injectedElements:[],removedElements:[],attributesChanged:[]},c=t=>t?t.length>f?`${t.slice(0,f)}...`:t:\"\",N=[\"cdn.shopify.com\",\"shopify.com\",\"shopifycloud\"],b=t=>t?N.some(e=>t.includes(e)):!1,m=t=>{const e=t.nodeName;if(!e||e===\"#text\"||e===\"#comment\")return null;const n=t.id?`#${t.id}`:\"\";let o=\"\";if(t.className&&typeof t.className==\"string\"){const p=t.className.trim().split(/\\s+/).slice(0,2).join(\".\");p&&(o=`.${p}`)}const u=t.getAttribute?.(\"src\"),l=t.getAttribute?.(\"href\"),g=t.getAttribute?.(\"type\"),i=[];u?i.push(`src=${c(u)}`):l&&i.push(`href=${c(l)}`),g&&i.push(`type=${g}`);const E=i.length>0?`[${i.join(\",\")}]`:\"\",A=u||l||\"\";return{desc:[e,n,o,E].filter(Boolean).join(\"\"),internal:b(A)}},d=t=>{const{target:e}=t,n=e.nodeName||\"\";return e.id?`${n}#${e.id}`:n},y=t=>{for(const e of t.addedNodes){const n=m(e);!n||n.internal||s.injectedElements.length ${d(t)}`)}},$=t=>{for(const e of t.removedNodes){const n=m(e);!n||n.internal||s.removedElements.length {const e=d(t),n=t.target.getAttribute?.(t.attributeName)||\"\",o=`${e}.${t.attributeName}=${c(n)}`;s.attributesChanged.length {for(const e of t){const n=e.type===\"childList\",o=e.type===\"attributes\";if(n){y(e),$(e);continue}o&&v(e)}}),a=()=>{h.observe(document.documentElement,{childList:!0,subtree:!0,attributes:!0})};document.readyState===\"loading\"?document.addEventListener(\"DOMContentLoaded\",a):a(),window.__preHydrationData=s,window.__stopPreHydrationMonitor=()=>{h.disconnect(),document.removeEventListener(\"DOMContentLoaded\",a),delete window.__preHydrationData,delete window.__stopPreHydrationMonitor}}catch{}})(); Build a personalized headless experience with Customer Account API - Shopify window.__brochureDuxConfig={\"eventHandlerEndpoint\":\"/.well-known/dux?v2&",
+            "fetch_error": ""
+          },
+          {
+            "title": "Built for Shopify requirements for Returns and exchanges apps and Subscription apps (effective December 1, 2026) - Shopify developer changelog",
+            "url": "https://shopify.dev/changelog/built-for-shopify-requirements-for-returns-and-exchanges-and-subscription-apps",
+            "query": "Shopify Built for Shopify requirements returns subscriptions 2026",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Built for Shopify requirements for Returns and exchanges apps and Subscription apps (effective December 1, 2026) - Shopify developer changelog self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Back to Developer changelog .Mode-Dark { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-dark-B9onMHn1.png); } } .Mode-Light { .-httpscdnshopifycomshopifycloudshopify-devproductionassetshero-light-Drov1vFSpnghttpscdnshopifycomshopifycloudshopify-devproductionassetshero-dark-B9onMHn1png { background-image: url(https://cdn.shopify.com/shopifycloud/shopify-dev/production/assets/hero-light-Drov1vFS.png); } } June 17, 2026 Tags: Action Required Built for Shopify Built for Shopify requirements for Returns and exchanges apps and Subscription apps (effective December 1, 2026) Ask Copy MD Effective December 1, 2026 , Returns and exchanges ",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Help Center | Subscriptions",
+            "url": "https://help.shopify.com/en/manual/products/purchase-options/subscriptions",
+            "query": "Shopify Built for Shopify requirements returns subscriptions 2026",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Shopify Editions | Spring ’26",
+            "url": "https://www.shopify.com/editions/spring2026",
+            "query": "Shopify Built for Shopify requirements returns subscriptions 2026",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Shopify Editions | Spring ’26 html{color-scheme:dark}html,body{margin:0;padding:0;background-color:#090909;color:#fff}img{max-width:100%} window.__S26_THEATRE_CLIENT_ENABLED__=false (function(){var c=document.createElement('div');c.id='ssr-paint-cover';c.setAttribute('aria-hidden','true');c.style.cssText='position:fixed;inset:0;z-index:100000;background-color:#090909;pointer-events:none';(document.body||document.documentElement).appendChild(c);var twReady=false,domReady=false,dropped=false;function dropCover(){if(dropped)return;dropped=true;if(c&&c.parentNode)c.parentNode.removeChild(c);}function maybeDrop(){if(twReady&&domReady)requestAnimationFrame(dropCover);}function reveal(l){var primary=l.hasAttribute('data-tw-primary');var swapped=false;var t;function swap(loaded){if(!swapped){swapped=true;if(t)clearTimeout(t);l.media='all';}if(primary&&loaded){twReady=true;maybeDrop();}}if(l.sheet){swap(true);}else{l.addEventListener('load',function(){swap(true);});l.addEventListener('error',function(){swap(true);});t=setTimeout(function(){swap(false);},1500);}}var links=document.querySelectorAll('link[data-async-css]');for(var i=0;i #page-loading-overlay { position: fixed; inset: 0; z-index: 2147483647; display: flex; align-items: center; justify-content: center; background-color: #090909; opacity: 1; transition-property: opacity; transition-timing-function: ease-out; transition-delay: 500ms; transition-duration: 800ms; } #page-loading-overlay[data-loaded] { opacity: 0; pointer-events: none; } @keyframes page-loading-noscript-dismiss { to { opacity: 0; visibility: hidden; } } #page-loading-overlay { animation: page-loading-noscript-dismiss 800ms ease-out 2500ms forwards; } .page-loading-preloader { width: 160px; height: 150px; display: grid; place-items: center; contain: layout",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify API access scopes",
+            "url": "https://shopify.dev/docs/api/usage/access-scopes",
+            "query": "Shopify Customer Account API mandatory returns subscription app developer forum",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Shopify API access scopes self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Collapse sidebar Get started Shopify APIs, libraries, and tools About Shopify APIs Shopify CLI React Router app package Stores Libraries and templates App data and logic Graph QL Admin API Shopify Functions Events Webhooks Payments Apps API REST Admin API (legacy) Polaris Polaris references App Home (iframe) App Home (UI extension) Admin Checkout Customer accounts POS Using Polaris web components Storefronts Storefront API Shopify QL for analytics Liquid Ajax API Hydrogen framework Hydrogen React library Storefront Web Components Customer Privacy API Customer Account API App management Partner API App Events API Additional APIs Customer authentication Web pixel Shop Minis Shop Pay Wallet API Full index Expand On this page How it works Authenticated access scopes Unauthenticated access scopes Customer access scopes Checking granted access scopes Limitations Shopify API access scopes Ask Copy MD All apps need to request access to specific store data d",
+            "fetch_error": ""
+          },
+          {
+            "title": "Built for Shopify: Called Customer Account API in the last 30 days issue - Built for Shopify - Shopify Developer Community Forums",
+            "url": "https://community.shopify.dev/t/built-for-shopify-called-customer-account-api-in-the-last-30-days-issue/25111",
+            "query": "Shopify Customer Account API mandatory returns subscription app developer forum",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Built for Shopify: Called Customer Account API in the last 30 days issue - Built for Shopify - Shopify Developer Community Forums {\"@context\":\"http://schema.org\",\"@type\":\"QAPage\",\"name\":\"Built for Shopify: Called Customer Account API in the last 30 days issue\",\"datePublished\":\"2025-11-06T19:26:51.598Z\",\"mainEntity\":{\"@type\":\"Question\",\"answerCount\":2,\"author\":{\"@type\":\"Person\",\"name\":\"PapaZulu\",\"url\":\"https://community.shopify.dev/u/PapaZulu\"},\"dateModified\":\"2025-11-06T19:26:51.691Z\",\"datePublished\":\"2025-11-06T19:26:51.598Z\",\"name\":\"Built for Shopify: Called Customer Account API in the last 30 days issue\",\"text\":\"Hi,\\n\\nWe have a subscription app in Shopify App Store and recently, a Built for Shopify requirement “Called Customer Account API in the last 30 days” popped up in the Built for Shopify dashboard.\\n\\nWe are trying all we can to fulfill this requirement, but nothing seems to work.\\n\\nWe contacted Shopify P…\",\"upvoteCount\":0,\"acceptedAnswer\":{\"@type\":\"Answer\",\"author\":{\"@type\":\"Person\",\"name\":\"PapaZulu\",\"url\":\"https://community.shopify.dev/u/PapaZulu\"},\"dateModified\":\"2025-11-07T16:10:57.622Z\",\"datePublished\":\"2025-11-07T16:10:32.510Z\",\"text\":\"Just a quick update. It seems that this was resolved as this requirement is now ticked again.\",\"upvoteCount\":0,\"url\":\"https://community.shopify.dev/t/built-for-shopify-called-customer-account-api-in-the-last-30-days-issue/25111/3\"},\"suggestedAnswer\":[{\"@type\":\"Answer\",\"author\":{\"@type\":\"Person\",\"name\":\"Liam-Shopify\",\"url\":\"https://community.shopify.dev/u/Liam-Shopify\"},\"dateModified\":\"2025-12-09T12:45:22.533Z\",\"datePublished\":\"2025-12-09T12:45:22.514Z\",\"text\":\"Glad this was resolved!\",\"upvoteCount\":0,\"url\":\"https://community.shopify.dev/t/built-for-shopify-called-customer-account-api-in-the-last-30-days-issue/25111/4\"}]}}",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/shopify on Reddit: Billing API for subscription outside App",
+            "url": "https://www.reddit.com/r/shopify/comments/1dfsry1/billing_api_for_subscription_outside_app/",
+            "query": "Shopify Customer Account API mandatory returns subscription app developer forum",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "How Much Does a Shopify Migration Cost? (2026 Pricing Guide) - Soda Web Media",
+            "url": "https://www.sodawebmedia.com/insights/how-much-does-a-shopify-migration-cost/",
+            "query": "Shopify app migration Customer Account API cost time small team",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf(\"?\")==-1){if(href.indexOf(\"#\")==-1){document.location.href=href+\"?nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"?nowprocket=1#\")}}else{if(href.indexOf(\"#\")==-1){document.location.href=href+\"&nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"&nowprocket=1#\")}}}} (()=>{class RocketLazyLoadScripts{constructor(){this.v=\"2.0.5\",this.userEvents=[\"keydown\",\"keyup\",\"mousedown\",\"mouseup\",\"mousemove\",\"mouseover\",\"mouseout\",\"touchmove\",\"touchstart\",\"touchend\",\"touchcancel\",\"wheel\",\"click\",\"dblclick\",\"input\"],this.attributeEvents=[\"onblur\",\"onclick\",\"oncontextmenu\",\"ondblclick\",\"onfocus\",\"onmousedown\",\"onmouseenter\",\"onmouseleave\",\"onmousemove\",\"onmouseout\",\"onmouseover\",\"onmouseup\",\"onmousewheel\",\"onscroll\",\"onsubmit\"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event(\"rocket-allScriptsLoaded\")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem(\"rocketCSPIssue\"),document.addEventListener(\"securitypolicyviolation\",t=>{this.CSPIssue||\"script-src-elem\"!==t.violatedDirective||\"data\"!==t.blockedURI||(this.CSPIssue=!0,session",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Migration Guide: Costs, Data & SEO Tips",
+            "url": "https://www.yotpo.com/blog/shopify-migration-cost-data-seo/",
+            "query": "Shopify app migration Customer Account API cost time small team",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Migration Cost: What You Should Actually Pay (2026 Guide)",
+            "url": "https://shopexperts.com/help/pricing/shopify-migration-cost",
+            "query": "Shopify app migration Customer Account API cost time small team",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Shopify Migration Cost: What You Should Actually Pay (2026 Guide) {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://shopexperts.com/help/pricing/shopify-migration-cost#blog-posting\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://shopexperts.com/help/pricing/shopify-migration-cost\"},\"headline\":\"Shopify Migration Cost: What You Should Actually Pay (2026 Guide)\",\"description\":\"What Shopify migration actually costs in 2026 — WooCommerce, Magento, BigCommerce, Squarespace, custom platforms. With the decision framework and risk math.\",\"datePublished\":\"2026-05-28\",\"dateModified\":\"2026-06-08T10:38:17.000Z\",\"author\":{\"@type\":\"Organization\",\"name\":\"ShopExperts\",\"url\":\"https://shopexperts.com\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"ShopExperts\",\"url\":\"https://shopexperts.com\"},\"url\":\"https://shopexperts.com/help/pricing/shopify-migration-cost\"} {\"@context\":\"https://schema.org\",\"@type\":\"FAQPage\",\"mainEntity\":[{\"@type\":\"Question\",\"name\":\"How much does Shopify migration cost?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Realistic ranges: $2,000-$8,000 for a small migration (Squarespace, Wix, BigCartel with under 500 products); $8,000-$30,000 for mid-market migration (WooCommerce or BigCommerce with 500-5,000 products); $20,000-$75,000 for complex mid-market with subscriptions or B2B; $30,000-$150,000 for Magento 2 / Adobe Commerce migration; $75,000-$500,000+ for enterprise (SFCC, custom platforms, large Magento). Hourly rates run $100-$400+ depending on geography, seniority, and agency vs freelancer.\"}},{\"@type\":\"Question\",\"name\":\"How much does WooCommerce to Shopify migration cost?\",\"acceptedAnswer\":{\"@type\":\"Answer\",\"text\":\"Realistic ranges: $5,000-$15,000 for a simple WooCommerce store (default theme, basic plugins, under 1,000 products); $15,000-$4",
+            "fetch_error": ""
+          },
+          {
+            "title": "Regain lost status",
+            "url": "https://shopify.dev/docs/apps/store/built-for-shopify/losing-status",
+            "query": "Shopify app removal consequences losing Built for Shopify status",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Regain lost status self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Apps Build Design Launch Collapse sidebar Quality assurance Going live Shopify App Store Built for Shopify Privacy requirements Work with protected customer data Pricing strategy About billing for your app Shopify App Pricing Manual pricing (legacy) Billing adjustments Deployment About deployment Deploy to Google Cloud Run Deploy to a hosting service About app versions Deploy and release app versions Deploy app components in a CD pipeline Reaching customers About app distribution Select a distribution method Support your customers Sunsetting your app Go-to-market success Track app usage App listing visibility App revenue share Shopify app store review About the Shopify App Store About the app review process Submit your app for review Pass app review App listing categories Policy violations About app quality checks Shopify App Store ads About Shopify App Store ads Create ads Manage ads Check ad performance Ad billing Ad permissions Ads FAQ Marketing your ap",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Help Center | Enforcement of Shopify’s Partner Program Policies",
+            "url": "https://help.shopify.com/en/partners/help-support/faq/removal",
+            "query": "Shopify app removal consequences losing Built for Shopify status",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Built for Shopify Status Removed Without Warning - New Category-Specific Criteria Applied Early? - Built for Shopify - Shopify Developer Community Forums",
+            "url": "https://community.shopify.dev/t/built-for-shopify-status-removed-without-warning-new-category-specific-criteria-applied-early/17570",
+            "query": "Shopify app removal consequences losing Built for Shopify status",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Built for Shopify Status Removed Without Warning - New Category-Specific Criteria Applied Early? - Built for Shopify - Shopify Developer Community Forums {\"@context\":\"http://schema.org\",\"@type\":\"QAPage\",\"name\":\"Built for Shopify Status Removed Without Warning - New Category-Specific Criteria Applied Early?\",\"datePublished\":\"2025-06-18T18:39:28.310Z\",\"mainEntity\":{\"@type\":\"Question\",\"answerCount\":9,\"author\":{\"@type\":\"Person\",\"name\":\"abueler\",\"url\":\"https://community.shopify.dev/u/abueler\"},\"dateModified\":\"2025-06-18T18:49:06.361Z\",\"datePublished\":\"2025-06-18T18:39:28.310Z\",\"name\":\"Built for Shopify Status Removed Without Warning - New Category-Specific Criteria Applied Early?\",\"text\":\"Our Built for Shopify status has been removed without prior warning following yesterday’s acknowledged system error where Shopify sent false alerts about performance metrics showing as 0.\\n\\nThe removal email states this could be due to:\\n\\nMissing criteria that result in immediate loss of status\\n\\nNeces…\",\"upvoteCount\":0,\"suggestedAnswer\":[{\"@type\":\"Answer\",\"author\":{\"@type\":\"Person\",\"name\":\"MarkT\",\"url\":\"https://community.shopify.dev/u/MarkT\"},\"dateModified\":\"2025-06-18T22:43:43.994Z\",\"datePublished\":\"2025-06-18T22:43:43.980Z\",\"text\":\"Hey Andreas, The team is currently investigating this. It appears that a call to the Fulfillment API triggered an immediate flag for unmet requirements.\\n\\nTo prevent this from happening in the future, the team updating the system to include a 60-day grace period for new rules being applied to apps.\",\"upvoteCount\":0,\"url\":\"https://community.shopify.dev/t/built-for-shopify-status-removed-without-warning-new-category-specific-criteria-applied-early/17570/2\"},{\"@type\":\"Answer\",\"author\":{\"@type\":\"Person\",\"name\":\"abueler\",\"url\":\"https://community.shopify.dev/u/a",
+            "fetch_error": ""
+          },
+          {
+            "title": "Shopify Customer API: How to Get Customer Data Easily in 2026",
+            "url": "https://api2cart.com/api-technology/shopify-customer-api/",
+            "query": "Shopify Customer Account API integration example",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf(\"?\")==-1){if(href.indexOf(\"#\")==-1){document.location.href=href+\"?nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"?nowprocket=1#\")}}else{if(href.indexOf(\"#\")==-1){document.location.href=href+\"&nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"&nowprocket=1#\")}}}} (()=>{class RocketLazyLoadScripts{constructor(){this.v=\"2.0.5\",this.userEvents=[\"keydown\",\"keyup\",\"mousedown\",\"mouseup\",\"mousemove\",\"mouseover\",\"mouseout\",\"touchmove\",\"touchstart\",\"touchend\",\"touchcancel\",\"wheel\",\"click\",\"dblclick\",\"input\"],this.attributeEvents=[\"onblur\",\"onclick\",\"oncontextmenu\",\"ondblclick\",\"onfocus\",\"onmousedown\",\"onmouseenter\",\"onmouseleave\",\"onmousemove\",\"onmouseout\",\"onmouseover\",\"onmouseup\",\"onmousewheel\",\"onscroll\",\"onsubmit\"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event(\"rocket-allScriptsLoaded\")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem(\"rocketCSPIssue\"),document.addEventListener(\"securitypolicyviolation\",t=>{this.CSPIssue||\"script-src-elem\"!==t.violatedDirective||\"data\"!==t.blockedURI||(this.CSPIssue=!0,session",
+            "fetch_error": ""
+          },
+          {
+            "title": "Customer Account API - Shopify.dev",
+            "url": "https://shopify.dev/docs/api/customer-account-ui-extensions/2025-04/apis/customer-account-api",
+            "query": "Shopify Customer Account API integration example",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 404: Not Found"
+          },
+          {
+            "title": "Manage customer accounts with the Customer Account API",
+            "url": "https://shopify.dev/docs/storefronts/headless/building-with-the-customer-account-api/customer-accounts",
+            "query": "Shopify Customer Account API integration example",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Manage customer accounts with the Customer Account API self.getThemeMode = () => { for (const cookie of document.cookie.split(';')) { const [key, value] = cookie .trim() .split('=') .map((value) => decodeURIComponent(value)); if (key === 'theme_mode') { if (value === 'ThemeMode-dark') return 'dark'; if (value === 'ThemeMode-default') return 'light'; } } if (matchMedia('(prefers-color-scheme: dark)').matches) return 'dark'; return 'light'; }; self.setThemeMode = (mode) => { const cookieValue = mode === 'dark' ? 'ThemeMode-dark' : 'ThemeMode-default'; document.cookie = `theme_mode=${cookieValue}; path=/`; }; try { if (getThemeMode() === 'dark') { document.documentElement.classList.remove('Mode-Light'); document.documentElement.classList.add('Mode-Dark'); } } catch (_) {} Skip to main content Apps Storefronts Agents References Ask assistant / Help • Log in Storefronts Overview Themes Web API / Headless Mobile Collapse sidebar Getting started Overview Getting started Developer preview Hydrogen and Oxygen Getting started Fundamentals Analytics Cart Content security policy Data fetching Caching Markets SEO Storefronts Environments Deployments Debugging and testing Performance Migrate and upgrade Production checklist Hydrogen CLI commands Hydrogen API reference Cookbook Bring your own stack Overview Headless with B2B Shopify Plugin for Word Press Storefront Web Components Hydrogen with account component Headless APIs Building with the Storefront API Building with the Customer Account API Additional SDKs Full index Expand On this page Requirements Step 1: Update a customer Step 2: Create an address Step 3: Update an address Step 4: Delete an address Next steps Manage customer accounts with the Customer Account API Ask Copy MD You can update customer accounts using the Customer ",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "规则变动影响谁",
+        "普通技术人的合规边界",
+        "平台红利和封号风险"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "Shopify 要求退货/换货和订阅应用在 2026 年底前强制客户认证 官方政策 规则 原文",
+        "Shopify 要求退货/换货和订阅应用在 2026 年底前强制客户认证 开发者公告 影响范围",
+        "Shopify 要求退货/换货和订阅应用在 2026 年底前强制客户认证 合规 风险 受影响用户"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}

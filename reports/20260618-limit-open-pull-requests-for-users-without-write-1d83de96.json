@@ -1,0 +1,1729 @@
+{
+  "id": "20260618-limit-open-pull-requests-for-users-without-write-1d83de96",
+  "batch_id": "2026-06-18-morning",
+  "title": "GitHub限制无写权限用户PR数量，打击低质量贡献",
+  "original_title": "Limit open pull requests for users without write access",
+  "url": "https://github.blog/changelog/2026-06-17-limit-open-pull-requests-for-users-without-write-access",
+  "summary": "Maintainers of open source repositories are dealing with an ever-growing volume of pull requests, including repeated low-quality or drive-by contributions that can slow triage and overwhelm review queues. To help… The post Limit open pull requests for users without write access appeared first on The GitHub Blog .",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "ai-frontier",
+  "topic_direction_title": "AI前沿",
+  "topic_direction_short_title": "AI前沿",
+  "topic_direction_description": "AI 模型、Agent、OpenAI、Claude、Gemini、底层能力和关键产品变化。重点用一句话记录发生了什么、来自哪里、是否需要后续查证。",
+  "source_name": "GitHub Blog",
+  "original_source_name": "Archive: 2026 - GitHub Changelog",
+  "source_type": "rss",
+  "feed_url": "https://github.blog/changelog/feed/",
+  "published_at": "2026-06-17T16:23:56+00:00",
+  "fetched_at": "2026-06-18T02:25:26.590062+00:00",
+  "decision": "deep_dive",
+  "report_type": "platform-rules",
+  "report_type_title": "平台规则",
+  "score": 78,
+  "reader_hook": "开源社区规则、PR管理、贡献者体验",
+  "topic_tension": {
+    "score": 9,
+    "conflict_point": "热点事件里的平台叙事、用户反弹和普通技术人的真实成本之间有冲突。",
+    "debate_question": "这件事到底是合理规则/正常成本控制，还是平台把风险和成本转嫁给普通使用者？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+    "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+  },
+  "persona_discussion_question": "小团队该不该继续把关键工作流押在这个平台规则上？",
+  "why_now": "GitHub正式推出限制功能，影响所有开源仓库",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "GitHub限制无写权限用户PR数量，旨在减少低质量贡献，是平台规则的重要变化。",
+  "collection_fit": "tools-rules",
+  "investigation_direction": "具体限制阈值、维护者反馈、对新手的影响",
+  "uncertainty_flags": [
+    "具体限制阈值未公布"
+  ],
+  "facts": [
+    {
+      "claim": "GitHub Blog 发布/收录了这条原始线索：Limit open pull requests for users without write access",
+      "type": "confirmed_fact",
+      "source_url": "https://github.blog/changelog/2026-06-17-limit-open-pull-requests-for-users-without-write-access",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "GitHub Blog",
+      "url": "https://github.blog/changelog/2026-06-17-limit-open-pull-requests-for-users-without-write-access",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "dev": [
+        "github"
+      ]
+    },
+    "source_host": "github.blog",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 9,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "开源社区规则、PR管理、贡献者体验",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://github.blog/changelog/feed/",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "具体限制阈值未公布"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：具体限制阈值、生效时间、豁免机制等关键细节缺失，官方公告未提供，无法验证。"
+    },
+    "core_question": "GitHub限制无写权限用户PR数量，对开源贡献者和维护者有何实际影响？",
+    "why_this_topic_matters": "GitHub作为全球最大代码托管平台，其规则变化直接影响开源贡献模式。限制PR数量可能减少低质量贡献，但也可能误伤新手和偶尔贡献者，引发关于开放性与维护成本的讨论。",
+    "fact_summary": [
+      "GitHub于2026年6月17日宣布限制无写权限用户的开放PR数量，旨在减少低质量或驱车式贡献。",
+      "官方公告未公布具体限制阈值（如PR数量上限、时间窗口）。",
+      "此前GitHub已推出禁用PR、限制PR仅协作者等仓库级设置。",
+      "社区已有关于低质量贡献的讨论，但官方限制的具体细节和社区反应尚未充分收集。"
+    ],
+    "persona_discussion_question": "作为开源维护者或贡献者，我该担心这个限制吗？它会影响我的项目或贡献习惯吗？",
+    "old_flower_stance": "平台规则变化是常态，但限制PR数量可能降低开源社区的开放性，将维护成本转嫁给贡献者。普通技术人应关注规则细节，评估对自身贡献习惯的影响。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 78,
+      "why_interested": "核心技术人关注开源贡献规则变化，入门读者担心影响学习贡献，高价值商业读者评估平台依赖风险。",
+      "reader_risk": "标题不能夸大，需明确标注待验证细节，避免引发不必要的恐慌。"
+    },
+    "mass_interest_hook": {
+      "score": 7,
+      "hook_type": "争议",
+      "why_non_technical_people_may_click": "GitHub是程序员常用平台，规则变化可能影响开源项目参与，普通人通过标题感受到“门槛提高”的冲突。",
+      "story_seed": "GitHub限制PR数量，新手贡献者可能被误伤，开源社区开放性与维护成本如何平衡？",
+      "do_not_overhype": "不能声称限制已生效或具体数字，需强调待验证。"
+    },
+    "topic_tension": {
+      "score": 9,
+      "conflict_point": "平台规则变化是否在降低开源社区的开放性和低门槛参与，将维护成本转嫁给贡献者？",
+      "debate_question": "这件事到底是合理规则/正常成本控制，还是平台把风险和成本转嫁给普通使用者？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "平台/工具厂商"
+      ],
+      "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2026-02-13: GitHub推出新仓库设置，可禁用PR或限制PR仅协作者。",
+      "2026-06-17: GitHub宣布限制无写权限用户的开放PR数量，具体阈值未公布。"
+    ],
+    "evidence_table": [
+      {
+        "source": "GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-06-17-limit-open-pull-requests-for-users-without-write-access/",
+        "supports": "官方公告，确认限制功能推出，但未提供具体阈值。",
+        "reliability": "official"
+      },
+      {
+        "source": "GitHub Docs - Limiting interactions",
+        "url": "https://docs.github.com/en/communities/moderating-comments-and-conversations/limiting-interactions-in-your-repository",
+        "supports": "现有临时交互限制功能，但非PR数量限制。",
+        "reliability": "official"
+      },
+      {
+        "source": "GitHub Changelog - New repository settings",
+        "url": "https://github.blog/changelog/2026-02-13-new-repository-settings-for-configuring-pull-request-access/",
+        "supports": "此前已推出禁用PR等设置，表明GitHub持续加强PR管理。",
+        "reliability": "official"
+      },
+      {
+        "source": "InfoWorld article",
+        "url": "https://www.infoworld.com/article/4127156/github-eyes-restrictions-on-pull-requests-to-rein-in-ai-based-code-deluge-on-maintainers.html",
+        "supports": "报道GitHub考虑限制PR以应对AI生成的低质量贡献。",
+        "reliability": "media"
+      },
+      {
+        "source": "GitHub Community Discussion #185387",
+        "url": "https://github.com/orgs/community/discussions/185387",
+        "supports": "社区讨论低质量贡献问题，提及AI生成代码。",
+        "reliability": "weak"
+      }
+    ],
+    "logic_closure": "部分闭环：官方公告确认限制，但缺少阈值和社区反应，逻辑链不完整。",
+    "writeable_angles": [
+      {
+        "angle": "规则解读：GitHub限制PR数量的具体影响与应对",
+        "why": "帮助读者理解规则变化，评估对自身项目的影响。",
+        "needs": "需要具体阈值、生效时间、豁免机制。"
+      },
+      {
+        "angle": "争议分析：开源开放性与维护成本的平衡",
+        "why": "引发讨论，适合传播。",
+        "needs": "需要社区反应、反方观点。"
+      },
+      {
+        "angle": "实操指南：维护者如何配置PR限制",
+        "why": "提供实用价值，吸引维护者读者。",
+        "needs": "需要官方文档细节、配置步骤。"
+      }
+    ],
+    "missing_basics": [
+      "具体限制阈值（如PR数量上限、时间窗口）",
+      "限制是否适用于所有仓库还是仅特定仓库",
+      "是否有例外机制（如通过赞助、贡献等级豁免）",
+      "官方公告中是否提及低质量PR的定义标准",
+      "社区反馈（如Hacker News、Reddit讨论）"
+    ],
+    "missing_materials": [
+      "至少2个社区讨论帖（如HN、Reddit）",
+      "维护者或贡献者的实际案例",
+      "官方FAQ或详细文档"
+    ],
+    "not_claimable": [
+      "限制的具体数字",
+      "限制是否已生效",
+      "社区普遍反对或支持"
+    ],
+    "followup_queries": [
+      "GitHub limit open pull requests users without write access threshold",
+      "GitHub PR limit Hacker News discussion",
+      "GitHub PR limit Reddit discussion",
+      "GitHub PR limit exemption sponsor"
+    ],
+    "additional_search_queries": [
+      "GitHub limit open pull requests users without write access threshold",
+      "GitHub PR limit Hacker News",
+      "GitHub PR limit Reddit",
+      "GitHub PR limit exemption sponsor"
+    ],
+    "stop_conditions": [
+      "官方公布具体阈值和生效时间",
+      "社区出现大规模讨论或争议",
+      "出现实际案例说明影响"
+    ],
+    "confidence": 60.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI前沿",
+    "report_type": "platform-rules",
+    "quality_gate": {
+      "pass": false,
+      "score": 60,
+      "fatal_issues": [
+        "核心事实没有来源：具体限制阈值、生效时间、豁免机制等关键细节缺失，官方公告未提供，无法验证。"
+      ],
+      "warnings": [
+        "缺少社区反应和反方观点，传播张力依赖待验证细节。",
+        "信息源偏科：仅依赖GitHub官方和一篇媒体文章，缺乏社区讨论（HN、Reddit）等关键来源。"
+      ],
+      "missing_evidence": [
+        "具体限制阈值（如PR数量上限、时间窗口）",
+        "限制是否适用于所有仓库还是仅特定仓库",
+        "是否有例外机制（如通过赞助、贡献等级豁免）",
+        "官方公告中是否提及低质量PR的定义标准",
+        "社区反馈（如Hacker News、Reddit讨论）"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "GitHub限制无写权限用户PR数量，对开源贡献者和维护者有何实际影响？",
+      "persona_discussion_question": "作为开源维护者或贡献者，我该担心这个限制吗？它会影响我的项目或贡献习惯吗？",
+      "hidden_public_issue": "平台规则变化是否在降低开源社区的开放性和低门槛参与，将维护成本转嫁给贡献者？",
+      "must_verify": [
+        "具体限制阈值（如PR数量上限、时间窗口）",
+        "限制是否适用于所有仓库还是仅特定仓库",
+        "是否有例外机制（如通过赞助、贡献等级豁免）",
+        "官方公告中是否提及低质量PR的定义标准",
+        "社区反馈（如Hacker News、Reddit讨论）"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "GitHub limit open pull requests users without write access threshold",
+          "why_needed": "获取具体限制数值和规则细节"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "GitHub limit PRs without write access Hacker News",
+          "why_needed": "了解社区反应和潜在争议"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "GitHub PR limit low quality contributions reddit",
+          "why_needed": "获取用户实际体验和批评"
+        },
+        {
+          "source_type": "policy",
+          "query": "GitHub acceptable use policy pull request spam",
+          "why_needed": "确认平台对低质量贡献的现有定义"
+        },
+        {
+          "source_type": "case_study",
+          "query": "GitHub PR limit impact open source maintainers",
+          "why_needed": "寻找实际案例说明影响"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "GitHub PR limit exemption sponsor",
+          "why_needed": "检查是否有付费豁免机制"
+        }
+      ],
+      "expert_challenge_points": [
+        "限制阈值是否合理？是否误伤新手或偶尔贡献者？",
+        "平台是否有数据证明低质量PR是普遍问题？",
+        "此规则是否变相鼓励付费赞助以获得贡献特权？"
+      ],
+      "do_not_claim_yet": [
+        "限制的具体数字",
+        "限制是否已生效",
+        "社区普遍反对或支持"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确标注待验证的阈值和社区反应",
+      "downstream_materials_needed": [
+        "GitHub官方公告原文",
+        "至少2个社区讨论帖（如HN、Reddit）",
+        "维护者或贡献者的实际案例"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Limit open pull requests for users without write access - GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-06-17-limit-open-pull-requests-for-users-without-write-access/",
+        "query": "GitHub limit open pull requests users without write access threshold",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Limit open pull requests for users without write access - GitHub Changelog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Limit open pull requests for users without write access\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-06-17T09:23:56-07:00\",\"abstract\":\"Maintainers of open source repositories are dealing with an ever-growing volume of pull requests, including repeated low-quality or drive-by contributions that can slow triage and overwhelm review queues. To help…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-17-limit-open-pull-requests-for-users-without-write-access\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/06\\/LimitOpenPRs_Improvements_Header.jpg?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Limit open pull requests for users without write access\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-06-17T09:23:56-07:00\",\"abstract\":\"Maintainers of open source repositories are dealing with an ever-growing volume of pull requests, including repeated low-quality or drive-by contributions that can slow triage and overwhelm review queues. To help…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-17-limit-open-pull-requests-for-users-without-write-access\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/06\\/LimitOpenPRs_Improvements_Header.jpg?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-17-limit-open-pull-requests-for-users-without-write-access\\/\",\"url\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-17-limit-open-pull-requests-for-users-without-write-access\\/\",\"name\":\"Limit open pu",
+        "fetch_error": ""
+      },
+      {
+        "title": "Limiting interactions in your repository - GitHub Docs",
+        "url": "https://docs.github.com/en/communities/moderating-comments-and-conversations/limiting-interactions-in-your-repository",
+        "query": "GitHub limit open pull requests users without write access threshold",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Limiting interactions in your repository - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar Building communities / Moderation / Limit interactions in repo Home Building communities Healthy contributions Management & moderation Community profiles Access community profiles Add a code of conduct Contributor guidelines Add a license to a repo Add support resources Community health file Encourage contributions Issue & PR templates About templates Configure Syntax for issue forms Syntax for GitHub's form schema Create a PR template Common validation errors when creating issue forms Moderation Manage comments Locking conversations Limit interactions in repo Limit interactions in account Limit interactions in org Track comment changes Manage abuse in your org Manage reported content Maintaining safety Block from your account View blocked users in account Unblock from your account Block from your org View blocked users in org Unblock from your org Reporting abuse or spam Using wikis About wikis Manage wiki pages Create footer or sidebar Editing wiki content View a history of changes Change access permissions Disabling wikis Building communities / Moderation / Limit interactions in repo Limiting interactions in your repository You can temporarily enforce a period of limited activity for certain users on a public repository. Who can use this feature? People with admin permissions to a repository, and organization moderators, can temporarily limit interactions in that repository. Copy as Markdown In this article About temporary interaction limits Limiting interactions in your repository Limiting concurrent",
+        "fetch_error": ""
+      },
+      {
+        "title": "New repository settings for configuring pull request access - GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-02-13-new-repository-settings-for-configuring-pull-request-access/",
+        "query": "GitHub limit open pull requests users without write access threshold",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "New repository settings for configuring pull request access - GitHub Changelog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"New repository settings for configuring pull request access\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-02-13T10:12:55-08:00\",\"abstract\":\"Maintainers now have more control over how repositories accept contributions. Two new settings let you manage pull requests to better match your project’s needs. Disable pull requests entirely You can…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-02-13-new-repository-settings-for-configuring-pull-request-access\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/02\\/548540508-dbda1af0-bca5-4c0b-8d08-be0f18199c59.jpg?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"New repository settings for configuring pull request access\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-02-13T10:12:55-08:00\",\"abstract\":\"Maintainers now have more control over how repositories accept contributions. Two new settings let you manage pull requests to better match your project’s needs. Disable pull requests entirely You can…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-02-13-new-repository-settings-for-configuring-pull-request-access\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/02\\/548540508-dbda1af0-bca5-4c0b-8d08-be0f18199c59.jpg?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-02-13-new-repository-settings-for-configuring-pull-request-access\\/\",\"url\":\"https:\\/\\/github.blog\\/changelog\\/2026-02-13-new-repository-settings-for-configuring-pull-request",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub discusses giving maintainers control to disable PRs | Hacker News",
+        "url": "https://news.ycombinator.com/item?id=46864517",
+        "query": "GitHub limit PRs without write access Hacker News",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 429: Too Many Requests"
+      },
+      {
+        "title": "How to restrict pull request approval · community · Discussion #22819",
+        "url": "https://github.com/orgs/community/discussions/22819",
+        "query": "GitHub limit PRs without write access Hacker News",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_diff_explain_conversation_in",
+        "fetch_error": ""
+      },
+      {
+        "title": "Exploring Solutions to Tackle Low-Quality Contributions on GitHub · community · Discussion #185387",
+        "url": "https://github.com/orgs/community/discussions/185387",
+        "query": "GitHub PR limit low quality contributions reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_diff_explain_conversation_in",
+        "fetch_error": ""
+      },
+      {
+        "title": "Exploring Solutions to Tackle Low-Quality Contributions on GitHub · community · Discussion #185387 | daily.dev",
+        "url": "https://app.daily.dev/posts/exploring-solutions-to-tackle-low-quality-contributions-on-github-community-discussion-185387-jwftmmkjs",
+        "query": "GitHub PR limit low quality contributions reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://daily.dev/#organization\",\"name\":\"daily.dev\",\"url\":\"https://daily.dev\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://daily.dev/apple-touch-icon.png\",\"width\":180,\"height\":180},\"sameAs\":[\"https://twitter.com/dailydotdev\",\"https://github.com/dailydotdev\",\"https://www.linkedin.com/company/daily-dev-ltd\"]},{\"@type\":\"WebSite\",\"@id\":\"https:///#website\",\"url\":\"https://\",\"name\":\"daily.dev\",\"publisher\":{\"@id\":\"https://daily.dev/#organization\"},\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:///search?q={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}}]} window.addEventListener('load', () => { window.windowLoaded = true; }, { once: true, }); Exploring Solutions to Tackle Low-Quality Contributions... {\"props\":{\"pageProps\":{\"id\":\"jwftmMKjS\",\"initialData\":{\"post\":{\"id\":\"jwftmMKjS\",\"title\":\"Exploring Solutions to Tackle Low-Quality Contributions on GitHub · community · Discussion #185387\",\"titleHtml\":null,\"image\":\"https://media.daily.dev/image/upload/f_auto,q_auto/v1/posts/8dba1cc00251610138492b1073838b00?_a=AQAEulh\",\"readTime\":10,\"permalink\":\"https://api.daily.dev/r/jwftmMKjS\",\"commentsPermalink\":\"https://app.daily.dev/posts/exploring-solutions-to-tackle-low-quality-contributions-on-github-community-discussion-185387-jwftmmkjs\",\"summary\":\"GitHub is addressing the growing problem of low-quality pull requests overwhelming open source maintainers. Short-term solutions include repository-level controls to disable PRs entirely, restrict PRs to collaborators only, and delete spam PRs from the UI. Long-term plans involve enhanced permission models, AI-powered triage tools to evaluate contributions against project guidelines, and improved trans",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/github on Reddit: How annoying is the GitHub API rate limit ?",
+        "url": "https://www.reddit.com/r/github/comments/186vej4/how_annoying_is_the_github_api_rate_limit/",
+        "query": "GitHub PR limit low quality contributions reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "GitHub Acceptable Use Policies - GitHub Docs",
+        "url": "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies",
+        "query": "GitHub acceptable use policy pull request spam",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "GitHub Acceptable Use Policies - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar Site policy / Acceptable Use Policies / GitHub Acceptable Use Policies Home Site policy GitHub Terms GitHub Terms of Service GitHub Corporate Terms of Service GitHub Terms for Additional Products and Features GitHub Community Guidelines GitHub Community Code of Conduct GitHub Pre-release License Terms GitHub DPA-Covered Previews GitHub Sponsors Additional Terms GitHub Registered Developer Agreement GitHub Marketplace Terms of Service GitHub Marketplace Developer Agreement GitHub Research Program Terms GitHub Open Source Applications Terms and Conditions GitHub Event Terms GitHub Event Code of Conduct GitHub Educational Use Agreement GitHub Copilot Extension Developer Policy GitHub Secret Scanning Partner Program Agreement Acceptable Use Policies GitHub Acceptable Use Policies Active Malware or Exploits Bullying and Harassment Disrupting the Experience of Other Users Doxxing and Invasion of Privacy Hate Speech and Discrimination Impersonation Disinformation Policy Sexually Obscene Content Threats of Violence and Gratuitously Violent Content Terrorism and Violent Extremism Content CSAM Policy NCII Synthetic Media and AI Tools GitHub Appeal and Reinstatement Privacy Policies GitHub General Privacy Statement GitHub Subprocessors GitHub Cookies GitHub Global Data Privacy Notice for Candidates Other Site Policies GitHub and Trade Controls GitHub Deceased User Policy GitHub Logo Policy GitHub Government Takedown Policy GitHub Username Policy Guidelines for Legal Requests of User Data GitHub Account Recovery Policy Conten",
+        "fetch_error": ""
+      },
+      {
+        "title": "Acceptable Use Policies - GitHub Docs",
+        "url": "https://docs.github.com/en/site-policy/acceptable-use-policies",
+        "query": "GitHub acceptable use policy pull request spam",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Acceptable Use Policies - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar Site policy / Acceptable Use Policies Home Site policy GitHub Terms GitHub Terms of Service GitHub Corporate Terms of Service GitHub Terms for Additional Products and Features GitHub Community Guidelines GitHub Community Code of Conduct GitHub Pre-release License Terms GitHub DPA-Covered Previews GitHub Sponsors Additional Terms GitHub Registered Developer Agreement GitHub Marketplace Terms of Service GitHub Marketplace Developer Agreement GitHub Research Program Terms GitHub Open Source Applications Terms and Conditions GitHub Event Terms GitHub Event Code of Conduct GitHub Educational Use Agreement GitHub Copilot Extension Developer Policy GitHub Secret Scanning Partner Program Agreement Acceptable Use Policies GitHub Acceptable Use Policies Active Malware or Exploits Bullying and Harassment Disrupting the Experience of Other Users Doxxing and Invasion of Privacy Hate Speech and Discrimination Impersonation Disinformation Policy Sexually Obscene Content Threats of Violence and Gratuitously Violent Content Terrorism and Violent Extremism Content CSAM Policy NCII Synthetic Media and AI Tools GitHub Appeal and Reinstatement Privacy Policies GitHub General Privacy Statement GitHub Subprocessors GitHub Cookies GitHub Global Data Privacy Notice for Candidates Other Site Policies GitHub and Trade Controls GitHub Deceased User Policy GitHub Logo Policy GitHub Government Takedown Policy GitHub Username Policy Guidelines for Legal Requests of User Data GitHub Account Recovery Policy Content Removal Policies Submitting content re",
+        "fetch_error": ""
+      },
+      {
+        "title": "Free Acceptable Use Policies Github Disrupting The Experience Of Other Users Template (US) | GitLaw",
+        "url": "https://git.law/templates/doc/acceptable-use-policies-github-disrupting-the-experience-of-other-users-github--2tH69K",
+        "query": "GitHub acceptable use policy pull request spam",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Free Acceptable Use Policies Github Disrupting The Experience Of Other Users Template (US) | GitLaw (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"\\n(function() {\\n window.addEventListener('popstate', function (event) {\\n if (window.__gitlawEarlyPopState) {\\n return window.__gitlawEarlyPopState(event);\\n }\\n });\\n})()\\n\",\"id\":\"early-pop-state\"}]) @keyframes router-loader { 0% { width: 30%; left: -30%; } 50% { width: 50%; } 100% { width: 30%; left: 100%; } } (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"\\nwindow.dataLayer = window.dataLayer || [];\\nfunction gtag(){dataLayer.push(arguments);}\\ngtag('consent', 'default', {\\n ad_storage: 'denied',\\n analytics_storage: 'denied',\\n functionality_storage: 'denied',\\n security_storage: 'granted', // can be left as granted (not marketing cookies)\\n ad_user_data: 'denied',\\n ad_personalization: 'denied'\\n});\\n\",\"id\":\"gtmConsentInit\"}]) {\"@context\":\"https://schema.org\",\"@type\":\"CreativeWork\",\"name\":\"Acceptable Use Policies Github Disrupting The Experience Of Other Users\",\"description\":\"The GitHub Disrupting the Experience of Other Users Policy prohibits behaviour that significantly or repeatedly interferes with other users’ ability to ...\",\"url\":\"https://git.law/templates/doc/acceptable-use-policies-github-disrupting-the-experience-of-other-users-github--2tH69K\",\"dateCreated\":\"2025-10-06T13:28:22.000Z\",\"dateModified\":\"2025-10-24T18:00:45.000Z\",\"inLanguage\":\"en\",\"isAccessibleForFree\":true,\"genre\":\"Legal document template\",\"author\":{\"@type\":\"Organization\",\"name\":\"oll\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"GitLaw\",\"url\":\"https://git.law\"}} Home Features Pricing Templates Knowledge base News Sign in Sign up Home Features Pricing Templates Knowledge base News Sign in Sign up Come to agreements faster Write, revi",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub keeps getting better for open source maintainers - The GitHub Blog",
+        "url": "https://github.blog/open-source/maintainers/github-keeps-getting-better-for-open-source-maintainers/",
+        "query": "GitHub PR limit impact open source maintainers",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "GitHub keeps getting better for open source maintainers - The GitHub Blog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"GitHub keeps getting better for open source maintainers\",\"author\":{\"@type\":\"Person\",\"name\":\"Nick Holden\"},\"datePublished\":\"2021-11-01T09:00:25-07:00\",\"abstract\":\"Maintainers can now limit who can approve and request changes on pull requests. You can also close issues and block users via your phone.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/open-source\\/maintainers\\/github-keeps-getting-better-for-open-source-maintainers\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2019\\/03\\/product-social.png?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"GitHub keeps getting better for open source maintainers\",\"author\":{\"@type\":\"Person\",\"name\":\"Nick Holden\"},\"datePublished\":\"2021-11-01T09:00:25-07:00\",\"abstract\":\"Maintainers can now limit who can approve and request changes on pull requests. You can also close issues and block users via your phone.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/open-source\\/maintainers\\/github-keeps-getting-better-for-open-source-maintainers\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2019\\/03\\/product-social.png?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/github.blog\\/open-source\\/maintainers\\/github-keeps-getting-better-for-open-source-maintainers\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/github.blog\\/open-source\\/maintainers\\/github-keeps-getting-better-for-open-source-maintainers\\/\"},\"author\":[{\"@id\":\"https:\\/\\/github.blog\\/#\\/schema\\/person\\/4b851a6dfdb479a48812ceba00d6e4d4\"}],\"headline\":\"GitHub keeps getting better for open source maintaine",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub eyes restrictions on pull requests to rein in AI-based code deluge on maintainers | InfoWorld",
+        "url": "https://www.infoworld.com/article/4127156/github-eyes-restrictions-on-pull-requests-to-rein-in-ai-based-code-deluge-on-maintainers.html",
+        "query": "GitHub PR limit impact open source maintainers",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root { --advertisement-label-text: \"Advertisement\"; } window.isBrandPostSeriesLanding = \"false\"; img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } window._sp_analytics = { config: { accountId: 146, events: { onDetectionComplete: function() { console.log('onMessageReady'); } }, } }; GitHub eyes restrictions on pull requests to rein in AI-based code deluge on maintainers | InfoWorld //CMP Stub \"use strict\";function _typeof(t){return(_typeof=\"function\"==typeof Symbol&&\"symbol\"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&\"function\"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?\"symbol\":typeof t})(t)}!function(){var t=function(){for(var t,e,o=[],n=window,r=n;r;){try{if(r.frames.__tcfapiLocator){t=r;break}}catch(a){}if(r===n.top)break;r=r.parent}t||(!function t(){var e=n.document,o=!!n.frames.__tcfapiLocator;if(!o){if(e.body){var r=e.createElement(\"iframe\");r.style.cssText=\"display:none\",r.name=\"__tcfapiLocator\",e.body.appendChild(r)}else setTimeout(t,5)}return!o}(),n.__tcfapi=function(){for(var t=arguments.length,n=Array(t),r=0;r 3&&2===parseInt(n[1],10)&&\"boolean\"==typeof n[3]&&(e=n[3],\"function\"==typeof n[2]&&n[2](\"set\",!0)):\"ping\"===n[0]?\"function\"==typeof n[2]&&n[2]({gdprApplies:e,cmpLoaded:!1,cmpStatus:\"stub\"}):o.push(n)},n.addEventListener(\"message\",function(t){var e=\"string\"==typeof t.data,o={};if(e)try{o=JSON.parse(t.data)}catch(n){}else o=t.data;var r=\"object\"===_typeof(o)&&null!==o?o.__tcfapiCall:null;r&&window.__tcfapi(r.command,r.version,function(o,n){var a={__tcfapiReturn:{returnValue:o,success:n,callId:r.callId}};t&&t.source&&t.source.postMessage&&t.source.postMessage(e?JSON.stringify(a):a,\"*\")},r.parameter)},!1))};\"undefined\"!=typeof module?module.exports=t:t()}(); window.__gpp",
+        "fetch_error": ""
+      },
+      {
+        "title": "Inside The Open Source Softwares (OSS) PRs Massacre of GitHub | Kush Creates Blogs",
+        "url": "https://www.kushcreates.com/blogs/inside-the-open-source-prs-massacre-of-github",
+        "query": "GitHub PR limit impact open source maintainers",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Inside The Open Source Softwares (OSS) PRs Massacre of GitHub | Kush Creates Blogs { \"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [ { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.kushcreates.com/\" }, { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Blogs\", \"item\": \"https://www.kushcreates.com/blogs/\" }, { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Inside The Open Source Softwares (OSS) PRs Massacre of GitHub\", \"item\": \"https://www.kushcreates.com/blogs/inside-the-open-source-prs-massacre-of-github\" } ] } { \"@context\": \"https://schema.org\", \"@type\": \"BlogPosting\", \"mainEntityOfPage\": { \"@type\": \"WebPage\", \"@id\": \"https://www.kushcreates.com/blogs/inside-the-open-source-prs-massacre-of-github\" }, \"headline\": \"Inside The Open Source Softwares (OSS) PRs Massacre of GitHub\", \"description\": \"How a viral Git and GitHub tutorial created years of GitHub spam, damaged reputations, and why Apna College's response missed the point entirely. The full story of Open Source Softwares' (OSS) PR crisis. An Article by Kush Creates aka Kush Brahmbhatt\", \"image\": \"https://www.kushcreates.com/images/blogs/inside-the-open-source-prs-massacre-of-github.png\", \"author\": { \"@type\": \"Person\", \"name\": \"Kush Brahmbhatt\", \"url\": \"https://www.kushcreates.com/about\" }, \"publisher\": { \"@type\": \"Organization\", \"name\": \"Kush Brahmbhatt\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://www.kushcreates.com/favicon.png\" } }, \"datePublished\": \"2025-11-10\", \"dateModified\": \"2025-11-10\" } { \"@context\": \"https://schema.org\", \"@type\": \"Person\", \"name\": \"Kush Creates\", \"alternateName\": \"Kush Brahmbhatt\", \"url\": \"https://www.kushcreates.com\", \"image\": \"https://www.kushcreates.com/favicon.png\", \"sameAs\": [ \"https://www.linkedin.com/in/kush-brahmbhatt-3",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub Sponsors Additional Terms - GitHub Docs",
+        "url": "https://docs.github.com/en/site-policy/github-terms/github-sponsors-additional-terms",
+        "query": "GitHub PR limit exemption sponsor",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "GitHub Sponsors Additional Terms - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar Site policy / GitHub Terms / GitHub Sponsors Additional Terms Home Site policy GitHub Terms GitHub Terms of Service GitHub Corporate Terms of Service GitHub Terms for Additional Products and Features GitHub Community Guidelines GitHub Community Code of Conduct GitHub Pre-release License Terms GitHub DPA-Covered Previews GitHub Sponsors Additional Terms GitHub Registered Developer Agreement GitHub Marketplace Terms of Service GitHub Marketplace Developer Agreement GitHub Research Program Terms GitHub Open Source Applications Terms and Conditions GitHub Event Terms GitHub Event Code of Conduct GitHub Educational Use Agreement GitHub Copilot Extension Developer Policy GitHub Secret Scanning Partner Program Agreement Acceptable Use Policies GitHub Acceptable Use Policies Active Malware or Exploits Bullying and Harassment Disrupting the Experience of Other Users Doxxing and Invasion of Privacy Hate Speech and Discrimination Impersonation Disinformation Policy Sexually Obscene Content Threats of Violence and Gratuitously Violent Content Terrorism and Violent Extremism Content CSAM Policy NCII Synthetic Media and AI Tools GitHub Appeal and Reinstatement Privacy Policies GitHub General Privacy Statement GitHub Subprocessors GitHub Cookies GitHub Global Data Privacy Notice for Candidates Other Site Policies GitHub and Trade Controls GitHub Deceased User Policy GitHub Logo Policy GitHub Government Takedown Policy GitHub Username Policy Guidelines for Legal Requests of User Data GitHub Account Recovery Policy Content Remov",
+        "fetch_error": ""
+      },
+      {
+        "title": "How Do I Sponsor a Pr · community · Discussion #152802",
+        "url": "https://github.com/orgs/community/discussions/152802",
+        "query": "GitHub PR limit exemption sponsor",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_diff_explain_conversation_in",
+        "fetch_error": ""
+      },
+      {
+        "title": "Managing your sponsorship tiers - GitHub Docs",
+        "url": "https://docs.github.com/en/sponsors/receiving-sponsorships-through-github-sponsors/managing-your-sponsorship-tiers",
+        "query": "GitHub PR limit exemption sponsor",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Managing your sponsorship tiers - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Sponsors / Receiving sponsorships / Manage payment tiers Home GitHub Sponsors Getting started About GitHub Sponsors Quickstart Navigating your Sponsors dashboard Sponsor contributors About sponsorships Sponsor through GitHub Sponsor through Patreon Managing your sponsorship Attribute sponsorships Paying by invoice Unlink Patreon Receiving sponsorships Open source contributors Set up for personal account Set up for organization Enable Patreon sponsorships Using a fiscal host Edit profile details Manage sponsor goals Manage payment tiers View sponsors & sponsorships Manage payouts Contacting your sponsors Tax information Unlink Patreon Delete Stripe account Disable your account Unpublish your profile Integrate with GitHub Sponsors Webhooks for events Sponsors GraphQL API GitHub Sponsors / Receiving sponsorships / Manage payment tiers Managing your sponsorship tiers You can add a new sponsorship tier, or edit or retire an existing tier. Copy as Markdown In this article About sponsorship tiers Adding a tier Editing or retiring a tier Adding a repository to a sponsorship tier About sponsorship tiers You can publish up to 10 one-time sponsorship tiers and 10 monthly tiers for sponsors to choose from. Each tier has its own one-time or monthly payment amount in US dollars. Publishing tiers is optional. You can customize the rewards for each tier. For example, rewards for a tier could include: Early access to new versions Logo or name in README Weekly newsletter updates Other rewards your sponsors would enjoy ✨ You",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：具体限制阈值、生效时间、豁免机制等关键细节缺失，官方公告未提供，无法验证。"
+    },
+    "core_question": "GitHub限制无写权限用户PR数量，对开源贡献者和维护者有何实际影响？",
+    "why_this_topic_matters": "GitHub作为全球最大代码托管平台，其规则变化直接影响开源贡献模式。限制PR数量可能减少低质量贡献，但也可能误伤新手和偶尔贡献者，引发关于开放性与维护成本的讨论。",
+    "fact_summary": [
+      "GitHub于2026年6月17日宣布限制无写权限用户的开放PR数量，旨在减少低质量或驱车式贡献。",
+      "官方公告未公布具体限制阈值（如PR数量上限、时间窗口）。",
+      "此前GitHub已推出禁用PR、限制PR仅协作者等仓库级设置。",
+      "社区已有关于低质量贡献的讨论，但官方限制的具体细节和社区反应尚未充分收集。"
+    ],
+    "persona_discussion_question": "作为开源维护者或贡献者，我该担心这个限制吗？它会影响我的项目或贡献习惯吗？",
+    "old_flower_stance": "平台规则变化是常态，但限制PR数量可能降低开源社区的开放性，将维护成本转嫁给贡献者。普通技术人应关注规则细节，评估对自身贡献习惯的影响。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 78,
+      "why_interested": "核心技术人关注开源贡献规则变化，入门读者担心影响学习贡献，高价值商业读者评估平台依赖风险。",
+      "reader_risk": "标题不能夸大，需明确标注待验证细节，避免引发不必要的恐慌。"
+    },
+    "mass_interest_hook": {
+      "score": 7,
+      "hook_type": "争议",
+      "why_non_technical_people_may_click": "GitHub是程序员常用平台，规则变化可能影响开源项目参与，普通人通过标题感受到“门槛提高”的冲突。",
+      "story_seed": "GitHub限制PR数量，新手贡献者可能被误伤，开源社区开放性与维护成本如何平衡？",
+      "do_not_overhype": "不能声称限制已生效或具体数字，需强调待验证。"
+    },
+    "topic_tension": {
+      "score": 9,
+      "conflict_point": "平台规则变化是否在降低开源社区的开放性和低门槛参与，将维护成本转嫁给贡献者？",
+      "debate_question": "这件事到底是合理规则/正常成本控制，还是平台把风险和成本转嫁给普通使用者？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "平台/工具厂商"
+      ],
+      "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2026-02-13: GitHub推出新仓库设置，可禁用PR或限制PR仅协作者。",
+      "2026-06-17: GitHub宣布限制无写权限用户的开放PR数量，具体阈值未公布。"
+    ],
+    "evidence_table": [
+      {
+        "source": "GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-06-17-limit-open-pull-requests-for-users-without-write-access/",
+        "supports": "官方公告，确认限制功能推出，但未提供具体阈值。",
+        "reliability": "official"
+      },
+      {
+        "source": "GitHub Docs - Limiting interactions",
+        "url": "https://docs.github.com/en/communities/moderating-comments-and-conversations/limiting-interactions-in-your-repository",
+        "supports": "现有临时交互限制功能，但非PR数量限制。",
+        "reliability": "official"
+      },
+      {
+        "source": "GitHub Changelog - New repository settings",
+        "url": "https://github.blog/changelog/2026-02-13-new-repository-settings-for-configuring-pull-request-access/",
+        "supports": "此前已推出禁用PR等设置，表明GitHub持续加强PR管理。",
+        "reliability": "official"
+      },
+      {
+        "source": "InfoWorld article",
+        "url": "https://www.infoworld.com/article/4127156/github-eyes-restrictions-on-pull-requests-to-rein-in-ai-based-code-deluge-on-maintainers.html",
+        "supports": "报道GitHub考虑限制PR以应对AI生成的低质量贡献。",
+        "reliability": "media"
+      },
+      {
+        "source": "GitHub Community Discussion #185387",
+        "url": "https://github.com/orgs/community/discussions/185387",
+        "supports": "社区讨论低质量贡献问题，提及AI生成代码。",
+        "reliability": "weak"
+      }
+    ],
+    "logic_closure": "部分闭环：官方公告确认限制，但缺少阈值和社区反应，逻辑链不完整。",
+    "writeable_angles": [
+      {
+        "angle": "规则解读：GitHub限制PR数量的具体影响与应对",
+        "why": "帮助读者理解规则变化，评估对自身项目的影响。",
+        "needs": "需要具体阈值、生效时间、豁免机制。"
+      },
+      {
+        "angle": "争议分析：开源开放性与维护成本的平衡",
+        "why": "引发讨论，适合传播。",
+        "needs": "需要社区反应、反方观点。"
+      },
+      {
+        "angle": "实操指南：维护者如何配置PR限制",
+        "why": "提供实用价值，吸引维护者读者。",
+        "needs": "需要官方文档细节、配置步骤。"
+      }
+    ],
+    "missing_basics": [
+      "具体限制阈值（如PR数量上限、时间窗口）",
+      "限制是否适用于所有仓库还是仅特定仓库",
+      "是否有例外机制（如通过赞助、贡献等级豁免）",
+      "官方公告中是否提及低质量PR的定义标准",
+      "社区反馈（如Hacker News、Reddit讨论）"
+    ],
+    "missing_materials": [
+      "至少2个社区讨论帖（如HN、Reddit）",
+      "维护者或贡献者的实际案例",
+      "官方FAQ或详细文档"
+    ],
+    "not_claimable": [
+      "限制的具体数字",
+      "限制是否已生效",
+      "社区普遍反对或支持"
+    ],
+    "followup_queries": [
+      "GitHub limit open pull requests users without write access threshold",
+      "GitHub PR limit Hacker News discussion",
+      "GitHub PR limit Reddit discussion",
+      "GitHub PR limit exemption sponsor"
+    ],
+    "additional_search_queries": [
+      "GitHub limit open pull requests users without write access threshold",
+      "GitHub PR limit Hacker News",
+      "GitHub PR limit Reddit",
+      "GitHub PR limit exemption sponsor"
+    ],
+    "stop_conditions": [
+      "官方公布具体阈值和生效时间",
+      "社区出现大规模讨论或争议",
+      "出现实际案例说明影响"
+    ],
+    "confidence": 60.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI前沿",
+    "report_type": "platform-rules",
+    "quality_gate": {
+      "pass": false,
+      "score": 60,
+      "fatal_issues": [
+        "核心事实没有来源：具体限制阈值、生效时间、豁免机制等关键细节缺失，官方公告未提供，无法验证。"
+      ],
+      "warnings": [
+        "缺少社区反应和反方观点，传播张力依赖待验证细节。",
+        "信息源偏科：仅依赖GitHub官方和一篇媒体文章，缺乏社区讨论（HN、Reddit）等关键来源。"
+      ],
+      "missing_evidence": [
+        "具体限制阈值（如PR数量上限、时间窗口）",
+        "限制是否适用于所有仓库还是仅特定仓库",
+        "是否有例外机制（如通过赞助、贡献等级豁免）",
+        "官方公告中是否提及低质量PR的定义标准",
+        "社区反馈（如Hacker News、Reddit讨论）"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "GitHub限制无写权限用户PR数量，对开源贡献者和维护者有何实际影响？",
+      "persona_discussion_question": "作为开源维护者或贡献者，我该担心这个限制吗？它会影响我的项目或贡献习惯吗？",
+      "hidden_public_issue": "平台规则变化是否在降低开源社区的开放性和低门槛参与，将维护成本转嫁给贡献者？",
+      "must_verify": [
+        "具体限制阈值（如PR数量上限、时间窗口）",
+        "限制是否适用于所有仓库还是仅特定仓库",
+        "是否有例外机制（如通过赞助、贡献等级豁免）",
+        "官方公告中是否提及低质量PR的定义标准",
+        "社区反馈（如Hacker News、Reddit讨论）"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "GitHub limit open pull requests users without write access threshold",
+          "why_needed": "获取具体限制数值和规则细节"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "GitHub limit PRs without write access Hacker News",
+          "why_needed": "了解社区反应和潜在争议"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "GitHub PR limit low quality contributions reddit",
+          "why_needed": "获取用户实际体验和批评"
+        },
+        {
+          "source_type": "policy",
+          "query": "GitHub acceptable use policy pull request spam",
+          "why_needed": "确认平台对低质量贡献的现有定义"
+        },
+        {
+          "source_type": "case_study",
+          "query": "GitHub PR limit impact open source maintainers",
+          "why_needed": "寻找实际案例说明影响"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "GitHub PR limit exemption sponsor",
+          "why_needed": "检查是否有付费豁免机制"
+        }
+      ],
+      "expert_challenge_points": [
+        "限制阈值是否合理？是否误伤新手或偶尔贡献者？",
+        "平台是否有数据证明低质量PR是普遍问题？",
+        "此规则是否变相鼓励付费赞助以获得贡献特权？"
+      ],
+      "do_not_claim_yet": [
+        "限制的具体数字",
+        "限制是否已生效",
+        "社区普遍反对或支持"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确标注待验证的阈值和社区反应",
+      "downstream_materials_needed": [
+        "GitHub官方公告原文",
+        "至少2个社区讨论帖（如HN、Reddit）",
+        "维护者或贡献者的实际案例"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Limit open pull requests for users without write access - GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-06-17-limit-open-pull-requests-for-users-without-write-access/",
+        "query": "GitHub limit open pull requests users without write access threshold",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Limit open pull requests for users without write access - GitHub Changelog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Limit open pull requests for users without write access\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-06-17T09:23:56-07:00\",\"abstract\":\"Maintainers of open source repositories are dealing with an ever-growing volume of pull requests, including repeated low-quality or drive-by contributions that can slow triage and overwhelm review queues. To help…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-17-limit-open-pull-requests-for-users-without-write-access\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/06\\/LimitOpenPRs_Improvements_Header.jpg?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Limit open pull requests for users without write access\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-06-17T09:23:56-07:00\",\"abstract\":\"Maintainers of open source repositories are dealing with an ever-growing volume of pull requests, including repeated low-quality or drive-by contributions that can slow triage and overwhelm review queues. To help…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-17-limit-open-pull-requests-for-users-without-write-access\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/06\\/LimitOpenPRs_Improvements_Header.jpg?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-17-limit-open-pull-requests-for-users-without-write-access\\/\",\"url\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-17-limit-open-pull-requests-for-users-without-write-access\\/\",\"name\":\"Limit open pu",
+        "fetch_error": ""
+      },
+      {
+        "title": "Limiting interactions in your repository - GitHub Docs",
+        "url": "https://docs.github.com/en/communities/moderating-comments-and-conversations/limiting-interactions-in-your-repository",
+        "query": "GitHub limit open pull requests users without write access threshold",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Limiting interactions in your repository - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar Building communities / Moderation / Limit interactions in repo Home Building communities Healthy contributions Management & moderation Community profiles Access community profiles Add a code of conduct Contributor guidelines Add a license to a repo Add support resources Community health file Encourage contributions Issue & PR templates About templates Configure Syntax for issue forms Syntax for GitHub's form schema Create a PR template Common validation errors when creating issue forms Moderation Manage comments Locking conversations Limit interactions in repo Limit interactions in account Limit interactions in org Track comment changes Manage abuse in your org Manage reported content Maintaining safety Block from your account View blocked users in account Unblock from your account Block from your org View blocked users in org Unblock from your org Reporting abuse or spam Using wikis About wikis Manage wiki pages Create footer or sidebar Editing wiki content View a history of changes Change access permissions Disabling wikis Building communities / Moderation / Limit interactions in repo Limiting interactions in your repository You can temporarily enforce a period of limited activity for certain users on a public repository. Who can use this feature? People with admin permissions to a repository, and organization moderators, can temporarily limit interactions in that repository. Copy as Markdown In this article About temporary interaction limits Limiting interactions in your repository Limiting concurrent",
+        "fetch_error": ""
+      },
+      {
+        "title": "New repository settings for configuring pull request access - GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-02-13-new-repository-settings-for-configuring-pull-request-access/",
+        "query": "GitHub limit open pull requests users without write access threshold",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "New repository settings for configuring pull request access - GitHub Changelog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"New repository settings for configuring pull request access\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-02-13T10:12:55-08:00\",\"abstract\":\"Maintainers now have more control over how repositories accept contributions. Two new settings let you manage pull requests to better match your project’s needs. Disable pull requests entirely You can…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-02-13-new-repository-settings-for-configuring-pull-request-access\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/02\\/548540508-dbda1af0-bca5-4c0b-8d08-be0f18199c59.jpg?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"New repository settings for configuring pull request access\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-02-13T10:12:55-08:00\",\"abstract\":\"Maintainers now have more control over how repositories accept contributions. Two new settings let you manage pull requests to better match your project’s needs. Disable pull requests entirely You can…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-02-13-new-repository-settings-for-configuring-pull-request-access\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/02\\/548540508-dbda1af0-bca5-4c0b-8d08-be0f18199c59.jpg?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-02-13-new-repository-settings-for-configuring-pull-request-access\\/\",\"url\":\"https:\\/\\/github.blog\\/changelog\\/2026-02-13-new-repository-settings-for-configuring-pull-request",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub discusses giving maintainers control to disable PRs | Hacker News",
+        "url": "https://news.ycombinator.com/item?id=46864517",
+        "query": "GitHub limit PRs without write access Hacker News",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 429: Too Many Requests"
+      },
+      {
+        "title": "How to restrict pull request approval · community · Discussion #22819",
+        "url": "https://github.com/orgs/community/discussions/22819",
+        "query": "GitHub limit PRs without write access Hacker News",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_diff_explain_conversation_in",
+        "fetch_error": ""
+      },
+      {
+        "title": "Exploring Solutions to Tackle Low-Quality Contributions on GitHub · community · Discussion #185387",
+        "url": "https://github.com/orgs/community/discussions/185387",
+        "query": "GitHub PR limit low quality contributions reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_diff_explain_conversation_in",
+        "fetch_error": ""
+      },
+      {
+        "title": "Exploring Solutions to Tackle Low-Quality Contributions on GitHub · community · Discussion #185387 | daily.dev",
+        "url": "https://app.daily.dev/posts/exploring-solutions-to-tackle-low-quality-contributions-on-github-community-discussion-185387-jwftmmkjs",
+        "query": "GitHub PR limit low quality contributions reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://daily.dev/#organization\",\"name\":\"daily.dev\",\"url\":\"https://daily.dev\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://daily.dev/apple-touch-icon.png\",\"width\":180,\"height\":180},\"sameAs\":[\"https://twitter.com/dailydotdev\",\"https://github.com/dailydotdev\",\"https://www.linkedin.com/company/daily-dev-ltd\"]},{\"@type\":\"WebSite\",\"@id\":\"https:///#website\",\"url\":\"https://\",\"name\":\"daily.dev\",\"publisher\":{\"@id\":\"https://daily.dev/#organization\"},\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:///search?q={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}}]} window.addEventListener('load', () => { window.windowLoaded = true; }, { once: true, }); Exploring Solutions to Tackle Low-Quality Contributions... {\"props\":{\"pageProps\":{\"id\":\"jwftmMKjS\",\"initialData\":{\"post\":{\"id\":\"jwftmMKjS\",\"title\":\"Exploring Solutions to Tackle Low-Quality Contributions on GitHub · community · Discussion #185387\",\"titleHtml\":null,\"image\":\"https://media.daily.dev/image/upload/f_auto,q_auto/v1/posts/8dba1cc00251610138492b1073838b00?_a=AQAEulh\",\"readTime\":10,\"permalink\":\"https://api.daily.dev/r/jwftmMKjS\",\"commentsPermalink\":\"https://app.daily.dev/posts/exploring-solutions-to-tackle-low-quality-contributions-on-github-community-discussion-185387-jwftmmkjs\",\"summary\":\"GitHub is addressing the growing problem of low-quality pull requests overwhelming open source maintainers. Short-term solutions include repository-level controls to disable PRs entirely, restrict PRs to collaborators only, and delete spam PRs from the UI. Long-term plans involve enhanced permission models, AI-powered triage tools to evaluate contributions against project guidelines, and improved trans",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/github on Reddit: How annoying is the GitHub API rate limit ?",
+        "url": "https://www.reddit.com/r/github/comments/186vej4/how_annoying_is_the_github_api_rate_limit/",
+        "query": "GitHub PR limit low quality contributions reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "GitHub Acceptable Use Policies - GitHub Docs",
+        "url": "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies",
+        "query": "GitHub acceptable use policy pull request spam",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "GitHub Acceptable Use Policies - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar Site policy / Acceptable Use Policies / GitHub Acceptable Use Policies Home Site policy GitHub Terms GitHub Terms of Service GitHub Corporate Terms of Service GitHub Terms for Additional Products and Features GitHub Community Guidelines GitHub Community Code of Conduct GitHub Pre-release License Terms GitHub DPA-Covered Previews GitHub Sponsors Additional Terms GitHub Registered Developer Agreement GitHub Marketplace Terms of Service GitHub Marketplace Developer Agreement GitHub Research Program Terms GitHub Open Source Applications Terms and Conditions GitHub Event Terms GitHub Event Code of Conduct GitHub Educational Use Agreement GitHub Copilot Extension Developer Policy GitHub Secret Scanning Partner Program Agreement Acceptable Use Policies GitHub Acceptable Use Policies Active Malware or Exploits Bullying and Harassment Disrupting the Experience of Other Users Doxxing and Invasion of Privacy Hate Speech and Discrimination Impersonation Disinformation Policy Sexually Obscene Content Threats of Violence and Gratuitously Violent Content Terrorism and Violent Extremism Content CSAM Policy NCII Synthetic Media and AI Tools GitHub Appeal and Reinstatement Privacy Policies GitHub General Privacy Statement GitHub Subprocessors GitHub Cookies GitHub Global Data Privacy Notice for Candidates Other Site Policies GitHub and Trade Controls GitHub Deceased User Policy GitHub Logo Policy GitHub Government Takedown Policy GitHub Username Policy Guidelines for Legal Requests of User Data GitHub Account Recovery Policy Conten",
+        "fetch_error": ""
+      },
+      {
+        "title": "Acceptable Use Policies - GitHub Docs",
+        "url": "https://docs.github.com/en/site-policy/acceptable-use-policies",
+        "query": "GitHub acceptable use policy pull request spam",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Acceptable Use Policies - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar Site policy / Acceptable Use Policies Home Site policy GitHub Terms GitHub Terms of Service GitHub Corporate Terms of Service GitHub Terms for Additional Products and Features GitHub Community Guidelines GitHub Community Code of Conduct GitHub Pre-release License Terms GitHub DPA-Covered Previews GitHub Sponsors Additional Terms GitHub Registered Developer Agreement GitHub Marketplace Terms of Service GitHub Marketplace Developer Agreement GitHub Research Program Terms GitHub Open Source Applications Terms and Conditions GitHub Event Terms GitHub Event Code of Conduct GitHub Educational Use Agreement GitHub Copilot Extension Developer Policy GitHub Secret Scanning Partner Program Agreement Acceptable Use Policies GitHub Acceptable Use Policies Active Malware or Exploits Bullying and Harassment Disrupting the Experience of Other Users Doxxing and Invasion of Privacy Hate Speech and Discrimination Impersonation Disinformation Policy Sexually Obscene Content Threats of Violence and Gratuitously Violent Content Terrorism and Violent Extremism Content CSAM Policy NCII Synthetic Media and AI Tools GitHub Appeal and Reinstatement Privacy Policies GitHub General Privacy Statement GitHub Subprocessors GitHub Cookies GitHub Global Data Privacy Notice for Candidates Other Site Policies GitHub and Trade Controls GitHub Deceased User Policy GitHub Logo Policy GitHub Government Takedown Policy GitHub Username Policy Guidelines for Legal Requests of User Data GitHub Account Recovery Policy Content Removal Policies Submitting content re",
+        "fetch_error": ""
+      },
+      {
+        "title": "Free Acceptable Use Policies Github Disrupting The Experience Of Other Users Template (US) | GitLaw",
+        "url": "https://git.law/templates/doc/acceptable-use-policies-github-disrupting-the-experience-of-other-users-github--2tH69K",
+        "query": "GitHub acceptable use policy pull request spam",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Free Acceptable Use Policies Github Disrupting The Experience Of Other Users Template (US) | GitLaw (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"\\n(function() {\\n window.addEventListener('popstate', function (event) {\\n if (window.__gitlawEarlyPopState) {\\n return window.__gitlawEarlyPopState(event);\\n }\\n });\\n})()\\n\",\"id\":\"early-pop-state\"}]) @keyframes router-loader { 0% { width: 30%; left: -30%; } 50% { width: 50%; } 100% { width: 30%; left: 100%; } } (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"\\nwindow.dataLayer = window.dataLayer || [];\\nfunction gtag(){dataLayer.push(arguments);}\\ngtag('consent', 'default', {\\n ad_storage: 'denied',\\n analytics_storage: 'denied',\\n functionality_storage: 'denied',\\n security_storage: 'granted', // can be left as granted (not marketing cookies)\\n ad_user_data: 'denied',\\n ad_personalization: 'denied'\\n});\\n\",\"id\":\"gtmConsentInit\"}]) {\"@context\":\"https://schema.org\",\"@type\":\"CreativeWork\",\"name\":\"Acceptable Use Policies Github Disrupting The Experience Of Other Users\",\"description\":\"The GitHub Disrupting the Experience of Other Users Policy prohibits behaviour that significantly or repeatedly interferes with other users’ ability to ...\",\"url\":\"https://git.law/templates/doc/acceptable-use-policies-github-disrupting-the-experience-of-other-users-github--2tH69K\",\"dateCreated\":\"2025-10-06T13:28:22.000Z\",\"dateModified\":\"2025-10-24T18:00:45.000Z\",\"inLanguage\":\"en\",\"isAccessibleForFree\":true,\"genre\":\"Legal document template\",\"author\":{\"@type\":\"Organization\",\"name\":\"oll\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"GitLaw\",\"url\":\"https://git.law\"}} Home Features Pricing Templates Knowledge base News Sign in Sign up Home Features Pricing Templates Knowledge base News Sign in Sign up Come to agreements faster Write, revi",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub keeps getting better for open source maintainers - The GitHub Blog",
+        "url": "https://github.blog/open-source/maintainers/github-keeps-getting-better-for-open-source-maintainers/",
+        "query": "GitHub PR limit impact open source maintainers",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "GitHub keeps getting better for open source maintainers - The GitHub Blog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"GitHub keeps getting better for open source maintainers\",\"author\":{\"@type\":\"Person\",\"name\":\"Nick Holden\"},\"datePublished\":\"2021-11-01T09:00:25-07:00\",\"abstract\":\"Maintainers can now limit who can approve and request changes on pull requests. You can also close issues and block users via your phone.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/open-source\\/maintainers\\/github-keeps-getting-better-for-open-source-maintainers\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2019\\/03\\/product-social.png?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"GitHub keeps getting better for open source maintainers\",\"author\":{\"@type\":\"Person\",\"name\":\"Nick Holden\"},\"datePublished\":\"2021-11-01T09:00:25-07:00\",\"abstract\":\"Maintainers can now limit who can approve and request changes on pull requests. You can also close issues and block users via your phone.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/open-source\\/maintainers\\/github-keeps-getting-better-for-open-source-maintainers\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2019\\/03\\/product-social.png?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/github.blog\\/open-source\\/maintainers\\/github-keeps-getting-better-for-open-source-maintainers\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/github.blog\\/open-source\\/maintainers\\/github-keeps-getting-better-for-open-source-maintainers\\/\"},\"author\":[{\"@id\":\"https:\\/\\/github.blog\\/#\\/schema\\/person\\/4b851a6dfdb479a48812ceba00d6e4d4\"}],\"headline\":\"GitHub keeps getting better for open source maintaine",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub eyes restrictions on pull requests to rein in AI-based code deluge on maintainers | InfoWorld",
+        "url": "https://www.infoworld.com/article/4127156/github-eyes-restrictions-on-pull-requests-to-rein-in-ai-based-code-deluge-on-maintainers.html",
+        "query": "GitHub PR limit impact open source maintainers",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root { --advertisement-label-text: \"Advertisement\"; } window.isBrandPostSeriesLanding = \"false\"; img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } window._sp_analytics = { config: { accountId: 146, events: { onDetectionComplete: function() { console.log('onMessageReady'); } }, } }; GitHub eyes restrictions on pull requests to rein in AI-based code deluge on maintainers | InfoWorld //CMP Stub \"use strict\";function _typeof(t){return(_typeof=\"function\"==typeof Symbol&&\"symbol\"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&\"function\"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?\"symbol\":typeof t})(t)}!function(){var t=function(){for(var t,e,o=[],n=window,r=n;r;){try{if(r.frames.__tcfapiLocator){t=r;break}}catch(a){}if(r===n.top)break;r=r.parent}t||(!function t(){var e=n.document,o=!!n.frames.__tcfapiLocator;if(!o){if(e.body){var r=e.createElement(\"iframe\");r.style.cssText=\"display:none\",r.name=\"__tcfapiLocator\",e.body.appendChild(r)}else setTimeout(t,5)}return!o}(),n.__tcfapi=function(){for(var t=arguments.length,n=Array(t),r=0;r 3&&2===parseInt(n[1],10)&&\"boolean\"==typeof n[3]&&(e=n[3],\"function\"==typeof n[2]&&n[2](\"set\",!0)):\"ping\"===n[0]?\"function\"==typeof n[2]&&n[2]({gdprApplies:e,cmpLoaded:!1,cmpStatus:\"stub\"}):o.push(n)},n.addEventListener(\"message\",function(t){var e=\"string\"==typeof t.data,o={};if(e)try{o=JSON.parse(t.data)}catch(n){}else o=t.data;var r=\"object\"===_typeof(o)&&null!==o?o.__tcfapiCall:null;r&&window.__tcfapi(r.command,r.version,function(o,n){var a={__tcfapiReturn:{returnValue:o,success:n,callId:r.callId}};t&&t.source&&t.source.postMessage&&t.source.postMessage(e?JSON.stringify(a):a,\"*\")},r.parameter)},!1))};\"undefined\"!=typeof module?module.exports=t:t()}(); window.__gpp",
+        "fetch_error": ""
+      },
+      {
+        "title": "Inside The Open Source Softwares (OSS) PRs Massacre of GitHub | Kush Creates Blogs",
+        "url": "https://www.kushcreates.com/blogs/inside-the-open-source-prs-massacre-of-github",
+        "query": "GitHub PR limit impact open source maintainers",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Inside The Open Source Softwares (OSS) PRs Massacre of GitHub | Kush Creates Blogs { \"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [ { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.kushcreates.com/\" }, { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Blogs\", \"item\": \"https://www.kushcreates.com/blogs/\" }, { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Inside The Open Source Softwares (OSS) PRs Massacre of GitHub\", \"item\": \"https://www.kushcreates.com/blogs/inside-the-open-source-prs-massacre-of-github\" } ] } { \"@context\": \"https://schema.org\", \"@type\": \"BlogPosting\", \"mainEntityOfPage\": { \"@type\": \"WebPage\", \"@id\": \"https://www.kushcreates.com/blogs/inside-the-open-source-prs-massacre-of-github\" }, \"headline\": \"Inside The Open Source Softwares (OSS) PRs Massacre of GitHub\", \"description\": \"How a viral Git and GitHub tutorial created years of GitHub spam, damaged reputations, and why Apna College's response missed the point entirely. The full story of Open Source Softwares' (OSS) PR crisis. An Article by Kush Creates aka Kush Brahmbhatt\", \"image\": \"https://www.kushcreates.com/images/blogs/inside-the-open-source-prs-massacre-of-github.png\", \"author\": { \"@type\": \"Person\", \"name\": \"Kush Brahmbhatt\", \"url\": \"https://www.kushcreates.com/about\" }, \"publisher\": { \"@type\": \"Organization\", \"name\": \"Kush Brahmbhatt\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://www.kushcreates.com/favicon.png\" } }, \"datePublished\": \"2025-11-10\", \"dateModified\": \"2025-11-10\" } { \"@context\": \"https://schema.org\", \"@type\": \"Person\", \"name\": \"Kush Creates\", \"alternateName\": \"Kush Brahmbhatt\", \"url\": \"https://www.kushcreates.com\", \"image\": \"https://www.kushcreates.com/favicon.png\", \"sameAs\": [ \"https://www.linkedin.com/in/kush-brahmbhatt-3",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub Sponsors Additional Terms - GitHub Docs",
+        "url": "https://docs.github.com/en/site-policy/github-terms/github-sponsors-additional-terms",
+        "query": "GitHub PR limit exemption sponsor",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "GitHub Sponsors Additional Terms - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar Site policy / GitHub Terms / GitHub Sponsors Additional Terms Home Site policy GitHub Terms GitHub Terms of Service GitHub Corporate Terms of Service GitHub Terms for Additional Products and Features GitHub Community Guidelines GitHub Community Code of Conduct GitHub Pre-release License Terms GitHub DPA-Covered Previews GitHub Sponsors Additional Terms GitHub Registered Developer Agreement GitHub Marketplace Terms of Service GitHub Marketplace Developer Agreement GitHub Research Program Terms GitHub Open Source Applications Terms and Conditions GitHub Event Terms GitHub Event Code of Conduct GitHub Educational Use Agreement GitHub Copilot Extension Developer Policy GitHub Secret Scanning Partner Program Agreement Acceptable Use Policies GitHub Acceptable Use Policies Active Malware or Exploits Bullying and Harassment Disrupting the Experience of Other Users Doxxing and Invasion of Privacy Hate Speech and Discrimination Impersonation Disinformation Policy Sexually Obscene Content Threats of Violence and Gratuitously Violent Content Terrorism and Violent Extremism Content CSAM Policy NCII Synthetic Media and AI Tools GitHub Appeal and Reinstatement Privacy Policies GitHub General Privacy Statement GitHub Subprocessors GitHub Cookies GitHub Global Data Privacy Notice for Candidates Other Site Policies GitHub and Trade Controls GitHub Deceased User Policy GitHub Logo Policy GitHub Government Takedown Policy GitHub Username Policy Guidelines for Legal Requests of User Data GitHub Account Recovery Policy Content Remov",
+        "fetch_error": ""
+      },
+      {
+        "title": "How Do I Sponsor a Pr · community · Discussion #152802",
+        "url": "https://github.com/orgs/community/discussions/152802",
+        "query": "GitHub PR limit exemption sponsor",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_diff_explain_conversation_in",
+        "fetch_error": ""
+      },
+      {
+        "title": "Managing your sponsorship tiers - GitHub Docs",
+        "url": "https://docs.github.com/en/sponsors/receiving-sponsorships-through-github-sponsors/managing-your-sponsorship-tiers",
+        "query": "GitHub PR limit exemption sponsor",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Managing your sponsorship tiers - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Sponsors / Receiving sponsorships / Manage payment tiers Home GitHub Sponsors Getting started About GitHub Sponsors Quickstart Navigating your Sponsors dashboard Sponsor contributors About sponsorships Sponsor through GitHub Sponsor through Patreon Managing your sponsorship Attribute sponsorships Paying by invoice Unlink Patreon Receiving sponsorships Open source contributors Set up for personal account Set up for organization Enable Patreon sponsorships Using a fiscal host Edit profile details Manage sponsor goals Manage payment tiers View sponsors & sponsorships Manage payouts Contacting your sponsors Tax information Unlink Patreon Delete Stripe account Disable your account Unpublish your profile Integrate with GitHub Sponsors Webhooks for events Sponsors GraphQL API GitHub Sponsors / Receiving sponsorships / Manage payment tiers Managing your sponsorship tiers You can add a new sponsorship tier, or edit or retire an existing tier. Copy as Markdown In this article About sponsorship tiers Adding a tier Editing or retiring a tier Adding a repository to a sponsorship tier About sponsorship tiers You can publish up to 10 one-time sponsorship tiers and 10 monthly tiers for sponsors to choose from. Each tier has its own one-time or monthly payment amount in US dollars. Publishing tiers is optional. You can customize the rewards for each tier. For example, rewards for a tier could include: Early access to new versions Logo or name in README Weekly newsletter updates Other rewards your sponsors would enjoy ✨ You",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260618-limit-open-pull-requests-for-users-without-write-1d83de96/",
+    "for_gpt_editor": {
+      "brief": "Maintainers of open source repositories are dealing with an ever-growing volume of pull requests, including repeated low-quality or drive-by contributions that can slow triage and overwhelm review queues. To help… The post Limit open pull requests for users without write access appeared first on The GitHub Blog .",
+      "title_seed": "GitHub限制无写权限用户PR数量，打击低质量贡献",
+      "original_title": "Limit open pull requests for users without write access",
+      "source_url": "https://github.blog/changelog/2026-06-17-limit-open-pull-requests-for-users-without-write-access",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：具体限制阈值、生效时间、豁免机制等关键细节缺失，官方公告未提供，无法验证。"
+        },
+        "core_question": "GitHub限制无写权限用户PR数量，对开源贡献者和维护者有何实际影响？",
+        "why_this_topic_matters": "GitHub作为全球最大代码托管平台，其规则变化直接影响开源贡献模式。限制PR数量可能减少低质量贡献，但也可能误伤新手和偶尔贡献者，引发关于开放性与维护成本的讨论。",
+        "fact_summary": [
+          "GitHub于2026年6月17日宣布限制无写权限用户的开放PR数量，旨在减少低质量或驱车式贡献。",
+          "官方公告未公布具体限制阈值（如PR数量上限、时间窗口）。",
+          "此前GitHub已推出禁用PR、限制PR仅协作者等仓库级设置。",
+          "社区已有关于低质量贡献的讨论，但官方限制的具体细节和社区反应尚未充分收集。"
+        ],
+        "persona_discussion_question": "作为开源维护者或贡献者，我该担心这个限制吗？它会影响我的项目或贡献习惯吗？",
+        "old_flower_stance": "平台规则变化是常态，但限制PR数量可能降低开源社区的开放性，将维护成本转嫁给贡献者。普通技术人应关注规则细节，评估对自身贡献习惯的影响。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 78,
+          "why_interested": "核心技术人关注开源贡献规则变化，入门读者担心影响学习贡献，高价值商业读者评估平台依赖风险。",
+          "reader_risk": "标题不能夸大，需明确标注待验证细节，避免引发不必要的恐慌。"
+        },
+        "mass_interest_hook": {
+          "score": 7,
+          "hook_type": "争议",
+          "why_non_technical_people_may_click": "GitHub是程序员常用平台，规则变化可能影响开源项目参与，普通人通过标题感受到“门槛提高”的冲突。",
+          "story_seed": "GitHub限制PR数量，新手贡献者可能被误伤，开源社区开放性与维护成本如何平衡？",
+          "do_not_overhype": "不能声称限制已生效或具体数字，需强调待验证。"
+        },
+        "topic_tension": {
+          "score": 9,
+          "conflict_point": "平台规则变化是否在降低开源社区的开放性和低门槛参与，将维护成本转嫁给贡献者？",
+          "debate_question": "这件事到底是合理规则/正常成本控制，还是平台把风险和成本转嫁给普通使用者？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "平台/工具厂商"
+          ],
+          "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2026-02-13: GitHub推出新仓库设置，可禁用PR或限制PR仅协作者。",
+          "2026-06-17: GitHub宣布限制无写权限用户的开放PR数量，具体阈值未公布。"
+        ],
+        "evidence_table": [
+          {
+            "source": "GitHub Changelog",
+            "url": "https://github.blog/changelog/2026-06-17-limit-open-pull-requests-for-users-without-write-access/",
+            "supports": "官方公告，确认限制功能推出，但未提供具体阈值。",
+            "reliability": "official"
+          },
+          {
+            "source": "GitHub Docs - Limiting interactions",
+            "url": "https://docs.github.com/en/communities/moderating-comments-and-conversations/limiting-interactions-in-your-repository",
+            "supports": "现有临时交互限制功能，但非PR数量限制。",
+            "reliability": "official"
+          },
+          {
+            "source": "GitHub Changelog - New repository settings",
+            "url": "https://github.blog/changelog/2026-02-13-new-repository-settings-for-configuring-pull-request-access/",
+            "supports": "此前已推出禁用PR等设置，表明GitHub持续加强PR管理。",
+            "reliability": "official"
+          },
+          {
+            "source": "InfoWorld article",
+            "url": "https://www.infoworld.com/article/4127156/github-eyes-restrictions-on-pull-requests-to-rein-in-ai-based-code-deluge-on-maintainers.html",
+            "supports": "报道GitHub考虑限制PR以应对AI生成的低质量贡献。",
+            "reliability": "media"
+          },
+          {
+            "source": "GitHub Community Discussion #185387",
+            "url": "https://github.com/orgs/community/discussions/185387",
+            "supports": "社区讨论低质量贡献问题，提及AI生成代码。",
+            "reliability": "weak"
+          }
+        ],
+        "logic_closure": "部分闭环：官方公告确认限制，但缺少阈值和社区反应，逻辑链不完整。",
+        "writeable_angles": [
+          {
+            "angle": "规则解读：GitHub限制PR数量的具体影响与应对",
+            "why": "帮助读者理解规则变化，评估对自身项目的影响。",
+            "needs": "需要具体阈值、生效时间、豁免机制。"
+          },
+          {
+            "angle": "争议分析：开源开放性与维护成本的平衡",
+            "why": "引发讨论，适合传播。",
+            "needs": "需要社区反应、反方观点。"
+          },
+          {
+            "angle": "实操指南：维护者如何配置PR限制",
+            "why": "提供实用价值，吸引维护者读者。",
+            "needs": "需要官方文档细节、配置步骤。"
+          }
+        ],
+        "missing_basics": [
+          "具体限制阈值（如PR数量上限、时间窗口）",
+          "限制是否适用于所有仓库还是仅特定仓库",
+          "是否有例外机制（如通过赞助、贡献等级豁免）",
+          "官方公告中是否提及低质量PR的定义标准",
+          "社区反馈（如Hacker News、Reddit讨论）"
+        ],
+        "missing_materials": [
+          "至少2个社区讨论帖（如HN、Reddit）",
+          "维护者或贡献者的实际案例",
+          "官方FAQ或详细文档"
+        ],
+        "not_claimable": [
+          "限制的具体数字",
+          "限制是否已生效",
+          "社区普遍反对或支持"
+        ],
+        "followup_queries": [
+          "GitHub limit open pull requests users without write access threshold",
+          "GitHub PR limit Hacker News discussion",
+          "GitHub PR limit Reddit discussion",
+          "GitHub PR limit exemption sponsor"
+        ],
+        "additional_search_queries": [
+          "GitHub limit open pull requests users without write access threshold",
+          "GitHub PR limit Hacker News",
+          "GitHub PR limit Reddit",
+          "GitHub PR limit exemption sponsor"
+        ],
+        "stop_conditions": [
+          "官方公布具体阈值和生效时间",
+          "社区出现大规模讨论或争议",
+          "出现实际案例说明影响"
+        ],
+        "confidence": 60.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI前沿",
+        "report_type": "platform-rules",
+        "quality_gate": {
+          "pass": false,
+          "score": 60,
+          "fatal_issues": [
+            "核心事实没有来源：具体限制阈值、生效时间、豁免机制等关键细节缺失，官方公告未提供，无法验证。"
+          ],
+          "warnings": [
+            "缺少社区反应和反方观点，传播张力依赖待验证细节。",
+            "信息源偏科：仅依赖GitHub官方和一篇媒体文章，缺乏社区讨论（HN、Reddit）等关键来源。"
+          ],
+          "missing_evidence": [
+            "具体限制阈值（如PR数量上限、时间窗口）",
+            "限制是否适用于所有仓库还是仅特定仓库",
+            "是否有例外机制（如通过赞助、贡献等级豁免）",
+            "官方公告中是否提及低质量PR的定义标准",
+            "社区反馈（如Hacker News、Reddit讨论）"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "GitHub限制无写权限用户PR数量，对开源贡献者和维护者有何实际影响？",
+          "persona_discussion_question": "作为开源维护者或贡献者，我该担心这个限制吗？它会影响我的项目或贡献习惯吗？",
+          "hidden_public_issue": "平台规则变化是否在降低开源社区的开放性和低门槛参与，将维护成本转嫁给贡献者？",
+          "must_verify": [
+            "具体限制阈值（如PR数量上限、时间窗口）",
+            "限制是否适用于所有仓库还是仅特定仓库",
+            "是否有例外机制（如通过赞助、贡献等级豁免）",
+            "官方公告中是否提及低质量PR的定义标准",
+            "社区反馈（如Hacker News、Reddit讨论）"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "GitHub limit open pull requests users without write access threshold",
+              "why_needed": "获取具体限制数值和规则细节"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "GitHub limit PRs without write access Hacker News",
+              "why_needed": "了解社区反应和潜在争议"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "GitHub PR limit low quality contributions reddit",
+              "why_needed": "获取用户实际体验和批评"
+            },
+            {
+              "source_type": "policy",
+              "query": "GitHub acceptable use policy pull request spam",
+              "why_needed": "确认平台对低质量贡献的现有定义"
+            },
+            {
+              "source_type": "case_study",
+              "query": "GitHub PR limit impact open source maintainers",
+              "why_needed": "寻找实际案例说明影响"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "GitHub PR limit exemption sponsor",
+              "why_needed": "检查是否有付费豁免机制"
+            }
+          ],
+          "expert_challenge_points": [
+            "限制阈值是否合理？是否误伤新手或偶尔贡献者？",
+            "平台是否有数据证明低质量PR是普遍问题？",
+            "此规则是否变相鼓励付费赞助以获得贡献特权？"
+          ],
+          "do_not_claim_yet": [
+            "限制的具体数字",
+            "限制是否已生效",
+            "社区普遍反对或支持"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确标注待验证的阈值和社区反应",
+          "downstream_materials_needed": [
+            "GitHub官方公告原文",
+            "至少2个社区讨论帖（如HN、Reddit）",
+            "维护者或贡献者的实际案例"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Limit open pull requests for users without write access - GitHub Changelog",
+            "url": "https://github.blog/changelog/2026-06-17-limit-open-pull-requests-for-users-without-write-access/",
+            "query": "GitHub limit open pull requests users without write access threshold",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Limit open pull requests for users without write access - GitHub Changelog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Limit open pull requests for users without write access\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-06-17T09:23:56-07:00\",\"abstract\":\"Maintainers of open source repositories are dealing with an ever-growing volume of pull requests, including repeated low-quality or drive-by contributions that can slow triage and overwhelm review queues. To help…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-17-limit-open-pull-requests-for-users-without-write-access\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/06\\/LimitOpenPRs_Improvements_Header.jpg?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Limit open pull requests for users without write access\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-06-17T09:23:56-07:00\",\"abstract\":\"Maintainers of open source repositories are dealing with an ever-growing volume of pull requests, including repeated low-quality or drive-by contributions that can slow triage and overwhelm review queues. To help…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-17-limit-open-pull-requests-for-users-without-write-access\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/06\\/LimitOpenPRs_Improvements_Header.jpg?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-17-limit-open-pull-requests-for-users-without-write-access\\/\",\"url\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-17-limit-open-pull-requests-for-users-without-write-access\\/\",\"name\":\"Limit open pu",
+            "fetch_error": ""
+          },
+          {
+            "title": "Limiting interactions in your repository - GitHub Docs",
+            "url": "https://docs.github.com/en/communities/moderating-comments-and-conversations/limiting-interactions-in-your-repository",
+            "query": "GitHub limit open pull requests users without write access threshold",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Limiting interactions in your repository - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar Building communities / Moderation / Limit interactions in repo Home Building communities Healthy contributions Management & moderation Community profiles Access community profiles Add a code of conduct Contributor guidelines Add a license to a repo Add support resources Community health file Encourage contributions Issue & PR templates About templates Configure Syntax for issue forms Syntax for GitHub's form schema Create a PR template Common validation errors when creating issue forms Moderation Manage comments Locking conversations Limit interactions in repo Limit interactions in account Limit interactions in org Track comment changes Manage abuse in your org Manage reported content Maintaining safety Block from your account View blocked users in account Unblock from your account Block from your org View blocked users in org Unblock from your org Reporting abuse or spam Using wikis About wikis Manage wiki pages Create footer or sidebar Editing wiki content View a history of changes Change access permissions Disabling wikis Building communities / Moderation / Limit interactions in repo Limiting interactions in your repository You can temporarily enforce a period of limited activity for certain users on a public repository. Who can use this feature? People with admin permissions to a repository, and organization moderators, can temporarily limit interactions in that repository. Copy as Markdown In this article About temporary interaction limits Limiting interactions in your repository Limiting concurrent",
+            "fetch_error": ""
+          },
+          {
+            "title": "New repository settings for configuring pull request access - GitHub Changelog",
+            "url": "https://github.blog/changelog/2026-02-13-new-repository-settings-for-configuring-pull-request-access/",
+            "query": "GitHub limit open pull requests users without write access threshold",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "New repository settings for configuring pull request access - GitHub Changelog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"New repository settings for configuring pull request access\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-02-13T10:12:55-08:00\",\"abstract\":\"Maintainers now have more control over how repositories accept contributions. Two new settings let you manage pull requests to better match your project’s needs. Disable pull requests entirely You can…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-02-13-new-repository-settings-for-configuring-pull-request-access\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/02\\/548540508-dbda1af0-bca5-4c0b-8d08-be0f18199c59.jpg?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"New repository settings for configuring pull request access\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-02-13T10:12:55-08:00\",\"abstract\":\"Maintainers now have more control over how repositories accept contributions. Two new settings let you manage pull requests to better match your project’s needs. Disable pull requests entirely You can…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-02-13-new-repository-settings-for-configuring-pull-request-access\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/02\\/548540508-dbda1af0-bca5-4c0b-8d08-be0f18199c59.jpg?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-02-13-new-repository-settings-for-configuring-pull-request-access\\/\",\"url\":\"https:\\/\\/github.blog\\/changelog\\/2026-02-13-new-repository-settings-for-configuring-pull-request",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub discusses giving maintainers control to disable PRs | Hacker News",
+            "url": "https://news.ycombinator.com/item?id=46864517",
+            "query": "GitHub limit PRs without write access Hacker News",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 429: Too Many Requests"
+          },
+          {
+            "title": "How to restrict pull request approval · community · Discussion #22819",
+            "url": "https://github.com/orgs/community/discussions/22819",
+            "query": "GitHub limit PRs without write access Hacker News",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_diff_explain_conversation_in",
+            "fetch_error": ""
+          },
+          {
+            "title": "Exploring Solutions to Tackle Low-Quality Contributions on GitHub · community · Discussion #185387",
+            "url": "https://github.com/orgs/community/discussions/185387",
+            "query": "GitHub PR limit low quality contributions reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_diff_explain_conversation_in",
+            "fetch_error": ""
+          },
+          {
+            "title": "Exploring Solutions to Tackle Low-Quality Contributions on GitHub · community · Discussion #185387 | daily.dev",
+            "url": "https://app.daily.dev/posts/exploring-solutions-to-tackle-low-quality-contributions-on-github-community-discussion-185387-jwftmmkjs",
+            "query": "GitHub PR limit low quality contributions reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://daily.dev/#organization\",\"name\":\"daily.dev\",\"url\":\"https://daily.dev\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://daily.dev/apple-touch-icon.png\",\"width\":180,\"height\":180},\"sameAs\":[\"https://twitter.com/dailydotdev\",\"https://github.com/dailydotdev\",\"https://www.linkedin.com/company/daily-dev-ltd\"]},{\"@type\":\"WebSite\",\"@id\":\"https:///#website\",\"url\":\"https://\",\"name\":\"daily.dev\",\"publisher\":{\"@id\":\"https://daily.dev/#organization\"},\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:///search?q={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}}]} window.addEventListener('load', () => { window.windowLoaded = true; }, { once: true, }); Exploring Solutions to Tackle Low-Quality Contributions... {\"props\":{\"pageProps\":{\"id\":\"jwftmMKjS\",\"initialData\":{\"post\":{\"id\":\"jwftmMKjS\",\"title\":\"Exploring Solutions to Tackle Low-Quality Contributions on GitHub · community · Discussion #185387\",\"titleHtml\":null,\"image\":\"https://media.daily.dev/image/upload/f_auto,q_auto/v1/posts/8dba1cc00251610138492b1073838b00?_a=AQAEulh\",\"readTime\":10,\"permalink\":\"https://api.daily.dev/r/jwftmMKjS\",\"commentsPermalink\":\"https://app.daily.dev/posts/exploring-solutions-to-tackle-low-quality-contributions-on-github-community-discussion-185387-jwftmmkjs\",\"summary\":\"GitHub is addressing the growing problem of low-quality pull requests overwhelming open source maintainers. Short-term solutions include repository-level controls to disable PRs entirely, restrict PRs to collaborators only, and delete spam PRs from the UI. Long-term plans involve enhanced permission models, AI-powered triage tools to evaluate contributions against project guidelines, and improved trans",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/github on Reddit: How annoying is the GitHub API rate limit ?",
+            "url": "https://www.reddit.com/r/github/comments/186vej4/how_annoying_is_the_github_api_rate_limit/",
+            "query": "GitHub PR limit low quality contributions reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "GitHub Acceptable Use Policies - GitHub Docs",
+            "url": "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies",
+            "query": "GitHub acceptable use policy pull request spam",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "GitHub Acceptable Use Policies - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar Site policy / Acceptable Use Policies / GitHub Acceptable Use Policies Home Site policy GitHub Terms GitHub Terms of Service GitHub Corporate Terms of Service GitHub Terms for Additional Products and Features GitHub Community Guidelines GitHub Community Code of Conduct GitHub Pre-release License Terms GitHub DPA-Covered Previews GitHub Sponsors Additional Terms GitHub Registered Developer Agreement GitHub Marketplace Terms of Service GitHub Marketplace Developer Agreement GitHub Research Program Terms GitHub Open Source Applications Terms and Conditions GitHub Event Terms GitHub Event Code of Conduct GitHub Educational Use Agreement GitHub Copilot Extension Developer Policy GitHub Secret Scanning Partner Program Agreement Acceptable Use Policies GitHub Acceptable Use Policies Active Malware or Exploits Bullying and Harassment Disrupting the Experience of Other Users Doxxing and Invasion of Privacy Hate Speech and Discrimination Impersonation Disinformation Policy Sexually Obscene Content Threats of Violence and Gratuitously Violent Content Terrorism and Violent Extremism Content CSAM Policy NCII Synthetic Media and AI Tools GitHub Appeal and Reinstatement Privacy Policies GitHub General Privacy Statement GitHub Subprocessors GitHub Cookies GitHub Global Data Privacy Notice for Candidates Other Site Policies GitHub and Trade Controls GitHub Deceased User Policy GitHub Logo Policy GitHub Government Takedown Policy GitHub Username Policy Guidelines for Legal Requests of User Data GitHub Account Recovery Policy Conten",
+            "fetch_error": ""
+          },
+          {
+            "title": "Acceptable Use Policies - GitHub Docs",
+            "url": "https://docs.github.com/en/site-policy/acceptable-use-policies",
+            "query": "GitHub acceptable use policy pull request spam",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Acceptable Use Policies - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar Site policy / Acceptable Use Policies Home Site policy GitHub Terms GitHub Terms of Service GitHub Corporate Terms of Service GitHub Terms for Additional Products and Features GitHub Community Guidelines GitHub Community Code of Conduct GitHub Pre-release License Terms GitHub DPA-Covered Previews GitHub Sponsors Additional Terms GitHub Registered Developer Agreement GitHub Marketplace Terms of Service GitHub Marketplace Developer Agreement GitHub Research Program Terms GitHub Open Source Applications Terms and Conditions GitHub Event Terms GitHub Event Code of Conduct GitHub Educational Use Agreement GitHub Copilot Extension Developer Policy GitHub Secret Scanning Partner Program Agreement Acceptable Use Policies GitHub Acceptable Use Policies Active Malware or Exploits Bullying and Harassment Disrupting the Experience of Other Users Doxxing and Invasion of Privacy Hate Speech and Discrimination Impersonation Disinformation Policy Sexually Obscene Content Threats of Violence and Gratuitously Violent Content Terrorism and Violent Extremism Content CSAM Policy NCII Synthetic Media and AI Tools GitHub Appeal and Reinstatement Privacy Policies GitHub General Privacy Statement GitHub Subprocessors GitHub Cookies GitHub Global Data Privacy Notice for Candidates Other Site Policies GitHub and Trade Controls GitHub Deceased User Policy GitHub Logo Policy GitHub Government Takedown Policy GitHub Username Policy Guidelines for Legal Requests of User Data GitHub Account Recovery Policy Content Removal Policies Submitting content re",
+            "fetch_error": ""
+          },
+          {
+            "title": "Free Acceptable Use Policies Github Disrupting The Experience Of Other Users Template (US) | GitLaw",
+            "url": "https://git.law/templates/doc/acceptable-use-policies-github-disrupting-the-experience-of-other-users-github--2tH69K",
+            "query": "GitHub acceptable use policy pull request spam",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Free Acceptable Use Policies Github Disrupting The Experience Of Other Users Template (US) | GitLaw (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"\\n(function() {\\n window.addEventListener('popstate', function (event) {\\n if (window.__gitlawEarlyPopState) {\\n return window.__gitlawEarlyPopState(event);\\n }\\n });\\n})()\\n\",\"id\":\"early-pop-state\"}]) @keyframes router-loader { 0% { width: 30%; left: -30%; } 50% { width: 50%; } 100% { width: 30%; left: 100%; } } (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"\\nwindow.dataLayer = window.dataLayer || [];\\nfunction gtag(){dataLayer.push(arguments);}\\ngtag('consent', 'default', {\\n ad_storage: 'denied',\\n analytics_storage: 'denied',\\n functionality_storage: 'denied',\\n security_storage: 'granted', // can be left as granted (not marketing cookies)\\n ad_user_data: 'denied',\\n ad_personalization: 'denied'\\n});\\n\",\"id\":\"gtmConsentInit\"}]) {\"@context\":\"https://schema.org\",\"@type\":\"CreativeWork\",\"name\":\"Acceptable Use Policies Github Disrupting The Experience Of Other Users\",\"description\":\"The GitHub Disrupting the Experience of Other Users Policy prohibits behaviour that significantly or repeatedly interferes with other users’ ability to ...\",\"url\":\"https://git.law/templates/doc/acceptable-use-policies-github-disrupting-the-experience-of-other-users-github--2tH69K\",\"dateCreated\":\"2025-10-06T13:28:22.000Z\",\"dateModified\":\"2025-10-24T18:00:45.000Z\",\"inLanguage\":\"en\",\"isAccessibleForFree\":true,\"genre\":\"Legal document template\",\"author\":{\"@type\":\"Organization\",\"name\":\"oll\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"GitLaw\",\"url\":\"https://git.law\"}} Home Features Pricing Templates Knowledge base News Sign in Sign up Home Features Pricing Templates Knowledge base News Sign in Sign up Come to agreements faster Write, revi",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub keeps getting better for open source maintainers - The GitHub Blog",
+            "url": "https://github.blog/open-source/maintainers/github-keeps-getting-better-for-open-source-maintainers/",
+            "query": "GitHub PR limit impact open source maintainers",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "GitHub keeps getting better for open source maintainers - The GitHub Blog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"GitHub keeps getting better for open source maintainers\",\"author\":{\"@type\":\"Person\",\"name\":\"Nick Holden\"},\"datePublished\":\"2021-11-01T09:00:25-07:00\",\"abstract\":\"Maintainers can now limit who can approve and request changes on pull requests. You can also close issues and block users via your phone.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/open-source\\/maintainers\\/github-keeps-getting-better-for-open-source-maintainers\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2019\\/03\\/product-social.png?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"GitHub keeps getting better for open source maintainers\",\"author\":{\"@type\":\"Person\",\"name\":\"Nick Holden\"},\"datePublished\":\"2021-11-01T09:00:25-07:00\",\"abstract\":\"Maintainers can now limit who can approve and request changes on pull requests. You can also close issues and block users via your phone.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/open-source\\/maintainers\\/github-keeps-getting-better-for-open-source-maintainers\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2019\\/03\\/product-social.png?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/github.blog\\/open-source\\/maintainers\\/github-keeps-getting-better-for-open-source-maintainers\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/github.blog\\/open-source\\/maintainers\\/github-keeps-getting-better-for-open-source-maintainers\\/\"},\"author\":[{\"@id\":\"https:\\/\\/github.blog\\/#\\/schema\\/person\\/4b851a6dfdb479a48812ceba00d6e4d4\"}],\"headline\":\"GitHub keeps getting better for open source maintaine",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub eyes restrictions on pull requests to rein in AI-based code deluge on maintainers | InfoWorld",
+            "url": "https://www.infoworld.com/article/4127156/github-eyes-restrictions-on-pull-requests-to-rein-in-ai-based-code-deluge-on-maintainers.html",
+            "query": "GitHub PR limit impact open source maintainers",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root { --advertisement-label-text: \"Advertisement\"; } window.isBrandPostSeriesLanding = \"false\"; img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } window._sp_analytics = { config: { accountId: 146, events: { onDetectionComplete: function() { console.log('onMessageReady'); } }, } }; GitHub eyes restrictions on pull requests to rein in AI-based code deluge on maintainers | InfoWorld //CMP Stub \"use strict\";function _typeof(t){return(_typeof=\"function\"==typeof Symbol&&\"symbol\"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&\"function\"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?\"symbol\":typeof t})(t)}!function(){var t=function(){for(var t,e,o=[],n=window,r=n;r;){try{if(r.frames.__tcfapiLocator){t=r;break}}catch(a){}if(r===n.top)break;r=r.parent}t||(!function t(){var e=n.document,o=!!n.frames.__tcfapiLocator;if(!o){if(e.body){var r=e.createElement(\"iframe\");r.style.cssText=\"display:none\",r.name=\"__tcfapiLocator\",e.body.appendChild(r)}else setTimeout(t,5)}return!o}(),n.__tcfapi=function(){for(var t=arguments.length,n=Array(t),r=0;r 3&&2===parseInt(n[1],10)&&\"boolean\"==typeof n[3]&&(e=n[3],\"function\"==typeof n[2]&&n[2](\"set\",!0)):\"ping\"===n[0]?\"function\"==typeof n[2]&&n[2]({gdprApplies:e,cmpLoaded:!1,cmpStatus:\"stub\"}):o.push(n)},n.addEventListener(\"message\",function(t){var e=\"string\"==typeof t.data,o={};if(e)try{o=JSON.parse(t.data)}catch(n){}else o=t.data;var r=\"object\"===_typeof(o)&&null!==o?o.__tcfapiCall:null;r&&window.__tcfapi(r.command,r.version,function(o,n){var a={__tcfapiReturn:{returnValue:o,success:n,callId:r.callId}};t&&t.source&&t.source.postMessage&&t.source.postMessage(e?JSON.stringify(a):a,\"*\")},r.parameter)},!1))};\"undefined\"!=typeof module?module.exports=t:t()}(); window.__gpp",
+            "fetch_error": ""
+          },
+          {
+            "title": "Inside The Open Source Softwares (OSS) PRs Massacre of GitHub | Kush Creates Blogs",
+            "url": "https://www.kushcreates.com/blogs/inside-the-open-source-prs-massacre-of-github",
+            "query": "GitHub PR limit impact open source maintainers",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Inside The Open Source Softwares (OSS) PRs Massacre of GitHub | Kush Creates Blogs { \"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [ { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.kushcreates.com/\" }, { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Blogs\", \"item\": \"https://www.kushcreates.com/blogs/\" }, { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Inside The Open Source Softwares (OSS) PRs Massacre of GitHub\", \"item\": \"https://www.kushcreates.com/blogs/inside-the-open-source-prs-massacre-of-github\" } ] } { \"@context\": \"https://schema.org\", \"@type\": \"BlogPosting\", \"mainEntityOfPage\": { \"@type\": \"WebPage\", \"@id\": \"https://www.kushcreates.com/blogs/inside-the-open-source-prs-massacre-of-github\" }, \"headline\": \"Inside The Open Source Softwares (OSS) PRs Massacre of GitHub\", \"description\": \"How a viral Git and GitHub tutorial created years of GitHub spam, damaged reputations, and why Apna College's response missed the point entirely. The full story of Open Source Softwares' (OSS) PR crisis. An Article by Kush Creates aka Kush Brahmbhatt\", \"image\": \"https://www.kushcreates.com/images/blogs/inside-the-open-source-prs-massacre-of-github.png\", \"author\": { \"@type\": \"Person\", \"name\": \"Kush Brahmbhatt\", \"url\": \"https://www.kushcreates.com/about\" }, \"publisher\": { \"@type\": \"Organization\", \"name\": \"Kush Brahmbhatt\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://www.kushcreates.com/favicon.png\" } }, \"datePublished\": \"2025-11-10\", \"dateModified\": \"2025-11-10\" } { \"@context\": \"https://schema.org\", \"@type\": \"Person\", \"name\": \"Kush Creates\", \"alternateName\": \"Kush Brahmbhatt\", \"url\": \"https://www.kushcreates.com\", \"image\": \"https://www.kushcreates.com/favicon.png\", \"sameAs\": [ \"https://www.linkedin.com/in/kush-brahmbhatt-3",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub Sponsors Additional Terms - GitHub Docs",
+            "url": "https://docs.github.com/en/site-policy/github-terms/github-sponsors-additional-terms",
+            "query": "GitHub PR limit exemption sponsor",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "GitHub Sponsors Additional Terms - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar Site policy / GitHub Terms / GitHub Sponsors Additional Terms Home Site policy GitHub Terms GitHub Terms of Service GitHub Corporate Terms of Service GitHub Terms for Additional Products and Features GitHub Community Guidelines GitHub Community Code of Conduct GitHub Pre-release License Terms GitHub DPA-Covered Previews GitHub Sponsors Additional Terms GitHub Registered Developer Agreement GitHub Marketplace Terms of Service GitHub Marketplace Developer Agreement GitHub Research Program Terms GitHub Open Source Applications Terms and Conditions GitHub Event Terms GitHub Event Code of Conduct GitHub Educational Use Agreement GitHub Copilot Extension Developer Policy GitHub Secret Scanning Partner Program Agreement Acceptable Use Policies GitHub Acceptable Use Policies Active Malware or Exploits Bullying and Harassment Disrupting the Experience of Other Users Doxxing and Invasion of Privacy Hate Speech and Discrimination Impersonation Disinformation Policy Sexually Obscene Content Threats of Violence and Gratuitously Violent Content Terrorism and Violent Extremism Content CSAM Policy NCII Synthetic Media and AI Tools GitHub Appeal and Reinstatement Privacy Policies GitHub General Privacy Statement GitHub Subprocessors GitHub Cookies GitHub Global Data Privacy Notice for Candidates Other Site Policies GitHub and Trade Controls GitHub Deceased User Policy GitHub Logo Policy GitHub Government Takedown Policy GitHub Username Policy Guidelines for Legal Requests of User Data GitHub Account Recovery Policy Content Remov",
+            "fetch_error": ""
+          },
+          {
+            "title": "How Do I Sponsor a Pr · community · Discussion #152802",
+            "url": "https://github.com/orgs/community/discussions/152802",
+            "query": "GitHub PR limit exemption sponsor",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_diff_explain_conversation_in",
+            "fetch_error": ""
+          },
+          {
+            "title": "Managing your sponsorship tiers - GitHub Docs",
+            "url": "https://docs.github.com/en/sponsors/receiving-sponsorships-through-github-sponsors/managing-your-sponsorship-tiers",
+            "query": "GitHub PR limit exemption sponsor",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Managing your sponsorship tiers - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Sponsors / Receiving sponsorships / Manage payment tiers Home GitHub Sponsors Getting started About GitHub Sponsors Quickstart Navigating your Sponsors dashboard Sponsor contributors About sponsorships Sponsor through GitHub Sponsor through Patreon Managing your sponsorship Attribute sponsorships Paying by invoice Unlink Patreon Receiving sponsorships Open source contributors Set up for personal account Set up for organization Enable Patreon sponsorships Using a fiscal host Edit profile details Manage sponsor goals Manage payment tiers View sponsors & sponsorships Manage payouts Contacting your sponsors Tax information Unlink Patreon Delete Stripe account Disable your account Unpublish your profile Integrate with GitHub Sponsors Webhooks for events Sponsors GraphQL API GitHub Sponsors / Receiving sponsorships / Manage payment tiers Managing your sponsorship tiers You can add a new sponsorship tier, or edit or retire an existing tier. Copy as Markdown In this article About sponsorship tiers Adding a tier Editing or retiring a tier Adding a repository to a sponsorship tier About sponsorship tiers You can publish up to 10 one-time sponsorship tiers and 10 monthly tiers for sponsors to choose from. Each tier has its own one-time or monthly payment amount in US dollars. Publishing tiers is optional. You can customize the rewards for each tier. For example, rewards for a tier could include: Early access to new versions Logo or name in README Weekly newsletter updates Other rewards your sponsors would enjoy ✨ You",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：具体限制阈值、生效时间、豁免机制等关键细节缺失，官方公告未提供，无法验证。"
+        },
+        "core_question": "GitHub限制无写权限用户PR数量，对开源贡献者和维护者有何实际影响？",
+        "why_this_topic_matters": "GitHub作为全球最大代码托管平台，其规则变化直接影响开源贡献模式。限制PR数量可能减少低质量贡献，但也可能误伤新手和偶尔贡献者，引发关于开放性与维护成本的讨论。",
+        "fact_summary": [
+          "GitHub于2026年6月17日宣布限制无写权限用户的开放PR数量，旨在减少低质量或驱车式贡献。",
+          "官方公告未公布具体限制阈值（如PR数量上限、时间窗口）。",
+          "此前GitHub已推出禁用PR、限制PR仅协作者等仓库级设置。",
+          "社区已有关于低质量贡献的讨论，但官方限制的具体细节和社区反应尚未充分收集。"
+        ],
+        "persona_discussion_question": "作为开源维护者或贡献者，我该担心这个限制吗？它会影响我的项目或贡献习惯吗？",
+        "old_flower_stance": "平台规则变化是常态，但限制PR数量可能降低开源社区的开放性，将维护成本转嫁给贡献者。普通技术人应关注规则细节，评估对自身贡献习惯的影响。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 78,
+          "why_interested": "核心技术人关注开源贡献规则变化，入门读者担心影响学习贡献，高价值商业读者评估平台依赖风险。",
+          "reader_risk": "标题不能夸大，需明确标注待验证细节，避免引发不必要的恐慌。"
+        },
+        "mass_interest_hook": {
+          "score": 7,
+          "hook_type": "争议",
+          "why_non_technical_people_may_click": "GitHub是程序员常用平台，规则变化可能影响开源项目参与，普通人通过标题感受到“门槛提高”的冲突。",
+          "story_seed": "GitHub限制PR数量，新手贡献者可能被误伤，开源社区开放性与维护成本如何平衡？",
+          "do_not_overhype": "不能声称限制已生效或具体数字，需强调待验证。"
+        },
+        "topic_tension": {
+          "score": 9,
+          "conflict_point": "平台规则变化是否在降低开源社区的开放性和低门槛参与，将维护成本转嫁给贡献者？",
+          "debate_question": "这件事到底是合理规则/正常成本控制，还是平台把风险和成本转嫁给普通使用者？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "平台/工具厂商"
+          ],
+          "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2026-02-13: GitHub推出新仓库设置，可禁用PR或限制PR仅协作者。",
+          "2026-06-17: GitHub宣布限制无写权限用户的开放PR数量，具体阈值未公布。"
+        ],
+        "evidence_table": [
+          {
+            "source": "GitHub Changelog",
+            "url": "https://github.blog/changelog/2026-06-17-limit-open-pull-requests-for-users-without-write-access/",
+            "supports": "官方公告，确认限制功能推出，但未提供具体阈值。",
+            "reliability": "official"
+          },
+          {
+            "source": "GitHub Docs - Limiting interactions",
+            "url": "https://docs.github.com/en/communities/moderating-comments-and-conversations/limiting-interactions-in-your-repository",
+            "supports": "现有临时交互限制功能，但非PR数量限制。",
+            "reliability": "official"
+          },
+          {
+            "source": "GitHub Changelog - New repository settings",
+            "url": "https://github.blog/changelog/2026-02-13-new-repository-settings-for-configuring-pull-request-access/",
+            "supports": "此前已推出禁用PR等设置，表明GitHub持续加强PR管理。",
+            "reliability": "official"
+          },
+          {
+            "source": "InfoWorld article",
+            "url": "https://www.infoworld.com/article/4127156/github-eyes-restrictions-on-pull-requests-to-rein-in-ai-based-code-deluge-on-maintainers.html",
+            "supports": "报道GitHub考虑限制PR以应对AI生成的低质量贡献。",
+            "reliability": "media"
+          },
+          {
+            "source": "GitHub Community Discussion #185387",
+            "url": "https://github.com/orgs/community/discussions/185387",
+            "supports": "社区讨论低质量贡献问题，提及AI生成代码。",
+            "reliability": "weak"
+          }
+        ],
+        "logic_closure": "部分闭环：官方公告确认限制，但缺少阈值和社区反应，逻辑链不完整。",
+        "writeable_angles": [
+          {
+            "angle": "规则解读：GitHub限制PR数量的具体影响与应对",
+            "why": "帮助读者理解规则变化，评估对自身项目的影响。",
+            "needs": "需要具体阈值、生效时间、豁免机制。"
+          },
+          {
+            "angle": "争议分析：开源开放性与维护成本的平衡",
+            "why": "引发讨论，适合传播。",
+            "needs": "需要社区反应、反方观点。"
+          },
+          {
+            "angle": "实操指南：维护者如何配置PR限制",
+            "why": "提供实用价值，吸引维护者读者。",
+            "needs": "需要官方文档细节、配置步骤。"
+          }
+        ],
+        "missing_basics": [
+          "具体限制阈值（如PR数量上限、时间窗口）",
+          "限制是否适用于所有仓库还是仅特定仓库",
+          "是否有例外机制（如通过赞助、贡献等级豁免）",
+          "官方公告中是否提及低质量PR的定义标准",
+          "社区反馈（如Hacker News、Reddit讨论）"
+        ],
+        "missing_materials": [
+          "至少2个社区讨论帖（如HN、Reddit）",
+          "维护者或贡献者的实际案例",
+          "官方FAQ或详细文档"
+        ],
+        "not_claimable": [
+          "限制的具体数字",
+          "限制是否已生效",
+          "社区普遍反对或支持"
+        ],
+        "followup_queries": [
+          "GitHub limit open pull requests users without write access threshold",
+          "GitHub PR limit Hacker News discussion",
+          "GitHub PR limit Reddit discussion",
+          "GitHub PR limit exemption sponsor"
+        ],
+        "additional_search_queries": [
+          "GitHub limit open pull requests users without write access threshold",
+          "GitHub PR limit Hacker News",
+          "GitHub PR limit Reddit",
+          "GitHub PR limit exemption sponsor"
+        ],
+        "stop_conditions": [
+          "官方公布具体阈值和生效时间",
+          "社区出现大规模讨论或争议",
+          "出现实际案例说明影响"
+        ],
+        "confidence": 60.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI前沿",
+        "report_type": "platform-rules",
+        "quality_gate": {
+          "pass": false,
+          "score": 60,
+          "fatal_issues": [
+            "核心事实没有来源：具体限制阈值、生效时间、豁免机制等关键细节缺失，官方公告未提供，无法验证。"
+          ],
+          "warnings": [
+            "缺少社区反应和反方观点，传播张力依赖待验证细节。",
+            "信息源偏科：仅依赖GitHub官方和一篇媒体文章，缺乏社区讨论（HN、Reddit）等关键来源。"
+          ],
+          "missing_evidence": [
+            "具体限制阈值（如PR数量上限、时间窗口）",
+            "限制是否适用于所有仓库还是仅特定仓库",
+            "是否有例外机制（如通过赞助、贡献等级豁免）",
+            "官方公告中是否提及低质量PR的定义标准",
+            "社区反馈（如Hacker News、Reddit讨论）"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "GitHub限制无写权限用户PR数量，对开源贡献者和维护者有何实际影响？",
+          "persona_discussion_question": "作为开源维护者或贡献者，我该担心这个限制吗？它会影响我的项目或贡献习惯吗？",
+          "hidden_public_issue": "平台规则变化是否在降低开源社区的开放性和低门槛参与，将维护成本转嫁给贡献者？",
+          "must_verify": [
+            "具体限制阈值（如PR数量上限、时间窗口）",
+            "限制是否适用于所有仓库还是仅特定仓库",
+            "是否有例外机制（如通过赞助、贡献等级豁免）",
+            "官方公告中是否提及低质量PR的定义标准",
+            "社区反馈（如Hacker News、Reddit讨论）"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "GitHub limit open pull requests users without write access threshold",
+              "why_needed": "获取具体限制数值和规则细节"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "GitHub limit PRs without write access Hacker News",
+              "why_needed": "了解社区反应和潜在争议"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "GitHub PR limit low quality contributions reddit",
+              "why_needed": "获取用户实际体验和批评"
+            },
+            {
+              "source_type": "policy",
+              "query": "GitHub acceptable use policy pull request spam",
+              "why_needed": "确认平台对低质量贡献的现有定义"
+            },
+            {
+              "source_type": "case_study",
+              "query": "GitHub PR limit impact open source maintainers",
+              "why_needed": "寻找实际案例说明影响"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "GitHub PR limit exemption sponsor",
+              "why_needed": "检查是否有付费豁免机制"
+            }
+          ],
+          "expert_challenge_points": [
+            "限制阈值是否合理？是否误伤新手或偶尔贡献者？",
+            "平台是否有数据证明低质量PR是普遍问题？",
+            "此规则是否变相鼓励付费赞助以获得贡献特权？"
+          ],
+          "do_not_claim_yet": [
+            "限制的具体数字",
+            "限制是否已生效",
+            "社区普遍反对或支持"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确标注待验证的阈值和社区反应",
+          "downstream_materials_needed": [
+            "GitHub官方公告原文",
+            "至少2个社区讨论帖（如HN、Reddit）",
+            "维护者或贡献者的实际案例"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Limit open pull requests for users without write access - GitHub Changelog",
+            "url": "https://github.blog/changelog/2026-06-17-limit-open-pull-requests-for-users-without-write-access/",
+            "query": "GitHub limit open pull requests users without write access threshold",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Limit open pull requests for users without write access - GitHub Changelog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Limit open pull requests for users without write access\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-06-17T09:23:56-07:00\",\"abstract\":\"Maintainers of open source repositories are dealing with an ever-growing volume of pull requests, including repeated low-quality or drive-by contributions that can slow triage and overwhelm review queues. To help…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-17-limit-open-pull-requests-for-users-without-write-access\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/06\\/LimitOpenPRs_Improvements_Header.jpg?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Limit open pull requests for users without write access\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-06-17T09:23:56-07:00\",\"abstract\":\"Maintainers of open source repositories are dealing with an ever-growing volume of pull requests, including repeated low-quality or drive-by contributions that can slow triage and overwhelm review queues. To help…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-17-limit-open-pull-requests-for-users-without-write-access\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/06\\/LimitOpenPRs_Improvements_Header.jpg?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-17-limit-open-pull-requests-for-users-without-write-access\\/\",\"url\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-17-limit-open-pull-requests-for-users-without-write-access\\/\",\"name\":\"Limit open pu",
+            "fetch_error": ""
+          },
+          {
+            "title": "Limiting interactions in your repository - GitHub Docs",
+            "url": "https://docs.github.com/en/communities/moderating-comments-and-conversations/limiting-interactions-in-your-repository",
+            "query": "GitHub limit open pull requests users without write access threshold",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Limiting interactions in your repository - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar Building communities / Moderation / Limit interactions in repo Home Building communities Healthy contributions Management & moderation Community profiles Access community profiles Add a code of conduct Contributor guidelines Add a license to a repo Add support resources Community health file Encourage contributions Issue & PR templates About templates Configure Syntax for issue forms Syntax for GitHub's form schema Create a PR template Common validation errors when creating issue forms Moderation Manage comments Locking conversations Limit interactions in repo Limit interactions in account Limit interactions in org Track comment changes Manage abuse in your org Manage reported content Maintaining safety Block from your account View blocked users in account Unblock from your account Block from your org View blocked users in org Unblock from your org Reporting abuse or spam Using wikis About wikis Manage wiki pages Create footer or sidebar Editing wiki content View a history of changes Change access permissions Disabling wikis Building communities / Moderation / Limit interactions in repo Limiting interactions in your repository You can temporarily enforce a period of limited activity for certain users on a public repository. Who can use this feature? People with admin permissions to a repository, and organization moderators, can temporarily limit interactions in that repository. Copy as Markdown In this article About temporary interaction limits Limiting interactions in your repository Limiting concurrent",
+            "fetch_error": ""
+          },
+          {
+            "title": "New repository settings for configuring pull request access - GitHub Changelog",
+            "url": "https://github.blog/changelog/2026-02-13-new-repository-settings-for-configuring-pull-request-access/",
+            "query": "GitHub limit open pull requests users without write access threshold",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "New repository settings for configuring pull request access - GitHub Changelog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"New repository settings for configuring pull request access\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-02-13T10:12:55-08:00\",\"abstract\":\"Maintainers now have more control over how repositories accept contributions. Two new settings let you manage pull requests to better match your project’s needs. Disable pull requests entirely You can…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-02-13-new-repository-settings-for-configuring-pull-request-access\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/02\\/548540508-dbda1af0-bca5-4c0b-8d08-be0f18199c59.jpg?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"New repository settings for configuring pull request access\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-02-13T10:12:55-08:00\",\"abstract\":\"Maintainers now have more control over how repositories accept contributions. Two new settings let you manage pull requests to better match your project’s needs. Disable pull requests entirely You can…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-02-13-new-repository-settings-for-configuring-pull-request-access\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2026\\/02\\/548540508-dbda1af0-bca5-4c0b-8d08-be0f18199c59.jpg?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-02-13-new-repository-settings-for-configuring-pull-request-access\\/\",\"url\":\"https:\\/\\/github.blog\\/changelog\\/2026-02-13-new-repository-settings-for-configuring-pull-request",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub discusses giving maintainers control to disable PRs | Hacker News",
+            "url": "https://news.ycombinator.com/item?id=46864517",
+            "query": "GitHub limit PRs without write access Hacker News",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 429: Too Many Requests"
+          },
+          {
+            "title": "How to restrict pull request approval · community · Discussion #22819",
+            "url": "https://github.com/orgs/community/discussions/22819",
+            "query": "GitHub limit PRs without write access Hacker News",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_diff_explain_conversation_in",
+            "fetch_error": ""
+          },
+          {
+            "title": "Exploring Solutions to Tackle Low-Quality Contributions on GitHub · community · Discussion #185387",
+            "url": "https://github.com/orgs/community/discussions/185387",
+            "query": "GitHub PR limit low quality contributions reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_diff_explain_conversation_in",
+            "fetch_error": ""
+          },
+          {
+            "title": "Exploring Solutions to Tackle Low-Quality Contributions on GitHub · community · Discussion #185387 | daily.dev",
+            "url": "https://app.daily.dev/posts/exploring-solutions-to-tackle-low-quality-contributions-on-github-community-discussion-185387-jwftmmkjs",
+            "query": "GitHub PR limit low quality contributions reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://daily.dev/#organization\",\"name\":\"daily.dev\",\"url\":\"https://daily.dev\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://daily.dev/apple-touch-icon.png\",\"width\":180,\"height\":180},\"sameAs\":[\"https://twitter.com/dailydotdev\",\"https://github.com/dailydotdev\",\"https://www.linkedin.com/company/daily-dev-ltd\"]},{\"@type\":\"WebSite\",\"@id\":\"https:///#website\",\"url\":\"https://\",\"name\":\"daily.dev\",\"publisher\":{\"@id\":\"https://daily.dev/#organization\"},\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":{\"@type\":\"EntryPoint\",\"urlTemplate\":\"https:///search?q={search_term_string}\"},\"query-input\":\"required name=search_term_string\"}}]} window.addEventListener('load', () => { window.windowLoaded = true; }, { once: true, }); Exploring Solutions to Tackle Low-Quality Contributions... {\"props\":{\"pageProps\":{\"id\":\"jwftmMKjS\",\"initialData\":{\"post\":{\"id\":\"jwftmMKjS\",\"title\":\"Exploring Solutions to Tackle Low-Quality Contributions on GitHub · community · Discussion #185387\",\"titleHtml\":null,\"image\":\"https://media.daily.dev/image/upload/f_auto,q_auto/v1/posts/8dba1cc00251610138492b1073838b00?_a=AQAEulh\",\"readTime\":10,\"permalink\":\"https://api.daily.dev/r/jwftmMKjS\",\"commentsPermalink\":\"https://app.daily.dev/posts/exploring-solutions-to-tackle-low-quality-contributions-on-github-community-discussion-185387-jwftmmkjs\",\"summary\":\"GitHub is addressing the growing problem of low-quality pull requests overwhelming open source maintainers. Short-term solutions include repository-level controls to disable PRs entirely, restrict PRs to collaborators only, and delete spam PRs from the UI. Long-term plans involve enhanced permission models, AI-powered triage tools to evaluate contributions against project guidelines, and improved trans",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/github on Reddit: How annoying is the GitHub API rate limit ?",
+            "url": "https://www.reddit.com/r/github/comments/186vej4/how_annoying_is_the_github_api_rate_limit/",
+            "query": "GitHub PR limit low quality contributions reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "GitHub Acceptable Use Policies - GitHub Docs",
+            "url": "https://docs.github.com/en/site-policy/acceptable-use-policies/github-acceptable-use-policies",
+            "query": "GitHub acceptable use policy pull request spam",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "GitHub Acceptable Use Policies - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar Site policy / Acceptable Use Policies / GitHub Acceptable Use Policies Home Site policy GitHub Terms GitHub Terms of Service GitHub Corporate Terms of Service GitHub Terms for Additional Products and Features GitHub Community Guidelines GitHub Community Code of Conduct GitHub Pre-release License Terms GitHub DPA-Covered Previews GitHub Sponsors Additional Terms GitHub Registered Developer Agreement GitHub Marketplace Terms of Service GitHub Marketplace Developer Agreement GitHub Research Program Terms GitHub Open Source Applications Terms and Conditions GitHub Event Terms GitHub Event Code of Conduct GitHub Educational Use Agreement GitHub Copilot Extension Developer Policy GitHub Secret Scanning Partner Program Agreement Acceptable Use Policies GitHub Acceptable Use Policies Active Malware or Exploits Bullying and Harassment Disrupting the Experience of Other Users Doxxing and Invasion of Privacy Hate Speech and Discrimination Impersonation Disinformation Policy Sexually Obscene Content Threats of Violence and Gratuitously Violent Content Terrorism and Violent Extremism Content CSAM Policy NCII Synthetic Media and AI Tools GitHub Appeal and Reinstatement Privacy Policies GitHub General Privacy Statement GitHub Subprocessors GitHub Cookies GitHub Global Data Privacy Notice for Candidates Other Site Policies GitHub and Trade Controls GitHub Deceased User Policy GitHub Logo Policy GitHub Government Takedown Policy GitHub Username Policy Guidelines for Legal Requests of User Data GitHub Account Recovery Policy Conten",
+            "fetch_error": ""
+          },
+          {
+            "title": "Acceptable Use Policies - GitHub Docs",
+            "url": "https://docs.github.com/en/site-policy/acceptable-use-policies",
+            "query": "GitHub acceptable use policy pull request spam",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Acceptable Use Policies - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar Site policy / Acceptable Use Policies Home Site policy GitHub Terms GitHub Terms of Service GitHub Corporate Terms of Service GitHub Terms for Additional Products and Features GitHub Community Guidelines GitHub Community Code of Conduct GitHub Pre-release License Terms GitHub DPA-Covered Previews GitHub Sponsors Additional Terms GitHub Registered Developer Agreement GitHub Marketplace Terms of Service GitHub Marketplace Developer Agreement GitHub Research Program Terms GitHub Open Source Applications Terms and Conditions GitHub Event Terms GitHub Event Code of Conduct GitHub Educational Use Agreement GitHub Copilot Extension Developer Policy GitHub Secret Scanning Partner Program Agreement Acceptable Use Policies GitHub Acceptable Use Policies Active Malware or Exploits Bullying and Harassment Disrupting the Experience of Other Users Doxxing and Invasion of Privacy Hate Speech and Discrimination Impersonation Disinformation Policy Sexually Obscene Content Threats of Violence and Gratuitously Violent Content Terrorism and Violent Extremism Content CSAM Policy NCII Synthetic Media and AI Tools GitHub Appeal and Reinstatement Privacy Policies GitHub General Privacy Statement GitHub Subprocessors GitHub Cookies GitHub Global Data Privacy Notice for Candidates Other Site Policies GitHub and Trade Controls GitHub Deceased User Policy GitHub Logo Policy GitHub Government Takedown Policy GitHub Username Policy Guidelines for Legal Requests of User Data GitHub Account Recovery Policy Content Removal Policies Submitting content re",
+            "fetch_error": ""
+          },
+          {
+            "title": "Free Acceptable Use Policies Github Disrupting The Experience Of Other Users Template (US) | GitLaw",
+            "url": "https://git.law/templates/doc/acceptable-use-policies-github-disrupting-the-experience-of-other-users-github--2tH69K",
+            "query": "GitHub acceptable use policy pull request spam",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Free Acceptable Use Policies Github Disrupting The Experience Of Other Users Template (US) | GitLaw (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"\\n(function() {\\n window.addEventListener('popstate', function (event) {\\n if (window.__gitlawEarlyPopState) {\\n return window.__gitlawEarlyPopState(event);\\n }\\n });\\n})()\\n\",\"id\":\"early-pop-state\"}]) @keyframes router-loader { 0% { width: 30%; left: -30%; } 50% { width: 50%; } 100% { width: 30%; left: 100%; } } (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"\\nwindow.dataLayer = window.dataLayer || [];\\nfunction gtag(){dataLayer.push(arguments);}\\ngtag('consent', 'default', {\\n ad_storage: 'denied',\\n analytics_storage: 'denied',\\n functionality_storage: 'denied',\\n security_storage: 'granted', // can be left as granted (not marketing cookies)\\n ad_user_data: 'denied',\\n ad_personalization: 'denied'\\n});\\n\",\"id\":\"gtmConsentInit\"}]) {\"@context\":\"https://schema.org\",\"@type\":\"CreativeWork\",\"name\":\"Acceptable Use Policies Github Disrupting The Experience Of Other Users\",\"description\":\"The GitHub Disrupting the Experience of Other Users Policy prohibits behaviour that significantly or repeatedly interferes with other users’ ability to ...\",\"url\":\"https://git.law/templates/doc/acceptable-use-policies-github-disrupting-the-experience-of-other-users-github--2tH69K\",\"dateCreated\":\"2025-10-06T13:28:22.000Z\",\"dateModified\":\"2025-10-24T18:00:45.000Z\",\"inLanguage\":\"en\",\"isAccessibleForFree\":true,\"genre\":\"Legal document template\",\"author\":{\"@type\":\"Organization\",\"name\":\"oll\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"GitLaw\",\"url\":\"https://git.law\"}} Home Features Pricing Templates Knowledge base News Sign in Sign up Home Features Pricing Templates Knowledge base News Sign in Sign up Come to agreements faster Write, revi",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub keeps getting better for open source maintainers - The GitHub Blog",
+            "url": "https://github.blog/open-source/maintainers/github-keeps-getting-better-for-open-source-maintainers/",
+            "query": "GitHub PR limit impact open source maintainers",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "GitHub keeps getting better for open source maintainers - The GitHub Blog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"GitHub keeps getting better for open source maintainers\",\"author\":{\"@type\":\"Person\",\"name\":\"Nick Holden\"},\"datePublished\":\"2021-11-01T09:00:25-07:00\",\"abstract\":\"Maintainers can now limit who can approve and request changes on pull requests. You can also close issues and block users via your phone.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/open-source\\/maintainers\\/github-keeps-getting-better-for-open-source-maintainers\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2019\\/03\\/product-social.png?resize=150%2C150\",\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"GitHub keeps getting better for open source maintainers\",\"author\":{\"@type\":\"Person\",\"name\":\"Nick Holden\"},\"datePublished\":\"2021-11-01T09:00:25-07:00\",\"abstract\":\"Maintainers can now limit who can approve and request changes on pull requests. You can also close issues and block users via your phone.\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/open-source\\/maintainers\\/github-keeps-getting-better-for-open-source-maintainers\\/\"},\"image\":\"https:\\/\\/github.blog\\/wp-content\\/uploads\\/2019\\/03\\/product-social.png?resize=150%2C150\",\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/github.blog\\/open-source\\/maintainers\\/github-keeps-getting-better-for-open-source-maintainers\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/github.blog\\/open-source\\/maintainers\\/github-keeps-getting-better-for-open-source-maintainers\\/\"},\"author\":[{\"@id\":\"https:\\/\\/github.blog\\/#\\/schema\\/person\\/4b851a6dfdb479a48812ceba00d6e4d4\"}],\"headline\":\"GitHub keeps getting better for open source maintaine",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub eyes restrictions on pull requests to rein in AI-based code deluge on maintainers | InfoWorld",
+            "url": "https://www.infoworld.com/article/4127156/github-eyes-restrictions-on-pull-requests-to-rein-in-ai-based-code-deluge-on-maintainers.html",
+            "query": "GitHub PR limit impact open source maintainers",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root { --advertisement-label-text: \"Advertisement\"; } window.isBrandPostSeriesLanding = \"false\"; img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } window._sp_analytics = { config: { accountId: 146, events: { onDetectionComplete: function() { console.log('onMessageReady'); } }, } }; GitHub eyes restrictions on pull requests to rein in AI-based code deluge on maintainers | InfoWorld //CMP Stub \"use strict\";function _typeof(t){return(_typeof=\"function\"==typeof Symbol&&\"symbol\"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&\"function\"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?\"symbol\":typeof t})(t)}!function(){var t=function(){for(var t,e,o=[],n=window,r=n;r;){try{if(r.frames.__tcfapiLocator){t=r;break}}catch(a){}if(r===n.top)break;r=r.parent}t||(!function t(){var e=n.document,o=!!n.frames.__tcfapiLocator;if(!o){if(e.body){var r=e.createElement(\"iframe\");r.style.cssText=\"display:none\",r.name=\"__tcfapiLocator\",e.body.appendChild(r)}else setTimeout(t,5)}return!o}(),n.__tcfapi=function(){for(var t=arguments.length,n=Array(t),r=0;r 3&&2===parseInt(n[1],10)&&\"boolean\"==typeof n[3]&&(e=n[3],\"function\"==typeof n[2]&&n[2](\"set\",!0)):\"ping\"===n[0]?\"function\"==typeof n[2]&&n[2]({gdprApplies:e,cmpLoaded:!1,cmpStatus:\"stub\"}):o.push(n)},n.addEventListener(\"message\",function(t){var e=\"string\"==typeof t.data,o={};if(e)try{o=JSON.parse(t.data)}catch(n){}else o=t.data;var r=\"object\"===_typeof(o)&&null!==o?o.__tcfapiCall:null;r&&window.__tcfapi(r.command,r.version,function(o,n){var a={__tcfapiReturn:{returnValue:o,success:n,callId:r.callId}};t&&t.source&&t.source.postMessage&&t.source.postMessage(e?JSON.stringify(a):a,\"*\")},r.parameter)},!1))};\"undefined\"!=typeof module?module.exports=t:t()}(); window.__gpp",
+            "fetch_error": ""
+          },
+          {
+            "title": "Inside The Open Source Softwares (OSS) PRs Massacre of GitHub | Kush Creates Blogs",
+            "url": "https://www.kushcreates.com/blogs/inside-the-open-source-prs-massacre-of-github",
+            "query": "GitHub PR limit impact open source maintainers",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Inside The Open Source Softwares (OSS) PRs Massacre of GitHub | Kush Creates Blogs { \"@context\": \"https://schema.org\", \"@type\": \"BreadcrumbList\", \"itemListElement\": [ { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.kushcreates.com/\" }, { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Blogs\", \"item\": \"https://www.kushcreates.com/blogs/\" }, { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Inside The Open Source Softwares (OSS) PRs Massacre of GitHub\", \"item\": \"https://www.kushcreates.com/blogs/inside-the-open-source-prs-massacre-of-github\" } ] } { \"@context\": \"https://schema.org\", \"@type\": \"BlogPosting\", \"mainEntityOfPage\": { \"@type\": \"WebPage\", \"@id\": \"https://www.kushcreates.com/blogs/inside-the-open-source-prs-massacre-of-github\" }, \"headline\": \"Inside The Open Source Softwares (OSS) PRs Massacre of GitHub\", \"description\": \"How a viral Git and GitHub tutorial created years of GitHub spam, damaged reputations, and why Apna College's response missed the point entirely. The full story of Open Source Softwares' (OSS) PR crisis. An Article by Kush Creates aka Kush Brahmbhatt\", \"image\": \"https://www.kushcreates.com/images/blogs/inside-the-open-source-prs-massacre-of-github.png\", \"author\": { \"@type\": \"Person\", \"name\": \"Kush Brahmbhatt\", \"url\": \"https://www.kushcreates.com/about\" }, \"publisher\": { \"@type\": \"Organization\", \"name\": \"Kush Brahmbhatt\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://www.kushcreates.com/favicon.png\" } }, \"datePublished\": \"2025-11-10\", \"dateModified\": \"2025-11-10\" } { \"@context\": \"https://schema.org\", \"@type\": \"Person\", \"name\": \"Kush Creates\", \"alternateName\": \"Kush Brahmbhatt\", \"url\": \"https://www.kushcreates.com\", \"image\": \"https://www.kushcreates.com/favicon.png\", \"sameAs\": [ \"https://www.linkedin.com/in/kush-brahmbhatt-3",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub Sponsors Additional Terms - GitHub Docs",
+            "url": "https://docs.github.com/en/site-policy/github-terms/github-sponsors-additional-terms",
+            "query": "GitHub PR limit exemption sponsor",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "GitHub Sponsors Additional Terms - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar Site policy / GitHub Terms / GitHub Sponsors Additional Terms Home Site policy GitHub Terms GitHub Terms of Service GitHub Corporate Terms of Service GitHub Terms for Additional Products and Features GitHub Community Guidelines GitHub Community Code of Conduct GitHub Pre-release License Terms GitHub DPA-Covered Previews GitHub Sponsors Additional Terms GitHub Registered Developer Agreement GitHub Marketplace Terms of Service GitHub Marketplace Developer Agreement GitHub Research Program Terms GitHub Open Source Applications Terms and Conditions GitHub Event Terms GitHub Event Code of Conduct GitHub Educational Use Agreement GitHub Copilot Extension Developer Policy GitHub Secret Scanning Partner Program Agreement Acceptable Use Policies GitHub Acceptable Use Policies Active Malware or Exploits Bullying and Harassment Disrupting the Experience of Other Users Doxxing and Invasion of Privacy Hate Speech and Discrimination Impersonation Disinformation Policy Sexually Obscene Content Threats of Violence and Gratuitously Violent Content Terrorism and Violent Extremism Content CSAM Policy NCII Synthetic Media and AI Tools GitHub Appeal and Reinstatement Privacy Policies GitHub General Privacy Statement GitHub Subprocessors GitHub Cookies GitHub Global Data Privacy Notice for Candidates Other Site Policies GitHub and Trade Controls GitHub Deceased User Policy GitHub Logo Policy GitHub Government Takedown Policy GitHub Username Policy Guidelines for Legal Requests of User Data GitHub Account Recovery Policy Content Remov",
+            "fetch_error": ""
+          },
+          {
+            "title": "How Do I Sponsor a Pr · community · Discussion #152802",
+            "url": "https://github.com/orgs/community/discussions/152802",
+            "query": "GitHub PR limit exemption sponsor",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copilot_custom_copilots_feature_preview\",\"copilot_diff_explain_conversation_in",
+            "fetch_error": ""
+          },
+          {
+            "title": "Managing your sponsorship tiers - GitHub Docs",
+            "url": "https://docs.github.com/en/sponsors/receiving-sponsorships-through-github-sponsors/managing-your-sponsorship-tiers",
+            "query": "GitHub PR limit exemption sponsor",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Managing your sponsorship tiers - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Sponsors / Receiving sponsorships / Manage payment tiers Home GitHub Sponsors Getting started About GitHub Sponsors Quickstart Navigating your Sponsors dashboard Sponsor contributors About sponsorships Sponsor through GitHub Sponsor through Patreon Managing your sponsorship Attribute sponsorships Paying by invoice Unlink Patreon Receiving sponsorships Open source contributors Set up for personal account Set up for organization Enable Patreon sponsorships Using a fiscal host Edit profile details Manage sponsor goals Manage payment tiers View sponsors & sponsorships Manage payouts Contacting your sponsors Tax information Unlink Patreon Delete Stripe account Disable your account Unpublish your profile Integrate with GitHub Sponsors Webhooks for events Sponsors GraphQL API GitHub Sponsors / Receiving sponsorships / Manage payment tiers Managing your sponsorship tiers You can add a new sponsorship tier, or edit or retire an existing tier. Copy as Markdown In this article About sponsorship tiers Adding a tier Editing or retiring a tier Adding a repository to a sponsorship tier About sponsorship tiers You can publish up to 10 one-time sponsorship tiers and 10 monthly tiers for sponsors to choose from. Each tier has its own one-time or monthly payment amount in US dollars. Publishing tiers is optional. You can customize the rewards for each tier. For example, rewards for a tier could include: Early access to new versions Logo or name in README Weekly newsletter updates Other rewards your sponsors would enjoy ✨ You",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "规则变动影响谁",
+        "普通技术人的合规边界",
+        "平台红利和封号风险"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "GitHub限制无写权限用户PR数量，打击低质量贡献 官方政策 规则 原文",
+        "GitHub限制无写权限用户PR数量，打击低质量贡献 开发者公告 影响范围",
+        "GitHub限制无写权限用户PR数量，打击低质量贡献 合规 风险 受影响用户"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
