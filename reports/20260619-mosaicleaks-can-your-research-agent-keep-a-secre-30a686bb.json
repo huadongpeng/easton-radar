@@ -1,0 +1,1859 @@
+{
+  "id": "20260619-mosaicleaks-can-your-research-agent-keep-a-secre-30a686bb",
+  "batch_id": "2026-06-19-morning",
+  "title": "研究型AI Agent存在数据泄露风险：MosaicLeaks实验揭示提示注入攻击",
+  "original_title": "MosaicLeaks: Can your research agent keep a secret?",
+  "url": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
+  "summary": "",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "ai-frontier",
+  "topic_direction_title": "AI前沿",
+  "topic_direction_short_title": "AI前沿",
+  "topic_direction_description": "AI 模型、Agent、OpenAI、Claude、Gemini、底层能力和关键产品变化。重点用一句话记录发生了什么、来自哪里、是否需要后续查证。",
+  "source_name": "Hugging Face Blog",
+  "original_source_name": "Hugging Face - Blog",
+  "source_type": "rss",
+  "feed_url": "https://huggingface.co/blog/feed.xml",
+  "published_at": "2026-06-18T18:13:13+00:00",
+  "fetched_at": "2026-06-18T22:24:46.034828+00:00",
+  "decision": "deep_dive",
+  "report_type": "risk-warning",
+  "report_type_title": "风险避坑",
+  "score": 82,
+  "reader_hook": "AI Agent安全风险，普通技术人使用研究助手时可能无意泄露敏感信息",
+  "topic_tension": {
+    "score": 6,
+    "conflict_point": "看起来有机会的路径和实际风险、合规边界之间的冲突。",
+    "debate_question": "这是值得试的小机会，还是又一个容易被包装的话术？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "",
+    "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+  },
+  "persona_discussion_question": "这是真机会，还是又一个普通技术人容易被包装话术带偏的坑？",
+  "why_now": "Hugging Face博客发布MosaicLeaks实验，展示研究Agent如何被提示注入窃取秘密",
+  "evidence_level": "near_source",
+  "source_priority": "P2 可参考源",
+  "reason": "ServiceNow在Hugging Face发布MosaicLeaks实验，展示研究型AI Agent在提示注入攻击下可能泄露机密数据，提醒开发者注意Agen",
+  "collection_fit": "ai-frontier",
+  "investigation_direction": "调查主流AI Agent框架（如LangChain、AutoGPT）的提示注入防护现状，整理常见攻击模式和防御措施",
+  "uncertainty_flags": [
+    "实验环境可能简化了攻击条件",
+    "实际生产环境中的攻击成功率未知"
+  ],
+  "facts": [
+    {
+      "claim": "Hugging Face Blog 发布/收录了这条原始线索：MosaicLeaks: Can your research agent keep a secret?",
+      "type": "confirmed_fact",
+      "source_url": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Hugging Face Blog",
+      "url": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
+      "source_type": "near_source",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "agent"
+      ]
+    },
+    "source_host": "huggingface.co",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 6,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "AI Agent安全风险，普通技术人使用研究助手时可能无意泄露敏感信息",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://huggingface.co/blog/feed.xml",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "实验环境可能简化了攻击条件",
+      "实际生产环境中的攻击成功率未知"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：MosaicLeaks实验原文未获取，摘要内容无法验证。"
+    },
+    "core_question": "研究型AI Agent在真实生产环境中面临多大的提示注入数据泄露风险？",
+    "why_this_topic_matters": "ServiceNow在Hugging Face发布MosaicLeaks实验，展示研究Agent如何被提示注入窃取秘密。随着Agent部署增多，提示注入风险被低估，开发者可能在不了解安全边界的情况下部署Agent，导致企业机密或用户数据泄露。",
+    "fact_summary": [
+      "ServiceNow在Hugging Face博客发布MosaicLeaks实验，展示研究型AI Agent在提示注入攻击下可能泄露机密数据。",
+      "实验涉及Agent-to-Agent发现过程中的提示注入。",
+      "已有真实案例：Meta AI Agent因指令配置错误导致敏感数据泄露给内部员工。",
+      "LangChain Core存在已知提示注入漏洞（CVE-2025-12420等）。",
+      "OWASP将提示注入列为LLM应用首要安全风险（LLM01）。",
+      "有学术基准（arXiv 2511.15759）显示组合防御框架可将攻击成功率从85%降至12%。"
+    ],
+    "persona_discussion_question": "我该不该信任研究Agent来处理内部文档？如果用它查竞品，会不会反被窃取我的查询意图？",
+    "old_flower_stance": "提示注入不是新问题，但Agent化让攻击面从单次对话扩展到多步工具调用链。普通技术人部署Agent时，安全边界往往被忽略。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 75,
+      "why_interested": "核心技术人关注Agent安全实践和防御方案；入门读者了解提示注入风险；商业读者评估Agent部署的合规成本。",
+      "reader_risk": "可能被误解为‘Agent都不安全’，需强调风险可控且有防御方案。"
+    },
+    "mass_interest_hook": {
+      "score": 60,
+      "hook_type": "故事",
+      "why_non_technical_people_may_click": "AI Agent泄露机密数据的故事（如Meta案例）具有新闻性，普通人担心自己使用的AI工具是否安全。",
+      "story_seed": "Meta AI Agent因一条指令泄露大量敏感数据给内部员工，类似事件可能发生在任何公司。",
+      "do_not_overhype": "不要声称Agent普遍存在严重泄露风险，需强调实验条件和防御方案。"
+    },
+    "topic_tension": {
+      "score": 6,
+      "conflict_point": "Agent效率提升 vs 安全风险增加",
+      "debate_question": "Agent的便利性是否值得承担提示注入风险？",
+      "stakeholders": [
+        "AI Agent开发者",
+        "企业安全团队",
+        "普通技术用户",
+        "AI平台厂商"
+      ],
+      "why_people_would_comment": "开发者争论防御方案有效性，安全团队关注合规，用户担心隐私。",
+      "traffic_risk": "传播张力不足，容易写成专业安全科普；需补真实冲突或反方材料。"
+    },
+    "timeline": [
+      "2025-12-27: LangChain Core提示注入漏洞披露",
+      "2026-01-13: ServiceNow修复AI平台关键漏洞CVE-2025-12420",
+      "2026-03-20: Meta AI Agent数据泄露事件",
+      "2026-05-15: Vectra AI发布提示注入分析",
+      "2026-06-18: ServiceNow发布MosaicLeaks实验"
+    ],
+    "evidence_table": [
+      {
+        "source": "Hugging Face Blog - MosaicLeaks",
+        "url": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
+        "supports": "实验展示研究Agent提示注入风险",
+        "reliability": "official"
+      },
+      {
+        "source": "The Hacker News - ServiceNow AI Agents",
+        "url": "https://thehackernews.com/2025/11/servicenow-ai-agents-can-be-tricked.html",
+        "supports": "Agent-to-Agent提示注入攻击",
+        "reliability": "media"
+      },
+      {
+        "source": "CyberScoop - ServiceNow patches critical AI flaw",
+        "url": "https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/",
+        "supports": "ServiceNow AI平台漏洞修复",
+        "reliability": "media"
+      },
+      {
+        "source": "Security Affairs - LangChain vulnerability",
+        "url": "https://securityaffairs.com/186185/hacking/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html",
+        "supports": "LangChain Core提示注入漏洞",
+        "reliability": "media"
+      },
+      {
+        "source": "The Guardian - Meta AI agent data leak",
+        "url": "https://www.theguardian.com/technology/2026/mar/20/meta-ai-agents-instruction-causes-large-sensitive-data-leak-to-employees",
+        "supports": "真实Agent数据泄露案例",
+        "reliability": "media"
+      },
+      {
+        "source": "OWASP - Prompt Injection",
+        "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+        "supports": "提示注入为LLM首要风险",
+        "reliability": "official"
+      },
+      {
+        "source": "arXiv - Benchmark and Defense Framework",
+        "url": "https://arxiv.org/html/2511.15759v1",
+        "supports": "防御框架可将攻击成功率从85%降至12%",
+        "reliability": "near_source"
+      }
+    ],
+    "logic_closure": "部分闭环：提示注入风险真实存在，有实验和案例支持，但MosaicLeaks具体攻击场景和成功率未知，防御方案有效性需验证。",
+    "writeable_angles": [
+      {
+        "angle": "Agent提示注入风险科普+防御实践",
+        "why": "满足核心技术人安全需求，提供可操作建议",
+        "needs": "MosaicLeaks实验细节、主流框架漏洞对比、防御方案代码示例"
+      },
+      {
+        "angle": "Meta案例复盘：Agent配置错误如何导致数据泄露",
+        "why": "故事性强，吸引泛兴趣读者",
+        "needs": "Meta事件详细技术分析、责任归属"
+      },
+      {
+        "angle": "Agent安全：成本账与迁移账",
+        "why": "服务高价值商业读者，评估风险与投入",
+        "needs": "防御方案成本、合规要求、保险数据"
+      }
+    ],
+    "missing_basics": [
+      "提示注入攻击的具体分类（直接、间接、二阶）",
+      "Agent架构中提示注入的攻击面（系统提示、工具调用、记忆）",
+      "主流防御方案（输入过滤、权限隔离、输出验证）"
+    ],
+    "missing_materials": [
+      "MosaicLeaks实验原文及代码",
+      "主流Agent框架（LangChain、AutoGPT、CrewAI）漏洞列表",
+      "真实Agent数据泄露案例详细报告",
+      "防御方案有效性基准数据",
+      "ServiceNow官方缓解建议"
+    ],
+    "not_claimable": [
+      "Agent存在普遍且严重的数据泄露风险",
+      "所有研究Agent都不安全",
+      "提示注入无法防御"
+    ],
+    "followup_queries": [
+      "MosaicLeaks实验的具体攻击场景和成功率",
+      "ServiceNow是否提供了缓解方案或工具",
+      "LangChain、AutoGPT等框架的已知提示注入漏洞",
+      "Meta AI Agent数据泄露事件的技术细节",
+      "OWASP LLM安全最佳实践"
+    ],
+    "additional_search_queries": [
+      "MosaicLeaks ServiceNow prompt injection research agent",
+      "MosaicLeaks ServiceNow GitHub",
+      "LangChain prompt injection vulnerability CVE",
+      "AutoGPT prompt injection vulnerability",
+      "Meta AI agent data leak technical analysis",
+      "OWASP LLM prompt injection prevention cheat sheet",
+      "prompt injection attack success rate benchmark 2025"
+    ],
+    "stop_conditions": [
+      "MosaicLeaks实验原文无法获取或内容与摘要不符",
+      "主流Agent框架无已知提示注入漏洞",
+      "无真实Agent数据泄露案例",
+      "防御方案被证明无效或不可部署"
+    ],
+    "confidence": 65.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI前沿",
+    "report_type": "risk-warning",
+    "quality_gate": {
+      "pass": false,
+      "score": 65,
+      "fatal_issues": [
+        "核心事实没有来源：MosaicLeaks实验原文未获取，摘要内容无法验证。"
+      ],
+      "warnings": [
+        "传播张力不足：冲突点和讨论点不够尖锐，容易写成专业安全科普。",
+        "信息源偏科：证据主要来自安全媒体和博客，缺少官方技术报告和代码。"
+      ],
+      "missing_evidence": [
+        "MosaicLeaks实验原文及代码",
+        "主流Agent框架（LangChain、AutoGPT、CrewAI）漏洞列表",
+        "真实Agent数据泄露案例详细报告",
+        "防御方案有效性基准数据",
+        "ServiceNow官方缓解建议"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "研究型AI Agent在真实生产环境中面临多大的提示注入数据泄露风险？",
+      "persona_discussion_question": "我该不该信任研究Agent来处理内部文档？如果用它查竞品，会不会反被窃取我的查询意图？",
+      "hidden_public_issue": "AI Agent的提示注入风险被低估，开发者可能在不了解安全边界的情况下部署Agent，导致企业机密或用户数据泄露，而责任往往由用户承担。",
+      "must_verify": [
+        "MosaicLeaks实验的具体攻击场景和成功率",
+        "ServiceNow是否提供了缓解方案或工具",
+        "主流Agent框架（如LangChain、AutoGPT）是否有已知的提示注入漏洞",
+        "是否有真实案例报告Agent导致数据泄露"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "MosaicLeaks ServiceNow prompt injection research agent",
+          "why_needed": "获取实验原文、攻击方法、缓解建议"
+        },
+        {
+          "source_type": "github_repo",
+          "query": "MosaicLeaks ServiceNow GitHub",
+          "why_needed": "查看实验代码、复现步骤、社区讨论"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "LangChain prompt injection vulnerability",
+          "why_needed": "了解主流框架的安全状态和已知漏洞"
+        },
+        {
+          "source_type": "case_study",
+          "query": "AI agent data leak real incident",
+          "why_needed": "寻找真实泄露案例，验证风险严重性"
+        },
+        {
+          "source_type": "policy",
+          "query": "OWASP LLM prompt injection",
+          "why_needed": "获取行业安全标准和最佳实践"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "prompt injection attack success rate benchmark",
+          "why_needed": "评估攻击成功率，判断风险等级"
+        }
+      ],
+      "expert_challenge_points": [
+        "实验环境是否过度简化？真实场景中攻击者能否轻易注入恶意提示？",
+        "Agent的权限隔离（如沙箱、最小权限）能否有效缓解？",
+        "提示注入是否属于已知漏洞，是否有成熟防御方案？"
+      ],
+      "do_not_claim_yet": [
+        "Agent存在普遍且严重的数据泄露风险",
+        "所有研究Agent都不安全",
+        "提示注入无法防御"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需补充真实案例和防御方案，否则容易写成小圈子安全科普。",
+      "downstream_materials_needed": [
+        "MosaicLeaks实验原文及代码",
+        "主流Agent框架安全文档",
+        "真实数据泄露案例报告",
+        "OWASP LLM安全指南"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "When AI Turns on Its Team: Exploiting Agent-to-Agent Discovery via Prompt Injection",
+        "url": "https://appomni.com/ao-labs/ai-agent-to-agent-discovery-prompt-injection/",
+        "query": "MosaicLeaks ServiceNow prompt injection research agent",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(window.NREUM||(NREUM={})).init={ajax:{deny_list:[\"bam.nr-data.net\"]},feature_flags:[\"soft_nav\"]};(window.NREUM||(NREUM={})).loader_config={licenseKey:\"NRJS-7f1bcd80faf16b99b32\",applicationID:\"681787618\",browserID:\"718418871\"};;/*! For license information please see nr-loader-rum-1.316.0.min.js.LICENSE.txt */ (()=>{var e,t,r={122:(e,t,r)=>{\"use strict\";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||\"object\"!=typeof e)return(0,n.R)(3);if(!t||\"object\"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),s=0===Object.keys(r).length?e:r;for(let o in s)if(void 0!==e[o])try{if(null===e[o]){r[o]=null;continue}Array.isArray(e[o])&&Array.isArray(t[o])?r[o]=Array.from(new Set([...e[o],...t[o]])):e[o]instanceof Map||e[o]instanceof Set||e[o]instanceof Date||e[o]instanceof RegExp?r[o]=e[o]:\"object\"==typeof e[o]&&\"object\"==typeof t[o]?r[o]=i(e[o],t[o]):r[o]=e[o]}catch(e){r[o]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},154:(e,t,r)=>{\"use strict\";r.d(t,{OF:()=>u,RI:()=>i,WN:()=>l,bv:()=>s,gm:()=>o,m:()=>c,mw:()=>a,sb:()=>d,zk:()=>f});var n=r(863);const i=\"undefined\"!=typeof window&&!!window.document,s=\"undefined\"!=typeof WorkerGlobalScope&&(\"undefined\"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||\"undefined\"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),o=i?window:\"undefined\"!=typeof WorkerGlobalScope&&(\"undefined\"!=typeof self&&self instanceof WorkerGlobalScope&&self||\"undefined\"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),a=Boolean(\"hidden\"===o?.document?.visibilityState),c=\"\"+o?.location,u=/iPad|iPhone|iPod/.test(o.navigator?.userAgent),d=u&&\"undefined\"==typeof SharedWorker",
+        "fetch_error": ""
+      },
+      {
+        "title": "ServiceNow AI Agents Can Be Tricked Into Acting Against Each Other via Second-Order Prompts",
+        "url": "https://thehackernews.com/2025/11/servicenow-ai-agents-can-be-tricked.html",
+        "query": "MosaicLeaks ServiceNow prompt injection research agent",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "ServiceNow AI Agents Can Be Tricked Into Acting Against Each Other via Second-Order Prompts @font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/math/wght/normal.woff2);unicode-range:U+0302-0303,U+0305,U+0307-0308,U+0310,U+0312,U+0315,U+031A,U+0326-0327,U+032C,U+032F-0330,U+0332-0333,U+0338,U+033A,U+0346,U+034D,U+0391-03A1,U+03A3-03A9,U+03B1-03C9,U+03D1,U+03D5-03D6,U+03F0-03F1,U+03F4-03F5,U+2016-2017,U+2034-2038,U+203C,U+2040,U+2043,U+2047,U+2050,U+2057,U+205F,U+2070-2071,U+2074-208E,U+2090-209C,U+20D0-20DC,U+20E1,U+20E5-20EF,U+2100-2112,U+2114-2115,U+2117-2121,U+2123-214F,U+2190,U+2192,U+2194-21AE,U+21B0-21E5,U+21F1-21F2,U+21F4-2211,U+2213-2214,U+2216-22FF,U+2308-230B,U+2310,U+2319,U+231C-2321,U+2336-237A,U+237C,U+2395,U+239B-23B7,U+23D0,U+23DC-23E1,U+2474-2475,U+25AF,U+25B3,U+25B7,U+25BD,U+25C1,U+25CA,U+25CC,U+25FB,U+266D-266F,U+27C0-27FF,U+2900-2AFF,U+2B0E-2B11,U+2B30-2B4C,U+2BFE,U+3030,U+FF5B,U+FF5D,U+1D400-1D7FF,U+1EE00-1EEFF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/symbols/wght/normal.woff2);unicode-range:U+0001-000C,U+000E-001F,U+007F-009F,U+20DD-20E0,U+20E2-20E4,U+2150-218F,U+2190,U+2192,U+2194-2199,U+21AF,U+21E6-21F0,U+21F3,U+2218-2219,U+2299,U+22C4-22C6,U+2300-243F,U+2440-244A,U+2460-24FF,U+25A0-27BF,U+2800-28FF,U+2921-2922,U+2981,U+29BF,U+29EB,U+2B00-2BFF,U+4DC0-4DFF,U+FFF9-FFFB,U+10140-1018E,",
+        "fetch_error": ""
+      },
+      {
+        "title": "ServiceNow patches critical AI platform flaw that could allow user impersonation | CyberScoop",
+        "url": "https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/",
+        "query": "MosaicLeaks ServiceNow prompt injection research agent",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } ServiceNow patches critical AI platform flaw that could allow user impersonation | CyberScoop {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/\",\"url\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/\",\"name\":\"ServiceNow patches critical AI platform flaw that could allow user impersonation | CyberScoop\",\"isPartOf\":{\"@id\":\"https://cyberscoop.com/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/#primaryimage\"},\"image\":{\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/#primaryimage\"},\"thumbnailUrl\":\"https://cyberscoop.com/wp-content/uploads/sites/3/2026/01/GettyImages-1173020463.jpg\",\"datePublished\":\"2026-01-13T15:47:26+00:00\",\"dateModified\":\"2026-01-16T19:47:21+00:00\",\"description\":\"ServiceNow has addressed a critical security vulnerability in its AI platform that could have allowed unauthenticated users to impersonate legitimate users and perform unauthorized actions, the company disclosed Monday.\",\"breadcrumb\":{\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/\"]}]},{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/#primaryimage\",\"url\":\"https://cyberscoop.com/w",
+        "fetch_error": ""
+      },
+      {
+        "title": "ServiceNow · GitHub",
+        "url": "https://github.com/ServiceNow",
+        "query": "MosaicLeaks ServiceNow GitHub",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+        "fetch_error": ""
+      },
+      {
+        "title": "Mastering ServiceNow GitHub Integration: A Quick G... - ServiceNow Community",
+        "url": "https://www.servicenow.com/community/servicenow-studio-articles/mastering-servicenow-github-integration-a-quick-guide/ta-p/3232635",
+        "query": "MosaicLeaks ServiceNow GitHub",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Mastering ServiceNow GitHub Integration: A Quick G... - ServiceNow Community window.khoros_analytics = {}; window.khoros_analytics.datetime_iso_utc = '2026-06-18T22:33:17Z'; window.khoros_analytics.user = {}; window.khoros_analytics.user.anonymous = true; window.khoros_analytics.user.fully_registered = false; window.khoros_analytics.user.partially_registered = false; window.khoros_analytics.user.username = ''; window.khoros_analytics.page = {}; window.khoros_analytics.page.url_server = 'https://www.servicenow.com/community/servicenow-studio-articles/mastering-servicenow-github-integration-a-quick-guide/ta-p/3232635'; window.khoros_analytics.page.url_browser = ((window.location.href) || ''); window.khoros_analytics.page.name = 'TkbArticlePage'; window.khoros_analytics.page.post_thread_id = '3232635'; window.khoros_analytics.page.post_subject = 'Mastering ServiceNow GitHub Integration: A Quick Guide'; window.khoros_analytics.page.breadcrumb_types_ids = '\\/community:cgfwn76974/category:product-discussions/category:app-development/category:servicenow-studio/board:servicenow-studio-articles/tkb:3232635'; window.khoros_analytics.page.breadcrumb_titles = '\\/ServiceNow Community/Products/App Development/ServiceNow Studio/ServiceNow Studio articles/Mastering ServiceNow GitHub Integration: A Quick Guide'; window.khoros_analytics.node = {}; window.khoros_analytics.node.type = 'board'; window.khoros_analytics.node.discussion_style = 'tkb'; window.khoros_analytics.node.id = 'servicenow-studio-articles'; window.khoros_analytics.node.title = 'ServiceNow Studio articles'; window.khoros_analytics.node.url = 'https://www.servicenow.com/community/servicenow-studio-articles/tkb-p/servicenow-studio-articles'; window.khoros_analytics.node.analytics_data = ''; window.khoros_analytics.node.anc",
+        "fetch_error": ""
+      },
+      {
+        "title": "ServiceNow GitHub Integration: The Comprehensive Guide [2026]",
+        "url": "https://exalate.com/blog/servicenow-github-integration/",
+        "query": "MosaicLeaks ServiceNow GitHub",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "LangChain core vulnerability allows prompt injection and data exposure",
+        "url": "https://securityaffairs.com/186185/hacking/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html",
+        "query": "LangChain prompt injection vulnerability",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "LangChain core vulnerability allows prompt injection and data exposure {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html\"},\"author\":{\"name\":\"Pierluigi Paganini\",\"@id\":\"https:\\/\\/securityaffairs.com\\/#\\/schema\\/person\\/919f4eac925343455dfcc8e063d0446a\"},\"headline\":\"LangChain core vulnerability allows prompt injection and data exposure\",\"datePublished\":\"2025-12-27T18:20:16+00:00\",\"dateModified\":\"2025-12-27T18:20:18+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html\"},\"wordCount\":458,\"image\":{\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html#primaryimage\"},\"thumbnailUrl\":\"https:\\/\\/i0.wp.com\\/securityaffairs.com\\/wp-content\\/uploads\\/2025\\/12\\/image-46.png?fit=900%2C600&ssl=1\",\"keywords\":[\"Hacking\",\"information security news\",\"IT Information Security\",\"LangChain\",\"LLM\",\"Pierluigi Paganini\",\"Security Affairs\",\"Security News\"],\"articleSection\":[\"Artificial Intelligence\",\"Breaking News\",\"Hacking\",\"Security\"],\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html\",\"url\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html\",\"name\":\"LangChain core vulnerability allows prompt injection and data exposure\",\"isPartOf\":{\"@",
+        "fetch_error": ""
+      },
+      {
+        "title": "Critical LangChain Core Vulnerability Exposes Secrets via Serialization Injection",
+        "url": "https://thehackernews.com/2025/12/critical-langchain-core-vulnerability.html",
+        "query": "LangChain prompt injection vulnerability",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Critical LangChain Core Vulnerability Exposes Secrets via Serialization Injection @font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/math/wght/normal.woff2);unicode-range:U+0302-0303,U+0305,U+0307-0308,U+0310,U+0312,U+0315,U+031A,U+0326-0327,U+032C,U+032F-0330,U+0332-0333,U+0338,U+033A,U+0346,U+034D,U+0391-03A1,U+03A3-03A9,U+03B1-03C9,U+03D1,U+03D5-03D6,U+03F0-03F1,U+03F4-03F5,U+2016-2017,U+2034-2038,U+203C,U+2040,U+2043,U+2047,U+2050,U+2057,U+205F,U+2070-2071,U+2074-208E,U+2090-209C,U+20D0-20DC,U+20E1,U+20E5-20EF,U+2100-2112,U+2114-2115,U+2117-2121,U+2123-214F,U+2190,U+2192,U+2194-21AE,U+21B0-21E5,U+21F1-21F2,U+21F4-2211,U+2213-2214,U+2216-22FF,U+2308-230B,U+2310,U+2319,U+231C-2321,U+2336-237A,U+237C,U+2395,U+239B-23B7,U+23D0,U+23DC-23E1,U+2474-2475,U+25AF,U+25B3,U+25B7,U+25BD,U+25C1,U+25CA,U+25CC,U+25FB,U+266D-266F,U+27C0-27FF,U+2900-2AFF,U+2B0E-2B11,U+2B30-2B4C,U+2BFE,U+3030,U+FF5B,U+FF5D,U+1D400-1D7FF,U+1EE00-1EEFF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/symbols/wght/normal.woff2);unicode-range:U+0001-000C,U+000E-001F,U+007F-009F,U+20DD-20E0,U+20E2-20E4,U+2150-218F,U+2190,U+2192,U+2194-2199,U+21AF,U+21E6-21F0,U+21F3,U+2218-2219,U+2299,U+22C4-22C6,U+2300-243F,U+2440-244A,U+2460-24FF,U+25A0-27BF,U+2800-28FF,U+2921-2922,U+2981,U+29BF,U+29EB,U+2B00-2BFF,U+4DC0-4DFF,U+FFF9-FFFB,U+10140-1018E,U+10190-1019C,U+101A0,U+101D0-101FD,U+10",
+        "fetch_error": ""
+      },
+      {
+        "title": "Vulnerabilities in LangChain Gen AI",
+        "url": "https://unit42.paloaltonetworks.com/langchain-vulnerabilities/",
+        "query": "LangChain prompt injection vulnerability",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "The read operation timed out"
+      },
+      {
+        "title": "Meta AI agent’s instruction causes large sensitive data leak to employees | AI (artificial intelligence) | The Guardian",
+        "url": "https://www.theguardian.com/technology/2026/mar/20/meta-ai-agents-instruction-causes-large-sensitive-data-leak-to-employees",
+        "query": "AI agent data leak real incident",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Meta AI agent’s instruction causes large sensitive data leak to employees | AI (artificial intelligence) | The Guardian [{\"@type\":\"NewsArticle\",\"@context\":\"https://schema.org\",\"@id\":\"https://www.theguardian.com/technology/2026/mar/20/meta-ai-agents-instruction-causes-large-sensitive-data-leak-to-employees\",\"publisher\":{\"@type\":\"Organization\",\"@context\":\"https://schema.org\",\"@id\":\"https://www.theguardian.com#publisher\",\"name\":\"The Guardian\",\"url\":\"https://www.theguardian.com/\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://uploads.guim.co.uk/2018/01/31/TheGuardian_AMP.png\",\"width\":190,\"height\":60},\"sameAs\":[\"https://www.facebook.com/theguardian\",\"https://twitter.com/guardian\",\"https://www.youtube.com/user/TheGuardian\"]},\"isAccessibleForFree\":true,\"isPartOf\":{\"@type\":[\"CreativeWork\",\"Product\"],\"name\":\"The Guardian\",\"productID\":\"theguardian.com:basic\"},\"image\":[\"https://i.guim.co.uk/img/media/64b9fe32be9fdfbf111a6132dff8580c6efacecd/357_0_5286_4230/master/5286.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=1cc0280e4457a142c2095afb784bee89\",\"https://i.guim.co.uk/img/media/64b9fe32be9fdfbf111a6132dff8580c6efacecd/357_0_5286_4230/master/5286.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=c828a0ad05a89df9a6878da59a59596e\",\"https://i.guim.co.uk/img/media/64b9fe32be9fdfbf111a6132dff8580c6efacecd/357_0_5286_4230/master/5286.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=bd15e0a988a749cd0441f2c49381099a\",\"https://i.guim.co.uk/img/media/64b9fe32be9fdfbf111a6132dff8580c6efacecd/357_0_5286_4230/master/5286.jpg?width=1200&quality=85&auto=format&fit=max&s=a5d242f9367b55ce9904110d371631dc\"],\"",
+        "fetch_error": ""
+      },
+      {
+        "title": "The Risk of Agentic AI: A Story of Meta's AI Agent Data Leak | Cybersecurity Magazine",
+        "url": "https://cybermagazine.com/news/the-risk-of-agentic-the-story-of-metas-ai-agent-data-leak",
+        "query": "AI agent data leak real incident",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "function OptanonWrapper() { } (function () { console.log(\"🔤 Running Typekit metrics fix\") // Only run if the browser supports font metric overrides var KIT_URL = 'https://use.typekit.net/alc1mww.css'; function injectStyle(cssText) { console.log(\"💉 Injecting Typekit metrics fix styles\"); var style = document.createElement('style'); style.setAttribute('data-typekit-metrics-fix', 'true'); style.textContent = cssText; document.head.appendChild(style); console.log(\"✅ Typekit metrics fix styles injected\"); } function buildOverrides(typekitCss) { console.log(\"🔨 Building font metric overrides\"); var faces = typekitCss.match(/@font-face\\s*{[^}]+}/g); if (!faces) { console.log(\"⚠️ No @font-face rules found\"); return ''; } console.log(\"📝 Found \" + faces.length + \" @font-face rules\"); var out = ''; for (var i = 0; i \" -metrics-fix\" var renamed = face.replace( /font-family:\\s*[\"']?([^;\"']+)[\"']?;/, function (_, name) { return 'font-family: \"' + name + '-metrics-fix\";'; } ); // Add overrides before closing brace var withOverrides = renamed.replace( /}\\s*$/, '\\n ascent-override: 75%;\\n line-gap-override: 0%;\\n}' ); out += withOverrides + '\\n\\n'; } console.log(\"✅ Built overrides for \" + faces.length + \" fonts\"); return out; } // Avoid injecting twice if (document.querySelector('style[data-typekit-metrics-fix=\"true\"]')) { console.log(\"⏭️ Typekit metrics fix already applied, skipping\"); return; } console.log(\"🌐 Fetching Typekit CSS from: \" + KIT_URL); fetch(KIT_URL, { mode: 'cors' }) .then(function (res) { console.log(\"📥 Typekit CSS fetched successfully\"); return res.text(); }) .then(function (css) { var overrides = buildOverrides(css); if (!overrides) { console.log(\"⚠️ No overrides generated\"); return; } injectStyle(overrides); // Mark document so your CSS can swap families document.doc",
+        "fetch_error": ""
+      },
+      {
+        "title": "Meta AI agent leak reveals enterprise AI security gaps | PointGuard AI",
+        "url": "https://www.pointguardai.com/ai-security-incidents/metas-ai-agent-misfire-spills-data-across-the-workforce",
+        "query": "AI agent data leak real incident",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Meta AI agent leak reveals enterprise AI security gaps | PointGuard AI WebFont.load({ google: { families: [\"Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic\",\"Maven Pro:300,400,500,600,700\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"Meta’s AI Agent Misfire Spills Data Across the Workforce\", \"description\": \"Misconfigured AI agent exposed sensitive internal data to unauthorized Meta employees.\", \"datePublished\": \"2026-03-31T17:59:07.570Z\", \"dateModified\": \"2026-03-23T19:43:41.439Z\", \"author\": { \"@type\": \"Organization\", \"name\": \"PointGuard AI\", \"url\": \"https://www.pointguardai.com\" }, \"publisher\": { \"@type\": \"Organization\", \"name\": \"PointGuard AI\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://cdn.prod.website-files.com/622134a6316eb7034f7dc84b/68082d3fc95630922029336d_9b0afa15d5b0feaa2ed367b1ae162250_PointGuard%20AI%20logo%20v2%20Color.png\" } }, \"about\": { \"@type\": \"SecurityIncident\", \"name\": \"Meta’s AI Agent Misfire Spills Data Across the Workforce\", \"description\": \"Misconfigured AI agent exposed sensitive internal data to unauthorized Meta employees.\", \"dateReported\": \"2026-03-20\", \"affectedOrganization\": { \"@type\": \"Organization\", \"name\": \"Meta’s AI Agent Misfire Spills Data Across the Workforce\", \"logo\": \"https://cdn.prod.website-files.com/622134a7316eb7ab1c7dc85f/69c17d02178eecc225914404_Meta%20leak%20icon.png\" }, \"securityMetrics\": { \"@type\": \"PropertyValue\", \"name\": \"AI Security Severity Index\", \"value\": \"7.3\", \"maxValue\": \"10\", \"description\": \"Composite threat ass",
+        "fetch_error": ""
+      },
+      {
+        "title": "LLM01:2025 Prompt Injection - OWASP Gen AI Security Project",
+        "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+        "query": "OWASP LLM prompt injection",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "@media all{.e-con{--container-widget-width:100%}.e-con>.elementor-widget-spacer{width:var(--container-widget-width,var(--spacer-size));--align-self:var(--container-widget-align-self,initial);--flex-shrink:0}.e-con>.elementor-widget-spacer>.elementor-widget-container{height:100%;width:100%}.e-con>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer{height:100%}.e-con>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer>.elementor-spacer-inner{height:var(--container-widget-height,var(--spacer-size))}.elementor-widget.elementor-icon-list--layout-inline .elementor-widget-container{overflow:hidden}.elementor-widget .elementor-icon-list-items.elementor-inline-items{margin-right:-8px;margin-left:-8px}.elementor-widget .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item{margin-right:8px;margin-left:8px}.elementor-widget .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after{width:auto;left:auto;right:auto;position:relative;height:100%;border-top:0;border-bottom:0;border-right:0;border-left-width:1px;border-style:solid;right:-8px}.elementor-widget .elementor-icon-list-items{list-style-type:none;margin:0;padding:0}.elementor-widget .elementor-icon-list-item{margin:0;padding:0;position:relative}.elementor-widget .elementor-icon-list-item:after{position:absolute;bottom:0;width:100%}.elementor-widget .elementor-icon-list-item,.elementor-widget .elementor-icon-list-item a{display:flex;font-size:inherit;align-items:var(--icon-vertical-align,center)}.elementor-widget .elementor-icon-list-icon+.elementor-icon-list-text{align-self:center;padding-inline-start:5px}.elementor-widget .elementor-icon-list-icon{display:flex;position:relative;top:var(--icon-vertical-offset,initial)}.elementor-widget .elemento",
+        "fetch_error": ""
+      },
+      {
+        "title": "LLM Prompt Injection Prevention - OWASP Cheat Sheet Series",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html",
+        "query": "OWASP LLM prompt injection",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "LLM Prompt Injection Prevention - OWASP Cheat Sheet Series :root{--md-text-font:\"Roboto\";--md-code-font:\"Roboto Mono\"} __md_scope=new URL(\"..\",location),__md_hash=e=>[...e].reduce(((e,_)=>(e JSON.parse(_.getItem(t.pathname+\".\"+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+\".\"+e,JSON.stringify(_))}catch(e){}} Skip to content OWASP Cheat Sheet Series LLM Prompt Injection Prevention var palette=__md_get(\"__palette\");if(palette&&palette.color){if(\"(prefers-color-scheme)\"===palette.color.media){var media=matchMedia(\"(prefers-color-scheme: light)\"),input=document.querySelector(media.matches?\"[data-md-color-media='(prefers-color-scheme: light)']\":\"[data-md-color-media='(prefers-color-scheme: dark)']\");palette.color.media=input.getAttribute(\"data-md-color-media\"),palette.color.scheme=input.getAttribute(\"data-md-color-scheme\"),palette.color.primary=input.getAttribute(\"data-md-color-primary\"),palette.color.accent=input.getAttribute(\"data-md-color-accent\")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute(\"data-md-color-\"+key,value)} Initializing search OWASP/CheatSheetSeries OWASP Cheat Sheet Series OWASP/CheatSheetSeries Introduction Index Alphabetical Index ASVS Index MASVS Index Proactive Controls Index Top 10 Cheatsheets Cheatsheets AI Agent Security AJAX Security AML Sanctions AI Agent Payments Abuse Case Access Control Attack Surface Analysis Authentication Authorization Authorization Regression Testing Authorization Testing Automation Automotive Security Bean Validation Bot Management and Anti-Automation Browser Extension Vulnerabilities Business Logic Security C-Based Toolchain Hardening CI CD Security Choosing and Using Security Questions Clickjacking Defense Content Security Policy Cookie Theft Mitigation Credentia",
+        "fetch_error": ""
+      },
+      {
+        "title": "Prompt Injection | OWASP Foundation",
+        "url": "https://owasp.org/www-community/attacks/PromptInjection",
+        "query": "OWASP LLM prompt injection",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "--> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-4531126-1'); --> if(Cookies.get('cookies-ok') == 'true' && window.ga === undefined) { window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date; ga('create', 'UA-4531126-1', 'auto'); ga('send', 'pageview'); } else if (Cookies.get('cookies-ok') == 'true') { ga('send', 'pageview'); } function handleOutboundLinkClicks(event) { var href = ''; if(event.target.href == undefined) href = event.target.parentElement.href; else href = event.target.href if(Cookies.get('cookies-ok') == 'true'){ ga('send', 'event', { eventCategory: 'Outbound Link', eventAction: 'click', eventLabel: href, transport: 'beacon' }); } } Prompt Injection | OWASP Foundation $(function(){ var baseurl = \"https://github.com/OWASP/www-community/blob/master/\"; var path = \"pages/attacks/prompt-injection.md\"; $('.repo').html(' Edit on GitHub '); }); For full functionality of this site it is necessary to enable JavaScript. Here are the instructions how to enable JavaScript in your web browser . #banner img { max-width: 30em; } @media (max-width: 1131px) { #banner img { max-width: 30em; } } @media (max-width: 800px) { #banner img { max-width: 20em; } } @media (max-width: 600px) { #banner img { max-width: 20em; } } @media (max-width: 450px) { #banner img { max-width: 250px; } } $(function () { var bannerdata = []; banneryaml = YAML.load('https://owasp.org/www-community/assets/sitedata/banner-data.yml'); $.each(banneryaml, function (index) { bannerdata.push(this); }); if (bannerdata.length > 0) { var htmlstring = \"\"; var usebanner = null; var defbanner = null; var checkdate = new Date(); //local time but who cares about the time? bannerdata.forEach(data => { if (da",
+        "fetch_error": ""
+      },
+      {
+        "title": "Anthropic published the prompt injection failure rates that enterprise security teams have been asking every vendor for | VentureBeat",
+        "url": "https://venturebeat.com/security/prompt-injection-measurable-security-metric-one-ai-developer-publishes-numbers",
+        "query": "prompt injection attack success rate benchmark",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 429: Too Many Requests"
+      },
+      {
+        "title": "Prompt injection: types, real-world CVEs, and enterprise defenses",
+        "url": "https://www.vectra.ai/topics/prompt-injection",
+        "query": "prompt injection attack success rate benchmark",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Prompt injection: types, real-world CVEs, and enterprise defenses WebFont.load({ google: { families: [\"Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"Organization\", \"@id\": \"https://www.vectra.ai/#organization\", \"name\": \"Vectra AI\", \"url\": \"https://www.vectra.ai\", \"logo\": \"https://cdn.prod.website-files.com/5bc507560cb5c73d2b835416/5f75695a56862b10f251c072_VectraLogo_NoTag_PMS363.png\" }, { \"@type\": \"Article\", \"url\": \"https://www.vectra.ai/topics/prompt-injection\", \"headline\": \"Prompt injection explained: the top AI security threat enterprises cannot ignore\", \"image\": \"https://cdn.prod.website-files.com/64e50cbe2b6f932c04238c14/69b0442d91bead2d076eb661_soc-analyst.png\", \"datePublished\": \"2026-05-15T17:44:48.273Z\", \"dateModified\": \"2026-05-14T17:22:40.141Z\", \"author\": { \"@type\": \"Person\", \"name\": \"Lucie Cardiet\", \"url\": \"https://www.vectra.ai/about/author/lucie-cardiet\" }, \"publisher\": { \"@id\": \"https://www.vectra.ai/#organization\" } }, { \"@type\": \"BreadcrumbList\", \"itemListElement\": [ { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.vectra.ai\" }, { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Topics\", \"item\": \"https://www.vectra.ai/topics\" }, { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Prompt injection explained: the top AI security threat enterprises cannot ignore\" } ] } ] } .anti-flicker, .anti-flicker * {visibility: hidden !important; opacity: 0 !important;} [data-wf-hidden-variation], [data-wf-hidden-variat",
+        "fetch_error": ""
+      },
+      {
+        "title": "Securing AI Agents Against Prompt Injection Attacks: A Comprehensive Benchmark and Defense Framework",
+        "url": "https://arxiv.org/html/2511.15759v1",
+        "query": "prompt injection attack success rate benchmark",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Securing AI Agents Against Prompt Injection Attacks: A Comprehensive Benchmark and Defense Framework 1 Introduction 2 Background and Threat Model 2.1 Retrieval-Augmented Generation Architecture 2.2 Threat Model 2.3 Attack Categories 3 Related Work 4 Benchmark Design 4.1 Dataset Construction 4.2 Sophistication Levels 4.3 Evaluation Metrics 5 Defense Framework 5.1 Content Filtering with Embedding Analysis 5.2 Hierarchical System Prompt Guardrails 5.3 Multi-Stage Response Verification 6 Experimental Evaluation 6.1 Experimental Setup 6.2 Attack Success Rates 6.3 Model-Specific Vulnerabilities 6.4 False Positive Analysis 6.5 Ablation Studies 6.6 Computational Overhead 7 Discussion 7.1 Limitations and Future Work 7.2 Deployment Considerations 7.3 Broader Implications 8 Conclusion Securing AI Agents Against Prompt Injection Attacks: A Comprehensive Benchmark and Defense Framework Badrinath Ramakrishnan Akshaya Balaji Abstract Retrieval-augmented generation (RAG) systems have emerged as powerful tools for enhancing large language model capabilities, yet they introduce significant security vulnerabilities through prompt injection attacks. We present a systematic benchmark for evaluating prompt injection risks in RAG-enabled AI agents and propose a multi-layered defense framework. Our benchmark encompasses 847 adversarial test cases across five attack categories: direct injection, context manipulation, instruction override, data exfiltration, and cross-context contamination. We evaluate three defense mechanisms—content filtering with embedding-based anomaly detection, hierarchical system prompt guardrails, and multi-stage response verification—across seven state-of-the-art language models. Results demonstrate that our combined defense framework reduces successful attack rates fro",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：MosaicLeaks实验原文未获取，摘要内容无法验证。"
+    },
+    "core_question": "研究型AI Agent在真实生产环境中面临多大的提示注入数据泄露风险？",
+    "why_this_topic_matters": "ServiceNow在Hugging Face发布MosaicLeaks实验，展示研究Agent如何被提示注入窃取秘密。随着Agent部署增多，提示注入风险被低估，开发者可能在不了解安全边界的情况下部署Agent，导致企业机密或用户数据泄露。",
+    "fact_summary": [
+      "ServiceNow在Hugging Face博客发布MosaicLeaks实验，展示研究型AI Agent在提示注入攻击下可能泄露机密数据。",
+      "实验涉及Agent-to-Agent发现过程中的提示注入。",
+      "已有真实案例：Meta AI Agent因指令配置错误导致敏感数据泄露给内部员工。",
+      "LangChain Core存在已知提示注入漏洞（CVE-2025-12420等）。",
+      "OWASP将提示注入列为LLM应用首要安全风险（LLM01）。",
+      "有学术基准（arXiv 2511.15759）显示组合防御框架可将攻击成功率从85%降至12%。"
+    ],
+    "persona_discussion_question": "我该不该信任研究Agent来处理内部文档？如果用它查竞品，会不会反被窃取我的查询意图？",
+    "old_flower_stance": "提示注入不是新问题，但Agent化让攻击面从单次对话扩展到多步工具调用链。普通技术人部署Agent时，安全边界往往被忽略。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 75,
+      "why_interested": "核心技术人关注Agent安全实践和防御方案；入门读者了解提示注入风险；商业读者评估Agent部署的合规成本。",
+      "reader_risk": "可能被误解为‘Agent都不安全’，需强调风险可控且有防御方案。"
+    },
+    "mass_interest_hook": {
+      "score": 60,
+      "hook_type": "故事",
+      "why_non_technical_people_may_click": "AI Agent泄露机密数据的故事（如Meta案例）具有新闻性，普通人担心自己使用的AI工具是否安全。",
+      "story_seed": "Meta AI Agent因一条指令泄露大量敏感数据给内部员工，类似事件可能发生在任何公司。",
+      "do_not_overhype": "不要声称Agent普遍存在严重泄露风险，需强调实验条件和防御方案。"
+    },
+    "topic_tension": {
+      "score": 6,
+      "conflict_point": "Agent效率提升 vs 安全风险增加",
+      "debate_question": "Agent的便利性是否值得承担提示注入风险？",
+      "stakeholders": [
+        "AI Agent开发者",
+        "企业安全团队",
+        "普通技术用户",
+        "AI平台厂商"
+      ],
+      "why_people_would_comment": "开发者争论防御方案有效性，安全团队关注合规，用户担心隐私。",
+      "traffic_risk": "传播张力不足，容易写成专业安全科普；需补真实冲突或反方材料。"
+    },
+    "timeline": [
+      "2025-12-27: LangChain Core提示注入漏洞披露",
+      "2026-01-13: ServiceNow修复AI平台关键漏洞CVE-2025-12420",
+      "2026-03-20: Meta AI Agent数据泄露事件",
+      "2026-05-15: Vectra AI发布提示注入分析",
+      "2026-06-18: ServiceNow发布MosaicLeaks实验"
+    ],
+    "evidence_table": [
+      {
+        "source": "Hugging Face Blog - MosaicLeaks",
+        "url": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
+        "supports": "实验展示研究Agent提示注入风险",
+        "reliability": "official"
+      },
+      {
+        "source": "The Hacker News - ServiceNow AI Agents",
+        "url": "https://thehackernews.com/2025/11/servicenow-ai-agents-can-be-tricked.html",
+        "supports": "Agent-to-Agent提示注入攻击",
+        "reliability": "media"
+      },
+      {
+        "source": "CyberScoop - ServiceNow patches critical AI flaw",
+        "url": "https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/",
+        "supports": "ServiceNow AI平台漏洞修复",
+        "reliability": "media"
+      },
+      {
+        "source": "Security Affairs - LangChain vulnerability",
+        "url": "https://securityaffairs.com/186185/hacking/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html",
+        "supports": "LangChain Core提示注入漏洞",
+        "reliability": "media"
+      },
+      {
+        "source": "The Guardian - Meta AI agent data leak",
+        "url": "https://www.theguardian.com/technology/2026/mar/20/meta-ai-agents-instruction-causes-large-sensitive-data-leak-to-employees",
+        "supports": "真实Agent数据泄露案例",
+        "reliability": "media"
+      },
+      {
+        "source": "OWASP - Prompt Injection",
+        "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+        "supports": "提示注入为LLM首要风险",
+        "reliability": "official"
+      },
+      {
+        "source": "arXiv - Benchmark and Defense Framework",
+        "url": "https://arxiv.org/html/2511.15759v1",
+        "supports": "防御框架可将攻击成功率从85%降至12%",
+        "reliability": "near_source"
+      }
+    ],
+    "logic_closure": "部分闭环：提示注入风险真实存在，有实验和案例支持，但MosaicLeaks具体攻击场景和成功率未知，防御方案有效性需验证。",
+    "writeable_angles": [
+      {
+        "angle": "Agent提示注入风险科普+防御实践",
+        "why": "满足核心技术人安全需求，提供可操作建议",
+        "needs": "MosaicLeaks实验细节、主流框架漏洞对比、防御方案代码示例"
+      },
+      {
+        "angle": "Meta案例复盘：Agent配置错误如何导致数据泄露",
+        "why": "故事性强，吸引泛兴趣读者",
+        "needs": "Meta事件详细技术分析、责任归属"
+      },
+      {
+        "angle": "Agent安全：成本账与迁移账",
+        "why": "服务高价值商业读者，评估风险与投入",
+        "needs": "防御方案成本、合规要求、保险数据"
+      }
+    ],
+    "missing_basics": [
+      "提示注入攻击的具体分类（直接、间接、二阶）",
+      "Agent架构中提示注入的攻击面（系统提示、工具调用、记忆）",
+      "主流防御方案（输入过滤、权限隔离、输出验证）"
+    ],
+    "missing_materials": [
+      "MosaicLeaks实验原文及代码",
+      "主流Agent框架（LangChain、AutoGPT、CrewAI）漏洞列表",
+      "真实Agent数据泄露案例详细报告",
+      "防御方案有效性基准数据",
+      "ServiceNow官方缓解建议"
+    ],
+    "not_claimable": [
+      "Agent存在普遍且严重的数据泄露风险",
+      "所有研究Agent都不安全",
+      "提示注入无法防御"
+    ],
+    "followup_queries": [
+      "MosaicLeaks实验的具体攻击场景和成功率",
+      "ServiceNow是否提供了缓解方案或工具",
+      "LangChain、AutoGPT等框架的已知提示注入漏洞",
+      "Meta AI Agent数据泄露事件的技术细节",
+      "OWASP LLM安全最佳实践"
+    ],
+    "additional_search_queries": [
+      "MosaicLeaks ServiceNow prompt injection research agent",
+      "MosaicLeaks ServiceNow GitHub",
+      "LangChain prompt injection vulnerability CVE",
+      "AutoGPT prompt injection vulnerability",
+      "Meta AI agent data leak technical analysis",
+      "OWASP LLM prompt injection prevention cheat sheet",
+      "prompt injection attack success rate benchmark 2025"
+    ],
+    "stop_conditions": [
+      "MosaicLeaks实验原文无法获取或内容与摘要不符",
+      "主流Agent框架无已知提示注入漏洞",
+      "无真实Agent数据泄露案例",
+      "防御方案被证明无效或不可部署"
+    ],
+    "confidence": 65.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI前沿",
+    "report_type": "risk-warning",
+    "quality_gate": {
+      "pass": false,
+      "score": 65,
+      "fatal_issues": [
+        "核心事实没有来源：MosaicLeaks实验原文未获取，摘要内容无法验证。"
+      ],
+      "warnings": [
+        "传播张力不足：冲突点和讨论点不够尖锐，容易写成专业安全科普。",
+        "信息源偏科：证据主要来自安全媒体和博客，缺少官方技术报告和代码。"
+      ],
+      "missing_evidence": [
+        "MosaicLeaks实验原文及代码",
+        "主流Agent框架（LangChain、AutoGPT、CrewAI）漏洞列表",
+        "真实Agent数据泄露案例详细报告",
+        "防御方案有效性基准数据",
+        "ServiceNow官方缓解建议"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "研究型AI Agent在真实生产环境中面临多大的提示注入数据泄露风险？",
+      "persona_discussion_question": "我该不该信任研究Agent来处理内部文档？如果用它查竞品，会不会反被窃取我的查询意图？",
+      "hidden_public_issue": "AI Agent的提示注入风险被低估，开发者可能在不了解安全边界的情况下部署Agent，导致企业机密或用户数据泄露，而责任往往由用户承担。",
+      "must_verify": [
+        "MosaicLeaks实验的具体攻击场景和成功率",
+        "ServiceNow是否提供了缓解方案或工具",
+        "主流Agent框架（如LangChain、AutoGPT）是否有已知的提示注入漏洞",
+        "是否有真实案例报告Agent导致数据泄露"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "MosaicLeaks ServiceNow prompt injection research agent",
+          "why_needed": "获取实验原文、攻击方法、缓解建议"
+        },
+        {
+          "source_type": "github_repo",
+          "query": "MosaicLeaks ServiceNow GitHub",
+          "why_needed": "查看实验代码、复现步骤、社区讨论"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "LangChain prompt injection vulnerability",
+          "why_needed": "了解主流框架的安全状态和已知漏洞"
+        },
+        {
+          "source_type": "case_study",
+          "query": "AI agent data leak real incident",
+          "why_needed": "寻找真实泄露案例，验证风险严重性"
+        },
+        {
+          "source_type": "policy",
+          "query": "OWASP LLM prompt injection",
+          "why_needed": "获取行业安全标准和最佳实践"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "prompt injection attack success rate benchmark",
+          "why_needed": "评估攻击成功率，判断风险等级"
+        }
+      ],
+      "expert_challenge_points": [
+        "实验环境是否过度简化？真实场景中攻击者能否轻易注入恶意提示？",
+        "Agent的权限隔离（如沙箱、最小权限）能否有效缓解？",
+        "提示注入是否属于已知漏洞，是否有成熟防御方案？"
+      ],
+      "do_not_claim_yet": [
+        "Agent存在普遍且严重的数据泄露风险",
+        "所有研究Agent都不安全",
+        "提示注入无法防御"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需补充真实案例和防御方案，否则容易写成小圈子安全科普。",
+      "downstream_materials_needed": [
+        "MosaicLeaks实验原文及代码",
+        "主流Agent框架安全文档",
+        "真实数据泄露案例报告",
+        "OWASP LLM安全指南"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "When AI Turns on Its Team: Exploiting Agent-to-Agent Discovery via Prompt Injection",
+        "url": "https://appomni.com/ao-labs/ai-agent-to-agent-discovery-prompt-injection/",
+        "query": "MosaicLeaks ServiceNow prompt injection research agent",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(window.NREUM||(NREUM={})).init={ajax:{deny_list:[\"bam.nr-data.net\"]},feature_flags:[\"soft_nav\"]};(window.NREUM||(NREUM={})).loader_config={licenseKey:\"NRJS-7f1bcd80faf16b99b32\",applicationID:\"681787618\",browserID:\"718418871\"};;/*! For license information please see nr-loader-rum-1.316.0.min.js.LICENSE.txt */ (()=>{var e,t,r={122:(e,t,r)=>{\"use strict\";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||\"object\"!=typeof e)return(0,n.R)(3);if(!t||\"object\"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),s=0===Object.keys(r).length?e:r;for(let o in s)if(void 0!==e[o])try{if(null===e[o]){r[o]=null;continue}Array.isArray(e[o])&&Array.isArray(t[o])?r[o]=Array.from(new Set([...e[o],...t[o]])):e[o]instanceof Map||e[o]instanceof Set||e[o]instanceof Date||e[o]instanceof RegExp?r[o]=e[o]:\"object\"==typeof e[o]&&\"object\"==typeof t[o]?r[o]=i(e[o],t[o]):r[o]=e[o]}catch(e){r[o]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},154:(e,t,r)=>{\"use strict\";r.d(t,{OF:()=>u,RI:()=>i,WN:()=>l,bv:()=>s,gm:()=>o,m:()=>c,mw:()=>a,sb:()=>d,zk:()=>f});var n=r(863);const i=\"undefined\"!=typeof window&&!!window.document,s=\"undefined\"!=typeof WorkerGlobalScope&&(\"undefined\"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||\"undefined\"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),o=i?window:\"undefined\"!=typeof WorkerGlobalScope&&(\"undefined\"!=typeof self&&self instanceof WorkerGlobalScope&&self||\"undefined\"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),a=Boolean(\"hidden\"===o?.document?.visibilityState),c=\"\"+o?.location,u=/iPad|iPhone|iPod/.test(o.navigator?.userAgent),d=u&&\"undefined\"==typeof SharedWorker",
+        "fetch_error": ""
+      },
+      {
+        "title": "ServiceNow AI Agents Can Be Tricked Into Acting Against Each Other via Second-Order Prompts",
+        "url": "https://thehackernews.com/2025/11/servicenow-ai-agents-can-be-tricked.html",
+        "query": "MosaicLeaks ServiceNow prompt injection research agent",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "ServiceNow AI Agents Can Be Tricked Into Acting Against Each Other via Second-Order Prompts @font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/math/wght/normal.woff2);unicode-range:U+0302-0303,U+0305,U+0307-0308,U+0310,U+0312,U+0315,U+031A,U+0326-0327,U+032C,U+032F-0330,U+0332-0333,U+0338,U+033A,U+0346,U+034D,U+0391-03A1,U+03A3-03A9,U+03B1-03C9,U+03D1,U+03D5-03D6,U+03F0-03F1,U+03F4-03F5,U+2016-2017,U+2034-2038,U+203C,U+2040,U+2043,U+2047,U+2050,U+2057,U+205F,U+2070-2071,U+2074-208E,U+2090-209C,U+20D0-20DC,U+20E1,U+20E5-20EF,U+2100-2112,U+2114-2115,U+2117-2121,U+2123-214F,U+2190,U+2192,U+2194-21AE,U+21B0-21E5,U+21F1-21F2,U+21F4-2211,U+2213-2214,U+2216-22FF,U+2308-230B,U+2310,U+2319,U+231C-2321,U+2336-237A,U+237C,U+2395,U+239B-23B7,U+23D0,U+23DC-23E1,U+2474-2475,U+25AF,U+25B3,U+25B7,U+25BD,U+25C1,U+25CA,U+25CC,U+25FB,U+266D-266F,U+27C0-27FF,U+2900-2AFF,U+2B0E-2B11,U+2B30-2B4C,U+2BFE,U+3030,U+FF5B,U+FF5D,U+1D400-1D7FF,U+1EE00-1EEFF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/symbols/wght/normal.woff2);unicode-range:U+0001-000C,U+000E-001F,U+007F-009F,U+20DD-20E0,U+20E2-20E4,U+2150-218F,U+2190,U+2192,U+2194-2199,U+21AF,U+21E6-21F0,U+21F3,U+2218-2219,U+2299,U+22C4-22C6,U+2300-243F,U+2440-244A,U+2460-24FF,U+25A0-27BF,U+2800-28FF,U+2921-2922,U+2981,U+29BF,U+29EB,U+2B00-2BFF,U+4DC0-4DFF,U+FFF9-FFFB,U+10140-1018E,",
+        "fetch_error": ""
+      },
+      {
+        "title": "ServiceNow patches critical AI platform flaw that could allow user impersonation | CyberScoop",
+        "url": "https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/",
+        "query": "MosaicLeaks ServiceNow prompt injection research agent",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } ServiceNow patches critical AI platform flaw that could allow user impersonation | CyberScoop {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/\",\"url\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/\",\"name\":\"ServiceNow patches critical AI platform flaw that could allow user impersonation | CyberScoop\",\"isPartOf\":{\"@id\":\"https://cyberscoop.com/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/#primaryimage\"},\"image\":{\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/#primaryimage\"},\"thumbnailUrl\":\"https://cyberscoop.com/wp-content/uploads/sites/3/2026/01/GettyImages-1173020463.jpg\",\"datePublished\":\"2026-01-13T15:47:26+00:00\",\"dateModified\":\"2026-01-16T19:47:21+00:00\",\"description\":\"ServiceNow has addressed a critical security vulnerability in its AI platform that could have allowed unauthenticated users to impersonate legitimate users and perform unauthorized actions, the company disclosed Monday.\",\"breadcrumb\":{\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/\"]}]},{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/#primaryimage\",\"url\":\"https://cyberscoop.com/w",
+        "fetch_error": ""
+      },
+      {
+        "title": "ServiceNow · GitHub",
+        "url": "https://github.com/ServiceNow",
+        "query": "MosaicLeaks ServiceNow GitHub",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+        "fetch_error": ""
+      },
+      {
+        "title": "Mastering ServiceNow GitHub Integration: A Quick G... - ServiceNow Community",
+        "url": "https://www.servicenow.com/community/servicenow-studio-articles/mastering-servicenow-github-integration-a-quick-guide/ta-p/3232635",
+        "query": "MosaicLeaks ServiceNow GitHub",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Mastering ServiceNow GitHub Integration: A Quick G... - ServiceNow Community window.khoros_analytics = {}; window.khoros_analytics.datetime_iso_utc = '2026-06-18T22:33:17Z'; window.khoros_analytics.user = {}; window.khoros_analytics.user.anonymous = true; window.khoros_analytics.user.fully_registered = false; window.khoros_analytics.user.partially_registered = false; window.khoros_analytics.user.username = ''; window.khoros_analytics.page = {}; window.khoros_analytics.page.url_server = 'https://www.servicenow.com/community/servicenow-studio-articles/mastering-servicenow-github-integration-a-quick-guide/ta-p/3232635'; window.khoros_analytics.page.url_browser = ((window.location.href) || ''); window.khoros_analytics.page.name = 'TkbArticlePage'; window.khoros_analytics.page.post_thread_id = '3232635'; window.khoros_analytics.page.post_subject = 'Mastering ServiceNow GitHub Integration: A Quick Guide'; window.khoros_analytics.page.breadcrumb_types_ids = '\\/community:cgfwn76974/category:product-discussions/category:app-development/category:servicenow-studio/board:servicenow-studio-articles/tkb:3232635'; window.khoros_analytics.page.breadcrumb_titles = '\\/ServiceNow Community/Products/App Development/ServiceNow Studio/ServiceNow Studio articles/Mastering ServiceNow GitHub Integration: A Quick Guide'; window.khoros_analytics.node = {}; window.khoros_analytics.node.type = 'board'; window.khoros_analytics.node.discussion_style = 'tkb'; window.khoros_analytics.node.id = 'servicenow-studio-articles'; window.khoros_analytics.node.title = 'ServiceNow Studio articles'; window.khoros_analytics.node.url = 'https://www.servicenow.com/community/servicenow-studio-articles/tkb-p/servicenow-studio-articles'; window.khoros_analytics.node.analytics_data = ''; window.khoros_analytics.node.anc",
+        "fetch_error": ""
+      },
+      {
+        "title": "ServiceNow GitHub Integration: The Comprehensive Guide [2026]",
+        "url": "https://exalate.com/blog/servicenow-github-integration/",
+        "query": "MosaicLeaks ServiceNow GitHub",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "LangChain core vulnerability allows prompt injection and data exposure",
+        "url": "https://securityaffairs.com/186185/hacking/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html",
+        "query": "LangChain prompt injection vulnerability",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "LangChain core vulnerability allows prompt injection and data exposure {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html\"},\"author\":{\"name\":\"Pierluigi Paganini\",\"@id\":\"https:\\/\\/securityaffairs.com\\/#\\/schema\\/person\\/919f4eac925343455dfcc8e063d0446a\"},\"headline\":\"LangChain core vulnerability allows prompt injection and data exposure\",\"datePublished\":\"2025-12-27T18:20:16+00:00\",\"dateModified\":\"2025-12-27T18:20:18+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html\"},\"wordCount\":458,\"image\":{\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html#primaryimage\"},\"thumbnailUrl\":\"https:\\/\\/i0.wp.com\\/securityaffairs.com\\/wp-content\\/uploads\\/2025\\/12\\/image-46.png?fit=900%2C600&ssl=1\",\"keywords\":[\"Hacking\",\"information security news\",\"IT Information Security\",\"LangChain\",\"LLM\",\"Pierluigi Paganini\",\"Security Affairs\",\"Security News\"],\"articleSection\":[\"Artificial Intelligence\",\"Breaking News\",\"Hacking\",\"Security\"],\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html\",\"url\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html\",\"name\":\"LangChain core vulnerability allows prompt injection and data exposure\",\"isPartOf\":{\"@",
+        "fetch_error": ""
+      },
+      {
+        "title": "Critical LangChain Core Vulnerability Exposes Secrets via Serialization Injection",
+        "url": "https://thehackernews.com/2025/12/critical-langchain-core-vulnerability.html",
+        "query": "LangChain prompt injection vulnerability",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Critical LangChain Core Vulnerability Exposes Secrets via Serialization Injection @font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/math/wght/normal.woff2);unicode-range:U+0302-0303,U+0305,U+0307-0308,U+0310,U+0312,U+0315,U+031A,U+0326-0327,U+032C,U+032F-0330,U+0332-0333,U+0338,U+033A,U+0346,U+034D,U+0391-03A1,U+03A3-03A9,U+03B1-03C9,U+03D1,U+03D5-03D6,U+03F0-03F1,U+03F4-03F5,U+2016-2017,U+2034-2038,U+203C,U+2040,U+2043,U+2047,U+2050,U+2057,U+205F,U+2070-2071,U+2074-208E,U+2090-209C,U+20D0-20DC,U+20E1,U+20E5-20EF,U+2100-2112,U+2114-2115,U+2117-2121,U+2123-214F,U+2190,U+2192,U+2194-21AE,U+21B0-21E5,U+21F1-21F2,U+21F4-2211,U+2213-2214,U+2216-22FF,U+2308-230B,U+2310,U+2319,U+231C-2321,U+2336-237A,U+237C,U+2395,U+239B-23B7,U+23D0,U+23DC-23E1,U+2474-2475,U+25AF,U+25B3,U+25B7,U+25BD,U+25C1,U+25CA,U+25CC,U+25FB,U+266D-266F,U+27C0-27FF,U+2900-2AFF,U+2B0E-2B11,U+2B30-2B4C,U+2BFE,U+3030,U+FF5B,U+FF5D,U+1D400-1D7FF,U+1EE00-1EEFF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/symbols/wght/normal.woff2);unicode-range:U+0001-000C,U+000E-001F,U+007F-009F,U+20DD-20E0,U+20E2-20E4,U+2150-218F,U+2190,U+2192,U+2194-2199,U+21AF,U+21E6-21F0,U+21F3,U+2218-2219,U+2299,U+22C4-22C6,U+2300-243F,U+2440-244A,U+2460-24FF,U+25A0-27BF,U+2800-28FF,U+2921-2922,U+2981,U+29BF,U+29EB,U+2B00-2BFF,U+4DC0-4DFF,U+FFF9-FFFB,U+10140-1018E,U+10190-1019C,U+101A0,U+101D0-101FD,U+10",
+        "fetch_error": ""
+      },
+      {
+        "title": "Vulnerabilities in LangChain Gen AI",
+        "url": "https://unit42.paloaltonetworks.com/langchain-vulnerabilities/",
+        "query": "LangChain prompt injection vulnerability",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "The read operation timed out"
+      },
+      {
+        "title": "Meta AI agent’s instruction causes large sensitive data leak to employees | AI (artificial intelligence) | The Guardian",
+        "url": "https://www.theguardian.com/technology/2026/mar/20/meta-ai-agents-instruction-causes-large-sensitive-data-leak-to-employees",
+        "query": "AI agent data leak real incident",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Meta AI agent’s instruction causes large sensitive data leak to employees | AI (artificial intelligence) | The Guardian [{\"@type\":\"NewsArticle\",\"@context\":\"https://schema.org\",\"@id\":\"https://www.theguardian.com/technology/2026/mar/20/meta-ai-agents-instruction-causes-large-sensitive-data-leak-to-employees\",\"publisher\":{\"@type\":\"Organization\",\"@context\":\"https://schema.org\",\"@id\":\"https://www.theguardian.com#publisher\",\"name\":\"The Guardian\",\"url\":\"https://www.theguardian.com/\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://uploads.guim.co.uk/2018/01/31/TheGuardian_AMP.png\",\"width\":190,\"height\":60},\"sameAs\":[\"https://www.facebook.com/theguardian\",\"https://twitter.com/guardian\",\"https://www.youtube.com/user/TheGuardian\"]},\"isAccessibleForFree\":true,\"isPartOf\":{\"@type\":[\"CreativeWork\",\"Product\"],\"name\":\"The Guardian\",\"productID\":\"theguardian.com:basic\"},\"image\":[\"https://i.guim.co.uk/img/media/64b9fe32be9fdfbf111a6132dff8580c6efacecd/357_0_5286_4230/master/5286.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=1cc0280e4457a142c2095afb784bee89\",\"https://i.guim.co.uk/img/media/64b9fe32be9fdfbf111a6132dff8580c6efacecd/357_0_5286_4230/master/5286.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=c828a0ad05a89df9a6878da59a59596e\",\"https://i.guim.co.uk/img/media/64b9fe32be9fdfbf111a6132dff8580c6efacecd/357_0_5286_4230/master/5286.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=bd15e0a988a749cd0441f2c49381099a\",\"https://i.guim.co.uk/img/media/64b9fe32be9fdfbf111a6132dff8580c6efacecd/357_0_5286_4230/master/5286.jpg?width=1200&quality=85&auto=format&fit=max&s=a5d242f9367b55ce9904110d371631dc\"],\"",
+        "fetch_error": ""
+      },
+      {
+        "title": "The Risk of Agentic AI: A Story of Meta's AI Agent Data Leak | Cybersecurity Magazine",
+        "url": "https://cybermagazine.com/news/the-risk-of-agentic-the-story-of-metas-ai-agent-data-leak",
+        "query": "AI agent data leak real incident",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "function OptanonWrapper() { } (function () { console.log(\"🔤 Running Typekit metrics fix\") // Only run if the browser supports font metric overrides var KIT_URL = 'https://use.typekit.net/alc1mww.css'; function injectStyle(cssText) { console.log(\"💉 Injecting Typekit metrics fix styles\"); var style = document.createElement('style'); style.setAttribute('data-typekit-metrics-fix', 'true'); style.textContent = cssText; document.head.appendChild(style); console.log(\"✅ Typekit metrics fix styles injected\"); } function buildOverrides(typekitCss) { console.log(\"🔨 Building font metric overrides\"); var faces = typekitCss.match(/@font-face\\s*{[^}]+}/g); if (!faces) { console.log(\"⚠️ No @font-face rules found\"); return ''; } console.log(\"📝 Found \" + faces.length + \" @font-face rules\"); var out = ''; for (var i = 0; i \" -metrics-fix\" var renamed = face.replace( /font-family:\\s*[\"']?([^;\"']+)[\"']?;/, function (_, name) { return 'font-family: \"' + name + '-metrics-fix\";'; } ); // Add overrides before closing brace var withOverrides = renamed.replace( /}\\s*$/, '\\n ascent-override: 75%;\\n line-gap-override: 0%;\\n}' ); out += withOverrides + '\\n\\n'; } console.log(\"✅ Built overrides for \" + faces.length + \" fonts\"); return out; } // Avoid injecting twice if (document.querySelector('style[data-typekit-metrics-fix=\"true\"]')) { console.log(\"⏭️ Typekit metrics fix already applied, skipping\"); return; } console.log(\"🌐 Fetching Typekit CSS from: \" + KIT_URL); fetch(KIT_URL, { mode: 'cors' }) .then(function (res) { console.log(\"📥 Typekit CSS fetched successfully\"); return res.text(); }) .then(function (css) { var overrides = buildOverrides(css); if (!overrides) { console.log(\"⚠️ No overrides generated\"); return; } injectStyle(overrides); // Mark document so your CSS can swap families document.doc",
+        "fetch_error": ""
+      },
+      {
+        "title": "Meta AI agent leak reveals enterprise AI security gaps | PointGuard AI",
+        "url": "https://www.pointguardai.com/ai-security-incidents/metas-ai-agent-misfire-spills-data-across-the-workforce",
+        "query": "AI agent data leak real incident",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Meta AI agent leak reveals enterprise AI security gaps | PointGuard AI WebFont.load({ google: { families: [\"Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic\",\"Maven Pro:300,400,500,600,700\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"Meta’s AI Agent Misfire Spills Data Across the Workforce\", \"description\": \"Misconfigured AI agent exposed sensitive internal data to unauthorized Meta employees.\", \"datePublished\": \"2026-03-31T17:59:07.570Z\", \"dateModified\": \"2026-03-23T19:43:41.439Z\", \"author\": { \"@type\": \"Organization\", \"name\": \"PointGuard AI\", \"url\": \"https://www.pointguardai.com\" }, \"publisher\": { \"@type\": \"Organization\", \"name\": \"PointGuard AI\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://cdn.prod.website-files.com/622134a6316eb7034f7dc84b/68082d3fc95630922029336d_9b0afa15d5b0feaa2ed367b1ae162250_PointGuard%20AI%20logo%20v2%20Color.png\" } }, \"about\": { \"@type\": \"SecurityIncident\", \"name\": \"Meta’s AI Agent Misfire Spills Data Across the Workforce\", \"description\": \"Misconfigured AI agent exposed sensitive internal data to unauthorized Meta employees.\", \"dateReported\": \"2026-03-20\", \"affectedOrganization\": { \"@type\": \"Organization\", \"name\": \"Meta’s AI Agent Misfire Spills Data Across the Workforce\", \"logo\": \"https://cdn.prod.website-files.com/622134a7316eb7ab1c7dc85f/69c17d02178eecc225914404_Meta%20leak%20icon.png\" }, \"securityMetrics\": { \"@type\": \"PropertyValue\", \"name\": \"AI Security Severity Index\", \"value\": \"7.3\", \"maxValue\": \"10\", \"description\": \"Composite threat ass",
+        "fetch_error": ""
+      },
+      {
+        "title": "LLM01:2025 Prompt Injection - OWASP Gen AI Security Project",
+        "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+        "query": "OWASP LLM prompt injection",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "@media all{.e-con{--container-widget-width:100%}.e-con>.elementor-widget-spacer{width:var(--container-widget-width,var(--spacer-size));--align-self:var(--container-widget-align-self,initial);--flex-shrink:0}.e-con>.elementor-widget-spacer>.elementor-widget-container{height:100%;width:100%}.e-con>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer{height:100%}.e-con>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer>.elementor-spacer-inner{height:var(--container-widget-height,var(--spacer-size))}.elementor-widget.elementor-icon-list--layout-inline .elementor-widget-container{overflow:hidden}.elementor-widget .elementor-icon-list-items.elementor-inline-items{margin-right:-8px;margin-left:-8px}.elementor-widget .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item{margin-right:8px;margin-left:8px}.elementor-widget .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after{width:auto;left:auto;right:auto;position:relative;height:100%;border-top:0;border-bottom:0;border-right:0;border-left-width:1px;border-style:solid;right:-8px}.elementor-widget .elementor-icon-list-items{list-style-type:none;margin:0;padding:0}.elementor-widget .elementor-icon-list-item{margin:0;padding:0;position:relative}.elementor-widget .elementor-icon-list-item:after{position:absolute;bottom:0;width:100%}.elementor-widget .elementor-icon-list-item,.elementor-widget .elementor-icon-list-item a{display:flex;font-size:inherit;align-items:var(--icon-vertical-align,center)}.elementor-widget .elementor-icon-list-icon+.elementor-icon-list-text{align-self:center;padding-inline-start:5px}.elementor-widget .elementor-icon-list-icon{display:flex;position:relative;top:var(--icon-vertical-offset,initial)}.elementor-widget .elemento",
+        "fetch_error": ""
+      },
+      {
+        "title": "LLM Prompt Injection Prevention - OWASP Cheat Sheet Series",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html",
+        "query": "OWASP LLM prompt injection",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "LLM Prompt Injection Prevention - OWASP Cheat Sheet Series :root{--md-text-font:\"Roboto\";--md-code-font:\"Roboto Mono\"} __md_scope=new URL(\"..\",location),__md_hash=e=>[...e].reduce(((e,_)=>(e JSON.parse(_.getItem(t.pathname+\".\"+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+\".\"+e,JSON.stringify(_))}catch(e){}} Skip to content OWASP Cheat Sheet Series LLM Prompt Injection Prevention var palette=__md_get(\"__palette\");if(palette&&palette.color){if(\"(prefers-color-scheme)\"===palette.color.media){var media=matchMedia(\"(prefers-color-scheme: light)\"),input=document.querySelector(media.matches?\"[data-md-color-media='(prefers-color-scheme: light)']\":\"[data-md-color-media='(prefers-color-scheme: dark)']\");palette.color.media=input.getAttribute(\"data-md-color-media\"),palette.color.scheme=input.getAttribute(\"data-md-color-scheme\"),palette.color.primary=input.getAttribute(\"data-md-color-primary\"),palette.color.accent=input.getAttribute(\"data-md-color-accent\")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute(\"data-md-color-\"+key,value)} Initializing search OWASP/CheatSheetSeries OWASP Cheat Sheet Series OWASP/CheatSheetSeries Introduction Index Alphabetical Index ASVS Index MASVS Index Proactive Controls Index Top 10 Cheatsheets Cheatsheets AI Agent Security AJAX Security AML Sanctions AI Agent Payments Abuse Case Access Control Attack Surface Analysis Authentication Authorization Authorization Regression Testing Authorization Testing Automation Automotive Security Bean Validation Bot Management and Anti-Automation Browser Extension Vulnerabilities Business Logic Security C-Based Toolchain Hardening CI CD Security Choosing and Using Security Questions Clickjacking Defense Content Security Policy Cookie Theft Mitigation Credentia",
+        "fetch_error": ""
+      },
+      {
+        "title": "Prompt Injection | OWASP Foundation",
+        "url": "https://owasp.org/www-community/attacks/PromptInjection",
+        "query": "OWASP LLM prompt injection",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "--> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-4531126-1'); --> if(Cookies.get('cookies-ok') == 'true' && window.ga === undefined) { window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date; ga('create', 'UA-4531126-1', 'auto'); ga('send', 'pageview'); } else if (Cookies.get('cookies-ok') == 'true') { ga('send', 'pageview'); } function handleOutboundLinkClicks(event) { var href = ''; if(event.target.href == undefined) href = event.target.parentElement.href; else href = event.target.href if(Cookies.get('cookies-ok') == 'true'){ ga('send', 'event', { eventCategory: 'Outbound Link', eventAction: 'click', eventLabel: href, transport: 'beacon' }); } } Prompt Injection | OWASP Foundation $(function(){ var baseurl = \"https://github.com/OWASP/www-community/blob/master/\"; var path = \"pages/attacks/prompt-injection.md\"; $('.repo').html(' Edit on GitHub '); }); For full functionality of this site it is necessary to enable JavaScript. Here are the instructions how to enable JavaScript in your web browser . #banner img { max-width: 30em; } @media (max-width: 1131px) { #banner img { max-width: 30em; } } @media (max-width: 800px) { #banner img { max-width: 20em; } } @media (max-width: 600px) { #banner img { max-width: 20em; } } @media (max-width: 450px) { #banner img { max-width: 250px; } } $(function () { var bannerdata = []; banneryaml = YAML.load('https://owasp.org/www-community/assets/sitedata/banner-data.yml'); $.each(banneryaml, function (index) { bannerdata.push(this); }); if (bannerdata.length > 0) { var htmlstring = \"\"; var usebanner = null; var defbanner = null; var checkdate = new Date(); //local time but who cares about the time? bannerdata.forEach(data => { if (da",
+        "fetch_error": ""
+      },
+      {
+        "title": "Anthropic published the prompt injection failure rates that enterprise security teams have been asking every vendor for | VentureBeat",
+        "url": "https://venturebeat.com/security/prompt-injection-measurable-security-metric-one-ai-developer-publishes-numbers",
+        "query": "prompt injection attack success rate benchmark",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 429: Too Many Requests"
+      },
+      {
+        "title": "Prompt injection: types, real-world CVEs, and enterprise defenses",
+        "url": "https://www.vectra.ai/topics/prompt-injection",
+        "query": "prompt injection attack success rate benchmark",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Prompt injection: types, real-world CVEs, and enterprise defenses WebFont.load({ google: { families: [\"Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"Organization\", \"@id\": \"https://www.vectra.ai/#organization\", \"name\": \"Vectra AI\", \"url\": \"https://www.vectra.ai\", \"logo\": \"https://cdn.prod.website-files.com/5bc507560cb5c73d2b835416/5f75695a56862b10f251c072_VectraLogo_NoTag_PMS363.png\" }, { \"@type\": \"Article\", \"url\": \"https://www.vectra.ai/topics/prompt-injection\", \"headline\": \"Prompt injection explained: the top AI security threat enterprises cannot ignore\", \"image\": \"https://cdn.prod.website-files.com/64e50cbe2b6f932c04238c14/69b0442d91bead2d076eb661_soc-analyst.png\", \"datePublished\": \"2026-05-15T17:44:48.273Z\", \"dateModified\": \"2026-05-14T17:22:40.141Z\", \"author\": { \"@type\": \"Person\", \"name\": \"Lucie Cardiet\", \"url\": \"https://www.vectra.ai/about/author/lucie-cardiet\" }, \"publisher\": { \"@id\": \"https://www.vectra.ai/#organization\" } }, { \"@type\": \"BreadcrumbList\", \"itemListElement\": [ { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.vectra.ai\" }, { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Topics\", \"item\": \"https://www.vectra.ai/topics\" }, { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Prompt injection explained: the top AI security threat enterprises cannot ignore\" } ] } ] } .anti-flicker, .anti-flicker * {visibility: hidden !important; opacity: 0 !important;} [data-wf-hidden-variation], [data-wf-hidden-variat",
+        "fetch_error": ""
+      },
+      {
+        "title": "Securing AI Agents Against Prompt Injection Attacks: A Comprehensive Benchmark and Defense Framework",
+        "url": "https://arxiv.org/html/2511.15759v1",
+        "query": "prompt injection attack success rate benchmark",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Securing AI Agents Against Prompt Injection Attacks: A Comprehensive Benchmark and Defense Framework 1 Introduction 2 Background and Threat Model 2.1 Retrieval-Augmented Generation Architecture 2.2 Threat Model 2.3 Attack Categories 3 Related Work 4 Benchmark Design 4.1 Dataset Construction 4.2 Sophistication Levels 4.3 Evaluation Metrics 5 Defense Framework 5.1 Content Filtering with Embedding Analysis 5.2 Hierarchical System Prompt Guardrails 5.3 Multi-Stage Response Verification 6 Experimental Evaluation 6.1 Experimental Setup 6.2 Attack Success Rates 6.3 Model-Specific Vulnerabilities 6.4 False Positive Analysis 6.5 Ablation Studies 6.6 Computational Overhead 7 Discussion 7.1 Limitations and Future Work 7.2 Deployment Considerations 7.3 Broader Implications 8 Conclusion Securing AI Agents Against Prompt Injection Attacks: A Comprehensive Benchmark and Defense Framework Badrinath Ramakrishnan Akshaya Balaji Abstract Retrieval-augmented generation (RAG) systems have emerged as powerful tools for enhancing large language model capabilities, yet they introduce significant security vulnerabilities through prompt injection attacks. We present a systematic benchmark for evaluating prompt injection risks in RAG-enabled AI agents and propose a multi-layered defense framework. Our benchmark encompasses 847 adversarial test cases across five attack categories: direct injection, context manipulation, instruction override, data exfiltration, and cross-context contamination. We evaluate three defense mechanisms—content filtering with embedding-based anomaly detection, hierarchical system prompt guardrails, and multi-stage response verification—across seven state-of-the-art language models. Results demonstrate that our combined defense framework reduces successful attack rates fro",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260619-mosaicleaks-can-your-research-agent-keep-a-secre-30a686bb/",
+    "for_gpt_editor": {
+      "brief": "AI Agent安全风险，普通技术人使用研究助手时可能无意泄露敏感信息",
+      "title_seed": "研究型AI Agent存在数据泄露风险：MosaicLeaks实验揭示提示注入攻击",
+      "original_title": "MosaicLeaks: Can your research agent keep a secret?",
+      "source_url": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：MosaicLeaks实验原文未获取，摘要内容无法验证。"
+        },
+        "core_question": "研究型AI Agent在真实生产环境中面临多大的提示注入数据泄露风险？",
+        "why_this_topic_matters": "ServiceNow在Hugging Face发布MosaicLeaks实验，展示研究Agent如何被提示注入窃取秘密。随着Agent部署增多，提示注入风险被低估，开发者可能在不了解安全边界的情况下部署Agent，导致企业机密或用户数据泄露。",
+        "fact_summary": [
+          "ServiceNow在Hugging Face博客发布MosaicLeaks实验，展示研究型AI Agent在提示注入攻击下可能泄露机密数据。",
+          "实验涉及Agent-to-Agent发现过程中的提示注入。",
+          "已有真实案例：Meta AI Agent因指令配置错误导致敏感数据泄露给内部员工。",
+          "LangChain Core存在已知提示注入漏洞（CVE-2025-12420等）。",
+          "OWASP将提示注入列为LLM应用首要安全风险（LLM01）。",
+          "有学术基准（arXiv 2511.15759）显示组合防御框架可将攻击成功率从85%降至12%。"
+        ],
+        "persona_discussion_question": "我该不该信任研究Agent来处理内部文档？如果用它查竞品，会不会反被窃取我的查询意图？",
+        "old_flower_stance": "提示注入不是新问题，但Agent化让攻击面从单次对话扩展到多步工具调用链。普通技术人部署Agent时，安全边界往往被忽略。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 75,
+          "why_interested": "核心技术人关注Agent安全实践和防御方案；入门读者了解提示注入风险；商业读者评估Agent部署的合规成本。",
+          "reader_risk": "可能被误解为‘Agent都不安全’，需强调风险可控且有防御方案。"
+        },
+        "mass_interest_hook": {
+          "score": 60,
+          "hook_type": "故事",
+          "why_non_technical_people_may_click": "AI Agent泄露机密数据的故事（如Meta案例）具有新闻性，普通人担心自己使用的AI工具是否安全。",
+          "story_seed": "Meta AI Agent因一条指令泄露大量敏感数据给内部员工，类似事件可能发生在任何公司。",
+          "do_not_overhype": "不要声称Agent普遍存在严重泄露风险，需强调实验条件和防御方案。"
+        },
+        "topic_tension": {
+          "score": 6,
+          "conflict_point": "Agent效率提升 vs 安全风险增加",
+          "debate_question": "Agent的便利性是否值得承担提示注入风险？",
+          "stakeholders": [
+            "AI Agent开发者",
+            "企业安全团队",
+            "普通技术用户",
+            "AI平台厂商"
+          ],
+          "why_people_would_comment": "开发者争论防御方案有效性，安全团队关注合规，用户担心隐私。",
+          "traffic_risk": "传播张力不足，容易写成专业安全科普；需补真实冲突或反方材料。"
+        },
+        "timeline": [
+          "2025-12-27: LangChain Core提示注入漏洞披露",
+          "2026-01-13: ServiceNow修复AI平台关键漏洞CVE-2025-12420",
+          "2026-03-20: Meta AI Agent数据泄露事件",
+          "2026-05-15: Vectra AI发布提示注入分析",
+          "2026-06-18: ServiceNow发布MosaicLeaks实验"
+        ],
+        "evidence_table": [
+          {
+            "source": "Hugging Face Blog - MosaicLeaks",
+            "url": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
+            "supports": "实验展示研究Agent提示注入风险",
+            "reliability": "official"
+          },
+          {
+            "source": "The Hacker News - ServiceNow AI Agents",
+            "url": "https://thehackernews.com/2025/11/servicenow-ai-agents-can-be-tricked.html",
+            "supports": "Agent-to-Agent提示注入攻击",
+            "reliability": "media"
+          },
+          {
+            "source": "CyberScoop - ServiceNow patches critical AI flaw",
+            "url": "https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/",
+            "supports": "ServiceNow AI平台漏洞修复",
+            "reliability": "media"
+          },
+          {
+            "source": "Security Affairs - LangChain vulnerability",
+            "url": "https://securityaffairs.com/186185/hacking/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html",
+            "supports": "LangChain Core提示注入漏洞",
+            "reliability": "media"
+          },
+          {
+            "source": "The Guardian - Meta AI agent data leak",
+            "url": "https://www.theguardian.com/technology/2026/mar/20/meta-ai-agents-instruction-causes-large-sensitive-data-leak-to-employees",
+            "supports": "真实Agent数据泄露案例",
+            "reliability": "media"
+          },
+          {
+            "source": "OWASP - Prompt Injection",
+            "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+            "supports": "提示注入为LLM首要风险",
+            "reliability": "official"
+          },
+          {
+            "source": "arXiv - Benchmark and Defense Framework",
+            "url": "https://arxiv.org/html/2511.15759v1",
+            "supports": "防御框架可将攻击成功率从85%降至12%",
+            "reliability": "near_source"
+          }
+        ],
+        "logic_closure": "部分闭环：提示注入风险真实存在，有实验和案例支持，但MosaicLeaks具体攻击场景和成功率未知，防御方案有效性需验证。",
+        "writeable_angles": [
+          {
+            "angle": "Agent提示注入风险科普+防御实践",
+            "why": "满足核心技术人安全需求，提供可操作建议",
+            "needs": "MosaicLeaks实验细节、主流框架漏洞对比、防御方案代码示例"
+          },
+          {
+            "angle": "Meta案例复盘：Agent配置错误如何导致数据泄露",
+            "why": "故事性强，吸引泛兴趣读者",
+            "needs": "Meta事件详细技术分析、责任归属"
+          },
+          {
+            "angle": "Agent安全：成本账与迁移账",
+            "why": "服务高价值商业读者，评估风险与投入",
+            "needs": "防御方案成本、合规要求、保险数据"
+          }
+        ],
+        "missing_basics": [
+          "提示注入攻击的具体分类（直接、间接、二阶）",
+          "Agent架构中提示注入的攻击面（系统提示、工具调用、记忆）",
+          "主流防御方案（输入过滤、权限隔离、输出验证）"
+        ],
+        "missing_materials": [
+          "MosaicLeaks实验原文及代码",
+          "主流Agent框架（LangChain、AutoGPT、CrewAI）漏洞列表",
+          "真实Agent数据泄露案例详细报告",
+          "防御方案有效性基准数据",
+          "ServiceNow官方缓解建议"
+        ],
+        "not_claimable": [
+          "Agent存在普遍且严重的数据泄露风险",
+          "所有研究Agent都不安全",
+          "提示注入无法防御"
+        ],
+        "followup_queries": [
+          "MosaicLeaks实验的具体攻击场景和成功率",
+          "ServiceNow是否提供了缓解方案或工具",
+          "LangChain、AutoGPT等框架的已知提示注入漏洞",
+          "Meta AI Agent数据泄露事件的技术细节",
+          "OWASP LLM安全最佳实践"
+        ],
+        "additional_search_queries": [
+          "MosaicLeaks ServiceNow prompt injection research agent",
+          "MosaicLeaks ServiceNow GitHub",
+          "LangChain prompt injection vulnerability CVE",
+          "AutoGPT prompt injection vulnerability",
+          "Meta AI agent data leak technical analysis",
+          "OWASP LLM prompt injection prevention cheat sheet",
+          "prompt injection attack success rate benchmark 2025"
+        ],
+        "stop_conditions": [
+          "MosaicLeaks实验原文无法获取或内容与摘要不符",
+          "主流Agent框架无已知提示注入漏洞",
+          "无真实Agent数据泄露案例",
+          "防御方案被证明无效或不可部署"
+        ],
+        "confidence": 65.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI前沿",
+        "report_type": "risk-warning",
+        "quality_gate": {
+          "pass": false,
+          "score": 65,
+          "fatal_issues": [
+            "核心事实没有来源：MosaicLeaks实验原文未获取，摘要内容无法验证。"
+          ],
+          "warnings": [
+            "传播张力不足：冲突点和讨论点不够尖锐，容易写成专业安全科普。",
+            "信息源偏科：证据主要来自安全媒体和博客，缺少官方技术报告和代码。"
+          ],
+          "missing_evidence": [
+            "MosaicLeaks实验原文及代码",
+            "主流Agent框架（LangChain、AutoGPT、CrewAI）漏洞列表",
+            "真实Agent数据泄露案例详细报告",
+            "防御方案有效性基准数据",
+            "ServiceNow官方缓解建议"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "研究型AI Agent在真实生产环境中面临多大的提示注入数据泄露风险？",
+          "persona_discussion_question": "我该不该信任研究Agent来处理内部文档？如果用它查竞品，会不会反被窃取我的查询意图？",
+          "hidden_public_issue": "AI Agent的提示注入风险被低估，开发者可能在不了解安全边界的情况下部署Agent，导致企业机密或用户数据泄露，而责任往往由用户承担。",
+          "must_verify": [
+            "MosaicLeaks实验的具体攻击场景和成功率",
+            "ServiceNow是否提供了缓解方案或工具",
+            "主流Agent框架（如LangChain、AutoGPT）是否有已知的提示注入漏洞",
+            "是否有真实案例报告Agent导致数据泄露"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "MosaicLeaks ServiceNow prompt injection research agent",
+              "why_needed": "获取实验原文、攻击方法、缓解建议"
+            },
+            {
+              "source_type": "github_repo",
+              "query": "MosaicLeaks ServiceNow GitHub",
+              "why_needed": "查看实验代码、复现步骤、社区讨论"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "LangChain prompt injection vulnerability",
+              "why_needed": "了解主流框架的安全状态和已知漏洞"
+            },
+            {
+              "source_type": "case_study",
+              "query": "AI agent data leak real incident",
+              "why_needed": "寻找真实泄露案例，验证风险严重性"
+            },
+            {
+              "source_type": "policy",
+              "query": "OWASP LLM prompt injection",
+              "why_needed": "获取行业安全标准和最佳实践"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "prompt injection attack success rate benchmark",
+              "why_needed": "评估攻击成功率，判断风险等级"
+            }
+          ],
+          "expert_challenge_points": [
+            "实验环境是否过度简化？真实场景中攻击者能否轻易注入恶意提示？",
+            "Agent的权限隔离（如沙箱、最小权限）能否有效缓解？",
+            "提示注入是否属于已知漏洞，是否有成熟防御方案？"
+          ],
+          "do_not_claim_yet": [
+            "Agent存在普遍且严重的数据泄露风险",
+            "所有研究Agent都不安全",
+            "提示注入无法防御"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需补充真实案例和防御方案，否则容易写成小圈子安全科普。",
+          "downstream_materials_needed": [
+            "MosaicLeaks实验原文及代码",
+            "主流Agent框架安全文档",
+            "真实数据泄露案例报告",
+            "OWASP LLM安全指南"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "When AI Turns on Its Team: Exploiting Agent-to-Agent Discovery via Prompt Injection",
+            "url": "https://appomni.com/ao-labs/ai-agent-to-agent-discovery-prompt-injection/",
+            "query": "MosaicLeaks ServiceNow prompt injection research agent",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(window.NREUM||(NREUM={})).init={ajax:{deny_list:[\"bam.nr-data.net\"]},feature_flags:[\"soft_nav\"]};(window.NREUM||(NREUM={})).loader_config={licenseKey:\"NRJS-7f1bcd80faf16b99b32\",applicationID:\"681787618\",browserID:\"718418871\"};;/*! For license information please see nr-loader-rum-1.316.0.min.js.LICENSE.txt */ (()=>{var e,t,r={122:(e,t,r)=>{\"use strict\";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||\"object\"!=typeof e)return(0,n.R)(3);if(!t||\"object\"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),s=0===Object.keys(r).length?e:r;for(let o in s)if(void 0!==e[o])try{if(null===e[o]){r[o]=null;continue}Array.isArray(e[o])&&Array.isArray(t[o])?r[o]=Array.from(new Set([...e[o],...t[o]])):e[o]instanceof Map||e[o]instanceof Set||e[o]instanceof Date||e[o]instanceof RegExp?r[o]=e[o]:\"object\"==typeof e[o]&&\"object\"==typeof t[o]?r[o]=i(e[o],t[o]):r[o]=e[o]}catch(e){r[o]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},154:(e,t,r)=>{\"use strict\";r.d(t,{OF:()=>u,RI:()=>i,WN:()=>l,bv:()=>s,gm:()=>o,m:()=>c,mw:()=>a,sb:()=>d,zk:()=>f});var n=r(863);const i=\"undefined\"!=typeof window&&!!window.document,s=\"undefined\"!=typeof WorkerGlobalScope&&(\"undefined\"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||\"undefined\"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),o=i?window:\"undefined\"!=typeof WorkerGlobalScope&&(\"undefined\"!=typeof self&&self instanceof WorkerGlobalScope&&self||\"undefined\"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),a=Boolean(\"hidden\"===o?.document?.visibilityState),c=\"\"+o?.location,u=/iPad|iPhone|iPod/.test(o.navigator?.userAgent),d=u&&\"undefined\"==typeof SharedWorker",
+            "fetch_error": ""
+          },
+          {
+            "title": "ServiceNow AI Agents Can Be Tricked Into Acting Against Each Other via Second-Order Prompts",
+            "url": "https://thehackernews.com/2025/11/servicenow-ai-agents-can-be-tricked.html",
+            "query": "MosaicLeaks ServiceNow prompt injection research agent",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "ServiceNow AI Agents Can Be Tricked Into Acting Against Each Other via Second-Order Prompts @font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/math/wght/normal.woff2);unicode-range:U+0302-0303,U+0305,U+0307-0308,U+0310,U+0312,U+0315,U+031A,U+0326-0327,U+032C,U+032F-0330,U+0332-0333,U+0338,U+033A,U+0346,U+034D,U+0391-03A1,U+03A3-03A9,U+03B1-03C9,U+03D1,U+03D5-03D6,U+03F0-03F1,U+03F4-03F5,U+2016-2017,U+2034-2038,U+203C,U+2040,U+2043,U+2047,U+2050,U+2057,U+205F,U+2070-2071,U+2074-208E,U+2090-209C,U+20D0-20DC,U+20E1,U+20E5-20EF,U+2100-2112,U+2114-2115,U+2117-2121,U+2123-214F,U+2190,U+2192,U+2194-21AE,U+21B0-21E5,U+21F1-21F2,U+21F4-2211,U+2213-2214,U+2216-22FF,U+2308-230B,U+2310,U+2319,U+231C-2321,U+2336-237A,U+237C,U+2395,U+239B-23B7,U+23D0,U+23DC-23E1,U+2474-2475,U+25AF,U+25B3,U+25B7,U+25BD,U+25C1,U+25CA,U+25CC,U+25FB,U+266D-266F,U+27C0-27FF,U+2900-2AFF,U+2B0E-2B11,U+2B30-2B4C,U+2BFE,U+3030,U+FF5B,U+FF5D,U+1D400-1D7FF,U+1EE00-1EEFF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/symbols/wght/normal.woff2);unicode-range:U+0001-000C,U+000E-001F,U+007F-009F,U+20DD-20E0,U+20E2-20E4,U+2150-218F,U+2190,U+2192,U+2194-2199,U+21AF,U+21E6-21F0,U+21F3,U+2218-2219,U+2299,U+22C4-22C6,U+2300-243F,U+2440-244A,U+2460-24FF,U+25A0-27BF,U+2800-28FF,U+2921-2922,U+2981,U+29BF,U+29EB,U+2B00-2BFF,U+4DC0-4DFF,U+FFF9-FFFB,U+10140-1018E,",
+            "fetch_error": ""
+          },
+          {
+            "title": "ServiceNow patches critical AI platform flaw that could allow user impersonation | CyberScoop",
+            "url": "https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/",
+            "query": "MosaicLeaks ServiceNow prompt injection research agent",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } ServiceNow patches critical AI platform flaw that could allow user impersonation | CyberScoop {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/\",\"url\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/\",\"name\":\"ServiceNow patches critical AI platform flaw that could allow user impersonation | CyberScoop\",\"isPartOf\":{\"@id\":\"https://cyberscoop.com/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/#primaryimage\"},\"image\":{\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/#primaryimage\"},\"thumbnailUrl\":\"https://cyberscoop.com/wp-content/uploads/sites/3/2026/01/GettyImages-1173020463.jpg\",\"datePublished\":\"2026-01-13T15:47:26+00:00\",\"dateModified\":\"2026-01-16T19:47:21+00:00\",\"description\":\"ServiceNow has addressed a critical security vulnerability in its AI platform that could have allowed unauthenticated users to impersonate legitimate users and perform unauthorized actions, the company disclosed Monday.\",\"breadcrumb\":{\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/\"]}]},{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/#primaryimage\",\"url\":\"https://cyberscoop.com/w",
+            "fetch_error": ""
+          },
+          {
+            "title": "ServiceNow · GitHub",
+            "url": "https://github.com/ServiceNow",
+            "query": "MosaicLeaks ServiceNow GitHub",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+            "fetch_error": ""
+          },
+          {
+            "title": "Mastering ServiceNow GitHub Integration: A Quick G... - ServiceNow Community",
+            "url": "https://www.servicenow.com/community/servicenow-studio-articles/mastering-servicenow-github-integration-a-quick-guide/ta-p/3232635",
+            "query": "MosaicLeaks ServiceNow GitHub",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Mastering ServiceNow GitHub Integration: A Quick G... - ServiceNow Community window.khoros_analytics = {}; window.khoros_analytics.datetime_iso_utc = '2026-06-18T22:33:17Z'; window.khoros_analytics.user = {}; window.khoros_analytics.user.anonymous = true; window.khoros_analytics.user.fully_registered = false; window.khoros_analytics.user.partially_registered = false; window.khoros_analytics.user.username = ''; window.khoros_analytics.page = {}; window.khoros_analytics.page.url_server = 'https://www.servicenow.com/community/servicenow-studio-articles/mastering-servicenow-github-integration-a-quick-guide/ta-p/3232635'; window.khoros_analytics.page.url_browser = ((window.location.href) || ''); window.khoros_analytics.page.name = 'TkbArticlePage'; window.khoros_analytics.page.post_thread_id = '3232635'; window.khoros_analytics.page.post_subject = 'Mastering ServiceNow GitHub Integration: A Quick Guide'; window.khoros_analytics.page.breadcrumb_types_ids = '\\/community:cgfwn76974/category:product-discussions/category:app-development/category:servicenow-studio/board:servicenow-studio-articles/tkb:3232635'; window.khoros_analytics.page.breadcrumb_titles = '\\/ServiceNow Community/Products/App Development/ServiceNow Studio/ServiceNow Studio articles/Mastering ServiceNow GitHub Integration: A Quick Guide'; window.khoros_analytics.node = {}; window.khoros_analytics.node.type = 'board'; window.khoros_analytics.node.discussion_style = 'tkb'; window.khoros_analytics.node.id = 'servicenow-studio-articles'; window.khoros_analytics.node.title = 'ServiceNow Studio articles'; window.khoros_analytics.node.url = 'https://www.servicenow.com/community/servicenow-studio-articles/tkb-p/servicenow-studio-articles'; window.khoros_analytics.node.analytics_data = ''; window.khoros_analytics.node.anc",
+            "fetch_error": ""
+          },
+          {
+            "title": "ServiceNow GitHub Integration: The Comprehensive Guide [2026]",
+            "url": "https://exalate.com/blog/servicenow-github-integration/",
+            "query": "MosaicLeaks ServiceNow GitHub",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "LangChain core vulnerability allows prompt injection and data exposure",
+            "url": "https://securityaffairs.com/186185/hacking/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html",
+            "query": "LangChain prompt injection vulnerability",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "LangChain core vulnerability allows prompt injection and data exposure {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html\"},\"author\":{\"name\":\"Pierluigi Paganini\",\"@id\":\"https:\\/\\/securityaffairs.com\\/#\\/schema\\/person\\/919f4eac925343455dfcc8e063d0446a\"},\"headline\":\"LangChain core vulnerability allows prompt injection and data exposure\",\"datePublished\":\"2025-12-27T18:20:16+00:00\",\"dateModified\":\"2025-12-27T18:20:18+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html\"},\"wordCount\":458,\"image\":{\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html#primaryimage\"},\"thumbnailUrl\":\"https:\\/\\/i0.wp.com\\/securityaffairs.com\\/wp-content\\/uploads\\/2025\\/12\\/image-46.png?fit=900%2C600&ssl=1\",\"keywords\":[\"Hacking\",\"information security news\",\"IT Information Security\",\"LangChain\",\"LLM\",\"Pierluigi Paganini\",\"Security Affairs\",\"Security News\"],\"articleSection\":[\"Artificial Intelligence\",\"Breaking News\",\"Hacking\",\"Security\"],\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html\",\"url\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html\",\"name\":\"LangChain core vulnerability allows prompt injection and data exposure\",\"isPartOf\":{\"@",
+            "fetch_error": ""
+          },
+          {
+            "title": "Critical LangChain Core Vulnerability Exposes Secrets via Serialization Injection",
+            "url": "https://thehackernews.com/2025/12/critical-langchain-core-vulnerability.html",
+            "query": "LangChain prompt injection vulnerability",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Critical LangChain Core Vulnerability Exposes Secrets via Serialization Injection @font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/math/wght/normal.woff2);unicode-range:U+0302-0303,U+0305,U+0307-0308,U+0310,U+0312,U+0315,U+031A,U+0326-0327,U+032C,U+032F-0330,U+0332-0333,U+0338,U+033A,U+0346,U+034D,U+0391-03A1,U+03A3-03A9,U+03B1-03C9,U+03D1,U+03D5-03D6,U+03F0-03F1,U+03F4-03F5,U+2016-2017,U+2034-2038,U+203C,U+2040,U+2043,U+2047,U+2050,U+2057,U+205F,U+2070-2071,U+2074-208E,U+2090-209C,U+20D0-20DC,U+20E1,U+20E5-20EF,U+2100-2112,U+2114-2115,U+2117-2121,U+2123-214F,U+2190,U+2192,U+2194-21AE,U+21B0-21E5,U+21F1-21F2,U+21F4-2211,U+2213-2214,U+2216-22FF,U+2308-230B,U+2310,U+2319,U+231C-2321,U+2336-237A,U+237C,U+2395,U+239B-23B7,U+23D0,U+23DC-23E1,U+2474-2475,U+25AF,U+25B3,U+25B7,U+25BD,U+25C1,U+25CA,U+25CC,U+25FB,U+266D-266F,U+27C0-27FF,U+2900-2AFF,U+2B0E-2B11,U+2B30-2B4C,U+2BFE,U+3030,U+FF5B,U+FF5D,U+1D400-1D7FF,U+1EE00-1EEFF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/symbols/wght/normal.woff2);unicode-range:U+0001-000C,U+000E-001F,U+007F-009F,U+20DD-20E0,U+20E2-20E4,U+2150-218F,U+2190,U+2192,U+2194-2199,U+21AF,U+21E6-21F0,U+21F3,U+2218-2219,U+2299,U+22C4-22C6,U+2300-243F,U+2440-244A,U+2460-24FF,U+25A0-27BF,U+2800-28FF,U+2921-2922,U+2981,U+29BF,U+29EB,U+2B00-2BFF,U+4DC0-4DFF,U+FFF9-FFFB,U+10140-1018E,U+10190-1019C,U+101A0,U+101D0-101FD,U+10",
+            "fetch_error": ""
+          },
+          {
+            "title": "Vulnerabilities in LangChain Gen AI",
+            "url": "https://unit42.paloaltonetworks.com/langchain-vulnerabilities/",
+            "query": "LangChain prompt injection vulnerability",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "The read operation timed out"
+          },
+          {
+            "title": "Meta AI agent’s instruction causes large sensitive data leak to employees | AI (artificial intelligence) | The Guardian",
+            "url": "https://www.theguardian.com/technology/2026/mar/20/meta-ai-agents-instruction-causes-large-sensitive-data-leak-to-employees",
+            "query": "AI agent data leak real incident",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Meta AI agent’s instruction causes large sensitive data leak to employees | AI (artificial intelligence) | The Guardian [{\"@type\":\"NewsArticle\",\"@context\":\"https://schema.org\",\"@id\":\"https://www.theguardian.com/technology/2026/mar/20/meta-ai-agents-instruction-causes-large-sensitive-data-leak-to-employees\",\"publisher\":{\"@type\":\"Organization\",\"@context\":\"https://schema.org\",\"@id\":\"https://www.theguardian.com#publisher\",\"name\":\"The Guardian\",\"url\":\"https://www.theguardian.com/\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://uploads.guim.co.uk/2018/01/31/TheGuardian_AMP.png\",\"width\":190,\"height\":60},\"sameAs\":[\"https://www.facebook.com/theguardian\",\"https://twitter.com/guardian\",\"https://www.youtube.com/user/TheGuardian\"]},\"isAccessibleForFree\":true,\"isPartOf\":{\"@type\":[\"CreativeWork\",\"Product\"],\"name\":\"The Guardian\",\"productID\":\"theguardian.com:basic\"},\"image\":[\"https://i.guim.co.uk/img/media/64b9fe32be9fdfbf111a6132dff8580c6efacecd/357_0_5286_4230/master/5286.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=1cc0280e4457a142c2095afb784bee89\",\"https://i.guim.co.uk/img/media/64b9fe32be9fdfbf111a6132dff8580c6efacecd/357_0_5286_4230/master/5286.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=c828a0ad05a89df9a6878da59a59596e\",\"https://i.guim.co.uk/img/media/64b9fe32be9fdfbf111a6132dff8580c6efacecd/357_0_5286_4230/master/5286.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=bd15e0a988a749cd0441f2c49381099a\",\"https://i.guim.co.uk/img/media/64b9fe32be9fdfbf111a6132dff8580c6efacecd/357_0_5286_4230/master/5286.jpg?width=1200&quality=85&auto=format&fit=max&s=a5d242f9367b55ce9904110d371631dc\"],\"",
+            "fetch_error": ""
+          },
+          {
+            "title": "The Risk of Agentic AI: A Story of Meta's AI Agent Data Leak | Cybersecurity Magazine",
+            "url": "https://cybermagazine.com/news/the-risk-of-agentic-the-story-of-metas-ai-agent-data-leak",
+            "query": "AI agent data leak real incident",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "function OptanonWrapper() { } (function () { console.log(\"🔤 Running Typekit metrics fix\") // Only run if the browser supports font metric overrides var KIT_URL = 'https://use.typekit.net/alc1mww.css'; function injectStyle(cssText) { console.log(\"💉 Injecting Typekit metrics fix styles\"); var style = document.createElement('style'); style.setAttribute('data-typekit-metrics-fix', 'true'); style.textContent = cssText; document.head.appendChild(style); console.log(\"✅ Typekit metrics fix styles injected\"); } function buildOverrides(typekitCss) { console.log(\"🔨 Building font metric overrides\"); var faces = typekitCss.match(/@font-face\\s*{[^}]+}/g); if (!faces) { console.log(\"⚠️ No @font-face rules found\"); return ''; } console.log(\"📝 Found \" + faces.length + \" @font-face rules\"); var out = ''; for (var i = 0; i \" -metrics-fix\" var renamed = face.replace( /font-family:\\s*[\"']?([^;\"']+)[\"']?;/, function (_, name) { return 'font-family: \"' + name + '-metrics-fix\";'; } ); // Add overrides before closing brace var withOverrides = renamed.replace( /}\\s*$/, '\\n ascent-override: 75%;\\n line-gap-override: 0%;\\n}' ); out += withOverrides + '\\n\\n'; } console.log(\"✅ Built overrides for \" + faces.length + \" fonts\"); return out; } // Avoid injecting twice if (document.querySelector('style[data-typekit-metrics-fix=\"true\"]')) { console.log(\"⏭️ Typekit metrics fix already applied, skipping\"); return; } console.log(\"🌐 Fetching Typekit CSS from: \" + KIT_URL); fetch(KIT_URL, { mode: 'cors' }) .then(function (res) { console.log(\"📥 Typekit CSS fetched successfully\"); return res.text(); }) .then(function (css) { var overrides = buildOverrides(css); if (!overrides) { console.log(\"⚠️ No overrides generated\"); return; } injectStyle(overrides); // Mark document so your CSS can swap families document.doc",
+            "fetch_error": ""
+          },
+          {
+            "title": "Meta AI agent leak reveals enterprise AI security gaps | PointGuard AI",
+            "url": "https://www.pointguardai.com/ai-security-incidents/metas-ai-agent-misfire-spills-data-across-the-workforce",
+            "query": "AI agent data leak real incident",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Meta AI agent leak reveals enterprise AI security gaps | PointGuard AI WebFont.load({ google: { families: [\"Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic\",\"Maven Pro:300,400,500,600,700\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"Meta’s AI Agent Misfire Spills Data Across the Workforce\", \"description\": \"Misconfigured AI agent exposed sensitive internal data to unauthorized Meta employees.\", \"datePublished\": \"2026-03-31T17:59:07.570Z\", \"dateModified\": \"2026-03-23T19:43:41.439Z\", \"author\": { \"@type\": \"Organization\", \"name\": \"PointGuard AI\", \"url\": \"https://www.pointguardai.com\" }, \"publisher\": { \"@type\": \"Organization\", \"name\": \"PointGuard AI\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://cdn.prod.website-files.com/622134a6316eb7034f7dc84b/68082d3fc95630922029336d_9b0afa15d5b0feaa2ed367b1ae162250_PointGuard%20AI%20logo%20v2%20Color.png\" } }, \"about\": { \"@type\": \"SecurityIncident\", \"name\": \"Meta’s AI Agent Misfire Spills Data Across the Workforce\", \"description\": \"Misconfigured AI agent exposed sensitive internal data to unauthorized Meta employees.\", \"dateReported\": \"2026-03-20\", \"affectedOrganization\": { \"@type\": \"Organization\", \"name\": \"Meta’s AI Agent Misfire Spills Data Across the Workforce\", \"logo\": \"https://cdn.prod.website-files.com/622134a7316eb7ab1c7dc85f/69c17d02178eecc225914404_Meta%20leak%20icon.png\" }, \"securityMetrics\": { \"@type\": \"PropertyValue\", \"name\": \"AI Security Severity Index\", \"value\": \"7.3\", \"maxValue\": \"10\", \"description\": \"Composite threat ass",
+            "fetch_error": ""
+          },
+          {
+            "title": "LLM01:2025 Prompt Injection - OWASP Gen AI Security Project",
+            "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+            "query": "OWASP LLM prompt injection",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "@media all{.e-con{--container-widget-width:100%}.e-con>.elementor-widget-spacer{width:var(--container-widget-width,var(--spacer-size));--align-self:var(--container-widget-align-self,initial);--flex-shrink:0}.e-con>.elementor-widget-spacer>.elementor-widget-container{height:100%;width:100%}.e-con>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer{height:100%}.e-con>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer>.elementor-spacer-inner{height:var(--container-widget-height,var(--spacer-size))}.elementor-widget.elementor-icon-list--layout-inline .elementor-widget-container{overflow:hidden}.elementor-widget .elementor-icon-list-items.elementor-inline-items{margin-right:-8px;margin-left:-8px}.elementor-widget .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item{margin-right:8px;margin-left:8px}.elementor-widget .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after{width:auto;left:auto;right:auto;position:relative;height:100%;border-top:0;border-bottom:0;border-right:0;border-left-width:1px;border-style:solid;right:-8px}.elementor-widget .elementor-icon-list-items{list-style-type:none;margin:0;padding:0}.elementor-widget .elementor-icon-list-item{margin:0;padding:0;position:relative}.elementor-widget .elementor-icon-list-item:after{position:absolute;bottom:0;width:100%}.elementor-widget .elementor-icon-list-item,.elementor-widget .elementor-icon-list-item a{display:flex;font-size:inherit;align-items:var(--icon-vertical-align,center)}.elementor-widget .elementor-icon-list-icon+.elementor-icon-list-text{align-self:center;padding-inline-start:5px}.elementor-widget .elementor-icon-list-icon{display:flex;position:relative;top:var(--icon-vertical-offset,initial)}.elementor-widget .elemento",
+            "fetch_error": ""
+          },
+          {
+            "title": "LLM Prompt Injection Prevention - OWASP Cheat Sheet Series",
+            "url": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html",
+            "query": "OWASP LLM prompt injection",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "LLM Prompt Injection Prevention - OWASP Cheat Sheet Series :root{--md-text-font:\"Roboto\";--md-code-font:\"Roboto Mono\"} __md_scope=new URL(\"..\",location),__md_hash=e=>[...e].reduce(((e,_)=>(e JSON.parse(_.getItem(t.pathname+\".\"+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+\".\"+e,JSON.stringify(_))}catch(e){}} Skip to content OWASP Cheat Sheet Series LLM Prompt Injection Prevention var palette=__md_get(\"__palette\");if(palette&&palette.color){if(\"(prefers-color-scheme)\"===palette.color.media){var media=matchMedia(\"(prefers-color-scheme: light)\"),input=document.querySelector(media.matches?\"[data-md-color-media='(prefers-color-scheme: light)']\":\"[data-md-color-media='(prefers-color-scheme: dark)']\");palette.color.media=input.getAttribute(\"data-md-color-media\"),palette.color.scheme=input.getAttribute(\"data-md-color-scheme\"),palette.color.primary=input.getAttribute(\"data-md-color-primary\"),palette.color.accent=input.getAttribute(\"data-md-color-accent\")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute(\"data-md-color-\"+key,value)} Initializing search OWASP/CheatSheetSeries OWASP Cheat Sheet Series OWASP/CheatSheetSeries Introduction Index Alphabetical Index ASVS Index MASVS Index Proactive Controls Index Top 10 Cheatsheets Cheatsheets AI Agent Security AJAX Security AML Sanctions AI Agent Payments Abuse Case Access Control Attack Surface Analysis Authentication Authorization Authorization Regression Testing Authorization Testing Automation Automotive Security Bean Validation Bot Management and Anti-Automation Browser Extension Vulnerabilities Business Logic Security C-Based Toolchain Hardening CI CD Security Choosing and Using Security Questions Clickjacking Defense Content Security Policy Cookie Theft Mitigation Credentia",
+            "fetch_error": ""
+          },
+          {
+            "title": "Prompt Injection | OWASP Foundation",
+            "url": "https://owasp.org/www-community/attacks/PromptInjection",
+            "query": "OWASP LLM prompt injection",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "--> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-4531126-1'); --> if(Cookies.get('cookies-ok') == 'true' && window.ga === undefined) { window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date; ga('create', 'UA-4531126-1', 'auto'); ga('send', 'pageview'); } else if (Cookies.get('cookies-ok') == 'true') { ga('send', 'pageview'); } function handleOutboundLinkClicks(event) { var href = ''; if(event.target.href == undefined) href = event.target.parentElement.href; else href = event.target.href if(Cookies.get('cookies-ok') == 'true'){ ga('send', 'event', { eventCategory: 'Outbound Link', eventAction: 'click', eventLabel: href, transport: 'beacon' }); } } Prompt Injection | OWASP Foundation $(function(){ var baseurl = \"https://github.com/OWASP/www-community/blob/master/\"; var path = \"pages/attacks/prompt-injection.md\"; $('.repo').html(' Edit on GitHub '); }); For full functionality of this site it is necessary to enable JavaScript. Here are the instructions how to enable JavaScript in your web browser . #banner img { max-width: 30em; } @media (max-width: 1131px) { #banner img { max-width: 30em; } } @media (max-width: 800px) { #banner img { max-width: 20em; } } @media (max-width: 600px) { #banner img { max-width: 20em; } } @media (max-width: 450px) { #banner img { max-width: 250px; } } $(function () { var bannerdata = []; banneryaml = YAML.load('https://owasp.org/www-community/assets/sitedata/banner-data.yml'); $.each(banneryaml, function (index) { bannerdata.push(this); }); if (bannerdata.length > 0) { var htmlstring = \"\"; var usebanner = null; var defbanner = null; var checkdate = new Date(); //local time but who cares about the time? bannerdata.forEach(data => { if (da",
+            "fetch_error": ""
+          },
+          {
+            "title": "Anthropic published the prompt injection failure rates that enterprise security teams have been asking every vendor for | VentureBeat",
+            "url": "https://venturebeat.com/security/prompt-injection-measurable-security-metric-one-ai-developer-publishes-numbers",
+            "query": "prompt injection attack success rate benchmark",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 429: Too Many Requests"
+          },
+          {
+            "title": "Prompt injection: types, real-world CVEs, and enterprise defenses",
+            "url": "https://www.vectra.ai/topics/prompt-injection",
+            "query": "prompt injection attack success rate benchmark",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Prompt injection: types, real-world CVEs, and enterprise defenses WebFont.load({ google: { families: [\"Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"Organization\", \"@id\": \"https://www.vectra.ai/#organization\", \"name\": \"Vectra AI\", \"url\": \"https://www.vectra.ai\", \"logo\": \"https://cdn.prod.website-files.com/5bc507560cb5c73d2b835416/5f75695a56862b10f251c072_VectraLogo_NoTag_PMS363.png\" }, { \"@type\": \"Article\", \"url\": \"https://www.vectra.ai/topics/prompt-injection\", \"headline\": \"Prompt injection explained: the top AI security threat enterprises cannot ignore\", \"image\": \"https://cdn.prod.website-files.com/64e50cbe2b6f932c04238c14/69b0442d91bead2d076eb661_soc-analyst.png\", \"datePublished\": \"2026-05-15T17:44:48.273Z\", \"dateModified\": \"2026-05-14T17:22:40.141Z\", \"author\": { \"@type\": \"Person\", \"name\": \"Lucie Cardiet\", \"url\": \"https://www.vectra.ai/about/author/lucie-cardiet\" }, \"publisher\": { \"@id\": \"https://www.vectra.ai/#organization\" } }, { \"@type\": \"BreadcrumbList\", \"itemListElement\": [ { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.vectra.ai\" }, { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Topics\", \"item\": \"https://www.vectra.ai/topics\" }, { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Prompt injection explained: the top AI security threat enterprises cannot ignore\" } ] } ] } .anti-flicker, .anti-flicker * {visibility: hidden !important; opacity: 0 !important;} [data-wf-hidden-variation], [data-wf-hidden-variat",
+            "fetch_error": ""
+          },
+          {
+            "title": "Securing AI Agents Against Prompt Injection Attacks: A Comprehensive Benchmark and Defense Framework",
+            "url": "https://arxiv.org/html/2511.15759v1",
+            "query": "prompt injection attack success rate benchmark",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Securing AI Agents Against Prompt Injection Attacks: A Comprehensive Benchmark and Defense Framework 1 Introduction 2 Background and Threat Model 2.1 Retrieval-Augmented Generation Architecture 2.2 Threat Model 2.3 Attack Categories 3 Related Work 4 Benchmark Design 4.1 Dataset Construction 4.2 Sophistication Levels 4.3 Evaluation Metrics 5 Defense Framework 5.1 Content Filtering with Embedding Analysis 5.2 Hierarchical System Prompt Guardrails 5.3 Multi-Stage Response Verification 6 Experimental Evaluation 6.1 Experimental Setup 6.2 Attack Success Rates 6.3 Model-Specific Vulnerabilities 6.4 False Positive Analysis 6.5 Ablation Studies 6.6 Computational Overhead 7 Discussion 7.1 Limitations and Future Work 7.2 Deployment Considerations 7.3 Broader Implications 8 Conclusion Securing AI Agents Against Prompt Injection Attacks: A Comprehensive Benchmark and Defense Framework Badrinath Ramakrishnan Akshaya Balaji Abstract Retrieval-augmented generation (RAG) systems have emerged as powerful tools for enhancing large language model capabilities, yet they introduce significant security vulnerabilities through prompt injection attacks. We present a systematic benchmark for evaluating prompt injection risks in RAG-enabled AI agents and propose a multi-layered defense framework. Our benchmark encompasses 847 adversarial test cases across five attack categories: direct injection, context manipulation, instruction override, data exfiltration, and cross-context contamination. We evaluate three defense mechanisms—content filtering with embedding-based anomaly detection, hierarchical system prompt guardrails, and multi-stage response verification—across seven state-of-the-art language models. Results demonstrate that our combined defense framework reduces successful attack rates fro",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：MosaicLeaks实验原文未获取，摘要内容无法验证。"
+        },
+        "core_question": "研究型AI Agent在真实生产环境中面临多大的提示注入数据泄露风险？",
+        "why_this_topic_matters": "ServiceNow在Hugging Face发布MosaicLeaks实验，展示研究Agent如何被提示注入窃取秘密。随着Agent部署增多，提示注入风险被低估，开发者可能在不了解安全边界的情况下部署Agent，导致企业机密或用户数据泄露。",
+        "fact_summary": [
+          "ServiceNow在Hugging Face博客发布MosaicLeaks实验，展示研究型AI Agent在提示注入攻击下可能泄露机密数据。",
+          "实验涉及Agent-to-Agent发现过程中的提示注入。",
+          "已有真实案例：Meta AI Agent因指令配置错误导致敏感数据泄露给内部员工。",
+          "LangChain Core存在已知提示注入漏洞（CVE-2025-12420等）。",
+          "OWASP将提示注入列为LLM应用首要安全风险（LLM01）。",
+          "有学术基准（arXiv 2511.15759）显示组合防御框架可将攻击成功率从85%降至12%。"
+        ],
+        "persona_discussion_question": "我该不该信任研究Agent来处理内部文档？如果用它查竞品，会不会反被窃取我的查询意图？",
+        "old_flower_stance": "提示注入不是新问题，但Agent化让攻击面从单次对话扩展到多步工具调用链。普通技术人部署Agent时，安全边界往往被忽略。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 75,
+          "why_interested": "核心技术人关注Agent安全实践和防御方案；入门读者了解提示注入风险；商业读者评估Agent部署的合规成本。",
+          "reader_risk": "可能被误解为‘Agent都不安全’，需强调风险可控且有防御方案。"
+        },
+        "mass_interest_hook": {
+          "score": 60,
+          "hook_type": "故事",
+          "why_non_technical_people_may_click": "AI Agent泄露机密数据的故事（如Meta案例）具有新闻性，普通人担心自己使用的AI工具是否安全。",
+          "story_seed": "Meta AI Agent因一条指令泄露大量敏感数据给内部员工，类似事件可能发生在任何公司。",
+          "do_not_overhype": "不要声称Agent普遍存在严重泄露风险，需强调实验条件和防御方案。"
+        },
+        "topic_tension": {
+          "score": 6,
+          "conflict_point": "Agent效率提升 vs 安全风险增加",
+          "debate_question": "Agent的便利性是否值得承担提示注入风险？",
+          "stakeholders": [
+            "AI Agent开发者",
+            "企业安全团队",
+            "普通技术用户",
+            "AI平台厂商"
+          ],
+          "why_people_would_comment": "开发者争论防御方案有效性，安全团队关注合规，用户担心隐私。",
+          "traffic_risk": "传播张力不足，容易写成专业安全科普；需补真实冲突或反方材料。"
+        },
+        "timeline": [
+          "2025-12-27: LangChain Core提示注入漏洞披露",
+          "2026-01-13: ServiceNow修复AI平台关键漏洞CVE-2025-12420",
+          "2026-03-20: Meta AI Agent数据泄露事件",
+          "2026-05-15: Vectra AI发布提示注入分析",
+          "2026-06-18: ServiceNow发布MosaicLeaks实验"
+        ],
+        "evidence_table": [
+          {
+            "source": "Hugging Face Blog - MosaicLeaks",
+            "url": "https://huggingface.co/blog/ServiceNow/mosaicleaks",
+            "supports": "实验展示研究Agent提示注入风险",
+            "reliability": "official"
+          },
+          {
+            "source": "The Hacker News - ServiceNow AI Agents",
+            "url": "https://thehackernews.com/2025/11/servicenow-ai-agents-can-be-tricked.html",
+            "supports": "Agent-to-Agent提示注入攻击",
+            "reliability": "media"
+          },
+          {
+            "source": "CyberScoop - ServiceNow patches critical AI flaw",
+            "url": "https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/",
+            "supports": "ServiceNow AI平台漏洞修复",
+            "reliability": "media"
+          },
+          {
+            "source": "Security Affairs - LangChain vulnerability",
+            "url": "https://securityaffairs.com/186185/hacking/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html",
+            "supports": "LangChain Core提示注入漏洞",
+            "reliability": "media"
+          },
+          {
+            "source": "The Guardian - Meta AI agent data leak",
+            "url": "https://www.theguardian.com/technology/2026/mar/20/meta-ai-agents-instruction-causes-large-sensitive-data-leak-to-employees",
+            "supports": "真实Agent数据泄露案例",
+            "reliability": "media"
+          },
+          {
+            "source": "OWASP - Prompt Injection",
+            "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+            "supports": "提示注入为LLM首要风险",
+            "reliability": "official"
+          },
+          {
+            "source": "arXiv - Benchmark and Defense Framework",
+            "url": "https://arxiv.org/html/2511.15759v1",
+            "supports": "防御框架可将攻击成功率从85%降至12%",
+            "reliability": "near_source"
+          }
+        ],
+        "logic_closure": "部分闭环：提示注入风险真实存在，有实验和案例支持，但MosaicLeaks具体攻击场景和成功率未知，防御方案有效性需验证。",
+        "writeable_angles": [
+          {
+            "angle": "Agent提示注入风险科普+防御实践",
+            "why": "满足核心技术人安全需求，提供可操作建议",
+            "needs": "MosaicLeaks实验细节、主流框架漏洞对比、防御方案代码示例"
+          },
+          {
+            "angle": "Meta案例复盘：Agent配置错误如何导致数据泄露",
+            "why": "故事性强，吸引泛兴趣读者",
+            "needs": "Meta事件详细技术分析、责任归属"
+          },
+          {
+            "angle": "Agent安全：成本账与迁移账",
+            "why": "服务高价值商业读者，评估风险与投入",
+            "needs": "防御方案成本、合规要求、保险数据"
+          }
+        ],
+        "missing_basics": [
+          "提示注入攻击的具体分类（直接、间接、二阶）",
+          "Agent架构中提示注入的攻击面（系统提示、工具调用、记忆）",
+          "主流防御方案（输入过滤、权限隔离、输出验证）"
+        ],
+        "missing_materials": [
+          "MosaicLeaks实验原文及代码",
+          "主流Agent框架（LangChain、AutoGPT、CrewAI）漏洞列表",
+          "真实Agent数据泄露案例详细报告",
+          "防御方案有效性基准数据",
+          "ServiceNow官方缓解建议"
+        ],
+        "not_claimable": [
+          "Agent存在普遍且严重的数据泄露风险",
+          "所有研究Agent都不安全",
+          "提示注入无法防御"
+        ],
+        "followup_queries": [
+          "MosaicLeaks实验的具体攻击场景和成功率",
+          "ServiceNow是否提供了缓解方案或工具",
+          "LangChain、AutoGPT等框架的已知提示注入漏洞",
+          "Meta AI Agent数据泄露事件的技术细节",
+          "OWASP LLM安全最佳实践"
+        ],
+        "additional_search_queries": [
+          "MosaicLeaks ServiceNow prompt injection research agent",
+          "MosaicLeaks ServiceNow GitHub",
+          "LangChain prompt injection vulnerability CVE",
+          "AutoGPT prompt injection vulnerability",
+          "Meta AI agent data leak technical analysis",
+          "OWASP LLM prompt injection prevention cheat sheet",
+          "prompt injection attack success rate benchmark 2025"
+        ],
+        "stop_conditions": [
+          "MosaicLeaks实验原文无法获取或内容与摘要不符",
+          "主流Agent框架无已知提示注入漏洞",
+          "无真实Agent数据泄露案例",
+          "防御方案被证明无效或不可部署"
+        ],
+        "confidence": 65.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI前沿",
+        "report_type": "risk-warning",
+        "quality_gate": {
+          "pass": false,
+          "score": 65,
+          "fatal_issues": [
+            "核心事实没有来源：MosaicLeaks实验原文未获取，摘要内容无法验证。"
+          ],
+          "warnings": [
+            "传播张力不足：冲突点和讨论点不够尖锐，容易写成专业安全科普。",
+            "信息源偏科：证据主要来自安全媒体和博客，缺少官方技术报告和代码。"
+          ],
+          "missing_evidence": [
+            "MosaicLeaks实验原文及代码",
+            "主流Agent框架（LangChain、AutoGPT、CrewAI）漏洞列表",
+            "真实Agent数据泄露案例详细报告",
+            "防御方案有效性基准数据",
+            "ServiceNow官方缓解建议"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "研究型AI Agent在真实生产环境中面临多大的提示注入数据泄露风险？",
+          "persona_discussion_question": "我该不该信任研究Agent来处理内部文档？如果用它查竞品，会不会反被窃取我的查询意图？",
+          "hidden_public_issue": "AI Agent的提示注入风险被低估，开发者可能在不了解安全边界的情况下部署Agent，导致企业机密或用户数据泄露，而责任往往由用户承担。",
+          "must_verify": [
+            "MosaicLeaks实验的具体攻击场景和成功率",
+            "ServiceNow是否提供了缓解方案或工具",
+            "主流Agent框架（如LangChain、AutoGPT）是否有已知的提示注入漏洞",
+            "是否有真实案例报告Agent导致数据泄露"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "MosaicLeaks ServiceNow prompt injection research agent",
+              "why_needed": "获取实验原文、攻击方法、缓解建议"
+            },
+            {
+              "source_type": "github_repo",
+              "query": "MosaicLeaks ServiceNow GitHub",
+              "why_needed": "查看实验代码、复现步骤、社区讨论"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "LangChain prompt injection vulnerability",
+              "why_needed": "了解主流框架的安全状态和已知漏洞"
+            },
+            {
+              "source_type": "case_study",
+              "query": "AI agent data leak real incident",
+              "why_needed": "寻找真实泄露案例，验证风险严重性"
+            },
+            {
+              "source_type": "policy",
+              "query": "OWASP LLM prompt injection",
+              "why_needed": "获取行业安全标准和最佳实践"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "prompt injection attack success rate benchmark",
+              "why_needed": "评估攻击成功率，判断风险等级"
+            }
+          ],
+          "expert_challenge_points": [
+            "实验环境是否过度简化？真实场景中攻击者能否轻易注入恶意提示？",
+            "Agent的权限隔离（如沙箱、最小权限）能否有效缓解？",
+            "提示注入是否属于已知漏洞，是否有成熟防御方案？"
+          ],
+          "do_not_claim_yet": [
+            "Agent存在普遍且严重的数据泄露风险",
+            "所有研究Agent都不安全",
+            "提示注入无法防御"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需补充真实案例和防御方案，否则容易写成小圈子安全科普。",
+          "downstream_materials_needed": [
+            "MosaicLeaks实验原文及代码",
+            "主流Agent框架安全文档",
+            "真实数据泄露案例报告",
+            "OWASP LLM安全指南"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "When AI Turns on Its Team: Exploiting Agent-to-Agent Discovery via Prompt Injection",
+            "url": "https://appomni.com/ao-labs/ai-agent-to-agent-discovery-prompt-injection/",
+            "query": "MosaicLeaks ServiceNow prompt injection research agent",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(window.NREUM||(NREUM={})).init={ajax:{deny_list:[\"bam.nr-data.net\"]},feature_flags:[\"soft_nav\"]};(window.NREUM||(NREUM={})).loader_config={licenseKey:\"NRJS-7f1bcd80faf16b99b32\",applicationID:\"681787618\",browserID:\"718418871\"};;/*! For license information please see nr-loader-rum-1.316.0.min.js.LICENSE.txt */ (()=>{var e,t,r={122:(e,t,r)=>{\"use strict\";r.d(t,{a:()=>i});var n=r(944);function i(e,t){try{if(!e||\"object\"!=typeof e)return(0,n.R)(3);if(!t||\"object\"!=typeof t)return(0,n.R)(4);const r=Object.create(Object.getPrototypeOf(t),Object.getOwnPropertyDescriptors(t)),s=0===Object.keys(r).length?e:r;for(let o in s)if(void 0!==e[o])try{if(null===e[o]){r[o]=null;continue}Array.isArray(e[o])&&Array.isArray(t[o])?r[o]=Array.from(new Set([...e[o],...t[o]])):e[o]instanceof Map||e[o]instanceof Set||e[o]instanceof Date||e[o]instanceof RegExp?r[o]=e[o]:\"object\"==typeof e[o]&&\"object\"==typeof t[o]?r[o]=i(e[o],t[o]):r[o]=e[o]}catch(e){r[o]||(0,n.R)(1,e)}return r}catch(e){(0,n.R)(2,e)}}},154:(e,t,r)=>{\"use strict\";r.d(t,{OF:()=>u,RI:()=>i,WN:()=>l,bv:()=>s,gm:()=>o,m:()=>c,mw:()=>a,sb:()=>d,zk:()=>f});var n=r(863);const i=\"undefined\"!=typeof window&&!!window.document,s=\"undefined\"!=typeof WorkerGlobalScope&&(\"undefined\"!=typeof self&&self instanceof WorkerGlobalScope&&self.navigator instanceof WorkerNavigator||\"undefined\"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis.navigator instanceof WorkerNavigator),o=i?window:\"undefined\"!=typeof WorkerGlobalScope&&(\"undefined\"!=typeof self&&self instanceof WorkerGlobalScope&&self||\"undefined\"!=typeof globalThis&&globalThis instanceof WorkerGlobalScope&&globalThis),a=Boolean(\"hidden\"===o?.document?.visibilityState),c=\"\"+o?.location,u=/iPad|iPhone|iPod/.test(o.navigator?.userAgent),d=u&&\"undefined\"==typeof SharedWorker",
+            "fetch_error": ""
+          },
+          {
+            "title": "ServiceNow AI Agents Can Be Tricked Into Acting Against Each Other via Second-Order Prompts",
+            "url": "https://thehackernews.com/2025/11/servicenow-ai-agents-can-be-tricked.html",
+            "query": "MosaicLeaks ServiceNow prompt injection research agent",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "ServiceNow AI Agents Can Be Tricked Into Acting Against Each Other via Second-Order Prompts @font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/math/wght/normal.woff2);unicode-range:U+0302-0303,U+0305,U+0307-0308,U+0310,U+0312,U+0315,U+031A,U+0326-0327,U+032C,U+032F-0330,U+0332-0333,U+0338,U+033A,U+0346,U+034D,U+0391-03A1,U+03A3-03A9,U+03B1-03C9,U+03D1,U+03D5-03D6,U+03F0-03F1,U+03F4-03F5,U+2016-2017,U+2034-2038,U+203C,U+2040,U+2043,U+2047,U+2050,U+2057,U+205F,U+2070-2071,U+2074-208E,U+2090-209C,U+20D0-20DC,U+20E1,U+20E5-20EF,U+2100-2112,U+2114-2115,U+2117-2121,U+2123-214F,U+2190,U+2192,U+2194-21AE,U+21B0-21E5,U+21F1-21F2,U+21F4-2211,U+2213-2214,U+2216-22FF,U+2308-230B,U+2310,U+2319,U+231C-2321,U+2336-237A,U+237C,U+2395,U+239B-23B7,U+23D0,U+23DC-23E1,U+2474-2475,U+25AF,U+25B3,U+25B7,U+25BD,U+25C1,U+25CA,U+25CC,U+25FB,U+266D-266F,U+27C0-27FF,U+2900-2AFF,U+2B0E-2B11,U+2B30-2B4C,U+2BFE,U+3030,U+FF5B,U+FF5D,U+1D400-1D7FF,U+1EE00-1EEFF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/symbols/wght/normal.woff2);unicode-range:U+0001-000C,U+000E-001F,U+007F-009F,U+20DD-20E0,U+20E2-20E4,U+2150-218F,U+2190,U+2192,U+2194-2199,U+21AF,U+21E6-21F0,U+21F3,U+2218-2219,U+2299,U+22C4-22C6,U+2300-243F,U+2440-244A,U+2460-24FF,U+25A0-27BF,U+2800-28FF,U+2921-2922,U+2981,U+29BF,U+29EB,U+2B00-2BFF,U+4DC0-4DFF,U+FFF9-FFFB,U+10140-1018E,",
+            "fetch_error": ""
+          },
+          {
+            "title": "ServiceNow patches critical AI platform flaw that could allow user impersonation | CyberScoop",
+            "url": "https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/",
+            "query": "MosaicLeaks ServiceNow prompt injection research agent",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); img:is([sizes=\"auto\" i], [sizes^=\"auto,\" i]) { contain-intrinsic-size: 3000px 1500px } ServiceNow patches critical AI platform flaw that could allow user impersonation | CyberScoop {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/\",\"url\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/\",\"name\":\"ServiceNow patches critical AI platform flaw that could allow user impersonation | CyberScoop\",\"isPartOf\":{\"@id\":\"https://cyberscoop.com/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/#primaryimage\"},\"image\":{\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/#primaryimage\"},\"thumbnailUrl\":\"https://cyberscoop.com/wp-content/uploads/sites/3/2026/01/GettyImages-1173020463.jpg\",\"datePublished\":\"2026-01-13T15:47:26+00:00\",\"dateModified\":\"2026-01-16T19:47:21+00:00\",\"description\":\"ServiceNow has addressed a critical security vulnerability in its AI platform that could have allowed unauthenticated users to impersonate legitimate users and perform unauthorized actions, the company disclosed Monday.\",\"breadcrumb\":{\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/#breadcrumb\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/\"]}]},{\"@type\":\"ImageObject\",\"inLanguage\":\"en-US\",\"@id\":\"https://cyberscoop.com/servicenow-fixes-critical-ai-vulnerability-cve-2025-12420/#primaryimage\",\"url\":\"https://cyberscoop.com/w",
+            "fetch_error": ""
+          },
+          {
+            "title": "ServiceNow · GitHub",
+            "url": "https://github.com/ServiceNow",
+            "query": "MosaicLeaks ServiceNow GitHub",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+            "fetch_error": ""
+          },
+          {
+            "title": "Mastering ServiceNow GitHub Integration: A Quick G... - ServiceNow Community",
+            "url": "https://www.servicenow.com/community/servicenow-studio-articles/mastering-servicenow-github-integration-a-quick-guide/ta-p/3232635",
+            "query": "MosaicLeaks ServiceNow GitHub",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Mastering ServiceNow GitHub Integration: A Quick G... - ServiceNow Community window.khoros_analytics = {}; window.khoros_analytics.datetime_iso_utc = '2026-06-18T22:33:17Z'; window.khoros_analytics.user = {}; window.khoros_analytics.user.anonymous = true; window.khoros_analytics.user.fully_registered = false; window.khoros_analytics.user.partially_registered = false; window.khoros_analytics.user.username = ''; window.khoros_analytics.page = {}; window.khoros_analytics.page.url_server = 'https://www.servicenow.com/community/servicenow-studio-articles/mastering-servicenow-github-integration-a-quick-guide/ta-p/3232635'; window.khoros_analytics.page.url_browser = ((window.location.href) || ''); window.khoros_analytics.page.name = 'TkbArticlePage'; window.khoros_analytics.page.post_thread_id = '3232635'; window.khoros_analytics.page.post_subject = 'Mastering ServiceNow GitHub Integration: A Quick Guide'; window.khoros_analytics.page.breadcrumb_types_ids = '\\/community:cgfwn76974/category:product-discussions/category:app-development/category:servicenow-studio/board:servicenow-studio-articles/tkb:3232635'; window.khoros_analytics.page.breadcrumb_titles = '\\/ServiceNow Community/Products/App Development/ServiceNow Studio/ServiceNow Studio articles/Mastering ServiceNow GitHub Integration: A Quick Guide'; window.khoros_analytics.node = {}; window.khoros_analytics.node.type = 'board'; window.khoros_analytics.node.discussion_style = 'tkb'; window.khoros_analytics.node.id = 'servicenow-studio-articles'; window.khoros_analytics.node.title = 'ServiceNow Studio articles'; window.khoros_analytics.node.url = 'https://www.servicenow.com/community/servicenow-studio-articles/tkb-p/servicenow-studio-articles'; window.khoros_analytics.node.analytics_data = ''; window.khoros_analytics.node.anc",
+            "fetch_error": ""
+          },
+          {
+            "title": "ServiceNow GitHub Integration: The Comprehensive Guide [2026]",
+            "url": "https://exalate.com/blog/servicenow-github-integration/",
+            "query": "MosaicLeaks ServiceNow GitHub",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "LangChain core vulnerability allows prompt injection and data exposure",
+            "url": "https://securityaffairs.com/186185/hacking/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html",
+            "query": "LangChain prompt injection vulnerability",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "LangChain core vulnerability allows prompt injection and data exposure {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html\"},\"author\":{\"name\":\"Pierluigi Paganini\",\"@id\":\"https:\\/\\/securityaffairs.com\\/#\\/schema\\/person\\/919f4eac925343455dfcc8e063d0446a\"},\"headline\":\"LangChain core vulnerability allows prompt injection and data exposure\",\"datePublished\":\"2025-12-27T18:20:16+00:00\",\"dateModified\":\"2025-12-27T18:20:18+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html\"},\"wordCount\":458,\"image\":{\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html#primaryimage\"},\"thumbnailUrl\":\"https:\\/\\/i0.wp.com\\/securityaffairs.com\\/wp-content\\/uploads\\/2025\\/12\\/image-46.png?fit=900%2C600&ssl=1\",\"keywords\":[\"Hacking\",\"information security news\",\"IT Information Security\",\"LangChain\",\"LLM\",\"Pierluigi Paganini\",\"Security Affairs\",\"Security News\"],\"articleSection\":[\"Artificial Intelligence\",\"Breaking News\",\"Hacking\",\"Security\"],\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html\",\"url\":\"https:\\/\\/securityaffairs.com\\/186185\\/hacking\\/langchain-core-vulnerability-allows-prompt-injection-and-data-exposure.html\",\"name\":\"LangChain core vulnerability allows prompt injection and data exposure\",\"isPartOf\":{\"@",
+            "fetch_error": ""
+          },
+          {
+            "title": "Critical LangChain Core Vulnerability Exposes Secrets via Serialization Injection",
+            "url": "https://thehackernews.com/2025/12/critical-langchain-core-vulnerability.html",
+            "query": "LangChain prompt injection vulnerability",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Critical LangChain Core Vulnerability Exposes Secrets via Serialization Injection @font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/math/wght/normal.woff2);unicode-range:U+0302-0303,U+0305,U+0307-0308,U+0310,U+0312,U+0315,U+031A,U+0326-0327,U+032C,U+032F-0330,U+0332-0333,U+0338,U+033A,U+0346,U+034D,U+0391-03A1,U+03A3-03A9,U+03B1-03C9,U+03D1,U+03D5-03D6,U+03F0-03F1,U+03F4-03F5,U+2016-2017,U+2034-2038,U+203C,U+2040,U+2043,U+2047,U+2050,U+2057,U+205F,U+2070-2071,U+2074-208E,U+2090-209C,U+20D0-20DC,U+20E1,U+20E5-20EF,U+2100-2112,U+2114-2115,U+2117-2121,U+2123-214F,U+2190,U+2192,U+2194-21AE,U+21B0-21E5,U+21F1-21F2,U+21F4-2211,U+2213-2214,U+2216-22FF,U+2308-230B,U+2310,U+2319,U+231C-2321,U+2336-237A,U+237C,U+2395,U+239B-23B7,U+23D0,U+23DC-23E1,U+2474-2475,U+25AF,U+25B3,U+25B7,U+25BD,U+25C1,U+25CA,U+25CC,U+25FB,U+266D-266F,U+27C0-27FF,U+2900-2AFF,U+2B0E-2B11,U+2B30-2B4C,U+2BFE,U+3030,U+FF5B,U+FF5D,U+1D400-1D7FF,U+1EE00-1EEFF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/symbols/wght/normal.woff2);unicode-range:U+0001-000C,U+000E-001F,U+007F-009F,U+20DD-20E0,U+20E2-20E4,U+2150-218F,U+2190,U+2192,U+2194-2199,U+21AF,U+21E6-21F0,U+21F3,U+2218-2219,U+2299,U+22C4-22C6,U+2300-243F,U+2440-244A,U+2460-24FF,U+25A0-27BF,U+2800-28FF,U+2921-2922,U+2981,U+29BF,U+29EB,U+2B00-2BFF,U+4DC0-4DFF,U+FFF9-FFFB,U+10140-1018E,U+10190-1019C,U+101A0,U+101D0-101FD,U+10",
+            "fetch_error": ""
+          },
+          {
+            "title": "Vulnerabilities in LangChain Gen AI",
+            "url": "https://unit42.paloaltonetworks.com/langchain-vulnerabilities/",
+            "query": "LangChain prompt injection vulnerability",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "The read operation timed out"
+          },
+          {
+            "title": "Meta AI agent’s instruction causes large sensitive data leak to employees | AI (artificial intelligence) | The Guardian",
+            "url": "https://www.theguardian.com/technology/2026/mar/20/meta-ai-agents-instruction-causes-large-sensitive-data-leak-to-employees",
+            "query": "AI agent data leak real incident",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Meta AI agent’s instruction causes large sensitive data leak to employees | AI (artificial intelligence) | The Guardian [{\"@type\":\"NewsArticle\",\"@context\":\"https://schema.org\",\"@id\":\"https://www.theguardian.com/technology/2026/mar/20/meta-ai-agents-instruction-causes-large-sensitive-data-leak-to-employees\",\"publisher\":{\"@type\":\"Organization\",\"@context\":\"https://schema.org\",\"@id\":\"https://www.theguardian.com#publisher\",\"name\":\"The Guardian\",\"url\":\"https://www.theguardian.com/\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://uploads.guim.co.uk/2018/01/31/TheGuardian_AMP.png\",\"width\":190,\"height\":60},\"sameAs\":[\"https://www.facebook.com/theguardian\",\"https://twitter.com/guardian\",\"https://www.youtube.com/user/TheGuardian\"]},\"isAccessibleForFree\":true,\"isPartOf\":{\"@type\":[\"CreativeWork\",\"Product\"],\"name\":\"The Guardian\",\"productID\":\"theguardian.com:basic\"},\"image\":[\"https://i.guim.co.uk/img/media/64b9fe32be9fdfbf111a6132dff8580c6efacecd/357_0_5286_4230/master/5286.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&precrop=40:21,offset-x50,offset-y0&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=1cc0280e4457a142c2095afb784bee89\",\"https://i.guim.co.uk/img/media/64b9fe32be9fdfbf111a6132dff8580c6efacecd/357_0_5286_4230/master/5286.jpg?width=1200&height=1200&quality=85&auto=format&fit=crop&s=c828a0ad05a89df9a6878da59a59596e\",\"https://i.guim.co.uk/img/media/64b9fe32be9fdfbf111a6132dff8580c6efacecd/357_0_5286_4230/master/5286.jpg?width=1200&height=900&quality=85&auto=format&fit=crop&s=bd15e0a988a749cd0441f2c49381099a\",\"https://i.guim.co.uk/img/media/64b9fe32be9fdfbf111a6132dff8580c6efacecd/357_0_5286_4230/master/5286.jpg?width=1200&quality=85&auto=format&fit=max&s=a5d242f9367b55ce9904110d371631dc\"],\"",
+            "fetch_error": ""
+          },
+          {
+            "title": "The Risk of Agentic AI: A Story of Meta's AI Agent Data Leak | Cybersecurity Magazine",
+            "url": "https://cybermagazine.com/news/the-risk-of-agentic-the-story-of-metas-ai-agent-data-leak",
+            "query": "AI agent data leak real incident",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "function OptanonWrapper() { } (function () { console.log(\"🔤 Running Typekit metrics fix\") // Only run if the browser supports font metric overrides var KIT_URL = 'https://use.typekit.net/alc1mww.css'; function injectStyle(cssText) { console.log(\"💉 Injecting Typekit metrics fix styles\"); var style = document.createElement('style'); style.setAttribute('data-typekit-metrics-fix', 'true'); style.textContent = cssText; document.head.appendChild(style); console.log(\"✅ Typekit metrics fix styles injected\"); } function buildOverrides(typekitCss) { console.log(\"🔨 Building font metric overrides\"); var faces = typekitCss.match(/@font-face\\s*{[^}]+}/g); if (!faces) { console.log(\"⚠️ No @font-face rules found\"); return ''; } console.log(\"📝 Found \" + faces.length + \" @font-face rules\"); var out = ''; for (var i = 0; i \" -metrics-fix\" var renamed = face.replace( /font-family:\\s*[\"']?([^;\"']+)[\"']?;/, function (_, name) { return 'font-family: \"' + name + '-metrics-fix\";'; } ); // Add overrides before closing brace var withOverrides = renamed.replace( /}\\s*$/, '\\n ascent-override: 75%;\\n line-gap-override: 0%;\\n}' ); out += withOverrides + '\\n\\n'; } console.log(\"✅ Built overrides for \" + faces.length + \" fonts\"); return out; } // Avoid injecting twice if (document.querySelector('style[data-typekit-metrics-fix=\"true\"]')) { console.log(\"⏭️ Typekit metrics fix already applied, skipping\"); return; } console.log(\"🌐 Fetching Typekit CSS from: \" + KIT_URL); fetch(KIT_URL, { mode: 'cors' }) .then(function (res) { console.log(\"📥 Typekit CSS fetched successfully\"); return res.text(); }) .then(function (css) { var overrides = buildOverrides(css); if (!overrides) { console.log(\"⚠️ No overrides generated\"); return; } injectStyle(overrides); // Mark document so your CSS can swap families document.doc",
+            "fetch_error": ""
+          },
+          {
+            "title": "Meta AI agent leak reveals enterprise AI security gaps | PointGuard AI",
+            "url": "https://www.pointguardai.com/ai-security-incidents/metas-ai-agent-misfire-spills-data-across-the-workforce",
+            "query": "AI agent data leak real incident",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Meta AI agent leak reveals enterprise AI security gaps | PointGuard AI WebFont.load({ google: { families: [\"Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic\",\"Maven Pro:300,400,500,600,700\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"Meta’s AI Agent Misfire Spills Data Across the Workforce\", \"description\": \"Misconfigured AI agent exposed sensitive internal data to unauthorized Meta employees.\", \"datePublished\": \"2026-03-31T17:59:07.570Z\", \"dateModified\": \"2026-03-23T19:43:41.439Z\", \"author\": { \"@type\": \"Organization\", \"name\": \"PointGuard AI\", \"url\": \"https://www.pointguardai.com\" }, \"publisher\": { \"@type\": \"Organization\", \"name\": \"PointGuard AI\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://cdn.prod.website-files.com/622134a6316eb7034f7dc84b/68082d3fc95630922029336d_9b0afa15d5b0feaa2ed367b1ae162250_PointGuard%20AI%20logo%20v2%20Color.png\" } }, \"about\": { \"@type\": \"SecurityIncident\", \"name\": \"Meta’s AI Agent Misfire Spills Data Across the Workforce\", \"description\": \"Misconfigured AI agent exposed sensitive internal data to unauthorized Meta employees.\", \"dateReported\": \"2026-03-20\", \"affectedOrganization\": { \"@type\": \"Organization\", \"name\": \"Meta’s AI Agent Misfire Spills Data Across the Workforce\", \"logo\": \"https://cdn.prod.website-files.com/622134a7316eb7ab1c7dc85f/69c17d02178eecc225914404_Meta%20leak%20icon.png\" }, \"securityMetrics\": { \"@type\": \"PropertyValue\", \"name\": \"AI Security Severity Index\", \"value\": \"7.3\", \"maxValue\": \"10\", \"description\": \"Composite threat ass",
+            "fetch_error": ""
+          },
+          {
+            "title": "LLM01:2025 Prompt Injection - OWASP Gen AI Security Project",
+            "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+            "query": "OWASP LLM prompt injection",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "@media all{.e-con{--container-widget-width:100%}.e-con>.elementor-widget-spacer{width:var(--container-widget-width,var(--spacer-size));--align-self:var(--container-widget-align-self,initial);--flex-shrink:0}.e-con>.elementor-widget-spacer>.elementor-widget-container{height:100%;width:100%}.e-con>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer{height:100%}.e-con>.elementor-widget-spacer>.elementor-widget-container>.elementor-spacer>.elementor-spacer-inner{height:var(--container-widget-height,var(--spacer-size))}.elementor-widget.elementor-icon-list--layout-inline .elementor-widget-container{overflow:hidden}.elementor-widget .elementor-icon-list-items.elementor-inline-items{margin-right:-8px;margin-left:-8px}.elementor-widget .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item{margin-right:8px;margin-left:8px}.elementor-widget .elementor-icon-list-items.elementor-inline-items .elementor-icon-list-item:after{width:auto;left:auto;right:auto;position:relative;height:100%;border-top:0;border-bottom:0;border-right:0;border-left-width:1px;border-style:solid;right:-8px}.elementor-widget .elementor-icon-list-items{list-style-type:none;margin:0;padding:0}.elementor-widget .elementor-icon-list-item{margin:0;padding:0;position:relative}.elementor-widget .elementor-icon-list-item:after{position:absolute;bottom:0;width:100%}.elementor-widget .elementor-icon-list-item,.elementor-widget .elementor-icon-list-item a{display:flex;font-size:inherit;align-items:var(--icon-vertical-align,center)}.elementor-widget .elementor-icon-list-icon+.elementor-icon-list-text{align-self:center;padding-inline-start:5px}.elementor-widget .elementor-icon-list-icon{display:flex;position:relative;top:var(--icon-vertical-offset,initial)}.elementor-widget .elemento",
+            "fetch_error": ""
+          },
+          {
+            "title": "LLM Prompt Injection Prevention - OWASP Cheat Sheet Series",
+            "url": "https://cheatsheetseries.owasp.org/cheatsheets/LLM_Prompt_Injection_Prevention_Cheat_Sheet.html",
+            "query": "OWASP LLM prompt injection",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "LLM Prompt Injection Prevention - OWASP Cheat Sheet Series :root{--md-text-font:\"Roboto\";--md-code-font:\"Roboto Mono\"} __md_scope=new URL(\"..\",location),__md_hash=e=>[...e].reduce(((e,_)=>(e JSON.parse(_.getItem(t.pathname+\".\"+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+\".\"+e,JSON.stringify(_))}catch(e){}} Skip to content OWASP Cheat Sheet Series LLM Prompt Injection Prevention var palette=__md_get(\"__palette\");if(palette&&palette.color){if(\"(prefers-color-scheme)\"===palette.color.media){var media=matchMedia(\"(prefers-color-scheme: light)\"),input=document.querySelector(media.matches?\"[data-md-color-media='(prefers-color-scheme: light)']\":\"[data-md-color-media='(prefers-color-scheme: dark)']\");palette.color.media=input.getAttribute(\"data-md-color-media\"),palette.color.scheme=input.getAttribute(\"data-md-color-scheme\"),palette.color.primary=input.getAttribute(\"data-md-color-primary\"),palette.color.accent=input.getAttribute(\"data-md-color-accent\")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute(\"data-md-color-\"+key,value)} Initializing search OWASP/CheatSheetSeries OWASP Cheat Sheet Series OWASP/CheatSheetSeries Introduction Index Alphabetical Index ASVS Index MASVS Index Proactive Controls Index Top 10 Cheatsheets Cheatsheets AI Agent Security AJAX Security AML Sanctions AI Agent Payments Abuse Case Access Control Attack Surface Analysis Authentication Authorization Authorization Regression Testing Authorization Testing Automation Automotive Security Bean Validation Bot Management and Anti-Automation Browser Extension Vulnerabilities Business Logic Security C-Based Toolchain Hardening CI CD Security Choosing and Using Security Questions Clickjacking Defense Content Security Policy Cookie Theft Mitigation Credentia",
+            "fetch_error": ""
+          },
+          {
+            "title": "Prompt Injection | OWASP Foundation",
+            "url": "https://owasp.org/www-community/attacks/PromptInjection",
+            "query": "OWASP LLM prompt injection",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "--> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-4531126-1'); --> if(Cookies.get('cookies-ok') == 'true' && window.ga === undefined) { window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date; ga('create', 'UA-4531126-1', 'auto'); ga('send', 'pageview'); } else if (Cookies.get('cookies-ok') == 'true') { ga('send', 'pageview'); } function handleOutboundLinkClicks(event) { var href = ''; if(event.target.href == undefined) href = event.target.parentElement.href; else href = event.target.href if(Cookies.get('cookies-ok') == 'true'){ ga('send', 'event', { eventCategory: 'Outbound Link', eventAction: 'click', eventLabel: href, transport: 'beacon' }); } } Prompt Injection | OWASP Foundation $(function(){ var baseurl = \"https://github.com/OWASP/www-community/blob/master/\"; var path = \"pages/attacks/prompt-injection.md\"; $('.repo').html(' Edit on GitHub '); }); For full functionality of this site it is necessary to enable JavaScript. Here are the instructions how to enable JavaScript in your web browser . #banner img { max-width: 30em; } @media (max-width: 1131px) { #banner img { max-width: 30em; } } @media (max-width: 800px) { #banner img { max-width: 20em; } } @media (max-width: 600px) { #banner img { max-width: 20em; } } @media (max-width: 450px) { #banner img { max-width: 250px; } } $(function () { var bannerdata = []; banneryaml = YAML.load('https://owasp.org/www-community/assets/sitedata/banner-data.yml'); $.each(banneryaml, function (index) { bannerdata.push(this); }); if (bannerdata.length > 0) { var htmlstring = \"\"; var usebanner = null; var defbanner = null; var checkdate = new Date(); //local time but who cares about the time? bannerdata.forEach(data => { if (da",
+            "fetch_error": ""
+          },
+          {
+            "title": "Anthropic published the prompt injection failure rates that enterprise security teams have been asking every vendor for | VentureBeat",
+            "url": "https://venturebeat.com/security/prompt-injection-measurable-security-metric-one-ai-developer-publishes-numbers",
+            "query": "prompt injection attack success rate benchmark",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 429: Too Many Requests"
+          },
+          {
+            "title": "Prompt injection: types, real-world CVEs, and enterprise defenses",
+            "url": "https://www.vectra.ai/topics/prompt-injection",
+            "query": "prompt injection attack success rate benchmark",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Prompt injection: types, real-world CVEs, and enterprise defenses WebFont.load({ google: { families: [\"Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic\"] }}); !function(o,c){var n=c.documentElement,t=\" w-mod-\";n.className+=t+\"js\",(\"ontouchstart\"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+\"touch\")}(window,document); { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"Organization\", \"@id\": \"https://www.vectra.ai/#organization\", \"name\": \"Vectra AI\", \"url\": \"https://www.vectra.ai\", \"logo\": \"https://cdn.prod.website-files.com/5bc507560cb5c73d2b835416/5f75695a56862b10f251c072_VectraLogo_NoTag_PMS363.png\" }, { \"@type\": \"Article\", \"url\": \"https://www.vectra.ai/topics/prompt-injection\", \"headline\": \"Prompt injection explained: the top AI security threat enterprises cannot ignore\", \"image\": \"https://cdn.prod.website-files.com/64e50cbe2b6f932c04238c14/69b0442d91bead2d076eb661_soc-analyst.png\", \"datePublished\": \"2026-05-15T17:44:48.273Z\", \"dateModified\": \"2026-05-14T17:22:40.141Z\", \"author\": { \"@type\": \"Person\", \"name\": \"Lucie Cardiet\", \"url\": \"https://www.vectra.ai/about/author/lucie-cardiet\" }, \"publisher\": { \"@id\": \"https://www.vectra.ai/#organization\" } }, { \"@type\": \"BreadcrumbList\", \"itemListElement\": [ { \"@type\": \"ListItem\", \"position\": 1, \"name\": \"Home\", \"item\": \"https://www.vectra.ai\" }, { \"@type\": \"ListItem\", \"position\": 2, \"name\": \"Topics\", \"item\": \"https://www.vectra.ai/topics\" }, { \"@type\": \"ListItem\", \"position\": 3, \"name\": \"Prompt injection explained: the top AI security threat enterprises cannot ignore\" } ] } ] } .anti-flicker, .anti-flicker * {visibility: hidden !important; opacity: 0 !important;} [data-wf-hidden-variation], [data-wf-hidden-variat",
+            "fetch_error": ""
+          },
+          {
+            "title": "Securing AI Agents Against Prompt Injection Attacks: A Comprehensive Benchmark and Defense Framework",
+            "url": "https://arxiv.org/html/2511.15759v1",
+            "query": "prompt injection attack success rate benchmark",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Securing AI Agents Against Prompt Injection Attacks: A Comprehensive Benchmark and Defense Framework 1 Introduction 2 Background and Threat Model 2.1 Retrieval-Augmented Generation Architecture 2.2 Threat Model 2.3 Attack Categories 3 Related Work 4 Benchmark Design 4.1 Dataset Construction 4.2 Sophistication Levels 4.3 Evaluation Metrics 5 Defense Framework 5.1 Content Filtering with Embedding Analysis 5.2 Hierarchical System Prompt Guardrails 5.3 Multi-Stage Response Verification 6 Experimental Evaluation 6.1 Experimental Setup 6.2 Attack Success Rates 6.3 Model-Specific Vulnerabilities 6.4 False Positive Analysis 6.5 Ablation Studies 6.6 Computational Overhead 7 Discussion 7.1 Limitations and Future Work 7.2 Deployment Considerations 7.3 Broader Implications 8 Conclusion Securing AI Agents Against Prompt Injection Attacks: A Comprehensive Benchmark and Defense Framework Badrinath Ramakrishnan Akshaya Balaji Abstract Retrieval-augmented generation (RAG) systems have emerged as powerful tools for enhancing large language model capabilities, yet they introduce significant security vulnerabilities through prompt injection attacks. We present a systematic benchmark for evaluating prompt injection risks in RAG-enabled AI agents and propose a multi-layered defense framework. Our benchmark encompasses 847 adversarial test cases across five attack categories: direct injection, context manipulation, instruction override, data exfiltration, and cross-context contamination. We evaluate three defense mechanisms—content filtering with embedding-based anomaly detection, hierarchical system prompt guardrails, and multi-stage response verification—across seven state-of-the-art language models. Results demonstrate that our combined defense framework reduces successful attack rates fro",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "营销话术拆解",
+        "合规和资金风险",
+        "普通人不该硬冲的原因"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "研究型AI Agent存在数据泄露风险：MosaicLeaks实验揭示提示注入攻击 投诉 风险 违规",
+        "研究型AI Agent存在数据泄露风险：MosaicLeaks实验揭示提示注入攻击 骗局 营销话术",
+        "研究型AI Agent存在数据泄露风险：MosaicLeaks实验揭示提示注入攻击 隐藏成本 失败案例"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}

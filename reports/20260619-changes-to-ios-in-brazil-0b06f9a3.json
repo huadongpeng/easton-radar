@@ -1,0 +1,1833 @@
+{
+  "id": "20260619-changes-to-ios-in-brazil-0b06f9a3",
+  "batch_id": "2026-06-19-morning",
+  "title": "苹果因巴西监管机构要求调整iOS政策",
+  "original_title": "Changes to iOS in Brazil",
+  "url": "https://developer.apple.com/news/?id=dhwadr2x",
+  "summary": "As part of a recent agreement with Brazil’s competition regulator CADE (Conselho Administrativo de Defesa Econômica), Apple is introducing changes to iOS that create new options for developers' apps in Brazil. Beginning with iOS 26.5, developers can distribute apps on alternative app marketplaces, operate alternative app marketplaces, process app payments for digital goods and services outside of Apple In-App Purchase in iOS, and more. The new options for downloading apps from alternative app marketplaces and making app payments open new avenues for malware, fraud, scams, and privacy and security risks. Apple has worked with CADE to introduce protections from these new threats — with a special emphasis on child safety. Those protections include Notarization for iOS apps, an authorization process for app marketplaces, and requirements that help protect children from inappropriate content ",
+  "source_category": "platform_policy",
+  "source_category_title": "平台规则与搜索生态",
+  "topic_direction": "side-info",
+  "topic_direction_title": "副业&信息差",
+  "topic_direction_short_title": "副业&信息差",
+  "topic_direction_description": "独立开发、副业项目、工具站、微型 SaaS、开源项目、现金流风险、外包回款、信息差机会和风险避坑。重点记录案例、项目、风险和需求信号。",
+  "source_name": "Apple Developer News",
+  "original_source_name": "Latest News - Apple Developer",
+  "source_type": "rss",
+  "feed_url": "https://developer.apple.com/news/rss/news.rss",
+  "published_at": "2026-06-18T14:30:05+00:00",
+  "fetched_at": "2026-06-18T22:25:45.782413+00:00",
+  "decision": "deep_dive",
+  "report_type": "platform-rules",
+  "report_type_title": "平台规则",
+  "score": 78,
+  "reader_hook": "苹果在巴西开放第三方应用商店和支付，影响开发者收入",
+  "topic_tension": {
+    "score": 8,
+    "conflict_point": "表面价格、额度或收益预期和真实成本之间的冲突。",
+    "debate_question": "这笔账普通技术人还能不能算得过来，还是只适合少数人？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+    "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+  },
+  "persona_discussion_question": "小团队该不该继续把关键工作流押在这个平台规则上？",
+  "why_now": "苹果与巴西监管机构达成协议，政策即将实施",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "苹果官方公告：根据与巴西CADE的协议，iOS将允许替代应用市场和支付方式，开发者需关注新条款。",
+  "collection_fit": "platform-rules",
+  "investigation_direction": "跟踪巴西市场实际变化及对其他地区影响",
+  "uncertainty_flags": [
+    "具体实施时间未公布"
+  ],
+  "facts": [
+    {
+      "claim": "Apple Developer News 发布/收录了这条原始线索：Changes to iOS in Brazil",
+      "type": "confirmed_fact",
+      "source_url": "https://developer.apple.com/news/?id=dhwadr2x",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Apple Developer News",
+      "url": "https://developer.apple.com/news/?id=dhwadr2x",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {},
+    "source_host": "developer.apple.com",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 8,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "苹果在巴西开放第三方应用商店和支付，影响开发者收入",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://developer.apple.com/news/rss/news.rss",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "具体实施时间未公布"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心费用结构（替代支付佣金、核心技术费）未公开，无法完成成本/收益分析，属于核心事实没有来源。"
+    },
+    "core_question": "苹果在巴西开放第三方应用商店和支付，对普通开发者（尤其是独立开发者和小团队）的实际收益、成本和风险是什么？",
+    "why_this_topic_matters": "这是继欧盟之后，苹果在第二个主要市场因监管压力开放iOS生态。巴西市场虽不及欧盟大，但政策细节可能成为其他国家的参考模板。对开发者而言，核心问题是：替代支付和商店是否真的能降低佣金成本，还是只是换了一种收费方式？",
+    "fact_summary": [
+      "苹果与巴西反垄断监管机构CADE达成协议，将在iOS 26.5起允许巴西地区使用替代应用市场和替代支付。",
+      "苹果声称将引入Notarization（公证）、应用市场授权流程和儿童保护措施。",
+      "协议于2025年12月首次报道，2026年6月苹果正式宣布开发者可开始集成。",
+      "欧盟类似政策（DMA）已实施，苹果对替代市场收取核心技术费（CTF），且App Store佣金未降低。",
+      "巴西市场占全球App Store收入比例未知，但苹果曾称欧盟占7%。"
+    ],
+    "persona_discussion_question": "作为独立开发者，我该不该为了巴西市场接入第三方支付或上架替代应用商店？这笔账算得过来吗？",
+    "old_flower_stance": "先别急着算账，等苹果公布巴西的具体费用结构。欧盟的经验已经证明，替代支付不一定省钱，可能只是多了一层费用。小开发者最该关注的是：新规则下，你的实际到手收入是变多了还是变少了？",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "高价值商业读者",
+        "副业普通人"
+      ],
+      "interest_score": 75,
+      "why_interested": "核心技术人关注平台规则变化对开发成本和分发策略的影响；高价值商业读者关注巴西市场机会和监管趋势；副业普通人可能被'降低佣金'的预期吸引，但需要风险提示。",
+      "reader_risk": "可能过度乐观，认为替代支付=省钱，忽略苹果可能收取的新费用。"
+    },
+    "mass_interest_hook": {
+      "score": 70,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "标题如'苹果在巴西被迫开放，开发者能省30%佣金？'制造了'苹果让步'的反差，普通人可能好奇自己的App会不会更便宜。",
+      "story_seed": "一个巴西独立开发者，原本交30%佣金，现在用替代支付，结果发现总成本没变，因为苹果收了新的'核心技术费'。",
+      "do_not_overhype": "不能声称开发者一定受益，必须强调费用结构未公布，欧盟案例显示可能不省钱。"
+    },
+    "topic_tension": {
+      "score": 10,
+      "conflict_point": "监管要求开放 vs 苹果通过新费用维持控制；开发者期望省钱 vs 实际可能成本不变或增加。",
+      "debate_question": "苹果的'保护'措施（公证、授权）是真心为用户安全，还是变相维持控制并增加开发者负担？",
+      "stakeholders": [
+        "苹果",
+        "巴西监管机构CADE",
+        "独立开发者/小团队",
+        "替代应用市场运营商（如Mercado Libre）",
+        "用户"
+      ],
+      "why_people_would_comment": "读者可以围绕'苹果是否在耍花招''替代支付到底省不省钱''小开发者有没有能力应对多个平台'等话题争论。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2025-12-23: 苹果与CADE达成协议，同意在巴西开放第三方应用商店和支付。",
+      "2025-12-24: 多家媒体报道协议细节，但费用结构未公布。",
+      "2026-06-18: 苹果正式宣布iOS 26.5起开发者可集成替代市场，发布开发者支持页面。",
+      "2026-06-18: TechCrunch、9to5Mac等报道，仍缺具体费用信息。"
+    ],
+    "evidence_table": [
+      {
+        "source": "Apple Developer News - Changes to iOS in Brazil",
+        "url": "https://developer.apple.com/news/?id=dhwadr2x",
+        "supports": "苹果官方确认巴西政策变化，包括替代市场、替代支付、公证和授权流程。",
+        "reliability": "official"
+      },
+      {
+        "source": "MacRumors - Apple to Introduce New App Store Fee Structure in Brazil",
+        "url": "https://www.macrumors.com/2025/12/24/new-app-store-fee-structure-in-brazil/",
+        "supports": "提到苹果将引入新费用结构，但未提供具体数字。",
+        "reliability": "media"
+      },
+      {
+        "source": "9to5Mac - Apple settles Brazilian antitrust case with App Store policy overhaul",
+        "url": "https://9to5mac.com/2025/12/23/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul/",
+        "supports": "确认协议达成，提及费用结构更新但无细节。",
+        "reliability": "media"
+      },
+      {
+        "source": "Apple Developer Support - Update on apps distributed in the European Union",
+        "url": "https://developer.apple.com/support/dma-and-apps-in-the-eu/",
+        "supports": "提供欧盟DMA政策细节，包括核心技术费（CTF）0.50欧元/安装，可作为巴西政策的参考。",
+        "reliability": "official"
+      },
+      {
+        "source": "TechCrunch - Apple says EU represents 7% of global App Store revenue",
+        "url": "https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/",
+        "supports": "提供欧盟市场规模参考，巴西市场可能更小。",
+        "reliability": "media"
+      },
+      {
+        "source": "Apple Newsroom - Apple announces changes to iOS in Brazil",
+        "url": "https://www.apple.com/newsroom/2026/06/apple-announces-changes-to-ios-in-brazil/",
+        "supports": "官方新闻稿，确认政策实施，但未提及费用。",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "部分闭环。已知事实：巴西将开放替代市场和支付，苹果将引入公证和授权。但核心费用结构未知，无法判断开发者是否受益。欧盟案例显示苹果收取CTF，App Store佣金未降，可作为参考但非直接证据。逻辑上，如果苹果在巴西也收取类似CTF，小开发者可能得不偿失。",
+    "writeable_angles": [
+      {
+        "angle": "成本账对比：巴西 vs 欧盟政策，苹果可能如何收费？",
+        "why": "通过欧盟已知费用结构推测巴西可能方案，帮助开发者提前评估。",
+        "needs": "需要巴西协议费用细节或苹果官方公告。"
+      },
+      {
+        "angle": "小开发者的风险清单：替代支付和商店的隐藏成本",
+        "why": "提醒读者关注公证费、多平台合规成本、用户支持等隐性支出。",
+        "needs": "需要公证流程费用、替代市场分成比例等信息。"
+      },
+      {
+        "angle": "巴西市场值得投入吗？市场规模、用户付费习惯与政策不确定性",
+        "why": "帮助开发者判断是否值得为巴西市场调整分发策略。",
+        "needs": "需要巴西iOS市场份额、开发者收入数据、本地支付偏好。"
+      }
+    ],
+    "missing_basics": [
+      "巴西iOS用户规模和付费能力数据",
+      "苹果在巴西的当前佣金结构（是否与全球一致30%/15%）",
+      "替代应用市场在巴西的现有生态（如Mercado Libre是否已有计划）"
+    ],
+    "missing_materials": [
+      "巴西CADE协议全文或官方摘要（含费用条款）",
+      "苹果巴西新政策开发者页面（含费用说明）",
+      "欧盟替代市场开发者实际案例（如Setapp、Epic Games Store的收入影响）",
+      "苹果Notarization流程和费用说明（是否免费？）"
+    ],
+    "not_claimable": [
+      "开发者一定会受益",
+      "佣金一定会降低",
+      "替代市场一定会成功",
+      "苹果的'保护'措施是纯粹善意的"
+    ],
+    "followup_queries": [
+      "苹果在巴西的替代支付是否收取佣金？比例多少？",
+      "苹果是否对替代市场应用收取核心技术费（CTF）？金额多少？",
+      "巴西CADE协议是否强制苹果降低App Store佣金？",
+      "替代应用市场的公证流程是否免费？",
+      "欧盟DMA实施后，开发者实际收入变化数据？"
+    ],
+    "additional_search_queries": [
+      "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+      "Apple alternative app marketplace Brazil developer fee commission 2025",
+      "EU alternative app store developer experience revenue impact 2024",
+      "Brazil iOS market share developer revenue 2025",
+      "Apple Notarization iOS Brazil requirements cost"
+    ],
+    "stop_conditions": [
+      "苹果官方公布巴西具体费用结构",
+      "巴西CADE发布协议全文",
+      "出现开发者实际收入变化的可靠案例"
+    ],
+    "confidence": 60.0,
+    "topic_direction": "side-info",
+    "topic_direction_title": "副业&信息差",
+    "report_type": "platform-rules",
+    "quality_gate": {
+      "pass": false,
+      "score": 60,
+      "fatal_issues": [
+        "核心费用结构（替代支付佣金、核心技术费）未公开，无法完成成本/收益分析，属于核心事实没有来源。"
+      ],
+      "warnings": [
+        "巴西iOS用户规模和付费能力数据缺失",
+        "替代应用市场在巴西的现有生态信息不足",
+        "欧盟案例作为参考，但巴西政策细节可能不同"
+      ],
+      "missing_evidence": [
+        "巴西CADE协议全文或官方摘要（含费用条款）",
+        "苹果巴西新政策开发者页面（含费用说明）",
+        "欧盟替代市场开发者实际案例（如Setapp、Epic Games Store的收入影响）",
+        "苹果Notarization流程和费用说明（是否免费？）"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "苹果在巴西开放第三方应用商店和支付，对普通开发者（尤其是独立开发者和小团队）的实际收益、成本和风险是什么？",
+      "persona_discussion_question": "作为独立开发者，我该不该为了巴西市场接入第三方支付或上架替代应用商店？这笔账算得过来吗？",
+      "hidden_public_issue": "苹果的‘保护’措施（公证、授权、儿童安全）是否会成为新的门槛或收费点？最终受益的是大公司还是小开发者？",
+      "must_verify": [
+        "苹果在巴西的替代应用商店和支付的具体佣金/费用结构（是否仍收取佣金？比例多少？）",
+        "替代应用商店的审核和上架流程（是否比App Store更宽松或更严格？）",
+        "苹果的‘保护’措施（Notarization、授权流程）是否会产生额外成本或时间延迟？",
+        "巴西CADE协议的具体条款（是否强制苹果降低佣金？是否有过渡期？）",
+        "其他地区（如欧盟）类似政策的实际效果和开发者反馈（开发者是否真的受益？）"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+          "why_needed": "获取官方协议细节，确认佣金、费用和规则变化"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "Apple alternative app marketplace Brazil developer fee commission 2025",
+          "why_needed": "确认苹果是否对替代市场收取额外费用或降低佣金"
+        },
+        {
+          "source_type": "case_study",
+          "query": "EU alternative app store developer experience revenue impact 2024",
+          "why_needed": "参考欧盟类似政策的实际效果，评估巴西政策可能带来的影响"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Brazil iOS alternative payment developer forum Reddit",
+          "why_needed": "了解巴西本地开发者的真实反馈和预期"
+        },
+        {
+          "source_type": "policy",
+          "query": "CADE Brazil Apple antitrust decision 2025",
+          "why_needed": "获取巴西监管机构的官方决定和理由"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Apple Notarization iOS Brazil requirements cost",
+          "why_needed": "确认公证流程的具体要求和潜在成本"
+        }
+      ],
+      "expert_challenge_points": [
+        "苹果的‘保护’措施是否变相维持控制？",
+        "替代支付是否真的能降低开发者成本？还是只是换了一种收费方式？",
+        "小开发者是否有资源应对多个平台的分发和支付合规？",
+        "巴西市场本身规模是否值得投入？",
+        "苹果是否会通过技术手段（如限制功能）削弱替代市场的竞争力？"
+      ],
+      "do_not_claim_yet": [
+        "开发者一定会受益",
+        "佣金一定会降低",
+        "替代市场一定会成功",
+        "苹果的‘保护’措施是纯粹善意的"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确标注证据缺口，重点放在成本/收益分析和风险提示上，避免过度乐观。",
+      "downstream_materials_needed": [
+        "巴西CADE协议全文或摘要",
+        "苹果巴西新政策开发者页面（含费用说明）",
+        "欧盟替代市场开发者案例（如Setapp、Epic Games Store）",
+        "巴西iOS市场份额和开发者收入数据",
+        "苹果Notarization流程和费用说明"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Apple to Introduce New App Store Fee Structure in Brazil Following Antitrust Settlement - MacRumors",
+        "url": "https://www.macrumors.com/2025/12/24/new-app-store-fee-structure-in-brazil/",
+        "query": "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "@media (prefers-color-scheme: dark) {html{background:#000;} .button {background: #373737;}}@media (prefers-color-scheme: light) {html{background:#fff;} .button {background: #f2f1ec;}} !function(){\"use strict\";var e=window.location.search.substring(1).split(\"&\");const t=e=>e.replace(/\\s/g,\"\"),o=e=>new Promise((t=>{if(!(\"msCrypto\"in window)&&\"https:\"===location.protocol&&\"crypto\"in window&&\"TextEncoder\"in window){const o=(new TextEncoder).encode(e);crypto.subtle.digest(\"SHA-256\",o).then((e=>{const o=Array.from(new Uint8Array(e)).map((e=>(\"00\"+e.toString(16)).slice(-2))).join(\"\");t(o)}))}else t(\"\")}));for(var n=0;n {const t=e.match(/((?=([a-zA-Z0-9._!#$%+^&*()[\\]<>-]+))\\2@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+)/gi);return t?t[0]:\"\"})(t(a.toLowerCase()))){o(a).then((t=>{t.length&&(localStorage.setItem(r,t),localStorage.setItem(\"adt_emsrc\",\"url\"),e.splice(n,1),history.replaceState(null,\"\",\"?\"+e.join(\"&\")))}));break}}}}(); function getCookie(name) { for (var nameEQ = name + \"=\", ca = document.cookie.split(\";\"), i = 0; i = 1) || (1==0)) return true; return false;} var forum_logged_in = forumsUserCheck(); var status = (forum_logged_in ? getCookie('xf_contributor')==1 ? \"contributor\" : getCookie('xf_contributor')==2 ? \"editor\" : \"logged-in\" : \"guest\"); var mrDark = getCookie('mr-dark'); var lightdark=false; if (mrDark == 1) { lightdark=true; document.write(' '); } else if (mrDark == 2) { document.write(' '); } else { try { var light = window.matchMedia(\"(prefers-color-scheme: light)\"); var dark = window.matchMedia(\"(prefers-color-scheme: dark)\"); if (dark.matches) lightdark=true; if (light.matches || dark.matches) { document.write(' '); document.write(' '); } else { document.write(' '); } } catch (e) { document.write(' '); } } var mrWidth = getCookie('mr-fluid'); if (mrWidth > 1) { do",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple announces major App Store changes for Brazil, including alternative app marketplaces",
+        "url": "https://9to5mac.com/2026/06/18/apple-announces-major-app-store-changes-for-brazil-including-alternative-app-marketplaces/",
+        "query": "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); window.dataLayer = window.dataLayer || []; dataLayer.push({\"pageType\":\"post\",\"event\":\"postCategory\",\"postCategory\":[\"app-store\"]}); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-M48W9J'); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-K5T6XC3'); Apple announces major App Store changes for Brazil - 9to5Mac {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/9to5mac.com\\/2026\\/06\\/18\\/apple-announces-major-app-store-changes-for-brazil-including-alternative-app-marketplaces\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/9to5mac.com\\/2026\\/06\\/18\\/apple-announces-major-app-store-changes-for-brazil-including-alternative-app-marketplaces\\/\"},\"author\":{\"name\":\"Marcus Mendes\",\"@id\":\"https:\\/\\/9to5mac.com\\/#\\/schema\\/person\\/f1c896906b7bd9605cfa037d57bbe001\"},\"headline\":\"Apple announces major App Store changes for Brazil, including alternative app marketplaces\",\"datePublished\":\"2026-06-18T15:00:02+00:00\",\"dateModified\":\"2026-06-18T15:00:04+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/9to5mac.com\\/2026\\/06\\/18\\/apple-announces-major-app-store-changes-for-brazil-including-alternative-app-marketplaces\\",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple to Allow Alternative App Marketplaces and Payments in Brazil - iClarified",
+        "url": "https://www.iclarified.com/101230/apple-to-allow-alternative-app-marketplaces-and-payments-in-brazil",
+        "query": "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Apple to Allow Alternative App Marketplaces and Payments in Brazil - iClarified {\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Apple to Allow Alternative App Marketplaces and Payments in Brazil\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.iclarified.com\\/101230\\/apple-to-allow-alternative-app-marketplaces-and-payments-in-brazil\"},\"url\":\"https:\\/\\/www.iclarified.com\\/101230\\/apple-to-allow-alternative-app-marketplaces-and-payments-in-brazil\",\"description\":\"Apple will let iOS developers in Brazil use alternative app marketplaces and payment options under a CADE agreement, starting with iOS 26.5.\",\"keywords\":\"ios,apple,developers,brazil,use,alternative,app,marketplaces,payment,options\",\"image\":\"https:\\/\\/www.iclarified.com\\/images\\/news\\/101230\\/101230\\/101230-1280.jpg\",\"author\":{\"@type\":\"Person\",\"name\":\"Shalom Levytam\",\"url\":\"https:\\/\\/www.iclarified.com\\/author\\/shalom-levytam\",\"image\":\"https:\\/\\/www.iclarified.com\\/images\\/author\\/shalom-levytam-1280.jpg\"},\"datePublished\":\"2026-06-18 15:45:28\",\"dateModified\":\"2026-06-18 15:45:28\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"iClarified\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/www.iclarified.com\\/images\\/index\\/iclarified-logo-640x150.svg\"}},\"articleBody\":\"Apple today announced changes to iOS in Brazil that will let developers distribute apps through alternative app marketplaces and offer payment options outside of Apple In-App Purchase. The changes follow an agreement with Brazil's competition regulator, the Conselho Administrativo de Defesa Econ\\u00f4mica (CADE), and are available for developers to integrate beginning today as part of iOS 26.5. Alternative App Marketplaces Developers will be able to distribute iOS apps in Brazil through alternative app marketplaces, rather than",
+        "fetch_error": ""
+      },
+      {
+        "title": "Brazil Instructs Apple to Offer Alternative App Stores",
+        "url": "https://appleosophy.com/2025/12/27/brazil-instructs-apple-to-offer-alternative-app-stores/",
+        "query": "Apple alternative app marketplace Brazil developer fee commission 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function() { // Dark is always the baseline render document.documentElement.classList.add('is-dark'); // Respect saved preference afterwards var theme = localStorage.getItem('networker_theme') || 'dark'; if (theme === 'light') { document.documentElement.classList.remove('is-dark'); } })(); Brazil Instructs Apple to Offer Alternative App Stores {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/appleosophy.com\\/2025\\/12\\/27\\/brazil-instructs-apple-to-offer-alternative-app-stores\\/#article\",\"name\":\"Brazil Instructs Apple to Offer Alternative App Stores\",\"headline\":\"Brazil Instructs Apple to Offer Alternative App Stores\",\"author\":{\"@id\":\"https:\\/\\/appleosophy.com\\/author\\/satyendu\\/#author\"},\"publisher\":{\"@id\":\"https:\\/\\/appleosophy.com\\/#organization\"},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cdn.appleosophy.com\\/2025\\/12\\/Apple-App-Store-compliance-hero-scaled.jpg\",\"width\":2560,\"height\":1440,\"caption\":\"Source: Apple Newsroom\"},\"datePublished\":\"2025-12-27T11:52:52-05:00\",\"dateModified\":\"2025-12-27T11:52:52-05:00\",\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/appleosophy.com\\/2025\\/12\\/27\\/brazil-instructs-apple-to-offer-alternative-app-stores\\/#webpage\"},\"isPartOf\":{\"@id\":\"https:\\/\\/appleosophy.com\\/2025\\/12\\/27\\/brazil-instructs-apple-to-offer-alternative-app-stores\\/#webpage\"},\"articleSection\":\"App Store, alternative payment methods, App Store Fees, Apple Brazil, Brazilian antitrust settlement, CADE, iOS third-party app stores, Mercado Libre Apple lawsuit\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/appleosophy.com\\/2025\\/12\\/27\\/brazil-instructs-apple-to-offer-alternative-app-stores\\/#breadcrumblist\",\"itemListElement\":[{\"@type\":\"ListItem\",\"@id\":\"https:\\/\\/appleosophy.com#listItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple allows alternative app stores and payments in Brazil | Rapid Meta",
+        "url": "https://rapid-meta.com/apple/apple-allows-alternative-app-stores-and-payments-in-brazil/",
+        "query": "Apple alternative app marketplace Brazil developer fee commission 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf(\"?\")==-1){if(href.indexOf(\"#\")==-1){document.location.href=href+\"?nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"?nowprocket=1#\")}}else{if(href.indexOf(\"#\")==-1){document.location.href=href+\"&nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"&nowprocket=1#\")}}}} (()=>{class RocketLazyLoadScripts{constructor(){this.v=\"2.0.5\",this.userEvents=[\"keydown\",\"keyup\",\"mousedown\",\"mouseup\",\"mousemove\",\"mouseover\",\"mouseout\",\"touchmove\",\"touchstart\",\"touchend\",\"touchcancel\",\"wheel\",\"click\",\"dblclick\",\"input\"],this.attributeEvents=[\"onblur\",\"onclick\",\"oncontextmenu\",\"ondblclick\",\"onfocus\",\"onmousedown\",\"onmouseenter\",\"onmouseleave\",\"onmousemove\",\"onmouseout\",\"onmouseover\",\"onmouseup\",\"onmousewheel\",\"onscroll\",\"onsubmit\"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event(\"rocket-allScriptsLoaded\")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem(\"rocketCSPIssue\"),document.addEventListener(\"securitypolicyviolation\",t=>{this.CSPIssue||\"script-src-elem\"!==t.violatedDirective||\"data\"!==t.blockedURI||(this.CSPIssue=!0,session",
+        "fetch_error": ""
+      },
+      {
+        "title": "iOS 26.5 Alternative App Marketplaces in Brazil: What's Live Now << Apple :: Gadget Hacks",
+        "url": "https://apple.gadgethacks.com/news/ios-265-alternative-app-marketplaces-in-brazil-whats-live-now/",
+        "query": "Apple alternative app marketplace Brazil developer fee commission 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Update on apps distributed in the European Union - Support - Apple Developer",
+        "url": "https://developer.apple.com/support/dma-and-apps-in-the-eu/",
+        "query": "EU alternative app store developer experience revenue impact 2024",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "// Synchronously disables the account link before first paint so the user // cannot navigate away before session.js registers its click listener. (function () { var accountLink = document.querySelector(\".globalnav-link-account\"); if (accountLink) { var href = accountLink.getAttribute(\"href\"); if (href) { accountLink.dataset.pendingHref = href; accountLink.removeAttribute(\"href\"); accountLink.style.cursor = \"default\"; } } })(); Update on apps distributed in the European Union - Support - Apple Developer '> ' /> ' /> ' /> // Execute immediately to avoid UI flash (function () { // Prevent React dev mode from running this multiple times if (window.__didRunColorThemeScript) { return; } window.__didRunColorThemeScript = true; const prefersDark = window.matchMedia(\"(prefers-color-scheme: dark)\").matches; const body = document.body; // If theme-dark or theme-light is already applied, do nothing and lock it if (body.classList.contains(\"theme-dark\") || body.classList.contains(\"theme-light\")) { // Set the data-color-scheme attribute based on the existing theme body.setAttribute('data-color-scheme', body.classList.contains(\"theme-dark\") ? \"dark\" : \"light\"); // Prevent future modifications window.__disableColorScheme = true; // Hide the color picker immediately const style = document.createElement('style'); style.textContent = '.color-scheme-toggle { display: none !important; }'; document.head.appendChild(style); return; } // Otherwise, set theme normally based on user settings or system preference if (window.Settings && window.Settings.preferredColorScheme) { const colorTheme = (window.Settings.preferredColorScheme === 'auto') && !prefersDark ? 'light' : (window.Settings.preferredColorScheme === 'light') ? 'light' : 'dark'; body.setAttribute('data-color-scheme', colorTheme); colorT",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple says EU represents 7% of global App Store revenue | TechCrunch",
+        "url": "https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/",
+        "query": "EU alternative app store developer experience revenue impact 2024",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); const successData = localStorage.getItem('turnstile_verified'); const failData = sessionStorage.getItem('turnstile_failed'); const isBot = failData ? 'true' : successData ? 'false' : null; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ is_bot: isBot }); const BUCKET_KEY = 'tc_jwplayer_promo_bucket'; const urlParam = new URLSearchParams(window.location.search).get('jw_promo_bucket'); if (urlParam === 'show' || urlParam === 'hide') { localStorage?.setItem(BUCKET_KEY, urlParam); } let bucket = localStorage?.getItem(BUCKET_KEY); if (!bucket || (bucket !== 'show' && bucket !== 'hide')) { bucket = Math.random() Apple says EU represents 7% of global App Store revenue | TechCrunch {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"NewsArticle\",\"@id\":\"https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/#article\",\"isPartOf\":{\"@id\":\"https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/\"},\"author\":[{\"@id\":\"https://techcrunch.com/#/schema/person/image/a6f7867020af40f5dcae726169b5c360\"}],\"headline\":\"Apple says EU represents 7% of global App Store revenue\",\"datePublished\":\"2024-02-02T05:37:49+00:00\",\"dateModified\":\"2024-02-02T17:58:05+00:00\",\"mainEntityOfPage\":{\"@id\":\"https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/\"},\"wordCount\":600,\"commentCount\":0,\"publisher\":{\"@id\":\"https://techcrunch.com/#organization\"},\"image\":{\"@id\":\"https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/#primaryimage\"},\"thumbnailUrl\":\"https://techcrunch.com/wp-content/uploads/2024/01/app-store-2024-v2.jpg\",\"keywords\":[\"Apple\",\"app-store\",\"eur",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple Opens App Store to Competitors in EU Amid Regulatory Pressure - Blog - MEF",
+        "url": "https://mobileecosystemforum.com/2025/07/01/apple-opens-app-store-to-competitors-in-eu-amid-regulatory-pressure/",
+        "query": "EU alternative app store developer experience revenue impact 2024",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "r/apple on Reddit: Apple to Allow Alternative App Stores and More on iOS in Brazil by April",
+        "url": "https://www.reddit.com/r/apple/comments/1ptz8xt/apple_to_allow_alternative_app_stores_and_more_on/",
+        "query": "Brazil iOS alternative payment developer forum Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/apple on Reddit: Apple to Introduce New App Store Fee Structure in Brazil Following Antitrust Settlement",
+        "url": "https://www.reddit.com/r/apple/comments/1puzunz/apple_to_introduce_new_app_store_fee_structure_in/",
+        "query": "Brazil iOS alternative payment developer forum Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "Apple Opens iOS to Third-Party App Stores in Brazil << Apple :: Gadget Hacks",
+        "url": "https://apple.gadgethacks.com/news/apple-opens-ios-to-third-party-app-stores-in-brazil/",
+        "query": "Brazil iOS alternative payment developer forum Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Apple settles Brazilian antitrust case with App Store policy overhaul - 9to5Mac",
+        "url": "https://9to5mac.com/2025/12/23/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul/",
+        "query": "CADE Brazil Apple antitrust decision 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); window.dataLayer = window.dataLayer || []; dataLayer.push({\"pageType\":\"post\",\"event\":\"postCategory\",\"postCategory\":[\"aapl\",\"antitrust\"]}); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-M48W9J'); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-K5T6XC3'); Apple settles Brazilian antitrust case with App Store policy overhaul - 9to5Mac {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/9to5mac.com\\/2025\\/12\\/23\\/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/9to5mac.com\\/2025\\/12\\/23\\/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul\\/\"},\"author\":{\"name\":\"Marcus Mendes\",\"@id\":\"https:\\/\\/9to5mac.com\\/#\\/schema\\/person\\/f1c896906b7bd9605cfa037d57bbe001\"},\"headline\":\"Apple settles Brazilian antitrust case with App Store policy overhaul [U: Fee structure]\",\"datePublished\":\"2025-12-23T20:57:02+00:00\",\"dateModified\":\"2025-12-23T22:17:52+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/9to5mac.com\\/2025\\/12\\/23\\/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul\\/\"},\"wordCount\":585,\"commentCount\":0",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple to allow third-party app stores in Brazil to settle iOS case with regulator | Reuters",
+        "url": "https://www.reuters.com/legal/litigation/apple-allow-third-party-app-stores-brazil-settle-ios-case-with-regulator-2025-12-23/",
+        "query": "CADE Brazil Apple antitrust decision 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 401: HTTP Forbidden"
+      },
+      {
+        "title": "Apple agrees to allow third-party app stores on iOS in Brazil following antitrust settlement",
+        "url": "https://macdailynews.com/2025/12/24/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement/",
+        "query": "CADE Brazil Apple antitrust decision 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Apple agrees to allow third-party app stores on iOS in Brazil following antitrust settlement {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/\"},\"author\":{\"name\":\"MacDailyNews Webmaster\",\"@id\":\"https:\\/\\/macdailynews.com\\/#\\/schema\\/person\\/d0022d2e2595bf9e1e5df4dc0d2c84c2\"},\"headline\":\"Apple agrees to allow third-party app stores on iOS in Brazil following antitrust settlement\",\"datePublished\":\"2025-12-24T17:49:48+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/\"},\"wordCount\":612,\"commentCount\":0,\"publisher\":{\"@id\":\"https:\\/\\/macdailynews.com\\/#organization\"},\"image\":{\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/#primaryimage\"},\"thumbnailUrl\":\"https:\\/\\/macdailynews.com\\/wp-content\\/uploads\\/2024\\/08\\/240830_apple_logo.png\",\"keywords\":[\"Apple App Store\",\"Brazil\",\"MercadoLibre\",\"third-party app stores\"],\"articleSection\":[\"News\"],\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"CommentAction\",\"name\":\"Comment\",\"target\":[\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/#respond\"]}],\"copyrightYear\":\"2025\",\"copyrightHolder\":{\"@id\":\"https:\\/\\/macdailynews.com\\/#organization\"}},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees",
+        "fetch_error": ""
+      },
+      {
+        "title": "Changes to iOS in Brazil - Support - Apple Developer",
+        "url": "https://developer.apple.com/support/app-distribution-in-brazil",
+        "query": "Apple Notarization iOS Brazil requirements cost",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "// Synchronously disables the account link before first paint so the user // cannot navigate away before session.js registers its click listener. (function () { var accountLink = document.querySelector(\".globalnav-link-account\"); if (accountLink) { var href = accountLink.getAttribute(\"href\"); if (href) { accountLink.dataset.pendingHref = href; accountLink.removeAttribute(\"href\"); accountLink.style.cursor = \"default\"; } } })(); Changes to iOS in Brazil - Support - Apple Developer ' /> ' /> // Execute immediately to avoid UI flash (function () { // Prevent React dev mode from running this multiple times if (window.__didRunColorThemeScript) { return; } window.__didRunColorThemeScript = true; const prefersDark = window.matchMedia(\"(prefers-color-scheme: dark)\").matches; const body = document.body; // If theme-dark or theme-light is already applied, do nothing and lock it if (body.classList.contains(\"theme-dark\") || body.classList.contains(\"theme-light\")) { // Set the data-color-scheme attribute based on the existing theme body.setAttribute('data-color-scheme', body.classList.contains(\"theme-dark\") ? \"dark\" : \"light\"); // Prevent future modifications window.__disableColorScheme = true; // Hide the color picker immediately const style = document.createElement('style'); style.textContent = '.color-scheme-toggle { display: none !important; }'; document.head.appendChild(style); return; } // Otherwise, set theme normally based on user settings or system preference if (window.Settings && window.Settings.preferredColorScheme) { const colorTheme = (window.Settings.preferredColorScheme === 'auto') && !prefersDark ? 'light' : (window.Settings.preferredColorScheme === 'light') ? 'light' : 'dark'; body.setAttribute('data-color-scheme', colorTheme); colorTheme === \"dark\" ? body.classList",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple announces changes to iOS in Brazil - Apple",
+        "url": "https://www.apple.com/newsroom/2026/06/apple-announces-changes-to-ios-in-brazil/",
+        "query": "Apple Notarization iOS Brazil requirements cost",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Apple announces changes to iOS in Brazil - Apple Apple Store Mac iPad iPhone Watch Vision AirPods TV & Home Entertainment Accessories Support 0 + {\"props\":{\"globalNavData\":{\"locale\":\"en_US\",\"ariaLabel\":\"Global\",\"analyticsAttributes\":[{\"name\":\"data-analytics-activitymap-region-id\",\"value\":\"global nav\"},{\"name\":\"data-analytics-region\",\"value\":\"global nav\"}],\"links\":[{\"id\":\"2758e8127e4ab787ae4e849277f79b83b3522719ae4b96a595421e50ea2d03f7\",\"name\":\"apple\",\"text\":\"Apple\",\"url\":\"/\",\"ariaLabel\":\"Apple\",\"submenuAriaLabel\":\"Apple menu\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"},{\"name\":\"compact\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"apple home\"}]},{\"id\":\"ad4a2a26eb4836393385e9f6c61b526b4a3cb31409c5ed8730ce7a704dd7132f\",\"name\":\"store\",\"text\":\"Store\",\"url\":\"/us/shop/goto/store\",\"ariaLabel\":\"Store\",\"submenuAriaLabel\":\"Store menu\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"store\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - store\"}]},{\"id\":\"9a82f08a3cc17e59a61372a40e7ecb17783e9c10aef163465f29bb5b00d4725a\",\"name\":\"mac\",\"text\":\"Mac\",\"url\":\"/mac/\",\"ariaLabel\":\"Mac\",\"submenuAriaLabel\":\"Mac menu\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"mac\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - mac\"}]},{\"id\":\"00948525be55e5a61fc12335c2fe8fbc94664d6237757d79344cadd205bde991\",\"name\":\"ipad\",\"text\":\"iPad\",\"url\":\"/ipad/\",\"ariaLabel\":\"iPad\",\"submenuAriaLabel\":\"iPad menu\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"ipad\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - ipad\"}]},{\"id\":\"254873a73c00038209d1c486",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple opens up App Store to new competition in Brazil | TechCrunch",
+        "url": "https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/",
+        "query": "Apple Notarization iOS Brazil requirements cost",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); const successData = localStorage.getItem('turnstile_verified'); const failData = sessionStorage.getItem('turnstile_failed'); const isBot = failData ? 'true' : successData ? 'false' : null; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ is_bot: isBot }); const BUCKET_KEY = 'tc_jwplayer_promo_bucket'; const urlParam = new URLSearchParams(window.location.search).get('jw_promo_bucket'); if (urlParam === 'show' || urlParam === 'hide') { localStorage?.setItem(BUCKET_KEY, urlParam); } let bucket = localStorage?.getItem(BUCKET_KEY); if (!bucket || (bucket !== 'show' && bucket !== 'hide')) { bucket = Math.random() Apple opens up App Store to new competition in Brazil | TechCrunch {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"NewsArticle\",\"@id\":\"https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/#article\",\"isPartOf\":{\"@id\":\"https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/\"},\"author\":[{\"@id\":\"https://techcrunch.com/#/schema/person/image/14f1d39bd1812acaeda25e46acf52b80\"}],\"headline\":\"Apple opens up App Store to new competition in Brazil\",\"datePublished\":\"2026-06-18T15:48:08+00:00\",\"dateModified\":\"2026-06-18T15:55:06+00:00\",\"mainEntityOfPage\":{\"@id\":\"https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/\"},\"wordCount\":279,\"publisher\":{\"@id\":\"https://techcrunch.com/#organization\"},\"image\":{\"@id\":\"https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/#primaryimage\"},\"thumbnailUrl\":\"https://techcrunch.com/wp-content/uploads/2022/07/app-store-ios-2022.jpg\",\"keywords\":[\"app store\",\"Apple\",\"Brazil\",\"developers\",\"In Br",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心费用结构（替代支付佣金、核心技术费）未公开，无法完成成本/收益分析，属于核心事实没有来源。"
+    },
+    "core_question": "苹果在巴西开放第三方应用商店和支付，对普通开发者（尤其是独立开发者和小团队）的实际收益、成本和风险是什么？",
+    "why_this_topic_matters": "这是继欧盟之后，苹果在第二个主要市场因监管压力开放iOS生态。巴西市场虽不及欧盟大，但政策细节可能成为其他国家的参考模板。对开发者而言，核心问题是：替代支付和商店是否真的能降低佣金成本，还是只是换了一种收费方式？",
+    "fact_summary": [
+      "苹果与巴西反垄断监管机构CADE达成协议，将在iOS 26.5起允许巴西地区使用替代应用市场和替代支付。",
+      "苹果声称将引入Notarization（公证）、应用市场授权流程和儿童保护措施。",
+      "协议于2025年12月首次报道，2026年6月苹果正式宣布开发者可开始集成。",
+      "欧盟类似政策（DMA）已实施，苹果对替代市场收取核心技术费（CTF），且App Store佣金未降低。",
+      "巴西市场占全球App Store收入比例未知，但苹果曾称欧盟占7%。"
+    ],
+    "persona_discussion_question": "作为独立开发者，我该不该为了巴西市场接入第三方支付或上架替代应用商店？这笔账算得过来吗？",
+    "old_flower_stance": "先别急着算账，等苹果公布巴西的具体费用结构。欧盟的经验已经证明，替代支付不一定省钱，可能只是多了一层费用。小开发者最该关注的是：新规则下，你的实际到手收入是变多了还是变少了？",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "高价值商业读者",
+        "副业普通人"
+      ],
+      "interest_score": 75,
+      "why_interested": "核心技术人关注平台规则变化对开发成本和分发策略的影响；高价值商业读者关注巴西市场机会和监管趋势；副业普通人可能被'降低佣金'的预期吸引，但需要风险提示。",
+      "reader_risk": "可能过度乐观，认为替代支付=省钱，忽略苹果可能收取的新费用。"
+    },
+    "mass_interest_hook": {
+      "score": 70,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "标题如'苹果在巴西被迫开放，开发者能省30%佣金？'制造了'苹果让步'的反差，普通人可能好奇自己的App会不会更便宜。",
+      "story_seed": "一个巴西独立开发者，原本交30%佣金，现在用替代支付，结果发现总成本没变，因为苹果收了新的'核心技术费'。",
+      "do_not_overhype": "不能声称开发者一定受益，必须强调费用结构未公布，欧盟案例显示可能不省钱。"
+    },
+    "topic_tension": {
+      "score": 10,
+      "conflict_point": "监管要求开放 vs 苹果通过新费用维持控制；开发者期望省钱 vs 实际可能成本不变或增加。",
+      "debate_question": "苹果的'保护'措施（公证、授权）是真心为用户安全，还是变相维持控制并增加开发者负担？",
+      "stakeholders": [
+        "苹果",
+        "巴西监管机构CADE",
+        "独立开发者/小团队",
+        "替代应用市场运营商（如Mercado Libre）",
+        "用户"
+      ],
+      "why_people_would_comment": "读者可以围绕'苹果是否在耍花招''替代支付到底省不省钱''小开发者有没有能力应对多个平台'等话题争论。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2025-12-23: 苹果与CADE达成协议，同意在巴西开放第三方应用商店和支付。",
+      "2025-12-24: 多家媒体报道协议细节，但费用结构未公布。",
+      "2026-06-18: 苹果正式宣布iOS 26.5起开发者可集成替代市场，发布开发者支持页面。",
+      "2026-06-18: TechCrunch、9to5Mac等报道，仍缺具体费用信息。"
+    ],
+    "evidence_table": [
+      {
+        "source": "Apple Developer News - Changes to iOS in Brazil",
+        "url": "https://developer.apple.com/news/?id=dhwadr2x",
+        "supports": "苹果官方确认巴西政策变化，包括替代市场、替代支付、公证和授权流程。",
+        "reliability": "official"
+      },
+      {
+        "source": "MacRumors - Apple to Introduce New App Store Fee Structure in Brazil",
+        "url": "https://www.macrumors.com/2025/12/24/new-app-store-fee-structure-in-brazil/",
+        "supports": "提到苹果将引入新费用结构，但未提供具体数字。",
+        "reliability": "media"
+      },
+      {
+        "source": "9to5Mac - Apple settles Brazilian antitrust case with App Store policy overhaul",
+        "url": "https://9to5mac.com/2025/12/23/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul/",
+        "supports": "确认协议达成，提及费用结构更新但无细节。",
+        "reliability": "media"
+      },
+      {
+        "source": "Apple Developer Support - Update on apps distributed in the European Union",
+        "url": "https://developer.apple.com/support/dma-and-apps-in-the-eu/",
+        "supports": "提供欧盟DMA政策细节，包括核心技术费（CTF）0.50欧元/安装，可作为巴西政策的参考。",
+        "reliability": "official"
+      },
+      {
+        "source": "TechCrunch - Apple says EU represents 7% of global App Store revenue",
+        "url": "https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/",
+        "supports": "提供欧盟市场规模参考，巴西市场可能更小。",
+        "reliability": "media"
+      },
+      {
+        "source": "Apple Newsroom - Apple announces changes to iOS in Brazil",
+        "url": "https://www.apple.com/newsroom/2026/06/apple-announces-changes-to-ios-in-brazil/",
+        "supports": "官方新闻稿，确认政策实施，但未提及费用。",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "部分闭环。已知事实：巴西将开放替代市场和支付，苹果将引入公证和授权。但核心费用结构未知，无法判断开发者是否受益。欧盟案例显示苹果收取CTF，App Store佣金未降，可作为参考但非直接证据。逻辑上，如果苹果在巴西也收取类似CTF，小开发者可能得不偿失。",
+    "writeable_angles": [
+      {
+        "angle": "成本账对比：巴西 vs 欧盟政策，苹果可能如何收费？",
+        "why": "通过欧盟已知费用结构推测巴西可能方案，帮助开发者提前评估。",
+        "needs": "需要巴西协议费用细节或苹果官方公告。"
+      },
+      {
+        "angle": "小开发者的风险清单：替代支付和商店的隐藏成本",
+        "why": "提醒读者关注公证费、多平台合规成本、用户支持等隐性支出。",
+        "needs": "需要公证流程费用、替代市场分成比例等信息。"
+      },
+      {
+        "angle": "巴西市场值得投入吗？市场规模、用户付费习惯与政策不确定性",
+        "why": "帮助开发者判断是否值得为巴西市场调整分发策略。",
+        "needs": "需要巴西iOS市场份额、开发者收入数据、本地支付偏好。"
+      }
+    ],
+    "missing_basics": [
+      "巴西iOS用户规模和付费能力数据",
+      "苹果在巴西的当前佣金结构（是否与全球一致30%/15%）",
+      "替代应用市场在巴西的现有生态（如Mercado Libre是否已有计划）"
+    ],
+    "missing_materials": [
+      "巴西CADE协议全文或官方摘要（含费用条款）",
+      "苹果巴西新政策开发者页面（含费用说明）",
+      "欧盟替代市场开发者实际案例（如Setapp、Epic Games Store的收入影响）",
+      "苹果Notarization流程和费用说明（是否免费？）"
+    ],
+    "not_claimable": [
+      "开发者一定会受益",
+      "佣金一定会降低",
+      "替代市场一定会成功",
+      "苹果的'保护'措施是纯粹善意的"
+    ],
+    "followup_queries": [
+      "苹果在巴西的替代支付是否收取佣金？比例多少？",
+      "苹果是否对替代市场应用收取核心技术费（CTF）？金额多少？",
+      "巴西CADE协议是否强制苹果降低App Store佣金？",
+      "替代应用市场的公证流程是否免费？",
+      "欧盟DMA实施后，开发者实际收入变化数据？"
+    ],
+    "additional_search_queries": [
+      "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+      "Apple alternative app marketplace Brazil developer fee commission 2025",
+      "EU alternative app store developer experience revenue impact 2024",
+      "Brazil iOS market share developer revenue 2025",
+      "Apple Notarization iOS Brazil requirements cost"
+    ],
+    "stop_conditions": [
+      "苹果官方公布巴西具体费用结构",
+      "巴西CADE发布协议全文",
+      "出现开发者实际收入变化的可靠案例"
+    ],
+    "confidence": 60.0,
+    "topic_direction": "side-info",
+    "topic_direction_title": "副业&信息差",
+    "report_type": "platform-rules",
+    "quality_gate": {
+      "pass": false,
+      "score": 60,
+      "fatal_issues": [
+        "核心费用结构（替代支付佣金、核心技术费）未公开，无法完成成本/收益分析，属于核心事实没有来源。"
+      ],
+      "warnings": [
+        "巴西iOS用户规模和付费能力数据缺失",
+        "替代应用市场在巴西的现有生态信息不足",
+        "欧盟案例作为参考，但巴西政策细节可能不同"
+      ],
+      "missing_evidence": [
+        "巴西CADE协议全文或官方摘要（含费用条款）",
+        "苹果巴西新政策开发者页面（含费用说明）",
+        "欧盟替代市场开发者实际案例（如Setapp、Epic Games Store的收入影响）",
+        "苹果Notarization流程和费用说明（是否免费？）"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "苹果在巴西开放第三方应用商店和支付，对普通开发者（尤其是独立开发者和小团队）的实际收益、成本和风险是什么？",
+      "persona_discussion_question": "作为独立开发者，我该不该为了巴西市场接入第三方支付或上架替代应用商店？这笔账算得过来吗？",
+      "hidden_public_issue": "苹果的‘保护’措施（公证、授权、儿童安全）是否会成为新的门槛或收费点？最终受益的是大公司还是小开发者？",
+      "must_verify": [
+        "苹果在巴西的替代应用商店和支付的具体佣金/费用结构（是否仍收取佣金？比例多少？）",
+        "替代应用商店的审核和上架流程（是否比App Store更宽松或更严格？）",
+        "苹果的‘保护’措施（Notarization、授权流程）是否会产生额外成本或时间延迟？",
+        "巴西CADE协议的具体条款（是否强制苹果降低佣金？是否有过渡期？）",
+        "其他地区（如欧盟）类似政策的实际效果和开发者反馈（开发者是否真的受益？）"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+          "why_needed": "获取官方协议细节，确认佣金、费用和规则变化"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "Apple alternative app marketplace Brazil developer fee commission 2025",
+          "why_needed": "确认苹果是否对替代市场收取额外费用或降低佣金"
+        },
+        {
+          "source_type": "case_study",
+          "query": "EU alternative app store developer experience revenue impact 2024",
+          "why_needed": "参考欧盟类似政策的实际效果，评估巴西政策可能带来的影响"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Brazil iOS alternative payment developer forum Reddit",
+          "why_needed": "了解巴西本地开发者的真实反馈和预期"
+        },
+        {
+          "source_type": "policy",
+          "query": "CADE Brazil Apple antitrust decision 2025",
+          "why_needed": "获取巴西监管机构的官方决定和理由"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Apple Notarization iOS Brazil requirements cost",
+          "why_needed": "确认公证流程的具体要求和潜在成本"
+        }
+      ],
+      "expert_challenge_points": [
+        "苹果的‘保护’措施是否变相维持控制？",
+        "替代支付是否真的能降低开发者成本？还是只是换了一种收费方式？",
+        "小开发者是否有资源应对多个平台的分发和支付合规？",
+        "巴西市场本身规模是否值得投入？",
+        "苹果是否会通过技术手段（如限制功能）削弱替代市场的竞争力？"
+      ],
+      "do_not_claim_yet": [
+        "开发者一定会受益",
+        "佣金一定会降低",
+        "替代市场一定会成功",
+        "苹果的‘保护’措施是纯粹善意的"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确标注证据缺口，重点放在成本/收益分析和风险提示上，避免过度乐观。",
+      "downstream_materials_needed": [
+        "巴西CADE协议全文或摘要",
+        "苹果巴西新政策开发者页面（含费用说明）",
+        "欧盟替代市场开发者案例（如Setapp、Epic Games Store）",
+        "巴西iOS市场份额和开发者收入数据",
+        "苹果Notarization流程和费用说明"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Apple to Introduce New App Store Fee Structure in Brazil Following Antitrust Settlement - MacRumors",
+        "url": "https://www.macrumors.com/2025/12/24/new-app-store-fee-structure-in-brazil/",
+        "query": "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "@media (prefers-color-scheme: dark) {html{background:#000;} .button {background: #373737;}}@media (prefers-color-scheme: light) {html{background:#fff;} .button {background: #f2f1ec;}} !function(){\"use strict\";var e=window.location.search.substring(1).split(\"&\");const t=e=>e.replace(/\\s/g,\"\"),o=e=>new Promise((t=>{if(!(\"msCrypto\"in window)&&\"https:\"===location.protocol&&\"crypto\"in window&&\"TextEncoder\"in window){const o=(new TextEncoder).encode(e);crypto.subtle.digest(\"SHA-256\",o).then((e=>{const o=Array.from(new Uint8Array(e)).map((e=>(\"00\"+e.toString(16)).slice(-2))).join(\"\");t(o)}))}else t(\"\")}));for(var n=0;n {const t=e.match(/((?=([a-zA-Z0-9._!#$%+^&*()[\\]<>-]+))\\2@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+)/gi);return t?t[0]:\"\"})(t(a.toLowerCase()))){o(a).then((t=>{t.length&&(localStorage.setItem(r,t),localStorage.setItem(\"adt_emsrc\",\"url\"),e.splice(n,1),history.replaceState(null,\"\",\"?\"+e.join(\"&\")))}));break}}}}(); function getCookie(name) { for (var nameEQ = name + \"=\", ca = document.cookie.split(\";\"), i = 0; i = 1) || (1==0)) return true; return false;} var forum_logged_in = forumsUserCheck(); var status = (forum_logged_in ? getCookie('xf_contributor')==1 ? \"contributor\" : getCookie('xf_contributor')==2 ? \"editor\" : \"logged-in\" : \"guest\"); var mrDark = getCookie('mr-dark'); var lightdark=false; if (mrDark == 1) { lightdark=true; document.write(' '); } else if (mrDark == 2) { document.write(' '); } else { try { var light = window.matchMedia(\"(prefers-color-scheme: light)\"); var dark = window.matchMedia(\"(prefers-color-scheme: dark)\"); if (dark.matches) lightdark=true; if (light.matches || dark.matches) { document.write(' '); document.write(' '); } else { document.write(' '); } } catch (e) { document.write(' '); } } var mrWidth = getCookie('mr-fluid'); if (mrWidth > 1) { do",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple announces major App Store changes for Brazil, including alternative app marketplaces",
+        "url": "https://9to5mac.com/2026/06/18/apple-announces-major-app-store-changes-for-brazil-including-alternative-app-marketplaces/",
+        "query": "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); window.dataLayer = window.dataLayer || []; dataLayer.push({\"pageType\":\"post\",\"event\":\"postCategory\",\"postCategory\":[\"app-store\"]}); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-M48W9J'); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-K5T6XC3'); Apple announces major App Store changes for Brazil - 9to5Mac {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/9to5mac.com\\/2026\\/06\\/18\\/apple-announces-major-app-store-changes-for-brazil-including-alternative-app-marketplaces\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/9to5mac.com\\/2026\\/06\\/18\\/apple-announces-major-app-store-changes-for-brazil-including-alternative-app-marketplaces\\/\"},\"author\":{\"name\":\"Marcus Mendes\",\"@id\":\"https:\\/\\/9to5mac.com\\/#\\/schema\\/person\\/f1c896906b7bd9605cfa037d57bbe001\"},\"headline\":\"Apple announces major App Store changes for Brazil, including alternative app marketplaces\",\"datePublished\":\"2026-06-18T15:00:02+00:00\",\"dateModified\":\"2026-06-18T15:00:04+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/9to5mac.com\\/2026\\/06\\/18\\/apple-announces-major-app-store-changes-for-brazil-including-alternative-app-marketplaces\\",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple to Allow Alternative App Marketplaces and Payments in Brazil - iClarified",
+        "url": "https://www.iclarified.com/101230/apple-to-allow-alternative-app-marketplaces-and-payments-in-brazil",
+        "query": "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Apple to Allow Alternative App Marketplaces and Payments in Brazil - iClarified {\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Apple to Allow Alternative App Marketplaces and Payments in Brazil\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.iclarified.com\\/101230\\/apple-to-allow-alternative-app-marketplaces-and-payments-in-brazil\"},\"url\":\"https:\\/\\/www.iclarified.com\\/101230\\/apple-to-allow-alternative-app-marketplaces-and-payments-in-brazil\",\"description\":\"Apple will let iOS developers in Brazil use alternative app marketplaces and payment options under a CADE agreement, starting with iOS 26.5.\",\"keywords\":\"ios,apple,developers,brazil,use,alternative,app,marketplaces,payment,options\",\"image\":\"https:\\/\\/www.iclarified.com\\/images\\/news\\/101230\\/101230\\/101230-1280.jpg\",\"author\":{\"@type\":\"Person\",\"name\":\"Shalom Levytam\",\"url\":\"https:\\/\\/www.iclarified.com\\/author\\/shalom-levytam\",\"image\":\"https:\\/\\/www.iclarified.com\\/images\\/author\\/shalom-levytam-1280.jpg\"},\"datePublished\":\"2026-06-18 15:45:28\",\"dateModified\":\"2026-06-18 15:45:28\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"iClarified\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/www.iclarified.com\\/images\\/index\\/iclarified-logo-640x150.svg\"}},\"articleBody\":\"Apple today announced changes to iOS in Brazil that will let developers distribute apps through alternative app marketplaces and offer payment options outside of Apple In-App Purchase. The changes follow an agreement with Brazil's competition regulator, the Conselho Administrativo de Defesa Econ\\u00f4mica (CADE), and are available for developers to integrate beginning today as part of iOS 26.5. Alternative App Marketplaces Developers will be able to distribute iOS apps in Brazil through alternative app marketplaces, rather than",
+        "fetch_error": ""
+      },
+      {
+        "title": "Brazil Instructs Apple to Offer Alternative App Stores",
+        "url": "https://appleosophy.com/2025/12/27/brazil-instructs-apple-to-offer-alternative-app-stores/",
+        "query": "Apple alternative app marketplace Brazil developer fee commission 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function() { // Dark is always the baseline render document.documentElement.classList.add('is-dark'); // Respect saved preference afterwards var theme = localStorage.getItem('networker_theme') || 'dark'; if (theme === 'light') { document.documentElement.classList.remove('is-dark'); } })(); Brazil Instructs Apple to Offer Alternative App Stores {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/appleosophy.com\\/2025\\/12\\/27\\/brazil-instructs-apple-to-offer-alternative-app-stores\\/#article\",\"name\":\"Brazil Instructs Apple to Offer Alternative App Stores\",\"headline\":\"Brazil Instructs Apple to Offer Alternative App Stores\",\"author\":{\"@id\":\"https:\\/\\/appleosophy.com\\/author\\/satyendu\\/#author\"},\"publisher\":{\"@id\":\"https:\\/\\/appleosophy.com\\/#organization\"},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cdn.appleosophy.com\\/2025\\/12\\/Apple-App-Store-compliance-hero-scaled.jpg\",\"width\":2560,\"height\":1440,\"caption\":\"Source: Apple Newsroom\"},\"datePublished\":\"2025-12-27T11:52:52-05:00\",\"dateModified\":\"2025-12-27T11:52:52-05:00\",\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/appleosophy.com\\/2025\\/12\\/27\\/brazil-instructs-apple-to-offer-alternative-app-stores\\/#webpage\"},\"isPartOf\":{\"@id\":\"https:\\/\\/appleosophy.com\\/2025\\/12\\/27\\/brazil-instructs-apple-to-offer-alternative-app-stores\\/#webpage\"},\"articleSection\":\"App Store, alternative payment methods, App Store Fees, Apple Brazil, Brazilian antitrust settlement, CADE, iOS third-party app stores, Mercado Libre Apple lawsuit\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/appleosophy.com\\/2025\\/12\\/27\\/brazil-instructs-apple-to-offer-alternative-app-stores\\/#breadcrumblist\",\"itemListElement\":[{\"@type\":\"ListItem\",\"@id\":\"https:\\/\\/appleosophy.com#listItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple allows alternative app stores and payments in Brazil | Rapid Meta",
+        "url": "https://rapid-meta.com/apple/apple-allows-alternative-app-stores-and-payments-in-brazil/",
+        "query": "Apple alternative app marketplace Brazil developer fee commission 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf(\"?\")==-1){if(href.indexOf(\"#\")==-1){document.location.href=href+\"?nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"?nowprocket=1#\")}}else{if(href.indexOf(\"#\")==-1){document.location.href=href+\"&nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"&nowprocket=1#\")}}}} (()=>{class RocketLazyLoadScripts{constructor(){this.v=\"2.0.5\",this.userEvents=[\"keydown\",\"keyup\",\"mousedown\",\"mouseup\",\"mousemove\",\"mouseover\",\"mouseout\",\"touchmove\",\"touchstart\",\"touchend\",\"touchcancel\",\"wheel\",\"click\",\"dblclick\",\"input\"],this.attributeEvents=[\"onblur\",\"onclick\",\"oncontextmenu\",\"ondblclick\",\"onfocus\",\"onmousedown\",\"onmouseenter\",\"onmouseleave\",\"onmousemove\",\"onmouseout\",\"onmouseover\",\"onmouseup\",\"onmousewheel\",\"onscroll\",\"onsubmit\"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event(\"rocket-allScriptsLoaded\")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem(\"rocketCSPIssue\"),document.addEventListener(\"securitypolicyviolation\",t=>{this.CSPIssue||\"script-src-elem\"!==t.violatedDirective||\"data\"!==t.blockedURI||(this.CSPIssue=!0,session",
+        "fetch_error": ""
+      },
+      {
+        "title": "iOS 26.5 Alternative App Marketplaces in Brazil: What's Live Now << Apple :: Gadget Hacks",
+        "url": "https://apple.gadgethacks.com/news/ios-265-alternative-app-marketplaces-in-brazil-whats-live-now/",
+        "query": "Apple alternative app marketplace Brazil developer fee commission 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Update on apps distributed in the European Union - Support - Apple Developer",
+        "url": "https://developer.apple.com/support/dma-and-apps-in-the-eu/",
+        "query": "EU alternative app store developer experience revenue impact 2024",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "// Synchronously disables the account link before first paint so the user // cannot navigate away before session.js registers its click listener. (function () { var accountLink = document.querySelector(\".globalnav-link-account\"); if (accountLink) { var href = accountLink.getAttribute(\"href\"); if (href) { accountLink.dataset.pendingHref = href; accountLink.removeAttribute(\"href\"); accountLink.style.cursor = \"default\"; } } })(); Update on apps distributed in the European Union - Support - Apple Developer '> ' /> ' /> ' /> // Execute immediately to avoid UI flash (function () { // Prevent React dev mode from running this multiple times if (window.__didRunColorThemeScript) { return; } window.__didRunColorThemeScript = true; const prefersDark = window.matchMedia(\"(prefers-color-scheme: dark)\").matches; const body = document.body; // If theme-dark or theme-light is already applied, do nothing and lock it if (body.classList.contains(\"theme-dark\") || body.classList.contains(\"theme-light\")) { // Set the data-color-scheme attribute based on the existing theme body.setAttribute('data-color-scheme', body.classList.contains(\"theme-dark\") ? \"dark\" : \"light\"); // Prevent future modifications window.__disableColorScheme = true; // Hide the color picker immediately const style = document.createElement('style'); style.textContent = '.color-scheme-toggle { display: none !important; }'; document.head.appendChild(style); return; } // Otherwise, set theme normally based on user settings or system preference if (window.Settings && window.Settings.preferredColorScheme) { const colorTheme = (window.Settings.preferredColorScheme === 'auto') && !prefersDark ? 'light' : (window.Settings.preferredColorScheme === 'light') ? 'light' : 'dark'; body.setAttribute('data-color-scheme', colorTheme); colorT",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple says EU represents 7% of global App Store revenue | TechCrunch",
+        "url": "https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/",
+        "query": "EU alternative app store developer experience revenue impact 2024",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); const successData = localStorage.getItem('turnstile_verified'); const failData = sessionStorage.getItem('turnstile_failed'); const isBot = failData ? 'true' : successData ? 'false' : null; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ is_bot: isBot }); const BUCKET_KEY = 'tc_jwplayer_promo_bucket'; const urlParam = new URLSearchParams(window.location.search).get('jw_promo_bucket'); if (urlParam === 'show' || urlParam === 'hide') { localStorage?.setItem(BUCKET_KEY, urlParam); } let bucket = localStorage?.getItem(BUCKET_KEY); if (!bucket || (bucket !== 'show' && bucket !== 'hide')) { bucket = Math.random() Apple says EU represents 7% of global App Store revenue | TechCrunch {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"NewsArticle\",\"@id\":\"https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/#article\",\"isPartOf\":{\"@id\":\"https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/\"},\"author\":[{\"@id\":\"https://techcrunch.com/#/schema/person/image/a6f7867020af40f5dcae726169b5c360\"}],\"headline\":\"Apple says EU represents 7% of global App Store revenue\",\"datePublished\":\"2024-02-02T05:37:49+00:00\",\"dateModified\":\"2024-02-02T17:58:05+00:00\",\"mainEntityOfPage\":{\"@id\":\"https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/\"},\"wordCount\":600,\"commentCount\":0,\"publisher\":{\"@id\":\"https://techcrunch.com/#organization\"},\"image\":{\"@id\":\"https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/#primaryimage\"},\"thumbnailUrl\":\"https://techcrunch.com/wp-content/uploads/2024/01/app-store-2024-v2.jpg\",\"keywords\":[\"Apple\",\"app-store\",\"eur",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple Opens App Store to Competitors in EU Amid Regulatory Pressure - Blog - MEF",
+        "url": "https://mobileecosystemforum.com/2025/07/01/apple-opens-app-store-to-competitors-in-eu-amid-regulatory-pressure/",
+        "query": "EU alternative app store developer experience revenue impact 2024",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "r/apple on Reddit: Apple to Allow Alternative App Stores and More on iOS in Brazil by April",
+        "url": "https://www.reddit.com/r/apple/comments/1ptz8xt/apple_to_allow_alternative_app_stores_and_more_on/",
+        "query": "Brazil iOS alternative payment developer forum Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/apple on Reddit: Apple to Introduce New App Store Fee Structure in Brazil Following Antitrust Settlement",
+        "url": "https://www.reddit.com/r/apple/comments/1puzunz/apple_to_introduce_new_app_store_fee_structure_in/",
+        "query": "Brazil iOS alternative payment developer forum Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "Apple Opens iOS to Third-Party App Stores in Brazil << Apple :: Gadget Hacks",
+        "url": "https://apple.gadgethacks.com/news/apple-opens-ios-to-third-party-app-stores-in-brazil/",
+        "query": "Brazil iOS alternative payment developer forum Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Apple settles Brazilian antitrust case with App Store policy overhaul - 9to5Mac",
+        "url": "https://9to5mac.com/2025/12/23/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul/",
+        "query": "CADE Brazil Apple antitrust decision 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); window.dataLayer = window.dataLayer || []; dataLayer.push({\"pageType\":\"post\",\"event\":\"postCategory\",\"postCategory\":[\"aapl\",\"antitrust\"]}); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-M48W9J'); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-K5T6XC3'); Apple settles Brazilian antitrust case with App Store policy overhaul - 9to5Mac {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/9to5mac.com\\/2025\\/12\\/23\\/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/9to5mac.com\\/2025\\/12\\/23\\/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul\\/\"},\"author\":{\"name\":\"Marcus Mendes\",\"@id\":\"https:\\/\\/9to5mac.com\\/#\\/schema\\/person\\/f1c896906b7bd9605cfa037d57bbe001\"},\"headline\":\"Apple settles Brazilian antitrust case with App Store policy overhaul [U: Fee structure]\",\"datePublished\":\"2025-12-23T20:57:02+00:00\",\"dateModified\":\"2025-12-23T22:17:52+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/9to5mac.com\\/2025\\/12\\/23\\/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul\\/\"},\"wordCount\":585,\"commentCount\":0",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple to allow third-party app stores in Brazil to settle iOS case with regulator | Reuters",
+        "url": "https://www.reuters.com/legal/litigation/apple-allow-third-party-app-stores-brazil-settle-ios-case-with-regulator-2025-12-23/",
+        "query": "CADE Brazil Apple antitrust decision 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 401: HTTP Forbidden"
+      },
+      {
+        "title": "Apple agrees to allow third-party app stores on iOS in Brazil following antitrust settlement",
+        "url": "https://macdailynews.com/2025/12/24/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement/",
+        "query": "CADE Brazil Apple antitrust decision 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Apple agrees to allow third-party app stores on iOS in Brazil following antitrust settlement {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/\"},\"author\":{\"name\":\"MacDailyNews Webmaster\",\"@id\":\"https:\\/\\/macdailynews.com\\/#\\/schema\\/person\\/d0022d2e2595bf9e1e5df4dc0d2c84c2\"},\"headline\":\"Apple agrees to allow third-party app stores on iOS in Brazil following antitrust settlement\",\"datePublished\":\"2025-12-24T17:49:48+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/\"},\"wordCount\":612,\"commentCount\":0,\"publisher\":{\"@id\":\"https:\\/\\/macdailynews.com\\/#organization\"},\"image\":{\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/#primaryimage\"},\"thumbnailUrl\":\"https:\\/\\/macdailynews.com\\/wp-content\\/uploads\\/2024\\/08\\/240830_apple_logo.png\",\"keywords\":[\"Apple App Store\",\"Brazil\",\"MercadoLibre\",\"third-party app stores\"],\"articleSection\":[\"News\"],\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"CommentAction\",\"name\":\"Comment\",\"target\":[\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/#respond\"]}],\"copyrightYear\":\"2025\",\"copyrightHolder\":{\"@id\":\"https:\\/\\/macdailynews.com\\/#organization\"}},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees",
+        "fetch_error": ""
+      },
+      {
+        "title": "Changes to iOS in Brazil - Support - Apple Developer",
+        "url": "https://developer.apple.com/support/app-distribution-in-brazil",
+        "query": "Apple Notarization iOS Brazil requirements cost",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "// Synchronously disables the account link before first paint so the user // cannot navigate away before session.js registers its click listener. (function () { var accountLink = document.querySelector(\".globalnav-link-account\"); if (accountLink) { var href = accountLink.getAttribute(\"href\"); if (href) { accountLink.dataset.pendingHref = href; accountLink.removeAttribute(\"href\"); accountLink.style.cursor = \"default\"; } } })(); Changes to iOS in Brazil - Support - Apple Developer ' /> ' /> // Execute immediately to avoid UI flash (function () { // Prevent React dev mode from running this multiple times if (window.__didRunColorThemeScript) { return; } window.__didRunColorThemeScript = true; const prefersDark = window.matchMedia(\"(prefers-color-scheme: dark)\").matches; const body = document.body; // If theme-dark or theme-light is already applied, do nothing and lock it if (body.classList.contains(\"theme-dark\") || body.classList.contains(\"theme-light\")) { // Set the data-color-scheme attribute based on the existing theme body.setAttribute('data-color-scheme', body.classList.contains(\"theme-dark\") ? \"dark\" : \"light\"); // Prevent future modifications window.__disableColorScheme = true; // Hide the color picker immediately const style = document.createElement('style'); style.textContent = '.color-scheme-toggle { display: none !important; }'; document.head.appendChild(style); return; } // Otherwise, set theme normally based on user settings or system preference if (window.Settings && window.Settings.preferredColorScheme) { const colorTheme = (window.Settings.preferredColorScheme === 'auto') && !prefersDark ? 'light' : (window.Settings.preferredColorScheme === 'light') ? 'light' : 'dark'; body.setAttribute('data-color-scheme', colorTheme); colorTheme === \"dark\" ? body.classList",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple announces changes to iOS in Brazil - Apple",
+        "url": "https://www.apple.com/newsroom/2026/06/apple-announces-changes-to-ios-in-brazil/",
+        "query": "Apple Notarization iOS Brazil requirements cost",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Apple announces changes to iOS in Brazil - Apple Apple Store Mac iPad iPhone Watch Vision AirPods TV & Home Entertainment Accessories Support 0 + {\"props\":{\"globalNavData\":{\"locale\":\"en_US\",\"ariaLabel\":\"Global\",\"analyticsAttributes\":[{\"name\":\"data-analytics-activitymap-region-id\",\"value\":\"global nav\"},{\"name\":\"data-analytics-region\",\"value\":\"global nav\"}],\"links\":[{\"id\":\"2758e8127e4ab787ae4e849277f79b83b3522719ae4b96a595421e50ea2d03f7\",\"name\":\"apple\",\"text\":\"Apple\",\"url\":\"/\",\"ariaLabel\":\"Apple\",\"submenuAriaLabel\":\"Apple menu\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"},{\"name\":\"compact\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"apple home\"}]},{\"id\":\"ad4a2a26eb4836393385e9f6c61b526b4a3cb31409c5ed8730ce7a704dd7132f\",\"name\":\"store\",\"text\":\"Store\",\"url\":\"/us/shop/goto/store\",\"ariaLabel\":\"Store\",\"submenuAriaLabel\":\"Store menu\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"store\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - store\"}]},{\"id\":\"9a82f08a3cc17e59a61372a40e7ecb17783e9c10aef163465f29bb5b00d4725a\",\"name\":\"mac\",\"text\":\"Mac\",\"url\":\"/mac/\",\"ariaLabel\":\"Mac\",\"submenuAriaLabel\":\"Mac menu\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"mac\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - mac\"}]},{\"id\":\"00948525be55e5a61fc12335c2fe8fbc94664d6237757d79344cadd205bde991\",\"name\":\"ipad\",\"text\":\"iPad\",\"url\":\"/ipad/\",\"ariaLabel\":\"iPad\",\"submenuAriaLabel\":\"iPad menu\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"ipad\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - ipad\"}]},{\"id\":\"254873a73c00038209d1c486",
+        "fetch_error": ""
+      },
+      {
+        "title": "Apple opens up App Store to new competition in Brazil | TechCrunch",
+        "url": "https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/",
+        "query": "Apple Notarization iOS Brazil requirements cost",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); const successData = localStorage.getItem('turnstile_verified'); const failData = sessionStorage.getItem('turnstile_failed'); const isBot = failData ? 'true' : successData ? 'false' : null; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ is_bot: isBot }); const BUCKET_KEY = 'tc_jwplayer_promo_bucket'; const urlParam = new URLSearchParams(window.location.search).get('jw_promo_bucket'); if (urlParam === 'show' || urlParam === 'hide') { localStorage?.setItem(BUCKET_KEY, urlParam); } let bucket = localStorage?.getItem(BUCKET_KEY); if (!bucket || (bucket !== 'show' && bucket !== 'hide')) { bucket = Math.random() Apple opens up App Store to new competition in Brazil | TechCrunch {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"NewsArticle\",\"@id\":\"https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/#article\",\"isPartOf\":{\"@id\":\"https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/\"},\"author\":[{\"@id\":\"https://techcrunch.com/#/schema/person/image/14f1d39bd1812acaeda25e46acf52b80\"}],\"headline\":\"Apple opens up App Store to new competition in Brazil\",\"datePublished\":\"2026-06-18T15:48:08+00:00\",\"dateModified\":\"2026-06-18T15:55:06+00:00\",\"mainEntityOfPage\":{\"@id\":\"https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/\"},\"wordCount\":279,\"publisher\":{\"@id\":\"https://techcrunch.com/#organization\"},\"image\":{\"@id\":\"https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/#primaryimage\"},\"thumbnailUrl\":\"https://techcrunch.com/wp-content/uploads/2022/07/app-store-ios-2022.jpg\",\"keywords\":[\"app store\",\"Apple\",\"Brazil\",\"developers\",\"In Br",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260619-changes-to-ios-in-brazil-0b06f9a3/",
+    "for_gpt_editor": {
+      "brief": "As part of a recent agreement with Brazil’s competition regulator CADE (Conselho Administrativo de Defesa Econômica), Apple is introducing changes to iOS that create new options for developers' apps in Brazil. Beginning with iOS 26.5, developers can distribute apps on alternative app marketplaces, operate alternative app marketplaces, process app payments for digital goods and services outside of Apple In-App Purchase in iOS, and more. The new options for downloading apps from alternative app marketplaces and making app payments open new avenues for malware, fraud, scams, and privacy and security risks. Apple has worked with CADE to introduce protections from these new threats — with a special emphasis on child safety. Those protections include Notarization for iOS apps, an authorization process for app marketplaces, and requirements that help protect children from inappropriate content ",
+      "title_seed": "苹果因巴西监管机构要求调整iOS政策",
+      "original_title": "Changes to iOS in Brazil",
+      "source_url": "https://developer.apple.com/news/?id=dhwadr2x",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心费用结构（替代支付佣金、核心技术费）未公开，无法完成成本/收益分析，属于核心事实没有来源。"
+        },
+        "core_question": "苹果在巴西开放第三方应用商店和支付，对普通开发者（尤其是独立开发者和小团队）的实际收益、成本和风险是什么？",
+        "why_this_topic_matters": "这是继欧盟之后，苹果在第二个主要市场因监管压力开放iOS生态。巴西市场虽不及欧盟大，但政策细节可能成为其他国家的参考模板。对开发者而言，核心问题是：替代支付和商店是否真的能降低佣金成本，还是只是换了一种收费方式？",
+        "fact_summary": [
+          "苹果与巴西反垄断监管机构CADE达成协议，将在iOS 26.5起允许巴西地区使用替代应用市场和替代支付。",
+          "苹果声称将引入Notarization（公证）、应用市场授权流程和儿童保护措施。",
+          "协议于2025年12月首次报道，2026年6月苹果正式宣布开发者可开始集成。",
+          "欧盟类似政策（DMA）已实施，苹果对替代市场收取核心技术费（CTF），且App Store佣金未降低。",
+          "巴西市场占全球App Store收入比例未知，但苹果曾称欧盟占7%。"
+        ],
+        "persona_discussion_question": "作为独立开发者，我该不该为了巴西市场接入第三方支付或上架替代应用商店？这笔账算得过来吗？",
+        "old_flower_stance": "先别急着算账，等苹果公布巴西的具体费用结构。欧盟的经验已经证明，替代支付不一定省钱，可能只是多了一层费用。小开发者最该关注的是：新规则下，你的实际到手收入是变多了还是变少了？",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "高价值商业读者",
+            "副业普通人"
+          ],
+          "interest_score": 75,
+          "why_interested": "核心技术人关注平台规则变化对开发成本和分发策略的影响；高价值商业读者关注巴西市场机会和监管趋势；副业普通人可能被'降低佣金'的预期吸引，但需要风险提示。",
+          "reader_risk": "可能过度乐观，认为替代支付=省钱，忽略苹果可能收取的新费用。"
+        },
+        "mass_interest_hook": {
+          "score": 70,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "标题如'苹果在巴西被迫开放，开发者能省30%佣金？'制造了'苹果让步'的反差，普通人可能好奇自己的App会不会更便宜。",
+          "story_seed": "一个巴西独立开发者，原本交30%佣金，现在用替代支付，结果发现总成本没变，因为苹果收了新的'核心技术费'。",
+          "do_not_overhype": "不能声称开发者一定受益，必须强调费用结构未公布，欧盟案例显示可能不省钱。"
+        },
+        "topic_tension": {
+          "score": 10,
+          "conflict_point": "监管要求开放 vs 苹果通过新费用维持控制；开发者期望省钱 vs 实际可能成本不变或增加。",
+          "debate_question": "苹果的'保护'措施（公证、授权）是真心为用户安全，还是变相维持控制并增加开发者负担？",
+          "stakeholders": [
+            "苹果",
+            "巴西监管机构CADE",
+            "独立开发者/小团队",
+            "替代应用市场运营商（如Mercado Libre）",
+            "用户"
+          ],
+          "why_people_would_comment": "读者可以围绕'苹果是否在耍花招''替代支付到底省不省钱''小开发者有没有能力应对多个平台'等话题争论。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2025-12-23: 苹果与CADE达成协议，同意在巴西开放第三方应用商店和支付。",
+          "2025-12-24: 多家媒体报道协议细节，但费用结构未公布。",
+          "2026-06-18: 苹果正式宣布iOS 26.5起开发者可集成替代市场，发布开发者支持页面。",
+          "2026-06-18: TechCrunch、9to5Mac等报道，仍缺具体费用信息。"
+        ],
+        "evidence_table": [
+          {
+            "source": "Apple Developer News - Changes to iOS in Brazil",
+            "url": "https://developer.apple.com/news/?id=dhwadr2x",
+            "supports": "苹果官方确认巴西政策变化，包括替代市场、替代支付、公证和授权流程。",
+            "reliability": "official"
+          },
+          {
+            "source": "MacRumors - Apple to Introduce New App Store Fee Structure in Brazil",
+            "url": "https://www.macrumors.com/2025/12/24/new-app-store-fee-structure-in-brazil/",
+            "supports": "提到苹果将引入新费用结构，但未提供具体数字。",
+            "reliability": "media"
+          },
+          {
+            "source": "9to5Mac - Apple settles Brazilian antitrust case with App Store policy overhaul",
+            "url": "https://9to5mac.com/2025/12/23/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul/",
+            "supports": "确认协议达成，提及费用结构更新但无细节。",
+            "reliability": "media"
+          },
+          {
+            "source": "Apple Developer Support - Update on apps distributed in the European Union",
+            "url": "https://developer.apple.com/support/dma-and-apps-in-the-eu/",
+            "supports": "提供欧盟DMA政策细节，包括核心技术费（CTF）0.50欧元/安装，可作为巴西政策的参考。",
+            "reliability": "official"
+          },
+          {
+            "source": "TechCrunch - Apple says EU represents 7% of global App Store revenue",
+            "url": "https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/",
+            "supports": "提供欧盟市场规模参考，巴西市场可能更小。",
+            "reliability": "media"
+          },
+          {
+            "source": "Apple Newsroom - Apple announces changes to iOS in Brazil",
+            "url": "https://www.apple.com/newsroom/2026/06/apple-announces-changes-to-ios-in-brazil/",
+            "supports": "官方新闻稿，确认政策实施，但未提及费用。",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "部分闭环。已知事实：巴西将开放替代市场和支付，苹果将引入公证和授权。但核心费用结构未知，无法判断开发者是否受益。欧盟案例显示苹果收取CTF，App Store佣金未降，可作为参考但非直接证据。逻辑上，如果苹果在巴西也收取类似CTF，小开发者可能得不偿失。",
+        "writeable_angles": [
+          {
+            "angle": "成本账对比：巴西 vs 欧盟政策，苹果可能如何收费？",
+            "why": "通过欧盟已知费用结构推测巴西可能方案，帮助开发者提前评估。",
+            "needs": "需要巴西协议费用细节或苹果官方公告。"
+          },
+          {
+            "angle": "小开发者的风险清单：替代支付和商店的隐藏成本",
+            "why": "提醒读者关注公证费、多平台合规成本、用户支持等隐性支出。",
+            "needs": "需要公证流程费用、替代市场分成比例等信息。"
+          },
+          {
+            "angle": "巴西市场值得投入吗？市场规模、用户付费习惯与政策不确定性",
+            "why": "帮助开发者判断是否值得为巴西市场调整分发策略。",
+            "needs": "需要巴西iOS市场份额、开发者收入数据、本地支付偏好。"
+          }
+        ],
+        "missing_basics": [
+          "巴西iOS用户规模和付费能力数据",
+          "苹果在巴西的当前佣金结构（是否与全球一致30%/15%）",
+          "替代应用市场在巴西的现有生态（如Mercado Libre是否已有计划）"
+        ],
+        "missing_materials": [
+          "巴西CADE协议全文或官方摘要（含费用条款）",
+          "苹果巴西新政策开发者页面（含费用说明）",
+          "欧盟替代市场开发者实际案例（如Setapp、Epic Games Store的收入影响）",
+          "苹果Notarization流程和费用说明（是否免费？）"
+        ],
+        "not_claimable": [
+          "开发者一定会受益",
+          "佣金一定会降低",
+          "替代市场一定会成功",
+          "苹果的'保护'措施是纯粹善意的"
+        ],
+        "followup_queries": [
+          "苹果在巴西的替代支付是否收取佣金？比例多少？",
+          "苹果是否对替代市场应用收取核心技术费（CTF）？金额多少？",
+          "巴西CADE协议是否强制苹果降低App Store佣金？",
+          "替代应用市场的公证流程是否免费？",
+          "欧盟DMA实施后，开发者实际收入变化数据？"
+        ],
+        "additional_search_queries": [
+          "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+          "Apple alternative app marketplace Brazil developer fee commission 2025",
+          "EU alternative app store developer experience revenue impact 2024",
+          "Brazil iOS market share developer revenue 2025",
+          "Apple Notarization iOS Brazil requirements cost"
+        ],
+        "stop_conditions": [
+          "苹果官方公布巴西具体费用结构",
+          "巴西CADE发布协议全文",
+          "出现开发者实际收入变化的可靠案例"
+        ],
+        "confidence": 60.0,
+        "topic_direction": "side-info",
+        "topic_direction_title": "副业&信息差",
+        "report_type": "platform-rules",
+        "quality_gate": {
+          "pass": false,
+          "score": 60,
+          "fatal_issues": [
+            "核心费用结构（替代支付佣金、核心技术费）未公开，无法完成成本/收益分析，属于核心事实没有来源。"
+          ],
+          "warnings": [
+            "巴西iOS用户规模和付费能力数据缺失",
+            "替代应用市场在巴西的现有生态信息不足",
+            "欧盟案例作为参考，但巴西政策细节可能不同"
+          ],
+          "missing_evidence": [
+            "巴西CADE协议全文或官方摘要（含费用条款）",
+            "苹果巴西新政策开发者页面（含费用说明）",
+            "欧盟替代市场开发者实际案例（如Setapp、Epic Games Store的收入影响）",
+            "苹果Notarization流程和费用说明（是否免费？）"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "苹果在巴西开放第三方应用商店和支付，对普通开发者（尤其是独立开发者和小团队）的实际收益、成本和风险是什么？",
+          "persona_discussion_question": "作为独立开发者，我该不该为了巴西市场接入第三方支付或上架替代应用商店？这笔账算得过来吗？",
+          "hidden_public_issue": "苹果的‘保护’措施（公证、授权、儿童安全）是否会成为新的门槛或收费点？最终受益的是大公司还是小开发者？",
+          "must_verify": [
+            "苹果在巴西的替代应用商店和支付的具体佣金/费用结构（是否仍收取佣金？比例多少？）",
+            "替代应用商店的审核和上架流程（是否比App Store更宽松或更严格？）",
+            "苹果的‘保护’措施（Notarization、授权流程）是否会产生额外成本或时间延迟？",
+            "巴西CADE协议的具体条款（是否强制苹果降低佣金？是否有过渡期？）",
+            "其他地区（如欧盟）类似政策的实际效果和开发者反馈（开发者是否真的受益？）"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+              "why_needed": "获取官方协议细节，确认佣金、费用和规则变化"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "Apple alternative app marketplace Brazil developer fee commission 2025",
+              "why_needed": "确认苹果是否对替代市场收取额外费用或降低佣金"
+            },
+            {
+              "source_type": "case_study",
+              "query": "EU alternative app store developer experience revenue impact 2024",
+              "why_needed": "参考欧盟类似政策的实际效果，评估巴西政策可能带来的影响"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Brazil iOS alternative payment developer forum Reddit",
+              "why_needed": "了解巴西本地开发者的真实反馈和预期"
+            },
+            {
+              "source_type": "policy",
+              "query": "CADE Brazil Apple antitrust decision 2025",
+              "why_needed": "获取巴西监管机构的官方决定和理由"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Apple Notarization iOS Brazil requirements cost",
+              "why_needed": "确认公证流程的具体要求和潜在成本"
+            }
+          ],
+          "expert_challenge_points": [
+            "苹果的‘保护’措施是否变相维持控制？",
+            "替代支付是否真的能降低开发者成本？还是只是换了一种收费方式？",
+            "小开发者是否有资源应对多个平台的分发和支付合规？",
+            "巴西市场本身规模是否值得投入？",
+            "苹果是否会通过技术手段（如限制功能）削弱替代市场的竞争力？"
+          ],
+          "do_not_claim_yet": [
+            "开发者一定会受益",
+            "佣金一定会降低",
+            "替代市场一定会成功",
+            "苹果的‘保护’措施是纯粹善意的"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确标注证据缺口，重点放在成本/收益分析和风险提示上，避免过度乐观。",
+          "downstream_materials_needed": [
+            "巴西CADE协议全文或摘要",
+            "苹果巴西新政策开发者页面（含费用说明）",
+            "欧盟替代市场开发者案例（如Setapp、Epic Games Store）",
+            "巴西iOS市场份额和开发者收入数据",
+            "苹果Notarization流程和费用说明"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Apple to Introduce New App Store Fee Structure in Brazil Following Antitrust Settlement - MacRumors",
+            "url": "https://www.macrumors.com/2025/12/24/new-app-store-fee-structure-in-brazil/",
+            "query": "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "@media (prefers-color-scheme: dark) {html{background:#000;} .button {background: #373737;}}@media (prefers-color-scheme: light) {html{background:#fff;} .button {background: #f2f1ec;}} !function(){\"use strict\";var e=window.location.search.substring(1).split(\"&\");const t=e=>e.replace(/\\s/g,\"\"),o=e=>new Promise((t=>{if(!(\"msCrypto\"in window)&&\"https:\"===location.protocol&&\"crypto\"in window&&\"TextEncoder\"in window){const o=(new TextEncoder).encode(e);crypto.subtle.digest(\"SHA-256\",o).then((e=>{const o=Array.from(new Uint8Array(e)).map((e=>(\"00\"+e.toString(16)).slice(-2))).join(\"\");t(o)}))}else t(\"\")}));for(var n=0;n {const t=e.match(/((?=([a-zA-Z0-9._!#$%+^&*()[\\]<>-]+))\\2@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+)/gi);return t?t[0]:\"\"})(t(a.toLowerCase()))){o(a).then((t=>{t.length&&(localStorage.setItem(r,t),localStorage.setItem(\"adt_emsrc\",\"url\"),e.splice(n,1),history.replaceState(null,\"\",\"?\"+e.join(\"&\")))}));break}}}}(); function getCookie(name) { for (var nameEQ = name + \"=\", ca = document.cookie.split(\";\"), i = 0; i = 1) || (1==0)) return true; return false;} var forum_logged_in = forumsUserCheck(); var status = (forum_logged_in ? getCookie('xf_contributor')==1 ? \"contributor\" : getCookie('xf_contributor')==2 ? \"editor\" : \"logged-in\" : \"guest\"); var mrDark = getCookie('mr-dark'); var lightdark=false; if (mrDark == 1) { lightdark=true; document.write(' '); } else if (mrDark == 2) { document.write(' '); } else { try { var light = window.matchMedia(\"(prefers-color-scheme: light)\"); var dark = window.matchMedia(\"(prefers-color-scheme: dark)\"); if (dark.matches) lightdark=true; if (light.matches || dark.matches) { document.write(' '); document.write(' '); } else { document.write(' '); } } catch (e) { document.write(' '); } } var mrWidth = getCookie('mr-fluid'); if (mrWidth > 1) { do",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple announces major App Store changes for Brazil, including alternative app marketplaces",
+            "url": "https://9to5mac.com/2026/06/18/apple-announces-major-app-store-changes-for-brazil-including-alternative-app-marketplaces/",
+            "query": "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); window.dataLayer = window.dataLayer || []; dataLayer.push({\"pageType\":\"post\",\"event\":\"postCategory\",\"postCategory\":[\"app-store\"]}); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-M48W9J'); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-K5T6XC3'); Apple announces major App Store changes for Brazil - 9to5Mac {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/9to5mac.com\\/2026\\/06\\/18\\/apple-announces-major-app-store-changes-for-brazil-including-alternative-app-marketplaces\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/9to5mac.com\\/2026\\/06\\/18\\/apple-announces-major-app-store-changes-for-brazil-including-alternative-app-marketplaces\\/\"},\"author\":{\"name\":\"Marcus Mendes\",\"@id\":\"https:\\/\\/9to5mac.com\\/#\\/schema\\/person\\/f1c896906b7bd9605cfa037d57bbe001\"},\"headline\":\"Apple announces major App Store changes for Brazil, including alternative app marketplaces\",\"datePublished\":\"2026-06-18T15:00:02+00:00\",\"dateModified\":\"2026-06-18T15:00:04+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/9to5mac.com\\/2026\\/06\\/18\\/apple-announces-major-app-store-changes-for-brazil-including-alternative-app-marketplaces\\",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple to Allow Alternative App Marketplaces and Payments in Brazil - iClarified",
+            "url": "https://www.iclarified.com/101230/apple-to-allow-alternative-app-marketplaces-and-payments-in-brazil",
+            "query": "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Apple to Allow Alternative App Marketplaces and Payments in Brazil - iClarified {\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Apple to Allow Alternative App Marketplaces and Payments in Brazil\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.iclarified.com\\/101230\\/apple-to-allow-alternative-app-marketplaces-and-payments-in-brazil\"},\"url\":\"https:\\/\\/www.iclarified.com\\/101230\\/apple-to-allow-alternative-app-marketplaces-and-payments-in-brazil\",\"description\":\"Apple will let iOS developers in Brazil use alternative app marketplaces and payment options under a CADE agreement, starting with iOS 26.5.\",\"keywords\":\"ios,apple,developers,brazil,use,alternative,app,marketplaces,payment,options\",\"image\":\"https:\\/\\/www.iclarified.com\\/images\\/news\\/101230\\/101230\\/101230-1280.jpg\",\"author\":{\"@type\":\"Person\",\"name\":\"Shalom Levytam\",\"url\":\"https:\\/\\/www.iclarified.com\\/author\\/shalom-levytam\",\"image\":\"https:\\/\\/www.iclarified.com\\/images\\/author\\/shalom-levytam-1280.jpg\"},\"datePublished\":\"2026-06-18 15:45:28\",\"dateModified\":\"2026-06-18 15:45:28\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"iClarified\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/www.iclarified.com\\/images\\/index\\/iclarified-logo-640x150.svg\"}},\"articleBody\":\"Apple today announced changes to iOS in Brazil that will let developers distribute apps through alternative app marketplaces and offer payment options outside of Apple In-App Purchase. The changes follow an agreement with Brazil's competition regulator, the Conselho Administrativo de Defesa Econ\\u00f4mica (CADE), and are available for developers to integrate beginning today as part of iOS 26.5. Alternative App Marketplaces Developers will be able to distribute iOS apps in Brazil through alternative app marketplaces, rather than",
+            "fetch_error": ""
+          },
+          {
+            "title": "Brazil Instructs Apple to Offer Alternative App Stores",
+            "url": "https://appleosophy.com/2025/12/27/brazil-instructs-apple-to-offer-alternative-app-stores/",
+            "query": "Apple alternative app marketplace Brazil developer fee commission 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function() { // Dark is always the baseline render document.documentElement.classList.add('is-dark'); // Respect saved preference afterwards var theme = localStorage.getItem('networker_theme') || 'dark'; if (theme === 'light') { document.documentElement.classList.remove('is-dark'); } })(); Brazil Instructs Apple to Offer Alternative App Stores {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/appleosophy.com\\/2025\\/12\\/27\\/brazil-instructs-apple-to-offer-alternative-app-stores\\/#article\",\"name\":\"Brazil Instructs Apple to Offer Alternative App Stores\",\"headline\":\"Brazil Instructs Apple to Offer Alternative App Stores\",\"author\":{\"@id\":\"https:\\/\\/appleosophy.com\\/author\\/satyendu\\/#author\"},\"publisher\":{\"@id\":\"https:\\/\\/appleosophy.com\\/#organization\"},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cdn.appleosophy.com\\/2025\\/12\\/Apple-App-Store-compliance-hero-scaled.jpg\",\"width\":2560,\"height\":1440,\"caption\":\"Source: Apple Newsroom\"},\"datePublished\":\"2025-12-27T11:52:52-05:00\",\"dateModified\":\"2025-12-27T11:52:52-05:00\",\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/appleosophy.com\\/2025\\/12\\/27\\/brazil-instructs-apple-to-offer-alternative-app-stores\\/#webpage\"},\"isPartOf\":{\"@id\":\"https:\\/\\/appleosophy.com\\/2025\\/12\\/27\\/brazil-instructs-apple-to-offer-alternative-app-stores\\/#webpage\"},\"articleSection\":\"App Store, alternative payment methods, App Store Fees, Apple Brazil, Brazilian antitrust settlement, CADE, iOS third-party app stores, Mercado Libre Apple lawsuit\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/appleosophy.com\\/2025\\/12\\/27\\/brazil-instructs-apple-to-offer-alternative-app-stores\\/#breadcrumblist\",\"itemListElement\":[{\"@type\":\"ListItem\",\"@id\":\"https:\\/\\/appleosophy.com#listItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple allows alternative app stores and payments in Brazil | Rapid Meta",
+            "url": "https://rapid-meta.com/apple/apple-allows-alternative-app-stores-and-payments-in-brazil/",
+            "query": "Apple alternative app marketplace Brazil developer fee commission 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf(\"?\")==-1){if(href.indexOf(\"#\")==-1){document.location.href=href+\"?nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"?nowprocket=1#\")}}else{if(href.indexOf(\"#\")==-1){document.location.href=href+\"&nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"&nowprocket=1#\")}}}} (()=>{class RocketLazyLoadScripts{constructor(){this.v=\"2.0.5\",this.userEvents=[\"keydown\",\"keyup\",\"mousedown\",\"mouseup\",\"mousemove\",\"mouseover\",\"mouseout\",\"touchmove\",\"touchstart\",\"touchend\",\"touchcancel\",\"wheel\",\"click\",\"dblclick\",\"input\"],this.attributeEvents=[\"onblur\",\"onclick\",\"oncontextmenu\",\"ondblclick\",\"onfocus\",\"onmousedown\",\"onmouseenter\",\"onmouseleave\",\"onmousemove\",\"onmouseout\",\"onmouseover\",\"onmouseup\",\"onmousewheel\",\"onscroll\",\"onsubmit\"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event(\"rocket-allScriptsLoaded\")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem(\"rocketCSPIssue\"),document.addEventListener(\"securitypolicyviolation\",t=>{this.CSPIssue||\"script-src-elem\"!==t.violatedDirective||\"data\"!==t.blockedURI||(this.CSPIssue=!0,session",
+            "fetch_error": ""
+          },
+          {
+            "title": "iOS 26.5 Alternative App Marketplaces in Brazil: What's Live Now << Apple :: Gadget Hacks",
+            "url": "https://apple.gadgethacks.com/news/ios-265-alternative-app-marketplaces-in-brazil-whats-live-now/",
+            "query": "Apple alternative app marketplace Brazil developer fee commission 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Update on apps distributed in the European Union - Support - Apple Developer",
+            "url": "https://developer.apple.com/support/dma-and-apps-in-the-eu/",
+            "query": "EU alternative app store developer experience revenue impact 2024",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "// Synchronously disables the account link before first paint so the user // cannot navigate away before session.js registers its click listener. (function () { var accountLink = document.querySelector(\".globalnav-link-account\"); if (accountLink) { var href = accountLink.getAttribute(\"href\"); if (href) { accountLink.dataset.pendingHref = href; accountLink.removeAttribute(\"href\"); accountLink.style.cursor = \"default\"; } } })(); Update on apps distributed in the European Union - Support - Apple Developer '> ' /> ' /> ' /> // Execute immediately to avoid UI flash (function () { // Prevent React dev mode from running this multiple times if (window.__didRunColorThemeScript) { return; } window.__didRunColorThemeScript = true; const prefersDark = window.matchMedia(\"(prefers-color-scheme: dark)\").matches; const body = document.body; // If theme-dark or theme-light is already applied, do nothing and lock it if (body.classList.contains(\"theme-dark\") || body.classList.contains(\"theme-light\")) { // Set the data-color-scheme attribute based on the existing theme body.setAttribute('data-color-scheme', body.classList.contains(\"theme-dark\") ? \"dark\" : \"light\"); // Prevent future modifications window.__disableColorScheme = true; // Hide the color picker immediately const style = document.createElement('style'); style.textContent = '.color-scheme-toggle { display: none !important; }'; document.head.appendChild(style); return; } // Otherwise, set theme normally based on user settings or system preference if (window.Settings && window.Settings.preferredColorScheme) { const colorTheme = (window.Settings.preferredColorScheme === 'auto') && !prefersDark ? 'light' : (window.Settings.preferredColorScheme === 'light') ? 'light' : 'dark'; body.setAttribute('data-color-scheme', colorTheme); colorT",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple says EU represents 7% of global App Store revenue | TechCrunch",
+            "url": "https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/",
+            "query": "EU alternative app store developer experience revenue impact 2024",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); const successData = localStorage.getItem('turnstile_verified'); const failData = sessionStorage.getItem('turnstile_failed'); const isBot = failData ? 'true' : successData ? 'false' : null; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ is_bot: isBot }); const BUCKET_KEY = 'tc_jwplayer_promo_bucket'; const urlParam = new URLSearchParams(window.location.search).get('jw_promo_bucket'); if (urlParam === 'show' || urlParam === 'hide') { localStorage?.setItem(BUCKET_KEY, urlParam); } let bucket = localStorage?.getItem(BUCKET_KEY); if (!bucket || (bucket !== 'show' && bucket !== 'hide')) { bucket = Math.random() Apple says EU represents 7% of global App Store revenue | TechCrunch {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"NewsArticle\",\"@id\":\"https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/#article\",\"isPartOf\":{\"@id\":\"https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/\"},\"author\":[{\"@id\":\"https://techcrunch.com/#/schema/person/image/a6f7867020af40f5dcae726169b5c360\"}],\"headline\":\"Apple says EU represents 7% of global App Store revenue\",\"datePublished\":\"2024-02-02T05:37:49+00:00\",\"dateModified\":\"2024-02-02T17:58:05+00:00\",\"mainEntityOfPage\":{\"@id\":\"https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/\"},\"wordCount\":600,\"commentCount\":0,\"publisher\":{\"@id\":\"https://techcrunch.com/#organization\"},\"image\":{\"@id\":\"https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/#primaryimage\"},\"thumbnailUrl\":\"https://techcrunch.com/wp-content/uploads/2024/01/app-store-2024-v2.jpg\",\"keywords\":[\"Apple\",\"app-store\",\"eur",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple Opens App Store to Competitors in EU Amid Regulatory Pressure - Blog - MEF",
+            "url": "https://mobileecosystemforum.com/2025/07/01/apple-opens-app-store-to-competitors-in-eu-amid-regulatory-pressure/",
+            "query": "EU alternative app store developer experience revenue impact 2024",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "r/apple on Reddit: Apple to Allow Alternative App Stores and More on iOS in Brazil by April",
+            "url": "https://www.reddit.com/r/apple/comments/1ptz8xt/apple_to_allow_alternative_app_stores_and_more_on/",
+            "query": "Brazil iOS alternative payment developer forum Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/apple on Reddit: Apple to Introduce New App Store Fee Structure in Brazil Following Antitrust Settlement",
+            "url": "https://www.reddit.com/r/apple/comments/1puzunz/apple_to_introduce_new_app_store_fee_structure_in/",
+            "query": "Brazil iOS alternative payment developer forum Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "Apple Opens iOS to Third-Party App Stores in Brazil << Apple :: Gadget Hacks",
+            "url": "https://apple.gadgethacks.com/news/apple-opens-ios-to-third-party-app-stores-in-brazil/",
+            "query": "Brazil iOS alternative payment developer forum Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Apple settles Brazilian antitrust case with App Store policy overhaul - 9to5Mac",
+            "url": "https://9to5mac.com/2025/12/23/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul/",
+            "query": "CADE Brazil Apple antitrust decision 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); window.dataLayer = window.dataLayer || []; dataLayer.push({\"pageType\":\"post\",\"event\":\"postCategory\",\"postCategory\":[\"aapl\",\"antitrust\"]}); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-M48W9J'); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-K5T6XC3'); Apple settles Brazilian antitrust case with App Store policy overhaul - 9to5Mac {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/9to5mac.com\\/2025\\/12\\/23\\/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/9to5mac.com\\/2025\\/12\\/23\\/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul\\/\"},\"author\":{\"name\":\"Marcus Mendes\",\"@id\":\"https:\\/\\/9to5mac.com\\/#\\/schema\\/person\\/f1c896906b7bd9605cfa037d57bbe001\"},\"headline\":\"Apple settles Brazilian antitrust case with App Store policy overhaul [U: Fee structure]\",\"datePublished\":\"2025-12-23T20:57:02+00:00\",\"dateModified\":\"2025-12-23T22:17:52+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/9to5mac.com\\/2025\\/12\\/23\\/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul\\/\"},\"wordCount\":585,\"commentCount\":0",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple to allow third-party app stores in Brazil to settle iOS case with regulator | Reuters",
+            "url": "https://www.reuters.com/legal/litigation/apple-allow-third-party-app-stores-brazil-settle-ios-case-with-regulator-2025-12-23/",
+            "query": "CADE Brazil Apple antitrust decision 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 401: HTTP Forbidden"
+          },
+          {
+            "title": "Apple agrees to allow third-party app stores on iOS in Brazil following antitrust settlement",
+            "url": "https://macdailynews.com/2025/12/24/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement/",
+            "query": "CADE Brazil Apple antitrust decision 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Apple agrees to allow third-party app stores on iOS in Brazil following antitrust settlement {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/\"},\"author\":{\"name\":\"MacDailyNews Webmaster\",\"@id\":\"https:\\/\\/macdailynews.com\\/#\\/schema\\/person\\/d0022d2e2595bf9e1e5df4dc0d2c84c2\"},\"headline\":\"Apple agrees to allow third-party app stores on iOS in Brazil following antitrust settlement\",\"datePublished\":\"2025-12-24T17:49:48+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/\"},\"wordCount\":612,\"commentCount\":0,\"publisher\":{\"@id\":\"https:\\/\\/macdailynews.com\\/#organization\"},\"image\":{\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/#primaryimage\"},\"thumbnailUrl\":\"https:\\/\\/macdailynews.com\\/wp-content\\/uploads\\/2024\\/08\\/240830_apple_logo.png\",\"keywords\":[\"Apple App Store\",\"Brazil\",\"MercadoLibre\",\"third-party app stores\"],\"articleSection\":[\"News\"],\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"CommentAction\",\"name\":\"Comment\",\"target\":[\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/#respond\"]}],\"copyrightYear\":\"2025\",\"copyrightHolder\":{\"@id\":\"https:\\/\\/macdailynews.com\\/#organization\"}},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees",
+            "fetch_error": ""
+          },
+          {
+            "title": "Changes to iOS in Brazil - Support - Apple Developer",
+            "url": "https://developer.apple.com/support/app-distribution-in-brazil",
+            "query": "Apple Notarization iOS Brazil requirements cost",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "// Synchronously disables the account link before first paint so the user // cannot navigate away before session.js registers its click listener. (function () { var accountLink = document.querySelector(\".globalnav-link-account\"); if (accountLink) { var href = accountLink.getAttribute(\"href\"); if (href) { accountLink.dataset.pendingHref = href; accountLink.removeAttribute(\"href\"); accountLink.style.cursor = \"default\"; } } })(); Changes to iOS in Brazil - Support - Apple Developer ' /> ' /> // Execute immediately to avoid UI flash (function () { // Prevent React dev mode from running this multiple times if (window.__didRunColorThemeScript) { return; } window.__didRunColorThemeScript = true; const prefersDark = window.matchMedia(\"(prefers-color-scheme: dark)\").matches; const body = document.body; // If theme-dark or theme-light is already applied, do nothing and lock it if (body.classList.contains(\"theme-dark\") || body.classList.contains(\"theme-light\")) { // Set the data-color-scheme attribute based on the existing theme body.setAttribute('data-color-scheme', body.classList.contains(\"theme-dark\") ? \"dark\" : \"light\"); // Prevent future modifications window.__disableColorScheme = true; // Hide the color picker immediately const style = document.createElement('style'); style.textContent = '.color-scheme-toggle { display: none !important; }'; document.head.appendChild(style); return; } // Otherwise, set theme normally based on user settings or system preference if (window.Settings && window.Settings.preferredColorScheme) { const colorTheme = (window.Settings.preferredColorScheme === 'auto') && !prefersDark ? 'light' : (window.Settings.preferredColorScheme === 'light') ? 'light' : 'dark'; body.setAttribute('data-color-scheme', colorTheme); colorTheme === \"dark\" ? body.classList",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple announces changes to iOS in Brazil - Apple",
+            "url": "https://www.apple.com/newsroom/2026/06/apple-announces-changes-to-ios-in-brazil/",
+            "query": "Apple Notarization iOS Brazil requirements cost",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Apple announces changes to iOS in Brazil - Apple Apple Store Mac iPad iPhone Watch Vision AirPods TV & Home Entertainment Accessories Support 0 + {\"props\":{\"globalNavData\":{\"locale\":\"en_US\",\"ariaLabel\":\"Global\",\"analyticsAttributes\":[{\"name\":\"data-analytics-activitymap-region-id\",\"value\":\"global nav\"},{\"name\":\"data-analytics-region\",\"value\":\"global nav\"}],\"links\":[{\"id\":\"2758e8127e4ab787ae4e849277f79b83b3522719ae4b96a595421e50ea2d03f7\",\"name\":\"apple\",\"text\":\"Apple\",\"url\":\"/\",\"ariaLabel\":\"Apple\",\"submenuAriaLabel\":\"Apple menu\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"},{\"name\":\"compact\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"apple home\"}]},{\"id\":\"ad4a2a26eb4836393385e9f6c61b526b4a3cb31409c5ed8730ce7a704dd7132f\",\"name\":\"store\",\"text\":\"Store\",\"url\":\"/us/shop/goto/store\",\"ariaLabel\":\"Store\",\"submenuAriaLabel\":\"Store menu\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"store\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - store\"}]},{\"id\":\"9a82f08a3cc17e59a61372a40e7ecb17783e9c10aef163465f29bb5b00d4725a\",\"name\":\"mac\",\"text\":\"Mac\",\"url\":\"/mac/\",\"ariaLabel\":\"Mac\",\"submenuAriaLabel\":\"Mac menu\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"mac\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - mac\"}]},{\"id\":\"00948525be55e5a61fc12335c2fe8fbc94664d6237757d79344cadd205bde991\",\"name\":\"ipad\",\"text\":\"iPad\",\"url\":\"/ipad/\",\"ariaLabel\":\"iPad\",\"submenuAriaLabel\":\"iPad menu\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"ipad\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - ipad\"}]},{\"id\":\"254873a73c00038209d1c486",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple opens up App Store to new competition in Brazil | TechCrunch",
+            "url": "https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/",
+            "query": "Apple Notarization iOS Brazil requirements cost",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); const successData = localStorage.getItem('turnstile_verified'); const failData = sessionStorage.getItem('turnstile_failed'); const isBot = failData ? 'true' : successData ? 'false' : null; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ is_bot: isBot }); const BUCKET_KEY = 'tc_jwplayer_promo_bucket'; const urlParam = new URLSearchParams(window.location.search).get('jw_promo_bucket'); if (urlParam === 'show' || urlParam === 'hide') { localStorage?.setItem(BUCKET_KEY, urlParam); } let bucket = localStorage?.getItem(BUCKET_KEY); if (!bucket || (bucket !== 'show' && bucket !== 'hide')) { bucket = Math.random() Apple opens up App Store to new competition in Brazil | TechCrunch {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"NewsArticle\",\"@id\":\"https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/#article\",\"isPartOf\":{\"@id\":\"https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/\"},\"author\":[{\"@id\":\"https://techcrunch.com/#/schema/person/image/14f1d39bd1812acaeda25e46acf52b80\"}],\"headline\":\"Apple opens up App Store to new competition in Brazil\",\"datePublished\":\"2026-06-18T15:48:08+00:00\",\"dateModified\":\"2026-06-18T15:55:06+00:00\",\"mainEntityOfPage\":{\"@id\":\"https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/\"},\"wordCount\":279,\"publisher\":{\"@id\":\"https://techcrunch.com/#organization\"},\"image\":{\"@id\":\"https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/#primaryimage\"},\"thumbnailUrl\":\"https://techcrunch.com/wp-content/uploads/2022/07/app-store-ios-2022.jpg\",\"keywords\":[\"app store\",\"Apple\",\"Brazil\",\"developers\",\"In Br",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心费用结构（替代支付佣金、核心技术费）未公开，无法完成成本/收益分析，属于核心事实没有来源。"
+        },
+        "core_question": "苹果在巴西开放第三方应用商店和支付，对普通开发者（尤其是独立开发者和小团队）的实际收益、成本和风险是什么？",
+        "why_this_topic_matters": "这是继欧盟之后，苹果在第二个主要市场因监管压力开放iOS生态。巴西市场虽不及欧盟大，但政策细节可能成为其他国家的参考模板。对开发者而言，核心问题是：替代支付和商店是否真的能降低佣金成本，还是只是换了一种收费方式？",
+        "fact_summary": [
+          "苹果与巴西反垄断监管机构CADE达成协议，将在iOS 26.5起允许巴西地区使用替代应用市场和替代支付。",
+          "苹果声称将引入Notarization（公证）、应用市场授权流程和儿童保护措施。",
+          "协议于2025年12月首次报道，2026年6月苹果正式宣布开发者可开始集成。",
+          "欧盟类似政策（DMA）已实施，苹果对替代市场收取核心技术费（CTF），且App Store佣金未降低。",
+          "巴西市场占全球App Store收入比例未知，但苹果曾称欧盟占7%。"
+        ],
+        "persona_discussion_question": "作为独立开发者，我该不该为了巴西市场接入第三方支付或上架替代应用商店？这笔账算得过来吗？",
+        "old_flower_stance": "先别急着算账，等苹果公布巴西的具体费用结构。欧盟的经验已经证明，替代支付不一定省钱，可能只是多了一层费用。小开发者最该关注的是：新规则下，你的实际到手收入是变多了还是变少了？",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "高价值商业读者",
+            "副业普通人"
+          ],
+          "interest_score": 75,
+          "why_interested": "核心技术人关注平台规则变化对开发成本和分发策略的影响；高价值商业读者关注巴西市场机会和监管趋势；副业普通人可能被'降低佣金'的预期吸引，但需要风险提示。",
+          "reader_risk": "可能过度乐观，认为替代支付=省钱，忽略苹果可能收取的新费用。"
+        },
+        "mass_interest_hook": {
+          "score": 70,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "标题如'苹果在巴西被迫开放，开发者能省30%佣金？'制造了'苹果让步'的反差，普通人可能好奇自己的App会不会更便宜。",
+          "story_seed": "一个巴西独立开发者，原本交30%佣金，现在用替代支付，结果发现总成本没变，因为苹果收了新的'核心技术费'。",
+          "do_not_overhype": "不能声称开发者一定受益，必须强调费用结构未公布，欧盟案例显示可能不省钱。"
+        },
+        "topic_tension": {
+          "score": 10,
+          "conflict_point": "监管要求开放 vs 苹果通过新费用维持控制；开发者期望省钱 vs 实际可能成本不变或增加。",
+          "debate_question": "苹果的'保护'措施（公证、授权）是真心为用户安全，还是变相维持控制并增加开发者负担？",
+          "stakeholders": [
+            "苹果",
+            "巴西监管机构CADE",
+            "独立开发者/小团队",
+            "替代应用市场运营商（如Mercado Libre）",
+            "用户"
+          ],
+          "why_people_would_comment": "读者可以围绕'苹果是否在耍花招''替代支付到底省不省钱''小开发者有没有能力应对多个平台'等话题争论。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2025-12-23: 苹果与CADE达成协议，同意在巴西开放第三方应用商店和支付。",
+          "2025-12-24: 多家媒体报道协议细节，但费用结构未公布。",
+          "2026-06-18: 苹果正式宣布iOS 26.5起开发者可集成替代市场，发布开发者支持页面。",
+          "2026-06-18: TechCrunch、9to5Mac等报道，仍缺具体费用信息。"
+        ],
+        "evidence_table": [
+          {
+            "source": "Apple Developer News - Changes to iOS in Brazil",
+            "url": "https://developer.apple.com/news/?id=dhwadr2x",
+            "supports": "苹果官方确认巴西政策变化，包括替代市场、替代支付、公证和授权流程。",
+            "reliability": "official"
+          },
+          {
+            "source": "MacRumors - Apple to Introduce New App Store Fee Structure in Brazil",
+            "url": "https://www.macrumors.com/2025/12/24/new-app-store-fee-structure-in-brazil/",
+            "supports": "提到苹果将引入新费用结构，但未提供具体数字。",
+            "reliability": "media"
+          },
+          {
+            "source": "9to5Mac - Apple settles Brazilian antitrust case with App Store policy overhaul",
+            "url": "https://9to5mac.com/2025/12/23/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul/",
+            "supports": "确认协议达成，提及费用结构更新但无细节。",
+            "reliability": "media"
+          },
+          {
+            "source": "Apple Developer Support - Update on apps distributed in the European Union",
+            "url": "https://developer.apple.com/support/dma-and-apps-in-the-eu/",
+            "supports": "提供欧盟DMA政策细节，包括核心技术费（CTF）0.50欧元/安装，可作为巴西政策的参考。",
+            "reliability": "official"
+          },
+          {
+            "source": "TechCrunch - Apple says EU represents 7% of global App Store revenue",
+            "url": "https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/",
+            "supports": "提供欧盟市场规模参考，巴西市场可能更小。",
+            "reliability": "media"
+          },
+          {
+            "source": "Apple Newsroom - Apple announces changes to iOS in Brazil",
+            "url": "https://www.apple.com/newsroom/2026/06/apple-announces-changes-to-ios-in-brazil/",
+            "supports": "官方新闻稿，确认政策实施，但未提及费用。",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "部分闭环。已知事实：巴西将开放替代市场和支付，苹果将引入公证和授权。但核心费用结构未知，无法判断开发者是否受益。欧盟案例显示苹果收取CTF，App Store佣金未降，可作为参考但非直接证据。逻辑上，如果苹果在巴西也收取类似CTF，小开发者可能得不偿失。",
+        "writeable_angles": [
+          {
+            "angle": "成本账对比：巴西 vs 欧盟政策，苹果可能如何收费？",
+            "why": "通过欧盟已知费用结构推测巴西可能方案，帮助开发者提前评估。",
+            "needs": "需要巴西协议费用细节或苹果官方公告。"
+          },
+          {
+            "angle": "小开发者的风险清单：替代支付和商店的隐藏成本",
+            "why": "提醒读者关注公证费、多平台合规成本、用户支持等隐性支出。",
+            "needs": "需要公证流程费用、替代市场分成比例等信息。"
+          },
+          {
+            "angle": "巴西市场值得投入吗？市场规模、用户付费习惯与政策不确定性",
+            "why": "帮助开发者判断是否值得为巴西市场调整分发策略。",
+            "needs": "需要巴西iOS市场份额、开发者收入数据、本地支付偏好。"
+          }
+        ],
+        "missing_basics": [
+          "巴西iOS用户规模和付费能力数据",
+          "苹果在巴西的当前佣金结构（是否与全球一致30%/15%）",
+          "替代应用市场在巴西的现有生态（如Mercado Libre是否已有计划）"
+        ],
+        "missing_materials": [
+          "巴西CADE协议全文或官方摘要（含费用条款）",
+          "苹果巴西新政策开发者页面（含费用说明）",
+          "欧盟替代市场开发者实际案例（如Setapp、Epic Games Store的收入影响）",
+          "苹果Notarization流程和费用说明（是否免费？）"
+        ],
+        "not_claimable": [
+          "开发者一定会受益",
+          "佣金一定会降低",
+          "替代市场一定会成功",
+          "苹果的'保护'措施是纯粹善意的"
+        ],
+        "followup_queries": [
+          "苹果在巴西的替代支付是否收取佣金？比例多少？",
+          "苹果是否对替代市场应用收取核心技术费（CTF）？金额多少？",
+          "巴西CADE协议是否强制苹果降低App Store佣金？",
+          "替代应用市场的公证流程是否免费？",
+          "欧盟DMA实施后，开发者实际收入变化数据？"
+        ],
+        "additional_search_queries": [
+          "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+          "Apple alternative app marketplace Brazil developer fee commission 2025",
+          "EU alternative app store developer experience revenue impact 2024",
+          "Brazil iOS market share developer revenue 2025",
+          "Apple Notarization iOS Brazil requirements cost"
+        ],
+        "stop_conditions": [
+          "苹果官方公布巴西具体费用结构",
+          "巴西CADE发布协议全文",
+          "出现开发者实际收入变化的可靠案例"
+        ],
+        "confidence": 60.0,
+        "topic_direction": "side-info",
+        "topic_direction_title": "副业&信息差",
+        "report_type": "platform-rules",
+        "quality_gate": {
+          "pass": false,
+          "score": 60,
+          "fatal_issues": [
+            "核心费用结构（替代支付佣金、核心技术费）未公开，无法完成成本/收益分析，属于核心事实没有来源。"
+          ],
+          "warnings": [
+            "巴西iOS用户规模和付费能力数据缺失",
+            "替代应用市场在巴西的现有生态信息不足",
+            "欧盟案例作为参考，但巴西政策细节可能不同"
+          ],
+          "missing_evidence": [
+            "巴西CADE协议全文或官方摘要（含费用条款）",
+            "苹果巴西新政策开发者页面（含费用说明）",
+            "欧盟替代市场开发者实际案例（如Setapp、Epic Games Store的收入影响）",
+            "苹果Notarization流程和费用说明（是否免费？）"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "苹果在巴西开放第三方应用商店和支付，对普通开发者（尤其是独立开发者和小团队）的实际收益、成本和风险是什么？",
+          "persona_discussion_question": "作为独立开发者，我该不该为了巴西市场接入第三方支付或上架替代应用商店？这笔账算得过来吗？",
+          "hidden_public_issue": "苹果的‘保护’措施（公证、授权、儿童安全）是否会成为新的门槛或收费点？最终受益的是大公司还是小开发者？",
+          "must_verify": [
+            "苹果在巴西的替代应用商店和支付的具体佣金/费用结构（是否仍收取佣金？比例多少？）",
+            "替代应用商店的审核和上架流程（是否比App Store更宽松或更严格？）",
+            "苹果的‘保护’措施（Notarization、授权流程）是否会产生额外成本或时间延迟？",
+            "巴西CADE协议的具体条款（是否强制苹果降低佣金？是否有过渡期？）",
+            "其他地区（如欧盟）类似政策的实际效果和开发者反馈（开发者是否真的受益？）"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+              "why_needed": "获取官方协议细节，确认佣金、费用和规则变化"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "Apple alternative app marketplace Brazil developer fee commission 2025",
+              "why_needed": "确认苹果是否对替代市场收取额外费用或降低佣金"
+            },
+            {
+              "source_type": "case_study",
+              "query": "EU alternative app store developer experience revenue impact 2024",
+              "why_needed": "参考欧盟类似政策的实际效果，评估巴西政策可能带来的影响"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Brazil iOS alternative payment developer forum Reddit",
+              "why_needed": "了解巴西本地开发者的真实反馈和预期"
+            },
+            {
+              "source_type": "policy",
+              "query": "CADE Brazil Apple antitrust decision 2025",
+              "why_needed": "获取巴西监管机构的官方决定和理由"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Apple Notarization iOS Brazil requirements cost",
+              "why_needed": "确认公证流程的具体要求和潜在成本"
+            }
+          ],
+          "expert_challenge_points": [
+            "苹果的‘保护’措施是否变相维持控制？",
+            "替代支付是否真的能降低开发者成本？还是只是换了一种收费方式？",
+            "小开发者是否有资源应对多个平台的分发和支付合规？",
+            "巴西市场本身规模是否值得投入？",
+            "苹果是否会通过技术手段（如限制功能）削弱替代市场的竞争力？"
+          ],
+          "do_not_claim_yet": [
+            "开发者一定会受益",
+            "佣金一定会降低",
+            "替代市场一定会成功",
+            "苹果的‘保护’措施是纯粹善意的"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确标注证据缺口，重点放在成本/收益分析和风险提示上，避免过度乐观。",
+          "downstream_materials_needed": [
+            "巴西CADE协议全文或摘要",
+            "苹果巴西新政策开发者页面（含费用说明）",
+            "欧盟替代市场开发者案例（如Setapp、Epic Games Store）",
+            "巴西iOS市场份额和开发者收入数据",
+            "苹果Notarization流程和费用说明"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Apple to Introduce New App Store Fee Structure in Brazil Following Antitrust Settlement - MacRumors",
+            "url": "https://www.macrumors.com/2025/12/24/new-app-store-fee-structure-in-brazil/",
+            "query": "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "@media (prefers-color-scheme: dark) {html{background:#000;} .button {background: #373737;}}@media (prefers-color-scheme: light) {html{background:#fff;} .button {background: #f2f1ec;}} !function(){\"use strict\";var e=window.location.search.substring(1).split(\"&\");const t=e=>e.replace(/\\s/g,\"\"),o=e=>new Promise((t=>{if(!(\"msCrypto\"in window)&&\"https:\"===location.protocol&&\"crypto\"in window&&\"TextEncoder\"in window){const o=(new TextEncoder).encode(e);crypto.subtle.digest(\"SHA-256\",o).then((e=>{const o=Array.from(new Uint8Array(e)).map((e=>(\"00\"+e.toString(16)).slice(-2))).join(\"\");t(o)}))}else t(\"\")}));for(var n=0;n {const t=e.match(/((?=([a-zA-Z0-9._!#$%+^&*()[\\]<>-]+))\\2@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+)/gi);return t?t[0]:\"\"})(t(a.toLowerCase()))){o(a).then((t=>{t.length&&(localStorage.setItem(r,t),localStorage.setItem(\"adt_emsrc\",\"url\"),e.splice(n,1),history.replaceState(null,\"\",\"?\"+e.join(\"&\")))}));break}}}}(); function getCookie(name) { for (var nameEQ = name + \"=\", ca = document.cookie.split(\";\"), i = 0; i = 1) || (1==0)) return true; return false;} var forum_logged_in = forumsUserCheck(); var status = (forum_logged_in ? getCookie('xf_contributor')==1 ? \"contributor\" : getCookie('xf_contributor')==2 ? \"editor\" : \"logged-in\" : \"guest\"); var mrDark = getCookie('mr-dark'); var lightdark=false; if (mrDark == 1) { lightdark=true; document.write(' '); } else if (mrDark == 2) { document.write(' '); } else { try { var light = window.matchMedia(\"(prefers-color-scheme: light)\"); var dark = window.matchMedia(\"(prefers-color-scheme: dark)\"); if (dark.matches) lightdark=true; if (light.matches || dark.matches) { document.write(' '); document.write(' '); } else { document.write(' '); } } catch (e) { document.write(' '); } } var mrWidth = getCookie('mr-fluid'); if (mrWidth > 1) { do",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple announces major App Store changes for Brazil, including alternative app marketplaces",
+            "url": "https://9to5mac.com/2026/06/18/apple-announces-major-app-store-changes-for-brazil-including-alternative-app-marketplaces/",
+            "query": "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); window.dataLayer = window.dataLayer || []; dataLayer.push({\"pageType\":\"post\",\"event\":\"postCategory\",\"postCategory\":[\"app-store\"]}); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-M48W9J'); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-K5T6XC3'); Apple announces major App Store changes for Brazil - 9to5Mac {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/9to5mac.com\\/2026\\/06\\/18\\/apple-announces-major-app-store-changes-for-brazil-including-alternative-app-marketplaces\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/9to5mac.com\\/2026\\/06\\/18\\/apple-announces-major-app-store-changes-for-brazil-including-alternative-app-marketplaces\\/\"},\"author\":{\"name\":\"Marcus Mendes\",\"@id\":\"https:\\/\\/9to5mac.com\\/#\\/schema\\/person\\/f1c896906b7bd9605cfa037d57bbe001\"},\"headline\":\"Apple announces major App Store changes for Brazil, including alternative app marketplaces\",\"datePublished\":\"2026-06-18T15:00:02+00:00\",\"dateModified\":\"2026-06-18T15:00:04+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/9to5mac.com\\/2026\\/06\\/18\\/apple-announces-major-app-store-changes-for-brazil-including-alternative-app-marketplaces\\",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple to Allow Alternative App Marketplaces and Payments in Brazil - iClarified",
+            "url": "https://www.iclarified.com/101230/apple-to-allow-alternative-app-marketplaces-and-payments-in-brazil",
+            "query": "Apple Brazil CADE agreement terms commission fee alternative marketplace",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Apple to Allow Alternative App Marketplaces and Payments in Brazil - iClarified {\"@context\":\"https:\\/\\/schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Apple to Allow Alternative App Marketplaces and Payments in Brazil\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.iclarified.com\\/101230\\/apple-to-allow-alternative-app-marketplaces-and-payments-in-brazil\"},\"url\":\"https:\\/\\/www.iclarified.com\\/101230\\/apple-to-allow-alternative-app-marketplaces-and-payments-in-brazil\",\"description\":\"Apple will let iOS developers in Brazil use alternative app marketplaces and payment options under a CADE agreement, starting with iOS 26.5.\",\"keywords\":\"ios,apple,developers,brazil,use,alternative,app,marketplaces,payment,options\",\"image\":\"https:\\/\\/www.iclarified.com\\/images\\/news\\/101230\\/101230\\/101230-1280.jpg\",\"author\":{\"@type\":\"Person\",\"name\":\"Shalom Levytam\",\"url\":\"https:\\/\\/www.iclarified.com\\/author\\/shalom-levytam\",\"image\":\"https:\\/\\/www.iclarified.com\\/images\\/author\\/shalom-levytam-1280.jpg\"},\"datePublished\":\"2026-06-18 15:45:28\",\"dateModified\":\"2026-06-18 15:45:28\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"iClarified\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/www.iclarified.com\\/images\\/index\\/iclarified-logo-640x150.svg\"}},\"articleBody\":\"Apple today announced changes to iOS in Brazil that will let developers distribute apps through alternative app marketplaces and offer payment options outside of Apple In-App Purchase. The changes follow an agreement with Brazil's competition regulator, the Conselho Administrativo de Defesa Econ\\u00f4mica (CADE), and are available for developers to integrate beginning today as part of iOS 26.5. Alternative App Marketplaces Developers will be able to distribute iOS apps in Brazil through alternative app marketplaces, rather than",
+            "fetch_error": ""
+          },
+          {
+            "title": "Brazil Instructs Apple to Offer Alternative App Stores",
+            "url": "https://appleosophy.com/2025/12/27/brazil-instructs-apple-to-offer-alternative-app-stores/",
+            "query": "Apple alternative app marketplace Brazil developer fee commission 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function() { // Dark is always the baseline render document.documentElement.classList.add('is-dark'); // Respect saved preference afterwards var theme = localStorage.getItem('networker_theme') || 'dark'; if (theme === 'light') { document.documentElement.classList.remove('is-dark'); } })(); Brazil Instructs Apple to Offer Alternative App Stores {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/appleosophy.com\\/2025\\/12\\/27\\/brazil-instructs-apple-to-offer-alternative-app-stores\\/#article\",\"name\":\"Brazil Instructs Apple to Offer Alternative App Stores\",\"headline\":\"Brazil Instructs Apple to Offer Alternative App Stores\",\"author\":{\"@id\":\"https:\\/\\/appleosophy.com\\/author\\/satyendu\\/#author\"},\"publisher\":{\"@id\":\"https:\\/\\/appleosophy.com\\/#organization\"},\"image\":{\"@type\":\"ImageObject\",\"url\":\"https:\\/\\/cdn.appleosophy.com\\/2025\\/12\\/Apple-App-Store-compliance-hero-scaled.jpg\",\"width\":2560,\"height\":1440,\"caption\":\"Source: Apple Newsroom\"},\"datePublished\":\"2025-12-27T11:52:52-05:00\",\"dateModified\":\"2025-12-27T11:52:52-05:00\",\"inLanguage\":\"en-US\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/appleosophy.com\\/2025\\/12\\/27\\/brazil-instructs-apple-to-offer-alternative-app-stores\\/#webpage\"},\"isPartOf\":{\"@id\":\"https:\\/\\/appleosophy.com\\/2025\\/12\\/27\\/brazil-instructs-apple-to-offer-alternative-app-stores\\/#webpage\"},\"articleSection\":\"App Store, alternative payment methods, App Store Fees, Apple Brazil, Brazilian antitrust settlement, CADE, iOS third-party app stores, Mercado Libre Apple lawsuit\"},{\"@type\":\"BreadcrumbList\",\"@id\":\"https:\\/\\/appleosophy.com\\/2025\\/12\\/27\\/brazil-instructs-apple-to-offer-alternative-app-stores\\/#breadcrumblist\",\"itemListElement\":[{\"@type\":\"ListItem\",\"@id\":\"https:\\/\\/appleosophy.com#listItem\",\"position\":1,\"name\":\"Home\",\"item\":\"http",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple allows alternative app stores and payments in Brazil | Rapid Meta",
+            "url": "https://rapid-meta.com/apple/apple-allows-alternative-app-stores-and-payments-in-brazil/",
+            "query": "Apple alternative app marketplace Brazil developer fee commission 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "if(navigator.userAgent.match(/MSIE|Internet Explorer/i)||navigator.userAgent.match(/Trident\\/7\\..*?rv:11/i)){var href=document.location.href;if(!href.match(/[?&]nowprocket/)){if(href.indexOf(\"?\")==-1){if(href.indexOf(\"#\")==-1){document.location.href=href+\"?nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"?nowprocket=1#\")}}else{if(href.indexOf(\"#\")==-1){document.location.href=href+\"&nowprocket=1\"}else{document.location.href=href.replace(\"#\",\"&nowprocket=1#\")}}}} (()=>{class RocketLazyLoadScripts{constructor(){this.v=\"2.0.5\",this.userEvents=[\"keydown\",\"keyup\",\"mousedown\",\"mouseup\",\"mousemove\",\"mouseover\",\"mouseout\",\"touchmove\",\"touchstart\",\"touchend\",\"touchcancel\",\"wheel\",\"click\",\"dblclick\",\"input\"],this.attributeEvents=[\"onblur\",\"onclick\",\"oncontextmenu\",\"ondblclick\",\"onfocus\",\"onmousedown\",\"onmouseenter\",\"onmouseleave\",\"onmousemove\",\"onmouseout\",\"onmouseover\",\"onmouseup\",\"onmousewheel\",\"onscroll\",\"onsubmit\"]}async t(){this.i(),this.o(),/iP(ad|hone)/.test(navigator.userAgent)&&this.h(),this.u(),this.l(this),this.m(),this.k(this),this.p(this),this._(),await Promise.all([this.R(),this.L()]),this.lastBreath=Date.now(),this.S(this),this.P(),this.D(),this.O(),this.M(),await this.C(this.delayedScripts.normal),await this.C(this.delayedScripts.defer),await this.C(this.delayedScripts.async),await this.T(),await this.F(),await this.j(),await this.A(),window.dispatchEvent(new Event(\"rocket-allScriptsLoaded\")),this.everythingLoaded=!0,this.lastTouchEnd&&await new Promise(t=>setTimeout(t,500-Date.now()+this.lastTouchEnd)),this.I(),this.H(),this.U(),this.W()}i(){this.CSPIssue=sessionStorage.getItem(\"rocketCSPIssue\"),document.addEventListener(\"securitypolicyviolation\",t=>{this.CSPIssue||\"script-src-elem\"!==t.violatedDirective||\"data\"!==t.blockedURI||(this.CSPIssue=!0,session",
+            "fetch_error": ""
+          },
+          {
+            "title": "iOS 26.5 Alternative App Marketplaces in Brazil: What's Live Now << Apple :: Gadget Hacks",
+            "url": "https://apple.gadgethacks.com/news/ios-265-alternative-app-marketplaces-in-brazil-whats-live-now/",
+            "query": "Apple alternative app marketplace Brazil developer fee commission 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Update on apps distributed in the European Union - Support - Apple Developer",
+            "url": "https://developer.apple.com/support/dma-and-apps-in-the-eu/",
+            "query": "EU alternative app store developer experience revenue impact 2024",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "// Synchronously disables the account link before first paint so the user // cannot navigate away before session.js registers its click listener. (function () { var accountLink = document.querySelector(\".globalnav-link-account\"); if (accountLink) { var href = accountLink.getAttribute(\"href\"); if (href) { accountLink.dataset.pendingHref = href; accountLink.removeAttribute(\"href\"); accountLink.style.cursor = \"default\"; } } })(); Update on apps distributed in the European Union - Support - Apple Developer '> ' /> ' /> ' /> // Execute immediately to avoid UI flash (function () { // Prevent React dev mode from running this multiple times if (window.__didRunColorThemeScript) { return; } window.__didRunColorThemeScript = true; const prefersDark = window.matchMedia(\"(prefers-color-scheme: dark)\").matches; const body = document.body; // If theme-dark or theme-light is already applied, do nothing and lock it if (body.classList.contains(\"theme-dark\") || body.classList.contains(\"theme-light\")) { // Set the data-color-scheme attribute based on the existing theme body.setAttribute('data-color-scheme', body.classList.contains(\"theme-dark\") ? \"dark\" : \"light\"); // Prevent future modifications window.__disableColorScheme = true; // Hide the color picker immediately const style = document.createElement('style'); style.textContent = '.color-scheme-toggle { display: none !important; }'; document.head.appendChild(style); return; } // Otherwise, set theme normally based on user settings or system preference if (window.Settings && window.Settings.preferredColorScheme) { const colorTheme = (window.Settings.preferredColorScheme === 'auto') && !prefersDark ? 'light' : (window.Settings.preferredColorScheme === 'light') ? 'light' : 'dark'; body.setAttribute('data-color-scheme', colorTheme); colorT",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple says EU represents 7% of global App Store revenue | TechCrunch",
+            "url": "https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/",
+            "query": "EU alternative app store developer experience revenue impact 2024",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); const successData = localStorage.getItem('turnstile_verified'); const failData = sessionStorage.getItem('turnstile_failed'); const isBot = failData ? 'true' : successData ? 'false' : null; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ is_bot: isBot }); const BUCKET_KEY = 'tc_jwplayer_promo_bucket'; const urlParam = new URLSearchParams(window.location.search).get('jw_promo_bucket'); if (urlParam === 'show' || urlParam === 'hide') { localStorage?.setItem(BUCKET_KEY, urlParam); } let bucket = localStorage?.getItem(BUCKET_KEY); if (!bucket || (bucket !== 'show' && bucket !== 'hide')) { bucket = Math.random() Apple says EU represents 7% of global App Store revenue | TechCrunch {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"NewsArticle\",\"@id\":\"https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/#article\",\"isPartOf\":{\"@id\":\"https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/\"},\"author\":[{\"@id\":\"https://techcrunch.com/#/schema/person/image/a6f7867020af40f5dcae726169b5c360\"}],\"headline\":\"Apple says EU represents 7% of global App Store revenue\",\"datePublished\":\"2024-02-02T05:37:49+00:00\",\"dateModified\":\"2024-02-02T17:58:05+00:00\",\"mainEntityOfPage\":{\"@id\":\"https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/\"},\"wordCount\":600,\"commentCount\":0,\"publisher\":{\"@id\":\"https://techcrunch.com/#organization\"},\"image\":{\"@id\":\"https://techcrunch.com/2024/02/01/apple-says-eu-represents-7-of-global-app-store-revenue/#primaryimage\"},\"thumbnailUrl\":\"https://techcrunch.com/wp-content/uploads/2024/01/app-store-2024-v2.jpg\",\"keywords\":[\"Apple\",\"app-store\",\"eur",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple Opens App Store to Competitors in EU Amid Regulatory Pressure - Blog - MEF",
+            "url": "https://mobileecosystemforum.com/2025/07/01/apple-opens-app-store-to-competitors-in-eu-amid-regulatory-pressure/",
+            "query": "EU alternative app store developer experience revenue impact 2024",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "r/apple on Reddit: Apple to Allow Alternative App Stores and More on iOS in Brazil by April",
+            "url": "https://www.reddit.com/r/apple/comments/1ptz8xt/apple_to_allow_alternative_app_stores_and_more_on/",
+            "query": "Brazil iOS alternative payment developer forum Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/apple on Reddit: Apple to Introduce New App Store Fee Structure in Brazil Following Antitrust Settlement",
+            "url": "https://www.reddit.com/r/apple/comments/1puzunz/apple_to_introduce_new_app_store_fee_structure_in/",
+            "query": "Brazil iOS alternative payment developer forum Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "Apple Opens iOS to Third-Party App Stores in Brazil << Apple :: Gadget Hacks",
+            "url": "https://apple.gadgethacks.com/news/apple-opens-ios-to-third-party-app-stores-in-brazil/",
+            "query": "Brazil iOS alternative payment developer forum Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Apple settles Brazilian antitrust case with App Store policy overhaul - 9to5Mac",
+            "url": "https://9to5mac.com/2025/12/23/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul/",
+            "query": "CADE Brazil Apple antitrust decision 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); window.dataLayer = window.dataLayer || []; dataLayer.push({\"pageType\":\"post\",\"event\":\"postCategory\",\"postCategory\":[\"aapl\",\"antitrust\"]}); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-M48W9J'); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start': new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src= 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer','GTM-K5T6XC3'); Apple settles Brazilian antitrust case with App Store policy overhaul - 9to5Mac {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/9to5mac.com\\/2025\\/12\\/23\\/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/9to5mac.com\\/2025\\/12\\/23\\/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul\\/\"},\"author\":{\"name\":\"Marcus Mendes\",\"@id\":\"https:\\/\\/9to5mac.com\\/#\\/schema\\/person\\/f1c896906b7bd9605cfa037d57bbe001\"},\"headline\":\"Apple settles Brazilian antitrust case with App Store policy overhaul [U: Fee structure]\",\"datePublished\":\"2025-12-23T20:57:02+00:00\",\"dateModified\":\"2025-12-23T22:17:52+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/9to5mac.com\\/2025\\/12\\/23\\/apple-settles-brazilian-antitrust-case-with-app-store-policy-overhaul\\/\"},\"wordCount\":585,\"commentCount\":0",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple to allow third-party app stores in Brazil to settle iOS case with regulator | Reuters",
+            "url": "https://www.reuters.com/legal/litigation/apple-allow-third-party-app-stores-brazil-settle-ios-case-with-regulator-2025-12-23/",
+            "query": "CADE Brazil Apple antitrust decision 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 401: HTTP Forbidden"
+          },
+          {
+            "title": "Apple agrees to allow third-party app stores on iOS in Brazil following antitrust settlement",
+            "url": "https://macdailynews.com/2025/12/24/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement/",
+            "query": "CADE Brazil Apple antitrust decision 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Apple agrees to allow third-party app stores on iOS in Brazil following antitrust settlement {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/\"},\"author\":{\"name\":\"MacDailyNews Webmaster\",\"@id\":\"https:\\/\\/macdailynews.com\\/#\\/schema\\/person\\/d0022d2e2595bf9e1e5df4dc0d2c84c2\"},\"headline\":\"Apple agrees to allow third-party app stores on iOS in Brazil following antitrust settlement\",\"datePublished\":\"2025-12-24T17:49:48+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/\"},\"wordCount\":612,\"commentCount\":0,\"publisher\":{\"@id\":\"https:\\/\\/macdailynews.com\\/#organization\"},\"image\":{\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/#primaryimage\"},\"thumbnailUrl\":\"https:\\/\\/macdailynews.com\\/wp-content\\/uploads\\/2024\\/08\\/240830_apple_logo.png\",\"keywords\":[\"Apple App Store\",\"Brazil\",\"MercadoLibre\",\"third-party app stores\"],\"articleSection\":[\"News\"],\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"CommentAction\",\"name\":\"Comment\",\"target\":[\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees-to-allow-third-party-app-stores-on-ios-in-brazil-following-antitrust-settlement\\/#respond\"]}],\"copyrightYear\":\"2025\",\"copyrightHolder\":{\"@id\":\"https:\\/\\/macdailynews.com\\/#organization\"}},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/macdailynews.com\\/2025\\/12\\/24\\/apple-agrees",
+            "fetch_error": ""
+          },
+          {
+            "title": "Changes to iOS in Brazil - Support - Apple Developer",
+            "url": "https://developer.apple.com/support/app-distribution-in-brazil",
+            "query": "Apple Notarization iOS Brazil requirements cost",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "// Synchronously disables the account link before first paint so the user // cannot navigate away before session.js registers its click listener. (function () { var accountLink = document.querySelector(\".globalnav-link-account\"); if (accountLink) { var href = accountLink.getAttribute(\"href\"); if (href) { accountLink.dataset.pendingHref = href; accountLink.removeAttribute(\"href\"); accountLink.style.cursor = \"default\"; } } })(); Changes to iOS in Brazil - Support - Apple Developer ' /> ' /> // Execute immediately to avoid UI flash (function () { // Prevent React dev mode from running this multiple times if (window.__didRunColorThemeScript) { return; } window.__didRunColorThemeScript = true; const prefersDark = window.matchMedia(\"(prefers-color-scheme: dark)\").matches; const body = document.body; // If theme-dark or theme-light is already applied, do nothing and lock it if (body.classList.contains(\"theme-dark\") || body.classList.contains(\"theme-light\")) { // Set the data-color-scheme attribute based on the existing theme body.setAttribute('data-color-scheme', body.classList.contains(\"theme-dark\") ? \"dark\" : \"light\"); // Prevent future modifications window.__disableColorScheme = true; // Hide the color picker immediately const style = document.createElement('style'); style.textContent = '.color-scheme-toggle { display: none !important; }'; document.head.appendChild(style); return; } // Otherwise, set theme normally based on user settings or system preference if (window.Settings && window.Settings.preferredColorScheme) { const colorTheme = (window.Settings.preferredColorScheme === 'auto') && !prefersDark ? 'light' : (window.Settings.preferredColorScheme === 'light') ? 'light' : 'dark'; body.setAttribute('data-color-scheme', colorTheme); colorTheme === \"dark\" ? body.classList",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple announces changes to iOS in Brazil - Apple",
+            "url": "https://www.apple.com/newsroom/2026/06/apple-announces-changes-to-ios-in-brazil/",
+            "query": "Apple Notarization iOS Brazil requirements cost",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Apple announces changes to iOS in Brazil - Apple Apple Store Mac iPad iPhone Watch Vision AirPods TV & Home Entertainment Accessories Support 0 + {\"props\":{\"globalNavData\":{\"locale\":\"en_US\",\"ariaLabel\":\"Global\",\"analyticsAttributes\":[{\"name\":\"data-analytics-activitymap-region-id\",\"value\":\"global nav\"},{\"name\":\"data-analytics-region\",\"value\":\"global nav\"}],\"links\":[{\"id\":\"2758e8127e4ab787ae4e849277f79b83b3522719ae4b96a595421e50ea2d03f7\",\"name\":\"apple\",\"text\":\"Apple\",\"url\":\"/\",\"ariaLabel\":\"Apple\",\"submenuAriaLabel\":\"Apple menu\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"},{\"name\":\"compact\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"apple home\"}]},{\"id\":\"ad4a2a26eb4836393385e9f6c61b526b4a3cb31409c5ed8730ce7a704dd7132f\",\"name\":\"store\",\"text\":\"Store\",\"url\":\"/us/shop/goto/store\",\"ariaLabel\":\"Store\",\"submenuAriaLabel\":\"Store menu\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"store\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - store\"}]},{\"id\":\"9a82f08a3cc17e59a61372a40e7ecb17783e9c10aef163465f29bb5b00d4725a\",\"name\":\"mac\",\"text\":\"Mac\",\"url\":\"/mac/\",\"ariaLabel\":\"Mac\",\"submenuAriaLabel\":\"Mac menu\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"mac\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - mac\"}]},{\"id\":\"00948525be55e5a61fc12335c2fe8fbc94664d6237757d79344cadd205bde991\",\"name\":\"ipad\",\"text\":\"iPad\",\"url\":\"/ipad/\",\"ariaLabel\":\"iPad\",\"submenuAriaLabel\":\"iPad menu\",\"images\":[{\"name\":\"regular\",\"assetInline\":\" \"}],\"analyticsAttributes\":[{\"name\":\"data-analytics-title\",\"value\":\"ipad\"},{\"name\":\"data-analytics-element-engagement\",\"value\":\"hover - ipad\"}]},{\"id\":\"254873a73c00038209d1c486",
+            "fetch_error": ""
+          },
+          {
+            "title": "Apple opens up App Store to new competition in Brazil | TechCrunch",
+            "url": "https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/",
+            "query": "Apple Notarization iOS Brazil requirements cost",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); const successData = localStorage.getItem('turnstile_verified'); const failData = sessionStorage.getItem('turnstile_failed'); const isBot = failData ? 'true' : successData ? 'false' : null; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ is_bot: isBot }); const BUCKET_KEY = 'tc_jwplayer_promo_bucket'; const urlParam = new URLSearchParams(window.location.search).get('jw_promo_bucket'); if (urlParam === 'show' || urlParam === 'hide') { localStorage?.setItem(BUCKET_KEY, urlParam); } let bucket = localStorage?.getItem(BUCKET_KEY); if (!bucket || (bucket !== 'show' && bucket !== 'hide')) { bucket = Math.random() Apple opens up App Store to new competition in Brazil | TechCrunch {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"NewsArticle\",\"@id\":\"https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/#article\",\"isPartOf\":{\"@id\":\"https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/\"},\"author\":[{\"@id\":\"https://techcrunch.com/#/schema/person/image/14f1d39bd1812acaeda25e46acf52b80\"}],\"headline\":\"Apple opens up App Store to new competition in Brazil\",\"datePublished\":\"2026-06-18T15:48:08+00:00\",\"dateModified\":\"2026-06-18T15:55:06+00:00\",\"mainEntityOfPage\":{\"@id\":\"https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/\"},\"wordCount\":279,\"publisher\":{\"@id\":\"https://techcrunch.com/#organization\"},\"image\":{\"@id\":\"https://techcrunch.com/2026/06/18/apple-opens-up-app-store-to-new-competition-in-brazil/#primaryimage\"},\"thumbnailUrl\":\"https://techcrunch.com/wp-content/uploads/2022/07/app-store-ios-2022.jpg\",\"keywords\":[\"app store\",\"Apple\",\"Brazil\",\"developers\",\"In Br",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "规则变动影响谁",
+        "普通技术人的合规边界",
+        "平台红利和封号风险"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "苹果因巴西监管机构要求调整iOS政策 官方政策 规则 原文",
+        "苹果因巴西监管机构要求调整iOS政策 开发者公告 影响范围",
+        "苹果因巴西监管机构要求调整iOS政策 合规 风险 受影响用户"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}

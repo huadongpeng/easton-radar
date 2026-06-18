@@ -1,0 +1,1545 @@
+{
+  "id": "20260619-safer-pull-request-target-defaults-for-github-ac-cd0a17cd",
+  "batch_id": "2026-06-19-morning",
+  "title": "GitHub Actions改进pull_request_target默认安全设置",
+  "original_title": "Safer pull_request_target defaults for GitHub Actions checkout",
+  "url": "https://github.blog/changelog/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout",
+  "summary": "The pull_request_target event is one of the most commonly misused triggers in GitHub Actions, leading to vulnerabilities in workflows. Workflows triggered by pull_request_target run with the base repository’s GITHUB_TOKEN, secrets,… The post Safer pull_request_target defaults for GitHub Actions checkout appeared first on The GitHub Blog .",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "tools-rules",
+  "topic_direction_title": "工具&规则",
+  "topic_direction_short_title": "工具&规则",
+  "topic_direction_description": "开发工具、AI 实操、API、云服务、自动化工作流、平台政策、账号规则、搜索流量和内容分发生态变化。重点记录工具或规则发生了什么变化。",
+  "source_name": "GitHub Blog",
+  "original_source_name": "Archive: 2026 - GitHub Changelog",
+  "source_type": "rss",
+  "feed_url": "https://github.blog/changelog/feed/",
+  "published_at": "2026-06-18T14:06:55+00:00",
+  "fetched_at": "2026-06-18T22:24:46.255143+00:00",
+  "decision": "brief",
+  "report_type": "risk-warning",
+  "report_type_title": "风险避坑",
+  "score": 55,
+  "reader_hook": "CI/CD安全改进，减少工作流漏洞",
+  "topic_tension": {
+    "score": 6,
+    "conflict_point": "表面价格、额度或收益预期和真实成本之间的冲突。",
+    "debate_question": "这笔账普通技术人还能不能算得过来，还是只适合少数人？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "",
+    "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+  },
+  "persona_discussion_question": "这是真机会，还是又一个普通技术人容易被包装话术带偏的坑？",
+  "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "GitHub官方更新：为Actions的pull_request_target事件引入更安全的默认设置，防止工作流漏洞。",
+  "collection_fit": "tools-rules",
+  "investigation_direction": "优先追价格页、额度、API 文档、替代方案和实际成本边界。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。",
+    "当前仅适合观察，不进入推荐层级。"
+  ],
+  "facts": [
+    {
+      "claim": "GitHub Blog 发布/收录了这条原始线索：Safer pull_request_target defaults for GitHub Actions checkout",
+      "type": "confirmed_fact",
+      "source_url": "https://github.blog/changelog/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "GitHub Blog",
+      "url": "https://github.blog/changelog/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "token"
+      ],
+      "dev": [
+        "github"
+      ]
+    },
+    "source_host": "github.blog",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 6,
+    "raw_score": 42,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "CI/CD安全改进，减少工作流漏洞",
+    "fit_for_radar": false
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://github.blog/changelog/feed/",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。",
+      "当前仅适合观察，不进入推荐层级。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：官方博客正文未抓取到具体变更细节，无法确认新默认设置的具体内容。"
+    },
+    "core_question": "GitHub Actions 的 pull_request_target 默认安全设置具体改了什么，对普通开发者的实际影响是什么？",
+    "why_this_topic_matters": "pull_request_target 是 GitHub Actions 中最常被误用的触发器，导致大量 CI/CD 安全漏洞。本次更新旨在默认减少风险，但可能引入工作流兼容性问题。对于使用 GitHub Actions 的团队，了解变更细节和迁移成本是必要的。",
+    "fact_summary": [
+      "GitHub 于 2026-06-18 发布 changelog，宣布为 pull_request_target 事件引入更安全的默认设置。",
+      "pull_request_target 事件允许工作流以基础仓库的权限和 secrets 运行，常被误用导致漏洞。",
+      "2025-11-07 已有相关变更，涉及环境分支保护规则。",
+      "JFrog 和 Orca Security 的研究展示了 pull_request_target 漏洞的实际利用案例。",
+      "社区讨论（如 GitHub Community Discussion #179107）涉及安全改进，但具体迁移问题尚未充分收集。"
+    ],
+    "persona_discussion_question": "这个改动会不会让我现有的 CI/CD 工作流突然报错或需要手动调整？我该不该花时间更新？",
+    "old_flower_stance": "平台安全改进是好事，但开发者需要评估迁移成本。不要盲目升级，先检查现有工作流是否依赖旧行为。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 6,
+      "why_interested": "核心技术人需要了解变更细节以避免工作流故障；入门读者可借此学习安全最佳实践；商业读者关注供应链安全风险。",
+      "reader_risk": "可能因缺乏具体案例而显得枯燥，需要补充实际漏洞故事和迁移指南。"
+    },
+    "mass_interest_hook": {
+      "score": 4,
+      "hook_type": "踩坑",
+      "why_non_technical_people_may_click": "标题可强调“你的 CI/CD 可能被攻击”或“GitHub 默认设置变更，小心工作流报错”，但非技术读者兴趣有限。",
+      "story_seed": "一个开源项目因误用 pull_request_target 导致 secrets 泄露，攻击者注入恶意代码。",
+      "do_not_overhype": "不要夸大漏洞普遍性，强调这是已知问题，新默认设置可缓解但非万能。"
+    },
+    "topic_tension": {
+      "score": 5,
+      "conflict_point": "安全改进 vs 开发者维护成本",
+      "debate_question": "平台安全改进是否应该默认启用，还是留给开发者选择？",
+      "stakeholders": [
+        "普通开发者",
+        "安全团队",
+        "GitHub 平台"
+      ],
+      "why_people_would_comment": "开发者可能分享迁移经验或抱怨兼容性问题；安全团队可能支持默认安全。",
+      "traffic_risk": "传播张力不足，容易写成专业说明；需要补真实冲突和反方材料。"
+    },
+    "timeline": [
+      "2025-11-07: GitHub 发布 pull_request_target 和环境分支保护规则变更，2025-12-08 生效。",
+      "2026-03-05: JFrog 发布 pull_request_target 漏洞利用研究。",
+      "2026-04-15: Wiz 发布 GitHub Actions 安全指南。",
+      "2026-06-18: GitHub 发布更安全的 pull_request_target 默认设置。"
+    ],
+    "evidence_table": [
+      {
+        "source": "GitHub Changelog (2026-06-18)",
+        "url": "https://github.blog/changelog/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout/",
+        "supports": "官方宣布更安全的默认设置",
+        "reliability": "official"
+      },
+      {
+        "source": "GitHub Changelog (2025-11-07)",
+        "url": "https://github.blog/changelog/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes/",
+        "supports": "早期相关变更",
+        "reliability": "official"
+      },
+      {
+        "source": "GitHub Community Discussion #179107",
+        "url": "https://github.com/orgs/community/discussions/179107",
+        "supports": "社区讨论安全改进",
+        "reliability": "weak"
+      },
+      {
+        "source": "JFrog Security Research",
+        "url": "https://research.jfrog.com/post/part-1-pull-request-target-exploitation/",
+        "supports": "漏洞利用案例",
+        "reliability": "near_source"
+      },
+      {
+        "source": "Orca Security Blog",
+        "url": "https://orca.security/resources/blog/pull-request-nightmare-github-actions-rce/",
+        "supports": "漏洞利用案例",
+        "reliability": "near_source"
+      },
+      {
+        "source": "GitGuardian Best Practices",
+        "url": "https://blog.gitguardian.com/github-actions-security-cheat-sheet/",
+        "supports": "安全最佳实践",
+        "reliability": "media"
+      },
+      {
+        "source": "GitHub Docs",
+        "url": "https://docs.github.com/en/actions/reference/security/secure-use",
+        "supports": "官方安全指南",
+        "reliability": "official"
+      },
+      {
+        "source": "Wiz Blog",
+        "url": "https://www.wiz.io/blog/github-actions-security-guide",
+        "supports": "安全指南",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "部分闭环：漏洞风险明确，官方改进方向清晰，但具体默认值变更细节和迁移影响未确认，无法评估实际影响。",
+    "writeable_angles": [
+      {
+        "angle": "安全改进解读：新默认设置具体改了什么，如何减少漏洞？",
+        "why": "直接解答核心问题，适合技术读者。",
+        "needs": "官方博客正文细节、迁移指南"
+      },
+      {
+        "angle": "迁移成本分析：现有工作流是否需要调整？",
+        "why": "提供实用价值，引发开发者共鸣。",
+        "needs": "社区迁移案例、兼容性问题报告"
+      },
+      {
+        "angle": "漏洞案例复盘：pull_request_target 如何被利用？",
+        "why": "故事性强，吸引非技术读者。",
+        "needs": "JFrog/Orca 案例细节"
+      }
+    ],
+    "missing_basics": [
+      "pull_request_target 与 pull_request 的区别",
+      "GitHub Actions 权限模型基础"
+    ],
+    "missing_materials": [
+      "官方博客正文（具体变更细节）",
+      "社区迁移经验或兼容性问题报告",
+      "反方材料：新默认设置是否足够安全？"
+    ],
+    "not_claimable": [
+      "所有工作流都会自动受益",
+      "无需任何手动操作",
+      "这是重大安全更新"
+    ],
+    "followup_queries": [
+      "GitHub Actions pull_request_target 新默认设置具体变更内容？",
+      "是否有工作流因新默认设置而失败？",
+      "新默认设置是否覆盖所有漏洞场景？"
+    ],
+    "additional_search_queries": [
+      "GitHub Actions pull_request_target default security settings changelog 2026",
+      "pull_request_target safer defaults migration issues",
+      "GitHub Actions pull_request_target vulnerability exploit 2026"
+    ],
+    "stop_conditions": [
+      "官方博客正文已获取并确认具体变更",
+      "社区有明确迁移案例或兼容性问题报告",
+      "无新漏洞案例出现"
+    ],
+    "confidence": 55.0,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "risk-warning",
+    "quality_gate": {
+      "pass": false,
+      "score": 55,
+      "fatal_issues": [
+        "核心事实没有来源：官方博客正文未抓取到具体变更细节，无法确认新默认设置的具体内容。",
+        "没有泛兴趣故事钩子：标题和开头只适合技术小圈子，非技术读者兴趣有限。",
+        "没有真实传播张力：冲突点不明确，缺乏反方材料和读者案例，传播张力不足。"
+      ],
+      "warnings": [
+        "基础概念缺口：缺少 pull_request_target 与 pull_request 的区别、GitHub Actions 权限模型基础。",
+        "资料素材缺口：缺少官方博客正文、社区迁移经验、反方材料。",
+        "信息源偏科：主要依赖官方 changelog 和安全研究，缺乏社区迁移案例和兼容性问题报告。"
+      ],
+      "missing_evidence": [
+        "官方博客正文（具体变更细节）",
+        "社区迁移经验或兼容性问题报告",
+        "反方材料：新默认设置是否足够安全？"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "GitHub Actions 的 pull_request_target 默认安全设置具体改了什么，对普通开发者的实际影响是什么？",
+      "persona_discussion_question": "这个改动会不会让我现有的 CI/CD 工作流突然报错或需要手动调整？我该不该花时间更新？",
+      "hidden_public_issue": "平台安全改进可能增加开发者维护成本，但安全漏洞风险降低，谁受益、谁承担迁移成本？",
+      "must_verify": [
+        "具体默认值变更内容（如 token 权限、事件触发条件）",
+        "是否影响现有工作流，是否需要手动迁移",
+        "是否有已知的兼容性问题或社区反馈"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "GitHub Actions pull_request_target default security settings changelog",
+          "why_needed": "确认官方具体变更细节和迁移指南"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "GitHub Actions pull_request_target safer defaults migration issues",
+          "why_needed": "了解社区实际遇到的兼容性问题和工作流调整经验"
+        },
+        {
+          "source_type": "case_study",
+          "query": "pull_request_target vulnerability exploit example",
+          "why_needed": "验证安全改进的实际必要性，提供反方材料"
+        },
+        {
+          "source_type": "policy",
+          "query": "GitHub Actions security best practices pull_request_target",
+          "why_needed": "对比官方最佳实践，确认新默认值是否更安全"
+        }
+      ],
+      "expert_challenge_points": [
+        "新默认设置是否真的能防止常见漏洞，还是只是表面改进？",
+        "对于已有大量工作流的团队，迁移成本是否被低估？",
+        "是否有其他更安全的替代方案（如使用 `pull_request` 配合 `workflow_run`）？"
+      ],
+      "do_not_claim_yet": [
+        "所有工作流都会自动受益",
+        "无需任何手动操作",
+        "这是重大安全更新"
+      ],
+      "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。因为该更新是官方 changelog 中的单点安全改进，缺乏普通技术人的真实选择题（如迁移成本、账单风险、平台绑定），且传播张力不足，容易写成专业说明。",
+      "downstream_materials_needed": [
+        "官方博客原文及详细变更日志",
+        "社区讨论帖（如 Hacker News、Reddit）",
+        "已知漏洞案例或 PoC",
+        "迁移指南或兼容性说明"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Safer pull_request_target defaults for GitHub Actions checkout - GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout/",
+        "query": "GitHub Actions pull_request_target default security settings changelog",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Safer pull_request_target defaults for GitHub Actions checkout - GitHub Changelog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Safer pull_request_target defaults for GitHub Actions checkout\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-06-18T07:06:55-07:00\",\"abstract\":\"The pull_request_target event is one of the most commonly misused triggers in GitHub Actions, leading to vulnerabilities in workflows. Workflows triggered by pull_request_target run with the base repository’s GITHUB_TOKEN, secrets,…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout\"},\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Safer pull_request_target defaults for GitHub Actions checkout\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-06-18T07:06:55-07:00\",\"abstract\":\"The pull_request_target event is one of the most commonly misused triggers in GitHub Actions, leading to vulnerabilities in workflows. Workflows triggered by pull_request_target run with the base repository’s GITHUB_TOKEN, secrets,…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout\"},\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout\\/\",\"url\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout\\/\",\"name\":\"Safer pull_request_target defaults for GitHub Actions checkout - The GitHub Blog\",\"isPartOf\":{\"@id\":\"https:\\/\\/github.blog\\/#website\"},\"datePublished\":\"2026-06-18",
+        "fetch_error": ""
+      },
+      {
+        "title": "Actions pull_request_target and environment branch protections changes - GitHub Changelog",
+        "url": "https://github.blog/changelog/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes/",
+        "query": "GitHub Actions pull_request_target default security settings changelog",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Actions pull_request_target and environment branch protections changes - GitHub Changelog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Actions pull_request_target and environment branch protections changes\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2025-11-07T08:18:15-08:00\",\"abstract\":\"GitHub is updating how GitHub Actions’ pull_request_target and environment branch protection rules are evaluated for pull-request-related events. These changes will take effect on 12\\/8\\/2025. They aim to reduce security critical…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes\"},\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Actions pull_request_target and environment branch protections changes\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2025-11-07T08:18:15-08:00\",\"abstract\":\"GitHub is updating how GitHub Actions’ pull_request_target and environment branch protection rules are evaluated for pull-request-related events. These changes will take effect on 12\\/8\\/2025. They aim to reduce security critical…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes\"},\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes\\/\",\"url\":\"https:\\/\\/github.blog\\/changelog\\/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes\\/\",\"name\":\"Actions pull_request_target and environment branch protections changes - The GitHub Blog\",\"isPartOf\":{\"@id\":\"h",
+        "fetch_error": ""
+      },
+      {
+        "title": "Towards a secure by default GitHub Actions · community · Discussion #179107",
+        "url": "https://github.com/orgs/community/discussions/179107",
+        "query": "GitHub Actions pull_request_target default security settings changelog",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+        "fetch_error": ""
+      },
+      {
+        "title": "Improve Actions security · community · Discussion #157949",
+        "url": "https://github.com/orgs/community/discussions/157949",
+        "query": "GitHub Actions pull_request_target safer defaults migration issues",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+        "fetch_error": ""
+      },
+      {
+        "title": "Secure GitHub Actions by pull_request_target - DEV Community",
+        "url": "https://dev.to/suzukishunsuke/secure-github-actions-by-pullrequesttarget-641",
+        "query": "GitHub Actions pull_request_target safer defaults migration issues",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Secure GitHub Actions by pull_request_target - DEV Community /* ========================================================================== THE 418 CHALLENGE: THEME-AWARE RETRO EDITION ========================================================================== */ .articletag-418challenge { font-family: \"Comic Sans MS\", \"Chalkboard SE\", \"Marker Felt\", sans-serif !important; cursor: crosshair !important; } /* Destroy modern rounded corners and add brutal borders */ .articletag-418challenge .crayons-card, .articletag-418challenge .crayons-article__main, .articletag-418challenge .crayons-article__header { border-radius: 0 !important; margin-bottom: 2rem !important; } /* Typography specifics */ .articletag-418challenge h1, .articletag-418challenge h2, .articletag-418challenge h3 { text-transform: uppercase !important; } /* Fake effect for the main article title */ .articletag-418challenge h1.fs-3xl { animation: retro-slide 5s linear infinite alternate; overflow: visible; } /* Spin those avatars */ .articletag-418challenge .crayons-article__header__meta img { border-radius: 0 !important; animation: retro-spin 5s linear infinite; } /* Obnoxious tags */ .articletag-418challenge .crayons-tag { border-radius: 0 !important; font-weight: 900 !important; transform: rotate(-3deg); display: inline-block; } .articletag-418challenge .crayons-tag:nth-child(even) { transform: rotate(3deg); } /* -------------------------------------------------------------------------- 2. LIGHT THEME (Windows 95 / Office 97 Vibes) -------------------------------------------------------------------------- */ body:not(.dark-theme) .articletag-418challenge { background-color: #008080 !important; /* Win95 Teal Desktop */ } body:not(.dark-theme) .articletag-418challenge .crayons-card, body:not(.dark-theme) .artic",
+        "fetch_error": ""
+      },
+      {
+        "title": "pull_request_target Exploitation - Part 1 - JFrog Security Research",
+        "url": "https://research.jfrog.com/post/part-1-pull-request-target-exploitation/",
+        "query": "pull_request_target vulnerability exploit example",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "pull_request_target Exploitation - Part 1 - JFrog Security Research window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag(\"js\", new Date()); gtag(\"config\", \"GTM-T6MF8M\"); gtag('set', 'developer_id.dODQ2Mj', true); .g-image--loading{display:none;} JFrog Security Research Model Threats Discover Follow JFrog Security Home Model Threats Discover Follow JFrog Security pull_request_target Exploitation - Part 1 Barak Haryati, Senior Director of Product Security at JFrog | 5 Mar, 2026 Test-Based Execution The JFrog Security Research team has identified multiple critical vulnerabilities across open source ecosystems that follow the same structural misconfiguration pattern in CI/CD workflows. These issues are not isolated mistakes. They stem from workflows that execute untrusted pull request content in privileged contexts, creating severe supply chain risk. In a separate blog, we explained how we built an AI agent to systematically detect these misconfiguration patterns at scale, what signals it looks for, and how such vulnerabilities can escalate from a single repository to organization-wide compromise. At the center of these cases is the GitHub Actions trigger pull_request_target , where pull requests run in the context of the base repository, inheriting its secrets and permissions. The full vulnerability details are also explained in the main blog. Each short blog in this series will cover one specific exploitation class and provide concrete exploitation analysis, this blog starts with “Test-Based Execution”. In this exploitation pattern, the workflow checks out the PR head and executes test code or scripts controlled by the attacker that are executed as part of the testing CI process. Vulnerabilities Disclosed From Government to Corpor",
+        "fetch_error": ""
+      },
+      {
+        "title": "pull_request_nightmare Part 1: Exploiting GitHub Actions for RCE and Supply Chain Attacks",
+        "url": "https://orca.security/resources/blog/pull-request-nightmare-github-actions-rce/",
+        "query": "pull_request_target vulnerability exploit example",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "function OptanonWrapper() { } (function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); (function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.defer = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-MFH8KTP'); document.addEventListener('DOMContentLoaded', function() { if (window?.dataLayer) { window.dataLayer.push({'logged_in': 'no'}); } }); (function() { var didInit = false; function initMunchkin() { if (didInit === false) { didInit = true; Munchkin.init('796-PBW-559'); } } var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//munchkin.marketo.net/munchkin.js'; s.onreadystatechange = function() { if (this.readyState == 'complete' || this.readyState == 'loaded') { initMunchkin(); } }; s.onload = initMunchkin; document.getElementsByTagName('head')[0].appendChild(s); })(); // Initialize VWO consent management window.VWO = window.VWO || []; window.VWO.init = window.VWO.init || (state => (window.VWO.consentState = state)); // Force the default state to Pending window.VWO.init(2); // Your consent category ID (confirmed as C0002) var consentCategoryId = 'C0002'; // OneTrust callback function function OptanonWrapper() { var vwoConsentProvided = OnetrustActiveGroups.includes(consentCategoryId); if (OneTrust.IsAlertBoxClosedAndValid()) { // User has made a consent choice VWO.init(vwoConsentProvided ? 1 : 3); } else { // Consent is still pending VWO.init(2); } } // Also listen for consent changes after initial load window.addEventLi",
+        "fetch_error": ""
+      },
+      {
+        "title": "pull_request_nightmare Part 2: Exploiting GitHub Actions for RCE and Supply Chain",
+        "url": "https://orca.security/resources/blog/pull-request-nightmare-part-2-exploits/",
+        "query": "pull_request_target vulnerability exploit example",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "function OptanonWrapper() { } (function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); (function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.defer = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-MFH8KTP'); document.addEventListener('DOMContentLoaded', function() { if (window?.dataLayer) { window.dataLayer.push({'logged_in': 'no'}); } }); (function() { var didInit = false; function initMunchkin() { if (didInit === false) { didInit = true; Munchkin.init('796-PBW-559'); } } var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//munchkin.marketo.net/munchkin.js'; s.onreadystatechange = function() { if (this.readyState == 'complete' || this.readyState == 'loaded') { initMunchkin(); } }; s.onload = initMunchkin; document.getElementsByTagName('head')[0].appendChild(s); })(); // Initialize VWO consent management window.VWO = window.VWO || []; window.VWO.init = window.VWO.init || (state => (window.VWO.consentState = state)); // Force the default state to Pending window.VWO.init(2); // Your consent category ID (confirmed as C0002) var consentCategoryId = 'C0002'; // OneTrust callback function function OptanonWrapper() { var vwoConsentProvided = OnetrustActiveGroups.includes(consentCategoryId); if (OneTrust.IsAlertBoxClosedAndValid()) { // User has made a consent choice VWO.init(vwoConsentProvided ? 1 : 3); } else { // Consent is still pending VWO.init(2); } } // Also listen for consent changes after initial load window.addEventLi",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub Actions Security Best Practices [cheat sheet included]",
+        "url": "https://blog.gitguardian.com/github-actions-security-cheat-sheet/",
+        "query": "GitHub Actions security best practices pull_request_target",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "GitHub Actions Security Best Practices Cheat Sheet { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"publisher\": { \"@type\": \"Organization\", \"name\": \"GitGuardian Blog - Take Control of Your Secrets Security\", \"url\": \"https://blog.gitguardian.com/\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://storage.ghost.io/c/42/5d/425d266f-cf99-406e-9436-597a19bed011/content/images/2025/02/gg-blog-logo-dark-mode.svg\", \"width\": 339, \"height\": 60 } }, \"author\": { \"@type\": \"Person\", \"name\": \"Thomas Segura\", \"image\": { \"@type\": \"ImageObject\", \"url\": \"https://storage.ghost.io/c/42/5d/425d266f-cf99-406e-9436-597a19bed011/content/images/size/w1200/2025/10/Thomas_portrait_crop.png\", \"width\": 1200, \"height\": 1200 }, \"url\": \"https://blog.gitguardian.com/author/thomassegura/\", \"sameAs\": [ \"https://thomassegura.com\" ] }, \"headline\": \"GitHub Actions Security Best Practices Cheat Sheet\", \"url\": \"https://blog.gitguardian.com/github-actions-security-cheat-sheet/\", \"datePublished\": \"2025-04-11T16:00:00.000Z\", \"dateModified\": \"2026-01-05T12:45:56.000Z\", \"image\": { \"@type\": \"ImageObject\", \"url\": \"https://storage.ghost.io/c/42/5d/425d266f-cf99-406e-9436-597a19bed011/content/images/size/w1200/2022/05/22W18-blog-GitHubActionsSecurityCheatSheet.png\", \"width\": 1200, \"height\": 702 }, \"keywords\": \"Cheat sheets\", \"description\": \"Learn how to secure your GitHub Actions with these best practices! From controlling credentials to using specific action version tags, this cheat sheet will help you protect against supply-chain attacks. Don't let a malicious actor inject code into your repository - read now!\", \"mainEntityOfPage\": \"https://blog.gitguardian.com/github-actions-security-cheat-sheet/\" } .gh-post-upgrade-cta-content, .gh-post-upgrade-cta { display: flex; flex-direction: column; align-items: cente",
+        "fetch_error": ""
+      },
+      {
+        "title": "Secure use reference - GitHub Docs",
+        "url": "https://docs.github.com/en/actions/reference/security/secure-use",
+        "query": "GitHub Actions security best practices pull_request_target",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Secure use reference - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Actions / Reference / Security / Secure use Home GitHub Actions Get started Quickstart Understand GitHub Actions Continuous integration Continuous deployment Actions vs Apps Concepts Workflows and actions Workflows Variables Contexts Expressions Reusing workflow configurations Custom actions Deployment environments Concurrency Workflow artifacts Dependency caching Notifications for workflow runs Runners GitHub-hosted runners Larger runners Self-hosted runners Private networking Runner groups Runner scale sets Actions Runner Controller Support for ARC Security Secrets GITHUB_TOKEN OpenID Connect Artifact attestations Script injections Compromised runners Kubernetes admissions controller Metrics Billing and usage How-tos Write workflows Use workflow templates Choose when workflows run Trigger a workflow Control jobs with conditions Control workflow concurrency Choose where workflows run Choose the runner for a job Run jobs in a container Choose what workflows do Use jobs Find and customize actions Use GitHub CLI Add scripts Use secrets Use variables Pass job outputs Set default values for jobs Deploy to environment Run job variations Reuse automations Reuse workflows Create workflow templates Share across private repositories Share with your organization Secure your work Use artifact attestations Use artifact attestations Increase security rating Enforce artifact attestations Verify attestations offline Manage attestations Security harden deployments OIDC in AWS OIDC in Azure OIDC in Google Cloud Platform OIDC in Hashi",
+        "fetch_error": ""
+      },
+      {
+        "title": "Hardening GitHub Actions: Lessons from Recent Attacks | Wiz Blog",
+        "url": "https://www.wiz.io/blog/github-actions-security-guide",
+        "query": "GitHub Actions security best practices pull_request_target",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Hardening GitHub Actions: Lessons from Recent Attacks | Wiz Blog {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"datePublished\":\"2026-04-15T09:19:21-04:00\",\"description\":\"Build resilient GitHub Actions workflows with lessons from recent attacks like TeamPCP and Axios. \",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://www.wiz.io/blog/github-actions-security-guide\"},\"headline\":\"How to Harden GitHub Actions: An Updated Guide\",\"image\":[\"https://www.datocms-assets.com/75231/1742245294-screenshot-2025-03-17-at-23-01-20.png?fit=crop&fm=jpg&h=100&w=100\",\"https://www.datocms-assets.com/75231/1753870692-shay.jpeg?fit=crop&fm=jpg&h=100&w=100\"],\"dateModified\":\"2026-04-15T09:19:21-04:00\",\"author\":[{\"@type\":\"Person\",\"name\":\"Rami McCarthy\",\"url\":\"https://www.wiz.io/authors/rami-mccarthy\"},{\"@type\":\"Person\",\"name\":\"Shay Berkovich\",\"url\":\"https://www.wiz.io/authors/shay-berkovich\"}],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Wiz.io\"},\"isAccessibleForFree\":true} (function() { function getInitialColorMode() { const pathname = window.location.pathname; const isDarkModePage = null; const isResearchPage = [\"/research\", \"/cloud-threat-landscape\", \"/ai-security-resource-center\", \"/ctf\", \"/bug-bounty-masterclass\", \"/cyber-model-arena\"].includes(pathname); const isResearchPath = [\"/bug-bounty-masterclass\"].some(path => pathname.startsWith(path)); if (isResearchPage || isResearchPath) { return 'dark-research'; } if (isDarkModePage) { return 'dark'; } return 'light'; } const colorMode = getInitialColorMode(); const root = document.documentElement; root.classList.add(colorMode); })() *:not([data-layout=\"full-bleed\"])]:col-start-2\"> Sign in Experiencing an incident? Wiz Pricing Get a demo Platform Solutions Pricing Resources Customers Company Get a demo *:not([data-layout=\"full-bleed\"])]:c",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：官方博客正文未抓取到具体变更细节，无法确认新默认设置的具体内容。"
+    },
+    "core_question": "GitHub Actions 的 pull_request_target 默认安全设置具体改了什么，对普通开发者的实际影响是什么？",
+    "why_this_topic_matters": "pull_request_target 是 GitHub Actions 中最常被误用的触发器，导致大量 CI/CD 安全漏洞。本次更新旨在默认减少风险，但可能引入工作流兼容性问题。对于使用 GitHub Actions 的团队，了解变更细节和迁移成本是必要的。",
+    "fact_summary": [
+      "GitHub 于 2026-06-18 发布 changelog，宣布为 pull_request_target 事件引入更安全的默认设置。",
+      "pull_request_target 事件允许工作流以基础仓库的权限和 secrets 运行，常被误用导致漏洞。",
+      "2025-11-07 已有相关变更，涉及环境分支保护规则。",
+      "JFrog 和 Orca Security 的研究展示了 pull_request_target 漏洞的实际利用案例。",
+      "社区讨论（如 GitHub Community Discussion #179107）涉及安全改进，但具体迁移问题尚未充分收集。"
+    ],
+    "persona_discussion_question": "这个改动会不会让我现有的 CI/CD 工作流突然报错或需要手动调整？我该不该花时间更新？",
+    "old_flower_stance": "平台安全改进是好事，但开发者需要评估迁移成本。不要盲目升级，先检查现有工作流是否依赖旧行为。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 6,
+      "why_interested": "核心技术人需要了解变更细节以避免工作流故障；入门读者可借此学习安全最佳实践；商业读者关注供应链安全风险。",
+      "reader_risk": "可能因缺乏具体案例而显得枯燥，需要补充实际漏洞故事和迁移指南。"
+    },
+    "mass_interest_hook": {
+      "score": 4,
+      "hook_type": "踩坑",
+      "why_non_technical_people_may_click": "标题可强调“你的 CI/CD 可能被攻击”或“GitHub 默认设置变更，小心工作流报错”，但非技术读者兴趣有限。",
+      "story_seed": "一个开源项目因误用 pull_request_target 导致 secrets 泄露，攻击者注入恶意代码。",
+      "do_not_overhype": "不要夸大漏洞普遍性，强调这是已知问题，新默认设置可缓解但非万能。"
+    },
+    "topic_tension": {
+      "score": 5,
+      "conflict_point": "安全改进 vs 开发者维护成本",
+      "debate_question": "平台安全改进是否应该默认启用，还是留给开发者选择？",
+      "stakeholders": [
+        "普通开发者",
+        "安全团队",
+        "GitHub 平台"
+      ],
+      "why_people_would_comment": "开发者可能分享迁移经验或抱怨兼容性问题；安全团队可能支持默认安全。",
+      "traffic_risk": "传播张力不足，容易写成专业说明；需要补真实冲突和反方材料。"
+    },
+    "timeline": [
+      "2025-11-07: GitHub 发布 pull_request_target 和环境分支保护规则变更，2025-12-08 生效。",
+      "2026-03-05: JFrog 发布 pull_request_target 漏洞利用研究。",
+      "2026-04-15: Wiz 发布 GitHub Actions 安全指南。",
+      "2026-06-18: GitHub 发布更安全的 pull_request_target 默认设置。"
+    ],
+    "evidence_table": [
+      {
+        "source": "GitHub Changelog (2026-06-18)",
+        "url": "https://github.blog/changelog/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout/",
+        "supports": "官方宣布更安全的默认设置",
+        "reliability": "official"
+      },
+      {
+        "source": "GitHub Changelog (2025-11-07)",
+        "url": "https://github.blog/changelog/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes/",
+        "supports": "早期相关变更",
+        "reliability": "official"
+      },
+      {
+        "source": "GitHub Community Discussion #179107",
+        "url": "https://github.com/orgs/community/discussions/179107",
+        "supports": "社区讨论安全改进",
+        "reliability": "weak"
+      },
+      {
+        "source": "JFrog Security Research",
+        "url": "https://research.jfrog.com/post/part-1-pull-request-target-exploitation/",
+        "supports": "漏洞利用案例",
+        "reliability": "near_source"
+      },
+      {
+        "source": "Orca Security Blog",
+        "url": "https://orca.security/resources/blog/pull-request-nightmare-github-actions-rce/",
+        "supports": "漏洞利用案例",
+        "reliability": "near_source"
+      },
+      {
+        "source": "GitGuardian Best Practices",
+        "url": "https://blog.gitguardian.com/github-actions-security-cheat-sheet/",
+        "supports": "安全最佳实践",
+        "reliability": "media"
+      },
+      {
+        "source": "GitHub Docs",
+        "url": "https://docs.github.com/en/actions/reference/security/secure-use",
+        "supports": "官方安全指南",
+        "reliability": "official"
+      },
+      {
+        "source": "Wiz Blog",
+        "url": "https://www.wiz.io/blog/github-actions-security-guide",
+        "supports": "安全指南",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "部分闭环：漏洞风险明确，官方改进方向清晰，但具体默认值变更细节和迁移影响未确认，无法评估实际影响。",
+    "writeable_angles": [
+      {
+        "angle": "安全改进解读：新默认设置具体改了什么，如何减少漏洞？",
+        "why": "直接解答核心问题，适合技术读者。",
+        "needs": "官方博客正文细节、迁移指南"
+      },
+      {
+        "angle": "迁移成本分析：现有工作流是否需要调整？",
+        "why": "提供实用价值，引发开发者共鸣。",
+        "needs": "社区迁移案例、兼容性问题报告"
+      },
+      {
+        "angle": "漏洞案例复盘：pull_request_target 如何被利用？",
+        "why": "故事性强，吸引非技术读者。",
+        "needs": "JFrog/Orca 案例细节"
+      }
+    ],
+    "missing_basics": [
+      "pull_request_target 与 pull_request 的区别",
+      "GitHub Actions 权限模型基础"
+    ],
+    "missing_materials": [
+      "官方博客正文（具体变更细节）",
+      "社区迁移经验或兼容性问题报告",
+      "反方材料：新默认设置是否足够安全？"
+    ],
+    "not_claimable": [
+      "所有工作流都会自动受益",
+      "无需任何手动操作",
+      "这是重大安全更新"
+    ],
+    "followup_queries": [
+      "GitHub Actions pull_request_target 新默认设置具体变更内容？",
+      "是否有工作流因新默认设置而失败？",
+      "新默认设置是否覆盖所有漏洞场景？"
+    ],
+    "additional_search_queries": [
+      "GitHub Actions pull_request_target default security settings changelog 2026",
+      "pull_request_target safer defaults migration issues",
+      "GitHub Actions pull_request_target vulnerability exploit 2026"
+    ],
+    "stop_conditions": [
+      "官方博客正文已获取并确认具体变更",
+      "社区有明确迁移案例或兼容性问题报告",
+      "无新漏洞案例出现"
+    ],
+    "confidence": 55.0,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "risk-warning",
+    "quality_gate": {
+      "pass": false,
+      "score": 55,
+      "fatal_issues": [
+        "核心事实没有来源：官方博客正文未抓取到具体变更细节，无法确认新默认设置的具体内容。",
+        "没有泛兴趣故事钩子：标题和开头只适合技术小圈子，非技术读者兴趣有限。",
+        "没有真实传播张力：冲突点不明确，缺乏反方材料和读者案例，传播张力不足。"
+      ],
+      "warnings": [
+        "基础概念缺口：缺少 pull_request_target 与 pull_request 的区别、GitHub Actions 权限模型基础。",
+        "资料素材缺口：缺少官方博客正文、社区迁移经验、反方材料。",
+        "信息源偏科：主要依赖官方 changelog 和安全研究，缺乏社区迁移案例和兼容性问题报告。"
+      ],
+      "missing_evidence": [
+        "官方博客正文（具体变更细节）",
+        "社区迁移经验或兼容性问题报告",
+        "反方材料：新默认设置是否足够安全？"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "GitHub Actions 的 pull_request_target 默认安全设置具体改了什么，对普通开发者的实际影响是什么？",
+      "persona_discussion_question": "这个改动会不会让我现有的 CI/CD 工作流突然报错或需要手动调整？我该不该花时间更新？",
+      "hidden_public_issue": "平台安全改进可能增加开发者维护成本，但安全漏洞风险降低，谁受益、谁承担迁移成本？",
+      "must_verify": [
+        "具体默认值变更内容（如 token 权限、事件触发条件）",
+        "是否影响现有工作流，是否需要手动迁移",
+        "是否有已知的兼容性问题或社区反馈"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "GitHub Actions pull_request_target default security settings changelog",
+          "why_needed": "确认官方具体变更细节和迁移指南"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "GitHub Actions pull_request_target safer defaults migration issues",
+          "why_needed": "了解社区实际遇到的兼容性问题和工作流调整经验"
+        },
+        {
+          "source_type": "case_study",
+          "query": "pull_request_target vulnerability exploit example",
+          "why_needed": "验证安全改进的实际必要性，提供反方材料"
+        },
+        {
+          "source_type": "policy",
+          "query": "GitHub Actions security best practices pull_request_target",
+          "why_needed": "对比官方最佳实践，确认新默认值是否更安全"
+        }
+      ],
+      "expert_challenge_points": [
+        "新默认设置是否真的能防止常见漏洞，还是只是表面改进？",
+        "对于已有大量工作流的团队，迁移成本是否被低估？",
+        "是否有其他更安全的替代方案（如使用 `pull_request` 配合 `workflow_run`）？"
+      ],
+      "do_not_claim_yet": [
+        "所有工作流都会自动受益",
+        "无需任何手动操作",
+        "这是重大安全更新"
+      ],
+      "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。因为该更新是官方 changelog 中的单点安全改进，缺乏普通技术人的真实选择题（如迁移成本、账单风险、平台绑定），且传播张力不足，容易写成专业说明。",
+      "downstream_materials_needed": [
+        "官方博客原文及详细变更日志",
+        "社区讨论帖（如 Hacker News、Reddit）",
+        "已知漏洞案例或 PoC",
+        "迁移指南或兼容性说明"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Safer pull_request_target defaults for GitHub Actions checkout - GitHub Changelog",
+        "url": "https://github.blog/changelog/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout/",
+        "query": "GitHub Actions pull_request_target default security settings changelog",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Safer pull_request_target defaults for GitHub Actions checkout - GitHub Changelog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Safer pull_request_target defaults for GitHub Actions checkout\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-06-18T07:06:55-07:00\",\"abstract\":\"The pull_request_target event is one of the most commonly misused triggers in GitHub Actions, leading to vulnerabilities in workflows. Workflows triggered by pull_request_target run with the base repository’s GITHUB_TOKEN, secrets,…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout\"},\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Safer pull_request_target defaults for GitHub Actions checkout\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-06-18T07:06:55-07:00\",\"abstract\":\"The pull_request_target event is one of the most commonly misused triggers in GitHub Actions, leading to vulnerabilities in workflows. Workflows triggered by pull_request_target run with the base repository’s GITHUB_TOKEN, secrets,…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout\"},\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout\\/\",\"url\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout\\/\",\"name\":\"Safer pull_request_target defaults for GitHub Actions checkout - The GitHub Blog\",\"isPartOf\":{\"@id\":\"https:\\/\\/github.blog\\/#website\"},\"datePublished\":\"2026-06-18",
+        "fetch_error": ""
+      },
+      {
+        "title": "Actions pull_request_target and environment branch protections changes - GitHub Changelog",
+        "url": "https://github.blog/changelog/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes/",
+        "query": "GitHub Actions pull_request_target default security settings changelog",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Actions pull_request_target and environment branch protections changes - GitHub Changelog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Actions pull_request_target and environment branch protections changes\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2025-11-07T08:18:15-08:00\",\"abstract\":\"GitHub is updating how GitHub Actions’ pull_request_target and environment branch protection rules are evaluated for pull-request-related events. These changes will take effect on 12\\/8\\/2025. They aim to reduce security critical…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes\"},\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Actions pull_request_target and environment branch protections changes\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2025-11-07T08:18:15-08:00\",\"abstract\":\"GitHub is updating how GitHub Actions’ pull_request_target and environment branch protection rules are evaluated for pull-request-related events. These changes will take effect on 12\\/8\\/2025. They aim to reduce security critical…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes\"},\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes\\/\",\"url\":\"https:\\/\\/github.blog\\/changelog\\/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes\\/\",\"name\":\"Actions pull_request_target and environment branch protections changes - The GitHub Blog\",\"isPartOf\":{\"@id\":\"h",
+        "fetch_error": ""
+      },
+      {
+        "title": "Towards a secure by default GitHub Actions · community · Discussion #179107",
+        "url": "https://github.com/orgs/community/discussions/179107",
+        "query": "GitHub Actions pull_request_target default security settings changelog",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+        "fetch_error": ""
+      },
+      {
+        "title": "Improve Actions security · community · Discussion #157949",
+        "url": "https://github.com/orgs/community/discussions/157949",
+        "query": "GitHub Actions pull_request_target safer defaults migration issues",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+        "fetch_error": ""
+      },
+      {
+        "title": "Secure GitHub Actions by pull_request_target - DEV Community",
+        "url": "https://dev.to/suzukishunsuke/secure-github-actions-by-pullrequesttarget-641",
+        "query": "GitHub Actions pull_request_target safer defaults migration issues",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Secure GitHub Actions by pull_request_target - DEV Community /* ========================================================================== THE 418 CHALLENGE: THEME-AWARE RETRO EDITION ========================================================================== */ .articletag-418challenge { font-family: \"Comic Sans MS\", \"Chalkboard SE\", \"Marker Felt\", sans-serif !important; cursor: crosshair !important; } /* Destroy modern rounded corners and add brutal borders */ .articletag-418challenge .crayons-card, .articletag-418challenge .crayons-article__main, .articletag-418challenge .crayons-article__header { border-radius: 0 !important; margin-bottom: 2rem !important; } /* Typography specifics */ .articletag-418challenge h1, .articletag-418challenge h2, .articletag-418challenge h3 { text-transform: uppercase !important; } /* Fake effect for the main article title */ .articletag-418challenge h1.fs-3xl { animation: retro-slide 5s linear infinite alternate; overflow: visible; } /* Spin those avatars */ .articletag-418challenge .crayons-article__header__meta img { border-radius: 0 !important; animation: retro-spin 5s linear infinite; } /* Obnoxious tags */ .articletag-418challenge .crayons-tag { border-radius: 0 !important; font-weight: 900 !important; transform: rotate(-3deg); display: inline-block; } .articletag-418challenge .crayons-tag:nth-child(even) { transform: rotate(3deg); } /* -------------------------------------------------------------------------- 2. LIGHT THEME (Windows 95 / Office 97 Vibes) -------------------------------------------------------------------------- */ body:not(.dark-theme) .articletag-418challenge { background-color: #008080 !important; /* Win95 Teal Desktop */ } body:not(.dark-theme) .articletag-418challenge .crayons-card, body:not(.dark-theme) .artic",
+        "fetch_error": ""
+      },
+      {
+        "title": "pull_request_target Exploitation - Part 1 - JFrog Security Research",
+        "url": "https://research.jfrog.com/post/part-1-pull-request-target-exploitation/",
+        "query": "pull_request_target vulnerability exploit example",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "pull_request_target Exploitation - Part 1 - JFrog Security Research window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag(\"js\", new Date()); gtag(\"config\", \"GTM-T6MF8M\"); gtag('set', 'developer_id.dODQ2Mj', true); .g-image--loading{display:none;} JFrog Security Research Model Threats Discover Follow JFrog Security Home Model Threats Discover Follow JFrog Security pull_request_target Exploitation - Part 1 Barak Haryati, Senior Director of Product Security at JFrog | 5 Mar, 2026 Test-Based Execution The JFrog Security Research team has identified multiple critical vulnerabilities across open source ecosystems that follow the same structural misconfiguration pattern in CI/CD workflows. These issues are not isolated mistakes. They stem from workflows that execute untrusted pull request content in privileged contexts, creating severe supply chain risk. In a separate blog, we explained how we built an AI agent to systematically detect these misconfiguration patterns at scale, what signals it looks for, and how such vulnerabilities can escalate from a single repository to organization-wide compromise. At the center of these cases is the GitHub Actions trigger pull_request_target , where pull requests run in the context of the base repository, inheriting its secrets and permissions. The full vulnerability details are also explained in the main blog. Each short blog in this series will cover one specific exploitation class and provide concrete exploitation analysis, this blog starts with “Test-Based Execution”. In this exploitation pattern, the workflow checks out the PR head and executes test code or scripts controlled by the attacker that are executed as part of the testing CI process. Vulnerabilities Disclosed From Government to Corpor",
+        "fetch_error": ""
+      },
+      {
+        "title": "pull_request_nightmare Part 1: Exploiting GitHub Actions for RCE and Supply Chain Attacks",
+        "url": "https://orca.security/resources/blog/pull-request-nightmare-github-actions-rce/",
+        "query": "pull_request_target vulnerability exploit example",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "function OptanonWrapper() { } (function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); (function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.defer = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-MFH8KTP'); document.addEventListener('DOMContentLoaded', function() { if (window?.dataLayer) { window.dataLayer.push({'logged_in': 'no'}); } }); (function() { var didInit = false; function initMunchkin() { if (didInit === false) { didInit = true; Munchkin.init('796-PBW-559'); } } var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//munchkin.marketo.net/munchkin.js'; s.onreadystatechange = function() { if (this.readyState == 'complete' || this.readyState == 'loaded') { initMunchkin(); } }; s.onload = initMunchkin; document.getElementsByTagName('head')[0].appendChild(s); })(); // Initialize VWO consent management window.VWO = window.VWO || []; window.VWO.init = window.VWO.init || (state => (window.VWO.consentState = state)); // Force the default state to Pending window.VWO.init(2); // Your consent category ID (confirmed as C0002) var consentCategoryId = 'C0002'; // OneTrust callback function function OptanonWrapper() { var vwoConsentProvided = OnetrustActiveGroups.includes(consentCategoryId); if (OneTrust.IsAlertBoxClosedAndValid()) { // User has made a consent choice VWO.init(vwoConsentProvided ? 1 : 3); } else { // Consent is still pending VWO.init(2); } } // Also listen for consent changes after initial load window.addEventLi",
+        "fetch_error": ""
+      },
+      {
+        "title": "pull_request_nightmare Part 2: Exploiting GitHub Actions for RCE and Supply Chain",
+        "url": "https://orca.security/resources/blog/pull-request-nightmare-part-2-exploits/",
+        "query": "pull_request_target vulnerability exploit example",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "function OptanonWrapper() { } (function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); (function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.defer = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-MFH8KTP'); document.addEventListener('DOMContentLoaded', function() { if (window?.dataLayer) { window.dataLayer.push({'logged_in': 'no'}); } }); (function() { var didInit = false; function initMunchkin() { if (didInit === false) { didInit = true; Munchkin.init('796-PBW-559'); } } var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//munchkin.marketo.net/munchkin.js'; s.onreadystatechange = function() { if (this.readyState == 'complete' || this.readyState == 'loaded') { initMunchkin(); } }; s.onload = initMunchkin; document.getElementsByTagName('head')[0].appendChild(s); })(); // Initialize VWO consent management window.VWO = window.VWO || []; window.VWO.init = window.VWO.init || (state => (window.VWO.consentState = state)); // Force the default state to Pending window.VWO.init(2); // Your consent category ID (confirmed as C0002) var consentCategoryId = 'C0002'; // OneTrust callback function function OptanonWrapper() { var vwoConsentProvided = OnetrustActiveGroups.includes(consentCategoryId); if (OneTrust.IsAlertBoxClosedAndValid()) { // User has made a consent choice VWO.init(vwoConsentProvided ? 1 : 3); } else { // Consent is still pending VWO.init(2); } } // Also listen for consent changes after initial load window.addEventLi",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub Actions Security Best Practices [cheat sheet included]",
+        "url": "https://blog.gitguardian.com/github-actions-security-cheat-sheet/",
+        "query": "GitHub Actions security best practices pull_request_target",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "GitHub Actions Security Best Practices Cheat Sheet { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"publisher\": { \"@type\": \"Organization\", \"name\": \"GitGuardian Blog - Take Control of Your Secrets Security\", \"url\": \"https://blog.gitguardian.com/\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://storage.ghost.io/c/42/5d/425d266f-cf99-406e-9436-597a19bed011/content/images/2025/02/gg-blog-logo-dark-mode.svg\", \"width\": 339, \"height\": 60 } }, \"author\": { \"@type\": \"Person\", \"name\": \"Thomas Segura\", \"image\": { \"@type\": \"ImageObject\", \"url\": \"https://storage.ghost.io/c/42/5d/425d266f-cf99-406e-9436-597a19bed011/content/images/size/w1200/2025/10/Thomas_portrait_crop.png\", \"width\": 1200, \"height\": 1200 }, \"url\": \"https://blog.gitguardian.com/author/thomassegura/\", \"sameAs\": [ \"https://thomassegura.com\" ] }, \"headline\": \"GitHub Actions Security Best Practices Cheat Sheet\", \"url\": \"https://blog.gitguardian.com/github-actions-security-cheat-sheet/\", \"datePublished\": \"2025-04-11T16:00:00.000Z\", \"dateModified\": \"2026-01-05T12:45:56.000Z\", \"image\": { \"@type\": \"ImageObject\", \"url\": \"https://storage.ghost.io/c/42/5d/425d266f-cf99-406e-9436-597a19bed011/content/images/size/w1200/2022/05/22W18-blog-GitHubActionsSecurityCheatSheet.png\", \"width\": 1200, \"height\": 702 }, \"keywords\": \"Cheat sheets\", \"description\": \"Learn how to secure your GitHub Actions with these best practices! From controlling credentials to using specific action version tags, this cheat sheet will help you protect against supply-chain attacks. Don't let a malicious actor inject code into your repository - read now!\", \"mainEntityOfPage\": \"https://blog.gitguardian.com/github-actions-security-cheat-sheet/\" } .gh-post-upgrade-cta-content, .gh-post-upgrade-cta { display: flex; flex-direction: column; align-items: cente",
+        "fetch_error": ""
+      },
+      {
+        "title": "Secure use reference - GitHub Docs",
+        "url": "https://docs.github.com/en/actions/reference/security/secure-use",
+        "query": "GitHub Actions security best practices pull_request_target",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Secure use reference - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Actions / Reference / Security / Secure use Home GitHub Actions Get started Quickstart Understand GitHub Actions Continuous integration Continuous deployment Actions vs Apps Concepts Workflows and actions Workflows Variables Contexts Expressions Reusing workflow configurations Custom actions Deployment environments Concurrency Workflow artifacts Dependency caching Notifications for workflow runs Runners GitHub-hosted runners Larger runners Self-hosted runners Private networking Runner groups Runner scale sets Actions Runner Controller Support for ARC Security Secrets GITHUB_TOKEN OpenID Connect Artifact attestations Script injections Compromised runners Kubernetes admissions controller Metrics Billing and usage How-tos Write workflows Use workflow templates Choose when workflows run Trigger a workflow Control jobs with conditions Control workflow concurrency Choose where workflows run Choose the runner for a job Run jobs in a container Choose what workflows do Use jobs Find and customize actions Use GitHub CLI Add scripts Use secrets Use variables Pass job outputs Set default values for jobs Deploy to environment Run job variations Reuse automations Reuse workflows Create workflow templates Share across private repositories Share with your organization Secure your work Use artifact attestations Use artifact attestations Increase security rating Enforce artifact attestations Verify attestations offline Manage attestations Security harden deployments OIDC in AWS OIDC in Azure OIDC in Google Cloud Platform OIDC in Hashi",
+        "fetch_error": ""
+      },
+      {
+        "title": "Hardening GitHub Actions: Lessons from Recent Attacks | Wiz Blog",
+        "url": "https://www.wiz.io/blog/github-actions-security-guide",
+        "query": "GitHub Actions security best practices pull_request_target",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Hardening GitHub Actions: Lessons from Recent Attacks | Wiz Blog {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"datePublished\":\"2026-04-15T09:19:21-04:00\",\"description\":\"Build resilient GitHub Actions workflows with lessons from recent attacks like TeamPCP and Axios. \",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://www.wiz.io/blog/github-actions-security-guide\"},\"headline\":\"How to Harden GitHub Actions: An Updated Guide\",\"image\":[\"https://www.datocms-assets.com/75231/1742245294-screenshot-2025-03-17-at-23-01-20.png?fit=crop&fm=jpg&h=100&w=100\",\"https://www.datocms-assets.com/75231/1753870692-shay.jpeg?fit=crop&fm=jpg&h=100&w=100\"],\"dateModified\":\"2026-04-15T09:19:21-04:00\",\"author\":[{\"@type\":\"Person\",\"name\":\"Rami McCarthy\",\"url\":\"https://www.wiz.io/authors/rami-mccarthy\"},{\"@type\":\"Person\",\"name\":\"Shay Berkovich\",\"url\":\"https://www.wiz.io/authors/shay-berkovich\"}],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Wiz.io\"},\"isAccessibleForFree\":true} (function() { function getInitialColorMode() { const pathname = window.location.pathname; const isDarkModePage = null; const isResearchPage = [\"/research\", \"/cloud-threat-landscape\", \"/ai-security-resource-center\", \"/ctf\", \"/bug-bounty-masterclass\", \"/cyber-model-arena\"].includes(pathname); const isResearchPath = [\"/bug-bounty-masterclass\"].some(path => pathname.startsWith(path)); if (isResearchPage || isResearchPath) { return 'dark-research'; } if (isDarkModePage) { return 'dark'; } return 'light'; } const colorMode = getInitialColorMode(); const root = document.documentElement; root.classList.add(colorMode); })() *:not([data-layout=\"full-bleed\"])]:col-start-2\"> Sign in Experiencing an incident? Wiz Pricing Get a demo Platform Solutions Pricing Resources Customers Company Get a demo *:not([data-layout=\"full-bleed\"])]:c",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260619-safer-pull-request-target-defaults-for-github-ac-cd0a17cd/",
+    "for_gpt_editor": {
+      "brief": "The pull_request_target event is one of the most commonly misused triggers in GitHub Actions, leading to vulnerabilities in workflows. Workflows triggered by pull_request_target run with the base repository’s GITHUB_TOKEN, secrets,… The post Safer pull_request_target defaults for GitHub Actions checkout appeared first on The GitHub Blog .",
+      "title_seed": "GitHub Actions改进pull_request_target默认安全设置",
+      "original_title": "Safer pull_request_target defaults for GitHub Actions checkout",
+      "source_url": "https://github.blog/changelog/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：官方博客正文未抓取到具体变更细节，无法确认新默认设置的具体内容。"
+        },
+        "core_question": "GitHub Actions 的 pull_request_target 默认安全设置具体改了什么，对普通开发者的实际影响是什么？",
+        "why_this_topic_matters": "pull_request_target 是 GitHub Actions 中最常被误用的触发器，导致大量 CI/CD 安全漏洞。本次更新旨在默认减少风险，但可能引入工作流兼容性问题。对于使用 GitHub Actions 的团队，了解变更细节和迁移成本是必要的。",
+        "fact_summary": [
+          "GitHub 于 2026-06-18 发布 changelog，宣布为 pull_request_target 事件引入更安全的默认设置。",
+          "pull_request_target 事件允许工作流以基础仓库的权限和 secrets 运行，常被误用导致漏洞。",
+          "2025-11-07 已有相关变更，涉及环境分支保护规则。",
+          "JFrog 和 Orca Security 的研究展示了 pull_request_target 漏洞的实际利用案例。",
+          "社区讨论（如 GitHub Community Discussion #179107）涉及安全改进，但具体迁移问题尚未充分收集。"
+        ],
+        "persona_discussion_question": "这个改动会不会让我现有的 CI/CD 工作流突然报错或需要手动调整？我该不该花时间更新？",
+        "old_flower_stance": "平台安全改进是好事，但开发者需要评估迁移成本。不要盲目升级，先检查现有工作流是否依赖旧行为。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 6,
+          "why_interested": "核心技术人需要了解变更细节以避免工作流故障；入门读者可借此学习安全最佳实践；商业读者关注供应链安全风险。",
+          "reader_risk": "可能因缺乏具体案例而显得枯燥，需要补充实际漏洞故事和迁移指南。"
+        },
+        "mass_interest_hook": {
+          "score": 4,
+          "hook_type": "踩坑",
+          "why_non_technical_people_may_click": "标题可强调“你的 CI/CD 可能被攻击”或“GitHub 默认设置变更，小心工作流报错”，但非技术读者兴趣有限。",
+          "story_seed": "一个开源项目因误用 pull_request_target 导致 secrets 泄露，攻击者注入恶意代码。",
+          "do_not_overhype": "不要夸大漏洞普遍性，强调这是已知问题，新默认设置可缓解但非万能。"
+        },
+        "topic_tension": {
+          "score": 5,
+          "conflict_point": "安全改进 vs 开发者维护成本",
+          "debate_question": "平台安全改进是否应该默认启用，还是留给开发者选择？",
+          "stakeholders": [
+            "普通开发者",
+            "安全团队",
+            "GitHub 平台"
+          ],
+          "why_people_would_comment": "开发者可能分享迁移经验或抱怨兼容性问题；安全团队可能支持默认安全。",
+          "traffic_risk": "传播张力不足，容易写成专业说明；需要补真实冲突和反方材料。"
+        },
+        "timeline": [
+          "2025-11-07: GitHub 发布 pull_request_target 和环境分支保护规则变更，2025-12-08 生效。",
+          "2026-03-05: JFrog 发布 pull_request_target 漏洞利用研究。",
+          "2026-04-15: Wiz 发布 GitHub Actions 安全指南。",
+          "2026-06-18: GitHub 发布更安全的 pull_request_target 默认设置。"
+        ],
+        "evidence_table": [
+          {
+            "source": "GitHub Changelog (2026-06-18)",
+            "url": "https://github.blog/changelog/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout/",
+            "supports": "官方宣布更安全的默认设置",
+            "reliability": "official"
+          },
+          {
+            "source": "GitHub Changelog (2025-11-07)",
+            "url": "https://github.blog/changelog/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes/",
+            "supports": "早期相关变更",
+            "reliability": "official"
+          },
+          {
+            "source": "GitHub Community Discussion #179107",
+            "url": "https://github.com/orgs/community/discussions/179107",
+            "supports": "社区讨论安全改进",
+            "reliability": "weak"
+          },
+          {
+            "source": "JFrog Security Research",
+            "url": "https://research.jfrog.com/post/part-1-pull-request-target-exploitation/",
+            "supports": "漏洞利用案例",
+            "reliability": "near_source"
+          },
+          {
+            "source": "Orca Security Blog",
+            "url": "https://orca.security/resources/blog/pull-request-nightmare-github-actions-rce/",
+            "supports": "漏洞利用案例",
+            "reliability": "near_source"
+          },
+          {
+            "source": "GitGuardian Best Practices",
+            "url": "https://blog.gitguardian.com/github-actions-security-cheat-sheet/",
+            "supports": "安全最佳实践",
+            "reliability": "media"
+          },
+          {
+            "source": "GitHub Docs",
+            "url": "https://docs.github.com/en/actions/reference/security/secure-use",
+            "supports": "官方安全指南",
+            "reliability": "official"
+          },
+          {
+            "source": "Wiz Blog",
+            "url": "https://www.wiz.io/blog/github-actions-security-guide",
+            "supports": "安全指南",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "部分闭环：漏洞风险明确，官方改进方向清晰，但具体默认值变更细节和迁移影响未确认，无法评估实际影响。",
+        "writeable_angles": [
+          {
+            "angle": "安全改进解读：新默认设置具体改了什么，如何减少漏洞？",
+            "why": "直接解答核心问题，适合技术读者。",
+            "needs": "官方博客正文细节、迁移指南"
+          },
+          {
+            "angle": "迁移成本分析：现有工作流是否需要调整？",
+            "why": "提供实用价值，引发开发者共鸣。",
+            "needs": "社区迁移案例、兼容性问题报告"
+          },
+          {
+            "angle": "漏洞案例复盘：pull_request_target 如何被利用？",
+            "why": "故事性强，吸引非技术读者。",
+            "needs": "JFrog/Orca 案例细节"
+          }
+        ],
+        "missing_basics": [
+          "pull_request_target 与 pull_request 的区别",
+          "GitHub Actions 权限模型基础"
+        ],
+        "missing_materials": [
+          "官方博客正文（具体变更细节）",
+          "社区迁移经验或兼容性问题报告",
+          "反方材料：新默认设置是否足够安全？"
+        ],
+        "not_claimable": [
+          "所有工作流都会自动受益",
+          "无需任何手动操作",
+          "这是重大安全更新"
+        ],
+        "followup_queries": [
+          "GitHub Actions pull_request_target 新默认设置具体变更内容？",
+          "是否有工作流因新默认设置而失败？",
+          "新默认设置是否覆盖所有漏洞场景？"
+        ],
+        "additional_search_queries": [
+          "GitHub Actions pull_request_target default security settings changelog 2026",
+          "pull_request_target safer defaults migration issues",
+          "GitHub Actions pull_request_target vulnerability exploit 2026"
+        ],
+        "stop_conditions": [
+          "官方博客正文已获取并确认具体变更",
+          "社区有明确迁移案例或兼容性问题报告",
+          "无新漏洞案例出现"
+        ],
+        "confidence": 55.0,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "risk-warning",
+        "quality_gate": {
+          "pass": false,
+          "score": 55,
+          "fatal_issues": [
+            "核心事实没有来源：官方博客正文未抓取到具体变更细节，无法确认新默认设置的具体内容。",
+            "没有泛兴趣故事钩子：标题和开头只适合技术小圈子，非技术读者兴趣有限。",
+            "没有真实传播张力：冲突点不明确，缺乏反方材料和读者案例，传播张力不足。"
+          ],
+          "warnings": [
+            "基础概念缺口：缺少 pull_request_target 与 pull_request 的区别、GitHub Actions 权限模型基础。",
+            "资料素材缺口：缺少官方博客正文、社区迁移经验、反方材料。",
+            "信息源偏科：主要依赖官方 changelog 和安全研究，缺乏社区迁移案例和兼容性问题报告。"
+          ],
+          "missing_evidence": [
+            "官方博客正文（具体变更细节）",
+            "社区迁移经验或兼容性问题报告",
+            "反方材料：新默认设置是否足够安全？"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "GitHub Actions 的 pull_request_target 默认安全设置具体改了什么，对普通开发者的实际影响是什么？",
+          "persona_discussion_question": "这个改动会不会让我现有的 CI/CD 工作流突然报错或需要手动调整？我该不该花时间更新？",
+          "hidden_public_issue": "平台安全改进可能增加开发者维护成本，但安全漏洞风险降低，谁受益、谁承担迁移成本？",
+          "must_verify": [
+            "具体默认值变更内容（如 token 权限、事件触发条件）",
+            "是否影响现有工作流，是否需要手动迁移",
+            "是否有已知的兼容性问题或社区反馈"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "GitHub Actions pull_request_target default security settings changelog",
+              "why_needed": "确认官方具体变更细节和迁移指南"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "GitHub Actions pull_request_target safer defaults migration issues",
+              "why_needed": "了解社区实际遇到的兼容性问题和工作流调整经验"
+            },
+            {
+              "source_type": "case_study",
+              "query": "pull_request_target vulnerability exploit example",
+              "why_needed": "验证安全改进的实际必要性，提供反方材料"
+            },
+            {
+              "source_type": "policy",
+              "query": "GitHub Actions security best practices pull_request_target",
+              "why_needed": "对比官方最佳实践，确认新默认值是否更安全"
+            }
+          ],
+          "expert_challenge_points": [
+            "新默认设置是否真的能防止常见漏洞，还是只是表面改进？",
+            "对于已有大量工作流的团队，迁移成本是否被低估？",
+            "是否有其他更安全的替代方案（如使用 `pull_request` 配合 `workflow_run`）？"
+          ],
+          "do_not_claim_yet": [
+            "所有工作流都会自动受益",
+            "无需任何手动操作",
+            "这是重大安全更新"
+          ],
+          "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。因为该更新是官方 changelog 中的单点安全改进，缺乏普通技术人的真实选择题（如迁移成本、账单风险、平台绑定），且传播张力不足，容易写成专业说明。",
+          "downstream_materials_needed": [
+            "官方博客原文及详细变更日志",
+            "社区讨论帖（如 Hacker News、Reddit）",
+            "已知漏洞案例或 PoC",
+            "迁移指南或兼容性说明"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Safer pull_request_target defaults for GitHub Actions checkout - GitHub Changelog",
+            "url": "https://github.blog/changelog/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout/",
+            "query": "GitHub Actions pull_request_target default security settings changelog",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Safer pull_request_target defaults for GitHub Actions checkout - GitHub Changelog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Safer pull_request_target defaults for GitHub Actions checkout\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-06-18T07:06:55-07:00\",\"abstract\":\"The pull_request_target event is one of the most commonly misused triggers in GitHub Actions, leading to vulnerabilities in workflows. Workflows triggered by pull_request_target run with the base repository’s GITHUB_TOKEN, secrets,…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout\"},\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Safer pull_request_target defaults for GitHub Actions checkout\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-06-18T07:06:55-07:00\",\"abstract\":\"The pull_request_target event is one of the most commonly misused triggers in GitHub Actions, leading to vulnerabilities in workflows. Workflows triggered by pull_request_target run with the base repository’s GITHUB_TOKEN, secrets,…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout\"},\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout\\/\",\"url\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout\\/\",\"name\":\"Safer pull_request_target defaults for GitHub Actions checkout - The GitHub Blog\",\"isPartOf\":{\"@id\":\"https:\\/\\/github.blog\\/#website\"},\"datePublished\":\"2026-06-18",
+            "fetch_error": ""
+          },
+          {
+            "title": "Actions pull_request_target and environment branch protections changes - GitHub Changelog",
+            "url": "https://github.blog/changelog/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes/",
+            "query": "GitHub Actions pull_request_target default security settings changelog",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Actions pull_request_target and environment branch protections changes - GitHub Changelog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Actions pull_request_target and environment branch protections changes\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2025-11-07T08:18:15-08:00\",\"abstract\":\"GitHub is updating how GitHub Actions’ pull_request_target and environment branch protection rules are evaluated for pull-request-related events. These changes will take effect on 12\\/8\\/2025. They aim to reduce security critical…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes\"},\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Actions pull_request_target and environment branch protections changes\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2025-11-07T08:18:15-08:00\",\"abstract\":\"GitHub is updating how GitHub Actions’ pull_request_target and environment branch protection rules are evaluated for pull-request-related events. These changes will take effect on 12\\/8\\/2025. They aim to reduce security critical…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes\"},\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes\\/\",\"url\":\"https:\\/\\/github.blog\\/changelog\\/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes\\/\",\"name\":\"Actions pull_request_target and environment branch protections changes - The GitHub Blog\",\"isPartOf\":{\"@id\":\"h",
+            "fetch_error": ""
+          },
+          {
+            "title": "Towards a secure by default GitHub Actions · community · Discussion #179107",
+            "url": "https://github.com/orgs/community/discussions/179107",
+            "query": "GitHub Actions pull_request_target default security settings changelog",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+            "fetch_error": ""
+          },
+          {
+            "title": "Improve Actions security · community · Discussion #157949",
+            "url": "https://github.com/orgs/community/discussions/157949",
+            "query": "GitHub Actions pull_request_target safer defaults migration issues",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+            "fetch_error": ""
+          },
+          {
+            "title": "Secure GitHub Actions by pull_request_target - DEV Community",
+            "url": "https://dev.to/suzukishunsuke/secure-github-actions-by-pullrequesttarget-641",
+            "query": "GitHub Actions pull_request_target safer defaults migration issues",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Secure GitHub Actions by pull_request_target - DEV Community /* ========================================================================== THE 418 CHALLENGE: THEME-AWARE RETRO EDITION ========================================================================== */ .articletag-418challenge { font-family: \"Comic Sans MS\", \"Chalkboard SE\", \"Marker Felt\", sans-serif !important; cursor: crosshair !important; } /* Destroy modern rounded corners and add brutal borders */ .articletag-418challenge .crayons-card, .articletag-418challenge .crayons-article__main, .articletag-418challenge .crayons-article__header { border-radius: 0 !important; margin-bottom: 2rem !important; } /* Typography specifics */ .articletag-418challenge h1, .articletag-418challenge h2, .articletag-418challenge h3 { text-transform: uppercase !important; } /* Fake effect for the main article title */ .articletag-418challenge h1.fs-3xl { animation: retro-slide 5s linear infinite alternate; overflow: visible; } /* Spin those avatars */ .articletag-418challenge .crayons-article__header__meta img { border-radius: 0 !important; animation: retro-spin 5s linear infinite; } /* Obnoxious tags */ .articletag-418challenge .crayons-tag { border-radius: 0 !important; font-weight: 900 !important; transform: rotate(-3deg); display: inline-block; } .articletag-418challenge .crayons-tag:nth-child(even) { transform: rotate(3deg); } /* -------------------------------------------------------------------------- 2. LIGHT THEME (Windows 95 / Office 97 Vibes) -------------------------------------------------------------------------- */ body:not(.dark-theme) .articletag-418challenge { background-color: #008080 !important; /* Win95 Teal Desktop */ } body:not(.dark-theme) .articletag-418challenge .crayons-card, body:not(.dark-theme) .artic",
+            "fetch_error": ""
+          },
+          {
+            "title": "pull_request_target Exploitation - Part 1 - JFrog Security Research",
+            "url": "https://research.jfrog.com/post/part-1-pull-request-target-exploitation/",
+            "query": "pull_request_target vulnerability exploit example",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "pull_request_target Exploitation - Part 1 - JFrog Security Research window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag(\"js\", new Date()); gtag(\"config\", \"GTM-T6MF8M\"); gtag('set', 'developer_id.dODQ2Mj', true); .g-image--loading{display:none;} JFrog Security Research Model Threats Discover Follow JFrog Security Home Model Threats Discover Follow JFrog Security pull_request_target Exploitation - Part 1 Barak Haryati, Senior Director of Product Security at JFrog | 5 Mar, 2026 Test-Based Execution The JFrog Security Research team has identified multiple critical vulnerabilities across open source ecosystems that follow the same structural misconfiguration pattern in CI/CD workflows. These issues are not isolated mistakes. They stem from workflows that execute untrusted pull request content in privileged contexts, creating severe supply chain risk. In a separate blog, we explained how we built an AI agent to systematically detect these misconfiguration patterns at scale, what signals it looks for, and how such vulnerabilities can escalate from a single repository to organization-wide compromise. At the center of these cases is the GitHub Actions trigger pull_request_target , where pull requests run in the context of the base repository, inheriting its secrets and permissions. The full vulnerability details are also explained in the main blog. Each short blog in this series will cover one specific exploitation class and provide concrete exploitation analysis, this blog starts with “Test-Based Execution”. In this exploitation pattern, the workflow checks out the PR head and executes test code or scripts controlled by the attacker that are executed as part of the testing CI process. Vulnerabilities Disclosed From Government to Corpor",
+            "fetch_error": ""
+          },
+          {
+            "title": "pull_request_nightmare Part 1: Exploiting GitHub Actions for RCE and Supply Chain Attacks",
+            "url": "https://orca.security/resources/blog/pull-request-nightmare-github-actions-rce/",
+            "query": "pull_request_target vulnerability exploit example",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "function OptanonWrapper() { } (function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); (function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.defer = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-MFH8KTP'); document.addEventListener('DOMContentLoaded', function() { if (window?.dataLayer) { window.dataLayer.push({'logged_in': 'no'}); } }); (function() { var didInit = false; function initMunchkin() { if (didInit === false) { didInit = true; Munchkin.init('796-PBW-559'); } } var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//munchkin.marketo.net/munchkin.js'; s.onreadystatechange = function() { if (this.readyState == 'complete' || this.readyState == 'loaded') { initMunchkin(); } }; s.onload = initMunchkin; document.getElementsByTagName('head')[0].appendChild(s); })(); // Initialize VWO consent management window.VWO = window.VWO || []; window.VWO.init = window.VWO.init || (state => (window.VWO.consentState = state)); // Force the default state to Pending window.VWO.init(2); // Your consent category ID (confirmed as C0002) var consentCategoryId = 'C0002'; // OneTrust callback function function OptanonWrapper() { var vwoConsentProvided = OnetrustActiveGroups.includes(consentCategoryId); if (OneTrust.IsAlertBoxClosedAndValid()) { // User has made a consent choice VWO.init(vwoConsentProvided ? 1 : 3); } else { // Consent is still pending VWO.init(2); } } // Also listen for consent changes after initial load window.addEventLi",
+            "fetch_error": ""
+          },
+          {
+            "title": "pull_request_nightmare Part 2: Exploiting GitHub Actions for RCE and Supply Chain",
+            "url": "https://orca.security/resources/blog/pull-request-nightmare-part-2-exploits/",
+            "query": "pull_request_target vulnerability exploit example",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "function OptanonWrapper() { } (function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); (function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.defer = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-MFH8KTP'); document.addEventListener('DOMContentLoaded', function() { if (window?.dataLayer) { window.dataLayer.push({'logged_in': 'no'}); } }); (function() { var didInit = false; function initMunchkin() { if (didInit === false) { didInit = true; Munchkin.init('796-PBW-559'); } } var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//munchkin.marketo.net/munchkin.js'; s.onreadystatechange = function() { if (this.readyState == 'complete' || this.readyState == 'loaded') { initMunchkin(); } }; s.onload = initMunchkin; document.getElementsByTagName('head')[0].appendChild(s); })(); // Initialize VWO consent management window.VWO = window.VWO || []; window.VWO.init = window.VWO.init || (state => (window.VWO.consentState = state)); // Force the default state to Pending window.VWO.init(2); // Your consent category ID (confirmed as C0002) var consentCategoryId = 'C0002'; // OneTrust callback function function OptanonWrapper() { var vwoConsentProvided = OnetrustActiveGroups.includes(consentCategoryId); if (OneTrust.IsAlertBoxClosedAndValid()) { // User has made a consent choice VWO.init(vwoConsentProvided ? 1 : 3); } else { // Consent is still pending VWO.init(2); } } // Also listen for consent changes after initial load window.addEventLi",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub Actions Security Best Practices [cheat sheet included]",
+            "url": "https://blog.gitguardian.com/github-actions-security-cheat-sheet/",
+            "query": "GitHub Actions security best practices pull_request_target",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "GitHub Actions Security Best Practices Cheat Sheet { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"publisher\": { \"@type\": \"Organization\", \"name\": \"GitGuardian Blog - Take Control of Your Secrets Security\", \"url\": \"https://blog.gitguardian.com/\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://storage.ghost.io/c/42/5d/425d266f-cf99-406e-9436-597a19bed011/content/images/2025/02/gg-blog-logo-dark-mode.svg\", \"width\": 339, \"height\": 60 } }, \"author\": { \"@type\": \"Person\", \"name\": \"Thomas Segura\", \"image\": { \"@type\": \"ImageObject\", \"url\": \"https://storage.ghost.io/c/42/5d/425d266f-cf99-406e-9436-597a19bed011/content/images/size/w1200/2025/10/Thomas_portrait_crop.png\", \"width\": 1200, \"height\": 1200 }, \"url\": \"https://blog.gitguardian.com/author/thomassegura/\", \"sameAs\": [ \"https://thomassegura.com\" ] }, \"headline\": \"GitHub Actions Security Best Practices Cheat Sheet\", \"url\": \"https://blog.gitguardian.com/github-actions-security-cheat-sheet/\", \"datePublished\": \"2025-04-11T16:00:00.000Z\", \"dateModified\": \"2026-01-05T12:45:56.000Z\", \"image\": { \"@type\": \"ImageObject\", \"url\": \"https://storage.ghost.io/c/42/5d/425d266f-cf99-406e-9436-597a19bed011/content/images/size/w1200/2022/05/22W18-blog-GitHubActionsSecurityCheatSheet.png\", \"width\": 1200, \"height\": 702 }, \"keywords\": \"Cheat sheets\", \"description\": \"Learn how to secure your GitHub Actions with these best practices! From controlling credentials to using specific action version tags, this cheat sheet will help you protect against supply-chain attacks. Don't let a malicious actor inject code into your repository - read now!\", \"mainEntityOfPage\": \"https://blog.gitguardian.com/github-actions-security-cheat-sheet/\" } .gh-post-upgrade-cta-content, .gh-post-upgrade-cta { display: flex; flex-direction: column; align-items: cente",
+            "fetch_error": ""
+          },
+          {
+            "title": "Secure use reference - GitHub Docs",
+            "url": "https://docs.github.com/en/actions/reference/security/secure-use",
+            "query": "GitHub Actions security best practices pull_request_target",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Secure use reference - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Actions / Reference / Security / Secure use Home GitHub Actions Get started Quickstart Understand GitHub Actions Continuous integration Continuous deployment Actions vs Apps Concepts Workflows and actions Workflows Variables Contexts Expressions Reusing workflow configurations Custom actions Deployment environments Concurrency Workflow artifacts Dependency caching Notifications for workflow runs Runners GitHub-hosted runners Larger runners Self-hosted runners Private networking Runner groups Runner scale sets Actions Runner Controller Support for ARC Security Secrets GITHUB_TOKEN OpenID Connect Artifact attestations Script injections Compromised runners Kubernetes admissions controller Metrics Billing and usage How-tos Write workflows Use workflow templates Choose when workflows run Trigger a workflow Control jobs with conditions Control workflow concurrency Choose where workflows run Choose the runner for a job Run jobs in a container Choose what workflows do Use jobs Find and customize actions Use GitHub CLI Add scripts Use secrets Use variables Pass job outputs Set default values for jobs Deploy to environment Run job variations Reuse automations Reuse workflows Create workflow templates Share across private repositories Share with your organization Secure your work Use artifact attestations Use artifact attestations Increase security rating Enforce artifact attestations Verify attestations offline Manage attestations Security harden deployments OIDC in AWS OIDC in Azure OIDC in Google Cloud Platform OIDC in Hashi",
+            "fetch_error": ""
+          },
+          {
+            "title": "Hardening GitHub Actions: Lessons from Recent Attacks | Wiz Blog",
+            "url": "https://www.wiz.io/blog/github-actions-security-guide",
+            "query": "GitHub Actions security best practices pull_request_target",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Hardening GitHub Actions: Lessons from Recent Attacks | Wiz Blog {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"datePublished\":\"2026-04-15T09:19:21-04:00\",\"description\":\"Build resilient GitHub Actions workflows with lessons from recent attacks like TeamPCP and Axios. \",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://www.wiz.io/blog/github-actions-security-guide\"},\"headline\":\"How to Harden GitHub Actions: An Updated Guide\",\"image\":[\"https://www.datocms-assets.com/75231/1742245294-screenshot-2025-03-17-at-23-01-20.png?fit=crop&fm=jpg&h=100&w=100\",\"https://www.datocms-assets.com/75231/1753870692-shay.jpeg?fit=crop&fm=jpg&h=100&w=100\"],\"dateModified\":\"2026-04-15T09:19:21-04:00\",\"author\":[{\"@type\":\"Person\",\"name\":\"Rami McCarthy\",\"url\":\"https://www.wiz.io/authors/rami-mccarthy\"},{\"@type\":\"Person\",\"name\":\"Shay Berkovich\",\"url\":\"https://www.wiz.io/authors/shay-berkovich\"}],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Wiz.io\"},\"isAccessibleForFree\":true} (function() { function getInitialColorMode() { const pathname = window.location.pathname; const isDarkModePage = null; const isResearchPage = [\"/research\", \"/cloud-threat-landscape\", \"/ai-security-resource-center\", \"/ctf\", \"/bug-bounty-masterclass\", \"/cyber-model-arena\"].includes(pathname); const isResearchPath = [\"/bug-bounty-masterclass\"].some(path => pathname.startsWith(path)); if (isResearchPage || isResearchPath) { return 'dark-research'; } if (isDarkModePage) { return 'dark'; } return 'light'; } const colorMode = getInitialColorMode(); const root = document.documentElement; root.classList.add(colorMode); })() *:not([data-layout=\"full-bleed\"])]:col-start-2\"> Sign in Experiencing an incident? Wiz Pricing Get a demo Platform Solutions Pricing Resources Customers Company Get a demo *:not([data-layout=\"full-bleed\"])]:c",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：官方博客正文未抓取到具体变更细节，无法确认新默认设置的具体内容。"
+        },
+        "core_question": "GitHub Actions 的 pull_request_target 默认安全设置具体改了什么，对普通开发者的实际影响是什么？",
+        "why_this_topic_matters": "pull_request_target 是 GitHub Actions 中最常被误用的触发器，导致大量 CI/CD 安全漏洞。本次更新旨在默认减少风险，但可能引入工作流兼容性问题。对于使用 GitHub Actions 的团队，了解变更细节和迁移成本是必要的。",
+        "fact_summary": [
+          "GitHub 于 2026-06-18 发布 changelog，宣布为 pull_request_target 事件引入更安全的默认设置。",
+          "pull_request_target 事件允许工作流以基础仓库的权限和 secrets 运行，常被误用导致漏洞。",
+          "2025-11-07 已有相关变更，涉及环境分支保护规则。",
+          "JFrog 和 Orca Security 的研究展示了 pull_request_target 漏洞的实际利用案例。",
+          "社区讨论（如 GitHub Community Discussion #179107）涉及安全改进，但具体迁移问题尚未充分收集。"
+        ],
+        "persona_discussion_question": "这个改动会不会让我现有的 CI/CD 工作流突然报错或需要手动调整？我该不该花时间更新？",
+        "old_flower_stance": "平台安全改进是好事，但开发者需要评估迁移成本。不要盲目升级，先检查现有工作流是否依赖旧行为。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 6,
+          "why_interested": "核心技术人需要了解变更细节以避免工作流故障；入门读者可借此学习安全最佳实践；商业读者关注供应链安全风险。",
+          "reader_risk": "可能因缺乏具体案例而显得枯燥，需要补充实际漏洞故事和迁移指南。"
+        },
+        "mass_interest_hook": {
+          "score": 4,
+          "hook_type": "踩坑",
+          "why_non_technical_people_may_click": "标题可强调“你的 CI/CD 可能被攻击”或“GitHub 默认设置变更，小心工作流报错”，但非技术读者兴趣有限。",
+          "story_seed": "一个开源项目因误用 pull_request_target 导致 secrets 泄露，攻击者注入恶意代码。",
+          "do_not_overhype": "不要夸大漏洞普遍性，强调这是已知问题，新默认设置可缓解但非万能。"
+        },
+        "topic_tension": {
+          "score": 5,
+          "conflict_point": "安全改进 vs 开发者维护成本",
+          "debate_question": "平台安全改进是否应该默认启用，还是留给开发者选择？",
+          "stakeholders": [
+            "普通开发者",
+            "安全团队",
+            "GitHub 平台"
+          ],
+          "why_people_would_comment": "开发者可能分享迁移经验或抱怨兼容性问题；安全团队可能支持默认安全。",
+          "traffic_risk": "传播张力不足，容易写成专业说明；需要补真实冲突和反方材料。"
+        },
+        "timeline": [
+          "2025-11-07: GitHub 发布 pull_request_target 和环境分支保护规则变更，2025-12-08 生效。",
+          "2026-03-05: JFrog 发布 pull_request_target 漏洞利用研究。",
+          "2026-04-15: Wiz 发布 GitHub Actions 安全指南。",
+          "2026-06-18: GitHub 发布更安全的 pull_request_target 默认设置。"
+        ],
+        "evidence_table": [
+          {
+            "source": "GitHub Changelog (2026-06-18)",
+            "url": "https://github.blog/changelog/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout/",
+            "supports": "官方宣布更安全的默认设置",
+            "reliability": "official"
+          },
+          {
+            "source": "GitHub Changelog (2025-11-07)",
+            "url": "https://github.blog/changelog/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes/",
+            "supports": "早期相关变更",
+            "reliability": "official"
+          },
+          {
+            "source": "GitHub Community Discussion #179107",
+            "url": "https://github.com/orgs/community/discussions/179107",
+            "supports": "社区讨论安全改进",
+            "reliability": "weak"
+          },
+          {
+            "source": "JFrog Security Research",
+            "url": "https://research.jfrog.com/post/part-1-pull-request-target-exploitation/",
+            "supports": "漏洞利用案例",
+            "reliability": "near_source"
+          },
+          {
+            "source": "Orca Security Blog",
+            "url": "https://orca.security/resources/blog/pull-request-nightmare-github-actions-rce/",
+            "supports": "漏洞利用案例",
+            "reliability": "near_source"
+          },
+          {
+            "source": "GitGuardian Best Practices",
+            "url": "https://blog.gitguardian.com/github-actions-security-cheat-sheet/",
+            "supports": "安全最佳实践",
+            "reliability": "media"
+          },
+          {
+            "source": "GitHub Docs",
+            "url": "https://docs.github.com/en/actions/reference/security/secure-use",
+            "supports": "官方安全指南",
+            "reliability": "official"
+          },
+          {
+            "source": "Wiz Blog",
+            "url": "https://www.wiz.io/blog/github-actions-security-guide",
+            "supports": "安全指南",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "部分闭环：漏洞风险明确，官方改进方向清晰，但具体默认值变更细节和迁移影响未确认，无法评估实际影响。",
+        "writeable_angles": [
+          {
+            "angle": "安全改进解读：新默认设置具体改了什么，如何减少漏洞？",
+            "why": "直接解答核心问题，适合技术读者。",
+            "needs": "官方博客正文细节、迁移指南"
+          },
+          {
+            "angle": "迁移成本分析：现有工作流是否需要调整？",
+            "why": "提供实用价值，引发开发者共鸣。",
+            "needs": "社区迁移案例、兼容性问题报告"
+          },
+          {
+            "angle": "漏洞案例复盘：pull_request_target 如何被利用？",
+            "why": "故事性强，吸引非技术读者。",
+            "needs": "JFrog/Orca 案例细节"
+          }
+        ],
+        "missing_basics": [
+          "pull_request_target 与 pull_request 的区别",
+          "GitHub Actions 权限模型基础"
+        ],
+        "missing_materials": [
+          "官方博客正文（具体变更细节）",
+          "社区迁移经验或兼容性问题报告",
+          "反方材料：新默认设置是否足够安全？"
+        ],
+        "not_claimable": [
+          "所有工作流都会自动受益",
+          "无需任何手动操作",
+          "这是重大安全更新"
+        ],
+        "followup_queries": [
+          "GitHub Actions pull_request_target 新默认设置具体变更内容？",
+          "是否有工作流因新默认设置而失败？",
+          "新默认设置是否覆盖所有漏洞场景？"
+        ],
+        "additional_search_queries": [
+          "GitHub Actions pull_request_target default security settings changelog 2026",
+          "pull_request_target safer defaults migration issues",
+          "GitHub Actions pull_request_target vulnerability exploit 2026"
+        ],
+        "stop_conditions": [
+          "官方博客正文已获取并确认具体变更",
+          "社区有明确迁移案例或兼容性问题报告",
+          "无新漏洞案例出现"
+        ],
+        "confidence": 55.0,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "risk-warning",
+        "quality_gate": {
+          "pass": false,
+          "score": 55,
+          "fatal_issues": [
+            "核心事实没有来源：官方博客正文未抓取到具体变更细节，无法确认新默认设置的具体内容。",
+            "没有泛兴趣故事钩子：标题和开头只适合技术小圈子，非技术读者兴趣有限。",
+            "没有真实传播张力：冲突点不明确，缺乏反方材料和读者案例，传播张力不足。"
+          ],
+          "warnings": [
+            "基础概念缺口：缺少 pull_request_target 与 pull_request 的区别、GitHub Actions 权限模型基础。",
+            "资料素材缺口：缺少官方博客正文、社区迁移经验、反方材料。",
+            "信息源偏科：主要依赖官方 changelog 和安全研究，缺乏社区迁移案例和兼容性问题报告。"
+          ],
+          "missing_evidence": [
+            "官方博客正文（具体变更细节）",
+            "社区迁移经验或兼容性问题报告",
+            "反方材料：新默认设置是否足够安全？"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "GitHub Actions 的 pull_request_target 默认安全设置具体改了什么，对普通开发者的实际影响是什么？",
+          "persona_discussion_question": "这个改动会不会让我现有的 CI/CD 工作流突然报错或需要手动调整？我该不该花时间更新？",
+          "hidden_public_issue": "平台安全改进可能增加开发者维护成本，但安全漏洞风险降低，谁受益、谁承担迁移成本？",
+          "must_verify": [
+            "具体默认值变更内容（如 token 权限、事件触发条件）",
+            "是否影响现有工作流，是否需要手动迁移",
+            "是否有已知的兼容性问题或社区反馈"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "GitHub Actions pull_request_target default security settings changelog",
+              "why_needed": "确认官方具体变更细节和迁移指南"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "GitHub Actions pull_request_target safer defaults migration issues",
+              "why_needed": "了解社区实际遇到的兼容性问题和工作流调整经验"
+            },
+            {
+              "source_type": "case_study",
+              "query": "pull_request_target vulnerability exploit example",
+              "why_needed": "验证安全改进的实际必要性，提供反方材料"
+            },
+            {
+              "source_type": "policy",
+              "query": "GitHub Actions security best practices pull_request_target",
+              "why_needed": "对比官方最佳实践，确认新默认值是否更安全"
+            }
+          ],
+          "expert_challenge_points": [
+            "新默认设置是否真的能防止常见漏洞，还是只是表面改进？",
+            "对于已有大量工作流的团队，迁移成本是否被低估？",
+            "是否有其他更安全的替代方案（如使用 `pull_request` 配合 `workflow_run`）？"
+          ],
+          "do_not_claim_yet": [
+            "所有工作流都会自动受益",
+            "无需任何手动操作",
+            "这是重大安全更新"
+          ],
+          "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。因为该更新是官方 changelog 中的单点安全改进，缺乏普通技术人的真实选择题（如迁移成本、账单风险、平台绑定），且传播张力不足，容易写成专业说明。",
+          "downstream_materials_needed": [
+            "官方博客原文及详细变更日志",
+            "社区讨论帖（如 Hacker News、Reddit）",
+            "已知漏洞案例或 PoC",
+            "迁移指南或兼容性说明"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Safer pull_request_target defaults for GitHub Actions checkout - GitHub Changelog",
+            "url": "https://github.blog/changelog/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout/",
+            "query": "GitHub Actions pull_request_target default security settings changelog",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Safer pull_request_target defaults for GitHub Actions checkout - GitHub Changelog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Safer pull_request_target defaults for GitHub Actions checkout\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-06-18T07:06:55-07:00\",\"abstract\":\"The pull_request_target event is one of the most commonly misused triggers in GitHub Actions, leading to vulnerabilities in workflows. Workflows triggered by pull_request_target run with the base repository’s GITHUB_TOKEN, secrets,…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout\"},\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Safer pull_request_target defaults for GitHub Actions checkout\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2026-06-18T07:06:55-07:00\",\"abstract\":\"The pull_request_target event is one of the most commonly misused triggers in GitHub Actions, leading to vulnerabilities in workflows. Workflows triggered by pull_request_target run with the base repository’s GITHUB_TOKEN, secrets,…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout\"},\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout\\/\",\"url\":\"https:\\/\\/github.blog\\/changelog\\/2026-06-18-safer-pull_request_target-defaults-for-github-actions-checkout\\/\",\"name\":\"Safer pull_request_target defaults for GitHub Actions checkout - The GitHub Blog\",\"isPartOf\":{\"@id\":\"https:\\/\\/github.blog\\/#website\"},\"datePublished\":\"2026-06-18",
+            "fetch_error": ""
+          },
+          {
+            "title": "Actions pull_request_target and environment branch protections changes - GitHub Changelog",
+            "url": "https://github.blog/changelog/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes/",
+            "query": "GitHub Actions pull_request_target default security settings changelog",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Actions pull_request_target and environment branch protections changes - GitHub Changelog {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Actions pull_request_target and environment branch protections changes\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2025-11-07T08:18:15-08:00\",\"abstract\":\"GitHub is updating how GitHub Actions’ pull_request_target and environment branch protection rules are evaluated for pull-request-related events. These changes will take effect on 12\\/8\\/2025. They aim to reduce security critical…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes\"},\"@type\":\"TechArticle\"} {\"@context\":\"https:\\/\\/schema.org\",\"headline\":\"Actions pull_request_target and environment branch protections changes\",\"author\":{\"@type\":\"Person\",\"name\":\"Allison\"},\"datePublished\":\"2025-11-07T08:18:15-08:00\",\"abstract\":\"GitHub is updating how GitHub Actions’ pull_request_target and environment branch protection rules are evaluated for pull-request-related events. These changes will take effect on 12\\/8\\/2025. They aim to reduce security critical…\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes\"},\"@type\":\"BlogPosting\"} {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/github.blog\\/changelog\\/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes\\/\",\"url\":\"https:\\/\\/github.blog\\/changelog\\/2025-11-07-actions-pull_request_target-and-environment-branch-protections-changes\\/\",\"name\":\"Actions pull_request_target and environment branch protections changes - The GitHub Blog\",\"isPartOf\":{\"@id\":\"h",
+            "fetch_error": ""
+          },
+          {
+            "title": "Towards a secure by default GitHub Actions · community · Discussion #179107",
+            "url": "https://github.com/orgs/community/discussions/179107",
+            "query": "GitHub Actions pull_request_target default security settings changelog",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+            "fetch_error": ""
+          },
+          {
+            "title": "Improve Actions security · community · Discussion #157949",
+            "url": "https://github.com/orgs/community/discussions/157949",
+            "query": "GitHub Actions pull_request_target safer defaults migration issues",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+            "fetch_error": ""
+          },
+          {
+            "title": "Secure GitHub Actions by pull_request_target - DEV Community",
+            "url": "https://dev.to/suzukishunsuke/secure-github-actions-by-pullrequesttarget-641",
+            "query": "GitHub Actions pull_request_target safer defaults migration issues",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Secure GitHub Actions by pull_request_target - DEV Community /* ========================================================================== THE 418 CHALLENGE: THEME-AWARE RETRO EDITION ========================================================================== */ .articletag-418challenge { font-family: \"Comic Sans MS\", \"Chalkboard SE\", \"Marker Felt\", sans-serif !important; cursor: crosshair !important; } /* Destroy modern rounded corners and add brutal borders */ .articletag-418challenge .crayons-card, .articletag-418challenge .crayons-article__main, .articletag-418challenge .crayons-article__header { border-radius: 0 !important; margin-bottom: 2rem !important; } /* Typography specifics */ .articletag-418challenge h1, .articletag-418challenge h2, .articletag-418challenge h3 { text-transform: uppercase !important; } /* Fake effect for the main article title */ .articletag-418challenge h1.fs-3xl { animation: retro-slide 5s linear infinite alternate; overflow: visible; } /* Spin those avatars */ .articletag-418challenge .crayons-article__header__meta img { border-radius: 0 !important; animation: retro-spin 5s linear infinite; } /* Obnoxious tags */ .articletag-418challenge .crayons-tag { border-radius: 0 !important; font-weight: 900 !important; transform: rotate(-3deg); display: inline-block; } .articletag-418challenge .crayons-tag:nth-child(even) { transform: rotate(3deg); } /* -------------------------------------------------------------------------- 2. LIGHT THEME (Windows 95 / Office 97 Vibes) -------------------------------------------------------------------------- */ body:not(.dark-theme) .articletag-418challenge { background-color: #008080 !important; /* Win95 Teal Desktop */ } body:not(.dark-theme) .articletag-418challenge .crayons-card, body:not(.dark-theme) .artic",
+            "fetch_error": ""
+          },
+          {
+            "title": "pull_request_target Exploitation - Part 1 - JFrog Security Research",
+            "url": "https://research.jfrog.com/post/part-1-pull-request-target-exploitation/",
+            "query": "pull_request_target vulnerability exploit example",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "pull_request_target Exploitation - Part 1 - JFrog Security Research window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag(\"js\", new Date()); gtag(\"config\", \"GTM-T6MF8M\"); gtag('set', 'developer_id.dODQ2Mj', true); .g-image--loading{display:none;} JFrog Security Research Model Threats Discover Follow JFrog Security Home Model Threats Discover Follow JFrog Security pull_request_target Exploitation - Part 1 Barak Haryati, Senior Director of Product Security at JFrog | 5 Mar, 2026 Test-Based Execution The JFrog Security Research team has identified multiple critical vulnerabilities across open source ecosystems that follow the same structural misconfiguration pattern in CI/CD workflows. These issues are not isolated mistakes. They stem from workflows that execute untrusted pull request content in privileged contexts, creating severe supply chain risk. In a separate blog, we explained how we built an AI agent to systematically detect these misconfiguration patterns at scale, what signals it looks for, and how such vulnerabilities can escalate from a single repository to organization-wide compromise. At the center of these cases is the GitHub Actions trigger pull_request_target , where pull requests run in the context of the base repository, inheriting its secrets and permissions. The full vulnerability details are also explained in the main blog. Each short blog in this series will cover one specific exploitation class and provide concrete exploitation analysis, this blog starts with “Test-Based Execution”. In this exploitation pattern, the workflow checks out the PR head and executes test code or scripts controlled by the attacker that are executed as part of the testing CI process. Vulnerabilities Disclosed From Government to Corpor",
+            "fetch_error": ""
+          },
+          {
+            "title": "pull_request_nightmare Part 1: Exploiting GitHub Actions for RCE and Supply Chain Attacks",
+            "url": "https://orca.security/resources/blog/pull-request-nightmare-github-actions-rce/",
+            "query": "pull_request_target vulnerability exploit example",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "function OptanonWrapper() { } (function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); (function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.defer = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-MFH8KTP'); document.addEventListener('DOMContentLoaded', function() { if (window?.dataLayer) { window.dataLayer.push({'logged_in': 'no'}); } }); (function() { var didInit = false; function initMunchkin() { if (didInit === false) { didInit = true; Munchkin.init('796-PBW-559'); } } var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//munchkin.marketo.net/munchkin.js'; s.onreadystatechange = function() { if (this.readyState == 'complete' || this.readyState == 'loaded') { initMunchkin(); } }; s.onload = initMunchkin; document.getElementsByTagName('head')[0].appendChild(s); })(); // Initialize VWO consent management window.VWO = window.VWO || []; window.VWO.init = window.VWO.init || (state => (window.VWO.consentState = state)); // Force the default state to Pending window.VWO.init(2); // Your consent category ID (confirmed as C0002) var consentCategoryId = 'C0002'; // OneTrust callback function function OptanonWrapper() { var vwoConsentProvided = OnetrustActiveGroups.includes(consentCategoryId); if (OneTrust.IsAlertBoxClosedAndValid()) { // User has made a consent choice VWO.init(vwoConsentProvided ? 1 : 3); } else { // Consent is still pending VWO.init(2); } } // Also listen for consent changes after initial load window.addEventLi",
+            "fetch_error": ""
+          },
+          {
+            "title": "pull_request_nightmare Part 2: Exploiting GitHub Actions for RCE and Supply Chain",
+            "url": "https://orca.security/resources/blog/pull-request-nightmare-part-2-exploits/",
+            "query": "pull_request_target vulnerability exploit example",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "function OptanonWrapper() { } (function(html){html.className = html.className.replace(/\\bno-js\\b/,'js')})(document.documentElement); (function(w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.defer = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-MFH8KTP'); document.addEventListener('DOMContentLoaded', function() { if (window?.dataLayer) { window.dataLayer.push({'logged_in': 'no'}); } }); (function() { var didInit = false; function initMunchkin() { if (didInit === false) { didInit = true; Munchkin.init('796-PBW-559'); } } var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = '//munchkin.marketo.net/munchkin.js'; s.onreadystatechange = function() { if (this.readyState == 'complete' || this.readyState == 'loaded') { initMunchkin(); } }; s.onload = initMunchkin; document.getElementsByTagName('head')[0].appendChild(s); })(); // Initialize VWO consent management window.VWO = window.VWO || []; window.VWO.init = window.VWO.init || (state => (window.VWO.consentState = state)); // Force the default state to Pending window.VWO.init(2); // Your consent category ID (confirmed as C0002) var consentCategoryId = 'C0002'; // OneTrust callback function function OptanonWrapper() { var vwoConsentProvided = OnetrustActiveGroups.includes(consentCategoryId); if (OneTrust.IsAlertBoxClosedAndValid()) { // User has made a consent choice VWO.init(vwoConsentProvided ? 1 : 3); } else { // Consent is still pending VWO.init(2); } } // Also listen for consent changes after initial load window.addEventLi",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub Actions Security Best Practices [cheat sheet included]",
+            "url": "https://blog.gitguardian.com/github-actions-security-cheat-sheet/",
+            "query": "GitHub Actions security best practices pull_request_target",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "GitHub Actions Security Best Practices Cheat Sheet { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"publisher\": { \"@type\": \"Organization\", \"name\": \"GitGuardian Blog - Take Control of Your Secrets Security\", \"url\": \"https://blog.gitguardian.com/\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://storage.ghost.io/c/42/5d/425d266f-cf99-406e-9436-597a19bed011/content/images/2025/02/gg-blog-logo-dark-mode.svg\", \"width\": 339, \"height\": 60 } }, \"author\": { \"@type\": \"Person\", \"name\": \"Thomas Segura\", \"image\": { \"@type\": \"ImageObject\", \"url\": \"https://storage.ghost.io/c/42/5d/425d266f-cf99-406e-9436-597a19bed011/content/images/size/w1200/2025/10/Thomas_portrait_crop.png\", \"width\": 1200, \"height\": 1200 }, \"url\": \"https://blog.gitguardian.com/author/thomassegura/\", \"sameAs\": [ \"https://thomassegura.com\" ] }, \"headline\": \"GitHub Actions Security Best Practices Cheat Sheet\", \"url\": \"https://blog.gitguardian.com/github-actions-security-cheat-sheet/\", \"datePublished\": \"2025-04-11T16:00:00.000Z\", \"dateModified\": \"2026-01-05T12:45:56.000Z\", \"image\": { \"@type\": \"ImageObject\", \"url\": \"https://storage.ghost.io/c/42/5d/425d266f-cf99-406e-9436-597a19bed011/content/images/size/w1200/2022/05/22W18-blog-GitHubActionsSecurityCheatSheet.png\", \"width\": 1200, \"height\": 702 }, \"keywords\": \"Cheat sheets\", \"description\": \"Learn how to secure your GitHub Actions with these best practices! From controlling credentials to using specific action version tags, this cheat sheet will help you protect against supply-chain attacks. Don't let a malicious actor inject code into your repository - read now!\", \"mainEntityOfPage\": \"https://blog.gitguardian.com/github-actions-security-cheat-sheet/\" } .gh-post-upgrade-cta-content, .gh-post-upgrade-cta { display: flex; flex-direction: column; align-items: cente",
+            "fetch_error": ""
+          },
+          {
+            "title": "Secure use reference - GitHub Docs",
+            "url": "https://docs.github.com/en/actions/reference/security/secure-use",
+            "query": "GitHub Actions security best practices pull_request_target",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Secure use reference - GitHub Docs Skip to main content GitHub Docs Version: Free, Pro, & Team Search or ask Copilot Search or ask Copilot Select language: current language is English Search or ask Copilot Search or ask Copilot Open menu Open Sidebar GitHub Actions / Reference / Security / Secure use Home GitHub Actions Get started Quickstart Understand GitHub Actions Continuous integration Continuous deployment Actions vs Apps Concepts Workflows and actions Workflows Variables Contexts Expressions Reusing workflow configurations Custom actions Deployment environments Concurrency Workflow artifacts Dependency caching Notifications for workflow runs Runners GitHub-hosted runners Larger runners Self-hosted runners Private networking Runner groups Runner scale sets Actions Runner Controller Support for ARC Security Secrets GITHUB_TOKEN OpenID Connect Artifact attestations Script injections Compromised runners Kubernetes admissions controller Metrics Billing and usage How-tos Write workflows Use workflow templates Choose when workflows run Trigger a workflow Control jobs with conditions Control workflow concurrency Choose where workflows run Choose the runner for a job Run jobs in a container Choose what workflows do Use jobs Find and customize actions Use GitHub CLI Add scripts Use secrets Use variables Pass job outputs Set default values for jobs Deploy to environment Run job variations Reuse automations Reuse workflows Create workflow templates Share across private repositories Share with your organization Secure your work Use artifact attestations Use artifact attestations Increase security rating Enforce artifact attestations Verify attestations offline Manage attestations Security harden deployments OIDC in AWS OIDC in Azure OIDC in Google Cloud Platform OIDC in Hashi",
+            "fetch_error": ""
+          },
+          {
+            "title": "Hardening GitHub Actions: Lessons from Recent Attacks | Wiz Blog",
+            "url": "https://www.wiz.io/blog/github-actions-security-guide",
+            "query": "GitHub Actions security best practices pull_request_target",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Hardening GitHub Actions: Lessons from Recent Attacks | Wiz Blog {\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"datePublished\":\"2026-04-15T09:19:21-04:00\",\"description\":\"Build resilient GitHub Actions workflows with lessons from recent attacks like TeamPCP and Axios. \",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://www.wiz.io/blog/github-actions-security-guide\"},\"headline\":\"How to Harden GitHub Actions: An Updated Guide\",\"image\":[\"https://www.datocms-assets.com/75231/1742245294-screenshot-2025-03-17-at-23-01-20.png?fit=crop&fm=jpg&h=100&w=100\",\"https://www.datocms-assets.com/75231/1753870692-shay.jpeg?fit=crop&fm=jpg&h=100&w=100\"],\"dateModified\":\"2026-04-15T09:19:21-04:00\",\"author\":[{\"@type\":\"Person\",\"name\":\"Rami McCarthy\",\"url\":\"https://www.wiz.io/authors/rami-mccarthy\"},{\"@type\":\"Person\",\"name\":\"Shay Berkovich\",\"url\":\"https://www.wiz.io/authors/shay-berkovich\"}],\"publisher\":{\"@type\":\"Organization\",\"name\":\"Wiz.io\"},\"isAccessibleForFree\":true} (function() { function getInitialColorMode() { const pathname = window.location.pathname; const isDarkModePage = null; const isResearchPage = [\"/research\", \"/cloud-threat-landscape\", \"/ai-security-resource-center\", \"/ctf\", \"/bug-bounty-masterclass\", \"/cyber-model-arena\"].includes(pathname); const isResearchPath = [\"/bug-bounty-masterclass\"].some(path => pathname.startsWith(path)); if (isResearchPage || isResearchPath) { return 'dark-research'; } if (isDarkModePage) { return 'dark'; } return 'light'; } const colorMode = getInitialColorMode(); const root = document.documentElement; root.classList.add(colorMode); })() *:not([data-layout=\"full-bleed\"])]:col-start-2\"> Sign in Experiencing an incident? Wiz Pricing Get a demo Platform Solutions Pricing Resources Customers Company Get a demo *:not([data-layout=\"full-bleed\"])]:c",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "营销话术拆解",
+        "合规和资金风险",
+        "普通人不该硬冲的原因"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "GitHub Actions改进pull_request_target默认安全设置 投诉 风险 违规",
+        "GitHub Actions改进pull_request_target默认安全设置 骗局 营销话术",
+        "GitHub Actions改进pull_request_target默认安全设置 隐藏成本 失败案例"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
