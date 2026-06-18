@@ -1,0 +1,1847 @@
+{
+  "id": "20260618-amd-silently-removes-memory-encryption-from-cons-c0c08ce4",
+  "batch_id": "2026-06-18-evening",
+  "title": "AMD 悄然移除消费级 Ryzen CPU 内存加密功能，用户安全风险未知",
+  "original_title": "AMD silently removes memory encryption from consumer Ryzen CPUs",
+  "url": "https://www.tomshardware.com/pc-components/cpus/amd-silently-removes-memory-encryption-from-consumer-ryzen-cpus-leaving-users-unaware-that-they-may-be-vulnerable-security-feature-vanishes-after-newer-agesa-firmware-amd-engineers-go-radio-silent-when-pressed-about-the-change",
+  "summary": "Comments",
+  "source_category": "developer_business",
+  "source_category_title": "开发者副业与独立开发",
+  "topic_direction": "side-info",
+  "topic_direction_title": "副业&信息差",
+  "topic_direction_short_title": "副业&信息差",
+  "topic_direction_description": "独立开发、副业项目、工具站、微型 SaaS、开源项目、现金流风险、外包回款、信息差机会和风险避坑。重点记录案例、项目、风险和需求信号。",
+  "source_name": "Hacker News",
+  "original_source_name": "Hacker News",
+  "source_type": "rss",
+  "feed_url": "https://news.ycombinator.com/rss",
+  "published_at": "2026-06-18T08:08:00+00:00",
+  "fetched_at": "2026-06-18T10:05:04.112420+00:00",
+  "decision": "deep_dive",
+  "report_type": "risk-warning",
+  "report_type_title": "风险避坑",
+  "score": 78,
+  "reader_hook": "硬件安全、技术风险、平台规则",
+  "topic_tension": {
+    "score": 8,
+    "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+    "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+    "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+  },
+  "persona_discussion_question": "这是真机会，还是又一个普通技术人容易被包装话术带偏的坑？",
+  "why_now": "Tom's Hardware 报道，引发社区讨论",
+  "evidence_level": "near_source",
+  "source_priority": "P1 高质量近源",
+  "reason": "AMD 在最新 AGESA 固件中移除了消费级 Ryzen CPU 的内存加密功能，且未公开说明，用户可能面临安全风险。",
+  "collection_fit": "tools-rules",
+  "investigation_direction": "确认受影响 CPU 型号、固件版本、安全影响评估、AMD 官方回应。",
+  "uncertainty_flags": [
+    "AMD 未官方确认",
+    "实际安全影响待评估"
+  ],
+  "facts": [
+    {
+      "claim": "Hacker News 发布/收录了这条原始线索：AMD silently removes memory encryption from consumer Ryzen CPUs",
+      "type": "confirmed_fact",
+      "source_url": "https://www.tomshardware.com/pc-components/cpus/amd-silently-removes-memory-encryption-from-consumer-ryzen-cpus-leaving-users-unaware-that-they-may-be-vulnerable-security-feature-vanishes-after-newer-agesa-firmware-amd-engineers-go-radio-silent-when-pressed-about-the-change",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Hacker News",
+      "url": "https://www.tomshardware.com/pc-components/cpus/amd-silently-removes-memory-encryption-from-consumer-ryzen-cpus-leaving-users-unaware-that-they-may-be-vulnerable-security-feature-vanishes-after-newer-agesa-firmware-amd-engineers-go-radio-silent-when-pressed-about-the-change",
+      "source_type": "near_source",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {},
+    "source_host": "www.tomshardware.com",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 8,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "硬件安全、技术风险、平台规则",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://news.ycombinator.com/rss",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "AMD 未官方确认",
+      "实际安全影响待评估"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "推荐选题",
+      "label": "推荐",
+      "reason": "证据较完整，来自Tom's Hardware、Ars Technica等可靠媒体，社区讨论热烈；老花人设解读角度清楚（硬件安全透明度、用户控制权、厂商责任）；读者分层明确；泛兴趣故事钩子成立（硬件安全功能被悄然移除，用户不知情）；传播张力强（厂商vs用户、安全vs性能、知情权vs商业决策）；逻辑基本能闭环。"
+    },
+    "core_question": "AMD是否在未通知用户的情况下从消费级Ryzen CPU中移除了内存加密功能（TSME）？这对普通用户的安全风险有多大？",
+    "why_this_topic_matters": "硬件安全功能被厂商悄然移除，用户无法知情也无法选择，暴露了消费级硬件在安全透明度上的缺失，以及用户对固件更新内容的控制权不足。此事影响所有使用最新AGESA固件的Ryzen用户，涉及物理攻击场景下的数据安全。",
+    "fact_summary": [
+      "Tom's Hardware于2026年6月15日报道，AMD在AGESA 1.2.7.0固件更新中移除了消费级Ryzen CPU的Transparent Secure Memory Encryption (TSME)功能。",
+      "Ars Technica于2026年6月18日报道，一位Linux爱好者Ben Kilpatrick在Ryzen 7 9700X上发现'encrypted RAM: not supported'，经数月追踪确认是AGESA固件变更所致。",
+      "AMD的官方声明称TSME'is a security feature only applied to PRO CPUs as part of AMD PRO Technologies'。",
+      "该功能在Windows下无检测路径，用户无法直接知晓是否被移除。",
+      "AMD工程师在被问及此事时保持沉默。",
+      "社区反应强烈，Reddit、Slashdot等平台有大量讨论。"
+    ],
+    "persona_discussion_question": "作为普通技术人，我是否需要担心我的Ryzen电脑的内存数据被物理访问泄露？我该如何检查自己的固件版本并评估风险？",
+    "old_flower_stance": "硬件安全功能被厂商悄然移除，用户无法知情也无法选择，这暴露了消费级硬件在安全透明度上的缺失，以及用户对固件更新内容的控制权不足。普通技术人应该关注自己的设备是否受影响，并思考如何应对厂商的'静默变更'。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "共鸣读者"
+      ],
+      "interest_score": 85,
+      "why_interested": "核心技术人关注硬件安全机制、固件变更对系统安全的影响；入门读者可以了解内存加密的基本概念和风险；共鸣读者对厂商不透明行为有共鸣。",
+      "reader_risk": "可能引发对AMD产品的信任危机，但需避免夸大实际风险（物理攻击场景相对少见）。"
+    },
+    "mass_interest_hook": {
+      "score": 80,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "标题暗示'安全功能被悄悄移除'，普通人会担心自己的电脑是否变不安全，即使不懂技术也会被'安全风险'吸引。",
+      "story_seed": "你的电脑可能已经失去了一个重要的安全功能，而你完全不知情——AMD在最新的固件更新中悄然移除了内存加密，没有通知用户。",
+      "do_not_overhype": "不要声称所有Ryzen用户都面临严重风险，实际物理攻击场景需要攻击者拥有物理访问权限，对普通用户威胁有限。"
+    },
+    "topic_tension": {
+      "score": 10,
+      "conflict_point": "厂商（AMD）与用户（消费者）之间的信息不对称和信任冲突；安全功能与性能/成本之间的权衡。",
+      "debate_question": "硬件厂商是否有义务在移除安全功能时明确通知用户？用户是否应该拥有对固件变更的知情权和选择权？",
+      "stakeholders": [
+        "AMD",
+        "Ryzen CPU用户",
+        "安全研究人员",
+        "PC制造商/BIOS供应商",
+        "竞争对手Intel"
+      ],
+      "why_people_would_comment": "读者可以围绕厂商责任、安全与性能的权衡、自己是否受影响、如何检测和应对等话题发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。避免引发无根据的恐慌。"
+    },
+    "timeline": [
+      "2026-06-15: Tom's Hardware首次报道AMD在AGESA 1.2.7.0中移除TSME。",
+      "2026-06-16: Guru3D、Technology.org等媒体跟进报道。",
+      "2026-06-17: State of Surveillance报道，引用Ars Technica的Dan Goodin。",
+      "2026-06-18: Ars Technica发布详细报道，社区反应强烈。",
+      "2026-06-18: Slashdot、Reddit等平台出现大量讨论。"
+    ],
+    "evidence_table": [
+      {
+        "source": "Tom's Hardware",
+        "url": "https://www.tomshardware.com/pc-components/cpus/amd-silently-removes-memory-encryption-from-consumer-ryzen-cpus-leaving-users-unaware-that-they-may-be-vulnerable-security-feature-vanishes-after-newer-agesa-firmware-amd-engineers-go-radio-silent-when-pressed-about-the-change",
+        "supports": "首次报道AMD移除TSME，提供详细技术背景和社区反应。",
+        "reliability": "media"
+      },
+      {
+        "source": "Ars Technica",
+        "url": "https://arstechnica.com/security/2026/06/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus/",
+        "supports": "深入报道，引用Linux爱好者Ben Kilpatrick的发现和AMD官方声明。",
+        "reliability": "media"
+      },
+      {
+        "source": "State of Surveillance",
+        "url": "https://stateofsurveillance.org/news/amd-ryzen-memory-guard-stripped-firmware-update-2026/",
+        "supports": "汇总报道，确认AMD官方声明：TSME仅用于PRO CPU。",
+        "reliability": "media"
+      },
+      {
+        "source": "Guru3D",
+        "url": "https://www.guru3d.com/story/amd-reportedly-removes-tsme-memory-encryption-support-from-ryzen-cpus/",
+        "supports": "跟进报道，确认TSME被移除。",
+        "reliability": "media"
+      },
+      {
+        "source": "Slashdot",
+        "url": "https://hardware.slashdot.org/story/26/06/15/200234/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus",
+        "supports": "社区讨论，反映用户不满。",
+        "reliability": "media"
+      },
+      {
+        "source": "Reddit r/hardware",
+        "url": "https://www.reddit.com/r/hardware/comments/1u72s18/arstechnica_users_cry_foul_after_amd_stripped/",
+        "supports": "社区讨论，用户自行验证和反馈。",
+        "reliability": "weak"
+      },
+      {
+        "source": "Mallory",
+        "url": "https://www.mallory.ai/stories/019ecc76-6134-7fe7-b08f-d0939eb1e9a9",
+        "supports": "安全情报平台报道，确认事件。",
+        "reliability": "media"
+      },
+      {
+        "source": "CryptoBriefing",
+        "url": "https://cryptobriefing.com/amd-removes-memory-encryption-consumer-cpus/",
+        "supports": "报道事件和社区反应。",
+        "reliability": "media"
+      },
+      {
+        "source": "News Directory 3",
+        "url": "https://www.newsdirectory3.com/amd-quietly-removes-security-feature-from-ryzen-processors-without-user-notification/",
+        "supports": "汇总报道。",
+        "reliability": "weak"
+      }
+    ],
+    "logic_closure": "证据链完整：多个可靠媒体确认AMD在AGESA 1.2.7.0中移除了TSME，AMD官方声明证实TSME仅用于PRO CPU，社区有用户自行验证。逻辑闭环：厂商未通知用户移除安全功能，用户无法检测，存在潜在安全风险。",
+    "writeable_angles": [
+      {
+        "angle": "风险预警：你的Ryzen CPU可能已失去内存加密，如何自查和应对",
+        "why": "直接服务用户，提供可操作步骤，吸引点击。",
+        "needs": "需要提供自查方法（检查AGESA版本、使用Linux工具检测TSME支持）、受影响CPU型号列表、降级固件的风险和可行性。"
+      },
+      {
+        "angle": "厂商责任：AMD悄然移除安全功能，用户知情权何在？",
+        "why": "引发讨论，符合老花人设对厂商透明度的关注。",
+        "needs": "需要分析AMD的披露政策、对比Intel类似情况、讨论用户是否有法律追索权。"
+      },
+      {
+        "angle": "安全与性能的权衡：内存加密真的必要吗？",
+        "why": "技术深度分析，吸引核心技术人。",
+        "needs": "需要解释TSME的工作原理、性能影响、物理攻击场景的真实威胁。"
+      },
+      {
+        "angle": "社区反应：Reddit、Slashdot用户如何应对？",
+        "why": "故事性强，容易引发共鸣。",
+        "needs": "需要收集社区讨论中的关键观点、用户自行验证的案例、可能的解决方案。"
+      }
+    ],
+    "missing_basics": [
+      "TSME与SME的区别",
+      "物理攻击（如冷启动攻击）的原理和可行性",
+      "AGESA固件更新机制和用户控制权"
+    ],
+    "missing_materials": [
+      "AMD官方AGESA 1.2.7.0更新日志（需确认是否提及TSME移除）",
+      "受影响CPU型号的完整列表",
+      "Windows下检测TSME是否启用的方法",
+      "降级固件的具体步骤和风险",
+      "Intel消费级CPU是否提供类似功能（如SGX）及其现状"
+    ],
+    "not_claimable": [
+      "AMD故意隐瞒安全漏洞",
+      "所有Ryzen用户都面临严重安全风险",
+      "该功能移除已导致数据泄露事件",
+      "用户无法通过任何方式恢复该功能"
+    ],
+    "followup_queries": [
+      "AMD AGESA 1.2.7.0 changelog 是否提及TSME移除？",
+      "哪些Ryzen CPU型号原本支持TSME？",
+      "Windows下如何检测TSME是否启用？",
+      "降级AGESA固件是否可行？风险是什么？",
+      "Intel消费级CPU是否有类似的内存加密功能？是否也被移除过？"
+    ],
+    "additional_search_queries": [
+      "AMD AGESA 1.2.7.0 release notes",
+      "Ryzen TSME support list",
+      "check TSME enabled Windows",
+      "downgrade AGESA firmware risk",
+      "Intel memory encryption consumer CPU"
+    ],
+    "stop_conditions": [
+      "AMD官方发布声明确认或否认TSME移除",
+      "发现TSME移除仅影响特定批次或可被BIOS选项恢复",
+      "社区发现该功能实际上并未被移除，而是被重命名或移动位置",
+      "出现大规模数据泄露事件直接归因于TSME移除"
+    ],
+    "confidence": 80,
+    "topic_direction": "side-info",
+    "topic_direction_title": "副业&信息差",
+    "report_type": "risk-warning",
+    "quality_gate": {
+      "pass": true,
+      "score": 85,
+      "fatal_issues": [],
+      "warnings": [
+        "AMD官方AGESA更新日志未获取到，需确认是否提及TSME移除",
+        "Windows下检测TSME的方法缺失",
+        "受影响CPU型号完整列表缺失"
+      ],
+      "missing_evidence": [
+        "AMD官方AGESA 1.2.7.0更新日志",
+        "Windows下检测TSME是否启用的方法",
+        "受影响CPU型号完整列表",
+        "降级固件的具体步骤和风险"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": true,
+      "downstream_handoff_ok": true,
+      "material_pack_ok": true,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": true,
+      "source_coverage_ok": true,
+      "recommendation": "publish"
+    },
+    "research_plan": {
+      "core_question": "AMD 是否在未通知用户的情况下从消费级 Ryzen CPU 中移除了内存加密功能？这对普通用户的安全风险有多大？",
+      "persona_discussion_question": "作为普通技术人，我是否需要担心我的 Ryzen 电脑的内存数据被物理访问泄露？我该如何检查自己的固件版本并评估风险？",
+      "hidden_public_issue": "硬件安全功能被厂商悄然移除，用户无法知情也无法选择，这暴露了消费级硬件在安全透明度上的缺失，以及用户对固件更新内容的控制权不足。",
+      "must_verify": [
+        "AMD 是否官方确认移除了内存加密功能？",
+        "哪些具体 Ryzen CPU 型号和 AGESA 版本受影响？",
+        "内存加密功能（如 SME/TSME）的实际安全价值是什么？",
+        "移除后是否存在已知的攻击案例或 PoC？",
+        "用户是否有办法自行恢复该功能？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "AMD AGESA firmware changelog memory encryption removal",
+          "why_needed": "确认官方是否在更新日志中提及此变更"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "AMD Ryzen memory encryption SME TSME support list",
+          "why_needed": "确认哪些型号原本支持内存加密"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "AMD AGESA memory encryption removed Reddit",
+          "why_needed": "获取社区反馈和用户自行验证的结果"
+        },
+        {
+          "source_type": "case_study",
+          "query": "AMD memory encryption vulnerability physical attack",
+          "why_needed": "评估实际安全风险，是否有真实攻击案例"
+        },
+        {
+          "source_type": "policy",
+          "query": "AMD security feature removal disclosure policy",
+          "why_needed": "了解 AMD 是否有义务通知用户此类变更"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "AMD vs Intel memory encryption consumer CPU comparison",
+          "why_needed": "对比竞争对手是否也有类似问题"
+        }
+      ],
+      "expert_challenge_points": [
+        "内存加密对普通用户是否真的必要？物理访问攻击场景是否常见？",
+        "AMD 是否可能出于性能或成本考虑移除该功能？",
+        "用户是否可以通过降级固件恢复功能？降级是否有风险？"
+      ],
+      "do_not_claim_yet": [
+        "AMD 故意隐瞒安全漏洞",
+        "所有 Ryzen 用户都面临严重安全风险",
+        "该功能移除导致数据泄露事件已发生"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需强调证据缺口：AMD 未官方确认，实际影响待评估。适合作为风险预警，引导用户自查和社区讨论。",
+      "downstream_materials_needed": [
+        "AMD 官方 AGESA 更新日志（需爬取或存档）",
+        "受影响 CPU 型号列表",
+        "社区测试结果（如 Reddit 帖子）",
+        "安全专家对物理攻击可行性的分析"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable — security feature vanishes after newer AGESA firmware, AMD engineers go radio silent when pressed about the change | Tom's Hardware",
+        "url": "https://www.tomshardware.com/pc-components/cpus/amd-silently-removes-memory-encryption-from-consumer-ryzen-cpus-leaving-users-unaware-that-they-may-be-vulnerable-security-feature-vanishes-after-newer-agesa-firmware-amd-engineers-go-radio-silent-when-pressed-about-the-change",
+        "query": "AMD AGESA firmware changelog memory encryption removal",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable — security feature vanishes after newer AGESA firmware, AMD engineers go radio silent when pressed about the change | Tom's Hardware @layer reset, legacy, tw-components, components, tw-utilities, utilities, van-ds, hawk, global; @layer legacy { :root { --color-primary-50: 247 212 213; --color-primary-100: 241 181 182; --color-primary-200: 234 150 151; --color-primary-300: 228 119 121; --color-primary-400: 222 87 90; --color-primary-500: 216 56 59; --color-primary-600: 190 37 40; --color-primary-700: 154 30 32; --color-primary-800: 117 23 25; --color-primary-900: 80 16 17; --color-primary-950: 43 8 9; --color-secondary-50: 248 250 252; --color-secondary-100: 241 245 249; --color-secondary-200: 226 232 240; --color-secondary-300: 203 213 225; --color-secondary-400: 148 163 184; --color-secondary-500: 100 116 139; --color-secondary-600: 71 85 105; --color-secondary-700: 51 65 85; --color-secondary-800: 30 41 59; --color-secondary-900: 15 23 42; --color-secondary-950: 2 6 23; --font-ui-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-ui-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; } } { \"@context\": \"https://schema.org\", \"@type\": \"NewsArticle\", \"name\": \"AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable\\u2026\", \"headline\": \"AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable — security feature vanishes after newer AGESA firmware, AMD engineers go radio silent when pressed about t",
+        "fetch_error": ""
+      },
+      {
+        "title": "AMD Pulls Memory Encryption From Ryzen CPUs - Technology Org",
+        "url": "https://www.technology.org/2026/06/16/amd-strips-memory-encryption-consumer-ryzen-cpus/",
+        "query": "AMD AGESA firmware changelog memory encryption removal",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "AMD Firmware Update Removes Memory Encryption From Consumer Ryzen CPUs | Mallory",
+        "url": "https://www.mallory.ai/stories/019ecc76-6134-7fe7-b08f-d0939eb1e9a9",
+        "query": "AMD AGESA firmware changelog memory encryption removal",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "AMD Firmware Update Removes Memory Encryption From Consumer Ryzen CPUs | Mallory {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Mallory\",\"legalName\":\"Mallory Intelligence\",\"url\":\"https://mallory.ai\",\"logo\":\"https://mallory.ai/logo.png\",\"description\":\"Mallory is an agentic threat-intelligence platform that reasons across your attack surface and the global threat landscape to deliver intelligence security teams can act on.\",\"sameAs\":[\"https://linkedin.com/company/malloryai\",\"https://x.com/malloryintel\",\"https://github.com/malloryai\"]} {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Mallory\",\"url\":\"https://mallory.ai\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Mallory\"}} ((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=[\"light\",\"dark\"];function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{let c=\"class\"===a,d=c&&f?e.map(a=>f[a]||a):e;c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)}),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&\"system\"===a?window.matchMedia(\"(prefers-color-scheme: dark)\").matches?\"dark\":\"light\":a;k(d)}catch(a){}})(\"class\",\"theme\",\"light\",null,[\"light\",\"dark\"],null,true,true) Skip to main content Mallory Platform How It Works See the platform in action Pricing Plans and pricing Use Cases Common security workflows Resources Blog Insights and analysis Press Latest press Videos Talks and demos About Company Our mission and team Careers Open roles Intelligence Toggle theme Sign in svg]:px-2.5 bg-primary hover:bg-primary/90 cursor-pointer\" href=\"/sign-up\">Start Free Trial Toggle theme Toggle menu Intel Intelligence AMD Firmware Update Removes Memory Encryption From… Back to intelligence patch-regression widely-deployed-product-advisory e",
+        "fetch_error": ""
+      },
+      {
+        "title": "AMD Reportedly Removes TSME Memory Encryption Support from Ryzen CPUs",
+        "url": "https://www.guru3d.com/story/amd-reportedly-removes-tsme-memory-encryption-support-from-ryzen-cpus/",
+        "query": "AMD Ryzen memory encryption SME TSME support list",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "AMD Reportedly Removes TSME Memory Encryption Support from Ryzen CPUs (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-1106208-1', 'auto'); ga('send', 'pageview'); window.googletag = window.googletag || {cmd: []}; googletag.cmd.push(function() { googletag.defineSlot('/21536815/300x250', [300, 250], 'div-gpt-ad-1603525413614-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googletag.enableServices(); }); googletag.cmd.push(function() { googletag.defineSlot('/21536815/top_728x90', [728, 90], 'div-gpt-ad-1370330043123-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googletag.enableServices(); }); googletag.cmd.push(function() { googletag.defineSlot('/21536815/728x90_bottom', [728, 90], 'div-gpt-ad-1371970877258-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googletag.enableServices(); }); googletag.cmd.push(function() { googletag.defineSlot('/21536815/300x600_navbar', [300, 600], 'div-gpt-ad-1460022611270-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googletag.enableServices(); }); googletag.cmd.push(function() { googletag.defineSlot('/21536815/336x280', [336, 280], 'div-gpt-ad-1504538105620-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googlet",
+        "fetch_error": ""
+      },
+      {
+        "title": "Memory encryption: AMD SME, TSME and SEV",
+        "url": "https://mricher.fr/post/amd-memory-encryption/",
+        "query": "AMD Ryzen memory encryption SME TSME support list",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Memory encryption: AMD SME, TSME and SEV ← Home Subscribe Memory encryption: AMD SME, TSME and SEV December 12, 2021 security hardware There is a saying in security that it is difficult to secure a system if the attacker is able to tinker with hardware itself. On the server side, most of those issues have been put away by locking down said hardware in reasonably secured locations. But on the client side, those solutions are not possible. Phones vs. PCs Phones, as tightly integrated pieces of equipment with SoC and soldered components, were the first to benefit, by default, from storage encryption and integrated secure platforms. In an effort spearheaded by Apple, they have become mostly secure in the last 5 years. Instead, the more traditional x86 PC started to lag behind significantly. The modularity of the platform seems to make it difficult to close all doors and reach the same level of protection as a smartphone. So aside from the use of disk encryptions, nothing moved. The recent rants against TPMs requirements in Windows 11 are proof that those are not broadly available. Specifically, with more and more people setting up some kind of disk encryption by default , the main target shifted from cold storage to runtime memory. Either BitLocker on Windows or Cryptsetup on Linux are part of the OS installation process now. Getting the data and secrets from system memory is much easier. The premise is that if you get physical access to any random running system, you can: get the RAM sticks out put them in liquid nitrogen to freeze the bits in-place …then hook them up to a custom test bench that will dump the content, including all secret keys, giving you access to any linked cold storage. AMD Zen Memory Encryption That’s why when AMD announced that they would implement in",
+        "fetch_error": ""
+      },
+      {
+        "title": "AMD Silently Strips Memory Encryption from Consumer Ryzen CPUs - State of Surveillance",
+        "url": "https://stateofsurveillance.org/news/amd-ryzen-memory-guard-stripped-firmware-update-2026/",
+        "query": "AMD Ryzen memory encryption SME TSME support list",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"AMD Silently Strips Memory Encryption from Consumer Ryzen CPUs\",\"description\":\"Ars Technica's Dan Goodin reported on June 15, 2026 that AMD removed Transparent Secure Memory Encryption (TSME) from consumer Ryzen CPUs via the AGESA 1.2.7.0 firmware update, with no notice, no BIOS indication, and no detection path on Windows. The same feature still ships on AMD PRO Technologies enterprise chips. A privacy-conscious Linux hobbyist named Ben Kilpatrick spent months documenting the regression after his Host Security ID audit on a Ryzen 7 9700X showed 'encrypted RAM: not supported.' AMD's only public statement: TSME 'is a security feature only applied to PRO CPUs as part of AMD PRO Technologies.'\",\"author\":{\"@type\":\"Organization\",\"name\":\"State of Surveillance\",\"url\":\"https://stateofsurveillance.org\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"State of Surveillance\",\"url\":\"https://stateofsurveillance.org\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://stateofsurveillance.org/logo.png\"}},\"datePublished\":\"2026-06-17\",\"dateModified\":\"2026-06-17\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://stateofsurveillance.org/news/amd-ryzen-memory-guard-stripped-firmware-update-2026\"},\"image\":\"https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80&auto=format,compress\"} AMD Silently Strips Memory Encryption from Consumer Ryzen CPUs - State of Surveillance // Consent-gated PostHog loader. NOTHING loads (no script, no config/flags // requests, no localStorage id) until the visitor has accepted analytics. // The cookie banner calls window.loadPostHog() on Accept; returning // visitors with stored consent load it immediately below. (function() { var started = false; window.loadPostHog = function() { if (starte",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/hardware on Reddit: [ArsTechnica] Users cry foul after AMD stripped memory crypto [TSME] from its consumer CPUs",
+        "url": "https://www.reddit.com/r/hardware/comments/1u72s18/arstechnica_users_cry_foul_after_amd_stripped/",
+        "query": "AMD AGESA memory encryption removed Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "Users cry foul after AMD stripped memory crypto from its consumer CPUs - Ars Technica",
+        "url": "https://arstechnica.com/security/2026/06/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus/",
+        "query": "AMD AGESA memory encryption removed Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Users cry foul after AMD stripped memory crypto from its consumer CPUs - Ars Technica window.snowplowQueue = window.snowplowQueue || []; window.arsSP = { entities: {\"site\":{\"org_id\":\"4gKgcFGUFUvCGFzHakTPfYp85Yi8\",\"site_env\":\"production\",\"site_app_version\":\"multi-tenant\",\"site_data_source\":\"web\",\"site_section\":\"security\"},\"page\":{\"has_buy_button\":false},\"content\":{\"content_id\":\"c6c7dcaedd793422df3bb446\",\"content_type\":\"article\",\"editor_name\":\"Ken Fisher\",\"author_name\":\"Dan Goodin\",\"date_display\":\"2026-06-18T09:21:02.740Z\",\"content_source\":\"web\",\"content_len\":2,\"content_title\":\"Users cry foul after AMD stripped memory crypto from its consumer CPUs\",\"author_id\":\"3\",\"date_publish\":\"2026-06-15T17:55:46.000Z\",\"date_last_modified\":\"2026-06-16T23:03:15.000Z\",\"onsite_keywords\":\"amd|cpus|processors|transparent-secure-memory-encryption|tsme\",\"pagination_pages_tot\":2,\"word_count\":1385,\"content_template\":\"standard\",\"content_template_type\":\"mt_article_two_column\",\"content_is_commerce\":false}}, config: {\"SNOWPLOW_COLLECTOR\":\"c.arstechnica.com\",\"AVO_API_KEY\":\"FTJO6mVPBIzdGhjn2Ruy\",\"APP_ID\":\"ars-technica\",\"APP_NAME\":\"ars-technica\",\"APP_ENV\":\"production\",\"APP_VERSION\":\"1.0.0\",\"COOKIE_DOMAIN\":\".arstechnica.com\"} }; (function () { var ChannelWildcard = { ALL: '*', }; function KendraEvent(historyLimit) { this.listeners = new Map(); this.eventHistory = []; this.historyLimit = historyLimit || 10; } KendraEvent.prototype.broadcast = function (channel, value, options) { var opts = options || {}; var timestamp = Date.now(); if (opts.once) { if (channel === ChannelWildcard.ALL) { console.warn(\"'once: true' is not supported with ChannelWildcard.ALL\"); return; } var hasBroadcasted = this.eventHistory.some(function (entry) { return entry.channel === channel; }); if (hasBroadcasted) { return; } } var",
+        "fetch_error": ""
+      },
+      {
+        "title": "Users Cry Foul After AMD Stripped Memory Crypto From Its Consumer CPUs - Slashdot",
+        "url": "https://hardware.slashdot.org/story/26/06/15/200234/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus",
+        "query": "AMD memory encryption vulnerability physical attack",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function () { if (typeof window.sdmedia !== 'object') { window.sdmedia = {}; } if (typeof window.sdmedia.site !== 'object') { window.sdmedia.site = {}; } var site = window.sdmedia.site; site.rootdir = \"//slashdot.org\"; }()); var pageload = { pagemark: '632473028753561068', before_content: (new Date).getTime() }; function pageload_done( $, console, maybe ){ pageload.after_readycode = (new Date).getTime(); pageload.content_ready_time = pageload.content_ready - pageload.before_content; pageload.script_ready_time = pageload.after_readycode - pageload.content_ready; pageload.ready_time = pageload.after_readycode - pageload.before_content; // Only report 1% of cases. maybe || (Math.random()>0.01) || $.ajax({ type: 'POST', data: { op: 'page_profile', pagemark: pageload.pagemark, dom: pageload.content_ready_time, js: pageload.script_ready_time } }); } Users Cry Foul After AMD Stripped Memory Crypto From Its Consumer CPUs - Slashdot // country.js converted to inline by CF Snippet window.is_euro_union = 0; window.country_code2 = \"US\"; window.region = \"CA\"; window.prebidOptions = {uids: {ip: \"172.185.47.133\" }}; window.bizx.cmp.init({ cmp_id: 12126, geo: window, gam_gdpr_technical_delivery: true, }); bizx.uids.gather(); window.prebidOptions = window.prebidOptions || {}; window.prebidOptions.uids = window.prebidOptions.uids || {}; window.prebidOptions.uids.hem = bizx.uids.getHem(); var _gaq = _gaq || []; window.SD = {}; window.SD.Ads = {}; var googletag = window.googletag || {}; googletag.cmd = googletag.cmd || []; var sdAdBlockActive = true; var sdUboActive = true; (function(){ var regexp=/\\s*(?:\\d+|many)\\s+more\\s*/i; var auto_more_count = 1; function auto_more(){ var $more_link = $('#more-experiment a'); $more_link.each(function(){ var $lastitem = $('#firehoselist>article.fhitem",
+        "fetch_error": ""
+      },
+      {
+        "title": "AMD removes memory encryption from consumer CPUs, users react",
+        "url": "https://cryptobriefing.com/amd-removes-memory-encryption-consumer-cpus/",
+        "query": "AMD memory encryption vulnerability physical attack",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function(){var s=localStorage.getItem('cb-dark-mode');if(s==='true')document.documentElement.classList.add('dark');})(); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5B8VMXJ'); (function() { var host = 'cryptobriefing.com'; var element = document.createElement('script'); var firstScript = document.getElementsByTagName('script')[0]; var url = 'https://cmp.inmobi.com' .concat('/choice/', 'nwS18F5XLGdW_', '/', host, '/choice.js?tag_version=V3'); var uspTries = 0; var uspTriesLimit = 3; element.async = true; element.type = 'text/javascript'; element.src = url; firstScript.parentNode.insertBefore(element, firstScript); function makeStub() { var TCF_LOCATOR_NAME = '__tcfapiLocator'; var queue = []; var win = window; var cmpFrame; function addFrame() { var doc = win.document; var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]); if (!otherCMP) { if (doc.body) { var iframe = doc.createElement('iframe'); iframe.style.cssText = 'display:none'; iframe.name = TCF_LOCATOR_NAME; doc.body.appendChild(iframe); } else { setTimeout(addFrame, 5); } } return !otherCMP; } function tcfAPIHandler() { var gdprApplies; var args = arguments; if (!args.length) { return queue; } else if (args[0] === 'setGdprApplies') { if ( args.length > 3 && args[2] === 2 && typeof args[3] === 'boolean' ) { gdprApplies = args[3]; if (typeof args[2] === 'function') { args[2]('set', true); } } } else if (args[0] === 'ping') { var retr = { gdprApplies: gdprApplies, cmpLoaded: false, cmpStatus: 'stub' }; if (typeof args[2] === 'function') { arg",
+        "fetch_error": ""
+      },
+      {
+        "title": "AMD Product Security",
+        "url": "https://www.amd.com/en/resources/product-security.html",
+        "query": "AMD security feature removal disclosure policy",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "The read operation timed out"
+      },
+      {
+        "title": "Advanced Micro Devices - Privacy Notice",
+        "url": "https://www.amd.com/en/legal/privacy.html",
+        "query": "AMD security feature removal disclosure policy",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "The read operation timed out"
+      },
+      {
+        "title": "AMD Quietly Removes Security Feature From Ryzen Processors Without User Notification - News Directory 3",
+        "url": "https://www.newsdirectory3.com/amd-quietly-removes-security-feature-from-ryzen-processors-without-user-notification/",
+        "query": "AMD security feature removal disclosure policy",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root{--color-primary:#2563eb;--color-surface:#fff;--color-background:#f8fafc;--color-text-primary:#1e293b;--color-border:#e2e8f0} *,*::before,*::after{box-sizing:border-box} body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;color:var(--color-text-primary);background:var(--color-background);line-height:1.6} .site-header{position:sticky;top:0;background:var(--color-surface);border-bottom:1px solid var(--color-border);z-index:99} .container{max-width:1200px;margin:0 auto;padding:0 1.5rem} .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden} .skip-link:focus{position:fixed;top:0;left:0;width:auto;height:auto;padding:1rem;background:#fff;z-index:100000} AMD Quietly Removes Security Feature From Ryzen Processors Without User Notification - News Directory 3 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://www.newsdirectory3.com/#organization\",\"name\":\"News Directory 3\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://www.newsdirectory3.com/#logo\",\"url\":\"https://i0.wp.com/www.newsdirectory3.com/wp-content/uploads/2026/03/cropped-logo.png?resize=150%2C150&ssl=1\",\"contentUrl\":\"https://i0.wp.com/www.newsdirectory3.com/wp-content/uploads/2026/03/cropped-logo.png?resize=150%2C150&ssl=1\",\"caption\":\"News Directory 3\",\"inLanguage\":\"en-US\"}},{\"@type\":\"WebSite\",\"@id\":\"https://www.newsdirectory3.com/#website\",\"url\":\"https://www.newsdirectory3.com\",\"name\":\"News Directory 3\",\"publisher\":{\"@id\":\"https://www.newsdirectory3.com/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://i0.wp.com/tarreo.buscafs.com/2026/06/Untitledfwfwed-2.jpg?fit=1920,1080&quality=75&strip=all\",\"url\":\"https://i0.wp.com/tarreo.buscafs.com/2026/06/Untitledfwfwed-2.jpg?fit=1920,1080&quality=75&strip=all\",\"w",
+        "fetch_error": ""
+      },
+      {
+        "title": "Intel vs AMD: Which CPUs Are Better in 2026? | Tom's Hardware",
+        "url": "https://www.tomshardware.com/features/amd-vs-intel-cpus",
+        "query": "AMD vs Intel memory encryption consumer CPU comparison",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Intel vs AMD: Which CPUs Are Better in 2026? | Tom's Hardware @layer reset, legacy, tw-components, components, tw-utilities, utilities, van-ds, hawk, global; @layer legacy { :root { --color-primary-50: 247 212 213; --color-primary-100: 241 181 182; --color-primary-200: 234 150 151; --color-primary-300: 228 119 121; --color-primary-400: 222 87 90; --color-primary-500: 216 56 59; --color-primary-600: 190 37 40; --color-primary-700: 154 30 32; --color-primary-800: 117 23 25; --color-primary-900: 80 16 17; --color-primary-950: 43 8 9; --color-secondary-50: 248 250 252; --color-secondary-100: 241 245 249; --color-secondary-200: 226 232 240; --color-secondary-300: 203 213 225; --color-secondary-400: 148 163 184; --color-secondary-500: 100 116 139; --color-secondary-600: 71 85 105; --color-secondary-700: 51 65 85; --color-secondary-800: 30 41 59; --color-secondary-900: 15 23 42; --color-secondary-950: 2 6 23; --font-ui-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-ui-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; } } { \"@context\": \"https://schema.org\", \"@type\": \"NewsArticle\", \"name\": \"Intel vs AMD: Which CPUs Are Better in 2026?\", \"headline\": \"Intel vs AMD: Which CPUs Are Better in 2026?\", \"alternativeHeadline\": \"We put Intel vs AMD in a battle of processor prowess.\", \"datePublished\": \"2024-08-03T12:37:35+00:00\", \"url\": \"https://www.tomshardware.com/features/amd-vs-intel-cpus\", \"articleSection\": \"CPUs\", \"speakable\": { \"@context\": \"https://schema.org\", \"@type\": \"SpeakableSpecification\", \"xpath\": [ \"/html/head/title\", \"/html/head/meta[@name=\\\"description\\\"]/@content\" ] }, \"image\": [ { \"@context\": \"https://schema.org\", \"",
+        "fetch_error": ""
+      },
+      {
+        "title": "Intel vs AMD Processor Security: Who Makes the Safest CPUs? | Tom's Hardware",
+        "url": "https://www.tomshardware.com/features/intel-amd-most-secure-processors",
+        "query": "AMD vs Intel memory encryption consumer CPU comparison",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Intel vs AMD Processor Security: Who Makes the Safest CPUs? | Tom's Hardware @layer reset, legacy, tw-components, components, tw-utilities, utilities, van-ds, hawk, global; @layer legacy { :root { --color-primary-50: 247 212 213; --color-primary-100: 241 181 182; --color-primary-200: 234 150 151; --color-primary-300: 228 119 121; --color-primary-400: 222 87 90; --color-primary-500: 216 56 59; --color-primary-600: 190 37 40; --color-primary-700: 154 30 32; --color-primary-800: 117 23 25; --color-primary-900: 80 16 17; --color-primary-950: 43 8 9; --color-secondary-50: 248 250 252; --color-secondary-100: 241 245 249; --color-secondary-200: 226 232 240; --color-secondary-300: 203 213 225; --color-secondary-400: 148 163 184; --color-secondary-500: 100 116 139; --color-secondary-600: 71 85 105; --color-secondary-700: 51 65 85; --color-secondary-800: 30 41 59; --color-secondary-900: 15 23 42; --color-secondary-950: 2 6 23; --font-ui-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-ui-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; } } { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"name\": \"Intel vs AMD Processor Security: Who Makes the Safest CPUs?\", \"headline\": \"Intel vs AMD Processor Security: Who Makes the Safest CPUs?\", \"alternativeHeadline\": \"Who has the most secure processors, AMD or Intel?\", \"datePublished\": \"2019-11-04T18:22:35+00:00\", \"url\": \"https://www.tomshardware.com/features/intel-amd-most-secure-processors\", \"articleSection\": \"CPUs\", \"speakable\": { \"@context\": \"https://schema.org\", \"@type\": \"SpeakableSpecification\", \"xpath\": [ \"/html/head/title\", \"/html/head/meta[@name=\\\"description\\\"]/@content\" ]",
+        "fetch_error": ""
+      },
+      {
+        "title": "A comparison study of intel SGX and AMD memory encryption technology | Proceedings of the 7th International Workshop on Hardware and Architectural Support for Security and Privacy",
+        "url": "https://dl.acm.org/doi/10.1145/3214292.3214301",
+        "query": "AMD vs Intel memory encryption consumer CPU comparison",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "推荐选题",
+      "label": "推荐",
+      "reason": "证据较完整，来自Tom's Hardware、Ars Technica等可靠媒体，社区讨论热烈；老花人设解读角度清楚（硬件安全透明度、用户控制权、厂商责任）；读者分层明确；泛兴趣故事钩子成立（硬件安全功能被悄然移除，用户不知情）；传播张力强（厂商vs用户、安全vs性能、知情权vs商业决策）；逻辑基本能闭环。"
+    },
+    "core_question": "AMD是否在未通知用户的情况下从消费级Ryzen CPU中移除了内存加密功能（TSME）？这对普通用户的安全风险有多大？",
+    "why_this_topic_matters": "硬件安全功能被厂商悄然移除，用户无法知情也无法选择，暴露了消费级硬件在安全透明度上的缺失，以及用户对固件更新内容的控制权不足。此事影响所有使用最新AGESA固件的Ryzen用户，涉及物理攻击场景下的数据安全。",
+    "fact_summary": [
+      "Tom's Hardware于2026年6月15日报道，AMD在AGESA 1.2.7.0固件更新中移除了消费级Ryzen CPU的Transparent Secure Memory Encryption (TSME)功能。",
+      "Ars Technica于2026年6月18日报道，一位Linux爱好者Ben Kilpatrick在Ryzen 7 9700X上发现'encrypted RAM: not supported'，经数月追踪确认是AGESA固件变更所致。",
+      "AMD的官方声明称TSME'is a security feature only applied to PRO CPUs as part of AMD PRO Technologies'。",
+      "该功能在Windows下无检测路径，用户无法直接知晓是否被移除。",
+      "AMD工程师在被问及此事时保持沉默。",
+      "社区反应强烈，Reddit、Slashdot等平台有大量讨论。"
+    ],
+    "persona_discussion_question": "作为普通技术人，我是否需要担心我的Ryzen电脑的内存数据被物理访问泄露？我该如何检查自己的固件版本并评估风险？",
+    "old_flower_stance": "硬件安全功能被厂商悄然移除，用户无法知情也无法选择，这暴露了消费级硬件在安全透明度上的缺失，以及用户对固件更新内容的控制权不足。普通技术人应该关注自己的设备是否受影响，并思考如何应对厂商的'静默变更'。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "共鸣读者"
+      ],
+      "interest_score": 85,
+      "why_interested": "核心技术人关注硬件安全机制、固件变更对系统安全的影响；入门读者可以了解内存加密的基本概念和风险；共鸣读者对厂商不透明行为有共鸣。",
+      "reader_risk": "可能引发对AMD产品的信任危机，但需避免夸大实际风险（物理攻击场景相对少见）。"
+    },
+    "mass_interest_hook": {
+      "score": 80,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "标题暗示'安全功能被悄悄移除'，普通人会担心自己的电脑是否变不安全，即使不懂技术也会被'安全风险'吸引。",
+      "story_seed": "你的电脑可能已经失去了一个重要的安全功能，而你完全不知情——AMD在最新的固件更新中悄然移除了内存加密，没有通知用户。",
+      "do_not_overhype": "不要声称所有Ryzen用户都面临严重风险，实际物理攻击场景需要攻击者拥有物理访问权限，对普通用户威胁有限。"
+    },
+    "topic_tension": {
+      "score": 10,
+      "conflict_point": "厂商（AMD）与用户（消费者）之间的信息不对称和信任冲突；安全功能与性能/成本之间的权衡。",
+      "debate_question": "硬件厂商是否有义务在移除安全功能时明确通知用户？用户是否应该拥有对固件变更的知情权和选择权？",
+      "stakeholders": [
+        "AMD",
+        "Ryzen CPU用户",
+        "安全研究人员",
+        "PC制造商/BIOS供应商",
+        "竞争对手Intel"
+      ],
+      "why_people_would_comment": "读者可以围绕厂商责任、安全与性能的权衡、自己是否受影响、如何检测和应对等话题发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。避免引发无根据的恐慌。"
+    },
+    "timeline": [
+      "2026-06-15: Tom's Hardware首次报道AMD在AGESA 1.2.7.0中移除TSME。",
+      "2026-06-16: Guru3D、Technology.org等媒体跟进报道。",
+      "2026-06-17: State of Surveillance报道，引用Ars Technica的Dan Goodin。",
+      "2026-06-18: Ars Technica发布详细报道，社区反应强烈。",
+      "2026-06-18: Slashdot、Reddit等平台出现大量讨论。"
+    ],
+    "evidence_table": [
+      {
+        "source": "Tom's Hardware",
+        "url": "https://www.tomshardware.com/pc-components/cpus/amd-silently-removes-memory-encryption-from-consumer-ryzen-cpus-leaving-users-unaware-that-they-may-be-vulnerable-security-feature-vanishes-after-newer-agesa-firmware-amd-engineers-go-radio-silent-when-pressed-about-the-change",
+        "supports": "首次报道AMD移除TSME，提供详细技术背景和社区反应。",
+        "reliability": "media"
+      },
+      {
+        "source": "Ars Technica",
+        "url": "https://arstechnica.com/security/2026/06/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus/",
+        "supports": "深入报道，引用Linux爱好者Ben Kilpatrick的发现和AMD官方声明。",
+        "reliability": "media"
+      },
+      {
+        "source": "State of Surveillance",
+        "url": "https://stateofsurveillance.org/news/amd-ryzen-memory-guard-stripped-firmware-update-2026/",
+        "supports": "汇总报道，确认AMD官方声明：TSME仅用于PRO CPU。",
+        "reliability": "media"
+      },
+      {
+        "source": "Guru3D",
+        "url": "https://www.guru3d.com/story/amd-reportedly-removes-tsme-memory-encryption-support-from-ryzen-cpus/",
+        "supports": "跟进报道，确认TSME被移除。",
+        "reliability": "media"
+      },
+      {
+        "source": "Slashdot",
+        "url": "https://hardware.slashdot.org/story/26/06/15/200234/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus",
+        "supports": "社区讨论，反映用户不满。",
+        "reliability": "media"
+      },
+      {
+        "source": "Reddit r/hardware",
+        "url": "https://www.reddit.com/r/hardware/comments/1u72s18/arstechnica_users_cry_foul_after_amd_stripped/",
+        "supports": "社区讨论，用户自行验证和反馈。",
+        "reliability": "weak"
+      },
+      {
+        "source": "Mallory",
+        "url": "https://www.mallory.ai/stories/019ecc76-6134-7fe7-b08f-d0939eb1e9a9",
+        "supports": "安全情报平台报道，确认事件。",
+        "reliability": "media"
+      },
+      {
+        "source": "CryptoBriefing",
+        "url": "https://cryptobriefing.com/amd-removes-memory-encryption-consumer-cpus/",
+        "supports": "报道事件和社区反应。",
+        "reliability": "media"
+      },
+      {
+        "source": "News Directory 3",
+        "url": "https://www.newsdirectory3.com/amd-quietly-removes-security-feature-from-ryzen-processors-without-user-notification/",
+        "supports": "汇总报道。",
+        "reliability": "weak"
+      }
+    ],
+    "logic_closure": "证据链完整：多个可靠媒体确认AMD在AGESA 1.2.7.0中移除了TSME，AMD官方声明证实TSME仅用于PRO CPU，社区有用户自行验证。逻辑闭环：厂商未通知用户移除安全功能，用户无法检测，存在潜在安全风险。",
+    "writeable_angles": [
+      {
+        "angle": "风险预警：你的Ryzen CPU可能已失去内存加密，如何自查和应对",
+        "why": "直接服务用户，提供可操作步骤，吸引点击。",
+        "needs": "需要提供自查方法（检查AGESA版本、使用Linux工具检测TSME支持）、受影响CPU型号列表、降级固件的风险和可行性。"
+      },
+      {
+        "angle": "厂商责任：AMD悄然移除安全功能，用户知情权何在？",
+        "why": "引发讨论，符合老花人设对厂商透明度的关注。",
+        "needs": "需要分析AMD的披露政策、对比Intel类似情况、讨论用户是否有法律追索权。"
+      },
+      {
+        "angle": "安全与性能的权衡：内存加密真的必要吗？",
+        "why": "技术深度分析，吸引核心技术人。",
+        "needs": "需要解释TSME的工作原理、性能影响、物理攻击场景的真实威胁。"
+      },
+      {
+        "angle": "社区反应：Reddit、Slashdot用户如何应对？",
+        "why": "故事性强，容易引发共鸣。",
+        "needs": "需要收集社区讨论中的关键观点、用户自行验证的案例、可能的解决方案。"
+      }
+    ],
+    "missing_basics": [
+      "TSME与SME的区别",
+      "物理攻击（如冷启动攻击）的原理和可行性",
+      "AGESA固件更新机制和用户控制权"
+    ],
+    "missing_materials": [
+      "AMD官方AGESA 1.2.7.0更新日志（需确认是否提及TSME移除）",
+      "受影响CPU型号的完整列表",
+      "Windows下检测TSME是否启用的方法",
+      "降级固件的具体步骤和风险",
+      "Intel消费级CPU是否提供类似功能（如SGX）及其现状"
+    ],
+    "not_claimable": [
+      "AMD故意隐瞒安全漏洞",
+      "所有Ryzen用户都面临严重安全风险",
+      "该功能移除已导致数据泄露事件",
+      "用户无法通过任何方式恢复该功能"
+    ],
+    "followup_queries": [
+      "AMD AGESA 1.2.7.0 changelog 是否提及TSME移除？",
+      "哪些Ryzen CPU型号原本支持TSME？",
+      "Windows下如何检测TSME是否启用？",
+      "降级AGESA固件是否可行？风险是什么？",
+      "Intel消费级CPU是否有类似的内存加密功能？是否也被移除过？"
+    ],
+    "additional_search_queries": [
+      "AMD AGESA 1.2.7.0 release notes",
+      "Ryzen TSME support list",
+      "check TSME enabled Windows",
+      "downgrade AGESA firmware risk",
+      "Intel memory encryption consumer CPU"
+    ],
+    "stop_conditions": [
+      "AMD官方发布声明确认或否认TSME移除",
+      "发现TSME移除仅影响特定批次或可被BIOS选项恢复",
+      "社区发现该功能实际上并未被移除，而是被重命名或移动位置",
+      "出现大规模数据泄露事件直接归因于TSME移除"
+    ],
+    "confidence": 80,
+    "topic_direction": "side-info",
+    "topic_direction_title": "副业&信息差",
+    "report_type": "risk-warning",
+    "quality_gate": {
+      "pass": true,
+      "score": 85,
+      "fatal_issues": [],
+      "warnings": [
+        "AMD官方AGESA更新日志未获取到，需确认是否提及TSME移除",
+        "Windows下检测TSME的方法缺失",
+        "受影响CPU型号完整列表缺失"
+      ],
+      "missing_evidence": [
+        "AMD官方AGESA 1.2.7.0更新日志",
+        "Windows下检测TSME是否启用的方法",
+        "受影响CPU型号完整列表",
+        "降级固件的具体步骤和风险"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": true,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": true,
+      "downstream_handoff_ok": true,
+      "material_pack_ok": true,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": true,
+      "source_coverage_ok": true,
+      "recommendation": "publish"
+    },
+    "research_plan": {
+      "core_question": "AMD 是否在未通知用户的情况下从消费级 Ryzen CPU 中移除了内存加密功能？这对普通用户的安全风险有多大？",
+      "persona_discussion_question": "作为普通技术人，我是否需要担心我的 Ryzen 电脑的内存数据被物理访问泄露？我该如何检查自己的固件版本并评估风险？",
+      "hidden_public_issue": "硬件安全功能被厂商悄然移除，用户无法知情也无法选择，这暴露了消费级硬件在安全透明度上的缺失，以及用户对固件更新内容的控制权不足。",
+      "must_verify": [
+        "AMD 是否官方确认移除了内存加密功能？",
+        "哪些具体 Ryzen CPU 型号和 AGESA 版本受影响？",
+        "内存加密功能（如 SME/TSME）的实际安全价值是什么？",
+        "移除后是否存在已知的攻击案例或 PoC？",
+        "用户是否有办法自行恢复该功能？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "AMD AGESA firmware changelog memory encryption removal",
+          "why_needed": "确认官方是否在更新日志中提及此变更"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "AMD Ryzen memory encryption SME TSME support list",
+          "why_needed": "确认哪些型号原本支持内存加密"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "AMD AGESA memory encryption removed Reddit",
+          "why_needed": "获取社区反馈和用户自行验证的结果"
+        },
+        {
+          "source_type": "case_study",
+          "query": "AMD memory encryption vulnerability physical attack",
+          "why_needed": "评估实际安全风险，是否有真实攻击案例"
+        },
+        {
+          "source_type": "policy",
+          "query": "AMD security feature removal disclosure policy",
+          "why_needed": "了解 AMD 是否有义务通知用户此类变更"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "AMD vs Intel memory encryption consumer CPU comparison",
+          "why_needed": "对比竞争对手是否也有类似问题"
+        }
+      ],
+      "expert_challenge_points": [
+        "内存加密对普通用户是否真的必要？物理访问攻击场景是否常见？",
+        "AMD 是否可能出于性能或成本考虑移除该功能？",
+        "用户是否可以通过降级固件恢复功能？降级是否有风险？"
+      ],
+      "do_not_claim_yet": [
+        "AMD 故意隐瞒安全漏洞",
+        "所有 Ryzen 用户都面临严重安全风险",
+        "该功能移除导致数据泄露事件已发生"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需强调证据缺口：AMD 未官方确认，实际影响待评估。适合作为风险预警，引导用户自查和社区讨论。",
+      "downstream_materials_needed": [
+        "AMD 官方 AGESA 更新日志（需爬取或存档）",
+        "受影响 CPU 型号列表",
+        "社区测试结果（如 Reddit 帖子）",
+        "安全专家对物理攻击可行性的分析"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable — security feature vanishes after newer AGESA firmware, AMD engineers go radio silent when pressed about the change | Tom's Hardware",
+        "url": "https://www.tomshardware.com/pc-components/cpus/amd-silently-removes-memory-encryption-from-consumer-ryzen-cpus-leaving-users-unaware-that-they-may-be-vulnerable-security-feature-vanishes-after-newer-agesa-firmware-amd-engineers-go-radio-silent-when-pressed-about-the-change",
+        "query": "AMD AGESA firmware changelog memory encryption removal",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable — security feature vanishes after newer AGESA firmware, AMD engineers go radio silent when pressed about the change | Tom's Hardware @layer reset, legacy, tw-components, components, tw-utilities, utilities, van-ds, hawk, global; @layer legacy { :root { --color-primary-50: 247 212 213; --color-primary-100: 241 181 182; --color-primary-200: 234 150 151; --color-primary-300: 228 119 121; --color-primary-400: 222 87 90; --color-primary-500: 216 56 59; --color-primary-600: 190 37 40; --color-primary-700: 154 30 32; --color-primary-800: 117 23 25; --color-primary-900: 80 16 17; --color-primary-950: 43 8 9; --color-secondary-50: 248 250 252; --color-secondary-100: 241 245 249; --color-secondary-200: 226 232 240; --color-secondary-300: 203 213 225; --color-secondary-400: 148 163 184; --color-secondary-500: 100 116 139; --color-secondary-600: 71 85 105; --color-secondary-700: 51 65 85; --color-secondary-800: 30 41 59; --color-secondary-900: 15 23 42; --color-secondary-950: 2 6 23; --font-ui-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-ui-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; } } { \"@context\": \"https://schema.org\", \"@type\": \"NewsArticle\", \"name\": \"AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable\\u2026\", \"headline\": \"AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable — security feature vanishes after newer AGESA firmware, AMD engineers go radio silent when pressed about t",
+        "fetch_error": ""
+      },
+      {
+        "title": "AMD Pulls Memory Encryption From Ryzen CPUs - Technology Org",
+        "url": "https://www.technology.org/2026/06/16/amd-strips-memory-encryption-consumer-ryzen-cpus/",
+        "query": "AMD AGESA firmware changelog memory encryption removal",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "AMD Firmware Update Removes Memory Encryption From Consumer Ryzen CPUs | Mallory",
+        "url": "https://www.mallory.ai/stories/019ecc76-6134-7fe7-b08f-d0939eb1e9a9",
+        "query": "AMD AGESA firmware changelog memory encryption removal",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "AMD Firmware Update Removes Memory Encryption From Consumer Ryzen CPUs | Mallory {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Mallory\",\"legalName\":\"Mallory Intelligence\",\"url\":\"https://mallory.ai\",\"logo\":\"https://mallory.ai/logo.png\",\"description\":\"Mallory is an agentic threat-intelligence platform that reasons across your attack surface and the global threat landscape to deliver intelligence security teams can act on.\",\"sameAs\":[\"https://linkedin.com/company/malloryai\",\"https://x.com/malloryintel\",\"https://github.com/malloryai\"]} {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Mallory\",\"url\":\"https://mallory.ai\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Mallory\"}} ((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=[\"light\",\"dark\"];function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{let c=\"class\"===a,d=c&&f?e.map(a=>f[a]||a):e;c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)}),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&\"system\"===a?window.matchMedia(\"(prefers-color-scheme: dark)\").matches?\"dark\":\"light\":a;k(d)}catch(a){}})(\"class\",\"theme\",\"light\",null,[\"light\",\"dark\"],null,true,true) Skip to main content Mallory Platform How It Works See the platform in action Pricing Plans and pricing Use Cases Common security workflows Resources Blog Insights and analysis Press Latest press Videos Talks and demos About Company Our mission and team Careers Open roles Intelligence Toggle theme Sign in svg]:px-2.5 bg-primary hover:bg-primary/90 cursor-pointer\" href=\"/sign-up\">Start Free Trial Toggle theme Toggle menu Intel Intelligence AMD Firmware Update Removes Memory Encryption From… Back to intelligence patch-regression widely-deployed-product-advisory e",
+        "fetch_error": ""
+      },
+      {
+        "title": "AMD Reportedly Removes TSME Memory Encryption Support from Ryzen CPUs",
+        "url": "https://www.guru3d.com/story/amd-reportedly-removes-tsme-memory-encryption-support-from-ryzen-cpus/",
+        "query": "AMD Ryzen memory encryption SME TSME support list",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "AMD Reportedly Removes TSME Memory Encryption Support from Ryzen CPUs (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-1106208-1', 'auto'); ga('send', 'pageview'); window.googletag = window.googletag || {cmd: []}; googletag.cmd.push(function() { googletag.defineSlot('/21536815/300x250', [300, 250], 'div-gpt-ad-1603525413614-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googletag.enableServices(); }); googletag.cmd.push(function() { googletag.defineSlot('/21536815/top_728x90', [728, 90], 'div-gpt-ad-1370330043123-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googletag.enableServices(); }); googletag.cmd.push(function() { googletag.defineSlot('/21536815/728x90_bottom', [728, 90], 'div-gpt-ad-1371970877258-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googletag.enableServices(); }); googletag.cmd.push(function() { googletag.defineSlot('/21536815/300x600_navbar', [300, 600], 'div-gpt-ad-1460022611270-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googletag.enableServices(); }); googletag.cmd.push(function() { googletag.defineSlot('/21536815/336x280', [336, 280], 'div-gpt-ad-1504538105620-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googlet",
+        "fetch_error": ""
+      },
+      {
+        "title": "Memory encryption: AMD SME, TSME and SEV",
+        "url": "https://mricher.fr/post/amd-memory-encryption/",
+        "query": "AMD Ryzen memory encryption SME TSME support list",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Memory encryption: AMD SME, TSME and SEV ← Home Subscribe Memory encryption: AMD SME, TSME and SEV December 12, 2021 security hardware There is a saying in security that it is difficult to secure a system if the attacker is able to tinker with hardware itself. On the server side, most of those issues have been put away by locking down said hardware in reasonably secured locations. But on the client side, those solutions are not possible. Phones vs. PCs Phones, as tightly integrated pieces of equipment with SoC and soldered components, were the first to benefit, by default, from storage encryption and integrated secure platforms. In an effort spearheaded by Apple, they have become mostly secure in the last 5 years. Instead, the more traditional x86 PC started to lag behind significantly. The modularity of the platform seems to make it difficult to close all doors and reach the same level of protection as a smartphone. So aside from the use of disk encryptions, nothing moved. The recent rants against TPMs requirements in Windows 11 are proof that those are not broadly available. Specifically, with more and more people setting up some kind of disk encryption by default , the main target shifted from cold storage to runtime memory. Either BitLocker on Windows or Cryptsetup on Linux are part of the OS installation process now. Getting the data and secrets from system memory is much easier. The premise is that if you get physical access to any random running system, you can: get the RAM sticks out put them in liquid nitrogen to freeze the bits in-place …then hook them up to a custom test bench that will dump the content, including all secret keys, giving you access to any linked cold storage. AMD Zen Memory Encryption That’s why when AMD announced that they would implement in",
+        "fetch_error": ""
+      },
+      {
+        "title": "AMD Silently Strips Memory Encryption from Consumer Ryzen CPUs - State of Surveillance",
+        "url": "https://stateofsurveillance.org/news/amd-ryzen-memory-guard-stripped-firmware-update-2026/",
+        "query": "AMD Ryzen memory encryption SME TSME support list",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"AMD Silently Strips Memory Encryption from Consumer Ryzen CPUs\",\"description\":\"Ars Technica's Dan Goodin reported on June 15, 2026 that AMD removed Transparent Secure Memory Encryption (TSME) from consumer Ryzen CPUs via the AGESA 1.2.7.0 firmware update, with no notice, no BIOS indication, and no detection path on Windows. The same feature still ships on AMD PRO Technologies enterprise chips. A privacy-conscious Linux hobbyist named Ben Kilpatrick spent months documenting the regression after his Host Security ID audit on a Ryzen 7 9700X showed 'encrypted RAM: not supported.' AMD's only public statement: TSME 'is a security feature only applied to PRO CPUs as part of AMD PRO Technologies.'\",\"author\":{\"@type\":\"Organization\",\"name\":\"State of Surveillance\",\"url\":\"https://stateofsurveillance.org\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"State of Surveillance\",\"url\":\"https://stateofsurveillance.org\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://stateofsurveillance.org/logo.png\"}},\"datePublished\":\"2026-06-17\",\"dateModified\":\"2026-06-17\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://stateofsurveillance.org/news/amd-ryzen-memory-guard-stripped-firmware-update-2026\"},\"image\":\"https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80&auto=format,compress\"} AMD Silently Strips Memory Encryption from Consumer Ryzen CPUs - State of Surveillance // Consent-gated PostHog loader. NOTHING loads (no script, no config/flags // requests, no localStorage id) until the visitor has accepted analytics. // The cookie banner calls window.loadPostHog() on Accept; returning // visitors with stored consent load it immediately below. (function() { var started = false; window.loadPostHog = function() { if (starte",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/hardware on Reddit: [ArsTechnica] Users cry foul after AMD stripped memory crypto [TSME] from its consumer CPUs",
+        "url": "https://www.reddit.com/r/hardware/comments/1u72s18/arstechnica_users_cry_foul_after_amd_stripped/",
+        "query": "AMD AGESA memory encryption removed Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "Users cry foul after AMD stripped memory crypto from its consumer CPUs - Ars Technica",
+        "url": "https://arstechnica.com/security/2026/06/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus/",
+        "query": "AMD AGESA memory encryption removed Reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Users cry foul after AMD stripped memory crypto from its consumer CPUs - Ars Technica window.snowplowQueue = window.snowplowQueue || []; window.arsSP = { entities: {\"site\":{\"org_id\":\"4gKgcFGUFUvCGFzHakTPfYp85Yi8\",\"site_env\":\"production\",\"site_app_version\":\"multi-tenant\",\"site_data_source\":\"web\",\"site_section\":\"security\"},\"page\":{\"has_buy_button\":false},\"content\":{\"content_id\":\"c6c7dcaedd793422df3bb446\",\"content_type\":\"article\",\"editor_name\":\"Ken Fisher\",\"author_name\":\"Dan Goodin\",\"date_display\":\"2026-06-18T09:21:02.740Z\",\"content_source\":\"web\",\"content_len\":2,\"content_title\":\"Users cry foul after AMD stripped memory crypto from its consumer CPUs\",\"author_id\":\"3\",\"date_publish\":\"2026-06-15T17:55:46.000Z\",\"date_last_modified\":\"2026-06-16T23:03:15.000Z\",\"onsite_keywords\":\"amd|cpus|processors|transparent-secure-memory-encryption|tsme\",\"pagination_pages_tot\":2,\"word_count\":1385,\"content_template\":\"standard\",\"content_template_type\":\"mt_article_two_column\",\"content_is_commerce\":false}}, config: {\"SNOWPLOW_COLLECTOR\":\"c.arstechnica.com\",\"AVO_API_KEY\":\"FTJO6mVPBIzdGhjn2Ruy\",\"APP_ID\":\"ars-technica\",\"APP_NAME\":\"ars-technica\",\"APP_ENV\":\"production\",\"APP_VERSION\":\"1.0.0\",\"COOKIE_DOMAIN\":\".arstechnica.com\"} }; (function () { var ChannelWildcard = { ALL: '*', }; function KendraEvent(historyLimit) { this.listeners = new Map(); this.eventHistory = []; this.historyLimit = historyLimit || 10; } KendraEvent.prototype.broadcast = function (channel, value, options) { var opts = options || {}; var timestamp = Date.now(); if (opts.once) { if (channel === ChannelWildcard.ALL) { console.warn(\"'once: true' is not supported with ChannelWildcard.ALL\"); return; } var hasBroadcasted = this.eventHistory.some(function (entry) { return entry.channel === channel; }); if (hasBroadcasted) { return; } } var",
+        "fetch_error": ""
+      },
+      {
+        "title": "Users Cry Foul After AMD Stripped Memory Crypto From Its Consumer CPUs - Slashdot",
+        "url": "https://hardware.slashdot.org/story/26/06/15/200234/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus",
+        "query": "AMD memory encryption vulnerability physical attack",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function () { if (typeof window.sdmedia !== 'object') { window.sdmedia = {}; } if (typeof window.sdmedia.site !== 'object') { window.sdmedia.site = {}; } var site = window.sdmedia.site; site.rootdir = \"//slashdot.org\"; }()); var pageload = { pagemark: '632473028753561068', before_content: (new Date).getTime() }; function pageload_done( $, console, maybe ){ pageload.after_readycode = (new Date).getTime(); pageload.content_ready_time = pageload.content_ready - pageload.before_content; pageload.script_ready_time = pageload.after_readycode - pageload.content_ready; pageload.ready_time = pageload.after_readycode - pageload.before_content; // Only report 1% of cases. maybe || (Math.random()>0.01) || $.ajax({ type: 'POST', data: { op: 'page_profile', pagemark: pageload.pagemark, dom: pageload.content_ready_time, js: pageload.script_ready_time } }); } Users Cry Foul After AMD Stripped Memory Crypto From Its Consumer CPUs - Slashdot // country.js converted to inline by CF Snippet window.is_euro_union = 0; window.country_code2 = \"US\"; window.region = \"CA\"; window.prebidOptions = {uids: {ip: \"172.185.47.133\" }}; window.bizx.cmp.init({ cmp_id: 12126, geo: window, gam_gdpr_technical_delivery: true, }); bizx.uids.gather(); window.prebidOptions = window.prebidOptions || {}; window.prebidOptions.uids = window.prebidOptions.uids || {}; window.prebidOptions.uids.hem = bizx.uids.getHem(); var _gaq = _gaq || []; window.SD = {}; window.SD.Ads = {}; var googletag = window.googletag || {}; googletag.cmd = googletag.cmd || []; var sdAdBlockActive = true; var sdUboActive = true; (function(){ var regexp=/\\s*(?:\\d+|many)\\s+more\\s*/i; var auto_more_count = 1; function auto_more(){ var $more_link = $('#more-experiment a'); $more_link.each(function(){ var $lastitem = $('#firehoselist>article.fhitem",
+        "fetch_error": ""
+      },
+      {
+        "title": "AMD removes memory encryption from consumer CPUs, users react",
+        "url": "https://cryptobriefing.com/amd-removes-memory-encryption-consumer-cpus/",
+        "query": "AMD memory encryption vulnerability physical attack",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(function(){var s=localStorage.getItem('cb-dark-mode');if(s==='true')document.documentElement.classList.add('dark');})(); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5B8VMXJ'); (function() { var host = 'cryptobriefing.com'; var element = document.createElement('script'); var firstScript = document.getElementsByTagName('script')[0]; var url = 'https://cmp.inmobi.com' .concat('/choice/', 'nwS18F5XLGdW_', '/', host, '/choice.js?tag_version=V3'); var uspTries = 0; var uspTriesLimit = 3; element.async = true; element.type = 'text/javascript'; element.src = url; firstScript.parentNode.insertBefore(element, firstScript); function makeStub() { var TCF_LOCATOR_NAME = '__tcfapiLocator'; var queue = []; var win = window; var cmpFrame; function addFrame() { var doc = win.document; var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]); if (!otherCMP) { if (doc.body) { var iframe = doc.createElement('iframe'); iframe.style.cssText = 'display:none'; iframe.name = TCF_LOCATOR_NAME; doc.body.appendChild(iframe); } else { setTimeout(addFrame, 5); } } return !otherCMP; } function tcfAPIHandler() { var gdprApplies; var args = arguments; if (!args.length) { return queue; } else if (args[0] === 'setGdprApplies') { if ( args.length > 3 && args[2] === 2 && typeof args[3] === 'boolean' ) { gdprApplies = args[3]; if (typeof args[2] === 'function') { args[2]('set', true); } } } else if (args[0] === 'ping') { var retr = { gdprApplies: gdprApplies, cmpLoaded: false, cmpStatus: 'stub' }; if (typeof args[2] === 'function') { arg",
+        "fetch_error": ""
+      },
+      {
+        "title": "AMD Product Security",
+        "url": "https://www.amd.com/en/resources/product-security.html",
+        "query": "AMD security feature removal disclosure policy",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "The read operation timed out"
+      },
+      {
+        "title": "Advanced Micro Devices - Privacy Notice",
+        "url": "https://www.amd.com/en/legal/privacy.html",
+        "query": "AMD security feature removal disclosure policy",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "The read operation timed out"
+      },
+      {
+        "title": "AMD Quietly Removes Security Feature From Ryzen Processors Without User Notification - News Directory 3",
+        "url": "https://www.newsdirectory3.com/amd-quietly-removes-security-feature-from-ryzen-processors-without-user-notification/",
+        "query": "AMD security feature removal disclosure policy",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root{--color-primary:#2563eb;--color-surface:#fff;--color-background:#f8fafc;--color-text-primary:#1e293b;--color-border:#e2e8f0} *,*::before,*::after{box-sizing:border-box} body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;color:var(--color-text-primary);background:var(--color-background);line-height:1.6} .site-header{position:sticky;top:0;background:var(--color-surface);border-bottom:1px solid var(--color-border);z-index:99} .container{max-width:1200px;margin:0 auto;padding:0 1.5rem} .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden} .skip-link:focus{position:fixed;top:0;left:0;width:auto;height:auto;padding:1rem;background:#fff;z-index:100000} AMD Quietly Removes Security Feature From Ryzen Processors Without User Notification - News Directory 3 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://www.newsdirectory3.com/#organization\",\"name\":\"News Directory 3\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://www.newsdirectory3.com/#logo\",\"url\":\"https://i0.wp.com/www.newsdirectory3.com/wp-content/uploads/2026/03/cropped-logo.png?resize=150%2C150&ssl=1\",\"contentUrl\":\"https://i0.wp.com/www.newsdirectory3.com/wp-content/uploads/2026/03/cropped-logo.png?resize=150%2C150&ssl=1\",\"caption\":\"News Directory 3\",\"inLanguage\":\"en-US\"}},{\"@type\":\"WebSite\",\"@id\":\"https://www.newsdirectory3.com/#website\",\"url\":\"https://www.newsdirectory3.com\",\"name\":\"News Directory 3\",\"publisher\":{\"@id\":\"https://www.newsdirectory3.com/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://i0.wp.com/tarreo.buscafs.com/2026/06/Untitledfwfwed-2.jpg?fit=1920,1080&quality=75&strip=all\",\"url\":\"https://i0.wp.com/tarreo.buscafs.com/2026/06/Untitledfwfwed-2.jpg?fit=1920,1080&quality=75&strip=all\",\"w",
+        "fetch_error": ""
+      },
+      {
+        "title": "Intel vs AMD: Which CPUs Are Better in 2026? | Tom's Hardware",
+        "url": "https://www.tomshardware.com/features/amd-vs-intel-cpus",
+        "query": "AMD vs Intel memory encryption consumer CPU comparison",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Intel vs AMD: Which CPUs Are Better in 2026? | Tom's Hardware @layer reset, legacy, tw-components, components, tw-utilities, utilities, van-ds, hawk, global; @layer legacy { :root { --color-primary-50: 247 212 213; --color-primary-100: 241 181 182; --color-primary-200: 234 150 151; --color-primary-300: 228 119 121; --color-primary-400: 222 87 90; --color-primary-500: 216 56 59; --color-primary-600: 190 37 40; --color-primary-700: 154 30 32; --color-primary-800: 117 23 25; --color-primary-900: 80 16 17; --color-primary-950: 43 8 9; --color-secondary-50: 248 250 252; --color-secondary-100: 241 245 249; --color-secondary-200: 226 232 240; --color-secondary-300: 203 213 225; --color-secondary-400: 148 163 184; --color-secondary-500: 100 116 139; --color-secondary-600: 71 85 105; --color-secondary-700: 51 65 85; --color-secondary-800: 30 41 59; --color-secondary-900: 15 23 42; --color-secondary-950: 2 6 23; --font-ui-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-ui-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; } } { \"@context\": \"https://schema.org\", \"@type\": \"NewsArticle\", \"name\": \"Intel vs AMD: Which CPUs Are Better in 2026?\", \"headline\": \"Intel vs AMD: Which CPUs Are Better in 2026?\", \"alternativeHeadline\": \"We put Intel vs AMD in a battle of processor prowess.\", \"datePublished\": \"2024-08-03T12:37:35+00:00\", \"url\": \"https://www.tomshardware.com/features/amd-vs-intel-cpus\", \"articleSection\": \"CPUs\", \"speakable\": { \"@context\": \"https://schema.org\", \"@type\": \"SpeakableSpecification\", \"xpath\": [ \"/html/head/title\", \"/html/head/meta[@name=\\\"description\\\"]/@content\" ] }, \"image\": [ { \"@context\": \"https://schema.org\", \"",
+        "fetch_error": ""
+      },
+      {
+        "title": "Intel vs AMD Processor Security: Who Makes the Safest CPUs? | Tom's Hardware",
+        "url": "https://www.tomshardware.com/features/intel-amd-most-secure-processors",
+        "query": "AMD vs Intel memory encryption consumer CPU comparison",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Intel vs AMD Processor Security: Who Makes the Safest CPUs? | Tom's Hardware @layer reset, legacy, tw-components, components, tw-utilities, utilities, van-ds, hawk, global; @layer legacy { :root { --color-primary-50: 247 212 213; --color-primary-100: 241 181 182; --color-primary-200: 234 150 151; --color-primary-300: 228 119 121; --color-primary-400: 222 87 90; --color-primary-500: 216 56 59; --color-primary-600: 190 37 40; --color-primary-700: 154 30 32; --color-primary-800: 117 23 25; --color-primary-900: 80 16 17; --color-primary-950: 43 8 9; --color-secondary-50: 248 250 252; --color-secondary-100: 241 245 249; --color-secondary-200: 226 232 240; --color-secondary-300: 203 213 225; --color-secondary-400: 148 163 184; --color-secondary-500: 100 116 139; --color-secondary-600: 71 85 105; --color-secondary-700: 51 65 85; --color-secondary-800: 30 41 59; --color-secondary-900: 15 23 42; --color-secondary-950: 2 6 23; --font-ui-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-ui-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; } } { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"name\": \"Intel vs AMD Processor Security: Who Makes the Safest CPUs?\", \"headline\": \"Intel vs AMD Processor Security: Who Makes the Safest CPUs?\", \"alternativeHeadline\": \"Who has the most secure processors, AMD or Intel?\", \"datePublished\": \"2019-11-04T18:22:35+00:00\", \"url\": \"https://www.tomshardware.com/features/intel-amd-most-secure-processors\", \"articleSection\": \"CPUs\", \"speakable\": { \"@context\": \"https://schema.org\", \"@type\": \"SpeakableSpecification\", \"xpath\": [ \"/html/head/title\", \"/html/head/meta[@name=\\\"description\\\"]/@content\" ]",
+        "fetch_error": ""
+      },
+      {
+        "title": "A comparison study of intel SGX and AMD memory encryption technology | Proceedings of the 7th International Workshop on Hardware and Architectural Support for Security and Privacy",
+        "url": "https://dl.acm.org/doi/10.1145/3214292.3214301",
+        "query": "AMD vs Intel memory encryption consumer CPU comparison",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260618-amd-silently-removes-memory-encryption-from-cons-c0c08ce4/",
+    "for_gpt_editor": {
+      "brief": "Comments",
+      "title_seed": "AMD 悄然移除消费级 Ryzen CPU 内存加密功能，用户安全风险未知",
+      "original_title": "AMD silently removes memory encryption from consumer Ryzen CPUs",
+      "source_url": "https://www.tomshardware.com/pc-components/cpus/amd-silently-removes-memory-encryption-from-consumer-ryzen-cpus-leaving-users-unaware-that-they-may-be-vulnerable-security-feature-vanishes-after-newer-agesa-firmware-amd-engineers-go-radio-silent-when-pressed-about-the-change",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "推荐选题",
+          "label": "推荐",
+          "reason": "证据较完整，来自Tom's Hardware、Ars Technica等可靠媒体，社区讨论热烈；老花人设解读角度清楚（硬件安全透明度、用户控制权、厂商责任）；读者分层明确；泛兴趣故事钩子成立（硬件安全功能被悄然移除，用户不知情）；传播张力强（厂商vs用户、安全vs性能、知情权vs商业决策）；逻辑基本能闭环。"
+        },
+        "core_question": "AMD是否在未通知用户的情况下从消费级Ryzen CPU中移除了内存加密功能（TSME）？这对普通用户的安全风险有多大？",
+        "why_this_topic_matters": "硬件安全功能被厂商悄然移除，用户无法知情也无法选择，暴露了消费级硬件在安全透明度上的缺失，以及用户对固件更新内容的控制权不足。此事影响所有使用最新AGESA固件的Ryzen用户，涉及物理攻击场景下的数据安全。",
+        "fact_summary": [
+          "Tom's Hardware于2026年6月15日报道，AMD在AGESA 1.2.7.0固件更新中移除了消费级Ryzen CPU的Transparent Secure Memory Encryption (TSME)功能。",
+          "Ars Technica于2026年6月18日报道，一位Linux爱好者Ben Kilpatrick在Ryzen 7 9700X上发现'encrypted RAM: not supported'，经数月追踪确认是AGESA固件变更所致。",
+          "AMD的官方声明称TSME'is a security feature only applied to PRO CPUs as part of AMD PRO Technologies'。",
+          "该功能在Windows下无检测路径，用户无法直接知晓是否被移除。",
+          "AMD工程师在被问及此事时保持沉默。",
+          "社区反应强烈，Reddit、Slashdot等平台有大量讨论。"
+        ],
+        "persona_discussion_question": "作为普通技术人，我是否需要担心我的Ryzen电脑的内存数据被物理访问泄露？我该如何检查自己的固件版本并评估风险？",
+        "old_flower_stance": "硬件安全功能被厂商悄然移除，用户无法知情也无法选择，这暴露了消费级硬件在安全透明度上的缺失，以及用户对固件更新内容的控制权不足。普通技术人应该关注自己的设备是否受影响，并思考如何应对厂商的'静默变更'。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "共鸣读者"
+          ],
+          "interest_score": 85,
+          "why_interested": "核心技术人关注硬件安全机制、固件变更对系统安全的影响；入门读者可以了解内存加密的基本概念和风险；共鸣读者对厂商不透明行为有共鸣。",
+          "reader_risk": "可能引发对AMD产品的信任危机，但需避免夸大实际风险（物理攻击场景相对少见）。"
+        },
+        "mass_interest_hook": {
+          "score": 80,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "标题暗示'安全功能被悄悄移除'，普通人会担心自己的电脑是否变不安全，即使不懂技术也会被'安全风险'吸引。",
+          "story_seed": "你的电脑可能已经失去了一个重要的安全功能，而你完全不知情——AMD在最新的固件更新中悄然移除了内存加密，没有通知用户。",
+          "do_not_overhype": "不要声称所有Ryzen用户都面临严重风险，实际物理攻击场景需要攻击者拥有物理访问权限，对普通用户威胁有限。"
+        },
+        "topic_tension": {
+          "score": 10,
+          "conflict_point": "厂商（AMD）与用户（消费者）之间的信息不对称和信任冲突；安全功能与性能/成本之间的权衡。",
+          "debate_question": "硬件厂商是否有义务在移除安全功能时明确通知用户？用户是否应该拥有对固件变更的知情权和选择权？",
+          "stakeholders": [
+            "AMD",
+            "Ryzen CPU用户",
+            "安全研究人员",
+            "PC制造商/BIOS供应商",
+            "竞争对手Intel"
+          ],
+          "why_people_would_comment": "读者可以围绕厂商责任、安全与性能的权衡、自己是否受影响、如何检测和应对等话题发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。避免引发无根据的恐慌。"
+        },
+        "timeline": [
+          "2026-06-15: Tom's Hardware首次报道AMD在AGESA 1.2.7.0中移除TSME。",
+          "2026-06-16: Guru3D、Technology.org等媒体跟进报道。",
+          "2026-06-17: State of Surveillance报道，引用Ars Technica的Dan Goodin。",
+          "2026-06-18: Ars Technica发布详细报道，社区反应强烈。",
+          "2026-06-18: Slashdot、Reddit等平台出现大量讨论。"
+        ],
+        "evidence_table": [
+          {
+            "source": "Tom's Hardware",
+            "url": "https://www.tomshardware.com/pc-components/cpus/amd-silently-removes-memory-encryption-from-consumer-ryzen-cpus-leaving-users-unaware-that-they-may-be-vulnerable-security-feature-vanishes-after-newer-agesa-firmware-amd-engineers-go-radio-silent-when-pressed-about-the-change",
+            "supports": "首次报道AMD移除TSME，提供详细技术背景和社区反应。",
+            "reliability": "media"
+          },
+          {
+            "source": "Ars Technica",
+            "url": "https://arstechnica.com/security/2026/06/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus/",
+            "supports": "深入报道，引用Linux爱好者Ben Kilpatrick的发现和AMD官方声明。",
+            "reliability": "media"
+          },
+          {
+            "source": "State of Surveillance",
+            "url": "https://stateofsurveillance.org/news/amd-ryzen-memory-guard-stripped-firmware-update-2026/",
+            "supports": "汇总报道，确认AMD官方声明：TSME仅用于PRO CPU。",
+            "reliability": "media"
+          },
+          {
+            "source": "Guru3D",
+            "url": "https://www.guru3d.com/story/amd-reportedly-removes-tsme-memory-encryption-support-from-ryzen-cpus/",
+            "supports": "跟进报道，确认TSME被移除。",
+            "reliability": "media"
+          },
+          {
+            "source": "Slashdot",
+            "url": "https://hardware.slashdot.org/story/26/06/15/200234/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus",
+            "supports": "社区讨论，反映用户不满。",
+            "reliability": "media"
+          },
+          {
+            "source": "Reddit r/hardware",
+            "url": "https://www.reddit.com/r/hardware/comments/1u72s18/arstechnica_users_cry_foul_after_amd_stripped/",
+            "supports": "社区讨论，用户自行验证和反馈。",
+            "reliability": "weak"
+          },
+          {
+            "source": "Mallory",
+            "url": "https://www.mallory.ai/stories/019ecc76-6134-7fe7-b08f-d0939eb1e9a9",
+            "supports": "安全情报平台报道，确认事件。",
+            "reliability": "media"
+          },
+          {
+            "source": "CryptoBriefing",
+            "url": "https://cryptobriefing.com/amd-removes-memory-encryption-consumer-cpus/",
+            "supports": "报道事件和社区反应。",
+            "reliability": "media"
+          },
+          {
+            "source": "News Directory 3",
+            "url": "https://www.newsdirectory3.com/amd-quietly-removes-security-feature-from-ryzen-processors-without-user-notification/",
+            "supports": "汇总报道。",
+            "reliability": "weak"
+          }
+        ],
+        "logic_closure": "证据链完整：多个可靠媒体确认AMD在AGESA 1.2.7.0中移除了TSME，AMD官方声明证实TSME仅用于PRO CPU，社区有用户自行验证。逻辑闭环：厂商未通知用户移除安全功能，用户无法检测，存在潜在安全风险。",
+        "writeable_angles": [
+          {
+            "angle": "风险预警：你的Ryzen CPU可能已失去内存加密，如何自查和应对",
+            "why": "直接服务用户，提供可操作步骤，吸引点击。",
+            "needs": "需要提供自查方法（检查AGESA版本、使用Linux工具检测TSME支持）、受影响CPU型号列表、降级固件的风险和可行性。"
+          },
+          {
+            "angle": "厂商责任：AMD悄然移除安全功能，用户知情权何在？",
+            "why": "引发讨论，符合老花人设对厂商透明度的关注。",
+            "needs": "需要分析AMD的披露政策、对比Intel类似情况、讨论用户是否有法律追索权。"
+          },
+          {
+            "angle": "安全与性能的权衡：内存加密真的必要吗？",
+            "why": "技术深度分析，吸引核心技术人。",
+            "needs": "需要解释TSME的工作原理、性能影响、物理攻击场景的真实威胁。"
+          },
+          {
+            "angle": "社区反应：Reddit、Slashdot用户如何应对？",
+            "why": "故事性强，容易引发共鸣。",
+            "needs": "需要收集社区讨论中的关键观点、用户自行验证的案例、可能的解决方案。"
+          }
+        ],
+        "missing_basics": [
+          "TSME与SME的区别",
+          "物理攻击（如冷启动攻击）的原理和可行性",
+          "AGESA固件更新机制和用户控制权"
+        ],
+        "missing_materials": [
+          "AMD官方AGESA 1.2.7.0更新日志（需确认是否提及TSME移除）",
+          "受影响CPU型号的完整列表",
+          "Windows下检测TSME是否启用的方法",
+          "降级固件的具体步骤和风险",
+          "Intel消费级CPU是否提供类似功能（如SGX）及其现状"
+        ],
+        "not_claimable": [
+          "AMD故意隐瞒安全漏洞",
+          "所有Ryzen用户都面临严重安全风险",
+          "该功能移除已导致数据泄露事件",
+          "用户无法通过任何方式恢复该功能"
+        ],
+        "followup_queries": [
+          "AMD AGESA 1.2.7.0 changelog 是否提及TSME移除？",
+          "哪些Ryzen CPU型号原本支持TSME？",
+          "Windows下如何检测TSME是否启用？",
+          "降级AGESA固件是否可行？风险是什么？",
+          "Intel消费级CPU是否有类似的内存加密功能？是否也被移除过？"
+        ],
+        "additional_search_queries": [
+          "AMD AGESA 1.2.7.0 release notes",
+          "Ryzen TSME support list",
+          "check TSME enabled Windows",
+          "downgrade AGESA firmware risk",
+          "Intel memory encryption consumer CPU"
+        ],
+        "stop_conditions": [
+          "AMD官方发布声明确认或否认TSME移除",
+          "发现TSME移除仅影响特定批次或可被BIOS选项恢复",
+          "社区发现该功能实际上并未被移除，而是被重命名或移动位置",
+          "出现大规模数据泄露事件直接归因于TSME移除"
+        ],
+        "confidence": 80,
+        "topic_direction": "side-info",
+        "topic_direction_title": "副业&信息差",
+        "report_type": "risk-warning",
+        "quality_gate": {
+          "pass": true,
+          "score": 85,
+          "fatal_issues": [],
+          "warnings": [
+            "AMD官方AGESA更新日志未获取到，需确认是否提及TSME移除",
+            "Windows下检测TSME的方法缺失",
+            "受影响CPU型号完整列表缺失"
+          ],
+          "missing_evidence": [
+            "AMD官方AGESA 1.2.7.0更新日志",
+            "Windows下检测TSME是否启用的方法",
+            "受影响CPU型号完整列表",
+            "降级固件的具体步骤和风险"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": true,
+          "downstream_handoff_ok": true,
+          "material_pack_ok": true,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": true,
+          "source_coverage_ok": true,
+          "recommendation": "publish"
+        },
+        "research_plan": {
+          "core_question": "AMD 是否在未通知用户的情况下从消费级 Ryzen CPU 中移除了内存加密功能？这对普通用户的安全风险有多大？",
+          "persona_discussion_question": "作为普通技术人，我是否需要担心我的 Ryzen 电脑的内存数据被物理访问泄露？我该如何检查自己的固件版本并评估风险？",
+          "hidden_public_issue": "硬件安全功能被厂商悄然移除，用户无法知情也无法选择，这暴露了消费级硬件在安全透明度上的缺失，以及用户对固件更新内容的控制权不足。",
+          "must_verify": [
+            "AMD 是否官方确认移除了内存加密功能？",
+            "哪些具体 Ryzen CPU 型号和 AGESA 版本受影响？",
+            "内存加密功能（如 SME/TSME）的实际安全价值是什么？",
+            "移除后是否存在已知的攻击案例或 PoC？",
+            "用户是否有办法自行恢复该功能？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "AMD AGESA firmware changelog memory encryption removal",
+              "why_needed": "确认官方是否在更新日志中提及此变更"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "AMD Ryzen memory encryption SME TSME support list",
+              "why_needed": "确认哪些型号原本支持内存加密"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "AMD AGESA memory encryption removed Reddit",
+              "why_needed": "获取社区反馈和用户自行验证的结果"
+            },
+            {
+              "source_type": "case_study",
+              "query": "AMD memory encryption vulnerability physical attack",
+              "why_needed": "评估实际安全风险，是否有真实攻击案例"
+            },
+            {
+              "source_type": "policy",
+              "query": "AMD security feature removal disclosure policy",
+              "why_needed": "了解 AMD 是否有义务通知用户此类变更"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "AMD vs Intel memory encryption consumer CPU comparison",
+              "why_needed": "对比竞争对手是否也有类似问题"
+            }
+          ],
+          "expert_challenge_points": [
+            "内存加密对普通用户是否真的必要？物理访问攻击场景是否常见？",
+            "AMD 是否可能出于性能或成本考虑移除该功能？",
+            "用户是否可以通过降级固件恢复功能？降级是否有风险？"
+          ],
+          "do_not_claim_yet": [
+            "AMD 故意隐瞒安全漏洞",
+            "所有 Ryzen 用户都面临严重安全风险",
+            "该功能移除导致数据泄露事件已发生"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需强调证据缺口：AMD 未官方确认，实际影响待评估。适合作为风险预警，引导用户自查和社区讨论。",
+          "downstream_materials_needed": [
+            "AMD 官方 AGESA 更新日志（需爬取或存档）",
+            "受影响 CPU 型号列表",
+            "社区测试结果（如 Reddit 帖子）",
+            "安全专家对物理攻击可行性的分析"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable — security feature vanishes after newer AGESA firmware, AMD engineers go radio silent when pressed about the change | Tom's Hardware",
+            "url": "https://www.tomshardware.com/pc-components/cpus/amd-silently-removes-memory-encryption-from-consumer-ryzen-cpus-leaving-users-unaware-that-they-may-be-vulnerable-security-feature-vanishes-after-newer-agesa-firmware-amd-engineers-go-radio-silent-when-pressed-about-the-change",
+            "query": "AMD AGESA firmware changelog memory encryption removal",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable — security feature vanishes after newer AGESA firmware, AMD engineers go radio silent when pressed about the change | Tom's Hardware @layer reset, legacy, tw-components, components, tw-utilities, utilities, van-ds, hawk, global; @layer legacy { :root { --color-primary-50: 247 212 213; --color-primary-100: 241 181 182; --color-primary-200: 234 150 151; --color-primary-300: 228 119 121; --color-primary-400: 222 87 90; --color-primary-500: 216 56 59; --color-primary-600: 190 37 40; --color-primary-700: 154 30 32; --color-primary-800: 117 23 25; --color-primary-900: 80 16 17; --color-primary-950: 43 8 9; --color-secondary-50: 248 250 252; --color-secondary-100: 241 245 249; --color-secondary-200: 226 232 240; --color-secondary-300: 203 213 225; --color-secondary-400: 148 163 184; --color-secondary-500: 100 116 139; --color-secondary-600: 71 85 105; --color-secondary-700: 51 65 85; --color-secondary-800: 30 41 59; --color-secondary-900: 15 23 42; --color-secondary-950: 2 6 23; --font-ui-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-ui-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; } } { \"@context\": \"https://schema.org\", \"@type\": \"NewsArticle\", \"name\": \"AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable\\u2026\", \"headline\": \"AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable — security feature vanishes after newer AGESA firmware, AMD engineers go radio silent when pressed about t",
+            "fetch_error": ""
+          },
+          {
+            "title": "AMD Pulls Memory Encryption From Ryzen CPUs - Technology Org",
+            "url": "https://www.technology.org/2026/06/16/amd-strips-memory-encryption-consumer-ryzen-cpus/",
+            "query": "AMD AGESA firmware changelog memory encryption removal",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "AMD Firmware Update Removes Memory Encryption From Consumer Ryzen CPUs | Mallory",
+            "url": "https://www.mallory.ai/stories/019ecc76-6134-7fe7-b08f-d0939eb1e9a9",
+            "query": "AMD AGESA firmware changelog memory encryption removal",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "AMD Firmware Update Removes Memory Encryption From Consumer Ryzen CPUs | Mallory {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Mallory\",\"legalName\":\"Mallory Intelligence\",\"url\":\"https://mallory.ai\",\"logo\":\"https://mallory.ai/logo.png\",\"description\":\"Mallory is an agentic threat-intelligence platform that reasons across your attack surface and the global threat landscape to deliver intelligence security teams can act on.\",\"sameAs\":[\"https://linkedin.com/company/malloryai\",\"https://x.com/malloryintel\",\"https://github.com/malloryai\"]} {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Mallory\",\"url\":\"https://mallory.ai\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Mallory\"}} ((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=[\"light\",\"dark\"];function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{let c=\"class\"===a,d=c&&f?e.map(a=>f[a]||a):e;c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)}),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&\"system\"===a?window.matchMedia(\"(prefers-color-scheme: dark)\").matches?\"dark\":\"light\":a;k(d)}catch(a){}})(\"class\",\"theme\",\"light\",null,[\"light\",\"dark\"],null,true,true) Skip to main content Mallory Platform How It Works See the platform in action Pricing Plans and pricing Use Cases Common security workflows Resources Blog Insights and analysis Press Latest press Videos Talks and demos About Company Our mission and team Careers Open roles Intelligence Toggle theme Sign in svg]:px-2.5 bg-primary hover:bg-primary/90 cursor-pointer\" href=\"/sign-up\">Start Free Trial Toggle theme Toggle menu Intel Intelligence AMD Firmware Update Removes Memory Encryption From… Back to intelligence patch-regression widely-deployed-product-advisory e",
+            "fetch_error": ""
+          },
+          {
+            "title": "AMD Reportedly Removes TSME Memory Encryption Support from Ryzen CPUs",
+            "url": "https://www.guru3d.com/story/amd-reportedly-removes-tsme-memory-encryption-support-from-ryzen-cpus/",
+            "query": "AMD Ryzen memory encryption SME TSME support list",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "AMD Reportedly Removes TSME Memory Encryption Support from Ryzen CPUs (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-1106208-1', 'auto'); ga('send', 'pageview'); window.googletag = window.googletag || {cmd: []}; googletag.cmd.push(function() { googletag.defineSlot('/21536815/300x250', [300, 250], 'div-gpt-ad-1603525413614-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googletag.enableServices(); }); googletag.cmd.push(function() { googletag.defineSlot('/21536815/top_728x90', [728, 90], 'div-gpt-ad-1370330043123-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googletag.enableServices(); }); googletag.cmd.push(function() { googletag.defineSlot('/21536815/728x90_bottom', [728, 90], 'div-gpt-ad-1371970877258-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googletag.enableServices(); }); googletag.cmd.push(function() { googletag.defineSlot('/21536815/300x600_navbar', [300, 600], 'div-gpt-ad-1460022611270-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googletag.enableServices(); }); googletag.cmd.push(function() { googletag.defineSlot('/21536815/336x280', [336, 280], 'div-gpt-ad-1504538105620-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googlet",
+            "fetch_error": ""
+          },
+          {
+            "title": "Memory encryption: AMD SME, TSME and SEV",
+            "url": "https://mricher.fr/post/amd-memory-encryption/",
+            "query": "AMD Ryzen memory encryption SME TSME support list",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Memory encryption: AMD SME, TSME and SEV ← Home Subscribe Memory encryption: AMD SME, TSME and SEV December 12, 2021 security hardware There is a saying in security that it is difficult to secure a system if the attacker is able to tinker with hardware itself. On the server side, most of those issues have been put away by locking down said hardware in reasonably secured locations. But on the client side, those solutions are not possible. Phones vs. PCs Phones, as tightly integrated pieces of equipment with SoC and soldered components, were the first to benefit, by default, from storage encryption and integrated secure platforms. In an effort spearheaded by Apple, they have become mostly secure in the last 5 years. Instead, the more traditional x86 PC started to lag behind significantly. The modularity of the platform seems to make it difficult to close all doors and reach the same level of protection as a smartphone. So aside from the use of disk encryptions, nothing moved. The recent rants against TPMs requirements in Windows 11 are proof that those are not broadly available. Specifically, with more and more people setting up some kind of disk encryption by default , the main target shifted from cold storage to runtime memory. Either BitLocker on Windows or Cryptsetup on Linux are part of the OS installation process now. Getting the data and secrets from system memory is much easier. The premise is that if you get physical access to any random running system, you can: get the RAM sticks out put them in liquid nitrogen to freeze the bits in-place …then hook them up to a custom test bench that will dump the content, including all secret keys, giving you access to any linked cold storage. AMD Zen Memory Encryption That’s why when AMD announced that they would implement in",
+            "fetch_error": ""
+          },
+          {
+            "title": "AMD Silently Strips Memory Encryption from Consumer Ryzen CPUs - State of Surveillance",
+            "url": "https://stateofsurveillance.org/news/amd-ryzen-memory-guard-stripped-firmware-update-2026/",
+            "query": "AMD Ryzen memory encryption SME TSME support list",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"AMD Silently Strips Memory Encryption from Consumer Ryzen CPUs\",\"description\":\"Ars Technica's Dan Goodin reported on June 15, 2026 that AMD removed Transparent Secure Memory Encryption (TSME) from consumer Ryzen CPUs via the AGESA 1.2.7.0 firmware update, with no notice, no BIOS indication, and no detection path on Windows. The same feature still ships on AMD PRO Technologies enterprise chips. A privacy-conscious Linux hobbyist named Ben Kilpatrick spent months documenting the regression after his Host Security ID audit on a Ryzen 7 9700X showed 'encrypted RAM: not supported.' AMD's only public statement: TSME 'is a security feature only applied to PRO CPUs as part of AMD PRO Technologies.'\",\"author\":{\"@type\":\"Organization\",\"name\":\"State of Surveillance\",\"url\":\"https://stateofsurveillance.org\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"State of Surveillance\",\"url\":\"https://stateofsurveillance.org\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://stateofsurveillance.org/logo.png\"}},\"datePublished\":\"2026-06-17\",\"dateModified\":\"2026-06-17\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://stateofsurveillance.org/news/amd-ryzen-memory-guard-stripped-firmware-update-2026\"},\"image\":\"https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80&auto=format,compress\"} AMD Silently Strips Memory Encryption from Consumer Ryzen CPUs - State of Surveillance // Consent-gated PostHog loader. NOTHING loads (no script, no config/flags // requests, no localStorage id) until the visitor has accepted analytics. // The cookie banner calls window.loadPostHog() on Accept; returning // visitors with stored consent load it immediately below. (function() { var started = false; window.loadPostHog = function() { if (starte",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/hardware on Reddit: [ArsTechnica] Users cry foul after AMD stripped memory crypto [TSME] from its consumer CPUs",
+            "url": "https://www.reddit.com/r/hardware/comments/1u72s18/arstechnica_users_cry_foul_after_amd_stripped/",
+            "query": "AMD AGESA memory encryption removed Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "Users cry foul after AMD stripped memory crypto from its consumer CPUs - Ars Technica",
+            "url": "https://arstechnica.com/security/2026/06/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus/",
+            "query": "AMD AGESA memory encryption removed Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Users cry foul after AMD stripped memory crypto from its consumer CPUs - Ars Technica window.snowplowQueue = window.snowplowQueue || []; window.arsSP = { entities: {\"site\":{\"org_id\":\"4gKgcFGUFUvCGFzHakTPfYp85Yi8\",\"site_env\":\"production\",\"site_app_version\":\"multi-tenant\",\"site_data_source\":\"web\",\"site_section\":\"security\"},\"page\":{\"has_buy_button\":false},\"content\":{\"content_id\":\"c6c7dcaedd793422df3bb446\",\"content_type\":\"article\",\"editor_name\":\"Ken Fisher\",\"author_name\":\"Dan Goodin\",\"date_display\":\"2026-06-18T09:21:02.740Z\",\"content_source\":\"web\",\"content_len\":2,\"content_title\":\"Users cry foul after AMD stripped memory crypto from its consumer CPUs\",\"author_id\":\"3\",\"date_publish\":\"2026-06-15T17:55:46.000Z\",\"date_last_modified\":\"2026-06-16T23:03:15.000Z\",\"onsite_keywords\":\"amd|cpus|processors|transparent-secure-memory-encryption|tsme\",\"pagination_pages_tot\":2,\"word_count\":1385,\"content_template\":\"standard\",\"content_template_type\":\"mt_article_two_column\",\"content_is_commerce\":false}}, config: {\"SNOWPLOW_COLLECTOR\":\"c.arstechnica.com\",\"AVO_API_KEY\":\"FTJO6mVPBIzdGhjn2Ruy\",\"APP_ID\":\"ars-technica\",\"APP_NAME\":\"ars-technica\",\"APP_ENV\":\"production\",\"APP_VERSION\":\"1.0.0\",\"COOKIE_DOMAIN\":\".arstechnica.com\"} }; (function () { var ChannelWildcard = { ALL: '*', }; function KendraEvent(historyLimit) { this.listeners = new Map(); this.eventHistory = []; this.historyLimit = historyLimit || 10; } KendraEvent.prototype.broadcast = function (channel, value, options) { var opts = options || {}; var timestamp = Date.now(); if (opts.once) { if (channel === ChannelWildcard.ALL) { console.warn(\"'once: true' is not supported with ChannelWildcard.ALL\"); return; } var hasBroadcasted = this.eventHistory.some(function (entry) { return entry.channel === channel; }); if (hasBroadcasted) { return; } } var",
+            "fetch_error": ""
+          },
+          {
+            "title": "Users Cry Foul After AMD Stripped Memory Crypto From Its Consumer CPUs - Slashdot",
+            "url": "https://hardware.slashdot.org/story/26/06/15/200234/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus",
+            "query": "AMD memory encryption vulnerability physical attack",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function () { if (typeof window.sdmedia !== 'object') { window.sdmedia = {}; } if (typeof window.sdmedia.site !== 'object') { window.sdmedia.site = {}; } var site = window.sdmedia.site; site.rootdir = \"//slashdot.org\"; }()); var pageload = { pagemark: '632473028753561068', before_content: (new Date).getTime() }; function pageload_done( $, console, maybe ){ pageload.after_readycode = (new Date).getTime(); pageload.content_ready_time = pageload.content_ready - pageload.before_content; pageload.script_ready_time = pageload.after_readycode - pageload.content_ready; pageload.ready_time = pageload.after_readycode - pageload.before_content; // Only report 1% of cases. maybe || (Math.random()>0.01) || $.ajax({ type: 'POST', data: { op: 'page_profile', pagemark: pageload.pagemark, dom: pageload.content_ready_time, js: pageload.script_ready_time } }); } Users Cry Foul After AMD Stripped Memory Crypto From Its Consumer CPUs - Slashdot // country.js converted to inline by CF Snippet window.is_euro_union = 0; window.country_code2 = \"US\"; window.region = \"CA\"; window.prebidOptions = {uids: {ip: \"172.185.47.133\" }}; window.bizx.cmp.init({ cmp_id: 12126, geo: window, gam_gdpr_technical_delivery: true, }); bizx.uids.gather(); window.prebidOptions = window.prebidOptions || {}; window.prebidOptions.uids = window.prebidOptions.uids || {}; window.prebidOptions.uids.hem = bizx.uids.getHem(); var _gaq = _gaq || []; window.SD = {}; window.SD.Ads = {}; var googletag = window.googletag || {}; googletag.cmd = googletag.cmd || []; var sdAdBlockActive = true; var sdUboActive = true; (function(){ var regexp=/\\s*(?:\\d+|many)\\s+more\\s*/i; var auto_more_count = 1; function auto_more(){ var $more_link = $('#more-experiment a'); $more_link.each(function(){ var $lastitem = $('#firehoselist>article.fhitem",
+            "fetch_error": ""
+          },
+          {
+            "title": "AMD removes memory encryption from consumer CPUs, users react",
+            "url": "https://cryptobriefing.com/amd-removes-memory-encryption-consumer-cpus/",
+            "query": "AMD memory encryption vulnerability physical attack",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function(){var s=localStorage.getItem('cb-dark-mode');if(s==='true')document.documentElement.classList.add('dark');})(); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5B8VMXJ'); (function() { var host = 'cryptobriefing.com'; var element = document.createElement('script'); var firstScript = document.getElementsByTagName('script')[0]; var url = 'https://cmp.inmobi.com' .concat('/choice/', 'nwS18F5XLGdW_', '/', host, '/choice.js?tag_version=V3'); var uspTries = 0; var uspTriesLimit = 3; element.async = true; element.type = 'text/javascript'; element.src = url; firstScript.parentNode.insertBefore(element, firstScript); function makeStub() { var TCF_LOCATOR_NAME = '__tcfapiLocator'; var queue = []; var win = window; var cmpFrame; function addFrame() { var doc = win.document; var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]); if (!otherCMP) { if (doc.body) { var iframe = doc.createElement('iframe'); iframe.style.cssText = 'display:none'; iframe.name = TCF_LOCATOR_NAME; doc.body.appendChild(iframe); } else { setTimeout(addFrame, 5); } } return !otherCMP; } function tcfAPIHandler() { var gdprApplies; var args = arguments; if (!args.length) { return queue; } else if (args[0] === 'setGdprApplies') { if ( args.length > 3 && args[2] === 2 && typeof args[3] === 'boolean' ) { gdprApplies = args[3]; if (typeof args[2] === 'function') { args[2]('set', true); } } } else if (args[0] === 'ping') { var retr = { gdprApplies: gdprApplies, cmpLoaded: false, cmpStatus: 'stub' }; if (typeof args[2] === 'function') { arg",
+            "fetch_error": ""
+          },
+          {
+            "title": "AMD Product Security",
+            "url": "https://www.amd.com/en/resources/product-security.html",
+            "query": "AMD security feature removal disclosure policy",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "The read operation timed out"
+          },
+          {
+            "title": "Advanced Micro Devices - Privacy Notice",
+            "url": "https://www.amd.com/en/legal/privacy.html",
+            "query": "AMD security feature removal disclosure policy",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "The read operation timed out"
+          },
+          {
+            "title": "AMD Quietly Removes Security Feature From Ryzen Processors Without User Notification - News Directory 3",
+            "url": "https://www.newsdirectory3.com/amd-quietly-removes-security-feature-from-ryzen-processors-without-user-notification/",
+            "query": "AMD security feature removal disclosure policy",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root{--color-primary:#2563eb;--color-surface:#fff;--color-background:#f8fafc;--color-text-primary:#1e293b;--color-border:#e2e8f0} *,*::before,*::after{box-sizing:border-box} body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;color:var(--color-text-primary);background:var(--color-background);line-height:1.6} .site-header{position:sticky;top:0;background:var(--color-surface);border-bottom:1px solid var(--color-border);z-index:99} .container{max-width:1200px;margin:0 auto;padding:0 1.5rem} .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden} .skip-link:focus{position:fixed;top:0;left:0;width:auto;height:auto;padding:1rem;background:#fff;z-index:100000} AMD Quietly Removes Security Feature From Ryzen Processors Without User Notification - News Directory 3 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://www.newsdirectory3.com/#organization\",\"name\":\"News Directory 3\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://www.newsdirectory3.com/#logo\",\"url\":\"https://i0.wp.com/www.newsdirectory3.com/wp-content/uploads/2026/03/cropped-logo.png?resize=150%2C150&ssl=1\",\"contentUrl\":\"https://i0.wp.com/www.newsdirectory3.com/wp-content/uploads/2026/03/cropped-logo.png?resize=150%2C150&ssl=1\",\"caption\":\"News Directory 3\",\"inLanguage\":\"en-US\"}},{\"@type\":\"WebSite\",\"@id\":\"https://www.newsdirectory3.com/#website\",\"url\":\"https://www.newsdirectory3.com\",\"name\":\"News Directory 3\",\"publisher\":{\"@id\":\"https://www.newsdirectory3.com/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://i0.wp.com/tarreo.buscafs.com/2026/06/Untitledfwfwed-2.jpg?fit=1920,1080&quality=75&strip=all\",\"url\":\"https://i0.wp.com/tarreo.buscafs.com/2026/06/Untitledfwfwed-2.jpg?fit=1920,1080&quality=75&strip=all\",\"w",
+            "fetch_error": ""
+          },
+          {
+            "title": "Intel vs AMD: Which CPUs Are Better in 2026? | Tom's Hardware",
+            "url": "https://www.tomshardware.com/features/amd-vs-intel-cpus",
+            "query": "AMD vs Intel memory encryption consumer CPU comparison",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Intel vs AMD: Which CPUs Are Better in 2026? | Tom's Hardware @layer reset, legacy, tw-components, components, tw-utilities, utilities, van-ds, hawk, global; @layer legacy { :root { --color-primary-50: 247 212 213; --color-primary-100: 241 181 182; --color-primary-200: 234 150 151; --color-primary-300: 228 119 121; --color-primary-400: 222 87 90; --color-primary-500: 216 56 59; --color-primary-600: 190 37 40; --color-primary-700: 154 30 32; --color-primary-800: 117 23 25; --color-primary-900: 80 16 17; --color-primary-950: 43 8 9; --color-secondary-50: 248 250 252; --color-secondary-100: 241 245 249; --color-secondary-200: 226 232 240; --color-secondary-300: 203 213 225; --color-secondary-400: 148 163 184; --color-secondary-500: 100 116 139; --color-secondary-600: 71 85 105; --color-secondary-700: 51 65 85; --color-secondary-800: 30 41 59; --color-secondary-900: 15 23 42; --color-secondary-950: 2 6 23; --font-ui-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-ui-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; } } { \"@context\": \"https://schema.org\", \"@type\": \"NewsArticle\", \"name\": \"Intel vs AMD: Which CPUs Are Better in 2026?\", \"headline\": \"Intel vs AMD: Which CPUs Are Better in 2026?\", \"alternativeHeadline\": \"We put Intel vs AMD in a battle of processor prowess.\", \"datePublished\": \"2024-08-03T12:37:35+00:00\", \"url\": \"https://www.tomshardware.com/features/amd-vs-intel-cpus\", \"articleSection\": \"CPUs\", \"speakable\": { \"@context\": \"https://schema.org\", \"@type\": \"SpeakableSpecification\", \"xpath\": [ \"/html/head/title\", \"/html/head/meta[@name=\\\"description\\\"]/@content\" ] }, \"image\": [ { \"@context\": \"https://schema.org\", \"",
+            "fetch_error": ""
+          },
+          {
+            "title": "Intel vs AMD Processor Security: Who Makes the Safest CPUs? | Tom's Hardware",
+            "url": "https://www.tomshardware.com/features/intel-amd-most-secure-processors",
+            "query": "AMD vs Intel memory encryption consumer CPU comparison",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Intel vs AMD Processor Security: Who Makes the Safest CPUs? | Tom's Hardware @layer reset, legacy, tw-components, components, tw-utilities, utilities, van-ds, hawk, global; @layer legacy { :root { --color-primary-50: 247 212 213; --color-primary-100: 241 181 182; --color-primary-200: 234 150 151; --color-primary-300: 228 119 121; --color-primary-400: 222 87 90; --color-primary-500: 216 56 59; --color-primary-600: 190 37 40; --color-primary-700: 154 30 32; --color-primary-800: 117 23 25; --color-primary-900: 80 16 17; --color-primary-950: 43 8 9; --color-secondary-50: 248 250 252; --color-secondary-100: 241 245 249; --color-secondary-200: 226 232 240; --color-secondary-300: 203 213 225; --color-secondary-400: 148 163 184; --color-secondary-500: 100 116 139; --color-secondary-600: 71 85 105; --color-secondary-700: 51 65 85; --color-secondary-800: 30 41 59; --color-secondary-900: 15 23 42; --color-secondary-950: 2 6 23; --font-ui-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-ui-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; } } { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"name\": \"Intel vs AMD Processor Security: Who Makes the Safest CPUs?\", \"headline\": \"Intel vs AMD Processor Security: Who Makes the Safest CPUs?\", \"alternativeHeadline\": \"Who has the most secure processors, AMD or Intel?\", \"datePublished\": \"2019-11-04T18:22:35+00:00\", \"url\": \"https://www.tomshardware.com/features/intel-amd-most-secure-processors\", \"articleSection\": \"CPUs\", \"speakable\": { \"@context\": \"https://schema.org\", \"@type\": \"SpeakableSpecification\", \"xpath\": [ \"/html/head/title\", \"/html/head/meta[@name=\\\"description\\\"]/@content\" ]",
+            "fetch_error": ""
+          },
+          {
+            "title": "A comparison study of intel SGX and AMD memory encryption technology | Proceedings of the 7th International Workshop on Hardware and Architectural Support for Security and Privacy",
+            "url": "https://dl.acm.org/doi/10.1145/3214292.3214301",
+            "query": "AMD vs Intel memory encryption consumer CPU comparison",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "推荐选题",
+          "label": "推荐",
+          "reason": "证据较完整，来自Tom's Hardware、Ars Technica等可靠媒体，社区讨论热烈；老花人设解读角度清楚（硬件安全透明度、用户控制权、厂商责任）；读者分层明确；泛兴趣故事钩子成立（硬件安全功能被悄然移除，用户不知情）；传播张力强（厂商vs用户、安全vs性能、知情权vs商业决策）；逻辑基本能闭环。"
+        },
+        "core_question": "AMD是否在未通知用户的情况下从消费级Ryzen CPU中移除了内存加密功能（TSME）？这对普通用户的安全风险有多大？",
+        "why_this_topic_matters": "硬件安全功能被厂商悄然移除，用户无法知情也无法选择，暴露了消费级硬件在安全透明度上的缺失，以及用户对固件更新内容的控制权不足。此事影响所有使用最新AGESA固件的Ryzen用户，涉及物理攻击场景下的数据安全。",
+        "fact_summary": [
+          "Tom's Hardware于2026年6月15日报道，AMD在AGESA 1.2.7.0固件更新中移除了消费级Ryzen CPU的Transparent Secure Memory Encryption (TSME)功能。",
+          "Ars Technica于2026年6月18日报道，一位Linux爱好者Ben Kilpatrick在Ryzen 7 9700X上发现'encrypted RAM: not supported'，经数月追踪确认是AGESA固件变更所致。",
+          "AMD的官方声明称TSME'is a security feature only applied to PRO CPUs as part of AMD PRO Technologies'。",
+          "该功能在Windows下无检测路径，用户无法直接知晓是否被移除。",
+          "AMD工程师在被问及此事时保持沉默。",
+          "社区反应强烈，Reddit、Slashdot等平台有大量讨论。"
+        ],
+        "persona_discussion_question": "作为普通技术人，我是否需要担心我的Ryzen电脑的内存数据被物理访问泄露？我该如何检查自己的固件版本并评估风险？",
+        "old_flower_stance": "硬件安全功能被厂商悄然移除，用户无法知情也无法选择，这暴露了消费级硬件在安全透明度上的缺失，以及用户对固件更新内容的控制权不足。普通技术人应该关注自己的设备是否受影响，并思考如何应对厂商的'静默变更'。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "共鸣读者"
+          ],
+          "interest_score": 85,
+          "why_interested": "核心技术人关注硬件安全机制、固件变更对系统安全的影响；入门读者可以了解内存加密的基本概念和风险；共鸣读者对厂商不透明行为有共鸣。",
+          "reader_risk": "可能引发对AMD产品的信任危机，但需避免夸大实际风险（物理攻击场景相对少见）。"
+        },
+        "mass_interest_hook": {
+          "score": 80,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "标题暗示'安全功能被悄悄移除'，普通人会担心自己的电脑是否变不安全，即使不懂技术也会被'安全风险'吸引。",
+          "story_seed": "你的电脑可能已经失去了一个重要的安全功能，而你完全不知情——AMD在最新的固件更新中悄然移除了内存加密，没有通知用户。",
+          "do_not_overhype": "不要声称所有Ryzen用户都面临严重风险，实际物理攻击场景需要攻击者拥有物理访问权限，对普通用户威胁有限。"
+        },
+        "topic_tension": {
+          "score": 10,
+          "conflict_point": "厂商（AMD）与用户（消费者）之间的信息不对称和信任冲突；安全功能与性能/成本之间的权衡。",
+          "debate_question": "硬件厂商是否有义务在移除安全功能时明确通知用户？用户是否应该拥有对固件变更的知情权和选择权？",
+          "stakeholders": [
+            "AMD",
+            "Ryzen CPU用户",
+            "安全研究人员",
+            "PC制造商/BIOS供应商",
+            "竞争对手Intel"
+          ],
+          "why_people_would_comment": "读者可以围绕厂商责任、安全与性能的权衡、自己是否受影响、如何检测和应对等话题发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。避免引发无根据的恐慌。"
+        },
+        "timeline": [
+          "2026-06-15: Tom's Hardware首次报道AMD在AGESA 1.2.7.0中移除TSME。",
+          "2026-06-16: Guru3D、Technology.org等媒体跟进报道。",
+          "2026-06-17: State of Surveillance报道，引用Ars Technica的Dan Goodin。",
+          "2026-06-18: Ars Technica发布详细报道，社区反应强烈。",
+          "2026-06-18: Slashdot、Reddit等平台出现大量讨论。"
+        ],
+        "evidence_table": [
+          {
+            "source": "Tom's Hardware",
+            "url": "https://www.tomshardware.com/pc-components/cpus/amd-silently-removes-memory-encryption-from-consumer-ryzen-cpus-leaving-users-unaware-that-they-may-be-vulnerable-security-feature-vanishes-after-newer-agesa-firmware-amd-engineers-go-radio-silent-when-pressed-about-the-change",
+            "supports": "首次报道AMD移除TSME，提供详细技术背景和社区反应。",
+            "reliability": "media"
+          },
+          {
+            "source": "Ars Technica",
+            "url": "https://arstechnica.com/security/2026/06/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus/",
+            "supports": "深入报道，引用Linux爱好者Ben Kilpatrick的发现和AMD官方声明。",
+            "reliability": "media"
+          },
+          {
+            "source": "State of Surveillance",
+            "url": "https://stateofsurveillance.org/news/amd-ryzen-memory-guard-stripped-firmware-update-2026/",
+            "supports": "汇总报道，确认AMD官方声明：TSME仅用于PRO CPU。",
+            "reliability": "media"
+          },
+          {
+            "source": "Guru3D",
+            "url": "https://www.guru3d.com/story/amd-reportedly-removes-tsme-memory-encryption-support-from-ryzen-cpus/",
+            "supports": "跟进报道，确认TSME被移除。",
+            "reliability": "media"
+          },
+          {
+            "source": "Slashdot",
+            "url": "https://hardware.slashdot.org/story/26/06/15/200234/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus",
+            "supports": "社区讨论，反映用户不满。",
+            "reliability": "media"
+          },
+          {
+            "source": "Reddit r/hardware",
+            "url": "https://www.reddit.com/r/hardware/comments/1u72s18/arstechnica_users_cry_foul_after_amd_stripped/",
+            "supports": "社区讨论，用户自行验证和反馈。",
+            "reliability": "weak"
+          },
+          {
+            "source": "Mallory",
+            "url": "https://www.mallory.ai/stories/019ecc76-6134-7fe7-b08f-d0939eb1e9a9",
+            "supports": "安全情报平台报道，确认事件。",
+            "reliability": "media"
+          },
+          {
+            "source": "CryptoBriefing",
+            "url": "https://cryptobriefing.com/amd-removes-memory-encryption-consumer-cpus/",
+            "supports": "报道事件和社区反应。",
+            "reliability": "media"
+          },
+          {
+            "source": "News Directory 3",
+            "url": "https://www.newsdirectory3.com/amd-quietly-removes-security-feature-from-ryzen-processors-without-user-notification/",
+            "supports": "汇总报道。",
+            "reliability": "weak"
+          }
+        ],
+        "logic_closure": "证据链完整：多个可靠媒体确认AMD在AGESA 1.2.7.0中移除了TSME，AMD官方声明证实TSME仅用于PRO CPU，社区有用户自行验证。逻辑闭环：厂商未通知用户移除安全功能，用户无法检测，存在潜在安全风险。",
+        "writeable_angles": [
+          {
+            "angle": "风险预警：你的Ryzen CPU可能已失去内存加密，如何自查和应对",
+            "why": "直接服务用户，提供可操作步骤，吸引点击。",
+            "needs": "需要提供自查方法（检查AGESA版本、使用Linux工具检测TSME支持）、受影响CPU型号列表、降级固件的风险和可行性。"
+          },
+          {
+            "angle": "厂商责任：AMD悄然移除安全功能，用户知情权何在？",
+            "why": "引发讨论，符合老花人设对厂商透明度的关注。",
+            "needs": "需要分析AMD的披露政策、对比Intel类似情况、讨论用户是否有法律追索权。"
+          },
+          {
+            "angle": "安全与性能的权衡：内存加密真的必要吗？",
+            "why": "技术深度分析，吸引核心技术人。",
+            "needs": "需要解释TSME的工作原理、性能影响、物理攻击场景的真实威胁。"
+          },
+          {
+            "angle": "社区反应：Reddit、Slashdot用户如何应对？",
+            "why": "故事性强，容易引发共鸣。",
+            "needs": "需要收集社区讨论中的关键观点、用户自行验证的案例、可能的解决方案。"
+          }
+        ],
+        "missing_basics": [
+          "TSME与SME的区别",
+          "物理攻击（如冷启动攻击）的原理和可行性",
+          "AGESA固件更新机制和用户控制权"
+        ],
+        "missing_materials": [
+          "AMD官方AGESA 1.2.7.0更新日志（需确认是否提及TSME移除）",
+          "受影响CPU型号的完整列表",
+          "Windows下检测TSME是否启用的方法",
+          "降级固件的具体步骤和风险",
+          "Intel消费级CPU是否提供类似功能（如SGX）及其现状"
+        ],
+        "not_claimable": [
+          "AMD故意隐瞒安全漏洞",
+          "所有Ryzen用户都面临严重安全风险",
+          "该功能移除已导致数据泄露事件",
+          "用户无法通过任何方式恢复该功能"
+        ],
+        "followup_queries": [
+          "AMD AGESA 1.2.7.0 changelog 是否提及TSME移除？",
+          "哪些Ryzen CPU型号原本支持TSME？",
+          "Windows下如何检测TSME是否启用？",
+          "降级AGESA固件是否可行？风险是什么？",
+          "Intel消费级CPU是否有类似的内存加密功能？是否也被移除过？"
+        ],
+        "additional_search_queries": [
+          "AMD AGESA 1.2.7.0 release notes",
+          "Ryzen TSME support list",
+          "check TSME enabled Windows",
+          "downgrade AGESA firmware risk",
+          "Intel memory encryption consumer CPU"
+        ],
+        "stop_conditions": [
+          "AMD官方发布声明确认或否认TSME移除",
+          "发现TSME移除仅影响特定批次或可被BIOS选项恢复",
+          "社区发现该功能实际上并未被移除，而是被重命名或移动位置",
+          "出现大规模数据泄露事件直接归因于TSME移除"
+        ],
+        "confidence": 80,
+        "topic_direction": "side-info",
+        "topic_direction_title": "副业&信息差",
+        "report_type": "risk-warning",
+        "quality_gate": {
+          "pass": true,
+          "score": 85,
+          "fatal_issues": [],
+          "warnings": [
+            "AMD官方AGESA更新日志未获取到，需确认是否提及TSME移除",
+            "Windows下检测TSME的方法缺失",
+            "受影响CPU型号完整列表缺失"
+          ],
+          "missing_evidence": [
+            "AMD官方AGESA 1.2.7.0更新日志",
+            "Windows下检测TSME是否启用的方法",
+            "受影响CPU型号完整列表",
+            "降级固件的具体步骤和风险"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": true,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": true,
+          "downstream_handoff_ok": true,
+          "material_pack_ok": true,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": true,
+          "source_coverage_ok": true,
+          "recommendation": "publish"
+        },
+        "research_plan": {
+          "core_question": "AMD 是否在未通知用户的情况下从消费级 Ryzen CPU 中移除了内存加密功能？这对普通用户的安全风险有多大？",
+          "persona_discussion_question": "作为普通技术人，我是否需要担心我的 Ryzen 电脑的内存数据被物理访问泄露？我该如何检查自己的固件版本并评估风险？",
+          "hidden_public_issue": "硬件安全功能被厂商悄然移除，用户无法知情也无法选择，这暴露了消费级硬件在安全透明度上的缺失，以及用户对固件更新内容的控制权不足。",
+          "must_verify": [
+            "AMD 是否官方确认移除了内存加密功能？",
+            "哪些具体 Ryzen CPU 型号和 AGESA 版本受影响？",
+            "内存加密功能（如 SME/TSME）的实际安全价值是什么？",
+            "移除后是否存在已知的攻击案例或 PoC？",
+            "用户是否有办法自行恢复该功能？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "AMD AGESA firmware changelog memory encryption removal",
+              "why_needed": "确认官方是否在更新日志中提及此变更"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "AMD Ryzen memory encryption SME TSME support list",
+              "why_needed": "确认哪些型号原本支持内存加密"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "AMD AGESA memory encryption removed Reddit",
+              "why_needed": "获取社区反馈和用户自行验证的结果"
+            },
+            {
+              "source_type": "case_study",
+              "query": "AMD memory encryption vulnerability physical attack",
+              "why_needed": "评估实际安全风险，是否有真实攻击案例"
+            },
+            {
+              "source_type": "policy",
+              "query": "AMD security feature removal disclosure policy",
+              "why_needed": "了解 AMD 是否有义务通知用户此类变更"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "AMD vs Intel memory encryption consumer CPU comparison",
+              "why_needed": "对比竞争对手是否也有类似问题"
+            }
+          ],
+          "expert_challenge_points": [
+            "内存加密对普通用户是否真的必要？物理访问攻击场景是否常见？",
+            "AMD 是否可能出于性能或成本考虑移除该功能？",
+            "用户是否可以通过降级固件恢复功能？降级是否有风险？"
+          ],
+          "do_not_claim_yet": [
+            "AMD 故意隐瞒安全漏洞",
+            "所有 Ryzen 用户都面临严重安全风险",
+            "该功能移除导致数据泄露事件已发生"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需强调证据缺口：AMD 未官方确认，实际影响待评估。适合作为风险预警，引导用户自查和社区讨论。",
+          "downstream_materials_needed": [
+            "AMD 官方 AGESA 更新日志（需爬取或存档）",
+            "受影响 CPU 型号列表",
+            "社区测试结果（如 Reddit 帖子）",
+            "安全专家对物理攻击可行性的分析"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable — security feature vanishes after newer AGESA firmware, AMD engineers go radio silent when pressed about the change | Tom's Hardware",
+            "url": "https://www.tomshardware.com/pc-components/cpus/amd-silently-removes-memory-encryption-from-consumer-ryzen-cpus-leaving-users-unaware-that-they-may-be-vulnerable-security-feature-vanishes-after-newer-agesa-firmware-amd-engineers-go-radio-silent-when-pressed-about-the-change",
+            "query": "AMD AGESA firmware changelog memory encryption removal",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable — security feature vanishes after newer AGESA firmware, AMD engineers go radio silent when pressed about the change | Tom's Hardware @layer reset, legacy, tw-components, components, tw-utilities, utilities, van-ds, hawk, global; @layer legacy { :root { --color-primary-50: 247 212 213; --color-primary-100: 241 181 182; --color-primary-200: 234 150 151; --color-primary-300: 228 119 121; --color-primary-400: 222 87 90; --color-primary-500: 216 56 59; --color-primary-600: 190 37 40; --color-primary-700: 154 30 32; --color-primary-800: 117 23 25; --color-primary-900: 80 16 17; --color-primary-950: 43 8 9; --color-secondary-50: 248 250 252; --color-secondary-100: 241 245 249; --color-secondary-200: 226 232 240; --color-secondary-300: 203 213 225; --color-secondary-400: 148 163 184; --color-secondary-500: 100 116 139; --color-secondary-600: 71 85 105; --color-secondary-700: 51 65 85; --color-secondary-800: 30 41 59; --color-secondary-900: 15 23 42; --color-secondary-950: 2 6 23; --font-ui-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-ui-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; } } { \"@context\": \"https://schema.org\", \"@type\": \"NewsArticle\", \"name\": \"AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable\\u2026\", \"headline\": \"AMD silently removes memory encryption from consumer Ryzen CPUs, leaving users unaware that they may be vulnerable — security feature vanishes after newer AGESA firmware, AMD engineers go radio silent when pressed about t",
+            "fetch_error": ""
+          },
+          {
+            "title": "AMD Pulls Memory Encryption From Ryzen CPUs - Technology Org",
+            "url": "https://www.technology.org/2026/06/16/amd-strips-memory-encryption-consumer-ryzen-cpus/",
+            "query": "AMD AGESA firmware changelog memory encryption removal",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "AMD Firmware Update Removes Memory Encryption From Consumer Ryzen CPUs | Mallory",
+            "url": "https://www.mallory.ai/stories/019ecc76-6134-7fe7-b08f-d0939eb1e9a9",
+            "query": "AMD AGESA firmware changelog memory encryption removal",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "AMD Firmware Update Removes Memory Encryption From Consumer Ryzen CPUs | Mallory {\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Mallory\",\"legalName\":\"Mallory Intelligence\",\"url\":\"https://mallory.ai\",\"logo\":\"https://mallory.ai/logo.png\",\"description\":\"Mallory is an agentic threat-intelligence platform that reasons across your attack surface and the global threat landscape to deliver intelligence security teams can act on.\",\"sameAs\":[\"https://linkedin.com/company/malloryai\",\"https://x.com/malloryintel\",\"https://github.com/malloryai\"]} {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Mallory\",\"url\":\"https://mallory.ai\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Mallory\"}} ((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=[\"light\",\"dark\"];function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{let c=\"class\"===a,d=c&&f?e.map(a=>f[a]||a):e;c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)}),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&\"system\"===a?window.matchMedia(\"(prefers-color-scheme: dark)\").matches?\"dark\":\"light\":a;k(d)}catch(a){}})(\"class\",\"theme\",\"light\",null,[\"light\",\"dark\"],null,true,true) Skip to main content Mallory Platform How It Works See the platform in action Pricing Plans and pricing Use Cases Common security workflows Resources Blog Insights and analysis Press Latest press Videos Talks and demos About Company Our mission and team Careers Open roles Intelligence Toggle theme Sign in svg]:px-2.5 bg-primary hover:bg-primary/90 cursor-pointer\" href=\"/sign-up\">Start Free Trial Toggle theme Toggle menu Intel Intelligence AMD Firmware Update Removes Memory Encryption From… Back to intelligence patch-regression widely-deployed-product-advisory e",
+            "fetch_error": ""
+          },
+          {
+            "title": "AMD Reportedly Removes TSME Memory Encryption Support from Ryzen CPUs",
+            "url": "https://www.guru3d.com/story/amd-reportedly-removes-tsme-memory-encryption-support-from-ryzen-cpus/",
+            "query": "AMD Ryzen memory encryption SME TSME support list",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "AMD Reportedly Removes TSME Memory Encryption Support from Ryzen CPUs (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){ (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-1106208-1', 'auto'); ga('send', 'pageview'); window.googletag = window.googletag || {cmd: []}; googletag.cmd.push(function() { googletag.defineSlot('/21536815/300x250', [300, 250], 'div-gpt-ad-1603525413614-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googletag.enableServices(); }); googletag.cmd.push(function() { googletag.defineSlot('/21536815/top_728x90', [728, 90], 'div-gpt-ad-1370330043123-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googletag.enableServices(); }); googletag.cmd.push(function() { googletag.defineSlot('/21536815/728x90_bottom', [728, 90], 'div-gpt-ad-1371970877258-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googletag.enableServices(); }); googletag.cmd.push(function() { googletag.defineSlot('/21536815/300x600_navbar', [300, 600], 'div-gpt-ad-1460022611270-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googletag.enableServices(); }); googletag.cmd.push(function() { googletag.defineSlot('/21536815/336x280', [336, 280], 'div-gpt-ad-1504538105620-0').addService(googletag.pubads()); googletag.pubads().enableSingleRequest(); googletag.pubads().collapseEmptyDivs(); googlet",
+            "fetch_error": ""
+          },
+          {
+            "title": "Memory encryption: AMD SME, TSME and SEV",
+            "url": "https://mricher.fr/post/amd-memory-encryption/",
+            "query": "AMD Ryzen memory encryption SME TSME support list",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Memory encryption: AMD SME, TSME and SEV ← Home Subscribe Memory encryption: AMD SME, TSME and SEV December 12, 2021 security hardware There is a saying in security that it is difficult to secure a system if the attacker is able to tinker with hardware itself. On the server side, most of those issues have been put away by locking down said hardware in reasonably secured locations. But on the client side, those solutions are not possible. Phones vs. PCs Phones, as tightly integrated pieces of equipment with SoC and soldered components, were the first to benefit, by default, from storage encryption and integrated secure platforms. In an effort spearheaded by Apple, they have become mostly secure in the last 5 years. Instead, the more traditional x86 PC started to lag behind significantly. The modularity of the platform seems to make it difficult to close all doors and reach the same level of protection as a smartphone. So aside from the use of disk encryptions, nothing moved. The recent rants against TPMs requirements in Windows 11 are proof that those are not broadly available. Specifically, with more and more people setting up some kind of disk encryption by default , the main target shifted from cold storage to runtime memory. Either BitLocker on Windows or Cryptsetup on Linux are part of the OS installation process now. Getting the data and secrets from system memory is much easier. The premise is that if you get physical access to any random running system, you can: get the RAM sticks out put them in liquid nitrogen to freeze the bits in-place …then hook them up to a custom test bench that will dump the content, including all secret keys, giving you access to any linked cold storage. AMD Zen Memory Encryption That’s why when AMD announced that they would implement in",
+            "fetch_error": ""
+          },
+          {
+            "title": "AMD Silently Strips Memory Encryption from Consumer Ryzen CPUs - State of Surveillance",
+            "url": "https://stateofsurveillance.org/news/amd-ryzen-memory-guard-stripped-firmware-update-2026/",
+            "query": "AMD Ryzen memory encryption SME TSME support list",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"Article\",\"headline\":\"AMD Silently Strips Memory Encryption from Consumer Ryzen CPUs\",\"description\":\"Ars Technica's Dan Goodin reported on June 15, 2026 that AMD removed Transparent Secure Memory Encryption (TSME) from consumer Ryzen CPUs via the AGESA 1.2.7.0 firmware update, with no notice, no BIOS indication, and no detection path on Windows. The same feature still ships on AMD PRO Technologies enterprise chips. A privacy-conscious Linux hobbyist named Ben Kilpatrick spent months documenting the regression after his Host Security ID audit on a Ryzen 7 9700X showed 'encrypted RAM: not supported.' AMD's only public statement: TSME 'is a security feature only applied to PRO CPUs as part of AMD PRO Technologies.'\",\"author\":{\"@type\":\"Organization\",\"name\":\"State of Surveillance\",\"url\":\"https://stateofsurveillance.org\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"State of Surveillance\",\"url\":\"https://stateofsurveillance.org\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://stateofsurveillance.org/logo.png\"}},\"datePublished\":\"2026-06-17\",\"dateModified\":\"2026-06-17\",\"mainEntityOfPage\":{\"@type\":\"WebPage\",\"@id\":\"https://stateofsurveillance.org/news/amd-ryzen-memory-guard-stripped-firmware-update-2026\"},\"image\":\"https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80&auto=format,compress\"} AMD Silently Strips Memory Encryption from Consumer Ryzen CPUs - State of Surveillance // Consent-gated PostHog loader. NOTHING loads (no script, no config/flags // requests, no localStorage id) until the visitor has accepted analytics. // The cookie banner calls window.loadPostHog() on Accept; returning // visitors with stored consent load it immediately below. (function() { var started = false; window.loadPostHog = function() { if (starte",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/hardware on Reddit: [ArsTechnica] Users cry foul after AMD stripped memory crypto [TSME] from its consumer CPUs",
+            "url": "https://www.reddit.com/r/hardware/comments/1u72s18/arstechnica_users_cry_foul_after_amd_stripped/",
+            "query": "AMD AGESA memory encryption removed Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "Users cry foul after AMD stripped memory crypto from its consumer CPUs - Ars Technica",
+            "url": "https://arstechnica.com/security/2026/06/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus/",
+            "query": "AMD AGESA memory encryption removed Reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Users cry foul after AMD stripped memory crypto from its consumer CPUs - Ars Technica window.snowplowQueue = window.snowplowQueue || []; window.arsSP = { entities: {\"site\":{\"org_id\":\"4gKgcFGUFUvCGFzHakTPfYp85Yi8\",\"site_env\":\"production\",\"site_app_version\":\"multi-tenant\",\"site_data_source\":\"web\",\"site_section\":\"security\"},\"page\":{\"has_buy_button\":false},\"content\":{\"content_id\":\"c6c7dcaedd793422df3bb446\",\"content_type\":\"article\",\"editor_name\":\"Ken Fisher\",\"author_name\":\"Dan Goodin\",\"date_display\":\"2026-06-18T09:21:02.740Z\",\"content_source\":\"web\",\"content_len\":2,\"content_title\":\"Users cry foul after AMD stripped memory crypto from its consumer CPUs\",\"author_id\":\"3\",\"date_publish\":\"2026-06-15T17:55:46.000Z\",\"date_last_modified\":\"2026-06-16T23:03:15.000Z\",\"onsite_keywords\":\"amd|cpus|processors|transparent-secure-memory-encryption|tsme\",\"pagination_pages_tot\":2,\"word_count\":1385,\"content_template\":\"standard\",\"content_template_type\":\"mt_article_two_column\",\"content_is_commerce\":false}}, config: {\"SNOWPLOW_COLLECTOR\":\"c.arstechnica.com\",\"AVO_API_KEY\":\"FTJO6mVPBIzdGhjn2Ruy\",\"APP_ID\":\"ars-technica\",\"APP_NAME\":\"ars-technica\",\"APP_ENV\":\"production\",\"APP_VERSION\":\"1.0.0\",\"COOKIE_DOMAIN\":\".arstechnica.com\"} }; (function () { var ChannelWildcard = { ALL: '*', }; function KendraEvent(historyLimit) { this.listeners = new Map(); this.eventHistory = []; this.historyLimit = historyLimit || 10; } KendraEvent.prototype.broadcast = function (channel, value, options) { var opts = options || {}; var timestamp = Date.now(); if (opts.once) { if (channel === ChannelWildcard.ALL) { console.warn(\"'once: true' is not supported with ChannelWildcard.ALL\"); return; } var hasBroadcasted = this.eventHistory.some(function (entry) { return entry.channel === channel; }); if (hasBroadcasted) { return; } } var",
+            "fetch_error": ""
+          },
+          {
+            "title": "Users Cry Foul After AMD Stripped Memory Crypto From Its Consumer CPUs - Slashdot",
+            "url": "https://hardware.slashdot.org/story/26/06/15/200234/users-cry-foul-after-amd-stripped-memory-crypto-from-its-consumer-cpus",
+            "query": "AMD memory encryption vulnerability physical attack",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function () { if (typeof window.sdmedia !== 'object') { window.sdmedia = {}; } if (typeof window.sdmedia.site !== 'object') { window.sdmedia.site = {}; } var site = window.sdmedia.site; site.rootdir = \"//slashdot.org\"; }()); var pageload = { pagemark: '632473028753561068', before_content: (new Date).getTime() }; function pageload_done( $, console, maybe ){ pageload.after_readycode = (new Date).getTime(); pageload.content_ready_time = pageload.content_ready - pageload.before_content; pageload.script_ready_time = pageload.after_readycode - pageload.content_ready; pageload.ready_time = pageload.after_readycode - pageload.before_content; // Only report 1% of cases. maybe || (Math.random()>0.01) || $.ajax({ type: 'POST', data: { op: 'page_profile', pagemark: pageload.pagemark, dom: pageload.content_ready_time, js: pageload.script_ready_time } }); } Users Cry Foul After AMD Stripped Memory Crypto From Its Consumer CPUs - Slashdot // country.js converted to inline by CF Snippet window.is_euro_union = 0; window.country_code2 = \"US\"; window.region = \"CA\"; window.prebidOptions = {uids: {ip: \"172.185.47.133\" }}; window.bizx.cmp.init({ cmp_id: 12126, geo: window, gam_gdpr_technical_delivery: true, }); bizx.uids.gather(); window.prebidOptions = window.prebidOptions || {}; window.prebidOptions.uids = window.prebidOptions.uids || {}; window.prebidOptions.uids.hem = bizx.uids.getHem(); var _gaq = _gaq || []; window.SD = {}; window.SD.Ads = {}; var googletag = window.googletag || {}; googletag.cmd = googletag.cmd || []; var sdAdBlockActive = true; var sdUboActive = true; (function(){ var regexp=/\\s*(?:\\d+|many)\\s+more\\s*/i; var auto_more_count = 1; function auto_more(){ var $more_link = $('#more-experiment a'); $more_link.each(function(){ var $lastitem = $('#firehoselist>article.fhitem",
+            "fetch_error": ""
+          },
+          {
+            "title": "AMD removes memory encryption from consumer CPUs, users react",
+            "url": "https://cryptobriefing.com/amd-removes-memory-encryption-consumer-cpus/",
+            "query": "AMD memory encryption vulnerability physical attack",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(function(){var s=localStorage.getItem('cb-dark-mode');if(s==='true')document.documentElement.classList.add('dark');})(); (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-5B8VMXJ'); (function() { var host = 'cryptobriefing.com'; var element = document.createElement('script'); var firstScript = document.getElementsByTagName('script')[0]; var url = 'https://cmp.inmobi.com' .concat('/choice/', 'nwS18F5XLGdW_', '/', host, '/choice.js?tag_version=V3'); var uspTries = 0; var uspTriesLimit = 3; element.async = true; element.type = 'text/javascript'; element.src = url; firstScript.parentNode.insertBefore(element, firstScript); function makeStub() { var TCF_LOCATOR_NAME = '__tcfapiLocator'; var queue = []; var win = window; var cmpFrame; function addFrame() { var doc = win.document; var otherCMP = !!(win.frames[TCF_LOCATOR_NAME]); if (!otherCMP) { if (doc.body) { var iframe = doc.createElement('iframe'); iframe.style.cssText = 'display:none'; iframe.name = TCF_LOCATOR_NAME; doc.body.appendChild(iframe); } else { setTimeout(addFrame, 5); } } return !otherCMP; } function tcfAPIHandler() { var gdprApplies; var args = arguments; if (!args.length) { return queue; } else if (args[0] === 'setGdprApplies') { if ( args.length > 3 && args[2] === 2 && typeof args[3] === 'boolean' ) { gdprApplies = args[3]; if (typeof args[2] === 'function') { args[2]('set', true); } } } else if (args[0] === 'ping') { var retr = { gdprApplies: gdprApplies, cmpLoaded: false, cmpStatus: 'stub' }; if (typeof args[2] === 'function') { arg",
+            "fetch_error": ""
+          },
+          {
+            "title": "AMD Product Security",
+            "url": "https://www.amd.com/en/resources/product-security.html",
+            "query": "AMD security feature removal disclosure policy",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "The read operation timed out"
+          },
+          {
+            "title": "Advanced Micro Devices - Privacy Notice",
+            "url": "https://www.amd.com/en/legal/privacy.html",
+            "query": "AMD security feature removal disclosure policy",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "The read operation timed out"
+          },
+          {
+            "title": "AMD Quietly Removes Security Feature From Ryzen Processors Without User Notification - News Directory 3",
+            "url": "https://www.newsdirectory3.com/amd-quietly-removes-security-feature-from-ryzen-processors-without-user-notification/",
+            "query": "AMD security feature removal disclosure policy",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root{--color-primary:#2563eb;--color-surface:#fff;--color-background:#f8fafc;--color-text-primary:#1e293b;--color-border:#e2e8f0} *,*::before,*::after{box-sizing:border-box} body{margin:0;font-family:Inter,-apple-system,BlinkMacSystemFont,sans-serif;color:var(--color-text-primary);background:var(--color-background);line-height:1.6} .site-header{position:sticky;top:0;background:var(--color-surface);border-bottom:1px solid var(--color-border);z-index:99} .container{max-width:1200px;margin:0 auto;padding:0 1.5rem} .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden} .skip-link:focus{position:fixed;top:0;left:0;width:auto;height:auto;padding:1rem;background:#fff;z-index:100000} AMD Quietly Removes Security Feature From Ryzen Processors Without User Notification - News Directory 3 {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"Organization\",\"@id\":\"https://www.newsdirectory3.com/#organization\",\"name\":\"News Directory 3\",\"logo\":{\"@type\":\"ImageObject\",\"@id\":\"https://www.newsdirectory3.com/#logo\",\"url\":\"https://i0.wp.com/www.newsdirectory3.com/wp-content/uploads/2026/03/cropped-logo.png?resize=150%2C150&ssl=1\",\"contentUrl\":\"https://i0.wp.com/www.newsdirectory3.com/wp-content/uploads/2026/03/cropped-logo.png?resize=150%2C150&ssl=1\",\"caption\":\"News Directory 3\",\"inLanguage\":\"en-US\"}},{\"@type\":\"WebSite\",\"@id\":\"https://www.newsdirectory3.com/#website\",\"url\":\"https://www.newsdirectory3.com\",\"name\":\"News Directory 3\",\"publisher\":{\"@id\":\"https://www.newsdirectory3.com/#organization\"},\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://i0.wp.com/tarreo.buscafs.com/2026/06/Untitledfwfwed-2.jpg?fit=1920,1080&quality=75&strip=all\",\"url\":\"https://i0.wp.com/tarreo.buscafs.com/2026/06/Untitledfwfwed-2.jpg?fit=1920,1080&quality=75&strip=all\",\"w",
+            "fetch_error": ""
+          },
+          {
+            "title": "Intel vs AMD: Which CPUs Are Better in 2026? | Tom's Hardware",
+            "url": "https://www.tomshardware.com/features/amd-vs-intel-cpus",
+            "query": "AMD vs Intel memory encryption consumer CPU comparison",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Intel vs AMD: Which CPUs Are Better in 2026? | Tom's Hardware @layer reset, legacy, tw-components, components, tw-utilities, utilities, van-ds, hawk, global; @layer legacy { :root { --color-primary-50: 247 212 213; --color-primary-100: 241 181 182; --color-primary-200: 234 150 151; --color-primary-300: 228 119 121; --color-primary-400: 222 87 90; --color-primary-500: 216 56 59; --color-primary-600: 190 37 40; --color-primary-700: 154 30 32; --color-primary-800: 117 23 25; --color-primary-900: 80 16 17; --color-primary-950: 43 8 9; --color-secondary-50: 248 250 252; --color-secondary-100: 241 245 249; --color-secondary-200: 226 232 240; --color-secondary-300: 203 213 225; --color-secondary-400: 148 163 184; --color-secondary-500: 100 116 139; --color-secondary-600: 71 85 105; --color-secondary-700: 51 65 85; --color-secondary-800: 30 41 59; --color-secondary-900: 15 23 42; --color-secondary-950: 2 6 23; --font-ui-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-ui-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; } } { \"@context\": \"https://schema.org\", \"@type\": \"NewsArticle\", \"name\": \"Intel vs AMD: Which CPUs Are Better in 2026?\", \"headline\": \"Intel vs AMD: Which CPUs Are Better in 2026?\", \"alternativeHeadline\": \"We put Intel vs AMD in a battle of processor prowess.\", \"datePublished\": \"2024-08-03T12:37:35+00:00\", \"url\": \"https://www.tomshardware.com/features/amd-vs-intel-cpus\", \"articleSection\": \"CPUs\", \"speakable\": { \"@context\": \"https://schema.org\", \"@type\": \"SpeakableSpecification\", \"xpath\": [ \"/html/head/title\", \"/html/head/meta[@name=\\\"description\\\"]/@content\" ] }, \"image\": [ { \"@context\": \"https://schema.org\", \"",
+            "fetch_error": ""
+          },
+          {
+            "title": "Intel vs AMD Processor Security: Who Makes the Safest CPUs? | Tom's Hardware",
+            "url": "https://www.tomshardware.com/features/intel-amd-most-secure-processors",
+            "query": "AMD vs Intel memory encryption consumer CPU comparison",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Intel vs AMD Processor Security: Who Makes the Safest CPUs? | Tom's Hardware @layer reset, legacy, tw-components, components, tw-utilities, utilities, van-ds, hawk, global; @layer legacy { :root { --color-primary-50: 247 212 213; --color-primary-100: 241 181 182; --color-primary-200: 234 150 151; --color-primary-300: 228 119 121; --color-primary-400: 222 87 90; --color-primary-500: 216 56 59; --color-primary-600: 190 37 40; --color-primary-700: 154 30 32; --color-primary-800: 117 23 25; --color-primary-900: 80 16 17; --color-primary-950: 43 8 9; --color-secondary-50: 248 250 252; --color-secondary-100: 241 245 249; --color-secondary-200: 226 232 240; --color-secondary-300: 203 213 225; --color-secondary-400: 148 163 184; --color-secondary-500: 100 116 139; --color-secondary-600: 71 85 105; --color-secondary-700: 51 65 85; --color-secondary-800: 30 41 59; --color-secondary-900: 15 23 42; --color-secondary-950: 2 6 23; --font-ui-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-ui-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-copy: \"Open Sans\", \"Open Sans-fallback\", sans-serif; --font-article-heading: \"Open Sans\", \"Open Sans-fallback\", sans-serif; } } { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"name\": \"Intel vs AMD Processor Security: Who Makes the Safest CPUs?\", \"headline\": \"Intel vs AMD Processor Security: Who Makes the Safest CPUs?\", \"alternativeHeadline\": \"Who has the most secure processors, AMD or Intel?\", \"datePublished\": \"2019-11-04T18:22:35+00:00\", \"url\": \"https://www.tomshardware.com/features/intel-amd-most-secure-processors\", \"articleSection\": \"CPUs\", \"speakable\": { \"@context\": \"https://schema.org\", \"@type\": \"SpeakableSpecification\", \"xpath\": [ \"/html/head/title\", \"/html/head/meta[@name=\\\"description\\\"]/@content\" ]",
+            "fetch_error": ""
+          },
+          {
+            "title": "A comparison study of intel SGX and AMD memory encryption technology | Proceedings of the 7th International Workshop on Hardware and Architectural Support for Security and Privacy",
+            "url": "https://dl.acm.org/doi/10.1145/3214292.3214301",
+            "query": "AMD vs Intel memory encryption consumer CPU comparison",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          }
+        ]
+      },
+      "angle_candidates": [
+        "营销话术拆解",
+        "合规和资金风险",
+        "普通人不该硬冲的原因"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "AMD 悄然移除消费级 Ryzen CPU 内存加密功能，用户安全风险未知 投诉 风险 违规",
+        "AMD 悄然移除消费级 Ryzen CPU 内存加密功能，用户安全风险未知 骗局 营销话术",
+        "AMD 悄然移除消费级 Ryzen CPU 内存加密功能，用户安全风险未知 隐藏成本 失败案例"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
