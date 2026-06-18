@@ -13,6 +13,20 @@ SPEC.loader.exec_module(radar)
 
 
 SITE = {
+    "site_url": "https://radar.example.com",
+    "report_types": {
+        "investigation": {"title": "深度调查"},
+        "opportunity": {"title": "机会拆解"},
+        "tool-ledger": {"title": "工具账本"},
+        "platform-rules": {"title": "平台规则"},
+        "case-study": {"title": "案例复盘"},
+        "risk-warning": {"title": "风险避坑"},
+        "hot-event": {"title": "热点观点"},
+    },
+    "source_categories": {
+        "ai_tools": "AI 工具与开发者平台",
+        "hot_events": "热点事件与争议",
+    },
     "topic_directions": {
         "ai-frontier": {"title": "AI前沿", "short_title": "AI前沿", "keywords": ["ai", "模型", "anthropic", "google"]},
         "tools-rules": {"title": "工具&规则", "short_title": "工具&规则", "keywords": ["规则", "合规", "搜索"]},
@@ -180,6 +194,19 @@ class DuplicatePolicyTest(unittest.TestCase):
 
         self.assertFalse(duplicate, reason)
         self.assertTrue(stale_duplicate, stale_reason)
+
+    def test_invalid_report_type_from_llm_is_coerced(self):
+        candidate = decision(
+            "GitHub 开发者工具变化",
+            "GitHub Copilot improves context handling and model routing",
+            "https://github.blog/example",
+            report_type="ai-frontier",
+        )
+
+        report = radar.build_report(candidate, SITE, {"report_type_rules": {}}, "2026-06-18-morning")
+
+        self.assertIn(report["report_type"], SITE["report_types"])
+        self.assertEqual(candidate.traceability["invalid_report_type"], "ai-frontier")
 
 
 if __name__ == "__main__":

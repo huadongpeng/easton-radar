@@ -3345,13 +3345,23 @@ def material_pack(report: dict[str, Any]) -> dict[str, Any]:
     return selection_dossier(report)
 
 
+def coerce_report_type(decision: RadarDecision, site: dict[str, Any]) -> str:
+    report_type = str(decision.report_type or "").strip()
+    if report_type in site.get("report_types", {}):
+        return report_type
+    fallback = infer_report_type(f"{decision.item.title} {decision.item.summary}", decision.item.source_category)
+    decision.traceability = {**decision.traceability, "invalid_report_type": report_type, "coerced_report_type": fallback}
+    return fallback
+
+
 def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str, Any], batch_id: str) -> dict[str, Any]:
     item = decision.item
+    report_type = coerce_report_type(decision, site)
     report_id = f"{now_bj().strftime('%Y%m%d')}-{slugify(item.title)}"
-    report_type_meta = site["report_types"][decision.report_type]
+    report_type_meta = site["report_types"][report_type]
     source_title = site.get("source_categories", {}).get(item.source_category, item.source_category)
     source_name = display_source_name(item)
-    topic_key, topic_meta = topic_direction_for_item(item, decision.report_type, site)
+    topic_key, topic_meta = topic_direction_for_item(item, report_type, site)
     report = {
         "id": report_id,
         "batch_id": batch_id,
@@ -3372,7 +3382,7 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
         "published_at": item.published_at,
         "fetched_at": item.fetched_at,
         "decision": decision.decision,
-        "report_type": decision.report_type,
+        "report_type": report_type,
         "report_type_title": report_type_meta["title"],
         "score": decision.score,
         "reader_hook": decision.reader_hook,
@@ -3380,14 +3390,14 @@ def build_report(decision: RadarDecision, site: dict[str, Any], policy: dict[str
             "title": decision.report_title,
             "summary": item.summary,
             "reader_hook": decision.reader_hook,
-            "report_type": decision.report_type,
+            "report_type": report_type,
             "evidence_level": decision.evidence_level,
         }),
         "persona_discussion_question": persona_discussion_question({
             "title": decision.report_title,
             "summary": item.summary,
             "reader_hook": decision.reader_hook,
-            "report_type": decision.report_type,
+            "report_type": report_type,
             "evidence_level": decision.evidence_level,
         }),
         "why_now": decision.why_now,
