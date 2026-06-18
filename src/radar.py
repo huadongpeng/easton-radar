@@ -1281,6 +1281,8 @@ def should_drop_item(item: SourceItem) -> bool:
         return True
     if "v2ex.com" in host and "jobs.xml" in item.feed_url:
         return True
+    if item.source_name == "Hacker News" and item.title.strip().lower() in {"comments", "ask hn", "tell hn"}:
+        return True
     if item.source_category == "overseas_and_platforms" and any(word in text for word in ["融资", "ipo", "财报"]) and not any(word in text for word in ["stripe", "shopify", "支付", "跨境", "出海", "开发者", "ai", "api"]):
         return True
     if len(item.title) > 90 and any(mark in item.title for mark in ["丨", "；", ";"]):
@@ -1977,6 +1979,10 @@ def ascii_dominant(text: str) -> bool:
     letters = sum(1 for ch in text if ch.isascii() and ch.isalpha())
     cjk = sum(1 for ch in text if "\u4e00" <= ch <= "\u9fff")
     return letters > 0 and cjk == 0
+
+
+def has_cjk(text: str) -> bool:
+    return any("\u4e00" <= ch <= "\u9fff" for ch in text or "")
 
 
 def chinese_topic_hint(title: str, report_type: str) -> str:
@@ -3757,24 +3763,123 @@ def display_report_title(report: dict[str, Any]) -> str:
     return title
 
 
+def compact_source_name(source: str) -> str:
+    source = clean_text(source)
+    aliases = [
+        ("AI News & Artificial Intelligence | TechCrunch", "TechCrunch"),
+        ("The latest on AI & ML - The GitHub Blog", "GitHub"),
+        ("Archive: 2026 - GitHub Changelog", "GitHub"),
+        ("Cloudflare changelogs | Developer platform", "Cloudflare"),
+        ("Recent changes to Shopify's platform", "Shopify"),
+        ("Shopify Changelog RSS", "Shopify"),
+        ("Shopify Developer Changelog", "Shopify"),
+        ("Simon Willison's Weblog", "Simon Willison"),
+        ("Feed: Artificial Intelligence Latest", "AI 资讯"),
+        ("Artificial Intelligence", "AWS"),
+        ("OpenAI News", "OpenAI"),
+        ("Google DeepMind News", "Google DeepMind"),
+        ("Hacker News", "Hacker News"),
+        ("TopHubData/36氪", "36氪"),
+    ]
+    for old, new in aliases:
+        if source == old or old in source:
+            return new
+    if source.startswith("TopHubData/"):
+        return source.replace("TopHubData/", "", 1)
+    return source[:18] or "信息源"
+
+
+def trim_chinese_sentence(value: str, limit: int) -> str:
+    value = clean_text(value)
+    value = re.sub(r"^(这条线索|当前线索|这件事)[，,：:]\s*", "", value)
+    parts = re.split(r"(?<=[。！？!?])", value)
+    sentence = parts[0].strip() if parts and parts[0].strip() else value
+    if len(sentence) > limit:
+        sentence = sentence[:limit - 1].rstrip(" ，,。") + "…"
+    return sentence
+
+
+def english_briefing_to_chinese(report: dict[str, Any], source: str) -> str:
+    original = clean_text(report.get("original_title") or report.get("title", ""))
+    summary = clean_text(report.get("summary", ""))
+    text = f"{original} {summary}".lower()
+    title_hint = display_report_title(report)
+
+    rules: list[tuple[list[str], str]] = [
+        (["wall street loves ai", "less optimistic"], f"{source}：华尔街看好 AI，但美国普通用户对 AI 的乐观度在下降。"),
+        (["open source", "pull request"], "GitHub：开源维护者正被无写权限用户的海量 PR 拖累。"),
+        (["vaulted payment", "b2b order"], "Shopify：B2B 订单对客户已保存信用卡的扣款规则发生变化。"),
+        (["social media feeds", "threads", "instagram"], "TechCrunch：Threads、Instagram、TikTok 等社交平台的信息流控制项正在变多。"),
+        (["glm-5.2"], "Z.ai：GLM-5.2 面向编码订阅用户开放，主打更强的长文本能力。"),
+        (["returns and exchanges", "subscription apps"], "Shopify：退货换货和订阅类应用将执行新的 App Store 要求。"),
+        (["sidekick app extensions"], "Shopify：Sidekick 应用扩展新增要求，相关插件需要按新规则适配。"),
+        (["channels are now available", "market type"], "Shopify：Channels 现在可作为 Markets 里的市场类型使用。"),
+        (["secret scanning"], "GitHub：Secret scanning 更新，代码仓库密钥泄漏检测规则有变化。"),
+        (["copilot", "model routing"], "GitHub：Copilot 正在调整上下文处理和模型路由，以提升每个 token 的利用效率。"),
+        (["auto mode", "copilot chat"], "GitHub：Copilot Chat 的 Auto mode 面向更多用户开放。"),
+        (["cloudflare captcha"], "Cloudflare：CAPTCHA 触发规则出现异常案例，网站访问体验可能受影响。"),
+        (["agents sdk", "browser automation"], "Cloudflare：Agents SDK 增强了浏览器自动化、代码执行和恢复能力。"),
+        (["amazon bedrock", "guardrails"], "AWS：Bedrock Guardrails 新增检查 API，用于约束 Agent 应用风险。"),
+        (["sagemaker", "async inference"], "AWS：SageMaker 异步推理支持内联请求载荷，接入方式更灵活。"),
+        (["sagemaker", "container caching"], "AWS：SageMaker 增加容器缓存能力，用于加快模型扩容。"),
+        (["google docs", "turn off ai"], "Google：用户开始关注如何关闭 Google Docs 里的 AI 功能。"),
+        (["anthropic", "export rules"], "Anthropic：出口管制相关事件引发外部讨论，AI 公司合规压力上升。"),
+        (["ai search", "facebook posts"], "Meta：AI 搜索可能接入 Facebook 帖子，引发隐私和内容边界讨论。"),
+    ]
+    for keywords, sentence in rules:
+        if all(keyword in text for keyword in keywords):
+            return sentence
+
+    if "shopify" in text:
+        return f"Shopify：平台或电商规则有新变化，需点进原文确认影响范围。"
+    if "github" in text or "copilot" in text:
+        return f"GitHub：开发者工具或仓库规则有新变化，需点进原文确认影响范围。"
+    if "openai" in text or "chatgpt" in text:
+        return f"OpenAI：ChatGPT 或 OpenAI 生态有新变化，需点进原文确认细节。"
+    if "cloudflare" in text:
+        return f"Cloudflare：开发者平台有新变化，需点进原文确认影响范围。"
+    if "aws" in text or "amazon" in text or "bedrock" in text or "sagemaker" in text:
+        return f"AWS：云服务和 AI 平台能力有新变化，需点进原文确认成本和接入边界。"
+    if "ai" in text or "model" in text or "llm" in text:
+        return f"{source}：AI 相关动态更新，需点进原文确认具体变化。"
+    if "payment" in text or "billing" in text or "price" in text:
+        return f"{source}：支付、计费或价格规则有变化，需点进原文确认影响范围。"
+    return f"{source}：{trim_chinese_sentence(title_hint, 52)}。"
+
+
 def short_briefing_sentence(report: dict[str, Any], limit: int = 96) -> str:
     title = display_report_title(report)
     summary = clean_text(report.get("summary", ""))
     reason = clean_text(report.get("reason", ""))
-    source = report.get("source_name", "")
-    sentence = summary or reason or title
-    sentence = re.split(r"(?<=[。！？!?])", sentence)[0].strip() or sentence
-    sentence = re.sub(r"^(这条线索|当前线索|这件事)[，,：:]\s*", "", sentence)
+    source = compact_source_name(report.get("source_name", ""))
+    original = clean_text(report.get("original_title", ""))
+    if has_cjk(summary):
+        sentence = f"{source}：{trim_chinese_sentence(summary, limit - len(source) - 1)}"
+    elif has_cjk(original):
+        sentence = f"{source}：{trim_chinese_sentence(original, limit - len(source) - 1)}"
+    elif original or summary:
+        sentence = english_briefing_to_chinese(report, source)
+    elif has_cjk(reason):
+        sentence = f"{source}：{trim_chinese_sentence(reason, limit - len(source) - 1)}"
+    elif has_cjk(title):
+        sentence = f"{source}：{trim_chinese_sentence(title, limit - len(source) - 1)}"
+    else:
+        sentence = english_briefing_to_chinese(report, source)
     if len(sentence) > limit:
         sentence = sentence[:limit - 1].rstrip(" ，,。") + "…"
-    if source and not sentence.startswith(f"【{source}】"):
-        sentence = f"【{source}】{sentence}"
     return sentence
+
+
+def display_briefing_title(report: dict[str, Any]) -> str:
+    title = display_report_title(report)
+    if ascii_dominant(title):
+        return short_briefing_sentence(report, limit=60)
+    return title
 
 
 def report_card(report: dict[str, Any]) -> str:
     topic_title = report.get("topic_direction_short_title") or report.get("topic_direction_title") or report.get("source_category_title", "")
-    title = display_report_title(report)
+    title = display_briefing_title(report)
     briefing = short_briefing_sentence(report)
     return f"""
 <article class="item">
@@ -3803,7 +3908,7 @@ def topic_summary_chips(reports: list[dict[str, Any]], site: dict[str, Any]) -> 
 
 def briefing_flow_item(report: dict[str, Any]) -> str:
     topic = report.get("topic_direction_short_title") or report.get("topic_direction_title") or report.get("source_category_title", "")
-    title = display_report_title(report)
+    title = display_briefing_title(report)
     sentence = short_briefing_sentence(report)
     return f"""
 <article class="flow-item">
@@ -4128,7 +4233,7 @@ def render_item(report: dict[str, Any], site: dict[str, Any]) -> str:
     topic_key = report.get("topic_direction", "")
     topic_title = report.get("topic_direction_title") or report.get("source_category_title", "")
     topic_link = topic_href(topic_key) if topic_key else "/"
-    visible_title = display_report_title(report)
+    visible_title = display_briefing_title(report)
     schema = {
         "@context": "https://schema.org",
         "@type": "Article",
@@ -4196,7 +4301,7 @@ def render_static(batch: dict[str, Any], reports: list[dict[str, Any]], all_repo
     for key, meta in site.get("topic_directions", {}).items():
         static.write_page(f"topics/{key}/index.html", f"{meta['title']} - Easton Radar", render_topic_direction(key, meta, reports_for_topic(all_reports, key)))
     for report in all_reports:
-        static.write_page(f"items/{report['id']}/index.html", f"{display_report_title(report)} - Easton Radar", render_item(report, site))
+        static.write_page(f"items/{report['id']}/index.html", f"{display_briefing_title(report)} - Easton Radar", render_item(report, site))
     static.write_text("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {site['site_url'].rstrip('/')}/sitemap.xml\n")
     static.write_text("sitemap.xml", sitemap(site, all_reports))
     static.write_text("llms.txt", llms(site, all_reports))
