@@ -1,0 +1,2201 @@
+{
+  "id": "20260619-agent-gui-tui-4a42a058",
+  "batch_id": "2026-06-19-noon",
+  "title": "平台规则：做了一个轻量终端 Agent",
+  "original_title": "[开源] 做了一个轻量终端 Agent，无 GUI，无 TUI，简单回复",
+  "url": "https://www.v2ex.com/t/1221325",
+  "summary": "有时候只是想问 AI 一个很简单的问题，不想打开 GUI ，也不需要完整 TUI 。 于是便有了 ami ，现在可以直接： ami \"告诉我终端清屏快捷键是什么\" ami \"帮我总结项目 README\" ... 它会在终端里返回简洁回答。 支持本地工具调用、代码阅读、Web Search 和 Git 辅助。 安装： npm i -g @dogxi/ami 安装好后初始化： ami init 然后享受它。 官网： ami.dogxi.me GitHub: dogxii/ami 一个比较喜欢的功能： ami commit 有时候要手动改 AI 写的代码，又想要 commit 信息，自己去想 commit 信息又比较麻烦 直接 ami commit 让 AI 帮忙写 commit 信息。",
+  "source_category": "developer_business",
+  "source_category_title": "开发者副业与独立开发",
+  "topic_direction": "side-info",
+  "topic_direction_title": "副业&信息差",
+  "topic_direction_short_title": "副业&信息差",
+  "topic_direction_description": "独立开发、副业项目、工具站、微型 SaaS、开源项目、现金流风险、外包回款、信息差机会和风险避坑。重点记录案例、项目、风险和需求信号。",
+  "source_name": "V2EX 分享创造",
+  "original_source_name": "分享创造",
+  "source_type": "rss",
+  "feed_url": "https://v2ex.com/feed/create.xml",
+  "published_at": "2026-06-18T06:05:08Z",
+  "fetched_at": "2026-06-19T04:02:36.603557+00:00",
+  "decision": "deep_dive",
+  "report_type": "platform-rules",
+  "report_type_title": "平台规则",
+  "score": 51,
+  "reader_hook": "适合按老花的规则避坑视角拆：平台规则、搜索流量、出海路径或合规边界怎么影响小团队。",
+  "topic_tension": {
+    "score": 9,
+    "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+    "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+    "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+  },
+  "persona_discussion_question": "小团队该不该继续把关键工作流押在这个平台规则上？",
+  "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
+  "evidence_level": "near_source",
+  "source_priority": "P2 可参考源",
+  "reason": "命中老花主线关键词，且来源可复查。",
+  "collection_fit": "部分符合收集原则，但未达到推荐标准；如方向仍有价值，可进入可选池等待补证。",
+  "investigation_direction": "优先追官方政策、开发者公告、执行范围、受影响人群和合规边界。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。"
+  ],
+  "facts": [
+    {
+      "claim": "V2EX 分享创造 发布/收录了这条原始线索：[开源] 做了一个轻量终端 Agent，无 GUI，无 TUI，简单回复",
+      "type": "confirmed_fact",
+      "source_url": "https://www.v2ex.com/t/1221325",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "V2EX 分享创造",
+      "url": "https://www.v2ex.com/t/1221325",
+      "source_type": "near_source",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "ai",
+        "agent"
+      ],
+      "dev": [
+        "github",
+        "开源"
+      ],
+      "platform": [
+        "search"
+      ]
+    },
+    "source_host": "www.v2ex.com",
+    "source_type": "rss",
+    "heuristic": true,
+    "topic_tension_score": 9
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "适合按老花的规则避坑视角拆：平台规则、搜索流量、出海路径或合规边界怎么影响小团队。",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://v2ex.com/feed/create.xml",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：ami依赖的具体AI模型、API Key存储方式、数据是否外传等关键安全信息缺失。"
+    },
+    "core_question": "这个开源终端Agent工具ami是否值得普通开发者日常使用，是否存在安全、成本或维护风险？",
+    "why_this_topic_matters": "终端Agent是AI工具链中一个快速增长的细分领域，但安全信任和成本控制是普通技术人最关心的实际问题。ami作为一个轻量级开源方案，其设计取舍和潜在风险具有普遍参考价值。",
+    "fact_summary": [
+      "ami是一个开源终端Agent，通过npm安装，支持本地工具调用、代码阅读、Web Search和Git辅助。",
+      "安装命令：npm i -g @dogxi/ami，初始化后可使用。",
+      "主要功能包括：简单问答、项目README总结、自动生成commit信息等。",
+      "项目发布于V2EX，作者为Dogxi，有GitHub仓库和官网。",
+      "依赖第三方AI服务（未明确说明具体模型），每次查询可能将本地数据发送至外部。",
+      "终端Agent直接访问文件系统和命令执行，存在权限滥用风险。"
+    ],
+    "persona_discussion_question": "老花：我该不该在终端里装一个AI助手？它会不会偷我的代码、泄露API Key，或者让我养成依赖？",
+    "old_flower_stance": "谨慎试用，先隔离环境、审查源码、控制API费用，不要在生产环境或敏感项目中直接使用。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "副业普通人"
+      ],
+      "interest_score": 75,
+      "why_interested": "终端Agent直接触及开发工作流，安全性和成本是刚需话题。",
+      "reader_risk": "可能被标题吸引但缺乏安全判断能力，需明确风险提示。"
+    },
+    "mass_interest_hook": {
+      "score": 60,
+      "hook_type": "踩坑",
+      "why_non_technical_people_may_click": "标题暗示‘轻量终端Agent’可能被误解为免费、安全的AI助手，普通人可能好奇是否能用。",
+      "story_seed": "一个开发者为了省事装了终端AI助手，结果API Key被泄露，代码被上传到第三方。",
+      "do_not_overhype": "不要夸大安全风险或功能缺陷，需基于证据。"
+    },
+    "topic_tension": {
+      "score": 10,
+      "conflict_point": "便利性 vs 安全风险：终端Agent提高效率，但可能引入数据泄露和权限滥用。",
+      "debate_question": "开源AI工具的安全信任问题：用户如何判断一个轻量级终端Agent不会窃取敏感信息？",
+      "stakeholders": [
+        "普通技术人",
+        "独立开发者",
+        "开源社区",
+        "AI服务提供商"
+      ],
+      "why_people_would_comment": "读者可以分享自己使用终端Agent的体验、安全顾虑或替代方案。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      {
+        "date": "2026-06-18",
+        "event": "V2EX帖子发布，介绍ami工具"
+      },
+      {
+        "date": "2026-06-18",
+        "event": "证据收集完成，未发现后续更新"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "V2EX帖子",
+        "url": "https://www.v2ex.com/t/1221325",
+        "supports": "工具功能、安装方式、作者信息",
+        "reliability": "media"
+      },
+      {
+        "source": "GitHub用户页",
+        "url": "https://github.com/dogxii",
+        "supports": "作者身份",
+        "reliability": "near_source"
+      },
+      {
+        "source": "个人网站",
+        "url": "https://dogxi.me/",
+        "supports": "作者身份",
+        "reliability": "near_source"
+      },
+      {
+        "source": "博客",
+        "url": "https://blog.dogxi.me/",
+        "supports": "作者身份",
+        "reliability": "near_source"
+      },
+      {
+        "source": "AWS文档",
+        "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/pricing-ami-products.html",
+        "supports": "无关（AMI歧义）",
+        "reliability": "official"
+      },
+      {
+        "source": "Reddit",
+        "url": "https://www.reddit.com/r/aws/comments/g6cqjt/cost_of_storing_ami/",
+        "supports": "无关（AMI歧义）",
+        "reliability": "weak"
+      },
+      {
+        "source": "Stack Overflow",
+        "url": "https://stackoverflow.com/questions/18650697/cost-of-storing-ami",
+        "supports": "无关（AMI歧义）",
+        "reliability": "weak"
+      },
+      {
+        "source": "Dupple文章",
+        "url": "https://dupple.com/learn/best-ai-terminal-coding-agents",
+        "supports": "终端Agent对比，未提及ami",
+        "reliability": "media"
+      },
+      {
+        "source": "RankLLMs文章",
+        "url": "https://rankllms.com/news/freebuff-ai-coding-agent-review/",
+        "supports": "终端Agent对比，未提及ami",
+        "reliability": "media"
+      },
+      {
+        "source": "Petronella文章",
+        "url": "https://petronellatech.com/blog/pi-dev-platform-review/",
+        "supports": "终端Agent对比，未提及ami",
+        "reliability": "media"
+      },
+      {
+        "source": "GitHub安全最佳实践",
+        "url": "https://github.com/lirantal/npm-security-best-practices",
+        "supports": "npm安全背景",
+        "reliability": "official"
+      },
+      {
+        "source": "OWASP NPM安全",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/NPM_Security_Cheat_Sheet.html",
+        "supports": "npm安全背景",
+        "reliability": "official"
+      },
+      {
+        "source": "npm安全政策",
+        "url": "https://docs.npmjs.com/policies/security/",
+        "supports": "npm安全背景",
+        "reliability": "official"
+      },
+      {
+        "source": "Docker安全文章",
+        "url": "https://www.docker.com/blog/ai-coding-agent-horror-stories-security-risks/",
+        "supports": "AI Agent安全风险案例",
+        "reliability": "media"
+      },
+      {
+        "source": "Hacker News文章",
+        "url": "https://thehackernews.com/2026/05/why-agentic-ai-is-securitys-next-blind.html",
+        "supports": "Agentic AI安全盲点",
+        "reliability": "media"
+      },
+      {
+        "source": "Infosecurity文章",
+        "url": "https://www.infosecurity-magazine.com/news/unchecked-ai-agents-cause/",
+        "supports": "AI Agent安全事件统计",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "部分闭环：事实清楚但关键证据缺失，无法完全验证安全性和成本。",
+    "writeable_angles": [
+      {
+        "angle": "安全审计角度：审查ami源码，评估数据泄露风险",
+        "why": "直接回应核心技术人的安全顾虑",
+        "needs": "源码审查结果、隐私政策"
+      },
+      {
+        "angle": "成本分析角度：计算使用ami的API费用",
+        "why": "帮助读者评估实际使用成本",
+        "needs": "API定价、使用量估算"
+      },
+      {
+        "angle": "替代方案对比：ami vs shell_gpt vs warp",
+        "why": "提供决策参考",
+        "needs": "各工具功能、安全、成本对比"
+      },
+      {
+        "angle": "避坑指南：使用终端Agent的注意事项",
+        "why": "实用性强，吸引入门读者",
+        "needs": "安全最佳实践、案例"
+      }
+    ],
+    "missing_basics": [
+      "ami依赖的具体AI模型和API",
+      "API Key的存储方式",
+      "数据是否发送到外部服务器",
+      "隐私政策或用户协议",
+      "GitHub仓库的star数、最近更新日期、issue活跃度",
+      "npm包的下载量、维护者信息"
+    ],
+    "missing_materials": [
+      "ami的GitHub仓库源码分析报告",
+      "ami的隐私政策原文",
+      "类似终端Agent工具（如shell_gpt、warp）的对比分析",
+      "npm包安全扫描结果（如Snyk）",
+      "用户社区讨论汇总"
+    ],
+    "not_claimable": [
+      "工具是安全的",
+      "工具是免费的",
+      "工具适合生产环境",
+      "工具比GUI工具更好"
+    ],
+    "followup_queries": [
+      "ami的GitHub仓库源码中是否有数据发送代码？",
+      "ami的npm包是否有已知漏洞？",
+      "ami的用户协议是否明确数据使用？",
+      "ami的API费用如何计算？"
+    ],
+    "additional_search_queries": [
+      "dogxii/ami github",
+      "ami terminal agent npm",
+      "ami terminal agent security",
+      "ami terminal agent review",
+      "shell_gpt vs ami",
+      "warp terminal agent"
+    ],
+    "stop_conditions": [
+      "发现ami存在恶意代码或数据泄露证据",
+      "ami项目已停止维护或删除",
+      "用户反馈普遍负面",
+      "类似工具已有更全面的分析"
+    ],
+    "confidence": 51.0,
+    "topic_direction": "side-info",
+    "topic_direction_title": "副业&信息差",
+    "report_type": "platform-rules",
+    "quality_gate": {
+      "pass": false,
+      "score": 51,
+      "fatal_issues": [
+        "核心事实没有来源：ami依赖的具体AI模型、API Key存储方式、数据是否外传等关键安全信息缺失。",
+        "成本估算没有公式、单位或边界：未提供API费用计算方式。",
+        "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象：读者分层虽列出但未深入分析各层需求。",
+        "没有泛兴趣故事钩子，标题和开头只适合技术小圈子：标题和开头偏向技术介绍，缺乏泛兴趣吸引力。",
+        "没有真实传播张力：冲突点（便利性vs安全）虽存在，但缺乏具体案例和证据支撑。",
+        "没有明确归入实际选题方向，或者选题方向和内容不匹配：选题方向为'副业&信息差'，但内容更偏向技术工具评测。",
+        "没有明确选题结论：推荐或可选：结论为'可选'但未明确说明升级条件。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写：理由不够充分。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：事实有缺口，逻辑部分闭环。",
+        "没有列出基础概念缺口和资料素材缺口：已列出但未充分强调。",
+        "没有按具体类型提供资料包：资料包不完整，缺少安全审计、成本分析等关键材料。"
+      ],
+      "warnings": [
+        "证据来源偏科：主要依赖V2EX帖子，缺乏官方文档和用户反馈。",
+        "泛兴趣钩子过度标题党：标题暗示'轻量终端Agent'可能被误解为免费安全，但正文证据不足。"
+      ],
+      "missing_evidence": [
+        "ami依赖的具体AI模型和API信息",
+        "API Key的存储方式",
+        "数据是否发送到外部服务器",
+        "隐私政策或用户协议",
+        "GitHub仓库的star数、最近更新日期、issue活跃度",
+        "npm包的下载量、维护者信息",
+        "源码安全审计报告",
+        "用户社区讨论汇总"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": false,
+      "report_type_ok": false,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "这个开源终端Agent工具ami是否值得普通开发者日常使用，是否存在安全、成本或维护风险？",
+      "persona_discussion_question": "老花：我该不该在终端里装一个AI助手？它会不会偷我的代码、泄露API Key，或者让我养成依赖？",
+      "hidden_public_issue": "开源AI工具的安全信任问题：用户如何判断一个轻量级终端Agent不会窃取敏感信息？平台（如GitHub、npm）的审核机制是否足够保护开发者？",
+      "must_verify": [
+        "工具是否收集用户数据或发送数据到外部服务器？",
+        "API Key的存储方式是否安全？",
+        "工具是否依赖第三方AI服务（如OpenAI）？如果是，费用如何？",
+        "GitHub仓库的star数、最近更新日期、issue活跃度",
+        "npm包的下载量、维护者信息",
+        "是否有已知的安全漏洞或恶意代码报告？",
+        "工具是否支持离线模式或本地模型？",
+        "用户协议和隐私政策是否明确？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "github_repo",
+          "query": "dogxii/ami",
+          "why_needed": "查看源码、README、issue、安全审计"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "ami.dogxi.me",
+          "why_needed": "查看官方文档、隐私政策、使用条款"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "ami pricing",
+          "why_needed": "确认是否有付费计划或API费用"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "ami terminal agent review",
+          "why_needed": "获取用户反馈、潜在问题"
+        },
+        {
+          "source_type": "policy",
+          "query": "npm package security policy",
+          "why_needed": "了解npm对恶意包的检测机制"
+        },
+        {
+          "source_type": "case_study",
+          "query": "terminal AI agent security incident",
+          "why_needed": "查找类似工具的安全事件作为参考"
+        }
+      ],
+      "expert_challenge_points": [
+        "终端Agent直接访问文件系统和命令执行，存在权限滥用风险",
+        "如果依赖云端AI，每次查询都会将本地数据发送到第三方，隐私风险高",
+        "开源项目可能缺乏持续维护，长期使用有兼容性和安全更新风险",
+        "工具声称支持Web Search，但未说明搜索API的调用方式和费用"
+      ],
+      "do_not_claim_yet": [
+        "工具是安全的",
+        "工具是免费的",
+        "工具适合生产环境",
+        "工具比GUI工具更好"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需强调安全验证和成本风险，适合作为副业/工具类选题",
+      "downstream_materials_needed": [
+        "ami的GitHub仓库源码分析报告",
+        "ami的隐私政策原文",
+        "类似终端Agent工具（如shell_gpt、warp）的对比分析",
+        "npm包安全扫描结果（如Snyk）",
+        "用户社区讨论汇总"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "[开源] 做了一个轻量终端 Agent，无 GUI，无 TUI，简单回复 - V2EX",
+        "url": "https://www.v2ex.com/t/1221325",
+        "query": "dogxii/ami",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "[开源] 做了一个轻量终端 Agent，无 GUI，无 TUI，简单回复 - V2EX body { min-width: 820px; font-family: \"Helvetica Neue\", \"Luxi Sans\", \"Segoe UI\", \"Hiragino Sans GB\", \"Microsoft Yahei\", sans-serif, \"Apple Logo\"; } const SITE_NIGHT = 0; const LANG = 'enus'; const FEATURES = ['search', 'favorite-nodes-sort']; const address = \"H7n949qebWfk6HwCMPGHVkWEFsKnh8CSHeqFMZjb29v7\"; async function reloadTopicTips() { $.get(\"/t/1221325/tips.html\") .done(function(data) { let last = $('#topic-tip-box').children().last(); if (!last.hasClass('inner')) { last.addClass('inner'); last.addClass('flex-one-row'); last.addClass('gap10'); } last.replaceWith(data); // Flash the element to indicate update let newLast = $('#topic-tip-box').children().last(); newLast.fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100); }) .fail(function() { console.error('Failed to fetch /t/1221325/tips.html'); }); } {\"interactionStatistic\": {\"userInteractionCount\": 491, \"@type\": \"InteractionCounter\", \"interactionType\": \"https://schema.org/ViewAction\"}, \"text\": \"有时候只是想问 AI 一个很简单的问题，不想打开 GUI ，也不需要完整 TUI 。\\n于是便有了 ami ，现在可以直接：\\nami \\\"告诉我终端清屏快捷键是什么\\\"\\nami \\\"帮我总结项目 README\\\"\\n...\\n它会在终端里返回简洁回答。\\n支持本地工具调用、代码阅读、Web Search 和 Git 辅助。\\n安装：\\nnpm i -g @dogxi/ami\\n安装好后初始化：\\nami init\\n然后享受它。\\n官网：\\nami.dogxi.me\\nGitHub:\\ndogxii/ami\\n一个比较喜欢的功能：\\nami commit\\n有时候要手动改 AI 写的代码，又想要 commit 信息，自己去想 commit 信息又比较麻烦\\n直接 ami commit 让 AI 帮忙写 commit 信息。\", \"image\": \"https://i.imgur.com/zYI9p15.png\", \"datePublished\": \"2026-06-18T06:05:08Z\", \"commentCount\": 0, \"mainEntityOfPage\": \"https://www.v2ex.com/t/1221325\", \"author\": {\"url\": \"https://www.v2ex.com/member/Dogxi\", \"@type\": \"Person\", \"name\": \"Dogxi\"}, \"headline\": \"[开源] 做了一个轻量终端 Agent，无 GUI，无 TUI，简单回复\", \"@type\": \"DiscussionForumPosting\", \"url\": \"https://www.v2ex.com/t/1221325\", \"isPartOf\": {\"url\": \"https://www.v2ex.com/g",
+        "fetch_error": ""
+      },
+      {
+        "title": "dogxii (Dogxi) · GitHub",
+        "url": "https://github.com/dogxii",
+        "query": "dogxii/ami",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+        "fetch_error": ""
+      },
+      {
+        "title": "Ami Ami Dogs: Seriously Cute Crochet: Hoshi, Mitsuki: 9780062025708: Amazon.com: Books",
+        "url": "https://www.amazon.com/Ami-Dogs-Seriously-Cute-Crochet/dp/0062025708",
+        "query": "dogxii/ami",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "var aPageStart = (new Date()).getTime(); var ue_t0=ue_t0||+new Date(); window.ue_ihb = (window.ue_ihb || window.ueinit || 0) + 1; if (window.ue_ihb === 1) { var ue_csm = window, ue_hob = +new Date(); (function(d){var e=d.ue=d.ue||{},f=Date.now||function(){return+new Date};e.d=function(b){return f()-(b?0:d.ue_t0)};e.stub=function(b,a){if(!b[a]){var c=[];b[a]=function(){c.push([c.slice.call(arguments),e.d(),d.ue_id])};b[a].replay=function(b){for(var a;a=c.shift();)b(a[0],a[1],a[2])};b[a].isStub=1}};e.exec=function(b,a){return function(){try{return b.apply(this,arguments)}catch(c){ueLogError(c,{attribution:a||\"undefined\",logLevel:\"WARN\"})}}}})(ue_csm); var ue_err_chan = 'jserr-rw'; (function(d,e){function h(f,b){if(!(a.ec>a.mxe)&&f){a.ter.push(f);b=b||{};var c=f.logLevel||b.logLevel;c&&c!==k&&c!==m&&c!==n&&c!==p||a.ec++;c&&c!=k||a.ecf++;b.pageURL=\"\"+(e.location?e.location.href:\"\");b.logLevel=c;b.attribution=f.attribution||b.attribution;a.erl.push({ex:f,info:b})}}function l(a,b,c,e,g){d.ueLogError({m:a,f:b,l:c,c:\"\"+e,err:g,fromOnError:1,args:arguments},g?{attribution:g.attribution,logLevel:g.logLevel}:void 0);return!1}var k=\"FATAL\",m=\"ERROR\",n=\"WARN\",p=\"DOWNGRADED\",a={ec:0,ecf:0, pec:0,ts:0,erl:[],ter:[],buffer:[],mxe:50,startTimer:function(){a.ts++;setInterval(function(){d.ue&&a.pec window.ue && ue.count && ue.count('CSMLibrarySize', 10717) (function(b,a,c,d){if((b=b.AmazonUIPageJS||b.P)&&b.when&&b.register){c=[];for(a=a.currentScript;a;a=a.parentElement)a.id&&c.push(a.id);return b.log(\"A copy of P has already been loaded on this page.\",\"FATAL\",c.join(\" \"))}})(window,document,Date);(function(a,b,c,d){\"use strict\";a._pSetI=function(){return null}})(window,document,Date);(function(c,e,I,B){\"use strict\";c._pd=function(){var a,u;return function(C,f,h,k,b,D,v,E,F){function w(d)",
+        "fetch_error": ""
+      },
+      {
+        "title": "Dogxi - Personal Website",
+        "url": "https://dogxi.me/",
+        "query": "ami.dogxi.me",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Dogxi - Rookie Dog (function () { var t = localStorage.getItem(\"theme\"); if (t === \"dark\" || (!t && window.matchMedia(\"(prefers-color-scheme: dark)\").matches)) { document.documentElement.classList.add(\"dark\"); } })(); /* ── Reset ── */ *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; } /* ── Tokens ── */ :root { --bg: #ffffff; --surface-soft: rgba(245, 245, 245, 0.72); --surface-active: #e8e8e8; --border: #e5e5e5; --text: #171717; --text-2: #6b6b6b; --text-3: #b0b0b0; --ring: rgba(23, 23, 23, 0.1); --grid-highlight: rgba(23, 23, 23, 0.2); --spark-1: #f0c95a; --spark-2: #77a8e8; --spark-3: #ef8f9a; --radius: 12px; --dur: 0.16s; --ease: cubic-bezier(0.16, 1, 0.3, 1); --spring: cubic-bezier(0.18, 1.42, 0.38, 1); } html.dark { --bg: #0f0f0f; --surface-soft: rgba(28, 28, 28, 0.68); --surface-active: #262626; --border: #2e2e2e; --text: #f5f5f5; --text-2: #999999; --text-3: #4a4a4a; --ring: rgba(255, 255, 255, 0.1); --grid-highlight: rgba(255, 255, 255, 0.18); --spark-1: #f1d574; --spark-2: #8db8ff; --spark-3: #ff9faf; } /* ── Base ── */ html { --spot-x: 50%; --spot-y: 50%; font-family: \"Inter\", system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; /* smooth theme transitions */ transition: background var(--dur) ease, color var(--dur) ease; } body { position: relative; isolation: isolate; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; /* safe area for notched phones */ padding: max(2.5rem, env(safe-area-inset-top)) max(1.25rem, env(safe-area-inset-right)) max(2.5rem, env(safe-area-inset-bottom)) max(1.25rem, env(safe-area-inset-left)); -webkit-tap-highlight-color: transparent; overflow-x: hidden; } ",
+        "fetch_error": ""
+      },
+      {
+        "title": "60s 信息聚合",
+        "url": "https://60s.dogxi.me/",
+        "query": "ami.dogxi.me",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "60s 信息聚合",
+        "fetch_error": ""
+      },
+      {
+        "title": "Dogxi 的狗窝",
+        "url": "https://blog.dogxi.me/",
+        "query": "ami.dogxi.me",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Dogxi 的狗窝 --> --> document.addEventListener(\"astro:before-swap\",e=>[...e.newDocument.head.querySelectorAll('link[as=\"font\"]')].forEach(o=>o.remove())); function init() { preloadTheme() onScroll() // animate() const backToPrev = document.getElementById('back-to-prev') if (backToPrev && backToPrev.dataset.bound !== 'true') { backToPrev.dataset.bound = 'true' backToPrev.addEventListener('click', () => window.history.back()) } if (document.documentElement.dataset.scrollWatcherBound !== 'true') { document.documentElement.dataset.scrollWatcherBound = 'true' document.addEventListener('scroll', onScroll, { passive: true }) } } // function animate() { // const animateElements = document.querySelectorAll('.animate') // animateElements.forEach((element, index) => { // setTimeout(() => { // element.classList.add('show') // }, index * 50) // }) // } function onScroll() { if (window.scrollY > 0) { document.documentElement.classList.add('scrolled') } else { document.documentElement.classList.remove('scrolled') } } function toggleTheme(dark) { const css = document.createElement('style') css.appendChild( document.createTextNode( `* { -webkit-transition: none !important; -moz-transition: none !important; -o-transition: none !important; -ms-transition: none !important; transition: none !important; } `, ), ) document.head.appendChild(css) if (dark) { document.documentElement.classList.add('dark') } else { document.documentElement.classList.remove('dark') } void window.getComputedStyle(css).opacity document.head.removeChild(css) } function preloadTheme() { const userTheme = localStorage.getItem('theme') || 'system' if (userTheme === 'light') { toggleTheme(false) } else if (userTheme === 'dark') { toggleTheme(true) } else { // system mode toggleTheme(window.matchMedia('(prefers-color-scheme:",
+        "fetch_error": ""
+      },
+      {
+        "title": "AMI product pricing for AWS Marketplace - AWS Marketplace",
+        "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/pricing-ami-products.html",
+        "query": "ami pricing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "AMI product pricing for AWS Marketplace - AWS Marketplace View a markdown version of this page AMI product pricing for AWS Marketplace - AWS Marketplace { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"AWS Marketplace\", \"item\" : \"https://docs.aws.amazon.com/marketplace/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"Seller Guide\", \"item\" : \"https://docs.aws.amazon.com/marketplace/latest/userguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"AMI-based products in AWS Marketplace\", \"item\" : \"https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html\" }, { \"@type\" : \"ListItem\", \"position\" : 5, \"name\" : \"AMI product pricing for AWS Marketplace\", \"item\" : \"https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html\" } ] } Documentation AWS Marketplace Seller Guide AMI pricing models AWS charges and software charges AMI product pricing for AWS Marketplace AWS Marketplace has multiple pricing models for Amazon Machine Image (AMI) products. With seller private offers, there are options available for multi-year and custom duration contracts. For more information about multi-year and custom duration contracts, see Preparing a private offer for your AWS Marketplace product and Private offer installment plans . The following sections provide information about pricing models for AMI-based products. Note You must be able to provide a W-9 tax form (for US based entities) or a W-8 form (for EU-based entities) as described in Registering as a seller on AWS Marketplace . Topics AMI pricing models AWS charges and software charges Custom metering pricing f",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/aws on Reddit: Cost of storing AMI",
+        "url": "https://www.reddit.com/r/aws/comments/g6cqjt/cost_of_storing_ami/",
+        "query": "ami pricing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "amazon web services - Cost of storing AMI - Stack Overflow",
+        "url": "https://stackoverflow.com/questions/18650697/cost-of-storing-ami",
+        "query": "ami pricing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "amazon web services - Cost of storing AMI - Stack Overflow function OptanonWrapper() { } { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"WebSite\", \"@id\": \"https://stackoverflow.com/#website\", \"name\": \"Stack Overflow\", \"url\": \"https://stackoverflow.com\", \"image\": \"https://stackoverflow.com/Content/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=0f0cab681579\", \"publisher\": { \"@id\": \"https://stackoverflow.com/#organization\" } }, { \"@type\": \"Organization\", \"@id\": \"https://stackoverflow.com/#organization\", \"name\": \"Stack Overflow\", \"url\": \"https://stackoverflow.com\", \"logo\": \"https://stackoverflow.com/Content/Sites/stackoverflow/Img/logo.png?v=0a124c963f5f\", \"sameAs\": [ \"https://stackoverflow.co/\", \"https://www.facebook.com/officialstackoverflow/\", \"https://x.com/stackoverflow\", \"https://www.linkedin.com/company/stack-overflow\", \"https://www.youtube.com/c/StackOverflowOfficial\", \"https://twitter.com/stackoverflow\" ], \"contactPoint\": [ { \"@type\": \"ContactPoint\", \"contactType\": \"Customer support\", \"url\": \"https://stackoverflow.com/contact\" }, { \"@type\": \"ContactPoint\", \"contactType\": \"Stack Ads\", \"url\": \"https://stackoverflow.co/advertising/\" }, { \"@type\": \"ContactPoint\", \"contactType\": \"Stack Internal\", \"url\": \"https://stackoverflow.co/teams/\" }, { \"@type\": \"ContactPoint\", \"contactType\": \"Stack Data Licensing\", \"url\": \"https://stackoverflow.co/api-solutions/\" } ], \"description\": \"Q\\u0026A for professional and enthusiast programmers\" } ] } https://stackoverflow.com/Content/ {\"options\":{\"locale\":\"en\",\"serverTime\":1781842193,\"routeName\":\"Questions/Show\",\"stackAuthUrl\":\"https://stackauth.com\",\"networkMetaHostname\":\"meta.stackexchange.com\",\"site\":{\"name\":\"Stack Overflow\",\"description\":\"Q\\u0026A for professional and enthusiast programmers\",\"isNoticesTabEnabled\":true,\"e",
+        "fetch_error": ""
+      },
+      {
+        "title": "The 7 Best AI Terminal Coding Agents (2026) | Dupple",
+        "url": "https://dupple.com/learn/best-ai-terminal-coding-agents",
+        "query": "ami terminal agent review",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "The 7 Best AI Terminal Coding Agents (2026) | Dupple {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"@id\":\"https://dupple.com/learn/best-ai-terminal-coding-agents#article\",\"headline\":\"The 7 Best AI Terminal Coding Agents (2026)\",\"description\":\"I tested the best AI terminal coding agents in 2026. Claude Code, Codex CLI, Aider, OpenCode and more, ranked by benchmark, price, and real workflow fit.\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://dupple.com/images/og-dupple.png\",\"width\":1200,\"height\":630},\"datePublished\":\"2026-06-16T00:00:00.000Z\",\"dateModified\":\"2026-06-16T00:00:00.000Z\",\"lastReviewed\":\"2026-06-16T00:00:00.000Z\",\"keywords\":\"best ai terminal coding agents\",\"articleSection\":\"AI Guides\",\"wordCount\":2532,\"author\":{\"@id\":\"https://dupple.com/about#louis\"},\"publisher\":{\"@id\":\"https://dupple.com/#org\"},\"mainEntityOfPage\":{\"@id\":\"https://dupple.com/learn/best-ai-terminal-coding-agents#webpage\"},\"isPartOf\":{\"@id\":\"https://dupple.com/learn#hub\"},\"url\":\"https://dupple.com/learn/best-ai-terminal-coding-agents\",\"inLanguage\":\"en\",\"about\":[{\"@type\":\"SoftwareApplication\",\"name\":\"Claude\",\"sameAs\":[\"https://en.wikipedia.org/wiki/Claude_(language_model)\",\"https://claude.com\"]},{\"@type\":\"Organization\",\"name\":\"OpenAI\",\"sameAs\":[\"https://en.wikipedia.org/wiki/OpenAI\",\"https://www.wikidata.org/wiki/Q21708200\",\"https://openai.com\"]},{\"@type\":\"SoftwareApplication\",\"name\":\"ChatGPT\",\"sameAs\":[\"https://en.wikipedia.org/wiki/ChatGPT\",\"https://www.wikidata.org/wiki/Q115564437\",\"https://chatgpt.com\"]},{\"@type\":\"SoftwareApplication\",\"name\":\"Google Gemini\",\"sameAs\":[\"https://en.wikipedia.org/wiki/Gemini_(chatbot)\",\"https://gemini.google.com\"]},{\"@type\":\"Organization\",\"name\":\"Anthropic\",\"sameAs\":[\"https://en.wikipedia.org/wiki/Anthropic\",\"https://www.wikidata.org/wiki/Q1089",
+        "fetch_error": ""
+      },
+      {
+        "title": "Freebuff AI Coding Agent Review: The Best Free Claude Code Alternative? - RankLLMs | The Ultimate AI Models Leaderboard",
+        "url": "https://rankllms.com/news/freebuff-ai-coding-agent-review/",
+        "query": "ami terminal agent review",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Freebuff AI Coding Agent Review: The Best Free Claude Code Alternative? - RankLLMs | The Ultimate AI Models Leaderboard img:is([sizes=auto i],[sizes^=\"auto,\" i]){contain-intrinsic-size:3000px 1500px} /*# sourceURL=wp-img-auto-sizes-contain-inline-css */ img.wp-smiley, img.emoji { display: inline !important; border: none !important; box-shadow: none !important; height: 1em !important; width: 1em !important; margin: 0 0.07em !important; vertical-align: -0.1em !important; background: none !important; padding: 0 !important; } /*# sourceURL=wp-emoji-styles-inline-css */ .ai-summarization-summary{--ai-summary-border-color:#1d2327;--ai-summary-background-color:rgba(29,35,39,.04);background-color:var(--ai-summary-background-color);border-left:4px solid var(--ai-summary-border-color);padding:1em 1.25em}.ai-summarization-summary>:last-child{margin-bottom:0}.ai-summarization-plugin-container .components-button.ai-summarization-plugin-button{justify-content:center;width:100%}.ai-summarization-plugin-container .description{color:#757575}.block-editor-block-popover .ai-summarization-block-controls-button{height:46px;margin-top:1px} /*# sourceURL=https://rankllms.com/wp-content/plugins/ai/build-scripts/experiments/summarization.css */ :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #FFFFFF;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amb",
+        "fetch_error": ""
+      },
+      {
+        "title": "Pi.dev Review: Secure Terminal AI Agent (2026) - Petronella Cybersecurity News",
+        "url": "https://petronellatech.com/blog/pi-dev-platform-review/",
+        "query": "ami terminal agent review",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Pi.dev Review: Secure Terminal AI Agent (2026) {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[ {\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://petronellatech.com/\"}, {\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"https://petronellatech.com/blog/\"}, {\"@type\":\"ListItem\",\"position\":3,\"name\":\"AI\",\"item\":\"https://petronellatech.com/blog/ai/\"}, {\"@type\":\"ListItem\",\"position\":4,\"name\":\"Pi.dev Review: Secure Terminal AI Agent (2026)\",\"item\":\"https://petronellatech.com/blog/pi-dev-platform-review/\"} ]} {\"@context\":\"https://schema.org\",\"@type\":\"Person\", \"@id\":\"https://petronellatech.com/#craig\", \"name\":\"Craig Petronella\", \"givenName\":\"Craig\", \"familyName\":\"Petronella\", \"jobTitle\":\"CEO & Founder\", \"description\":\"Craig Petronella is the founder of Petronella Technology Group (Raleigh, NC, est. 2002). CMMC Registered Practitioner, Certified Wireless Network Expert, Cisco CCNA, Hubbell Certified, and licensed Digital Forensic Examiner (NC License 604180-DFE). #1 Amazon Best-Selling author of 14+ cybersecurity books.\", \"url\":\"https://petronellatech.com/about/craig-petronella/\", \"image\":\"https://petronellatech.com/assets/brand/craig-headshot.webp\", \"worksFor\":{\"@id\":\"https://petronellatech.com/#organization\"}, \"knowsAbout\":[\"Cybersecurity\",\"CMMC Compliance\",\"HIPAA Compliance\",\"NIST 800-171\",\"NIST 800-37\",\"NIST CSF\",\"Digital Forensics\",\"Incident Response\",\"Ransomware Defense\",\"Private AI\",\"AI Integration\",\"Blockchain Security\",\"Penetration Testing\",\"vCISO Services\",\"Expert Witness Testimony\",\"Security Awareness Training\",\"FTC Safeguards Rule\",\"GLBA Compliance\",\"SOC 2\"], \"hasCredential\":[ {\"@type\":\"EducationalOccupationalCredential\",\"credentialCategory\":\"Professional Certification\",\"name\":\"CMMC Registered Practitioner (CMMC-RP)\",\"recog",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub - lirantal/npm-security-best-practices: Collection of npm package manager Security Best Practices · GitHub",
+        "url": "https://github.com/lirantal/npm-security-best-practices",
+        "query": "npm package security policy",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+        "fetch_error": ""
+      },
+      {
+        "title": "NPM Security - OWASP Cheat Sheet Series",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/NPM_Security_Cheat_Sheet.html",
+        "query": "npm package security policy",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "NPM Security - OWASP Cheat Sheet Series :root{--md-text-font:\"Roboto\";--md-code-font:\"Roboto Mono\"} __md_scope=new URL(\"..\",location),__md_hash=e=>[...e].reduce(((e,_)=>(e JSON.parse(_.getItem(t.pathname+\".\"+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+\".\"+e,JSON.stringify(_))}catch(e){}} Skip to content OWASP Cheat Sheet Series NPM Security var palette=__md_get(\"__palette\");if(palette&&palette.color){if(\"(prefers-color-scheme)\"===palette.color.media){var media=matchMedia(\"(prefers-color-scheme: light)\"),input=document.querySelector(media.matches?\"[data-md-color-media='(prefers-color-scheme: light)']\":\"[data-md-color-media='(prefers-color-scheme: dark)']\");palette.color.media=input.getAttribute(\"data-md-color-media\"),palette.color.scheme=input.getAttribute(\"data-md-color-scheme\"),palette.color.primary=input.getAttribute(\"data-md-color-primary\"),palette.color.accent=input.getAttribute(\"data-md-color-accent\")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute(\"data-md-color-\"+key,value)} Initializing search OWASP/CheatSheetSeries OWASP Cheat Sheet Series OWASP/CheatSheetSeries Introduction Index Alphabetical Index ASVS Index MASVS Index Proactive Controls Index Top 10 Cheatsheets Cheatsheets AI Agent Security AJAX Security AML Sanctions AI Agent Payments Abuse Case Access Control Attack Surface Analysis Authentication Authorization Authorization Regression Testing Authorization Testing Automation Automotive Security Bean Validation Bot Management and Anti-Automation Browser Extension Vulnerabilities Business Logic Security C-Based Toolchain Hardening CI CD Security Choosing and Using Security Questions Clickjacking Defense Content Security Policy Cookie Theft Mitigation Credential Stuffing Prevention Cross-Site Reque",
+        "fetch_error": ""
+      },
+      {
+        "title": "npm Security Policy | npm Docs",
+        "url": "https://docs.npmjs.com/policies/security/",
+        "query": "npm package security policy",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "npm Security Policy | npm Docs .prc-TextInput-CharacterCounter-vJZBe{align-items:center;color:var(--fgColor-muted,#59636e);display:flex;gap:var(--control-xsmall-gap,.25rem)}.prc-TextInput-CharacterCounter--error-HA0kN{color:var(--fgColor-danger,#d1242f)}.prc-components-Spinner-fIUBk{height:100%;max-width:100%;position:absolute;right:0;top:0}.prc-components-SpinnerLeading-phYLe{left:0}.prc-components-SpinnerHidden-mRxuj{visibility:hidden}.prc-components-SpinnerVisible-paqsj{visibility:visible}.prc-components-Box-XRSqm{display:flex;position:relative}.prc-Spinner-Box-Y-ke-{display:inline-flex}@keyframes prc-Spinner-rotate-keyframes-LV51p{to{transform:rotate(1turn)}}.prc-Spinner-SpinnerAnimation-tutJZ{animation:prc-Spinner-rotate-keyframes-LV51p var(--base-duration-1000,[ object Object ]) var(--base-easing-linear,0,0,1,1) infinite}.prc-VisuallyHidden-VisuallyHidden-Q0qSB:not(:focus):not(:active):not(:focus-within){clip-path:inset(50%);height:1px;overflow:hidden;position:absolute;white-space:nowrap;width:1px}.prc-components-TextInputBaseWrapper-wY-n0{align-items:stretch;background-color:var(--bgColor-default,#fff);border:var(--borderWidth-thin,.0625rem) solid var(--control-borderColor-rest,#d1d9e0);border-radius:var(--borderRadius-medium,.375rem);box-shadow:var(--shadow-inset,inset 0 1px 0 0 #1f23280a);color:var(--fgColor-default,#1f2328);cursor:text;display:inline-flex;font-size:var(--text-body-size-medium,.875rem);line-height:var(--base-size-20,1.25rem);min-height:var(--base-size-32,2rem);outline:none;overflow:hidden;vertical-align:middle}.prc-components-TextInputBaseWrapper-wY-n0 input,.prc-components-TextInputBaseWrapper-wY-n0 textarea{cursor:text}.prc-components-TextInputBaseWrapper-wY-n0 select{cursor:pointer}:is(.prc-components-TextInputBaseWrapper-wY-n0 input,.prc-co",
+        "fetch_error": ""
+      },
+      {
+        "title": "AI Coding Agent Horror Stories: Security Risks Explained | Docker",
+        "url": "https://www.docker.com/blog/ai-coding-agent-horror-stories-security-risks/",
+        "query": "terminal AI agent security incident",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:[\"bam.nr-data.net\"]},feature_flags:[\"soft_nav\"],distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:\"1386242466\",accountID:\"6399396\",trustKey:\"6399396\",xpid:\"UgUOWFVaDhABVlRWBgMEVVMI\",licenseKey:\"NRJS-27f33ade91093c8b2a2\",applicationID:\"1254123379\",browserID:\"1386242466\"};;/*! For license information please see nr-loader-spa-1.316.0.min.js.LICENSE.txt */ (()=>{var e,t,r={384:(e,t,r)=>{\"use strict\";r.d(t,{NT:()=>a,Zm:()=>c,bQ:()=>u,dV:()=>d,pV:()=>l});var n=r(6154),i=r(1863),s=r(944),o=r(1910);const a={beacon:\"bam.nr-data.net\",errorBeacon:\"bam.nr-data.net\"};function c(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function d(){let e=c();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate||n.gm.setInterval,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket},(0,o.i)(...Object.values(e.o))),e}function u(e,t){let r=c();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t,2===Object.keys(r.initializedAgents).length&&(0,s.R)(69)}function l(){return function(){let e=c();const t=e.info||{};e.info={beacon:a.beacon,errorBeacon:a.errorBeacon,...t}}(),function(){let e=c();const t=e.init||{};e.init={...t}}(),d(),function(){let e=c();const t=e.loader_config||{};e.loader_config={...t}}(),c()}},733:(e,t,r)=>{\"use strict\";function n(e,t){return function(e){let t=2166136261;for(let r=0;r >>0).toString(16).padStart(8,\"0\")}(\"\".concat(String(e),\":\").concat(String(t)))}r.d(t,{Y:()=>n})},782:(e,t,r)=>{\"use strict\";r.d(t,{T:()=>n});const n=r(860).K7.pageViewTiming},860:(e,t,r)=>{\"use s",
+        "fetch_error": ""
+      },
+      {
+        "title": "Why Agentic AI Is Security's Next Blind Spot",
+        "url": "https://thehackernews.com/2026/05/why-agentic-ai-is-securitys-next-blind.html",
+        "query": "terminal AI agent security incident",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Why Agentic AI Is Security's Next Blind Spot @font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/symbols/wght/normal.woff2);unicode-range:U+0001-000C,U+000E-001F,U+007F-009F,U+20DD-20E0,U+20E2-20E4,U+2150-218F,U+2190,U+2192,U+2194-2199,U+21AF,U+21E6-21F0,U+21F3,U+2218-2219,U+2299,U+22C4-22C6,U+2300-243F,U+2440-244A,U+2460-24FF,U+25A0-27BF,U+2800-28FF,U+2921-2922,U+2981,U+29BF,U+29EB,U+2B00-2BFF,U+4DC0-4DFF,U+FFF9-FFFB,U+10140-1018E,U+10190-1019C,U+101A0,U+101D0-101FD,U+102E0-102FB,U+10E60-10E7E,U+1D2C0-1D2D3,U+1D2E0-1D37F,U+1F000-1F0FF,U+1F100-1F1AD,U+1F1E6-1F1FF,U+1F30D-1F30F,U+1F315,U+1F31C,U+1F31E,U+1F320-1F32C,U+1F33",
+        "fetch_error": ""
+      },
+      {
+        "title": "AI Agents Cause Cybersecurity Incidents at Two Thirds of Firms - Infosecurity Magazine",
+        "url": "https://www.infosecurity-magazine.com/news/unchecked-ai-agents-cause/",
+        "query": "terminal AI agent security incident",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "AI Agents Cause Cybersecurity Incidents at Two Thirds of Firms - Infosecurity Magazine window.NREUM||(NREUM={});NREUM.info = {\"beacon\":\"bam.eu01.nr-data.net\",\"errorBeacon\":\"bam.eu01.nr-data.net\",\"licenseKey\":\"NRJS-70b3f9b2c6f17cc4471\",\"applicationID\":\"241052313\",\"transactionName\":\"MhBSZQoZXxEDUkdRWQtacWIoV0UHD0FfWUIABh9GHRpBAwVUHVlFFQ0=\",\"queueTime\":0,\"applicationTime\":8,\"agent\":\"\",\"atts\":\"\"} (window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:[\"bam.eu01.nr-data.net\"]},feature_flags:[\"soft_nav\"],distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:\"322535572\",accountID:\"2916063\",trustKey:\"2916063\",xpid:\"Vg8GV1ZVCxACUFBSAgMEV1c=\",licenseKey:\"NRJS-70b3f9b2c6f17cc4471\",applicationID:\"241052313\",browserID:\"322535572\"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if(\"function\"==typeof __nr_require)return __nr_require;for(var o=0;o 0&&(l-=1)}),s.on(\"internal-error\",function(t){i(\"ierr\",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t(\"loader\");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){U++,L=g.hash,this[u]=y.now()}function o(){U--,g.hash!==L&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit(\"newURL\",[\"\"+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s=\"-start\",c=\"-end\",f=\"-body\",u=\"fn\"+s,d=\"fn\"+c,p=\"cb\"+s,l=\"cb\"+c,h=\"jsTime\",m=\"fetch\",v=\"addEventListener\",w=window,g=w.location,y=t(\"loader\");if(w[v]&&y.xhrWrappable&&!y.disabled){var x=t(11),b=t(12),E=t(9),R=t(7),O=t(14),T=t(8),S=t(15),P=t(10),M=t(\"ee\"),C=M.get(\"tracer\"),N=t(23);t(17),y.features.spa=!0;var L,U=0;M.on(u,r),b.on(p,r),P.on(",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：ami依赖的具体AI模型、API Key存储方式、数据是否外传等关键安全信息缺失。"
+    },
+    "core_question": "这个开源终端Agent工具ami是否值得普通开发者日常使用，是否存在安全、成本或维护风险？",
+    "why_this_topic_matters": "终端Agent是AI工具链中一个快速增长的细分领域，但安全信任和成本控制是普通技术人最关心的实际问题。ami作为一个轻量级开源方案，其设计取舍和潜在风险具有普遍参考价值。",
+    "fact_summary": [
+      "ami是一个开源终端Agent，通过npm安装，支持本地工具调用、代码阅读、Web Search和Git辅助。",
+      "安装命令：npm i -g @dogxi/ami，初始化后可使用。",
+      "主要功能包括：简单问答、项目README总结、自动生成commit信息等。",
+      "项目发布于V2EX，作者为Dogxi，有GitHub仓库和官网。",
+      "依赖第三方AI服务（未明确说明具体模型），每次查询可能将本地数据发送至外部。",
+      "终端Agent直接访问文件系统和命令执行，存在权限滥用风险。"
+    ],
+    "persona_discussion_question": "老花：我该不该在终端里装一个AI助手？它会不会偷我的代码、泄露API Key，或者让我养成依赖？",
+    "old_flower_stance": "谨慎试用，先隔离环境、审查源码、控制API费用，不要在生产环境或敏感项目中直接使用。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "副业普通人"
+      ],
+      "interest_score": 75,
+      "why_interested": "终端Agent直接触及开发工作流，安全性和成本是刚需话题。",
+      "reader_risk": "可能被标题吸引但缺乏安全判断能力，需明确风险提示。"
+    },
+    "mass_interest_hook": {
+      "score": 60,
+      "hook_type": "踩坑",
+      "why_non_technical_people_may_click": "标题暗示‘轻量终端Agent’可能被误解为免费、安全的AI助手，普通人可能好奇是否能用。",
+      "story_seed": "一个开发者为了省事装了终端AI助手，结果API Key被泄露，代码被上传到第三方。",
+      "do_not_overhype": "不要夸大安全风险或功能缺陷，需基于证据。"
+    },
+    "topic_tension": {
+      "score": 10,
+      "conflict_point": "便利性 vs 安全风险：终端Agent提高效率，但可能引入数据泄露和权限滥用。",
+      "debate_question": "开源AI工具的安全信任问题：用户如何判断一个轻量级终端Agent不会窃取敏感信息？",
+      "stakeholders": [
+        "普通技术人",
+        "独立开发者",
+        "开源社区",
+        "AI服务提供商"
+      ],
+      "why_people_would_comment": "读者可以分享自己使用终端Agent的体验、安全顾虑或替代方案。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      {
+        "date": "2026-06-18",
+        "event": "V2EX帖子发布，介绍ami工具"
+      },
+      {
+        "date": "2026-06-18",
+        "event": "证据收集完成，未发现后续更新"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "V2EX帖子",
+        "url": "https://www.v2ex.com/t/1221325",
+        "supports": "工具功能、安装方式、作者信息",
+        "reliability": "media"
+      },
+      {
+        "source": "GitHub用户页",
+        "url": "https://github.com/dogxii",
+        "supports": "作者身份",
+        "reliability": "near_source"
+      },
+      {
+        "source": "个人网站",
+        "url": "https://dogxi.me/",
+        "supports": "作者身份",
+        "reliability": "near_source"
+      },
+      {
+        "source": "博客",
+        "url": "https://blog.dogxi.me/",
+        "supports": "作者身份",
+        "reliability": "near_source"
+      },
+      {
+        "source": "AWS文档",
+        "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/pricing-ami-products.html",
+        "supports": "无关（AMI歧义）",
+        "reliability": "official"
+      },
+      {
+        "source": "Reddit",
+        "url": "https://www.reddit.com/r/aws/comments/g6cqjt/cost_of_storing_ami/",
+        "supports": "无关（AMI歧义）",
+        "reliability": "weak"
+      },
+      {
+        "source": "Stack Overflow",
+        "url": "https://stackoverflow.com/questions/18650697/cost-of-storing-ami",
+        "supports": "无关（AMI歧义）",
+        "reliability": "weak"
+      },
+      {
+        "source": "Dupple文章",
+        "url": "https://dupple.com/learn/best-ai-terminal-coding-agents",
+        "supports": "终端Agent对比，未提及ami",
+        "reliability": "media"
+      },
+      {
+        "source": "RankLLMs文章",
+        "url": "https://rankllms.com/news/freebuff-ai-coding-agent-review/",
+        "supports": "终端Agent对比，未提及ami",
+        "reliability": "media"
+      },
+      {
+        "source": "Petronella文章",
+        "url": "https://petronellatech.com/blog/pi-dev-platform-review/",
+        "supports": "终端Agent对比，未提及ami",
+        "reliability": "media"
+      },
+      {
+        "source": "GitHub安全最佳实践",
+        "url": "https://github.com/lirantal/npm-security-best-practices",
+        "supports": "npm安全背景",
+        "reliability": "official"
+      },
+      {
+        "source": "OWASP NPM安全",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/NPM_Security_Cheat_Sheet.html",
+        "supports": "npm安全背景",
+        "reliability": "official"
+      },
+      {
+        "source": "npm安全政策",
+        "url": "https://docs.npmjs.com/policies/security/",
+        "supports": "npm安全背景",
+        "reliability": "official"
+      },
+      {
+        "source": "Docker安全文章",
+        "url": "https://www.docker.com/blog/ai-coding-agent-horror-stories-security-risks/",
+        "supports": "AI Agent安全风险案例",
+        "reliability": "media"
+      },
+      {
+        "source": "Hacker News文章",
+        "url": "https://thehackernews.com/2026/05/why-agentic-ai-is-securitys-next-blind.html",
+        "supports": "Agentic AI安全盲点",
+        "reliability": "media"
+      },
+      {
+        "source": "Infosecurity文章",
+        "url": "https://www.infosecurity-magazine.com/news/unchecked-ai-agents-cause/",
+        "supports": "AI Agent安全事件统计",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "部分闭环：事实清楚但关键证据缺失，无法完全验证安全性和成本。",
+    "writeable_angles": [
+      {
+        "angle": "安全审计角度：审查ami源码，评估数据泄露风险",
+        "why": "直接回应核心技术人的安全顾虑",
+        "needs": "源码审查结果、隐私政策"
+      },
+      {
+        "angle": "成本分析角度：计算使用ami的API费用",
+        "why": "帮助读者评估实际使用成本",
+        "needs": "API定价、使用量估算"
+      },
+      {
+        "angle": "替代方案对比：ami vs shell_gpt vs warp",
+        "why": "提供决策参考",
+        "needs": "各工具功能、安全、成本对比"
+      },
+      {
+        "angle": "避坑指南：使用终端Agent的注意事项",
+        "why": "实用性强，吸引入门读者",
+        "needs": "安全最佳实践、案例"
+      }
+    ],
+    "missing_basics": [
+      "ami依赖的具体AI模型和API",
+      "API Key的存储方式",
+      "数据是否发送到外部服务器",
+      "隐私政策或用户协议",
+      "GitHub仓库的star数、最近更新日期、issue活跃度",
+      "npm包的下载量、维护者信息"
+    ],
+    "missing_materials": [
+      "ami的GitHub仓库源码分析报告",
+      "ami的隐私政策原文",
+      "类似终端Agent工具（如shell_gpt、warp）的对比分析",
+      "npm包安全扫描结果（如Snyk）",
+      "用户社区讨论汇总"
+    ],
+    "not_claimable": [
+      "工具是安全的",
+      "工具是免费的",
+      "工具适合生产环境",
+      "工具比GUI工具更好"
+    ],
+    "followup_queries": [
+      "ami的GitHub仓库源码中是否有数据发送代码？",
+      "ami的npm包是否有已知漏洞？",
+      "ami的用户协议是否明确数据使用？",
+      "ami的API费用如何计算？"
+    ],
+    "additional_search_queries": [
+      "dogxii/ami github",
+      "ami terminal agent npm",
+      "ami terminal agent security",
+      "ami terminal agent review",
+      "shell_gpt vs ami",
+      "warp terminal agent"
+    ],
+    "stop_conditions": [
+      "发现ami存在恶意代码或数据泄露证据",
+      "ami项目已停止维护或删除",
+      "用户反馈普遍负面",
+      "类似工具已有更全面的分析"
+    ],
+    "confidence": 51.0,
+    "topic_direction": "side-info",
+    "topic_direction_title": "副业&信息差",
+    "report_type": "platform-rules",
+    "quality_gate": {
+      "pass": false,
+      "score": 51,
+      "fatal_issues": [
+        "核心事实没有来源：ami依赖的具体AI模型、API Key存储方式、数据是否外传等关键安全信息缺失。",
+        "成本估算没有公式、单位或边界：未提供API费用计算方式。",
+        "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象：读者分层虽列出但未深入分析各层需求。",
+        "没有泛兴趣故事钩子，标题和开头只适合技术小圈子：标题和开头偏向技术介绍，缺乏泛兴趣吸引力。",
+        "没有真实传播张力：冲突点（便利性vs安全）虽存在，但缺乏具体案例和证据支撑。",
+        "没有明确归入实际选题方向，或者选题方向和内容不匹配：选题方向为'副业&信息差'，但内容更偏向技术工具评测。",
+        "没有明确选题结论：推荐或可选：结论为'可选'但未明确说明升级条件。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写：理由不够充分。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：事实有缺口，逻辑部分闭环。",
+        "没有列出基础概念缺口和资料素材缺口：已列出但未充分强调。",
+        "没有按具体类型提供资料包：资料包不完整，缺少安全审计、成本分析等关键材料。"
+      ],
+      "warnings": [
+        "证据来源偏科：主要依赖V2EX帖子，缺乏官方文档和用户反馈。",
+        "泛兴趣钩子过度标题党：标题暗示'轻量终端Agent'可能被误解为免费安全，但正文证据不足。"
+      ],
+      "missing_evidence": [
+        "ami依赖的具体AI模型和API信息",
+        "API Key的存储方式",
+        "数据是否发送到外部服务器",
+        "隐私政策或用户协议",
+        "GitHub仓库的star数、最近更新日期、issue活跃度",
+        "npm包的下载量、维护者信息",
+        "源码安全审计报告",
+        "用户社区讨论汇总"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": false,
+      "report_type_ok": false,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "这个开源终端Agent工具ami是否值得普通开发者日常使用，是否存在安全、成本或维护风险？",
+      "persona_discussion_question": "老花：我该不该在终端里装一个AI助手？它会不会偷我的代码、泄露API Key，或者让我养成依赖？",
+      "hidden_public_issue": "开源AI工具的安全信任问题：用户如何判断一个轻量级终端Agent不会窃取敏感信息？平台（如GitHub、npm）的审核机制是否足够保护开发者？",
+      "must_verify": [
+        "工具是否收集用户数据或发送数据到外部服务器？",
+        "API Key的存储方式是否安全？",
+        "工具是否依赖第三方AI服务（如OpenAI）？如果是，费用如何？",
+        "GitHub仓库的star数、最近更新日期、issue活跃度",
+        "npm包的下载量、维护者信息",
+        "是否有已知的安全漏洞或恶意代码报告？",
+        "工具是否支持离线模式或本地模型？",
+        "用户协议和隐私政策是否明确？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "github_repo",
+          "query": "dogxii/ami",
+          "why_needed": "查看源码、README、issue、安全审计"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "ami.dogxi.me",
+          "why_needed": "查看官方文档、隐私政策、使用条款"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "ami pricing",
+          "why_needed": "确认是否有付费计划或API费用"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "ami terminal agent review",
+          "why_needed": "获取用户反馈、潜在问题"
+        },
+        {
+          "source_type": "policy",
+          "query": "npm package security policy",
+          "why_needed": "了解npm对恶意包的检测机制"
+        },
+        {
+          "source_type": "case_study",
+          "query": "terminal AI agent security incident",
+          "why_needed": "查找类似工具的安全事件作为参考"
+        }
+      ],
+      "expert_challenge_points": [
+        "终端Agent直接访问文件系统和命令执行，存在权限滥用风险",
+        "如果依赖云端AI，每次查询都会将本地数据发送到第三方，隐私风险高",
+        "开源项目可能缺乏持续维护，长期使用有兼容性和安全更新风险",
+        "工具声称支持Web Search，但未说明搜索API的调用方式和费用"
+      ],
+      "do_not_claim_yet": [
+        "工具是安全的",
+        "工具是免费的",
+        "工具适合生产环境",
+        "工具比GUI工具更好"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需强调安全验证和成本风险，适合作为副业/工具类选题",
+      "downstream_materials_needed": [
+        "ami的GitHub仓库源码分析报告",
+        "ami的隐私政策原文",
+        "类似终端Agent工具（如shell_gpt、warp）的对比分析",
+        "npm包安全扫描结果（如Snyk）",
+        "用户社区讨论汇总"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "[开源] 做了一个轻量终端 Agent，无 GUI，无 TUI，简单回复 - V2EX",
+        "url": "https://www.v2ex.com/t/1221325",
+        "query": "dogxii/ami",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "[开源] 做了一个轻量终端 Agent，无 GUI，无 TUI，简单回复 - V2EX body { min-width: 820px; font-family: \"Helvetica Neue\", \"Luxi Sans\", \"Segoe UI\", \"Hiragino Sans GB\", \"Microsoft Yahei\", sans-serif, \"Apple Logo\"; } const SITE_NIGHT = 0; const LANG = 'enus'; const FEATURES = ['search', 'favorite-nodes-sort']; const address = \"H7n949qebWfk6HwCMPGHVkWEFsKnh8CSHeqFMZjb29v7\"; async function reloadTopicTips() { $.get(\"/t/1221325/tips.html\") .done(function(data) { let last = $('#topic-tip-box').children().last(); if (!last.hasClass('inner')) { last.addClass('inner'); last.addClass('flex-one-row'); last.addClass('gap10'); } last.replaceWith(data); // Flash the element to indicate update let newLast = $('#topic-tip-box').children().last(); newLast.fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100); }) .fail(function() { console.error('Failed to fetch /t/1221325/tips.html'); }); } {\"interactionStatistic\": {\"userInteractionCount\": 491, \"@type\": \"InteractionCounter\", \"interactionType\": \"https://schema.org/ViewAction\"}, \"text\": \"有时候只是想问 AI 一个很简单的问题，不想打开 GUI ，也不需要完整 TUI 。\\n于是便有了 ami ，现在可以直接：\\nami \\\"告诉我终端清屏快捷键是什么\\\"\\nami \\\"帮我总结项目 README\\\"\\n...\\n它会在终端里返回简洁回答。\\n支持本地工具调用、代码阅读、Web Search 和 Git 辅助。\\n安装：\\nnpm i -g @dogxi/ami\\n安装好后初始化：\\nami init\\n然后享受它。\\n官网：\\nami.dogxi.me\\nGitHub:\\ndogxii/ami\\n一个比较喜欢的功能：\\nami commit\\n有时候要手动改 AI 写的代码，又想要 commit 信息，自己去想 commit 信息又比较麻烦\\n直接 ami commit 让 AI 帮忙写 commit 信息。\", \"image\": \"https://i.imgur.com/zYI9p15.png\", \"datePublished\": \"2026-06-18T06:05:08Z\", \"commentCount\": 0, \"mainEntityOfPage\": \"https://www.v2ex.com/t/1221325\", \"author\": {\"url\": \"https://www.v2ex.com/member/Dogxi\", \"@type\": \"Person\", \"name\": \"Dogxi\"}, \"headline\": \"[开源] 做了一个轻量终端 Agent，无 GUI，无 TUI，简单回复\", \"@type\": \"DiscussionForumPosting\", \"url\": \"https://www.v2ex.com/t/1221325\", \"isPartOf\": {\"url\": \"https://www.v2ex.com/g",
+        "fetch_error": ""
+      },
+      {
+        "title": "dogxii (Dogxi) · GitHub",
+        "url": "https://github.com/dogxii",
+        "query": "dogxii/ami",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+        "fetch_error": ""
+      },
+      {
+        "title": "Ami Ami Dogs: Seriously Cute Crochet: Hoshi, Mitsuki: 9780062025708: Amazon.com: Books",
+        "url": "https://www.amazon.com/Ami-Dogs-Seriously-Cute-Crochet/dp/0062025708",
+        "query": "dogxii/ami",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "var aPageStart = (new Date()).getTime(); var ue_t0=ue_t0||+new Date(); window.ue_ihb = (window.ue_ihb || window.ueinit || 0) + 1; if (window.ue_ihb === 1) { var ue_csm = window, ue_hob = +new Date(); (function(d){var e=d.ue=d.ue||{},f=Date.now||function(){return+new Date};e.d=function(b){return f()-(b?0:d.ue_t0)};e.stub=function(b,a){if(!b[a]){var c=[];b[a]=function(){c.push([c.slice.call(arguments),e.d(),d.ue_id])};b[a].replay=function(b){for(var a;a=c.shift();)b(a[0],a[1],a[2])};b[a].isStub=1}};e.exec=function(b,a){return function(){try{return b.apply(this,arguments)}catch(c){ueLogError(c,{attribution:a||\"undefined\",logLevel:\"WARN\"})}}}})(ue_csm); var ue_err_chan = 'jserr-rw'; (function(d,e){function h(f,b){if(!(a.ec>a.mxe)&&f){a.ter.push(f);b=b||{};var c=f.logLevel||b.logLevel;c&&c!==k&&c!==m&&c!==n&&c!==p||a.ec++;c&&c!=k||a.ecf++;b.pageURL=\"\"+(e.location?e.location.href:\"\");b.logLevel=c;b.attribution=f.attribution||b.attribution;a.erl.push({ex:f,info:b})}}function l(a,b,c,e,g){d.ueLogError({m:a,f:b,l:c,c:\"\"+e,err:g,fromOnError:1,args:arguments},g?{attribution:g.attribution,logLevel:g.logLevel}:void 0);return!1}var k=\"FATAL\",m=\"ERROR\",n=\"WARN\",p=\"DOWNGRADED\",a={ec:0,ecf:0, pec:0,ts:0,erl:[],ter:[],buffer:[],mxe:50,startTimer:function(){a.ts++;setInterval(function(){d.ue&&a.pec window.ue && ue.count && ue.count('CSMLibrarySize', 10717) (function(b,a,c,d){if((b=b.AmazonUIPageJS||b.P)&&b.when&&b.register){c=[];for(a=a.currentScript;a;a=a.parentElement)a.id&&c.push(a.id);return b.log(\"A copy of P has already been loaded on this page.\",\"FATAL\",c.join(\" \"))}})(window,document,Date);(function(a,b,c,d){\"use strict\";a._pSetI=function(){return null}})(window,document,Date);(function(c,e,I,B){\"use strict\";c._pd=function(){var a,u;return function(C,f,h,k,b,D,v,E,F){function w(d)",
+        "fetch_error": ""
+      },
+      {
+        "title": "Dogxi - Personal Website",
+        "url": "https://dogxi.me/",
+        "query": "ami.dogxi.me",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Dogxi - Rookie Dog (function () { var t = localStorage.getItem(\"theme\"); if (t === \"dark\" || (!t && window.matchMedia(\"(prefers-color-scheme: dark)\").matches)) { document.documentElement.classList.add(\"dark\"); } })(); /* ── Reset ── */ *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; } /* ── Tokens ── */ :root { --bg: #ffffff; --surface-soft: rgba(245, 245, 245, 0.72); --surface-active: #e8e8e8; --border: #e5e5e5; --text: #171717; --text-2: #6b6b6b; --text-3: #b0b0b0; --ring: rgba(23, 23, 23, 0.1); --grid-highlight: rgba(23, 23, 23, 0.2); --spark-1: #f0c95a; --spark-2: #77a8e8; --spark-3: #ef8f9a; --radius: 12px; --dur: 0.16s; --ease: cubic-bezier(0.16, 1, 0.3, 1); --spring: cubic-bezier(0.18, 1.42, 0.38, 1); } html.dark { --bg: #0f0f0f; --surface-soft: rgba(28, 28, 28, 0.68); --surface-active: #262626; --border: #2e2e2e; --text: #f5f5f5; --text-2: #999999; --text-3: #4a4a4a; --ring: rgba(255, 255, 255, 0.1); --grid-highlight: rgba(255, 255, 255, 0.18); --spark-1: #f1d574; --spark-2: #8db8ff; --spark-3: #ff9faf; } /* ── Base ── */ html { --spot-x: 50%; --spot-y: 50%; font-family: \"Inter\", system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; /* smooth theme transitions */ transition: background var(--dur) ease, color var(--dur) ease; } body { position: relative; isolation: isolate; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; /* safe area for notched phones */ padding: max(2.5rem, env(safe-area-inset-top)) max(1.25rem, env(safe-area-inset-right)) max(2.5rem, env(safe-area-inset-bottom)) max(1.25rem, env(safe-area-inset-left)); -webkit-tap-highlight-color: transparent; overflow-x: hidden; } ",
+        "fetch_error": ""
+      },
+      {
+        "title": "60s 信息聚合",
+        "url": "https://60s.dogxi.me/",
+        "query": "ami.dogxi.me",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "60s 信息聚合",
+        "fetch_error": ""
+      },
+      {
+        "title": "Dogxi 的狗窝",
+        "url": "https://blog.dogxi.me/",
+        "query": "ami.dogxi.me",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Dogxi 的狗窝 --> --> document.addEventListener(\"astro:before-swap\",e=>[...e.newDocument.head.querySelectorAll('link[as=\"font\"]')].forEach(o=>o.remove())); function init() { preloadTheme() onScroll() // animate() const backToPrev = document.getElementById('back-to-prev') if (backToPrev && backToPrev.dataset.bound !== 'true') { backToPrev.dataset.bound = 'true' backToPrev.addEventListener('click', () => window.history.back()) } if (document.documentElement.dataset.scrollWatcherBound !== 'true') { document.documentElement.dataset.scrollWatcherBound = 'true' document.addEventListener('scroll', onScroll, { passive: true }) } } // function animate() { // const animateElements = document.querySelectorAll('.animate') // animateElements.forEach((element, index) => { // setTimeout(() => { // element.classList.add('show') // }, index * 50) // }) // } function onScroll() { if (window.scrollY > 0) { document.documentElement.classList.add('scrolled') } else { document.documentElement.classList.remove('scrolled') } } function toggleTheme(dark) { const css = document.createElement('style') css.appendChild( document.createTextNode( `* { -webkit-transition: none !important; -moz-transition: none !important; -o-transition: none !important; -ms-transition: none !important; transition: none !important; } `, ), ) document.head.appendChild(css) if (dark) { document.documentElement.classList.add('dark') } else { document.documentElement.classList.remove('dark') } void window.getComputedStyle(css).opacity document.head.removeChild(css) } function preloadTheme() { const userTheme = localStorage.getItem('theme') || 'system' if (userTheme === 'light') { toggleTheme(false) } else if (userTheme === 'dark') { toggleTheme(true) } else { // system mode toggleTheme(window.matchMedia('(prefers-color-scheme:",
+        "fetch_error": ""
+      },
+      {
+        "title": "AMI product pricing for AWS Marketplace - AWS Marketplace",
+        "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/pricing-ami-products.html",
+        "query": "ami pricing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "AMI product pricing for AWS Marketplace - AWS Marketplace View a markdown version of this page AMI product pricing for AWS Marketplace - AWS Marketplace { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"AWS Marketplace\", \"item\" : \"https://docs.aws.amazon.com/marketplace/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"Seller Guide\", \"item\" : \"https://docs.aws.amazon.com/marketplace/latest/userguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"AMI-based products in AWS Marketplace\", \"item\" : \"https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html\" }, { \"@type\" : \"ListItem\", \"position\" : 5, \"name\" : \"AMI product pricing for AWS Marketplace\", \"item\" : \"https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html\" } ] } Documentation AWS Marketplace Seller Guide AMI pricing models AWS charges and software charges AMI product pricing for AWS Marketplace AWS Marketplace has multiple pricing models for Amazon Machine Image (AMI) products. With seller private offers, there are options available for multi-year and custom duration contracts. For more information about multi-year and custom duration contracts, see Preparing a private offer for your AWS Marketplace product and Private offer installment plans . The following sections provide information about pricing models for AMI-based products. Note You must be able to provide a W-9 tax form (for US based entities) or a W-8 form (for EU-based entities) as described in Registering as a seller on AWS Marketplace . Topics AMI pricing models AWS charges and software charges Custom metering pricing f",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/aws on Reddit: Cost of storing AMI",
+        "url": "https://www.reddit.com/r/aws/comments/g6cqjt/cost_of_storing_ami/",
+        "query": "ami pricing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "amazon web services - Cost of storing AMI - Stack Overflow",
+        "url": "https://stackoverflow.com/questions/18650697/cost-of-storing-ami",
+        "query": "ami pricing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "amazon web services - Cost of storing AMI - Stack Overflow function OptanonWrapper() { } { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"WebSite\", \"@id\": \"https://stackoverflow.com/#website\", \"name\": \"Stack Overflow\", \"url\": \"https://stackoverflow.com\", \"image\": \"https://stackoverflow.com/Content/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=0f0cab681579\", \"publisher\": { \"@id\": \"https://stackoverflow.com/#organization\" } }, { \"@type\": \"Organization\", \"@id\": \"https://stackoverflow.com/#organization\", \"name\": \"Stack Overflow\", \"url\": \"https://stackoverflow.com\", \"logo\": \"https://stackoverflow.com/Content/Sites/stackoverflow/Img/logo.png?v=0a124c963f5f\", \"sameAs\": [ \"https://stackoverflow.co/\", \"https://www.facebook.com/officialstackoverflow/\", \"https://x.com/stackoverflow\", \"https://www.linkedin.com/company/stack-overflow\", \"https://www.youtube.com/c/StackOverflowOfficial\", \"https://twitter.com/stackoverflow\" ], \"contactPoint\": [ { \"@type\": \"ContactPoint\", \"contactType\": \"Customer support\", \"url\": \"https://stackoverflow.com/contact\" }, { \"@type\": \"ContactPoint\", \"contactType\": \"Stack Ads\", \"url\": \"https://stackoverflow.co/advertising/\" }, { \"@type\": \"ContactPoint\", \"contactType\": \"Stack Internal\", \"url\": \"https://stackoverflow.co/teams/\" }, { \"@type\": \"ContactPoint\", \"contactType\": \"Stack Data Licensing\", \"url\": \"https://stackoverflow.co/api-solutions/\" } ], \"description\": \"Q\\u0026A for professional and enthusiast programmers\" } ] } https://stackoverflow.com/Content/ {\"options\":{\"locale\":\"en\",\"serverTime\":1781842193,\"routeName\":\"Questions/Show\",\"stackAuthUrl\":\"https://stackauth.com\",\"networkMetaHostname\":\"meta.stackexchange.com\",\"site\":{\"name\":\"Stack Overflow\",\"description\":\"Q\\u0026A for professional and enthusiast programmers\",\"isNoticesTabEnabled\":true,\"e",
+        "fetch_error": ""
+      },
+      {
+        "title": "The 7 Best AI Terminal Coding Agents (2026) | Dupple",
+        "url": "https://dupple.com/learn/best-ai-terminal-coding-agents",
+        "query": "ami terminal agent review",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "The 7 Best AI Terminal Coding Agents (2026) | Dupple {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"@id\":\"https://dupple.com/learn/best-ai-terminal-coding-agents#article\",\"headline\":\"The 7 Best AI Terminal Coding Agents (2026)\",\"description\":\"I tested the best AI terminal coding agents in 2026. Claude Code, Codex CLI, Aider, OpenCode and more, ranked by benchmark, price, and real workflow fit.\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://dupple.com/images/og-dupple.png\",\"width\":1200,\"height\":630},\"datePublished\":\"2026-06-16T00:00:00.000Z\",\"dateModified\":\"2026-06-16T00:00:00.000Z\",\"lastReviewed\":\"2026-06-16T00:00:00.000Z\",\"keywords\":\"best ai terminal coding agents\",\"articleSection\":\"AI Guides\",\"wordCount\":2532,\"author\":{\"@id\":\"https://dupple.com/about#louis\"},\"publisher\":{\"@id\":\"https://dupple.com/#org\"},\"mainEntityOfPage\":{\"@id\":\"https://dupple.com/learn/best-ai-terminal-coding-agents#webpage\"},\"isPartOf\":{\"@id\":\"https://dupple.com/learn#hub\"},\"url\":\"https://dupple.com/learn/best-ai-terminal-coding-agents\",\"inLanguage\":\"en\",\"about\":[{\"@type\":\"SoftwareApplication\",\"name\":\"Claude\",\"sameAs\":[\"https://en.wikipedia.org/wiki/Claude_(language_model)\",\"https://claude.com\"]},{\"@type\":\"Organization\",\"name\":\"OpenAI\",\"sameAs\":[\"https://en.wikipedia.org/wiki/OpenAI\",\"https://www.wikidata.org/wiki/Q21708200\",\"https://openai.com\"]},{\"@type\":\"SoftwareApplication\",\"name\":\"ChatGPT\",\"sameAs\":[\"https://en.wikipedia.org/wiki/ChatGPT\",\"https://www.wikidata.org/wiki/Q115564437\",\"https://chatgpt.com\"]},{\"@type\":\"SoftwareApplication\",\"name\":\"Google Gemini\",\"sameAs\":[\"https://en.wikipedia.org/wiki/Gemini_(chatbot)\",\"https://gemini.google.com\"]},{\"@type\":\"Organization\",\"name\":\"Anthropic\",\"sameAs\":[\"https://en.wikipedia.org/wiki/Anthropic\",\"https://www.wikidata.org/wiki/Q1089",
+        "fetch_error": ""
+      },
+      {
+        "title": "Freebuff AI Coding Agent Review: The Best Free Claude Code Alternative? - RankLLMs | The Ultimate AI Models Leaderboard",
+        "url": "https://rankllms.com/news/freebuff-ai-coding-agent-review/",
+        "query": "ami terminal agent review",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Freebuff AI Coding Agent Review: The Best Free Claude Code Alternative? - RankLLMs | The Ultimate AI Models Leaderboard img:is([sizes=auto i],[sizes^=\"auto,\" i]){contain-intrinsic-size:3000px 1500px} /*# sourceURL=wp-img-auto-sizes-contain-inline-css */ img.wp-smiley, img.emoji { display: inline !important; border: none !important; box-shadow: none !important; height: 1em !important; width: 1em !important; margin: 0 0.07em !important; vertical-align: -0.1em !important; background: none !important; padding: 0 !important; } /*# sourceURL=wp-emoji-styles-inline-css */ .ai-summarization-summary{--ai-summary-border-color:#1d2327;--ai-summary-background-color:rgba(29,35,39,.04);background-color:var(--ai-summary-background-color);border-left:4px solid var(--ai-summary-border-color);padding:1em 1.25em}.ai-summarization-summary>:last-child{margin-bottom:0}.ai-summarization-plugin-container .components-button.ai-summarization-plugin-button{justify-content:center;width:100%}.ai-summarization-plugin-container .description{color:#757575}.block-editor-block-popover .ai-summarization-block-controls-button{height:46px;margin-top:1px} /*# sourceURL=https://rankllms.com/wp-content/plugins/ai/build-scripts/experiments/summarization.css */ :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #FFFFFF;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amb",
+        "fetch_error": ""
+      },
+      {
+        "title": "Pi.dev Review: Secure Terminal AI Agent (2026) - Petronella Cybersecurity News",
+        "url": "https://petronellatech.com/blog/pi-dev-platform-review/",
+        "query": "ami terminal agent review",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Pi.dev Review: Secure Terminal AI Agent (2026) {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[ {\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://petronellatech.com/\"}, {\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"https://petronellatech.com/blog/\"}, {\"@type\":\"ListItem\",\"position\":3,\"name\":\"AI\",\"item\":\"https://petronellatech.com/blog/ai/\"}, {\"@type\":\"ListItem\",\"position\":4,\"name\":\"Pi.dev Review: Secure Terminal AI Agent (2026)\",\"item\":\"https://petronellatech.com/blog/pi-dev-platform-review/\"} ]} {\"@context\":\"https://schema.org\",\"@type\":\"Person\", \"@id\":\"https://petronellatech.com/#craig\", \"name\":\"Craig Petronella\", \"givenName\":\"Craig\", \"familyName\":\"Petronella\", \"jobTitle\":\"CEO & Founder\", \"description\":\"Craig Petronella is the founder of Petronella Technology Group (Raleigh, NC, est. 2002). CMMC Registered Practitioner, Certified Wireless Network Expert, Cisco CCNA, Hubbell Certified, and licensed Digital Forensic Examiner (NC License 604180-DFE). #1 Amazon Best-Selling author of 14+ cybersecurity books.\", \"url\":\"https://petronellatech.com/about/craig-petronella/\", \"image\":\"https://petronellatech.com/assets/brand/craig-headshot.webp\", \"worksFor\":{\"@id\":\"https://petronellatech.com/#organization\"}, \"knowsAbout\":[\"Cybersecurity\",\"CMMC Compliance\",\"HIPAA Compliance\",\"NIST 800-171\",\"NIST 800-37\",\"NIST CSF\",\"Digital Forensics\",\"Incident Response\",\"Ransomware Defense\",\"Private AI\",\"AI Integration\",\"Blockchain Security\",\"Penetration Testing\",\"vCISO Services\",\"Expert Witness Testimony\",\"Security Awareness Training\",\"FTC Safeguards Rule\",\"GLBA Compliance\",\"SOC 2\"], \"hasCredential\":[ {\"@type\":\"EducationalOccupationalCredential\",\"credentialCategory\":\"Professional Certification\",\"name\":\"CMMC Registered Practitioner (CMMC-RP)\",\"recog",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub - lirantal/npm-security-best-practices: Collection of npm package manager Security Best Practices · GitHub",
+        "url": "https://github.com/lirantal/npm-security-best-practices",
+        "query": "npm package security policy",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+        "fetch_error": ""
+      },
+      {
+        "title": "NPM Security - OWASP Cheat Sheet Series",
+        "url": "https://cheatsheetseries.owasp.org/cheatsheets/NPM_Security_Cheat_Sheet.html",
+        "query": "npm package security policy",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "NPM Security - OWASP Cheat Sheet Series :root{--md-text-font:\"Roboto\";--md-code-font:\"Roboto Mono\"} __md_scope=new URL(\"..\",location),__md_hash=e=>[...e].reduce(((e,_)=>(e JSON.parse(_.getItem(t.pathname+\".\"+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+\".\"+e,JSON.stringify(_))}catch(e){}} Skip to content OWASP Cheat Sheet Series NPM Security var palette=__md_get(\"__palette\");if(palette&&palette.color){if(\"(prefers-color-scheme)\"===palette.color.media){var media=matchMedia(\"(prefers-color-scheme: light)\"),input=document.querySelector(media.matches?\"[data-md-color-media='(prefers-color-scheme: light)']\":\"[data-md-color-media='(prefers-color-scheme: dark)']\");palette.color.media=input.getAttribute(\"data-md-color-media\"),palette.color.scheme=input.getAttribute(\"data-md-color-scheme\"),palette.color.primary=input.getAttribute(\"data-md-color-primary\"),palette.color.accent=input.getAttribute(\"data-md-color-accent\")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute(\"data-md-color-\"+key,value)} Initializing search OWASP/CheatSheetSeries OWASP Cheat Sheet Series OWASP/CheatSheetSeries Introduction Index Alphabetical Index ASVS Index MASVS Index Proactive Controls Index Top 10 Cheatsheets Cheatsheets AI Agent Security AJAX Security AML Sanctions AI Agent Payments Abuse Case Access Control Attack Surface Analysis Authentication Authorization Authorization Regression Testing Authorization Testing Automation Automotive Security Bean Validation Bot Management and Anti-Automation Browser Extension Vulnerabilities Business Logic Security C-Based Toolchain Hardening CI CD Security Choosing and Using Security Questions Clickjacking Defense Content Security Policy Cookie Theft Mitigation Credential Stuffing Prevention Cross-Site Reque",
+        "fetch_error": ""
+      },
+      {
+        "title": "npm Security Policy | npm Docs",
+        "url": "https://docs.npmjs.com/policies/security/",
+        "query": "npm package security policy",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "npm Security Policy | npm Docs .prc-TextInput-CharacterCounter-vJZBe{align-items:center;color:var(--fgColor-muted,#59636e);display:flex;gap:var(--control-xsmall-gap,.25rem)}.prc-TextInput-CharacterCounter--error-HA0kN{color:var(--fgColor-danger,#d1242f)}.prc-components-Spinner-fIUBk{height:100%;max-width:100%;position:absolute;right:0;top:0}.prc-components-SpinnerLeading-phYLe{left:0}.prc-components-SpinnerHidden-mRxuj{visibility:hidden}.prc-components-SpinnerVisible-paqsj{visibility:visible}.prc-components-Box-XRSqm{display:flex;position:relative}.prc-Spinner-Box-Y-ke-{display:inline-flex}@keyframes prc-Spinner-rotate-keyframes-LV51p{to{transform:rotate(1turn)}}.prc-Spinner-SpinnerAnimation-tutJZ{animation:prc-Spinner-rotate-keyframes-LV51p var(--base-duration-1000,[ object Object ]) var(--base-easing-linear,0,0,1,1) infinite}.prc-VisuallyHidden-VisuallyHidden-Q0qSB:not(:focus):not(:active):not(:focus-within){clip-path:inset(50%);height:1px;overflow:hidden;position:absolute;white-space:nowrap;width:1px}.prc-components-TextInputBaseWrapper-wY-n0{align-items:stretch;background-color:var(--bgColor-default,#fff);border:var(--borderWidth-thin,.0625rem) solid var(--control-borderColor-rest,#d1d9e0);border-radius:var(--borderRadius-medium,.375rem);box-shadow:var(--shadow-inset,inset 0 1px 0 0 #1f23280a);color:var(--fgColor-default,#1f2328);cursor:text;display:inline-flex;font-size:var(--text-body-size-medium,.875rem);line-height:var(--base-size-20,1.25rem);min-height:var(--base-size-32,2rem);outline:none;overflow:hidden;vertical-align:middle}.prc-components-TextInputBaseWrapper-wY-n0 input,.prc-components-TextInputBaseWrapper-wY-n0 textarea{cursor:text}.prc-components-TextInputBaseWrapper-wY-n0 select{cursor:pointer}:is(.prc-components-TextInputBaseWrapper-wY-n0 input,.prc-co",
+        "fetch_error": ""
+      },
+      {
+        "title": "AI Coding Agent Horror Stories: Security Risks Explained | Docker",
+        "url": "https://www.docker.com/blog/ai-coding-agent-horror-stories-security-risks/",
+        "query": "terminal AI agent security incident",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:[\"bam.nr-data.net\"]},feature_flags:[\"soft_nav\"],distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:\"1386242466\",accountID:\"6399396\",trustKey:\"6399396\",xpid:\"UgUOWFVaDhABVlRWBgMEVVMI\",licenseKey:\"NRJS-27f33ade91093c8b2a2\",applicationID:\"1254123379\",browserID:\"1386242466\"};;/*! For license information please see nr-loader-spa-1.316.0.min.js.LICENSE.txt */ (()=>{var e,t,r={384:(e,t,r)=>{\"use strict\";r.d(t,{NT:()=>a,Zm:()=>c,bQ:()=>u,dV:()=>d,pV:()=>l});var n=r(6154),i=r(1863),s=r(944),o=r(1910);const a={beacon:\"bam.nr-data.net\",errorBeacon:\"bam.nr-data.net\"};function c(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function d(){let e=c();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate||n.gm.setInterval,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket},(0,o.i)(...Object.values(e.o))),e}function u(e,t){let r=c();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t,2===Object.keys(r.initializedAgents).length&&(0,s.R)(69)}function l(){return function(){let e=c();const t=e.info||{};e.info={beacon:a.beacon,errorBeacon:a.errorBeacon,...t}}(),function(){let e=c();const t=e.init||{};e.init={...t}}(),d(),function(){let e=c();const t=e.loader_config||{};e.loader_config={...t}}(),c()}},733:(e,t,r)=>{\"use strict\";function n(e,t){return function(e){let t=2166136261;for(let r=0;r >>0).toString(16).padStart(8,\"0\")}(\"\".concat(String(e),\":\").concat(String(t)))}r.d(t,{Y:()=>n})},782:(e,t,r)=>{\"use strict\";r.d(t,{T:()=>n});const n=r(860).K7.pageViewTiming},860:(e,t,r)=>{\"use s",
+        "fetch_error": ""
+      },
+      {
+        "title": "Why Agentic AI Is Security's Next Blind Spot",
+        "url": "https://thehackernews.com/2026/05/why-agentic-ai-is-securitys-next-blind.html",
+        "query": "terminal AI agent security incident",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Why Agentic AI Is Security's Next Blind Spot @font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/symbols/wght/normal.woff2);unicode-range:U+0001-000C,U+000E-001F,U+007F-009F,U+20DD-20E0,U+20E2-20E4,U+2150-218F,U+2190,U+2192,U+2194-2199,U+21AF,U+21E6-21F0,U+21F3,U+2218-2219,U+2299,U+22C4-22C6,U+2300-243F,U+2440-244A,U+2460-24FF,U+25A0-27BF,U+2800-28FF,U+2921-2922,U+2981,U+29BF,U+29EB,U+2B00-2BFF,U+4DC0-4DFF,U+FFF9-FFFB,U+10140-1018E,U+10190-1019C,U+101A0,U+101D0-101FD,U+102E0-102FB,U+10E60-10E7E,U+1D2C0-1D2D3,U+1D2E0-1D37F,U+1F000-1F0FF,U+1F100-1F1AD,U+1F1E6-1F1FF,U+1F30D-1F30F,U+1F315,U+1F31C,U+1F31E,U+1F320-1F32C,U+1F33",
+        "fetch_error": ""
+      },
+      {
+        "title": "AI Agents Cause Cybersecurity Incidents at Two Thirds of Firms - Infosecurity Magazine",
+        "url": "https://www.infosecurity-magazine.com/news/unchecked-ai-agents-cause/",
+        "query": "terminal AI agent security incident",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "AI Agents Cause Cybersecurity Incidents at Two Thirds of Firms - Infosecurity Magazine window.NREUM||(NREUM={});NREUM.info = {\"beacon\":\"bam.eu01.nr-data.net\",\"errorBeacon\":\"bam.eu01.nr-data.net\",\"licenseKey\":\"NRJS-70b3f9b2c6f17cc4471\",\"applicationID\":\"241052313\",\"transactionName\":\"MhBSZQoZXxEDUkdRWQtacWIoV0UHD0FfWUIABh9GHRpBAwVUHVlFFQ0=\",\"queueTime\":0,\"applicationTime\":8,\"agent\":\"\",\"atts\":\"\"} (window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:[\"bam.eu01.nr-data.net\"]},feature_flags:[\"soft_nav\"],distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:\"322535572\",accountID:\"2916063\",trustKey:\"2916063\",xpid:\"Vg8GV1ZVCxACUFBSAgMEV1c=\",licenseKey:\"NRJS-70b3f9b2c6f17cc4471\",applicationID:\"241052313\",browserID:\"322535572\"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if(\"function\"==typeof __nr_require)return __nr_require;for(var o=0;o 0&&(l-=1)}),s.on(\"internal-error\",function(t){i(\"ierr\",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t(\"loader\");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){U++,L=g.hash,this[u]=y.now()}function o(){U--,g.hash!==L&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit(\"newURL\",[\"\"+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s=\"-start\",c=\"-end\",f=\"-body\",u=\"fn\"+s,d=\"fn\"+c,p=\"cb\"+s,l=\"cb\"+c,h=\"jsTime\",m=\"fetch\",v=\"addEventListener\",w=window,g=w.location,y=t(\"loader\");if(w[v]&&y.xhrWrappable&&!y.disabled){var x=t(11),b=t(12),E=t(9),R=t(7),O=t(14),T=t(8),S=t(15),P=t(10),M=t(\"ee\"),C=M.get(\"tracer\"),N=t(23);t(17),y.features.spa=!0;var L,U=0;M.on(u,r),b.on(p,r),P.on(",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260619-agent-gui-tui-4a42a058/",
+    "for_gpt_editor": {
+      "brief": "有时候只是想问 AI 一个很简单的问题，不想打开 GUI ，也不需要完整 TUI 。 于是便有了 ami ，现在可以直接： ami \"告诉我终端清屏快捷键是什么\" ami \"帮我总结项目 README\" ... 它会在终端里返回简洁回答。 支持本地工具调用、代码阅读、Web Search 和 Git 辅助。 安装： npm i -g @dogxi/ami 安装好后初始化： ami init 然后享受它。 官网： ami.dogxi.me GitHub: dogxii/ami 一个比较喜欢的功能： ami commit 有时候要手动改 AI 写的代码，又想要 commit 信息，自己去想 commit 信息又比较麻烦 直接 ami commit 让 AI 帮忙写 commit 信息。",
+      "title_seed": "平台规则：做了一个轻量终端 Agent",
+      "original_title": "[开源] 做了一个轻量终端 Agent，无 GUI，无 TUI，简单回复",
+      "source_url": "https://www.v2ex.com/t/1221325",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：ami依赖的具体AI模型、API Key存储方式、数据是否外传等关键安全信息缺失。"
+        },
+        "core_question": "这个开源终端Agent工具ami是否值得普通开发者日常使用，是否存在安全、成本或维护风险？",
+        "why_this_topic_matters": "终端Agent是AI工具链中一个快速增长的细分领域，但安全信任和成本控制是普通技术人最关心的实际问题。ami作为一个轻量级开源方案，其设计取舍和潜在风险具有普遍参考价值。",
+        "fact_summary": [
+          "ami是一个开源终端Agent，通过npm安装，支持本地工具调用、代码阅读、Web Search和Git辅助。",
+          "安装命令：npm i -g @dogxi/ami，初始化后可使用。",
+          "主要功能包括：简单问答、项目README总结、自动生成commit信息等。",
+          "项目发布于V2EX，作者为Dogxi，有GitHub仓库和官网。",
+          "依赖第三方AI服务（未明确说明具体模型），每次查询可能将本地数据发送至外部。",
+          "终端Agent直接访问文件系统和命令执行，存在权限滥用风险。"
+        ],
+        "persona_discussion_question": "老花：我该不该在终端里装一个AI助手？它会不会偷我的代码、泄露API Key，或者让我养成依赖？",
+        "old_flower_stance": "谨慎试用，先隔离环境、审查源码、控制API费用，不要在生产环境或敏感项目中直接使用。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "副业普通人"
+          ],
+          "interest_score": 75,
+          "why_interested": "终端Agent直接触及开发工作流，安全性和成本是刚需话题。",
+          "reader_risk": "可能被标题吸引但缺乏安全判断能力，需明确风险提示。"
+        },
+        "mass_interest_hook": {
+          "score": 60,
+          "hook_type": "踩坑",
+          "why_non_technical_people_may_click": "标题暗示‘轻量终端Agent’可能被误解为免费、安全的AI助手，普通人可能好奇是否能用。",
+          "story_seed": "一个开发者为了省事装了终端AI助手，结果API Key被泄露，代码被上传到第三方。",
+          "do_not_overhype": "不要夸大安全风险或功能缺陷，需基于证据。"
+        },
+        "topic_tension": {
+          "score": 10,
+          "conflict_point": "便利性 vs 安全风险：终端Agent提高效率，但可能引入数据泄露和权限滥用。",
+          "debate_question": "开源AI工具的安全信任问题：用户如何判断一个轻量级终端Agent不会窃取敏感信息？",
+          "stakeholders": [
+            "普通技术人",
+            "独立开发者",
+            "开源社区",
+            "AI服务提供商"
+          ],
+          "why_people_would_comment": "读者可以分享自己使用终端Agent的体验、安全顾虑或替代方案。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          {
+            "date": "2026-06-18",
+            "event": "V2EX帖子发布，介绍ami工具"
+          },
+          {
+            "date": "2026-06-18",
+            "event": "证据收集完成，未发现后续更新"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "V2EX帖子",
+            "url": "https://www.v2ex.com/t/1221325",
+            "supports": "工具功能、安装方式、作者信息",
+            "reliability": "media"
+          },
+          {
+            "source": "GitHub用户页",
+            "url": "https://github.com/dogxii",
+            "supports": "作者身份",
+            "reliability": "near_source"
+          },
+          {
+            "source": "个人网站",
+            "url": "https://dogxi.me/",
+            "supports": "作者身份",
+            "reliability": "near_source"
+          },
+          {
+            "source": "博客",
+            "url": "https://blog.dogxi.me/",
+            "supports": "作者身份",
+            "reliability": "near_source"
+          },
+          {
+            "source": "AWS文档",
+            "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/pricing-ami-products.html",
+            "supports": "无关（AMI歧义）",
+            "reliability": "official"
+          },
+          {
+            "source": "Reddit",
+            "url": "https://www.reddit.com/r/aws/comments/g6cqjt/cost_of_storing_ami/",
+            "supports": "无关（AMI歧义）",
+            "reliability": "weak"
+          },
+          {
+            "source": "Stack Overflow",
+            "url": "https://stackoverflow.com/questions/18650697/cost-of-storing-ami",
+            "supports": "无关（AMI歧义）",
+            "reliability": "weak"
+          },
+          {
+            "source": "Dupple文章",
+            "url": "https://dupple.com/learn/best-ai-terminal-coding-agents",
+            "supports": "终端Agent对比，未提及ami",
+            "reliability": "media"
+          },
+          {
+            "source": "RankLLMs文章",
+            "url": "https://rankllms.com/news/freebuff-ai-coding-agent-review/",
+            "supports": "终端Agent对比，未提及ami",
+            "reliability": "media"
+          },
+          {
+            "source": "Petronella文章",
+            "url": "https://petronellatech.com/blog/pi-dev-platform-review/",
+            "supports": "终端Agent对比，未提及ami",
+            "reliability": "media"
+          },
+          {
+            "source": "GitHub安全最佳实践",
+            "url": "https://github.com/lirantal/npm-security-best-practices",
+            "supports": "npm安全背景",
+            "reliability": "official"
+          },
+          {
+            "source": "OWASP NPM安全",
+            "url": "https://cheatsheetseries.owasp.org/cheatsheets/NPM_Security_Cheat_Sheet.html",
+            "supports": "npm安全背景",
+            "reliability": "official"
+          },
+          {
+            "source": "npm安全政策",
+            "url": "https://docs.npmjs.com/policies/security/",
+            "supports": "npm安全背景",
+            "reliability": "official"
+          },
+          {
+            "source": "Docker安全文章",
+            "url": "https://www.docker.com/blog/ai-coding-agent-horror-stories-security-risks/",
+            "supports": "AI Agent安全风险案例",
+            "reliability": "media"
+          },
+          {
+            "source": "Hacker News文章",
+            "url": "https://thehackernews.com/2026/05/why-agentic-ai-is-securitys-next-blind.html",
+            "supports": "Agentic AI安全盲点",
+            "reliability": "media"
+          },
+          {
+            "source": "Infosecurity文章",
+            "url": "https://www.infosecurity-magazine.com/news/unchecked-ai-agents-cause/",
+            "supports": "AI Agent安全事件统计",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "部分闭环：事实清楚但关键证据缺失，无法完全验证安全性和成本。",
+        "writeable_angles": [
+          {
+            "angle": "安全审计角度：审查ami源码，评估数据泄露风险",
+            "why": "直接回应核心技术人的安全顾虑",
+            "needs": "源码审查结果、隐私政策"
+          },
+          {
+            "angle": "成本分析角度：计算使用ami的API费用",
+            "why": "帮助读者评估实际使用成本",
+            "needs": "API定价、使用量估算"
+          },
+          {
+            "angle": "替代方案对比：ami vs shell_gpt vs warp",
+            "why": "提供决策参考",
+            "needs": "各工具功能、安全、成本对比"
+          },
+          {
+            "angle": "避坑指南：使用终端Agent的注意事项",
+            "why": "实用性强，吸引入门读者",
+            "needs": "安全最佳实践、案例"
+          }
+        ],
+        "missing_basics": [
+          "ami依赖的具体AI模型和API",
+          "API Key的存储方式",
+          "数据是否发送到外部服务器",
+          "隐私政策或用户协议",
+          "GitHub仓库的star数、最近更新日期、issue活跃度",
+          "npm包的下载量、维护者信息"
+        ],
+        "missing_materials": [
+          "ami的GitHub仓库源码分析报告",
+          "ami的隐私政策原文",
+          "类似终端Agent工具（如shell_gpt、warp）的对比分析",
+          "npm包安全扫描结果（如Snyk）",
+          "用户社区讨论汇总"
+        ],
+        "not_claimable": [
+          "工具是安全的",
+          "工具是免费的",
+          "工具适合生产环境",
+          "工具比GUI工具更好"
+        ],
+        "followup_queries": [
+          "ami的GitHub仓库源码中是否有数据发送代码？",
+          "ami的npm包是否有已知漏洞？",
+          "ami的用户协议是否明确数据使用？",
+          "ami的API费用如何计算？"
+        ],
+        "additional_search_queries": [
+          "dogxii/ami github",
+          "ami terminal agent npm",
+          "ami terminal agent security",
+          "ami terminal agent review",
+          "shell_gpt vs ami",
+          "warp terminal agent"
+        ],
+        "stop_conditions": [
+          "发现ami存在恶意代码或数据泄露证据",
+          "ami项目已停止维护或删除",
+          "用户反馈普遍负面",
+          "类似工具已有更全面的分析"
+        ],
+        "confidence": 51.0,
+        "topic_direction": "side-info",
+        "topic_direction_title": "副业&信息差",
+        "report_type": "platform-rules",
+        "quality_gate": {
+          "pass": false,
+          "score": 51,
+          "fatal_issues": [
+            "核心事实没有来源：ami依赖的具体AI模型、API Key存储方式、数据是否外传等关键安全信息缺失。",
+            "成本估算没有公式、单位或边界：未提供API费用计算方式。",
+            "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象：读者分层虽列出但未深入分析各层需求。",
+            "没有泛兴趣故事钩子，标题和开头只适合技术小圈子：标题和开头偏向技术介绍，缺乏泛兴趣吸引力。",
+            "没有真实传播张力：冲突点（便利性vs安全）虽存在，但缺乏具体案例和证据支撑。",
+            "没有明确归入实际选题方向，或者选题方向和内容不匹配：选题方向为'副业&信息差'，但内容更偏向技术工具评测。",
+            "没有明确选题结论：推荐或可选：结论为'可选'但未明确说明升级条件。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写：理由不够充分。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：事实有缺口，逻辑部分闭环。",
+            "没有列出基础概念缺口和资料素材缺口：已列出但未充分强调。",
+            "没有按具体类型提供资料包：资料包不完整，缺少安全审计、成本分析等关键材料。"
+          ],
+          "warnings": [
+            "证据来源偏科：主要依赖V2EX帖子，缺乏官方文档和用户反馈。",
+            "泛兴趣钩子过度标题党：标题暗示'轻量终端Agent'可能被误解为免费安全，但正文证据不足。"
+          ],
+          "missing_evidence": [
+            "ami依赖的具体AI模型和API信息",
+            "API Key的存储方式",
+            "数据是否发送到外部服务器",
+            "隐私政策或用户协议",
+            "GitHub仓库的star数、最近更新日期、issue活跃度",
+            "npm包的下载量、维护者信息",
+            "源码安全审计报告",
+            "用户社区讨论汇总"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": false,
+          "report_type_ok": false,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "这个开源终端Agent工具ami是否值得普通开发者日常使用，是否存在安全、成本或维护风险？",
+          "persona_discussion_question": "老花：我该不该在终端里装一个AI助手？它会不会偷我的代码、泄露API Key，或者让我养成依赖？",
+          "hidden_public_issue": "开源AI工具的安全信任问题：用户如何判断一个轻量级终端Agent不会窃取敏感信息？平台（如GitHub、npm）的审核机制是否足够保护开发者？",
+          "must_verify": [
+            "工具是否收集用户数据或发送数据到外部服务器？",
+            "API Key的存储方式是否安全？",
+            "工具是否依赖第三方AI服务（如OpenAI）？如果是，费用如何？",
+            "GitHub仓库的star数、最近更新日期、issue活跃度",
+            "npm包的下载量、维护者信息",
+            "是否有已知的安全漏洞或恶意代码报告？",
+            "工具是否支持离线模式或本地模型？",
+            "用户协议和隐私政策是否明确？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "github_repo",
+              "query": "dogxii/ami",
+              "why_needed": "查看源码、README、issue、安全审计"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "ami.dogxi.me",
+              "why_needed": "查看官方文档、隐私政策、使用条款"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "ami pricing",
+              "why_needed": "确认是否有付费计划或API费用"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "ami terminal agent review",
+              "why_needed": "获取用户反馈、潜在问题"
+            },
+            {
+              "source_type": "policy",
+              "query": "npm package security policy",
+              "why_needed": "了解npm对恶意包的检测机制"
+            },
+            {
+              "source_type": "case_study",
+              "query": "terminal AI agent security incident",
+              "why_needed": "查找类似工具的安全事件作为参考"
+            }
+          ],
+          "expert_challenge_points": [
+            "终端Agent直接访问文件系统和命令执行，存在权限滥用风险",
+            "如果依赖云端AI，每次查询都会将本地数据发送到第三方，隐私风险高",
+            "开源项目可能缺乏持续维护，长期使用有兼容性和安全更新风险",
+            "工具声称支持Web Search，但未说明搜索API的调用方式和费用"
+          ],
+          "do_not_claim_yet": [
+            "工具是安全的",
+            "工具是免费的",
+            "工具适合生产环境",
+            "工具比GUI工具更好"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需强调安全验证和成本风险，适合作为副业/工具类选题",
+          "downstream_materials_needed": [
+            "ami的GitHub仓库源码分析报告",
+            "ami的隐私政策原文",
+            "类似终端Agent工具（如shell_gpt、warp）的对比分析",
+            "npm包安全扫描结果（如Snyk）",
+            "用户社区讨论汇总"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "[开源] 做了一个轻量终端 Agent，无 GUI，无 TUI，简单回复 - V2EX",
+            "url": "https://www.v2ex.com/t/1221325",
+            "query": "dogxii/ami",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "[开源] 做了一个轻量终端 Agent，无 GUI，无 TUI，简单回复 - V2EX body { min-width: 820px; font-family: \"Helvetica Neue\", \"Luxi Sans\", \"Segoe UI\", \"Hiragino Sans GB\", \"Microsoft Yahei\", sans-serif, \"Apple Logo\"; } const SITE_NIGHT = 0; const LANG = 'enus'; const FEATURES = ['search', 'favorite-nodes-sort']; const address = \"H7n949qebWfk6HwCMPGHVkWEFsKnh8CSHeqFMZjb29v7\"; async function reloadTopicTips() { $.get(\"/t/1221325/tips.html\") .done(function(data) { let last = $('#topic-tip-box').children().last(); if (!last.hasClass('inner')) { last.addClass('inner'); last.addClass('flex-one-row'); last.addClass('gap10'); } last.replaceWith(data); // Flash the element to indicate update let newLast = $('#topic-tip-box').children().last(); newLast.fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100); }) .fail(function() { console.error('Failed to fetch /t/1221325/tips.html'); }); } {\"interactionStatistic\": {\"userInteractionCount\": 491, \"@type\": \"InteractionCounter\", \"interactionType\": \"https://schema.org/ViewAction\"}, \"text\": \"有时候只是想问 AI 一个很简单的问题，不想打开 GUI ，也不需要完整 TUI 。\\n于是便有了 ami ，现在可以直接：\\nami \\\"告诉我终端清屏快捷键是什么\\\"\\nami \\\"帮我总结项目 README\\\"\\n...\\n它会在终端里返回简洁回答。\\n支持本地工具调用、代码阅读、Web Search 和 Git 辅助。\\n安装：\\nnpm i -g @dogxi/ami\\n安装好后初始化：\\nami init\\n然后享受它。\\n官网：\\nami.dogxi.me\\nGitHub:\\ndogxii/ami\\n一个比较喜欢的功能：\\nami commit\\n有时候要手动改 AI 写的代码，又想要 commit 信息，自己去想 commit 信息又比较麻烦\\n直接 ami commit 让 AI 帮忙写 commit 信息。\", \"image\": \"https://i.imgur.com/zYI9p15.png\", \"datePublished\": \"2026-06-18T06:05:08Z\", \"commentCount\": 0, \"mainEntityOfPage\": \"https://www.v2ex.com/t/1221325\", \"author\": {\"url\": \"https://www.v2ex.com/member/Dogxi\", \"@type\": \"Person\", \"name\": \"Dogxi\"}, \"headline\": \"[开源] 做了一个轻量终端 Agent，无 GUI，无 TUI，简单回复\", \"@type\": \"DiscussionForumPosting\", \"url\": \"https://www.v2ex.com/t/1221325\", \"isPartOf\": {\"url\": \"https://www.v2ex.com/g",
+            "fetch_error": ""
+          },
+          {
+            "title": "dogxii (Dogxi) · GitHub",
+            "url": "https://github.com/dogxii",
+            "query": "dogxii/ami",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+            "fetch_error": ""
+          },
+          {
+            "title": "Ami Ami Dogs: Seriously Cute Crochet: Hoshi, Mitsuki: 9780062025708: Amazon.com: Books",
+            "url": "https://www.amazon.com/Ami-Dogs-Seriously-Cute-Crochet/dp/0062025708",
+            "query": "dogxii/ami",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "var aPageStart = (new Date()).getTime(); var ue_t0=ue_t0||+new Date(); window.ue_ihb = (window.ue_ihb || window.ueinit || 0) + 1; if (window.ue_ihb === 1) { var ue_csm = window, ue_hob = +new Date(); (function(d){var e=d.ue=d.ue||{},f=Date.now||function(){return+new Date};e.d=function(b){return f()-(b?0:d.ue_t0)};e.stub=function(b,a){if(!b[a]){var c=[];b[a]=function(){c.push([c.slice.call(arguments),e.d(),d.ue_id])};b[a].replay=function(b){for(var a;a=c.shift();)b(a[0],a[1],a[2])};b[a].isStub=1}};e.exec=function(b,a){return function(){try{return b.apply(this,arguments)}catch(c){ueLogError(c,{attribution:a||\"undefined\",logLevel:\"WARN\"})}}}})(ue_csm); var ue_err_chan = 'jserr-rw'; (function(d,e){function h(f,b){if(!(a.ec>a.mxe)&&f){a.ter.push(f);b=b||{};var c=f.logLevel||b.logLevel;c&&c!==k&&c!==m&&c!==n&&c!==p||a.ec++;c&&c!=k||a.ecf++;b.pageURL=\"\"+(e.location?e.location.href:\"\");b.logLevel=c;b.attribution=f.attribution||b.attribution;a.erl.push({ex:f,info:b})}}function l(a,b,c,e,g){d.ueLogError({m:a,f:b,l:c,c:\"\"+e,err:g,fromOnError:1,args:arguments},g?{attribution:g.attribution,logLevel:g.logLevel}:void 0);return!1}var k=\"FATAL\",m=\"ERROR\",n=\"WARN\",p=\"DOWNGRADED\",a={ec:0,ecf:0, pec:0,ts:0,erl:[],ter:[],buffer:[],mxe:50,startTimer:function(){a.ts++;setInterval(function(){d.ue&&a.pec window.ue && ue.count && ue.count('CSMLibrarySize', 10717) (function(b,a,c,d){if((b=b.AmazonUIPageJS||b.P)&&b.when&&b.register){c=[];for(a=a.currentScript;a;a=a.parentElement)a.id&&c.push(a.id);return b.log(\"A copy of P has already been loaded on this page.\",\"FATAL\",c.join(\" \"))}})(window,document,Date);(function(a,b,c,d){\"use strict\";a._pSetI=function(){return null}})(window,document,Date);(function(c,e,I,B){\"use strict\";c._pd=function(){var a,u;return function(C,f,h,k,b,D,v,E,F){function w(d)",
+            "fetch_error": ""
+          },
+          {
+            "title": "Dogxi - Personal Website",
+            "url": "https://dogxi.me/",
+            "query": "ami.dogxi.me",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Dogxi - Rookie Dog (function () { var t = localStorage.getItem(\"theme\"); if (t === \"dark\" || (!t && window.matchMedia(\"(prefers-color-scheme: dark)\").matches)) { document.documentElement.classList.add(\"dark\"); } })(); /* ── Reset ── */ *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; } /* ── Tokens ── */ :root { --bg: #ffffff; --surface-soft: rgba(245, 245, 245, 0.72); --surface-active: #e8e8e8; --border: #e5e5e5; --text: #171717; --text-2: #6b6b6b; --text-3: #b0b0b0; --ring: rgba(23, 23, 23, 0.1); --grid-highlight: rgba(23, 23, 23, 0.2); --spark-1: #f0c95a; --spark-2: #77a8e8; --spark-3: #ef8f9a; --radius: 12px; --dur: 0.16s; --ease: cubic-bezier(0.16, 1, 0.3, 1); --spring: cubic-bezier(0.18, 1.42, 0.38, 1); } html.dark { --bg: #0f0f0f; --surface-soft: rgba(28, 28, 28, 0.68); --surface-active: #262626; --border: #2e2e2e; --text: #f5f5f5; --text-2: #999999; --text-3: #4a4a4a; --ring: rgba(255, 255, 255, 0.1); --grid-highlight: rgba(255, 255, 255, 0.18); --spark-1: #f1d574; --spark-2: #8db8ff; --spark-3: #ff9faf; } /* ── Base ── */ html { --spot-x: 50%; --spot-y: 50%; font-family: \"Inter\", system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; /* smooth theme transitions */ transition: background var(--dur) ease, color var(--dur) ease; } body { position: relative; isolation: isolate; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; /* safe area for notched phones */ padding: max(2.5rem, env(safe-area-inset-top)) max(1.25rem, env(safe-area-inset-right)) max(2.5rem, env(safe-area-inset-bottom)) max(1.25rem, env(safe-area-inset-left)); -webkit-tap-highlight-color: transparent; overflow-x: hidden; } ",
+            "fetch_error": ""
+          },
+          {
+            "title": "60s 信息聚合",
+            "url": "https://60s.dogxi.me/",
+            "query": "ami.dogxi.me",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "60s 信息聚合",
+            "fetch_error": ""
+          },
+          {
+            "title": "Dogxi 的狗窝",
+            "url": "https://blog.dogxi.me/",
+            "query": "ami.dogxi.me",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Dogxi 的狗窝 --> --> document.addEventListener(\"astro:before-swap\",e=>[...e.newDocument.head.querySelectorAll('link[as=\"font\"]')].forEach(o=>o.remove())); function init() { preloadTheme() onScroll() // animate() const backToPrev = document.getElementById('back-to-prev') if (backToPrev && backToPrev.dataset.bound !== 'true') { backToPrev.dataset.bound = 'true' backToPrev.addEventListener('click', () => window.history.back()) } if (document.documentElement.dataset.scrollWatcherBound !== 'true') { document.documentElement.dataset.scrollWatcherBound = 'true' document.addEventListener('scroll', onScroll, { passive: true }) } } // function animate() { // const animateElements = document.querySelectorAll('.animate') // animateElements.forEach((element, index) => { // setTimeout(() => { // element.classList.add('show') // }, index * 50) // }) // } function onScroll() { if (window.scrollY > 0) { document.documentElement.classList.add('scrolled') } else { document.documentElement.classList.remove('scrolled') } } function toggleTheme(dark) { const css = document.createElement('style') css.appendChild( document.createTextNode( `* { -webkit-transition: none !important; -moz-transition: none !important; -o-transition: none !important; -ms-transition: none !important; transition: none !important; } `, ), ) document.head.appendChild(css) if (dark) { document.documentElement.classList.add('dark') } else { document.documentElement.classList.remove('dark') } void window.getComputedStyle(css).opacity document.head.removeChild(css) } function preloadTheme() { const userTheme = localStorage.getItem('theme') || 'system' if (userTheme === 'light') { toggleTheme(false) } else if (userTheme === 'dark') { toggleTheme(true) } else { // system mode toggleTheme(window.matchMedia('(prefers-color-scheme:",
+            "fetch_error": ""
+          },
+          {
+            "title": "AMI product pricing for AWS Marketplace - AWS Marketplace",
+            "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/pricing-ami-products.html",
+            "query": "ami pricing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "AMI product pricing for AWS Marketplace - AWS Marketplace View a markdown version of this page AMI product pricing for AWS Marketplace - AWS Marketplace { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"AWS Marketplace\", \"item\" : \"https://docs.aws.amazon.com/marketplace/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"Seller Guide\", \"item\" : \"https://docs.aws.amazon.com/marketplace/latest/userguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"AMI-based products in AWS Marketplace\", \"item\" : \"https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html\" }, { \"@type\" : \"ListItem\", \"position\" : 5, \"name\" : \"AMI product pricing for AWS Marketplace\", \"item\" : \"https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html\" } ] } Documentation AWS Marketplace Seller Guide AMI pricing models AWS charges and software charges AMI product pricing for AWS Marketplace AWS Marketplace has multiple pricing models for Amazon Machine Image (AMI) products. With seller private offers, there are options available for multi-year and custom duration contracts. For more information about multi-year and custom duration contracts, see Preparing a private offer for your AWS Marketplace product and Private offer installment plans . The following sections provide information about pricing models for AMI-based products. Note You must be able to provide a W-9 tax form (for US based entities) or a W-8 form (for EU-based entities) as described in Registering as a seller on AWS Marketplace . Topics AMI pricing models AWS charges and software charges Custom metering pricing f",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/aws on Reddit: Cost of storing AMI",
+            "url": "https://www.reddit.com/r/aws/comments/g6cqjt/cost_of_storing_ami/",
+            "query": "ami pricing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "amazon web services - Cost of storing AMI - Stack Overflow",
+            "url": "https://stackoverflow.com/questions/18650697/cost-of-storing-ami",
+            "query": "ami pricing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "amazon web services - Cost of storing AMI - Stack Overflow function OptanonWrapper() { } { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"WebSite\", \"@id\": \"https://stackoverflow.com/#website\", \"name\": \"Stack Overflow\", \"url\": \"https://stackoverflow.com\", \"image\": \"https://stackoverflow.com/Content/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=0f0cab681579\", \"publisher\": { \"@id\": \"https://stackoverflow.com/#organization\" } }, { \"@type\": \"Organization\", \"@id\": \"https://stackoverflow.com/#organization\", \"name\": \"Stack Overflow\", \"url\": \"https://stackoverflow.com\", \"logo\": \"https://stackoverflow.com/Content/Sites/stackoverflow/Img/logo.png?v=0a124c963f5f\", \"sameAs\": [ \"https://stackoverflow.co/\", \"https://www.facebook.com/officialstackoverflow/\", \"https://x.com/stackoverflow\", \"https://www.linkedin.com/company/stack-overflow\", \"https://www.youtube.com/c/StackOverflowOfficial\", \"https://twitter.com/stackoverflow\" ], \"contactPoint\": [ { \"@type\": \"ContactPoint\", \"contactType\": \"Customer support\", \"url\": \"https://stackoverflow.com/contact\" }, { \"@type\": \"ContactPoint\", \"contactType\": \"Stack Ads\", \"url\": \"https://stackoverflow.co/advertising/\" }, { \"@type\": \"ContactPoint\", \"contactType\": \"Stack Internal\", \"url\": \"https://stackoverflow.co/teams/\" }, { \"@type\": \"ContactPoint\", \"contactType\": \"Stack Data Licensing\", \"url\": \"https://stackoverflow.co/api-solutions/\" } ], \"description\": \"Q\\u0026A for professional and enthusiast programmers\" } ] } https://stackoverflow.com/Content/ {\"options\":{\"locale\":\"en\",\"serverTime\":1781842193,\"routeName\":\"Questions/Show\",\"stackAuthUrl\":\"https://stackauth.com\",\"networkMetaHostname\":\"meta.stackexchange.com\",\"site\":{\"name\":\"Stack Overflow\",\"description\":\"Q\\u0026A for professional and enthusiast programmers\",\"isNoticesTabEnabled\":true,\"e",
+            "fetch_error": ""
+          },
+          {
+            "title": "The 7 Best AI Terminal Coding Agents (2026) | Dupple",
+            "url": "https://dupple.com/learn/best-ai-terminal-coding-agents",
+            "query": "ami terminal agent review",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "The 7 Best AI Terminal Coding Agents (2026) | Dupple {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"@id\":\"https://dupple.com/learn/best-ai-terminal-coding-agents#article\",\"headline\":\"The 7 Best AI Terminal Coding Agents (2026)\",\"description\":\"I tested the best AI terminal coding agents in 2026. Claude Code, Codex CLI, Aider, OpenCode and more, ranked by benchmark, price, and real workflow fit.\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://dupple.com/images/og-dupple.png\",\"width\":1200,\"height\":630},\"datePublished\":\"2026-06-16T00:00:00.000Z\",\"dateModified\":\"2026-06-16T00:00:00.000Z\",\"lastReviewed\":\"2026-06-16T00:00:00.000Z\",\"keywords\":\"best ai terminal coding agents\",\"articleSection\":\"AI Guides\",\"wordCount\":2532,\"author\":{\"@id\":\"https://dupple.com/about#louis\"},\"publisher\":{\"@id\":\"https://dupple.com/#org\"},\"mainEntityOfPage\":{\"@id\":\"https://dupple.com/learn/best-ai-terminal-coding-agents#webpage\"},\"isPartOf\":{\"@id\":\"https://dupple.com/learn#hub\"},\"url\":\"https://dupple.com/learn/best-ai-terminal-coding-agents\",\"inLanguage\":\"en\",\"about\":[{\"@type\":\"SoftwareApplication\",\"name\":\"Claude\",\"sameAs\":[\"https://en.wikipedia.org/wiki/Claude_(language_model)\",\"https://claude.com\"]},{\"@type\":\"Organization\",\"name\":\"OpenAI\",\"sameAs\":[\"https://en.wikipedia.org/wiki/OpenAI\",\"https://www.wikidata.org/wiki/Q21708200\",\"https://openai.com\"]},{\"@type\":\"SoftwareApplication\",\"name\":\"ChatGPT\",\"sameAs\":[\"https://en.wikipedia.org/wiki/ChatGPT\",\"https://www.wikidata.org/wiki/Q115564437\",\"https://chatgpt.com\"]},{\"@type\":\"SoftwareApplication\",\"name\":\"Google Gemini\",\"sameAs\":[\"https://en.wikipedia.org/wiki/Gemini_(chatbot)\",\"https://gemini.google.com\"]},{\"@type\":\"Organization\",\"name\":\"Anthropic\",\"sameAs\":[\"https://en.wikipedia.org/wiki/Anthropic\",\"https://www.wikidata.org/wiki/Q1089",
+            "fetch_error": ""
+          },
+          {
+            "title": "Freebuff AI Coding Agent Review: The Best Free Claude Code Alternative? - RankLLMs | The Ultimate AI Models Leaderboard",
+            "url": "https://rankllms.com/news/freebuff-ai-coding-agent-review/",
+            "query": "ami terminal agent review",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Freebuff AI Coding Agent Review: The Best Free Claude Code Alternative? - RankLLMs | The Ultimate AI Models Leaderboard img:is([sizes=auto i],[sizes^=\"auto,\" i]){contain-intrinsic-size:3000px 1500px} /*# sourceURL=wp-img-auto-sizes-contain-inline-css */ img.wp-smiley, img.emoji { display: inline !important; border: none !important; box-shadow: none !important; height: 1em !important; width: 1em !important; margin: 0 0.07em !important; vertical-align: -0.1em !important; background: none !important; padding: 0 !important; } /*# sourceURL=wp-emoji-styles-inline-css */ .ai-summarization-summary{--ai-summary-border-color:#1d2327;--ai-summary-background-color:rgba(29,35,39,.04);background-color:var(--ai-summary-background-color);border-left:4px solid var(--ai-summary-border-color);padding:1em 1.25em}.ai-summarization-summary>:last-child{margin-bottom:0}.ai-summarization-plugin-container .components-button.ai-summarization-plugin-button{justify-content:center;width:100%}.ai-summarization-plugin-container .description{color:#757575}.block-editor-block-popover .ai-summarization-block-controls-button{height:46px;margin-top:1px} /*# sourceURL=https://rankllms.com/wp-content/plugins/ai/build-scripts/experiments/summarization.css */ :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #FFFFFF;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amb",
+            "fetch_error": ""
+          },
+          {
+            "title": "Pi.dev Review: Secure Terminal AI Agent (2026) - Petronella Cybersecurity News",
+            "url": "https://petronellatech.com/blog/pi-dev-platform-review/",
+            "query": "ami terminal agent review",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Pi.dev Review: Secure Terminal AI Agent (2026) {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[ {\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://petronellatech.com/\"}, {\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"https://petronellatech.com/blog/\"}, {\"@type\":\"ListItem\",\"position\":3,\"name\":\"AI\",\"item\":\"https://petronellatech.com/blog/ai/\"}, {\"@type\":\"ListItem\",\"position\":4,\"name\":\"Pi.dev Review: Secure Terminal AI Agent (2026)\",\"item\":\"https://petronellatech.com/blog/pi-dev-platform-review/\"} ]} {\"@context\":\"https://schema.org\",\"@type\":\"Person\", \"@id\":\"https://petronellatech.com/#craig\", \"name\":\"Craig Petronella\", \"givenName\":\"Craig\", \"familyName\":\"Petronella\", \"jobTitle\":\"CEO & Founder\", \"description\":\"Craig Petronella is the founder of Petronella Technology Group (Raleigh, NC, est. 2002). CMMC Registered Practitioner, Certified Wireless Network Expert, Cisco CCNA, Hubbell Certified, and licensed Digital Forensic Examiner (NC License 604180-DFE). #1 Amazon Best-Selling author of 14+ cybersecurity books.\", \"url\":\"https://petronellatech.com/about/craig-petronella/\", \"image\":\"https://petronellatech.com/assets/brand/craig-headshot.webp\", \"worksFor\":{\"@id\":\"https://petronellatech.com/#organization\"}, \"knowsAbout\":[\"Cybersecurity\",\"CMMC Compliance\",\"HIPAA Compliance\",\"NIST 800-171\",\"NIST 800-37\",\"NIST CSF\",\"Digital Forensics\",\"Incident Response\",\"Ransomware Defense\",\"Private AI\",\"AI Integration\",\"Blockchain Security\",\"Penetration Testing\",\"vCISO Services\",\"Expert Witness Testimony\",\"Security Awareness Training\",\"FTC Safeguards Rule\",\"GLBA Compliance\",\"SOC 2\"], \"hasCredential\":[ {\"@type\":\"EducationalOccupationalCredential\",\"credentialCategory\":\"Professional Certification\",\"name\":\"CMMC Registered Practitioner (CMMC-RP)\",\"recog",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub - lirantal/npm-security-best-practices: Collection of npm package manager Security Best Practices · GitHub",
+            "url": "https://github.com/lirantal/npm-security-best-practices",
+            "query": "npm package security policy",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+            "fetch_error": ""
+          },
+          {
+            "title": "NPM Security - OWASP Cheat Sheet Series",
+            "url": "https://cheatsheetseries.owasp.org/cheatsheets/NPM_Security_Cheat_Sheet.html",
+            "query": "npm package security policy",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "NPM Security - OWASP Cheat Sheet Series :root{--md-text-font:\"Roboto\";--md-code-font:\"Roboto Mono\"} __md_scope=new URL(\"..\",location),__md_hash=e=>[...e].reduce(((e,_)=>(e JSON.parse(_.getItem(t.pathname+\".\"+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+\".\"+e,JSON.stringify(_))}catch(e){}} Skip to content OWASP Cheat Sheet Series NPM Security var palette=__md_get(\"__palette\");if(palette&&palette.color){if(\"(prefers-color-scheme)\"===palette.color.media){var media=matchMedia(\"(prefers-color-scheme: light)\"),input=document.querySelector(media.matches?\"[data-md-color-media='(prefers-color-scheme: light)']\":\"[data-md-color-media='(prefers-color-scheme: dark)']\");palette.color.media=input.getAttribute(\"data-md-color-media\"),palette.color.scheme=input.getAttribute(\"data-md-color-scheme\"),palette.color.primary=input.getAttribute(\"data-md-color-primary\"),palette.color.accent=input.getAttribute(\"data-md-color-accent\")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute(\"data-md-color-\"+key,value)} Initializing search OWASP/CheatSheetSeries OWASP Cheat Sheet Series OWASP/CheatSheetSeries Introduction Index Alphabetical Index ASVS Index MASVS Index Proactive Controls Index Top 10 Cheatsheets Cheatsheets AI Agent Security AJAX Security AML Sanctions AI Agent Payments Abuse Case Access Control Attack Surface Analysis Authentication Authorization Authorization Regression Testing Authorization Testing Automation Automotive Security Bean Validation Bot Management and Anti-Automation Browser Extension Vulnerabilities Business Logic Security C-Based Toolchain Hardening CI CD Security Choosing and Using Security Questions Clickjacking Defense Content Security Policy Cookie Theft Mitigation Credential Stuffing Prevention Cross-Site Reque",
+            "fetch_error": ""
+          },
+          {
+            "title": "npm Security Policy | npm Docs",
+            "url": "https://docs.npmjs.com/policies/security/",
+            "query": "npm package security policy",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "npm Security Policy | npm Docs .prc-TextInput-CharacterCounter-vJZBe{align-items:center;color:var(--fgColor-muted,#59636e);display:flex;gap:var(--control-xsmall-gap,.25rem)}.prc-TextInput-CharacterCounter--error-HA0kN{color:var(--fgColor-danger,#d1242f)}.prc-components-Spinner-fIUBk{height:100%;max-width:100%;position:absolute;right:0;top:0}.prc-components-SpinnerLeading-phYLe{left:0}.prc-components-SpinnerHidden-mRxuj{visibility:hidden}.prc-components-SpinnerVisible-paqsj{visibility:visible}.prc-components-Box-XRSqm{display:flex;position:relative}.prc-Spinner-Box-Y-ke-{display:inline-flex}@keyframes prc-Spinner-rotate-keyframes-LV51p{to{transform:rotate(1turn)}}.prc-Spinner-SpinnerAnimation-tutJZ{animation:prc-Spinner-rotate-keyframes-LV51p var(--base-duration-1000,[ object Object ]) var(--base-easing-linear,0,0,1,1) infinite}.prc-VisuallyHidden-VisuallyHidden-Q0qSB:not(:focus):not(:active):not(:focus-within){clip-path:inset(50%);height:1px;overflow:hidden;position:absolute;white-space:nowrap;width:1px}.prc-components-TextInputBaseWrapper-wY-n0{align-items:stretch;background-color:var(--bgColor-default,#fff);border:var(--borderWidth-thin,.0625rem) solid var(--control-borderColor-rest,#d1d9e0);border-radius:var(--borderRadius-medium,.375rem);box-shadow:var(--shadow-inset,inset 0 1px 0 0 #1f23280a);color:var(--fgColor-default,#1f2328);cursor:text;display:inline-flex;font-size:var(--text-body-size-medium,.875rem);line-height:var(--base-size-20,1.25rem);min-height:var(--base-size-32,2rem);outline:none;overflow:hidden;vertical-align:middle}.prc-components-TextInputBaseWrapper-wY-n0 input,.prc-components-TextInputBaseWrapper-wY-n0 textarea{cursor:text}.prc-components-TextInputBaseWrapper-wY-n0 select{cursor:pointer}:is(.prc-components-TextInputBaseWrapper-wY-n0 input,.prc-co",
+            "fetch_error": ""
+          },
+          {
+            "title": "AI Coding Agent Horror Stories: Security Risks Explained | Docker",
+            "url": "https://www.docker.com/blog/ai-coding-agent-horror-stories-security-risks/",
+            "query": "terminal AI agent security incident",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:[\"bam.nr-data.net\"]},feature_flags:[\"soft_nav\"],distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:\"1386242466\",accountID:\"6399396\",trustKey:\"6399396\",xpid:\"UgUOWFVaDhABVlRWBgMEVVMI\",licenseKey:\"NRJS-27f33ade91093c8b2a2\",applicationID:\"1254123379\",browserID:\"1386242466\"};;/*! For license information please see nr-loader-spa-1.316.0.min.js.LICENSE.txt */ (()=>{var e,t,r={384:(e,t,r)=>{\"use strict\";r.d(t,{NT:()=>a,Zm:()=>c,bQ:()=>u,dV:()=>d,pV:()=>l});var n=r(6154),i=r(1863),s=r(944),o=r(1910);const a={beacon:\"bam.nr-data.net\",errorBeacon:\"bam.nr-data.net\"};function c(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function d(){let e=c();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate||n.gm.setInterval,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket},(0,o.i)(...Object.values(e.o))),e}function u(e,t){let r=c();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t,2===Object.keys(r.initializedAgents).length&&(0,s.R)(69)}function l(){return function(){let e=c();const t=e.info||{};e.info={beacon:a.beacon,errorBeacon:a.errorBeacon,...t}}(),function(){let e=c();const t=e.init||{};e.init={...t}}(),d(),function(){let e=c();const t=e.loader_config||{};e.loader_config={...t}}(),c()}},733:(e,t,r)=>{\"use strict\";function n(e,t){return function(e){let t=2166136261;for(let r=0;r >>0).toString(16).padStart(8,\"0\")}(\"\".concat(String(e),\":\").concat(String(t)))}r.d(t,{Y:()=>n})},782:(e,t,r)=>{\"use strict\";r.d(t,{T:()=>n});const n=r(860).K7.pageViewTiming},860:(e,t,r)=>{\"use s",
+            "fetch_error": ""
+          },
+          {
+            "title": "Why Agentic AI Is Security's Next Blind Spot",
+            "url": "https://thehackernews.com/2026/05/why-agentic-ai-is-securitys-next-blind.html",
+            "query": "terminal AI agent security incident",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Why Agentic AI Is Security's Next Blind Spot @font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/symbols/wght/normal.woff2);unicode-range:U+0001-000C,U+000E-001F,U+007F-009F,U+20DD-20E0,U+20E2-20E4,U+2150-218F,U+2190,U+2192,U+2194-2199,U+21AF,U+21E6-21F0,U+21F3,U+2218-2219,U+2299,U+22C4-22C6,U+2300-243F,U+2440-244A,U+2460-24FF,U+25A0-27BF,U+2800-28FF,U+2921-2922,U+2981,U+29BF,U+29EB,U+2B00-2BFF,U+4DC0-4DFF,U+FFF9-FFFB,U+10140-1018E,U+10190-1019C,U+101A0,U+101D0-101FD,U+102E0-102FB,U+10E60-10E7E,U+1D2C0-1D2D3,U+1D2E0-1D37F,U+1F000-1F0FF,U+1F100-1F1AD,U+1F1E6-1F1FF,U+1F30D-1F30F,U+1F315,U+1F31C,U+1F31E,U+1F320-1F32C,U+1F33",
+            "fetch_error": ""
+          },
+          {
+            "title": "AI Agents Cause Cybersecurity Incidents at Two Thirds of Firms - Infosecurity Magazine",
+            "url": "https://www.infosecurity-magazine.com/news/unchecked-ai-agents-cause/",
+            "query": "terminal AI agent security incident",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "AI Agents Cause Cybersecurity Incidents at Two Thirds of Firms - Infosecurity Magazine window.NREUM||(NREUM={});NREUM.info = {\"beacon\":\"bam.eu01.nr-data.net\",\"errorBeacon\":\"bam.eu01.nr-data.net\",\"licenseKey\":\"NRJS-70b3f9b2c6f17cc4471\",\"applicationID\":\"241052313\",\"transactionName\":\"MhBSZQoZXxEDUkdRWQtacWIoV0UHD0FfWUIABh9GHRpBAwVUHVlFFQ0=\",\"queueTime\":0,\"applicationTime\":8,\"agent\":\"\",\"atts\":\"\"} (window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:[\"bam.eu01.nr-data.net\"]},feature_flags:[\"soft_nav\"],distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:\"322535572\",accountID:\"2916063\",trustKey:\"2916063\",xpid:\"Vg8GV1ZVCxACUFBSAgMEV1c=\",licenseKey:\"NRJS-70b3f9b2c6f17cc4471\",applicationID:\"241052313\",browserID:\"322535572\"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if(\"function\"==typeof __nr_require)return __nr_require;for(var o=0;o 0&&(l-=1)}),s.on(\"internal-error\",function(t){i(\"ierr\",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t(\"loader\");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){U++,L=g.hash,this[u]=y.now()}function o(){U--,g.hash!==L&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit(\"newURL\",[\"\"+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s=\"-start\",c=\"-end\",f=\"-body\",u=\"fn\"+s,d=\"fn\"+c,p=\"cb\"+s,l=\"cb\"+c,h=\"jsTime\",m=\"fetch\",v=\"addEventListener\",w=window,g=w.location,y=t(\"loader\");if(w[v]&&y.xhrWrappable&&!y.disabled){var x=t(11),b=t(12),E=t(9),R=t(7),O=t(14),T=t(8),S=t(15),P=t(10),M=t(\"ee\"),C=M.get(\"tracer\"),N=t(23);t(17),y.features.spa=!0;var L,U=0;M.on(u,r),b.on(p,r),P.on(",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：ami依赖的具体AI模型、API Key存储方式、数据是否外传等关键安全信息缺失。"
+        },
+        "core_question": "这个开源终端Agent工具ami是否值得普通开发者日常使用，是否存在安全、成本或维护风险？",
+        "why_this_topic_matters": "终端Agent是AI工具链中一个快速增长的细分领域，但安全信任和成本控制是普通技术人最关心的实际问题。ami作为一个轻量级开源方案，其设计取舍和潜在风险具有普遍参考价值。",
+        "fact_summary": [
+          "ami是一个开源终端Agent，通过npm安装，支持本地工具调用、代码阅读、Web Search和Git辅助。",
+          "安装命令：npm i -g @dogxi/ami，初始化后可使用。",
+          "主要功能包括：简单问答、项目README总结、自动生成commit信息等。",
+          "项目发布于V2EX，作者为Dogxi，有GitHub仓库和官网。",
+          "依赖第三方AI服务（未明确说明具体模型），每次查询可能将本地数据发送至外部。",
+          "终端Agent直接访问文件系统和命令执行，存在权限滥用风险。"
+        ],
+        "persona_discussion_question": "老花：我该不该在终端里装一个AI助手？它会不会偷我的代码、泄露API Key，或者让我养成依赖？",
+        "old_flower_stance": "谨慎试用，先隔离环境、审查源码、控制API费用，不要在生产环境或敏感项目中直接使用。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "副业普通人"
+          ],
+          "interest_score": 75,
+          "why_interested": "终端Agent直接触及开发工作流，安全性和成本是刚需话题。",
+          "reader_risk": "可能被标题吸引但缺乏安全判断能力，需明确风险提示。"
+        },
+        "mass_interest_hook": {
+          "score": 60,
+          "hook_type": "踩坑",
+          "why_non_technical_people_may_click": "标题暗示‘轻量终端Agent’可能被误解为免费、安全的AI助手，普通人可能好奇是否能用。",
+          "story_seed": "一个开发者为了省事装了终端AI助手，结果API Key被泄露，代码被上传到第三方。",
+          "do_not_overhype": "不要夸大安全风险或功能缺陷，需基于证据。"
+        },
+        "topic_tension": {
+          "score": 10,
+          "conflict_point": "便利性 vs 安全风险：终端Agent提高效率，但可能引入数据泄露和权限滥用。",
+          "debate_question": "开源AI工具的安全信任问题：用户如何判断一个轻量级终端Agent不会窃取敏感信息？",
+          "stakeholders": [
+            "普通技术人",
+            "独立开发者",
+            "开源社区",
+            "AI服务提供商"
+          ],
+          "why_people_would_comment": "读者可以分享自己使用终端Agent的体验、安全顾虑或替代方案。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          {
+            "date": "2026-06-18",
+            "event": "V2EX帖子发布，介绍ami工具"
+          },
+          {
+            "date": "2026-06-18",
+            "event": "证据收集完成，未发现后续更新"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "V2EX帖子",
+            "url": "https://www.v2ex.com/t/1221325",
+            "supports": "工具功能、安装方式、作者信息",
+            "reliability": "media"
+          },
+          {
+            "source": "GitHub用户页",
+            "url": "https://github.com/dogxii",
+            "supports": "作者身份",
+            "reliability": "near_source"
+          },
+          {
+            "source": "个人网站",
+            "url": "https://dogxi.me/",
+            "supports": "作者身份",
+            "reliability": "near_source"
+          },
+          {
+            "source": "博客",
+            "url": "https://blog.dogxi.me/",
+            "supports": "作者身份",
+            "reliability": "near_source"
+          },
+          {
+            "source": "AWS文档",
+            "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/pricing-ami-products.html",
+            "supports": "无关（AMI歧义）",
+            "reliability": "official"
+          },
+          {
+            "source": "Reddit",
+            "url": "https://www.reddit.com/r/aws/comments/g6cqjt/cost_of_storing_ami/",
+            "supports": "无关（AMI歧义）",
+            "reliability": "weak"
+          },
+          {
+            "source": "Stack Overflow",
+            "url": "https://stackoverflow.com/questions/18650697/cost-of-storing-ami",
+            "supports": "无关（AMI歧义）",
+            "reliability": "weak"
+          },
+          {
+            "source": "Dupple文章",
+            "url": "https://dupple.com/learn/best-ai-terminal-coding-agents",
+            "supports": "终端Agent对比，未提及ami",
+            "reliability": "media"
+          },
+          {
+            "source": "RankLLMs文章",
+            "url": "https://rankllms.com/news/freebuff-ai-coding-agent-review/",
+            "supports": "终端Agent对比，未提及ami",
+            "reliability": "media"
+          },
+          {
+            "source": "Petronella文章",
+            "url": "https://petronellatech.com/blog/pi-dev-platform-review/",
+            "supports": "终端Agent对比，未提及ami",
+            "reliability": "media"
+          },
+          {
+            "source": "GitHub安全最佳实践",
+            "url": "https://github.com/lirantal/npm-security-best-practices",
+            "supports": "npm安全背景",
+            "reliability": "official"
+          },
+          {
+            "source": "OWASP NPM安全",
+            "url": "https://cheatsheetseries.owasp.org/cheatsheets/NPM_Security_Cheat_Sheet.html",
+            "supports": "npm安全背景",
+            "reliability": "official"
+          },
+          {
+            "source": "npm安全政策",
+            "url": "https://docs.npmjs.com/policies/security/",
+            "supports": "npm安全背景",
+            "reliability": "official"
+          },
+          {
+            "source": "Docker安全文章",
+            "url": "https://www.docker.com/blog/ai-coding-agent-horror-stories-security-risks/",
+            "supports": "AI Agent安全风险案例",
+            "reliability": "media"
+          },
+          {
+            "source": "Hacker News文章",
+            "url": "https://thehackernews.com/2026/05/why-agentic-ai-is-securitys-next-blind.html",
+            "supports": "Agentic AI安全盲点",
+            "reliability": "media"
+          },
+          {
+            "source": "Infosecurity文章",
+            "url": "https://www.infosecurity-magazine.com/news/unchecked-ai-agents-cause/",
+            "supports": "AI Agent安全事件统计",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "部分闭环：事实清楚但关键证据缺失，无法完全验证安全性和成本。",
+        "writeable_angles": [
+          {
+            "angle": "安全审计角度：审查ami源码，评估数据泄露风险",
+            "why": "直接回应核心技术人的安全顾虑",
+            "needs": "源码审查结果、隐私政策"
+          },
+          {
+            "angle": "成本分析角度：计算使用ami的API费用",
+            "why": "帮助读者评估实际使用成本",
+            "needs": "API定价、使用量估算"
+          },
+          {
+            "angle": "替代方案对比：ami vs shell_gpt vs warp",
+            "why": "提供决策参考",
+            "needs": "各工具功能、安全、成本对比"
+          },
+          {
+            "angle": "避坑指南：使用终端Agent的注意事项",
+            "why": "实用性强，吸引入门读者",
+            "needs": "安全最佳实践、案例"
+          }
+        ],
+        "missing_basics": [
+          "ami依赖的具体AI模型和API",
+          "API Key的存储方式",
+          "数据是否发送到外部服务器",
+          "隐私政策或用户协议",
+          "GitHub仓库的star数、最近更新日期、issue活跃度",
+          "npm包的下载量、维护者信息"
+        ],
+        "missing_materials": [
+          "ami的GitHub仓库源码分析报告",
+          "ami的隐私政策原文",
+          "类似终端Agent工具（如shell_gpt、warp）的对比分析",
+          "npm包安全扫描结果（如Snyk）",
+          "用户社区讨论汇总"
+        ],
+        "not_claimable": [
+          "工具是安全的",
+          "工具是免费的",
+          "工具适合生产环境",
+          "工具比GUI工具更好"
+        ],
+        "followup_queries": [
+          "ami的GitHub仓库源码中是否有数据发送代码？",
+          "ami的npm包是否有已知漏洞？",
+          "ami的用户协议是否明确数据使用？",
+          "ami的API费用如何计算？"
+        ],
+        "additional_search_queries": [
+          "dogxii/ami github",
+          "ami terminal agent npm",
+          "ami terminal agent security",
+          "ami terminal agent review",
+          "shell_gpt vs ami",
+          "warp terminal agent"
+        ],
+        "stop_conditions": [
+          "发现ami存在恶意代码或数据泄露证据",
+          "ami项目已停止维护或删除",
+          "用户反馈普遍负面",
+          "类似工具已有更全面的分析"
+        ],
+        "confidence": 51.0,
+        "topic_direction": "side-info",
+        "topic_direction_title": "副业&信息差",
+        "report_type": "platform-rules",
+        "quality_gate": {
+          "pass": false,
+          "score": 51,
+          "fatal_issues": [
+            "核心事实没有来源：ami依赖的具体AI模型、API Key存储方式、数据是否外传等关键安全信息缺失。",
+            "成本估算没有公式、单位或边界：未提供API费用计算方式。",
+            "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象：读者分层虽列出但未深入分析各层需求。",
+            "没有泛兴趣故事钩子，标题和开头只适合技术小圈子：标题和开头偏向技术介绍，缺乏泛兴趣吸引力。",
+            "没有真实传播张力：冲突点（便利性vs安全）虽存在，但缺乏具体案例和证据支撑。",
+            "没有明确归入实际选题方向，或者选题方向和内容不匹配：选题方向为'副业&信息差'，但内容更偏向技术工具评测。",
+            "没有明确选题结论：推荐或可选：结论为'可选'但未明确说明升级条件。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写：理由不够充分。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：事实有缺口，逻辑部分闭环。",
+            "没有列出基础概念缺口和资料素材缺口：已列出但未充分强调。",
+            "没有按具体类型提供资料包：资料包不完整，缺少安全审计、成本分析等关键材料。"
+          ],
+          "warnings": [
+            "证据来源偏科：主要依赖V2EX帖子，缺乏官方文档和用户反馈。",
+            "泛兴趣钩子过度标题党：标题暗示'轻量终端Agent'可能被误解为免费安全，但正文证据不足。"
+          ],
+          "missing_evidence": [
+            "ami依赖的具体AI模型和API信息",
+            "API Key的存储方式",
+            "数据是否发送到外部服务器",
+            "隐私政策或用户协议",
+            "GitHub仓库的star数、最近更新日期、issue活跃度",
+            "npm包的下载量、维护者信息",
+            "源码安全审计报告",
+            "用户社区讨论汇总"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": false,
+          "report_type_ok": false,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "这个开源终端Agent工具ami是否值得普通开发者日常使用，是否存在安全、成本或维护风险？",
+          "persona_discussion_question": "老花：我该不该在终端里装一个AI助手？它会不会偷我的代码、泄露API Key，或者让我养成依赖？",
+          "hidden_public_issue": "开源AI工具的安全信任问题：用户如何判断一个轻量级终端Agent不会窃取敏感信息？平台（如GitHub、npm）的审核机制是否足够保护开发者？",
+          "must_verify": [
+            "工具是否收集用户数据或发送数据到外部服务器？",
+            "API Key的存储方式是否安全？",
+            "工具是否依赖第三方AI服务（如OpenAI）？如果是，费用如何？",
+            "GitHub仓库的star数、最近更新日期、issue活跃度",
+            "npm包的下载量、维护者信息",
+            "是否有已知的安全漏洞或恶意代码报告？",
+            "工具是否支持离线模式或本地模型？",
+            "用户协议和隐私政策是否明确？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "github_repo",
+              "query": "dogxii/ami",
+              "why_needed": "查看源码、README、issue、安全审计"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "ami.dogxi.me",
+              "why_needed": "查看官方文档、隐私政策、使用条款"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "ami pricing",
+              "why_needed": "确认是否有付费计划或API费用"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "ami terminal agent review",
+              "why_needed": "获取用户反馈、潜在问题"
+            },
+            {
+              "source_type": "policy",
+              "query": "npm package security policy",
+              "why_needed": "了解npm对恶意包的检测机制"
+            },
+            {
+              "source_type": "case_study",
+              "query": "terminal AI agent security incident",
+              "why_needed": "查找类似工具的安全事件作为参考"
+            }
+          ],
+          "expert_challenge_points": [
+            "终端Agent直接访问文件系统和命令执行，存在权限滥用风险",
+            "如果依赖云端AI，每次查询都会将本地数据发送到第三方，隐私风险高",
+            "开源项目可能缺乏持续维护，长期使用有兼容性和安全更新风险",
+            "工具声称支持Web Search，但未说明搜索API的调用方式和费用"
+          ],
+          "do_not_claim_yet": [
+            "工具是安全的",
+            "工具是免费的",
+            "工具适合生产环境",
+            "工具比GUI工具更好"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需强调安全验证和成本风险，适合作为副业/工具类选题",
+          "downstream_materials_needed": [
+            "ami的GitHub仓库源码分析报告",
+            "ami的隐私政策原文",
+            "类似终端Agent工具（如shell_gpt、warp）的对比分析",
+            "npm包安全扫描结果（如Snyk）",
+            "用户社区讨论汇总"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "[开源] 做了一个轻量终端 Agent，无 GUI，无 TUI，简单回复 - V2EX",
+            "url": "https://www.v2ex.com/t/1221325",
+            "query": "dogxii/ami",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "[开源] 做了一个轻量终端 Agent，无 GUI，无 TUI，简单回复 - V2EX body { min-width: 820px; font-family: \"Helvetica Neue\", \"Luxi Sans\", \"Segoe UI\", \"Hiragino Sans GB\", \"Microsoft Yahei\", sans-serif, \"Apple Logo\"; } const SITE_NIGHT = 0; const LANG = 'enus'; const FEATURES = ['search', 'favorite-nodes-sort']; const address = \"H7n949qebWfk6HwCMPGHVkWEFsKnh8CSHeqFMZjb29v7\"; async function reloadTopicTips() { $.get(\"/t/1221325/tips.html\") .done(function(data) { let last = $('#topic-tip-box').children().last(); if (!last.hasClass('inner')) { last.addClass('inner'); last.addClass('flex-one-row'); last.addClass('gap10'); } last.replaceWith(data); // Flash the element to indicate update let newLast = $('#topic-tip-box').children().last(); newLast.fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100); }) .fail(function() { console.error('Failed to fetch /t/1221325/tips.html'); }); } {\"interactionStatistic\": {\"userInteractionCount\": 491, \"@type\": \"InteractionCounter\", \"interactionType\": \"https://schema.org/ViewAction\"}, \"text\": \"有时候只是想问 AI 一个很简单的问题，不想打开 GUI ，也不需要完整 TUI 。\\n于是便有了 ami ，现在可以直接：\\nami \\\"告诉我终端清屏快捷键是什么\\\"\\nami \\\"帮我总结项目 README\\\"\\n...\\n它会在终端里返回简洁回答。\\n支持本地工具调用、代码阅读、Web Search 和 Git 辅助。\\n安装：\\nnpm i -g @dogxi/ami\\n安装好后初始化：\\nami init\\n然后享受它。\\n官网：\\nami.dogxi.me\\nGitHub:\\ndogxii/ami\\n一个比较喜欢的功能：\\nami commit\\n有时候要手动改 AI 写的代码，又想要 commit 信息，自己去想 commit 信息又比较麻烦\\n直接 ami commit 让 AI 帮忙写 commit 信息。\", \"image\": \"https://i.imgur.com/zYI9p15.png\", \"datePublished\": \"2026-06-18T06:05:08Z\", \"commentCount\": 0, \"mainEntityOfPage\": \"https://www.v2ex.com/t/1221325\", \"author\": {\"url\": \"https://www.v2ex.com/member/Dogxi\", \"@type\": \"Person\", \"name\": \"Dogxi\"}, \"headline\": \"[开源] 做了一个轻量终端 Agent，无 GUI，无 TUI，简单回复\", \"@type\": \"DiscussionForumPosting\", \"url\": \"https://www.v2ex.com/t/1221325\", \"isPartOf\": {\"url\": \"https://www.v2ex.com/g",
+            "fetch_error": ""
+          },
+          {
+            "title": "dogxii (Dogxi) · GitHub",
+            "url": "https://github.com/dogxii",
+            "query": "dogxii/ami",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+            "fetch_error": ""
+          },
+          {
+            "title": "Ami Ami Dogs: Seriously Cute Crochet: Hoshi, Mitsuki: 9780062025708: Amazon.com: Books",
+            "url": "https://www.amazon.com/Ami-Dogs-Seriously-Cute-Crochet/dp/0062025708",
+            "query": "dogxii/ami",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "var aPageStart = (new Date()).getTime(); var ue_t0=ue_t0||+new Date(); window.ue_ihb = (window.ue_ihb || window.ueinit || 0) + 1; if (window.ue_ihb === 1) { var ue_csm = window, ue_hob = +new Date(); (function(d){var e=d.ue=d.ue||{},f=Date.now||function(){return+new Date};e.d=function(b){return f()-(b?0:d.ue_t0)};e.stub=function(b,a){if(!b[a]){var c=[];b[a]=function(){c.push([c.slice.call(arguments),e.d(),d.ue_id])};b[a].replay=function(b){for(var a;a=c.shift();)b(a[0],a[1],a[2])};b[a].isStub=1}};e.exec=function(b,a){return function(){try{return b.apply(this,arguments)}catch(c){ueLogError(c,{attribution:a||\"undefined\",logLevel:\"WARN\"})}}}})(ue_csm); var ue_err_chan = 'jserr-rw'; (function(d,e){function h(f,b){if(!(a.ec>a.mxe)&&f){a.ter.push(f);b=b||{};var c=f.logLevel||b.logLevel;c&&c!==k&&c!==m&&c!==n&&c!==p||a.ec++;c&&c!=k||a.ecf++;b.pageURL=\"\"+(e.location?e.location.href:\"\");b.logLevel=c;b.attribution=f.attribution||b.attribution;a.erl.push({ex:f,info:b})}}function l(a,b,c,e,g){d.ueLogError({m:a,f:b,l:c,c:\"\"+e,err:g,fromOnError:1,args:arguments},g?{attribution:g.attribution,logLevel:g.logLevel}:void 0);return!1}var k=\"FATAL\",m=\"ERROR\",n=\"WARN\",p=\"DOWNGRADED\",a={ec:0,ecf:0, pec:0,ts:0,erl:[],ter:[],buffer:[],mxe:50,startTimer:function(){a.ts++;setInterval(function(){d.ue&&a.pec window.ue && ue.count && ue.count('CSMLibrarySize', 10717) (function(b,a,c,d){if((b=b.AmazonUIPageJS||b.P)&&b.when&&b.register){c=[];for(a=a.currentScript;a;a=a.parentElement)a.id&&c.push(a.id);return b.log(\"A copy of P has already been loaded on this page.\",\"FATAL\",c.join(\" \"))}})(window,document,Date);(function(a,b,c,d){\"use strict\";a._pSetI=function(){return null}})(window,document,Date);(function(c,e,I,B){\"use strict\";c._pd=function(){var a,u;return function(C,f,h,k,b,D,v,E,F){function w(d)",
+            "fetch_error": ""
+          },
+          {
+            "title": "Dogxi - Personal Website",
+            "url": "https://dogxi.me/",
+            "query": "ami.dogxi.me",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Dogxi - Rookie Dog (function () { var t = localStorage.getItem(\"theme\"); if (t === \"dark\" || (!t && window.matchMedia(\"(prefers-color-scheme: dark)\").matches)) { document.documentElement.classList.add(\"dark\"); } })(); /* ── Reset ── */ *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; } /* ── Tokens ── */ :root { --bg: #ffffff; --surface-soft: rgba(245, 245, 245, 0.72); --surface-active: #e8e8e8; --border: #e5e5e5; --text: #171717; --text-2: #6b6b6b; --text-3: #b0b0b0; --ring: rgba(23, 23, 23, 0.1); --grid-highlight: rgba(23, 23, 23, 0.2); --spark-1: #f0c95a; --spark-2: #77a8e8; --spark-3: #ef8f9a; --radius: 12px; --dur: 0.16s; --ease: cubic-bezier(0.16, 1, 0.3, 1); --spring: cubic-bezier(0.18, 1.42, 0.38, 1); } html.dark { --bg: #0f0f0f; --surface-soft: rgba(28, 28, 28, 0.68); --surface-active: #262626; --border: #2e2e2e; --text: #f5f5f5; --text-2: #999999; --text-3: #4a4a4a; --ring: rgba(255, 255, 255, 0.1); --grid-highlight: rgba(255, 255, 255, 0.18); --spark-1: #f1d574; --spark-2: #8db8ff; --spark-3: #ff9faf; } /* ── Base ── */ html { --spot-x: 50%; --spot-y: 50%; font-family: \"Inter\", system-ui, -apple-system, sans-serif; background: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; /* smooth theme transitions */ transition: background var(--dur) ease, color var(--dur) ease; } body { position: relative; isolation: isolate; min-height: 100svh; display: flex; flex-direction: column; align-items: center; justify-content: center; /* safe area for notched phones */ padding: max(2.5rem, env(safe-area-inset-top)) max(1.25rem, env(safe-area-inset-right)) max(2.5rem, env(safe-area-inset-bottom)) max(1.25rem, env(safe-area-inset-left)); -webkit-tap-highlight-color: transparent; overflow-x: hidden; } ",
+            "fetch_error": ""
+          },
+          {
+            "title": "60s 信息聚合",
+            "url": "https://60s.dogxi.me/",
+            "query": "ami.dogxi.me",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "60s 信息聚合",
+            "fetch_error": ""
+          },
+          {
+            "title": "Dogxi 的狗窝",
+            "url": "https://blog.dogxi.me/",
+            "query": "ami.dogxi.me",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Dogxi 的狗窝 --> --> document.addEventListener(\"astro:before-swap\",e=>[...e.newDocument.head.querySelectorAll('link[as=\"font\"]')].forEach(o=>o.remove())); function init() { preloadTheme() onScroll() // animate() const backToPrev = document.getElementById('back-to-prev') if (backToPrev && backToPrev.dataset.bound !== 'true') { backToPrev.dataset.bound = 'true' backToPrev.addEventListener('click', () => window.history.back()) } if (document.documentElement.dataset.scrollWatcherBound !== 'true') { document.documentElement.dataset.scrollWatcherBound = 'true' document.addEventListener('scroll', onScroll, { passive: true }) } } // function animate() { // const animateElements = document.querySelectorAll('.animate') // animateElements.forEach((element, index) => { // setTimeout(() => { // element.classList.add('show') // }, index * 50) // }) // } function onScroll() { if (window.scrollY > 0) { document.documentElement.classList.add('scrolled') } else { document.documentElement.classList.remove('scrolled') } } function toggleTheme(dark) { const css = document.createElement('style') css.appendChild( document.createTextNode( `* { -webkit-transition: none !important; -moz-transition: none !important; -o-transition: none !important; -ms-transition: none !important; transition: none !important; } `, ), ) document.head.appendChild(css) if (dark) { document.documentElement.classList.add('dark') } else { document.documentElement.classList.remove('dark') } void window.getComputedStyle(css).opacity document.head.removeChild(css) } function preloadTheme() { const userTheme = localStorage.getItem('theme') || 'system' if (userTheme === 'light') { toggleTheme(false) } else if (userTheme === 'dark') { toggleTheme(true) } else { // system mode toggleTheme(window.matchMedia('(prefers-color-scheme:",
+            "fetch_error": ""
+          },
+          {
+            "title": "AMI product pricing for AWS Marketplace - AWS Marketplace",
+            "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/pricing-ami-products.html",
+            "query": "ami pricing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "AMI product pricing for AWS Marketplace - AWS Marketplace View a markdown version of this page AMI product pricing for AWS Marketplace - AWS Marketplace { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"AWS Marketplace\", \"item\" : \"https://docs.aws.amazon.com/marketplace/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"Seller Guide\", \"item\" : \"https://docs.aws.amazon.com/marketplace/latest/userguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"AMI-based products in AWS Marketplace\", \"item\" : \"https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html\" }, { \"@type\" : \"ListItem\", \"position\" : 5, \"name\" : \"AMI product pricing for AWS Marketplace\", \"item\" : \"https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html\" } ] } Documentation AWS Marketplace Seller Guide AMI pricing models AWS charges and software charges AMI product pricing for AWS Marketplace AWS Marketplace has multiple pricing models for Amazon Machine Image (AMI) products. With seller private offers, there are options available for multi-year and custom duration contracts. For more information about multi-year and custom duration contracts, see Preparing a private offer for your AWS Marketplace product and Private offer installment plans . The following sections provide information about pricing models for AMI-based products. Note You must be able to provide a W-9 tax form (for US based entities) or a W-8 form (for EU-based entities) as described in Registering as a seller on AWS Marketplace . Topics AMI pricing models AWS charges and software charges Custom metering pricing f",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/aws on Reddit: Cost of storing AMI",
+            "url": "https://www.reddit.com/r/aws/comments/g6cqjt/cost_of_storing_ami/",
+            "query": "ami pricing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "amazon web services - Cost of storing AMI - Stack Overflow",
+            "url": "https://stackoverflow.com/questions/18650697/cost-of-storing-ami",
+            "query": "ami pricing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "amazon web services - Cost of storing AMI - Stack Overflow function OptanonWrapper() { } { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"WebSite\", \"@id\": \"https://stackoverflow.com/#website\", \"name\": \"Stack Overflow\", \"url\": \"https://stackoverflow.com\", \"image\": \"https://stackoverflow.com/Content/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=0f0cab681579\", \"publisher\": { \"@id\": \"https://stackoverflow.com/#organization\" } }, { \"@type\": \"Organization\", \"@id\": \"https://stackoverflow.com/#organization\", \"name\": \"Stack Overflow\", \"url\": \"https://stackoverflow.com\", \"logo\": \"https://stackoverflow.com/Content/Sites/stackoverflow/Img/logo.png?v=0a124c963f5f\", \"sameAs\": [ \"https://stackoverflow.co/\", \"https://www.facebook.com/officialstackoverflow/\", \"https://x.com/stackoverflow\", \"https://www.linkedin.com/company/stack-overflow\", \"https://www.youtube.com/c/StackOverflowOfficial\", \"https://twitter.com/stackoverflow\" ], \"contactPoint\": [ { \"@type\": \"ContactPoint\", \"contactType\": \"Customer support\", \"url\": \"https://stackoverflow.com/contact\" }, { \"@type\": \"ContactPoint\", \"contactType\": \"Stack Ads\", \"url\": \"https://stackoverflow.co/advertising/\" }, { \"@type\": \"ContactPoint\", \"contactType\": \"Stack Internal\", \"url\": \"https://stackoverflow.co/teams/\" }, { \"@type\": \"ContactPoint\", \"contactType\": \"Stack Data Licensing\", \"url\": \"https://stackoverflow.co/api-solutions/\" } ], \"description\": \"Q\\u0026A for professional and enthusiast programmers\" } ] } https://stackoverflow.com/Content/ {\"options\":{\"locale\":\"en\",\"serverTime\":1781842193,\"routeName\":\"Questions/Show\",\"stackAuthUrl\":\"https://stackauth.com\",\"networkMetaHostname\":\"meta.stackexchange.com\",\"site\":{\"name\":\"Stack Overflow\",\"description\":\"Q\\u0026A for professional and enthusiast programmers\",\"isNoticesTabEnabled\":true,\"e",
+            "fetch_error": ""
+          },
+          {
+            "title": "The 7 Best AI Terminal Coding Agents (2026) | Dupple",
+            "url": "https://dupple.com/learn/best-ai-terminal-coding-agents",
+            "query": "ami terminal agent review",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "The 7 Best AI Terminal Coding Agents (2026) | Dupple {\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"BlogPosting\",\"@id\":\"https://dupple.com/learn/best-ai-terminal-coding-agents#article\",\"headline\":\"The 7 Best AI Terminal Coding Agents (2026)\",\"description\":\"I tested the best AI terminal coding agents in 2026. Claude Code, Codex CLI, Aider, OpenCode and more, ranked by benchmark, price, and real workflow fit.\",\"image\":{\"@type\":\"ImageObject\",\"url\":\"https://dupple.com/images/og-dupple.png\",\"width\":1200,\"height\":630},\"datePublished\":\"2026-06-16T00:00:00.000Z\",\"dateModified\":\"2026-06-16T00:00:00.000Z\",\"lastReviewed\":\"2026-06-16T00:00:00.000Z\",\"keywords\":\"best ai terminal coding agents\",\"articleSection\":\"AI Guides\",\"wordCount\":2532,\"author\":{\"@id\":\"https://dupple.com/about#louis\"},\"publisher\":{\"@id\":\"https://dupple.com/#org\"},\"mainEntityOfPage\":{\"@id\":\"https://dupple.com/learn/best-ai-terminal-coding-agents#webpage\"},\"isPartOf\":{\"@id\":\"https://dupple.com/learn#hub\"},\"url\":\"https://dupple.com/learn/best-ai-terminal-coding-agents\",\"inLanguage\":\"en\",\"about\":[{\"@type\":\"SoftwareApplication\",\"name\":\"Claude\",\"sameAs\":[\"https://en.wikipedia.org/wiki/Claude_(language_model)\",\"https://claude.com\"]},{\"@type\":\"Organization\",\"name\":\"OpenAI\",\"sameAs\":[\"https://en.wikipedia.org/wiki/OpenAI\",\"https://www.wikidata.org/wiki/Q21708200\",\"https://openai.com\"]},{\"@type\":\"SoftwareApplication\",\"name\":\"ChatGPT\",\"sameAs\":[\"https://en.wikipedia.org/wiki/ChatGPT\",\"https://www.wikidata.org/wiki/Q115564437\",\"https://chatgpt.com\"]},{\"@type\":\"SoftwareApplication\",\"name\":\"Google Gemini\",\"sameAs\":[\"https://en.wikipedia.org/wiki/Gemini_(chatbot)\",\"https://gemini.google.com\"]},{\"@type\":\"Organization\",\"name\":\"Anthropic\",\"sameAs\":[\"https://en.wikipedia.org/wiki/Anthropic\",\"https://www.wikidata.org/wiki/Q1089",
+            "fetch_error": ""
+          },
+          {
+            "title": "Freebuff AI Coding Agent Review: The Best Free Claude Code Alternative? - RankLLMs | The Ultimate AI Models Leaderboard",
+            "url": "https://rankllms.com/news/freebuff-ai-coding-agent-review/",
+            "query": "ami terminal agent review",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Freebuff AI Coding Agent Review: The Best Free Claude Code Alternative? - RankLLMs | The Ultimate AI Models Leaderboard img:is([sizes=auto i],[sizes^=\"auto,\" i]){contain-intrinsic-size:3000px 1500px} /*# sourceURL=wp-img-auto-sizes-contain-inline-css */ img.wp-smiley, img.emoji { display: inline !important; border: none !important; box-shadow: none !important; height: 1em !important; width: 1em !important; margin: 0 0.07em !important; vertical-align: -0.1em !important; background: none !important; padding: 0 !important; } /*# sourceURL=wp-emoji-styles-inline-css */ .ai-summarization-summary{--ai-summary-border-color:#1d2327;--ai-summary-background-color:rgba(29,35,39,.04);background-color:var(--ai-summary-background-color);border-left:4px solid var(--ai-summary-border-color);padding:1em 1.25em}.ai-summarization-summary>:last-child{margin-bottom:0}.ai-summarization-plugin-container .components-button.ai-summarization-plugin-button{justify-content:center;width:100%}.ai-summarization-plugin-container .description{color:#757575}.block-editor-block-popover .ai-summarization-block-controls-button{height:46px;margin-top:1px} /*# sourceURL=https://rankllms.com/wp-content/plugins/ai/build-scripts/experiments/summarization.css */ :root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #FFFFFF;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amb",
+            "fetch_error": ""
+          },
+          {
+            "title": "Pi.dev Review: Secure Terminal AI Agent (2026) - Petronella Cybersecurity News",
+            "url": "https://petronellatech.com/blog/pi-dev-platform-review/",
+            "query": "ami terminal agent review",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Pi.dev Review: Secure Terminal AI Agent (2026) {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[ {\"@type\":\"ListItem\",\"position\":1,\"name\":\"Home\",\"item\":\"https://petronellatech.com/\"}, {\"@type\":\"ListItem\",\"position\":2,\"name\":\"Blog\",\"item\":\"https://petronellatech.com/blog/\"}, {\"@type\":\"ListItem\",\"position\":3,\"name\":\"AI\",\"item\":\"https://petronellatech.com/blog/ai/\"}, {\"@type\":\"ListItem\",\"position\":4,\"name\":\"Pi.dev Review: Secure Terminal AI Agent (2026)\",\"item\":\"https://petronellatech.com/blog/pi-dev-platform-review/\"} ]} {\"@context\":\"https://schema.org\",\"@type\":\"Person\", \"@id\":\"https://petronellatech.com/#craig\", \"name\":\"Craig Petronella\", \"givenName\":\"Craig\", \"familyName\":\"Petronella\", \"jobTitle\":\"CEO & Founder\", \"description\":\"Craig Petronella is the founder of Petronella Technology Group (Raleigh, NC, est. 2002). CMMC Registered Practitioner, Certified Wireless Network Expert, Cisco CCNA, Hubbell Certified, and licensed Digital Forensic Examiner (NC License 604180-DFE). #1 Amazon Best-Selling author of 14+ cybersecurity books.\", \"url\":\"https://petronellatech.com/about/craig-petronella/\", \"image\":\"https://petronellatech.com/assets/brand/craig-headshot.webp\", \"worksFor\":{\"@id\":\"https://petronellatech.com/#organization\"}, \"knowsAbout\":[\"Cybersecurity\",\"CMMC Compliance\",\"HIPAA Compliance\",\"NIST 800-171\",\"NIST 800-37\",\"NIST CSF\",\"Digital Forensics\",\"Incident Response\",\"Ransomware Defense\",\"Private AI\",\"AI Integration\",\"Blockchain Security\",\"Penetration Testing\",\"vCISO Services\",\"Expert Witness Testimony\",\"Security Awareness Training\",\"FTC Safeguards Rule\",\"GLBA Compliance\",\"SOC 2\"], \"hasCredential\":[ {\"@type\":\"EducationalOccupationalCredential\",\"credentialCategory\":\"Professional Certification\",\"name\":\"CMMC Registered Practitioner (CMMC-RP)\",\"recog",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub - lirantal/npm-security-best-practices: Collection of npm package manager Security Best Practices · GitHub",
+            "url": "https://github.com/lirantal/npm-security-best-practices",
+            "query": "npm package security policy",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ":root { --tab-size-preference: 4; } pre, code { tab-size: var(--tab-size-preference); } {\"locale\":\"en\",\"featureFlags\":[\"actions_custom_images_storage_billing_ui_visibility\",\"actions_image_version_event\",\"actions_workflow_language_service_allow_concurrency_queue\",\"agent_author_search_expansion\",\"agent_author_search_expansion_ui_pulls\",\"agent_conflict_resolution\",\"agent_plane_disable_bypass_permissions_mode_tile\",\"alternate_user_config_repo\",\"artifact_ui_v2\",\"billing_discount_threshold_notification\",\"billing_user_level_budgets\",\"billing_user_level_budgets_manage\",\"code_scanning_dfa_degraded_experience_notice\",\"code_view_raf_sticky_lines\",\"codespaces_prebuild_region_target_update\",\"coding_agent_model_selection\",\"coding_agent_model_selection_all_skus\",\"coding_agent_session_ai_credits\",\"comment_viewer_copy_raw_markdown\",\"contentful_primer_code_blocks\",\"copilot_agent_snippy\",\"copilot_api_agentic_issue_marshal_yaml\",\"copilot_ask_mode_dropdown\",\"copilot_automation_suggest_tools_enabled\",\"copilot_automations_suggested_automations\",\"copilot_chat_attach_multiple_images\",\"copilot_chat_auto_mode_picker_paid\",\"copilot_chat_category_rate_limit_messages\",\"copilot_chat_clear_model_selection_for_default_change\",\"copilot_chat_contextual_suggestions_updated\",\"copilot_chat_docked_panel\",\"copilot_chat_enable_tool_call_logs\",\"copilot_chat_input_commands\",\"copilot_chat_interspersed_tool_calls\",\"copilot_chat_max_upsell\",\"copilot_chat_models_browser_cache\",\"copilot_chat_opening_thread_switch\",\"copilot_chat_prettify_pasted_code\",\"copilot_chat_reduce_quota_checks\",\"copilot_chat_vision_in_claude\",\"copilot_chat_vision_preview_gate\",\"copilot_cli_install_cta_max_plan\",\"copilot_cloud_agent_always_categorize_models_in_model_picker\",\"copilot_coding_agent_tbb_quota_banner\",\"copilot_custom_copilots\",\"copil",
+            "fetch_error": ""
+          },
+          {
+            "title": "NPM Security - OWASP Cheat Sheet Series",
+            "url": "https://cheatsheetseries.owasp.org/cheatsheets/NPM_Security_Cheat_Sheet.html",
+            "query": "npm package security policy",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "NPM Security - OWASP Cheat Sheet Series :root{--md-text-font:\"Roboto\";--md-code-font:\"Roboto Mono\"} __md_scope=new URL(\"..\",location),__md_hash=e=>[...e].reduce(((e,_)=>(e JSON.parse(_.getItem(t.pathname+\".\"+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+\".\"+e,JSON.stringify(_))}catch(e){}} Skip to content OWASP Cheat Sheet Series NPM Security var palette=__md_get(\"__palette\");if(palette&&palette.color){if(\"(prefers-color-scheme)\"===palette.color.media){var media=matchMedia(\"(prefers-color-scheme: light)\"),input=document.querySelector(media.matches?\"[data-md-color-media='(prefers-color-scheme: light)']\":\"[data-md-color-media='(prefers-color-scheme: dark)']\");palette.color.media=input.getAttribute(\"data-md-color-media\"),palette.color.scheme=input.getAttribute(\"data-md-color-scheme\"),palette.color.primary=input.getAttribute(\"data-md-color-primary\"),palette.color.accent=input.getAttribute(\"data-md-color-accent\")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute(\"data-md-color-\"+key,value)} Initializing search OWASP/CheatSheetSeries OWASP Cheat Sheet Series OWASP/CheatSheetSeries Introduction Index Alphabetical Index ASVS Index MASVS Index Proactive Controls Index Top 10 Cheatsheets Cheatsheets AI Agent Security AJAX Security AML Sanctions AI Agent Payments Abuse Case Access Control Attack Surface Analysis Authentication Authorization Authorization Regression Testing Authorization Testing Automation Automotive Security Bean Validation Bot Management and Anti-Automation Browser Extension Vulnerabilities Business Logic Security C-Based Toolchain Hardening CI CD Security Choosing and Using Security Questions Clickjacking Defense Content Security Policy Cookie Theft Mitigation Credential Stuffing Prevention Cross-Site Reque",
+            "fetch_error": ""
+          },
+          {
+            "title": "npm Security Policy | npm Docs",
+            "url": "https://docs.npmjs.com/policies/security/",
+            "query": "npm package security policy",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "npm Security Policy | npm Docs .prc-TextInput-CharacterCounter-vJZBe{align-items:center;color:var(--fgColor-muted,#59636e);display:flex;gap:var(--control-xsmall-gap,.25rem)}.prc-TextInput-CharacterCounter--error-HA0kN{color:var(--fgColor-danger,#d1242f)}.prc-components-Spinner-fIUBk{height:100%;max-width:100%;position:absolute;right:0;top:0}.prc-components-SpinnerLeading-phYLe{left:0}.prc-components-SpinnerHidden-mRxuj{visibility:hidden}.prc-components-SpinnerVisible-paqsj{visibility:visible}.prc-components-Box-XRSqm{display:flex;position:relative}.prc-Spinner-Box-Y-ke-{display:inline-flex}@keyframes prc-Spinner-rotate-keyframes-LV51p{to{transform:rotate(1turn)}}.prc-Spinner-SpinnerAnimation-tutJZ{animation:prc-Spinner-rotate-keyframes-LV51p var(--base-duration-1000,[ object Object ]) var(--base-easing-linear,0,0,1,1) infinite}.prc-VisuallyHidden-VisuallyHidden-Q0qSB:not(:focus):not(:active):not(:focus-within){clip-path:inset(50%);height:1px;overflow:hidden;position:absolute;white-space:nowrap;width:1px}.prc-components-TextInputBaseWrapper-wY-n0{align-items:stretch;background-color:var(--bgColor-default,#fff);border:var(--borderWidth-thin,.0625rem) solid var(--control-borderColor-rest,#d1d9e0);border-radius:var(--borderRadius-medium,.375rem);box-shadow:var(--shadow-inset,inset 0 1px 0 0 #1f23280a);color:var(--fgColor-default,#1f2328);cursor:text;display:inline-flex;font-size:var(--text-body-size-medium,.875rem);line-height:var(--base-size-20,1.25rem);min-height:var(--base-size-32,2rem);outline:none;overflow:hidden;vertical-align:middle}.prc-components-TextInputBaseWrapper-wY-n0 input,.prc-components-TextInputBaseWrapper-wY-n0 textarea{cursor:text}.prc-components-TextInputBaseWrapper-wY-n0 select{cursor:pointer}:is(.prc-components-TextInputBaseWrapper-wY-n0 input,.prc-co",
+            "fetch_error": ""
+          },
+          {
+            "title": "AI Coding Agent Horror Stories: Security Risks Explained | Docker",
+            "url": "https://www.docker.com/blog/ai-coding-agent-horror-stories-security-risks/",
+            "query": "terminal AI agent security incident",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "(window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:[\"bam.nr-data.net\"]},feature_flags:[\"soft_nav\"],distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:\"1386242466\",accountID:\"6399396\",trustKey:\"6399396\",xpid:\"UgUOWFVaDhABVlRWBgMEVVMI\",licenseKey:\"NRJS-27f33ade91093c8b2a2\",applicationID:\"1254123379\",browserID:\"1386242466\"};;/*! For license information please see nr-loader-spa-1.316.0.min.js.LICENSE.txt */ (()=>{var e,t,r={384:(e,t,r)=>{\"use strict\";r.d(t,{NT:()=>a,Zm:()=>c,bQ:()=>u,dV:()=>d,pV:()=>l});var n=r(6154),i=r(1863),s=r(944),o=r(1910);const a={beacon:\"bam.nr-data.net\",errorBeacon:\"bam.nr-data.net\"};function c(){return n.gm.NREUM||(n.gm.NREUM={}),void 0===n.gm.newrelic&&(n.gm.newrelic=n.gm.NREUM),n.gm.NREUM}function d(){let e=c();return e.o||(e.o={ST:n.gm.setTimeout,SI:n.gm.setImmediate||n.gm.setInterval,CT:n.gm.clearTimeout,XHR:n.gm.XMLHttpRequest,REQ:n.gm.Request,EV:n.gm.Event,PR:n.gm.Promise,MO:n.gm.MutationObserver,FETCH:n.gm.fetch,WS:n.gm.WebSocket},(0,o.i)(...Object.values(e.o))),e}function u(e,t){let r=c();r.initializedAgents??={},t.initializedAt={ms:(0,i.t)(),date:new Date},r.initializedAgents[e]=t,2===Object.keys(r.initializedAgents).length&&(0,s.R)(69)}function l(){return function(){let e=c();const t=e.info||{};e.info={beacon:a.beacon,errorBeacon:a.errorBeacon,...t}}(),function(){let e=c();const t=e.init||{};e.init={...t}}(),d(),function(){let e=c();const t=e.loader_config||{};e.loader_config={...t}}(),c()}},733:(e,t,r)=>{\"use strict\";function n(e,t){return function(e){let t=2166136261;for(let r=0;r >>0).toString(16).padStart(8,\"0\")}(\"\".concat(String(e),\":\").concat(String(t)))}r.d(t,{Y:()=>n})},782:(e,t,r)=>{\"use strict\";r.d(t,{T:()=>n});const n=r(860).K7.pageViewTiming},860:(e,t,r)=>{\"use s",
+            "fetch_error": ""
+          },
+          {
+            "title": "Why Agentic AI Is Security's Next Blind Spot",
+            "url": "https://thehackernews.com/2026/05/why-agentic-ai-is-securitys-next-blind.html",
+            "query": "terminal AI agent security incident",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Why Agentic AI Is Security's Next Blind Spot @font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/latin/wght/normal.woff2);unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/cyrillic-ext/wght/normal.woff2);unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/greek/wght/normal.woff2);unicode-range:U+0370-0377,U+037A-037F,U+0384-038A,U+038C,U+038E-03A1,U+03A3-03FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/latin-ext/wght/normal.woff2);unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF;font-display:swap;}@font-face {font-family:Roboto;font-style:normal;font-weight:100 900;src:url(/cf-fonts/v/roboto/5.2.10/symbols/wght/normal.woff2);unicode-range:U+0001-000C,U+000E-001F,U+007F-009F,U+20DD-20E0,U+20E2-20E4,U+2150-218F,U+2190,U+2192,U+2194-2199,U+21AF,U+21E6-21F0,U+21F3,U+2218-2219,U+2299,U+22C4-22C6,U+2300-243F,U+2440-244A,U+2460-24FF,U+25A0-27BF,U+2800-28FF,U+2921-2922,U+2981,U+29BF,U+29EB,U+2B00-2BFF,U+4DC0-4DFF,U+FFF9-FFFB,U+10140-1018E,U+10190-1019C,U+101A0,U+101D0-101FD,U+102E0-102FB,U+10E60-10E7E,U+1D2C0-1D2D3,U+1D2E0-1D37F,U+1F000-1F0FF,U+1F100-1F1AD,U+1F1E6-1F1FF,U+1F30D-1F30F,U+1F315,U+1F31C,U+1F31E,U+1F320-1F32C,U+1F33",
+            "fetch_error": ""
+          },
+          {
+            "title": "AI Agents Cause Cybersecurity Incidents at Two Thirds of Firms - Infosecurity Magazine",
+            "url": "https://www.infosecurity-magazine.com/news/unchecked-ai-agents-cause/",
+            "query": "terminal AI agent security incident",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "AI Agents Cause Cybersecurity Incidents at Two Thirds of Firms - Infosecurity Magazine window.NREUM||(NREUM={});NREUM.info = {\"beacon\":\"bam.eu01.nr-data.net\",\"errorBeacon\":\"bam.eu01.nr-data.net\",\"licenseKey\":\"NRJS-70b3f9b2c6f17cc4471\",\"applicationID\":\"241052313\",\"transactionName\":\"MhBSZQoZXxEDUkdRWQtacWIoV0UHD0FfWUIABh9GHRpBAwVUHVlFFQ0=\",\"queueTime\":0,\"applicationTime\":8,\"agent\":\"\",\"atts\":\"\"} (window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:[\"bam.eu01.nr-data.net\"]},feature_flags:[\"soft_nav\"],distributed_tracing:{enabled:true}};(window.NREUM||(NREUM={})).loader_config={agentID:\"322535572\",accountID:\"2916063\",trustKey:\"2916063\",xpid:\"Vg8GV1ZVCxACUFBSAgMEV1c=\",licenseKey:\"NRJS-70b3f9b2c6f17cc4471\",applicationID:\"241052313\",browserID:\"322535572\"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var o=e[n]={exports:{}};t[n][0].call(o.exports,function(e){var o=t[n][1][e];return r(o||e)},o,o.exports)}return e[n].exports}if(\"function\"==typeof __nr_require)return __nr_require;for(var o=0;o 0&&(l-=1)}),s.on(\"internal-error\",function(t){i(\"ierr\",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t(\"loader\");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){U++,L=g.hash,this[u]=y.now()}function o(){U--,g.hash!==L&&i(0,!0);var t=y.now();this[h]=~~this[h]+t-this[u],this[d]=t}function i(t,e){E.emit(\"newURL\",[\"\"+g,e])}function a(t,e){t.on(e,function(){this[e]=y.now()})}var s=\"-start\",c=\"-end\",f=\"-body\",u=\"fn\"+s,d=\"fn\"+c,p=\"cb\"+s,l=\"cb\"+c,h=\"jsTime\",m=\"fetch\",v=\"addEventListener\",w=window,g=w.location,y=t(\"loader\");if(w[v]&&y.xhrWrappable&&!y.disabled){var x=t(11),b=t(12),E=t(9),R=t(7),O=t(14),T=t(8),S=t(15),P=t(10),M=t(\"ee\"),C=M.get(\"tracer\"),N=t(23);t(17),y.features.spa=!0;var L,U=0;M.on(u,r),b.on(p,r),P.on(",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "规则变动影响谁",
+        "普通技术人的合规边界",
+        "平台红利和封号风险"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "平台规则：做了一个轻量终端 Agent 官方政策 规则 原文",
+        "平台规则：做了一个轻量终端 Agent 开发者公告 影响范围",
+        "平台规则：做了一个轻量终端 Agent 合规 风险 受影响用户"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
