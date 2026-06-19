@@ -1,0 +1,1840 @@
+{
+  "id": "20260620-workers-temporary-accounts-for-ai-agent-deployme-ce493042",
+  "batch_id": "2026-06-20-morning",
+  "title": "Cloudflare Workers 支持 AI Agent 临时账号部署",
+  "original_title": "Workers - Temporary accounts for AI agent deployments",
+  "url": "https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/",
+  "summary": "AI agents can now deploy Workers to Cloudflare without first requiring a user to sign up, open a browser-based OAuth flow, click through the dashboard, or create an API token. When an agent tries to deploy without Cloudflare credentials, Wrangler can tell it to rerun with --temporary , then deploy the Worker to a temporary preview account. To try this with your agent, update to Wrangler 4.102.0 or later, make sure you are logged out ( wrangler logout ), and then ask your agent to build something and deploy it to Cloudflare. The agent should follow Wrangler's output and deploy using the --temporary flag. wrangler deploy --temporary The temporary deployment stays live for 60 minutes. During that window, the agent can verify the Worker, redeploy changes, and return both the live Worker URL and claim URL. Opening the claim URL lets you sign in to or create a Cloudflare account and make the t",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "tools-rules",
+  "topic_direction_title": "工具&规则",
+  "topic_direction_short_title": "工具&规则",
+  "topic_direction_description": "开发工具、AI 实操、API、云服务、自动化工作流、平台政策、账号规则、搜索流量和内容分发生态变化。重点记录工具或规则发生了什么变化。",
+  "source_name": "Cloudflare Developers",
+  "original_source_name": "Cloudflare changelogs | Developer platform",
+  "source_type": "rss",
+  "feed_url": "https://developers.cloudflare.com/changelog/rss/developer-platform.xml",
+  "published_at": "2026-06-19T00:00:00+00:00",
+  "fetched_at": "2026-06-19T22:01:29.814348+00:00",
+  "decision": "brief",
+  "report_type": "platform-rules",
+  "report_type_title": "平台规则",
+  "score": 55,
+  "reader_hook": "AI Agent 开发者可免注册直接部署到 Cloudflare",
+  "topic_tension": {
+    "score": 8,
+    "conflict_point": "表面价格、额度或收益预期和真实成本之间的冲突。",
+    "debate_question": "这笔账普通技术人还能不能算得过来，还是只适合少数人？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+    "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+  },
+  "persona_discussion_question": "小团队该不该继续把关键工作流押在这个平台规则上？",
+  "why_now": "AI Agent 部署需求增长，Cloudflare 降低门槛",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "Cloudflare 允许 AI Agent 通过临时账号部署 Workers，无需用户注册。降低门槛但可能带来安全与计费风险。",
+  "collection_fit": "tools-rules",
+  "investigation_direction": "临时账号的安全模型与计费机制",
+  "uncertainty_flags": [
+    "临时账号的计费归属不明确"
+  ],
+  "facts": [
+    {
+      "claim": "Cloudflare Developers 发布/收录了这条原始线索：Workers - Temporary accounts for AI agent deployments",
+      "type": "confirmed_fact",
+      "source_url": "https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Cloudflare Developers",
+      "url": "https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "ai",
+        "agent",
+        "token"
+      ],
+      "dev": [
+        "api",
+        "cloudflare"
+      ]
+    },
+    "source_host": "developers.cloudflare.com",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 8,
+    "raw_score": 51,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "AI Agent 开发者可免注册直接部署到 Cloudflare",
+    "fit_for_radar": false
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://developers.cloudflare.com/changelog/rss/developer-platform.xml",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "临时账号的计费归属不明确"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：临时账号的计费归属、安全隔离、配额限制等关键信息无官方文档支持。"
+    },
+    "core_question": "Cloudflare Workers 临时账号部署 AI Agent 的真实成本、安全风险和适用场景是什么？",
+    "why_this_topic_matters": "AI Agent 部署需求快速增长，Cloudflare 降低注册门槛可能改变开发者工作流，但计费和安全风险不明确，可能带来意外账单或滥用问题。",
+    "fact_summary": [
+      "Cloudflare 允许 AI Agent 通过 wrangler deploy --temporary 免注册部署 Workers，部署后存活 60 分钟。",
+      "需要 Wrangler 4.102.0+，且用户必须已 logout。",
+      "临时部署会返回 live URL 和 claim URL，claim 后可转为正式账号。",
+      "官方文档未明确说明临时账号的计费归属、配额限制和安全隔离机制。",
+      "Cloudflare 有 Workers 免费计划（10万请求/天），但临时账号是否适用未知。",
+      "社区有 Cloudflare 服务被滥用的案例（如凭证窃取、恶意软件分发），但未直接涉及临时账号。"
+    ],
+    "persona_discussion_question": "作为独立开发者，我该不该让 AI Agent 用临时账号部署 Workers？会不会产生意外账单或安全漏洞？",
+    "old_flower_stance": "临时账号降低了 AI Agent 部署门槛，但计费和安全风险不透明，普通技术人应谨慎使用，避免意外账单。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 7,
+      "why_interested": "技术人关心部署效率、成本和安全；入门读者可了解新工具；商业读者关注平台策略变化。",
+      "reader_risk": "可能因计费不明确导致读者误用产生费用，需明确风险提示。"
+    },
+    "mass_interest_hook": {
+      "score": 6,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "AI Agent 免注册部署听起来很酷，但背后可能隐藏账单陷阱，普通人也会好奇。",
+      "story_seed": "一个开发者让 AI Agent 自动部署，结果收到意外账单的故事。",
+      "do_not_overhype": "不能声称临时账号完全免费或安全，必须强调证据缺口。"
+    },
+    "topic_tension": {
+      "score": 7,
+      "conflict_point": "便利性 vs. 计费和安全风险的不透明",
+      "debate_question": "Cloudflare 临时账号是降低门槛还是埋雷？",
+      "stakeholders": [
+        "独立开发者",
+        "Cloudflare 平台",
+        "AI Agent 开发者",
+        "安全研究人员"
+      ],
+      "why_people_would_comment": "读者可以分享使用体验、讨论计费风险、质疑平台策略。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2026-06-19: Cloudflare 发布临时账号功能",
+      "2026-06-19: 官方 changelog 发布"
+    ],
+    "evidence_table": [
+      {
+        "source": "Cloudflare Developers Changelog",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/",
+        "supports": "功能存在，部署流程，60分钟存活，claim 机制",
+        "reliability": "official"
+      },
+      {
+        "source": "Cloudflare Workers Pricing",
+        "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+        "supports": "免费计划额度（10万请求/天），但未提及临时账号",
+        "reliability": "official"
+      },
+      {
+        "source": "Cloudflare Workers Limits",
+        "url": "https://developers.cloudflare.com/workers/platform/limits/",
+        "supports": "平台限制，但未提及临时账号",
+        "reliability": "official"
+      },
+      {
+        "source": "Cloudflare Security Model",
+        "url": "https://developers.cloudflare.com/workers/reference/security-model/",
+        "supports": "安全架构，但未提及临时账号隔离",
+        "reliability": "official"
+      },
+      {
+        "source": "Cofense Blog - Cloudflare Abuse",
+        "url": "https://cofense.com/blog/how-cloudflare-services-are-abused-for-credential-theft-and-malware-distribution",
+        "supports": "Cloudflare 服务被滥用的案例，但未直接涉及临时账号",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "部分闭环：功能存在，但计费、安全、配额等关键信息缺失，无法形成完整判断。",
+    "writeable_angles": [
+      {
+        "angle": "临时账号的计费风险分析",
+        "why": "最核心的读者关切，但证据不足，需补证",
+        "needs": "官方计费说明、社区案例"
+      },
+      {
+        "angle": "临时账号的安全隔离与滥用风险",
+        "why": "安全是技术人第二关切，有间接证据",
+        "needs": "官方隔离机制说明、滥用案例"
+      },
+      {
+        "angle": "临时账号对 AI Agent 开发工作流的影响",
+        "why": "正面价值，但需平衡风险",
+        "needs": "实际使用案例、对比传统部署"
+      }
+    ],
+    "missing_basics": [
+      "临时账号是否适用免费计划额度",
+      "临时账号的计费归属（谁付费）",
+      "临时账号的安全隔离机制",
+      "临时账号的配额限制（请求数、带宽、CPU时间）",
+      "Claim 账号后的计费规则"
+    ],
+    "missing_materials": [
+      "官方关于临时账号计费的明确文档",
+      "官方关于临时账号安全隔离的说明",
+      "社区讨论或案例（如 Reddit、Hacker News）",
+      "安全分析报告或博客文章"
+    ],
+    "not_claimable": [
+      "临时账号完全免费",
+      "临时账号安全无风险",
+      "所有 Agent 都适合使用临时账号部署",
+      "Cloudflare 已解决所有计费和安全问题"
+    ],
+    "followup_queries": [
+      "Cloudflare Workers temporary account billing",
+      "Cloudflare Workers temporary account security isolation",
+      "Cloudflare Workers temporary account limits",
+      "Cloudflare Workers temporary account abuse",
+      "Cloudflare Workers claim account billing"
+    ],
+    "additional_search_queries": [
+      "Cloudflare Workers temporary account billing",
+      "Cloudflare Workers temporary account security isolation",
+      "Cloudflare Workers temporary account limits",
+      "Cloudflare Workers temporary account abuse",
+      "Cloudflare Workers claim account billing"
+    ],
+    "stop_conditions": [
+      "官方明确说明临时账号计费归属和配额限制",
+      "出现大规模滥用或安全事件报道",
+      "社区出现大量负面反馈或账单纠纷"
+    ],
+    "confidence": 55.0,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "platform-rules",
+    "quality_gate": {
+      "pass": false,
+      "score": 55,
+      "fatal_issues": [
+        "核心事实没有来源：临时账号的计费归属、安全隔离、配额限制等关键信息无官方文档支持。"
+      ],
+      "warnings": [
+        "成本估算没有公式、单位或边界：未提供临时账号的计费模型。",
+        "没有说明主要服务哪层读者：primary_layer 为 '核心技术人'，但未明确区分。",
+        "泛兴趣钩子过度标题党：hook 声称 '免注册直接部署'，但正文证据接不住计费和安全风险。",
+        "没有真实传播张力：冲突点 '便利性 vs. 计费和安全风险的不透明' 缺乏具体案例支撑。",
+        "没有明确选题结论：verdict 为 '可选选题'，但未解释为什么值得选。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：logic_closure 为 '部分闭环'，关键证据缺失。",
+        "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在 fatal_issues 中体现。"
+      ],
+      "missing_evidence": [
+        "临时账号是否适用免费计划额度",
+        "临时账号的计费归属（谁付费）",
+        "临时账号的安全隔离机制",
+        "临时账号的配额限制（请求数、带宽、CPU时间）",
+        "Claim 账号后的计费规则",
+        "社区讨论或案例（如 Reddit、Hacker News）",
+        "安全分析报告或博客文章"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "Cloudflare Workers 临时账号部署 AI Agent 的真实成本、安全风险和适用场景是什么？",
+      "persona_discussion_question": "作为独立开发者，我该不该让 AI Agent 用临时账号部署 Workers？会不会产生意外账单或安全漏洞？",
+      "hidden_public_issue": "临时账号的计费归属不明确，可能导致开发者承担意外费用；同时，免注册部署可能被滥用，增加平台安全风险，最终转嫁给用户。",
+      "must_verify": [
+        "临时账号的计费归属：是免费额度内还是可能产生费用？",
+        "临时账号的安全限制：是否隔离？能否访问其他资源？",
+        "临时账号的配额限制：是否有请求数、带宽、CPU时间等限制？",
+        "Claim 账号后的计费规则：是否继承临时账号的用量？",
+        "是否支持 Workers Paid 计划下的临时账号？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Cloudflare Workers temporary account billing",
+          "why_needed": "确认临时账号是否计费、计费归属和免费额度范围。"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Cloudflare Workers temporary account security isolation",
+          "why_needed": "了解临时账号的安全隔离机制和潜在风险。"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Cloudflare Workers temporary account limits",
+          "why_needed": "确认临时账号的配额限制（请求数、带宽、CPU时间等）。"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Cloudflare Workers temporary account abuse",
+          "why_needed": "了解社区对临时账号被滥用的担忧和实际案例。"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Cloudflare Workers claim account billing",
+          "why_needed": "确认 Claim 账号后是否继承临时账号的用量及计费规则。"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "Cloudflare Workers pricing free plan",
+          "why_needed": "确认免费计划的额度是否适用于临时账号。"
+        }
+      ],
+      "expert_challenge_points": [
+        "临时账号的计费归属不明确，可能导致开发者承担意外费用。",
+        "免注册部署可能被滥用，增加平台安全风险。",
+        "临时账号的配额限制可能不足以支持生产级 Agent 部署。",
+        "Claim 账号后的计费规则不透明，可能隐藏额外成本。"
+      ],
+      "do_not_claim_yet": [
+        "临时账号完全免费",
+        "临时账号安全无风险",
+        "所有 Agent 都适合使用临时账号部署",
+        "Cloudflare 已解决所有计费和安全问题"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确标注计费和安全风险待验证，并引导读者关注官方文档更新。",
+      "downstream_materials_needed": [
+        "Cloudflare Workers 临时账号的官方文档链接",
+        "Cloudflare Workers 定价页面链接",
+        "社区讨论或案例（如 Reddit、Hacker News）",
+        "安全分析报告或博客文章"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Pricing · Cloudflare Workers docs",
+        "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+        "query": "Cloudflare Workers temporary account billing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/platform/pricing/#page\",\"headline\":\"Pricing · Cloudflare Workers docs\",\"description\":\"Workers plans and pricing information.\",\"url\":\"https://developers.cloudflare.com/workers/platform/pricing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-23\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Pricing · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(",
+        "fetch_error": ""
+      },
+      {
+        "title": "Temporary accounts for AI agent deployments · Changelog",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/",
+        "query": "Cloudflare Workers temporary account billing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/#page\",\"headline\":\"Temporary accounts for AI agent deployments · Changelog\",\"description\":\"Deploy Workers from AI agents with wrangler deploy --temporary, then claim the temporary account within 60 minutes.\",\"url\":\"https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/changelog-preview.png\",\"dateModified\":\"2026-06-19\",\"datePublished\":\"2026-06-19\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Temporary accounts for AI agent deployments · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-wi",
+        "fetch_error": ""
+      },
+      {
+        "title": "Billing and Limitations · Cloudflare Workers docs",
+        "url": "https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/",
+        "query": "Cloudflare Workers temporary account billing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/#page\",\"headline\":\"Billing and Limitations · Cloudflare Workers docs\",\"description\":\"Billing, troubleshooting, and limitations for Static assets on Workers\",\"url\":\"https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-23\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Billing and Limitations · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.as",
+        "fetch_error": ""
+      },
+      {
+        "title": "Security model · Cloudflare Workers docs",
+        "url": "https://developers.cloudflare.com/workers/reference/security-model/",
+        "query": "Cloudflare Workers temporary account security isolation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/reference/security-model/#page\",\"headline\":\"Security model · Cloudflare Workers docs\",\"description\":\"Understand the Workers security architecture, including V8 isolate sandboxing and Spectre mitigations.\",\"url\":\"https://developers.cloudflare.com/workers/reference/security-model/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-23\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Security model · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl",
+        "fetch_error": ""
+      },
+      {
+        "title": "Worker Isolation · Cloudflare for Platforms docs",
+        "url": "https://developers.cloudflare.com/cloudflare-for-platforms/workers-for-platforms/reference/worker-isolation/",
+        "query": "Cloudflare Workers temporary account security isolation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/cloudflare-for-platforms/workers-for-platforms/reference/worker-isolation/#page\",\"headline\":\"Worker Isolation · Cloudflare for Platforms docs\",\"description\":\"Choose between untrusted and trusted isolation modes for user Workers in a Workers for Platforms dispatch namespace.\",\"url\":\"https://developers.cloudflare.com/cloudflare-for-platforms/workers-for-platforms/reference/worker-isolation/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-21\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Worker Isolation · Cloudflare for Platforms docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){dis",
+        "fetch_error": ""
+      },
+      {
+        "title": "How Workers works · Cloudflare Workers docs",
+        "url": "https://developers.cloudflare.com/workers/reference/how-workers-works/",
+        "query": "Cloudflare Workers temporary account security isolation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/reference/how-workers-works/#page\",\"headline\":\"How Workers works · Cloudflare Workers docs\",\"description\":\"The difference between the Workers runtime versus traditional browsers and Node.js.\",\"url\":\"https://developers.cloudflare.com/workers/reference/how-workers-works/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-23\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} How Workers works · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero",
+        "fetch_error": ""
+      },
+      {
+        "title": "Limits · Cloudflare Workers docs",
+        "url": "https://developers.cloudflare.com/workers/platform/limits/",
+        "query": "Cloudflare Workers temporary account limits",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/platform/limits/#page\",\"headline\":\"Limits · Cloudflare Workers docs\",\"description\":\"Cloudflare Workers plan and platform limits.\",\"url\":\"https://developers.cloudflare.com/workers/platform/limits/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-06-03\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Limits · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:mi",
+        "fetch_error": ""
+      },
+      {
+        "title": "Limits · Cloudflare Workers KV docs",
+        "url": "https://developers.cloudflare.com/kv/platform/limits/",
+        "query": "Cloudflare Workers temporary account limits",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/kv/platform/limits/#page\",\"headline\":\"Limits · Cloudflare Workers KV docs\",\"description\":\"Workers KV account and namespace limits for reads, writes, key size, value size, and storage.\",\"url\":\"https://developers.cloudflare.com/kv/platform/limits/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-21\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Limits · Cloudflare Workers KV docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where",
+        "fetch_error": ""
+      },
+      {
+        "title": "Limits & pricing · Cloudflare Workers docs",
+        "url": "https://developers.cloudflare.com/workers/ci-cd/builds/limits-and-pricing/",
+        "query": "Cloudflare Workers temporary account limits",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/ci-cd/builds/limits-and-pricing/#page\",\"headline\":\"Limits & pricing · Cloudflare Workers docs\",\"description\":\"Limits & pricing for Workers Builds\",\"url\":\"https://developers.cloudflare.com/workers/ci-cd/builds/limits-and-pricing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-05-29\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Limits & pricing · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.",
+        "fetch_error": ""
+      },
+      {
+        "title": "The Unintentional Enabler: How Cloudflare Services are Abused for Credential Theft and Malware Distribution - Security Boulevard",
+        "url": "https://securityboulevard.com/2026/03/the-unintentional-enabler-how-cloudflare-services-are-abused-for-credential-theft-and-malware-distribution/",
+        "query": "Cloudflare Workers temporary account abuse",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "The Unintentional Enabler: How Cloudflare Services are Abused for Credential Theft and Malware Distribution",
+        "url": "https://cofense.com/blog/how-cloudflare-services-are-abused-for-credential-theft-and-malware-distribution",
+        "query": "Cloudflare Workers temporary account abuse",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "The Unintentional Enabler: How Cloudflare Services are Abused for Credential Theft and Malware Distribution window['kxt']=window['kxt']||function(){(window['kxt'].q=window['kxt'].q||[]).push(arguments)}; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'consent.default', 'consent': { 'functionality_storage': 'granted', 'personalization_storage': 'denied', 'analytics_storage': 'denied', 'ad_storage': 'denied' } }); window.asyncReady = function (callback) { document.readyState === \"interactive\" || document.readyState === \"complete\" ? callback() : document.addEventListener(\"DOMContentLoaded\", callback); }; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'consent.default', 'consent': { 'functionality_storage': 'granted', 'personalization_storage': 'denied', 'analytics_storage': 'denied', 'ad_storage': 'denied' } }); class PWP{async load({url:e,id:t}){let a=document.getElementById(t),r=await fetch(e);r.ok?(a.innerHTML=await r.text(),a.dispatchEvent(new Event(\"pwp.load\",{bubbles:!0,cancelable:!0})),document.dispatchEvent(this._hydrateObj(new Event(\"pwp.load\",{bubbles:!0,cancelable:!0}),{elm:a}))):console.error(\"PWP error retrieving page content at {url}\")}_hydrateObj=(e,t={})=>{for(let[a,r]of Object.entries(t))try{e[a]=r}catch{Object.defineProperty(e,a,{configurable:!0,get:()=>r})}return e}}window.PWP=new PWP; (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-5RQ37KH'); (function() { var didInit = fa",
+        "fetch_error": ""
+      },
+      {
+        "title": "Account Abuse Protection (Early Access) · Cloudflare bot solutions docs",
+        "url": "https://developers.cloudflare.com/bots/account-abuse-protection/",
+        "query": "Cloudflare Workers temporary account abuse",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/bots/account-abuse-protection/#page\",\"headline\":\"Account Abuse Protection (Early Access) · Cloudflare bot solutions docs\",\"description\":\"Detect and block automated abuse on login and registration endpoints.\",\"url\":\"https://developers.cloudflare.com/bots/account-abuse-protection/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/core-services-preview.png\",\"dateModified\":\"2026-05-05\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"},\"keywords\":[\"Account takeover\"]} Account Abuse Protection (Early Access) · Cloudflare bot solutions docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1re",
+        "fetch_error": ""
+      },
+      {
+        "title": "Usage based billing · Cloudflare Billing docs",
+        "url": "https://developers.cloudflare.com/billing/usage-based-billing/",
+        "query": "Cloudflare Workers claim account billing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/billing/understand/usage-based-billing/#page\",\"headline\":\"Usage-based billing · Cloudflare Billing docs\",\"description\":\"Products that bill based on metered consumption.\",\"url\":\"https://developers.cloudflare.com/billing/understand/usage-based-billing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/core-services-preview.png\",\"dateModified\":\"2026-05-29\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Usage-based billing · Cloudflare Billing docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>",
+        "fetch_error": ""
+      },
+      {
+        "title": "Workers AI billing dispute unanswered for 13 days - account cancellation threatened - #2 by tanmay - Billing - Cloudflare Community",
+        "url": "https://community.cloudflare.com/t/workers-ai-billing-dispute-unanswered-for-13-days-account-cancellation-threatened/922742/2",
+        "query": "Cloudflare Workers claim account billing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Overview · Cloudflare Billing docs",
+        "url": "https://developers.cloudflare.com/billing/",
+        "query": "Cloudflare Workers claim account billing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"@id\":\"https://developers.cloudflare.com/billing/#page\",\"headline\":\"Overview · Cloudflare Billing docs\",\"description\":\"Manage billing and subscriptions for your account.\",\"url\":\"https://developers.cloudflare.com/billing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/core-services-preview.png\",\"dateModified\":\"2026-05-29\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Overview · Cloudflare Billing docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;",
+        "fetch_error": ""
+      },
+      {
+        "title": "Workers & Pages Pricing | Cloudflare",
+        "url": "https://www.cloudflare.com/plans/developer-platform/",
+        "query": "Cloudflare Workers pricing free plan",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ".rich-text-renderer .richtext-bold-container,.rich-text-renderer .richtext-bold-container i span{font-weight:700!important}.rich-text-renderer .rt-quote p{font-size:inherit!important;font-weight:inherit!important;margin:0!important}.rich-text-renderer ul li>span>span p{margin-bottom:24px}.rich-text-renderer ul li>span>span p:last-child{margin-bottom:0}.rich-text-renderer ol li>span>span p{margin-bottom:24px}.rich-text-renderer ol li>span>span p:last-child{margin-bottom:0}.rich-text-renderer table th span.fw7{color:#f63}@media screen and (min-width:1000px){.sticky-rich-text-renderer{max-height:700px;overflow-y:scroll;position:sticky;top:150px}}.br-checkbox{-webkit-user-select:none;user-select:none}.br-checkbox input{cursor:pointer}.br-checkbox input:checked~.checkmark{background-color:#0051c3;border-color:#0051c3}.br-checkbox input:checked~.checkmark:after{display:block}.br-checkbox .checkmark{left:0;top:0}.br-checkbox .checkmark:after{border:solid #fff;border-width:0 2px 2px 0;content:\"\";display:none;height:10px;left:8px;position:absolute;top:4px;transform:rotate(45deg);width:5px}.pay-enterprise-card .learn-more:after{content:url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='10' fill='none' viewBox='0 0 6 10'%3E%3Cpath stroke='%23F63' stroke-width='1.2' d='M.71.801 4.91 5 .71 9.199'/%3E%3C/svg%3E\");top:0}.feature-card{position:relative}.feature-card .ol-text{display:flex;flex-direction:column;padding:15px;position:absolute;width:100%}.feature-card .ol-text__sup{color:#003682;font-size:.8rem;font-weight:700;letter-spacing:.1rem;margin-bottom:8px;text-transform:uppercase}.feature-card .ol-text__text{color:#fff;font-size:1.5rem}@media (max-width:749px){.feature-card .ol-text{padding:25px}.feature-card .ol-text__sup{font-size:",
+        "fetch_error": ""
+      },
+      {
+        "title": "Pricing · Cloudflare Workers AI docs",
+        "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+        "query": "Cloudflare Workers pricing free plan",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers-ai/platform/pricing/#page\",\"headline\":\"Pricing · Cloudflare Workers AI docs\",\"description\":\"Workers AI pricing is based on Neurons, with a free daily allocation and per-model rates.\",\"url\":\"https://developers.cloudflare.com/workers-ai/platform/pricing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-06-16\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Pricing · Cloudflare Workers AI docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>",
+        "fetch_error": ""
+      },
+      {
+        "title": "Pricing · Cloudflare Workers KV docs",
+        "url": "https://developers.cloudflare.com/kv/platform/pricing/",
+        "query": "Cloudflare Workers pricing free plan",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/kv/platform/pricing/#page\",\"headline\":\"Pricing · Cloudflare Workers KV docs\",\"description\":\"Workers KV pricing for read, write, delete, and list operations, plus storage costs and billing FAQ.\",\"url\":\"https://developers.cloudflare.com/kv/platform/pricing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-21\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Pricing · Cloudflare Workers KV docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：临时账号的计费归属、安全隔离、配额限制等关键信息无官方文档支持。"
+    },
+    "core_question": "Cloudflare Workers 临时账号部署 AI Agent 的真实成本、安全风险和适用场景是什么？",
+    "why_this_topic_matters": "AI Agent 部署需求快速增长，Cloudflare 降低注册门槛可能改变开发者工作流，但计费和安全风险不明确，可能带来意外账单或滥用问题。",
+    "fact_summary": [
+      "Cloudflare 允许 AI Agent 通过 wrangler deploy --temporary 免注册部署 Workers，部署后存活 60 分钟。",
+      "需要 Wrangler 4.102.0+，且用户必须已 logout。",
+      "临时部署会返回 live URL 和 claim URL，claim 后可转为正式账号。",
+      "官方文档未明确说明临时账号的计费归属、配额限制和安全隔离机制。",
+      "Cloudflare 有 Workers 免费计划（10万请求/天），但临时账号是否适用未知。",
+      "社区有 Cloudflare 服务被滥用的案例（如凭证窃取、恶意软件分发），但未直接涉及临时账号。"
+    ],
+    "persona_discussion_question": "作为独立开发者，我该不该让 AI Agent 用临时账号部署 Workers？会不会产生意外账单或安全漏洞？",
+    "old_flower_stance": "临时账号降低了 AI Agent 部署门槛，但计费和安全风险不透明，普通技术人应谨慎使用，避免意外账单。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 7,
+      "why_interested": "技术人关心部署效率、成本和安全；入门读者可了解新工具；商业读者关注平台策略变化。",
+      "reader_risk": "可能因计费不明确导致读者误用产生费用，需明确风险提示。"
+    },
+    "mass_interest_hook": {
+      "score": 6,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "AI Agent 免注册部署听起来很酷，但背后可能隐藏账单陷阱，普通人也会好奇。",
+      "story_seed": "一个开发者让 AI Agent 自动部署，结果收到意外账单的故事。",
+      "do_not_overhype": "不能声称临时账号完全免费或安全，必须强调证据缺口。"
+    },
+    "topic_tension": {
+      "score": 7,
+      "conflict_point": "便利性 vs. 计费和安全风险的不透明",
+      "debate_question": "Cloudflare 临时账号是降低门槛还是埋雷？",
+      "stakeholders": [
+        "独立开发者",
+        "Cloudflare 平台",
+        "AI Agent 开发者",
+        "安全研究人员"
+      ],
+      "why_people_would_comment": "读者可以分享使用体验、讨论计费风险、质疑平台策略。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2026-06-19: Cloudflare 发布临时账号功能",
+      "2026-06-19: 官方 changelog 发布"
+    ],
+    "evidence_table": [
+      {
+        "source": "Cloudflare Developers Changelog",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/",
+        "supports": "功能存在，部署流程，60分钟存活，claim 机制",
+        "reliability": "official"
+      },
+      {
+        "source": "Cloudflare Workers Pricing",
+        "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+        "supports": "免费计划额度（10万请求/天），但未提及临时账号",
+        "reliability": "official"
+      },
+      {
+        "source": "Cloudflare Workers Limits",
+        "url": "https://developers.cloudflare.com/workers/platform/limits/",
+        "supports": "平台限制，但未提及临时账号",
+        "reliability": "official"
+      },
+      {
+        "source": "Cloudflare Security Model",
+        "url": "https://developers.cloudflare.com/workers/reference/security-model/",
+        "supports": "安全架构，但未提及临时账号隔离",
+        "reliability": "official"
+      },
+      {
+        "source": "Cofense Blog - Cloudflare Abuse",
+        "url": "https://cofense.com/blog/how-cloudflare-services-are-abused-for-credential-theft-and-malware-distribution",
+        "supports": "Cloudflare 服务被滥用的案例，但未直接涉及临时账号",
+        "reliability": "media"
+      }
+    ],
+    "logic_closure": "部分闭环：功能存在，但计费、安全、配额等关键信息缺失，无法形成完整判断。",
+    "writeable_angles": [
+      {
+        "angle": "临时账号的计费风险分析",
+        "why": "最核心的读者关切，但证据不足，需补证",
+        "needs": "官方计费说明、社区案例"
+      },
+      {
+        "angle": "临时账号的安全隔离与滥用风险",
+        "why": "安全是技术人第二关切，有间接证据",
+        "needs": "官方隔离机制说明、滥用案例"
+      },
+      {
+        "angle": "临时账号对 AI Agent 开发工作流的影响",
+        "why": "正面价值，但需平衡风险",
+        "needs": "实际使用案例、对比传统部署"
+      }
+    ],
+    "missing_basics": [
+      "临时账号是否适用免费计划额度",
+      "临时账号的计费归属（谁付费）",
+      "临时账号的安全隔离机制",
+      "临时账号的配额限制（请求数、带宽、CPU时间）",
+      "Claim 账号后的计费规则"
+    ],
+    "missing_materials": [
+      "官方关于临时账号计费的明确文档",
+      "官方关于临时账号安全隔离的说明",
+      "社区讨论或案例（如 Reddit、Hacker News）",
+      "安全分析报告或博客文章"
+    ],
+    "not_claimable": [
+      "临时账号完全免费",
+      "临时账号安全无风险",
+      "所有 Agent 都适合使用临时账号部署",
+      "Cloudflare 已解决所有计费和安全问题"
+    ],
+    "followup_queries": [
+      "Cloudflare Workers temporary account billing",
+      "Cloudflare Workers temporary account security isolation",
+      "Cloudflare Workers temporary account limits",
+      "Cloudflare Workers temporary account abuse",
+      "Cloudflare Workers claim account billing"
+    ],
+    "additional_search_queries": [
+      "Cloudflare Workers temporary account billing",
+      "Cloudflare Workers temporary account security isolation",
+      "Cloudflare Workers temporary account limits",
+      "Cloudflare Workers temporary account abuse",
+      "Cloudflare Workers claim account billing"
+    ],
+    "stop_conditions": [
+      "官方明确说明临时账号计费归属和配额限制",
+      "出现大规模滥用或安全事件报道",
+      "社区出现大量负面反馈或账单纠纷"
+    ],
+    "confidence": 55.0,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "platform-rules",
+    "quality_gate": {
+      "pass": false,
+      "score": 55,
+      "fatal_issues": [
+        "核心事实没有来源：临时账号的计费归属、安全隔离、配额限制等关键信息无官方文档支持。"
+      ],
+      "warnings": [
+        "成本估算没有公式、单位或边界：未提供临时账号的计费模型。",
+        "没有说明主要服务哪层读者：primary_layer 为 '核心技术人'，但未明确区分。",
+        "泛兴趣钩子过度标题党：hook 声称 '免注册直接部署'，但正文证据接不住计费和安全风险。",
+        "没有真实传播张力：冲突点 '便利性 vs. 计费和安全风险的不透明' 缺乏具体案例支撑。",
+        "没有明确选题结论：verdict 为 '可选选题'，但未解释为什么值得选。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：logic_closure 为 '部分闭环'，关键证据缺失。",
+        "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在 fatal_issues 中体现。"
+      ],
+      "missing_evidence": [
+        "临时账号是否适用免费计划额度",
+        "临时账号的计费归属（谁付费）",
+        "临时账号的安全隔离机制",
+        "临时账号的配额限制（请求数、带宽、CPU时间）",
+        "Claim 账号后的计费规则",
+        "社区讨论或案例（如 Reddit、Hacker News）",
+        "安全分析报告或博客文章"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "Cloudflare Workers 临时账号部署 AI Agent 的真实成本、安全风险和适用场景是什么？",
+      "persona_discussion_question": "作为独立开发者，我该不该让 AI Agent 用临时账号部署 Workers？会不会产生意外账单或安全漏洞？",
+      "hidden_public_issue": "临时账号的计费归属不明确，可能导致开发者承担意外费用；同时，免注册部署可能被滥用，增加平台安全风险，最终转嫁给用户。",
+      "must_verify": [
+        "临时账号的计费归属：是免费额度内还是可能产生费用？",
+        "临时账号的安全限制：是否隔离？能否访问其他资源？",
+        "临时账号的配额限制：是否有请求数、带宽、CPU时间等限制？",
+        "Claim 账号后的计费规则：是否继承临时账号的用量？",
+        "是否支持 Workers Paid 计划下的临时账号？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Cloudflare Workers temporary account billing",
+          "why_needed": "确认临时账号是否计费、计费归属和免费额度范围。"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Cloudflare Workers temporary account security isolation",
+          "why_needed": "了解临时账号的安全隔离机制和潜在风险。"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Cloudflare Workers temporary account limits",
+          "why_needed": "确认临时账号的配额限制（请求数、带宽、CPU时间等）。"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Cloudflare Workers temporary account abuse",
+          "why_needed": "了解社区对临时账号被滥用的担忧和实际案例。"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Cloudflare Workers claim account billing",
+          "why_needed": "确认 Claim 账号后是否继承临时账号的用量及计费规则。"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "Cloudflare Workers pricing free plan",
+          "why_needed": "确认免费计划的额度是否适用于临时账号。"
+        }
+      ],
+      "expert_challenge_points": [
+        "临时账号的计费归属不明确，可能导致开发者承担意外费用。",
+        "免注册部署可能被滥用，增加平台安全风险。",
+        "临时账号的配额限制可能不足以支持生产级 Agent 部署。",
+        "Claim 账号后的计费规则不透明，可能隐藏额外成本。"
+      ],
+      "do_not_claim_yet": [
+        "临时账号完全免费",
+        "临时账号安全无风险",
+        "所有 Agent 都适合使用临时账号部署",
+        "Cloudflare 已解决所有计费和安全问题"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确标注计费和安全风险待验证，并引导读者关注官方文档更新。",
+      "downstream_materials_needed": [
+        "Cloudflare Workers 临时账号的官方文档链接",
+        "Cloudflare Workers 定价页面链接",
+        "社区讨论或案例（如 Reddit、Hacker News）",
+        "安全分析报告或博客文章"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Pricing · Cloudflare Workers docs",
+        "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+        "query": "Cloudflare Workers temporary account billing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/platform/pricing/#page\",\"headline\":\"Pricing · Cloudflare Workers docs\",\"description\":\"Workers plans and pricing information.\",\"url\":\"https://developers.cloudflare.com/workers/platform/pricing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-23\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Pricing · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(",
+        "fetch_error": ""
+      },
+      {
+        "title": "Temporary accounts for AI agent deployments · Changelog",
+        "url": "https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/",
+        "query": "Cloudflare Workers temporary account billing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/#page\",\"headline\":\"Temporary accounts for AI agent deployments · Changelog\",\"description\":\"Deploy Workers from AI agents with wrangler deploy --temporary, then claim the temporary account within 60 minutes.\",\"url\":\"https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/changelog-preview.png\",\"dateModified\":\"2026-06-19\",\"datePublished\":\"2026-06-19\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Temporary accounts for AI agent deployments · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-wi",
+        "fetch_error": ""
+      },
+      {
+        "title": "Billing and Limitations · Cloudflare Workers docs",
+        "url": "https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/",
+        "query": "Cloudflare Workers temporary account billing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/#page\",\"headline\":\"Billing and Limitations · Cloudflare Workers docs\",\"description\":\"Billing, troubleshooting, and limitations for Static assets on Workers\",\"url\":\"https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-23\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Billing and Limitations · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.as",
+        "fetch_error": ""
+      },
+      {
+        "title": "Security model · Cloudflare Workers docs",
+        "url": "https://developers.cloudflare.com/workers/reference/security-model/",
+        "query": "Cloudflare Workers temporary account security isolation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/reference/security-model/#page\",\"headline\":\"Security model · Cloudflare Workers docs\",\"description\":\"Understand the Workers security architecture, including V8 isolate sandboxing and Spectre mitigations.\",\"url\":\"https://developers.cloudflare.com/workers/reference/security-model/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-23\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Security model · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl",
+        "fetch_error": ""
+      },
+      {
+        "title": "Worker Isolation · Cloudflare for Platforms docs",
+        "url": "https://developers.cloudflare.com/cloudflare-for-platforms/workers-for-platforms/reference/worker-isolation/",
+        "query": "Cloudflare Workers temporary account security isolation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/cloudflare-for-platforms/workers-for-platforms/reference/worker-isolation/#page\",\"headline\":\"Worker Isolation · Cloudflare for Platforms docs\",\"description\":\"Choose between untrusted and trusted isolation modes for user Workers in a Workers for Platforms dispatch namespace.\",\"url\":\"https://developers.cloudflare.com/cloudflare-for-platforms/workers-for-platforms/reference/worker-isolation/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-21\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Worker Isolation · Cloudflare for Platforms docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){dis",
+        "fetch_error": ""
+      },
+      {
+        "title": "How Workers works · Cloudflare Workers docs",
+        "url": "https://developers.cloudflare.com/workers/reference/how-workers-works/",
+        "query": "Cloudflare Workers temporary account security isolation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/reference/how-workers-works/#page\",\"headline\":\"How Workers works · Cloudflare Workers docs\",\"description\":\"The difference between the Workers runtime versus traditional browsers and Node.js.\",\"url\":\"https://developers.cloudflare.com/workers/reference/how-workers-works/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-23\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} How Workers works · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero",
+        "fetch_error": ""
+      },
+      {
+        "title": "Limits · Cloudflare Workers docs",
+        "url": "https://developers.cloudflare.com/workers/platform/limits/",
+        "query": "Cloudflare Workers temporary account limits",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/platform/limits/#page\",\"headline\":\"Limits · Cloudflare Workers docs\",\"description\":\"Cloudflare Workers plan and platform limits.\",\"url\":\"https://developers.cloudflare.com/workers/platform/limits/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-06-03\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Limits · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:mi",
+        "fetch_error": ""
+      },
+      {
+        "title": "Limits · Cloudflare Workers KV docs",
+        "url": "https://developers.cloudflare.com/kv/platform/limits/",
+        "query": "Cloudflare Workers temporary account limits",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/kv/platform/limits/#page\",\"headline\":\"Limits · Cloudflare Workers KV docs\",\"description\":\"Workers KV account and namespace limits for reads, writes, key size, value size, and storage.\",\"url\":\"https://developers.cloudflare.com/kv/platform/limits/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-21\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Limits · Cloudflare Workers KV docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where",
+        "fetch_error": ""
+      },
+      {
+        "title": "Limits & pricing · Cloudflare Workers docs",
+        "url": "https://developers.cloudflare.com/workers/ci-cd/builds/limits-and-pricing/",
+        "query": "Cloudflare Workers temporary account limits",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/ci-cd/builds/limits-and-pricing/#page\",\"headline\":\"Limits & pricing · Cloudflare Workers docs\",\"description\":\"Limits & pricing for Workers Builds\",\"url\":\"https://developers.cloudflare.com/workers/ci-cd/builds/limits-and-pricing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-05-29\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Limits & pricing · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.",
+        "fetch_error": ""
+      },
+      {
+        "title": "The Unintentional Enabler: How Cloudflare Services are Abused for Credential Theft and Malware Distribution - Security Boulevard",
+        "url": "https://securityboulevard.com/2026/03/the-unintentional-enabler-how-cloudflare-services-are-abused-for-credential-theft-and-malware-distribution/",
+        "query": "Cloudflare Workers temporary account abuse",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "The Unintentional Enabler: How Cloudflare Services are Abused for Credential Theft and Malware Distribution",
+        "url": "https://cofense.com/blog/how-cloudflare-services-are-abused-for-credential-theft-and-malware-distribution",
+        "query": "Cloudflare Workers temporary account abuse",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "The Unintentional Enabler: How Cloudflare Services are Abused for Credential Theft and Malware Distribution window['kxt']=window['kxt']||function(){(window['kxt'].q=window['kxt'].q||[]).push(arguments)}; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'consent.default', 'consent': { 'functionality_storage': 'granted', 'personalization_storage': 'denied', 'analytics_storage': 'denied', 'ad_storage': 'denied' } }); window.asyncReady = function (callback) { document.readyState === \"interactive\" || document.readyState === \"complete\" ? callback() : document.addEventListener(\"DOMContentLoaded\", callback); }; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'consent.default', 'consent': { 'functionality_storage': 'granted', 'personalization_storage': 'denied', 'analytics_storage': 'denied', 'ad_storage': 'denied' } }); class PWP{async load({url:e,id:t}){let a=document.getElementById(t),r=await fetch(e);r.ok?(a.innerHTML=await r.text(),a.dispatchEvent(new Event(\"pwp.load\",{bubbles:!0,cancelable:!0})),document.dispatchEvent(this._hydrateObj(new Event(\"pwp.load\",{bubbles:!0,cancelable:!0}),{elm:a}))):console.error(\"PWP error retrieving page content at {url}\")}_hydrateObj=(e,t={})=>{for(let[a,r]of Object.entries(t))try{e[a]=r}catch{Object.defineProperty(e,a,{configurable:!0,get:()=>r})}return e}}window.PWP=new PWP; (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-5RQ37KH'); (function() { var didInit = fa",
+        "fetch_error": ""
+      },
+      {
+        "title": "Account Abuse Protection (Early Access) · Cloudflare bot solutions docs",
+        "url": "https://developers.cloudflare.com/bots/account-abuse-protection/",
+        "query": "Cloudflare Workers temporary account abuse",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/bots/account-abuse-protection/#page\",\"headline\":\"Account Abuse Protection (Early Access) · Cloudflare bot solutions docs\",\"description\":\"Detect and block automated abuse on login and registration endpoints.\",\"url\":\"https://developers.cloudflare.com/bots/account-abuse-protection/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/core-services-preview.png\",\"dateModified\":\"2026-05-05\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"},\"keywords\":[\"Account takeover\"]} Account Abuse Protection (Early Access) · Cloudflare bot solutions docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1re",
+        "fetch_error": ""
+      },
+      {
+        "title": "Usage based billing · Cloudflare Billing docs",
+        "url": "https://developers.cloudflare.com/billing/usage-based-billing/",
+        "query": "Cloudflare Workers claim account billing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/billing/understand/usage-based-billing/#page\",\"headline\":\"Usage-based billing · Cloudflare Billing docs\",\"description\":\"Products that bill based on metered consumption.\",\"url\":\"https://developers.cloudflare.com/billing/understand/usage-based-billing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/core-services-preview.png\",\"dateModified\":\"2026-05-29\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Usage-based billing · Cloudflare Billing docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>",
+        "fetch_error": ""
+      },
+      {
+        "title": "Workers AI billing dispute unanswered for 13 days - account cancellation threatened - #2 by tanmay - Billing - Cloudflare Community",
+        "url": "https://community.cloudflare.com/t/workers-ai-billing-dispute-unanswered-for-13-days-account-cancellation-threatened/922742/2",
+        "query": "Cloudflare Workers claim account billing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Overview · Cloudflare Billing docs",
+        "url": "https://developers.cloudflare.com/billing/",
+        "query": "Cloudflare Workers claim account billing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"@id\":\"https://developers.cloudflare.com/billing/#page\",\"headline\":\"Overview · Cloudflare Billing docs\",\"description\":\"Manage billing and subscriptions for your account.\",\"url\":\"https://developers.cloudflare.com/billing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/core-services-preview.png\",\"dateModified\":\"2026-05-29\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Overview · Cloudflare Billing docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;",
+        "fetch_error": ""
+      },
+      {
+        "title": "Workers & Pages Pricing | Cloudflare",
+        "url": "https://www.cloudflare.com/plans/developer-platform/",
+        "query": "Cloudflare Workers pricing free plan",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": ".rich-text-renderer .richtext-bold-container,.rich-text-renderer .richtext-bold-container i span{font-weight:700!important}.rich-text-renderer .rt-quote p{font-size:inherit!important;font-weight:inherit!important;margin:0!important}.rich-text-renderer ul li>span>span p{margin-bottom:24px}.rich-text-renderer ul li>span>span p:last-child{margin-bottom:0}.rich-text-renderer ol li>span>span p{margin-bottom:24px}.rich-text-renderer ol li>span>span p:last-child{margin-bottom:0}.rich-text-renderer table th span.fw7{color:#f63}@media screen and (min-width:1000px){.sticky-rich-text-renderer{max-height:700px;overflow-y:scroll;position:sticky;top:150px}}.br-checkbox{-webkit-user-select:none;user-select:none}.br-checkbox input{cursor:pointer}.br-checkbox input:checked~.checkmark{background-color:#0051c3;border-color:#0051c3}.br-checkbox input:checked~.checkmark:after{display:block}.br-checkbox .checkmark{left:0;top:0}.br-checkbox .checkmark:after{border:solid #fff;border-width:0 2px 2px 0;content:\"\";display:none;height:10px;left:8px;position:absolute;top:4px;transform:rotate(45deg);width:5px}.pay-enterprise-card .learn-more:after{content:url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='10' fill='none' viewBox='0 0 6 10'%3E%3Cpath stroke='%23F63' stroke-width='1.2' d='M.71.801 4.91 5 .71 9.199'/%3E%3C/svg%3E\");top:0}.feature-card{position:relative}.feature-card .ol-text{display:flex;flex-direction:column;padding:15px;position:absolute;width:100%}.feature-card .ol-text__sup{color:#003682;font-size:.8rem;font-weight:700;letter-spacing:.1rem;margin-bottom:8px;text-transform:uppercase}.feature-card .ol-text__text{color:#fff;font-size:1.5rem}@media (max-width:749px){.feature-card .ol-text{padding:25px}.feature-card .ol-text__sup{font-size:",
+        "fetch_error": ""
+      },
+      {
+        "title": "Pricing · Cloudflare Workers AI docs",
+        "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+        "query": "Cloudflare Workers pricing free plan",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers-ai/platform/pricing/#page\",\"headline\":\"Pricing · Cloudflare Workers AI docs\",\"description\":\"Workers AI pricing is based on Neurons, with a free daily allocation and per-model rates.\",\"url\":\"https://developers.cloudflare.com/workers-ai/platform/pricing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-06-16\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Pricing · Cloudflare Workers AI docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>",
+        "fetch_error": ""
+      },
+      {
+        "title": "Pricing · Cloudflare Workers KV docs",
+        "url": "https://developers.cloudflare.com/kv/platform/pricing/",
+        "query": "Cloudflare Workers pricing free plan",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/kv/platform/pricing/#page\",\"headline\":\"Pricing · Cloudflare Workers KV docs\",\"description\":\"Workers KV pricing for read, write, delete, and list operations, plus storage costs and billing FAQ.\",\"url\":\"https://developers.cloudflare.com/kv/platform/pricing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-21\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Pricing · Cloudflare Workers KV docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260620-workers-temporary-accounts-for-ai-agent-deployme-ce493042/",
+    "for_gpt_editor": {
+      "brief": "AI agents can now deploy Workers to Cloudflare without first requiring a user to sign up, open a browser-based OAuth flow, click through the dashboard, or create an API token. When an agent tries to deploy without Cloudflare credentials, Wrangler can tell it to rerun with --temporary , then deploy the Worker to a temporary preview account. To try this with your agent, update to Wrangler 4.102.0 or later, make sure you are logged out ( wrangler logout ), and then ask your agent to build something and deploy it to Cloudflare. The agent should follow Wrangler's output and deploy using the --temporary flag. wrangler deploy --temporary The temporary deployment stays live for 60 minutes. During that window, the agent can verify the Worker, redeploy changes, and return both the live Worker URL and claim URL. Opening the claim URL lets you sign in to or create a Cloudflare account and make the t",
+      "title_seed": "Cloudflare Workers 支持 AI Agent 临时账号部署",
+      "original_title": "Workers - Temporary accounts for AI agent deployments",
+      "source_url": "https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：临时账号的计费归属、安全隔离、配额限制等关键信息无官方文档支持。"
+        },
+        "core_question": "Cloudflare Workers 临时账号部署 AI Agent 的真实成本、安全风险和适用场景是什么？",
+        "why_this_topic_matters": "AI Agent 部署需求快速增长，Cloudflare 降低注册门槛可能改变开发者工作流，但计费和安全风险不明确，可能带来意外账单或滥用问题。",
+        "fact_summary": [
+          "Cloudflare 允许 AI Agent 通过 wrangler deploy --temporary 免注册部署 Workers，部署后存活 60 分钟。",
+          "需要 Wrangler 4.102.0+，且用户必须已 logout。",
+          "临时部署会返回 live URL 和 claim URL，claim 后可转为正式账号。",
+          "官方文档未明确说明临时账号的计费归属、配额限制和安全隔离机制。",
+          "Cloudflare 有 Workers 免费计划（10万请求/天），但临时账号是否适用未知。",
+          "社区有 Cloudflare 服务被滥用的案例（如凭证窃取、恶意软件分发），但未直接涉及临时账号。"
+        ],
+        "persona_discussion_question": "作为独立开发者，我该不该让 AI Agent 用临时账号部署 Workers？会不会产生意外账单或安全漏洞？",
+        "old_flower_stance": "临时账号降低了 AI Agent 部署门槛，但计费和安全风险不透明，普通技术人应谨慎使用，避免意外账单。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 7,
+          "why_interested": "技术人关心部署效率、成本和安全；入门读者可了解新工具；商业读者关注平台策略变化。",
+          "reader_risk": "可能因计费不明确导致读者误用产生费用，需明确风险提示。"
+        },
+        "mass_interest_hook": {
+          "score": 6,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "AI Agent 免注册部署听起来很酷，但背后可能隐藏账单陷阱，普通人也会好奇。",
+          "story_seed": "一个开发者让 AI Agent 自动部署，结果收到意外账单的故事。",
+          "do_not_overhype": "不能声称临时账号完全免费或安全，必须强调证据缺口。"
+        },
+        "topic_tension": {
+          "score": 7,
+          "conflict_point": "便利性 vs. 计费和安全风险的不透明",
+          "debate_question": "Cloudflare 临时账号是降低门槛还是埋雷？",
+          "stakeholders": [
+            "独立开发者",
+            "Cloudflare 平台",
+            "AI Agent 开发者",
+            "安全研究人员"
+          ],
+          "why_people_would_comment": "读者可以分享使用体验、讨论计费风险、质疑平台策略。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2026-06-19: Cloudflare 发布临时账号功能",
+          "2026-06-19: 官方 changelog 发布"
+        ],
+        "evidence_table": [
+          {
+            "source": "Cloudflare Developers Changelog",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/",
+            "supports": "功能存在，部署流程，60分钟存活，claim 机制",
+            "reliability": "official"
+          },
+          {
+            "source": "Cloudflare Workers Pricing",
+            "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+            "supports": "免费计划额度（10万请求/天），但未提及临时账号",
+            "reliability": "official"
+          },
+          {
+            "source": "Cloudflare Workers Limits",
+            "url": "https://developers.cloudflare.com/workers/platform/limits/",
+            "supports": "平台限制，但未提及临时账号",
+            "reliability": "official"
+          },
+          {
+            "source": "Cloudflare Security Model",
+            "url": "https://developers.cloudflare.com/workers/reference/security-model/",
+            "supports": "安全架构，但未提及临时账号隔离",
+            "reliability": "official"
+          },
+          {
+            "source": "Cofense Blog - Cloudflare Abuse",
+            "url": "https://cofense.com/blog/how-cloudflare-services-are-abused-for-credential-theft-and-malware-distribution",
+            "supports": "Cloudflare 服务被滥用的案例，但未直接涉及临时账号",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "部分闭环：功能存在，但计费、安全、配额等关键信息缺失，无法形成完整判断。",
+        "writeable_angles": [
+          {
+            "angle": "临时账号的计费风险分析",
+            "why": "最核心的读者关切，但证据不足，需补证",
+            "needs": "官方计费说明、社区案例"
+          },
+          {
+            "angle": "临时账号的安全隔离与滥用风险",
+            "why": "安全是技术人第二关切，有间接证据",
+            "needs": "官方隔离机制说明、滥用案例"
+          },
+          {
+            "angle": "临时账号对 AI Agent 开发工作流的影响",
+            "why": "正面价值，但需平衡风险",
+            "needs": "实际使用案例、对比传统部署"
+          }
+        ],
+        "missing_basics": [
+          "临时账号是否适用免费计划额度",
+          "临时账号的计费归属（谁付费）",
+          "临时账号的安全隔离机制",
+          "临时账号的配额限制（请求数、带宽、CPU时间）",
+          "Claim 账号后的计费规则"
+        ],
+        "missing_materials": [
+          "官方关于临时账号计费的明确文档",
+          "官方关于临时账号安全隔离的说明",
+          "社区讨论或案例（如 Reddit、Hacker News）",
+          "安全分析报告或博客文章"
+        ],
+        "not_claimable": [
+          "临时账号完全免费",
+          "临时账号安全无风险",
+          "所有 Agent 都适合使用临时账号部署",
+          "Cloudflare 已解决所有计费和安全问题"
+        ],
+        "followup_queries": [
+          "Cloudflare Workers temporary account billing",
+          "Cloudflare Workers temporary account security isolation",
+          "Cloudflare Workers temporary account limits",
+          "Cloudflare Workers temporary account abuse",
+          "Cloudflare Workers claim account billing"
+        ],
+        "additional_search_queries": [
+          "Cloudflare Workers temporary account billing",
+          "Cloudflare Workers temporary account security isolation",
+          "Cloudflare Workers temporary account limits",
+          "Cloudflare Workers temporary account abuse",
+          "Cloudflare Workers claim account billing"
+        ],
+        "stop_conditions": [
+          "官方明确说明临时账号计费归属和配额限制",
+          "出现大规模滥用或安全事件报道",
+          "社区出现大量负面反馈或账单纠纷"
+        ],
+        "confidence": 55.0,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "platform-rules",
+        "quality_gate": {
+          "pass": false,
+          "score": 55,
+          "fatal_issues": [
+            "核心事实没有来源：临时账号的计费归属、安全隔离、配额限制等关键信息无官方文档支持。"
+          ],
+          "warnings": [
+            "成本估算没有公式、单位或边界：未提供临时账号的计费模型。",
+            "没有说明主要服务哪层读者：primary_layer 为 '核心技术人'，但未明确区分。",
+            "泛兴趣钩子过度标题党：hook 声称 '免注册直接部署'，但正文证据接不住计费和安全风险。",
+            "没有真实传播张力：冲突点 '便利性 vs. 计费和安全风险的不透明' 缺乏具体案例支撑。",
+            "没有明确选题结论：verdict 为 '可选选题'，但未解释为什么值得选。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：logic_closure 为 '部分闭环'，关键证据缺失。",
+            "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在 fatal_issues 中体现。"
+          ],
+          "missing_evidence": [
+            "临时账号是否适用免费计划额度",
+            "临时账号的计费归属（谁付费）",
+            "临时账号的安全隔离机制",
+            "临时账号的配额限制（请求数、带宽、CPU时间）",
+            "Claim 账号后的计费规则",
+            "社区讨论或案例（如 Reddit、Hacker News）",
+            "安全分析报告或博客文章"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "Cloudflare Workers 临时账号部署 AI Agent 的真实成本、安全风险和适用场景是什么？",
+          "persona_discussion_question": "作为独立开发者，我该不该让 AI Agent 用临时账号部署 Workers？会不会产生意外账单或安全漏洞？",
+          "hidden_public_issue": "临时账号的计费归属不明确，可能导致开发者承担意外费用；同时，免注册部署可能被滥用，增加平台安全风险，最终转嫁给用户。",
+          "must_verify": [
+            "临时账号的计费归属：是免费额度内还是可能产生费用？",
+            "临时账号的安全限制：是否隔离？能否访问其他资源？",
+            "临时账号的配额限制：是否有请求数、带宽、CPU时间等限制？",
+            "Claim 账号后的计费规则：是否继承临时账号的用量？",
+            "是否支持 Workers Paid 计划下的临时账号？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Cloudflare Workers temporary account billing",
+              "why_needed": "确认临时账号是否计费、计费归属和免费额度范围。"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Cloudflare Workers temporary account security isolation",
+              "why_needed": "了解临时账号的安全隔离机制和潜在风险。"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Cloudflare Workers temporary account limits",
+              "why_needed": "确认临时账号的配额限制（请求数、带宽、CPU时间等）。"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Cloudflare Workers temporary account abuse",
+              "why_needed": "了解社区对临时账号被滥用的担忧和实际案例。"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Cloudflare Workers claim account billing",
+              "why_needed": "确认 Claim 账号后是否继承临时账号的用量及计费规则。"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "Cloudflare Workers pricing free plan",
+              "why_needed": "确认免费计划的额度是否适用于临时账号。"
+            }
+          ],
+          "expert_challenge_points": [
+            "临时账号的计费归属不明确，可能导致开发者承担意外费用。",
+            "免注册部署可能被滥用，增加平台安全风险。",
+            "临时账号的配额限制可能不足以支持生产级 Agent 部署。",
+            "Claim 账号后的计费规则不透明，可能隐藏额外成本。"
+          ],
+          "do_not_claim_yet": [
+            "临时账号完全免费",
+            "临时账号安全无风险",
+            "所有 Agent 都适合使用临时账号部署",
+            "Cloudflare 已解决所有计费和安全问题"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确标注计费和安全风险待验证，并引导读者关注官方文档更新。",
+          "downstream_materials_needed": [
+            "Cloudflare Workers 临时账号的官方文档链接",
+            "Cloudflare Workers 定价页面链接",
+            "社区讨论或案例（如 Reddit、Hacker News）",
+            "安全分析报告或博客文章"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Pricing · Cloudflare Workers docs",
+            "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+            "query": "Cloudflare Workers temporary account billing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/platform/pricing/#page\",\"headline\":\"Pricing · Cloudflare Workers docs\",\"description\":\"Workers plans and pricing information.\",\"url\":\"https://developers.cloudflare.com/workers/platform/pricing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-23\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Pricing · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(",
+            "fetch_error": ""
+          },
+          {
+            "title": "Temporary accounts for AI agent deployments · Changelog",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/",
+            "query": "Cloudflare Workers temporary account billing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/#page\",\"headline\":\"Temporary accounts for AI agent deployments · Changelog\",\"description\":\"Deploy Workers from AI agents with wrangler deploy --temporary, then claim the temporary account within 60 minutes.\",\"url\":\"https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/changelog-preview.png\",\"dateModified\":\"2026-06-19\",\"datePublished\":\"2026-06-19\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Temporary accounts for AI agent deployments · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-wi",
+            "fetch_error": ""
+          },
+          {
+            "title": "Billing and Limitations · Cloudflare Workers docs",
+            "url": "https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/",
+            "query": "Cloudflare Workers temporary account billing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/#page\",\"headline\":\"Billing and Limitations · Cloudflare Workers docs\",\"description\":\"Billing, troubleshooting, and limitations for Static assets on Workers\",\"url\":\"https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-23\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Billing and Limitations · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.as",
+            "fetch_error": ""
+          },
+          {
+            "title": "Security model · Cloudflare Workers docs",
+            "url": "https://developers.cloudflare.com/workers/reference/security-model/",
+            "query": "Cloudflare Workers temporary account security isolation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/reference/security-model/#page\",\"headline\":\"Security model · Cloudflare Workers docs\",\"description\":\"Understand the Workers security architecture, including V8 isolate sandboxing and Spectre mitigations.\",\"url\":\"https://developers.cloudflare.com/workers/reference/security-model/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-23\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Security model · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl",
+            "fetch_error": ""
+          },
+          {
+            "title": "Worker Isolation · Cloudflare for Platforms docs",
+            "url": "https://developers.cloudflare.com/cloudflare-for-platforms/workers-for-platforms/reference/worker-isolation/",
+            "query": "Cloudflare Workers temporary account security isolation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/cloudflare-for-platforms/workers-for-platforms/reference/worker-isolation/#page\",\"headline\":\"Worker Isolation · Cloudflare for Platforms docs\",\"description\":\"Choose between untrusted and trusted isolation modes for user Workers in a Workers for Platforms dispatch namespace.\",\"url\":\"https://developers.cloudflare.com/cloudflare-for-platforms/workers-for-platforms/reference/worker-isolation/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-21\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Worker Isolation · Cloudflare for Platforms docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){dis",
+            "fetch_error": ""
+          },
+          {
+            "title": "How Workers works · Cloudflare Workers docs",
+            "url": "https://developers.cloudflare.com/workers/reference/how-workers-works/",
+            "query": "Cloudflare Workers temporary account security isolation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/reference/how-workers-works/#page\",\"headline\":\"How Workers works · Cloudflare Workers docs\",\"description\":\"The difference between the Workers runtime versus traditional browsers and Node.js.\",\"url\":\"https://developers.cloudflare.com/workers/reference/how-workers-works/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-23\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} How Workers works · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero",
+            "fetch_error": ""
+          },
+          {
+            "title": "Limits · Cloudflare Workers docs",
+            "url": "https://developers.cloudflare.com/workers/platform/limits/",
+            "query": "Cloudflare Workers temporary account limits",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/platform/limits/#page\",\"headline\":\"Limits · Cloudflare Workers docs\",\"description\":\"Cloudflare Workers plan and platform limits.\",\"url\":\"https://developers.cloudflare.com/workers/platform/limits/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-06-03\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Limits · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:mi",
+            "fetch_error": ""
+          },
+          {
+            "title": "Limits · Cloudflare Workers KV docs",
+            "url": "https://developers.cloudflare.com/kv/platform/limits/",
+            "query": "Cloudflare Workers temporary account limits",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/kv/platform/limits/#page\",\"headline\":\"Limits · Cloudflare Workers KV docs\",\"description\":\"Workers KV account and namespace limits for reads, writes, key size, value size, and storage.\",\"url\":\"https://developers.cloudflare.com/kv/platform/limits/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-21\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Limits · Cloudflare Workers KV docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where",
+            "fetch_error": ""
+          },
+          {
+            "title": "Limits & pricing · Cloudflare Workers docs",
+            "url": "https://developers.cloudflare.com/workers/ci-cd/builds/limits-and-pricing/",
+            "query": "Cloudflare Workers temporary account limits",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/ci-cd/builds/limits-and-pricing/#page\",\"headline\":\"Limits & pricing · Cloudflare Workers docs\",\"description\":\"Limits & pricing for Workers Builds\",\"url\":\"https://developers.cloudflare.com/workers/ci-cd/builds/limits-and-pricing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-05-29\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Limits & pricing · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.",
+            "fetch_error": ""
+          },
+          {
+            "title": "The Unintentional Enabler: How Cloudflare Services are Abused for Credential Theft and Malware Distribution - Security Boulevard",
+            "url": "https://securityboulevard.com/2026/03/the-unintentional-enabler-how-cloudflare-services-are-abused-for-credential-theft-and-malware-distribution/",
+            "query": "Cloudflare Workers temporary account abuse",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "The Unintentional Enabler: How Cloudflare Services are Abused for Credential Theft and Malware Distribution",
+            "url": "https://cofense.com/blog/how-cloudflare-services-are-abused-for-credential-theft-and-malware-distribution",
+            "query": "Cloudflare Workers temporary account abuse",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "The Unintentional Enabler: How Cloudflare Services are Abused for Credential Theft and Malware Distribution window['kxt']=window['kxt']||function(){(window['kxt'].q=window['kxt'].q||[]).push(arguments)}; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'consent.default', 'consent': { 'functionality_storage': 'granted', 'personalization_storage': 'denied', 'analytics_storage': 'denied', 'ad_storage': 'denied' } }); window.asyncReady = function (callback) { document.readyState === \"interactive\" || document.readyState === \"complete\" ? callback() : document.addEventListener(\"DOMContentLoaded\", callback); }; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'consent.default', 'consent': { 'functionality_storage': 'granted', 'personalization_storage': 'denied', 'analytics_storage': 'denied', 'ad_storage': 'denied' } }); class PWP{async load({url:e,id:t}){let a=document.getElementById(t),r=await fetch(e);r.ok?(a.innerHTML=await r.text(),a.dispatchEvent(new Event(\"pwp.load\",{bubbles:!0,cancelable:!0})),document.dispatchEvent(this._hydrateObj(new Event(\"pwp.load\",{bubbles:!0,cancelable:!0}),{elm:a}))):console.error(\"PWP error retrieving page content at {url}\")}_hydrateObj=(e,t={})=>{for(let[a,r]of Object.entries(t))try{e[a]=r}catch{Object.defineProperty(e,a,{configurable:!0,get:()=>r})}return e}}window.PWP=new PWP; (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-5RQ37KH'); (function() { var didInit = fa",
+            "fetch_error": ""
+          },
+          {
+            "title": "Account Abuse Protection (Early Access) · Cloudflare bot solutions docs",
+            "url": "https://developers.cloudflare.com/bots/account-abuse-protection/",
+            "query": "Cloudflare Workers temporary account abuse",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/bots/account-abuse-protection/#page\",\"headline\":\"Account Abuse Protection (Early Access) · Cloudflare bot solutions docs\",\"description\":\"Detect and block automated abuse on login and registration endpoints.\",\"url\":\"https://developers.cloudflare.com/bots/account-abuse-protection/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/core-services-preview.png\",\"dateModified\":\"2026-05-05\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"},\"keywords\":[\"Account takeover\"]} Account Abuse Protection (Early Access) · Cloudflare bot solutions docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1re",
+            "fetch_error": ""
+          },
+          {
+            "title": "Usage based billing · Cloudflare Billing docs",
+            "url": "https://developers.cloudflare.com/billing/usage-based-billing/",
+            "query": "Cloudflare Workers claim account billing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/billing/understand/usage-based-billing/#page\",\"headline\":\"Usage-based billing · Cloudflare Billing docs\",\"description\":\"Products that bill based on metered consumption.\",\"url\":\"https://developers.cloudflare.com/billing/understand/usage-based-billing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/core-services-preview.png\",\"dateModified\":\"2026-05-29\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Usage-based billing · Cloudflare Billing docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>",
+            "fetch_error": ""
+          },
+          {
+            "title": "Workers AI billing dispute unanswered for 13 days - account cancellation threatened - #2 by tanmay - Billing - Cloudflare Community",
+            "url": "https://community.cloudflare.com/t/workers-ai-billing-dispute-unanswered-for-13-days-account-cancellation-threatened/922742/2",
+            "query": "Cloudflare Workers claim account billing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Overview · Cloudflare Billing docs",
+            "url": "https://developers.cloudflare.com/billing/",
+            "query": "Cloudflare Workers claim account billing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"@id\":\"https://developers.cloudflare.com/billing/#page\",\"headline\":\"Overview · Cloudflare Billing docs\",\"description\":\"Manage billing and subscriptions for your account.\",\"url\":\"https://developers.cloudflare.com/billing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/core-services-preview.png\",\"dateModified\":\"2026-05-29\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Overview · Cloudflare Billing docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;",
+            "fetch_error": ""
+          },
+          {
+            "title": "Workers & Pages Pricing | Cloudflare",
+            "url": "https://www.cloudflare.com/plans/developer-platform/",
+            "query": "Cloudflare Workers pricing free plan",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ".rich-text-renderer .richtext-bold-container,.rich-text-renderer .richtext-bold-container i span{font-weight:700!important}.rich-text-renderer .rt-quote p{font-size:inherit!important;font-weight:inherit!important;margin:0!important}.rich-text-renderer ul li>span>span p{margin-bottom:24px}.rich-text-renderer ul li>span>span p:last-child{margin-bottom:0}.rich-text-renderer ol li>span>span p{margin-bottom:24px}.rich-text-renderer ol li>span>span p:last-child{margin-bottom:0}.rich-text-renderer table th span.fw7{color:#f63}@media screen and (min-width:1000px){.sticky-rich-text-renderer{max-height:700px;overflow-y:scroll;position:sticky;top:150px}}.br-checkbox{-webkit-user-select:none;user-select:none}.br-checkbox input{cursor:pointer}.br-checkbox input:checked~.checkmark{background-color:#0051c3;border-color:#0051c3}.br-checkbox input:checked~.checkmark:after{display:block}.br-checkbox .checkmark{left:0;top:0}.br-checkbox .checkmark:after{border:solid #fff;border-width:0 2px 2px 0;content:\"\";display:none;height:10px;left:8px;position:absolute;top:4px;transform:rotate(45deg);width:5px}.pay-enterprise-card .learn-more:after{content:url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='10' fill='none' viewBox='0 0 6 10'%3E%3Cpath stroke='%23F63' stroke-width='1.2' d='M.71.801 4.91 5 .71 9.199'/%3E%3C/svg%3E\");top:0}.feature-card{position:relative}.feature-card .ol-text{display:flex;flex-direction:column;padding:15px;position:absolute;width:100%}.feature-card .ol-text__sup{color:#003682;font-size:.8rem;font-weight:700;letter-spacing:.1rem;margin-bottom:8px;text-transform:uppercase}.feature-card .ol-text__text{color:#fff;font-size:1.5rem}@media (max-width:749px){.feature-card .ol-text{padding:25px}.feature-card .ol-text__sup{font-size:",
+            "fetch_error": ""
+          },
+          {
+            "title": "Pricing · Cloudflare Workers AI docs",
+            "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+            "query": "Cloudflare Workers pricing free plan",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers-ai/platform/pricing/#page\",\"headline\":\"Pricing · Cloudflare Workers AI docs\",\"description\":\"Workers AI pricing is based on Neurons, with a free daily allocation and per-model rates.\",\"url\":\"https://developers.cloudflare.com/workers-ai/platform/pricing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-06-16\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Pricing · Cloudflare Workers AI docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>",
+            "fetch_error": ""
+          },
+          {
+            "title": "Pricing · Cloudflare Workers KV docs",
+            "url": "https://developers.cloudflare.com/kv/platform/pricing/",
+            "query": "Cloudflare Workers pricing free plan",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/kv/platform/pricing/#page\",\"headline\":\"Pricing · Cloudflare Workers KV docs\",\"description\":\"Workers KV pricing for read, write, delete, and list operations, plus storage costs and billing FAQ.\",\"url\":\"https://developers.cloudflare.com/kv/platform/pricing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-21\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Pricing · Cloudflare Workers KV docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：临时账号的计费归属、安全隔离、配额限制等关键信息无官方文档支持。"
+        },
+        "core_question": "Cloudflare Workers 临时账号部署 AI Agent 的真实成本、安全风险和适用场景是什么？",
+        "why_this_topic_matters": "AI Agent 部署需求快速增长，Cloudflare 降低注册门槛可能改变开发者工作流，但计费和安全风险不明确，可能带来意外账单或滥用问题。",
+        "fact_summary": [
+          "Cloudflare 允许 AI Agent 通过 wrangler deploy --temporary 免注册部署 Workers，部署后存活 60 分钟。",
+          "需要 Wrangler 4.102.0+，且用户必须已 logout。",
+          "临时部署会返回 live URL 和 claim URL，claim 后可转为正式账号。",
+          "官方文档未明确说明临时账号的计费归属、配额限制和安全隔离机制。",
+          "Cloudflare 有 Workers 免费计划（10万请求/天），但临时账号是否适用未知。",
+          "社区有 Cloudflare 服务被滥用的案例（如凭证窃取、恶意软件分发），但未直接涉及临时账号。"
+        ],
+        "persona_discussion_question": "作为独立开发者，我该不该让 AI Agent 用临时账号部署 Workers？会不会产生意外账单或安全漏洞？",
+        "old_flower_stance": "临时账号降低了 AI Agent 部署门槛，但计费和安全风险不透明，普通技术人应谨慎使用，避免意外账单。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 7,
+          "why_interested": "技术人关心部署效率、成本和安全；入门读者可了解新工具；商业读者关注平台策略变化。",
+          "reader_risk": "可能因计费不明确导致读者误用产生费用，需明确风险提示。"
+        },
+        "mass_interest_hook": {
+          "score": 6,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "AI Agent 免注册部署听起来很酷，但背后可能隐藏账单陷阱，普通人也会好奇。",
+          "story_seed": "一个开发者让 AI Agent 自动部署，结果收到意外账单的故事。",
+          "do_not_overhype": "不能声称临时账号完全免费或安全，必须强调证据缺口。"
+        },
+        "topic_tension": {
+          "score": 7,
+          "conflict_point": "便利性 vs. 计费和安全风险的不透明",
+          "debate_question": "Cloudflare 临时账号是降低门槛还是埋雷？",
+          "stakeholders": [
+            "独立开发者",
+            "Cloudflare 平台",
+            "AI Agent 开发者",
+            "安全研究人员"
+          ],
+          "why_people_would_comment": "读者可以分享使用体验、讨论计费风险、质疑平台策略。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2026-06-19: Cloudflare 发布临时账号功能",
+          "2026-06-19: 官方 changelog 发布"
+        ],
+        "evidence_table": [
+          {
+            "source": "Cloudflare Developers Changelog",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/",
+            "supports": "功能存在，部署流程，60分钟存活，claim 机制",
+            "reliability": "official"
+          },
+          {
+            "source": "Cloudflare Workers Pricing",
+            "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+            "supports": "免费计划额度（10万请求/天），但未提及临时账号",
+            "reliability": "official"
+          },
+          {
+            "source": "Cloudflare Workers Limits",
+            "url": "https://developers.cloudflare.com/workers/platform/limits/",
+            "supports": "平台限制，但未提及临时账号",
+            "reliability": "official"
+          },
+          {
+            "source": "Cloudflare Security Model",
+            "url": "https://developers.cloudflare.com/workers/reference/security-model/",
+            "supports": "安全架构，但未提及临时账号隔离",
+            "reliability": "official"
+          },
+          {
+            "source": "Cofense Blog - Cloudflare Abuse",
+            "url": "https://cofense.com/blog/how-cloudflare-services-are-abused-for-credential-theft-and-malware-distribution",
+            "supports": "Cloudflare 服务被滥用的案例，但未直接涉及临时账号",
+            "reliability": "media"
+          }
+        ],
+        "logic_closure": "部分闭环：功能存在，但计费、安全、配额等关键信息缺失，无法形成完整判断。",
+        "writeable_angles": [
+          {
+            "angle": "临时账号的计费风险分析",
+            "why": "最核心的读者关切，但证据不足，需补证",
+            "needs": "官方计费说明、社区案例"
+          },
+          {
+            "angle": "临时账号的安全隔离与滥用风险",
+            "why": "安全是技术人第二关切，有间接证据",
+            "needs": "官方隔离机制说明、滥用案例"
+          },
+          {
+            "angle": "临时账号对 AI Agent 开发工作流的影响",
+            "why": "正面价值，但需平衡风险",
+            "needs": "实际使用案例、对比传统部署"
+          }
+        ],
+        "missing_basics": [
+          "临时账号是否适用免费计划额度",
+          "临时账号的计费归属（谁付费）",
+          "临时账号的安全隔离机制",
+          "临时账号的配额限制（请求数、带宽、CPU时间）",
+          "Claim 账号后的计费规则"
+        ],
+        "missing_materials": [
+          "官方关于临时账号计费的明确文档",
+          "官方关于临时账号安全隔离的说明",
+          "社区讨论或案例（如 Reddit、Hacker News）",
+          "安全分析报告或博客文章"
+        ],
+        "not_claimable": [
+          "临时账号完全免费",
+          "临时账号安全无风险",
+          "所有 Agent 都适合使用临时账号部署",
+          "Cloudflare 已解决所有计费和安全问题"
+        ],
+        "followup_queries": [
+          "Cloudflare Workers temporary account billing",
+          "Cloudflare Workers temporary account security isolation",
+          "Cloudflare Workers temporary account limits",
+          "Cloudflare Workers temporary account abuse",
+          "Cloudflare Workers claim account billing"
+        ],
+        "additional_search_queries": [
+          "Cloudflare Workers temporary account billing",
+          "Cloudflare Workers temporary account security isolation",
+          "Cloudflare Workers temporary account limits",
+          "Cloudflare Workers temporary account abuse",
+          "Cloudflare Workers claim account billing"
+        ],
+        "stop_conditions": [
+          "官方明确说明临时账号计费归属和配额限制",
+          "出现大规模滥用或安全事件报道",
+          "社区出现大量负面反馈或账单纠纷"
+        ],
+        "confidence": 55.0,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "platform-rules",
+        "quality_gate": {
+          "pass": false,
+          "score": 55,
+          "fatal_issues": [
+            "核心事实没有来源：临时账号的计费归属、安全隔离、配额限制等关键信息无官方文档支持。"
+          ],
+          "warnings": [
+            "成本估算没有公式、单位或边界：未提供临时账号的计费模型。",
+            "没有说明主要服务哪层读者：primary_layer 为 '核心技术人'，但未明确区分。",
+            "泛兴趣钩子过度标题党：hook 声称 '免注册直接部署'，但正文证据接不住计费和安全风险。",
+            "没有真实传播张力：冲突点 '便利性 vs. 计费和安全风险的不透明' 缺乏具体案例支撑。",
+            "没有明确选题结论：verdict 为 '可选选题'，但未解释为什么值得选。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：logic_closure 为 '部分闭环'，关键证据缺失。",
+            "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在 fatal_issues 中体现。"
+          ],
+          "missing_evidence": [
+            "临时账号是否适用免费计划额度",
+            "临时账号的计费归属（谁付费）",
+            "临时账号的安全隔离机制",
+            "临时账号的配额限制（请求数、带宽、CPU时间）",
+            "Claim 账号后的计费规则",
+            "社区讨论或案例（如 Reddit、Hacker News）",
+            "安全分析报告或博客文章"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "Cloudflare Workers 临时账号部署 AI Agent 的真实成本、安全风险和适用场景是什么？",
+          "persona_discussion_question": "作为独立开发者，我该不该让 AI Agent 用临时账号部署 Workers？会不会产生意外账单或安全漏洞？",
+          "hidden_public_issue": "临时账号的计费归属不明确，可能导致开发者承担意外费用；同时，免注册部署可能被滥用，增加平台安全风险，最终转嫁给用户。",
+          "must_verify": [
+            "临时账号的计费归属：是免费额度内还是可能产生费用？",
+            "临时账号的安全限制：是否隔离？能否访问其他资源？",
+            "临时账号的配额限制：是否有请求数、带宽、CPU时间等限制？",
+            "Claim 账号后的计费规则：是否继承临时账号的用量？",
+            "是否支持 Workers Paid 计划下的临时账号？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Cloudflare Workers temporary account billing",
+              "why_needed": "确认临时账号是否计费、计费归属和免费额度范围。"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Cloudflare Workers temporary account security isolation",
+              "why_needed": "了解临时账号的安全隔离机制和潜在风险。"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Cloudflare Workers temporary account limits",
+              "why_needed": "确认临时账号的配额限制（请求数、带宽、CPU时间等）。"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Cloudflare Workers temporary account abuse",
+              "why_needed": "了解社区对临时账号被滥用的担忧和实际案例。"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Cloudflare Workers claim account billing",
+              "why_needed": "确认 Claim 账号后是否继承临时账号的用量及计费规则。"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "Cloudflare Workers pricing free plan",
+              "why_needed": "确认免费计划的额度是否适用于临时账号。"
+            }
+          ],
+          "expert_challenge_points": [
+            "临时账号的计费归属不明确，可能导致开发者承担意外费用。",
+            "免注册部署可能被滥用，增加平台安全风险。",
+            "临时账号的配额限制可能不足以支持生产级 Agent 部署。",
+            "Claim 账号后的计费规则不透明，可能隐藏额外成本。"
+          ],
+          "do_not_claim_yet": [
+            "临时账号完全免费",
+            "临时账号安全无风险",
+            "所有 Agent 都适合使用临时账号部署",
+            "Cloudflare 已解决所有计费和安全问题"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确标注计费和安全风险待验证，并引导读者关注官方文档更新。",
+          "downstream_materials_needed": [
+            "Cloudflare Workers 临时账号的官方文档链接",
+            "Cloudflare Workers 定价页面链接",
+            "社区讨论或案例（如 Reddit、Hacker News）",
+            "安全分析报告或博客文章"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Pricing · Cloudflare Workers docs",
+            "url": "https://developers.cloudflare.com/workers/platform/pricing/",
+            "query": "Cloudflare Workers temporary account billing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/platform/pricing/#page\",\"headline\":\"Pricing · Cloudflare Workers docs\",\"description\":\"Workers plans and pricing information.\",\"url\":\"https://developers.cloudflare.com/workers/platform/pricing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-23\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Pricing · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(",
+            "fetch_error": ""
+          },
+          {
+            "title": "Temporary accounts for AI agent deployments · Changelog",
+            "url": "https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/",
+            "query": "Cloudflare Workers temporary account billing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"@id\":\"https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/#page\",\"headline\":\"Temporary accounts for AI agent deployments · Changelog\",\"description\":\"Deploy Workers from AI agents with wrangler deploy --temporary, then claim the temporary account within 60 minutes.\",\"url\":\"https://developers.cloudflare.com/changelog/post/2026-06-19-temporary-accounts-for-agents/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/changelog-preview.png\",\"dateModified\":\"2026-06-19\",\"datePublished\":\"2026-06-19\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Temporary accounts for AI agent deployments · Changelog window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .sl-container{--sl-content-wi",
+            "fetch_error": ""
+          },
+          {
+            "title": "Billing and Limitations · Cloudflare Workers docs",
+            "url": "https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/",
+            "query": "Cloudflare Workers temporary account billing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/#page\",\"headline\":\"Billing and Limitations · Cloudflare Workers docs\",\"description\":\"Billing, troubleshooting, and limitations for Static assets on Workers\",\"url\":\"https://developers.cloudflare.com/workers/static-assets/billing-and-limitations/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-23\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Billing and Limitations · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.as",
+            "fetch_error": ""
+          },
+          {
+            "title": "Security model · Cloudflare Workers docs",
+            "url": "https://developers.cloudflare.com/workers/reference/security-model/",
+            "query": "Cloudflare Workers temporary account security isolation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/reference/security-model/#page\",\"headline\":\"Security model · Cloudflare Workers docs\",\"description\":\"Understand the Workers security architecture, including V8 isolate sandboxing and Spectre mitigations.\",\"url\":\"https://developers.cloudflare.com/workers/reference/security-model/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-23\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Security model · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl",
+            "fetch_error": ""
+          },
+          {
+            "title": "Worker Isolation · Cloudflare for Platforms docs",
+            "url": "https://developers.cloudflare.com/cloudflare-for-platforms/workers-for-platforms/reference/worker-isolation/",
+            "query": "Cloudflare Workers temporary account security isolation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/cloudflare-for-platforms/workers-for-platforms/reference/worker-isolation/#page\",\"headline\":\"Worker Isolation · Cloudflare for Platforms docs\",\"description\":\"Choose between untrusted and trusted isolation modes for user Workers in a Workers for Platforms dispatch namespace.\",\"url\":\"https://developers.cloudflare.com/cloudflare-for-platforms/workers-for-platforms/reference/worker-isolation/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-21\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Worker Isolation · Cloudflare for Platforms docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){dis",
+            "fetch_error": ""
+          },
+          {
+            "title": "How Workers works · Cloudflare Workers docs",
+            "url": "https://developers.cloudflare.com/workers/reference/how-workers-works/",
+            "query": "Cloudflare Workers temporary account security isolation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/reference/how-workers-works/#page\",\"headline\":\"How Workers works · Cloudflare Workers docs\",\"description\":\"The difference between the Workers runtime versus traditional browsers and Node.js.\",\"url\":\"https://developers.cloudflare.com/workers/reference/how-workers-works/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-23\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} How Workers works · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero",
+            "fetch_error": ""
+          },
+          {
+            "title": "Limits · Cloudflare Workers docs",
+            "url": "https://developers.cloudflare.com/workers/platform/limits/",
+            "query": "Cloudflare Workers temporary account limits",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/platform/limits/#page\",\"headline\":\"Limits · Cloudflare Workers docs\",\"description\":\"Cloudflare Workers plan and platform limits.\",\"url\":\"https://developers.cloudflare.com/workers/platform/limits/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-06-03\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Limits · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:mi",
+            "fetch_error": ""
+          },
+          {
+            "title": "Limits · Cloudflare Workers KV docs",
+            "url": "https://developers.cloudflare.com/kv/platform/limits/",
+            "query": "Cloudflare Workers temporary account limits",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/kv/platform/limits/#page\",\"headline\":\"Limits · Cloudflare Workers KV docs\",\"description\":\"Workers KV account and namespace limits for reads, writes, key size, value size, and storage.\",\"url\":\"https://developers.cloudflare.com/kv/platform/limits/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-21\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Limits · Cloudflare Workers KV docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where",
+            "fetch_error": ""
+          },
+          {
+            "title": "Limits & pricing · Cloudflare Workers docs",
+            "url": "https://developers.cloudflare.com/workers/ci-cd/builds/limits-and-pricing/",
+            "query": "Cloudflare Workers temporary account limits",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers/ci-cd/builds/limits-and-pricing/#page\",\"headline\":\"Limits & pricing · Cloudflare Workers docs\",\"description\":\"Limits & pricing for Workers Builds\",\"url\":\"https://developers.cloudflare.com/workers/ci-cd/builds/limits-and-pricing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-05-29\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Limits & pricing · Cloudflare Workers docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.",
+            "fetch_error": ""
+          },
+          {
+            "title": "The Unintentional Enabler: How Cloudflare Services are Abused for Credential Theft and Malware Distribution - Security Boulevard",
+            "url": "https://securityboulevard.com/2026/03/the-unintentional-enabler-how-cloudflare-services-are-abused-for-credential-theft-and-malware-distribution/",
+            "query": "Cloudflare Workers temporary account abuse",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "The Unintentional Enabler: How Cloudflare Services are Abused for Credential Theft and Malware Distribution",
+            "url": "https://cofense.com/blog/how-cloudflare-services-are-abused-for-credential-theft-and-malware-distribution",
+            "query": "Cloudflare Workers temporary account abuse",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "The Unintentional Enabler: How Cloudflare Services are Abused for Credential Theft and Malware Distribution window['kxt']=window['kxt']||function(){(window['kxt'].q=window['kxt'].q||[]).push(arguments)}; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'consent.default', 'consent': { 'functionality_storage': 'granted', 'personalization_storage': 'denied', 'analytics_storage': 'denied', 'ad_storage': 'denied' } }); window.asyncReady = function (callback) { document.readyState === \"interactive\" || document.readyState === \"complete\" ? callback() : document.addEventListener(\"DOMContentLoaded\", callback); }; window.dataLayer = window.dataLayer || []; window.dataLayer.push({ 'event': 'consent.default', 'consent': { 'functionality_storage': 'granted', 'personalization_storage': 'denied', 'analytics_storage': 'denied', 'ad_storage': 'denied' } }); class PWP{async load({url:e,id:t}){let a=document.getElementById(t),r=await fetch(e);r.ok?(a.innerHTML=await r.text(),a.dispatchEvent(new Event(\"pwp.load\",{bubbles:!0,cancelable:!0})),document.dispatchEvent(this._hydrateObj(new Event(\"pwp.load\",{bubbles:!0,cancelable:!0}),{elm:a}))):console.error(\"PWP error retrieving page content at {url}\")}_hydrateObj=(e,t={})=>{for(let[a,r]of Object.entries(t))try{e[a]=r}catch{Object.defineProperty(e,a,{configurable:!0,get:()=>r})}return e}}window.PWP=new PWP; (function (w, d, s, l, i) { w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' }); var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f); })(window, document, 'script', 'dataLayer', 'GTM-5RQ37KH'); (function() { var didInit = fa",
+            "fetch_error": ""
+          },
+          {
+            "title": "Account Abuse Protection (Early Access) · Cloudflare bot solutions docs",
+            "url": "https://developers.cloudflare.com/bots/account-abuse-protection/",
+            "query": "Cloudflare Workers temporary account abuse",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/bots/account-abuse-protection/#page\",\"headline\":\"Account Abuse Protection (Early Access) · Cloudflare bot solutions docs\",\"description\":\"Detect and block automated abuse on login and registration endpoints.\",\"url\":\"https://developers.cloudflare.com/bots/account-abuse-protection/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/core-services-preview.png\",\"dateModified\":\"2026-05-05\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"},\"keywords\":[\"Account takeover\"]} Account Abuse Protection (Early Access) · Cloudflare bot solutions docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1re",
+            "fetch_error": ""
+          },
+          {
+            "title": "Usage based billing · Cloudflare Billing docs",
+            "url": "https://developers.cloudflare.com/billing/usage-based-billing/",
+            "query": "Cloudflare Workers claim account billing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/billing/understand/usage-based-billing/#page\",\"headline\":\"Usage-based billing · Cloudflare Billing docs\",\"description\":\"Products that bill based on metered consumption.\",\"url\":\"https://developers.cloudflare.com/billing/understand/usage-based-billing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/core-services-preview.png\",\"dateModified\":\"2026-05-29\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Usage-based billing · Cloudflare Billing docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>",
+            "fetch_error": ""
+          },
+          {
+            "title": "Workers AI billing dispute unanswered for 13 days - account cancellation threatened - #2 by tanmay - Billing - Cloudflare Community",
+            "url": "https://community.cloudflare.com/t/workers-ai-billing-dispute-unanswered-for-13-days-account-cancellation-threatened/922742/2",
+            "query": "Cloudflare Workers claim account billing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Overview · Cloudflare Billing docs",
+            "url": "https://developers.cloudflare.com/billing/",
+            "query": "Cloudflare Workers claim account billing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"WebPage\",\"@id\":\"https://developers.cloudflare.com/billing/#page\",\"headline\":\"Overview · Cloudflare Billing docs\",\"description\":\"Manage billing and subscriptions for your account.\",\"url\":\"https://developers.cloudflare.com/billing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/core-services-preview.png\",\"dateModified\":\"2026-05-29\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Overview · Cloudflare Billing docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero-html:where(.astro-opidluyl){object-fit:contain;width:min(70%,20rem);height:auto;",
+            "fetch_error": ""
+          },
+          {
+            "title": "Workers & Pages Pricing | Cloudflare",
+            "url": "https://www.cloudflare.com/plans/developer-platform/",
+            "query": "Cloudflare Workers pricing free plan",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": ".rich-text-renderer .richtext-bold-container,.rich-text-renderer .richtext-bold-container i span{font-weight:700!important}.rich-text-renderer .rt-quote p{font-size:inherit!important;font-weight:inherit!important;margin:0!important}.rich-text-renderer ul li>span>span p{margin-bottom:24px}.rich-text-renderer ul li>span>span p:last-child{margin-bottom:0}.rich-text-renderer ol li>span>span p{margin-bottom:24px}.rich-text-renderer ol li>span>span p:last-child{margin-bottom:0}.rich-text-renderer table th span.fw7{color:#f63}@media screen and (min-width:1000px){.sticky-rich-text-renderer{max-height:700px;overflow-y:scroll;position:sticky;top:150px}}.br-checkbox{-webkit-user-select:none;user-select:none}.br-checkbox input{cursor:pointer}.br-checkbox input:checked~.checkmark{background-color:#0051c3;border-color:#0051c3}.br-checkbox input:checked~.checkmark:after{display:block}.br-checkbox .checkmark{left:0;top:0}.br-checkbox .checkmark:after{border:solid #fff;border-width:0 2px 2px 0;content:\"\";display:none;height:10px;left:8px;position:absolute;top:4px;transform:rotate(45deg);width:5px}.pay-enterprise-card .learn-more:after{content:url(\"data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='10' fill='none' viewBox='0 0 6 10'%3E%3Cpath stroke='%23F63' stroke-width='1.2' d='M.71.801 4.91 5 .71 9.199'/%3E%3C/svg%3E\");top:0}.feature-card{position:relative}.feature-card .ol-text{display:flex;flex-direction:column;padding:15px;position:absolute;width:100%}.feature-card .ol-text__sup{color:#003682;font-size:.8rem;font-weight:700;letter-spacing:.1rem;margin-bottom:8px;text-transform:uppercase}.feature-card .ol-text__text{color:#fff;font-size:1.5rem}@media (max-width:749px){.feature-card .ol-text{padding:25px}.feature-card .ol-text__sup{font-size:",
+            "fetch_error": ""
+          },
+          {
+            "title": "Pricing · Cloudflare Workers AI docs",
+            "url": "https://developers.cloudflare.com/workers-ai/platform/pricing/",
+            "query": "Cloudflare Workers pricing free plan",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/workers-ai/platform/pricing/#page\",\"headline\":\"Pricing · Cloudflare Workers AI docs\",\"description\":\"Workers AI pricing is based on Neurons, with a free daily allocation and per-model rates.\",\"url\":\"https://developers.cloudflare.com/workers-ai/platform/pricing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-06-16\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Pricing · Cloudflare Workers AI docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>",
+            "fetch_error": ""
+          },
+          {
+            "title": "Pricing · Cloudflare Workers KV docs",
+            "url": "https://developers.cloudflare.com/kv/platform/pricing/",
+            "query": "Cloudflare Workers pricing free plan",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "{\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"@id\":\"https://developers.cloudflare.com/kv/platform/pricing/#page\",\"headline\":\"Pricing · Cloudflare Workers KV docs\",\"description\":\"Workers KV pricing for read, write, delete, and list operations, plus storage costs and billing FAQ.\",\"url\":\"https://developers.cloudflare.com/kv/platform/pricing/\",\"inLanguage\":\"en\",\"image\":\"https://developers.cloudflare.com/dev-products-preview.png\",\"dateModified\":\"2026-04-21\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Cloudflare\",\"url\":\"https://www.cloudflare.com/\"},\"isPartOf\":{\"@type\":\"WebSite\",\"@id\":\"https://developers.cloudflare.com/#website\",\"name\":\"Cloudflare Docs\",\"url\":\"https://developers.cloudflare.com/\"}} Pricing · Cloudflare Workers KV docs window.StarlightThemeProvider = (() => { const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('starlight-theme'); const theme = storedTheme || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'); document.documentElement.dataset.theme = theme === 'light' ? 'light' : 'dark'; return { updatePickers(theme = storedTheme || 'auto') { document.querySelectorAll('starlight-theme-select').forEach((picker) => { const select = picker.querySelector('select'); if (select) select.value = theme; /** @type {HTMLTemplateElement | null} */ const tmpl = document.querySelector(`#theme-icons`); const newIcon = tmpl && tmpl.content.querySelector('.' + theme); if (newIcon) { const oldIcon = picker.querySelector('svg.label-icon'); if (oldIcon) { oldIcon.replaceChildren(...newIcon.cloneNode(true).childNodes); } } }); }, }; })(); .hero:where(.astro-opidluyl){display:grid;align-items:center;gap:1rem;padding-bottom:1rem}.hero:where(.astro-opidluyl)>img:where(.astro-opidluyl),.hero:where(.astro-opidluyl)>.hero",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "规则变动影响谁",
+        "普通技术人的合规边界",
+        "平台红利和封号风险"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "Cloudflare Workers 支持 AI Agent 临时账号部署 官方政策 规则 原文",
+        "Cloudflare Workers 支持 AI Agent 临时账号部署 开发者公告 影响范围",
+        "Cloudflare Workers 支持 AI Agent 临时账号部署 合规 风险 受影响用户"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
