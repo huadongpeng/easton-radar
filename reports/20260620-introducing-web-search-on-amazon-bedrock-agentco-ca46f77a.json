@@ -1,0 +1,1888 @@
+{
+  "id": "20260620-introducing-web-search-on-amazon-bedrock-agentco-ca46f77a",
+  "batch_id": "2026-06-20-noon",
+  "title": "AWS Bedrock AgentCore 上线联网搜索能力",
+  "original_title": "Introducing Web Search on Amazon Bedrock AgentCore",
+  "url": "https://aws.amazon.com/blogs/machine-learning/introducing-web-search-on-amazon-bedrock-agentcore/",
+  "summary": "Web Search on Amazon Bedrock AgentCore is now generally available. In this post, we walk through what makes Web Search on Amazon Bedrock AgentCore different, why it matters, and how to wire it in with a few lines of code.",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "ai-frontier",
+  "topic_direction_title": "AI前沿",
+  "topic_direction_short_title": "AI前沿",
+  "topic_direction_description": "AI 模型、Agent、OpenAI、Claude、Gemini、底层能力和关键产品变化。重点用一句话记录发生了什么、来自哪里、是否需要后续查证。",
+  "source_name": "AWS Machine Learning Blog",
+  "original_source_name": "Artificial Intelligence",
+  "source_type": "rss",
+  "feed_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+  "published_at": "2026-06-19T14:15:24+00:00",
+  "fetched_at": "2026-06-20T04:00:14.861350+00:00",
+  "decision": "brief",
+  "report_type": "tool-ledger",
+  "report_type_title": "工具账本",
+  "score": 55,
+  "reader_hook": "AI工具成本与能力变化",
+  "topic_tension": {
+    "score": 7,
+    "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+    "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+    "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+  },
+  "persona_discussion_question": "这笔工具账到底是提高效率，还是把不可见成本转嫁给普通程序员和小团队？",
+  "why_now": "AWS 正式发布该功能，可能影响Agent开发者的工具选型。",
+  "evidence_level": "official",
+  "source_priority": "P0 官方/一手源",
+  "reason": "AWS Bedrock AgentCore 新增联网搜索能力，Agent可实时获取网络信息。",
+  "collection_fit": "ai-frontier",
+  "investigation_direction": "优先追官方政策、开发者公告、执行范围、受影响人群和合规边界。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。"
+  ],
+  "facts": [
+    {
+      "claim": "AWS Machine Learning Blog 发布/收录了这条原始线索：Introducing Web Search on Amazon Bedrock AgentCore",
+      "type": "confirmed_fact",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/introducing-web-search-on-amazon-bedrock-agentcore/",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "AWS Machine Learning Blog",
+      "url": "https://aws.amazon.com/blogs/machine-learning/introducing-web-search-on-amazon-bedrock-agentcore/",
+      "source_type": "official",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "platform": [
+        "search",
+        "amazon"
+      ]
+    },
+    "source_host": "aws.amazon.com",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 7,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "AI工具成本与能力变化",
+    "fit_for_radar": false
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://aws.amazon.com/blogs/machine-learning/feed/",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：成本估算没有公式、单位或边界"
+    },
+    "core_question": "AWS Bedrock AgentCore 的联网搜索功能是否值得普通开发者/小团队迁移或集成？",
+    "why_this_topic_matters": "联网搜索是 Agent 从封闭知识走向实时信息的关键能力，AWS 正式发布该功能可能影响 Agent 开发者的工具选型，但成本、延迟、平台绑定风险未知。",
+    "fact_summary": [
+      "AWS Bedrock AgentCore 联网搜索功能已正式可用。",
+      "官方文档描述了功能：使用 AWS 自建网络索引，支持域名过滤，数据隐私默认不用于训练。",
+      "定价页面未明确显示联网搜索的单独计费项，可能包含在 AgentCore 调用费用中。",
+      "Reddit 社区相关讨论因 403 错误无法获取。",
+      "竞品对比（OpenAI、Google）和实际使用案例尚未找到。"
+    ],
+    "persona_discussion_question": "老花：我该不该把现有 Agent 迁移到 Bedrock AgentCore 来用联网搜索？成本、延迟、数据隐私和平台绑定风险分别是什么？",
+    "old_flower_stance": "先算账，再迁移。联网搜索是能力，但成本不透明、延迟未知、平台锁定风险高，小团队应优先用开源或低成本替代方案验证需求。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 7,
+      "why_interested": "核心技术人关注成本账、延迟、平台锁定；入门读者想了解联网搜索对 Agent 的价值；商业读者评估是否值得投入。",
+      "reader_risk": "若夸大功能或成本误导，可能引发读者不信任。"
+    },
+    "mass_interest_hook": {
+      "score": 6,
+      "hook_type": "数字",
+      "why_non_technical_people_may_click": "标题如“AWS 给 AI 加了个搜索功能，成本可能翻倍？”能吸引对 AI 成本好奇的普通人。",
+      "story_seed": "一个独立开发者用 Bedrock AgentCore 做客服 Agent，结果联网搜索让账单暴涨 3 倍。",
+      "do_not_overhype": "不要声称联网搜索是“革命性”或“必备”，避免夸大成本影响。"
+    },
+    "topic_tension": {
+      "score": 7,
+      "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+      "debate_question": "联网搜索功能到底是在提升 Agent 能力，还是变相把开发者锁在 AWS 生态里？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "AWS 平台"
+      ],
+      "why_people_would_comment": "读者可以围绕成本、延迟、数据隐私、平台绑定等发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2026-06-17: AWS 宣布 Bedrock AgentCore 联网搜索功能正式可用。"
+    ],
+    "evidence_table": [
+      {
+        "source": "AWS Machine Learning Blog",
+        "url": "https://aws.amazon.com/blogs/machine-learning/introducing-web-search-on-amazon-bedrock-agentcore/",
+        "supports": "功能正式发布，提供联网搜索能力。",
+        "reliability": "official"
+      },
+      {
+        "source": "AWS News Blog",
+        "url": "https://aws.amazon.com/blogs/aws/announcing-web-search-on-amazon-bedrock-agentcore-ground-your-ai-agents-in-current-accurate-web-knowledge/",
+        "supports": "功能详情、使用场景。",
+        "reliability": "official"
+      },
+      {
+        "source": "AWS 官方文档 - Web Search Tool",
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-target-connector-web-search-tool.html",
+        "supports": "技术细节：使用 AWS 自建网络索引，支持域名过滤。",
+        "reliability": "official"
+      },
+      {
+        "source": "AWS 定价页面",
+        "url": "https://aws.amazon.com/bedrock/agentcore/pricing/",
+        "supports": "未明确显示联网搜索单独计费项。",
+        "reliability": "official"
+      },
+      {
+        "source": "AWS 数据保护文档",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html",
+        "supports": "数据默认不用于训练。",
+        "reliability": "official"
+      },
+      {
+        "source": "The AWS News Feed",
+        "url": "https://aws-news.com/article/2026-06-17-announcing-web-search-on-amazon-bedrock-agentcore-for-agentic-web-retrieval",
+        "supports": "功能概述。",
+        "reliability": "media"
+      },
+      {
+        "source": "Cloud Burn",
+        "url": "https://cloudburn.io/blog/amazon-bedrock-agentcore-pricing",
+        "supports": "定价分析，但未抓取到具体内容。",
+        "reliability": "weak"
+      },
+      {
+        "source": "Reddit",
+        "url": "https://www.reddit.com/r/aws/comments/1pohj3n/web_search_with_bedrock/",
+        "supports": "开发者讨论，但 403 无法获取。",
+        "reliability": "weak"
+      }
+    ],
+    "logic_closure": "部分闭环：功能存在、官方文档清晰，但定价、延迟、竞品对比、实际案例缺失，无法形成完整判断。",
+    "writeable_angles": [
+      {
+        "angle": "成本账：联网搜索的隐藏费用",
+        "why": "定价不透明，小团队最关心成本。",
+        "needs": "明确计费方式、免费额度、超出后费用。"
+      },
+      {
+        "angle": "延迟与可靠性：联网搜索是否影响实时交互",
+        "why": "Agent 实时性要求高，延迟是关键。",
+        "needs": "实际测试数据或开发者反馈。"
+      },
+      {
+        "angle": "数据隐私：联网搜索是否安全",
+        "why": "企业用户关注数据是否被用于训练。",
+        "needs": "官方数据保护说明。"
+      },
+      {
+        "angle": "平台锁定：迁移成本与替代方案",
+        "why": "开发者担心被 AWS 绑定。",
+        "needs": "竞品对比（OpenAI、Google）、开源替代。"
+      }
+    ],
+    "missing_basics": [
+      "联网搜索的计费模式（按调用次数、搜索量还是 token？）",
+      "联网搜索的延迟范围（响应时间）",
+      "是否支持自定义搜索源（如 Bing API）",
+      "与 OpenAI GPTs with Browsing、Google Vertex AI Agent Builder 的对比"
+    ],
+    "missing_materials": [
+      "定价页面截图或明确计费说明",
+      "至少一个实际使用案例或开发者评测",
+      "竞品对比表格",
+      "延迟基准测试数据"
+    ],
+    "not_claimable": [
+      "不要声称联网搜索是“革命性”或“必备”",
+      "不要断言成本低于其他方案",
+      "不要假设所有开发者都需要联网搜索"
+    ],
+    "followup_queries": [
+      "Amazon Bedrock AgentCore web search pricing per request",
+      "Bedrock AgentCore web search latency benchmark",
+      "Bedrock AgentCore web search vs OpenAI browsing",
+      "Bedrock AgentCore web search custom search source",
+      "Bedrock AgentCore web search developer review 2026"
+    ],
+    "additional_search_queries": [
+      "Amazon Bedrock AgentCore web search pricing per request",
+      "Bedrock AgentCore web search latency benchmark",
+      "Bedrock AgentCore web search vs OpenAI browsing",
+      "Bedrock AgentCore web search custom search source",
+      "Bedrock AgentCore web search developer review 2026"
+    ],
+    "stop_conditions": [
+      "定价页面明确显示联网搜索免费或费用极低",
+      "多个开发者评测显示延迟可接受且成本可控",
+      "竞品对比显示 AWS 有明显优势"
+    ],
+    "confidence": 55.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI前沿",
+    "report_type": "tool-ledger",
+    "quality_gate": {
+      "pass": false,
+      "score": 55,
+      "fatal_issues": [
+        "成本估算没有公式、单位或边界",
+        "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象"
+      ],
+      "warnings": [
+        "定价、延迟、数据隐私、竞品对比等关键证据不足",
+        "缺少开发者实际体验反馈",
+        "逻辑尚未闭环"
+      ],
+      "missing_evidence": [
+        "联网搜索的计费模式（按调用次数、搜索量还是 token？）",
+        "联网搜索的延迟范围（响应时间）",
+        "是否支持自定义搜索源（如 Bing API）",
+        "与 OpenAI GPTs with Browsing、Google Vertex AI Agent Builder 的对比",
+        "至少一个实际使用案例或开发者评测"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "AWS Bedrock AgentCore 的联网搜索功能是否值得普通开发者/小团队迁移或集成？",
+      "persona_discussion_question": "老花：我该不该把现有 Agent 迁移到 Bedrock AgentCore 来用联网搜索？成本、延迟、数据隐私和平台绑定风险分别是什么？",
+      "hidden_public_issue": "联网搜索功能是否会导致 Agent 调用成本不可控（搜索 API 费用 + LLM 推理费用），以及是否变相将开发者锁定在 AWS 生态内？",
+      "must_verify": [
+        "联网搜索的定价模式：是按调用次数、搜索量还是 token 计费？是否有免费额度？",
+        "联网搜索的延迟和可靠性：搜索响应时间、结果质量、是否支持自定义搜索源？",
+        "数据隐私：搜索请求是否经过 AWS 服务器？用户数据是否被用于训练或存储？",
+        "与现有 Agent 工具的对比：如 OpenAI GPTs with Browsing、Google Vertex AI Agent Builder 的联网搜索能力、定价和限制。",
+        "是否支持自定义搜索 API（如 Bing Search API、Google Custom Search）？还是只能使用 AWS 内置搜索？",
+        "是否有实际案例或基准测试展示联网搜索对 Agent 任务准确率的提升？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "pricing_page",
+          "query": "Amazon Bedrock AgentCore pricing web search",
+          "why_needed": "确认联网搜索的计费方式，评估成本风险。"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Amazon Bedrock AgentCore web search documentation",
+          "why_needed": "获取功能细节、限制、数据隐私说明。"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Bedrock AgentCore web search review reddit",
+          "why_needed": "了解开发者实际使用体验、延迟、可靠性。"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Bedrock AgentCore web search use case",
+          "why_needed": "寻找实际应用案例，验证效果。"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "Agent web search benchmark 2025",
+          "why_needed": "对比不同平台联网搜索能力。"
+        },
+        {
+          "source_type": "policy",
+          "query": "AWS Bedrock data privacy web search",
+          "why_needed": "确认数据是否被用于训练或存储。"
+        }
+      ],
+      "expert_challenge_points": [
+        "联网搜索的延迟是否会影响实时 Agent 交互体验？",
+        "搜索结果的准确性如何？是否容易引入错误信息或偏见？",
+        "对于小团队，成本是否可控？是否有隐藏费用（如超出免费额度后的高额费用）？",
+        "是否支持自定义搜索源？如果不支持，是否限制了 Agent 的灵活性？"
+      ],
+      "do_not_claim_yet": [
+        "不要声称联网搜索功能是“革命性”或“必备”的，除非有充分证据。",
+        "不要断言成本低于其他方案，除非有明确的定价对比。",
+        "不要假设所有开发者都需要联网搜索，除非有案例证明其必要性。"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确标注定价、延迟、数据隐私等关键信息待验证。",
+      "downstream_materials_needed": [
+        "定价页面截图或官方定价链接。",
+        "官方文档中关于联网搜索的详细说明。",
+        "至少一个实际使用案例或开发者评测。",
+        "与竞品（如 OpenAI、Google）的对比表格。"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Amazon Bedrock AgentCore Pricing - AWS",
+        "url": "https://aws.amazon.com/bedrock/agentcore/pricing/",
+        "query": "Amazon Bedrock AgentCore pricing web search",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon Bedrock AgentCore Pricing - AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"Y6oPrfvfcqSIDNozH4G3ccsjnurUt00P9v042tJH/dY=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.17/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main content {\"data\":{\"items\"",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore Pricing: 12 Components Breakdown | Cloud Burn",
+        "url": "https://cloudburn.io/blog/amazon-bedrock-agentcore-pricing",
+        "query": "Amazon Bedrock AgentCore pricing web search",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-scrollbar-thumb:#0000;--tw-scrollbar-track:#0000;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-ordinal:initial;--tw-slashed-zero:initial;--tw-numeric-figure:initial;--tw-numeric-spacing:initial;--tw-numeric-fraction:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore: Pricing, Features & How It Works",
+        "url": "https://www.pump.co/blog/amazon-bedrock-agentcore/",
+        "query": "Amazon Bedrock AgentCore pricing web search",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "try{if(localStorage.getItem(\"__framer_force_showing_editorbar_since\")){const n=document.createElement(\"link\");n.rel = \"modulepreload\";n.href=\"https://framer.com/edit/init.mjs\";document.head.appendChild(n)}}catch(e){} .circle{ position: relative; display: inline-block; z-index: 1; } .circle::before { content:\"\"; position:absolute; width:130%; height:130%; top: 40%; left: 50%; transform: translate(-50%, -50%); z-index: -1; background-repeat: no-repeat; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjk3IiBoZWlnaHQ9IjEzMyIgdmlld0JveD0iMCAwIDI5NyAxMzMiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMzcuNzA4IDIxLjI2MjFDOTQuODQ1IDIyLjAyMzEgLTEuOTgxNDkgMzUuNTIxIDUuMzk5NDEgODIuNTUwMUMxNC42MjU1IDE0MS4zMzYgMjk0LjI5MiAxNDMuNjE5IDI5MS45ODYgODIuNTUwMUMyOTAuMTQxIDMzLjY5NDYgMTQxLjI5MyAxMC44MjY5IDY3LjA5OTEgNS41IiBzdHJva2U9IiNEQkZCNTEiIHN0cm9rZS13aWR0aD0iMTAiLz4KPC9zdmc+Cg=='); background-size: 100% 100%; } .underline{ position: relative; z-index:1; display: inline-block; overflow: visible; } .underline::before { content:\"\"; position:absolute; width:100%; height:100%; top: 90%; left: 50%; transform: translate(-50%, -10%); z-index: -1; background-repeat: no-repeat; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgzIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjgzIDE2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMSAxMUM1MC44MjYxIDYuNDcyMjYgMTc2Ljc4MyAwLjEzMzQyIDI4MiAxMSIgc3Ryb2tlPSIjREJGQjUxIiBzdHJva2Utd2lkdGg9IjEwIi8+Cjwvc3ZnPgo='); } .underline.green::before { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgzIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjgzIDE2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMSAxMUM1MC44MjYxIDYuNDcyMjYgMTc2Ljc4MyAwLjEzM",
+        "fetch_error": ""
+      },
+      {
+        "title": "Web Search Tool - Amazon Bedrock AgentCore",
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-target-connector-web-search-tool.html",
+        "query": "Amazon Bedrock AgentCore web search documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Web Search Tool - Amazon Bedrock AgentCore View a markdown version of this page Web Search Tool - Amazon Bedrock AgentCore { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"Amazon Bedrock AgentCore\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"Developer Guide\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"Amazon Bedrock AgentCore Gateway: A secure AI gateway for agents, tools, and models\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway.html\" }, { \"@type\" : \"ListItem\", \"position\" : 5, \"name\" : \"Supported targets for Amazon Bedrock AgentCore gateways\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-supported-targets.html\" }, { \"@type\" : \"ListItem\", \"position\" : 6, \"name\" : \"MCP targets\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-targets-mcp.html\" }, { \"@type\" : \"ListItem\", \"position\" : 7, \"name\" : \"Built-in connectors as targets\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-target-connectors.html\" }, { \"@type\" : \"ListItem\", \"position\" : 8, \"name\" : \"Web Search Tool\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-target-connectors.html\" } ] } Documentation Amazon Bedrock AgentCore Developer Guide Key capabilities Purpose-built web index Private by design How it works Use cases Set up Web Search Tool Configure domain filtering Configure the Gateway Service Role Input sche",
+        "fetch_error": ""
+      },
+      {
+        "title": "Announcing Web Search on Amazon Bedrock AgentCore: Ground your AI agents in current, accurate web knowledge | Amazon Web Services",
+        "url": "https://aws.amazon.com/blogs/aws/announcing-web-search-on-amazon-bedrock-agentcore-ground-your-ai-agents-in-current-accurate-web-knowledge/",
+        "query": "Amazon Bedrock AgentCore web search documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Announcing Web Search on Amazon Bedrock AgentCore: Ground your AI agents in current, accurate web knowledge | AWS News Blog body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore Documentation",
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/",
+        "query": "Amazon Bedrock AgentCore web search documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon Bedrock AgentCore Documentation Amazon Bedrock AgentCore is a fully managed service that enables you to deploy and operate highly capable agents securely, at scale using any framework and model. Get started Get started with AgentCore Build your first agent in minutes with the AgentCore CLI. Code examples Explore tutorials, use cases, and integrations in this GitHub repository. Integrations Explore AgentCore integrations with popular frameworks. AgentCore MCP server Vibe coding with your coding assistant. Console and SDKs AgentCore Console Access the AgentCore console. AgentCore SDK AgentCore Python SDK on GitHub. AWS SDK AWS SDK for Python (boto3) for AgentCore. Documentation AgentCore Developer Guide Describes how to use the AgentCore console, API, and CLI. AgentCore Data Plane API Reference Describes the AgentCore data plane API operations and parameters. bedrock-agentcore AgentCore Control Plane API Reference Describes the AgentCore control plane API operations and parameters. bedrock-agentcore-control AgentCore harness Get started with AgentCore harness Define and invoke AI agents with a single API call using AgentCore Harness. AgentCore harness in the Developer Guide Learn more about the managed agent loop with built-in memory, tools, and isolated execution environments. AgentCore Runtime Get started with AgentCore Runtime Deploy your first agent to AgentCore Runtime in minutes. AgentCore Runtime tutorials Tutorials for hosting MCP servers and agents (supports A2A) using AgentCore Runtime. AgentCore Runtime in the Developer Guide Learn more about hosting your AI agents and tools in secure, purpose-built hosting environments. AgentCore Memory Get started with AgentCore Memory Get started creating and managing memory resources with AgentCore Memory. AgentCore ",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/aws on Reddit: web search with bedrock",
+        "url": "https://www.reddit.com/r/aws/comments/1pohj3n/web_search_with_bedrock/",
+        "query": "Bedrock AgentCore web search review reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/aws on Reddit: Clarification on AWS Bedrock & Agentcore services",
+        "url": "https://www.reddit.com/r/aws/comments/1tzrfsh/clarification_on_aws_bedrock_agentcore_services/",
+        "query": "Bedrock AgentCore web search review reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/aws on Reddit: Amazon bedrock agent core evaluations",
+        "url": "https://www.reddit.com/r/aws/comments/1q87plm/amazon_bedrock_agent_core_evaluations/",
+        "query": "Bedrock AgentCore web search review reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "Announcing Web Search on Amazon Bedrock AgentCore for Agentic Web Retrieval | The AWS News Feed",
+        "url": "https://aws-news.com/article/2026-06-17-announcing-web-search-on-amazon-bedrock-agentcore-for-agentic-web-retrieval",
+        "query": "Bedrock AgentCore web search use case",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Announcing Web Search on Amazon Bedrock AgentCore for Agentic Web Retrieval | The AWS News Feed {\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Announcing Web Search on Amazon Bedrock AgentCore for Agentic Web Retrieval\",\"description\":\"Amazon Bedrock AgentCore now offers general availability of Web Search, enabling AI agents to access current web information while maintaining data…\",\"image\":\"https://static.aws-news.com/article-banners/019ed644-655e-585a-15dd-42918bcc6367.png\",\"datePublished\":\"2026-06-17T15:47:47.166346Z\",\"dateModified\":\"2026-06-17T15:47:47.166346Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Luc van Donkersgoed\",\"url\":\"https://lucvandonkersgoed.com\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"The AWS News Feed\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://aws-news.com/logo.png\"}},\"mainEntityOfPage\":\"https://aws-news.com/article/2026-06-17-announcing-web-search-on-amazon-bedrock-agentcore-for-agentic-web-retrieval\"} try{if(localStorage.getItem('ad-free')==='1'){document.documentElement.classList.add('ad-free')}}catch(e){} .ad-free [data-ad-slot]{display:none!important} html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;box-sizing:border-box;-webkit-text-size-adjust:100%;}*,*::before,*::after{box-sizing:inherit;}strong,b{font-weight:700;}body{margin:0;color:rgba(0, 0, 0, 0.87);font-family:\"Roboto\",\"Helvetica\",\"Arial\",sans-serif;font-weight:400;font-size:1rem;line-height:1.5;letter-spacing:0.00938em;background-color:#eeeeee;}@media print{body{background-color:#fff;}}body::backdrop{background-color:#eeeeee;} @media (min-width:0px){.css-1rb0nos{display:block;}}@media (min-width:1200px){.css-1rb0nos{display:none;}} .css-fiz1wc{overflow:hidden;position:relative;}@media (min-width:0px){.css-fiz1wc{display:none;}}@media (min-wid",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore harness is now generally available: Go from idea to production-grade agent in minutes | Amazon Web Services",
+        "url": "https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-harness-is-now-generally-available-go-from-idea-to-production-grade-agent-in-minutes/",
+        "query": "Bedrock AgentCore web search use case",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon Bedrock AgentCore harness is now generally available: Go from idea to production-grade agent in minutes | Artificial Intelligence body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rg",
+        "fetch_error": ""
+      },
+      {
+        "title": "Example use cases - Amazon Bedrock AgentCore",
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity-use-cases.html",
+        "query": "Bedrock AgentCore web search use case",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Example use cases - Amazon Bedrock AgentCore View a markdown version of this page Example use cases - Amazon Bedrock AgentCore { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"Amazon Bedrock AgentCore\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"Developer Guide\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"Provide identity and credential management for agent applications with Amazon Bedrock AgentCore Identity\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity.html\" }, { \"@type\" : \"ListItem\", \"position\" : 5, \"name\" : \"Overview of Amazon Bedrock AgentCore Identity\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity-overview.html\" }, { \"@type\" : \"ListItem\", \"position\" : 6, \"name\" : \"Example use cases\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity-overview.html\" } ] } Documentation Amazon Bedrock AgentCore Developer Guide Personal assistant agents Enterprise automation agents Customer service agents Data processing and analytics agents Development and DevOps agents Example use cases Amazon Bedrock AgentCore Identity supports a wide range of use cases across different industries and application types. This section provides detailed examples of how the service can be applied in specific scenarios, demonstrating both user-delegated access (OAuth 2.0 authorization code grant) and machine-to-machine authentication (OAuth 2.0 client credentials gra",
+        "fetch_error": ""
+      },
+      {
+        "title": "BrowseComp: a benchmark for browsing agents | OpenAI",
+        "url": "https://openai.com/index/browsecomp/",
+        "query": "Agent web search benchmark 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Agentic Search in 2026: Benchmark 8 Search APIs for Agents",
+        "url": "https://aimultiple.com/agentic-search",
+        "query": "Agent web search benchmark 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Agentic Search in 2026: Benchmark 8 Search APIs for Agents :root { --font-geist: 'Geist', 'Geist Fallback'; --font-roboto-mono: 'Roboto Mono', 'Roboto Mono Fallback'; } (function() { const theme = document.cookie.match(/theme=(light|dark)/)?.[1] || 'light'; document.documentElement.setAttribute('data-theme', theme); })(); Agentic AI CATEGORIES Model Context Protocol GenAI Applications AI in Industries AI Hardware AI Foundations AI Coding RAG Browse Categories Browser MCP Code Execution with MCP MCP Gateway Cybersecurity CATEGORIES Data Security Identity & Access Management Security Tools Network Security Threat Detection and Response (TDR) Browse Categories Device Control Software SaaS Backup Solutions Google Workspace Backup DLP Review DLP Software USB Blocking Software DLP Pricing See All Data CATEGORIES Web Proxies Web Data Scraping Data Collection Data Science Synthetic Data Browse Categories Residential Proxy Providers Proxy Providers Datacenter Proxy Amazon Proxies SOCKS5 Proxies Geonode Proxies Proxy Pricing See All Enterprise Software CATEGORIES E-Commerce Workload Automation IT Automation RMM Process Improvement Managed File Transfer Helpdesk Software Browse Categories Ecommerce Technology Price Monitoring Tools Checkout Free Stores Ecommerce Data Collection Services Contact Us Agentic AI Model Context Protocol GenAI Applications AI in Industries AI Hardware AI Foundations AI Coding RAG Cybersecurity Data Security Identity & Access Management Security Tools Network Security Threat Detection and Response (TDR) Data Web Proxies Web Data Scraping Data Collection Data Science Synthetic Data Enterprise Software E-Commerce Workload Automation IT Automation RMM Process Improvement Managed File Transfer Helpdesk Software Services Contact Us Back Model Context Protocol ",
+        "fetch_error": ""
+      },
+      {
+        "title": "11 Best AI Browser Agents in 2026",
+        "url": "https://www.firecrawl.dev/blog/best-browser-agents",
+        "query": "Agent web search benchmark 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "11 Best AI Browser Agents in 2026 :root { --heat-4: #fa5d190a; --heat-8: #fa5d1914; --heat-12: #fa5d191f; --heat-16: #fa5d1929; --heat-20: #fa5d1933; --heat-40: #fa5d1966; --heat-90: #fa5d19e6; --heat-100: #fa5d19ff; --accent-black: #262626ff; --accent-white: #ffffffff; --surface: #ffffffff; --surface-raised: #ffffffff; --accent-amethyst: #9061ffff; --accent-bluetron: #2a6dfbff; --accent-crimson: #eb3424ff; --accent-forest: #42c366ff; --accent-honey: #ecb730ff; --black-alpha-1: #00000003; --black-alpha-2: #00000005; --black-alpha-3: #00000008; --black-alpha-4: #0000000a; --black-alpha-5: #0000000d; --black-alpha-6: #0000000f; --black-alpha-7: #00000012; --black-alpha-8: #00000014; --black-alpha-10: #0000001a; --black-alpha-12: #0000001f; --black-alpha-16: #00000029; --black-alpha-20: #00000033; --black-alpha-24: #0000003d; --black-alpha-32: #26262652; --black-alpha-40: #26262666; --black-alpha-48: #2626267a; --black-alpha-56: #2626268f; --black-alpha-64: #262626a3; --black-alpha-72: #262626b8; --black-alpha-88: #262626e0; --white-alpha-56: #ffffff8f; --white-alpha-72: #ffffffb8; --border-faint: #edededff; --border-muted: #e8e8e8ff; --border-loud: #e6e6e6ff; --illustrations-faint: #edededff; --illustrations-muted: #e6e6e6ff; --illustrations-default: #dbdbdbff; --background-base: #f9f9f9ff; --background-lighter: #fbfbfbff } .dark { --heat-4: #fa5d190a; --heat-8: #fa5d1914; --heat-12: #fa5d191f; --heat-16: #fa5d1929; --heat-20: #fa5d1933; --heat-40: #fa5d1966; --heat-90: #fa5d19e6; --heat-100: #fa5d19ff; --accent-black: #f5f5f5ff; --accent-white: #ffffffff; --surface: #171717ff; --surface-raised: #1f1f1fff; --accent-amethyst: #a07affff; --accent-bluetron: #5a8ffcff; --accent-crimson: #f05545ff; --accent-forest: #5cd47fff; --accent-honey: #f0c550ff; --black-alpha-1: #ffffff",
+        "fetch_error": ""
+      },
+      {
+        "title": "Secure Gen AI Apps - Amazon Bedrock Security and Privacy - AWS",
+        "url": "https://aws.amazon.com/bedrock/security-compliance/",
+        "query": "AWS Bedrock data privacy web search",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Secure Gen AI Apps - Amazon Bedrock Security and Privacy - AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"glGjsWcKWf9PPh0RWAz8W93/LcwjbNe0OyRVgV/y8nE=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.17/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main ",
+        "fetch_error": ""
+      },
+      {
+        "title": "Data protection - Amazon Bedrock",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html",
+        "query": "AWS Bedrock data privacy web search",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Data protection - Amazon Bedrock View a markdown version of this page Data protection - Amazon Bedrock { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"Amazon Bedrock\", \"item\" : \"https://docs.aws.amazon.com/bedrock/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"User Guide\", \"item\" : \"https://docs.aws.amazon.com/bedrock/latest/userguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"Security, Guardrails, and Observability in Amazon Bedrock\", \"item\" : \"https://docs.aws.amazon.com/bedrock/latest/userguide/security.html\" }, { \"@type\" : \"ListItem\", \"position\" : 5, \"name\" : \"Security\", \"item\" : \"https://docs.aws.amazon.com/bedrock/latest/userguide/security-overview.html\" }, { \"@type\" : \"ListItem\", \"position\" : 6, \"name\" : \"Data protection\", \"item\" : \"https://docs.aws.amazon.com/bedrock/latest/userguide/security-overview.html\" } ] } Documentation Amazon Bedrock User Guide Data protection The AWS shared responsibility model applies to data protection in Amazon Bedrock. As described in this model, AWS is responsible for protecting the global infrastructure that runs all of the AWS Cloud. You are responsible for maintaining control over your content that is hosted on this infrastructure. You are also responsible for the security configuration and management tasks for the AWS services that you use. For more information about data privacy, see Data Privacy FAQ . For information about data protection in Europe, see the General Data Protection Regulation (GDPR) Center . For data protection purposes, we recommend that you protect AWS account credentials and set up individual users w",
+        "fetch_error": ""
+      },
+      {
+        "title": "Security, privacy, and responsible AI – Amazon Bedrock – AWS",
+        "url": "https://aws.amazon.com/bedrock/security-privacy-responsible-ai/",
+        "query": "AWS Bedrock data privacy web search",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Security, privacy, and responsible AI – Amazon Bedrock – AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"gKTTkMvGGmshQ/iMEOXx19kce4bhtPoG4vCKZzD+reE=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.17/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main co",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：成本估算没有公式、单位或边界"
+    },
+    "core_question": "AWS Bedrock AgentCore 的联网搜索功能是否值得普通开发者/小团队迁移或集成？",
+    "why_this_topic_matters": "联网搜索是 Agent 从封闭知识走向实时信息的关键能力，AWS 正式发布该功能可能影响 Agent 开发者的工具选型，但成本、延迟、平台绑定风险未知。",
+    "fact_summary": [
+      "AWS Bedrock AgentCore 联网搜索功能已正式可用。",
+      "官方文档描述了功能：使用 AWS 自建网络索引，支持域名过滤，数据隐私默认不用于训练。",
+      "定价页面未明确显示联网搜索的单独计费项，可能包含在 AgentCore 调用费用中。",
+      "Reddit 社区相关讨论因 403 错误无法获取。",
+      "竞品对比（OpenAI、Google）和实际使用案例尚未找到。"
+    ],
+    "persona_discussion_question": "老花：我该不该把现有 Agent 迁移到 Bedrock AgentCore 来用联网搜索？成本、延迟、数据隐私和平台绑定风险分别是什么？",
+    "old_flower_stance": "先算账，再迁移。联网搜索是能力，但成本不透明、延迟未知、平台锁定风险高，小团队应优先用开源或低成本替代方案验证需求。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 7,
+      "why_interested": "核心技术人关注成本账、延迟、平台锁定；入门读者想了解联网搜索对 Agent 的价值；商业读者评估是否值得投入。",
+      "reader_risk": "若夸大功能或成本误导，可能引发读者不信任。"
+    },
+    "mass_interest_hook": {
+      "score": 6,
+      "hook_type": "数字",
+      "why_non_technical_people_may_click": "标题如“AWS 给 AI 加了个搜索功能，成本可能翻倍？”能吸引对 AI 成本好奇的普通人。",
+      "story_seed": "一个独立开发者用 Bedrock AgentCore 做客服 Agent，结果联网搜索让账单暴涨 3 倍。",
+      "do_not_overhype": "不要声称联网搜索是“革命性”或“必备”，避免夸大成本影响。"
+    },
+    "topic_tension": {
+      "score": 7,
+      "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+      "debate_question": "联网搜索功能到底是在提升 Agent 能力，还是变相把开发者锁在 AWS 生态里？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "AWS 平台"
+      ],
+      "why_people_would_comment": "读者可以围绕成本、延迟、数据隐私、平台绑定等发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2026-06-17: AWS 宣布 Bedrock AgentCore 联网搜索功能正式可用。"
+    ],
+    "evidence_table": [
+      {
+        "source": "AWS Machine Learning Blog",
+        "url": "https://aws.amazon.com/blogs/machine-learning/introducing-web-search-on-amazon-bedrock-agentcore/",
+        "supports": "功能正式发布，提供联网搜索能力。",
+        "reliability": "official"
+      },
+      {
+        "source": "AWS News Blog",
+        "url": "https://aws.amazon.com/blogs/aws/announcing-web-search-on-amazon-bedrock-agentcore-ground-your-ai-agents-in-current-accurate-web-knowledge/",
+        "supports": "功能详情、使用场景。",
+        "reliability": "official"
+      },
+      {
+        "source": "AWS 官方文档 - Web Search Tool",
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-target-connector-web-search-tool.html",
+        "supports": "技术细节：使用 AWS 自建网络索引，支持域名过滤。",
+        "reliability": "official"
+      },
+      {
+        "source": "AWS 定价页面",
+        "url": "https://aws.amazon.com/bedrock/agentcore/pricing/",
+        "supports": "未明确显示联网搜索单独计费项。",
+        "reliability": "official"
+      },
+      {
+        "source": "AWS 数据保护文档",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html",
+        "supports": "数据默认不用于训练。",
+        "reliability": "official"
+      },
+      {
+        "source": "The AWS News Feed",
+        "url": "https://aws-news.com/article/2026-06-17-announcing-web-search-on-amazon-bedrock-agentcore-for-agentic-web-retrieval",
+        "supports": "功能概述。",
+        "reliability": "media"
+      },
+      {
+        "source": "Cloud Burn",
+        "url": "https://cloudburn.io/blog/amazon-bedrock-agentcore-pricing",
+        "supports": "定价分析，但未抓取到具体内容。",
+        "reliability": "weak"
+      },
+      {
+        "source": "Reddit",
+        "url": "https://www.reddit.com/r/aws/comments/1pohj3n/web_search_with_bedrock/",
+        "supports": "开发者讨论，但 403 无法获取。",
+        "reliability": "weak"
+      }
+    ],
+    "logic_closure": "部分闭环：功能存在、官方文档清晰，但定价、延迟、竞品对比、实际案例缺失，无法形成完整判断。",
+    "writeable_angles": [
+      {
+        "angle": "成本账：联网搜索的隐藏费用",
+        "why": "定价不透明，小团队最关心成本。",
+        "needs": "明确计费方式、免费额度、超出后费用。"
+      },
+      {
+        "angle": "延迟与可靠性：联网搜索是否影响实时交互",
+        "why": "Agent 实时性要求高，延迟是关键。",
+        "needs": "实际测试数据或开发者反馈。"
+      },
+      {
+        "angle": "数据隐私：联网搜索是否安全",
+        "why": "企业用户关注数据是否被用于训练。",
+        "needs": "官方数据保护说明。"
+      },
+      {
+        "angle": "平台锁定：迁移成本与替代方案",
+        "why": "开发者担心被 AWS 绑定。",
+        "needs": "竞品对比（OpenAI、Google）、开源替代。"
+      }
+    ],
+    "missing_basics": [
+      "联网搜索的计费模式（按调用次数、搜索量还是 token？）",
+      "联网搜索的延迟范围（响应时间）",
+      "是否支持自定义搜索源（如 Bing API）",
+      "与 OpenAI GPTs with Browsing、Google Vertex AI Agent Builder 的对比"
+    ],
+    "missing_materials": [
+      "定价页面截图或明确计费说明",
+      "至少一个实际使用案例或开发者评测",
+      "竞品对比表格",
+      "延迟基准测试数据"
+    ],
+    "not_claimable": [
+      "不要声称联网搜索是“革命性”或“必备”",
+      "不要断言成本低于其他方案",
+      "不要假设所有开发者都需要联网搜索"
+    ],
+    "followup_queries": [
+      "Amazon Bedrock AgentCore web search pricing per request",
+      "Bedrock AgentCore web search latency benchmark",
+      "Bedrock AgentCore web search vs OpenAI browsing",
+      "Bedrock AgentCore web search custom search source",
+      "Bedrock AgentCore web search developer review 2026"
+    ],
+    "additional_search_queries": [
+      "Amazon Bedrock AgentCore web search pricing per request",
+      "Bedrock AgentCore web search latency benchmark",
+      "Bedrock AgentCore web search vs OpenAI browsing",
+      "Bedrock AgentCore web search custom search source",
+      "Bedrock AgentCore web search developer review 2026"
+    ],
+    "stop_conditions": [
+      "定价页面明确显示联网搜索免费或费用极低",
+      "多个开发者评测显示延迟可接受且成本可控",
+      "竞品对比显示 AWS 有明显优势"
+    ],
+    "confidence": 55.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI前沿",
+    "report_type": "tool-ledger",
+    "quality_gate": {
+      "pass": false,
+      "score": 55,
+      "fatal_issues": [
+        "成本估算没有公式、单位或边界",
+        "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象"
+      ],
+      "warnings": [
+        "定价、延迟、数据隐私、竞品对比等关键证据不足",
+        "缺少开发者实际体验反馈",
+        "逻辑尚未闭环"
+      ],
+      "missing_evidence": [
+        "联网搜索的计费模式（按调用次数、搜索量还是 token？）",
+        "联网搜索的延迟范围（响应时间）",
+        "是否支持自定义搜索源（如 Bing API）",
+        "与 OpenAI GPTs with Browsing、Google Vertex AI Agent Builder 的对比",
+        "至少一个实际使用案例或开发者评测"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": true,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "AWS Bedrock AgentCore 的联网搜索功能是否值得普通开发者/小团队迁移或集成？",
+      "persona_discussion_question": "老花：我该不该把现有 Agent 迁移到 Bedrock AgentCore 来用联网搜索？成本、延迟、数据隐私和平台绑定风险分别是什么？",
+      "hidden_public_issue": "联网搜索功能是否会导致 Agent 调用成本不可控（搜索 API 费用 + LLM 推理费用），以及是否变相将开发者锁定在 AWS 生态内？",
+      "must_verify": [
+        "联网搜索的定价模式：是按调用次数、搜索量还是 token 计费？是否有免费额度？",
+        "联网搜索的延迟和可靠性：搜索响应时间、结果质量、是否支持自定义搜索源？",
+        "数据隐私：搜索请求是否经过 AWS 服务器？用户数据是否被用于训练或存储？",
+        "与现有 Agent 工具的对比：如 OpenAI GPTs with Browsing、Google Vertex AI Agent Builder 的联网搜索能力、定价和限制。",
+        "是否支持自定义搜索 API（如 Bing Search API、Google Custom Search）？还是只能使用 AWS 内置搜索？",
+        "是否有实际案例或基准测试展示联网搜索对 Agent 任务准确率的提升？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "pricing_page",
+          "query": "Amazon Bedrock AgentCore pricing web search",
+          "why_needed": "确认联网搜索的计费方式，评估成本风险。"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "Amazon Bedrock AgentCore web search documentation",
+          "why_needed": "获取功能细节、限制、数据隐私说明。"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Bedrock AgentCore web search review reddit",
+          "why_needed": "了解开发者实际使用体验、延迟、可靠性。"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Bedrock AgentCore web search use case",
+          "why_needed": "寻找实际应用案例，验证效果。"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "Agent web search benchmark 2025",
+          "why_needed": "对比不同平台联网搜索能力。"
+        },
+        {
+          "source_type": "policy",
+          "query": "AWS Bedrock data privacy web search",
+          "why_needed": "确认数据是否被用于训练或存储。"
+        }
+      ],
+      "expert_challenge_points": [
+        "联网搜索的延迟是否会影响实时 Agent 交互体验？",
+        "搜索结果的准确性如何？是否容易引入错误信息或偏见？",
+        "对于小团队，成本是否可控？是否有隐藏费用（如超出免费额度后的高额费用）？",
+        "是否支持自定义搜索源？如果不支持，是否限制了 Agent 的灵活性？"
+      ],
+      "do_not_claim_yet": [
+        "不要声称联网搜索功能是“革命性”或“必备”的，除非有充分证据。",
+        "不要断言成本低于其他方案，除非有明确的定价对比。",
+        "不要假设所有开发者都需要联网搜索，除非有案例证明其必要性。"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确标注定价、延迟、数据隐私等关键信息待验证。",
+      "downstream_materials_needed": [
+        "定价页面截图或官方定价链接。",
+        "官方文档中关于联网搜索的详细说明。",
+        "至少一个实际使用案例或开发者评测。",
+        "与竞品（如 OpenAI、Google）的对比表格。"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Amazon Bedrock AgentCore Pricing - AWS",
+        "url": "https://aws.amazon.com/bedrock/agentcore/pricing/",
+        "query": "Amazon Bedrock AgentCore pricing web search",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon Bedrock AgentCore Pricing - AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"Y6oPrfvfcqSIDNozH4G3ccsjnurUt00P9v042tJH/dY=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.17/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main content {\"data\":{\"items\"",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore Pricing: 12 Components Breakdown | Cloud Burn",
+        "url": "https://cloudburn.io/blog/amazon-bedrock-agentcore-pricing",
+        "query": "Amazon Bedrock AgentCore pricing web search",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-scrollbar-thumb:#0000;--tw-scrollbar-track:#0000;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-ordinal:initial;--tw-slashed-zero:initial;--tw-numeric-figure:initial;--tw-numeric-spacing:initial;--tw-numeric-fraction:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore: Pricing, Features & How It Works",
+        "url": "https://www.pump.co/blog/amazon-bedrock-agentcore/",
+        "query": "Amazon Bedrock AgentCore pricing web search",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "try{if(localStorage.getItem(\"__framer_force_showing_editorbar_since\")){const n=document.createElement(\"link\");n.rel = \"modulepreload\";n.href=\"https://framer.com/edit/init.mjs\";document.head.appendChild(n)}}catch(e){} .circle{ position: relative; display: inline-block; z-index: 1; } .circle::before { content:\"\"; position:absolute; width:130%; height:130%; top: 40%; left: 50%; transform: translate(-50%, -50%); z-index: -1; background-repeat: no-repeat; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjk3IiBoZWlnaHQ9IjEzMyIgdmlld0JveD0iMCAwIDI5NyAxMzMiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMzcuNzA4IDIxLjI2MjFDOTQuODQ1IDIyLjAyMzEgLTEuOTgxNDkgMzUuNTIxIDUuMzk5NDEgODIuNTUwMUMxNC42MjU1IDE0MS4zMzYgMjk0LjI5MiAxNDMuNjE5IDI5MS45ODYgODIuNTUwMUMyOTAuMTQxIDMzLjY5NDYgMTQxLjI5MyAxMC44MjY5IDY3LjA5OTEgNS41IiBzdHJva2U9IiNEQkZCNTEiIHN0cm9rZS13aWR0aD0iMTAiLz4KPC9zdmc+Cg=='); background-size: 100% 100%; } .underline{ position: relative; z-index:1; display: inline-block; overflow: visible; } .underline::before { content:\"\"; position:absolute; width:100%; height:100%; top: 90%; left: 50%; transform: translate(-50%, -10%); z-index: -1; background-repeat: no-repeat; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgzIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjgzIDE2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMSAxMUM1MC44MjYxIDYuNDcyMjYgMTc2Ljc4MyAwLjEzMzQyIDI4MiAxMSIgc3Ryb2tlPSIjREJGQjUxIiBzdHJva2Utd2lkdGg9IjEwIi8+Cjwvc3ZnPgo='); } .underline.green::before { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgzIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjgzIDE2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMSAxMUM1MC44MjYxIDYuNDcyMjYgMTc2Ljc4MyAwLjEzM",
+        "fetch_error": ""
+      },
+      {
+        "title": "Web Search Tool - Amazon Bedrock AgentCore",
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-target-connector-web-search-tool.html",
+        "query": "Amazon Bedrock AgentCore web search documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Web Search Tool - Amazon Bedrock AgentCore View a markdown version of this page Web Search Tool - Amazon Bedrock AgentCore { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"Amazon Bedrock AgentCore\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"Developer Guide\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"Amazon Bedrock AgentCore Gateway: A secure AI gateway for agents, tools, and models\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway.html\" }, { \"@type\" : \"ListItem\", \"position\" : 5, \"name\" : \"Supported targets for Amazon Bedrock AgentCore gateways\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-supported-targets.html\" }, { \"@type\" : \"ListItem\", \"position\" : 6, \"name\" : \"MCP targets\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-targets-mcp.html\" }, { \"@type\" : \"ListItem\", \"position\" : 7, \"name\" : \"Built-in connectors as targets\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-target-connectors.html\" }, { \"@type\" : \"ListItem\", \"position\" : 8, \"name\" : \"Web Search Tool\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-target-connectors.html\" } ] } Documentation Amazon Bedrock AgentCore Developer Guide Key capabilities Purpose-built web index Private by design How it works Use cases Set up Web Search Tool Configure domain filtering Configure the Gateway Service Role Input sche",
+        "fetch_error": ""
+      },
+      {
+        "title": "Announcing Web Search on Amazon Bedrock AgentCore: Ground your AI agents in current, accurate web knowledge | Amazon Web Services",
+        "url": "https://aws.amazon.com/blogs/aws/announcing-web-search-on-amazon-bedrock-agentcore-ground-your-ai-agents-in-current-accurate-web-knowledge/",
+        "query": "Amazon Bedrock AgentCore web search documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Announcing Web Search on Amazon Bedrock AgentCore: Ground your AI agents in current, accurate web knowledge | AWS News Blog body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore Documentation",
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/",
+        "query": "Amazon Bedrock AgentCore web search documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon Bedrock AgentCore Documentation Amazon Bedrock AgentCore is a fully managed service that enables you to deploy and operate highly capable agents securely, at scale using any framework and model. Get started Get started with AgentCore Build your first agent in minutes with the AgentCore CLI. Code examples Explore tutorials, use cases, and integrations in this GitHub repository. Integrations Explore AgentCore integrations with popular frameworks. AgentCore MCP server Vibe coding with your coding assistant. Console and SDKs AgentCore Console Access the AgentCore console. AgentCore SDK AgentCore Python SDK on GitHub. AWS SDK AWS SDK for Python (boto3) for AgentCore. Documentation AgentCore Developer Guide Describes how to use the AgentCore console, API, and CLI. AgentCore Data Plane API Reference Describes the AgentCore data plane API operations and parameters. bedrock-agentcore AgentCore Control Plane API Reference Describes the AgentCore control plane API operations and parameters. bedrock-agentcore-control AgentCore harness Get started with AgentCore harness Define and invoke AI agents with a single API call using AgentCore Harness. AgentCore harness in the Developer Guide Learn more about the managed agent loop with built-in memory, tools, and isolated execution environments. AgentCore Runtime Get started with AgentCore Runtime Deploy your first agent to AgentCore Runtime in minutes. AgentCore Runtime tutorials Tutorials for hosting MCP servers and agents (supports A2A) using AgentCore Runtime. AgentCore Runtime in the Developer Guide Learn more about hosting your AI agents and tools in secure, purpose-built hosting environments. AgentCore Memory Get started with AgentCore Memory Get started creating and managing memory resources with AgentCore Memory. AgentCore ",
+        "fetch_error": ""
+      },
+      {
+        "title": "r/aws on Reddit: web search with bedrock",
+        "url": "https://www.reddit.com/r/aws/comments/1pohj3n/web_search_with_bedrock/",
+        "query": "Bedrock AgentCore web search review reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/aws on Reddit: Clarification on AWS Bedrock & Agentcore services",
+        "url": "https://www.reddit.com/r/aws/comments/1tzrfsh/clarification_on_aws_bedrock_agentcore_services/",
+        "query": "Bedrock AgentCore web search review reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/aws on Reddit: Amazon bedrock agent core evaluations",
+        "url": "https://www.reddit.com/r/aws/comments/1q87plm/amazon_bedrock_agent_core_evaluations/",
+        "query": "Bedrock AgentCore web search review reddit",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "Announcing Web Search on Amazon Bedrock AgentCore for Agentic Web Retrieval | The AWS News Feed",
+        "url": "https://aws-news.com/article/2026-06-17-announcing-web-search-on-amazon-bedrock-agentcore-for-agentic-web-retrieval",
+        "query": "Bedrock AgentCore web search use case",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Announcing Web Search on Amazon Bedrock AgentCore for Agentic Web Retrieval | The AWS News Feed {\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Announcing Web Search on Amazon Bedrock AgentCore for Agentic Web Retrieval\",\"description\":\"Amazon Bedrock AgentCore now offers general availability of Web Search, enabling AI agents to access current web information while maintaining data…\",\"image\":\"https://static.aws-news.com/article-banners/019ed644-655e-585a-15dd-42918bcc6367.png\",\"datePublished\":\"2026-06-17T15:47:47.166346Z\",\"dateModified\":\"2026-06-17T15:47:47.166346Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Luc van Donkersgoed\",\"url\":\"https://lucvandonkersgoed.com\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"The AWS News Feed\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://aws-news.com/logo.png\"}},\"mainEntityOfPage\":\"https://aws-news.com/article/2026-06-17-announcing-web-search-on-amazon-bedrock-agentcore-for-agentic-web-retrieval\"} try{if(localStorage.getItem('ad-free')==='1'){document.documentElement.classList.add('ad-free')}}catch(e){} .ad-free [data-ad-slot]{display:none!important} html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;box-sizing:border-box;-webkit-text-size-adjust:100%;}*,*::before,*::after{box-sizing:inherit;}strong,b{font-weight:700;}body{margin:0;color:rgba(0, 0, 0, 0.87);font-family:\"Roboto\",\"Helvetica\",\"Arial\",sans-serif;font-weight:400;font-size:1rem;line-height:1.5;letter-spacing:0.00938em;background-color:#eeeeee;}@media print{body{background-color:#fff;}}body::backdrop{background-color:#eeeeee;} @media (min-width:0px){.css-1rb0nos{display:block;}}@media (min-width:1200px){.css-1rb0nos{display:none;}} .css-fiz1wc{overflow:hidden;position:relative;}@media (min-width:0px){.css-fiz1wc{display:none;}}@media (min-wid",
+        "fetch_error": ""
+      },
+      {
+        "title": "Amazon Bedrock AgentCore harness is now generally available: Go from idea to production-grade agent in minutes | Amazon Web Services",
+        "url": "https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-harness-is-now-generally-available-go-from-idea-to-production-grade-agent-in-minutes/",
+        "query": "Bedrock AgentCore web search use case",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Amazon Bedrock AgentCore harness is now generally available: Go from idea to production-grade agent in minutes | Artificial Intelligence body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rg",
+        "fetch_error": ""
+      },
+      {
+        "title": "Example use cases - Amazon Bedrock AgentCore",
+        "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity-use-cases.html",
+        "query": "Bedrock AgentCore web search use case",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Example use cases - Amazon Bedrock AgentCore View a markdown version of this page Example use cases - Amazon Bedrock AgentCore { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"Amazon Bedrock AgentCore\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"Developer Guide\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"Provide identity and credential management for agent applications with Amazon Bedrock AgentCore Identity\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity.html\" }, { \"@type\" : \"ListItem\", \"position\" : 5, \"name\" : \"Overview of Amazon Bedrock AgentCore Identity\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity-overview.html\" }, { \"@type\" : \"ListItem\", \"position\" : 6, \"name\" : \"Example use cases\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity-overview.html\" } ] } Documentation Amazon Bedrock AgentCore Developer Guide Personal assistant agents Enterprise automation agents Customer service agents Data processing and analytics agents Development and DevOps agents Example use cases Amazon Bedrock AgentCore Identity supports a wide range of use cases across different industries and application types. This section provides detailed examples of how the service can be applied in specific scenarios, demonstrating both user-delegated access (OAuth 2.0 authorization code grant) and machine-to-machine authentication (OAuth 2.0 client credentials gra",
+        "fetch_error": ""
+      },
+      {
+        "title": "BrowseComp: a benchmark for browsing agents | OpenAI",
+        "url": "https://openai.com/index/browsecomp/",
+        "query": "Agent web search benchmark 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "Agentic Search in 2026: Benchmark 8 Search APIs for Agents",
+        "url": "https://aimultiple.com/agentic-search",
+        "query": "Agent web search benchmark 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Agentic Search in 2026: Benchmark 8 Search APIs for Agents :root { --font-geist: 'Geist', 'Geist Fallback'; --font-roboto-mono: 'Roboto Mono', 'Roboto Mono Fallback'; } (function() { const theme = document.cookie.match(/theme=(light|dark)/)?.[1] || 'light'; document.documentElement.setAttribute('data-theme', theme); })(); Agentic AI CATEGORIES Model Context Protocol GenAI Applications AI in Industries AI Hardware AI Foundations AI Coding RAG Browse Categories Browser MCP Code Execution with MCP MCP Gateway Cybersecurity CATEGORIES Data Security Identity & Access Management Security Tools Network Security Threat Detection and Response (TDR) Browse Categories Device Control Software SaaS Backup Solutions Google Workspace Backup DLP Review DLP Software USB Blocking Software DLP Pricing See All Data CATEGORIES Web Proxies Web Data Scraping Data Collection Data Science Synthetic Data Browse Categories Residential Proxy Providers Proxy Providers Datacenter Proxy Amazon Proxies SOCKS5 Proxies Geonode Proxies Proxy Pricing See All Enterprise Software CATEGORIES E-Commerce Workload Automation IT Automation RMM Process Improvement Managed File Transfer Helpdesk Software Browse Categories Ecommerce Technology Price Monitoring Tools Checkout Free Stores Ecommerce Data Collection Services Contact Us Agentic AI Model Context Protocol GenAI Applications AI in Industries AI Hardware AI Foundations AI Coding RAG Cybersecurity Data Security Identity & Access Management Security Tools Network Security Threat Detection and Response (TDR) Data Web Proxies Web Data Scraping Data Collection Data Science Synthetic Data Enterprise Software E-Commerce Workload Automation IT Automation RMM Process Improvement Managed File Transfer Helpdesk Software Services Contact Us Back Model Context Protocol ",
+        "fetch_error": ""
+      },
+      {
+        "title": "11 Best AI Browser Agents in 2026",
+        "url": "https://www.firecrawl.dev/blog/best-browser-agents",
+        "query": "Agent web search benchmark 2025",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "11 Best AI Browser Agents in 2026 :root { --heat-4: #fa5d190a; --heat-8: #fa5d1914; --heat-12: #fa5d191f; --heat-16: #fa5d1929; --heat-20: #fa5d1933; --heat-40: #fa5d1966; --heat-90: #fa5d19e6; --heat-100: #fa5d19ff; --accent-black: #262626ff; --accent-white: #ffffffff; --surface: #ffffffff; --surface-raised: #ffffffff; --accent-amethyst: #9061ffff; --accent-bluetron: #2a6dfbff; --accent-crimson: #eb3424ff; --accent-forest: #42c366ff; --accent-honey: #ecb730ff; --black-alpha-1: #00000003; --black-alpha-2: #00000005; --black-alpha-3: #00000008; --black-alpha-4: #0000000a; --black-alpha-5: #0000000d; --black-alpha-6: #0000000f; --black-alpha-7: #00000012; --black-alpha-8: #00000014; --black-alpha-10: #0000001a; --black-alpha-12: #0000001f; --black-alpha-16: #00000029; --black-alpha-20: #00000033; --black-alpha-24: #0000003d; --black-alpha-32: #26262652; --black-alpha-40: #26262666; --black-alpha-48: #2626267a; --black-alpha-56: #2626268f; --black-alpha-64: #262626a3; --black-alpha-72: #262626b8; --black-alpha-88: #262626e0; --white-alpha-56: #ffffff8f; --white-alpha-72: #ffffffb8; --border-faint: #edededff; --border-muted: #e8e8e8ff; --border-loud: #e6e6e6ff; --illustrations-faint: #edededff; --illustrations-muted: #e6e6e6ff; --illustrations-default: #dbdbdbff; --background-base: #f9f9f9ff; --background-lighter: #fbfbfbff } .dark { --heat-4: #fa5d190a; --heat-8: #fa5d1914; --heat-12: #fa5d191f; --heat-16: #fa5d1929; --heat-20: #fa5d1933; --heat-40: #fa5d1966; --heat-90: #fa5d19e6; --heat-100: #fa5d19ff; --accent-black: #f5f5f5ff; --accent-white: #ffffffff; --surface: #171717ff; --surface-raised: #1f1f1fff; --accent-amethyst: #a07affff; --accent-bluetron: #5a8ffcff; --accent-crimson: #f05545ff; --accent-forest: #5cd47fff; --accent-honey: #f0c550ff; --black-alpha-1: #ffffff",
+        "fetch_error": ""
+      },
+      {
+        "title": "Secure Gen AI Apps - Amazon Bedrock Security and Privacy - AWS",
+        "url": "https://aws.amazon.com/bedrock/security-compliance/",
+        "query": "AWS Bedrock data privacy web search",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Secure Gen AI Apps - Amazon Bedrock Security and Privacy - AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"glGjsWcKWf9PPh0RWAz8W93/LcwjbNe0OyRVgV/y8nE=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.17/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main ",
+        "fetch_error": ""
+      },
+      {
+        "title": "Data protection - Amazon Bedrock",
+        "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html",
+        "query": "AWS Bedrock data privacy web search",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Data protection - Amazon Bedrock View a markdown version of this page Data protection - Amazon Bedrock { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"Amazon Bedrock\", \"item\" : \"https://docs.aws.amazon.com/bedrock/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"User Guide\", \"item\" : \"https://docs.aws.amazon.com/bedrock/latest/userguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"Security, Guardrails, and Observability in Amazon Bedrock\", \"item\" : \"https://docs.aws.amazon.com/bedrock/latest/userguide/security.html\" }, { \"@type\" : \"ListItem\", \"position\" : 5, \"name\" : \"Security\", \"item\" : \"https://docs.aws.amazon.com/bedrock/latest/userguide/security-overview.html\" }, { \"@type\" : \"ListItem\", \"position\" : 6, \"name\" : \"Data protection\", \"item\" : \"https://docs.aws.amazon.com/bedrock/latest/userguide/security-overview.html\" } ] } Documentation Amazon Bedrock User Guide Data protection The AWS shared responsibility model applies to data protection in Amazon Bedrock. As described in this model, AWS is responsible for protecting the global infrastructure that runs all of the AWS Cloud. You are responsible for maintaining control over your content that is hosted on this infrastructure. You are also responsible for the security configuration and management tasks for the AWS services that you use. For more information about data privacy, see Data Privacy FAQ . For information about data protection in Europe, see the General Data Protection Regulation (GDPR) Center . For data protection purposes, we recommend that you protect AWS account credentials and set up individual users w",
+        "fetch_error": ""
+      },
+      {
+        "title": "Security, privacy, and responsible AI – Amazon Bedrock – AWS",
+        "url": "https://aws.amazon.com/bedrock/security-privacy-responsible-ai/",
+        "query": "AWS Bedrock data privacy web search",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Security, privacy, and responsible AI – Amazon Bedrock – AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"gKTTkMvGGmshQ/iMEOXx19kce4bhtPoG4vCKZzD+reE=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.17/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main co",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260620-introducing-web-search-on-amazon-bedrock-agentco-ca46f77a/",
+    "for_gpt_editor": {
+      "brief": "Web Search on Amazon Bedrock AgentCore is now generally available. In this post, we walk through what makes Web Search on Amazon Bedrock AgentCore different, why it matters, and how to wire it in with a few lines of code.",
+      "title_seed": "AWS Bedrock AgentCore 上线联网搜索能力",
+      "original_title": "Introducing Web Search on Amazon Bedrock AgentCore",
+      "source_url": "https://aws.amazon.com/blogs/machine-learning/introducing-web-search-on-amazon-bedrock-agentcore/",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：成本估算没有公式、单位或边界"
+        },
+        "core_question": "AWS Bedrock AgentCore 的联网搜索功能是否值得普通开发者/小团队迁移或集成？",
+        "why_this_topic_matters": "联网搜索是 Agent 从封闭知识走向实时信息的关键能力，AWS 正式发布该功能可能影响 Agent 开发者的工具选型，但成本、延迟、平台绑定风险未知。",
+        "fact_summary": [
+          "AWS Bedrock AgentCore 联网搜索功能已正式可用。",
+          "官方文档描述了功能：使用 AWS 自建网络索引，支持域名过滤，数据隐私默认不用于训练。",
+          "定价页面未明确显示联网搜索的单独计费项，可能包含在 AgentCore 调用费用中。",
+          "Reddit 社区相关讨论因 403 错误无法获取。",
+          "竞品对比（OpenAI、Google）和实际使用案例尚未找到。"
+        ],
+        "persona_discussion_question": "老花：我该不该把现有 Agent 迁移到 Bedrock AgentCore 来用联网搜索？成本、延迟、数据隐私和平台绑定风险分别是什么？",
+        "old_flower_stance": "先算账，再迁移。联网搜索是能力，但成本不透明、延迟未知、平台锁定风险高，小团队应优先用开源或低成本替代方案验证需求。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 7,
+          "why_interested": "核心技术人关注成本账、延迟、平台锁定；入门读者想了解联网搜索对 Agent 的价值；商业读者评估是否值得投入。",
+          "reader_risk": "若夸大功能或成本误导，可能引发读者不信任。"
+        },
+        "mass_interest_hook": {
+          "score": 6,
+          "hook_type": "数字",
+          "why_non_technical_people_may_click": "标题如“AWS 给 AI 加了个搜索功能，成本可能翻倍？”能吸引对 AI 成本好奇的普通人。",
+          "story_seed": "一个独立开发者用 Bedrock AgentCore 做客服 Agent，结果联网搜索让账单暴涨 3 倍。",
+          "do_not_overhype": "不要声称联网搜索是“革命性”或“必备”，避免夸大成本影响。"
+        },
+        "topic_tension": {
+          "score": 7,
+          "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+          "debate_question": "联网搜索功能到底是在提升 Agent 能力，还是变相把开发者锁在 AWS 生态里？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "AWS 平台"
+          ],
+          "why_people_would_comment": "读者可以围绕成本、延迟、数据隐私、平台绑定等发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2026-06-17: AWS 宣布 Bedrock AgentCore 联网搜索功能正式可用。"
+        ],
+        "evidence_table": [
+          {
+            "source": "AWS Machine Learning Blog",
+            "url": "https://aws.amazon.com/blogs/machine-learning/introducing-web-search-on-amazon-bedrock-agentcore/",
+            "supports": "功能正式发布，提供联网搜索能力。",
+            "reliability": "official"
+          },
+          {
+            "source": "AWS News Blog",
+            "url": "https://aws.amazon.com/blogs/aws/announcing-web-search-on-amazon-bedrock-agentcore-ground-your-ai-agents-in-current-accurate-web-knowledge/",
+            "supports": "功能详情、使用场景。",
+            "reliability": "official"
+          },
+          {
+            "source": "AWS 官方文档 - Web Search Tool",
+            "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-target-connector-web-search-tool.html",
+            "supports": "技术细节：使用 AWS 自建网络索引，支持域名过滤。",
+            "reliability": "official"
+          },
+          {
+            "source": "AWS 定价页面",
+            "url": "https://aws.amazon.com/bedrock/agentcore/pricing/",
+            "supports": "未明确显示联网搜索单独计费项。",
+            "reliability": "official"
+          },
+          {
+            "source": "AWS 数据保护文档",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html",
+            "supports": "数据默认不用于训练。",
+            "reliability": "official"
+          },
+          {
+            "source": "The AWS News Feed",
+            "url": "https://aws-news.com/article/2026-06-17-announcing-web-search-on-amazon-bedrock-agentcore-for-agentic-web-retrieval",
+            "supports": "功能概述。",
+            "reliability": "media"
+          },
+          {
+            "source": "Cloud Burn",
+            "url": "https://cloudburn.io/blog/amazon-bedrock-agentcore-pricing",
+            "supports": "定价分析，但未抓取到具体内容。",
+            "reliability": "weak"
+          },
+          {
+            "source": "Reddit",
+            "url": "https://www.reddit.com/r/aws/comments/1pohj3n/web_search_with_bedrock/",
+            "supports": "开发者讨论，但 403 无法获取。",
+            "reliability": "weak"
+          }
+        ],
+        "logic_closure": "部分闭环：功能存在、官方文档清晰，但定价、延迟、竞品对比、实际案例缺失，无法形成完整判断。",
+        "writeable_angles": [
+          {
+            "angle": "成本账：联网搜索的隐藏费用",
+            "why": "定价不透明，小团队最关心成本。",
+            "needs": "明确计费方式、免费额度、超出后费用。"
+          },
+          {
+            "angle": "延迟与可靠性：联网搜索是否影响实时交互",
+            "why": "Agent 实时性要求高，延迟是关键。",
+            "needs": "实际测试数据或开发者反馈。"
+          },
+          {
+            "angle": "数据隐私：联网搜索是否安全",
+            "why": "企业用户关注数据是否被用于训练。",
+            "needs": "官方数据保护说明。"
+          },
+          {
+            "angle": "平台锁定：迁移成本与替代方案",
+            "why": "开发者担心被 AWS 绑定。",
+            "needs": "竞品对比（OpenAI、Google）、开源替代。"
+          }
+        ],
+        "missing_basics": [
+          "联网搜索的计费模式（按调用次数、搜索量还是 token？）",
+          "联网搜索的延迟范围（响应时间）",
+          "是否支持自定义搜索源（如 Bing API）",
+          "与 OpenAI GPTs with Browsing、Google Vertex AI Agent Builder 的对比"
+        ],
+        "missing_materials": [
+          "定价页面截图或明确计费说明",
+          "至少一个实际使用案例或开发者评测",
+          "竞品对比表格",
+          "延迟基准测试数据"
+        ],
+        "not_claimable": [
+          "不要声称联网搜索是“革命性”或“必备”",
+          "不要断言成本低于其他方案",
+          "不要假设所有开发者都需要联网搜索"
+        ],
+        "followup_queries": [
+          "Amazon Bedrock AgentCore web search pricing per request",
+          "Bedrock AgentCore web search latency benchmark",
+          "Bedrock AgentCore web search vs OpenAI browsing",
+          "Bedrock AgentCore web search custom search source",
+          "Bedrock AgentCore web search developer review 2026"
+        ],
+        "additional_search_queries": [
+          "Amazon Bedrock AgentCore web search pricing per request",
+          "Bedrock AgentCore web search latency benchmark",
+          "Bedrock AgentCore web search vs OpenAI browsing",
+          "Bedrock AgentCore web search custom search source",
+          "Bedrock AgentCore web search developer review 2026"
+        ],
+        "stop_conditions": [
+          "定价页面明确显示联网搜索免费或费用极低",
+          "多个开发者评测显示延迟可接受且成本可控",
+          "竞品对比显示 AWS 有明显优势"
+        ],
+        "confidence": 55.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI前沿",
+        "report_type": "tool-ledger",
+        "quality_gate": {
+          "pass": false,
+          "score": 55,
+          "fatal_issues": [
+            "成本估算没有公式、单位或边界",
+            "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象"
+          ],
+          "warnings": [
+            "定价、延迟、数据隐私、竞品对比等关键证据不足",
+            "缺少开发者实际体验反馈",
+            "逻辑尚未闭环"
+          ],
+          "missing_evidence": [
+            "联网搜索的计费模式（按调用次数、搜索量还是 token？）",
+            "联网搜索的延迟范围（响应时间）",
+            "是否支持自定义搜索源（如 Bing API）",
+            "与 OpenAI GPTs with Browsing、Google Vertex AI Agent Builder 的对比",
+            "至少一个实际使用案例或开发者评测"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "AWS Bedrock AgentCore 的联网搜索功能是否值得普通开发者/小团队迁移或集成？",
+          "persona_discussion_question": "老花：我该不该把现有 Agent 迁移到 Bedrock AgentCore 来用联网搜索？成本、延迟、数据隐私和平台绑定风险分别是什么？",
+          "hidden_public_issue": "联网搜索功能是否会导致 Agent 调用成本不可控（搜索 API 费用 + LLM 推理费用），以及是否变相将开发者锁定在 AWS 生态内？",
+          "must_verify": [
+            "联网搜索的定价模式：是按调用次数、搜索量还是 token 计费？是否有免费额度？",
+            "联网搜索的延迟和可靠性：搜索响应时间、结果质量、是否支持自定义搜索源？",
+            "数据隐私：搜索请求是否经过 AWS 服务器？用户数据是否被用于训练或存储？",
+            "与现有 Agent 工具的对比：如 OpenAI GPTs with Browsing、Google Vertex AI Agent Builder 的联网搜索能力、定价和限制。",
+            "是否支持自定义搜索 API（如 Bing Search API、Google Custom Search）？还是只能使用 AWS 内置搜索？",
+            "是否有实际案例或基准测试展示联网搜索对 Agent 任务准确率的提升？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "pricing_page",
+              "query": "Amazon Bedrock AgentCore pricing web search",
+              "why_needed": "确认联网搜索的计费方式，评估成本风险。"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Amazon Bedrock AgentCore web search documentation",
+              "why_needed": "获取功能细节、限制、数据隐私说明。"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Bedrock AgentCore web search review reddit",
+              "why_needed": "了解开发者实际使用体验、延迟、可靠性。"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Bedrock AgentCore web search use case",
+              "why_needed": "寻找实际应用案例，验证效果。"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "Agent web search benchmark 2025",
+              "why_needed": "对比不同平台联网搜索能力。"
+            },
+            {
+              "source_type": "policy",
+              "query": "AWS Bedrock data privacy web search",
+              "why_needed": "确认数据是否被用于训练或存储。"
+            }
+          ],
+          "expert_challenge_points": [
+            "联网搜索的延迟是否会影响实时 Agent 交互体验？",
+            "搜索结果的准确性如何？是否容易引入错误信息或偏见？",
+            "对于小团队，成本是否可控？是否有隐藏费用（如超出免费额度后的高额费用）？",
+            "是否支持自定义搜索源？如果不支持，是否限制了 Agent 的灵活性？"
+          ],
+          "do_not_claim_yet": [
+            "不要声称联网搜索功能是“革命性”或“必备”的，除非有充分证据。",
+            "不要断言成本低于其他方案，除非有明确的定价对比。",
+            "不要假设所有开发者都需要联网搜索，除非有案例证明其必要性。"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确标注定价、延迟、数据隐私等关键信息待验证。",
+          "downstream_materials_needed": [
+            "定价页面截图或官方定价链接。",
+            "官方文档中关于联网搜索的详细说明。",
+            "至少一个实际使用案例或开发者评测。",
+            "与竞品（如 OpenAI、Google）的对比表格。"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Amazon Bedrock AgentCore Pricing - AWS",
+            "url": "https://aws.amazon.com/bedrock/agentcore/pricing/",
+            "query": "Amazon Bedrock AgentCore pricing web search",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon Bedrock AgentCore Pricing - AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"Y6oPrfvfcqSIDNozH4G3ccsjnurUt00P9v042tJH/dY=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.17/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main content {\"data\":{\"items\"",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore Pricing: 12 Components Breakdown | Cloud Burn",
+            "url": "https://cloudburn.io/blog/amazon-bedrock-agentcore-pricing",
+            "query": "Amazon Bedrock AgentCore pricing web search",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-scrollbar-thumb:#0000;--tw-scrollbar-track:#0000;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-ordinal:initial;--tw-slashed-zero:initial;--tw-numeric-figure:initial;--tw-numeric-spacing:initial;--tw-numeric-fraction:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore: Pricing, Features & How It Works",
+            "url": "https://www.pump.co/blog/amazon-bedrock-agentcore/",
+            "query": "Amazon Bedrock AgentCore pricing web search",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "try{if(localStorage.getItem(\"__framer_force_showing_editorbar_since\")){const n=document.createElement(\"link\");n.rel = \"modulepreload\";n.href=\"https://framer.com/edit/init.mjs\";document.head.appendChild(n)}}catch(e){} .circle{ position: relative; display: inline-block; z-index: 1; } .circle::before { content:\"\"; position:absolute; width:130%; height:130%; top: 40%; left: 50%; transform: translate(-50%, -50%); z-index: -1; background-repeat: no-repeat; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjk3IiBoZWlnaHQ9IjEzMyIgdmlld0JveD0iMCAwIDI5NyAxMzMiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMzcuNzA4IDIxLjI2MjFDOTQuODQ1IDIyLjAyMzEgLTEuOTgxNDkgMzUuNTIxIDUuMzk5NDEgODIuNTUwMUMxNC42MjU1IDE0MS4zMzYgMjk0LjI5MiAxNDMuNjE5IDI5MS45ODYgODIuNTUwMUMyOTAuMTQxIDMzLjY5NDYgMTQxLjI5MyAxMC44MjY5IDY3LjA5OTEgNS41IiBzdHJva2U9IiNEQkZCNTEiIHN0cm9rZS13aWR0aD0iMTAiLz4KPC9zdmc+Cg=='); background-size: 100% 100%; } .underline{ position: relative; z-index:1; display: inline-block; overflow: visible; } .underline::before { content:\"\"; position:absolute; width:100%; height:100%; top: 90%; left: 50%; transform: translate(-50%, -10%); z-index: -1; background-repeat: no-repeat; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgzIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjgzIDE2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMSAxMUM1MC44MjYxIDYuNDcyMjYgMTc2Ljc4MyAwLjEzMzQyIDI4MiAxMSIgc3Ryb2tlPSIjREJGQjUxIiBzdHJva2Utd2lkdGg9IjEwIi8+Cjwvc3ZnPgo='); } .underline.green::before { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgzIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjgzIDE2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMSAxMUM1MC44MjYxIDYuNDcyMjYgMTc2Ljc4MyAwLjEzM",
+            "fetch_error": ""
+          },
+          {
+            "title": "Web Search Tool - Amazon Bedrock AgentCore",
+            "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-target-connector-web-search-tool.html",
+            "query": "Amazon Bedrock AgentCore web search documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Web Search Tool - Amazon Bedrock AgentCore View a markdown version of this page Web Search Tool - Amazon Bedrock AgentCore { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"Amazon Bedrock AgentCore\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"Developer Guide\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"Amazon Bedrock AgentCore Gateway: A secure AI gateway for agents, tools, and models\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway.html\" }, { \"@type\" : \"ListItem\", \"position\" : 5, \"name\" : \"Supported targets for Amazon Bedrock AgentCore gateways\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-supported-targets.html\" }, { \"@type\" : \"ListItem\", \"position\" : 6, \"name\" : \"MCP targets\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-targets-mcp.html\" }, { \"@type\" : \"ListItem\", \"position\" : 7, \"name\" : \"Built-in connectors as targets\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-target-connectors.html\" }, { \"@type\" : \"ListItem\", \"position\" : 8, \"name\" : \"Web Search Tool\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-target-connectors.html\" } ] } Documentation Amazon Bedrock AgentCore Developer Guide Key capabilities Purpose-built web index Private by design How it works Use cases Set up Web Search Tool Configure domain filtering Configure the Gateway Service Role Input sche",
+            "fetch_error": ""
+          },
+          {
+            "title": "Announcing Web Search on Amazon Bedrock AgentCore: Ground your AI agents in current, accurate web knowledge | Amazon Web Services",
+            "url": "https://aws.amazon.com/blogs/aws/announcing-web-search-on-amazon-bedrock-agentcore-ground-your-ai-agents-in-current-accurate-web-knowledge/",
+            "query": "Amazon Bedrock AgentCore web search documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Announcing Web Search on Amazon Bedrock AgentCore: Ground your AI agents in current, accurate web knowledge | AWS News Blog body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore Documentation",
+            "url": "https://docs.aws.amazon.com/bedrock-agentcore/",
+            "query": "Amazon Bedrock AgentCore web search documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon Bedrock AgentCore Documentation Amazon Bedrock AgentCore is a fully managed service that enables you to deploy and operate highly capable agents securely, at scale using any framework and model. Get started Get started with AgentCore Build your first agent in minutes with the AgentCore CLI. Code examples Explore tutorials, use cases, and integrations in this GitHub repository. Integrations Explore AgentCore integrations with popular frameworks. AgentCore MCP server Vibe coding with your coding assistant. Console and SDKs AgentCore Console Access the AgentCore console. AgentCore SDK AgentCore Python SDK on GitHub. AWS SDK AWS SDK for Python (boto3) for AgentCore. Documentation AgentCore Developer Guide Describes how to use the AgentCore console, API, and CLI. AgentCore Data Plane API Reference Describes the AgentCore data plane API operations and parameters. bedrock-agentcore AgentCore Control Plane API Reference Describes the AgentCore control plane API operations and parameters. bedrock-agentcore-control AgentCore harness Get started with AgentCore harness Define and invoke AI agents with a single API call using AgentCore Harness. AgentCore harness in the Developer Guide Learn more about the managed agent loop with built-in memory, tools, and isolated execution environments. AgentCore Runtime Get started with AgentCore Runtime Deploy your first agent to AgentCore Runtime in minutes. AgentCore Runtime tutorials Tutorials for hosting MCP servers and agents (supports A2A) using AgentCore Runtime. AgentCore Runtime in the Developer Guide Learn more about hosting your AI agents and tools in secure, purpose-built hosting environments. AgentCore Memory Get started with AgentCore Memory Get started creating and managing memory resources with AgentCore Memory. AgentCore ",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/aws on Reddit: web search with bedrock",
+            "url": "https://www.reddit.com/r/aws/comments/1pohj3n/web_search_with_bedrock/",
+            "query": "Bedrock AgentCore web search review reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/aws on Reddit: Clarification on AWS Bedrock & Agentcore services",
+            "url": "https://www.reddit.com/r/aws/comments/1tzrfsh/clarification_on_aws_bedrock_agentcore_services/",
+            "query": "Bedrock AgentCore web search review reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/aws on Reddit: Amazon bedrock agent core evaluations",
+            "url": "https://www.reddit.com/r/aws/comments/1q87plm/amazon_bedrock_agent_core_evaluations/",
+            "query": "Bedrock AgentCore web search review reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "Announcing Web Search on Amazon Bedrock AgentCore for Agentic Web Retrieval | The AWS News Feed",
+            "url": "https://aws-news.com/article/2026-06-17-announcing-web-search-on-amazon-bedrock-agentcore-for-agentic-web-retrieval",
+            "query": "Bedrock AgentCore web search use case",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Announcing Web Search on Amazon Bedrock AgentCore for Agentic Web Retrieval | The AWS News Feed {\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Announcing Web Search on Amazon Bedrock AgentCore for Agentic Web Retrieval\",\"description\":\"Amazon Bedrock AgentCore now offers general availability of Web Search, enabling AI agents to access current web information while maintaining data…\",\"image\":\"https://static.aws-news.com/article-banners/019ed644-655e-585a-15dd-42918bcc6367.png\",\"datePublished\":\"2026-06-17T15:47:47.166346Z\",\"dateModified\":\"2026-06-17T15:47:47.166346Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Luc van Donkersgoed\",\"url\":\"https://lucvandonkersgoed.com\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"The AWS News Feed\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://aws-news.com/logo.png\"}},\"mainEntityOfPage\":\"https://aws-news.com/article/2026-06-17-announcing-web-search-on-amazon-bedrock-agentcore-for-agentic-web-retrieval\"} try{if(localStorage.getItem('ad-free')==='1'){document.documentElement.classList.add('ad-free')}}catch(e){} .ad-free [data-ad-slot]{display:none!important} html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;box-sizing:border-box;-webkit-text-size-adjust:100%;}*,*::before,*::after{box-sizing:inherit;}strong,b{font-weight:700;}body{margin:0;color:rgba(0, 0, 0, 0.87);font-family:\"Roboto\",\"Helvetica\",\"Arial\",sans-serif;font-weight:400;font-size:1rem;line-height:1.5;letter-spacing:0.00938em;background-color:#eeeeee;}@media print{body{background-color:#fff;}}body::backdrop{background-color:#eeeeee;} @media (min-width:0px){.css-1rb0nos{display:block;}}@media (min-width:1200px){.css-1rb0nos{display:none;}} .css-fiz1wc{overflow:hidden;position:relative;}@media (min-width:0px){.css-fiz1wc{display:none;}}@media (min-wid",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore harness is now generally available: Go from idea to production-grade agent in minutes | Amazon Web Services",
+            "url": "https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-harness-is-now-generally-available-go-from-idea-to-production-grade-agent-in-minutes/",
+            "query": "Bedrock AgentCore web search use case",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon Bedrock AgentCore harness is now generally available: Go from idea to production-grade agent in minutes | Artificial Intelligence body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rg",
+            "fetch_error": ""
+          },
+          {
+            "title": "Example use cases - Amazon Bedrock AgentCore",
+            "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity-use-cases.html",
+            "query": "Bedrock AgentCore web search use case",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Example use cases - Amazon Bedrock AgentCore View a markdown version of this page Example use cases - Amazon Bedrock AgentCore { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"Amazon Bedrock AgentCore\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"Developer Guide\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"Provide identity and credential management for agent applications with Amazon Bedrock AgentCore Identity\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity.html\" }, { \"@type\" : \"ListItem\", \"position\" : 5, \"name\" : \"Overview of Amazon Bedrock AgentCore Identity\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity-overview.html\" }, { \"@type\" : \"ListItem\", \"position\" : 6, \"name\" : \"Example use cases\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity-overview.html\" } ] } Documentation Amazon Bedrock AgentCore Developer Guide Personal assistant agents Enterprise automation agents Customer service agents Data processing and analytics agents Development and DevOps agents Example use cases Amazon Bedrock AgentCore Identity supports a wide range of use cases across different industries and application types. This section provides detailed examples of how the service can be applied in specific scenarios, demonstrating both user-delegated access (OAuth 2.0 authorization code grant) and machine-to-machine authentication (OAuth 2.0 client credentials gra",
+            "fetch_error": ""
+          },
+          {
+            "title": "BrowseComp: a benchmark for browsing agents | OpenAI",
+            "url": "https://openai.com/index/browsecomp/",
+            "query": "Agent web search benchmark 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Agentic Search in 2026: Benchmark 8 Search APIs for Agents",
+            "url": "https://aimultiple.com/agentic-search",
+            "query": "Agent web search benchmark 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Agentic Search in 2026: Benchmark 8 Search APIs for Agents :root { --font-geist: 'Geist', 'Geist Fallback'; --font-roboto-mono: 'Roboto Mono', 'Roboto Mono Fallback'; } (function() { const theme = document.cookie.match(/theme=(light|dark)/)?.[1] || 'light'; document.documentElement.setAttribute('data-theme', theme); })(); Agentic AI CATEGORIES Model Context Protocol GenAI Applications AI in Industries AI Hardware AI Foundations AI Coding RAG Browse Categories Browser MCP Code Execution with MCP MCP Gateway Cybersecurity CATEGORIES Data Security Identity & Access Management Security Tools Network Security Threat Detection and Response (TDR) Browse Categories Device Control Software SaaS Backup Solutions Google Workspace Backup DLP Review DLP Software USB Blocking Software DLP Pricing See All Data CATEGORIES Web Proxies Web Data Scraping Data Collection Data Science Synthetic Data Browse Categories Residential Proxy Providers Proxy Providers Datacenter Proxy Amazon Proxies SOCKS5 Proxies Geonode Proxies Proxy Pricing See All Enterprise Software CATEGORIES E-Commerce Workload Automation IT Automation RMM Process Improvement Managed File Transfer Helpdesk Software Browse Categories Ecommerce Technology Price Monitoring Tools Checkout Free Stores Ecommerce Data Collection Services Contact Us Agentic AI Model Context Protocol GenAI Applications AI in Industries AI Hardware AI Foundations AI Coding RAG Cybersecurity Data Security Identity & Access Management Security Tools Network Security Threat Detection and Response (TDR) Data Web Proxies Web Data Scraping Data Collection Data Science Synthetic Data Enterprise Software E-Commerce Workload Automation IT Automation RMM Process Improvement Managed File Transfer Helpdesk Software Services Contact Us Back Model Context Protocol ",
+            "fetch_error": ""
+          },
+          {
+            "title": "11 Best AI Browser Agents in 2026",
+            "url": "https://www.firecrawl.dev/blog/best-browser-agents",
+            "query": "Agent web search benchmark 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "11 Best AI Browser Agents in 2026 :root { --heat-4: #fa5d190a; --heat-8: #fa5d1914; --heat-12: #fa5d191f; --heat-16: #fa5d1929; --heat-20: #fa5d1933; --heat-40: #fa5d1966; --heat-90: #fa5d19e6; --heat-100: #fa5d19ff; --accent-black: #262626ff; --accent-white: #ffffffff; --surface: #ffffffff; --surface-raised: #ffffffff; --accent-amethyst: #9061ffff; --accent-bluetron: #2a6dfbff; --accent-crimson: #eb3424ff; --accent-forest: #42c366ff; --accent-honey: #ecb730ff; --black-alpha-1: #00000003; --black-alpha-2: #00000005; --black-alpha-3: #00000008; --black-alpha-4: #0000000a; --black-alpha-5: #0000000d; --black-alpha-6: #0000000f; --black-alpha-7: #00000012; --black-alpha-8: #00000014; --black-alpha-10: #0000001a; --black-alpha-12: #0000001f; --black-alpha-16: #00000029; --black-alpha-20: #00000033; --black-alpha-24: #0000003d; --black-alpha-32: #26262652; --black-alpha-40: #26262666; --black-alpha-48: #2626267a; --black-alpha-56: #2626268f; --black-alpha-64: #262626a3; --black-alpha-72: #262626b8; --black-alpha-88: #262626e0; --white-alpha-56: #ffffff8f; --white-alpha-72: #ffffffb8; --border-faint: #edededff; --border-muted: #e8e8e8ff; --border-loud: #e6e6e6ff; --illustrations-faint: #edededff; --illustrations-muted: #e6e6e6ff; --illustrations-default: #dbdbdbff; --background-base: #f9f9f9ff; --background-lighter: #fbfbfbff } .dark { --heat-4: #fa5d190a; --heat-8: #fa5d1914; --heat-12: #fa5d191f; --heat-16: #fa5d1929; --heat-20: #fa5d1933; --heat-40: #fa5d1966; --heat-90: #fa5d19e6; --heat-100: #fa5d19ff; --accent-black: #f5f5f5ff; --accent-white: #ffffffff; --surface: #171717ff; --surface-raised: #1f1f1fff; --accent-amethyst: #a07affff; --accent-bluetron: #5a8ffcff; --accent-crimson: #f05545ff; --accent-forest: #5cd47fff; --accent-honey: #f0c550ff; --black-alpha-1: #ffffff",
+            "fetch_error": ""
+          },
+          {
+            "title": "Secure Gen AI Apps - Amazon Bedrock Security and Privacy - AWS",
+            "url": "https://aws.amazon.com/bedrock/security-compliance/",
+            "query": "AWS Bedrock data privacy web search",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Secure Gen AI Apps - Amazon Bedrock Security and Privacy - AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"glGjsWcKWf9PPh0RWAz8W93/LcwjbNe0OyRVgV/y8nE=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.17/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main ",
+            "fetch_error": ""
+          },
+          {
+            "title": "Data protection - Amazon Bedrock",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html",
+            "query": "AWS Bedrock data privacy web search",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Data protection - Amazon Bedrock View a markdown version of this page Data protection - Amazon Bedrock { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"Amazon Bedrock\", \"item\" : \"https://docs.aws.amazon.com/bedrock/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"User Guide\", \"item\" : \"https://docs.aws.amazon.com/bedrock/latest/userguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"Security, Guardrails, and Observability in Amazon Bedrock\", \"item\" : \"https://docs.aws.amazon.com/bedrock/latest/userguide/security.html\" }, { \"@type\" : \"ListItem\", \"position\" : 5, \"name\" : \"Security\", \"item\" : \"https://docs.aws.amazon.com/bedrock/latest/userguide/security-overview.html\" }, { \"@type\" : \"ListItem\", \"position\" : 6, \"name\" : \"Data protection\", \"item\" : \"https://docs.aws.amazon.com/bedrock/latest/userguide/security-overview.html\" } ] } Documentation Amazon Bedrock User Guide Data protection The AWS shared responsibility model applies to data protection in Amazon Bedrock. As described in this model, AWS is responsible for protecting the global infrastructure that runs all of the AWS Cloud. You are responsible for maintaining control over your content that is hosted on this infrastructure. You are also responsible for the security configuration and management tasks for the AWS services that you use. For more information about data privacy, see Data Privacy FAQ . For information about data protection in Europe, see the General Data Protection Regulation (GDPR) Center . For data protection purposes, we recommend that you protect AWS account credentials and set up individual users w",
+            "fetch_error": ""
+          },
+          {
+            "title": "Security, privacy, and responsible AI – Amazon Bedrock – AWS",
+            "url": "https://aws.amazon.com/bedrock/security-privacy-responsible-ai/",
+            "query": "AWS Bedrock data privacy web search",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Security, privacy, and responsible AI – Amazon Bedrock – AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"gKTTkMvGGmshQ/iMEOXx19kce4bhtPoG4vCKZzD+reE=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.17/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main co",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：成本估算没有公式、单位或边界"
+        },
+        "core_question": "AWS Bedrock AgentCore 的联网搜索功能是否值得普通开发者/小团队迁移或集成？",
+        "why_this_topic_matters": "联网搜索是 Agent 从封闭知识走向实时信息的关键能力，AWS 正式发布该功能可能影响 Agent 开发者的工具选型，但成本、延迟、平台绑定风险未知。",
+        "fact_summary": [
+          "AWS Bedrock AgentCore 联网搜索功能已正式可用。",
+          "官方文档描述了功能：使用 AWS 自建网络索引，支持域名过滤，数据隐私默认不用于训练。",
+          "定价页面未明确显示联网搜索的单独计费项，可能包含在 AgentCore 调用费用中。",
+          "Reddit 社区相关讨论因 403 错误无法获取。",
+          "竞品对比（OpenAI、Google）和实际使用案例尚未找到。"
+        ],
+        "persona_discussion_question": "老花：我该不该把现有 Agent 迁移到 Bedrock AgentCore 来用联网搜索？成本、延迟、数据隐私和平台绑定风险分别是什么？",
+        "old_flower_stance": "先算账，再迁移。联网搜索是能力，但成本不透明、延迟未知、平台锁定风险高，小团队应优先用开源或低成本替代方案验证需求。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 7,
+          "why_interested": "核心技术人关注成本账、延迟、平台锁定；入门读者想了解联网搜索对 Agent 的价值；商业读者评估是否值得投入。",
+          "reader_risk": "若夸大功能或成本误导，可能引发读者不信任。"
+        },
+        "mass_interest_hook": {
+          "score": 6,
+          "hook_type": "数字",
+          "why_non_technical_people_may_click": "标题如“AWS 给 AI 加了个搜索功能，成本可能翻倍？”能吸引对 AI 成本好奇的普通人。",
+          "story_seed": "一个独立开发者用 Bedrock AgentCore 做客服 Agent，结果联网搜索让账单暴涨 3 倍。",
+          "do_not_overhype": "不要声称联网搜索是“革命性”或“必备”，避免夸大成本影响。"
+        },
+        "topic_tension": {
+          "score": 7,
+          "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+          "debate_question": "联网搜索功能到底是在提升 Agent 能力，还是变相把开发者锁在 AWS 生态里？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "AWS 平台"
+          ],
+          "why_people_would_comment": "读者可以围绕成本、延迟、数据隐私、平台绑定等发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2026-06-17: AWS 宣布 Bedrock AgentCore 联网搜索功能正式可用。"
+        ],
+        "evidence_table": [
+          {
+            "source": "AWS Machine Learning Blog",
+            "url": "https://aws.amazon.com/blogs/machine-learning/introducing-web-search-on-amazon-bedrock-agentcore/",
+            "supports": "功能正式发布，提供联网搜索能力。",
+            "reliability": "official"
+          },
+          {
+            "source": "AWS News Blog",
+            "url": "https://aws.amazon.com/blogs/aws/announcing-web-search-on-amazon-bedrock-agentcore-ground-your-ai-agents-in-current-accurate-web-knowledge/",
+            "supports": "功能详情、使用场景。",
+            "reliability": "official"
+          },
+          {
+            "source": "AWS 官方文档 - Web Search Tool",
+            "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-target-connector-web-search-tool.html",
+            "supports": "技术细节：使用 AWS 自建网络索引，支持域名过滤。",
+            "reliability": "official"
+          },
+          {
+            "source": "AWS 定价页面",
+            "url": "https://aws.amazon.com/bedrock/agentcore/pricing/",
+            "supports": "未明确显示联网搜索单独计费项。",
+            "reliability": "official"
+          },
+          {
+            "source": "AWS 数据保护文档",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html",
+            "supports": "数据默认不用于训练。",
+            "reliability": "official"
+          },
+          {
+            "source": "The AWS News Feed",
+            "url": "https://aws-news.com/article/2026-06-17-announcing-web-search-on-amazon-bedrock-agentcore-for-agentic-web-retrieval",
+            "supports": "功能概述。",
+            "reliability": "media"
+          },
+          {
+            "source": "Cloud Burn",
+            "url": "https://cloudburn.io/blog/amazon-bedrock-agentcore-pricing",
+            "supports": "定价分析，但未抓取到具体内容。",
+            "reliability": "weak"
+          },
+          {
+            "source": "Reddit",
+            "url": "https://www.reddit.com/r/aws/comments/1pohj3n/web_search_with_bedrock/",
+            "supports": "开发者讨论，但 403 无法获取。",
+            "reliability": "weak"
+          }
+        ],
+        "logic_closure": "部分闭环：功能存在、官方文档清晰，但定价、延迟、竞品对比、实际案例缺失，无法形成完整判断。",
+        "writeable_angles": [
+          {
+            "angle": "成本账：联网搜索的隐藏费用",
+            "why": "定价不透明，小团队最关心成本。",
+            "needs": "明确计费方式、免费额度、超出后费用。"
+          },
+          {
+            "angle": "延迟与可靠性：联网搜索是否影响实时交互",
+            "why": "Agent 实时性要求高，延迟是关键。",
+            "needs": "实际测试数据或开发者反馈。"
+          },
+          {
+            "angle": "数据隐私：联网搜索是否安全",
+            "why": "企业用户关注数据是否被用于训练。",
+            "needs": "官方数据保护说明。"
+          },
+          {
+            "angle": "平台锁定：迁移成本与替代方案",
+            "why": "开发者担心被 AWS 绑定。",
+            "needs": "竞品对比（OpenAI、Google）、开源替代。"
+          }
+        ],
+        "missing_basics": [
+          "联网搜索的计费模式（按调用次数、搜索量还是 token？）",
+          "联网搜索的延迟范围（响应时间）",
+          "是否支持自定义搜索源（如 Bing API）",
+          "与 OpenAI GPTs with Browsing、Google Vertex AI Agent Builder 的对比"
+        ],
+        "missing_materials": [
+          "定价页面截图或明确计费说明",
+          "至少一个实际使用案例或开发者评测",
+          "竞品对比表格",
+          "延迟基准测试数据"
+        ],
+        "not_claimable": [
+          "不要声称联网搜索是“革命性”或“必备”",
+          "不要断言成本低于其他方案",
+          "不要假设所有开发者都需要联网搜索"
+        ],
+        "followup_queries": [
+          "Amazon Bedrock AgentCore web search pricing per request",
+          "Bedrock AgentCore web search latency benchmark",
+          "Bedrock AgentCore web search vs OpenAI browsing",
+          "Bedrock AgentCore web search custom search source",
+          "Bedrock AgentCore web search developer review 2026"
+        ],
+        "additional_search_queries": [
+          "Amazon Bedrock AgentCore web search pricing per request",
+          "Bedrock AgentCore web search latency benchmark",
+          "Bedrock AgentCore web search vs OpenAI browsing",
+          "Bedrock AgentCore web search custom search source",
+          "Bedrock AgentCore web search developer review 2026"
+        ],
+        "stop_conditions": [
+          "定价页面明确显示联网搜索免费或费用极低",
+          "多个开发者评测显示延迟可接受且成本可控",
+          "竞品对比显示 AWS 有明显优势"
+        ],
+        "confidence": 55.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI前沿",
+        "report_type": "tool-ledger",
+        "quality_gate": {
+          "pass": false,
+          "score": 55,
+          "fatal_issues": [
+            "成本估算没有公式、单位或边界",
+            "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象"
+          ],
+          "warnings": [
+            "定价、延迟、数据隐私、竞品对比等关键证据不足",
+            "缺少开发者实际体验反馈",
+            "逻辑尚未闭环"
+          ],
+          "missing_evidence": [
+            "联网搜索的计费模式（按调用次数、搜索量还是 token？）",
+            "联网搜索的延迟范围（响应时间）",
+            "是否支持自定义搜索源（如 Bing API）",
+            "与 OpenAI GPTs with Browsing、Google Vertex AI Agent Builder 的对比",
+            "至少一个实际使用案例或开发者评测"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": true,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "AWS Bedrock AgentCore 的联网搜索功能是否值得普通开发者/小团队迁移或集成？",
+          "persona_discussion_question": "老花：我该不该把现有 Agent 迁移到 Bedrock AgentCore 来用联网搜索？成本、延迟、数据隐私和平台绑定风险分别是什么？",
+          "hidden_public_issue": "联网搜索功能是否会导致 Agent 调用成本不可控（搜索 API 费用 + LLM 推理费用），以及是否变相将开发者锁定在 AWS 生态内？",
+          "must_verify": [
+            "联网搜索的定价模式：是按调用次数、搜索量还是 token 计费？是否有免费额度？",
+            "联网搜索的延迟和可靠性：搜索响应时间、结果质量、是否支持自定义搜索源？",
+            "数据隐私：搜索请求是否经过 AWS 服务器？用户数据是否被用于训练或存储？",
+            "与现有 Agent 工具的对比：如 OpenAI GPTs with Browsing、Google Vertex AI Agent Builder 的联网搜索能力、定价和限制。",
+            "是否支持自定义搜索 API（如 Bing Search API、Google Custom Search）？还是只能使用 AWS 内置搜索？",
+            "是否有实际案例或基准测试展示联网搜索对 Agent 任务准确率的提升？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "pricing_page",
+              "query": "Amazon Bedrock AgentCore pricing web search",
+              "why_needed": "确认联网搜索的计费方式，评估成本风险。"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "Amazon Bedrock AgentCore web search documentation",
+              "why_needed": "获取功能细节、限制、数据隐私说明。"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Bedrock AgentCore web search review reddit",
+              "why_needed": "了解开发者实际使用体验、延迟、可靠性。"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Bedrock AgentCore web search use case",
+              "why_needed": "寻找实际应用案例，验证效果。"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "Agent web search benchmark 2025",
+              "why_needed": "对比不同平台联网搜索能力。"
+            },
+            {
+              "source_type": "policy",
+              "query": "AWS Bedrock data privacy web search",
+              "why_needed": "确认数据是否被用于训练或存储。"
+            }
+          ],
+          "expert_challenge_points": [
+            "联网搜索的延迟是否会影响实时 Agent 交互体验？",
+            "搜索结果的准确性如何？是否容易引入错误信息或偏见？",
+            "对于小团队，成本是否可控？是否有隐藏费用（如超出免费额度后的高额费用）？",
+            "是否支持自定义搜索源？如果不支持，是否限制了 Agent 的灵活性？"
+          ],
+          "do_not_claim_yet": [
+            "不要声称联网搜索功能是“革命性”或“必备”的，除非有充分证据。",
+            "不要断言成本低于其他方案，除非有明确的定价对比。",
+            "不要假设所有开发者都需要联网搜索，除非有案例证明其必要性。"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确标注定价、延迟、数据隐私等关键信息待验证。",
+          "downstream_materials_needed": [
+            "定价页面截图或官方定价链接。",
+            "官方文档中关于联网搜索的详细说明。",
+            "至少一个实际使用案例或开发者评测。",
+            "与竞品（如 OpenAI、Google）的对比表格。"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Amazon Bedrock AgentCore Pricing - AWS",
+            "url": "https://aws.amazon.com/bedrock/agentcore/pricing/",
+            "query": "Amazon Bedrock AgentCore pricing web search",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon Bedrock AgentCore Pricing - AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"Y6oPrfvfcqSIDNozH4G3ccsjnurUt00P9v042tJH/dY=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.17/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main content {\"data\":{\"items\"",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore Pricing: 12 Components Breakdown | Cloud Burn",
+            "url": "https://cloudburn.io/blog/amazon-bedrock-agentcore-pricing",
+            "query": "Amazon Bedrock AgentCore pricing web search",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-translate-z:0;--tw-scale-x:1;--tw-scale-y:1;--tw-scale-z:1;--tw-rotate-x:initial;--tw-rotate-y:initial;--tw-rotate-z:initial;--tw-skew-x:initial;--tw-skew-y:initial;--tw-scrollbar-thumb:#0000;--tw-scrollbar-track:#0000;--tw-space-y-reverse:0;--tw-divide-y-reverse:0;--tw-border-style:solid;--tw-gradient-position:initial;--tw-gradient-from:#0000;--tw-gradient-via:#0000;--tw-gradient-to:#0000;--tw-gradient-stops:initial;--tw-gradient-via-stops:initial;--tw-gradient-from-position:0%;--tw-gradient-via-position:50%;--tw-gradient-to-position:100%;--tw-leading:initial;--tw-font-weight:initial;--tw-tracking:initial;--tw-ordinal:initial;--tw-slashed-zero:initial;--tw-numeric-figure:initial;--tw-numeric-spacing:initial;--tw-numeric-fraction:initial;--tw-shadow:0 0 #0000;--tw-shadow-color:initial;--tw-shadow-alpha:100%;--tw-inset-shadow:0 0 #0000;--tw-inset-shadow-color:initial;--tw-inset-shadow-alpha:100%;--tw-ring-color:initial;--tw-ring-shadow:0 0 #0000;--tw-inset-ring-color:initial;--tw-inset-ring-shadow:0 0 #0000;--tw-ring-inset:initial;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-offset-shadow:0 0 #0000;--tw-outline-style:solid;--tw-blur:initial;--tw-brightness:initial;--tw-contrast:initial;--tw-grayscale:initial;--tw-hue-rotate:initial;--tw-invert:initial;--tw-opacity:initial;--tw-saturate:initial;--tw-sepia:initial;--tw-drop-shadow:initial;--tw-drop-shadow-color:initial;--tw-drop-shadow-alpha:100%;--tw-drop-shadow-size:initial;--tw-backdrop-blur:initial;--tw-backdrop-brightness:initial;--tw",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore: Pricing, Features & How It Works",
+            "url": "https://www.pump.co/blog/amazon-bedrock-agentcore/",
+            "query": "Amazon Bedrock AgentCore pricing web search",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "try{if(localStorage.getItem(\"__framer_force_showing_editorbar_since\")){const n=document.createElement(\"link\");n.rel = \"modulepreload\";n.href=\"https://framer.com/edit/init.mjs\";document.head.appendChild(n)}}catch(e){} .circle{ position: relative; display: inline-block; z-index: 1; } .circle::before { content:\"\"; position:absolute; width:130%; height:130%; top: 40%; left: 50%; transform: translate(-50%, -50%); z-index: -1; background-repeat: no-repeat; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjk3IiBoZWlnaHQ9IjEzMyIgdmlld0JveD0iMCAwIDI5NyAxMzMiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMzcuNzA4IDIxLjI2MjFDOTQuODQ1IDIyLjAyMzEgLTEuOTgxNDkgMzUuNTIxIDUuMzk5NDEgODIuNTUwMUMxNC42MjU1IDE0MS4zMzYgMjk0LjI5MiAxNDMuNjE5IDI5MS45ODYgODIuNTUwMUMyOTAuMTQxIDMzLjY5NDYgMTQxLjI5MyAxMC44MjY5IDY3LjA5OTEgNS41IiBzdHJva2U9IiNEQkZCNTEiIHN0cm9rZS13aWR0aD0iMTAiLz4KPC9zdmc+Cg=='); background-size: 100% 100%; } .underline{ position: relative; z-index:1; display: inline-block; overflow: visible; } .underline::before { content:\"\"; position:absolute; width:100%; height:100%; top: 90%; left: 50%; transform: translate(-50%, -10%); z-index: -1; background-repeat: no-repeat; background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgzIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjgzIDE2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMSAxMUM1MC44MjYxIDYuNDcyMjYgMTc2Ljc4MyAwLjEzMzQyIDI4MiAxMSIgc3Ryb2tlPSIjREJGQjUxIiBzdHJva2Utd2lkdGg9IjEwIi8+Cjwvc3ZnPgo='); } .underline.green::before { background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjgzIiBoZWlnaHQ9IjE2IiB2aWV3Qm94PSIwIDAgMjgzIDE2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBkPSJNMSAxMUM1MC44MjYxIDYuNDcyMjYgMTc2Ljc4MyAwLjEzM",
+            "fetch_error": ""
+          },
+          {
+            "title": "Web Search Tool - Amazon Bedrock AgentCore",
+            "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-target-connector-web-search-tool.html",
+            "query": "Amazon Bedrock AgentCore web search documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Web Search Tool - Amazon Bedrock AgentCore View a markdown version of this page Web Search Tool - Amazon Bedrock AgentCore { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"Amazon Bedrock AgentCore\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"Developer Guide\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"Amazon Bedrock AgentCore Gateway: A secure AI gateway for agents, tools, and models\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway.html\" }, { \"@type\" : \"ListItem\", \"position\" : 5, \"name\" : \"Supported targets for Amazon Bedrock AgentCore gateways\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-supported-targets.html\" }, { \"@type\" : \"ListItem\", \"position\" : 6, \"name\" : \"MCP targets\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-targets-mcp.html\" }, { \"@type\" : \"ListItem\", \"position\" : 7, \"name\" : \"Built-in connectors as targets\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-target-connectors.html\" }, { \"@type\" : \"ListItem\", \"position\" : 8, \"name\" : \"Web Search Tool\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/gateway-target-connectors.html\" } ] } Documentation Amazon Bedrock AgentCore Developer Guide Key capabilities Purpose-built web index Private by design How it works Use cases Set up Web Search Tool Configure domain filtering Configure the Gateway Service Role Input sche",
+            "fetch_error": ""
+          },
+          {
+            "title": "Announcing Web Search on Amazon Bedrock AgentCore: Ground your AI agents in current, accurate web knowledge | Amazon Web Services",
+            "url": "https://aws.amazon.com/blogs/aws/announcing-web-search-on-amazon-bedrock-agentcore-ground-your-ai-agents-in-current-accurate-web-knowledge/",
+            "query": "Amazon Bedrock AgentCore web search documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Announcing Web Search on Amazon Bedrock AgentCore: Ground your AI agents in current, accurate web knowledge | AWS News Blog body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore Documentation",
+            "url": "https://docs.aws.amazon.com/bedrock-agentcore/",
+            "query": "Amazon Bedrock AgentCore web search documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon Bedrock AgentCore Documentation Amazon Bedrock AgentCore is a fully managed service that enables you to deploy and operate highly capable agents securely, at scale using any framework and model. Get started Get started with AgentCore Build your first agent in minutes with the AgentCore CLI. Code examples Explore tutorials, use cases, and integrations in this GitHub repository. Integrations Explore AgentCore integrations with popular frameworks. AgentCore MCP server Vibe coding with your coding assistant. Console and SDKs AgentCore Console Access the AgentCore console. AgentCore SDK AgentCore Python SDK on GitHub. AWS SDK AWS SDK for Python (boto3) for AgentCore. Documentation AgentCore Developer Guide Describes how to use the AgentCore console, API, and CLI. AgentCore Data Plane API Reference Describes the AgentCore data plane API operations and parameters. bedrock-agentcore AgentCore Control Plane API Reference Describes the AgentCore control plane API operations and parameters. bedrock-agentcore-control AgentCore harness Get started with AgentCore harness Define and invoke AI agents with a single API call using AgentCore Harness. AgentCore harness in the Developer Guide Learn more about the managed agent loop with built-in memory, tools, and isolated execution environments. AgentCore Runtime Get started with AgentCore Runtime Deploy your first agent to AgentCore Runtime in minutes. AgentCore Runtime tutorials Tutorials for hosting MCP servers and agents (supports A2A) using AgentCore Runtime. AgentCore Runtime in the Developer Guide Learn more about hosting your AI agents and tools in secure, purpose-built hosting environments. AgentCore Memory Get started with AgentCore Memory Get started creating and managing memory resources with AgentCore Memory. AgentCore ",
+            "fetch_error": ""
+          },
+          {
+            "title": "r/aws on Reddit: web search with bedrock",
+            "url": "https://www.reddit.com/r/aws/comments/1pohj3n/web_search_with_bedrock/",
+            "query": "Bedrock AgentCore web search review reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/aws on Reddit: Clarification on AWS Bedrock & Agentcore services",
+            "url": "https://www.reddit.com/r/aws/comments/1tzrfsh/clarification_on_aws_bedrock_agentcore_services/",
+            "query": "Bedrock AgentCore web search review reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/aws on Reddit: Amazon bedrock agent core evaluations",
+            "url": "https://www.reddit.com/r/aws/comments/1q87plm/amazon_bedrock_agent_core_evaluations/",
+            "query": "Bedrock AgentCore web search review reddit",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "Announcing Web Search on Amazon Bedrock AgentCore for Agentic Web Retrieval | The AWS News Feed",
+            "url": "https://aws-news.com/article/2026-06-17-announcing-web-search-on-amazon-bedrock-agentcore-for-agentic-web-retrieval",
+            "query": "Bedrock AgentCore web search use case",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Announcing Web Search on Amazon Bedrock AgentCore for Agentic Web Retrieval | The AWS News Feed {\"@context\":\"https://schema.org\",\"@type\":\"NewsArticle\",\"headline\":\"Announcing Web Search on Amazon Bedrock AgentCore for Agentic Web Retrieval\",\"description\":\"Amazon Bedrock AgentCore now offers general availability of Web Search, enabling AI agents to access current web information while maintaining data…\",\"image\":\"https://static.aws-news.com/article-banners/019ed644-655e-585a-15dd-42918bcc6367.png\",\"datePublished\":\"2026-06-17T15:47:47.166346Z\",\"dateModified\":\"2026-06-17T15:47:47.166346Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Luc van Donkersgoed\",\"url\":\"https://lucvandonkersgoed.com\"},\"publisher\":{\"@type\":\"Organization\",\"name\":\"The AWS News Feed\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://aws-news.com/logo.png\"}},\"mainEntityOfPage\":\"https://aws-news.com/article/2026-06-17-announcing-web-search-on-amazon-bedrock-agentcore-for-agentic-web-retrieval\"} try{if(localStorage.getItem('ad-free')==='1'){document.documentElement.classList.add('ad-free')}}catch(e){} .ad-free [data-ad-slot]{display:none!important} html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;box-sizing:border-box;-webkit-text-size-adjust:100%;}*,*::before,*::after{box-sizing:inherit;}strong,b{font-weight:700;}body{margin:0;color:rgba(0, 0, 0, 0.87);font-family:\"Roboto\",\"Helvetica\",\"Arial\",sans-serif;font-weight:400;font-size:1rem;line-height:1.5;letter-spacing:0.00938em;background-color:#eeeeee;}@media print{body{background-color:#fff;}}body::backdrop{background-color:#eeeeee;} @media (min-width:0px){.css-1rb0nos{display:block;}}@media (min-width:1200px){.css-1rb0nos{display:none;}} .css-fiz1wc{overflow:hidden;position:relative;}@media (min-width:0px){.css-fiz1wc{display:none;}}@media (min-wid",
+            "fetch_error": ""
+          },
+          {
+            "title": "Amazon Bedrock AgentCore harness is now generally available: Go from idea to production-grade agent in minutes | Amazon Web Services",
+            "url": "https://aws.amazon.com/blogs/machine-learning/amazon-bedrock-agentcore-harness-is-now-generally-available-go-from-idea-to-production-grade-agent-in-minutes/",
+            "query": "Bedrock AgentCore web search use case",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Amazon Bedrock AgentCore harness is now generally available: Go from idea to production-grade agent in minutes | Artificial Intelligence body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rg",
+            "fetch_error": ""
+          },
+          {
+            "title": "Example use cases - Amazon Bedrock AgentCore",
+            "url": "https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity-use-cases.html",
+            "query": "Bedrock AgentCore web search use case",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Example use cases - Amazon Bedrock AgentCore View a markdown version of this page Example use cases - Amazon Bedrock AgentCore { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"Amazon Bedrock AgentCore\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"Developer Guide\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"Provide identity and credential management for agent applications with Amazon Bedrock AgentCore Identity\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity.html\" }, { \"@type\" : \"ListItem\", \"position\" : 5, \"name\" : \"Overview of Amazon Bedrock AgentCore Identity\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity-overview.html\" }, { \"@type\" : \"ListItem\", \"position\" : 6, \"name\" : \"Example use cases\", \"item\" : \"https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/identity-overview.html\" } ] } Documentation Amazon Bedrock AgentCore Developer Guide Personal assistant agents Enterprise automation agents Customer service agents Data processing and analytics agents Development and DevOps agents Example use cases Amazon Bedrock AgentCore Identity supports a wide range of use cases across different industries and application types. This section provides detailed examples of how the service can be applied in specific scenarios, demonstrating both user-delegated access (OAuth 2.0 authorization code grant) and machine-to-machine authentication (OAuth 2.0 client credentials gra",
+            "fetch_error": ""
+          },
+          {
+            "title": "BrowseComp: a benchmark for browsing agents | OpenAI",
+            "url": "https://openai.com/index/browsecomp/",
+            "query": "Agent web search benchmark 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "Agentic Search in 2026: Benchmark 8 Search APIs for Agents",
+            "url": "https://aimultiple.com/agentic-search",
+            "query": "Agent web search benchmark 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Agentic Search in 2026: Benchmark 8 Search APIs for Agents :root { --font-geist: 'Geist', 'Geist Fallback'; --font-roboto-mono: 'Roboto Mono', 'Roboto Mono Fallback'; } (function() { const theme = document.cookie.match(/theme=(light|dark)/)?.[1] || 'light'; document.documentElement.setAttribute('data-theme', theme); })(); Agentic AI CATEGORIES Model Context Protocol GenAI Applications AI in Industries AI Hardware AI Foundations AI Coding RAG Browse Categories Browser MCP Code Execution with MCP MCP Gateway Cybersecurity CATEGORIES Data Security Identity & Access Management Security Tools Network Security Threat Detection and Response (TDR) Browse Categories Device Control Software SaaS Backup Solutions Google Workspace Backup DLP Review DLP Software USB Blocking Software DLP Pricing See All Data CATEGORIES Web Proxies Web Data Scraping Data Collection Data Science Synthetic Data Browse Categories Residential Proxy Providers Proxy Providers Datacenter Proxy Amazon Proxies SOCKS5 Proxies Geonode Proxies Proxy Pricing See All Enterprise Software CATEGORIES E-Commerce Workload Automation IT Automation RMM Process Improvement Managed File Transfer Helpdesk Software Browse Categories Ecommerce Technology Price Monitoring Tools Checkout Free Stores Ecommerce Data Collection Services Contact Us Agentic AI Model Context Protocol GenAI Applications AI in Industries AI Hardware AI Foundations AI Coding RAG Cybersecurity Data Security Identity & Access Management Security Tools Network Security Threat Detection and Response (TDR) Data Web Proxies Web Data Scraping Data Collection Data Science Synthetic Data Enterprise Software E-Commerce Workload Automation IT Automation RMM Process Improvement Managed File Transfer Helpdesk Software Services Contact Us Back Model Context Protocol ",
+            "fetch_error": ""
+          },
+          {
+            "title": "11 Best AI Browser Agents in 2026",
+            "url": "https://www.firecrawl.dev/blog/best-browser-agents",
+            "query": "Agent web search benchmark 2025",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "11 Best AI Browser Agents in 2026 :root { --heat-4: #fa5d190a; --heat-8: #fa5d1914; --heat-12: #fa5d191f; --heat-16: #fa5d1929; --heat-20: #fa5d1933; --heat-40: #fa5d1966; --heat-90: #fa5d19e6; --heat-100: #fa5d19ff; --accent-black: #262626ff; --accent-white: #ffffffff; --surface: #ffffffff; --surface-raised: #ffffffff; --accent-amethyst: #9061ffff; --accent-bluetron: #2a6dfbff; --accent-crimson: #eb3424ff; --accent-forest: #42c366ff; --accent-honey: #ecb730ff; --black-alpha-1: #00000003; --black-alpha-2: #00000005; --black-alpha-3: #00000008; --black-alpha-4: #0000000a; --black-alpha-5: #0000000d; --black-alpha-6: #0000000f; --black-alpha-7: #00000012; --black-alpha-8: #00000014; --black-alpha-10: #0000001a; --black-alpha-12: #0000001f; --black-alpha-16: #00000029; --black-alpha-20: #00000033; --black-alpha-24: #0000003d; --black-alpha-32: #26262652; --black-alpha-40: #26262666; --black-alpha-48: #2626267a; --black-alpha-56: #2626268f; --black-alpha-64: #262626a3; --black-alpha-72: #262626b8; --black-alpha-88: #262626e0; --white-alpha-56: #ffffff8f; --white-alpha-72: #ffffffb8; --border-faint: #edededff; --border-muted: #e8e8e8ff; --border-loud: #e6e6e6ff; --illustrations-faint: #edededff; --illustrations-muted: #e6e6e6ff; --illustrations-default: #dbdbdbff; --background-base: #f9f9f9ff; --background-lighter: #fbfbfbff } .dark { --heat-4: #fa5d190a; --heat-8: #fa5d1914; --heat-12: #fa5d191f; --heat-16: #fa5d1929; --heat-20: #fa5d1933; --heat-40: #fa5d1966; --heat-90: #fa5d19e6; --heat-100: #fa5d19ff; --accent-black: #f5f5f5ff; --accent-white: #ffffffff; --surface: #171717ff; --surface-raised: #1f1f1fff; --accent-amethyst: #a07affff; --accent-bluetron: #5a8ffcff; --accent-crimson: #f05545ff; --accent-forest: #5cd47fff; --accent-honey: #f0c550ff; --black-alpha-1: #ffffff",
+            "fetch_error": ""
+          },
+          {
+            "title": "Secure Gen AI Apps - Amazon Bedrock Security and Privacy - AWS",
+            "url": "https://aws.amazon.com/bedrock/security-compliance/",
+            "query": "AWS Bedrock data privacy web search",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Secure Gen AI Apps - Amazon Bedrock Security and Privacy - AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"glGjsWcKWf9PPh0RWAz8W93/LcwjbNe0OyRVgV/y8nE=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.17/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main ",
+            "fetch_error": ""
+          },
+          {
+            "title": "Data protection - Amazon Bedrock",
+            "url": "https://docs.aws.amazon.com/bedrock/latest/userguide/data-protection.html",
+            "query": "AWS Bedrock data privacy web search",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Data protection - Amazon Bedrock View a markdown version of this page Data protection - Amazon Bedrock { \"@context\" : \"https://schema.org\", \"@type\" : \"BreadcrumbList\", \"itemListElement\" : [ { \"@type\" : \"ListItem\", \"position\" : 1, \"name\" : \"AWS\", \"item\" : \"https://aws.amazon.com\" }, { \"@type\" : \"ListItem\", \"position\" : 2, \"name\" : \"Amazon Bedrock\", \"item\" : \"https://docs.aws.amazon.com/bedrock/index.html\" }, { \"@type\" : \"ListItem\", \"position\" : 3, \"name\" : \"User Guide\", \"item\" : \"https://docs.aws.amazon.com/bedrock/latest/userguide\" }, { \"@type\" : \"ListItem\", \"position\" : 4, \"name\" : \"Security, Guardrails, and Observability in Amazon Bedrock\", \"item\" : \"https://docs.aws.amazon.com/bedrock/latest/userguide/security.html\" }, { \"@type\" : \"ListItem\", \"position\" : 5, \"name\" : \"Security\", \"item\" : \"https://docs.aws.amazon.com/bedrock/latest/userguide/security-overview.html\" }, { \"@type\" : \"ListItem\", \"position\" : 6, \"name\" : \"Data protection\", \"item\" : \"https://docs.aws.amazon.com/bedrock/latest/userguide/security-overview.html\" } ] } Documentation Amazon Bedrock User Guide Data protection The AWS shared responsibility model applies to data protection in Amazon Bedrock. As described in this model, AWS is responsible for protecting the global infrastructure that runs all of the AWS Cloud. You are responsible for maintaining control over your content that is hosted on this infrastructure. You are also responsible for the security configuration and management tasks for the AWS services that you use. For more information about data privacy, see Data Privacy FAQ . For information about data protection in Europe, see the General Data Protection Regulation (GDPR) Center . For data protection purposes, we recommend that you protect AWS account credentials and set up individual users w",
+            "fetch_error": ""
+          },
+          {
+            "title": "Security, privacy, and responsible AI – Amazon Bedrock – AWS",
+            "url": "https://aws.amazon.com/bedrock/security-privacy-responsible-ai/",
+            "query": "AWS Bedrock data privacy web search",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Security, privacy, and responsible AI – Amazon Bedrock – AWS {\"pageLanguage\":\"en\",\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"offerOrigin\":\"https://s0.awsstatic.com\"} {\"noLoadEventRetriggers\": true, \"nonce\":\"gKTTkMvGGmshQ/iMEOXx19kce4bhtPoG4vCKZzD+reE=\"} {\"imports\":{\"react\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react.js\",\"react/jsx-runtime\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/jsx-runtime.js\",\"react-dom\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom.js\",\"react-dom/server\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/server-browser.js\",\"react-dom-server-browser\":\"https://a0.awsstatic.com/eb-csr/2.0.17/react/react-dom-server-browser.js\",\"sanitize-html\":\"https://a0.awsstatic.com/eb-csr/2.0.17/sanitize-html/index.js\",\"video.js\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/video.js\",\"videojs-event-tracking\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-event-tracking.js\",\"videojs-hotkeys\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-hotkeys.js\",\"videojs-youtube\":\"https://a0.awsstatic.com/eb-csr/2.0.17/videojs/videojs-youtube.js\",\"@amzn/awsmcc\":\"https://a0.awsstatic.com/awsmcc/1.0.1/bundle/index.js\"}} {\"supportedLanguages\":[\"ar\",\"cn\",\"de\",\"en\",\"es\",\"fr\",\"id\",\"it\",\"jp\",\"ko\",\"pt\",\"ru\",\"th\",\"tr\",\"tw\",\"vi\"],\"defaultLanguage\":\"en\",\"logDataSet\":\"LIVE:PROD\",\"logInstance\":\"PUB\",\"csdsEndpoint\":\"https://d2c.aws.amazon.com/\",\"isLoggingEnabled\":true,\"currentLanguage\":\"en-US\",\"currentStage\":\"Prod\",\"isRTL\":false,\"framework\":\"v3\",\"drTemplateStoreHost\":\"https://t0.m.awsstatic.com\",\"isBJS\":false,\"pageTemplate\":\"pVdRzs0Ruth077Ntd0b9JlGlc2Jg1hHMuPtDCRuQ50Q=\",\"requestType\":\"PTR\",\"awstvVideoAPIOrigin\":\"//aws.amazon.com\",\"awstvVideoAssetOrigin\":\"https://tv.awsstatic.com\"} Skip to main co",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "成本是否真的下降",
+        "免费额度和爆账单风险",
+        "替代方案值不值得换"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "AWS Bedrock AgentCore 上线联网搜索能力 官方公告 价格 成本",
+        "AWS Bedrock AgentCore 上线联网搜索能力 API 文档 额度 限制",
+        "AWS Bedrock AgentCore 上线联网搜索能力 替代方案 真实使用 成本"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
