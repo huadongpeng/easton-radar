@@ -1,0 +1,1751 @@
+{
+  "id": "20260620-quick-share-f441793a",
+  "batch_id": "2026-06-20-evening",
+  "title": "开源跨平台剪贴板同步工具：离线、零权限、兼容 Quick Share",
+  "original_title": "[限免] 不联网、跨全平台的剪贴板同步 + 附近文件互传（兼容 Quick Share）",
+  "url": "https://www.v2ex.com/t/1221564",
+  "summary": "隐私是第一目标：完全离线、不收集任何数据（连\"匿名\"也不收集）、无账号。基于 Google 开源的 Nearby ，不依赖 GMS ，兼容 Quick Share ，可直接发给没装本应用的原生 Android 手机。 还有个我自己做完才发现的点 —— 零权限存文件：低版本 Android 上别的 app 基本都要整盘读写权限，其实根本用不着； Privli 只通过系统选择器授权单个文件夹。 剪贴板同步：在 PC （ Windows / macOS / Linux ）复制文字或截图，另一台桌面或 Android 上直接粘贴 —— 桌面和 Android 都能后台自动接收。「发送」则受系统限制：iOS 需前台点一下才能发出（系统禁止后台读剪贴板），Android 可以通过点击任务栏的按钮发送给信任的设备； iOS 甚至接收也需在前台。 价格：Linux / Android / Windows 一直免费； macOS 可以直接下载 dmg 或者 brew 跳过付费； iOS 下载时一次性买断（无订阅），现限时免费。 https://local1st.app",
+  "source_category": "developer_business",
+  "source_category_title": "开发者副业与独立开发",
+  "topic_direction": "tools-rules",
+  "topic_direction_title": "工具&规则",
+  "topic_direction_short_title": "工具&规则",
+  "topic_direction_description": "开发工具、AI 实操、API、云服务、自动化工作流、平台政策、账号规则、搜索流量和内容分发生态变化。重点记录工具或规则发生了什么变化。",
+  "source_name": "V2EX 分享创造",
+  "original_source_name": "分享创造",
+  "source_type": "rss",
+  "feed_url": "https://v2ex.com/feed/create.xml",
+  "published_at": "2026-06-19T12:55:57Z",
+  "fetched_at": "2026-06-20T09:48:17.746354+00:00",
+  "decision": "brief",
+  "report_type": "tool-ledger",
+  "report_type_title": "工具账本",
+  "score": 60,
+  "reader_hook": "开源跨平台剪贴板同步工具，离线、零权限、兼容 Quick Share，适合注重隐私的技术人。",
+  "topic_tension": {
+    "score": 9,
+    "conflict_point": "热点事件里的平台叙事、用户反弹和普通技术人的真实成本之间有冲突。",
+    "debate_question": "这件事到底是合理规则/正常成本控制，还是平台把风险和成本转嫁给普通使用者？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+    "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+  },
+  "persona_discussion_question": "这笔工具账到底是提高效率，还是把不可见成本转嫁给普通程序员和小团队？",
+  "why_now": "跨平台剪贴板同步是技术人常见需求，该工具以隐私优先为卖点。",
+  "evidence_level": "near_source",
+  "source_priority": "P2 可参考源",
+  "reason": "V2EX 用户发布开源剪贴板同步工具，基于 Google Nearby，离线、零权限、兼容 Quick Share，支持跨平台。",
+  "collection_fit": "tools-rules",
+  "investigation_direction": "测试工具兼容性和稳定性，对比同类工具。",
+  "uncertainty_flags": [
+    "实际使用体验和兼容性待验证。"
+  ],
+  "facts": [
+    {
+      "claim": "V2EX 分享创造 发布/收录了这条原始线索：[限免] 不联网、跨全平台的剪贴板同步 + 附近文件互传（兼容 Quick Share）",
+      "type": "confirmed_fact",
+      "source_url": "https://www.v2ex.com/t/1221564",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "V2EX 分享创造",
+      "url": "https://www.v2ex.com/t/1221564",
+      "source_type": "near_source",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "money": [
+        "价格"
+      ],
+      "dev": [
+        "开源"
+      ],
+      "platform": [
+        "google",
+        "平台"
+      ],
+      "heat": [
+        "限制"
+      ]
+    },
+    "source_host": "www.v2ex.com",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 9,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "开源跨平台剪贴板同步工具，离线、零权限、兼容 Quick Share，适合注重隐私的技术人。",
+    "fit_for_radar": false
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://v2ex.com/feed/create.xml",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "实际使用体验和兼容性待验证。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：工具名称、GitHub仓库、隐私政策均未找到独立来源。"
+    },
+    "core_question": "这个离线剪贴板同步工具是否真的安全、好用、值得安装？",
+    "why_this_topic_matters": "跨平台剪贴板同步是技术人常见需求，该工具以隐私优先为卖点，可能改变用户对云剪贴板的依赖。",
+    "fact_summary": [
+      "V2EX 用户发布开源剪贴板同步工具 Privli，基于 Google Nearby，离线、零权限、兼容 Quick Share。",
+      "支持 Windows/macOS/Linux/Android/iOS，剪贴板同步和文件互传。",
+      "Linux/Android/Windows 免费，macOS 可 brew 免费，iOS 限时免费。",
+      "iOS 端因系统限制需前台操作，Android 可通过任务栏按钮发送。"
+    ],
+    "persona_discussion_question": "我该不该放弃云剪贴板（如苹果接力、微软云剪贴板）改用这个离线工具？迁移成本高吗？",
+    "old_flower_stance": "隐私优先的工具值得关注，但需验证实际体验和安全性，不建议立即迁移。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 8,
+      "why_interested": "技术人关注隐私和离线方案，该工具提供了一种新选择。",
+      "reader_risk": "可能因证据不足导致读者误判工具可靠性。"
+    },
+    "mass_interest_hook": {
+      "score": 7,
+      "hook_type": "故事",
+      "why_non_technical_people_may_click": "隐私问题人人关心，免费工具吸引人。",
+      "story_seed": "一个开发者因为不信任云服务，自己做了个离线剪贴板同步工具。",
+      "do_not_overhype": "不要声称该工具是最好用的或完全无风险。"
+    },
+    "topic_tension": {
+      "score": 9,
+      "conflict_point": "隐私优先 vs 便利性：离线工具是否值得牺牲云同步的便利？",
+      "debate_question": "隐私优先的工具是否以牺牲便利性为代价？普通用户是否愿意为隐私放弃云同步？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "平台/工具厂商"
+      ],
+      "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2025-08-20: V2EX 用户发布 Privli 工具介绍"
+    ],
+    "evidence_table": [
+      {
+        "source": "V2EX 帖子",
+        "url": "https://www.v2ex.com/t/1221564",
+        "supports": "工具功能、价格、平台支持",
+        "reliability": "weak"
+      },
+      {
+        "source": "官方页面",
+        "url": "https://nearby.local1st.app",
+        "supports": "工具存在，有重定向",
+        "reliability": "near_source"
+      },
+      {
+        "source": "MacRumors",
+        "url": "https://www.macrumors.com/2025/05/12/apple-mac-apps-clipboard-change/",
+        "supports": "Apple 限制后台剪贴板访问",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "部分闭环：工具功能描述清晰，但缺乏独立验证和用户反馈。",
+    "writeable_angles": [
+      {
+        "angle": "工具账本：Privli 的功能、成本、隐私优势与同类对比",
+        "why": "帮助读者快速评估是否值得使用",
+        "needs": "需要同类工具对比数据"
+      },
+      {
+        "angle": "风险避坑：离线剪贴板工具的安全性和可靠性验证",
+        "why": "隐私工具本身可能成为安全风险",
+        "needs": "需要安全审计或第三方验证"
+      }
+    ],
+    "missing_basics": [
+      "Google Nearby 技术原理",
+      "iOS 剪贴板限制的具体细节"
+    ],
+    "missing_materials": [
+      "GitHub 仓库链接和代码审查结果",
+      "官方隐私政策原文",
+      "用户实测体验（延迟、兼容性）",
+      "与同类工具（如 KDE Connect、Pushbullet）的对比表"
+    ],
+    "not_claimable": [
+      "不要声称该工具是最好用的剪贴板同步工具",
+      "不要声称该工具完全无隐私风险",
+      "不要声称该工具兼容所有设备"
+    ],
+    "followup_queries": [
+      "Privli GitHub 仓库地址是什么？",
+      "Privli 的隐私政策在哪里？",
+      "Privli 在 Reddit/Hacker News 上有用户讨论吗？"
+    ],
+    "additional_search_queries": [
+      "local1st/Privli GitHub",
+      "Privli review reddit hacker news",
+      "Google Nearby offline clipboard sync alternative"
+    ],
+    "stop_conditions": [
+      "找到官方隐私政策明确说明数据收集情况",
+      "找到至少 3 个独立用户实测报告",
+      "GitHub 仓库代码审查完成"
+    ],
+    "confidence": 40.0,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "tool-ledger",
+    "quality_gate": {
+      "pass": false,
+      "score": 40,
+      "fatal_issues": [
+        "核心事实没有来源：工具名称、GitHub仓库、隐私政策均未找到独立来源。",
+        "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象。",
+        "没有泛兴趣故事钩子，标题和开头只适合技术小圈子。",
+        "没有真实传播张力：说不清冲突点、讨论点、利益拉扯、身份代入或读者为什么愿意评论。",
+        "没有明确归入实际选题方向，或者选题方向和内容不匹配。",
+        "没有明确选题结论：推荐或可选。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写。",
+        "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环。",
+        "没有列出基础概念缺口和资料素材缺口。",
+        "没有按具体类型提供资料包。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来。"
+      ],
+      "warnings": [
+        "证据链不完整：未找到GitHub仓库、官方隐私政策、用户实测反馈。",
+        "泛兴趣钩子不足：标题和摘要仅吸引技术人，缺乏大众可理解的故事。",
+        "传播张力弱：缺乏明确的冲突点或讨论空间。"
+      ],
+      "missing_evidence": [
+        "GitHub仓库链接和代码审查结果",
+        "官方隐私政策原文",
+        "用户实测体验（延迟、兼容性）",
+        "与同类工具（如KDE Connect、Pushbullet）的对比表"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": false,
+      "topic_direction_ok": false,
+      "report_type_ok": false,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "这个离线剪贴板同步工具是否真的安全、好用、值得安装？",
+      "persona_discussion_question": "我该不该放弃云剪贴板（如苹果接力、微软云剪贴板）改用这个离线工具？迁移成本高吗？",
+      "hidden_public_issue": "隐私优先的工具是否以牺牲便利性为代价？普通用户是否愿意为隐私放弃云同步的便利？",
+      "must_verify": [
+        "工具是否真的完全离线、不收集任何数据？",
+        "基于 Google Nearby 的实现是否依赖 GMS？",
+        "兼容 Quick Share 的具体表现如何？",
+        "剪贴板同步的延迟和稳定性如何？",
+        "iOS 端接收剪贴板是否真的需要前台？",
+        "macOS 端是否真的可以 brew 免费使用？",
+        "是否有安全审计或第三方验证？",
+        "GitHub 仓库的活跃度和代码质量如何？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "github_repo",
+          "query": "local1st/Privli GitHub",
+          "why_needed": "验证代码是否开源、许可证、最近更新、issue 讨论"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "local1st.app documentation",
+          "why_needed": "获取官方功能说明、隐私政策、FAQ"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Privli review reddit hacker news",
+          "why_needed": "获取真实用户反馈、问题报告"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Google Nearby offline clipboard sync alternative",
+          "why_needed": "了解类似工具对比、技术原理"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "local1st.app pricing",
+          "why_needed": "确认 macOS 是否真的免费，iOS 限免截止日期"
+        },
+        {
+          "source_type": "policy",
+          "query": "Apple iOS clipboard background restriction",
+          "why_needed": "验证 iOS 后台剪贴板限制是否如作者所述"
+        }
+      ],
+      "expert_challenge_points": [
+        "离线同步的延迟和可靠性是否满足日常使用？",
+        "基于 Nearby 的实现是否在非 Google 设备上稳定？",
+        "零权限存文件是否真的安全？是否存在其他隐私风险？",
+        "macOS 免费是否只是临时策略？未来是否会收费？"
+      ],
+      "do_not_claim_yet": [
+        "不要声称该工具是最好用的剪贴板同步工具",
+        "不要声称该工具完全无隐私风险",
+        "不要声称该工具兼容所有设备"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需注明验证不足，建议读者自行测试。",
+      "downstream_materials_needed": [
+        "GitHub 仓库链接和代码审查结果",
+        "官方隐私政策原文",
+        "用户实测体验（延迟、兼容性）",
+        "与同类工具（如 KDE Connect、Pushbullet）的对比表"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Privli - Private Nearby File Sharing",
+        "url": "https://nearby.local1st.app",
+        "query": "local1st/Privli GitHub",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Privli redirect to /en. No \"noindex\" here: the bare domain must stay indexable so Google can consolidate it into /en via the canonical below (noindex would drop https://local1st.app from search entirely). --> (function () { var SUPPORTED = [ 'en', 'zh-Hans', 'zh-Hant', 'es', 'fr', 'de', 'ja', 'ko', 'pt-BR', 'ru', 'it', 'hi', 'id', 'tr', 'vi', 'ar' ]; var DEFAULT = 'en'; function resolve(tag) { if (!tag) return null; var lower = tag.toLowerCase(); // Exact match (case-insensitive). for (var i = 0; i fr, es-419 -> es). for (var j = 0; j Redirecting… Continue to Privli",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub on a Budget. How to Run a Private Local Git Repo on… | by Dean J Murphy | Medium",
+        "url": "https://dean-joseph-murphy.medium.com/github-on-a-budget-dc5e451061a7",
+        "query": "local1st/Privli GitHub",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "r/git on Reddit: Can I use git locally on my computer?",
+        "url": "https://www.reddit.com/r/git/comments/1jw3qya/can_i_use_git_locally_on_my_computer/",
+        "query": "local1st/Privli GitHub",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "Local-first architecture with Expo - Expo Documentation",
+        "url": "https://docs.expo.dev/guides/local-first/",
+        "query": "local1st.app documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Local-first architecture with Expo - Expo Documentation {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Expo Documentation\",\"url\":\"https://docs.expo.dev\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Expo\",\"url\":\"https://expo.dev\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://docs.expo.dev/static/images/expo-logo.svg\"},\"sameAs\":[\"https://github.com/expo\",\"https://x.com/expo\",\"https://bsky.app/profile/expo.dev\",\"https://www.linkedin.com/company/expo-dev/\",\"https://www.youtube.com/@expodevelopers\"]}} {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"More\",\"item\":\"https://docs.expo.dev/guides/expo-ui-swift-ui\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Assorted\",\"item\":\"https://docs.expo.dev\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Local-first\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"headline\":\"Local-first architecture with Expo\",\"description\":\"An introduction to the emerging local-first software movement, including links to relevant learning resources and tools.\",\"dateModified\":\"June 09, 2026\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Expo\",\"url\":\"https://expo.dev\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://docs.expo.dev/static/images/expo-logo.svg\"},\"sameAs\":[\"https://github.com/expo\",\"https://x.com/expo\",\"https://bsky.app/profile/expo.dev\",\"https://www.linkedin.com/company/expo-dev/\",\"https://www.youtube.com/@expodevelopers\"]},\"url\":\"https://docs.expo.dev/guides/local-first/\"} {\"@context\":\"https://schema.org\",\"@type\":\"VideoObject\",\"name\":\"Watch: Build a Local-First Real-Time Shopping List App with Expo and TinyBase\",\"description\":\"Build a real-time shopping list app using TinyBase with expo-sqlite for persistence and automatic syncing.\",\"thumbnailUrl\":\"https://i3.ytimg.co",
+        "fetch_error": ""
+      },
+      {
+        "title": "Local-First Software - PowerSync",
+        "url": "https://docs.powersync.com/resources/local-first-software",
+        "query": "local1st.app documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Local-First Software - PowerSync !function(){var b=\"\"; function a(p){if(p==null)return\"/\";p=\"\"+p;if(\"\"===p)return\"/\";return\"/\"===p.charAt(0)?p:\"/\"+p} function u(p){if(p==null)return p;p=\"\"+p;if(!p||p.charAt(p.length-1)===\"/\")return p.slice(0,-1);return p} function i(p){if(p==null)return p;p=\"\"+p;if(6 (function(a,b){try{let c=document.getElementById(\"banner\")?.innerText;if(c){for(let d=0;d {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"PowerSync\",\"creator\":{\"@type\":\"Organization\",\"name\":\"Mintlify\",\"url\":\"https://mintlify.com\"}} ((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=[\"light\",\"dark\"];function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{let c=\"class\"===a,d=c&&f?e.map(a=>f[a]||a):e;c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)}),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&\"system\"===a?window.matchMedia(\"(prefers-color-scheme: dark)\").matches?\"dark\":\"light\":a;k(d)}catch(a){}})(\"class\",\"isDarkMode\",\"system\",null,[\"dark\",\"light\",\"true\",\"false\",\"system\"],{\"true\":\"dark\",\"false\":\"light\",\"dark\":\"dark\",\"light\":\"light\"},true,false) Documentation Index Fetch the complete documentation index at: /llms.txt Use this file to discover all available pages before exploring further. :root{--banner-height:0px!important} (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"(function g(a,b,c,d,e){try{let f,g,h=[];try{h=window.location.pathname.split(\\\"/\\\").filter(a=\\u003e\\\"\\\"!==a\\u0026\\u0026\\\"global\\\"!==a).slice(0,2)}catch{h=[]}let i=h.find(a=\\u003ec.includes(a)),j=[];for(let c of(i?j.push(i):j.push(b),j.push(\\\"global\\\"),j)){if(!c)continue;let b=a[c];if(b?.content){f=b.content,g=c;break}}if(!f)return void document.documentElement.setAttribute(d,\\\"hidden\\\");let k=!0,l=0;",
+        "fetch_error": ""
+      },
+      {
+        "title": "What is Local-first Web Development? | alexop.dev",
+        "url": "https://alexop.dev/posts/what-is-local-first-web-development/",
+        "query": "local1st.app documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "What is Local-first Web Development? | alexop.dev document.addEventListener(\"DOMContentLoaded\", function () { if (typeof renderMathInElement === \"function\") { renderMathInElement(document.body, { delimiters: [ { left: \"$$\", right: \"$$\", display: true }, { left: \"$\", right: \"$\", display: false }, { left: \"\\\\(\", right: \"\\\\)\", display: false }, { left: \"\\\\[\", right: \"\\\\]\", display: true }, ], throwOnError: false, trust: true, strict: false, output: \"html\", }); } }); {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"What is Local-first Web Development? | alexop.dev\",\"description\":\"What is local-first software and why does it matter? This guide covers local-first architecture, offline-capable apps with automatic sync, data ownership, and how to build a local-first web app with Vue step by step.\",\"image\":\"https://alexop.dev/posts/what-is-local-first-web-development/index.png\",\"datePublished\":\"2024-05-29T15:22:00.000Z\",\"dateModified\":\"2024-11-28T15:22:00.000Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Alexander Opalic\"}} .chat-prose[data-v-8a19bbf8] p{margin:.5rem 0}.chat-prose[data-v-8a19bbf8] p:first-child{margin-top:0}.chat-prose[data-v-8a19bbf8] p:last-child{margin-bottom:0}.chat-prose[data-v-8a19bbf8] a{color:rgb(var(--color-accent));text-decoration:underline;text-decoration-style:dashed;text-underline-offset:4px}.chat-prose[data-v-8a19bbf8] a:hover{text-decoration-style:solid}.chat-prose[data-v-8a19bbf8] ul,.chat-prose[data-v-8a19bbf8] ol{margin:.5rem 0;padding-left:1.25rem}.chat-prose[data-v-8a19bbf8] li{margin:.15rem 0}.chat-prose[data-v-8a19bbf8] code{background:rgba(var(--color-card-muted),.5);padding:.1rem .3rem;border-radius:3px;font-size:.85em}.chat-prose[data-v-8a19bbf8] pre{background:rgba(var(--color-card-muted),.6);padding:.6rem .8rem;border-radius:v",
+        "fetch_error": ""
+      },
+      {
+        "title": "hacking: security in practice",
+        "url": "https://www.reddit.com/r/hacking/",
+        "query": "Privli review reddit hacker news",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/privacy on Reddit: Exactly how safe is Privacy.com?",
+        "url": "https://www.reddit.com/r/privacy/comments/dxpa07/exactly_how_safe_is_privacycom/",
+        "query": "Privli review reddit hacker news",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/PrivacyTechTalk",
+        "url": "https://www.reddit.com/r/PrivacyTechTalk/",
+        "query": "Privli review reddit hacker news",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/GooglePixel on Reddit: Why hasn’t Google developed a synchronized clipboard between Chrome and Android?",
+        "url": "https://www.reddit.com/r/GooglePixel/comments/1ffqhf6/why_hasnt_google_developed_a_synchronized/",
+        "query": "Google Nearby offline clipboard sync alternative",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/androiddev on Reddit: Built a clipboard sharing app between Android and Windows using only Bluetooth (no internet required)",
+        "url": "https://www.reddit.com/r/androiddev/comments/1mdvdkh/built_a_clipboard_sharing_app_between_android_and/",
+        "query": "Google Nearby offline clipboard sync alternative",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "This free and open-source self-hosted app syncs your clipboard across all of your devices",
+        "url": "https://www.xda-developers.com/open-source-self-hosted-app-syncs-clipboard-across-devices/",
+        "query": "Google Nearby offline clipboard sync alternative",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "This free and open-source self-hosted app syncs your clipboard across all of your devices window.isInAppBrowser = false { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"This free and open-source self-hosted app syncs your clipboard across all of your devices\", \"url\": \"https://www.xda-developers.com/open-source-self-hosted-app-syncs-clipboard-across-devices/\", \"about\": [ {\"@type\": \"Thing\", \"name\": \"Productivity\"}, {\"@type\": \"Thing\", \"name\": \"app\"}, {\"@type\": \"Thing\", \"name\": \"Self-Hosting\"} ], \"thumbnailUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1200&h=628&fit=crop\", \"image\":[{ \"@type\": \"ImageObject\", \"contentUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=900&fit=crop\", \"url\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=900&fit=crop\", \"height\": 900, \"width\": 1600, \"representativeOfPage\": true }, { \"@type\": \"ImageObject\", \"contentUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg\", \"url\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg\", \"height\": 2272, \"width\": 4040 }, { \"@type\": \"ImageObject\", \"contentUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=1200&fit=crop\", \"url\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=1200&fit=crop\", \"height\": 1200, \"width\": 1600 }, { \"@type\": \"ImageObject\", \"contentUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=1600&fit=crop\", \"url\": \"https://static0.xdaimages.com/wordpress/wp-co",
+        "fetch_error": ""
+      },
+      {
+        "title": "Welcome to… Your Local Business Guide. - Local1st",
+        "url": "https://www.local1st.com.au/pricing-guide",
+        "query": "local1st.app pricing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "%PDF-1.4 % 186 0 obj > endobj xref 186 122 0000000016 00000 n 0000003450 00000 n 0000003609 00000 n 0000011120 00000 n 0000011258 00000 n 0000011396 00000 n 0000011868 00000 n 0000012335 00000 n 0000012750 00000 n 0000013177 00000 n 0000013646 00000 n 0000014075 00000 n 0000014138 00000 n 0000014393 00000 n 0000014855 00000 n 0000015111 00000 n 0000015225 00000 n 0000015673 00000 n 0000015927 00000 n 0000016412 00000 n 0000016674 00000 n 0000017192 00000 n 0000017219 00000 n 0000019532 00000 n 0000019974 00000 n 0000020071 00000 n 0000020220 00000 n 0000020317 00000 n 0000020466 00000 n 0000020612 00000 n 0000020639 00000 n 0000020736 00000 n 0000020875 00000 n 0000023097 00000 n 0000025286 00000 n 0000026978 00000 n 0000029375 00000 n 0000031820 00000 n 0000034093 00000 n 0000036350 00000 n 0000036620 00000 n 0000039215 00000 n 0000042434 00000 n 0000042540 00000 n 0000042610 00000 n 0000046361 00000 n 0000046416 00000 n 0000046499 00000 n 0000050216 00000 n 0000050456 00000 n 0000054270 00000 n 0000054372 00000 n 0000054690 00000 n 0000054958 00000 n 0000055062 00000 n 0000058627 00000 n 0000058733 00000 n 0000058808 00000 n 0000058878 00000 n 0000059286 00000 n 0000059412 00000 n 0000059528 00000 n 0000059563 00000 n 0000059641 00000 n 0000066388 00000 n 0000066721 00000 n 0000066787 00000 n 0000066903 00000 n 0000066938 00000 n 0000067016 00000 n 0000070321 00000 n 0000070660 00000 n 0000070726 00000 n 0000070842 00000 n 0000070912 00000 n 0000071015 00000 n 0000073893 00000 n 0000074145 00000 n 0000074425 00000 n 0000074452 00000 n 0000074859 00000 n 0000077999 00000 n 0000078260 00000 n 0000078684 00000 n 0000078792 00000 n 0000078889 00000 n 0000079038 00000 n 0000079116 00000 n 0000085600 00000 n 0000085639 00000 n 0000085718 00000 n 0000085815 00000 n 000008596",
+        "fetch_error": ""
+      },
+      {
+        "title": "I love local first, but I struggle with how to monetize truly local-first applic... | Hacker News",
+        "url": "https://news.ycombinator.com/item?id=40786600",
+        "query": "local1st.app pricing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "I love local first, but I struggle with how to monetize truly local-first applic... | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login braden-lk on June 25, 2024 | parent | context | favorite | on: Local First, Forever I love local first, but I struggle with how to monetize truly local-first applications. I know that's not everyone's favorite topic, but I've got bills to pay and payroll to make. Our product is about 80% local-first, with live collaboration and image hosting needing a server. I plan to change that eventually, but I worry that jailbreaking the app in this way will lead to financial troubles. Obsidian's model seems nice: base app is free, and then payment for the networked portions like sync+publish. However, there's little data available on how well this works and how big of a TAM you need to make it sustainable. Or if it's even possible without an enterprise revenue channel. For those interested in building robust local-first + collaborative apps, I've been using Yjs for a few years now and have overall really enjoyed it. Multi-master collaboration also poses some stimulating technical and design challenges if you're looking for new frontiers beyond the traditional client-server model. gritzko on June 25, 2024 | next [–] Ha. I just realized it is 10 years since me, Alexei and Oleg launched our CRDT demo on HN. Funnily enough, it featured this mouse-cursor trick as well. It was a demo of the lib. It was August 2014 if I remember correctly. The post was submitted by Dan Abramov. Nostalgie. That repo is long abandoned https://github.com/gritzko/swarm Did CRDTs and local-first advance much since 2014? There is a bunch of research, way more CRDT libs on GitHub, but (somewhat) successful businesses you can count on one hand. I g",
+        "fetch_error": ""
+      },
+      {
+        "title": "Pricing - LocaleApp",
+        "url": "https://www.localeapp.com/pricing/",
+        "query": "local1st.app pricing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+      },
+      {
+        "title": "Apple to Block Mac Apps From Secretly Accessing Your Clipboard - MacRumors",
+        "url": "https://www.macrumors.com/2025/05/12/apple-mac-apps-clipboard-change/",
+        "query": "Apple iOS clipboard background restriction",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "@media (prefers-color-scheme: dark) {html{background:#000;} .button {background: #373737;}}@media (prefers-color-scheme: light) {html{background:#fff;} .button {background: #f2f1ec;}} !function(){\"use strict\";var e=window.location.search.substring(1).split(\"&\");const t=e=>e.replace(/\\s/g,\"\"),o=e=>new Promise((t=>{if(!(\"msCrypto\"in window)&&\"https:\"===location.protocol&&\"crypto\"in window&&\"TextEncoder\"in window){const o=(new TextEncoder).encode(e);crypto.subtle.digest(\"SHA-256\",o).then((e=>{const o=Array.from(new Uint8Array(e)).map((e=>(\"00\"+e.toString(16)).slice(-2))).join(\"\");t(o)}))}else t(\"\")}));for(var n=0;n {const t=e.match(/((?=([a-zA-Z0-9._!#$%+^&*()[\\]<>-]+))\\2@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+)/gi);return t?t[0]:\"\"})(t(a.toLowerCase()))){o(a).then((t=>{t.length&&(localStorage.setItem(r,t),localStorage.setItem(\"adt_emsrc\",\"url\"),e.splice(n,1),history.replaceState(null,\"\",\"?\"+e.join(\"&\")))}));break}}}}(); function getCookie(name) { for (var nameEQ = name + \"=\", ca = document.cookie.split(\";\"), i = 0; i = 1) || (1==0)) return true; return false;} var forum_logged_in = forumsUserCheck(); var status = (forum_logged_in ? getCookie('xf_contributor')==1 ? \"contributor\" : getCookie('xf_contributor')==2 ? \"editor\" : \"logged-in\" : \"guest\"); var mrDark = getCookie('mr-dark'); var lightdark=false; if (mrDark == 1) { lightdark=true; document.write(' '); } else if (mrDark == 2) { document.write(' '); } else { try { var light = window.matchMedia(\"(prefers-color-scheme: light)\"); var dark = window.matchMedia(\"(prefers-color-scheme: dark)\"); if (dark.matches) lightdark=true; if (light.matches || dark.matches) { document.write(' '); document.write(' '); } else { document.write(' '); } } catch (e) { document.write(' '); } } var mrWidth = getCookie('mr-fluid'); if (mrWidth > 1) { do",
+        "fetch_error": ""
+      },
+      {
+        "title": "Yoink Brings Background Clipboard Monitoring to iOS and iPadOS 15 via Picture in Picture Workaround - MacStories",
+        "url": "https://www.macstories.net/ios/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround/",
+        "query": "Apple iOS clipboard background restriction",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Yoink Brings Background Clipboard Monitoring to iOS and iPadOS 15 via Picture in Picture Workaround - MacStories {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/\"},\"author\":{\"@id\":\"https:\\/\\/www.macstories.net\\/#\\/schema\\/person\\/e3a909d4a39cb7cf5864aae8da36fbaf\"},\"headline\":\"Yoink Brings Background Clipboard Monitoring to iOS and iPadOS 15 via Picture in Picture Workaround\",\"datePublished\":\"2021-10-19T14:00:29+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/\"},\"wordCount\":1875,\"image\":{\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/#primaryimage\"},\"thumbnailUrl\":\"https:\\/\\/cdn.macstories.net\\/image-16-1634574389273.png\",\"keywords\":[\"featured\",\"iOS 15\",\"iPadOS 15\",\"multitasking\"],\"articleSection\":[\"iOS\"],\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/\",\"url\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/\",\"name\":\"Yoink Brings Background Clipboard Monitoring to iOS and iPadOS 15 via Picture in Picture Workaround - MacStories\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.macstories.net\\/#website\"},\"primaryImageOfPage\":{\"@id\":\"ht",
+        "fetch_error": ""
+      },
+      {
+        "title": "iOS pasteboard and clipboard privacy: what to know | PTKD Journal",
+        "url": "https://ptkd.com/journal/ios-pasteboard-clipboard-privacy",
+        "query": "Apple iOS clipboard background restriction",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "— uniquely replaced by Helmet per-route at prerender, or at runtime when the SPA hydrates. Other meta tags (description, og:*, twitter:*, canonical, robots) are provided per-route by SEOHead/Helmet; we don't repeat them here because vite-prerender-plugin would append rather than replace them. --> iOS pasteboard and clipboard privacy: what to know | PTKD Journal { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"Organization\", \"@id\": \"https://ptkd.com/#organization\", \"name\": \"PTKD\", \"url\": \"https://ptkd.com\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://ptkd.com/ptkd-logo.png\", \"width\": 1024, \"height\": 1024 }, \"description\": \"PTKD is a mobile app security scanner for Android and iOS that delivers OWASP-aligned vulnerability reports in minutes.\", \"foundingDate\": \"2024\", \"founder\": { \"@id\": \"https://ptkd.com/#founder\" }, \"knowsAbout\": [ \"Mobile application security\", \"OWASP Mobile Top 10\", \"Android security\", \"iOS security\", \"SDK risk analysis\", \"Static application security testing\", \"Dynamic application security testing\", \"TLS certificate pinning\", \"GDPR mobile compliance\", \"HIPAA mobile compliance\", \"PCI DSS mobile compliance\" ], \"areaServed\": \"Worldwide\" }, { \"@type\": \"Person\", \"@id\": \"https://ptkd.com/#founder\", \"name\": \"Laurens Dauchy\", \"jobTitle\": \"Founder\", \"worksFor\": { \"@id\": \"https://ptkd.com/#organization\" }, \"url\": \"https://ptkd.com/about\" }, { \"@type\": \"WebSite\", \"@id\": \"https://ptkd.com/#website\", \"url\": \"https://ptkd.com\", \"name\": \"PTKD\", \"publisher\": { \"@id\": \"https://ptkd.com/#organization\" }, \"inLanguage\": \"en\", \"potentialAction\": { \"@type\": \"SearchAction\", \"target\": \"https://ptkd.com/search?q={search_term_string}\", \"query-input\": \"required name=search_term_string\" } }, { \"@type\": \"SoftwareApplication\", \"@id\": \"https://ptkd.com/#software\", \"",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：工具名称、GitHub仓库、隐私政策均未找到独立来源。"
+    },
+    "core_question": "这个离线剪贴板同步工具是否真的安全、好用、值得安装？",
+    "why_this_topic_matters": "跨平台剪贴板同步是技术人常见需求，该工具以隐私优先为卖点，可能改变用户对云剪贴板的依赖。",
+    "fact_summary": [
+      "V2EX 用户发布开源剪贴板同步工具 Privli，基于 Google Nearby，离线、零权限、兼容 Quick Share。",
+      "支持 Windows/macOS/Linux/Android/iOS，剪贴板同步和文件互传。",
+      "Linux/Android/Windows 免费，macOS 可 brew 免费，iOS 限时免费。",
+      "iOS 端因系统限制需前台操作，Android 可通过任务栏按钮发送。"
+    ],
+    "persona_discussion_question": "我该不该放弃云剪贴板（如苹果接力、微软云剪贴板）改用这个离线工具？迁移成本高吗？",
+    "old_flower_stance": "隐私优先的工具值得关注，但需验证实际体验和安全性，不建议立即迁移。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 8,
+      "why_interested": "技术人关注隐私和离线方案，该工具提供了一种新选择。",
+      "reader_risk": "可能因证据不足导致读者误判工具可靠性。"
+    },
+    "mass_interest_hook": {
+      "score": 7,
+      "hook_type": "故事",
+      "why_non_technical_people_may_click": "隐私问题人人关心，免费工具吸引人。",
+      "story_seed": "一个开发者因为不信任云服务，自己做了个离线剪贴板同步工具。",
+      "do_not_overhype": "不要声称该工具是最好用的或完全无风险。"
+    },
+    "topic_tension": {
+      "score": 9,
+      "conflict_point": "隐私优先 vs 便利性：离线工具是否值得牺牲云同步的便利？",
+      "debate_question": "隐私优先的工具是否以牺牲便利性为代价？普通用户是否愿意为隐私放弃云同步？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "平台/工具厂商"
+      ],
+      "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      "2025-08-20: V2EX 用户发布 Privli 工具介绍"
+    ],
+    "evidence_table": [
+      {
+        "source": "V2EX 帖子",
+        "url": "https://www.v2ex.com/t/1221564",
+        "supports": "工具功能、价格、平台支持",
+        "reliability": "weak"
+      },
+      {
+        "source": "官方页面",
+        "url": "https://nearby.local1st.app",
+        "supports": "工具存在，有重定向",
+        "reliability": "near_source"
+      },
+      {
+        "source": "MacRumors",
+        "url": "https://www.macrumors.com/2025/05/12/apple-mac-apps-clipboard-change/",
+        "supports": "Apple 限制后台剪贴板访问",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "部分闭环：工具功能描述清晰，但缺乏独立验证和用户反馈。",
+    "writeable_angles": [
+      {
+        "angle": "工具账本：Privli 的功能、成本、隐私优势与同类对比",
+        "why": "帮助读者快速评估是否值得使用",
+        "needs": "需要同类工具对比数据"
+      },
+      {
+        "angle": "风险避坑：离线剪贴板工具的安全性和可靠性验证",
+        "why": "隐私工具本身可能成为安全风险",
+        "needs": "需要安全审计或第三方验证"
+      }
+    ],
+    "missing_basics": [
+      "Google Nearby 技术原理",
+      "iOS 剪贴板限制的具体细节"
+    ],
+    "missing_materials": [
+      "GitHub 仓库链接和代码审查结果",
+      "官方隐私政策原文",
+      "用户实测体验（延迟、兼容性）",
+      "与同类工具（如 KDE Connect、Pushbullet）的对比表"
+    ],
+    "not_claimable": [
+      "不要声称该工具是最好用的剪贴板同步工具",
+      "不要声称该工具完全无隐私风险",
+      "不要声称该工具兼容所有设备"
+    ],
+    "followup_queries": [
+      "Privli GitHub 仓库地址是什么？",
+      "Privli 的隐私政策在哪里？",
+      "Privli 在 Reddit/Hacker News 上有用户讨论吗？"
+    ],
+    "additional_search_queries": [
+      "local1st/Privli GitHub",
+      "Privli review reddit hacker news",
+      "Google Nearby offline clipboard sync alternative"
+    ],
+    "stop_conditions": [
+      "找到官方隐私政策明确说明数据收集情况",
+      "找到至少 3 个独立用户实测报告",
+      "GitHub 仓库代码审查完成"
+    ],
+    "confidence": 40.0,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "tool-ledger",
+    "quality_gate": {
+      "pass": false,
+      "score": 40,
+      "fatal_issues": [
+        "核心事实没有来源：工具名称、GitHub仓库、隐私政策均未找到独立来源。",
+        "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象。",
+        "没有泛兴趣故事钩子，标题和开头只适合技术小圈子。",
+        "没有真实传播张力：说不清冲突点、讨论点、利益拉扯、身份代入或读者为什么愿意评论。",
+        "没有明确归入实际选题方向，或者选题方向和内容不匹配。",
+        "没有明确选题结论：推荐或可选。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写。",
+        "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环。",
+        "没有列出基础概念缺口和资料素材缺口。",
+        "没有按具体类型提供资料包。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来。"
+      ],
+      "warnings": [
+        "证据链不完整：未找到GitHub仓库、官方隐私政策、用户实测反馈。",
+        "泛兴趣钩子不足：标题和摘要仅吸引技术人，缺乏大众可理解的故事。",
+        "传播张力弱：缺乏明确的冲突点或讨论空间。"
+      ],
+      "missing_evidence": [
+        "GitHub仓库链接和代码审查结果",
+        "官方隐私政策原文",
+        "用户实测体验（延迟、兼容性）",
+        "与同类工具（如KDE Connect、Pushbullet）的对比表"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": false,
+      "topic_direction_ok": false,
+      "report_type_ok": false,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "这个离线剪贴板同步工具是否真的安全、好用、值得安装？",
+      "persona_discussion_question": "我该不该放弃云剪贴板（如苹果接力、微软云剪贴板）改用这个离线工具？迁移成本高吗？",
+      "hidden_public_issue": "隐私优先的工具是否以牺牲便利性为代价？普通用户是否愿意为隐私放弃云同步的便利？",
+      "must_verify": [
+        "工具是否真的完全离线、不收集任何数据？",
+        "基于 Google Nearby 的实现是否依赖 GMS？",
+        "兼容 Quick Share 的具体表现如何？",
+        "剪贴板同步的延迟和稳定性如何？",
+        "iOS 端接收剪贴板是否真的需要前台？",
+        "macOS 端是否真的可以 brew 免费使用？",
+        "是否有安全审计或第三方验证？",
+        "GitHub 仓库的活跃度和代码质量如何？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "github_repo",
+          "query": "local1st/Privli GitHub",
+          "why_needed": "验证代码是否开源、许可证、最近更新、issue 讨论"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "local1st.app documentation",
+          "why_needed": "获取官方功能说明、隐私政策、FAQ"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Privli review reddit hacker news",
+          "why_needed": "获取真实用户反馈、问题报告"
+        },
+        {
+          "source_type": "case_study",
+          "query": "Google Nearby offline clipboard sync alternative",
+          "why_needed": "了解类似工具对比、技术原理"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "local1st.app pricing",
+          "why_needed": "确认 macOS 是否真的免费，iOS 限免截止日期"
+        },
+        {
+          "source_type": "policy",
+          "query": "Apple iOS clipboard background restriction",
+          "why_needed": "验证 iOS 后台剪贴板限制是否如作者所述"
+        }
+      ],
+      "expert_challenge_points": [
+        "离线同步的延迟和可靠性是否满足日常使用？",
+        "基于 Nearby 的实现是否在非 Google 设备上稳定？",
+        "零权限存文件是否真的安全？是否存在其他隐私风险？",
+        "macOS 免费是否只是临时策略？未来是否会收费？"
+      ],
+      "do_not_claim_yet": [
+        "不要声称该工具是最好用的剪贴板同步工具",
+        "不要声称该工具完全无隐私风险",
+        "不要声称该工具兼容所有设备"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需注明验证不足，建议读者自行测试。",
+      "downstream_materials_needed": [
+        "GitHub 仓库链接和代码审查结果",
+        "官方隐私政策原文",
+        "用户实测体验（延迟、兼容性）",
+        "与同类工具（如 KDE Connect、Pushbullet）的对比表"
+      ]
+    },
+    "research_evidence": [
+      {
+        "title": "Privli - Private Nearby File Sharing",
+        "url": "https://nearby.local1st.app",
+        "query": "local1st/Privli GitHub",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Privli redirect to /en. No \"noindex\" here: the bare domain must stay indexable so Google can consolidate it into /en via the canonical below (noindex would drop https://local1st.app from search entirely). --> (function () { var SUPPORTED = [ 'en', 'zh-Hans', 'zh-Hant', 'es', 'fr', 'de', 'ja', 'ko', 'pt-BR', 'ru', 'it', 'hi', 'id', 'tr', 'vi', 'ar' ]; var DEFAULT = 'en'; function resolve(tag) { if (!tag) return null; var lower = tag.toLowerCase(); // Exact match (case-insensitive). for (var i = 0; i fr, es-419 -> es). for (var j = 0; j Redirecting… Continue to Privli",
+        "fetch_error": ""
+      },
+      {
+        "title": "GitHub on a Budget. How to Run a Private Local Git Repo on… | by Dean J Murphy | Medium",
+        "url": "https://dean-joseph-murphy.medium.com/github-on-a-budget-dc5e451061a7",
+        "query": "local1st/Privli GitHub",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Forbidden"
+      },
+      {
+        "title": "r/git on Reddit: Can I use git locally on my computer?",
+        "url": "https://www.reddit.com/r/git/comments/1jw3qya/can_i_use_git_locally_on_my_computer/",
+        "query": "local1st/Privli GitHub",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "Local-first architecture with Expo - Expo Documentation",
+        "url": "https://docs.expo.dev/guides/local-first/",
+        "query": "local1st.app documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Local-first architecture with Expo - Expo Documentation {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Expo Documentation\",\"url\":\"https://docs.expo.dev\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Expo\",\"url\":\"https://expo.dev\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://docs.expo.dev/static/images/expo-logo.svg\"},\"sameAs\":[\"https://github.com/expo\",\"https://x.com/expo\",\"https://bsky.app/profile/expo.dev\",\"https://www.linkedin.com/company/expo-dev/\",\"https://www.youtube.com/@expodevelopers\"]}} {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"More\",\"item\":\"https://docs.expo.dev/guides/expo-ui-swift-ui\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Assorted\",\"item\":\"https://docs.expo.dev\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Local-first\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"headline\":\"Local-first architecture with Expo\",\"description\":\"An introduction to the emerging local-first software movement, including links to relevant learning resources and tools.\",\"dateModified\":\"June 09, 2026\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Expo\",\"url\":\"https://expo.dev\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://docs.expo.dev/static/images/expo-logo.svg\"},\"sameAs\":[\"https://github.com/expo\",\"https://x.com/expo\",\"https://bsky.app/profile/expo.dev\",\"https://www.linkedin.com/company/expo-dev/\",\"https://www.youtube.com/@expodevelopers\"]},\"url\":\"https://docs.expo.dev/guides/local-first/\"} {\"@context\":\"https://schema.org\",\"@type\":\"VideoObject\",\"name\":\"Watch: Build a Local-First Real-Time Shopping List App with Expo and TinyBase\",\"description\":\"Build a real-time shopping list app using TinyBase with expo-sqlite for persistence and automatic syncing.\",\"thumbnailUrl\":\"https://i3.ytimg.co",
+        "fetch_error": ""
+      },
+      {
+        "title": "Local-First Software - PowerSync",
+        "url": "https://docs.powersync.com/resources/local-first-software",
+        "query": "local1st.app documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Local-First Software - PowerSync !function(){var b=\"\"; function a(p){if(p==null)return\"/\";p=\"\"+p;if(\"\"===p)return\"/\";return\"/\"===p.charAt(0)?p:\"/\"+p} function u(p){if(p==null)return p;p=\"\"+p;if(!p||p.charAt(p.length-1)===\"/\")return p.slice(0,-1);return p} function i(p){if(p==null)return p;p=\"\"+p;if(6 (function(a,b){try{let c=document.getElementById(\"banner\")?.innerText;if(c){for(let d=0;d {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"PowerSync\",\"creator\":{\"@type\":\"Organization\",\"name\":\"Mintlify\",\"url\":\"https://mintlify.com\"}} ((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=[\"light\",\"dark\"];function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{let c=\"class\"===a,d=c&&f?e.map(a=>f[a]||a):e;c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)}),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&\"system\"===a?window.matchMedia(\"(prefers-color-scheme: dark)\").matches?\"dark\":\"light\":a;k(d)}catch(a){}})(\"class\",\"isDarkMode\",\"system\",null,[\"dark\",\"light\",\"true\",\"false\",\"system\"],{\"true\":\"dark\",\"false\":\"light\",\"dark\":\"dark\",\"light\":\"light\"},true,false) Documentation Index Fetch the complete documentation index at: /llms.txt Use this file to discover all available pages before exploring further. :root{--banner-height:0px!important} (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"(function g(a,b,c,d,e){try{let f,g,h=[];try{h=window.location.pathname.split(\\\"/\\\").filter(a=\\u003e\\\"\\\"!==a\\u0026\\u0026\\\"global\\\"!==a).slice(0,2)}catch{h=[]}let i=h.find(a=\\u003ec.includes(a)),j=[];for(let c of(i?j.push(i):j.push(b),j.push(\\\"global\\\"),j)){if(!c)continue;let b=a[c];if(b?.content){f=b.content,g=c;break}}if(!f)return void document.documentElement.setAttribute(d,\\\"hidden\\\");let k=!0,l=0;",
+        "fetch_error": ""
+      },
+      {
+        "title": "What is Local-first Web Development? | alexop.dev",
+        "url": "https://alexop.dev/posts/what-is-local-first-web-development/",
+        "query": "local1st.app documentation",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "What is Local-first Web Development? | alexop.dev document.addEventListener(\"DOMContentLoaded\", function () { if (typeof renderMathInElement === \"function\") { renderMathInElement(document.body, { delimiters: [ { left: \"$$\", right: \"$$\", display: true }, { left: \"$\", right: \"$\", display: false }, { left: \"\\\\(\", right: \"\\\\)\", display: false }, { left: \"\\\\[\", right: \"\\\\]\", display: true }, ], throwOnError: false, trust: true, strict: false, output: \"html\", }); } }); {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"What is Local-first Web Development? | alexop.dev\",\"description\":\"What is local-first software and why does it matter? This guide covers local-first architecture, offline-capable apps with automatic sync, data ownership, and how to build a local-first web app with Vue step by step.\",\"image\":\"https://alexop.dev/posts/what-is-local-first-web-development/index.png\",\"datePublished\":\"2024-05-29T15:22:00.000Z\",\"dateModified\":\"2024-11-28T15:22:00.000Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Alexander Opalic\"}} .chat-prose[data-v-8a19bbf8] p{margin:.5rem 0}.chat-prose[data-v-8a19bbf8] p:first-child{margin-top:0}.chat-prose[data-v-8a19bbf8] p:last-child{margin-bottom:0}.chat-prose[data-v-8a19bbf8] a{color:rgb(var(--color-accent));text-decoration:underline;text-decoration-style:dashed;text-underline-offset:4px}.chat-prose[data-v-8a19bbf8] a:hover{text-decoration-style:solid}.chat-prose[data-v-8a19bbf8] ul,.chat-prose[data-v-8a19bbf8] ol{margin:.5rem 0;padding-left:1.25rem}.chat-prose[data-v-8a19bbf8] li{margin:.15rem 0}.chat-prose[data-v-8a19bbf8] code{background:rgba(var(--color-card-muted),.5);padding:.1rem .3rem;border-radius:3px;font-size:.85em}.chat-prose[data-v-8a19bbf8] pre{background:rgba(var(--color-card-muted),.6);padding:.6rem .8rem;border-radius:v",
+        "fetch_error": ""
+      },
+      {
+        "title": "hacking: security in practice",
+        "url": "https://www.reddit.com/r/hacking/",
+        "query": "Privli review reddit hacker news",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/privacy on Reddit: Exactly how safe is Privacy.com?",
+        "url": "https://www.reddit.com/r/privacy/comments/dxpa07/exactly_how_safe_is_privacycom/",
+        "query": "Privli review reddit hacker news",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/PrivacyTechTalk",
+        "url": "https://www.reddit.com/r/PrivacyTechTalk/",
+        "query": "Privli review reddit hacker news",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/GooglePixel on Reddit: Why hasn’t Google developed a synchronized clipboard between Chrome and Android?",
+        "url": "https://www.reddit.com/r/GooglePixel/comments/1ffqhf6/why_hasnt_google_developed_a_synchronized/",
+        "query": "Google Nearby offline clipboard sync alternative",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "r/androiddev on Reddit: Built a clipboard sharing app between Android and Windows using only Bluetooth (no internet required)",
+        "url": "https://www.reddit.com/r/androiddev/comments/1mdvdkh/built_a_clipboard_sharing_app_between_android_and/",
+        "query": "Google Nearby offline clipboard sync alternative",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "HTTP Error 403: Blocked"
+      },
+      {
+        "title": "This free and open-source self-hosted app syncs your clipboard across all of your devices",
+        "url": "https://www.xda-developers.com/open-source-self-hosted-app-syncs-clipboard-across-devices/",
+        "query": "Google Nearby offline clipboard sync alternative",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "This free and open-source self-hosted app syncs your clipboard across all of your devices window.isInAppBrowser = false { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"This free and open-source self-hosted app syncs your clipboard across all of your devices\", \"url\": \"https://www.xda-developers.com/open-source-self-hosted-app-syncs-clipboard-across-devices/\", \"about\": [ {\"@type\": \"Thing\", \"name\": \"Productivity\"}, {\"@type\": \"Thing\", \"name\": \"app\"}, {\"@type\": \"Thing\", \"name\": \"Self-Hosting\"} ], \"thumbnailUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1200&h=628&fit=crop\", \"image\":[{ \"@type\": \"ImageObject\", \"contentUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=900&fit=crop\", \"url\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=900&fit=crop\", \"height\": 900, \"width\": 1600, \"representativeOfPage\": true }, { \"@type\": \"ImageObject\", \"contentUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg\", \"url\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg\", \"height\": 2272, \"width\": 4040 }, { \"@type\": \"ImageObject\", \"contentUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=1200&fit=crop\", \"url\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=1200&fit=crop\", \"height\": 1200, \"width\": 1600 }, { \"@type\": \"ImageObject\", \"contentUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=1600&fit=crop\", \"url\": \"https://static0.xdaimages.com/wordpress/wp-co",
+        "fetch_error": ""
+      },
+      {
+        "title": "Welcome to… Your Local Business Guide. - Local1st",
+        "url": "https://www.local1st.com.au/pricing-guide",
+        "query": "local1st.app pricing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "%PDF-1.4 % 186 0 obj > endobj xref 186 122 0000000016 00000 n 0000003450 00000 n 0000003609 00000 n 0000011120 00000 n 0000011258 00000 n 0000011396 00000 n 0000011868 00000 n 0000012335 00000 n 0000012750 00000 n 0000013177 00000 n 0000013646 00000 n 0000014075 00000 n 0000014138 00000 n 0000014393 00000 n 0000014855 00000 n 0000015111 00000 n 0000015225 00000 n 0000015673 00000 n 0000015927 00000 n 0000016412 00000 n 0000016674 00000 n 0000017192 00000 n 0000017219 00000 n 0000019532 00000 n 0000019974 00000 n 0000020071 00000 n 0000020220 00000 n 0000020317 00000 n 0000020466 00000 n 0000020612 00000 n 0000020639 00000 n 0000020736 00000 n 0000020875 00000 n 0000023097 00000 n 0000025286 00000 n 0000026978 00000 n 0000029375 00000 n 0000031820 00000 n 0000034093 00000 n 0000036350 00000 n 0000036620 00000 n 0000039215 00000 n 0000042434 00000 n 0000042540 00000 n 0000042610 00000 n 0000046361 00000 n 0000046416 00000 n 0000046499 00000 n 0000050216 00000 n 0000050456 00000 n 0000054270 00000 n 0000054372 00000 n 0000054690 00000 n 0000054958 00000 n 0000055062 00000 n 0000058627 00000 n 0000058733 00000 n 0000058808 00000 n 0000058878 00000 n 0000059286 00000 n 0000059412 00000 n 0000059528 00000 n 0000059563 00000 n 0000059641 00000 n 0000066388 00000 n 0000066721 00000 n 0000066787 00000 n 0000066903 00000 n 0000066938 00000 n 0000067016 00000 n 0000070321 00000 n 0000070660 00000 n 0000070726 00000 n 0000070842 00000 n 0000070912 00000 n 0000071015 00000 n 0000073893 00000 n 0000074145 00000 n 0000074425 00000 n 0000074452 00000 n 0000074859 00000 n 0000077999 00000 n 0000078260 00000 n 0000078684 00000 n 0000078792 00000 n 0000078889 00000 n 0000079038 00000 n 0000079116 00000 n 0000085600 00000 n 0000085639 00000 n 0000085718 00000 n 0000085815 00000 n 000008596",
+        "fetch_error": ""
+      },
+      {
+        "title": "I love local first, but I struggle with how to monetize truly local-first applic... | Hacker News",
+        "url": "https://news.ycombinator.com/item?id=40786600",
+        "query": "local1st.app pricing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "I love local first, but I struggle with how to monetize truly local-first applic... | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login braden-lk on June 25, 2024 | parent | context | favorite | on: Local First, Forever I love local first, but I struggle with how to monetize truly local-first applications. I know that's not everyone's favorite topic, but I've got bills to pay and payroll to make. Our product is about 80% local-first, with live collaboration and image hosting needing a server. I plan to change that eventually, but I worry that jailbreaking the app in this way will lead to financial troubles. Obsidian's model seems nice: base app is free, and then payment for the networked portions like sync+publish. However, there's little data available on how well this works and how big of a TAM you need to make it sustainable. Or if it's even possible without an enterprise revenue channel. For those interested in building robust local-first + collaborative apps, I've been using Yjs for a few years now and have overall really enjoyed it. Multi-master collaboration also poses some stimulating technical and design challenges if you're looking for new frontiers beyond the traditional client-server model. gritzko on June 25, 2024 | next [–] Ha. I just realized it is 10 years since me, Alexei and Oleg launched our CRDT demo on HN. Funnily enough, it featured this mouse-cursor trick as well. It was a demo of the lib. It was August 2014 if I remember correctly. The post was submitted by Dan Abramov. Nostalgie. That repo is long abandoned https://github.com/gritzko/swarm Did CRDTs and local-first advance much since 2014? There is a bunch of research, way more CRDT libs on GitHub, but (somewhat) successful businesses you can count on one hand. I g",
+        "fetch_error": ""
+      },
+      {
+        "title": "Pricing - LocaleApp",
+        "url": "https://www.localeapp.com/pricing/",
+        "query": "local1st.app pricing",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "",
+        "fetch_error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+      },
+      {
+        "title": "Apple to Block Mac Apps From Secretly Accessing Your Clipboard - MacRumors",
+        "url": "https://www.macrumors.com/2025/05/12/apple-mac-apps-clipboard-change/",
+        "query": "Apple iOS clipboard background restriction",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "@media (prefers-color-scheme: dark) {html{background:#000;} .button {background: #373737;}}@media (prefers-color-scheme: light) {html{background:#fff;} .button {background: #f2f1ec;}} !function(){\"use strict\";var e=window.location.search.substring(1).split(\"&\");const t=e=>e.replace(/\\s/g,\"\"),o=e=>new Promise((t=>{if(!(\"msCrypto\"in window)&&\"https:\"===location.protocol&&\"crypto\"in window&&\"TextEncoder\"in window){const o=(new TextEncoder).encode(e);crypto.subtle.digest(\"SHA-256\",o).then((e=>{const o=Array.from(new Uint8Array(e)).map((e=>(\"00\"+e.toString(16)).slice(-2))).join(\"\");t(o)}))}else t(\"\")}));for(var n=0;n {const t=e.match(/((?=([a-zA-Z0-9._!#$%+^&*()[\\]<>-]+))\\2@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+)/gi);return t?t[0]:\"\"})(t(a.toLowerCase()))){o(a).then((t=>{t.length&&(localStorage.setItem(r,t),localStorage.setItem(\"adt_emsrc\",\"url\"),e.splice(n,1),history.replaceState(null,\"\",\"?\"+e.join(\"&\")))}));break}}}}(); function getCookie(name) { for (var nameEQ = name + \"=\", ca = document.cookie.split(\";\"), i = 0; i = 1) || (1==0)) return true; return false;} var forum_logged_in = forumsUserCheck(); var status = (forum_logged_in ? getCookie('xf_contributor')==1 ? \"contributor\" : getCookie('xf_contributor')==2 ? \"editor\" : \"logged-in\" : \"guest\"); var mrDark = getCookie('mr-dark'); var lightdark=false; if (mrDark == 1) { lightdark=true; document.write(' '); } else if (mrDark == 2) { document.write(' '); } else { try { var light = window.matchMedia(\"(prefers-color-scheme: light)\"); var dark = window.matchMedia(\"(prefers-color-scheme: dark)\"); if (dark.matches) lightdark=true; if (light.matches || dark.matches) { document.write(' '); document.write(' '); } else { document.write(' '); } } catch (e) { document.write(' '); } } var mrWidth = getCookie('mr-fluid'); if (mrWidth > 1) { do",
+        "fetch_error": ""
+      },
+      {
+        "title": "Yoink Brings Background Clipboard Monitoring to iOS and iPadOS 15 via Picture in Picture Workaround - MacStories",
+        "url": "https://www.macstories.net/ios/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround/",
+        "query": "Apple iOS clipboard background restriction",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "Yoink Brings Background Clipboard Monitoring to iOS and iPadOS 15 via Picture in Picture Workaround - MacStories {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/\"},\"author\":{\"@id\":\"https:\\/\\/www.macstories.net\\/#\\/schema\\/person\\/e3a909d4a39cb7cf5864aae8da36fbaf\"},\"headline\":\"Yoink Brings Background Clipboard Monitoring to iOS and iPadOS 15 via Picture in Picture Workaround\",\"datePublished\":\"2021-10-19T14:00:29+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/\"},\"wordCount\":1875,\"image\":{\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/#primaryimage\"},\"thumbnailUrl\":\"https:\\/\\/cdn.macstories.net\\/image-16-1634574389273.png\",\"keywords\":[\"featured\",\"iOS 15\",\"iPadOS 15\",\"multitasking\"],\"articleSection\":[\"iOS\"],\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/\",\"url\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/\",\"name\":\"Yoink Brings Background Clipboard Monitoring to iOS and iPadOS 15 via Picture in Picture Workaround - MacStories\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.macstories.net\\/#website\"},\"primaryImageOfPage\":{\"@id\":\"ht",
+        "fetch_error": ""
+      },
+      {
+        "title": "iOS pasteboard and clipboard privacy: what to know | PTKD Journal",
+        "url": "https://ptkd.com/journal/ios-pasteboard-clipboard-privacy",
+        "query": "Apple iOS clipboard background restriction",
+        "provider": "brave",
+        "score": "",
+        "fetched_text": "— uniquely replaced by Helmet per-route at prerender, or at runtime when the SPA hydrates. Other meta tags (description, og:*, twitter:*, canonical, robots) are provided per-route by SEOHead/Helmet; we don't repeat them here because vite-prerender-plugin would append rather than replace them. --> iOS pasteboard and clipboard privacy: what to know | PTKD Journal { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"Organization\", \"@id\": \"https://ptkd.com/#organization\", \"name\": \"PTKD\", \"url\": \"https://ptkd.com\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://ptkd.com/ptkd-logo.png\", \"width\": 1024, \"height\": 1024 }, \"description\": \"PTKD is a mobile app security scanner for Android and iOS that delivers OWASP-aligned vulnerability reports in minutes.\", \"foundingDate\": \"2024\", \"founder\": { \"@id\": \"https://ptkd.com/#founder\" }, \"knowsAbout\": [ \"Mobile application security\", \"OWASP Mobile Top 10\", \"Android security\", \"iOS security\", \"SDK risk analysis\", \"Static application security testing\", \"Dynamic application security testing\", \"TLS certificate pinning\", \"GDPR mobile compliance\", \"HIPAA mobile compliance\", \"PCI DSS mobile compliance\" ], \"areaServed\": \"Worldwide\" }, { \"@type\": \"Person\", \"@id\": \"https://ptkd.com/#founder\", \"name\": \"Laurens Dauchy\", \"jobTitle\": \"Founder\", \"worksFor\": { \"@id\": \"https://ptkd.com/#organization\" }, \"url\": \"https://ptkd.com/about\" }, { \"@type\": \"WebSite\", \"@id\": \"https://ptkd.com/#website\", \"url\": \"https://ptkd.com\", \"name\": \"PTKD\", \"publisher\": { \"@id\": \"https://ptkd.com/#organization\" }, \"inLanguage\": \"en\", \"potentialAction\": { \"@type\": \"SearchAction\", \"target\": \"https://ptkd.com/search?q={search_term_string}\", \"query-input\": \"required name=search_term_string\" } }, { \"@type\": \"SoftwareApplication\", \"@id\": \"https://ptkd.com/#software\", \"",
+        "fetch_error": ""
+      }
+    ]
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260620-quick-share-f441793a/",
+    "for_gpt_editor": {
+      "brief": "隐私是第一目标：完全离线、不收集任何数据（连\"匿名\"也不收集）、无账号。基于 Google 开源的 Nearby ，不依赖 GMS ，兼容 Quick Share ，可直接发给没装本应用的原生 Android 手机。 还有个我自己做完才发现的点 —— 零权限存文件：低版本 Android 上别的 app 基本都要整盘读写权限，其实根本用不着； Privli 只通过系统选择器授权单个文件夹。 剪贴板同步：在 PC （ Windows / macOS / Linux ）复制文字或截图，另一台桌面或 Android 上直接粘贴 —— 桌面和 Android 都能后台自动接收。「发送」则受系统限制：iOS 需前台点一下才能发出（系统禁止后台读剪贴板），Android 可以通过点击任务栏的按钮发送给信任的设备； iOS 甚至接收也需在前台。 价格：Linux / Android / Windows 一直免费； macOS 可以直接下载 dmg 或者 brew 跳过付费； iOS 下载时一次性买断（无订阅），现限时免费。 https://local1st.app",
+      "title_seed": "开源跨平台剪贴板同步工具：离线、零权限、兼容 Quick Share",
+      "original_title": "[限免] 不联网、跨全平台的剪贴板同步 + 附近文件互传（兼容 Quick Share）",
+      "source_url": "https://www.v2ex.com/t/1221564",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：工具名称、GitHub仓库、隐私政策均未找到独立来源。"
+        },
+        "core_question": "这个离线剪贴板同步工具是否真的安全、好用、值得安装？",
+        "why_this_topic_matters": "跨平台剪贴板同步是技术人常见需求，该工具以隐私优先为卖点，可能改变用户对云剪贴板的依赖。",
+        "fact_summary": [
+          "V2EX 用户发布开源剪贴板同步工具 Privli，基于 Google Nearby，离线、零权限、兼容 Quick Share。",
+          "支持 Windows/macOS/Linux/Android/iOS，剪贴板同步和文件互传。",
+          "Linux/Android/Windows 免费，macOS 可 brew 免费，iOS 限时免费。",
+          "iOS 端因系统限制需前台操作，Android 可通过任务栏按钮发送。"
+        ],
+        "persona_discussion_question": "我该不该放弃云剪贴板（如苹果接力、微软云剪贴板）改用这个离线工具？迁移成本高吗？",
+        "old_flower_stance": "隐私优先的工具值得关注，但需验证实际体验和安全性，不建议立即迁移。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 8,
+          "why_interested": "技术人关注隐私和离线方案，该工具提供了一种新选择。",
+          "reader_risk": "可能因证据不足导致读者误判工具可靠性。"
+        },
+        "mass_interest_hook": {
+          "score": 7,
+          "hook_type": "故事",
+          "why_non_technical_people_may_click": "隐私问题人人关心，免费工具吸引人。",
+          "story_seed": "一个开发者因为不信任云服务，自己做了个离线剪贴板同步工具。",
+          "do_not_overhype": "不要声称该工具是最好用的或完全无风险。"
+        },
+        "topic_tension": {
+          "score": 9,
+          "conflict_point": "隐私优先 vs 便利性：离线工具是否值得牺牲云同步的便利？",
+          "debate_question": "隐私优先的工具是否以牺牲便利性为代价？普通用户是否愿意为隐私放弃云同步？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "平台/工具厂商"
+          ],
+          "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2025-08-20: V2EX 用户发布 Privli 工具介绍"
+        ],
+        "evidence_table": [
+          {
+            "source": "V2EX 帖子",
+            "url": "https://www.v2ex.com/t/1221564",
+            "supports": "工具功能、价格、平台支持",
+            "reliability": "weak"
+          },
+          {
+            "source": "官方页面",
+            "url": "https://nearby.local1st.app",
+            "supports": "工具存在，有重定向",
+            "reliability": "near_source"
+          },
+          {
+            "source": "MacRumors",
+            "url": "https://www.macrumors.com/2025/05/12/apple-mac-apps-clipboard-change/",
+            "supports": "Apple 限制后台剪贴板访问",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "部分闭环：工具功能描述清晰，但缺乏独立验证和用户反馈。",
+        "writeable_angles": [
+          {
+            "angle": "工具账本：Privli 的功能、成本、隐私优势与同类对比",
+            "why": "帮助读者快速评估是否值得使用",
+            "needs": "需要同类工具对比数据"
+          },
+          {
+            "angle": "风险避坑：离线剪贴板工具的安全性和可靠性验证",
+            "why": "隐私工具本身可能成为安全风险",
+            "needs": "需要安全审计或第三方验证"
+          }
+        ],
+        "missing_basics": [
+          "Google Nearby 技术原理",
+          "iOS 剪贴板限制的具体细节"
+        ],
+        "missing_materials": [
+          "GitHub 仓库链接和代码审查结果",
+          "官方隐私政策原文",
+          "用户实测体验（延迟、兼容性）",
+          "与同类工具（如 KDE Connect、Pushbullet）的对比表"
+        ],
+        "not_claimable": [
+          "不要声称该工具是最好用的剪贴板同步工具",
+          "不要声称该工具完全无隐私风险",
+          "不要声称该工具兼容所有设备"
+        ],
+        "followup_queries": [
+          "Privli GitHub 仓库地址是什么？",
+          "Privli 的隐私政策在哪里？",
+          "Privli 在 Reddit/Hacker News 上有用户讨论吗？"
+        ],
+        "additional_search_queries": [
+          "local1st/Privli GitHub",
+          "Privli review reddit hacker news",
+          "Google Nearby offline clipboard sync alternative"
+        ],
+        "stop_conditions": [
+          "找到官方隐私政策明确说明数据收集情况",
+          "找到至少 3 个独立用户实测报告",
+          "GitHub 仓库代码审查完成"
+        ],
+        "confidence": 40.0,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "tool-ledger",
+        "quality_gate": {
+          "pass": false,
+          "score": 40,
+          "fatal_issues": [
+            "核心事实没有来源：工具名称、GitHub仓库、隐私政策均未找到独立来源。",
+            "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象。",
+            "没有泛兴趣故事钩子，标题和开头只适合技术小圈子。",
+            "没有真实传播张力：说不清冲突点、讨论点、利益拉扯、身份代入或读者为什么愿意评论。",
+            "没有明确归入实际选题方向，或者选题方向和内容不匹配。",
+            "没有明确选题结论：推荐或可选。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写。",
+            "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环。",
+            "没有列出基础概念缺口和资料素材缺口。",
+            "没有按具体类型提供资料包。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来。"
+          ],
+          "warnings": [
+            "证据链不完整：未找到GitHub仓库、官方隐私政策、用户实测反馈。",
+            "泛兴趣钩子不足：标题和摘要仅吸引技术人，缺乏大众可理解的故事。",
+            "传播张力弱：缺乏明确的冲突点或讨论空间。"
+          ],
+          "missing_evidence": [
+            "GitHub仓库链接和代码审查结果",
+            "官方隐私政策原文",
+            "用户实测体验（延迟、兼容性）",
+            "与同类工具（如KDE Connect、Pushbullet）的对比表"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": false,
+          "topic_direction_ok": false,
+          "report_type_ok": false,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "这个离线剪贴板同步工具是否真的安全、好用、值得安装？",
+          "persona_discussion_question": "我该不该放弃云剪贴板（如苹果接力、微软云剪贴板）改用这个离线工具？迁移成本高吗？",
+          "hidden_public_issue": "隐私优先的工具是否以牺牲便利性为代价？普通用户是否愿意为隐私放弃云同步的便利？",
+          "must_verify": [
+            "工具是否真的完全离线、不收集任何数据？",
+            "基于 Google Nearby 的实现是否依赖 GMS？",
+            "兼容 Quick Share 的具体表现如何？",
+            "剪贴板同步的延迟和稳定性如何？",
+            "iOS 端接收剪贴板是否真的需要前台？",
+            "macOS 端是否真的可以 brew 免费使用？",
+            "是否有安全审计或第三方验证？",
+            "GitHub 仓库的活跃度和代码质量如何？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "github_repo",
+              "query": "local1st/Privli GitHub",
+              "why_needed": "验证代码是否开源、许可证、最近更新、issue 讨论"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "local1st.app documentation",
+              "why_needed": "获取官方功能说明、隐私政策、FAQ"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Privli review reddit hacker news",
+              "why_needed": "获取真实用户反馈、问题报告"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Google Nearby offline clipboard sync alternative",
+              "why_needed": "了解类似工具对比、技术原理"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "local1st.app pricing",
+              "why_needed": "确认 macOS 是否真的免费，iOS 限免截止日期"
+            },
+            {
+              "source_type": "policy",
+              "query": "Apple iOS clipboard background restriction",
+              "why_needed": "验证 iOS 后台剪贴板限制是否如作者所述"
+            }
+          ],
+          "expert_challenge_points": [
+            "离线同步的延迟和可靠性是否满足日常使用？",
+            "基于 Nearby 的实现是否在非 Google 设备上稳定？",
+            "零权限存文件是否真的安全？是否存在其他隐私风险？",
+            "macOS 免费是否只是临时策略？未来是否会收费？"
+          ],
+          "do_not_claim_yet": [
+            "不要声称该工具是最好用的剪贴板同步工具",
+            "不要声称该工具完全无隐私风险",
+            "不要声称该工具兼容所有设备"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需注明验证不足，建议读者自行测试。",
+          "downstream_materials_needed": [
+            "GitHub 仓库链接和代码审查结果",
+            "官方隐私政策原文",
+            "用户实测体验（延迟、兼容性）",
+            "与同类工具（如 KDE Connect、Pushbullet）的对比表"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Privli - Private Nearby File Sharing",
+            "url": "https://nearby.local1st.app",
+            "query": "local1st/Privli GitHub",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Privli redirect to /en. No \"noindex\" here: the bare domain must stay indexable so Google can consolidate it into /en via the canonical below (noindex would drop https://local1st.app from search entirely). --> (function () { var SUPPORTED = [ 'en', 'zh-Hans', 'zh-Hant', 'es', 'fr', 'de', 'ja', 'ko', 'pt-BR', 'ru', 'it', 'hi', 'id', 'tr', 'vi', 'ar' ]; var DEFAULT = 'en'; function resolve(tag) { if (!tag) return null; var lower = tag.toLowerCase(); // Exact match (case-insensitive). for (var i = 0; i fr, es-419 -> es). for (var j = 0; j Redirecting… Continue to Privli",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub on a Budget. How to Run a Private Local Git Repo on… | by Dean J Murphy | Medium",
+            "url": "https://dean-joseph-murphy.medium.com/github-on-a-budget-dc5e451061a7",
+            "query": "local1st/Privli GitHub",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "r/git on Reddit: Can I use git locally on my computer?",
+            "url": "https://www.reddit.com/r/git/comments/1jw3qya/can_i_use_git_locally_on_my_computer/",
+            "query": "local1st/Privli GitHub",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "Local-first architecture with Expo - Expo Documentation",
+            "url": "https://docs.expo.dev/guides/local-first/",
+            "query": "local1st.app documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Local-first architecture with Expo - Expo Documentation {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Expo Documentation\",\"url\":\"https://docs.expo.dev\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Expo\",\"url\":\"https://expo.dev\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://docs.expo.dev/static/images/expo-logo.svg\"},\"sameAs\":[\"https://github.com/expo\",\"https://x.com/expo\",\"https://bsky.app/profile/expo.dev\",\"https://www.linkedin.com/company/expo-dev/\",\"https://www.youtube.com/@expodevelopers\"]}} {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"More\",\"item\":\"https://docs.expo.dev/guides/expo-ui-swift-ui\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Assorted\",\"item\":\"https://docs.expo.dev\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Local-first\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"headline\":\"Local-first architecture with Expo\",\"description\":\"An introduction to the emerging local-first software movement, including links to relevant learning resources and tools.\",\"dateModified\":\"June 09, 2026\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Expo\",\"url\":\"https://expo.dev\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://docs.expo.dev/static/images/expo-logo.svg\"},\"sameAs\":[\"https://github.com/expo\",\"https://x.com/expo\",\"https://bsky.app/profile/expo.dev\",\"https://www.linkedin.com/company/expo-dev/\",\"https://www.youtube.com/@expodevelopers\"]},\"url\":\"https://docs.expo.dev/guides/local-first/\"} {\"@context\":\"https://schema.org\",\"@type\":\"VideoObject\",\"name\":\"Watch: Build a Local-First Real-Time Shopping List App with Expo and TinyBase\",\"description\":\"Build a real-time shopping list app using TinyBase with expo-sqlite for persistence and automatic syncing.\",\"thumbnailUrl\":\"https://i3.ytimg.co",
+            "fetch_error": ""
+          },
+          {
+            "title": "Local-First Software - PowerSync",
+            "url": "https://docs.powersync.com/resources/local-first-software",
+            "query": "local1st.app documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Local-First Software - PowerSync !function(){var b=\"\"; function a(p){if(p==null)return\"/\";p=\"\"+p;if(\"\"===p)return\"/\";return\"/\"===p.charAt(0)?p:\"/\"+p} function u(p){if(p==null)return p;p=\"\"+p;if(!p||p.charAt(p.length-1)===\"/\")return p.slice(0,-1);return p} function i(p){if(p==null)return p;p=\"\"+p;if(6 (function(a,b){try{let c=document.getElementById(\"banner\")?.innerText;if(c){for(let d=0;d {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"PowerSync\",\"creator\":{\"@type\":\"Organization\",\"name\":\"Mintlify\",\"url\":\"https://mintlify.com\"}} ((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=[\"light\",\"dark\"];function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{let c=\"class\"===a,d=c&&f?e.map(a=>f[a]||a):e;c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)}),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&\"system\"===a?window.matchMedia(\"(prefers-color-scheme: dark)\").matches?\"dark\":\"light\":a;k(d)}catch(a){}})(\"class\",\"isDarkMode\",\"system\",null,[\"dark\",\"light\",\"true\",\"false\",\"system\"],{\"true\":\"dark\",\"false\":\"light\",\"dark\":\"dark\",\"light\":\"light\"},true,false) Documentation Index Fetch the complete documentation index at: /llms.txt Use this file to discover all available pages before exploring further. :root{--banner-height:0px!important} (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"(function g(a,b,c,d,e){try{let f,g,h=[];try{h=window.location.pathname.split(\\\"/\\\").filter(a=\\u003e\\\"\\\"!==a\\u0026\\u0026\\\"global\\\"!==a).slice(0,2)}catch{h=[]}let i=h.find(a=\\u003ec.includes(a)),j=[];for(let c of(i?j.push(i):j.push(b),j.push(\\\"global\\\"),j)){if(!c)continue;let b=a[c];if(b?.content){f=b.content,g=c;break}}if(!f)return void document.documentElement.setAttribute(d,\\\"hidden\\\");let k=!0,l=0;",
+            "fetch_error": ""
+          },
+          {
+            "title": "What is Local-first Web Development? | alexop.dev",
+            "url": "https://alexop.dev/posts/what-is-local-first-web-development/",
+            "query": "local1st.app documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "What is Local-first Web Development? | alexop.dev document.addEventListener(\"DOMContentLoaded\", function () { if (typeof renderMathInElement === \"function\") { renderMathInElement(document.body, { delimiters: [ { left: \"$$\", right: \"$$\", display: true }, { left: \"$\", right: \"$\", display: false }, { left: \"\\\\(\", right: \"\\\\)\", display: false }, { left: \"\\\\[\", right: \"\\\\]\", display: true }, ], throwOnError: false, trust: true, strict: false, output: \"html\", }); } }); {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"What is Local-first Web Development? | alexop.dev\",\"description\":\"What is local-first software and why does it matter? This guide covers local-first architecture, offline-capable apps with automatic sync, data ownership, and how to build a local-first web app with Vue step by step.\",\"image\":\"https://alexop.dev/posts/what-is-local-first-web-development/index.png\",\"datePublished\":\"2024-05-29T15:22:00.000Z\",\"dateModified\":\"2024-11-28T15:22:00.000Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Alexander Opalic\"}} .chat-prose[data-v-8a19bbf8] p{margin:.5rem 0}.chat-prose[data-v-8a19bbf8] p:first-child{margin-top:0}.chat-prose[data-v-8a19bbf8] p:last-child{margin-bottom:0}.chat-prose[data-v-8a19bbf8] a{color:rgb(var(--color-accent));text-decoration:underline;text-decoration-style:dashed;text-underline-offset:4px}.chat-prose[data-v-8a19bbf8] a:hover{text-decoration-style:solid}.chat-prose[data-v-8a19bbf8] ul,.chat-prose[data-v-8a19bbf8] ol{margin:.5rem 0;padding-left:1.25rem}.chat-prose[data-v-8a19bbf8] li{margin:.15rem 0}.chat-prose[data-v-8a19bbf8] code{background:rgba(var(--color-card-muted),.5);padding:.1rem .3rem;border-radius:3px;font-size:.85em}.chat-prose[data-v-8a19bbf8] pre{background:rgba(var(--color-card-muted),.6);padding:.6rem .8rem;border-radius:v",
+            "fetch_error": ""
+          },
+          {
+            "title": "hacking: security in practice",
+            "url": "https://www.reddit.com/r/hacking/",
+            "query": "Privli review reddit hacker news",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/privacy on Reddit: Exactly how safe is Privacy.com?",
+            "url": "https://www.reddit.com/r/privacy/comments/dxpa07/exactly_how_safe_is_privacycom/",
+            "query": "Privli review reddit hacker news",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/PrivacyTechTalk",
+            "url": "https://www.reddit.com/r/PrivacyTechTalk/",
+            "query": "Privli review reddit hacker news",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/GooglePixel on Reddit: Why hasn’t Google developed a synchronized clipboard between Chrome and Android?",
+            "url": "https://www.reddit.com/r/GooglePixel/comments/1ffqhf6/why_hasnt_google_developed_a_synchronized/",
+            "query": "Google Nearby offline clipboard sync alternative",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/androiddev on Reddit: Built a clipboard sharing app between Android and Windows using only Bluetooth (no internet required)",
+            "url": "https://www.reddit.com/r/androiddev/comments/1mdvdkh/built_a_clipboard_sharing_app_between_android_and/",
+            "query": "Google Nearby offline clipboard sync alternative",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "This free and open-source self-hosted app syncs your clipboard across all of your devices",
+            "url": "https://www.xda-developers.com/open-source-self-hosted-app-syncs-clipboard-across-devices/",
+            "query": "Google Nearby offline clipboard sync alternative",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "This free and open-source self-hosted app syncs your clipboard across all of your devices window.isInAppBrowser = false { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"This free and open-source self-hosted app syncs your clipboard across all of your devices\", \"url\": \"https://www.xda-developers.com/open-source-self-hosted-app-syncs-clipboard-across-devices/\", \"about\": [ {\"@type\": \"Thing\", \"name\": \"Productivity\"}, {\"@type\": \"Thing\", \"name\": \"app\"}, {\"@type\": \"Thing\", \"name\": \"Self-Hosting\"} ], \"thumbnailUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1200&h=628&fit=crop\", \"image\":[{ \"@type\": \"ImageObject\", \"contentUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=900&fit=crop\", \"url\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=900&fit=crop\", \"height\": 900, \"width\": 1600, \"representativeOfPage\": true }, { \"@type\": \"ImageObject\", \"contentUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg\", \"url\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg\", \"height\": 2272, \"width\": 4040 }, { \"@type\": \"ImageObject\", \"contentUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=1200&fit=crop\", \"url\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=1200&fit=crop\", \"height\": 1200, \"width\": 1600 }, { \"@type\": \"ImageObject\", \"contentUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=1600&fit=crop\", \"url\": \"https://static0.xdaimages.com/wordpress/wp-co",
+            "fetch_error": ""
+          },
+          {
+            "title": "Welcome to… Your Local Business Guide. - Local1st",
+            "url": "https://www.local1st.com.au/pricing-guide",
+            "query": "local1st.app pricing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "%PDF-1.4 % 186 0 obj > endobj xref 186 122 0000000016 00000 n 0000003450 00000 n 0000003609 00000 n 0000011120 00000 n 0000011258 00000 n 0000011396 00000 n 0000011868 00000 n 0000012335 00000 n 0000012750 00000 n 0000013177 00000 n 0000013646 00000 n 0000014075 00000 n 0000014138 00000 n 0000014393 00000 n 0000014855 00000 n 0000015111 00000 n 0000015225 00000 n 0000015673 00000 n 0000015927 00000 n 0000016412 00000 n 0000016674 00000 n 0000017192 00000 n 0000017219 00000 n 0000019532 00000 n 0000019974 00000 n 0000020071 00000 n 0000020220 00000 n 0000020317 00000 n 0000020466 00000 n 0000020612 00000 n 0000020639 00000 n 0000020736 00000 n 0000020875 00000 n 0000023097 00000 n 0000025286 00000 n 0000026978 00000 n 0000029375 00000 n 0000031820 00000 n 0000034093 00000 n 0000036350 00000 n 0000036620 00000 n 0000039215 00000 n 0000042434 00000 n 0000042540 00000 n 0000042610 00000 n 0000046361 00000 n 0000046416 00000 n 0000046499 00000 n 0000050216 00000 n 0000050456 00000 n 0000054270 00000 n 0000054372 00000 n 0000054690 00000 n 0000054958 00000 n 0000055062 00000 n 0000058627 00000 n 0000058733 00000 n 0000058808 00000 n 0000058878 00000 n 0000059286 00000 n 0000059412 00000 n 0000059528 00000 n 0000059563 00000 n 0000059641 00000 n 0000066388 00000 n 0000066721 00000 n 0000066787 00000 n 0000066903 00000 n 0000066938 00000 n 0000067016 00000 n 0000070321 00000 n 0000070660 00000 n 0000070726 00000 n 0000070842 00000 n 0000070912 00000 n 0000071015 00000 n 0000073893 00000 n 0000074145 00000 n 0000074425 00000 n 0000074452 00000 n 0000074859 00000 n 0000077999 00000 n 0000078260 00000 n 0000078684 00000 n 0000078792 00000 n 0000078889 00000 n 0000079038 00000 n 0000079116 00000 n 0000085600 00000 n 0000085639 00000 n 0000085718 00000 n 0000085815 00000 n 000008596",
+            "fetch_error": ""
+          },
+          {
+            "title": "I love local first, but I struggle with how to monetize truly local-first applic... | Hacker News",
+            "url": "https://news.ycombinator.com/item?id=40786600",
+            "query": "local1st.app pricing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "I love local first, but I struggle with how to monetize truly local-first applic... | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login braden-lk on June 25, 2024 | parent | context | favorite | on: Local First, Forever I love local first, but I struggle with how to monetize truly local-first applications. I know that's not everyone's favorite topic, but I've got bills to pay and payroll to make. Our product is about 80% local-first, with live collaboration and image hosting needing a server. I plan to change that eventually, but I worry that jailbreaking the app in this way will lead to financial troubles. Obsidian's model seems nice: base app is free, and then payment for the networked portions like sync+publish. However, there's little data available on how well this works and how big of a TAM you need to make it sustainable. Or if it's even possible without an enterprise revenue channel. For those interested in building robust local-first + collaborative apps, I've been using Yjs for a few years now and have overall really enjoyed it. Multi-master collaboration also poses some stimulating technical and design challenges if you're looking for new frontiers beyond the traditional client-server model. gritzko on June 25, 2024 | next [–] Ha. I just realized it is 10 years since me, Alexei and Oleg launched our CRDT demo on HN. Funnily enough, it featured this mouse-cursor trick as well. It was a demo of the lib. It was August 2014 if I remember correctly. The post was submitted by Dan Abramov. Nostalgie. That repo is long abandoned https://github.com/gritzko/swarm Did CRDTs and local-first advance much since 2014? There is a bunch of research, way more CRDT libs on GitHub, but (somewhat) successful businesses you can count on one hand. I g",
+            "fetch_error": ""
+          },
+          {
+            "title": "Pricing - LocaleApp",
+            "url": "https://www.localeapp.com/pricing/",
+            "query": "local1st.app pricing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+          },
+          {
+            "title": "Apple to Block Mac Apps From Secretly Accessing Your Clipboard - MacRumors",
+            "url": "https://www.macrumors.com/2025/05/12/apple-mac-apps-clipboard-change/",
+            "query": "Apple iOS clipboard background restriction",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "@media (prefers-color-scheme: dark) {html{background:#000;} .button {background: #373737;}}@media (prefers-color-scheme: light) {html{background:#fff;} .button {background: #f2f1ec;}} !function(){\"use strict\";var e=window.location.search.substring(1).split(\"&\");const t=e=>e.replace(/\\s/g,\"\"),o=e=>new Promise((t=>{if(!(\"msCrypto\"in window)&&\"https:\"===location.protocol&&\"crypto\"in window&&\"TextEncoder\"in window){const o=(new TextEncoder).encode(e);crypto.subtle.digest(\"SHA-256\",o).then((e=>{const o=Array.from(new Uint8Array(e)).map((e=>(\"00\"+e.toString(16)).slice(-2))).join(\"\");t(o)}))}else t(\"\")}));for(var n=0;n {const t=e.match(/((?=([a-zA-Z0-9._!#$%+^&*()[\\]<>-]+))\\2@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+)/gi);return t?t[0]:\"\"})(t(a.toLowerCase()))){o(a).then((t=>{t.length&&(localStorage.setItem(r,t),localStorage.setItem(\"adt_emsrc\",\"url\"),e.splice(n,1),history.replaceState(null,\"\",\"?\"+e.join(\"&\")))}));break}}}}(); function getCookie(name) { for (var nameEQ = name + \"=\", ca = document.cookie.split(\";\"), i = 0; i = 1) || (1==0)) return true; return false;} var forum_logged_in = forumsUserCheck(); var status = (forum_logged_in ? getCookie('xf_contributor')==1 ? \"contributor\" : getCookie('xf_contributor')==2 ? \"editor\" : \"logged-in\" : \"guest\"); var mrDark = getCookie('mr-dark'); var lightdark=false; if (mrDark == 1) { lightdark=true; document.write(' '); } else if (mrDark == 2) { document.write(' '); } else { try { var light = window.matchMedia(\"(prefers-color-scheme: light)\"); var dark = window.matchMedia(\"(prefers-color-scheme: dark)\"); if (dark.matches) lightdark=true; if (light.matches || dark.matches) { document.write(' '); document.write(' '); } else { document.write(' '); } } catch (e) { document.write(' '); } } var mrWidth = getCookie('mr-fluid'); if (mrWidth > 1) { do",
+            "fetch_error": ""
+          },
+          {
+            "title": "Yoink Brings Background Clipboard Monitoring to iOS and iPadOS 15 via Picture in Picture Workaround - MacStories",
+            "url": "https://www.macstories.net/ios/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround/",
+            "query": "Apple iOS clipboard background restriction",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Yoink Brings Background Clipboard Monitoring to iOS and iPadOS 15 via Picture in Picture Workaround - MacStories {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/\"},\"author\":{\"@id\":\"https:\\/\\/www.macstories.net\\/#\\/schema\\/person\\/e3a909d4a39cb7cf5864aae8da36fbaf\"},\"headline\":\"Yoink Brings Background Clipboard Monitoring to iOS and iPadOS 15 via Picture in Picture Workaround\",\"datePublished\":\"2021-10-19T14:00:29+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/\"},\"wordCount\":1875,\"image\":{\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/#primaryimage\"},\"thumbnailUrl\":\"https:\\/\\/cdn.macstories.net\\/image-16-1634574389273.png\",\"keywords\":[\"featured\",\"iOS 15\",\"iPadOS 15\",\"multitasking\"],\"articleSection\":[\"iOS\"],\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/\",\"url\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/\",\"name\":\"Yoink Brings Background Clipboard Monitoring to iOS and iPadOS 15 via Picture in Picture Workaround - MacStories\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.macstories.net\\/#website\"},\"primaryImageOfPage\":{\"@id\":\"ht",
+            "fetch_error": ""
+          },
+          {
+            "title": "iOS pasteboard and clipboard privacy: what to know | PTKD Journal",
+            "url": "https://ptkd.com/journal/ios-pasteboard-clipboard-privacy",
+            "query": "Apple iOS clipboard background restriction",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "— uniquely replaced by Helmet per-route at prerender, or at runtime when the SPA hydrates. Other meta tags (description, og:*, twitter:*, canonical, robots) are provided per-route by SEOHead/Helmet; we don't repeat them here because vite-prerender-plugin would append rather than replace them. --> iOS pasteboard and clipboard privacy: what to know | PTKD Journal { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"Organization\", \"@id\": \"https://ptkd.com/#organization\", \"name\": \"PTKD\", \"url\": \"https://ptkd.com\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://ptkd.com/ptkd-logo.png\", \"width\": 1024, \"height\": 1024 }, \"description\": \"PTKD is a mobile app security scanner for Android and iOS that delivers OWASP-aligned vulnerability reports in minutes.\", \"foundingDate\": \"2024\", \"founder\": { \"@id\": \"https://ptkd.com/#founder\" }, \"knowsAbout\": [ \"Mobile application security\", \"OWASP Mobile Top 10\", \"Android security\", \"iOS security\", \"SDK risk analysis\", \"Static application security testing\", \"Dynamic application security testing\", \"TLS certificate pinning\", \"GDPR mobile compliance\", \"HIPAA mobile compliance\", \"PCI DSS mobile compliance\" ], \"areaServed\": \"Worldwide\" }, { \"@type\": \"Person\", \"@id\": \"https://ptkd.com/#founder\", \"name\": \"Laurens Dauchy\", \"jobTitle\": \"Founder\", \"worksFor\": { \"@id\": \"https://ptkd.com/#organization\" }, \"url\": \"https://ptkd.com/about\" }, { \"@type\": \"WebSite\", \"@id\": \"https://ptkd.com/#website\", \"url\": \"https://ptkd.com\", \"name\": \"PTKD\", \"publisher\": { \"@id\": \"https://ptkd.com/#organization\" }, \"inLanguage\": \"en\", \"potentialAction\": { \"@type\": \"SearchAction\", \"target\": \"https://ptkd.com/search?q={search_term_string}\", \"query-input\": \"required name=search_term_string\" } }, { \"@type\": \"SoftwareApplication\", \"@id\": \"https://ptkd.com/#software\", \"",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：工具名称、GitHub仓库、隐私政策均未找到独立来源。"
+        },
+        "core_question": "这个离线剪贴板同步工具是否真的安全、好用、值得安装？",
+        "why_this_topic_matters": "跨平台剪贴板同步是技术人常见需求，该工具以隐私优先为卖点，可能改变用户对云剪贴板的依赖。",
+        "fact_summary": [
+          "V2EX 用户发布开源剪贴板同步工具 Privli，基于 Google Nearby，离线、零权限、兼容 Quick Share。",
+          "支持 Windows/macOS/Linux/Android/iOS，剪贴板同步和文件互传。",
+          "Linux/Android/Windows 免费，macOS 可 brew 免费，iOS 限时免费。",
+          "iOS 端因系统限制需前台操作，Android 可通过任务栏按钮发送。"
+        ],
+        "persona_discussion_question": "我该不该放弃云剪贴板（如苹果接力、微软云剪贴板）改用这个离线工具？迁移成本高吗？",
+        "old_flower_stance": "隐私优先的工具值得关注，但需验证实际体验和安全性，不建议立即迁移。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 8,
+          "why_interested": "技术人关注隐私和离线方案，该工具提供了一种新选择。",
+          "reader_risk": "可能因证据不足导致读者误判工具可靠性。"
+        },
+        "mass_interest_hook": {
+          "score": 7,
+          "hook_type": "故事",
+          "why_non_technical_people_may_click": "隐私问题人人关心，免费工具吸引人。",
+          "story_seed": "一个开发者因为不信任云服务，自己做了个离线剪贴板同步工具。",
+          "do_not_overhype": "不要声称该工具是最好用的或完全无风险。"
+        },
+        "topic_tension": {
+          "score": 9,
+          "conflict_point": "隐私优先 vs 便利性：离线工具是否值得牺牲云同步的便利？",
+          "debate_question": "隐私优先的工具是否以牺牲便利性为代价？普通用户是否愿意为隐私放弃云同步？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "平台/工具厂商"
+          ],
+          "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          "2025-08-20: V2EX 用户发布 Privli 工具介绍"
+        ],
+        "evidence_table": [
+          {
+            "source": "V2EX 帖子",
+            "url": "https://www.v2ex.com/t/1221564",
+            "supports": "工具功能、价格、平台支持",
+            "reliability": "weak"
+          },
+          {
+            "source": "官方页面",
+            "url": "https://nearby.local1st.app",
+            "supports": "工具存在，有重定向",
+            "reliability": "near_source"
+          },
+          {
+            "source": "MacRumors",
+            "url": "https://www.macrumors.com/2025/05/12/apple-mac-apps-clipboard-change/",
+            "supports": "Apple 限制后台剪贴板访问",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "部分闭环：工具功能描述清晰，但缺乏独立验证和用户反馈。",
+        "writeable_angles": [
+          {
+            "angle": "工具账本：Privli 的功能、成本、隐私优势与同类对比",
+            "why": "帮助读者快速评估是否值得使用",
+            "needs": "需要同类工具对比数据"
+          },
+          {
+            "angle": "风险避坑：离线剪贴板工具的安全性和可靠性验证",
+            "why": "隐私工具本身可能成为安全风险",
+            "needs": "需要安全审计或第三方验证"
+          }
+        ],
+        "missing_basics": [
+          "Google Nearby 技术原理",
+          "iOS 剪贴板限制的具体细节"
+        ],
+        "missing_materials": [
+          "GitHub 仓库链接和代码审查结果",
+          "官方隐私政策原文",
+          "用户实测体验（延迟、兼容性）",
+          "与同类工具（如 KDE Connect、Pushbullet）的对比表"
+        ],
+        "not_claimable": [
+          "不要声称该工具是最好用的剪贴板同步工具",
+          "不要声称该工具完全无隐私风险",
+          "不要声称该工具兼容所有设备"
+        ],
+        "followup_queries": [
+          "Privli GitHub 仓库地址是什么？",
+          "Privli 的隐私政策在哪里？",
+          "Privli 在 Reddit/Hacker News 上有用户讨论吗？"
+        ],
+        "additional_search_queries": [
+          "local1st/Privli GitHub",
+          "Privli review reddit hacker news",
+          "Google Nearby offline clipboard sync alternative"
+        ],
+        "stop_conditions": [
+          "找到官方隐私政策明确说明数据收集情况",
+          "找到至少 3 个独立用户实测报告",
+          "GitHub 仓库代码审查完成"
+        ],
+        "confidence": 40.0,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "tool-ledger",
+        "quality_gate": {
+          "pass": false,
+          "score": 40,
+          "fatal_issues": [
+            "核心事实没有来源：工具名称、GitHub仓库、隐私政策均未找到独立来源。",
+            "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象。",
+            "没有泛兴趣故事钩子，标题和开头只适合技术小圈子。",
+            "没有真实传播张力：说不清冲突点、讨论点、利益拉扯、身份代入或读者为什么愿意评论。",
+            "没有明确归入实际选题方向，或者选题方向和内容不匹配。",
+            "没有明确选题结论：推荐或可选。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写。",
+            "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环。",
+            "没有列出基础概念缺口和资料素材缺口。",
+            "没有按具体类型提供资料包。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来。"
+          ],
+          "warnings": [
+            "证据链不完整：未找到GitHub仓库、官方隐私政策、用户实测反馈。",
+            "泛兴趣钩子不足：标题和摘要仅吸引技术人，缺乏大众可理解的故事。",
+            "传播张力弱：缺乏明确的冲突点或讨论空间。"
+          ],
+          "missing_evidence": [
+            "GitHub仓库链接和代码审查结果",
+            "官方隐私政策原文",
+            "用户实测体验（延迟、兼容性）",
+            "与同类工具（如KDE Connect、Pushbullet）的对比表"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": false,
+          "topic_direction_ok": false,
+          "report_type_ok": false,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "这个离线剪贴板同步工具是否真的安全、好用、值得安装？",
+          "persona_discussion_question": "我该不该放弃云剪贴板（如苹果接力、微软云剪贴板）改用这个离线工具？迁移成本高吗？",
+          "hidden_public_issue": "隐私优先的工具是否以牺牲便利性为代价？普通用户是否愿意为隐私放弃云同步的便利？",
+          "must_verify": [
+            "工具是否真的完全离线、不收集任何数据？",
+            "基于 Google Nearby 的实现是否依赖 GMS？",
+            "兼容 Quick Share 的具体表现如何？",
+            "剪贴板同步的延迟和稳定性如何？",
+            "iOS 端接收剪贴板是否真的需要前台？",
+            "macOS 端是否真的可以 brew 免费使用？",
+            "是否有安全审计或第三方验证？",
+            "GitHub 仓库的活跃度和代码质量如何？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "github_repo",
+              "query": "local1st/Privli GitHub",
+              "why_needed": "验证代码是否开源、许可证、最近更新、issue 讨论"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "local1st.app documentation",
+              "why_needed": "获取官方功能说明、隐私政策、FAQ"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Privli review reddit hacker news",
+              "why_needed": "获取真实用户反馈、问题报告"
+            },
+            {
+              "source_type": "case_study",
+              "query": "Google Nearby offline clipboard sync alternative",
+              "why_needed": "了解类似工具对比、技术原理"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "local1st.app pricing",
+              "why_needed": "确认 macOS 是否真的免费，iOS 限免截止日期"
+            },
+            {
+              "source_type": "policy",
+              "query": "Apple iOS clipboard background restriction",
+              "why_needed": "验证 iOS 后台剪贴板限制是否如作者所述"
+            }
+          ],
+          "expert_challenge_points": [
+            "离线同步的延迟和可靠性是否满足日常使用？",
+            "基于 Nearby 的实现是否在非 Google 设备上稳定？",
+            "零权限存文件是否真的安全？是否存在其他隐私风险？",
+            "macOS 免费是否只是临时策略？未来是否会收费？"
+          ],
+          "do_not_claim_yet": [
+            "不要声称该工具是最好用的剪贴板同步工具",
+            "不要声称该工具完全无隐私风险",
+            "不要声称该工具兼容所有设备"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需注明验证不足，建议读者自行测试。",
+          "downstream_materials_needed": [
+            "GitHub 仓库链接和代码审查结果",
+            "官方隐私政策原文",
+            "用户实测体验（延迟、兼容性）",
+            "与同类工具（如 KDE Connect、Pushbullet）的对比表"
+          ]
+        },
+        "research_evidence": [
+          {
+            "title": "Privli - Private Nearby File Sharing",
+            "url": "https://nearby.local1st.app",
+            "query": "local1st/Privli GitHub",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Privli redirect to /en. No \"noindex\" here: the bare domain must stay indexable so Google can consolidate it into /en via the canonical below (noindex would drop https://local1st.app from search entirely). --> (function () { var SUPPORTED = [ 'en', 'zh-Hans', 'zh-Hant', 'es', 'fr', 'de', 'ja', 'ko', 'pt-BR', 'ru', 'it', 'hi', 'id', 'tr', 'vi', 'ar' ]; var DEFAULT = 'en'; function resolve(tag) { if (!tag) return null; var lower = tag.toLowerCase(); // Exact match (case-insensitive). for (var i = 0; i fr, es-419 -> es). for (var j = 0; j Redirecting… Continue to Privli",
+            "fetch_error": ""
+          },
+          {
+            "title": "GitHub on a Budget. How to Run a Private Local Git Repo on… | by Dean J Murphy | Medium",
+            "url": "https://dean-joseph-murphy.medium.com/github-on-a-budget-dc5e451061a7",
+            "query": "local1st/Privli GitHub",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Forbidden"
+          },
+          {
+            "title": "r/git on Reddit: Can I use git locally on my computer?",
+            "url": "https://www.reddit.com/r/git/comments/1jw3qya/can_i_use_git_locally_on_my_computer/",
+            "query": "local1st/Privli GitHub",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "Local-first architecture with Expo - Expo Documentation",
+            "url": "https://docs.expo.dev/guides/local-first/",
+            "query": "local1st.app documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Local-first architecture with Expo - Expo Documentation {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Expo Documentation\",\"url\":\"https://docs.expo.dev\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Expo\",\"url\":\"https://expo.dev\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://docs.expo.dev/static/images/expo-logo.svg\"},\"sameAs\":[\"https://github.com/expo\",\"https://x.com/expo\",\"https://bsky.app/profile/expo.dev\",\"https://www.linkedin.com/company/expo-dev/\",\"https://www.youtube.com/@expodevelopers\"]}} {\"@context\":\"https://schema.org\",\"@type\":\"BreadcrumbList\",\"itemListElement\":[{\"@type\":\"ListItem\",\"position\":1,\"name\":\"More\",\"item\":\"https://docs.expo.dev/guides/expo-ui-swift-ui\"},{\"@type\":\"ListItem\",\"position\":2,\"name\":\"Assorted\",\"item\":\"https://docs.expo.dev\"},{\"@type\":\"ListItem\",\"position\":3,\"name\":\"Local-first\"}]} {\"@context\":\"https://schema.org\",\"@type\":\"TechArticle\",\"headline\":\"Local-first architecture with Expo\",\"description\":\"An introduction to the emerging local-first software movement, including links to relevant learning resources and tools.\",\"dateModified\":\"June 09, 2026\",\"publisher\":{\"@type\":\"Organization\",\"name\":\"Expo\",\"url\":\"https://expo.dev\",\"logo\":{\"@type\":\"ImageObject\",\"url\":\"https://docs.expo.dev/static/images/expo-logo.svg\"},\"sameAs\":[\"https://github.com/expo\",\"https://x.com/expo\",\"https://bsky.app/profile/expo.dev\",\"https://www.linkedin.com/company/expo-dev/\",\"https://www.youtube.com/@expodevelopers\"]},\"url\":\"https://docs.expo.dev/guides/local-first/\"} {\"@context\":\"https://schema.org\",\"@type\":\"VideoObject\",\"name\":\"Watch: Build a Local-First Real-Time Shopping List App with Expo and TinyBase\",\"description\":\"Build a real-time shopping list app using TinyBase with expo-sqlite for persistence and automatic syncing.\",\"thumbnailUrl\":\"https://i3.ytimg.co",
+            "fetch_error": ""
+          },
+          {
+            "title": "Local-First Software - PowerSync",
+            "url": "https://docs.powersync.com/resources/local-first-software",
+            "query": "local1st.app documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Local-First Software - PowerSync !function(){var b=\"\"; function a(p){if(p==null)return\"/\";p=\"\"+p;if(\"\"===p)return\"/\";return\"/\"===p.charAt(0)?p:\"/\"+p} function u(p){if(p==null)return p;p=\"\"+p;if(!p||p.charAt(p.length-1)===\"/\")return p.slice(0,-1);return p} function i(p){if(p==null)return p;p=\"\"+p;if(6 (function(a,b){try{let c=document.getElementById(\"banner\")?.innerText;if(c){for(let d=0;d {\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"PowerSync\",\"creator\":{\"@type\":\"Organization\",\"name\":\"Mintlify\",\"url\":\"https://mintlify.com\"}} ((a,b,c,d,e,f,g,h)=>{let i=document.documentElement,j=[\"light\",\"dark\"];function k(b){var c;(Array.isArray(a)?a:[a]).forEach(a=>{let c=\"class\"===a,d=c&&f?e.map(a=>f[a]||a):e;c?(i.classList.remove(...d),i.classList.add(f&&f[b]?f[b]:b)):i.setAttribute(a,b)}),c=b,h&&j.includes(c)&&(i.style.colorScheme=c)}if(d)k(d);else try{let a=localStorage.getItem(b)||c,d=g&&\"system\"===a?window.matchMedia(\"(prefers-color-scheme: dark)\").matches?\"dark\":\"light\":a;k(d)}catch(a){}})(\"class\",\"isDarkMode\",\"system\",null,[\"dark\",\"light\",\"true\",\"false\",\"system\"],{\"true\":\"dark\",\"false\":\"light\",\"dark\":\"dark\",\"light\":\"light\"},true,false) Documentation Index Fetch the complete documentation index at: /llms.txt Use this file to discover all available pages before exploring further. :root{--banner-height:0px!important} (self.__next_s=self.__next_s||[]).push([0,{\"children\":\"(function g(a,b,c,d,e){try{let f,g,h=[];try{h=window.location.pathname.split(\\\"/\\\").filter(a=\\u003e\\\"\\\"!==a\\u0026\\u0026\\\"global\\\"!==a).slice(0,2)}catch{h=[]}let i=h.find(a=\\u003ec.includes(a)),j=[];for(let c of(i?j.push(i):j.push(b),j.push(\\\"global\\\"),j)){if(!c)continue;let b=a[c];if(b?.content){f=b.content,g=c;break}}if(!f)return void document.documentElement.setAttribute(d,\\\"hidden\\\");let k=!0,l=0;",
+            "fetch_error": ""
+          },
+          {
+            "title": "What is Local-first Web Development? | alexop.dev",
+            "url": "https://alexop.dev/posts/what-is-local-first-web-development/",
+            "query": "local1st.app documentation",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "What is Local-first Web Development? | alexop.dev document.addEventListener(\"DOMContentLoaded\", function () { if (typeof renderMathInElement === \"function\") { renderMathInElement(document.body, { delimiters: [ { left: \"$$\", right: \"$$\", display: true }, { left: \"$\", right: \"$\", display: false }, { left: \"\\\\(\", right: \"\\\\)\", display: false }, { left: \"\\\\[\", right: \"\\\\]\", display: true }, ], throwOnError: false, trust: true, strict: false, output: \"html\", }); } }); {\"@context\":\"https://schema.org\",\"@type\":\"BlogPosting\",\"headline\":\"What is Local-first Web Development? | alexop.dev\",\"description\":\"What is local-first software and why does it matter? This guide covers local-first architecture, offline-capable apps with automatic sync, data ownership, and how to build a local-first web app with Vue step by step.\",\"image\":\"https://alexop.dev/posts/what-is-local-first-web-development/index.png\",\"datePublished\":\"2024-05-29T15:22:00.000Z\",\"dateModified\":\"2024-11-28T15:22:00.000Z\",\"author\":{\"@type\":\"Person\",\"name\":\"Alexander Opalic\"}} .chat-prose[data-v-8a19bbf8] p{margin:.5rem 0}.chat-prose[data-v-8a19bbf8] p:first-child{margin-top:0}.chat-prose[data-v-8a19bbf8] p:last-child{margin-bottom:0}.chat-prose[data-v-8a19bbf8] a{color:rgb(var(--color-accent));text-decoration:underline;text-decoration-style:dashed;text-underline-offset:4px}.chat-prose[data-v-8a19bbf8] a:hover{text-decoration-style:solid}.chat-prose[data-v-8a19bbf8] ul,.chat-prose[data-v-8a19bbf8] ol{margin:.5rem 0;padding-left:1.25rem}.chat-prose[data-v-8a19bbf8] li{margin:.15rem 0}.chat-prose[data-v-8a19bbf8] code{background:rgba(var(--color-card-muted),.5);padding:.1rem .3rem;border-radius:3px;font-size:.85em}.chat-prose[data-v-8a19bbf8] pre{background:rgba(var(--color-card-muted),.6);padding:.6rem .8rem;border-radius:v",
+            "fetch_error": ""
+          },
+          {
+            "title": "hacking: security in practice",
+            "url": "https://www.reddit.com/r/hacking/",
+            "query": "Privli review reddit hacker news",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/privacy on Reddit: Exactly how safe is Privacy.com?",
+            "url": "https://www.reddit.com/r/privacy/comments/dxpa07/exactly_how_safe_is_privacycom/",
+            "query": "Privli review reddit hacker news",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/PrivacyTechTalk",
+            "url": "https://www.reddit.com/r/PrivacyTechTalk/",
+            "query": "Privli review reddit hacker news",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/GooglePixel on Reddit: Why hasn’t Google developed a synchronized clipboard between Chrome and Android?",
+            "url": "https://www.reddit.com/r/GooglePixel/comments/1ffqhf6/why_hasnt_google_developed_a_synchronized/",
+            "query": "Google Nearby offline clipboard sync alternative",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "r/androiddev on Reddit: Built a clipboard sharing app between Android and Windows using only Bluetooth (no internet required)",
+            "url": "https://www.reddit.com/r/androiddev/comments/1mdvdkh/built_a_clipboard_sharing_app_between_android_and/",
+            "query": "Google Nearby offline clipboard sync alternative",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "HTTP Error 403: Blocked"
+          },
+          {
+            "title": "This free and open-source self-hosted app syncs your clipboard across all of your devices",
+            "url": "https://www.xda-developers.com/open-source-self-hosted-app-syncs-clipboard-across-devices/",
+            "query": "Google Nearby offline clipboard sync alternative",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "This free and open-source self-hosted app syncs your clipboard across all of your devices window.isInAppBrowser = false { \"@context\": \"https://schema.org\", \"@type\": \"Article\", \"headline\": \"This free and open-source self-hosted app syncs your clipboard across all of your devices\", \"url\": \"https://www.xda-developers.com/open-source-self-hosted-app-syncs-clipboard-across-devices/\", \"about\": [ {\"@type\": \"Thing\", \"name\": \"Productivity\"}, {\"@type\": \"Thing\", \"name\": \"app\"}, {\"@type\": \"Thing\", \"name\": \"Self-Hosting\"} ], \"thumbnailUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1200&h=628&fit=crop\", \"image\":[{ \"@type\": \"ImageObject\", \"contentUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=900&fit=crop\", \"url\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=900&fit=crop\", \"height\": 900, \"width\": 1600, \"representativeOfPage\": true }, { \"@type\": \"ImageObject\", \"contentUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg\", \"url\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg\", \"height\": 2272, \"width\": 4040 }, { \"@type\": \"ImageObject\", \"contentUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=1200&fit=crop\", \"url\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=1200&fit=crop\", \"height\": 1200, \"width\": 1600 }, { \"@type\": \"ImageObject\", \"contentUrl\": \"https://static0.xdaimages.com/wordpress/wp-content/uploads/wm/2025/08/clipcascade-hero.jpeg?w=1600&h=1600&fit=crop\", \"url\": \"https://static0.xdaimages.com/wordpress/wp-co",
+            "fetch_error": ""
+          },
+          {
+            "title": "Welcome to… Your Local Business Guide. - Local1st",
+            "url": "https://www.local1st.com.au/pricing-guide",
+            "query": "local1st.app pricing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "%PDF-1.4 % 186 0 obj > endobj xref 186 122 0000000016 00000 n 0000003450 00000 n 0000003609 00000 n 0000011120 00000 n 0000011258 00000 n 0000011396 00000 n 0000011868 00000 n 0000012335 00000 n 0000012750 00000 n 0000013177 00000 n 0000013646 00000 n 0000014075 00000 n 0000014138 00000 n 0000014393 00000 n 0000014855 00000 n 0000015111 00000 n 0000015225 00000 n 0000015673 00000 n 0000015927 00000 n 0000016412 00000 n 0000016674 00000 n 0000017192 00000 n 0000017219 00000 n 0000019532 00000 n 0000019974 00000 n 0000020071 00000 n 0000020220 00000 n 0000020317 00000 n 0000020466 00000 n 0000020612 00000 n 0000020639 00000 n 0000020736 00000 n 0000020875 00000 n 0000023097 00000 n 0000025286 00000 n 0000026978 00000 n 0000029375 00000 n 0000031820 00000 n 0000034093 00000 n 0000036350 00000 n 0000036620 00000 n 0000039215 00000 n 0000042434 00000 n 0000042540 00000 n 0000042610 00000 n 0000046361 00000 n 0000046416 00000 n 0000046499 00000 n 0000050216 00000 n 0000050456 00000 n 0000054270 00000 n 0000054372 00000 n 0000054690 00000 n 0000054958 00000 n 0000055062 00000 n 0000058627 00000 n 0000058733 00000 n 0000058808 00000 n 0000058878 00000 n 0000059286 00000 n 0000059412 00000 n 0000059528 00000 n 0000059563 00000 n 0000059641 00000 n 0000066388 00000 n 0000066721 00000 n 0000066787 00000 n 0000066903 00000 n 0000066938 00000 n 0000067016 00000 n 0000070321 00000 n 0000070660 00000 n 0000070726 00000 n 0000070842 00000 n 0000070912 00000 n 0000071015 00000 n 0000073893 00000 n 0000074145 00000 n 0000074425 00000 n 0000074452 00000 n 0000074859 00000 n 0000077999 00000 n 0000078260 00000 n 0000078684 00000 n 0000078792 00000 n 0000078889 00000 n 0000079038 00000 n 0000079116 00000 n 0000085600 00000 n 0000085639 00000 n 0000085718 00000 n 0000085815 00000 n 000008596",
+            "fetch_error": ""
+          },
+          {
+            "title": "I love local first, but I struggle with how to monetize truly local-first applic... | Hacker News",
+            "url": "https://news.ycombinator.com/item?id=40786600",
+            "query": "local1st.app pricing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "I love local first, but I struggle with how to monetize truly local-first applic... | Hacker News Hacker News new | past | comments | ask | show | jobs | submit login braden-lk on June 25, 2024 | parent | context | favorite | on: Local First, Forever I love local first, but I struggle with how to monetize truly local-first applications. I know that's not everyone's favorite topic, but I've got bills to pay and payroll to make. Our product is about 80% local-first, with live collaboration and image hosting needing a server. I plan to change that eventually, but I worry that jailbreaking the app in this way will lead to financial troubles. Obsidian's model seems nice: base app is free, and then payment for the networked portions like sync+publish. However, there's little data available on how well this works and how big of a TAM you need to make it sustainable. Or if it's even possible without an enterprise revenue channel. For those interested in building robust local-first + collaborative apps, I've been using Yjs for a few years now and have overall really enjoyed it. Multi-master collaboration also poses some stimulating technical and design challenges if you're looking for new frontiers beyond the traditional client-server model. gritzko on June 25, 2024 | next [–] Ha. I just realized it is 10 years since me, Alexei and Oleg launched our CRDT demo on HN. Funnily enough, it featured this mouse-cursor trick as well. It was a demo of the lib. It was August 2014 if I remember correctly. The post was submitted by Dan Abramov. Nostalgie. That repo is long abandoned https://github.com/gritzko/swarm Did CRDTs and local-first advance much since 2014? There is a bunch of research, way more CRDT libs on GitHub, but (somewhat) successful businesses you can count on one hand. I g",
+            "fetch_error": ""
+          },
+          {
+            "title": "Pricing - LocaleApp",
+            "url": "https://www.localeapp.com/pricing/",
+            "query": "local1st.app pricing",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "",
+            "fetch_error": "<urlopen error [Errno -3] Temporary failure in name resolution>"
+          },
+          {
+            "title": "Apple to Block Mac Apps From Secretly Accessing Your Clipboard - MacRumors",
+            "url": "https://www.macrumors.com/2025/05/12/apple-mac-apps-clipboard-change/",
+            "query": "Apple iOS clipboard background restriction",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "@media (prefers-color-scheme: dark) {html{background:#000;} .button {background: #373737;}}@media (prefers-color-scheme: light) {html{background:#fff;} .button {background: #f2f1ec;}} !function(){\"use strict\";var e=window.location.search.substring(1).split(\"&\");const t=e=>e.replace(/\\s/g,\"\"),o=e=>new Promise((t=>{if(!(\"msCrypto\"in window)&&\"https:\"===location.protocol&&\"crypto\"in window&&\"TextEncoder\"in window){const o=(new TextEncoder).encode(e);crypto.subtle.digest(\"SHA-256\",o).then((e=>{const o=Array.from(new Uint8Array(e)).map((e=>(\"00\"+e.toString(16)).slice(-2))).join(\"\");t(o)}))}else t(\"\")}));for(var n=0;n {const t=e.match(/((?=([a-zA-Z0-9._!#$%+^&*()[\\]<>-]+))\\2@[a-zA-Z0-9._-]+\\.[a-zA-Z0-9._-]+)/gi);return t?t[0]:\"\"})(t(a.toLowerCase()))){o(a).then((t=>{t.length&&(localStorage.setItem(r,t),localStorage.setItem(\"adt_emsrc\",\"url\"),e.splice(n,1),history.replaceState(null,\"\",\"?\"+e.join(\"&\")))}));break}}}}(); function getCookie(name) { for (var nameEQ = name + \"=\", ca = document.cookie.split(\";\"), i = 0; i = 1) || (1==0)) return true; return false;} var forum_logged_in = forumsUserCheck(); var status = (forum_logged_in ? getCookie('xf_contributor')==1 ? \"contributor\" : getCookie('xf_contributor')==2 ? \"editor\" : \"logged-in\" : \"guest\"); var mrDark = getCookie('mr-dark'); var lightdark=false; if (mrDark == 1) { lightdark=true; document.write(' '); } else if (mrDark == 2) { document.write(' '); } else { try { var light = window.matchMedia(\"(prefers-color-scheme: light)\"); var dark = window.matchMedia(\"(prefers-color-scheme: dark)\"); if (dark.matches) lightdark=true; if (light.matches || dark.matches) { document.write(' '); document.write(' '); } else { document.write(' '); } } catch (e) { document.write(' '); } } var mrWidth = getCookie('mr-fluid'); if (mrWidth > 1) { do",
+            "fetch_error": ""
+          },
+          {
+            "title": "Yoink Brings Background Clipboard Monitoring to iOS and iPadOS 15 via Picture in Picture Workaround - MacStories",
+            "url": "https://www.macstories.net/ios/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround/",
+            "query": "Apple iOS clipboard background restriction",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "Yoink Brings Background Clipboard Monitoring to iOS and iPadOS 15 via Picture in Picture Workaround - MacStories {\"@context\":\"https:\\/\\/schema.org\",\"@graph\":[{\"@type\":\"Article\",\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/#article\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/\"},\"author\":{\"@id\":\"https:\\/\\/www.macstories.net\\/#\\/schema\\/person\\/e3a909d4a39cb7cf5864aae8da36fbaf\"},\"headline\":\"Yoink Brings Background Clipboard Monitoring to iOS and iPadOS 15 via Picture in Picture Workaround\",\"datePublished\":\"2021-10-19T14:00:29+00:00\",\"mainEntityOfPage\":{\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/\"},\"wordCount\":1875,\"image\":{\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/#primaryimage\"},\"thumbnailUrl\":\"https:\\/\\/cdn.macstories.net\\/image-16-1634574389273.png\",\"keywords\":[\"featured\",\"iOS 15\",\"iPadOS 15\",\"multitasking\"],\"articleSection\":[\"iOS\"],\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/\",\"url\":\"https:\\/\\/www.macstories.net\\/ios\\/yoink-brings-background-clipboard-monitoring-to-ios-and-ipados-15-via-picture-in-picture-workaround\\/\",\"name\":\"Yoink Brings Background Clipboard Monitoring to iOS and iPadOS 15 via Picture in Picture Workaround - MacStories\",\"isPartOf\":{\"@id\":\"https:\\/\\/www.macstories.net\\/#website\"},\"primaryImageOfPage\":{\"@id\":\"ht",
+            "fetch_error": ""
+          },
+          {
+            "title": "iOS pasteboard and clipboard privacy: what to know | PTKD Journal",
+            "url": "https://ptkd.com/journal/ios-pasteboard-clipboard-privacy",
+            "query": "Apple iOS clipboard background restriction",
+            "provider": "brave",
+            "score": "",
+            "fetched_text": "— uniquely replaced by Helmet per-route at prerender, or at runtime when the SPA hydrates. Other meta tags (description, og:*, twitter:*, canonical, robots) are provided per-route by SEOHead/Helmet; we don't repeat them here because vite-prerender-plugin would append rather than replace them. --> iOS pasteboard and clipboard privacy: what to know | PTKD Journal { \"@context\": \"https://schema.org\", \"@graph\": [ { \"@type\": \"Organization\", \"@id\": \"https://ptkd.com/#organization\", \"name\": \"PTKD\", \"url\": \"https://ptkd.com\", \"logo\": { \"@type\": \"ImageObject\", \"url\": \"https://ptkd.com/ptkd-logo.png\", \"width\": 1024, \"height\": 1024 }, \"description\": \"PTKD is a mobile app security scanner for Android and iOS that delivers OWASP-aligned vulnerability reports in minutes.\", \"foundingDate\": \"2024\", \"founder\": { \"@id\": \"https://ptkd.com/#founder\" }, \"knowsAbout\": [ \"Mobile application security\", \"OWASP Mobile Top 10\", \"Android security\", \"iOS security\", \"SDK risk analysis\", \"Static application security testing\", \"Dynamic application security testing\", \"TLS certificate pinning\", \"GDPR mobile compliance\", \"HIPAA mobile compliance\", \"PCI DSS mobile compliance\" ], \"areaServed\": \"Worldwide\" }, { \"@type\": \"Person\", \"@id\": \"https://ptkd.com/#founder\", \"name\": \"Laurens Dauchy\", \"jobTitle\": \"Founder\", \"worksFor\": { \"@id\": \"https://ptkd.com/#organization\" }, \"url\": \"https://ptkd.com/about\" }, { \"@type\": \"WebSite\", \"@id\": \"https://ptkd.com/#website\", \"url\": \"https://ptkd.com\", \"name\": \"PTKD\", \"publisher\": { \"@id\": \"https://ptkd.com/#organization\" }, \"inLanguage\": \"en\", \"potentialAction\": { \"@type\": \"SearchAction\", \"target\": \"https://ptkd.com/search?q={search_term_string}\", \"query-input\": \"required name=search_term_string\" } }, { \"@type\": \"SoftwareApplication\", \"@id\": \"https://ptkd.com/#software\", \"",
+            "fetch_error": ""
+          }
+        ]
+      },
+      "angle_candidates": [
+        "成本是否真的下降",
+        "免费额度和爆账单风险",
+        "替代方案值不值得换"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "开源跨平台剪贴板同步工具：离线、零权限、兼容 Quick Share 官方公告 价格 成本",
+        "开源跨平台剪贴板同步工具：离线、零权限、兼容 Quick Share API 文档 额度 限制",
+        "开源跨平台剪贴板同步工具：离线、零权限、兼容 Quick Share 替代方案 真实使用 成本"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
