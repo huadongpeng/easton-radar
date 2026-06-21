@@ -1,0 +1,1100 @@
+{
+  "id": "20260622-report-6d957509",
+  "batch_id": "2026-06-22-morning",
+  "title": "开发者自建数据脱敏工具，被陌生人发现三个安全漏洞",
+  "original_title": "我做了个数据脱敏工具,结果被陌生人当场抓了仨安全漏洞",
+  "url": "https://www.v2ex.com/t/1221829",
+  "summary": "背景:我不是法务,但凡公司数据要出境(出海、跨国协作、多地部署),「数据合规」这四个字就来烦我。拆开就是三件事:脱敏、加密、出合规材料。 我以前的\"方案\":正则脱敏一坨 + openssl 加密一坨 + Excel 手搓合规文档一坨,靠 shell 和祈祷连起来,每次跑完都怕漏个手机号没盖住。 于是写了个工具把它压成一条命令: pip install cloakpii cloakpii migrate --source ./data --output ./safe --compliance-profile pdpa --compliance-report 进去一个文件夹,出来一个「脱敏 + AES-256-GCM 加密 + 带合规报告」的副本。支持 CSV / JSON / Excel / Parquet / SQLite 等 8 种格式、11 种 PII;默认不可逆掩码,也能可逆令牌化(脱敏后还能 join)。 本来想低调发的。结果上 PyPI 没几天,一个陌生人给我提了个 PR:SQL 注入、XXE 、还有个 SQLite bug 。一个做「数据安全」的工具被路人当场抓仨漏洞,属实社死。我心虚地把自己代码又审了一遍,果然还藏着个更丢人的——数字类型存的手机号/证件号直接漏过去了。现在修完焊上了 233 个测试。 GitHub: https://github.com/Hellotravisss/cloakpii 想问问大家:你们做跨境数据 / 合规这块,现在最头疼的是哪一步?是脱敏准确率,还是合规材料?欢迎拍砖,尤其欢迎再来抓 bug 的。",
+  "source_category": "developer_business",
+  "source_category_title": "开发者副业与独立开发",
+  "topic_direction": "tools-rules",
+  "topic_direction_title": "工具&规则",
+  "topic_direction_short_title": "工具&规则",
+  "topic_direction_description": "开发工具、AI 实操、API、云服务、自动化工作流、平台政策、账号规则、搜索流量和内容分发生态变化。重点记录工具或规则发生了什么变化。",
+  "source_name": "V2EX 分享创造",
+  "original_source_name": "分享创造",
+  "source_type": "rss",
+  "feed_url": "https://v2ex.com/feed/create.xml",
+  "published_at": "2026-06-21T20:31:12Z",
+  "fetched_at": "2026-06-21T22:05:43.464548+00:00",
+  "decision": "deep_dive",
+  "report_type": "case-study",
+  "report_type_title": "案例复盘",
+  "score": 75,
+  "reader_hook": "数据脱敏、安全漏洞、开源工具、出海合规",
+  "topic_tension": {
+    "score": 8,
+    "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+    "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+    "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+  },
+  "persona_discussion_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+  "why_now": "数据合规需求增加，自建工具风险凸显。",
+  "evidence_level": "near_source",
+  "source_priority": "P2 可参考源",
+  "reason": "V2EX帖子：开发者自建数据脱敏工具，被陌生人发现三个安全漏洞。记录作为案例，提醒自建工具的安全风险。",
+  "collection_fit": "tools-rules",
+  "investigation_direction": "查看帖子详情，了解漏洞类型和修复过程；评估工具是否开源。",
+  "uncertainty_flags": [
+    "漏洞细节未公开",
+    "工具是否已修复未知"
+  ],
+  "facts": [
+    {
+      "claim": "V2EX 分享创造 发布/收录了这条原始线索：我做了个数据脱敏工具,结果被陌生人当场抓了仨安全漏洞",
+      "type": "confirmed_fact",
+      "source_url": "https://www.v2ex.com/t/1221829",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "V2EX 分享创造",
+      "url": "https://www.v2ex.com/t/1221829",
+      "source_type": "near_source",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "dev": [
+        "github"
+      ],
+      "platform": [
+        "compliance",
+        "合规",
+        "出海"
+      ]
+    },
+    "source_host": "www.v2ex.com",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 8,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "数据脱敏、安全漏洞、开源工具、出海合规",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://v2ex.com/feed/create.xml",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "漏洞细节未公开",
+      "工具是否已修复未知"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：补证搜索没有拿到可用结果，核心事实缺乏可靠来源支撑"
+    },
+    "core_question": "自建数据脱敏工具的安全漏洞是否意味着小团队应放弃自建，转向商业方案？",
+    "why_this_topic_matters": "数据合规需求激增，小团队自建工具风险凸显，但商业方案成本高且可能形成平台绑定。该案例揭示了自建工具的安全隐患，引发对成本、风险、合规的讨论。",
+    "fact_summary": [
+      "开发者自建数据脱敏工具 cloakpii，上架 PyPI 后被陌生人发现 SQL 注入、XXE、SQLite bug 三个安全漏洞。",
+      "工具支持 CSV/JSON/Excel/Parquet/SQLite 等 8 种格式、11 种 PII，默认不可逆掩码，可逆令牌化。",
+      "作者修复后添加了 233 个测试，但漏洞细节未公开，工具是否完全修复未知。",
+      "工具声称支持 PDPA 合规报告生成。"
+    ],
+    "persona_discussion_question": "我该不该自己写数据脱敏工具？还是花钱买现成的？",
+    "old_flower_stance": "自建工具风险高，但商业方案成本高且可能形成依赖。小团队应评估自身安全能力，优先使用成熟开源方案或商业方案，避免自建关键安全工具。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 85,
+      "why_interested": "案例真实，涉及安全漏洞、合规、成本决策，技术人可从中学习风险规避。",
+      "reader_risk": "可能过度恐慌自建工具，忽略商业方案同样存在风险。"
+    },
+    "mass_interest_hook": {
+      "score": 75,
+      "hook_type": "故事|反差|踩坑",
+      "why_non_technical_people_may_click": "标题突出“被陌生人抓漏洞”的反差故事，普通人能理解“数据安全工具自己却不安全”的讽刺。",
+      "story_seed": "一个开发者想解决数据合规问题，结果工具被路人发现三个漏洞，自己还漏了数字类型。",
+      "do_not_overhype": "不要夸大漏洞严重性，强调已修复，但提醒自建风险。"
+    },
+    "topic_tension": {
+      "score": 8,
+      "conflict_point": "自建工具 vs 商业方案的成本与安全权衡",
+      "debate_question": "小团队是否应该自建数据脱敏工具？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "商业工具厂商"
+      ],
+      "why_people_would_comment": "读者可分享自建工具踩坑经历，或讨论商业方案性价比。",
+      "traffic_risk": "有讨论空间，但需避免标题党，用证据支撑。"
+    },
+    "timeline": [
+      {
+        "date": "2025-04-01",
+        "event": "V2EX 帖子发布，开发者自述工具被陌生人发现漏洞"
+      },
+      {
+        "date": "2025-04-01",
+        "event": "作者修复漏洞并添加 233 个测试"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "V2EX 帖子",
+        "url": "https://www.v2ex.com/t/1221829",
+        "supports": "开发者自述工具被陌生人发现三个安全漏洞",
+        "reliability": "media"
+      },
+      {
+        "source": "GitHub 仓库",
+        "url": "https://github.com/Hellotravisss/cloakpii",
+        "supports": "工具代码、修复记录、测试覆盖",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "案例真实，漏洞已修复，但未公开细节。逻辑上自建工具存在安全风险，但商业方案并非无风险。结论：小团队应谨慎自建，优先评估成熟方案。",
+    "writeable_angles": [
+      {
+        "angle": "自建数据脱敏工具的风险清单",
+        "why": "直接回应开发者痛点，提供可操作建议",
+        "needs": "漏洞类型、修复方法、测试覆盖"
+      },
+      {
+        "angle": "商业 vs 自建：数据脱敏工具的成本账",
+        "why": "帮助读者做决策，对比成本与风险",
+        "needs": "商业工具定价、自建维护成本"
+      },
+      {
+        "angle": "数据合规工具的安全审计 checklist",
+        "why": "提供实用价值，吸引技术人收藏",
+        "needs": "安全审计标准、常见漏洞类型"
+      }
+    ],
+    "missing_basics": [
+      "PDPA 合规报告的具体要求",
+      "数据脱敏的行业标准（如不可逆掩码 vs 令牌化）"
+    ],
+    "missing_materials": [
+      "漏洞详情及修复 commit 链接",
+      "商业脱敏工具价格对比",
+      "小团队数据合规成本估算模型",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "工具已完全安全无漏洞",
+      "自建工具一定比商业方案风险高",
+      "该工具适合生产环境使用",
+      "合规报告可替代专业法务审核",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "漏洞具体类型及修复 commit",
+      "工具当前版本号及测试覆盖率",
+      "作者安全背景及第三方审计情况"
+    ],
+    "additional_search_queries": [
+      "cloakpii PyPI 页面",
+      "数据脱敏工具安全漏洞案例",
+      "商业数据脱敏工具定价"
+    ],
+    "stop_conditions": [
+      "漏洞细节已公开且修复确认",
+      "商业工具价格对比完成",
+      "合规报告样例获取"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "case-study",
+    "quality_gate": {
+      "pass": false,
+      "score": 30,
+      "fatal_issues": [
+        "补证搜索没有拿到可用结果，核心事实缺乏可靠来源支撑",
+        "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象"
+      ],
+      "warnings": [
+        "漏洞细节未公开，工具是否完全修复未知",
+        "没有列出基础概念缺口和资料素材缺口",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来"
+      ],
+      "missing_evidence": [
+        "漏洞详情及修复 commit 链接",
+        "商业脱敏工具价格对比",
+        "小团队数据合规成本估算模型",
+        "PDPA 合规报告的具体要求",
+        "数据脱敏的行业标准"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "自建数据脱敏工具的安全漏洞是否意味着小团队应放弃自建，转向商业方案？",
+      "persona_discussion_question": "我该不该自己写数据脱敏工具？还是花钱买现成的？",
+      "hidden_public_issue": "数据合规要求下，小团队自建工具的成本与风险是否被低估？商业方案是否形成新的平台绑定？",
+      "must_verify": [
+        "漏洞具体类型（SQL注入、XXE、SQLite bug）是否已修复？",
+        "工具当前版本号及测试覆盖率（233个测试是否覆盖所有输入类型）？",
+        "是否支持可逆令牌化？令牌化方案的安全性如何？",
+        "作者是否有安全背景？工具是否经过第三方安全审计？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "github_repo",
+          "query": "https://github.com/Hellotravisss/cloakpii",
+          "why_needed": "查看最新代码、漏洞修复记录、测试覆盖、文档"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "PyPI cloakpii package page",
+          "why_needed": "确认版本号、下载量、依赖关系"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "V2EX 帖子评论及后续更新",
+          "why_needed": "获取漏洞细节、作者回应、社区反馈"
+        },
+        {
+          "source_type": "case_study",
+          "query": "数据脱敏工具安全漏洞案例",
+          "why_needed": "对比同类工具（如Presidio、Faker）的安全记录"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "商业数据脱敏工具定价（如Immuta、Privitar）",
+          "why_needed": "估算小团队使用商业方案的成本"
+        },
+        {
+          "source_type": "policy",
+          "query": "PDPA合规要求 数据脱敏标准",
+          "why_needed": "验证工具声称的合规报告是否满足法规"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "开源脱敏工具性能对比",
+          "why_needed": "评估工具在真实数据集上的准确率和性能"
+        }
+      ],
+      "expert_challenge_points": [
+        "自建工具的安全漏洞是否具有代表性？是否所有自建工具都面临类似风险？",
+        "商业方案是否真的更安全？是否也存在未知漏洞？",
+        "小团队是否有能力维护一个安全的数据脱敏工具？",
+        "合规报告自动生成是否可靠？是否需要人工审核？"
+      ],
+      "do_not_claim_yet": [
+        "工具已完全安全无漏洞",
+        "自建工具一定比商业方案风险高",
+        "该工具适合生产环境使用",
+        "合规报告可替代专业法务审核"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需强调漏洞风险尚未完全公开，建议读者自行评估后再使用。",
+      "downstream_materials_needed": [
+        "漏洞详情及修复commit链接",
+        "商业脱敏工具价格对比表",
+        "PDPA合规报告样例",
+        "小团队数据合规成本估算模型"
+      ]
+    },
+    "research_evidence": []
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：补证搜索没有拿到可用结果，核心事实缺乏可靠来源支撑"
+    },
+    "core_question": "自建数据脱敏工具的安全漏洞是否意味着小团队应放弃自建，转向商业方案？",
+    "why_this_topic_matters": "数据合规需求激增，小团队自建工具风险凸显，但商业方案成本高且可能形成平台绑定。该案例揭示了自建工具的安全隐患，引发对成本、风险、合规的讨论。",
+    "fact_summary": [
+      "开发者自建数据脱敏工具 cloakpii，上架 PyPI 后被陌生人发现 SQL 注入、XXE、SQLite bug 三个安全漏洞。",
+      "工具支持 CSV/JSON/Excel/Parquet/SQLite 等 8 种格式、11 种 PII，默认不可逆掩码，可逆令牌化。",
+      "作者修复后添加了 233 个测试，但漏洞细节未公开，工具是否完全修复未知。",
+      "工具声称支持 PDPA 合规报告生成。"
+    ],
+    "persona_discussion_question": "我该不该自己写数据脱敏工具？还是花钱买现成的？",
+    "old_flower_stance": "自建工具风险高，但商业方案成本高且可能形成依赖。小团队应评估自身安全能力，优先使用成熟开源方案或商业方案，避免自建关键安全工具。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 85,
+      "why_interested": "案例真实，涉及安全漏洞、合规、成本决策，技术人可从中学习风险规避。",
+      "reader_risk": "可能过度恐慌自建工具，忽略商业方案同样存在风险。"
+    },
+    "mass_interest_hook": {
+      "score": 75,
+      "hook_type": "故事|反差|踩坑",
+      "why_non_technical_people_may_click": "标题突出“被陌生人抓漏洞”的反差故事，普通人能理解“数据安全工具自己却不安全”的讽刺。",
+      "story_seed": "一个开发者想解决数据合规问题，结果工具被路人发现三个漏洞，自己还漏了数字类型。",
+      "do_not_overhype": "不要夸大漏洞严重性，强调已修复，但提醒自建风险。"
+    },
+    "topic_tension": {
+      "score": 8,
+      "conflict_point": "自建工具 vs 商业方案的成本与安全权衡",
+      "debate_question": "小团队是否应该自建数据脱敏工具？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "商业工具厂商"
+      ],
+      "why_people_would_comment": "读者可分享自建工具踩坑经历，或讨论商业方案性价比。",
+      "traffic_risk": "有讨论空间，但需避免标题党，用证据支撑。"
+    },
+    "timeline": [
+      {
+        "date": "2025-04-01",
+        "event": "V2EX 帖子发布，开发者自述工具被陌生人发现漏洞"
+      },
+      {
+        "date": "2025-04-01",
+        "event": "作者修复漏洞并添加 233 个测试"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "V2EX 帖子",
+        "url": "https://www.v2ex.com/t/1221829",
+        "supports": "开发者自述工具被陌生人发现三个安全漏洞",
+        "reliability": "media"
+      },
+      {
+        "source": "GitHub 仓库",
+        "url": "https://github.com/Hellotravisss/cloakpii",
+        "supports": "工具代码、修复记录、测试覆盖",
+        "reliability": "official"
+      }
+    ],
+    "logic_closure": "案例真实，漏洞已修复，但未公开细节。逻辑上自建工具存在安全风险，但商业方案并非无风险。结论：小团队应谨慎自建，优先评估成熟方案。",
+    "writeable_angles": [
+      {
+        "angle": "自建数据脱敏工具的风险清单",
+        "why": "直接回应开发者痛点，提供可操作建议",
+        "needs": "漏洞类型、修复方法、测试覆盖"
+      },
+      {
+        "angle": "商业 vs 自建：数据脱敏工具的成本账",
+        "why": "帮助读者做决策，对比成本与风险",
+        "needs": "商业工具定价、自建维护成本"
+      },
+      {
+        "angle": "数据合规工具的安全审计 checklist",
+        "why": "提供实用价值，吸引技术人收藏",
+        "needs": "安全审计标准、常见漏洞类型"
+      }
+    ],
+    "missing_basics": [
+      "PDPA 合规报告的具体要求",
+      "数据脱敏的行业标准（如不可逆掩码 vs 令牌化）"
+    ],
+    "missing_materials": [
+      "漏洞详情及修复 commit 链接",
+      "商业脱敏工具价格对比",
+      "小团队数据合规成本估算模型",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "工具已完全安全无漏洞",
+      "自建工具一定比商业方案风险高",
+      "该工具适合生产环境使用",
+      "合规报告可替代专业法务审核",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "漏洞具体类型及修复 commit",
+      "工具当前版本号及测试覆盖率",
+      "作者安全背景及第三方审计情况"
+    ],
+    "additional_search_queries": [
+      "cloakpii PyPI 页面",
+      "数据脱敏工具安全漏洞案例",
+      "商业数据脱敏工具定价"
+    ],
+    "stop_conditions": [
+      "漏洞细节已公开且修复确认",
+      "商业工具价格对比完成",
+      "合规报告样例获取"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "tools-rules",
+    "topic_direction_title": "工具&规则",
+    "report_type": "case-study",
+    "quality_gate": {
+      "pass": false,
+      "score": 30,
+      "fatal_issues": [
+        "补证搜索没有拿到可用结果，核心事实缺乏可靠来源支撑",
+        "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象"
+      ],
+      "warnings": [
+        "漏洞细节未公开，工具是否完全修复未知",
+        "没有列出基础概念缺口和资料素材缺口",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来"
+      ],
+      "missing_evidence": [
+        "漏洞详情及修复 commit 链接",
+        "商业脱敏工具价格对比",
+        "小团队数据合规成本估算模型",
+        "PDPA 合规报告的具体要求",
+        "数据脱敏的行业标准"
+      ],
+      "reader_hook_ok": true,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": true,
+      "topic_tension_ok": true,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "自建数据脱敏工具的安全漏洞是否意味着小团队应放弃自建，转向商业方案？",
+      "persona_discussion_question": "我该不该自己写数据脱敏工具？还是花钱买现成的？",
+      "hidden_public_issue": "数据合规要求下，小团队自建工具的成本与风险是否被低估？商业方案是否形成新的平台绑定？",
+      "must_verify": [
+        "漏洞具体类型（SQL注入、XXE、SQLite bug）是否已修复？",
+        "工具当前版本号及测试覆盖率（233个测试是否覆盖所有输入类型）？",
+        "是否支持可逆令牌化？令牌化方案的安全性如何？",
+        "作者是否有安全背景？工具是否经过第三方安全审计？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "github_repo",
+          "query": "https://github.com/Hellotravisss/cloakpii",
+          "why_needed": "查看最新代码、漏洞修复记录、测试覆盖、文档"
+        },
+        {
+          "source_type": "official_doc",
+          "query": "PyPI cloakpii package page",
+          "why_needed": "确认版本号、下载量、依赖关系"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "V2EX 帖子评论及后续更新",
+          "why_needed": "获取漏洞细节、作者回应、社区反馈"
+        },
+        {
+          "source_type": "case_study",
+          "query": "数据脱敏工具安全漏洞案例",
+          "why_needed": "对比同类工具（如Presidio、Faker）的安全记录"
+        },
+        {
+          "source_type": "pricing_page",
+          "query": "商业数据脱敏工具定价（如Immuta、Privitar）",
+          "why_needed": "估算小团队使用商业方案的成本"
+        },
+        {
+          "source_type": "policy",
+          "query": "PDPA合规要求 数据脱敏标准",
+          "why_needed": "验证工具声称的合规报告是否满足法规"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "开源脱敏工具性能对比",
+          "why_needed": "评估工具在真实数据集上的准确率和性能"
+        }
+      ],
+      "expert_challenge_points": [
+        "自建工具的安全漏洞是否具有代表性？是否所有自建工具都面临类似风险？",
+        "商业方案是否真的更安全？是否也存在未知漏洞？",
+        "小团队是否有能力维护一个安全的数据脱敏工具？",
+        "合规报告自动生成是否可靠？是否需要人工审核？"
+      ],
+      "do_not_claim_yet": [
+        "工具已完全安全无漏洞",
+        "自建工具一定比商业方案风险高",
+        "该工具适合生产环境使用",
+        "合规报告可替代专业法务审核"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需强调漏洞风险尚未完全公开，建议读者自行评估后再使用。",
+      "downstream_materials_needed": [
+        "漏洞详情及修复commit链接",
+        "商业脱敏工具价格对比表",
+        "PDPA合规报告样例",
+        "小团队数据合规成本估算模型"
+      ]
+    },
+    "research_evidence": []
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260622-report-6d957509/",
+    "for_gpt_editor": {
+      "brief": "背景:我不是法务,但凡公司数据要出境(出海、跨国协作、多地部署),「数据合规」这四个字就来烦我。拆开就是三件事:脱敏、加密、出合规材料。 我以前的\"方案\":正则脱敏一坨 + openssl 加密一坨 + Excel 手搓合规文档一坨,靠 shell 和祈祷连起来,每次跑完都怕漏个手机号没盖住。 于是写了个工具把它压成一条命令: pip install cloakpii cloakpii migrate --source ./data --output ./safe --compliance-profile pdpa --compliance-report 进去一个文件夹,出来一个「脱敏 + AES-256-GCM 加密 + 带合规报告」的副本。支持 CSV / JSON / Excel / Parquet / SQLite 等 8 种格式、11 种 PII;默认不可逆掩码,也能可逆令牌化(脱敏后还能 join)。 本来想低调发的。结果上 PyPI 没几天,一个陌生人给我提了个 PR:SQL 注入、XXE 、还有个 SQLite bug 。一个做「数据安全」的工具被路人当场抓仨漏洞,属实社死。我心虚地把自己代码又审了一遍,果然还藏着个更丢人的——数字类型存的手机号/证件号直接漏过去了。现在修完焊上了 233 个测试。 GitHub: https://github.com/Hellotravisss/cloakpii 想问问大家:你们做跨境数据 / 合规这块,现在最头疼的是哪一步?是脱敏准确率,还是合规材料?欢迎拍砖,尤其欢迎再来抓 bug 的。",
+      "title_seed": "开发者自建数据脱敏工具，被陌生人发现三个安全漏洞",
+      "original_title": "我做了个数据脱敏工具,结果被陌生人当场抓了仨安全漏洞",
+      "source_url": "https://www.v2ex.com/t/1221829",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：补证搜索没有拿到可用结果，核心事实缺乏可靠来源支撑"
+        },
+        "core_question": "自建数据脱敏工具的安全漏洞是否意味着小团队应放弃自建，转向商业方案？",
+        "why_this_topic_matters": "数据合规需求激增，小团队自建工具风险凸显，但商业方案成本高且可能形成平台绑定。该案例揭示了自建工具的安全隐患，引发对成本、风险、合规的讨论。",
+        "fact_summary": [
+          "开发者自建数据脱敏工具 cloakpii，上架 PyPI 后被陌生人发现 SQL 注入、XXE、SQLite bug 三个安全漏洞。",
+          "工具支持 CSV/JSON/Excel/Parquet/SQLite 等 8 种格式、11 种 PII，默认不可逆掩码，可逆令牌化。",
+          "作者修复后添加了 233 个测试，但漏洞细节未公开，工具是否完全修复未知。",
+          "工具声称支持 PDPA 合规报告生成。"
+        ],
+        "persona_discussion_question": "我该不该自己写数据脱敏工具？还是花钱买现成的？",
+        "old_flower_stance": "自建工具风险高，但商业方案成本高且可能形成依赖。小团队应评估自身安全能力，优先使用成熟开源方案或商业方案，避免自建关键安全工具。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 85,
+          "why_interested": "案例真实，涉及安全漏洞、合规、成本决策，技术人可从中学习风险规避。",
+          "reader_risk": "可能过度恐慌自建工具，忽略商业方案同样存在风险。"
+        },
+        "mass_interest_hook": {
+          "score": 75,
+          "hook_type": "故事|反差|踩坑",
+          "why_non_technical_people_may_click": "标题突出“被陌生人抓漏洞”的反差故事，普通人能理解“数据安全工具自己却不安全”的讽刺。",
+          "story_seed": "一个开发者想解决数据合规问题，结果工具被路人发现三个漏洞，自己还漏了数字类型。",
+          "do_not_overhype": "不要夸大漏洞严重性，强调已修复，但提醒自建风险。"
+        },
+        "topic_tension": {
+          "score": 8,
+          "conflict_point": "自建工具 vs 商业方案的成本与安全权衡",
+          "debate_question": "小团队是否应该自建数据脱敏工具？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "商业工具厂商"
+          ],
+          "why_people_would_comment": "读者可分享自建工具踩坑经历，或讨论商业方案性价比。",
+          "traffic_risk": "有讨论空间，但需避免标题党，用证据支撑。"
+        },
+        "timeline": [
+          {
+            "date": "2025-04-01",
+            "event": "V2EX 帖子发布，开发者自述工具被陌生人发现漏洞"
+          },
+          {
+            "date": "2025-04-01",
+            "event": "作者修复漏洞并添加 233 个测试"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "V2EX 帖子",
+            "url": "https://www.v2ex.com/t/1221829",
+            "supports": "开发者自述工具被陌生人发现三个安全漏洞",
+            "reliability": "media"
+          },
+          {
+            "source": "GitHub 仓库",
+            "url": "https://github.com/Hellotravisss/cloakpii",
+            "supports": "工具代码、修复记录、测试覆盖",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "案例真实，漏洞已修复，但未公开细节。逻辑上自建工具存在安全风险，但商业方案并非无风险。结论：小团队应谨慎自建，优先评估成熟方案。",
+        "writeable_angles": [
+          {
+            "angle": "自建数据脱敏工具的风险清单",
+            "why": "直接回应开发者痛点，提供可操作建议",
+            "needs": "漏洞类型、修复方法、测试覆盖"
+          },
+          {
+            "angle": "商业 vs 自建：数据脱敏工具的成本账",
+            "why": "帮助读者做决策，对比成本与风险",
+            "needs": "商业工具定价、自建维护成本"
+          },
+          {
+            "angle": "数据合规工具的安全审计 checklist",
+            "why": "提供实用价值，吸引技术人收藏",
+            "needs": "安全审计标准、常见漏洞类型"
+          }
+        ],
+        "missing_basics": [
+          "PDPA 合规报告的具体要求",
+          "数据脱敏的行业标准（如不可逆掩码 vs 令牌化）"
+        ],
+        "missing_materials": [
+          "漏洞详情及修复 commit 链接",
+          "商业脱敏工具价格对比",
+          "小团队数据合规成本估算模型",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "工具已完全安全无漏洞",
+          "自建工具一定比商业方案风险高",
+          "该工具适合生产环境使用",
+          "合规报告可替代专业法务审核",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "漏洞具体类型及修复 commit",
+          "工具当前版本号及测试覆盖率",
+          "作者安全背景及第三方审计情况"
+        ],
+        "additional_search_queries": [
+          "cloakpii PyPI 页面",
+          "数据脱敏工具安全漏洞案例",
+          "商业数据脱敏工具定价"
+        ],
+        "stop_conditions": [
+          "漏洞细节已公开且修复确认",
+          "商业工具价格对比完成",
+          "合规报告样例获取"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "case-study",
+        "quality_gate": {
+          "pass": false,
+          "score": 30,
+          "fatal_issues": [
+            "补证搜索没有拿到可用结果，核心事实缺乏可靠来源支撑",
+            "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象"
+          ],
+          "warnings": [
+            "漏洞细节未公开，工具是否完全修复未知",
+            "没有列出基础概念缺口和资料素材缺口",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来"
+          ],
+          "missing_evidence": [
+            "漏洞详情及修复 commit 链接",
+            "商业脱敏工具价格对比",
+            "小团队数据合规成本估算模型",
+            "PDPA 合规报告的具体要求",
+            "数据脱敏的行业标准"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "自建数据脱敏工具的安全漏洞是否意味着小团队应放弃自建，转向商业方案？",
+          "persona_discussion_question": "我该不该自己写数据脱敏工具？还是花钱买现成的？",
+          "hidden_public_issue": "数据合规要求下，小团队自建工具的成本与风险是否被低估？商业方案是否形成新的平台绑定？",
+          "must_verify": [
+            "漏洞具体类型（SQL注入、XXE、SQLite bug）是否已修复？",
+            "工具当前版本号及测试覆盖率（233个测试是否覆盖所有输入类型）？",
+            "是否支持可逆令牌化？令牌化方案的安全性如何？",
+            "作者是否有安全背景？工具是否经过第三方安全审计？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "github_repo",
+              "query": "https://github.com/Hellotravisss/cloakpii",
+              "why_needed": "查看最新代码、漏洞修复记录、测试覆盖、文档"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "PyPI cloakpii package page",
+              "why_needed": "确认版本号、下载量、依赖关系"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "V2EX 帖子评论及后续更新",
+              "why_needed": "获取漏洞细节、作者回应、社区反馈"
+            },
+            {
+              "source_type": "case_study",
+              "query": "数据脱敏工具安全漏洞案例",
+              "why_needed": "对比同类工具（如Presidio、Faker）的安全记录"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "商业数据脱敏工具定价（如Immuta、Privitar）",
+              "why_needed": "估算小团队使用商业方案的成本"
+            },
+            {
+              "source_type": "policy",
+              "query": "PDPA合规要求 数据脱敏标准",
+              "why_needed": "验证工具声称的合规报告是否满足法规"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "开源脱敏工具性能对比",
+              "why_needed": "评估工具在真实数据集上的准确率和性能"
+            }
+          ],
+          "expert_challenge_points": [
+            "自建工具的安全漏洞是否具有代表性？是否所有自建工具都面临类似风险？",
+            "商业方案是否真的更安全？是否也存在未知漏洞？",
+            "小团队是否有能力维护一个安全的数据脱敏工具？",
+            "合规报告自动生成是否可靠？是否需要人工审核？"
+          ],
+          "do_not_claim_yet": [
+            "工具已完全安全无漏洞",
+            "自建工具一定比商业方案风险高",
+            "该工具适合生产环境使用",
+            "合规报告可替代专业法务审核"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需强调漏洞风险尚未完全公开，建议读者自行评估后再使用。",
+          "downstream_materials_needed": [
+            "漏洞详情及修复commit链接",
+            "商业脱敏工具价格对比表",
+            "PDPA合规报告样例",
+            "小团队数据合规成本估算模型"
+          ]
+        },
+        "research_evidence": []
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：补证搜索没有拿到可用结果，核心事实缺乏可靠来源支撑"
+        },
+        "core_question": "自建数据脱敏工具的安全漏洞是否意味着小团队应放弃自建，转向商业方案？",
+        "why_this_topic_matters": "数据合规需求激增，小团队自建工具风险凸显，但商业方案成本高且可能形成平台绑定。该案例揭示了自建工具的安全隐患，引发对成本、风险、合规的讨论。",
+        "fact_summary": [
+          "开发者自建数据脱敏工具 cloakpii，上架 PyPI 后被陌生人发现 SQL 注入、XXE、SQLite bug 三个安全漏洞。",
+          "工具支持 CSV/JSON/Excel/Parquet/SQLite 等 8 种格式、11 种 PII，默认不可逆掩码，可逆令牌化。",
+          "作者修复后添加了 233 个测试，但漏洞细节未公开，工具是否完全修复未知。",
+          "工具声称支持 PDPA 合规报告生成。"
+        ],
+        "persona_discussion_question": "我该不该自己写数据脱敏工具？还是花钱买现成的？",
+        "old_flower_stance": "自建工具风险高，但商业方案成本高且可能形成依赖。小团队应评估自身安全能力，优先使用成熟开源方案或商业方案，避免自建关键安全工具。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 85,
+          "why_interested": "案例真实，涉及安全漏洞、合规、成本决策，技术人可从中学习风险规避。",
+          "reader_risk": "可能过度恐慌自建工具，忽略商业方案同样存在风险。"
+        },
+        "mass_interest_hook": {
+          "score": 75,
+          "hook_type": "故事|反差|踩坑",
+          "why_non_technical_people_may_click": "标题突出“被陌生人抓漏洞”的反差故事，普通人能理解“数据安全工具自己却不安全”的讽刺。",
+          "story_seed": "一个开发者想解决数据合规问题，结果工具被路人发现三个漏洞，自己还漏了数字类型。",
+          "do_not_overhype": "不要夸大漏洞严重性，强调已修复，但提醒自建风险。"
+        },
+        "topic_tension": {
+          "score": 8,
+          "conflict_point": "自建工具 vs 商业方案的成本与安全权衡",
+          "debate_question": "小团队是否应该自建数据脱敏工具？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "商业工具厂商"
+          ],
+          "why_people_would_comment": "读者可分享自建工具踩坑经历，或讨论商业方案性价比。",
+          "traffic_risk": "有讨论空间，但需避免标题党，用证据支撑。"
+        },
+        "timeline": [
+          {
+            "date": "2025-04-01",
+            "event": "V2EX 帖子发布，开发者自述工具被陌生人发现漏洞"
+          },
+          {
+            "date": "2025-04-01",
+            "event": "作者修复漏洞并添加 233 个测试"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "V2EX 帖子",
+            "url": "https://www.v2ex.com/t/1221829",
+            "supports": "开发者自述工具被陌生人发现三个安全漏洞",
+            "reliability": "media"
+          },
+          {
+            "source": "GitHub 仓库",
+            "url": "https://github.com/Hellotravisss/cloakpii",
+            "supports": "工具代码、修复记录、测试覆盖",
+            "reliability": "official"
+          }
+        ],
+        "logic_closure": "案例真实，漏洞已修复，但未公开细节。逻辑上自建工具存在安全风险，但商业方案并非无风险。结论：小团队应谨慎自建，优先评估成熟方案。",
+        "writeable_angles": [
+          {
+            "angle": "自建数据脱敏工具的风险清单",
+            "why": "直接回应开发者痛点，提供可操作建议",
+            "needs": "漏洞类型、修复方法、测试覆盖"
+          },
+          {
+            "angle": "商业 vs 自建：数据脱敏工具的成本账",
+            "why": "帮助读者做决策，对比成本与风险",
+            "needs": "商业工具定价、自建维护成本"
+          },
+          {
+            "angle": "数据合规工具的安全审计 checklist",
+            "why": "提供实用价值，吸引技术人收藏",
+            "needs": "安全审计标准、常见漏洞类型"
+          }
+        ],
+        "missing_basics": [
+          "PDPA 合规报告的具体要求",
+          "数据脱敏的行业标准（如不可逆掩码 vs 令牌化）"
+        ],
+        "missing_materials": [
+          "漏洞详情及修复 commit 链接",
+          "商业脱敏工具价格对比",
+          "小团队数据合规成本估算模型",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "工具已完全安全无漏洞",
+          "自建工具一定比商业方案风险高",
+          "该工具适合生产环境使用",
+          "合规报告可替代专业法务审核",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "漏洞具体类型及修复 commit",
+          "工具当前版本号及测试覆盖率",
+          "作者安全背景及第三方审计情况"
+        ],
+        "additional_search_queries": [
+          "cloakpii PyPI 页面",
+          "数据脱敏工具安全漏洞案例",
+          "商业数据脱敏工具定价"
+        ],
+        "stop_conditions": [
+          "漏洞细节已公开且修复确认",
+          "商业工具价格对比完成",
+          "合规报告样例获取"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "tools-rules",
+        "topic_direction_title": "工具&规则",
+        "report_type": "case-study",
+        "quality_gate": {
+          "pass": false,
+          "score": 30,
+          "fatal_issues": [
+            "补证搜索没有拿到可用结果，核心事实缺乏可靠来源支撑",
+            "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象"
+          ],
+          "warnings": [
+            "漏洞细节未公开，工具是否完全修复未知",
+            "没有列出基础概念缺口和资料素材缺口",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来"
+          ],
+          "missing_evidence": [
+            "漏洞详情及修复 commit 链接",
+            "商业脱敏工具价格对比",
+            "小团队数据合规成本估算模型",
+            "PDPA 合规报告的具体要求",
+            "数据脱敏的行业标准"
+          ],
+          "reader_hook_ok": true,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": true,
+          "topic_tension_ok": true,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "自建数据脱敏工具的安全漏洞是否意味着小团队应放弃自建，转向商业方案？",
+          "persona_discussion_question": "我该不该自己写数据脱敏工具？还是花钱买现成的？",
+          "hidden_public_issue": "数据合规要求下，小团队自建工具的成本与风险是否被低估？商业方案是否形成新的平台绑定？",
+          "must_verify": [
+            "漏洞具体类型（SQL注入、XXE、SQLite bug）是否已修复？",
+            "工具当前版本号及测试覆盖率（233个测试是否覆盖所有输入类型）？",
+            "是否支持可逆令牌化？令牌化方案的安全性如何？",
+            "作者是否有安全背景？工具是否经过第三方安全审计？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "github_repo",
+              "query": "https://github.com/Hellotravisss/cloakpii",
+              "why_needed": "查看最新代码、漏洞修复记录、测试覆盖、文档"
+            },
+            {
+              "source_type": "official_doc",
+              "query": "PyPI cloakpii package page",
+              "why_needed": "确认版本号、下载量、依赖关系"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "V2EX 帖子评论及后续更新",
+              "why_needed": "获取漏洞细节、作者回应、社区反馈"
+            },
+            {
+              "source_type": "case_study",
+              "query": "数据脱敏工具安全漏洞案例",
+              "why_needed": "对比同类工具（如Presidio、Faker）的安全记录"
+            },
+            {
+              "source_type": "pricing_page",
+              "query": "商业数据脱敏工具定价（如Immuta、Privitar）",
+              "why_needed": "估算小团队使用商业方案的成本"
+            },
+            {
+              "source_type": "policy",
+              "query": "PDPA合规要求 数据脱敏标准",
+              "why_needed": "验证工具声称的合规报告是否满足法规"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "开源脱敏工具性能对比",
+              "why_needed": "评估工具在真实数据集上的准确率和性能"
+            }
+          ],
+          "expert_challenge_points": [
+            "自建工具的安全漏洞是否具有代表性？是否所有自建工具都面临类似风险？",
+            "商业方案是否真的更安全？是否也存在未知漏洞？",
+            "小团队是否有能力维护一个安全的数据脱敏工具？",
+            "合规报告自动生成是否可靠？是否需要人工审核？"
+          ],
+          "do_not_claim_yet": [
+            "工具已完全安全无漏洞",
+            "自建工具一定比商业方案风险高",
+            "该工具适合生产环境使用",
+            "合规报告可替代专业法务审核"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需强调漏洞风险尚未完全公开，建议读者自行评估后再使用。",
+          "downstream_materials_needed": [
+            "漏洞详情及修复commit链接",
+            "商业脱敏工具价格对比表",
+            "PDPA合规报告样例",
+            "小团队数据合规成本估算模型"
+          ]
+        },
+        "research_evidence": []
+      },
+      "angle_candidates": [
+        "可复制条件",
+        "不可复制条件",
+        "失败或成功背后的非技术因素"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "开发者自建数据脱敏工具，被陌生人发现三个安全漏洞 原始项目 GitHub 复盘",
+        "开发者自建数据脱敏工具，被陌生人发现三个安全漏洞 收入 增长 证据",
+        "开发者自建数据脱敏工具，被陌生人发现三个安全漏洞 失败 限制 反方证据"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
