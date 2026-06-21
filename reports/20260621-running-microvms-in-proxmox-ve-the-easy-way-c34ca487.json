@@ -1,0 +1,1061 @@
+{
+  "id": "20260621-running-microvms-in-proxmox-ve-the-easy-way-c34ca487",
+  "batch_id": "2026-06-21-evening",
+  "title": "Proxmox VE 上轻松运行 MicroVM 的方法",
+  "original_title": "Running MicroVMs in Proxmox VE, the Easy Way",
+  "url": "https://taoofmac.com/space/blog/2026/06/18/1845",
+  "summary": "Comments",
+  "source_category": "developer_business",
+  "source_category_title": "开发者副业与独立开发",
+  "topic_direction": "side-info",
+  "topic_direction_title": "副业&信息差",
+  "topic_direction_short_title": "副业&信息差",
+  "topic_direction_description": "独立开发、副业项目、工具站、微型 SaaS、开源项目、现金流风险、外包回款、信息差机会和风险避坑。重点记录案例、项目、风险和需求信号。",
+  "source_name": "Hacker News",
+  "original_source_name": "Hacker News",
+  "source_type": "rss",
+  "feed_url": "https://news.ycombinator.com/rss",
+  "published_at": "2026-06-19T15:13:11+00:00",
+  "fetched_at": "2026-06-21T10:00:24.835338+00:00",
+  "decision": "brief",
+  "report_type": "tool-ledger",
+  "report_type_title": "工具账本",
+  "score": 45,
+  "reader_hook": "技术人关注虚拟化成本与效率",
+  "topic_tension": {
+    "score": 5,
+    "conflict_point": "表面价格、额度或收益预期和真实成本之间的冲突。",
+    "debate_question": "这笔账普通技术人还能不能算得过来，还是只适合少数人？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "",
+    "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+  },
+  "persona_discussion_question": "这笔工具账到底是提高效率，还是把不可见成本转嫁给普通程序员和小团队？",
+  "why_now": "来自本批次稳定公开源，适合先进入 Radar 观察。",
+  "evidence_level": "media",
+  "source_priority": "P1 高质量近源",
+  "reason": "介绍了一种在 Proxmox VE 中运行 MicroVM 的简便方法，适合技术人评估虚拟化方案，但缺乏具体成本或性能对比，信息价值有限。",
+  "collection_fit": "tools-rules",
+  "investigation_direction": "优先追需求是否真实、用户是谁、付费路径、最小验证成本和停止信号。",
+  "uncertainty_flags": [
+    "缺乏实际部署案例和成本数据"
+  ],
+  "facts": [
+    {
+      "claim": "Hacker News 发布/收录了这条原始线索：Running MicroVMs in Proxmox VE, the Easy Way",
+      "type": "confirmed_fact",
+      "source_url": "https://taoofmac.com/space/blog/2026/06/18/1845",
+      "confidence": 0.55
+    }
+  ],
+  "sources": [
+    {
+      "title": "Hacker News",
+      "url": "https://taoofmac.com/space/blog/2026/06/18/1845",
+      "source_type": "media",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {},
+    "source_host": "taoofmac.com",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 5,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "技术人关注虚拟化成本与效率",
+    "fit_for_radar": false
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://news.ycombinator.com/rss",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "缺乏实际部署案例和成本数据"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：文章来自个人博客，缺乏官方或权威来源支撑。"
+    },
+    "core_question": "在 Proxmox VE 上运行 MicroVM 的简便方法是否真的能带来成本或性能优势，还是只是技术演示？",
+    "why_this_topic_matters": "虚拟化是技术人日常运维和成本控制的核心，MicroVM 方案可能带来更低的资源开销和更快的启动速度，但缺乏真实数据支撑，普通技术人难以判断是否值得迁移。",
+    "fact_summary": [
+      "来源文章介绍了一种在 Proxmox VE 上运行 MicroVM 的简便方法，但未提供具体性能或成本对比数据。",
+      "MicroVM 通常指轻量级虚拟机，如 Firecracker、Cloud Hypervisor，启动快、资源占用少。",
+      "Proxmox VE 是基于 KVM 的开源虚拟化平台，支持 LXC 容器和 KVM 虚拟机。",
+      "文章来自个人博客，非官方或权威来源。"
+    ],
+    "persona_discussion_question": "作为独立开发者，我该不该把现有虚拟机迁移到 MicroVM？迁移成本、性能收益和运维复杂度是否值得？",
+    "old_flower_stance": "技术人应该先算账：MicroVM 的启动速度和资源节省是否值得额外的配置成本和运维复杂度？不要被‘简便’二字迷惑，先看官方文档和社区反馈。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 40,
+      "why_interested": "核心技术人关注虚拟化技术选型和成本优化；入门读者可能被‘简便’吸引但缺乏判断基础；高价值商业读者关注基础设施成本。",
+      "reader_risk": "缺乏真实数据，容易误导读者做出错误决策。"
+    },
+    "mass_interest_hook": {
+      "score": 20,
+      "hook_type": "故事",
+      "why_non_technical_people_may_click": "标题中的‘轻松’和‘MicroVM’可能吸引对技术优化感兴趣的普通读者，但缺乏冲突和数字，点击率低。",
+      "story_seed": "一个独立开发者为了节省服务器成本，尝试将虚拟机迁移到 MicroVM，结果发现配置复杂、性能不如预期，最终回到 KVM。",
+      "do_not_overhype": "不要声称 MicroVM 一定更高效或更省钱，需要数据支撑。"
+    },
+    "topic_tension": {
+      "score": 5,
+      "conflict_point": "表面价格、额度或收益预期和真实成本之间的冲突。",
+      "debate_question": "这笔账普通技术人还能不能算得过来，还是只适合少数人？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "平台/工具厂商"
+      ],
+      "why_people_would_comment": "技术人可能会争论 MicroVM 的适用场景和实际收益，但缺乏具体案例和对比数据，讨论难以深入。",
+      "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+    },
+    "timeline": [],
+    "evidence_table": [
+      {
+        "source": "Tao of Mac 博客",
+        "url": "https://taoofmac.com/space/blog/2026/06/18/1845",
+        "supports": "介绍了一种在 Proxmox VE 上运行 MicroVM 的方法",
+        "reliability": "weak"
+      }
+    ],
+    "logic_closure": false,
+    "writeable_angles": [
+      {
+        "angle": "MicroVM 在 Proxmox 上的部署步骤与注意事项",
+        "why": "技术教程类内容有稳定需求，但需要补充官方文档和社区反馈。",
+        "needs": "官方文档、社区讨论、实际部署截图"
+      },
+      {
+        "angle": "MicroVM vs KVM：性能与成本对比分析",
+        "why": "对比分析能帮助读者决策，但需要可靠的基准测试数据。",
+        "needs": "第三方性能测试报告、成本计算模型"
+      },
+      {
+        "angle": "MicroVM 的适用场景与限制",
+        "why": "帮助读者判断是否适合自己，避免盲目迁移。",
+        "needs": "官方文档、社区经验、已知限制列表"
+      }
+    ],
+    "missing_basics": [
+      "Proxmox VE 官方是否支持 MicroVM？",
+      "MicroVM 在 Proxmox 上的配置步骤和工具链要求",
+      "MicroVM 与 KVM 虚拟机的性能对比数据（CPU、内存、I/O）",
+      "MicroVM 的启动时间优势在 Proxmox 环境下是否明显？",
+      "MicroVM 是否支持热迁移、快照等 Proxmox 核心功能？"
+    ],
+    "missing_materials": [
+      "Proxmox VE 官方文档中关于 MicroVM 的部分",
+      "至少一个第三方性能测试报告",
+      "社区讨论帖（如 Reddit 或论坛）",
+      "一个实际部署案例（博客或教程）",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "MicroVM 在 Proxmox 上比 KVM 更高效",
+      "该方案适合生产环境",
+      "部署 MicroVM 很简单",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "Proxmox VE 官方是否支持 MicroVM？",
+      "MicroVM 在 Proxmox 上的性能基准测试数据",
+      "社区对 Proxmox MicroVM 的实际使用反馈"
+    ],
+    "additional_search_queries": [
+      "Proxmox VE MicroVM documentation",
+      "MicroVM vs KVM performance benchmark Proxmox",
+      "Proxmox MicroVM experience Reddit",
+      "MicroVM production deployment case study",
+      "Proxmox MicroVM script or tool"
+    ],
+    "stop_conditions": [
+      "官方文档明确不支持 MicroVM",
+      "性能测试显示 MicroVM 无显著优势",
+      "社区反馈负面且无实际案例"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "side-info",
+    "topic_direction_title": "副业&信息差",
+    "report_type": "tool-ledger",
+    "quality_gate": {
+      "pass": false,
+      "score": 30,
+      "fatal_issues": [
+        "核心事实没有来源：文章来自个人博客，缺乏官方或权威来源支撑。",
+        "没有泛兴趣故事钩子，标题和开头只适合技术小圈子。",
+        "没有真实传播张力：说不清冲突点、讨论点、利益拉扯、身份代入或读者为什么愿意评论。",
+        "没有明确归入实际选题方向，或者选题方向和内容不匹配：选题方向为副业&信息差，但内容为技术教程，不匹配。",
+        "没有明确选题结论：推荐或可选。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环。",
+        "没有列出基础概念缺口和资料素材缺口。",
+        "没有按具体类型提供资料包。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来。"
+      ],
+      "warnings": [
+        "成本估算没有公式、单位或边界。",
+        "老花人设解读角度说不清。",
+        "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象。",
+        "只有专业价值，没有话题性和公共讨论空间，却仍然标成推荐选题。",
+        "把数据源分类误当成网站栏目。",
+        "没有给下游 GPT 编辑应用和研究闭环留下足够结构化资料。",
+        "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断。"
+      ],
+      "missing_evidence": [
+        "Proxmox VE 官方是否支持 MicroVM？",
+        "MicroVM 在 Proxmox 上的配置步骤和工具链要求",
+        "MicroVM 与 KVM 虚拟机的性能对比数据（CPU、内存、I/O）",
+        "MicroVM 的启动时间优势在 Proxmox 环境下是否明显？",
+        "MicroVM 是否支持热迁移、快照等 Proxmox 核心功能？",
+        "至少一个第三方性能测试报告",
+        "社区讨论帖（如 Reddit 或论坛）",
+        "一个实际部署案例（博客或教程）"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": false,
+      "topic_direction_ok": false,
+      "report_type_ok": false,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "在 Proxmox VE 上运行 MicroVM 的简便方法是否真的能带来成本或性能优势，还是只是技术演示？",
+      "persona_discussion_question": "作为独立开发者，我该不该把现有虚拟机迁移到 MicroVM？迁移成本、性能收益和运维复杂度是否值得？",
+      "hidden_public_issue": "MicroVM 方案是否会导致平台绑定（如依赖特定 hypervisor）或增加长期运维成本？谁在推广这种方案，背后是否有商业利益？",
+      "must_verify": [
+        "MicroVM 在 Proxmox VE 上的实际性能对比数据（与 KVM 虚拟机相比）",
+        "部署 MicroVM 的额外配置步骤和工具链要求",
+        "MicroVM 的适用场景限制（如不支持某些设备、驱动或操作系统）",
+        "是否有官方或社区提供的稳定支持，还是实验性功能"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Proxmox VE MicroVM documentation",
+          "why_needed": "确认 Proxmox 官方是否支持 MicroVM，以及配置方法和限制"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "MicroVM vs KVM performance benchmark Proxmox",
+          "why_needed": "获取性能对比数据，评估实际收益"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Proxmox MicroVM experience Reddit",
+          "why_needed": "了解社区实际使用反馈和常见问题"
+        },
+        {
+          "source_type": "case_study",
+          "query": "MicroVM production deployment case study",
+          "why_needed": "寻找真实生产环境案例，验证可行性"
+        },
+        {
+          "source_type": "github_repo",
+          "query": "Proxmox MicroVM script or tool",
+          "why_needed": "检查是否有简化部署的开源工具，评估易用性"
+        }
+      ],
+      "expert_challenge_points": [
+        "MicroVM 的内存和 I/O 开销是否真的比传统 VM 低？",
+        "MicroVM 的启动时间优势在 Proxmox 环境下是否明显？",
+        "MicroVM 是否支持热迁移、快照等 Proxmox 核心功能？"
+      ],
+      "do_not_claim_yet": [
+        "MicroVM 在 Proxmox 上比 KVM 更高效",
+        "该方案适合生产环境",
+        "部署 MicroVM 很简单"
+      ],
+      "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。该主题技术细节多，缺乏成本、性能对比和真实案例，普通技术人难以判断价值，传播张力不足。",
+      "downstream_materials_needed": [
+        "Proxmox VE 官方文档中关于 MicroVM 的部分",
+        "至少一个第三方性能测试报告",
+        "社区讨论帖（如 Reddit 或论坛）",
+        "一个实际部署案例（博客或教程）"
+      ]
+    },
+    "research_evidence": []
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：文章来自个人博客，缺乏官方或权威来源支撑。"
+    },
+    "core_question": "在 Proxmox VE 上运行 MicroVM 的简便方法是否真的能带来成本或性能优势，还是只是技术演示？",
+    "why_this_topic_matters": "虚拟化是技术人日常运维和成本控制的核心，MicroVM 方案可能带来更低的资源开销和更快的启动速度，但缺乏真实数据支撑，普通技术人难以判断是否值得迁移。",
+    "fact_summary": [
+      "来源文章介绍了一种在 Proxmox VE 上运行 MicroVM 的简便方法，但未提供具体性能或成本对比数据。",
+      "MicroVM 通常指轻量级虚拟机，如 Firecracker、Cloud Hypervisor，启动快、资源占用少。",
+      "Proxmox VE 是基于 KVM 的开源虚拟化平台，支持 LXC 容器和 KVM 虚拟机。",
+      "文章来自个人博客，非官方或权威来源。"
+    ],
+    "persona_discussion_question": "作为独立开发者，我该不该把现有虚拟机迁移到 MicroVM？迁移成本、性能收益和运维复杂度是否值得？",
+    "old_flower_stance": "技术人应该先算账：MicroVM 的启动速度和资源节省是否值得额外的配置成本和运维复杂度？不要被‘简便’二字迷惑，先看官方文档和社区反馈。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 40,
+      "why_interested": "核心技术人关注虚拟化技术选型和成本优化；入门读者可能被‘简便’吸引但缺乏判断基础；高价值商业读者关注基础设施成本。",
+      "reader_risk": "缺乏真实数据，容易误导读者做出错误决策。"
+    },
+    "mass_interest_hook": {
+      "score": 20,
+      "hook_type": "故事",
+      "why_non_technical_people_may_click": "标题中的‘轻松’和‘MicroVM’可能吸引对技术优化感兴趣的普通读者，但缺乏冲突和数字，点击率低。",
+      "story_seed": "一个独立开发者为了节省服务器成本，尝试将虚拟机迁移到 MicroVM，结果发现配置复杂、性能不如预期，最终回到 KVM。",
+      "do_not_overhype": "不要声称 MicroVM 一定更高效或更省钱，需要数据支撑。"
+    },
+    "topic_tension": {
+      "score": 5,
+      "conflict_point": "表面价格、额度或收益预期和真实成本之间的冲突。",
+      "debate_question": "这笔账普通技术人还能不能算得过来，还是只适合少数人？",
+      "stakeholders": [
+        "普通技术人",
+        "小团队/独立开发者",
+        "平台/工具厂商"
+      ],
+      "why_people_would_comment": "技术人可能会争论 MicroVM 的适用场景和实际收益，但缺乏具体案例和对比数据，讨论难以深入。",
+      "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+    },
+    "timeline": [],
+    "evidence_table": [
+      {
+        "source": "Tao of Mac 博客",
+        "url": "https://taoofmac.com/space/blog/2026/06/18/1845",
+        "supports": "介绍了一种在 Proxmox VE 上运行 MicroVM 的方法",
+        "reliability": "weak"
+      }
+    ],
+    "logic_closure": false,
+    "writeable_angles": [
+      {
+        "angle": "MicroVM 在 Proxmox 上的部署步骤与注意事项",
+        "why": "技术教程类内容有稳定需求，但需要补充官方文档和社区反馈。",
+        "needs": "官方文档、社区讨论、实际部署截图"
+      },
+      {
+        "angle": "MicroVM vs KVM：性能与成本对比分析",
+        "why": "对比分析能帮助读者决策，但需要可靠的基准测试数据。",
+        "needs": "第三方性能测试报告、成本计算模型"
+      },
+      {
+        "angle": "MicroVM 的适用场景与限制",
+        "why": "帮助读者判断是否适合自己，避免盲目迁移。",
+        "needs": "官方文档、社区经验、已知限制列表"
+      }
+    ],
+    "missing_basics": [
+      "Proxmox VE 官方是否支持 MicroVM？",
+      "MicroVM 在 Proxmox 上的配置步骤和工具链要求",
+      "MicroVM 与 KVM 虚拟机的性能对比数据（CPU、内存、I/O）",
+      "MicroVM 的启动时间优势在 Proxmox 环境下是否明显？",
+      "MicroVM 是否支持热迁移、快照等 Proxmox 核心功能？"
+    ],
+    "missing_materials": [
+      "Proxmox VE 官方文档中关于 MicroVM 的部分",
+      "至少一个第三方性能测试报告",
+      "社区讨论帖（如 Reddit 或论坛）",
+      "一个实际部署案例（博客或教程）",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "MicroVM 在 Proxmox 上比 KVM 更高效",
+      "该方案适合生产环境",
+      "部署 MicroVM 很简单",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "Proxmox VE 官方是否支持 MicroVM？",
+      "MicroVM 在 Proxmox 上的性能基准测试数据",
+      "社区对 Proxmox MicroVM 的实际使用反馈"
+    ],
+    "additional_search_queries": [
+      "Proxmox VE MicroVM documentation",
+      "MicroVM vs KVM performance benchmark Proxmox",
+      "Proxmox MicroVM experience Reddit",
+      "MicroVM production deployment case study",
+      "Proxmox MicroVM script or tool"
+    ],
+    "stop_conditions": [
+      "官方文档明确不支持 MicroVM",
+      "性能测试显示 MicroVM 无显著优势",
+      "社区反馈负面且无实际案例"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "side-info",
+    "topic_direction_title": "副业&信息差",
+    "report_type": "tool-ledger",
+    "quality_gate": {
+      "pass": false,
+      "score": 30,
+      "fatal_issues": [
+        "核心事实没有来源：文章来自个人博客，缺乏官方或权威来源支撑。",
+        "没有泛兴趣故事钩子，标题和开头只适合技术小圈子。",
+        "没有真实传播张力：说不清冲突点、讨论点、利益拉扯、身份代入或读者为什么愿意评论。",
+        "没有明确归入实际选题方向，或者选题方向和内容不匹配：选题方向为副业&信息差，但内容为技术教程，不匹配。",
+        "没有明确选题结论：推荐或可选。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环。",
+        "没有列出基础概念缺口和资料素材缺口。",
+        "没有按具体类型提供资料包。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来。"
+      ],
+      "warnings": [
+        "成本估算没有公式、单位或边界。",
+        "老花人设解读角度说不清。",
+        "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象。",
+        "只有专业价值，没有话题性和公共讨论空间，却仍然标成推荐选题。",
+        "把数据源分类误当成网站栏目。",
+        "没有给下游 GPT 编辑应用和研究闭环留下足够结构化资料。",
+        "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断。"
+      ],
+      "missing_evidence": [
+        "Proxmox VE 官方是否支持 MicroVM？",
+        "MicroVM 在 Proxmox 上的配置步骤和工具链要求",
+        "MicroVM 与 KVM 虚拟机的性能对比数据（CPU、内存、I/O）",
+        "MicroVM 的启动时间优势在 Proxmox 环境下是否明显？",
+        "MicroVM 是否支持热迁移、快照等 Proxmox 核心功能？",
+        "至少一个第三方性能测试报告",
+        "社区讨论帖（如 Reddit 或论坛）",
+        "一个实际部署案例（博客或教程）"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": false,
+      "topic_direction_ok": false,
+      "report_type_ok": false,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "在 Proxmox VE 上运行 MicroVM 的简便方法是否真的能带来成本或性能优势，还是只是技术演示？",
+      "persona_discussion_question": "作为独立开发者，我该不该把现有虚拟机迁移到 MicroVM？迁移成本、性能收益和运维复杂度是否值得？",
+      "hidden_public_issue": "MicroVM 方案是否会导致平台绑定（如依赖特定 hypervisor）或增加长期运维成本？谁在推广这种方案，背后是否有商业利益？",
+      "must_verify": [
+        "MicroVM 在 Proxmox VE 上的实际性能对比数据（与 KVM 虚拟机相比）",
+        "部署 MicroVM 的额外配置步骤和工具链要求",
+        "MicroVM 的适用场景限制（如不支持某些设备、驱动或操作系统）",
+        "是否有官方或社区提供的稳定支持，还是实验性功能"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "Proxmox VE MicroVM documentation",
+          "why_needed": "确认 Proxmox 官方是否支持 MicroVM，以及配置方法和限制"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "MicroVM vs KVM performance benchmark Proxmox",
+          "why_needed": "获取性能对比数据，评估实际收益"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "Proxmox MicroVM experience Reddit",
+          "why_needed": "了解社区实际使用反馈和常见问题"
+        },
+        {
+          "source_type": "case_study",
+          "query": "MicroVM production deployment case study",
+          "why_needed": "寻找真实生产环境案例，验证可行性"
+        },
+        {
+          "source_type": "github_repo",
+          "query": "Proxmox MicroVM script or tool",
+          "why_needed": "检查是否有简化部署的开源工具，评估易用性"
+        }
+      ],
+      "expert_challenge_points": [
+        "MicroVM 的内存和 I/O 开销是否真的比传统 VM 低？",
+        "MicroVM 的启动时间优势在 Proxmox 环境下是否明显？",
+        "MicroVM 是否支持热迁移、快照等 Proxmox 核心功能？"
+      ],
+      "do_not_claim_yet": [
+        "MicroVM 在 Proxmox 上比 KVM 更高效",
+        "该方案适合生产环境",
+        "部署 MicroVM 很简单"
+      ],
+      "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。该主题技术细节多，缺乏成本、性能对比和真实案例，普通技术人难以判断价值，传播张力不足。",
+      "downstream_materials_needed": [
+        "Proxmox VE 官方文档中关于 MicroVM 的部分",
+        "至少一个第三方性能测试报告",
+        "社区讨论帖（如 Reddit 或论坛）",
+        "一个实际部署案例（博客或教程）"
+      ]
+    },
+    "research_evidence": []
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260621-running-microvms-in-proxmox-ve-the-easy-way-c34ca487/",
+    "for_gpt_editor": {
+      "brief": "Comments",
+      "title_seed": "Proxmox VE 上轻松运行 MicroVM 的方法",
+      "original_title": "Running MicroVMs in Proxmox VE, the Easy Way",
+      "source_url": "https://taoofmac.com/space/blog/2026/06/18/1845",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：文章来自个人博客，缺乏官方或权威来源支撑。"
+        },
+        "core_question": "在 Proxmox VE 上运行 MicroVM 的简便方法是否真的能带来成本或性能优势，还是只是技术演示？",
+        "why_this_topic_matters": "虚拟化是技术人日常运维和成本控制的核心，MicroVM 方案可能带来更低的资源开销和更快的启动速度，但缺乏真实数据支撑，普通技术人难以判断是否值得迁移。",
+        "fact_summary": [
+          "来源文章介绍了一种在 Proxmox VE 上运行 MicroVM 的简便方法，但未提供具体性能或成本对比数据。",
+          "MicroVM 通常指轻量级虚拟机，如 Firecracker、Cloud Hypervisor，启动快、资源占用少。",
+          "Proxmox VE 是基于 KVM 的开源虚拟化平台，支持 LXC 容器和 KVM 虚拟机。",
+          "文章来自个人博客，非官方或权威来源。"
+        ],
+        "persona_discussion_question": "作为独立开发者，我该不该把现有虚拟机迁移到 MicroVM？迁移成本、性能收益和运维复杂度是否值得？",
+        "old_flower_stance": "技术人应该先算账：MicroVM 的启动速度和资源节省是否值得额外的配置成本和运维复杂度？不要被‘简便’二字迷惑，先看官方文档和社区反馈。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 40,
+          "why_interested": "核心技术人关注虚拟化技术选型和成本优化；入门读者可能被‘简便’吸引但缺乏判断基础；高价值商业读者关注基础设施成本。",
+          "reader_risk": "缺乏真实数据，容易误导读者做出错误决策。"
+        },
+        "mass_interest_hook": {
+          "score": 20,
+          "hook_type": "故事",
+          "why_non_technical_people_may_click": "标题中的‘轻松’和‘MicroVM’可能吸引对技术优化感兴趣的普通读者，但缺乏冲突和数字，点击率低。",
+          "story_seed": "一个独立开发者为了节省服务器成本，尝试将虚拟机迁移到 MicroVM，结果发现配置复杂、性能不如预期，最终回到 KVM。",
+          "do_not_overhype": "不要声称 MicroVM 一定更高效或更省钱，需要数据支撑。"
+        },
+        "topic_tension": {
+          "score": 5,
+          "conflict_point": "表面价格、额度或收益预期和真实成本之间的冲突。",
+          "debate_question": "这笔账普通技术人还能不能算得过来，还是只适合少数人？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "平台/工具厂商"
+          ],
+          "why_people_would_comment": "技术人可能会争论 MicroVM 的适用场景和实际收益，但缺乏具体案例和对比数据，讨论难以深入。",
+          "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+        },
+        "timeline": [],
+        "evidence_table": [
+          {
+            "source": "Tao of Mac 博客",
+            "url": "https://taoofmac.com/space/blog/2026/06/18/1845",
+            "supports": "介绍了一种在 Proxmox VE 上运行 MicroVM 的方法",
+            "reliability": "weak"
+          }
+        ],
+        "logic_closure": false,
+        "writeable_angles": [
+          {
+            "angle": "MicroVM 在 Proxmox 上的部署步骤与注意事项",
+            "why": "技术教程类内容有稳定需求，但需要补充官方文档和社区反馈。",
+            "needs": "官方文档、社区讨论、实际部署截图"
+          },
+          {
+            "angle": "MicroVM vs KVM：性能与成本对比分析",
+            "why": "对比分析能帮助读者决策，但需要可靠的基准测试数据。",
+            "needs": "第三方性能测试报告、成本计算模型"
+          },
+          {
+            "angle": "MicroVM 的适用场景与限制",
+            "why": "帮助读者判断是否适合自己，避免盲目迁移。",
+            "needs": "官方文档、社区经验、已知限制列表"
+          }
+        ],
+        "missing_basics": [
+          "Proxmox VE 官方是否支持 MicroVM？",
+          "MicroVM 在 Proxmox 上的配置步骤和工具链要求",
+          "MicroVM 与 KVM 虚拟机的性能对比数据（CPU、内存、I/O）",
+          "MicroVM 的启动时间优势在 Proxmox 环境下是否明显？",
+          "MicroVM 是否支持热迁移、快照等 Proxmox 核心功能？"
+        ],
+        "missing_materials": [
+          "Proxmox VE 官方文档中关于 MicroVM 的部分",
+          "至少一个第三方性能测试报告",
+          "社区讨论帖（如 Reddit 或论坛）",
+          "一个实际部署案例（博客或教程）",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "MicroVM 在 Proxmox 上比 KVM 更高效",
+          "该方案适合生产环境",
+          "部署 MicroVM 很简单",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "Proxmox VE 官方是否支持 MicroVM？",
+          "MicroVM 在 Proxmox 上的性能基准测试数据",
+          "社区对 Proxmox MicroVM 的实际使用反馈"
+        ],
+        "additional_search_queries": [
+          "Proxmox VE MicroVM documentation",
+          "MicroVM vs KVM performance benchmark Proxmox",
+          "Proxmox MicroVM experience Reddit",
+          "MicroVM production deployment case study",
+          "Proxmox MicroVM script or tool"
+        ],
+        "stop_conditions": [
+          "官方文档明确不支持 MicroVM",
+          "性能测试显示 MicroVM 无显著优势",
+          "社区反馈负面且无实际案例"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "side-info",
+        "topic_direction_title": "副业&信息差",
+        "report_type": "tool-ledger",
+        "quality_gate": {
+          "pass": false,
+          "score": 30,
+          "fatal_issues": [
+            "核心事实没有来源：文章来自个人博客，缺乏官方或权威来源支撑。",
+            "没有泛兴趣故事钩子，标题和开头只适合技术小圈子。",
+            "没有真实传播张力：说不清冲突点、讨论点、利益拉扯、身份代入或读者为什么愿意评论。",
+            "没有明确归入实际选题方向，或者选题方向和内容不匹配：选题方向为副业&信息差，但内容为技术教程，不匹配。",
+            "没有明确选题结论：推荐或可选。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环。",
+            "没有列出基础概念缺口和资料素材缺口。",
+            "没有按具体类型提供资料包。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来。"
+          ],
+          "warnings": [
+            "成本估算没有公式、单位或边界。",
+            "老花人设解读角度说不清。",
+            "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象。",
+            "只有专业价值，没有话题性和公共讨论空间，却仍然标成推荐选题。",
+            "把数据源分类误当成网站栏目。",
+            "没有给下游 GPT 编辑应用和研究闭环留下足够结构化资料。",
+            "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断。"
+          ],
+          "missing_evidence": [
+            "Proxmox VE 官方是否支持 MicroVM？",
+            "MicroVM 在 Proxmox 上的配置步骤和工具链要求",
+            "MicroVM 与 KVM 虚拟机的性能对比数据（CPU、内存、I/O）",
+            "MicroVM 的启动时间优势在 Proxmox 环境下是否明显？",
+            "MicroVM 是否支持热迁移、快照等 Proxmox 核心功能？",
+            "至少一个第三方性能测试报告",
+            "社区讨论帖（如 Reddit 或论坛）",
+            "一个实际部署案例（博客或教程）"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": false,
+          "topic_direction_ok": false,
+          "report_type_ok": false,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "在 Proxmox VE 上运行 MicroVM 的简便方法是否真的能带来成本或性能优势，还是只是技术演示？",
+          "persona_discussion_question": "作为独立开发者，我该不该把现有虚拟机迁移到 MicroVM？迁移成本、性能收益和运维复杂度是否值得？",
+          "hidden_public_issue": "MicroVM 方案是否会导致平台绑定（如依赖特定 hypervisor）或增加长期运维成本？谁在推广这种方案，背后是否有商业利益？",
+          "must_verify": [
+            "MicroVM 在 Proxmox VE 上的实际性能对比数据（与 KVM 虚拟机相比）",
+            "部署 MicroVM 的额外配置步骤和工具链要求",
+            "MicroVM 的适用场景限制（如不支持某些设备、驱动或操作系统）",
+            "是否有官方或社区提供的稳定支持，还是实验性功能"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Proxmox VE MicroVM documentation",
+              "why_needed": "确认 Proxmox 官方是否支持 MicroVM，以及配置方法和限制"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "MicroVM vs KVM performance benchmark Proxmox",
+              "why_needed": "获取性能对比数据，评估实际收益"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Proxmox MicroVM experience Reddit",
+              "why_needed": "了解社区实际使用反馈和常见问题"
+            },
+            {
+              "source_type": "case_study",
+              "query": "MicroVM production deployment case study",
+              "why_needed": "寻找真实生产环境案例，验证可行性"
+            },
+            {
+              "source_type": "github_repo",
+              "query": "Proxmox MicroVM script or tool",
+              "why_needed": "检查是否有简化部署的开源工具，评估易用性"
+            }
+          ],
+          "expert_challenge_points": [
+            "MicroVM 的内存和 I/O 开销是否真的比传统 VM 低？",
+            "MicroVM 的启动时间优势在 Proxmox 环境下是否明显？",
+            "MicroVM 是否支持热迁移、快照等 Proxmox 核心功能？"
+          ],
+          "do_not_claim_yet": [
+            "MicroVM 在 Proxmox 上比 KVM 更高效",
+            "该方案适合生产环境",
+            "部署 MicroVM 很简单"
+          ],
+          "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。该主题技术细节多，缺乏成本、性能对比和真实案例，普通技术人难以判断价值，传播张力不足。",
+          "downstream_materials_needed": [
+            "Proxmox VE 官方文档中关于 MicroVM 的部分",
+            "至少一个第三方性能测试报告",
+            "社区讨论帖（如 Reddit 或论坛）",
+            "一个实际部署案例（博客或教程）"
+          ]
+        },
+        "research_evidence": []
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：文章来自个人博客，缺乏官方或权威来源支撑。"
+        },
+        "core_question": "在 Proxmox VE 上运行 MicroVM 的简便方法是否真的能带来成本或性能优势，还是只是技术演示？",
+        "why_this_topic_matters": "虚拟化是技术人日常运维和成本控制的核心，MicroVM 方案可能带来更低的资源开销和更快的启动速度，但缺乏真实数据支撑，普通技术人难以判断是否值得迁移。",
+        "fact_summary": [
+          "来源文章介绍了一种在 Proxmox VE 上运行 MicroVM 的简便方法，但未提供具体性能或成本对比数据。",
+          "MicroVM 通常指轻量级虚拟机，如 Firecracker、Cloud Hypervisor，启动快、资源占用少。",
+          "Proxmox VE 是基于 KVM 的开源虚拟化平台，支持 LXC 容器和 KVM 虚拟机。",
+          "文章来自个人博客，非官方或权威来源。"
+        ],
+        "persona_discussion_question": "作为独立开发者，我该不该把现有虚拟机迁移到 MicroVM？迁移成本、性能收益和运维复杂度是否值得？",
+        "old_flower_stance": "技术人应该先算账：MicroVM 的启动速度和资源节省是否值得额外的配置成本和运维复杂度？不要被‘简便’二字迷惑，先看官方文档和社区反馈。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 40,
+          "why_interested": "核心技术人关注虚拟化技术选型和成本优化；入门读者可能被‘简便’吸引但缺乏判断基础；高价值商业读者关注基础设施成本。",
+          "reader_risk": "缺乏真实数据，容易误导读者做出错误决策。"
+        },
+        "mass_interest_hook": {
+          "score": 20,
+          "hook_type": "故事",
+          "why_non_technical_people_may_click": "标题中的‘轻松’和‘MicroVM’可能吸引对技术优化感兴趣的普通读者，但缺乏冲突和数字，点击率低。",
+          "story_seed": "一个独立开发者为了节省服务器成本，尝试将虚拟机迁移到 MicroVM，结果发现配置复杂、性能不如预期，最终回到 KVM。",
+          "do_not_overhype": "不要声称 MicroVM 一定更高效或更省钱，需要数据支撑。"
+        },
+        "topic_tension": {
+          "score": 5,
+          "conflict_point": "表面价格、额度或收益预期和真实成本之间的冲突。",
+          "debate_question": "这笔账普通技术人还能不能算得过来，还是只适合少数人？",
+          "stakeholders": [
+            "普通技术人",
+            "小团队/独立开发者",
+            "平台/工具厂商"
+          ],
+          "why_people_would_comment": "技术人可能会争论 MicroVM 的适用场景和实际收益，但缺乏具体案例和对比数据，讨论难以深入。",
+          "traffic_risk": "传播张力不足，容易写成专业说明或小圈子自嗨；需要补真实冲突、反方材料或读者案例。"
+        },
+        "timeline": [],
+        "evidence_table": [
+          {
+            "source": "Tao of Mac 博客",
+            "url": "https://taoofmac.com/space/blog/2026/06/18/1845",
+            "supports": "介绍了一种在 Proxmox VE 上运行 MicroVM 的方法",
+            "reliability": "weak"
+          }
+        ],
+        "logic_closure": false,
+        "writeable_angles": [
+          {
+            "angle": "MicroVM 在 Proxmox 上的部署步骤与注意事项",
+            "why": "技术教程类内容有稳定需求，但需要补充官方文档和社区反馈。",
+            "needs": "官方文档、社区讨论、实际部署截图"
+          },
+          {
+            "angle": "MicroVM vs KVM：性能与成本对比分析",
+            "why": "对比分析能帮助读者决策，但需要可靠的基准测试数据。",
+            "needs": "第三方性能测试报告、成本计算模型"
+          },
+          {
+            "angle": "MicroVM 的适用场景与限制",
+            "why": "帮助读者判断是否适合自己，避免盲目迁移。",
+            "needs": "官方文档、社区经验、已知限制列表"
+          }
+        ],
+        "missing_basics": [
+          "Proxmox VE 官方是否支持 MicroVM？",
+          "MicroVM 在 Proxmox 上的配置步骤和工具链要求",
+          "MicroVM 与 KVM 虚拟机的性能对比数据（CPU、内存、I/O）",
+          "MicroVM 的启动时间优势在 Proxmox 环境下是否明显？",
+          "MicroVM 是否支持热迁移、快照等 Proxmox 核心功能？"
+        ],
+        "missing_materials": [
+          "Proxmox VE 官方文档中关于 MicroVM 的部分",
+          "至少一个第三方性能测试报告",
+          "社区讨论帖（如 Reddit 或论坛）",
+          "一个实际部署案例（博客或教程）",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "MicroVM 在 Proxmox 上比 KVM 更高效",
+          "该方案适合生产环境",
+          "部署 MicroVM 很简单",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "Proxmox VE 官方是否支持 MicroVM？",
+          "MicroVM 在 Proxmox 上的性能基准测试数据",
+          "社区对 Proxmox MicroVM 的实际使用反馈"
+        ],
+        "additional_search_queries": [
+          "Proxmox VE MicroVM documentation",
+          "MicroVM vs KVM performance benchmark Proxmox",
+          "Proxmox MicroVM experience Reddit",
+          "MicroVM production deployment case study",
+          "Proxmox MicroVM script or tool"
+        ],
+        "stop_conditions": [
+          "官方文档明确不支持 MicroVM",
+          "性能测试显示 MicroVM 无显著优势",
+          "社区反馈负面且无实际案例"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "side-info",
+        "topic_direction_title": "副业&信息差",
+        "report_type": "tool-ledger",
+        "quality_gate": {
+          "pass": false,
+          "score": 30,
+          "fatal_issues": [
+            "核心事实没有来源：文章来自个人博客，缺乏官方或权威来源支撑。",
+            "没有泛兴趣故事钩子，标题和开头只适合技术小圈子。",
+            "没有真实传播张力：说不清冲突点、讨论点、利益拉扯、身份代入或读者为什么愿意评论。",
+            "没有明确归入实际选题方向，或者选题方向和内容不匹配：选题方向为副业&信息差，但内容为技术教程，不匹配。",
+            "没有明确选题结论：推荐或可选。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环。",
+            "没有列出基础概念缺口和资料素材缺口。",
+            "没有按具体类型提供资料包。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来。"
+          ],
+          "warnings": [
+            "成本估算没有公式、单位或边界。",
+            "老花人设解读角度说不清。",
+            "没有说明主要服务哪层读者，或者把所有读者混成一个笼统对象。",
+            "只有专业价值，没有话题性和公共讨论空间，却仍然标成推荐选题。",
+            "把数据源分类误当成网站栏目。",
+            "没有给下游 GPT 编辑应用和研究闭环留下足够结构化资料。",
+            "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断。"
+          ],
+          "missing_evidence": [
+            "Proxmox VE 官方是否支持 MicroVM？",
+            "MicroVM 在 Proxmox 上的配置步骤和工具链要求",
+            "MicroVM 与 KVM 虚拟机的性能对比数据（CPU、内存、I/O）",
+            "MicroVM 的启动时间优势在 Proxmox 环境下是否明显？",
+            "MicroVM 是否支持热迁移、快照等 Proxmox 核心功能？",
+            "至少一个第三方性能测试报告",
+            "社区讨论帖（如 Reddit 或论坛）",
+            "一个实际部署案例（博客或教程）"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": false,
+          "topic_direction_ok": false,
+          "report_type_ok": false,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "在 Proxmox VE 上运行 MicroVM 的简便方法是否真的能带来成本或性能优势，还是只是技术演示？",
+          "persona_discussion_question": "作为独立开发者，我该不该把现有虚拟机迁移到 MicroVM？迁移成本、性能收益和运维复杂度是否值得？",
+          "hidden_public_issue": "MicroVM 方案是否会导致平台绑定（如依赖特定 hypervisor）或增加长期运维成本？谁在推广这种方案，背后是否有商业利益？",
+          "must_verify": [
+            "MicroVM 在 Proxmox VE 上的实际性能对比数据（与 KVM 虚拟机相比）",
+            "部署 MicroVM 的额外配置步骤和工具链要求",
+            "MicroVM 的适用场景限制（如不支持某些设备、驱动或操作系统）",
+            "是否有官方或社区提供的稳定支持，还是实验性功能"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "Proxmox VE MicroVM documentation",
+              "why_needed": "确认 Proxmox 官方是否支持 MicroVM，以及配置方法和限制"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "MicroVM vs KVM performance benchmark Proxmox",
+              "why_needed": "获取性能对比数据，评估实际收益"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "Proxmox MicroVM experience Reddit",
+              "why_needed": "了解社区实际使用反馈和常见问题"
+            },
+            {
+              "source_type": "case_study",
+              "query": "MicroVM production deployment case study",
+              "why_needed": "寻找真实生产环境案例，验证可行性"
+            },
+            {
+              "source_type": "github_repo",
+              "query": "Proxmox MicroVM script or tool",
+              "why_needed": "检查是否有简化部署的开源工具，评估易用性"
+            }
+          ],
+          "expert_challenge_points": [
+            "MicroVM 的内存和 I/O 开销是否真的比传统 VM 低？",
+            "MicroVM 的启动时间优势在 Proxmox 环境下是否明显？",
+            "MicroVM 是否支持热迁移、快照等 Proxmox 核心功能？"
+          ],
+          "do_not_claim_yet": [
+            "MicroVM 在 Proxmox 上比 KVM 更高效",
+            "该方案适合生产环境",
+            "部署 MicroVM 很简单"
+          ],
+          "can_publish_as_radar_if_missing": "不能推荐，只能作为事实源沉淀。该主题技术细节多，缺乏成本、性能对比和真实案例，普通技术人难以判断价值，传播张力不足。",
+          "downstream_materials_needed": [
+            "Proxmox VE 官方文档中关于 MicroVM 的部分",
+            "至少一个第三方性能测试报告",
+            "社区讨论帖（如 Reddit 或论坛）",
+            "一个实际部署案例（博客或教程）"
+          ]
+        },
+        "research_evidence": []
+      },
+      "angle_candidates": [
+        "成本是否真的下降",
+        "免费额度和爆账单风险",
+        "替代方案值不值得换"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "Proxmox VE 上轻松运行 MicroVM 的方法 官方公告 价格 成本",
+        "Proxmox VE 上轻松运行 MicroVM 的方法 API 文档 额度 限制",
+        "Proxmox VE 上轻松运行 MicroVM 的方法 替代方案 真实使用 成本"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
