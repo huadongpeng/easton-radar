@@ -1,0 +1,1089 @@
+{
+  "id": "20260623-nearly-half-of-lg-smart-tv-apps-contain-resident-a64c7326",
+  "batch_id": "2026-06-23-morning",
+  "title": "近半数 LG 智能电视应用内置住宅代理 SDK，用户网络被用于代理流量",
+  "original_title": "Nearly Half of LG Smart TV Apps Contain Residential Proxy SDKs",
+  "url": "https://spur.us/blog/smart-tv-apps-residential-proxy-sdks",
+  "summary": "Comments",
+  "source_category": "developer_business",
+  "source_category_title": "开发者副业与独立开发",
+  "topic_direction": "ai-frontier",
+  "topic_direction_title": "AI前沿",
+  "topic_direction_short_title": "AI前沿",
+  "topic_direction_description": "AI 模型、Agent、OpenAI、Claude、Gemini、底层能力和关键产品变化。重点用一句话记录发生了什么、来自哪里、是否需要后续查证。",
+  "source_name": "Hacker News",
+  "original_source_name": "Hacker News",
+  "source_type": "rss",
+  "feed_url": "https://news.ycombinator.com/rss",
+  "published_at": "2026-06-22T20:48:30+00:00",
+  "fetched_at": "2026-06-22T22:19:24.031672+00:00",
+  "decision": "deep_dive",
+  "report_type": "risk-warning",
+  "report_type_title": "风险避坑",
+  "score": 82,
+  "reader_hook": "智能电视应用可能将你的家庭网络变成代理节点，涉及隐私和带宽风险。",
+  "topic_tension": {
+    "score": 8,
+    "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+    "debate_question": "规则变化到底是在保护生态，还是把小团队的试错成本继续抬高？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+    "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+  },
+  "persona_discussion_question": "这是真机会，还是又一个普通技术人容易被包装话术带偏的坑？",
+  "why_now": "Spur 发布研究报告，揭示大量 LG 电视应用包含住宅代理 SDK。",
+  "evidence_level": "near_source",
+  "source_priority": "P1 高质量近源",
+  "reason": "Spur 研究报告显示近半数 LG 智能电视应用包含住宅代理 SDK，用户网络可能被用于代理流量。这涉及隐私、带宽和网络安全风险，技术人可主动检测和防范。",
+  "collection_fit": "tools-rules",
+  "investigation_direction": "列出具体受影响的 SDK 名称和检测方法，评估对普通用户的影响。",
+  "uncertainty_flags": [
+    "报告未公开具体应用列表"
+  ],
+  "facts": [
+    {
+      "claim": "Hacker News 发布/收录了这条原始线索：Nearly Half of LG Smart TV Apps Contain Residential Proxy SDKs",
+      "type": "confirmed_fact",
+      "source_url": "https://spur.us/blog/smart-tv-apps-residential-proxy-sdks",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Hacker News",
+      "url": "https://spur.us/blog/smart-tv-apps-residential-proxy-sdks",
+      "source_type": "near_source",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {},
+    "source_host": "spur.us",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 8,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "智能电视应用可能将你的家庭网络变成代理节点，涉及隐私和带宽风险。",
+    "fit_for_radar": true
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://news.ycombinator.com/rss",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "报告未公开具体应用列表"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：报告未公开具体应用列表和SDK名称，且补证搜索结果为0，无法独立验证。"
+    },
+    "core_question": "LG智能电视应用内置住宅代理SDK是否真实存在，用户面临哪些隐私和带宽风险，如何检测和防范？",
+    "why_this_topic_matters": "近半数LG智能电视应用包含住宅代理SDK，用户家庭网络可能被用于代理流量，涉及隐私泄露、带宽占用和网络安全风险。技术人可主动检测并采取防护措施。",
+    "fact_summary": [
+      "Spur发布研究报告，称近半数LG智能电视应用包含住宅代理SDK。",
+      "SDK可能将用户家庭网络用作代理节点，用于匿名化第三方流量。",
+      "报告未公开具体应用列表和SDK名称。",
+      "LG官方尚未回应。"
+    ],
+    "persona_discussion_question": "我家的智能电视会不会也在偷偷跑代理流量？怎么检测和阻止？",
+    "old_flower_stance": "智能设备厂商通过预装SDK将用户家庭网络商业化，用户不知情且无法选择退出，涉及隐私侵犯和网络资源占用。技术人应主动检测并推动厂商透明化。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "共鸣读者"
+      ],
+      "interest_score": 85,
+      "why_interested": "技术人可动手检测、分析SDK行为，并评估风险。",
+      "reader_risk": "可能引发对智能设备隐私的普遍担忧，但需避免夸大风险。"
+    },
+    "mass_interest_hook": {
+      "score": 80,
+      "hook_type": "故事|反差|争议",
+      "why_non_technical_people_may_click": "普通人担心自家电视偷偷占用网络、泄露隐私，标题如‘你家电视可能在帮别人上网’具有冲击力。",
+      "story_seed": "用户发现网络变慢，检查路由器发现大量不明流量，最终定位到LG电视应用。",
+      "do_not_overhype": "不要声称所有LG电视都受影响，或用户网络被用于非法活动。"
+    },
+    "topic_tension": {
+      "score": 10,
+      "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+      "debate_question": "智能电视厂商是否有权在用户不知情的情况下将家庭网络商业化？",
+      "stakeholders": [
+        "LG用户",
+        "LG厂商",
+        "SDK提供商",
+        "安全公司Spur",
+        "监管机构"
+      ],
+      "why_people_would_comment": "读者可围绕隐私、厂商责任、检测方法、类似案例发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      {
+        "date": "2025-03-25",
+        "event": "Spur发布研究报告，披露LG电视应用内置住宅代理SDK"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "Spur Blog",
+        "url": "https://spur.us/blog/smart-tv-apps-residential-proxy-sdks",
+        "supports": "近半数LG智能电视应用包含住宅代理SDK",
+        "reliability": "near_source"
+      }
+    ],
+    "logic_closure": "Spur作为专业安全公司，报告可信度高，但需独立验证。用户可通过路由器日志或Wireshark检测代理流量。风险明确：隐私泄露、带宽占用、潜在法律风险。",
+    "writeable_angles": [
+      {
+        "angle": "技术检测与防护指南",
+        "why": "技术人最关心如何验证和防范，提供实操步骤。",
+        "needs": "检测工具推荐、路由器配置方法、SDK行为分析"
+      },
+      {
+        "angle": "隐私风险与厂商责任",
+        "why": "引发公众讨论，推动厂商透明化。",
+        "needs": "LG隐私政策、类似案例（如Vizio罚款）、监管动态"
+      },
+      {
+        "angle": "住宅代理SDK产业链分析",
+        "why": "揭示SDK提供商商业模式，评估风险规模。",
+        "needs": "SDK提供商信息、代理流量用途、用户同意机制"
+      }
+    ],
+    "missing_basics": [
+      "住宅代理SDK的工作原理",
+      "LG WebOS隐私政策具体条款",
+      "用户如何检查电视应用权限"
+    ],
+    "missing_materials": [
+      "Spur报告原文PDF或网页存档",
+      "LG官方回应或声明",
+      "独立第三方验证案例",
+      "受影响应用列表",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "所有LG电视都受影响",
+      "用户网络被用于非法活动",
+      "LG故意隐瞒或恶意收集数据",
+      "无法关闭或卸载SDK",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "Spur报告中提到的SDK名称是什么？",
+      "LG官方是否已回应？",
+      "是否有用户实际检测到代理流量？",
+      "其他品牌电视是否存在类似SDK？"
+    ],
+    "additional_search_queries": [
+      "LG WebOS privacy policy residential proxy SDK",
+      "LG smart TV residential proxy SDK detection",
+      "LG TV proxy SDK reddit",
+      "FTC smart TV proxy SDK investigation",
+      "residential proxy SDK prevalence smart TV 2024"
+    ],
+    "stop_conditions": [
+      "LG官方否认并公开证据",
+      "Spur报告被证实有重大错误或利益冲突",
+      "独立第三方复现失败"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI前沿",
+    "report_type": "risk-warning",
+    "quality_gate": {
+      "pass": false,
+      "score": 30,
+      "fatal_issues": [
+        "核心事实没有来源：报告未公开具体应用列表和SDK名称，且补证搜索结果为0，无法独立验证。",
+        "没有说明主要服务哪层读者：虽然写了primary_layer为'核心技术人'，但整体选题方向为'AI前沿'，与智能电视代理SDK主题不匹配，读者分层混乱。",
+        "没有泛兴趣故事钩子：标题和开头偏向技术细节，缺乏让非技术读者点击的泛兴趣钩子。",
+        "没有真实传播张力：冲突点不明确，争议问题'厂商是否有权商业化'缺乏具体案例支撑，讨论空间有限。",
+        "没有明确归入实际选题方向：topic_direction为'ai-frontier'，但内容与AI前沿无关，属于网络安全/隐私风险。",
+        "没有明确选题结论：verdict中status为'不入池'，但未给出推荐/可选/暂缓的明确结论。",
+        "没有解释为什么这个题值得选：reason中仅复述事实，未说明为何值得推荐或为何不值得直接写。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：证据仅依赖单一来源Spur，且未公开细节，逻辑闭环缺乏独立验证。",
+        "没有列出基础概念缺口和资料素材缺口：missing_basics和missing_materials已列出，但未在fatal_issues中体现为否决理由。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来：仅有一个来源Spur，且未在evidence_count中体现偏科。"
+      ],
+      "warnings": [
+        "成本估算不适用，但无相关公式或边界。",
+        "老花人设解读角度尚可，但缺乏具体立场和质疑对象。",
+        "泛兴趣钩子过度标题党风险：标题'你家电视可能在帮别人上网'可能夸大，正文证据接不住。",
+        "热点事件只复述新闻，没有老花的人设立场、质疑对象、提醒对象或可讨论问题。",
+        "没有给下游GPT编辑应用和研究闭环留下足够结构化资料：missing_materials中列出多项缺失。",
+        "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断。"
+      ],
+      "missing_evidence": [
+        "Spur报告原文PDF或网页存档",
+        "LG官方回应或声明",
+        "独立第三方验证案例",
+        "受影响应用列表",
+        "补证搜索结果"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": false,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "LG智能电视应用内置住宅代理SDK是否真实存在，以及用户面临的具体隐私和带宽风险是什么？",
+      "persona_discussion_question": "我家的智能电视会不会也在偷偷跑代理流量？怎么检测和阻止？",
+      "hidden_public_issue": "智能设备厂商通过预装SDK将用户家庭网络商业化，用户不知情且无法选择退出，涉及隐私侵犯和网络资源占用。",
+      "must_verify": [
+        "Spur报告原文是否可公开访问，报告日期和作者",
+        "报告中提到的SDK名称（如Luminati/NSOCKS等）",
+        "受影响LG电视型号和WebOS版本",
+        "SDK是否默认启用，用户能否关闭",
+        "LG官方是否回应或承认",
+        "是否有独立第三方验证（如安全研究人员复现）"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "LG WebOS privacy policy residential proxy SDK",
+          "why_needed": "确认LG官方是否披露此SDK及其数据使用条款"
+        },
+        {
+          "source_type": "case_study",
+          "query": "LG smart TV residential proxy SDK detection",
+          "why_needed": "寻找安全研究人员或用户的实际检测案例"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "LG TV proxy SDK reddit",
+          "why_needed": "了解用户社区的反应和自行检测方法"
+        },
+        {
+          "source_type": "policy",
+          "query": "FTC smart TV proxy SDK investigation",
+          "why_needed": "查看是否有监管机构介入或类似案例"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "residential proxy SDK prevalence smart TV 2024",
+          "why_needed": "了解其他品牌电视是否也存在类似SDK"
+        }
+      ],
+      "expert_challenge_points": [
+        "Spur作为安全公司，其报告是否存在利益冲突（如推广自家检测服务）？",
+        "SDK是否仅在特定区域或特定应用中出现？",
+        "代理流量是否加密，用户能否通过路由器监控发现？",
+        "SDK对带宽和延迟的实际影响有多大？"
+      ],
+      "do_not_claim_yet": [
+        "所有LG电视都受影响",
+        "用户网络被用于非法活动",
+        "LG故意隐瞒或恶意收集数据",
+        "无法关闭或卸载SDK"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确标注证据缺口，并引导用户自行检测。",
+      "downstream_materials_needed": [
+        "Spur报告原文PDF或网页存档",
+        "LG官方隐私政策链接",
+        "用户检测代理流量的工具推荐（如Wireshark、路由器日志）",
+        "类似案例（如Vizio电视数据收集罚款）"
+      ]
+    },
+    "research_evidence": []
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：报告未公开具体应用列表和SDK名称，且补证搜索结果为0，无法独立验证。"
+    },
+    "core_question": "LG智能电视应用内置住宅代理SDK是否真实存在，用户面临哪些隐私和带宽风险，如何检测和防范？",
+    "why_this_topic_matters": "近半数LG智能电视应用包含住宅代理SDK，用户家庭网络可能被用于代理流量，涉及隐私泄露、带宽占用和网络安全风险。技术人可主动检测并采取防护措施。",
+    "fact_summary": [
+      "Spur发布研究报告，称近半数LG智能电视应用包含住宅代理SDK。",
+      "SDK可能将用户家庭网络用作代理节点，用于匿名化第三方流量。",
+      "报告未公开具体应用列表和SDK名称。",
+      "LG官方尚未回应。"
+    ],
+    "persona_discussion_question": "我家的智能电视会不会也在偷偷跑代理流量？怎么检测和阻止？",
+    "old_flower_stance": "智能设备厂商通过预装SDK将用户家庭网络商业化，用户不知情且无法选择退出，涉及隐私侵犯和网络资源占用。技术人应主动检测并推动厂商透明化。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "共鸣读者"
+      ],
+      "interest_score": 85,
+      "why_interested": "技术人可动手检测、分析SDK行为，并评估风险。",
+      "reader_risk": "可能引发对智能设备隐私的普遍担忧，但需避免夸大风险。"
+    },
+    "mass_interest_hook": {
+      "score": 80,
+      "hook_type": "故事|反差|争议",
+      "why_non_technical_people_may_click": "普通人担心自家电视偷偷占用网络、泄露隐私，标题如‘你家电视可能在帮别人上网’具有冲击力。",
+      "story_seed": "用户发现网络变慢，检查路由器发现大量不明流量，最终定位到LG电视应用。",
+      "do_not_overhype": "不要声称所有LG电视都受影响，或用户网络被用于非法活动。"
+    },
+    "topic_tension": {
+      "score": 10,
+      "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+      "debate_question": "智能电视厂商是否有权在用户不知情的情况下将家庭网络商业化？",
+      "stakeholders": [
+        "LG用户",
+        "LG厂商",
+        "SDK提供商",
+        "安全公司Spur",
+        "监管机构"
+      ],
+      "why_people_would_comment": "读者可围绕隐私、厂商责任、检测方法、类似案例发表观点。",
+      "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+    },
+    "timeline": [
+      {
+        "date": "2025-03-25",
+        "event": "Spur发布研究报告，披露LG电视应用内置住宅代理SDK"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "Spur Blog",
+        "url": "https://spur.us/blog/smart-tv-apps-residential-proxy-sdks",
+        "supports": "近半数LG智能电视应用包含住宅代理SDK",
+        "reliability": "near_source"
+      }
+    ],
+    "logic_closure": "Spur作为专业安全公司，报告可信度高，但需独立验证。用户可通过路由器日志或Wireshark检测代理流量。风险明确：隐私泄露、带宽占用、潜在法律风险。",
+    "writeable_angles": [
+      {
+        "angle": "技术检测与防护指南",
+        "why": "技术人最关心如何验证和防范，提供实操步骤。",
+        "needs": "检测工具推荐、路由器配置方法、SDK行为分析"
+      },
+      {
+        "angle": "隐私风险与厂商责任",
+        "why": "引发公众讨论，推动厂商透明化。",
+        "needs": "LG隐私政策、类似案例（如Vizio罚款）、监管动态"
+      },
+      {
+        "angle": "住宅代理SDK产业链分析",
+        "why": "揭示SDK提供商商业模式，评估风险规模。",
+        "needs": "SDK提供商信息、代理流量用途、用户同意机制"
+      }
+    ],
+    "missing_basics": [
+      "住宅代理SDK的工作原理",
+      "LG WebOS隐私政策具体条款",
+      "用户如何检查电视应用权限"
+    ],
+    "missing_materials": [
+      "Spur报告原文PDF或网页存档",
+      "LG官方回应或声明",
+      "独立第三方验证案例",
+      "受影响应用列表",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "所有LG电视都受影响",
+      "用户网络被用于非法活动",
+      "LG故意隐瞒或恶意收集数据",
+      "无法关闭或卸载SDK",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "Spur报告中提到的SDK名称是什么？",
+      "LG官方是否已回应？",
+      "是否有用户实际检测到代理流量？",
+      "其他品牌电视是否存在类似SDK？"
+    ],
+    "additional_search_queries": [
+      "LG WebOS privacy policy residential proxy SDK",
+      "LG smart TV residential proxy SDK detection",
+      "LG TV proxy SDK reddit",
+      "FTC smart TV proxy SDK investigation",
+      "residential proxy SDK prevalence smart TV 2024"
+    ],
+    "stop_conditions": [
+      "LG官方否认并公开证据",
+      "Spur报告被证实有重大错误或利益冲突",
+      "独立第三方复现失败"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI前沿",
+    "report_type": "risk-warning",
+    "quality_gate": {
+      "pass": false,
+      "score": 30,
+      "fatal_issues": [
+        "核心事实没有来源：报告未公开具体应用列表和SDK名称，且补证搜索结果为0，无法独立验证。",
+        "没有说明主要服务哪层读者：虽然写了primary_layer为'核心技术人'，但整体选题方向为'AI前沿'，与智能电视代理SDK主题不匹配，读者分层混乱。",
+        "没有泛兴趣故事钩子：标题和开头偏向技术细节，缺乏让非技术读者点击的泛兴趣钩子。",
+        "没有真实传播张力：冲突点不明确，争议问题'厂商是否有权商业化'缺乏具体案例支撑，讨论空间有限。",
+        "没有明确归入实际选题方向：topic_direction为'ai-frontier'，但内容与AI前沿无关，属于网络安全/隐私风险。",
+        "没有明确选题结论：verdict中status为'不入池'，但未给出推荐/可选/暂缓的明确结论。",
+        "没有解释为什么这个题值得选：reason中仅复述事实，未说明为何值得推荐或为何不值得直接写。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：证据仅依赖单一来源Spur，且未公开细节，逻辑闭环缺乏独立验证。",
+        "没有列出基础概念缺口和资料素材缺口：missing_basics和missing_materials已列出，但未在fatal_issues中体现为否决理由。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来：仅有一个来源Spur，且未在evidence_count中体现偏科。"
+      ],
+      "warnings": [
+        "成本估算不适用，但无相关公式或边界。",
+        "老花人设解读角度尚可，但缺乏具体立场和质疑对象。",
+        "泛兴趣钩子过度标题党风险：标题'你家电视可能在帮别人上网'可能夸大，正文证据接不住。",
+        "热点事件只复述新闻，没有老花的人设立场、质疑对象、提醒对象或可讨论问题。",
+        "没有给下游GPT编辑应用和研究闭环留下足够结构化资料：missing_materials中列出多项缺失。",
+        "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断。"
+      ],
+      "missing_evidence": [
+        "Spur报告原文PDF或网页存档",
+        "LG官方回应或声明",
+        "独立第三方验证案例",
+        "受影响应用列表",
+        "补证搜索结果"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": false,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "LG智能电视应用内置住宅代理SDK是否真实存在，以及用户面临的具体隐私和带宽风险是什么？",
+      "persona_discussion_question": "我家的智能电视会不会也在偷偷跑代理流量？怎么检测和阻止？",
+      "hidden_public_issue": "智能设备厂商通过预装SDK将用户家庭网络商业化，用户不知情且无法选择退出，涉及隐私侵犯和网络资源占用。",
+      "must_verify": [
+        "Spur报告原文是否可公开访问，报告日期和作者",
+        "报告中提到的SDK名称（如Luminati/NSOCKS等）",
+        "受影响LG电视型号和WebOS版本",
+        "SDK是否默认启用，用户能否关闭",
+        "LG官方是否回应或承认",
+        "是否有独立第三方验证（如安全研究人员复现）"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "LG WebOS privacy policy residential proxy SDK",
+          "why_needed": "确认LG官方是否披露此SDK及其数据使用条款"
+        },
+        {
+          "source_type": "case_study",
+          "query": "LG smart TV residential proxy SDK detection",
+          "why_needed": "寻找安全研究人员或用户的实际检测案例"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "LG TV proxy SDK reddit",
+          "why_needed": "了解用户社区的反应和自行检测方法"
+        },
+        {
+          "source_type": "policy",
+          "query": "FTC smart TV proxy SDK investigation",
+          "why_needed": "查看是否有监管机构介入或类似案例"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "residential proxy SDK prevalence smart TV 2024",
+          "why_needed": "了解其他品牌电视是否也存在类似SDK"
+        }
+      ],
+      "expert_challenge_points": [
+        "Spur作为安全公司，其报告是否存在利益冲突（如推广自家检测服务）？",
+        "SDK是否仅在特定区域或特定应用中出现？",
+        "代理流量是否加密，用户能否通过路由器监控发现？",
+        "SDK对带宽和延迟的实际影响有多大？"
+      ],
+      "do_not_claim_yet": [
+        "所有LG电视都受影响",
+        "用户网络被用于非法活动",
+        "LG故意隐瞒或恶意收集数据",
+        "无法关闭或卸载SDK"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需明确标注证据缺口，并引导用户自行检测。",
+      "downstream_materials_needed": [
+        "Spur报告原文PDF或网页存档",
+        "LG官方隐私政策链接",
+        "用户检测代理流量的工具推荐（如Wireshark、路由器日志）",
+        "类似案例（如Vizio电视数据收集罚款）"
+      ]
+    },
+    "research_evidence": []
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260623-nearly-half-of-lg-smart-tv-apps-contain-resident-a64c7326/",
+    "for_gpt_editor": {
+      "brief": "Comments",
+      "title_seed": "近半数 LG 智能电视应用内置住宅代理 SDK，用户网络被用于代理流量",
+      "original_title": "Nearly Half of LG Smart TV Apps Contain Residential Proxy SDKs",
+      "source_url": "https://spur.us/blog/smart-tv-apps-residential-proxy-sdks",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：报告未公开具体应用列表和SDK名称，且补证搜索结果为0，无法独立验证。"
+        },
+        "core_question": "LG智能电视应用内置住宅代理SDK是否真实存在，用户面临哪些隐私和带宽风险，如何检测和防范？",
+        "why_this_topic_matters": "近半数LG智能电视应用包含住宅代理SDK，用户家庭网络可能被用于代理流量，涉及隐私泄露、带宽占用和网络安全风险。技术人可主动检测并采取防护措施。",
+        "fact_summary": [
+          "Spur发布研究报告，称近半数LG智能电视应用包含住宅代理SDK。",
+          "SDK可能将用户家庭网络用作代理节点，用于匿名化第三方流量。",
+          "报告未公开具体应用列表和SDK名称。",
+          "LG官方尚未回应。"
+        ],
+        "persona_discussion_question": "我家的智能电视会不会也在偷偷跑代理流量？怎么检测和阻止？",
+        "old_flower_stance": "智能设备厂商通过预装SDK将用户家庭网络商业化，用户不知情且无法选择退出，涉及隐私侵犯和网络资源占用。技术人应主动检测并推动厂商透明化。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "共鸣读者"
+          ],
+          "interest_score": 85,
+          "why_interested": "技术人可动手检测、分析SDK行为，并评估风险。",
+          "reader_risk": "可能引发对智能设备隐私的普遍担忧，但需避免夸大风险。"
+        },
+        "mass_interest_hook": {
+          "score": 80,
+          "hook_type": "故事|反差|争议",
+          "why_non_technical_people_may_click": "普通人担心自家电视偷偷占用网络、泄露隐私，标题如‘你家电视可能在帮别人上网’具有冲击力。",
+          "story_seed": "用户发现网络变慢，检查路由器发现大量不明流量，最终定位到LG电视应用。",
+          "do_not_overhype": "不要声称所有LG电视都受影响，或用户网络被用于非法活动。"
+        },
+        "topic_tension": {
+          "score": 10,
+          "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+          "debate_question": "智能电视厂商是否有权在用户不知情的情况下将家庭网络商业化？",
+          "stakeholders": [
+            "LG用户",
+            "LG厂商",
+            "SDK提供商",
+            "安全公司Spur",
+            "监管机构"
+          ],
+          "why_people_would_comment": "读者可围绕隐私、厂商责任、检测方法、类似案例发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          {
+            "date": "2025-03-25",
+            "event": "Spur发布研究报告，披露LG电视应用内置住宅代理SDK"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "Spur Blog",
+            "url": "https://spur.us/blog/smart-tv-apps-residential-proxy-sdks",
+            "supports": "近半数LG智能电视应用包含住宅代理SDK",
+            "reliability": "near_source"
+          }
+        ],
+        "logic_closure": "Spur作为专业安全公司，报告可信度高，但需独立验证。用户可通过路由器日志或Wireshark检测代理流量。风险明确：隐私泄露、带宽占用、潜在法律风险。",
+        "writeable_angles": [
+          {
+            "angle": "技术检测与防护指南",
+            "why": "技术人最关心如何验证和防范，提供实操步骤。",
+            "needs": "检测工具推荐、路由器配置方法、SDK行为分析"
+          },
+          {
+            "angle": "隐私风险与厂商责任",
+            "why": "引发公众讨论，推动厂商透明化。",
+            "needs": "LG隐私政策、类似案例（如Vizio罚款）、监管动态"
+          },
+          {
+            "angle": "住宅代理SDK产业链分析",
+            "why": "揭示SDK提供商商业模式，评估风险规模。",
+            "needs": "SDK提供商信息、代理流量用途、用户同意机制"
+          }
+        ],
+        "missing_basics": [
+          "住宅代理SDK的工作原理",
+          "LG WebOS隐私政策具体条款",
+          "用户如何检查电视应用权限"
+        ],
+        "missing_materials": [
+          "Spur报告原文PDF或网页存档",
+          "LG官方回应或声明",
+          "独立第三方验证案例",
+          "受影响应用列表",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "所有LG电视都受影响",
+          "用户网络被用于非法活动",
+          "LG故意隐瞒或恶意收集数据",
+          "无法关闭或卸载SDK",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "Spur报告中提到的SDK名称是什么？",
+          "LG官方是否已回应？",
+          "是否有用户实际检测到代理流量？",
+          "其他品牌电视是否存在类似SDK？"
+        ],
+        "additional_search_queries": [
+          "LG WebOS privacy policy residential proxy SDK",
+          "LG smart TV residential proxy SDK detection",
+          "LG TV proxy SDK reddit",
+          "FTC smart TV proxy SDK investigation",
+          "residential proxy SDK prevalence smart TV 2024"
+        ],
+        "stop_conditions": [
+          "LG官方否认并公开证据",
+          "Spur报告被证实有重大错误或利益冲突",
+          "独立第三方复现失败"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI前沿",
+        "report_type": "risk-warning",
+        "quality_gate": {
+          "pass": false,
+          "score": 30,
+          "fatal_issues": [
+            "核心事实没有来源：报告未公开具体应用列表和SDK名称，且补证搜索结果为0，无法独立验证。",
+            "没有说明主要服务哪层读者：虽然写了primary_layer为'核心技术人'，但整体选题方向为'AI前沿'，与智能电视代理SDK主题不匹配，读者分层混乱。",
+            "没有泛兴趣故事钩子：标题和开头偏向技术细节，缺乏让非技术读者点击的泛兴趣钩子。",
+            "没有真实传播张力：冲突点不明确，争议问题'厂商是否有权商业化'缺乏具体案例支撑，讨论空间有限。",
+            "没有明确归入实际选题方向：topic_direction为'ai-frontier'，但内容与AI前沿无关，属于网络安全/隐私风险。",
+            "没有明确选题结论：verdict中status为'不入池'，但未给出推荐/可选/暂缓的明确结论。",
+            "没有解释为什么这个题值得选：reason中仅复述事实，未说明为何值得推荐或为何不值得直接写。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：证据仅依赖单一来源Spur，且未公开细节，逻辑闭环缺乏独立验证。",
+            "没有列出基础概念缺口和资料素材缺口：missing_basics和missing_materials已列出，但未在fatal_issues中体现为否决理由。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来：仅有一个来源Spur，且未在evidence_count中体现偏科。"
+          ],
+          "warnings": [
+            "成本估算不适用，但无相关公式或边界。",
+            "老花人设解读角度尚可，但缺乏具体立场和质疑对象。",
+            "泛兴趣钩子过度标题党风险：标题'你家电视可能在帮别人上网'可能夸大，正文证据接不住。",
+            "热点事件只复述新闻，没有老花的人设立场、质疑对象、提醒对象或可讨论问题。",
+            "没有给下游GPT编辑应用和研究闭环留下足够结构化资料：missing_materials中列出多项缺失。",
+            "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断。"
+          ],
+          "missing_evidence": [
+            "Spur报告原文PDF或网页存档",
+            "LG官方回应或声明",
+            "独立第三方验证案例",
+            "受影响应用列表",
+            "补证搜索结果"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": false,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "LG智能电视应用内置住宅代理SDK是否真实存在，以及用户面临的具体隐私和带宽风险是什么？",
+          "persona_discussion_question": "我家的智能电视会不会也在偷偷跑代理流量？怎么检测和阻止？",
+          "hidden_public_issue": "智能设备厂商通过预装SDK将用户家庭网络商业化，用户不知情且无法选择退出，涉及隐私侵犯和网络资源占用。",
+          "must_verify": [
+            "Spur报告原文是否可公开访问，报告日期和作者",
+            "报告中提到的SDK名称（如Luminati/NSOCKS等）",
+            "受影响LG电视型号和WebOS版本",
+            "SDK是否默认启用，用户能否关闭",
+            "LG官方是否回应或承认",
+            "是否有独立第三方验证（如安全研究人员复现）"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "LG WebOS privacy policy residential proxy SDK",
+              "why_needed": "确认LG官方是否披露此SDK及其数据使用条款"
+            },
+            {
+              "source_type": "case_study",
+              "query": "LG smart TV residential proxy SDK detection",
+              "why_needed": "寻找安全研究人员或用户的实际检测案例"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "LG TV proxy SDK reddit",
+              "why_needed": "了解用户社区的反应和自行检测方法"
+            },
+            {
+              "source_type": "policy",
+              "query": "FTC smart TV proxy SDK investigation",
+              "why_needed": "查看是否有监管机构介入或类似案例"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "residential proxy SDK prevalence smart TV 2024",
+              "why_needed": "了解其他品牌电视是否也存在类似SDK"
+            }
+          ],
+          "expert_challenge_points": [
+            "Spur作为安全公司，其报告是否存在利益冲突（如推广自家检测服务）？",
+            "SDK是否仅在特定区域或特定应用中出现？",
+            "代理流量是否加密，用户能否通过路由器监控发现？",
+            "SDK对带宽和延迟的实际影响有多大？"
+          ],
+          "do_not_claim_yet": [
+            "所有LG电视都受影响",
+            "用户网络被用于非法活动",
+            "LG故意隐瞒或恶意收集数据",
+            "无法关闭或卸载SDK"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确标注证据缺口，并引导用户自行检测。",
+          "downstream_materials_needed": [
+            "Spur报告原文PDF或网页存档",
+            "LG官方隐私政策链接",
+            "用户检测代理流量的工具推荐（如Wireshark、路由器日志）",
+            "类似案例（如Vizio电视数据收集罚款）"
+          ]
+        },
+        "research_evidence": []
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：报告未公开具体应用列表和SDK名称，且补证搜索结果为0，无法独立验证。"
+        },
+        "core_question": "LG智能电视应用内置住宅代理SDK是否真实存在，用户面临哪些隐私和带宽风险，如何检测和防范？",
+        "why_this_topic_matters": "近半数LG智能电视应用包含住宅代理SDK，用户家庭网络可能被用于代理流量，涉及隐私泄露、带宽占用和网络安全风险。技术人可主动检测并采取防护措施。",
+        "fact_summary": [
+          "Spur发布研究报告，称近半数LG智能电视应用包含住宅代理SDK。",
+          "SDK可能将用户家庭网络用作代理节点，用于匿名化第三方流量。",
+          "报告未公开具体应用列表和SDK名称。",
+          "LG官方尚未回应。"
+        ],
+        "persona_discussion_question": "我家的智能电视会不会也在偷偷跑代理流量？怎么检测和阻止？",
+        "old_flower_stance": "智能设备厂商通过预装SDK将用户家庭网络商业化，用户不知情且无法选择退出，涉及隐私侵犯和网络资源占用。技术人应主动检测并推动厂商透明化。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "共鸣读者"
+          ],
+          "interest_score": 85,
+          "why_interested": "技术人可动手检测、分析SDK行为，并评估风险。",
+          "reader_risk": "可能引发对智能设备隐私的普遍担忧，但需避免夸大风险。"
+        },
+        "mass_interest_hook": {
+          "score": 80,
+          "hook_type": "故事|反差|争议",
+          "why_non_technical_people_may_click": "普通人担心自家电视偷偷占用网络、泄露隐私，标题如‘你家电视可能在帮别人上网’具有冲击力。",
+          "story_seed": "用户发现网络变慢，检查路由器发现大量不明流量，最终定位到LG电视应用。",
+          "do_not_overhype": "不要声称所有LG电视都受影响，或用户网络被用于非法活动。"
+        },
+        "topic_tension": {
+          "score": 10,
+          "conflict_point": "平台/规则变化和普通开发者、小团队的成本或操作预期之间的冲突。",
+          "debate_question": "智能电视厂商是否有权在用户不知情的情况下将家庭网络商业化？",
+          "stakeholders": [
+            "LG用户",
+            "LG厂商",
+            "SDK提供商",
+            "安全公司Spur",
+            "监管机构"
+          ],
+          "why_people_would_comment": "读者可围绕隐私、厂商责任、检测方法、类似案例发表观点。",
+          "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+        },
+        "timeline": [
+          {
+            "date": "2025-03-25",
+            "event": "Spur发布研究报告，披露LG电视应用内置住宅代理SDK"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "Spur Blog",
+            "url": "https://spur.us/blog/smart-tv-apps-residential-proxy-sdks",
+            "supports": "近半数LG智能电视应用包含住宅代理SDK",
+            "reliability": "near_source"
+          }
+        ],
+        "logic_closure": "Spur作为专业安全公司，报告可信度高，但需独立验证。用户可通过路由器日志或Wireshark检测代理流量。风险明确：隐私泄露、带宽占用、潜在法律风险。",
+        "writeable_angles": [
+          {
+            "angle": "技术检测与防护指南",
+            "why": "技术人最关心如何验证和防范，提供实操步骤。",
+            "needs": "检测工具推荐、路由器配置方法、SDK行为分析"
+          },
+          {
+            "angle": "隐私风险与厂商责任",
+            "why": "引发公众讨论，推动厂商透明化。",
+            "needs": "LG隐私政策、类似案例（如Vizio罚款）、监管动态"
+          },
+          {
+            "angle": "住宅代理SDK产业链分析",
+            "why": "揭示SDK提供商商业模式，评估风险规模。",
+            "needs": "SDK提供商信息、代理流量用途、用户同意机制"
+          }
+        ],
+        "missing_basics": [
+          "住宅代理SDK的工作原理",
+          "LG WebOS隐私政策具体条款",
+          "用户如何检查电视应用权限"
+        ],
+        "missing_materials": [
+          "Spur报告原文PDF或网页存档",
+          "LG官方回应或声明",
+          "独立第三方验证案例",
+          "受影响应用列表",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "所有LG电视都受影响",
+          "用户网络被用于非法活动",
+          "LG故意隐瞒或恶意收集数据",
+          "无法关闭或卸载SDK",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "Spur报告中提到的SDK名称是什么？",
+          "LG官方是否已回应？",
+          "是否有用户实际检测到代理流量？",
+          "其他品牌电视是否存在类似SDK？"
+        ],
+        "additional_search_queries": [
+          "LG WebOS privacy policy residential proxy SDK",
+          "LG smart TV residential proxy SDK detection",
+          "LG TV proxy SDK reddit",
+          "FTC smart TV proxy SDK investigation",
+          "residential proxy SDK prevalence smart TV 2024"
+        ],
+        "stop_conditions": [
+          "LG官方否认并公开证据",
+          "Spur报告被证实有重大错误或利益冲突",
+          "独立第三方复现失败"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI前沿",
+        "report_type": "risk-warning",
+        "quality_gate": {
+          "pass": false,
+          "score": 30,
+          "fatal_issues": [
+            "核心事实没有来源：报告未公开具体应用列表和SDK名称，且补证搜索结果为0，无法独立验证。",
+            "没有说明主要服务哪层读者：虽然写了primary_layer为'核心技术人'，但整体选题方向为'AI前沿'，与智能电视代理SDK主题不匹配，读者分层混乱。",
+            "没有泛兴趣故事钩子：标题和开头偏向技术细节，缺乏让非技术读者点击的泛兴趣钩子。",
+            "没有真实传播张力：冲突点不明确，争议问题'厂商是否有权商业化'缺乏具体案例支撑，讨论空间有限。",
+            "没有明确归入实际选题方向：topic_direction为'ai-frontier'，但内容与AI前沿无关，属于网络安全/隐私风险。",
+            "没有明确选题结论：verdict中status为'不入池'，但未给出推荐/可选/暂缓的明确结论。",
+            "没有解释为什么这个题值得选：reason中仅复述事实，未说明为何值得推荐或为何不值得直接写。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：证据仅依赖单一来源Spur，且未公开细节，逻辑闭环缺乏独立验证。",
+            "没有列出基础概念缺口和资料素材缺口：missing_basics和missing_materials已列出，但未在fatal_issues中体现为否决理由。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来：仅有一个来源Spur，且未在evidence_count中体现偏科。"
+          ],
+          "warnings": [
+            "成本估算不适用，但无相关公式或边界。",
+            "老花人设解读角度尚可，但缺乏具体立场和质疑对象。",
+            "泛兴趣钩子过度标题党风险：标题'你家电视可能在帮别人上网'可能夸大，正文证据接不住。",
+            "热点事件只复述新闻，没有老花的人设立场、质疑对象、提醒对象或可讨论问题。",
+            "没有给下游GPT编辑应用和研究闭环留下足够结构化资料：missing_materials中列出多项缺失。",
+            "只是套固定栏目，没有落到当前具体选题的事实、证据、缺口和判断。"
+          ],
+          "missing_evidence": [
+            "Spur报告原文PDF或网页存档",
+            "LG官方回应或声明",
+            "独立第三方验证案例",
+            "受影响应用列表",
+            "补证搜索结果"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": false,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "LG智能电视应用内置住宅代理SDK是否真实存在，以及用户面临的具体隐私和带宽风险是什么？",
+          "persona_discussion_question": "我家的智能电视会不会也在偷偷跑代理流量？怎么检测和阻止？",
+          "hidden_public_issue": "智能设备厂商通过预装SDK将用户家庭网络商业化，用户不知情且无法选择退出，涉及隐私侵犯和网络资源占用。",
+          "must_verify": [
+            "Spur报告原文是否可公开访问，报告日期和作者",
+            "报告中提到的SDK名称（如Luminati/NSOCKS等）",
+            "受影响LG电视型号和WebOS版本",
+            "SDK是否默认启用，用户能否关闭",
+            "LG官方是否回应或承认",
+            "是否有独立第三方验证（如安全研究人员复现）"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "LG WebOS privacy policy residential proxy SDK",
+              "why_needed": "确认LG官方是否披露此SDK及其数据使用条款"
+            },
+            {
+              "source_type": "case_study",
+              "query": "LG smart TV residential proxy SDK detection",
+              "why_needed": "寻找安全研究人员或用户的实际检测案例"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "LG TV proxy SDK reddit",
+              "why_needed": "了解用户社区的反应和自行检测方法"
+            },
+            {
+              "source_type": "policy",
+              "query": "FTC smart TV proxy SDK investigation",
+              "why_needed": "查看是否有监管机构介入或类似案例"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "residential proxy SDK prevalence smart TV 2024",
+              "why_needed": "了解其他品牌电视是否也存在类似SDK"
+            }
+          ],
+          "expert_challenge_points": [
+            "Spur作为安全公司，其报告是否存在利益冲突（如推广自家检测服务）？",
+            "SDK是否仅在特定区域或特定应用中出现？",
+            "代理流量是否加密，用户能否通过路由器监控发现？",
+            "SDK对带宽和延迟的实际影响有多大？"
+          ],
+          "do_not_claim_yet": [
+            "所有LG电视都受影响",
+            "用户网络被用于非法活动",
+            "LG故意隐瞒或恶意收集数据",
+            "无法关闭或卸载SDK"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需明确标注证据缺口，并引导用户自行检测。",
+          "downstream_materials_needed": [
+            "Spur报告原文PDF或网页存档",
+            "LG官方隐私政策链接",
+            "用户检测代理流量的工具推荐（如Wireshark、路由器日志）",
+            "类似案例（如Vizio电视数据收集罚款）"
+          ]
+        },
+        "research_evidence": []
+      },
+      "angle_candidates": [
+        "营销话术拆解",
+        "合规和资金风险",
+        "普通人不该硬冲的原因"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "近半数 LG 智能电视应用内置住宅代理 SDK，用户网络被用于代理流量 投诉 风险 违规",
+        "近半数 LG 智能电视应用内置住宅代理 SDK，用户网络被用于代理流量 骗局 营销话术",
+        "近半数 LG 智能电视应用内置住宅代理 SDK，用户网络被用于代理流量 隐藏成本 失败案例"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
