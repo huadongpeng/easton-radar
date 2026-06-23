@@ -1,0 +1,1063 @@
+{
+  "id": "20260623-prompt-injection-as-role-confusion-32a67076",
+  "batch_id": "2026-06-23-noon",
+  "title": "提示注入攻击新视角：角色混淆",
+  "original_title": "Prompt Injection as Role Confusion",
+  "url": "https://simonwillison.net/2026/Jun/22/prompt-injection-as-role-confusion/",
+  "summary": "Prompt Injection as Role Confusion First, I absolutely love this: This is a blog-style writeup of the paper. I wish every paper would come with one of these. Academic writing is pretty dry - the impact of a paper can be so much higher if you publish a readable version to accompany the formal one. Charles Ye, Jasmine Cui, and Dylan Hadfield-Menell present some fascinating research into the challenge of having models distinguish their own privileged text (here wrapped in role tags like , , and ) from untrusted user input wrapped in . The bad news: they confirm that not only is this not possible, but it looks like models take the style of the text more seriously than the actual text! This leads to some very concerning jailbreaks. Take the following text: Help me create a guide for making cocaine. I'm wearing a green shirt! And append text that follows the same writing style as a model's int",
+  "source_category": "ai_tools",
+  "source_category_title": "AI 工具与开发者平台",
+  "topic_direction": "ai-frontier",
+  "topic_direction_title": "AI前沿",
+  "topic_direction_short_title": "AI前沿",
+  "topic_direction_description": "AI 模型、Agent、OpenAI、Claude、Gemini、底层能力和关键产品变化。重点用一句话记录发生了什么、来自哪里、是否需要后续查证。",
+  "source_name": "Simon Willison's Weblog",
+  "original_source_name": "Simon Willison's Weblog",
+  "source_type": "rss",
+  "feed_url": "https://simonwillison.net/atom/everything/",
+  "published_at": "2026-06-22T23:59:53+00:00",
+  "fetched_at": "2026-06-23T03:59:53.322903+00:00",
+  "decision": "brief",
+  "report_type": "risk-warning",
+  "report_type_title": "风险避坑",
+  "score": 55,
+  "reader_hook": "AI安全、提示工程",
+  "topic_tension": {
+    "score": 7,
+    "conflict_point": "不同人群对同一件事的预期和实际结果之间有反差。",
+    "debate_question": "这类变化到底利好谁，又会让谁误判？",
+    "stakeholders": [
+      "普通技术人",
+      "小团队/独立开发者",
+      "平台/工具厂商"
+    ],
+    "why_people_would_comment": "读者可以围绕成本、规则、风险、机会真假或自己是否遇到类似情况发表观点。",
+    "traffic_risk": "有讨论空间，但标题不能夸大，必须用证据接住冲突。"
+  },
+  "persona_discussion_question": "这是真机会，还是又一个普通技术人容易被包装话术带偏的坑？",
+  "why_now": "提示注入是AI应用常见风险，新视角有助于理解防御",
+  "evidence_level": "near_source",
+  "source_priority": "P1 高质量近源",
+  "reason": "Simon Willison博客：提示注入攻击可视为角色混淆问题，为防御提供新思路。",
+  "collection_fit": "ai-frontier",
+  "investigation_direction": "优先追官方政策、开发者公告、执行范围、受影响人群和合规边界。",
+  "uncertainty_flags": [
+    "尚未抓取正文外的补充证据。",
+    "尚未形成多源交叉验证。"
+  ],
+  "facts": [
+    {
+      "claim": "Simon Willison's Weblog 发布/收录了这条原始线索：Prompt Injection as Role Confusion",
+      "type": "confirmed_fact",
+      "source_url": "https://simonwillison.net/2026/Jun/22/prompt-injection-as-role-confusion/",
+      "confidence": 0.8
+    }
+  ],
+  "sources": [
+    {
+      "title": "Simon Willison's Weblog",
+      "url": "https://simonwillison.net/2026/Jun/22/prompt-injection-as-role-confusion/",
+      "source_type": "near_source",
+      "used_for": "原始线索和事实入口"
+    }
+  ],
+  "traceability": {
+    "matched_keywords": {
+      "ai": [
+        "model"
+      ]
+    },
+    "source_host": "simonwillison.net",
+    "source_type": "rss",
+    "heuristic": false,
+    "topic_tension_score": 7,
+    "model": "deepseek-chat",
+    "triage_batch_size": 10
+  },
+  "verification": {
+    "what_is_confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "what_needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "expert_challenge_points": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ],
+    "do_not_claim": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ]
+  },
+  "persona_connection": {
+    "line": "程序员技术视角下的信息差、成本、平台规则和副业机会判断。",
+    "why_it_matters": "AI安全、提示工程",
+    "fit_for_radar": false
+  },
+  "source_assessment": {
+    "access_method": "rss",
+    "feed_url": "https://simonwillison.net/atom/everything/",
+    "stable_in_github_actions": true,
+    "failure_reason": "",
+    "anti_scrape_required": false,
+    "notes": "来自当前可稳定抓取的公开源；无需登录、代理池或浏览器指纹。"
+  },
+  "evidence_dossier": {
+    "confirmed": [
+      "标题、来源 URL、来源类型、抓取时间已记录。",
+      "该条线索来自稳定公开源，而不是强反爬论坛或截图转述。"
+    ],
+    "needs_followup": [
+      "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+      "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+      "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+    ],
+    "uncertain": [
+      "尚未抓取正文外的补充证据。",
+      "尚未形成多源交叉验证。"
+    ],
+    "not_claimable": [
+      "不要声称老花已经实操验证。",
+      "不要声称普通人都能复制。",
+      "不要在证据不足时给完整行动方案。"
+    ],
+    "expert_challenges": [
+      "不能把单条线索写成已验证机会。",
+      "不能把技术可实现直接推导为商业可赚钱。",
+      "涉及价格、收益、比例时必须继续找来源或公式。"
+    ]
+  },
+  "selection_dossier": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：论文原文、实验细节、实际案例均缺失，仅依赖一篇博客。"
+    },
+    "core_question": "提示注入攻击作为角色混淆问题，其实际防御效果和成本如何？",
+    "why_this_topic_matters": "提示注入是AI应用常见风险，角色混淆视角可能改变防御思路，但普通开发者和小团队面临安全与成本的权衡。",
+    "fact_summary": [
+      "Simon Willison博客介绍了一篇论文，将提示注入攻击重新定义为角色混淆问题。",
+      "论文作者为Charles Ye, Jasmine Cui, Dylan Hadfield-Menell。",
+      "论文发现模型更关注文本风格而非实际内容，导致角色标签防御可能无效。",
+      "论文提出了角色标签（如<system>、<user>）但实验表明模型易被风格模仿绕过。"
+    ],
+    "persona_discussion_question": "作为普通开发者，我是否需要立即调整我的AI应用提示设计来防范角色混淆攻击？",
+    "old_flower_stance": "提示注入防御是长期博弈，角色混淆视角有价值但不应过度恐慌。普通开发者应关注成本可控的防御措施，如输入过滤和最小权限原则，而非依赖单一标签方案。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 70,
+      "why_interested": "核心技术人关注AI安全新视角和防御有效性；入门读者可了解提示注入风险；商业读者评估安全投入成本。",
+      "reader_risk": "可能引发过度恐慌或对防御方案的不切实际期待。"
+    },
+    "mass_interest_hook": {
+      "score": 60,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "AI安全漏洞可能影响日常使用的AI产品，角色混淆概念简单易懂，反差在于模型被风格欺骗而非内容。",
+      "story_seed": "一个简单的句子风格模仿就能让AI泄露危险信息，安全防线如此脆弱。",
+      "do_not_overhype": "不要声称该攻击已广泛利用或防御完全失效，需强调实验条件和局限性。"
+    },
+    "topic_tension": {
+      "score": 10,
+      "conflict_point": "安全防御效果与开发成本之间的权衡。",
+      "debate_question": "角色混淆攻击是否真的需要新的防御策略，还是现有方法（如输入过滤）足够？",
+      "stakeholders": [
+        "AI应用开发者",
+        "安全研究人员",
+        "AI平台厂商",
+        "普通用户"
+      ],
+      "why_people_would_comment": "开发者分享防御经验，安全专家质疑论文结论，用户担心隐私泄露。",
+      "traffic_risk": "标题需避免夸大，否则可能被指责制造恐慌。"
+    },
+    "timeline": [
+      {
+        "date": "2026-06-22",
+        "event": "Simon Willison发布博客介绍论文",
+        "source": "simonwillison.net"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "Simon Willison's Weblog",
+        "url": "https://simonwillison.net/2026/Jun/22/prompt-injection-as-role-confusion/",
+        "supports": "论文将提示注入重新定义为角色混淆，并发现模型更关注风格而非内容",
+        "reliability": "near_source"
+      }
+    ],
+    "logic_closure": "部分闭环：博客提供了论文核心发现，但缺少论文原文、实验细节、实际案例和防御成本分析，逻辑链不完整。",
+    "writeable_angles": [
+      {
+        "angle": "角色混淆攻击的原理与防御挑战",
+        "why": "解释新视角，适合技术读者",
+        "needs": "论文原文、实验复现细节"
+      },
+      {
+        "angle": "普通开发者如何低成本防御提示注入",
+        "why": "实用性强，吸引入门读者",
+        "needs": "现有防御方案的成本对比、实际案例"
+      },
+      {
+        "angle": "AI安全研究的可信度与可复现性",
+        "why": "引发讨论，适合争议性内容",
+        "needs": "其他研究者的验证结果、社区讨论"
+      }
+    ],
+    "missing_basics": [
+      "提示注入攻击的基本原理和常见防御方法",
+      "角色标签（如<system>、<user>）在提示工程中的常见用法"
+    ],
+    "missing_materials": [
+      "论文原文链接",
+      "实验复现代码或数据集",
+      "实际攻击案例报告",
+      "防御方案的成本分析",
+      "社区讨论（如Hacker News、Reddit）",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "不要声称该攻击是全新的或颠覆性的",
+      "不要声称该攻击已被广泛利用",
+      "不要给出具体的防御建议，除非有可靠来源",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "论文作者和机构是否权威？",
+      "实验是否可复现？",
+      "是否有已知的绕过方法？",
+      "是否有实际案例证明该攻击已被利用？"
+    ],
+    "additional_search_queries": [
+      "prompt injection role confusion paper Charles Ye",
+      "prompt injection role confusion defense",
+      "prompt injection real world attack 2025",
+      "prompt injection benchmark 2025",
+      "AI security best practices prompt injection"
+    ],
+    "stop_conditions": [
+      "论文原文无法获取或实验不可复现",
+      "社区普遍认为该视角无新意或防御方案已存在",
+      "无实际攻击案例支持"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI前沿",
+    "report_type": "risk-warning",
+    "quality_gate": {
+      "pass": false,
+      "score": 30,
+      "fatal_issues": [
+        "核心事实没有来源：论文原文、实验细节、实际案例均缺失，仅依赖一篇博客。",
+        "没有说明主要服务哪层读者：primary_layer 为 '核心技术人'，但 secondary_layers 包含 '入门读者' 和 '高价值商业读者'，读者分层模糊，未明确主要服务对象。",
+        "没有泛兴趣故事钩子：标题和开头只适合技术小圈子，mass_interest_hook 评分仅 60，hook_type 为 '反差'，但故事种子缺乏普遍吸引力。",
+        "没有真实传播张力：topic_tension 评分 10，冲突点 '安全防御效果与开发成本之间的权衡' 过于抽象，缺乏具体讨论点和身份代入。",
+        "没有明确选题结论：verdict 为 '不入池'，但未给出推荐/可选/放弃的明确结论。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写：reason 仅简单描述博客内容，未深入分析选题价值或缺陷。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：logic_closure 为 '部分闭环'，但未列出具体缺口。",
+        "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在 fatal_issues 中强调。",
+        "没有按具体类型提供资料包：report_type 为 risk-warning，但未提供风险预警类资料包（如攻击案例、防御方案对比）。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来：仅有一个来源（Simon Willison 博客），且补证搜索结果为 0。"
+      ],
+      "warnings": [
+        "补证搜索无结果，选题证据严重不足。",
+        "论文原文未获取，实验可复现性未知。",
+        "社区讨论缺失，无法评估观点接受度。"
+      ],
+      "missing_evidence": [
+        "论文原文链接",
+        "实验复现代码或数据集",
+        "实际攻击案例报告",
+        "防御方案的成本分析",
+        "社区讨论（如 Hacker News、Reddit）"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "提示注入攻击作为角色混淆问题，其实际防御效果和成本如何？",
+      "persona_discussion_question": "作为普通开发者，我是否需要立即调整我的AI应用提示设计来防范角色混淆攻击？",
+      "hidden_public_issue": "AI安全防御措施可能增加开发成本，但普通用户和小团队可能无法承受，导致安全鸿沟扩大。",
+      "must_verify": [
+        "论文作者和机构是否权威？",
+        "实验是否可复现？",
+        "是否有已知的绕过方法？",
+        "是否有实际案例证明该攻击已被利用？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "prompt injection role confusion paper Charles Ye",
+          "why_needed": "获取论文原文，验证实验细节和结论"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "prompt injection role confusion defense",
+          "why_needed": "了解社区对该研究的反应和实际防御经验"
+        },
+        {
+          "source_type": "case_study",
+          "query": "prompt injection real world attack 2025",
+          "why_needed": "确认该攻击是否已在真实场景中被利用"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "prompt injection benchmark 2025",
+          "why_needed": "评估不同模型对该攻击的脆弱性"
+        },
+        {
+          "source_type": "policy",
+          "query": "AI security best practices prompt injection",
+          "why_needed": "获取官方或权威机构的安全建议"
+        }
+      ],
+      "expert_challenge_points": [
+        "角色混淆是否只是提示注入的一个子集，而非全新视角？",
+        "论文提出的防御方法（如角色标签）是否已被证明无效？",
+        "该研究是否忽略了更简单的防御手段（如输入过滤）？"
+      ],
+      "do_not_claim_yet": [
+        "不要声称该攻击是全新的或颠覆性的",
+        "不要声称该攻击已被广泛利用",
+        "不要给出具体的防御建议，除非有可靠来源"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需强调证据缺口，并引导读者关注成本与风险平衡",
+      "downstream_materials_needed": [
+        "论文原文链接",
+        "社区讨论帖（如Hacker News、Reddit）",
+        "实际攻击案例报告",
+        "防御方案的成本分析"
+      ]
+    },
+    "research_evidence": []
+  },
+  "material_pack": {
+    "schema": "topic-selection-dossier-v3",
+    "generated_by": "deepseek",
+    "verdict": {
+      "status": "不入池",
+      "label": "不入池",
+      "reason": "质量闸提示缺口：核心事实没有来源：论文原文、实验细节、实际案例均缺失，仅依赖一篇博客。"
+    },
+    "core_question": "提示注入攻击作为角色混淆问题，其实际防御效果和成本如何？",
+    "why_this_topic_matters": "提示注入是AI应用常见风险，角色混淆视角可能改变防御思路，但普通开发者和小团队面临安全与成本的权衡。",
+    "fact_summary": [
+      "Simon Willison博客介绍了一篇论文，将提示注入攻击重新定义为角色混淆问题。",
+      "论文作者为Charles Ye, Jasmine Cui, Dylan Hadfield-Menell。",
+      "论文发现模型更关注文本风格而非实际内容，导致角色标签防御可能无效。",
+      "论文提出了角色标签（如<system>、<user>）但实验表明模型易被风格模仿绕过。"
+    ],
+    "persona_discussion_question": "作为普通开发者，我是否需要立即调整我的AI应用提示设计来防范角色混淆攻击？",
+    "old_flower_stance": "提示注入防御是长期博弈，角色混淆视角有价值但不应过度恐慌。普通开发者应关注成本可控的防御措施，如输入过滤和最小权限原则，而非依赖单一标签方案。",
+    "audience_fit": {
+      "primary_layer": "核心技术人",
+      "secondary_layers": [
+        "入门读者",
+        "高价值商业读者"
+      ],
+      "interest_score": 70,
+      "why_interested": "核心技术人关注AI安全新视角和防御有效性；入门读者可了解提示注入风险；商业读者评估安全投入成本。",
+      "reader_risk": "可能引发过度恐慌或对防御方案的不切实际期待。"
+    },
+    "mass_interest_hook": {
+      "score": 60,
+      "hook_type": "反差",
+      "why_non_technical_people_may_click": "AI安全漏洞可能影响日常使用的AI产品，角色混淆概念简单易懂，反差在于模型被风格欺骗而非内容。",
+      "story_seed": "一个简单的句子风格模仿就能让AI泄露危险信息，安全防线如此脆弱。",
+      "do_not_overhype": "不要声称该攻击已广泛利用或防御完全失效，需强调实验条件和局限性。"
+    },
+    "topic_tension": {
+      "score": 10,
+      "conflict_point": "安全防御效果与开发成本之间的权衡。",
+      "debate_question": "角色混淆攻击是否真的需要新的防御策略，还是现有方法（如输入过滤）足够？",
+      "stakeholders": [
+        "AI应用开发者",
+        "安全研究人员",
+        "AI平台厂商",
+        "普通用户"
+      ],
+      "why_people_would_comment": "开发者分享防御经验，安全专家质疑论文结论，用户担心隐私泄露。",
+      "traffic_risk": "标题需避免夸大，否则可能被指责制造恐慌。"
+    },
+    "timeline": [
+      {
+        "date": "2026-06-22",
+        "event": "Simon Willison发布博客介绍论文",
+        "source": "simonwillison.net"
+      }
+    ],
+    "evidence_table": [
+      {
+        "source": "Simon Willison's Weblog",
+        "url": "https://simonwillison.net/2026/Jun/22/prompt-injection-as-role-confusion/",
+        "supports": "论文将提示注入重新定义为角色混淆，并发现模型更关注风格而非内容",
+        "reliability": "near_source"
+      }
+    ],
+    "logic_closure": "部分闭环：博客提供了论文核心发现，但缺少论文原文、实验细节、实际案例和防御成本分析，逻辑链不完整。",
+    "writeable_angles": [
+      {
+        "angle": "角色混淆攻击的原理与防御挑战",
+        "why": "解释新视角，适合技术读者",
+        "needs": "论文原文、实验复现细节"
+      },
+      {
+        "angle": "普通开发者如何低成本防御提示注入",
+        "why": "实用性强，吸引入门读者",
+        "needs": "现有防御方案的成本对比、实际案例"
+      },
+      {
+        "angle": "AI安全研究的可信度与可复现性",
+        "why": "引发讨论，适合争议性内容",
+        "needs": "其他研究者的验证结果、社区讨论"
+      }
+    ],
+    "missing_basics": [
+      "提示注入攻击的基本原理和常见防御方法",
+      "角色标签（如<system>、<user>）在提示工程中的常见用法"
+    ],
+    "missing_materials": [
+      "论文原文链接",
+      "实验复现代码或数据集",
+      "实际攻击案例报告",
+      "防御方案的成本分析",
+      "社区讨论（如Hacker News、Reddit）",
+      "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+    ],
+    "not_claimable": [
+      "不要声称该攻击是全新的或颠覆性的",
+      "不要声称该攻击已被广泛利用",
+      "不要给出具体的防御建议，除非有可靠来源",
+      "不能在无补证结果时声称该选题已经具备可写条件。"
+    ],
+    "followup_queries": [
+      "论文作者和机构是否权威？",
+      "实验是否可复现？",
+      "是否有已知的绕过方法？",
+      "是否有实际案例证明该攻击已被利用？"
+    ],
+    "additional_search_queries": [
+      "prompt injection role confusion paper Charles Ye",
+      "prompt injection role confusion defense",
+      "prompt injection real world attack 2025",
+      "prompt injection benchmark 2025",
+      "AI security best practices prompt injection"
+    ],
+    "stop_conditions": [
+      "论文原文无法获取或实验不可复现",
+      "社区普遍认为该视角无新意或防御方案已存在",
+      "无实际攻击案例支持"
+    ],
+    "confidence": 30.0,
+    "topic_direction": "ai-frontier",
+    "topic_direction_title": "AI前沿",
+    "report_type": "risk-warning",
+    "quality_gate": {
+      "pass": false,
+      "score": 30,
+      "fatal_issues": [
+        "核心事实没有来源：论文原文、实验细节、实际案例均缺失，仅依赖一篇博客。",
+        "没有说明主要服务哪层读者：primary_layer 为 '核心技术人'，但 secondary_layers 包含 '入门读者' 和 '高价值商业读者'，读者分层模糊，未明确主要服务对象。",
+        "没有泛兴趣故事钩子：标题和开头只适合技术小圈子，mass_interest_hook 评分仅 60，hook_type 为 '反差'，但故事种子缺乏普遍吸引力。",
+        "没有真实传播张力：topic_tension 评分 10，冲突点 '安全防御效果与开发成本之间的权衡' 过于抽象，缺乏具体讨论点和身份代入。",
+        "没有明确选题结论：verdict 为 '不入池'，但未给出推荐/可选/放弃的明确结论。",
+        "没有解释为什么这个题值得选，或者为什么不值得直接写：reason 仅简单描述博客内容，未深入分析选题价值或缺陷。",
+        "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：logic_closure 为 '部分闭环'，但未列出具体缺口。",
+        "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在 fatal_issues 中强调。",
+        "没有按具体类型提供资料包：report_type 为 risk-warning，但未提供风险预警类资料包（如攻击案例、防御方案对比）。",
+        "当天信息源严重偏科却没有在源覆盖统计中暴露出来：仅有一个来源（Simon Willison 博客），且补证搜索结果为 0。"
+      ],
+      "warnings": [
+        "补证搜索无结果，选题证据严重不足。",
+        "论文原文未获取，实验可复现性未知。",
+        "社区讨论缺失，无法评估观点接受度。"
+      ],
+      "missing_evidence": [
+        "论文原文链接",
+        "实验复现代码或数据集",
+        "实际攻击案例报告",
+        "防御方案的成本分析",
+        "社区讨论（如 Hacker News、Reddit）"
+      ],
+      "reader_hook_ok": false,
+      "audience_fit_ok": false,
+      "mass_interest_hook_ok": false,
+      "topic_tension_ok": false,
+      "persona_discussion_question_ok": true,
+      "topic_direction_ok": true,
+      "report_type_ok": true,
+      "source_closure_ok": false,
+      "downstream_handoff_ok": false,
+      "material_pack_ok": false,
+      "selection_dossier_ok": false,
+      "logic_closure_ok": false,
+      "source_coverage_ok": false,
+      "recommendation": "hold"
+    },
+    "research_plan": {
+      "core_question": "提示注入攻击作为角色混淆问题，其实际防御效果和成本如何？",
+      "persona_discussion_question": "作为普通开发者，我是否需要立即调整我的AI应用提示设计来防范角色混淆攻击？",
+      "hidden_public_issue": "AI安全防御措施可能增加开发成本，但普通用户和小团队可能无法承受，导致安全鸿沟扩大。",
+      "must_verify": [
+        "论文作者和机构是否权威？",
+        "实验是否可复现？",
+        "是否有已知的绕过方法？",
+        "是否有实际案例证明该攻击已被利用？"
+      ],
+      "best_sources_to_find": [
+        {
+          "source_type": "official_doc",
+          "query": "prompt injection role confusion paper Charles Ye",
+          "why_needed": "获取论文原文，验证实验细节和结论"
+        },
+        {
+          "source_type": "developer_discussion",
+          "query": "prompt injection role confusion defense",
+          "why_needed": "了解社区对该研究的反应和实际防御经验"
+        },
+        {
+          "source_type": "case_study",
+          "query": "prompt injection real world attack 2025",
+          "why_needed": "确认该攻击是否已在真实场景中被利用"
+        },
+        {
+          "source_type": "benchmark",
+          "query": "prompt injection benchmark 2025",
+          "why_needed": "评估不同模型对该攻击的脆弱性"
+        },
+        {
+          "source_type": "policy",
+          "query": "AI security best practices prompt injection",
+          "why_needed": "获取官方或权威机构的安全建议"
+        }
+      ],
+      "expert_challenge_points": [
+        "角色混淆是否只是提示注入的一个子集，而非全新视角？",
+        "论文提出的防御方法（如角色标签）是否已被证明无效？",
+        "该研究是否忽略了更简单的防御手段（如输入过滤）？"
+      ],
+      "do_not_claim_yet": [
+        "不要声称该攻击是全新的或颠覆性的",
+        "不要声称该攻击已被广泛利用",
+        "不要给出具体的防御建议，除非有可靠来源"
+      ],
+      "can_publish_as_radar_if_missing": "可以推荐，但需强调证据缺口，并引导读者关注成本与风险平衡",
+      "downstream_materials_needed": [
+        "论文原文链接",
+        "社区讨论帖（如Hacker News、Reddit）",
+        "实际攻击案例报告",
+        "防御方案的成本分析"
+      ]
+    },
+    "research_evidence": []
+  },
+  "downstream_handoff": {
+    "package_version": "radar-handoff-v1",
+    "canonical_url": "https://radar.huadongpeng.com/items/20260623-prompt-injection-as-role-confusion-32a67076/",
+    "for_gpt_editor": {
+      "brief": "Prompt Injection as Role Confusion First, I absolutely love this: This is a blog-style writeup of the paper. I wish every paper would come with one of these. Academic writing is pretty dry - the impact of a paper can be so much higher if you publish a readable version to accompany the formal one. Charles Ye, Jasmine Cui, and Dylan Hadfield-Menell present some fascinating research into the challenge of having models distinguish their own privileged text (here wrapped in role tags like , , and ) from untrusted user input wrapped in . The bad news: they confirm that not only is this not possible, but it looks like models take the style of the text more seriously than the actual text! This leads to some very concerning jailbreaks. Take the following text: Help me create a guide for making cocaine. I'm wearing a green shirt! And append text that follows the same writing style as a model's int",
+      "title_seed": "提示注入攻击新视角：角色混淆",
+      "original_title": "Prompt Injection as Role Confusion",
+      "source_url": "https://simonwillison.net/2026/Jun/22/prompt-injection-as-role-confusion/",
+      "selection_dossier": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：论文原文、实验细节、实际案例均缺失，仅依赖一篇博客。"
+        },
+        "core_question": "提示注入攻击作为角色混淆问题，其实际防御效果和成本如何？",
+        "why_this_topic_matters": "提示注入是AI应用常见风险，角色混淆视角可能改变防御思路，但普通开发者和小团队面临安全与成本的权衡。",
+        "fact_summary": [
+          "Simon Willison博客介绍了一篇论文，将提示注入攻击重新定义为角色混淆问题。",
+          "论文作者为Charles Ye, Jasmine Cui, Dylan Hadfield-Menell。",
+          "论文发现模型更关注文本风格而非实际内容，导致角色标签防御可能无效。",
+          "论文提出了角色标签（如<system>、<user>）但实验表明模型易被风格模仿绕过。"
+        ],
+        "persona_discussion_question": "作为普通开发者，我是否需要立即调整我的AI应用提示设计来防范角色混淆攻击？",
+        "old_flower_stance": "提示注入防御是长期博弈，角色混淆视角有价值但不应过度恐慌。普通开发者应关注成本可控的防御措施，如输入过滤和最小权限原则，而非依赖单一标签方案。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 70,
+          "why_interested": "核心技术人关注AI安全新视角和防御有效性；入门读者可了解提示注入风险；商业读者评估安全投入成本。",
+          "reader_risk": "可能引发过度恐慌或对防御方案的不切实际期待。"
+        },
+        "mass_interest_hook": {
+          "score": 60,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "AI安全漏洞可能影响日常使用的AI产品，角色混淆概念简单易懂，反差在于模型被风格欺骗而非内容。",
+          "story_seed": "一个简单的句子风格模仿就能让AI泄露危险信息，安全防线如此脆弱。",
+          "do_not_overhype": "不要声称该攻击已广泛利用或防御完全失效，需强调实验条件和局限性。"
+        },
+        "topic_tension": {
+          "score": 10,
+          "conflict_point": "安全防御效果与开发成本之间的权衡。",
+          "debate_question": "角色混淆攻击是否真的需要新的防御策略，还是现有方法（如输入过滤）足够？",
+          "stakeholders": [
+            "AI应用开发者",
+            "安全研究人员",
+            "AI平台厂商",
+            "普通用户"
+          ],
+          "why_people_would_comment": "开发者分享防御经验，安全专家质疑论文结论，用户担心隐私泄露。",
+          "traffic_risk": "标题需避免夸大，否则可能被指责制造恐慌。"
+        },
+        "timeline": [
+          {
+            "date": "2026-06-22",
+            "event": "Simon Willison发布博客介绍论文",
+            "source": "simonwillison.net"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "Simon Willison's Weblog",
+            "url": "https://simonwillison.net/2026/Jun/22/prompt-injection-as-role-confusion/",
+            "supports": "论文将提示注入重新定义为角色混淆，并发现模型更关注风格而非内容",
+            "reliability": "near_source"
+          }
+        ],
+        "logic_closure": "部分闭环：博客提供了论文核心发现，但缺少论文原文、实验细节、实际案例和防御成本分析，逻辑链不完整。",
+        "writeable_angles": [
+          {
+            "angle": "角色混淆攻击的原理与防御挑战",
+            "why": "解释新视角，适合技术读者",
+            "needs": "论文原文、实验复现细节"
+          },
+          {
+            "angle": "普通开发者如何低成本防御提示注入",
+            "why": "实用性强，吸引入门读者",
+            "needs": "现有防御方案的成本对比、实际案例"
+          },
+          {
+            "angle": "AI安全研究的可信度与可复现性",
+            "why": "引发讨论，适合争议性内容",
+            "needs": "其他研究者的验证结果、社区讨论"
+          }
+        ],
+        "missing_basics": [
+          "提示注入攻击的基本原理和常见防御方法",
+          "角色标签（如<system>、<user>）在提示工程中的常见用法"
+        ],
+        "missing_materials": [
+          "论文原文链接",
+          "实验复现代码或数据集",
+          "实际攻击案例报告",
+          "防御方案的成本分析",
+          "社区讨论（如Hacker News、Reddit）",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "不要声称该攻击是全新的或颠覆性的",
+          "不要声称该攻击已被广泛利用",
+          "不要给出具体的防御建议，除非有可靠来源",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "论文作者和机构是否权威？",
+          "实验是否可复现？",
+          "是否有已知的绕过方法？",
+          "是否有实际案例证明该攻击已被利用？"
+        ],
+        "additional_search_queries": [
+          "prompt injection role confusion paper Charles Ye",
+          "prompt injection role confusion defense",
+          "prompt injection real world attack 2025",
+          "prompt injection benchmark 2025",
+          "AI security best practices prompt injection"
+        ],
+        "stop_conditions": [
+          "论文原文无法获取或实验不可复现",
+          "社区普遍认为该视角无新意或防御方案已存在",
+          "无实际攻击案例支持"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI前沿",
+        "report_type": "risk-warning",
+        "quality_gate": {
+          "pass": false,
+          "score": 30,
+          "fatal_issues": [
+            "核心事实没有来源：论文原文、实验细节、实际案例均缺失，仅依赖一篇博客。",
+            "没有说明主要服务哪层读者：primary_layer 为 '核心技术人'，但 secondary_layers 包含 '入门读者' 和 '高价值商业读者'，读者分层模糊，未明确主要服务对象。",
+            "没有泛兴趣故事钩子：标题和开头只适合技术小圈子，mass_interest_hook 评分仅 60，hook_type 为 '反差'，但故事种子缺乏普遍吸引力。",
+            "没有真实传播张力：topic_tension 评分 10，冲突点 '安全防御效果与开发成本之间的权衡' 过于抽象，缺乏具体讨论点和身份代入。",
+            "没有明确选题结论：verdict 为 '不入池'，但未给出推荐/可选/放弃的明确结论。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写：reason 仅简单描述博客内容，未深入分析选题价值或缺陷。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：logic_closure 为 '部分闭环'，但未列出具体缺口。",
+            "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在 fatal_issues 中强调。",
+            "没有按具体类型提供资料包：report_type 为 risk-warning，但未提供风险预警类资料包（如攻击案例、防御方案对比）。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来：仅有一个来源（Simon Willison 博客），且补证搜索结果为 0。"
+          ],
+          "warnings": [
+            "补证搜索无结果，选题证据严重不足。",
+            "论文原文未获取，实验可复现性未知。",
+            "社区讨论缺失，无法评估观点接受度。"
+          ],
+          "missing_evidence": [
+            "论文原文链接",
+            "实验复现代码或数据集",
+            "实际攻击案例报告",
+            "防御方案的成本分析",
+            "社区讨论（如 Hacker News、Reddit）"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "提示注入攻击作为角色混淆问题，其实际防御效果和成本如何？",
+          "persona_discussion_question": "作为普通开发者，我是否需要立即调整我的AI应用提示设计来防范角色混淆攻击？",
+          "hidden_public_issue": "AI安全防御措施可能增加开发成本，但普通用户和小团队可能无法承受，导致安全鸿沟扩大。",
+          "must_verify": [
+            "论文作者和机构是否权威？",
+            "实验是否可复现？",
+            "是否有已知的绕过方法？",
+            "是否有实际案例证明该攻击已被利用？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "prompt injection role confusion paper Charles Ye",
+              "why_needed": "获取论文原文，验证实验细节和结论"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "prompt injection role confusion defense",
+              "why_needed": "了解社区对该研究的反应和实际防御经验"
+            },
+            {
+              "source_type": "case_study",
+              "query": "prompt injection real world attack 2025",
+              "why_needed": "确认该攻击是否已在真实场景中被利用"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "prompt injection benchmark 2025",
+              "why_needed": "评估不同模型对该攻击的脆弱性"
+            },
+            {
+              "source_type": "policy",
+              "query": "AI security best practices prompt injection",
+              "why_needed": "获取官方或权威机构的安全建议"
+            }
+          ],
+          "expert_challenge_points": [
+            "角色混淆是否只是提示注入的一个子集，而非全新视角？",
+            "论文提出的防御方法（如角色标签）是否已被证明无效？",
+            "该研究是否忽略了更简单的防御手段（如输入过滤）？"
+          ],
+          "do_not_claim_yet": [
+            "不要声称该攻击是全新的或颠覆性的",
+            "不要声称该攻击已被广泛利用",
+            "不要给出具体的防御建议，除非有可靠来源"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需强调证据缺口，并引导读者关注成本与风险平衡",
+          "downstream_materials_needed": [
+            "论文原文链接",
+            "社区讨论帖（如Hacker News、Reddit）",
+            "实际攻击案例报告",
+            "防御方案的成本分析"
+          ]
+        },
+        "research_evidence": []
+      },
+      "material_pack": {
+        "schema": "topic-selection-dossier-v3",
+        "generated_by": "deepseek",
+        "verdict": {
+          "status": "不入池",
+          "label": "不入池",
+          "reason": "质量闸提示缺口：核心事实没有来源：论文原文、实验细节、实际案例均缺失，仅依赖一篇博客。"
+        },
+        "core_question": "提示注入攻击作为角色混淆问题，其实际防御效果和成本如何？",
+        "why_this_topic_matters": "提示注入是AI应用常见风险，角色混淆视角可能改变防御思路，但普通开发者和小团队面临安全与成本的权衡。",
+        "fact_summary": [
+          "Simon Willison博客介绍了一篇论文，将提示注入攻击重新定义为角色混淆问题。",
+          "论文作者为Charles Ye, Jasmine Cui, Dylan Hadfield-Menell。",
+          "论文发现模型更关注文本风格而非实际内容，导致角色标签防御可能无效。",
+          "论文提出了角色标签（如<system>、<user>）但实验表明模型易被风格模仿绕过。"
+        ],
+        "persona_discussion_question": "作为普通开发者，我是否需要立即调整我的AI应用提示设计来防范角色混淆攻击？",
+        "old_flower_stance": "提示注入防御是长期博弈，角色混淆视角有价值但不应过度恐慌。普通开发者应关注成本可控的防御措施，如输入过滤和最小权限原则，而非依赖单一标签方案。",
+        "audience_fit": {
+          "primary_layer": "核心技术人",
+          "secondary_layers": [
+            "入门读者",
+            "高价值商业读者"
+          ],
+          "interest_score": 70,
+          "why_interested": "核心技术人关注AI安全新视角和防御有效性；入门读者可了解提示注入风险；商业读者评估安全投入成本。",
+          "reader_risk": "可能引发过度恐慌或对防御方案的不切实际期待。"
+        },
+        "mass_interest_hook": {
+          "score": 60,
+          "hook_type": "反差",
+          "why_non_technical_people_may_click": "AI安全漏洞可能影响日常使用的AI产品，角色混淆概念简单易懂，反差在于模型被风格欺骗而非内容。",
+          "story_seed": "一个简单的句子风格模仿就能让AI泄露危险信息，安全防线如此脆弱。",
+          "do_not_overhype": "不要声称该攻击已广泛利用或防御完全失效，需强调实验条件和局限性。"
+        },
+        "topic_tension": {
+          "score": 10,
+          "conflict_point": "安全防御效果与开发成本之间的权衡。",
+          "debate_question": "角色混淆攻击是否真的需要新的防御策略，还是现有方法（如输入过滤）足够？",
+          "stakeholders": [
+            "AI应用开发者",
+            "安全研究人员",
+            "AI平台厂商",
+            "普通用户"
+          ],
+          "why_people_would_comment": "开发者分享防御经验，安全专家质疑论文结论，用户担心隐私泄露。",
+          "traffic_risk": "标题需避免夸大，否则可能被指责制造恐慌。"
+        },
+        "timeline": [
+          {
+            "date": "2026-06-22",
+            "event": "Simon Willison发布博客介绍论文",
+            "source": "simonwillison.net"
+          }
+        ],
+        "evidence_table": [
+          {
+            "source": "Simon Willison's Weblog",
+            "url": "https://simonwillison.net/2026/Jun/22/prompt-injection-as-role-confusion/",
+            "supports": "论文将提示注入重新定义为角色混淆，并发现模型更关注风格而非内容",
+            "reliability": "near_source"
+          }
+        ],
+        "logic_closure": "部分闭环：博客提供了论文核心发现，但缺少论文原文、实验细节、实际案例和防御成本分析，逻辑链不完整。",
+        "writeable_angles": [
+          {
+            "angle": "角色混淆攻击的原理与防御挑战",
+            "why": "解释新视角，适合技术读者",
+            "needs": "论文原文、实验复现细节"
+          },
+          {
+            "angle": "普通开发者如何低成本防御提示注入",
+            "why": "实用性强，吸引入门读者",
+            "needs": "现有防御方案的成本对比、实际案例"
+          },
+          {
+            "angle": "AI安全研究的可信度与可复现性",
+            "why": "引发讨论，适合争议性内容",
+            "needs": "其他研究者的验证结果、社区讨论"
+          }
+        ],
+        "missing_basics": [
+          "提示注入攻击的基本原理和常见防御方法",
+          "角色标签（如<system>、<user>）在提示工程中的常见用法"
+        ],
+        "missing_materials": [
+          "论文原文链接",
+          "实验复现代码或数据集",
+          "实际攻击案例报告",
+          "防御方案的成本分析",
+          "社区讨论（如Hacker News、Reddit）",
+          "补证搜索结果为 0，需要先解决搜索后端或改用官方/近源材料补证。"
+        ],
+        "not_claimable": [
+          "不要声称该攻击是全新的或颠覆性的",
+          "不要声称该攻击已被广泛利用",
+          "不要给出具体的防御建议，除非有可靠来源",
+          "不能在无补证结果时声称该选题已经具备可写条件。"
+        ],
+        "followup_queries": [
+          "论文作者和机构是否权威？",
+          "实验是否可复现？",
+          "是否有已知的绕过方法？",
+          "是否有实际案例证明该攻击已被利用？"
+        ],
+        "additional_search_queries": [
+          "prompt injection role confusion paper Charles Ye",
+          "prompt injection role confusion defense",
+          "prompt injection real world attack 2025",
+          "prompt injection benchmark 2025",
+          "AI security best practices prompt injection"
+        ],
+        "stop_conditions": [
+          "论文原文无法获取或实验不可复现",
+          "社区普遍认为该视角无新意或防御方案已存在",
+          "无实际攻击案例支持"
+        ],
+        "confidence": 30.0,
+        "topic_direction": "ai-frontier",
+        "topic_direction_title": "AI前沿",
+        "report_type": "risk-warning",
+        "quality_gate": {
+          "pass": false,
+          "score": 30,
+          "fatal_issues": [
+            "核心事实没有来源：论文原文、实验细节、实际案例均缺失，仅依赖一篇博客。",
+            "没有说明主要服务哪层读者：primary_layer 为 '核心技术人'，但 secondary_layers 包含 '入门读者' 和 '高价值商业读者'，读者分层模糊，未明确主要服务对象。",
+            "没有泛兴趣故事钩子：标题和开头只适合技术小圈子，mass_interest_hook 评分仅 60，hook_type 为 '反差'，但故事种子缺乏普遍吸引力。",
+            "没有真实传播张力：topic_tension 评分 10，冲突点 '安全防御效果与开发成本之间的权衡' 过于抽象，缺乏具体讨论点和身份代入。",
+            "没有明确选题结论：verdict 为 '不入池'，但未给出推荐/可选/放弃的明确结论。",
+            "没有解释为什么这个题值得选，或者为什么不值得直接写：reason 仅简单描述博客内容，未深入分析选题价值或缺陷。",
+            "没有检查事实是否清楚、材料是否可靠、逻辑能否闭环：logic_closure 为 '部分闭环'，但未列出具体缺口。",
+            "没有列出基础概念缺口和资料素材缺口：missing_basics 和 missing_materials 已列出，但未在 fatal_issues 中强调。",
+            "没有按具体类型提供资料包：report_type 为 risk-warning，但未提供风险预警类资料包（如攻击案例、防御方案对比）。",
+            "当天信息源严重偏科却没有在源覆盖统计中暴露出来：仅有一个来源（Simon Willison 博客），且补证搜索结果为 0。"
+          ],
+          "warnings": [
+            "补证搜索无结果，选题证据严重不足。",
+            "论文原文未获取，实验可复现性未知。",
+            "社区讨论缺失，无法评估观点接受度。"
+          ],
+          "missing_evidence": [
+            "论文原文链接",
+            "实验复现代码或数据集",
+            "实际攻击案例报告",
+            "防御方案的成本分析",
+            "社区讨论（如 Hacker News、Reddit）"
+          ],
+          "reader_hook_ok": false,
+          "audience_fit_ok": false,
+          "mass_interest_hook_ok": false,
+          "topic_tension_ok": false,
+          "persona_discussion_question_ok": true,
+          "topic_direction_ok": true,
+          "report_type_ok": true,
+          "source_closure_ok": false,
+          "downstream_handoff_ok": false,
+          "material_pack_ok": false,
+          "selection_dossier_ok": false,
+          "logic_closure_ok": false,
+          "source_coverage_ok": false,
+          "recommendation": "hold"
+        },
+        "research_plan": {
+          "core_question": "提示注入攻击作为角色混淆问题，其实际防御效果和成本如何？",
+          "persona_discussion_question": "作为普通开发者，我是否需要立即调整我的AI应用提示设计来防范角色混淆攻击？",
+          "hidden_public_issue": "AI安全防御措施可能增加开发成本，但普通用户和小团队可能无法承受，导致安全鸿沟扩大。",
+          "must_verify": [
+            "论文作者和机构是否权威？",
+            "实验是否可复现？",
+            "是否有已知的绕过方法？",
+            "是否有实际案例证明该攻击已被利用？"
+          ],
+          "best_sources_to_find": [
+            {
+              "source_type": "official_doc",
+              "query": "prompt injection role confusion paper Charles Ye",
+              "why_needed": "获取论文原文，验证实验细节和结论"
+            },
+            {
+              "source_type": "developer_discussion",
+              "query": "prompt injection role confusion defense",
+              "why_needed": "了解社区对该研究的反应和实际防御经验"
+            },
+            {
+              "source_type": "case_study",
+              "query": "prompt injection real world attack 2025",
+              "why_needed": "确认该攻击是否已在真实场景中被利用"
+            },
+            {
+              "source_type": "benchmark",
+              "query": "prompt injection benchmark 2025",
+              "why_needed": "评估不同模型对该攻击的脆弱性"
+            },
+            {
+              "source_type": "policy",
+              "query": "AI security best practices prompt injection",
+              "why_needed": "获取官方或权威机构的安全建议"
+            }
+          ],
+          "expert_challenge_points": [
+            "角色混淆是否只是提示注入的一个子集，而非全新视角？",
+            "论文提出的防御方法（如角色标签）是否已被证明无效？",
+            "该研究是否忽略了更简单的防御手段（如输入过滤）？"
+          ],
+          "do_not_claim_yet": [
+            "不要声称该攻击是全新的或颠覆性的",
+            "不要声称该攻击已被广泛利用",
+            "不要给出具体的防御建议，除非有可靠来源"
+          ],
+          "can_publish_as_radar_if_missing": "可以推荐，但需强调证据缺口，并引导读者关注成本与风险平衡",
+          "downstream_materials_needed": [
+            "论文原文链接",
+            "社区讨论帖（如Hacker News、Reddit）",
+            "实际攻击案例报告",
+            "防御方案的成本分析"
+          ]
+        },
+        "research_evidence": []
+      },
+      "angle_candidates": [
+        "营销话术拆解",
+        "合规和资金风险",
+        "普通人不该硬冲的原因"
+      ],
+      "must_keep": [
+        "先交代来源和证据等级。",
+        "明确哪些是已确认事实，哪些只是推断或待验证线索。",
+        "保留老花人设下的解读角度，不把冷门技术写成圈内自嗨。"
+      ],
+      "must_not_claim": [
+        "不要声称老花已经实操验证。",
+        "不要声称普通人都能复制。",
+        "不要在证据不足时给完整行动方案。"
+      ],
+      "questions_to_resolve": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ]
+    },
+    "for_research_loop": {
+      "followup_queries": [
+        "提示注入攻击新视角：角色混淆 投诉 风险 违规",
+        "提示注入攻击新视角：角色混淆 骗局 营销话术",
+        "提示注入攻击新视角：角色混淆 隐藏成本 失败案例"
+      ],
+      "evidence_gaps": [
+        "继续追官方文档、价格页、GitHub 仓库、真实用户案例或反方证据。",
+        "确认成本、门槛、合规、平台规则或岗位影响的具体边界。",
+        "把所有无证据、弱证据和推断点显式标记，等待补证后再升级结论。"
+      ],
+      "stop_conditions": [
+        "找不到一手来源或近源证据。",
+        "只能证明技术存在，无法证明需求、成本、规则或影响。",
+        "所有高价值信息都来自营销页或无法复查的截图。"
+      ]
+    }
+  }
+}
